@@ -19,6 +19,7 @@ public class MockAiControl {
   private volatile Simulation global = Simulation.OK;
   private final Map<String, Simulation> byKey = new ConcurrentHashMap<>();
   private final Map<String, String> answerOverrides = new ConcurrentHashMap<>();
+  private final Map<String, String> scenarios = new ConcurrentHashMap<>();
   private final Deque<String> received = new ArrayDeque<>();
 
   public static String key(String userId, String lane) {
@@ -38,6 +39,23 @@ public class MockAiControl {
     } else {
       byKey.put(key(userId, lane), mode);
     }
+  }
+
+  /**
+   * Kịch bản trả lời "scene" của nhà cung cấp giả lập (E2: F-GEO-111 tọa độ hỏng, F-GEO-112 AI tự
+   * khai nhãn) theo người dùng và làn; null hoặc rỗng = bỏ.
+   */
+  public void setScenario(String userId, String lane, String scenario) {
+    if (scenario == null || scenario.isBlank()) {
+      scenarios.remove(key(userId, lane));
+    } else {
+      scenarios.put(key(userId, lane), scenario);
+    }
+  }
+
+  public String scenarioFor(String userId, String lane) {
+    String s = scenarios.get(key(userId, lane));
+    return s != null ? s : scenarios.get(key(userId, null));
   }
 
   public void overrideAnswer(String problemCode, String answer) {
@@ -68,6 +86,7 @@ public class MockAiControl {
     global = Simulation.OK;
     byKey.clear();
     answerOverrides.clear();
+    scenarios.clear();
     received.clear();
   }
 }

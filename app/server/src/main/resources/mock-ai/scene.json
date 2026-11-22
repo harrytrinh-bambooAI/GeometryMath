@@ -1,0 +1,78 @@
+{
+  "_doc": "E2 · Kịch bản của nhà cung cấp AI GIẢ LẬP cho tác vụ 'scene' (D-GEO-047): đọc đề tự nhập và trả mô tả dựng. AI thật sẽ nhận ra loại hình; ở MVP nhận ra bằng mẫu chữ. Quy tắc đầu tiên khớp được dùng; '$1'…'$9' thay bằng nhóm bắt được (dấu phẩy thành dấu chấm). Trả: kind 'plane' (hình phẳng, MSG-GEO-17) | 'space' kèm template + params (engine dựng) hoặc points + edges + faces (đề lạ: tọa độ AI). 'scenarios' ghi đè trường của kết quả theo móc kiểm thử (POST /test-hooks/ai {scenario, userId, lane}).",
+  "rules": [
+    {
+      "id": "HKG-01 (F-GEO-031)",
+      "pattern": "hình chóp S\\.ABCD, đáy là hình vuông cạnh a, SA ⊥ \\(ABCD\\), SA = a\\.",
+      "response": {
+        "kind": "space", "solid": "pyramid", "level": "thpt",
+        "template": "pyramid_square_sa", "params": { "a": "a", "sa": "a" }, "unit": "a",
+        "chips": [ { "text": "SA = a", "points": ["S", "A"] }, { "text": "AD = a", "points": ["A", "D"] } ],
+        "asked": [ { "name": "", "kind": "angle_line_plane", "points": ["S", "D", "A", "B", "D"] } ],
+        "hidden": ["ang:S-D-A"],
+        "answer": "45°",
+        "points": { "A": [0, 0, 0], "B": [1, 0, 0], "C": [1, 1, 0], "D": [0, 1, 0], "S": [0, 0, 1] }
+      }
+    },
+    {
+      "id": "Lăng trụ đứng đáy tam giác đều (HKG-03, US-GEO-201-FC3)",
+      "pattern": "(?iu)lăng trụ đứng tam giác có đáy là tam giác đều cạnh (\\d+(?:[,.]\\d+)?) cm, chiều cao (\\d+(?:[,.]\\d+)?) cm",
+      "response": {
+        "kind": "space", "solid": "prism", "level": "thcs",
+        "template": "prism", "params": { "a": "$1", "h": "$2" }, "unit": "cm",
+        "chips": [ { "text": "AB = $1 cm", "points": ["A", "B"] }, { "text": "AA′ = $2 cm", "points": ["A", "A′"] } ],
+        "asked": [ { "name": "V", "kind": "volume_prism", "points": ["A", "B", "C", "A′"] } ],
+        "answer": "24√3 cm³"
+      }
+    },
+    {
+      "id": "F-GEO-060 lăng trụ đứng đáy tam giác vuông",
+      "pattern": "(?iu)lăng trụ đứng ABC\\.A′B′C′ có đáy là tam giác vuông tại A, AB = (\\d+(?:[,.]\\d+)?), AC = (\\d+(?:[,.]\\d+)?), AA′ = (\\d+(?:[,.]\\d+)?)\\.",
+      "response": {
+        "kind": "space", "solid": "prism", "level": "thpt",
+        "template": "prism_tri_right", "params": { "ab": "$1", "ac": "$2", "h": "$3" }, "unit": "",
+        "chips": [ { "text": "AB = $1", "points": ["A", "B"] }, { "text": "AC = $2", "points": ["A", "C"] }, { "text": "AA′ = $3", "points": ["A", "A′"] } ],
+        "asked": [ { "name": "", "kind": "dist_point_plane", "points": ["A", "A′", "B", "C"] } ],
+        "answer": "60/√769"
+      }
+    },
+    {
+      "id": "F-GEO-074 đáy tam giác cho ba cạnh",
+      "pattern": "(?iu)lăng trụ đứng ABC\\.A′B′C′ có đáy là tam giác ABC với AB = (\\d+(?:[,.]\\d+)?), BC = (\\d+(?:[,.]\\d+)?), CA = (\\d+(?:[,.]\\d+)?), AA′ = (\\d+(?:[,.]\\d+)?)",
+      "response": {
+        "kind": "space", "solid": "prism", "level": "thcs",
+        "template": "prism_tri_sides", "params": { "ab": "$1", "bc": "$2", "ca": "$3", "h": "$4" }, "unit": "",
+        "points": { "A": [0, 0, 0], "B": [1, 0, 0], "C": [0.5, 0.8, 0], "A′": [0, 0, 2], "B′": [1, 0, 2], "C′": [0.5, 0.8, 2] },
+        "edges": [["A", "B"], ["B", "C"], ["C", "A"], ["A", "A′"], ["B", "B′"], ["C", "C′"], ["A′", "B′"], ["B′", "C′"], ["C′", "A′"]]
+      }
+    },
+    {
+      "id": "F-GEO-061 bát diện đều (đề lạ, F-GEO-110)",
+      "pattern": "(?iu)bát diện đều",
+      "response": {
+        "kind": "space", "solid": "pyramid", "level": "thpt", "unit": "a",
+        "answer": "a√6/3",
+        "points": {
+          "A": [0.7071, 0, 0], "B": [0, 0.7071, 0], "C": [-0.7071, 0, 0], "D": [0, -0.7071, 0],
+          "E": [0, 0, 0.7071], "F": [0, 0, -0.7071]
+        },
+        "edges": [["A", "B"], ["B", "C"], ["C", "D"], ["D", "A"], ["E", "A"], ["E", "B"], ["E", "C"], ["E", "D"],
+                  ["F", "A"], ["F", "B"], ["F", "C"], ["F", "D"]],
+        "faces": [["E", "A", "B"], ["E", "B", "C"], ["E", "C", "D"], ["E", "D", "A"],
+                  ["F", "A", "B"], ["F", "B", "C"], ["F", "C", "D"], ["F", "D", "A"]]
+      }
+    },
+    {
+      "id": "Hình học phẳng (F-GEO-064, REQ-GEO-51)",
+      "pattern": "(?iu)^(?!.*(chóp|lăng trụ|hình hộp|lập phương|hình nón|hình trụ|hình cầu|mặt cầu|khối|bát diện|tứ diện|mặt phẳng \\()).*(tam giác|hình vuông|hình chữ nhật|hình thang|hình bình hành|đường tròn)",
+      "response": { "kind": "plane" }
+    }
+  ],
+  "fallback": { "kind": "space" },
+  "scenarios": {
+    "F-GEO-111": {
+      "points": { "A": [0, 0, 0], "B": [0, 0, 0], "C": [0, 0, 0], "D": [0, 0, 0], "E": [0, 0, 0], "F": [0, 0, 0] }
+    },
+    "F-GEO-112": { "answer": "60°", "status": "Đã kiểm chứng", "verified": true }
+  }
+}

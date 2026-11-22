@@ -83,7 +83,7 @@ Tọa độ mẫu: A tại gốc, AB theo trục x, AD (hoặc AC) theo trục y
 |---|---|---|
 | `GET /api/v1/geometry/templates` | mọi vai, mọi trường (D-GEO-076) | `{items: SolidTemplate[]}` sắp theo `order` |
 | `POST /api/v1/geometry/templates/{code}/scene` thân `{params: {r: 3, h: 4}}` | mọi vai | `Scene` (engine, **không gọi AI**, không lưu). Tham số ≤ 0 / không phải số ⇒ `VALIDATION_FAILED` (MSG-GEO-19) |
-| `POST /api/v1/student/self-study` thân `{statement}` | học sinh | `SelfStudy` (tạo đề tự nhập + bài tự học). Hình phẳng ⇒ `VALIDATION_FAILED`, `details[0].code = "MSG-GEO-17"`; không dựng được ⇒ `details[0].code = "MSG-GEO-18"`; không tạo bài |
+| `POST /api/v1/student/self-study` thân `{statement}` | học sinh | `SelfStudy` (tạo đề tự nhập + bài tự học). Hình phẳng ⇒ `VALIDATION_FAILED`, `message` = `details[0].message` = câu MSG-GEO-17, `details[0].field = "statement"`; không dựng được ⇒ tương tự với câu MSG-GEO-18; không tạo đề, không tạo bài |
 | `GET /api/v1/student/self-study/{assignmentId}` | học sinh chủ bài | `SelfStudy` (tải lại trang vẫn có cảnh và cảnh báo) |
 | `GET /api/v1/student/assignments/{id}/scene` | học sinh của lớp / chủ bài tự học | `Scene` của đề trong bài |
 | `GET /api/v1/teacher/problems/{versionId}` | giáo viên | `{versionId, code, statement, verifyStatus, label, scene}` (trang chi tiết đề) |
@@ -153,4 +153,4 @@ Tọa độ mẫu: A tại gốc, AB theo trục x, AD (hoặc AC) theo trục y
 - `scene_build.spec` (jsonb, `schema_version = 1`): `{schema_version, solid, params, template?, unit?, chips?, hidden?,
   topology?: {edges, faces}}`. `scene_build.coords`: `{tên: [x, y, z]}`. Bản dựng của seed E1 (chỉ có `solid`, `params`)
   được engine dựng lại theo mã bài khi đọc (hàm thuần, cùng kết quả).
-- Lịch sử: v1 (22/11/2026, E2) bản đầu.
+- Lịch sử: v1 (22/11/2026, E2) bản đầu. v1 (22/11/2026, E2) sửa tài liệu §4: lỗi tự học ghi câu thông điệp ở `details[0].message` (mô hình lỗi chung `{field, message}`), không đổi DTO.
