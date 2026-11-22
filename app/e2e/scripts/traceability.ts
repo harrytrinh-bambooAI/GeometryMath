@@ -76,8 +76,12 @@ for (const file of walk(path.join(e2eDir, 'tests'))) {
 const serverTest = path.resolve(e2eDir, '../server/src/test/java');
 const itTagged = new Map<string, Set<string>>();
 if (existsSync(serverTest)) {
-  for (const file of walk(serverTest).concat(readdirSync(serverTest).length ? [] : [])) {
-    if (!file.endsWith('.java')) continue;
+  const walkJava = (d: string): string[] =>
+    readdirSync(d).flatMap((n) => {
+      const p = path.join(d, n);
+      return statSync(p).isDirectory() ? walkJava(p) : n.endsWith('.java') ? [p] : [];
+    });
+  for (const file of walkJava(serverTest)) {
     for (const m of readFileSync(file, 'utf8').matchAll(/TC[-_]GEO[-_](\d{4})/g)) {
       const id = `TC-GEO-${m[1]}`;
       if (!itTagged.has(id)) itTagged.set(id, new Set());
@@ -95,7 +99,8 @@ for (const dir of ['surefire-reports', 'failsafe-reports']) {
     for (const m of xml.matchAll(/<testcase\b([^>]*?)(\/>|>([\s\S]*?)<\/testcase>)/g)) {
       const attrs = m[1] ?? '';
       const body = m[3] ?? '';
-      const ids = [...attrs.matchAll(/TC[-_]GEO[-_](\d{4})/g)].map((x) => `TC-GEO-${x[1]}`);
+      // tên ca JUnit: @DisplayName "TC-GEO-0123 …" hoặc tên phương thức tc0123_…
+      const ids = [...attrs.matchAll(/(?:TC[-_]GEO[-_]|\btc)(\d{4})/g)].map((x) => `TC-GEO-${x[1]}`);
       const st = /<(failure|error)\b/.test(body) ? 'failed' : /<skipped\b/.test(body) ? 'skipped' : 'passed';
       for (const id of ids) {
         const prev = junit.get(id);

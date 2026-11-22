@@ -1,15 +1,33 @@
 import type { FeatureModule } from '../types.ts';
+import { AssignPage } from './AssignPage.tsx';
+import { CatalogPage } from './CatalogPage.tsx';
+import { JoinClassPage } from './JoinClassPage.tsx';
+import { MonitorPage } from './MonitorPage.tsx';
+import { MyAssignmentsPage } from './MyAssignmentsPage.tsx';
+import { StudentAssignmentPage } from './StudentAssignmentPage.tsx';
+import { TeacherLoginPage } from './TeacherLoginPage.tsx';
+import './e1.css';
 
 /**
  * E1 — Nền tảng, cổng AI, bộ đề chuẩn, thử tải.
- * Chỗ cắm của epic: thêm route/mục rail vào đây; màn, hook, gọi API đặt trong thư mục src/features/e1/.
- * data-testid của epic bắt đầu bằng 'e1-' (xem app/web/README.md).
+ * Học sinh: /hs/vao-lop (Vào lớp), /hs/bai-cua-em (Bài của em), /hs/bai/:id (một bài + Hỏi đáp).
+ * Giáo viên: /gv/dang-nhap (Giáo viên mẫu), /gv/kho-de, /gv/giao-bai/:versionId, /gv/theo-doi/:id.
+ * Màn kho đề, giao bài, theo dõi lớp ở đây là bản tối thiểu cho tiêu chí E1; E5–E7 làm bản đầy đủ.
  */
 export const feature: FeatureModule = {
   id: 'e1',
   title: 'Nền tảng, cổng AI, bộ đề chuẩn, thử tải',
-  teacherRoutes: [],
-  studentRoutes: [],
-  teacherNav: [],
-  studentNav: [],
+  teacherRoutes: [
+    { path: 'dang-nhap', element: <TeacherLoginPage /> },
+    { path: 'kho-de', element: <CatalogPage /> },
+    { path: 'giao-bai/:versionId', element: <AssignPage /> },
+    { path: 'theo-doi/:id', element: <MonitorPage /> },
+  ],
+  studentRoutes: [
+    { path: 'vao-lop', element: <JoinClassPage /> },
+    { path: 'bai-cua-em', element: <MyAssignmentsPage /> },
+    { path: 'bai/:id', element: <StudentAssignmentPage /> },
+  ],
+  teacherNav: [{ to: 'kho-de', label: 'Kho đề', testId: 'e1-nav-kho-de' }],
+  studentNav: [{ to: 'bai-cua-em', label: 'Bài của em', testId: 'e1-nav-bai-cua-em' }],
 };

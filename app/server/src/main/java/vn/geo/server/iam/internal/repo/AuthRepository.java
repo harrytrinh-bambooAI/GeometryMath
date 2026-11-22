@@ -91,6 +91,19 @@ public class AuthRepository {
         .list();
   }
 
+  /** Móc kiểm thử: học sinh rời lớp (left_at), dọn học sinh do ca kiểm tạo. */
+  public int leaveClass(String joinCode, String nameKey) {
+    return jdbc.sql(
+            """
+            UPDATE class_member SET left_at = now()
+            WHERE class_id = (SELECT id FROM class WHERE join_code = :code) AND name_key = :nameKey AND left_at IS NULL
+            -- sqllint:allow=tenant móc kiểm thử dev/test: tra lớp theo mã lớp toàn cục (D-GEO-051)
+            """)
+        .param("code", joinCode)
+        .param("nameKey", nameKey)
+        .update();
+  }
+
   /** Móc kiểm thử PO-51: đặt lại bộ đếm thử sai mã giáo viên. */
   public int resetAuthFailures() {
     return jdbc.sql("DELETE FROM auth_failure WHERE at <= now()").update();

@@ -20,10 +20,25 @@ public class AiTestHookController {
 
   private final MockAiControl control;
   private final AiSettings settings;
+  private final vn.geo.server.aigateway.internal.AiCallLog calls;
 
-  public AiTestHookController(MockAiControl control, AiSettings settings) {
+  public AiTestHookController(
+      MockAiControl control,
+      AiSettings settings,
+      vn.geo.server.aigateway.internal.AiCallLog calls) {
     this.control = control;
     this.settings = settings;
+    this.calls = calls;
+  }
+
+  /**
+   * Lượt gọi AI gần nhất của một người dùng (kiểm "có một bản ghi lượt gọi trạng thái lỗi" từ E2E).
+   */
+  @org.springframework.web.bind.annotation.GetMapping("/test-hooks/ai/calls")
+  public java.util.List<vn.geo.server.aigateway.internal.AiCallLog.Entry> calls(
+      @org.springframework.web.bind.annotation.RequestParam java.util.UUID userId,
+      @org.springframework.web.bind.annotation.RequestParam(defaultValue = "10") int limit) {
+    return calls.recent(userId, Math.min(limit, 100));
   }
 
   /**

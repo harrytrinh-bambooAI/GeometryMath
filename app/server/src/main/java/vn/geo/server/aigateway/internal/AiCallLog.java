@@ -24,4 +24,9 @@ public interface AiCallLog {
       String status) {}
 
   void record(Entry e);
+
+  /** Lượt gọi gần nhất của một người dùng, mới nhất trước (chỉ móc kiểm thử dev/test dùng). */
+  default java.util.List<Entry> recent(UUID userId, int limit) {
+    return java.util.List.of();
+  }
 }

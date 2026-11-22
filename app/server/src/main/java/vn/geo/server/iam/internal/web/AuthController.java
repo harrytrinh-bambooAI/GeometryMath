@@ -56,6 +56,14 @@ public class AuthController {
       this.auth = auth;
     }
 
+    /** Dọn học sinh do ca kiểm tạo (QF-E1-02: khôi phục số học sinh của lớp): đặt left_at. */
+    public record Leave(String joinCode, String displayName) {}
+
+    @PostMapping("/test-hooks/students/leave")
+    public Map<String, Integer> leave(@RequestBody Leave b) {
+      return Map.of("left", auth.leaveClass(b.joinCode(), b.displayName()));
+    }
+
     @PostMapping("/test-hooks/auth-failures/reset")
     public Map<String, Integer> reset() {
       return Map.of("deleted", auth.resetAuthFailures());

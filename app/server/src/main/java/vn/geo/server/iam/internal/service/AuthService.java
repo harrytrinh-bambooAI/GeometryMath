@@ -103,6 +103,11 @@ public class AuthService {
         .toList();
   }
 
+  public int leaveClass(String joinCode, String displayName) {
+    return repo.leaveClass(
+        joinCode == null ? "" : joinCode.strip().toUpperCase(Locale.ROOT), NameKey.of(displayName));
+  }
+
   public int resetAuthFailures() {
     return repo.resetAuthFailures();
   }
