@@ -1,10 +1,11 @@
 import type { APIRequestContext, Page, TestInfo } from '@playwright/test';
 import { expect, test } from '../../support/fixtures.ts';
-import { API, BG, MSG, USER, lane, setAi, signInPage, studentJoinUI } from './e1.ts';
+import { AN_AI_LOCK, API, BG, MSG, USER, bearer, devToken, lane, setAi, signInPage, studentJoinUI, withLock } from './e1.ts';
 
 /**
  * US-GEO-103 (cổng AI: khóa không xuống trình duyệt, lỗi → MSG-GEO-14 + "Thử lại") và US-GEO-104-FC1 (bài lớp khác).
- * Chế độ lỗi của nhà cung cấp giả lập đặt theo (An, làn) để test song song không giẫm nhau.
+ * Chế độ lỗi của nhà cung cấp giả lập đặt theo (An, làn) để test song song không giẫm nhau; mọi ca sinh lượt gọi AI
+ * của An giữ khóa AN_AI_LOCK để ca đếm bản ghi lượt gọi (TC-GEO-0120/0122) chính xác khi chromium/webkit/api chạy song song.
  */
 test.describe.configure({ mode: 'serial' });
 
@@ -40,8 +41,11 @@ test('Khóa của nhà cung cấp không xuống trình duyệt @TC-GEO-0118', a
   await studentJoinUI(page, 'An', 'HK7M2A');
   await page.getByTestId('e1-assignment-HKG-01').click();
   await page.getByTestId('e1-qa-input').fill(Q);
-  await page.getByTestId('e1-qa-send').click();
-  await expect(page.getByTestId('e1-qa-answer')).toHaveCount(1);
+  // lượt gọi AI của An: giữ khóa chung để TC-GEO-0120/0122 (dự án khác) đếm bản ghi chính xác
+  await withLock(AN_AI_LOCK, async () => {
+    await page.getByTestId('e1-qa-send').click();
+    await expect(page.getByTestId('e1-qa-answer')).toHaveCount(1);
+  });
   // toàn bộ dữ liệu trả về + mã trang (HTML, JS, CSS) đã tải về thiết bị
   bodies.push(await page.content());
   for (const src of await page.evaluate(() => performance.getEntriesByType('resource').map((e) => e.name))) {
@@ -52,37 +56,64 @@ test('Khóa của nhà cung cấp không xuống trình duyệt @TC-GEO-0118', a
   // Phần "một lượt dựng hình tự học" cần màn Tự học của E2: ghi ở qc_findings mục Dev (QF-E1-D03).
 });
 
+/** Câu hỏi mới nhất An đã lưu (id) — kiểm "không lưu gì" phía máy chủ. */
+async function newestSavedQuestion(request: APIRequestContext): Promise<number | undefined> {
+  const r = await request.get(`${API}/api/v1/students/${AN}/questions`, { headers: bearer(await devToken(request, 'F-GEO-020')) });
+  expect(r.status()).toBe(200);
+  return ((await r.json()) as { items: Array<{ id: number }> }).items[0]?.id;
+}
+
 test('Nhà cung cấp trả lỗi @TC-GEO-0120', async ({ page, request }, testInfo) => {
-  await openBg1AsAn(page, request, testInfo);
-  await setAi(request, { mode: 'error', userId: AN, lane: lane(testInfo) });
-  await page.getByTestId('e1-qa-input').fill(Q);
-  const res = page.waitForResponse((r) => r.url().includes('/questions'));
-  await page.getByTestId('e1-qa-send').click();
-  expect((await res).status()).toBeGreaterThanOrEqual(500);
-  await expect(page.getByTestId('e1-qa-error')).toContainText(MSG['14']);
-  await expect(page.getByTestId('e1-qa-retry')).toHaveText('Thử lại');
-  await expect(page.getByTestId('e1-qa-answer')).toHaveCount(0);
-  await expect(page.getByTestId('e1-assignment-page-label')).toHaveText('Đã kiểm chứng');
-  expect((await calls(request))[0]).toMatchObject({ status: 'error', purpose: 'qa' });
+  await withLock(AN_AI_LOCK, async () => {
+    await openBg1AsAn(page, request, testInfo);
+    await setAi(request, { mode: 'error', userId: AN, lane: lane(testInfo) });
+    const before = await calls(request);
+    expect(before.length, 'danh sách lượt gọi chưa chạm trần 100').toBeLessThan(100);
+    const savedBefore = await newestSavedQuestion(request);
+    await page.getByTestId('e1-qa-input').fill(Q);
+    const res = page.waitForResponse((r) => r.url().includes('/questions'));
+    await page.getByTestId('e1-qa-send').click();
+    expect((await res).status()).toBeGreaterThanOrEqual(500);
+    await expect(page.getByTestId('e1-qa-error')).toContainText(MSG['14']);
+    await expect(page.getByTestId('e1-qa-retry')).toHaveText('Thử lại');
+    await expect(page.getByTestId('e1-qa-answer')).toHaveCount(0);
+    await expect(page.getByTestId('e1-assignment-page-label')).toHaveText('Đã kiểm chứng');
+    // đúng MỘT bản ghi lượt gọi mới, trạng thái lỗi; các bản ghi cũ giữ nguyên
+    const after = await calls(request);
+    expect(after).toHaveLength(before.length + 1);
+    expect(after[0]).toMatchObject({ status: 'error', purpose: 'qa' });
+    expect(after.slice(1)).toEqual(before);
+    // phía máy chủ không lưu câu hỏi/câu trả lời dở dang nào
+    expect(await newestSavedQuestion(request)).toBe(savedBefore);
+  });
 });
 
 test('Bấm "Thử lại" sau lỗi @TC-GEO-0122', async ({ page, request }, testInfo) => {
-  await openBg1AsAn(page, request, testInfo);
-  await setAi(request, { mode: 'error', userId: AN, lane: lane(testInfo) });
-  await page.getByTestId('e1-qa-input').fill(Q);
-  await page.getByTestId('e1-qa-send').click();
-  await expect(page.getByTestId('e1-qa-error')).toContainText(MSG['14']);
-  const errorCalls = (await calls(request)).filter((c) => c.status === 'error').length;
-  // nhà cung cấp giả lập trở lại bình thường; An bấm "Thử lại" (không gõ lại)
-  await setAi(request, { mode: 'ok', userId: AN, lane: lane(testInfo) });
-  const req = page.waitForRequest((r) => r.url().includes('/questions') && r.method() === 'POST');
-  await page.getByTestId('e1-qa-retry').click();
-  expect((JSON.parse((await req).postData() ?? '{}') as { question: string }).question).toBe(Q);
-  await expect(page.getByTestId('e1-qa-answer')).toHaveCount(1);
-  await expect(page.getByTestId('e1-qa-error')).toHaveCount(0);
-  const after = await calls(request);
-  expect(after[0]!.status).toBe('ok');
-  expect(after.filter((c) => c.status === 'error').length).toBeGreaterThanOrEqual(errorCalls);
+  await withLock(AN_AI_LOCK, async () => {
+    await openBg1AsAn(page, request, testInfo);
+    await setAi(request, { mode: 'error', userId: AN, lane: lane(testInfo) });
+    const start = await calls(request);
+    expect(start.length, 'danh sách lượt gọi chưa chạm trần 100').toBeLessThan(99);
+    await page.getByTestId('e1-qa-input').fill(Q);
+    await page.getByTestId('e1-qa-send').click();
+    await expect(page.getByTestId('e1-qa-error')).toContainText(MSG['14']);
+    const afterError = await calls(request);
+    expect(afterError).toHaveLength(start.length + 1);
+    expect(afterError[0]).toMatchObject({ status: 'error', purpose: 'qa' });
+    // nhà cung cấp giả lập trở lại bình thường; An bấm "Thử lại" (không gõ lại)
+    await setAi(request, { mode: 'ok', userId: AN, lane: lane(testInfo) });
+    const req = page.waitForRequest((r) => r.url().includes('/questions') && r.method() === 'POST');
+    await page.getByTestId('e1-qa-retry').click();
+    expect((JSON.parse((await req).postData() ?? '{}') as { question: string }).question).toBe(Q);
+    await expect(page.getByTestId('e1-qa-answer')).toHaveCount(1);
+    await expect(page.getByTestId('e1-qa-error')).toHaveCount(0);
+    // thêm ĐÚNG một bản ghi thành công (không trùng); bản ghi lỗi trước đó vẫn còn nguyên
+    const after = await calls(request);
+    expect(after).toHaveLength(afterError.length + 1);
+    expect(after[0]).toMatchObject({ status: 'ok', purpose: 'qa' });
+    expect(after.slice(1)).toEqual(afterError);
+    expect(after.filter((c) => c.status === 'ok').length).toBe(afterError.filter((c) => c.status === 'ok').length + 1);
+  });
 });
 
 test('Học sinh gọi bài của lớp khác cùng trường @TC-GEO-0128', async ({ page, request }) => {

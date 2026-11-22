@@ -124,4 +124,82 @@ class AiGatewayE1IT extends AbstractE1IT {
         .as("không lưu câu trả lời dở")
         .isEqualTo(before);
   }
+
+  @Test
+  @DisplayName(
+      "TC-GEO-0120 Nhà cung cấp trả lỗi: phía máy chủ không lưu gì, đúng một bản ghi lỗi (US-GEO-103-FC1)")
+  void tc0120_providerErrorStoresNothing() throws Exception {
+    postJson("/test-hooks/ai", null, "{\"mode\":\"error\",\"userId\":\"" + AN + "\"}");
+    String anFilter = " WHERE user_id = '" + AN + "'";
+    long qaBefore = count("SELECT count(*) FROM qa_turn" + anFilter);
+    long eventsBefore = count("SELECT count(*) FROM event_log" + anFilter);
+    long okBefore = count("SELECT count(*) FROM ai_call_log" + anFilter + " AND status = 'ok'");
+    long errBefore = count("SELECT count(*) FROM ai_call_log" + anFilter + " AND status = 'error'");
+    var r =
+        postJson(
+            "/api/v1/student/assignments/" + BG1 + "/questions",
+            an(),
+            "{\"question\":\"Vì sao A là hình chiếu của S?\",\"requestId\":\""
+                + vn.geo.server.common.id.Uuid7.next()
+                + "\"}");
+    assertThat(r.statusCode()).isEqualTo(503);
+    assertThat(json(r).get("code").asString()).isEqualTo("DEPENDENCY_UNAVAILABLE");
+    assertThat(r.body()).doesNotContain("reply");
+    assertThat(count("SELECT count(*) FROM qa_turn" + anFilter))
+        .as("không lưu câu trả lời dở dang")
+        .isEqualTo(qaBefore);
+    assertThat(count("SELECT count(*) FROM event_log" + anFilter))
+        .as("không ghi sự kiện hỏi")
+        .isEqualTo(eventsBefore);
+    assertThat(count("SELECT count(*) FROM ai_call_log" + anFilter + " AND status = 'error'"))
+        .as("đúng một bản ghi lượt gọi trạng thái lỗi")
+        .isEqualTo(errBefore + 1);
+    assertThat(count("SELECT count(*) FROM ai_call_log" + anFilter + " AND status = 'ok'"))
+        .isEqualTo(okBefore);
+    assertThat(
+            jdbc.sql("SELECT verify_status::text FROM problem_version WHERE id = :v")
+                .param("v", HKG01_V)
+                .query(String.class)
+                .single())
+        .as("nhãn máy vẫn Đã kiểm chứng")
+        .isEqualTo("verified");
+  }
+
+  @Test
+  @DisplayName(
+      "US-GEO-103 lũy đẳng: gửi lại cùng requestId trả câu trả lời đã lưu, không gọi AI lần nữa")
+  void sameRequestIdReturnsSavedAnswerWithoutCallingAi() throws Exception {
+    String rid = vn.geo.server.common.id.Uuid7.next().toString();
+    String dung = token(ORG_A, DUNG, Role.STUDENT);
+    long callsBefore = count("SELECT count(*) FROM ai_call_log");
+    long qaBefore = count("SELECT count(*) FROM qa_turn");
+    var first =
+        postJson(
+            "/api/v1/student/assignments/" + BG1 + "/questions",
+            dung,
+            "{\"question\":\"Góc giữa SD và đáy là góc nào?\",\"requestId\":\"" + rid + "\"}");
+    assertThat(first.statusCode()).isEqualTo(200);
+    assertThat(count("SELECT count(*) FROM ai_call_log")).isEqualTo(callsBefore + 1);
+    int promptsAfterFirst = mock.receivedPrompts().size();
+
+    // gửi lại (mạng chập chờn): cùng requestId, kể cả thân khác => cùng bản ghi, cùng câu trả lời
+    for (String q : List.of("Góc giữa SD và đáy là góc nào?", "câu khác")) {
+      var again =
+          postJson(
+              "/api/v1/student/assignments/" + BG1 + "/questions",
+              dung,
+              "{\"question\":\"" + q + "\",\"requestId\":\"" + rid + "\"}");
+      assertThat(again.statusCode()).isEqualTo(200);
+      assertThat(json(again).get("id").asLong()).isEqualTo(json(first).get("id").asLong());
+      assertThat(json(again).get("reply").asString())
+          .isEqualTo(json(first).get("reply").asString());
+      assertThat(json(again).get("question").asString())
+          .isEqualTo("Góc giữa SD và đáy là góc nào?");
+    }
+    assertThat(count("SELECT count(*) FROM ai_call_log"))
+        .as("không gọi AI lần nữa")
+        .isEqualTo(callsBefore + 1);
+    assertThat(mock.receivedPrompts()).hasSize(promptsAfterFirst);
+    assertThat(count("SELECT count(*) FROM qa_turn")).isEqualTo(qaBefore + 1);
+  }
 }

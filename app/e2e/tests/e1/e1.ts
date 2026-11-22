@@ -1,4 +1,7 @@
 import { createHash } from 'node:crypto';
+import { mkdirSync, rmSync, statSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import type { APIRequestContext, Page, TestInfo } from '@playwright/test';
 import { expect, fixtureIds } from '../../support/fixtures.ts';
 
@@ -71,8 +74,47 @@ export async function signInPage(page: Page, request: APIRequestContext, userRef
   );
 }
 
-export async function resetAuthFailures(request: APIRequestContext): Promise<void> {
-  expect((await request.post(`${API}/test-hooks/auth-failures/reset`, { data: {} })).status()).toBe(200);
+/**
+ * Đặt lại bộ đếm thử sai mã giáo viên THEO PHẠM VI (móc PO-51): chỉ các địa chỉ IP và tài khoản ca kiểm dùng,
+ * không xóa toàn bảng (TC-GEO-0171/0179 chạy song song với ca UI trên chromium/webkit).
+ */
+export async function resetAuthFailures(
+  request: APIRequestContext,
+  scope: { ips?: string[]; userIds?: string[] },
+): Promise<void> {
+  expect((await request.post(`${API}/test-hooks/auth-failures/reset`, { data: scope })).status()).toBe(200);
+}
+
+/**
+ * Khóa liên tiến trình (thư mục tạo nguyên tử) cho tài nguyên dùng chung giữa các worker Playwright, ví dụ bộ đếm
+ * thử sai theo tài khoản F-GEO-003: TC-GEO-0179 dò mã tài khoản này còn TC-GEO-0111/0112 đăng nhập đúng bằng nó.
+ */
+/** Khóa cho mọi ca sinh lượt gọi AI của An (F-GEO-020): TC-GEO-0120/0122 đếm đúng số bản ghi lượt gọi. */
+export const AN_AI_LOCK = 'ai-F-GEO-020';
+
+export async function withLock<T>(name: string, fn: () => Promise<T>, timeoutMs = 60_000): Promise<T> {
+  const dir = join(tmpdir(), `geo-e2e-lock-${process.env.GEO_E2E_RUN ?? 'local'}-${name}`);
+  const deadline = Date.now() + timeoutMs;
+  for (;;) {
+    try {
+      mkdirSync(dir);
+      break;
+    } catch (e) {
+      if ((e as NodeJS.ErrnoException).code !== 'EEXIST') throw e;
+      try {
+        if (Date.now() - statSync(dir).mtimeMs > timeoutMs) rmSync(dir, { recursive: true, force: true }); // khóa mồ côi
+      } catch {
+        /* vừa được nhả */
+      }
+      if (Date.now() > deadline) throw new Error(`Chờ khóa ${name} quá ${timeoutMs} ms`);
+      await new Promise((r) => setTimeout(r, 100));
+    }
+  }
+  try {
+    return await fn();
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
 }
 
 export async function setAi(request: APIRequestContext, body: Record<string, unknown>): Promise<void> {

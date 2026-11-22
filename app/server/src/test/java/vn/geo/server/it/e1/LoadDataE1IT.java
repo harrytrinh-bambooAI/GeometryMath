@@ -8,17 +8,34 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
+import javax.sql.DataSource;
+import net.ttddyy.dsproxy.ExecutionInfo;
+import net.ttddyy.dsproxy.QueryInfo;
+import net.ttddyy.dsproxy.listener.QueryExecutionListener;
+import net.ttddyy.dsproxy.support.ProxyDataSourceBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.springframework.jdbc.core.simple.JdbcClient;
+import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import tools.jackson.databind.JsonNode;
+import vn.geo.server.assignment.internal.repo.AssignmentRepository;
+import vn.geo.server.common.db.TenantJdbc;
+import vn.geo.server.common.id.Uuid7;
+import vn.geo.server.common.security.AuthPrincipal;
+import vn.geo.server.common.security.RequestContext;
+import vn.geo.server.common.security.Role;
+import vn.geo.server.iam.internal.repo.AuthRepository;
+import vn.geo.server.tracking.internal.repo.TrackingRepository;
 
 /**
  * US-GEO-108 (dữ liệu thử tải bằng một lệnh) và TC-GEO-0802 (truy vấn nóng không quét tuần tự bảng
@@ -120,13 +137,21 @@ class LoadDataE1IT extends AbstractE1IT {
       String klass;
       String assignment;
       String teacher;
+      String joinCode;
+      String nameKey;
+      String displayName;
+      long qaId;
       try (Statement st = c.createStatement();
           ResultSet rs =
               st.executeQuery(
                   """
-                  SELECT cm.org_id, cm.user_id, cm.class_id, a.id, cl.teacher_id
+                  SELECT cm.org_id, cm.user_id, cm.class_id, a.id, cl.teacher_id, cl.join_code, cm.name_key,
+                         u.display_name,
+                         (SELECT coalesce(max(q.id), 0) FROM qa_turn q WHERE q.org_id = cm.org_id AND q.user_id = cm.user_id)
                   FROM class_member cm JOIN class cl ON cl.id = cm.class_id
+                  JOIN app_user u ON u.id = cm.user_id
                   JOIN assignment a ON a.class_id = cm.class_id
+                  WHERE cm.left_at IS NULL
                   ORDER BY cm.user_id LIMIT 1
                   """)) {
         rs.next();
@@ -135,72 +160,158 @@ class LoadDataE1IT extends AbstractE1IT {
         klass = rs.getString(3);
         assignment = rs.getString(4);
         teacher = rs.getString(5);
+        joinCode = rs.getString(6);
+        nameKey = rs.getString(7);
+        displayName = rs.getString(8);
+        qaId = rs.getLong(9);
       }
-      // Truy vấn nóng của mã E1 (cùng SQL với repo, tham số gắn sẵn)
-      Map<String, String> hot = new LinkedHashMap<>();
-      hot.put(
-          "Q02 bài của em",
-          """
-          SELECT a.id, p.code, pv.statement, c.name, a.release_at, a.release_rev, a.allow_hint, a.allow_qa,
-                 ap.first_opened_at IS NOT NULL, COALESCE(ap.hint_level_max, 0)
-          FROM class_member cm
-          JOIN class c ON c.org_id = '%1$s' AND c.id = cm.class_id
-          JOIN assignment a ON a.org_id = '%1$s' AND a.class_id = cm.class_id AND a.kind = 'class' AND a.archived_at IS NULL
-          JOIN problem_version pv ON pv.org_id = a.content_org_id AND pv.id = a.problem_version_id
-          JOIN problem p ON p.org_id = pv.org_id AND p.id = pv.problem_id
-          LEFT JOIN assignment_progress ap ON ap.org_id = '%1$s' AND ap.assignment_id = a.id AND ap.user_id = cm.user_id
-          WHERE cm.org_id = '%1$s' AND cm.user_id = '%2$s' AND cm.left_at IS NULL
-          ORDER BY a.id DESC LIMIT 21
-          """);
-      hot.put(
-          "Q09 theo dõi lớp",
-          """
-          SELECT a.id, u.id, u.display_name, ap.first_opened_at IS NOT NULL, COALESCE(ap.hint_level_max, 0)
-          FROM assignment a
-          JOIN class_member cm ON cm.org_id = '%1$s' AND cm.class_id = a.class_id AND cm.left_at IS NULL
-          JOIN app_user u ON u.org_id = '%1$s' AND u.id = cm.user_id
-          LEFT JOIN assignment_progress ap ON ap.org_id = '%1$s' AND ap.assignment_id = a.id AND ap.user_id = cm.user_id
-          WHERE a.org_id = '%1$s' AND a.id = '%3$s'
-          ORDER BY cm.name_key, cm.user_id LIMIT 101
-          """);
-      hot.put(
-          "Q14 câu hỏi của lớp",
-          """
-          SELECT q.id, q.question, q.asked_at, u.display_name
-          FROM qa_turn q JOIN app_user u ON u.org_id = '%1$s' AND u.id = q.user_id
-          WHERE q.org_id = '%1$s' AND q.assignment_id = '%3$s' ORDER BY q.id DESC LIMIT 20
-          """);
-      hot.put(
-          "Q03 bài của lớp",
-          """
-          SELECT a.id, p.code, a.release_at FROM assignment a
-          JOIN problem p ON p.org_id = a.content_org_id AND p.id = a.problem_id
-          WHERE a.org_id = '%1$s' AND a.class_id = '%4$s' AND a.kind = 'class' AND a.archived_at IS NULL
-          ORDER BY a.id DESC LIMIT 21
-          """);
-      hot.put(
-          "Q17 lớp của giáo viên",
-          "SELECT id, name FROM class WHERE org_id = '%1$s' AND teacher_id = '%5$s' AND archived_at IS NULL ORDER BY name, id LIMIT 100");
-      hot.put(
-          "Q20 dòng thời gian",
+      UUID orgId = UUID.fromString(org);
+      UUID studentId = UUID.fromString(student);
+      UUID classId = UUID.fromString(klass);
+      UUID assignmentId = UUID.fromString(assignment);
+      UUID teacherId = UUID.fromString(teacher);
+
+      // Gọi đúng repository của mã E1 (SQL thật, kể cả câu lệnh bên trong hàm plpgsql) trên
+      // geo_bench.
+      // auto_explain ghi kế hoạch thực thi (ANALYZE, JSON) của mọi câu lệnh, kể cả lồng trong hàm,
+      // thành NOTICE gửi về đúng câu lệnh JDBC vừa chạy.
+      PlanCollector plans = new PlanCollector();
+      try (Connection traced = bench()) {
+        try (Statement st = traced.createStatement()) {
+          st.execute("LOAD 'auto_explain'");
+          st.execute("SET auto_explain.log_min_duration = 0");
+          st.execute("SET auto_explain.log_analyze = on");
+          st.execute("SET auto_explain.log_buffers = on");
+          st.execute("SET auto_explain.log_format = 'json'");
+          st.execute("SET auto_explain.log_nested_statements = on");
+          st.execute("SET auto_explain.log_level = 'notice'");
+          st.execute("SET client_min_messages = 'notice'");
+        }
+        DataSource ds =
+            ProxyDataSourceBuilder.create(new SingleConnectionDataSource(traced, true))
+                .listener(plans)
+                .build();
+        JdbcClient jdbcClient = JdbcClient.create(ds);
+        TenantJdbc tenant = new TenantJdbc(jdbcClient);
+        AssignmentRepository assignments = new AssignmentRepository(tenant);
+        TrackingRepository tracking = new TrackingRepository(tenant);
+        AuthRepository auth = new AuthRepository(jdbcClient, tenant);
+
+        RequestContext.callAs(
+            new AuthPrincipal(orgId, studentId, Role.STUDENT),
+            () -> {
+              plans.label("Q02 bài của em (studentPage)");
+              assignments.studentPage(studentId, null, 21);
+              plans.label("fn_qa_answer (answer)");
+              tracking.answer(studentId, qaId);
+              return null;
+            });
+        RequestContext.callAs(
+            new AuthPrincipal(orgId, teacherId, Role.TEACHER),
+            () -> {
+              plans.label("Q03 bài của lớp (classPage)");
+              assignments.classPage(classId, null, 21);
+              plans.label("isTeacherOfClass");
+              assertThat(assignments.isTeacherOfClass(teacherId, classId)).isTrue();
+              plans.label("monitorHeader");
+              assertThat(tracking.monitorHeader(teacherId, assignmentId)).isPresent();
+              plans.label("Q09 theo dõi lớp (monitorStudents)");
+              assertThat(tracking.monitorStudents(assignmentId)).isNotEmpty();
+              plans.label("Q14 câu hỏi của lớp (monitorQuestions)");
+              tracking.monitorQuestions(assignmentId);
+              plans.label("Q17 lớp của giáo viên (teacherClasses)");
+              assertThat(auth.teacherClasses(teacherId)).isNotEmpty();
+              return null;
+            });
+        // đăng nhập: trước khi biết trường (không cần ngữ cảnh)
+        plans.label("Q01 fn_student_login (tên đã có trong lớp)");
+        assertThat(auth.studentLogin(joinCode, nameKey, displayName, Uuid7.next()).userId())
+            .isEqualTo(studentId);
+        plans.label("Q24 fn_teacher_login (mã sai)");
+        auth.teacherLogin("ZZZZ", new byte[32], new byte[32]);
+      }
+      // Q20 dòng thời gian: E1 chưa có repository đọc (thuộc E3); giữ truy vấn tham chiếu của danh
+      // mục.
+      plans.explainRaw(
+          c,
+          "Q20 dòng thời gian (danh mục, chưa có repo)",
           """
           SELECT occurred_at, kind FROM event_log
           WHERE org_id = '%1$s' AND assignment_id = '%3$s' AND user_id = '%2$s'
           ORDER BY occurred_at DESC, id DESC LIMIT 50
-          """);
+          """
+              .formatted(org, student, assignment));
+
+      assertThat(plans.labelsWithPlans())
+          .as("mỗi lời gọi repository có kế hoạch thực thi")
+          .contains(
+              "Q02 bài của em (studentPage)",
+              "fn_qa_answer (answer)",
+              "Q03 bài của lớp (classPage)",
+              "isTeacherOfClass",
+              "monitorHeader",
+              "Q09 theo dõi lớp (monitorStudents)",
+              "Q14 câu hỏi của lớp (monitorQuestions)",
+              "Q17 lớp của giáo viên (teacherClasses)",
+              "Q01 fn_student_login (tên đã có trong lớp)",
+              "Q24 fn_teacher_login (mã sai)",
+              "Q20 dòng thời gian (danh mục, chưa có repo)");
       List<String> problems = new ArrayList<>();
-      for (var e : hot.entrySet()) {
-        String sql = e.getValue().formatted(org, student, assignment, klass, teacher);
-        String planJson;
-        try (Statement st = c.createStatement();
-            ResultSet rs = st.executeQuery("EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) " + sql)) {
-          rs.next();
-          planJson = rs.getString(1);
-        }
-        JsonNode plan = mapper.readTree(planJson).get(0).get("Plan");
-        inspect(c, e.getKey(), plan, problems);
+      for (PlanCollector.Captured p : plans.captured) {
+        JsonNode root = mapper.readTree(p.json());
+        JsonNode plan = root.isArray() ? root.get(0).get("Plan") : root.get("Plan");
+        inspect(c, p.label(), plan, problems);
       }
       assertThat(problems).as("kế hoạch quét tuần tự / lọc mã trường sau quét").isEmpty();
+    }
+  }
+
+  /** Thu kế hoạch auto_explain (NOTICE) của từng câu lệnh JDBC, gắn nhãn lời gọi repository. */
+  static final class PlanCollector implements QueryExecutionListener {
+    record Captured(String label, String json) {}
+
+    final List<Captured> captured = new ArrayList<>();
+    private String label = "?";
+
+    void label(String l) {
+      label = l;
+    }
+
+    java.util.Set<String> labelsWithPlans() {
+      java.util.Set<String> s = new java.util.LinkedHashSet<>();
+      captured.forEach(x -> s.add(x.label()));
+      return s;
+    }
+
+    @Override
+    public void beforeQuery(ExecutionInfo execInfo, List<QueryInfo> queryInfoList) {}
+
+    @Override
+    public void afterQuery(ExecutionInfo execInfo, List<QueryInfo> queryInfoList) {
+      try {
+        for (SQLWarning w = execInfo.getStatement().getWarnings();
+            w != null;
+            w = w.getNextWarning()) {
+          add(w.getMessage());
+        }
+      } catch (SQLException e) {
+        throw new IllegalStateException(e);
+      }
+    }
+
+    private void add(String msg) {
+      int i = msg == null ? -1 : msg.indexOf('{');
+      if (i >= 0 && msg.contains("\"Plan\"")) {
+        captured.add(new Captured(label, msg.substring(i)));
+      }
+    }
+
+    void explainRaw(Connection c, String l, String sql) throws SQLException {
+      try (Statement st = c.createStatement();
+          ResultSet rs = st.executeQuery("EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) " + sql)) {
+        rs.next();
+        captured.add(new Captured(l, rs.getString(1)));
+      }
     }
   }
 

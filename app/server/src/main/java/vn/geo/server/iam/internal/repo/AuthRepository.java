@@ -104,8 +104,24 @@ public class AuthRepository {
         .update();
   }
 
-  /** Móc kiểm thử PO-51: đặt lại bộ đếm thử sai mã giáo viên. */
-  public int resetAuthFailures() {
-    return jdbc.sql("DELETE FROM auth_failure WHERE at <= now()").update();
+  /**
+   * Móc kiểm thử PO-51: đặt lại bộ đếm thử sai mã giáo viên THEO PHẠM VI (các khóa IP và tài khoản
+   * ca kiểm dùng), không xóa toàn bảng để các ca chạy song song không giẫm nhau.
+   */
+  public int resetAuthFailures(List<byte[]> ipKeys, List<UUID> userIds) {
+    int n = 0;
+    if (!ipKeys.isEmpty()) {
+      n +=
+          jdbc.sql("DELETE FROM auth_failure WHERE ip_key = ANY(:ipKeys)")
+              .param("ipKeys", ipKeys.toArray(new byte[0][]))
+              .update();
+    }
+    if (!userIds.isEmpty()) {
+      n +=
+          jdbc.sql("DELETE FROM auth_failure WHERE user_id = ANY(:userIds)")
+              .param("userIds", userIds.toArray(new UUID[0]))
+              .update();
+    }
+    return n;
   }
 }
