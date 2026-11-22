@@ -6,6 +6,7 @@ Video/
 target/
 node_modules/
 dist/
+dist-e2e/
 build/
 .next/
 __pycache__/

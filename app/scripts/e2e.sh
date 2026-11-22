@@ -5,7 +5,7 @@
 #   -> traceability -> tắt máy chủ/web do script này bật.
 # Bằng chứng: e2e/evidence/<run>/index.html, summary.json, traceability.txt (run = GEO_E2E_RUN hoặc giờ VN).
 # Tham số thêm truyền thẳng cho Playwright, ví dụ: scripts/e2e.sh --project=api  hoặc  -g @TC-GEO-0100
-# GEO_E2E_SKIP_BUILD=1: dùng jar và web/dist có sẵn.
+# GEO_E2E_SKIP_BUILD=1: dùng jar và web/dist-e2e có sẵn. Bản web của E2E (có móc __geoScene, PO-52) ghi vào web/dist-e2e, không đè web/dist (production).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 source scripts/env.sh
@@ -29,7 +29,7 @@ scripts/db-init.sh >/dev/null
 
 if [ "${GEO_E2E_SKIP_BUILD:-0}" != "1" ]; then
   echo "== build máy chủ"; (cd server && ./mvnw -B -ntp -q -DskipTests package)
-  echo "== build web (móc kiểm thử __geoScene bật, PO-52)"; (cd web && { [ -d node_modules ] || npm ci --no-audit --no-fund; } && VITE_GEO_TEST_HOOKS=1 npm run build >/dev/null)
+  echo "== build web (móc kiểm thử __geoScene bật, PO-52)"; (cd web && { [ -d node_modules ] || npm ci --no-audit --no-fund; } && npm run build:e2e >/dev/null)
 fi
 (cd e2e && { [ -d node_modules ] || npm ci --no-audit --no-fund; })
 
@@ -53,7 +53,7 @@ PIDS+=($!)
 wait_http "$API_URL/health" "máy chủ" 90
 
 echo "== bật web $WEB_URL (vite preview, proxy -> $API_URL)"
-(cd web && exec node node_modules/vite/bin/vite.js preview --strictPort >"$LOGDIR/web.log" 2>&1) &
+(cd web && exec node node_modules/vite/bin/vite.js preview --strictPort --outDir dist-e2e >"$LOGDIR/web.log" 2>&1) &
 PIDS+=($!)
 wait_http "$WEB_URL/" "web" 30
 
