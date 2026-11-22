@@ -1,0 +1,39 @@
+# TC | AC | ưu tiên | loại | tầng | tài khoản | CL | ghi chú
+0200 | 201-SC1 | H | CN | DV | Kỹ thuật (engine) | FN-01
+0201 | 201-SC2 | M | CN | DV | Kỹ thuật (engine) | FN-01
+0202 | 201-SC3 | M | CN | TC | Học sinh An, iPad | UI-02
+0203 | 201-SC4 | H | CN | DV | Kỹ thuật (engine) | FN-11 | BVA: đúng ngưỡng 1e-6; so sánh có ε 1e-12 (D-GEO-163)
+0204 | 201-SC5 | M | CN | DV | Kỹ thuật (engine) | FN-01
+0205 | 201-FC1 | H | CN | DV | Kỹ thuật (engine) | FN-11 | BVA: vượt ngưỡng (2e-6); so sánh có ε 1e-12 (D-GEO-163)
+0206 | 201-FC2 | H | CN | DV | Kỹ thuật (engine) | FN-03
+0207 | 201-FC3 | M | CN | DV | Kỹ thuật (engine) | FN-03
+0208 | 202-SC1 | H | CN | API+TC | Học sinh An | FN-01
+0209 | 202-SC2 | M | CN | TC | Học sinh An | FN-02
+0210 | 202-SC3 | M | CN | TC | Học sinh An | FN-12
+0211 | 202-SC4 | H | CN | DV+TC | Học sinh An | FN-01
+0212 | 202-FC1 | M | CN | DV+TC | Học sinh An | FN-02
+0213 | 203-SC1 | H | CN | DV | Kỹ thuật (engine) | FN-11 | bảng quyết định nhãn, dòng 1
+0214 | 203-SC2 | H | CN | DV | Kỹ thuật (engine) | FN-11 | bảng quyết định nhãn, dòng 2
+0215 | 203-SC3 | H | CN | DV | Kỹ thuật (engine) | FN-11
+0216 | 203-SC4 | H | CN | DV | Kỹ thuật (engine) | FN-11 | BVA: đúng ngưỡng 1e-4; biên đổi thành 45,0044 vì 45,0045 nằm đúng ngưỡng dấu phẩy động; so sánh có ε 1e-12 (D-GEO-163, RV-GEO-23)
+0217 | 203-SC5 | M | CN | DV | Kỹ thuật (engine) | FN-11 | xung đột dữ liệu đã biết: tệp nguồn ghi "Cần xem lại", phép tính cho "Đã kiểm chứng"
+0218 | 203-SC6 | M | TB | TC | Giáo viên mẫu (máy tính) và học sinh An (iPad, iPhone) | UI-02 | PROVISIONAL KG-09 (phiên bản thiết bị tối thiểu)
+0219 | 203-FC1 | H | CN | DV | Kỹ thuật (engine) | FN-11 | BVA: vượt ngưỡng; so sánh có ε 1e-12 (D-GEO-163)
+0220 | 203-FC2 | H | CN | DV | Kỹ thuật (engine) | FN-11
+0221 | 203-FC3 | H | CN | API | Kỹ thuật (nhà cung cấp giả lập) | FN-11
+0222 | 203-FC4 | H | PQ | API+TC | Giáo viên mẫu | FN-05
+0223 | 203-FC5 | H | DL | API | Học sinh An | FN-07
+0224 | 204-SC1 | H | CN | API+TC | Học sinh An | FN-11 | bảng quyết định nhãn, dòng 4
+0225 | 204-SC2 | M | CN | TC | Học sinh An | FN-11
+0226 | 204-SC3 | L | CN | DV | Kỹ thuật | FN-12
+0227 | 204-FC1 | H | CN | API | Học sinh An | FN-11
+0228 | 204-FC2 | M | CN | API | Học sinh An | FN-14
+0229 | 204-FC3 | M | CN | API+TC | Học sinh An | UI-03
+0230 | 205-SC1 | M | CN | DB | Kỹ thuật | FN-01
+0231 | 205-SC2 | M | CN | TC | Học sinh An | UI-02
+0232 | 205-SC3 | M | PQ | API | Học sinh An của lớp 9C (trường khác) | FN-06
+0233 | 205-FC1 | L | CN | DB | Kỹ thuật | FN-03
+# lượt sửa gom sau phản biện (M-304, M-217): tiêu chí mới của BA
+0234 | 203-SC7 | H | CN | DV | Kỹ thuật (engine) | FN-11 | D-GEO-140; BVA dung sai tuyệt đối
+0235 | 203-FC6 | H | CN | DV | Kỹ thuật (engine) | FN-11 | D-GEO-140; BVA dung sai tuyệt đối
+0236 | 203-SC8 | H | CN | DV | Kỹ thuật (engine) | FN-11 | D-GEO-178; BVA: dung sai nửa đơn vị chữ số cuối (cặp với TC-GEO-0235)

@@ -1,0 +1,1083 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototype – Hình Học Không Gian Cùng AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/ds.css">
+<link rel="stylesheet" href="fig3d.css">
+<link rel="stylesheet" href="tour.css">
+<style>
+body{background:#141B2D;overflow:hidden}
+#demo{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:8px 16px;color:#fff;font-size:12px;white-space:nowrap}
+#demo b.t{font-size:13.5px;margin-right:4px}
+#demo .roles{display:flex;background:rgba(255,255,255,.1);border-radius:99px;padding:3px}
+#demo .roles span,#demo .sc span{padding:5px 11px;border-radius:99px;font-weight:700;cursor:pointer;color:#C9D2E6}
+#demo .roles span.on{background:#fff;color:#3B5BDB}
+#demo .sc{display:flex;gap:4px;align-items:center}
+#demo .sc span{background:rgba(255,255,255,.07);font-weight:600}
+#demo .sc span:hover{background:rgba(255,255,255,.18)}
+#demo .sc span.on{background:#F0522B;color:#fff}
+#demo .sc span.cz{border:1px dashed rgba(255,255,255,.3)}
+#demo .lbl2{color:#8F9BB5;font-weight:700;margin-left:8px}
+#app .screen{width:100%;height:calc(100vh - var(--dh,58px));margin:0;border-radius:16px 16px 0 0}
+#app .body{animation:fade .28s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+[data-act],[data-go]{cursor:pointer;transition:transform .12s,box-shadow .12s,background .12s}
+.card[data-act]:hover,.card[data-go]:hover,.hint[data-act]:hover,.hint[data-go]:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,27,45,.12)}
+.btn:hover{filter:brightness(1.07)} .chip[data-act]:hover{filter:brightness(.96)}
+.rail a{cursor:pointer} .rail a:hover{background:#F1F4FA}
+input.in,textarea.in{border:none;outline:none;background:transparent;font:inherit;color:inherit;flex:1;min-width:0;resize:none}
+#toast{position:fixed;left:50%;top:calc(var(--dh,58px) + 14px);transform:translate(-50%,-20px);background:#141B2D;color:#fff;padding:12px 20px;border-radius:14px;font-weight:600;font-size:14px;opacity:0;transition:all .25s;z-index:99;display:flex;gap:9px;align-items:center;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+#busy{position:fixed;inset:var(--dh,58px) 0 0 0;background:rgba(243,245,251,.82);display:none;align-items:center;justify-content:center;z-index:90;flex-direction:column;gap:14px;font-weight:700;font-size:16px}
+#busy.on{display:flex}
+.spin{width:44px;height:44px;border-radius:50%;border:5px solid #D9E0F5;border-top-color:#3B5BDB;animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ov{position:absolute;inset:0;background:rgba(20,27,45,.45);display:flex;align-items:center;justify-content:center;z-index:20;animation:fade .2s}
+.modal{background:#fff;border-radius:20px;padding:24px;width:500px;box-shadow:0 24px 60px rgba(0,0,0,.3);display:flex;flex-direction:column;gap:14px}
+.dock b{cursor:pointer}.dock b:hover{background:#EEF1F8}.dock b.on:hover{background:var(--pri)}
+.tabs span{cursor:pointer}
+.bub{padding:9px 12px;border-radius:14px;font-size:13px;max-width:270px}
+.bub.me{background:var(--pri);color:#fff;align-self:flex-end}.bub.ot{background:var(--soft);border:1px solid var(--line);align-self:flex-start}
+.bub.ai{background:var(--pur-s);border:1px solid #D9CCFF;align-self:flex-start}
+.scroll{overflow-y:auto;min-height:0}
+.flow{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--muted);background:#fff;border:1px dashed #C9D3F5;border-radius:12px;padding:8px 12px}
+.flow i{font-style:normal;color:var(--pri)}
+input[type=range]{width:100%;accent-color:#3B5BDB}
+
+#app{display:flex;justify-content:center;overflow:hidden}
+@media(max-width:820px){#demo{flex-wrap:nowrap;overflow-x:auto}#demo i{display:none}}
+/* ---- iPad ---- */
+.dev-ipad .body{gap:14px;padding:4px 18px 18px}.dev-ipad .top{padding:0 18px}.dev-ipad .side{width:340px}
+.dev-ipad .dock b{width:62px;padding:9px 0 7px}.dev-ipad .btn{padding:12px 16px}.dev-ipad .rail a{padding:11px 0 9px}
+/* ---- iPhone ---- */
+.dev-phone .screen{display:block}
+.dev-phone .main{height:100%;padding-bottom:66px}
+.dev-phone .rail{position:absolute;left:0;right:0;bottom:0;height:66px;flex-direction:row;padding:6px 6px 10px;border-right:none;border-top:1px solid var(--line);z-index:15;gap:2px;justify-content:space-around}
+.dev-phone .rail .logo,.dev-phone .rail .sp{display:none}
+.dev-phone .rail a{width:auto;flex:1;font-size:9.5px;padding:6px 0 4px;gap:2px;white-space:nowrap}
+.dev-phone .top{height:auto;padding:12px 14px 8px;gap:8px}.dev-phone .top h1{font-size:17px;line-height:1.25}.dev-phone .top .crumb{font-size:11.5px}
+.dev-phone .top .ava{display:none}.dev-phone .top .chip.pur{font-size:0;padding:7px;gap:0}.dev-phone .top .btn.sm{font-size:0;gap:0;padding:8px}
+.dev-phone .body{flex-direction:column;overflow-y:auto;padding:4px 12px 16px;gap:12px}
+.dev-phone .body>*{width:100%!important;flex:none!important;max-width:none!important}
+.dev-phone .scroll{overflow:visible!important}
+.dev-phone .body>.canvas,.dev-phone .body .canvas{height:390px!important}
+.dev-phone .prob{font-size:12px;padding:8px 10px;gap:8px;top:10px;left:10px;right:10px}.dev-phone .prob .icb{display:none}.dev-phone .prob .chip{font-size:0;padding:6px;gap:0}
+.dev-phone .fig{top:74px;bottom:70px}.dev-phone .views{display:none}.dev-phone .meas{bottom:70px!important;left:10px}
+.dev-phone .dock{bottom:10px;padding:5px;gap:1px}.dev-phone .dock b{width:40px;font-size:0;padding:10px 0;gap:0}.dev-phone .dock i{margin:4px 1px}
+.dev-phone .side{min-height:300px}
+.dev-phone [style*="grid-template-columns"]{grid-template-columns:1fr 1fr!important;gap:10px!important}
+.dev-phone .row{flex-wrap:wrap}.dev-phone .hint,.dev-phone .field,.dev-phone .tabs,.dev-phone .steps,.dev-phone .dock{flex-wrap:nowrap}
+.dev-phone .stat{flex:1 1 42%;padding:10px 12px}.dev-phone .stat b{font-size:20px}
+.dev-phone table{display:block;overflow-x:auto;white-space:nowrap}
+.dev-phone .modal{width:92%}.dev-phone .pad{padding:14px}.dev-phone .thumb{height:92px}.dev-phone .thumb svg{height:70px}
+.dev-phone .top .chip.pur{font-size:0!important;padding:7px!important}
+.dev-phone .hint{flex-wrap:wrap}.dev-phone .hint>.grow,.dev-phone .hint>div:not(.icb):not(.thumb):not(.num):not(.ava):not(.toggle){flex:1 1 58%;min-width:0}
+.dev-phone .card.pad.row{flex-wrap:wrap;gap:12px!important}.dev-phone .card.pad.row>.thumb{width:64px!important;height:64px!important}.dev-phone .card.pad.row>.thumb svg{height:46px}
+.dev-phone .card.pad.row>.grow{flex:1 1 60%}.dev-phone .card.pad.row>.col:last-child{flex:1 1 100%}.dev-phone .card.pad.row>.col:last-child .btn{width:100%}
+.dev-phone td .row,.dev-phone .rail,.dev-phone .seg{flex-wrap:nowrap}
+.dev-phone .flow{font-size:11px}.dev-phone .bub{max-width:86%}
+/* ---- Giáo trình, soạn bài, import ---- */
+#app[data-fit] .screen{grid-template-rows:minmax(0,1fr)}#app[data-fit] .main{min-height:0}
+.ditem{gap:10px}.ditem.hl{border-color:var(--org);box-shadow:0 0 0 3px rgba(240,82,43,.16),var(--sh)}
+.sol{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--soft);display:flex;flex-direction:column;gap:7px;font-size:12.8px}
+.sol .why{color:var(--muted);font-size:12px;margin-top:1px}
+.grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.grp .lbl{margin:0;flex-basis:100%}
+.grp .chip{padding:6px 11px;font-size:12px}
+.unc{background:#FFE9A8;border:1.5px dashed #E8A200;border-radius:6px;padding:0 4px;font:inherit;color:#7A5200;font-weight:700;outline:none}
+.okc{background:var(--grn-s);color:var(--grn);border-radius:6px;padding:0 5px;font-weight:700;font-family:'Be Vietnam Pro',sans-serif;font-size:12px}
+.tick{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;background:var(--grn);color:#fff;vertical-align:middle;margin-left:3px}
+.tick svg.ic{width:13px;height:13px;stroke-width:3}
+.nb{text-align:left;width:150px;height:190px;border-radius:8px;border:1px solid #E3DAC0;background:repeating-linear-gradient(#FFFDF6 0 15px,#D5DFF3 15px 16px);position:relative;padding:15px 8px 6px 22px;font:8.5px/16px 'Bradley Hand','Comic Sans MS',cursive;color:#2B3A67;overflow:hidden;box-shadow:var(--sh)}
+.nb::before{content:"";position:absolute;left:16px;top:0;bottom:0;width:1px;background:#F2A9A0}
+.nb svg{position:absolute;right:8px;bottom:8px;height:62px;opacity:.75}
+.dz{border:2px dashed #C9D3F5;border-radius:16px;background:#F8FAFF;padding:26px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.strike{text-decoration:line-through;color:var(--faint)}
+/* ---- Soạn bài giảng, import bài giảng, hội thoại hai chiều (PO-45, PO-46) ---- */
+.prop{border:1.5px dashed #B9A4FF;background:#FAF8FF;border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.ba{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 9px;font-size:12.8px;line-height:1.5}
+.ba .tg{font-size:11px;font-weight:800;color:var(--muted);padding-top:5px}
+.ba .bf{background:var(--red-s);color:#8A2A1A;text-decoration:line-through;text-decoration-color:rgba(138,42,26,.4);border-radius:8px;padding:5px 9px}
+.ba .af{background:var(--grn-s);color:#0B5E41;border-radius:8px;padding:5px 9px;font-weight:600}
+.uncn{display:flex;gap:7px;align-items:flex-start;font-size:12.3px;font-weight:600;line-height:1.45;color:#7A5200;background:var(--yel-s);border-radius:9px;padding:6px 9px}
+.uncn svg.ic{width:14px;height:14px;flex-shrink:0;margin-top:2px}
+.ed{border-radius:5px;outline:none;cursor:text;transition:background .12s,box-shadow .12s}.ed:hover{background:#FFF7DB}.ed:focus{background:#fff;box-shadow:0 0 0 2px var(--pri)}
+.chkl{display:flex;gap:6px;align-items:center;font-size:12px;font-weight:700;color:var(--grn)}.chkl.bad{color:#9A6B00}.chkl svg.ic{width:14px;height:14px;flex-shrink:0}
+.histp{border:1px solid var(--line);background:var(--soft);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;max-height:172px;overflow-y:auto;flex-shrink:0}
+.cbx{width:22px;height:22px;border-radius:7px;border:2px solid #B9C2D8;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;background:#fff;color:#fff}
+.cbx.on{background:var(--pri);border-color:var(--pri)}.cbx svg.ic{width:14px;height:14px;stroke-width:3}
+.ditem.off>.lbody,.ditem.off>.lexd{opacity:.42}
+.lex,.lexd{background:var(--yel-s);border-radius:10px;padding:8px 11px;clear:both}.lexd{font-size:13.2px;line-height:1.6}
+.ldraft{font-size:13.2px}.ldraft .lfig{width:150px}
+.bub .opt{cursor:pointer;white-space:normal;border-radius:12px;text-align:left;background:#fff;border:1.5px solid #C9B8FF}
+.tabs span[data-act]{cursor:pointer}
+.dev-phone .modal .row{flex-wrap:wrap}.dev-phone .modal .row>*{flex:1 1 100%!important;width:auto!important}
+/* ---- Hình 3D tương tác (PO-35, PO-36), từ khóa và bài giảng (PO-34), nguồn câu trả lời (PO-33) ---- */
+.f3box{width:100%;height:100%}
+.canvas .f3-hud{right:150px}.dev-phone .canvas .f3-hud,.canvas.noviews .f3-hud{right:8px}
+.views span[data-act]{cursor:pointer}.views span[data-act]:hover{background:#EEF1F8}
+.fnote{position:absolute;left:14px;bottom:16px;display:flex;gap:7px;align-items:center;font-size:12px;font-weight:600;color:var(--muted);background:var(--soft);border:1px dashed var(--line);border-radius:10px;padding:7px 11px}
+.fnote svg.ic{width:15px;height:15px}
+.meas span.hid{border-color:#B9C2D8;color:var(--muted);border-style:dashed}
+.kw{color:#6238D9;font-weight:700;text-decoration:underline dotted #A98BFF;text-decoration-thickness:2px;text-underline-offset:4px;cursor:pointer;padding:8px 2px;margin:-8px -2px;border-radius:4px;transition:background .12s}
+.kw:hover{background:var(--pur-s)}
+.kw.go{color:var(--pri);text-decoration-color:#9DB0F5;white-space:nowrap}
+.srcl{display:flex;gap:6px;align-items:flex-start;margin-top:8px;padding-top:7px;border-top:1px dashed #CFC2FA;font-size:11.5px;font-weight:600;color:#5B3FC4;line-height:1.45;flex-wrap:wrap}
+.srcl[data-act]{cursor:pointer}.srcl[data-act]:hover u{background:var(--pur-s)}
+.srcl svg.ic{width:13px;height:13px;flex-shrink:0;margin-top:2px}.srcl>span{flex:1 1 150px;min-width:0}.srcl u{text-decoration:underline dotted;text-underline-offset:3px}
+.srcl.off{color:var(--muted);border-top-color:var(--line)}
+.srcl .chip{font-size:10.5px;padding:2px 8px;flex:none;margin-right:auto}
+.hsw .bub.ai{max-width:316px}.hsw .bub.me{max-width:290px}
+.qs .chip{white-space:normal;border-radius:12px;text-align:left;padding:6px 10px}
+.modal.lec{width:600px;max-width:94%;max-height:90%;overflow-y:auto;gap:12px}
+.lrow{display:flex;gap:11px;align-items:center}
+.lsrc{display:flex;gap:9px;align-items:center;flex-wrap:wrap;border-radius:12px;padding:9px 12px;font-size:12.5px;line-height:1.45;background:var(--pri-s);color:#2F49B5}
+.lsrc.ai{background:var(--pur-s);color:#5B3FC4}.lsrc svg.ic{width:17px;height:17px;flex-shrink:0}.lsrc>div{flex:1 1 220px;min-width:0;word-break:break-word}
+.lbody{font-size:13.8px;line-height:1.62}.lbody p{margin:0 0 9px}.lbody p:last-child{margin-bottom:0}
+.lfig{float:right;width:168px;margin:2px 0 8px 14px;border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:6px}.lfig svg{display:block;width:100%;height:auto}
+.lrel{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}.lrel .kw{font-size:13px;padding:10px 2px;margin:-4px 0}
+.dev-phone .lfig{width:128px}.dev-phone .modal.lec{padding:18px}
+.dev-phone .body>.canvas.c3d{height:520px!important}.dev-phone .f3-chip{min-height:36px;padding:0 10px;font-size:12px}.dev-phone .f3-hud{font-size:11.5px}
+.dev-phone .meas span:not(:last-child){display:none}.dev-phone .fnote{bottom:10px;left:10px;right:10px}
+</style>
+</head>
+<body>
+<div id="demo"></div>
+<div id="app"></div>
+<div id="toast"></div>
+<div id="busy"><div class="spin"></div><span id="busyT"></span></div>
+<script src="../assets/ds.js"></script>
+<script src="fig3d.js"></script>
+<script>
+/* ============ DỮ LIỆU MẪU ============ */
+const PROBS=[
+ {id:'p1',short:'Hình chóp S.ABCD: góc giữa SD và mặt đáy',t:'Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy.',lv:'THPT',topic:'Góc',shape:'chop',c:'#3B5BDB',ok:1,ans:'45°',
+  hints:['Góc giữa đường thẳng và mặt phẳng là góc giữa đường đó và hình chiếu của nó trên mặt phẳng.','Hình chiếu của S lên mặt đáy là điểm nào? Từ đó suy ra hình chiếu của SD.'],
+  steps:[['Tìm hình chiếu của SD','SA ⊥ (ABCD) nên A là hình chiếu của S. Hình chiếu của SD là AD.','Muốn tìm góc giữa đường và mặt, việc đầu tiên là tìm hình chiếu của đường lên mặt.'],['Xác định góc cần tìm','Góc giữa SD và (ABCD) là góc SDA. Tam giác SAD vuông tại A.','Có hình chiếu rồi thì góc cần tìm nằm trong một tam giác vuông.'],['Tính góc','tan SDA = SA / AD = a / a = 1, suy ra góc SDA = 45°.','Trong tam giác vuông, tan của góc nhọn bằng cạnh đối chia cạnh kề.']]},
+ {id:'p2',short:'Hình lập phương cạnh a: khoảng cách giữa AC và B′D′',t:'Cho hình lập phương ABCD.A′B′C′D′ cạnh a. Tính khoảng cách giữa AC và B′D′.',lv:'THPT',topic:'Khoảng cách',shape:'hop',c:'#F0522B',ok:1,ans:'a',
+  hints:['AC và B′D′ nằm trong hai mặt đáy (ABCD) và (A′B′C′D′). Hai mặt này có quan hệ gì?','Khoảng cách giữa hai đường chéo nhau nằm trong hai mặt phẳng song song bằng khoảng cách giữa hai mặt phẳng đó.'],
+  steps:[['Nhận xét vị trí','AC ⊂ (ABCD), B′D′ ⊂ (A′B′C′D′), và hai mặt phẳng này song song.','Hai đường chéo nhau thường được đưa về hai mặt phẳng song song chứa chúng.'],['Tính khoảng cách','Khoảng cách giữa hai mặt đáy bằng cạnh a. Vậy d(AC, B′D′) = a.','Đoạn nối tâm hai đáy vuông góc với cả AC và B′D′.']]},
+ {id:'p3',short:'Lăng trụ đứng tam giác đều: tính thể tích',t:'Lăng trụ đứng tam giác có đáy là tam giác đều cạnh 4 cm, chiều cao 6 cm. Tính thể tích.',lv:'THCS',topic:'Thể tích',shape:'lang',c:'#0F8A5F',ok:1,ans:'24√3 cm³',
+  hints:['Thể tích lăng trụ bằng diện tích đáy nhân chiều cao.','Diện tích tam giác đều cạnh a là a²√3 / 4.'],
+  steps:[['Tính diện tích đáy','S = 4²·√3 / 4 = 4√3 cm².','Đáy là tam giác đều nên dùng công thức a²√3 / 4.'],['Tính thể tích','V = S · h = 4√3 · 6 = 24√3 cm³.','Lăng trụ đứng: V = diện tích đáy × chiều cao.']]},
+ {id:'p4',short:'Hình nón: diện tích xung quanh và thể tích',t:'Hình nón có bán kính đáy 3 cm, đường sinh 5 cm. Tính diện tích xung quanh và thể tích.',lv:'THCS',topic:'Thể tích',shape:'non',c:'#7C4DFF',ok:1,ans:'15π cm², 12π cm³',
+  hints:['Diện tích xung quanh hình nón: πrl.','Chiều cao tính từ tam giác vuông tạo bởi bán kính, chiều cao, đường sinh.'],
+  steps:[['Diện tích xung quanh','Sxq = π·3·5 = 15π cm².','Công thức πrl với l là đường sinh.'],['Thể tích','h = √(5² − 3²) = 4. V = ⅓·π·3²·4 = 12π cm³.','Cần chiều cao trước khi tính thể tích.']]},
+ {id:'p5',short:'Hình trụ: diện tích toàn phần',t:'Hình trụ có chiều cao 10 cm, bán kính đáy 4 cm. Tính diện tích toàn phần.',lv:'THCS',topic:'Diện tích',shape:'tru',c:'#0EA5E9',ok:1,ans:'112π cm²',
+  hints:['Diện tích toàn phần gồm diện tích xung quanh và hai đáy.','Stp = 2πr(r + h).'],
+  steps:[['Áp dụng công thức','Stp = 2π·4·(4 + 10) = 112π cm².','Gộp diện tích xung quanh 2πrh và hai đáy 2πr².']]},
+ {id:'p6',short:'Mặt cầu ngoại tiếp hình lập phương',t:'Mặt cầu ngoại tiếp hình lập phương cạnh a. Tính bán kính và thể tích khối cầu.',lv:'THPT',topic:'Mặt cầu',shape:'cau',c:'#E8A200',ok:0,ans:'R = a√3/2',
+  hints:['Tâm mặt cầu là tâm hình lập phương.','Bán kính bằng nửa đường chéo của hình lập phương.'],
+  steps:[['Bán kính','Đường chéo hình lập phương bằng a√3, nên R = a√3 / 2.','Mặt cầu ngoại tiếp đi qua cả 8 đỉnh.'],['Thể tích','V = 4/3·π·R³ = (√3/2)·π·a³.','Thay R vào công thức thể tích khối cầu.']]}];
+/* Bài bổ sung cho các luồng soạn bài, import, giáo trình (cùng cấu trúc với PROBS; đáp số đã tự kiểm) */
+const XP=[
+ {id:'x1',short:'Hình chóp S.ABCD: góc giữa SC và mặt đáy',t:'Cho hình chóp S.ABCD có đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a√6. Tính góc giữa SC và mặt phẳng (ABCD).',lv:'THPT',topic:'Góc',shape:'chop',c:'#3B5BDB',ok:1,ans:'60°',
+  hints:['Góc giữa SC và (ABCD) là góc giữa SC và hình chiếu của nó trên (ABCD).','SA ⊥ (ABCD) nên hình chiếu của SC là AC. Hãy tính AC theo a.'],h3:'Tam giác SAC vuông tại A: lập tan của góc SCA từ SA và AC.',
+  steps:[['Tìm hình chiếu của SC','SA ⊥ (ABCD) nên A là hình chiếu của S. Hình chiếu của SC trên (ABCD) là AC.','Góc giữa đường và mặt luôn bắt đầu từ hình chiếu của đường lên mặt.'],['Tính AC','ABCD là hình vuông cạnh a nên AC = a√2.','AC là đường chéo của hình vuông đáy.'],['Tính góc','Tam giác SAC vuông tại A: tan SCA = SA / AC = a√6 / (a√2) = √3, suy ra góc SCA = 60°.','Trong tam giác vuông, tan của góc nhọn bằng cạnh đối chia cạnh kề.']]},
+ {id:'x2',easy:'x2e',short:'Hình chóp S.ABCD: khoảng cách từ A đến (SBC)',t:'Cho hình chóp S.ABCD có đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính khoảng cách từ A đến mặt phẳng (SBC).',lv:'THPT',topic:'Khoảng cách',shape:'chop',c:'#F0522B',ok:1,ans:'a√2/2',
+  hints:['Khoảng cách từ A đến (SBC) là độ dài đoạn vuông góc hạ từ A xuống (SBC). Hãy tìm một mặt phẳng qua A vuông góc với (SBC).','BC ⊥ AB và BC ⊥ SA nên BC ⊥ (SAB). Trong (SAB), kẻ AH ⊥ SB.'],h3:'Tam giác SAB vuông tại A có SA = AB = a. Đường cao AH ứng với cạnh huyền SB tính thế nào?',
+  steps:[['Chứng minh BC ⊥ (SAB)','BC ⊥ AB (đáy là hình vuông) và BC ⊥ SA (vì SA ⊥ (ABCD)), nên BC ⊥ (SAB).','Cần một mặt phẳng chứa A và vuông góc với (SBC) để hạ đường vuông góc trong đó.'],['Dựng hình chiếu của A','Trong (SAB) kẻ AH ⊥ SB tại H. Vì BC ⊥ (SAB) nên AH ⊥ BC, suy ra AH ⊥ (SBC). H là hình chiếu của A trên (SBC).','Đường thẳng vuông góc với hai đường cắt nhau của (SBC) thì vuông góc với (SBC).'],['Tính AH','Tam giác SAB vuông tại A, SB = a√2. AH = SA · AB / SB = a · a / (a√2) = a√2/2.','Đường cao ứng với cạnh huyền bằng tích hai cạnh góc vuông chia cạnh huyền.']]},
+ {id:'x2e',short:'Hình chóp S.ABCD: khoảng cách từ C đến (SAB)',t:'Cho hình chóp S.ABCD có đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính khoảng cách từ C đến mặt phẳng (SAB).',lv:'THPT',topic:'Khoảng cách',shape:'chop',c:'#F0522B',ok:1,ans:'a',
+  hints:['Tìm một đường thẳng đi qua C và vuông góc với (SAB).','CB ⊥ AB. CB có vuông góc với SA không?'],h3:'Khi CB ⊥ (SAB) thì B là hình chiếu của C trên (SAB).',
+  steps:[['Chứng minh CB ⊥ (SAB)','CB ⊥ AB (đáy là hình vuông) và CB ⊥ SA (vì SA ⊥ (ABCD)), nên CB ⊥ (SAB).','Đường thẳng vuông góc với hai đường cắt nhau của một mặt phẳng thì vuông góc với mặt phẳng đó.'],['Kết luận','B là hình chiếu của C trên (SAB), nên d(C, (SAB)) = CB = a.','Khoảng cách từ một điểm đến mặt phẳng là khoảng cách từ điểm đó đến hình chiếu của nó.']]},
+ {id:'x3',short:'Hình lập phương: góc giữa A′C và mặt đáy',t:'Cho hình lập phương ABCD.A′B′C′D′ cạnh a. Tính góc giữa A′C và mặt phẳng (ABCD), làm tròn đến 0,1°.',lv:'THPT',topic:'Góc',shape:'hop',c:'#3B5BDB',ok:1,ans:'≈ 35,3°',
+  hints:['A′A ⊥ (ABCD). Hình chiếu của A′C trên (ABCD) là đoạn nào?','Góc cần tìm là góc A′CA trong tam giác A′AC vuông tại A.'],h3:'Tính AC theo a (đường chéo hình vuông), rồi lập tan của góc A′CA.',
+  steps:[['Tìm hình chiếu của A′C','A′A ⊥ (ABCD) nên A là hình chiếu của A′. Hình chiếu của A′C trên (ABCD) là AC.','Cạnh bên của hình lập phương vuông góc với mặt đáy.'],['Xác định góc','Góc giữa A′C và (ABCD) là góc A′CA. Tam giác A′AC vuông tại A, AC = a√2.','Có hình chiếu rồi thì góc cần tìm nằm trong một tam giác vuông.'],['Tính góc','tan A′CA = A′A / AC = a / (a√2) = √2/2 ≈ 0,707, suy ra góc A′CA ≈ 35,3°.','Trong tam giác vuông, tan của góc nhọn bằng cạnh đối chia cạnh kề.']]},
+ {id:'x4',short:'Hình chóp S.ABCD: góc giữa SB và mặt đáy',t:'Cho hình chóp S.ABCD có đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a√3/3. Tính góc giữa SB và mặt phẳng (ABCD).',lv:'THPT',topic:'Góc',shape:'chop',c:'#3B5BDB',ok:1,ans:'30°',
+  hints:['Góc giữa SB và (ABCD) là góc giữa SB và hình chiếu của nó trên (ABCD).','SA ⊥ (ABCD) nên hình chiếu của SB là AB. Xét tam giác SAB vuông tại A.'],
+  steps:[['Tìm hình chiếu của SB','SA ⊥ (ABCD) nên A là hình chiếu của S. Hình chiếu của SB trên (ABCD) là AB.','Muốn tìm góc giữa đường và mặt, trước hết tìm hình chiếu của đường lên mặt.'],['Xác định góc','Góc giữa SB và (ABCD) là góc SBA. Tam giác SAB vuông tại A.','Có hình chiếu rồi thì góc cần tìm nằm trong một tam giác vuông.'],['Tính góc','tan SBA = SA / AB = (a√3/3) / a = √3/3, suy ra góc SBA = 30°.','Trong tam giác vuông, tan của góc nhọn bằng cạnh đối chia cạnh kề.']]},
+ {id:'x5',short:'Hình chóp tứ giác đều: tính thể tích',t:'Cho hình chóp tứ giác đều S.ABCD có cạnh đáy a, chiều cao SO = 2a (O là tâm đáy). Tính thể tích khối chóp.',lv:'THPT',topic:'Thể tích',shape:'chop',c:'#0F8A5F',ok:1,ans:'2a³/3',
+  hints:['Thể tích khối chóp bằng một phần ba diện tích đáy nhân chiều cao.','Đáy là hình vuông cạnh a. Chiều cao đã cho là SO.'],hm:'V = ⅓ × diện tích đáy × chiều cao; đáy là hình vuông cạnh a, chiều cao là SO.',
+  steps:[['Tính diện tích đáy','Đáy ABCD là hình vuông cạnh a nên S = a².','Hình chóp tứ giác đều có đáy là hình vuông.'],['Tính thể tích','V = ⅓ · S · SO = ⅓ · a² · 2a = 2a³/3.','Khối chóp: V = ⅓ × diện tích đáy × chiều cao.']]},
+ {id:'x6',short:'Hình chóp S.ABCD: khoảng cách từ A đến (SBD)',t:'Cho hình chóp S.ABCD có đáy là hình vuông cạnh 2a, SA ⊥ (ABCD), SA = 2a. Tính khoảng cách từ A đến mặt phẳng (SBD).',lv:'THPT',topic:'Khoảng cách',shape:'chop',c:'#F0522B',ok:1,ans:'2a√3/3',
+  hints:['Gọi O là giao điểm của AC và BD. BD vuông góc với những đường nào đi qua A?','BD ⊥ (SAC). Trong (SAC), kẻ AH ⊥ SO.'],hm:'Gọi O = AC ∩ BD; vì BD ⊥ (SAC) nên kẻ AH ⊥ SO trong (SAC) thì AH là khoảng cách cần tìm.',
+  steps:[['Chọn hệ trục tọa độ','Chọn A(0; 0; 0), B(2a; 0; 0), D(0; 2a; 0), S(0; 0; 2a).','AB, AD, AS đôi một vuông góc nên đặt được ba trục tọa độ tại A.'],['Viết phương trình (SBD)','(SBD) cắt ba trục tại B, D, S nên có phương trình x/2a + y/2a + z/2a = 1, tức x + y + z − 2a = 0.','Mặt phẳng cắt ba trục tọa độ viết được theo đoạn chắn.'],['Tính khoảng cách','d(A, (SBD)) = |0 + 0 + 0 − 2a| / √3 = 2a√3/3.','Dùng công thức khoảng cách từ một điểm đến một mặt phẳng.']],
+  alt:[['Chứng minh BD ⊥ (SAC)','Gọi O = AC ∩ BD. BD ⊥ AC (hai đường chéo hình vuông) và BD ⊥ SA (vì SA ⊥ (ABCD)), nên BD ⊥ (SAC).','Cần một mặt phẳng chứa A và vuông góc với (SBD) để hạ đường vuông góc trong đó.'],['Dựng hình chiếu của A','Trong (SAC) kẻ AH ⊥ SO tại H. Vì BD ⊥ (SAC) nên AH ⊥ BD, suy ra AH ⊥ (SBD). H là hình chiếu của A trên (SBD).','Đường thẳng vuông góc với hai đường cắt nhau của (SBD) thì vuông góc với (SBD).'],['Tính AH','AO = a√2, SO = √(SA² + AO²) = √(4a² + 2a²) = a√6. AH = SA · AO / SO = 2a · a√2 / (a√6) = 2a√3/3.','Đường cao ứng với cạnh huyền bằng tích hai cạnh góc vuông chia cạnh huyền.']]},
+ {id:'x7',short:'Hình hộp chữ nhật: thể tích và đường chéo',t:'Hình hộp chữ nhật có ba kích thước 3 cm, 4 cm, 5 cm. Tính thể tích và độ dài đường chéo.',lv:'THPT',topic:'Thể tích',shape:'hop',c:'#0F8A5F',ok:1,ans:'60 cm³, 5√2 cm',
+  hints:['Thể tích hình hộp chữ nhật bằng tích ba kích thước.','Bình phương đường chéo bằng tổng bình phương ba kích thước.'],
+  steps:[['Thể tích','V = 3 · 4 · 5 = 60 cm³.','Hình hộp chữ nhật: V = dài × rộng × cao.'],['Đường chéo','d = √(3² + 4² + 5²) = √50 = 5√2 cm.','Áp dụng định lí Pythagore hai lần: cho mặt đáy, rồi cho tam giác chứa đường chéo.']]},
+ {id:'x8',short:'Hình cầu bán kính 3 cm: diện tích và thể tích',t:'Hình cầu có bán kính 3 cm. Tính diện tích mặt cầu và thể tích khối cầu.',lv:'THPT',topic:'Mặt cầu',shape:'cau',c:'#E8A200',ok:0,ans:'36π cm², 36π cm³',
+  hints:['Diện tích mặt cầu: S = 4πR².','Thể tích khối cầu: V = 4/3·πR³.'],hm:'Dùng hai công thức của hình cầu: S = 4πR² và V = 4/3·πR³.',
+  steps:[['Diện tích mặt cầu','S = 4π·3² = 36π cm².','Diện tích mặt cầu bằng bốn lần diện tích hình tròn lớn.'],['Thể tích khối cầu','V = 4/3·π·3³ = 36π cm³.','Thay R = 3 vào công thức thể tích khối cầu.']]}];
+const PB=id=>PROBS.find(p=>p.id===id)||XP.find(p=>p.id===id);
+Object.assign(PB('p4'),{hm:'Sxq = πrl; chiều cao h tính từ tam giác vuông có cạnh huyền là đường sinh: h² = l² − r².'});
+Object.assign(PB('p5'),{hm:'Diện tích toàn phần gồm diện tích xung quanh và hai đáy: Stp = 2πr(r + h).'});
+Object.assign(PB('p6'),{hm:'Tâm mặt cầu là tâm hình lập phương, bán kính bằng nửa đường chéo của hình lập phương.'});
+const DLV={p1:'Dễ',p2:'Vừa',p3:'Dễ',p4:'Vừa',p5:'Dễ',p6:'Vừa',x1:'Vừa',x2:'Vừa',x2e:'Dễ',x3:'Vừa',x4:'Dễ',x5:'Dễ',x6:'Khó',x7:'Dễ',x8:'Dễ'};
+const LES={p1:'l1',x1:'l1',x3:'l1',x4:'l1',p2:'l2',x2:'l2',x2e:'l2',x6:'l2',p3:'l3',x5:'l3',x7:'l3',p4:'l4',p5:'l4',p6:'l4',x8:'l4'};
+const CH=[{t:'Chương 1 · Quan hệ vuông góc trong không gian',les:['l1','l2']},{t:'Chương 2 · Thể tích và các khối tròn xoay',les:['l3','l4']}];
+const LN={l1:'Góc giữa đường thẳng và mặt phẳng',l2:'Khoảng cách',l3:'Thể tích khối đa diện',l4:'Hình nón, hình trụ, hình cầu'};
+/* ---- Kho bài giảng theo khái niệm (PO-33, PO-34). src 'gv' = bài soạn của giáo viên (tài liệu mẫu), 'ai' = AI viết, chờ giáo viên duyệt ---- */
+const DOCN='Giao-an-Hinh-khong-gian-11A1.docx';
+const LFIG={
+ hc:`<svg viewBox="0 0 200 130"><polygon points="14,112 150,112 190,70 54,70" fill="#3B5BDB" fill-opacity=".1" stroke="#253150" stroke-width="1.6"/><line x1="100" y1="18" x2="100" y2="92" stroke="#F0522B" stroke-width="2" stroke-dasharray="5 4"/><path d="M100,82h10v10" fill="none" stroke="#F0522B" stroke-width="1.5"/><circle cx="100" cy="18" r="3.5" fill="#141B2D"/><circle cx="100" cy="92" r="3.5" fill="#F0522B"/><g font-size="13" font-weight="800"><text x="107" y="20">M</text><text x="84" y="106" fill="#F0522B">H</text><text x="22" y="106" font-size="12" font-weight="700" fill="#5F6B85">(P)</text></g></svg>`,
+ gdm:`<svg viewBox="0 0 200 130"><polygon points="14,116 160,116 194,72 48,72" fill="#3B5BDB" fill-opacity=".1" stroke="#253150" stroke-width="1.6"/><line x1="70" y1="20" x2="150" y2="94" stroke="#253150" stroke-width="2.2"/><line x1="70" y1="20" x2="70" y2="94" stroke="#F0522B" stroke-width="1.8" stroke-dasharray="5 4"/><line x1="70" y1="94" x2="150" y2="94" stroke="#0F8A5F" stroke-width="2.2"/><path d="M70,84h10v10" fill="none" stroke="#F0522B" stroke-width="1.4"/><path d="M128,94A22,22 0 0 1 134,79" fill="none" stroke="#7C4DFF" stroke-width="2"/><g font-size="12.5" font-weight="800"><text x="56" y="20">M</text><text x="56" y="108" fill="#F0522B">H</text><text x="154" y="106">I</text><text x="112" y="50">d</text><text x="96" y="109" fill="#0F8A5F">d′</text><text x="113" y="88" fill="#7C4DFF">α</text></g></svg>`,
+ dvm:`<svg viewBox="0 0 200 130"><polygon points="14,116 160,116 194,72 48,72" fill="#3B5BDB" fill-opacity=".1" stroke="#253150" stroke-width="1.6"/><line x1="40" y1="104" x2="170" y2="84" stroke="#0F8A5F" stroke-width="2"/><line x1="70" y1="78" x2="140" y2="112" stroke="#0F8A5F" stroke-width="2"/><line x1="104" y1="12" x2="104" y2="94" stroke="#F0522B" stroke-width="2.4"/><circle cx="104" cy="94" r="3.4" fill="#141B2D"/><g font-size="12.5" font-weight="800"><text x="110" y="22" fill="#F0522B">d</text><text x="166" y="80" fill="#0F8A5F">a</text><text x="144" y="111" fill="#0F8A5F">b</text><text x="22" y="112" fill="#5F6B85" font-weight="700">(P)</text></g></svg>`,
+ tslg:`<svg viewBox="0 0 200 130"><polygon points="40,104 164,104 40,26" fill="#3B5BDB" fill-opacity=".1" stroke="#253150" stroke-width="2" stroke-linejoin="round"/><path d="M40,92h12v12" fill="none" stroke="#253150" stroke-width="1.5"/><path d="M140,104A24,24 0 0 1 143.700,91.200" fill="none" stroke="#7C4DFF" stroke-width="2"/><g font-size="12" font-weight="700" fill="#5F6B85"><text x="10" y="70">đối</text><text x="90" y="121">kề</text><text x="104" y="56">huyền</text></g><text x="122" y="99" font-size="13" font-weight="800" fill="#7C4DFF">α</text></svg>`,
+ sxqn:`<svg viewBox="0 0 200 130"><ellipse cx="100" cy="102" rx="62" ry="14" fill="#7C4DFF" fill-opacity=".1"/><path d="M38,102A62,14 0 0 0 162,102M100,14L38,102M100,14L162,102" fill="none" stroke="#253150" stroke-width="2"/><path d="M38,102A62,14 0 0 1 162,102" fill="none" stroke="#253150" stroke-width="1.4" stroke-dasharray="5 4"/><line x1="100" y1="14" x2="100" y2="102" stroke="#F0522B" stroke-width="1.8" stroke-dasharray="5 4"/><line x1="100" y1="102" x2="162" y2="102" stroke="#0F8A5F" stroke-width="2"/><path d="M100,92h10v10" fill="none" stroke="#F0522B" stroke-width="1.4"/><g font-size="13" font-weight="800"><text x="86" y="62" fill="#F0522B">h</text><text x="126" y="98" fill="#0F8A5F">r</text><text x="138" y="54">l</text></g></svg>`};
+const KB={
+ dvm:{t:'Đường thẳng vuông góc với mặt phẳng',src:'gv',sec:'mục 1.1',les:'l1',q:'Khi nào đường thẳng vuông góc với mặt phẳng?',rel:['hc','gdm'],
+  terms:['đường thẳng vuông góc với mặt phẳng','vuông góc với mặt phẳng','vuông góc với mặt đáy'],
+  body:['Đường thẳng d gọi là vuông góc với mặt phẳng (P) nếu d vuông góc với mọi đường thẳng nằm trong (P). Kí hiệu: d ⊥ (P).',
+   'Dấu hiệu nhận biết: nếu d vuông góc với hai đường thẳng cắt nhau cùng nằm trong (P) thì d ⊥ (P). Chỉ một đường thì chưa đủ, và hai đường song song cũng chưa đủ.',
+   'Hệ quả hay dùng: khi d ⊥ (P) thì d vuông góc với mọi đường thẳng trong (P), kể cả những đường không đi qua chân của d. Nhờ đó ta có ngay các tam giác vuông để tính độ dài và góc.'],
+  sum:'Đường thẳng d vuông góc với mặt phẳng (P) khi d vuông góc với hai đường thẳng cắt nhau nằm trong (P). Khi đó d vuông góc với mọi đường thẳng trong (P).',
+  more:'Em nhìn cột cờ dựng trên sân: cột vuông góc với mọi vạch kẻ trên sân, dù vạch đó có đi qua chân cột hay không. Trong bài, dữ kiện có dấu ⊥ với một mặt phẳng cho em ngay các góc vuông để dùng.'},
+ hc:{t:'Hình chiếu vuông góc',src:'gv',sec:'mục 1.2',les:'l1',q:'Hình chiếu vuông góc là gì?',rel:['gdm','dvm'],
+  terms:['hình chiếu vuông góc','hình chiếu'],
+  body:['Cho mặt phẳng (P) và điểm M không nằm trên (P). Qua M kẻ đường thẳng vuông góc với (P), cắt (P) tại H. Điểm H gọi là hình chiếu vuông góc của M trên (P). Nếu M đã nằm trên (P) thì hình chiếu của M là chính nó.',
+   'Muốn tìm hình chiếu của một đoạn thẳng MN trên (P), ta tìm hình chiếu H của M và K của N, rồi nối HK. Trường hợp hay gặp: N đã nằm trên (P), khi đó hình chiếu của MN là đoạn HN.',
+   'Cách nhận ra nhanh: nếu trong đề có một đường thẳng đi qua M và vuông góc với (P), thì chân của đường thẳng đó trên (P) chính là hình chiếu của M.'],
+  sum:'Hình chiếu vuông góc của điểm M trên mặt phẳng (P) là chân H của đường vuông góc hạ từ M xuống (P). Hình chiếu của một đoạn thẳng là đoạn nối hình chiếu của hai đầu mút.',
+  more:'Em hình dung nắng chiếu thẳng đứng xuống sân: bóng của một điểm nằm ngay dưới điểm đó, và bóng của một cây sào là đoạn nối bóng của hai đầu sào. Trên hình của bài, hãy tìm đường thẳng nào đã vuông góc sẵn với mặt phẳng.'},
+ gdm:{t:'Góc giữa đường thẳng và mặt phẳng',src:'gv',sec:'mục 1.3',les:'l1',q:'Góc giữa đường thẳng và mặt phẳng là gì?',rel:['hc','tslg','dvm'],
+  terms:['góc giữa đường thẳng và mặt phẳng','góc giữa đường và mặt'],
+  body:['Nếu đường thẳng d vuông góc với mặt phẳng (P) thì góc giữa d và (P) bằng 90°. Nếu không, góc giữa d và (P) là góc giữa d và hình chiếu vuông góc d′ của nó trên (P). Góc này luôn nằm trong khoảng từ 0° đến 90°.',
+   'Ba việc cần làm: (1) tìm giao điểm I của d với (P); (2) lấy một điểm M khác trên d, tìm hình chiếu H của M trên (P), nối HI để được d′; (3) góc cần tìm là góc nhọn tại I.',
+   'Góc đó nằm trong tam giác MHI, là một tam giác vuông tại H, nên tính được bằng tỉ số lượng giác.'],
+  sum:'Góc giữa đường thẳng d và mặt phẳng (P) là góc giữa d và hình chiếu vuông góc của nó trên (P); góc này nằm trong khoảng từ 0° đến 90°.',
+  more:'Làm theo ba việc: tìm giao điểm của đường thẳng với mặt phẳng, tìm hình chiếu của một điểm khác trên đường thẳng, rồi xét góc tại giao điểm trong tam giác vuông vừa tạo ra.'},
+ tslg:{t:'Tỉ số lượng giác trong tam giác vuông',src:'ai',les:'l1',q:'Tỉ số lượng giác trong tam giác vuông tính thế nào?',rel:['gdm'],
+  terms:['tỉ số lượng giác','tam giác vuông','tan của góc nhọn'],
+  body:['Trong tam giác vuông, xét một góc nhọn α. Cạnh đối là cạnh góc vuông không chạm vào α, cạnh kề là cạnh góc vuông chạm vào α, cạnh huyền là cạnh đối diện với góc vuông.',
+   'sin α = cạnh đối / cạnh huyền; cos α = cạnh kề / cạnh huyền; tan α = cạnh đối / cạnh kề.',
+   'Khi biết hai cạnh góc vuông, dùng tan là nhanh nhất vì không cần tính cạnh huyền. Có giá trị của tan rồi, em tra bảng giá trị lượng giác của các góc đặc biệt hoặc dùng máy tính để suy ra số đo góc.',
+   'Lưu ý: phải chỉ ra đúng tam giác vuông và đúng đỉnh góc vuông trước khi lập tỉ số.'],
+  sum:'Trong tam giác vuông, với góc nhọn α: sin α = cạnh đối / cạnh huyền, cos α = cạnh kề / cạnh huyền, tan α = cạnh đối / cạnh kề.',
+  more:'Trước khi lập tỉ số, em chỉ rõ đỉnh góc vuông, rồi đứng ở góc nhọn cần tính: cạnh góc vuông chạm vào góc đó là cạnh kề, cạnh góc vuông còn lại là cạnh đối. Biết hai cạnh góc vuông thì dùng tan.'},
+ cheo:{t:'Hai đường thẳng chéo nhau',src:'ai',les:'l2',q:'Hai đường thẳng chéo nhau là gì?',rel:['kcss'],
+  terms:['hai đường thẳng chéo nhau','hai đường chéo nhau','đường chéo nhau','chéo nhau'],
+  body:['Hai đường thẳng chéo nhau là hai đường thẳng không cùng nằm trong một mặt phẳng nào: chúng không cắt nhau và cũng không song song.',
+   'Khoảng cách giữa hai đường thẳng chéo nhau là độ dài đoạn vuông góc chung, tức đoạn thẳng nối hai đường và vuông góc với cả hai.',
+   'Cách làm thường gặp: nếu hai đường chéo nhau lần lượt nằm trong hai mặt phẳng song song thì khoảng cách giữa hai đường bằng khoảng cách giữa hai mặt phẳng đó. Vì thế, việc đầu tiên là tìm hai mặt phẳng song song, mỗi mặt chứa một đường.'],
+  sum:'Hai đường thẳng chéo nhau là hai đường không cùng nằm trong một mặt phẳng. Khoảng cách giữa chúng là độ dài đoạn vuông góc chung; nếu hai đường nằm trong hai mặt phẳng song song thì khoảng cách đó bằng khoảng cách giữa hai mặt phẳng.',
+  more:'Hai đường chéo nhau giống một cây cầu vượt và con đường chạy bên dưới: không gặp nhau, cũng không song song. Việc đầu tiên là tìm hai mặt phẳng song song, mỗi mặt chứa một đường.'},
+ kcss:{t:'Khoảng cách giữa hai mặt phẳng song song',src:'gv',sec:'mục 2.2',les:'l2',q:'Khoảng cách giữa hai mặt phẳng song song tính thế nào?',rel:['cheo','dvm'],
+  terms:['khoảng cách giữa hai mặt phẳng song song','khoảng cách giữa hai mặt phẳng','hai mặt phẳng song song','mặt phẳng song song'],
+  body:['Cho hai mặt phẳng song song (P) và (Q). Khoảng cách giữa chúng là khoảng cách từ một điểm bất kì trên (P) đến (Q). Kết quả không phụ thuộc vào điểm được chọn.',
+   'Để tính, chọn một điểm M thuận tiện trên (P), hạ đường vuông góc MH xuống (Q); độ dài MH là khoảng cách cần tìm.',
+   'Nếu trên hình đã có sẵn một đường thẳng vuông góc với mặt phẳng (P) và (Q), thì đoạn của nó nằm giữa hai mặt phẳng chính là MH, không cần dựng thêm.'],
+  sum:'Khoảng cách giữa hai mặt phẳng song song là khoảng cách từ một điểm bất kì của mặt phẳng này đến mặt phẳng kia.',
+  more:'Giống khoảng cách giữa sàn và trần của một căn phòng: đo ở chỗ nào cũng ra cùng một số, miễn là đo theo phương vuông góc. Em tìm một đoạn thẳng vuông góc với cả hai mặt phẳng.'},
+ ttlt:{t:'Thể tích khối lăng trụ',src:'gv',sec:'mục 3.1',les:'l3',q:'Thể tích khối lăng trụ tính thế nào?',rel:['kcss','dttp'],
+  terms:['thể tích khối lăng trụ','thể tích lăng trụ','lăng trụ đứng'],
+  body:['Thể tích khối lăng trụ bằng diện tích đáy nhân với chiều cao: V = S · h. Chiều cao là khoảng cách giữa hai mặt đáy; với lăng trụ đứng, chiều cao bằng độ dài cạnh bên.',
+   'Diện tích đáy tính theo hình dạng của đáy. Một số công thức hay dùng: tam giác đều cạnh a có S = a²√3/4; tam giác vuông có S bằng nửa tích hai cạnh góc vuông; hình chữ nhật có S bằng dài nhân rộng.',
+   'Nhớ kiểm tra đơn vị: diện tích đáy tính bằng cm² và chiều cao tính bằng cm thì thể tích tính bằng cm³.'],
+  sum:'Thể tích khối lăng trụ bằng diện tích đáy nhân với chiều cao: V = S · h. Với lăng trụ đứng, chiều cao bằng độ dài cạnh bên.',
+  more:'Em tính riêng diện tích đáy trước, viết kèm đơn vị, rồi mới nhân với chiều cao. Đáy là hình gì thì dùng công thức diện tích của hình đó.'},
+ sxqn:{t:'Diện tích xung quanh hình nón',src:'gv',sec:'mục 4.1',les:'l4',q:'Diện tích xung quanh hình nón tính thế nào?',rel:['tslg','dttp'],
+  terms:['diện tích xung quanh hình nón','diện tích xung quanh','đường sinh'],
+  body:['Hình nón có bán kính đáy r, chiều cao h và đường sinh l. Đường sinh là đoạn nối đỉnh với một điểm trên đường tròn đáy; chiều cao là đoạn nối đỉnh với tâm đáy. Ba đoạn r, h, l tạo thành một tam giác vuông, nên l² = r² + h².',
+   'Diện tích xung quanh: Sxq = πrl. Diện tích toàn phần: Stp = πrl + πr². Thể tích: V = ⅓πr²h.',
+   'Lỗi hay gặp: dùng đường sinh thay cho chiều cao trong công thức thể tích. Nếu đề cho r và l, phải tính h trước rồi mới tính thể tích.'],
+  sum:'Hình nón có bán kính đáy r, chiều cao h, đường sinh l với l² = r² + h². Diện tích xung quanh là Sxq = πrl; thể tích là V = ⅓πr²h.',
+  more:'Đường sinh là cạnh xiên chạy trên mặt nón, chiều cao là đoạn thẳng đứng từ đỉnh xuống tâm đáy. Hai đoạn này cùng với bán kính tạo thành một tam giác vuông, nên biết hai đại lượng là tính được đại lượng thứ ba.'},
+ dttp:{t:'Diện tích toàn phần hình trụ',src:'gv',sec:'mục 4.2',les:'l4',q:'Diện tích toàn phần hình trụ tính thế nào?',rel:['sxqn'],
+  terms:['diện tích toàn phần hình trụ','diện tích toàn phần'],
+  body:['Hình trụ có bán kính đáy r và chiều cao h. Mặt xung quanh khi trải phẳng là một hình chữ nhật có một cạnh bằng chu vi đáy 2πr và cạnh kia bằng h, nên Sxq = 2πrh.',
+   'Diện tích toàn phần gồm diện tích xung quanh và diện tích hai đáy: Stp = 2πrh + 2πr² = 2πr(r + h).',
+   'Thể tích: V = πr²h. Khi làm bài, viết công thức trước, thay số sau, và giữ nguyên π trong kết quả nếu đề không yêu cầu làm tròn.'],
+  sum:'Diện tích toàn phần của hình trụ gồm diện tích xung quanh và hai đáy: Stp = 2πrh + 2πr² = 2πr(r + h).',
+  more:'Em tưởng tượng bóc nhãn một hộp sữa hình trụ: tờ nhãn trải ra là hình chữ nhật có chiều dài bằng chu vi đáy. Cộng thêm hai nắp tròn là được diện tích toàn phần.'},
+ mcnt:{t:'Mặt cầu ngoại tiếp',src:'ai',les:'l4',q:'Mặt cầu ngoại tiếp là gì?',rel:['tslg'],
+  terms:['mặt cầu ngoại tiếp','tâm mặt cầu'],
+  body:['Mặt cầu ngoại tiếp một hình đa diện là mặt cầu đi qua tất cả các đỉnh của hình đó. Tâm của mặt cầu cách đều mọi đỉnh; khoảng cách đó là bán kính R.',
+   'Với hình hộp chữ nhật (hình lập phương là trường hợp riêng), các đường chéo cắt nhau tại trung điểm của mỗi đường. Điểm đó cách đều tám đỉnh nên là tâm mặt cầu ngoại tiếp, và R bằng nửa độ dài đường chéo. Hình hộp chữ nhật có ba kích thước m, n, p thì đường chéo dài √(m² + n² + p²), tính bằng định lí Pythagore trong hai tam giác vuông.',
+   'Khi đã có R: diện tích mặt cầu S = 4πR², thể tích khối cầu V = 4/3·πR³.'],
+  sum:'Mặt cầu ngoại tiếp một hình đa diện đi qua tất cả các đỉnh của hình đó; tâm mặt cầu cách đều các đỉnh. Với hình hộp chữ nhật, tâm là giao điểm các đường chéo và bán kính bằng nửa đường chéo.',
+  more:'Em tìm một điểm cách đều tất cả các đỉnh. Ở hình hộp chữ nhật, các đường chéo cắt nhau tại trung điểm của mỗi đường nên điểm đó chính là tâm; việc còn lại là tính độ dài đường chéo.'}};
+const KBP={p1:['gdm','hc','dvm','tslg'],p2:['cheo','kcss'],p3:['ttlt'],p4:['sxqn','tslg'],p5:['dttp'],p6:['mcnt'],x1:['gdm','hc'],x3:['gdm','hc'],x4:['gdm','hc'],x2:['dvm','hc'],x2e:['dvm','hc'],x6:['dvm','hc']};
+const KWT=[];Object.keys(KB).forEach(id=>KB[id].terms.forEach(t=>KWT.push([t,id])));KWT.sort((a,b)=>b[0].length-a[0].length);
+const KWRE=new RegExp('('+KWT.map(x=>x[0].replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')','giu');
+// đổi các thuật ngữ trong một đoạn chữ thuần thành từ khóa bấm được; mỗi bài giảng chỉ đánh dấu lần xuất hiện đầu tiên
+const kw=(t,skip)=>{const seen={};if(skip)seen[skip]=1;return String(t).replace(KWRE,m=>{const id=KWT.find(x=>x[0]===m.toLowerCase())[1];if(seen[id])return m;seen[id]=1;return `<span class="kw" data-act="lec" data-arg="${id}">${m}</span>`;});};
+const kbFind=s=>{const x=KWT.find(x=>s.includes(x[0]));return x?x[1]:Object.keys(KB).find(id=>s.includes(KB[id].t.toLowerCase()));};
+/* ---- Soạn bài giảng với AI, import bài giảng từ file (PO-45, PO-46). Ví dụ minh họa dùng hình và số liệu khác mọi bài tập (PO-44) ---- */
+const LFIGX={
+ cheo:`<svg viewBox="0 0 200 130"><polygon points="30,52 150,52 186,22 66,22" fill="#7C4DFF" fill-opacity=".1" stroke="#253150" stroke-width="1.4"/><polygon points="14,118 134,118 170,88 50,88" fill="#3B5BDB" fill-opacity=".1" stroke="#253150" stroke-width="1.4"/><line x1="100" y1="38.4" x2="100" y2="104" stroke="#F0522B" stroke-width="2" stroke-dasharray="5 4"/><line x1="60" y1="44" x2="160" y2="30" stroke="#0F8A5F" stroke-width="2.2"/><line x1="50" y1="94" x2="140" y2="112" stroke="#253150" stroke-width="2.2"/><circle cx="100" cy="38.4" r="3" fill="#F0522B"/><circle cx="100" cy="104" r="3" fill="#F0522B"/><g font-size="12.5" font-weight="800"><text x="163" y="27" fill="#0F8A5F">b</text><text x="143" y="110">a</text><text x="106" y="76" fill="#F0522B">d</text><text x="20" y="114" font-size="11.5" font-weight="700" fill="#5F6B85">(P)</text><text x="42" y="48" font-size="11.5" font-weight="700" fill="#5F6B85">(Q)</text></g></svg>`,
+ mcnt:`<svg viewBox="0 0 200 130"><circle cx="100" cy="65" r="52" fill="#E8A200" fill-opacity=".1" stroke="#253150" stroke-width="1.8"/><rect x="56" y="37" width="88" height="56" fill="#3B5BDB" fill-opacity=".1" stroke="#253150" stroke-width="1.8"/><line x1="56" y1="93" x2="100" y2="65" stroke="#253150" stroke-width="1.3" stroke-dasharray="5 4"/><line x1="100" y1="65" x2="144" y2="37" stroke="#F0522B" stroke-width="2.2"/><circle cx="100" cy="65" r="3.4" fill="#141B2D"/><g font-size="13" font-weight="800"><text x="87" y="61">O</text><text x="124" y="64" fill="#F0522B">R</text></g></svg>`};
+const LEX={
+ tslg:'Tam giác ABC vuông tại A có AB = 3 cm, AC = 4 cm, nên BC = 5 cm. Xét góc B: cạnh đối là AC, cạnh kề là AB. Vậy sin B = 4/5 = 0,8; cos B = 3/5 = 0,6; tan B = 4/3 ≈ 1,33.',
+ cheo:'Hình hộp chữ nhật ABCD.A′B′C′D′ có AA′ = 5 cm. Hai đường thẳng AB và B′C′ chéo nhau: AB nằm trong (ABCD), B′C′ nằm trong (A′B′C′D′), và hai mặt phẳng này song song. Khoảng cách giữa AB và B′C′ bằng khoảng cách giữa hai mặt đáy, tức bằng AA′ = 5 cm; đoạn vuông góc chung là BB′.',
+ mcnt:'Hình hộp chữ nhật có ba kích thước 2 cm, 3 cm, 6 cm. Đường chéo dài √(2² + 3² + 6²) = √49 = 7 cm, nên mặt cầu ngoại tiếp có bán kính R = 7 : 2 = 3,5 cm.',
+ hc:'Cột đèn MH dựng vuông góc với mặt sân tại H; một sợi dây néo nối đỉnh M với điểm N trên sân. Hình chiếu của M trên mặt sân là H, còn N nằm sẵn trên sân nên hình chiếu của N là chính nó. Vậy hình chiếu của dây MN trên mặt sân là đoạn HN.',
+ ttlt:'Lăng trụ đứng có đáy là tam giác vuông với hai cạnh góc vuông 3 cm và 4 cm, cạnh bên dài 5 cm. Diện tích đáy S = ½ · 3 · 4 = 6 cm²; thể tích V = S · h = 6 · 5 = 30 cm³.'};
+const UNC9={cheo:'khoảng cách giữa hai đường thẳng chéo nhau và đoạn vuông góc chung là nội dung của lớp 11. Thầy cô cân nhắc chỉ dùng bài này cho lớp 11.',
+ mcnt:'lớp 9 mới học hình cầu; mặt cầu ngoại tiếp một hình đa diện thuộc chương trình các lớp trên. Thầy cô cân nhắc chỉ dùng bài này cho lớp 11.'};
+const unc9=id=>{const u=UNC9[id]||(['l1','l2'].includes(KB[id].les)&&id!=='tslg'?'quan hệ vuông góc trong không gian là nội dung của lớp 11. Thầy cô cân nhắc chỉ dùng bài này cho lớp 11.':'');return u?'Tôi chưa chắc mức độ này hợp với lớp 9B: '+u:'';};
+const DOCL=Object.keys(KB).filter(id=>KB[id].src==='gv');      // các phần lý thuyết của giáo án mẫu
+const LCON=[['cheo','Hai đường thẳng chéo nhau'],['tslg','Tỉ số lượng giác trong tam giác vuông'],['mcnt','Mặt cầu ngoại tiếp']];
+// bài giảng có hiệu lực: bản trong kho, cộng phần giáo viên đã soạn với AI (src 'cmp') hoặc đã cập nhật từ file; lưu ở st.kbx
+const LK=id=>Object.assign({},KB[id],st.kbx[id]);
+const kbOk=id=>KB[id].src==='gv'||!!st.kbok[id]||LK(id).src==='cmp';
+const srcTxt=(id,src)=>{const x=src||LK(id).src;return x==='gv'?`Bài soạn của giáo viên · ${DOCN}, ${KB[id].sec}`:x==='cmp'?'Soạn với AI · theo định hướng của thầy cô':'Bài giảng do AI viết';};
+const srcShort=id=>{const x=LK(id).src;return x==='gv'?'bài soạn của giáo viên, '+KB[id].sec:x==='cmp'?'soạn với AI, giáo viên đã duyệt':'bài giảng do AI viết';};
+const lecFig=(id,L)=>L.fig===false?'':(LFIG[id]||(L.fig?LFIGX[id]:'')||'');
+const kbChip=id=>`<span class="chip ${kbOk(id)?'pri':'pur'}" data-lbl="${id}">${ic(kbOk(id)?'check':'spark')}${kbOk(id)?'Giáo viên đã duyệt':'AI soạn · chờ giáo viên duyệt'}</span>`;
+const newCmp=()=>({kind:'ex',o:{topic:'vg',types:['goc','kc'],n:3,lv:'Vừa',dir:'ai',fmt:'full'},lo:{con:'cheo',lvl:'11A1',ex:'co',len:'full',fig:'co'},chat:[],items:null,lec:null,last:-1,llast:-1,q:'',edit:false,prop:[],hist:[],undo:null,pid:0,showHist:false});
+const newImp=src=>({src:src||'doc',file:false,imgs:[],stage:'pick',load:0,items:null,lecs:null,grp:'ex',fmt:'full',chat:[],fix:{},last:-1,llast:-1,q:'',prop:[],hist:[],undo:null,pid:0,showHist:false});
+const init=()=>({role:'hs',view:'hs-home',cur:'a1',tab:'hint',step:0,figs:{},kbok:{},kbx:{},lpv:null,lec:null,modal:null,sel:{cls:'11A1',rel:'19:00 hôm nay'},subj:'phang',pa:1,
+ asg:[{id:'a1',p:'p1',cls:'11A1',rel:'19:00 hôm nay',open:false,hints:0,chat:[],seen:false,acts:0},
+      {id:'a3',p:'p3',cls:'11A1',rel:'đã mở',open:true,hints:2,chat:[],seen:true,acts:6}],
+ grade:{crit:[['Xác định hình chiếu','Chỉ ra A là hình chiếu của S, AD là hình chiếu của SD',3,3,1],['Xác định góc','Nêu đúng góc SDA và tam giác vuông',3,3,1],['Tính toán','Lập đúng tỉ số lượng giác và ra đáp số',1,3,0],['Trình bày','Lập luận rõ ràng, đủ căn cứ',0.5,1,0]],approved:false},
+ cop:0,libExtra:0,
+ msgs:[{f:'gv',t:'An tiến bộ rõ ở phần thể tích. Tuần này em cần luyện thêm dạng khoảng cách, tôi đã giao thêm bài.'}],
+ grp:[['Bình','#3B5BDB','Mình dựng mặt (SBD) rồi. Kẻ đường vuông góc từ A xuống đâu nhỉ?'],['Lan','#0F8A5F','BD ⊥ AC và BD ⊥ SA nên BD ⊥ (SAC). Mình thêm điểm O rồi đó.']],
+ curr:[{id:'k1',p:'p1',les:'l1',src:'kho',fmt:'full'},{id:'k2',p:'p3',les:'l3',src:'kho',fmt:'full'},{id:'k3',p:'x7',les:'l3',src:'kho',fmt:'full'}],kid:3,
+ cmp:newCmp(),imp:newImp('doc'),per:{sid:'an',prop:null},paths:{},pv:null,back:null});
+let st=init(),dev=null;
+const DEVS=[['web','Web'],['ipad','iPad'],['phone','iPhone']],DEFDEV={gv:'web',hs:'ipad',ph:'phone',tr:'web',ql:'web'};
+const devOf=()=>innerWidth<=820?'phone':(dev||DEFDEV[st.role]);
+function frame(){const app=document.getElementById('app'),s=app.querySelector('.screen'),d=devOf(),vw=innerWidth,vh=innerHeight-document.getElementById('demo').offsetHeight;
+ app.className='dev-'+d;app.style.height=vh+'px';
+ if(d==='web'||vw<=820){s.style.cssText=vw<=820?`height:${vh}px;border-radius:0`:'';return;}
+ const[W,H]=d==='ipad'?[1180,820]:[390,844],k=Math.min(1,(vw-40)/W,(vh-40)/H);
+ s.style.cssText=`width:${W}px;height:${H}px;margin:18px 0 0;border-radius:${d==='ipad'?26:40}px;box-shadow:0 0 0 10px #000,0 0 0 12px #3a3f4d;transform:scale(${k});transform-origin:top center;flex-shrink:0`;}
+const A=()=>st.asg.find(a=>a.id===st.cur);
+const CONCEPT=['gv-grade','gv-copilot','gv-profile','hs-group','hs-subject','ph-home','ph-chat','tr-home','ql-home','gv-edit','gv-curr','gv-compose','gv-import','gv-personal','hs-path'];
+
+/* ============ KHUNG ============ */
+NAV.gv=[['home','Tổng quan'],['book','Kho đề'],['layers','Giáo trình'],['users','Lớp học'],['chart','Theo dõi'],['edit','Chấm bài'],['spark','Trợ lý']];   // PO-41: Giáo trình đứng cạnh Kho đề
+NAV.hs=[['home','Bài của em'],['cube','Tự học'],['users','Nhóm học'],['layers','Môn khác'],['clock','Lịch sử']];
+NAV.ph=[['home','Tổng quan'],['chat','Trao đổi']]; NAV.tr=[['home','Tổng quan']]; NAV.ql=[['home','Tổng quan']];
+const RAIL={gv:['gv-home','gv-lib','gv-curr','gv-class','gv-track','gv-grade','gv-copilot'],hs:['hs-home','hs-self','hs-group','hs-subject','hs-history'],ph:['ph-home','ph-chat'],tr:['tr-home'],ql:['ql-home']};
+const PARENT={'hs-work':'hs-home','hs-loading':'hs-self','gv-prob':'gv-lib','gv-profile':'gv-track','gv-edit':'gv-lib','gv-compose':'gv-curr','gv-import':'gv-curr','gv-personal':'gv-curr','hs-path':'hs-home'};
+const ROLES=[['hs','Học sinh'],['gv','Giáo viên'],['ph','Phụ huynh'],['tr','Nhà trường'],['ql','Cơ quan quản lý']];
+const SC=[['gv','gv-lib','1 · GV giao bài'],['hs','hs-home','2 · HS làm bài'],['gv','gv-track','3 · GV theo dõi, mở lời giải'],['hs','hs-work','4 · HS xem lời giải'],['ph','ph-home','5 · Phụ huynh'],
+ ['gv','gv-grade','Chấm bài',1],['gv','gv-copilot','Trợ lý GV',1],['hs','hs-subject','Môn khác',1],['hs','hs-group','Nhóm học',1],['tr','tr-home','Trường',1],['ql','ql-home','Quản lý',1],['gv','gv-curr','Giáo trình',2]];
+const bodyOf=s=>s.slice(s.indexOf('<div class="body">')+18,s.lastIndexOf('</div></div></section>'));
+const TOPV=()=>(st.view==='gv-prob'&&st.back)||PARENT[st.view]||st.view;
+const shell=(title,crumb,body,o={})=>{const v=TOPV();return screen('scr',st.role,RAIL[st.role].indexOf(v),title,crumb,body+(st.modal?MODALS[st.modal]():''),{noSeg:1,concept:CONCEPT.includes(st.view),top:o.top||''});};
+const flow=t=>`<div class="flow">${ic('arrow','width:15px;height:15px;color:var(--pri)')}<span>${t}</span></div>`;
+function toast(t,icn){const e=document.getElementById('toast');e.innerHTML=ic(icn||'check','width:17px;height:17px;flex-shrink:0;color:'+(icn?'#FFD27A':'#5EE0A0'))+t;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),2600);}
+function busy(t,ms,then){document.getElementById('busyT').textContent=t;document.getElementById('busy').classList.add('on');setTimeout(()=>{document.getElementById('busy').classList.remove('on');then();},ms);}
+function go(v,role){if(role)st.role=role;st.view=v;st.modal=null;render();}
+function render(){
+ document.getElementById('demo').innerHTML=`<b class="t">Bản mẫu tương tác</b><div class="roles">${ROLES.map(r=>`<span class="${st.role===r[0]?'on':''}" data-role="${r[0]}">${r[1]}</span>`).join('')}</div><span class="lbl2">Thiết bị</span><div class="roles">${DEVS.map(d=>`<span class="${devOf()===d[0]?'on':''}" data-dev="${d[0]}">${d[1]}</span>`).join('')}</div><div class="sc" style="margin-left:8px">${SC.filter(s=>s[3]===2).map(s=>`<span class="cz ${st.role===s[0]&&TOPV()===s[1]?'on':''}" data-sc="${SC.indexOf(s)}">${s[2]}</span>`).join('')}</div><span class="lbl2" data-reset style="cursor:pointer;margin-left:auto">↺ Đặt lại dữ liệu</span><i style="flex-basis:100%;height:0"></i>
+ <span class="lbl2" style="margin-left:0">Kịch bản chính</span><div class="sc">${SC.filter(s=>!s[3]).map(s=>`<span class="${st.role===s[0]&&TOPV()===(PARENT[s[1]]||s[1])?'on':''}" data-sc="${SC.indexOf(s)}">${s[2]}</span>`).join('')}</div>
+ <span class="lbl2">Tầm nhìn</span><div class="sc">${SC.filter(s=>s[3]===1).map(s=>`<span class="cz ${st.role===s[0]&&(PARENT[st.view]||st.view)===s[1]?'on':''}" data-sc="${SC.indexOf(s)}">${s[2]}</span>`).join('')}</div>`;
+ document.documentElement.style.setProperty('--dh',document.getElementById('demo').offsetHeight+'px');
+ FH.forEach(h=>h.destroy());FH=[];FIG=null;
+ document.getElementById('app').innerHTML=VIEWS[st.view]();
+ frame();
+ mountFigs();
+ if(CONCEPT.indexOf(st.view)>=10||st.view==='hs-work'||st.view==='gv-track')document.getElementById('app').dataset.fit=1;      // khóa chiều cao khung để cột hỏi đáp tự cuộnelse delete document.getElementById('app').dataset.fit;
+ document.querySelectorAll('#app .rail a').forEach((a,i)=>a.dataset.go=RAIL[st.role][i]);
+ const sc=document.querySelector('#app .scroll.end');if(sc)sc.scrollTop=sc.scrollHeight;
+ const hl=document.querySelector('#app .ditem.last'),hp=hl&&hl.closest('.scroll');if(hp)hp.scrollTop+=hl.getBoundingClientRect().top-hp.getBoundingClientRect().top-8;
+ if(st.jump){const e=document.querySelector(`#app [data-lec="${st.jump}"]`),sp=e&&e.closest('.scroll');if(sp)sp.scrollTop+=e.getBoundingClientRect().top-sp.getBoundingClientRect().top-150;st.jump=null;}
+}
+
+/* ============ HÌNH (Fig3D: PO-35, PO-36; giới hạn đo: PO-08, PO-42, PO-22) ============ */
+P.extend="M9 9h6v6H9zM4 12h2M18 12h2M12 4v2M12 18v2M4 12l2-2M4 12l2 2M20 12l-2-2M20 12l-2 2M12 4l-2 2M12 4l2 2M12 20l-2-2M12 20l2-2";
+const FIGP=id=>typeof Fig3D!=='undefined'&&!!Fig3D.SCENES[id];      // bài có hình mẫu tương tác (p1–p6); bài khác giữ hình tĩnh
+// Đại lượng ẩn trước giờ mở lời giải: đại lượng đề hỏi và đại lượng tương đương (PO-42). Bài không khai báo thì theo scene.asked của Fig3D.
+const HID={p1:['ang:S-D-A','ang:A-S-D']};
+const figState=k=>st.figs[k]||(st.figs[k]=Fig3D.newState());
+const figBox=(pid,key)=>`<div class="f3box" data-f3d="${pid}" data-f3k="${key}"></div>`;
+const figStatic=(p,h)=>sh[p.shape](p.c).replace('<svg',`<svg style="height:${h}"`);
+let FH=[],FIG=null;      // FH: mọi hình đang gắn; FIG: hình ở màn làm bài của học sinh
+function mountFigs(){
+ document.querySelectorAll('#app [data-f3d]').forEach(el=>{const pid=el.dataset.f3d,key=el.dataset.f3k,s=figState(key);let h;
+  if(key.startsWith('gv:')){      // giáo viên xem đề: hình đủ các bước của lời giải, không ẩn số đo
+   if(s.scene!==pid){Object.assign(s,Fig3D.newState(pid));s.step=Fig3D.SCENES[pid].steps.length;}
+   h=Fig3D.mount(el,pid,s,{hidden:[]});}
+  else if(key==='pv'){h=Fig3D.mount(el,pid,s,{hud:false});if(s.step)h.setStep(0);}      // xem như học sinh: lời giải còn khóa
+  else{const a=st.asg.find(x=>x.id===key),open=!!(a&&a.open),want=open&&st.view==='hs-work'&&st.tab==='sol'?st.step+1:0;
+   h=Fig3D.mount(el,pid,s,{hidden:open?[]:HID[pid],onEvent:ev=>figEvent(a,ev)});
+   if(s.step!==want)h.setStep(want);      // want > 0 chỉ khi lời giải đã mở (PO-36, PO-22)
+   FIG=h;}
+  FH.push(h);});}
+const measHTML=a=>(a.flog||[]).filter(x=>!(a.open&&x.hid)).map(x=>`<span class="${x.hid?'hid':''}">${x.t}</span>`).join('');
+function updFigUI(){if(!FIG||st.view!=='hs-work')return;const a=A();
+ document.querySelectorAll('#app .canvas .dock b').forEach(b=>b.classList.toggle('on',b.dataset.arg===FIG.state.tool));
+ const m=document.querySelector('#app .canvas .meas');if(m)m.innerHTML=measHTML(a);}
+// sự kiện của Fig3D → thông báo ngắn + tính vào hoạt động của học sinh (màn theo dõi của giáo viên đọc a.acts)
+function figEvent(a,ev){const t=ev.type,d=ev.detail;
+ if(!a||t==='step'||t==='pick'||t==='select')return;
+ a.acts++;
+ if(t==='tool')return updFigUI();
+ if(t==='view'&&!d.view)return;      // kéo để xoay, chụm để thu phóng: không cần thông báo
+ if(t==='add'||t==='measure')a.flog=(a.flog||[]).concat({t:d.text,hid:!!d.hidden}).slice(-3);
+ if(t==='clear'||t==='reset')a.flog=[];
+ toast(d.text,d.hidden?'lock':null);updFigUI();}
+const TOOLS=[['cursor','Chọn','select'],['point','Điểm','point'],['line','Đoạn','segment'],['plane','Mặt phẳng','plane'],['extend','Mở rộng','extend'],['ruler','Đo dài','length'],['angle','Đo góc','angle'],['reset','Đặt lại','reset']];
+const TTIP={extend:'Chạm cạnh để kéo dài, chạm mặt để mở rộng',reset:'Xóa phần vẽ thêm và về góc nhìn ban đầu'};
+const dockI=tool=>`<div class="dock">${TOOLS.map((x,i)=>`${i===5||i===7?'<i></i>':''}<b class="${x[2]===tool?'on':''}" data-act="tool" data-arg="${x[2]}"${TTIP[x[2]]?` title="${TTIP[x[2]]}"`:''}>${ic(x[0],'width:21px;height:21px')}${x[1]}</b>`).join('')}</div>`;
+
+/* ============ HỌC SINH ============ */
+// Nội dung có hiệu lực của một bài: bài được giao lấy theo giáo trình (PO-41: gộp gợi ý, thêm gợi ý, hướng lời giải, định dạng); tự học dùng bản gốc
+const EV=pid=>{const k=st.curr.find(k=>k.p===pid);return IV(k||{p:pid},(k&&k.fmt)||'full');};
+const VA=a=>a.self?IV({p:a.p},'full'):EV(a.p);
+const nHof=a=>VA(a).hints.length;
+const stateOf=a=>a.seen?nHof(a)+1:Math.min(a.hints,nHof(a));
+const stLbl=(s,n)=>s===0?'Chưa bắt đầu':s>n?'Đã xem lời giải':'Đã xem gợi ý'+(n>1?' '+s:'');
+const VIEWS={
+'hs-home':()=>shell('Chào An 👋',`Lớp 11A1 · em có ${st.asg.filter(a=>!a.seen&&!a.self).length} bài cần làm`,`
+<div class="col grow scroll" style="gap:14px;min-width:0">
+ ${flow('Bấm một bài để bắt đầu. Bài mới xuất hiện ở đây ngay khi <i>giáo viên giao</i>.')}
+ <h2 style="margin:0">Bài được giao</h2>
+ ${st.asg.map(a=>{const p=PB(a.p),s=stateOf(a),n=nHof(a);return `<div class="card pad row" style="gap:16px;align-items:stretch" data-act="open" data-arg="${a.id}">
+  <div class="thumb" style="width:132px;height:auto;flex-shrink:0">${sh[p.shape](p.c)}</div>
+  <div class="grow col" style="gap:8px"><div class="row">${a.open?`<span class="chip grn">${ic('unlock')}Lời giải đã mở</span>`:`<span class="chip yel">${ic('lock')}Lời giải mở ${a.rel}</span>`}<span class="chip">${p.topic}</span>${a.isNew?'<span class="chip org">Mới giao</span>':''}</div>
+  <div style="font-weight:700;font-size:14.5px">${p.short}</div>
+  <div class="steps" style="max-width:260px">${Array.from({length:n+1},(_,i)=>`<i class="${i<s?(s>n?'g':'on'):''}"></i>`).join('')}</div>
+  <div class="tiny muted">${stLbl(s,n)}</div></div>
+  <div class="col" style="justify-content:center"><span class="btn ${s===0?'soft':s>n?'ghost':''}">${ic(s>n?'eye':'play')}${s===0?'Bắt đầu':s>n?'Xem lại':'Làm tiếp'}</span></div></div>`}).join('')}
+ ${st.grade.approved?`<div class="card pad row" style="border-color:#B9E6D2;background:var(--grn-s)"><div class="icb grn">${ic('check')}</div><div class="grow"><b>Bài kiểm tra đã được trả</b><div class="small muted">Điểm đã được giáo viên duyệt: ${total()}/10 · "Em xác định góc đúng, xem lại cạnh kề trong tỉ số tan."</div></div><span class="chip pur">Chặng 5</span></div>`:''}
+ ${st.paths.an?`<div class="card pad row" style="border-color:#D9CCFF;background:var(--pur-s)" data-go="hs-path"><div class="icb pur" style="background:#fff">${ic('layers')}</div><div class="grow"><b>Lộ trình của em</b><div class="small muted">Giáo viên đã duyệt lộ trình riêng cho em · ${st.paths.an.rows.filter(r=>r.in&&r.p).length} bài</div></div><span class="chip pur">Chặng 6</span><span class="btn sm">${ic('arrow')}Xem</span></div>`:''}
+</div>
+<div class="col" style="width:360px;flex-shrink:0;gap:14px">
+ <div class="card pad" style="background:linear-gradient(135deg,#3B5BDB,#7C4DFF);color:#fff;border:none"><div class="row"><div class="icb" style="background:rgba(255,255,255,.2);color:#fff">${ic('flame')}</div><div><div style="font-size:22px;font-weight:800">3 ngày liên tiếp</div><div class="small" style="opacity:.85">Em đã tự xoay hình ở 5 bài tuần này</div></div></div></div>
+ <div class="card pad col" style="gap:12px"><h2 style="margin:0">Em đang học tới đâu</h2>${[['Góc','#3B5BDB',70],['Khoảng cách','#F0522B',35],['Thể tích','#0F8A5F',85]].map(x=>`<div><div class="row small" style="margin-bottom:5px"><b>${x[0]}</b><span class="muted" style="margin-left:auto">${x[2]}%</span></div><div class="bar"><i style="width:${x[2]}%;background:${x[1]}"></i></div></div>`).join('')}</div>
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Tự khám phá</h2><div class="small muted">Dán đề của em hoặc chọn một hình mẫu.</div><span class="btn soft" data-go="hs-self">${ic('cube')}Mở chế độ tự học</span></div></div>`),
+
+'hs-work':()=>{const a=A(),p=PB(a.p),v=VA(a),nH=v.hints.length,sN=stateOf(a),isSol=st.tab==='sol'&&a.open,f3=FIGP(p.id);
+ if(st.step>=v.steps.length)st.step=0;
+ const tabs=`<div class="tabs">${[['hint','bulb','Gợi ý'],['sol',a.open?'unlock':'lock','Lời giải'],['chat','chat','Hỏi đáp']].map(t=>`<span class="${st.tab===t[0]?'on':''}" data-act="tab" data-arg="${t[0]}">${ic(t[1])}${t[2]}</span>`).join('')}</div>`;
+ const kwTip=`<div class="tiny muted" data-part="kwtip">Chữ <span class="kw" style="cursor:default">gạch chân chấm</span> là từ khóa: bấm để đọc lại bài giảng.</div>`;
+ let side='';
+ if(st.tab==='hint')side=`<div><div class="row small" style="margin-bottom:6px"><b>Tiến độ của em</b><span class="muted" style="margin-left:auto">${sN}/${nH+1}</span></div><div class="steps">${Array.from({length:nH+1},(_,i)=>`<i class="${i<sN?'on':''}"></i>`).join('')}</div></div>
+  ${a.hints===0?`<div class="hint" style="background:var(--soft)"><div class="icb pri">${ic('cube')}</div><div><h3>Thử tự làm trước nhé</h3><p>${f3?'Kéo trên hình để xoay, dùng công cụ bên dưới để vẽ thêm và đo.':'Đọc kỹ đề và quan sát hình.'} Khi cần, bấm nút để xem gợi ý đầu tiên.</p></div></div>`:''}
+  ${v.hints.slice(0,a.hints).map((h,i)=>`<div class="hint ${i===a.hints-1?'act':''}"><div class="icb yel">${ic('bulb')}</div><div><h3>Gợi ý${nH>1?' '+(i+1):''} · ${i?'Bước kế tiếp':'Hướng nghĩ'}</h3><p>${kw(h)}</p></div></div>`).join('')}
+  ${a.hints>0?kwTip:''}
+  ${a.hints<nH?`<span class="btn" data-act="hint">${ic('bulb')}Xem gợi ý${nH>1?' '+(a.hints+1):''}</span>`:''}
+  ${a.open?`<div class="hint" style="border-color:#B9E6D2;background:var(--grn-s);align-items:center" data-act="tab" data-arg="sol"><div class="icb grn">${ic('unlock')}</div><div><h3>Lời giải đã mở</h3><p>Bấm để xem từng bước cùng hình.</p></div></div>`
+   :a.self?`<div class="hint lock" style="align-items:center"><div class="icb" style="background:#E7EBF4;color:var(--muted)">${ic('lock')}</div><div><h3>Lời giải mở sau gợi ý ${nH}</h3><p>Ở chế độ tự học, em xem hai gợi ý trước.</p></div></div>`
+   :`<div class="hint lock" style="align-items:center"><div class="icb" style="background:#E7EBF4;color:var(--muted)">${ic('lock')}</div><div><h3>Lời giải mở ${a.rel}</h3><p>Do giáo viên của em đặt.</p></div></div>`}`;
+ else if(st.tab==='sol')side=!a.open?`<div class="col" style="align-items:center;text-align:center;gap:12px;margin-top:40px"><div class="icb yel" style="width:84px;height:84px;border-radius:26px">${ic('lock','width:40px;height:40px')}</div><h2 style="margin:0;font-size:19px">Lời giải đang khóa</h2><div class="muted">Mở ${a.self?'sau khi em xem gợi ý '+nH:a.rel+', do giáo viên của em đặt'}.</div>
+   ${v.steps.map(()=>`<div class="hint" style="width:100%;opacity:.5"><div class="num">?</div><div class="grow"><div style="height:11px;width:60%;background:#E7EBF4;border-radius:9px"></div><div style="height:9px;width:92%;background:#EEF1F7;border-radius:9px;margin-top:8px"></div></div></div>`).join('')}
+   <span class="btn soft" data-act="tab" data-arg="hint">${ic('bulb')}Xem gợi ý trong lúc chờ</span></div>`
+  :`<div class="row"><span class="chip ${p.ok?'grn':'yel'}">${ic('shield')}${p.ok?'Đáp số đã kiểm chứng':'Cần xem lại'}</span><span class="chip pur">${ic('spark')}AI soạn</span></div>
+   ${v.steps.map((s,i)=>`<div class="hint ${i===st.step?'act':''}" data-act="step" data-arg="${i}"><div class="num ${i<st.step?'done':i===st.step?'on':''}">${i+1}</div><div><h3>${s[0]}</h3><p>${kw(s[1])}</p>${i===st.step&&v.fmt!=='short'?`<div class="small" style="margin-top:8px;padding:8px 10px;border-radius:10px;background:#fff;border:1px dashed #C9D3F5"><b style="color:var(--pri)">Vì sao nghĩ ra bước này?</b> ${kw(s[2])}</div>`:''}</div></div>`).join('')}
+   ${f3?`<div class="tiny muted" data-part="steptip">Phần vẽ thêm của bước đang xem hiện dần trên hình; các bước trước mờ đi.</div>`:''}
+   <div class="grow"></div><div class="row"><span class="btn ghost grow" data-act="step" data-arg="${Math.max(0,st.step-1)}">${ic('arrow','transform:rotate(180deg)')}Bước trước</span><span class="btn grow" data-act="step" data-arg="${Math.min(v.steps.length-1,st.step+1)}">Bước sau${ic('arrow')}</span></div>`;
+ else side=`<div class="col grow scroll end" style="gap:9px"><div class="bub ai">Em cứ hỏi về bài này. Mình trả lời dựa trên giáo trình của lớp và ghi rõ nguồn. ${a.open?'':'Trước giờ mở lời giải, mình chỉ giải thích khái niệm và gợi hướng, không nêu đáp số.'}</div>${a.chat.map(m=>bubHTML(m,a)).join('')}</div>
+  <div class="row qs" style="gap:6px;flex-wrap:wrap">${QS(a).map(q=>`<span class="chip pri" data-act="ask" data-arg="${q}">${q}</span>`).join('')}</div>
+  <div class="field" style="background:var(--soft)">${ic('chat')}<input class="in" id="q" placeholder="Hỏi về bài này…"><div class="icb pri" style="width:32px;height:32px" data-act="ask">${ic('send','width:16px;height:16px')}</div></div>`;
+ return shell(p.short,a.self?'Tự học':'Bài được giao · lớp '+a.cls,`
+<div class="canvas ${f3?'c3d':'noviews'}"><div class="prob"><div class="icb pri">${ic('file')}</div><div class="grow">${VA(a).t}</div><span class="chip ${p.ok?'grn':'yel'}">${ic('shield')}${p.ok?'Hình đã kiểm chứng':'Cần xem lại'}</span></div>
+ <div class="fig">${f3?figBox(p.id,a.id):figStatic(p,'78%')}</div>
+ ${f3?`<div class="views"><span data-act="view" data-arg="front">${ic('eye')}Nhìn từ trước</span><span data-act="view" data-arg="top">${ic('layers')}Nhìn từ trên</span><span data-act="view" data-arg="default">${ic('cube')}Xoay tự do</span></div>
+ <div class="meas" style="bottom:96px">${measHTML(a)}</div>${dockI((st.figs[a.id]&&st.figs[a.id].tool)||'select')}`
+ :`<div class="fnote">${ic('cube')}Hình tĩnh: bài này chưa có hình tương tác trong bản mẫu.</div>`}</div>
+<div class="card side hsw">${tabs}<div class="pad col grow" style="gap:11px;min-height:0">${side}</div></div>`,{top:`<span class="btn sm ghost" data-go="hs-home">${ic('arrow','transform:rotate(180deg)')}Bài của em</span>`});},
+
+'hs-self':()=>shell('Tự học','Dán đề của em, hoặc chọn một hình để khám phá',`
+<div class="col grow" style="gap:14px;min-width:0">
+ ${flow('Nhập đề → bấm <i>Dựng hình</i> → hệ thống đọc đề, dựng hình, kiểm chứng → mở màn hình làm bài.')}
+ <div class="card pad col" style="gap:12px"><div class="row"><div class="icb pri">${ic('edit')}</div><h2 style="margin:0">Đề bài của em</h2></div>
+  <div class="field" style="align-items:flex-start;height:104px;font-weight:500"><textarea class="in" id="selfq" style="height:100%">Mặt cầu ngoại tiếp hình lập phương cạnh a. Tính bán kính và thể tích khối cầu.</textarea></div>
+  <div class="row"><span class="btn ghost" data-act="toastx" data-arg="Bản mẫu: ảnh đề sẽ được đọc thành chữ để em sửa lại">${ic('camera')}Chụp hoặc dán ảnh đề</span><span class="btn" style="margin-left:auto;padding:11px 22px" data-act="build">${ic('spark')}Dựng hình</span></div></div>
+ <div class="card pad"><h2>Hoặc chọn một hình mẫu</h2><div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px">${PROBS.map(p=>`<div class="col" style="gap:7px;align-items:center" data-act="selfp" data-arg="${p.id}"><div class="thumb" style="width:100%;height:120px">${sh[p.shape](p.c)}</div><b class="small">${{chop:'Hình chóp',hop:'Hình hộp',lang:'Lăng trụ',non:'Hình nón',tru:'Hình trụ',cau:'Hình cầu'}[p.shape]}</b></div>`).join('')}</div></div></div>`),
+
+'hs-loading':()=>shell('Đang dựng hình…','Tự học',`<div class="card pad col grow" style="align-items:center;justify-content:center;gap:16px">
+ <div class="spin" style="width:60px;height:60px"></div>
+ ${['Đọc đề bài','Dựng hình từ điều kiện của đề','Kiểm chứng bằng tính toán','Soạn gợi ý từng mức'].map((t,i)=>`<div class="row" style="width:360px"><div class="num ${i<st.load?'done':i===st.load?'on':''}">${i<st.load?ic('check','width:14px;height:14px;stroke-width:3'):i+1}</div><b style="${i>st.load?'color:var(--faint)':''}">${t}</b></div>`).join('')}</div>`),
+
+'hs-history':()=>shell('Lịch sử','Bài em đã làm và câu em đã hỏi',`
+<div class="card pad col grow" style="gap:10px"><h2 style="margin:0">Bài đã làm</h2>${st.asg.map(a=>{const p=PB(a.p);return `<div class="hint" style="align-items:center" data-act="open" data-arg="${a.id}"><div class="thumb" style="width:58px;height:58px;flex-shrink:0">${sh[p.shape](p.c).replace('<svg','<svg style="height:42px"')}</div><div class="grow"><h3>${p.short}</h3><p>${a.self?'Tự học':'Lớp '+a.cls} · ${a.hints} gợi ý · ${a.chat.filter(m=>m.me).length} câu hỏi</p></div><span class="chip ${a.seen?'grn':'yel'}">${a.seen?'Đã xem lời giải':'Đang làm'}</span></div>`}).join('')}</div>
+<div class="card pad col" style="width:420px;flex-shrink:0;gap:10px"><h2 style="margin:0">Nhật ký hỏi đáp</h2>${st.asg.flatMap(a=>a.chat.filter(m=>m.me).map(m=>`<div class="hint"><div class="icb pur">${ic('chat')}</div><div><h3>"${m.t}"</h3><p>${PB(a.p).short}</p></div></div>`)).join('')||'<div class="muted small">Em chưa hỏi câu nào. Vào một bài và mở tab Hỏi đáp.</div>'}</div>`),
+
+'hs-group':()=>shell('Nhóm học: Hình không gian 11','Chặng 7 · nhóm liên trường · có giáo viên điều phối',bodyOf(V7).replace(/<div class="pad col grow" style="gap:12px">[\s\S]*$/,`<div class="pad col grow" style="gap:10px;min-height:0"><div class="col grow scroll end" style="gap:9px">${st.grp.map(m=>`<div class="bub ${m[0]==='An'?'me':m[0]==='Trợ lý nhóm'?'ai':'ot'}"><b class="tiny">${m[0]}</b><br>${m[2]}</div>`).join('')}</div>
+ <div class="field" style="background:var(--soft)">${ic('chat')}<input class="in" id="gq" placeholder="Nhắn cả nhóm…" value="${st.grp.length<3?'Vậy kẻ AH ⊥ SO là xong đúng không?':''}"><div class="icb pri" style="width:32px;height:32px" data-act="gsend">${ic('send','width:16px;height:16px')}</div></div>
+ <div class="row tiny muted"><span class="chip red" data-act="toastx" data-arg="Đã gửi báo cáo tới giáo viên điều phối">${ic('flag')}Báo cáo</span><span>Giáo viên điều phối theo dõi trao đổi.</span></div></div></div>`)),
+
+'hs-subject':()=>{const a=st.pa;const pts=Array.from({length:41},(_,i)=>{const x=-4+i*.2,y=a*x*x-2;return `${220+x*40},${200-y*24}`}).join(' ');
+ return shell(st.subj==='phang'?'Hình học phẳng':'Hàm số và đồ thị',st.subj==='phang'?'Chặng 2 · trọn môn Hình học':'Chặng 4 · môn học thứ hai dùng lại khung môn học',`
+<div class="canvas"><div class="prob"><div class="icb pri">${ic('file')}</div><div class="grow">${st.subj==='phang'?'Cho tam giác ABC vuông tại A, AB = 3, AC = 4. Tính BC và đường cao AH.':'Khảo sát đồ thị hàm số y = ax² − 2. Kéo thanh trượt để xem a thay đổi đồ thị thế nào.'}</div><span class="chip grn">${ic('shield')}Đã kiểm chứng</span></div>
+ <div class="fig">${st.subj==='phang'?`<svg viewBox="0 0 440 360"><polygon points="80,300 380,300 80,75" fill="#3B5BDB" fill-opacity=".1" stroke="#253150" stroke-width="2.6" stroke-linejoin="round"/><line x1="80" y1="300" x2="188" y2="219" stroke="#F0522B" stroke-width="3" stroke-dasharray="8 6"/><path d="M80,280h20v20" fill="none" stroke="#253150" stroke-width="2"/><g fill="#141B2D"><circle cx="80" cy="300" r="5"/><circle cx="380" cy="300" r="5"/><circle cx="80" cy="75" r="5"/></g><circle cx="188" cy="219" r="6" fill="#F0522B"/><g font-size="19" font-weight="800" fill="#141B2D"><text x="56" y="322">A</text><text x="388" y="322">C</text><text x="56" y="70">B</text></g><text x="198" y="212" fill="#F0522B" font-size="19" font-weight="800">H</text><g font-size="15" font-weight="700" fill="#5F6B85"><text x="50" y="194">3</text><text x="222" y="326">4</text><text x="236" y="176">5</text></g></svg>`
+  :`<svg viewBox="0 0 440 360"><g stroke="#DCE2EF">${Array.from({length:11},(_,i)=>`<line x1="${20+i*40}" y1="20" x2="${20+i*40}" y2="340"/>`).join('')}${Array.from({length:8},(_,i)=>`<line x1="20" y1="${32+i*48}" x2="420" y2="${32+i*48}"/>`).join('')}</g><line x1="20" y1="200" x2="420" y2="200" stroke="#253150" stroke-width="2"/><line x1="220" y1="20" x2="220" y2="340" stroke="#253150" stroke-width="2"/><clipPath id="cp"><rect x="20" y="20" width="400" height="320"/></clipPath><polyline points="${pts}" fill="none" stroke="#F0522B" stroke-width="3.5" clip-path="url(#cp)"/><circle cx="220" cy="248" r="6" fill="#3B5BDB"/><text x="230" y="266" font-size="15" font-weight="800" fill="#3B5BDB">Đỉnh (0; −2)</text><text x="404" y="194" font-size="15" font-weight="700">x</text><text x="228" y="34" font-size="15" font-weight="700">y</text></svg>`}</div>
+ <div class="views" style="top:90px"><span class="${st.subj==='phang'?'':''}" data-act="subj" data-arg="phang">${ic('layers')}Hình học phẳng</span><span data-act="subj" data-arg="hamso">${ic('chart')}Hàm số và đồ thị</span></div></div>
+<div class="card side"><div class="tabs"><span class="on">${ic('bulb')}Gợi ý</span><span>${ic('lock')}Lời giải</span><span>${ic('chat')}Hỏi đáp</span></div><div class="pad col grow" style="gap:11px">
+ ${st.subj==='phang'?`<div class="hint act"><div class="icb yel">${ic('bulb')}</div><div><h3>Gợi ý 1 · Hướng nghĩ</h3><p>Tam giác vuông: bình phương cạnh huyền bằng tổng bình phương hai cạnh góc vuông.</p></div></div><div class="hint"><div class="icb yel">${ic('bulb')}</div><div><h3>Gợi ý 2 · Bước kế tiếp</h3><p>Tính diện tích tam giác theo hai cách để suy ra AH.</p></div></div>`
+  :`<div class="hint act"><div class="icb pri">${ic('chart')}</div><div class="grow"><h3>Hệ số a = ${vn(a.toFixed(1))}</h3><p>${a>0?'a > 0: đồ thị quay bề lõm lên trên.':a<0?'a < 0: đồ thị quay bề lõm xuống dưới.':'a = 0: đồ thị là đường thẳng y = −2.'}</p><input type="range" min="-2" max="2" step="0.1" value="${a}" id="rng" style="margin-top:8px"></div></div><div class="hint"><div class="icb yel">${ic('bulb')}</div><div><h3>Thử xem</h3><p>Kéo a về số âm. Đỉnh của parabol có đổi chỗ không?</p></div></div>`}
+ <div class="hint lock" style="align-items:center"><div class="icb" style="background:#E7EBF4;color:var(--muted)">${ic('lock')}</div><div><h3>Cùng một cách học</h3><p>Hình đã kiểm chứng, gợi ý trước, lời giải mở theo giờ giáo viên đặt.</p></div></div></div></div>`);},
+
+/* ============ GIÁO VIÊN ============ */
+'gv-home':()=>shell('Tổng quan','Giáo viên mẫu · 2 lớp',`
+<div class="col grow scroll" style="gap:14px;min-width:0">
+ <div class="row" style="gap:14px">${[['users','pri','2','lớp'],['book','org',String(48+st.libExtra),'đề trong kho'],['send','grn',String(st.asg.filter(a=>!a.self).length),'bài đang giao'],['lock','yel',String(st.asg.filter(a=>!a.open&&!a.self).length),'lời giải đang khóa']].map(x=>`<div class="card stat"><div class="icb ${x[1]}">${ic(x[0])}</div><div><b>${x[2]}</b><span class="small muted">${x[3]}</span></div></div>`).join('')}</div>
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Bài đang giao</h2>${st.asg.filter(a=>!a.self).map(a=>`<div class="hint" style="align-items:center" data-act="track" data-arg="${a.id}"><div class="thumb" style="width:58px;height:58px;flex-shrink:0">${sh[PB(a.p).shape](PB(a.p).c).replace('<svg','<svg style="height:42px"')}</div><div class="grow"><h3>${PB(a.p).short}</h3><p>Lớp ${a.cls}</p></div>${a.open?`<span class="chip grn">${ic('unlock')}Lời giải đã mở</span>`:`<span class="chip yel">${ic('lock')}Mở ${a.rel}</span>`}<span class="btn sm ghost">${ic('chart')}Theo dõi</span></div>`).join('')}</div>
+ <div class="row" style="gap:14px"><div class="card pad row grow" data-go="gv-lib"><div class="icb pri">${ic('book')}</div><div><b>Mở kho đề</b><div class="small muted">Chọn đề và giao cho lớp</div></div></div><div class="card pad row grow" data-go="gv-copilot"><div class="icb pur">${ic('spark')}</div><div><b>Trợ lý soạn đề</b><div class="small muted">Chặng 5 · concept</div></div></div></div></div>
+<div class="card pad col" style="width:380px;flex-shrink:0;gap:10px"><h2 style="margin:0">Tin nhắn từ phụ huynh</h2><div class="tiny muted">Chặng 6 · concept</div>${st.msgs.filter(m=>m.f==='ph').map(m=>`<div class="hint"><div class="ava" style="background:#0F8A5F;width:34px;height:34px;font-size:12px">PH</div><div><h3>Phụ huynh của An</h3><p>${m.t}</p></div></div>`).join('')||'<div class="small muted">Chưa có tin nhắn mới. Thử chuyển sang vai Phụ huynh và gửi một tin.</div>'}</div>`),
+
+'gv-lib':()=>shell('Kho đề hình không gian',`${48+st.libExtra} đề · tài liệu của Giáo viên mẫu`,`<div class="col grow scroll" style="gap:14px;min-width:0">
+ ${flow('Bấm một đề để xem hình và lời giải, rồi <i>giao cho lớp</i> và đặt giờ mở lời giải.')}
+ <div class="row"><div class="field grow">${ic('search')}<span class="muted" style="font-weight:500">Tìm theo nội dung đề</span></div><span class="btn ghost" data-go="gv-edit">${ic('plus')}Thêm đề</span></div>
+ <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">${PROBS.map(p=>`<div class="card pad col" style="gap:10px" data-act="prob" data-arg="${p.id}"><div class="thumb">${sh[p.shape](p.c)}</div>
+  <div class="row" style="gap:6px"><span class="chip pri">${p.lv}</span><span class="chip">${p.topic}</span>${p.ok?`<span class="chip grn" style="margin-left:auto">${ic('shield')}Đã kiểm chứng</span>`:`<span class="chip yel" style="margin-left:auto">Cần xem lại</span>`}</div>
+  <div style="font-weight:600;font-size:13.5px;height:58px;overflow:hidden">${p.t}</div>
+  <div class="row"><span class="tiny muted row" style="gap:4px">${ic('spark','width:13px;height:13px')}AI soạn · ${p.steps.length} bước</span>${st.asg.some(a=>a.p===p.id&&!a.self)?`<span class="chip grn" style="margin-left:auto">${ic('check')}Đã giao</span>`:`<span class="btn sm" style="margin-left:auto">${ic('send')}Giao bài</span>`}</div></div>`).join('')}</div></div>`),
+
+'gv-prob':()=>{const p=PB(st.pid),done=st.asg.some(a=>a.p===p.id&&!a.self),v=EV(p.id),k=st.curr.find(k=>k.p===p.id),md=k?modsOf(k):[];return shell('Chi tiết đề & giao bài',(st.back?'Giáo trình › ':'Kho đề › ')+p.topic,`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="canvas" style="flex:none;height:380px"><div class="prob"><div class="icb pri">${ic('file')}</div><div class="grow">${v.t}</div><span class="chip ${v.ok?'grn':'yel'}">${ic('shield')}${v.ok?'Đã kiểm chứng':'Cần xem lại'}</span></div>
+  <div class="fig" style="bottom:14px">${FIGP(p.id)?figBox(p.id,'gv:'+p.id):figStatic(p,'80%')}</div></div>
+ <div class="card pad grow scroll"><div class="row" style="margin-bottom:10px;flex-wrap:wrap"><h2 style="margin:0">Gợi ý và lời giải</h2><span class="chip pur">${ic('spark')}AI soạn</span><span class="chip ${p.ok?'grn':'yel'}">Đáp số: ${p.ans}</span>${k?`<span class="chip pri" data-part="fromcurr">${ic('layers')}Theo giáo trình lớp 11A1${md.length?' · '+md.join(', ').toLowerCase():''}</span>`:''}</div>
+  <div class="col" style="gap:6px;margin-bottom:12px" data-part="gvhints">${v.hints.map((h,i)=>`<div class="row small" style="align-items:flex-start;gap:8px"><span class="chip yel" style="flex-shrink:0">${ic('bulb')}Gợi ý${v.hints.length>1?' '+(i+1):''}</span><span>${h}</span></div>`).join('')}</div>
+  <div class="col" style="gap:9px" data-part="gvsteps">${v.steps.map((s,i)=>`<div class="row" style="align-items:flex-start"><div class="num done">${i+1}</div><div><h3>${s[0]}</h3><div class="small muted">${s[1]}</div></div></div>`).join('')}</div></div></div>
+<div class="card pad col" style="width:392px;flex-shrink:0;gap:14px">
+ <div class="row"><div class="icb org">${ic('send')}</div><div><h2 style="margin:0">Giao bài cho lớp</h2><div class="small muted">Ba bước</div></div></div>
+ <div><div class="lbl">1 · Chọn lớp</div><div class="row">${['11A1','9B'].map(c=>`<span class="chip ${st.sel.cls===c?'on':''}" style="padding:8px 13px;font-size:12.5px" data-act="selcls" data-arg="${c}">${st.sel.cls===c?ic('check'):''}${c} · ${c==='9B'?'THCS':'THPT'}</span>`).join('')}</div></div>
+ <div><div class="lbl">2 · Trợ giúp trong lúc làm</div><div class="col" style="gap:8px"><div class="field">${ic('bulb')}<span class="grow">${['','Một gợi ý','Gợi ý mức 1 và 2','Gợi ý mức 1, 2 và 3'][v.hints.length]}</span><div class="toggle"></div></div><div class="field">${ic('chat')}<span class="grow">Hỏi đáp theo giáo trình (không nêu đáp số)</span><div class="toggle"></div></div></div></div>
+ <div><div class="lbl">3 · Thời điểm mở lời giải</div><div class="col" style="gap:7px">${['ngay bây giờ','19:00 hôm nay','thứ Tư 25/11'].map(r=>`<div class="field" style="${st.sel.rel===r?'border-color:var(--pri);background:var(--pri-s);color:var(--pri)':''}" data-act="selrel" data-arg="${r}">${ic(r==='ngay bây giờ'?'unlock':'clock')}<span class="grow">${r[0].toUpperCase()+r.slice(1)}</span>${st.sel.rel===r?ic('check'):''}</div>`).join('')}</div></div>
+ <div class="hint lock" style="align-items:center"><div class="icb yel">${ic('lock')}</div><div class="small">${st.sel.rel==='ngay bây giờ'?'Học sinh xem được lời giải ngay.':`Trước <b>${st.sel.rel}</b>, học sinh chỉ thấy đề, hình và gợi ý.`}</div></div>
+ <div class="grow"></div>
+ ${done?`<span class="btn grn" data-go="gv-track">${ic('check')}Đã giao · xem theo dõi lớp</span>`:`<span class="btn" style="padding:13px" data-act="assign">${ic('send')}Giao bài cho ${st.sel.cls}</span>`}</div>`,{top:`<span class="btn sm ghost" data-go="${st.back||'gv-lib'}">${ic('arrow','transform:rotate(180deg)')}${st.back?'Giáo trình':'Kho đề'}</span>`});},
+
+'gv-edit':()=>shell('Thêm đề mới','Chặng 2 · giáo viên tự thêm đề, sửa và duyệt lời giải',`
+<div class="card pad col grow" style="gap:12px"><h2 style="margin:0">Đề bài</h2><div class="field" style="align-items:flex-start;height:96px;font-weight:500">Cho hình chóp đều S.ABCD cạnh đáy a, cạnh bên a√2. Tính thể tích khối chóp.</div>
+ <div class="row"><span class="chip on">THPT</span><span class="chip">THCS</span><span class="chip pri">Thể tích</span><span class="btn sm ghost" style="margin-left:auto">${ic('camera')}Nhập từ ảnh hoặc PDF</span></div>
+ <h2 style="margin:8px 0 0">Lời giải do AI đề xuất</h2>
+ ${[['Chiều cao','SO = √(SA² − OA²) = √(2a² − a²/2) = a√6/2.'],['Thể tích','V = ⅓·a²·a√6/2 = a³√6/6.']].map((s,i)=>`<div class="hint" style="align-items:center"><div class="num on">${i+1}</div><div class="grow"><h3>${s[0]}</h3><p>${s[1]}</p></div><span class="btn sm ghost">${ic('edit')}Sửa</span></div>`).join('')}
+ <div class="grow"></div><div class="row"><span class="chip grn">${ic('shield')}Đáp số khớp tính toán</span><span class="btn grn" style="margin-left:auto" data-act="adddone">${ic('check')}Duyệt và đưa vào kho</span></div></div>
+<div class="canvas" style="width:480px;flex:none"><div class="fig" style="top:20px;bottom:20px">${sh.chop('#E8A200').replace('<svg','<svg style="height:70%"')}</div></div>`),
+
+'gv-class':()=>shell('Lớp học','2 lớp mẫu',`
+<div class="col" style="width:330px;flex-shrink:0;gap:14px">${[['11A1','THPT','LOP-11A1',1],['9B','THCS','LOP-9B',0]].map(c=>`<div class="card pad col" style="gap:8px;${c[3]?'border-color:var(--pri)':''}"><div class="row"><div class="icb ${c[3]?'pri':'org'}">${ic('users')}</div><div><h2 style="margin:0">${c[0]}</h2><div class="small muted">${c[1]} · 5 học sinh</div></div></div><div class="field kbd">${ic('lock')}Mã lớp: ${c[2]}<span class="chip" style="margin-left:auto" data-act="toastx" data-arg="Đã chép mã lớp">Chép</span></div></div>`).join('')}
+ <div class="card pad col" style="gap:8px;border-style:dashed"><div class="row"><div class="icb pur">${ic('plus')}</div><div><b>Tạo lớp mới</b><div class="small muted">Chặng 3 · tài khoản chính thức, nhiều lớp</div></div></div></div></div>
+<div class="card pad grow"><h2>Học sinh lớp 11A1</h2><table><thead><tr><th>Học sinh</th><th>Bài đã làm</th><th>Gợi ý đã dùng</th><th>Hoạt động gần nhất</th><th></th></tr></thead><tbody>
+ ${[['An','#F0522B',st.asg.filter(a=>a.seen&&!a.self).length+'/'+st.asg.filter(a=>!a.self).length,st.asg.reduce((s,a)=>s+a.hints,0),'Vừa xong'],['Bình','#3B5BDB','1/2',1,'11 phút trước'],['Chi','#0F8A5F','2/2',0,'Hôm nay'],['Dũng','#7C4DFF','1/2',4,'Hôm nay'],['Hà','#0EA5E9','0/2',0,'3 ngày trước']].map(x=>`<tr><td><div class="row"><div class="ava" style="width:30px;height:30px;font-size:12px;background:${x[1]}">${x[0][0]}</div><b>${x[0]}</b></div></td><td>${x[2]}</td><td>${x[3]}</td><td class="muted">${x[4]}</td><td>${x[0]==='An'?`<span class="btn sm ghost" data-go="gv-profile">${ic('chart')}Hồ sơ</span>`:''}</td></tr>`).join('')}</tbody></table></div>`),
+
+'gv-track':()=>{const a=st.asg.find(x=>x.id===st.tr)||st.asg.find(x=>!x.self),p=PB(a.p),qs=a.chat.filter(m=>m.me),nH=nHof(a),ml=KBP[p.id]&&KBP[p.id][0];
+ const row=(n,c,open,h,q,stt)=>`<tr><td><div class="row"><div class="ava" style="width:30px;height:30px;font-size:12px;background:${c}">${n[0]}</div><b>${n}</b></div></td><td>${open?`<span class="chip grn">${ic('check')}Đã mở</span>`:'<span class="chip">Chưa mở</span>'}</td><td>${Array.from({length:nH},(_,i)=>`<span class="dot ${h>i?'on':''}">${ic('bulb')}</span>`).join('')}</td><td>${q?`<span class="chip pri">${ic('chat')}${q} câu</span>`:'<span class="muted">—</span>'}</td><td>${stt}</td></tr>`;
+ const anSt=a.seen?'<span class="chip grn">Đã xem lời giải</span>':a.hints>=nH&&!a.open?'<span class="chip yel">Đang chờ lời giải</span>':a.acts||a.hints?'<span class="chip pri">Đang làm</span>':'<span class="chip">Chưa bắt đầu</span>';
+ return shell('Theo dõi lớp '+a.cls,'Bài: '+p.short,`
+<div class="col grow scroll" style="gap:14px;min-width:0">
+ <div class="row" style="gap:6px">${st.asg.filter(x=>!x.self).map(x=>`<span class="chip ${x.id===a.id?'on':''}" data-act="track" data-arg="${x.id}">${PB(x.p).topic} · ${SHN[PB(x.p).shape]}</span>`).join('')}</div>
+ ${flow('Dòng của <i>An</i> cập nhật theo đúng những gì bạn làm ở vai Học sinh: mở bài, gợi ý, câu hỏi.')}
+ <div class="card pad"><div class="row" style="margin-bottom:6px"><h2 style="margin:0">Học sinh</h2><span class="chip" style="margin-left:auto">Dữ liệu mẫu</span></div>
+ <table><thead><tr><th>Học sinh</th><th>Mở bài</th><th>Gợi ý ${Array.from({length:nH},(_,i)=>i+1).join(' · ')}</th><th>Hỏi đáp</th><th>Tình trạng</th></tr></thead><tbody>
+ ${row('An','#F0522B',a.acts||a.hints||a.seen,a.hints,qs.length,anSt)}${row('Bình','#3B5BDB',1,1,2,'<span class="chip pri">Đang làm</span>')}${row('Chi','#0F8A5F',1,0,0,'<span class="chip grn">Tự làm, không cần gợi ý</span>')}${row('Dũng','#7C4DFF',1,2,2,a.open?'<span class="chip grn">Đã xem lời giải</span>':'<span class="chip yel">Đang chờ lời giải</span>')}${row('Hà','#0EA5E9',0,0,0,'<span class="chip">Chưa bắt đầu</span>')}</tbody></table></div></div>
+<div class="col" style="width:372px;flex-shrink:0;gap:14px">
+ ${a.open?`<div class="card pad col" style="gap:10px;border-color:#B9E6D2;background:var(--grn-s)"><div class="row"><div class="icb grn">${ic('unlock')}</div><div><h2 style="margin:0">Lời giải đã mở</h2><div class="small muted">Học sinh xem được từng bước cùng hình.</div></div></div></div>`
+  :`<div class="card pad col" style="gap:12px;border-color:#F4D58A;background:#FFFBEE"><div class="row"><div class="icb yel">${ic('lock')}</div><div><h2 style="margin:0">Lời giải đang khóa</h2><div class="small muted">Mở ${a.rel}</div></div></div><div class="row"><span class="btn org grow" data-act="release" data-arg="${a.id}">${ic('unlock')}Mở ngay</span><span class="btn ghost grow" data-act="modal" data-arg="time">${ic('clock')}Đổi giờ</span></div></div>`}
+ <div class="card pad grow col scroll" style="gap:10px" data-part="asked"><div><h2 style="margin:0">Học sinh đang hỏi gì</h2><div class="tiny muted">Kèm nguồn trong giáo trình mà trợ lý đã dùng để trả lời.</div></div>
+  ${qs.map(m=>`<div class="hint" style="border-color:#C9D3F5;background:#F5F7FF" data-q="1"><div class="icb pri">${ic('chat')}</div><div class="grow"><h3>"${esc(m.t)}"</h3><p>An · vừa xong</p>${ansSrc(m.ans)}</div></div>`).join('')}
+  <div class="hint"><div class="icb pur">${ic('chat')}</div><div class="grow"><h3>"${p.id==='p1'?'Góc cần tìm là góc nào trên hình?':'Em nên bắt đầu từ đâu?'}"</h3><p>Bình, Dũng · 3 lượt</p>${ansSrc({src:ml||'bai'})}</div></div></div></div>`);},
+
+'gv-profile':()=>shell('Hồ sơ học tập · An','Chặng 6 · nhận định dựa trên bằng chứng',bodyOf(V2),{top:`<span class="btn sm ghost" data-go="gv-class">${ic('arrow','transform:rotate(180deg)')}Lớp học</span>`}),
+
+'gv-grade':()=>{const g=st.grade;return shell('Chấm bài · An (11A1)','Chặng 5 · AI đề xuất điểm theo từng tiêu chí, giáo viên duyệt mới thành điểm chính thức',`
+<div class="card pad col" style="width:450px;flex-shrink:0;gap:10px"><div class="row"><h2 style="margin:0">Bài làm viết tay</h2><span class="chip" style="margin-left:auto">Ảnh gốc</span></div>
+ <div class="paper grow">Ta có SA ⊥ (ABCD) nên A là hình chiếu của S<br>⇒ hình chiếu của SD lên đáy là AD<br>⇒ góc cần tìm là góc SDA<br>Tam giác SAD vuông tại A:<br>tan SDA = SA / SD = a / a√2<br>⇒ góc SDA ≈ 35°<div class="mark" style="left:10px;right:60px;top:121px;height:56px"></div></div>
+ <div class="hint" style="border-color:#F7C2B3;background:var(--org-s);align-items:center"><div class="icb org">${ic('flag')}</div><div class="small"><b>AI tìm thấy chỗ sai:</b> dùng SD thay cho AD ở mẫu số. Đáp số đúng là 45°.</div></div></div>
+<div class="col grow" style="gap:12px;min-width:0">
+ ${flow('Bấm <i>− / +</i> để sửa điểm AI đề xuất, bấm <i>Nhận</i> từng tiêu chí, rồi <i>Duyệt và trả bài</i>. Học sinh và phụ huynh chỉ thấy điểm sau khi duyệt.')}
+ <div class="card pad col" style="gap:10px"><div class="row"><h2 style="margin:0">Tiêu chí chấm</h2><span class="chip pur">${ic('spark')}Đề xuất của AI</span></div>
+ ${g.crit.map((c,i)=>`<div class="hint" style="align-items:center"><div class="grow"><h3>${c[0]}</h3><p>${c[1]}</p></div>
+  <span class="chip" data-act="pt" data-arg="${i},-0.5">−</span><div style="text-align:center;width:62px"><div style="font-size:19px;font-weight:800;color:var(--pri)">${vn(c[2])}<span class="muted" style="font-size:12px">/${c[3]}</span></div></div><span class="chip" data-act="pt" data-arg="${i},0.5">+</span>
+  <span class="btn sm ${c[4]?'grn':'ghost'}" data-act="acc" data-arg="${i}" style="width:104px">${c[4]?ic('check')+'Đã nhận':'Nhận'}</span></div>`).join('')}</div>
+ <div class="card pad row" style="gap:16px"><div><div class="small muted">${g.approved?'Điểm chính thức':'Tổng điểm đề xuất'}</div><div style="font-size:30px;font-weight:800">${total()}<span class="muted" style="font-size:16px">/10</span></div></div>
+  <div class="field grow" style="font-weight:500;color:var(--muted)">${ic('edit')}Em xác định góc đúng, xem lại cạnh kề trong tỉ số tan.</div>
+  ${g.approved?`<span class="chip grn" style="padding:10px 16px;font-size:13px">${ic('check')}Đã duyệt và trả bài</span>`:`<span class="btn grn" style="padding:13px 20px" data-act="approve">${ic('check')}Duyệt và trả bài</span>`}</div></div>`);},
+
+'gv-copilot':()=>shell('Trợ lý giáo viên','Chặng 5 · AI soạn nháp từ tài liệu của thầy cô; chỉ dùng khi thầy cô duyệt',`
+<div class="card pad col" style="width:400px;flex-shrink:0;gap:12px"><h2 style="margin:0">Thầy cô cần gì hôm nay?</h2>
+ ${[['file','pri','Soạn giáo án'],['layers','org','Tạo bộ đề luyện tập'],['chart','grn','Tổng hợp lỗi sai của lớp'],['chat','pur','Soạn thông báo, báo cáo phụ huynh']].map((x,i)=>`<div class="hint ${i===1?'act':''}" style="align-items:center"><div class="icb ${x[1]}">${ic(x[0])}</div><h3>${x[2]}</h3></div>`).join('')}
+ <div class="grow"></div><div class="field" style="align-items:flex-start;height:84px;font-weight:500"><textarea class="in" style="height:100%">Tạo 3 bài về khoảng cách từ điểm đến mặt phẳng cho 11A1: 1 dễ, 1 vừa, 1 khó.</textarea></div>
+ <span class="btn" data-act="draft">${ic('spark')}Soạn nháp</span></div>
+<div class="card pad col grow" style="gap:12px;min-width:0">${st.cop===0?`<div class="col grow" style="align-items:center;justify-content:center;gap:10px;color:var(--muted)"><div class="icb pur" style="width:72px;height:72px;border-radius:22px">${ic('spark','width:34px;height:34px')}</div><b>Bản nháp sẽ hiện ở đây</b><div class="small">Bấm "Soạn nháp" ở bên trái.</div></div>`:`
+ <div class="row"><h2 style="margin:0">Bộ đề nháp: Khoảng cách từ điểm đến mặt phẳng</h2><span class="chip ${st.cop===2?'grn':'pur'}" style="margin-left:auto">${st.cop===2?ic('check')+'Đã duyệt, đã vào kho đề':ic('spark')+'Bản nháp của AI · cần duyệt'}</span></div>
+ <div class="row small muted">${ic('book')}Nguồn đã dùng: Kho đề của thầy cô · Đề cương chương 3</div>
+ ${[['Dễ','grn','Hình chóp S.ABC có SA ⊥ (ABC). Tính khoảng cách từ S đến (ABC).','chop','#0F8A5F',1],['Vừa','yel','Lăng trụ đứng ABC.A′B′C′, đáy vuông tại A. Tính khoảng cách từ A đến (A′BC).','lang','#E8A200',1],['Khó','red','Hình chóp S.ABCD đáy hình thoi, tính khoảng cách từ trọng tâm tam giác SAB đến (SCD).','chop','#D92D20',0]].map(x=>`<div class="hint" style="align-items:center"><div class="thumb" style="width:66px;height:62px;flex-shrink:0">${sh[x[3]](x[4]).replace('<svg','<svg style="height:46px"')}</div><div class="grow"><div class="row" style="gap:6px;margin-bottom:3px"><span class="chip ${x[1]}">${x[0]}</span>${x[5]?`<span class="chip grn">${ic('shield')}Đã kiểm chứng</span>`:'<span class="chip yel">Cần thầy cô xem lại</span>'}</div><h3 style="font-weight:600">${x[2]}</h3></div><span class="btn sm ghost">${ic('edit')}Sửa</span></div>`).join('')}
+ <div class="grow"></div>${st.cop===1?`<div class="row"><span class="btn ghost" data-act="draft">${ic('reset')}Soạn lại</span><span class="btn grn" style="margin-left:auto" data-act="copok">${ic('check')}Duyệt và đưa vào kho đề</span></div>`:`<span class="btn soft" data-go="gv-lib">${ic('book')}Mở kho đề</span>`}`}</div>`),
+
+/* ============ PHỤ HUYNH · TRƯỜNG · QUẢN LÝ ============ */
+'ph-home':()=>{const cl=st.asg.filter(a=>!a.self),done=cl.filter(a=>a.seen).length,h=st.asg.reduce((s,a)=>s+a.hints,0),q=st.asg.reduce((s,a)=>s+a.chat.filter(m=>m.me).length,0);return shell('Con của bạn: An · lớp 11A1','Chặng 6 · thông tin đã được giáo viên duyệt',`
+<div class="col grow scroll" style="gap:14px;min-width:0">
+ ${flow('Số liệu dưới đây đổi theo những gì <i>An</i> làm và những gì <i>giáo viên</i> duyệt ở hai vai kia.')}
+ <div class="row" style="gap:14px">${[['check','grn',done+'/'+cl.length,'bài được giao đã hoàn thành'],['bulb','yel',String(h),'lần xem gợi ý'],['chat','pur',String(q),'câu đã hỏi']].map(x=>`<div class="card stat"><div class="icb ${x[1]}">${ic(x[0])}</div><div><b>${x[2]}</b><span class="small muted">${x[3]}</span></div></div>`).join('')}</div>
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Bài của con</h2>${st.asg.filter(a=>!a.self).map(a=>`<div class="row"><div class="icb ${a.seen?'grn':'pri'}">${ic(a.seen?'check':'cube')}</div><div class="grow"><b>${PB(a.p).short}</b><div class="small muted">${a.open?'Lời giải đã mở':'Lời giải mở '+a.rel}</div></div><span class="chip ${a.seen?'grn':a.hints?'yel':''}">${a.seen?'Đã hoàn thành':a.hints?'Đang làm':'Chưa bắt đầu'}</span></div>`).join('')}</div>
+ ${st.paths.an?`<div class="card pad row" data-part="phsum" style="border-color:#D9CCFF;background:var(--pur-s);align-items:flex-start"><div class="icb pur" style="background:#fff">${ic('layers')}</div><div class="grow"><b>Lộ trình riêng của con</b><div class="small muted">${st.paths.an.sum}</div></div></div>`:''}
+ <div class="card pad row" style="${st.grade.approved?'border-color:#B9E6D2;background:var(--grn-s)':''}"><div class="icb ${st.grade.approved?'grn':'yel'}">${ic(st.grade.approved?'check':'clock')}</div><div><b>Bài kiểm tra chương 3</b><div class="small muted">${st.grade.approved?`Điểm đã được giáo viên duyệt: ${total()}/10 · "Em xác định góc đúng, xem lại cạnh kề trong tỉ số tan."`:'Đang chờ giáo viên duyệt. Điểm AI đề xuất không hiển thị cho phụ huynh.'}</div></div></div>
+ <div class="row" style="gap:12px;align-items:stretch"><div class="hint grow" style="border-color:#B9E6D2;background:var(--grn-s)"><div class="icb grn">${ic('trend')}</div><div><h3>Đang làm tốt</h3><p>Thể tích khối chóp, xác định hình chiếu</p></div></div><div class="hint grow" style="border-color:#F4D58A;background:var(--yel-s)"><div class="icb yel">${ic('bulb')}</div><div><h3>Nên luyện thêm</h3><p>Khoảng cách từ điểm đến mặt phẳng</p></div></div></div></div>
+<div class="card pad col" style="width:380px;flex-shrink:0;gap:10px;min-height:0">${chatPH()}</div>`);},
+'ph-chat':()=>shell('Trao đổi với giáo viên','Chặng 6 · kênh do nhà trường quản lý',`<div class="card pad col grow" style="gap:10px;min-height:0;max-width:760px;margin:0 auto">${chatPH()}</div>`),
+'tr-home':()=>shell('Trường THPT Mẫu','Chặng 8 · vận hành nhà trường',bodyOf(V5)),
+'ql-home':()=>shell('Theo dõi triển khai','Chặng 9 · quản trị giáo dục · chỉ số tổng hợp trong phạm vi ủy quyền',bodyOf(V6))};
+
+const chatPH=()=>`<h2 style="margin:0">Trao đổi với giáo viên</h2><div class="col grow scroll end" style="gap:9px">${st.msgs.map(m=>`<div class="bub ${m.f==='ph'?'me':'ot'}"><b class="tiny">${m.f==='ph'?'Bạn':'Giáo viên Toán · 11A1'}</b><br>${m.t}</div>`).join('')}</div>
+ <div class="field" style="background:var(--soft)">${ic('chat')}<input class="in" id="pm" placeholder="Nhắn giáo viên…" value="${st.msgs.length<2?'Ở nhà tôi nên giúp con luyện phần nào ạ?':''}"><div class="icb pri" style="width:32px;height:32px" data-act="psend">${ic('send','width:16px;height:16px')}</div></div><div class="tiny muted">Giáo viên trả lời trong giờ hành chính.</div>`;
+const vn=n=>String(n).replace('.',',');
+const total=()=>vn(st.grade.crit.reduce((s,c)=>s+c[2],0));
+const MODALS={time:()=>`<div class="ov"><div class="modal"><div class="row"><div class="icb yel">${ic('clock')}</div><h2 style="margin:0;font-size:18px">Đổi giờ mở lời giải</h2><span class="chip" style="margin-left:auto" data-act="modal" data-arg="">${ic('x')}</span></div>${['20:00 hôm nay','thứ Hai 23/11, 19:00','sau buổi học tới'].map(r=>`<div class="field" data-act="settime" data-arg="${r}">${ic('clock')}<span class="grow">${r[0].toUpperCase()+r.slice(1)}</span>${ic('arrow')}</div>`).join('')}<div class="small muted">Học sinh thấy giờ mới ngay trên bài.</div></div></div>`};
+
+/* ============ GIÁO TRÌNH · SOẠN BÀI · IMPORT · GIÁO TRÌNH RIÊNG (concept, PO-27 đến PO-32) ============ */
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+const SHN={chop:'Hình chóp',hop:'Hình hộp',lang:'Lăng trụ',non:'Hình nón',tru:'Hình trụ',cau:'Hình cầu'};
+const SRC={kho:['book','Kho đề',''],ai:['spark','Soạn với AI','pur'],doc:['file','Import tài liệu','pri'],img:['camera','Import ảnh','org']};
+const TOPIC=[['vg','Quan hệ vuông góc'],['dd','Thể tích khối đa diện'],['tx','Khối tròn xoay']];
+const TYPE=[['goc','Góc'],['kc','Khoảng cách'],['tt','Thể tích'],['dt','Diện tích']];
+const DIR=[['hc','Dùng hình chiếu, không dùng tọa độ'],['td','Dùng tọa độ'],['ai','Để AI chọn']];
+const FMT=[['full','Từng bước kèm vì sao'],['short','Ngắn gọn']];
+const TDEF={vg:['goc','kc'],dd:['tt'],tx:['tt','dt']};
+const POOL=[['x1','vg','goc'],['x2','vg','kc'],['x3','vg','goc'],['p2','vg','kc'],['x5','dd','tt'],['p4','tx','tt dt'],['p5','tx','dt'],['x8','tx','tt dt'],['p6','tx','tt']];
+const DOCP=['p1','p2','p3','p4','p5','p6'],IMGP=['x5','x6','x8'];
+const OCR={x5:['Bài 1. Cho h/chóp tứ giác đều S.ABCD, cạnh đáy a, chiều cao SO = ',['2a'],' (O là tâm đáy). Tính ',['thể tích'],' khối chóp.'],
+ x6:['Bài 2. Cho h/chóp S.ABCD, đáy là h.vuông cạnh 2a, SA ⊥ (ABCD), SA = 2a. Tính k/c từ A đến mp ',['(SBD)'],'.'],
+ x8:['Bài 3. Hình cầu có bán kính ',['3 cm'],'. Tính diện tích mặt cầu và thể tích khối cầu.']};
+const nm=(L,k)=>L.find(x=>x[0]===k)[1];
+const inCurr=p=>st.curr.some(k=>k.p===p);
+const mLbl=ok=>`<span class="chip ${ok?'grn':'yel'}">${ic(ok?'shield':'flag')}${ok?'Đã kiểm chứng':'Cần xem lại'}</span>`;
+const hLbl=ap=>`<span class="chip ${ap?'pri':'pur'}">${ic(ap?'check':'spark')}${ap?'Giáo viên đã duyệt':'AI soạn'}</span>`;
+const modsOf=k=>[k.ed&&'Thầy cô đã sửa',k.merged&&'Gợi ý đã gộp',k.h3&&'Thêm gợi ý 3',k.alt&&PB(k.p).alt&&'Lời giải theo hình chiếu',k.fmt==='short'&&'Lời giải ngắn gọn'].filter(Boolean);
+/* --- bài giảng, nguồn câu trả lời (PO-33, PO-34, PO-37) --- */
+const srcLine=m=>m.oos?`<div class="srcl off">${ic('flag')}<span>Nguồn: không có trong giáo trình của lớp</span></div>`
+ :m.src==='bai'?`<div class="srcl" data-act="tab" data-arg="hint">${ic('book')}<span>Nguồn: <u>Giáo trình lớp 11A1 · gợi ý của bài này</u></span></div>`
+ :m.src?`<div class="srcl" data-act="lec" data-arg="${m.src}">${ic('book')}<span>Nguồn: <u>${srcTxt(m.src)} · “${KB[m.src].t}”</u></span>${kbChip(m.src)}</div>`:'';
+const bubHTML=(m,a)=>m.me?`<div class="bub me">${esc(m.t)}</div>`
+ :`<div class="bub ai">${kw(m.t)}${m.step!=null&&a.open?` <span class="kw go" data-act="gostep" data-arg="${m.step}">Xem bước ${m.step+1} →</span>`:''}${srcLine(m)}</div>`;
+// nguồn mà trợ lý đã dùng, hiện ở màn theo dõi của giáo viên
+const ansSrc=r=>!r?'':r.oos?`<div class="srcl off">${ic('flag')}<span>Ngoài giáo trình · trợ lý không tự trả lời, đã mời em hỏi giáo viên</span></div>`
+ :`<div class="srcl"${r.src!=='bai'?` data-act="lec" data-arg="${r.src}"`:''}>${ic('book')}<span>Trợ lý dùng nguồn: <u>${r.src==='bai'?'Giáo trình lớp 11A1 · gợi ý của bài này':`“${KB[r.src].t}” · ${srcShort(r.src)}`}</u></span>${r.src!=='bai'?kbChip(r.src):''}${r.deny?'<span class="chip yel">Không nêu đáp số</span>':''}</div>`;
+const lecModal=(id,L,pv)=>{const gv=L.src==='gv',cm=L.src==='cmp',inWork=!pv&&st.role==='hs'&&st.view==='hs-work',F=lecFig(id,L),K=x=>pv?kw(esc(x),id).replace(/ data-act="lec"/g,''):kw(esc(x),id);
+ return `<div class="ov" data-act="modal" data-arg=""><div class="modal lec" data-act="noop" data-lecid="${id}"${pv?' data-pv="1"':''}>
+ <div class="lrow"><div class="icb pur">${ic(pv?'eye':'book')}</div><div class="grow"><div class="tiny muted" style="font-weight:700">${pv?'Xem như học sinh · hộp bài giảng mở ra khi học sinh bấm từ khóa':`Bài giảng · dùng ở bài học ${L.les[1]} của giáo trình lớp 11A1`}</div><h2 style="margin:0;font-size:19px;line-height:1.3">${L.t}</h2></div><span class="chip" style="align-self:flex-start;cursor:pointer" data-act="modal" data-arg="">${ic('x')}Đóng</span></div>
+ <div class="lsrc ${gv||cm?'':'ai'}" data-part="lsrc">${ic(gv?'file':'spark')}<div><b>Nguồn:</b> ${srcTxt(id,L.src)}</div>${pv?'<span class="chip">Bản xem trước · chưa lưu</span>':kbChip(id)}</div>
+ <div class="lbody">${F?`<div class="lfig">${F}</div>`:''}${L.body.map(x=>`<p>${K(x)}</p>`).join('')}${L.exT?`<p class="lex" data-part="lex"><b>Ví dụ.</b> ${K(L.exT)}</p>`:''}</div>
+ <div style="clear:both"><div class="lbl">Từ khóa liên quan</div><div class="lrel">${L.rel.map(r=>`<span class="kw"${pv?'':` data-act="lec" data-arg="${r}"`}>${KB[r].t}</span>`).join('')}</div></div>
+ ${pv?`<div class="tiny muted">Học sinh mở bài giảng này khi bấm các từ khóa: ${L.terms.map(t=>`“${t}”`).join(', ')}.</div>`:inWork?`<span class="btn soft" data-act="lecask" data-arg="${id}">${ic('chat')}Hỏi thêm về khái niệm này</span>`:st.role==='gv'&&!kbOk(id)?`<span class="btn grn" data-act="kbok" data-arg="${id}">${ic('check')}Duyệt bài giảng này</span>`:''}</div></div>`;};
+MODALS.lec=()=>lecModal(st.lec,LK(st.lec));
+MODALS.lpv=()=>{const x=st.lpv,c=st[x.k],d=c.lecs?c.lecs[x.i]:c.lec;return lecModal(d.id,Object.assign({},KB[d.id],{src:x.k==='cmp'?'cmp':'gv',body:d.body,exT:d.exT,fig:d.fig}),1);};
+const thumb=(p,w,h,sv)=>`<div class="thumb" style="width:${w}px;height:${h}px;flex-shrink:0">${sh[p.shape](p.c).replace('<svg',`<svg style="height:${sv}px"`)}</div>`;
+const oSent=o=>`Soạn ${o.n} bài tính ${o.types.map(t=>nm(TYPE,t).toLowerCase()).join(', ')} thuộc phần ${nm(TOPIC,o.topic)} cho lớp 11A1, mức ${o.lv.toLowerCase()}; lời giải ${{hc:'dùng hình chiếu, không dùng tọa độ',td:'dùng tọa độ',ai:'theo hướng AI chọn'}[o.dir]}, trình bày ${nm(FMT,o.fmt).toLowerCase()}.`;
+const uncLeft=()=>st.imp.items?st.imp.items.reduce((n,it)=>n+(OCR[it.p]||[]).filter((x,j)=>Array.isArray(x)&&st.imp.fix[it.p+':'+j]==null).length,0):0;
+// nội dung một bài sau các chỉnh sửa của giáo viên (gộp gợi ý, thêm gợi ý, đổi hướng lời giải, đổi định dạng)
+const IV=(it,dfmt)=>{const p=PB(it.p),e=it.ed||{};let h=p.hints.slice();if(it.merged)h=[p.hm||p.hints.join(' ')];if(it.h3)h.push(p.h3||`Việc đầu tiên nên làm: ${p.steps[0][0].toLowerCase()}.`);
+ h=h.map((x,j)=>e['h'+j]!=null?esc(e['h'+j]):x);      // chỗ thầy cô sửa tay (PO-46)
+ return{p,t:e.t!=null?esc(e.t):p.t,hints:h,steps:it.alt&&p.alt?p.alt:p.steps,fmt:it.fmt||dfmt,ok:p.ok&&!it.rev};};
+const solHTML=v=>`<div class="sol">${v.steps.map((s,i)=>`<div class="row" style="align-items:flex-start;gap:8px"><b style="color:var(--pri)">${i+1}.</b><div>${v.fmt==='short'?s[1]:`<b>${s[0]}.</b> ${s[1]}<div class="why">Vì sao: ${s[2]}</div>`}</div></div>`).join('')}<div><span class="chip ${v.ok?'grn':'yel'}">Đáp số: ${v.p.ans}</span></div></div>`;
+const ocrBox=(it,i)=>{const m=st.imp,segs=OCR[it.p];if(!segs)return'';const edited=segs.some((x,j)=>Array.isArray(x)&&m.fix[it.p+':'+j]!=null&&m.fix[it.p+':'+j]!==x[0]);
+ return `<div class="col" style="width:236px;flex-shrink:0;gap:6px" data-part="ocr"><div class="lbl" style="margin:0">Chữ đọc được từ ảnh ${m.imgs.indexOf(it.p)+1}</div>
+ <div class="paper" style="font-size:13px;line-height:1.85;padding:10px 12px">${segs.map((x,j)=>{if(!Array.isArray(x))return x;const k=it.p+':'+j,f=m.fix[k];
+  return f!=null?`<span class="okc" data-act="ocredit" data-arg="${k}" title="Bấm để sửa lại">${esc(f)}</span>`:`<input class="unc" id="u-${k}" value="${esc(x[0])}" size="${Math.max(3,x[0].length)}"><span class="tick" data-act="ocrok" data-arg="${k}" title="Xác nhận">${ic('check')}</span>`;}).join('')}</div>
+ <div class="tiny muted">Ô vàng: chỗ máy chưa chắc. Sửa nếu cần rồi bấm dấu ✓.</div>${edited?'<div class="tiny" style="color:#9A6B00">Thầy cô đã sửa chữ đọc được. Bản mẫu không dựng lại bài theo chữ mới.</div>':''}</div>`;};
+/* --- hội thoại hai chiều (PO-46): đề xuất trước → sau trên chính mục bị đổi, Nhận / Bỏ / Hoàn tác, sửa tay, lịch sử --- */
+const cap=x=>x[0].toUpperCase()+x.slice(1);
+const clone=o=>JSON.parse(JSON.stringify(o));
+const tgtOf=(ctx,k,i)=>k==='lec'?(ctx.lecs?ctx.lecs[i]:ctx.lec):ctx.items[i];
+const setTgt=(ctx,k,i,v)=>{if(k==='ex')ctx.items[i]=v;else if(ctx.lecs)ctx.lecs[i]=v;else ctx.lec=v;};
+const tgtName=(ctx,k,i)=>k==='lec'?(ctx.lecs?`bài giảng ${i+1}`:'bài giảng'):`bài ${i+1}`;
+const edA=(key,k,i,f)=>`data-edit="${key},${k},${i},${f}" contenteditable="plaintext-only" spellcheck="false" class="ed" title="Bấm vào chữ để sửa trực tiếp"`;
+const undoBtn=(key,k,i)=>{const u=st[key].undo;return u&&u.k===k&&u.i===i?`<span class="btn sm ghost" data-act="dundo" data-arg="${key}" title="Trả mục này về như trước thay đổi vừa rồi">${ic('reset')}Hoàn tác</span>`:'';};
+const flags=o=>`${o.chg?`<span class="chip org">${ic('edit')}Vừa đổi</span>`:''}${o.man?`<span class="chip pri" data-part="man">${ic('edit')}Thầy cô đã sửa</span>`:''}`;
+const chkLine=o=>o.chkT?`<div class="chkl ${o.rev?'bad':''}" data-part="chk">${ic(o.rev?'flag':'shield')}${o.chkT}</div>`:'';
+const propBox=(q,key)=>`<div class="prop" data-prop="${q.id}"><div class="row" style="gap:7px;flex-wrap:wrap"><span class="chip pur">${ic('spark')}AI đề xuất · ${q.part}</span><b class="small">${cap(q.sum)}</b></div>
+ <div class="ba"><span class="tg">Trước</span><div class="bf">${esc(q.before)}</div><span class="tg">Sau</span><div class="af">${esc(q.after)}</div></div>
+ <div class="small"><b>Vì sao:</b> ${q.why}</div>${q.unc?`<div class="uncn">${ic('flag')}<span>${q.unc}</span></div>`:''}
+ <div class="row" style="flex-wrap:wrap"><span class="btn sm grn" data-act="dacc" data-arg="${key},${q.id}">${ic('check')}Nhận</span><span class="btn sm ghost" data-act="drej" data-arg="${key},${q.id}">${ic('x')}Bỏ</span><span class="tiny muted">Bản nháp chưa đổi cho tới khi thầy cô bấm “Nhận”.</span></div></div>`;
+const propsOf=(key,k,i)=>st[key].prop.filter(q=>q.k===k&&q.i===i).map(q=>propBox(q,key)).join('');
+const histBar=key=>{const c=st[key];return `<span class="chip ${c.showHist?'on':''}" style="cursor:pointer" data-act="dhist" data-arg="${key}" data-part="histbtn">${ic('clock')}Lịch sử thay đổi (${c.hist.length})</span>`;};
+const histPanel=key=>{const c=st[key];return !c.showHist?'':`<div class="histp" data-part="hist"><div class="row" style="flex-wrap:wrap"><b class="small">Lịch sử thay đổi của bản nháp</b><span class="tiny muted">Chưa có gì được lưu vào giáo trình.</span></div>
+ ${c.hist.length?c.hist.map((h,j)=>`<div class="row small" style="gap:7px;align-items:flex-start"><span class="chip ${h.who==='ai'?'pur':'pri'}" style="flex-shrink:0">${h.who==='ai'?'AI đề xuất':'Thầy cô'}</span><span class="grow">${j+1}. ${h.t}</span>${h.r?`<span class="chip grn" style="flex-shrink:0">${h.r}</span>`:''}</div>`).join(''):'<div class="small muted">Chưa có thay đổi nào.</div>'}</div>`;};
+const itemCard=(it,i,key)=>{const ctx=st[key],v=IV(it,key==='cmp'?ctx.o.fmt:ctx.fmt),p=v.p,dup=key==='imp'&&inCurr(p.id);
+ return `<div class="card pad col ditem ${it.chg?'hl':''} ${ctx.last===i?'last':''}" data-item="${i}">
+ <div class="row" style="gap:7px;flex-wrap:wrap"><div class="num on">${i+1}</div><b style="font-size:14.5px">${p.short}</b>${flags(it)}<span class="grow"></span><span class="chip">${DLV[p.id]}</span>${mLbl(v.ok)}${hLbl(0)}</div>
+ ${chkLine(it)}${propsOf(key,'ex',i)}
+ <div class="row" style="align-items:flex-start;gap:14px">${key==='imp'&&ctx.src==='img'?ocrBox(it,i):''}${thumb(p,104,92,66)}
+ <div class="col grow" style="gap:8px"><div style="font-weight:500" ${edA(key,'ex',i,'t')}>${v.t}</div>
+  ${v.hints.map((h,j)=>`<div class="row small" style="align-items:flex-start;gap:8px"><span class="chip yel" style="flex-shrink:0">${ic('bulb')}Gợi ý${v.hints.length>1?' '+(j+1):''}</span><span ${edA(key,'ex',i,'h'+j)}>${h}</span></div>`).join('')}
+  <div class="lbl" style="margin:2px 0 0">Lời giải · ${nm(FMT,v.fmt)}${it.alt&&p.alt?' · theo hướng hình chiếu':''}</div>${solHTML(v)}
+  ${p.ok?'':`<div class="small" style="color:#9A6B00">Máy chưa kiểm chứng được đáp số của bài này. Thầy cô xem lại trước khi dùng; nhãn “Cần xem lại” được giữ khi lưu.</div>`}
+  <div class="row" style="flex-wrap:wrap"><span class="btn sm ghost" data-act="pv" data-arg="${key},${i}">${ic('eye')}Xem như học sinh</span>${undoBtn(key,'ex',i)}${dup?`<span class="chip">${ic('check')}Đã có trong giáo trình, sẽ không lưu lại</span>`:''}</div></div></div></div>`;};
+// bài giảng trong bản nháp (soạn với AI: một bài; import: các phần lý thuyết của giáo án). d = {id, body[], exT, fig, lvl, sel}
+const lecSame=d=>{const L=LK(d.id);return JSON.stringify([d.body,d.exT||null])===JSON.stringify([L.body,L.exT||null]);};
+const lecCard=(d,key,i)=>{const ctx=st[key],L=KB[d.id],imp=key==='imp',same=imp&&lecSame(d),F=lecFig(d.id,d);
+ return `<div class="card pad col ditem ${d.chg?'hl':''} ${ctx.llast===i?'last':''} ${imp&&!d.sel?'off':''}" data-litem="${i}">
+ <div class="row" style="gap:7px;flex-wrap:wrap">${imp?`<span class="cbx ${d.sel?'on':''}" data-act="lsel" data-arg="${i}" title="Chọn hoặc bỏ chọn mục này">${ic('check')}</span><div class="num on">${i+1}</div>`:`<div class="icb pur" style="width:32px;height:32px">${ic('book','width:17px;height:17px')}</div>`}<b style="font-size:14.5px">${L.t}</b>${flags(d)}<span class="grow"></span>${imp?`<span class="chip">${ic('file')}Giáo án · ${L.sec}</span>`:`<span class="chip">Diễn đạt cho lớp ${d.lvl}</span>`}${mLbl(!d.rev)}${hLbl(0)}</div>
+ ${imp?`<div class="row small" style="gap:6px;flex-wrap:wrap" data-part="lstat"><span class="chip ${same?'':'org'}">${ic(same?'check':'edit')}${same?'Đã có trong kho · nội dung trùng khớp':'Đã có trong kho · sẽ cập nhật khi lưu'}</span>${d.sel?'':'<span class="chip red">Đã bỏ chọn · không lưu mục này</span>'}</div>`:''}
+ ${chkLine(d)}${propsOf(key,'lec',i)}
+ <div class="lbody ldraft">${F?`<div class="lfig">${F}</div>`:''}${d.body.map((x,j)=>`<p ${edA(key,'lec',i,'b'+j)}>${esc(x)}</p>`).join('')}</div>
+ ${d.exT?`<div class="lexd" data-part="lex"><b>Ví dụ.</b> <span ${edA(key,'lec',i,'ex')}>${esc(d.exT)}</span></div>`:''}
+ <div class="row small" style="gap:6px;flex-wrap:wrap;clear:both"><b class="tiny muted">Từ khóa liên quan</b>${L.rel.map(r=>`<span class="chip pur">${KB[r].t}</span>`).join('')}<span class="chip">Bài học ${L.les[1]} · ${LN[L.les]}</span></div>
+ <div class="row" style="flex-wrap:wrap"><span class="btn sm ghost" data-act="lpv" data-arg="${key},${i}">${ic('eye')}Xem như học sinh</span>${undoBtn(key,'lec',i)}</div></div>`;};
+const chatBox=(key,chat,hello,sugg,ph)=>{const act=key==='cmp'?'csend':'impchat',c=st[key];
+ return `<div class="col grow scroll end" style="gap:9px;min-height:60px"><div class="bub ai" style="max-width:none">${hello}</div>${chat.map((m,j)=>m.me?`<div class="bub me" style="max-width:92%">${esc(m.t)}</div>`
+  :`<div class="bub ai" style="max-width:92%">${m.t}${m.unc?`<div class="uncn" style="margin-top:7px" data-part="unc">${ic('flag')}<span>${m.unc}</span></div>`:''}${m.opts?`<div class="row" style="gap:5px;flex-wrap:wrap;margin-top:8px" data-part="opts">${m.opts.map(o=>`<span class="chip opt" data-act="${act}" data-arg="${o[1]}">${o[0]}</span>`).join('')}</div>`:''}${m.undo&&c.undo&&j===chat.length-1?`<div style="margin-top:8px"><span class="btn sm ghost" style="background:#fff" data-act="dundo" data-arg="${key}">${ic('reset')}Hoàn tác</span></div>`:''}</div>`).join('')}</div>
+ <div class="row" style="gap:6px;flex-wrap:wrap" data-part="sugg">${sugg.map(q=>`<span class="chip pri" style="white-space:normal;border-radius:12px;text-align:left" data-act="${act}" data-arg="${q}">${q}</span>`).join('')}</div>
+ <div class="field" style="background:var(--soft)">${ic('chat')}<input class="in" id="${key==='cmp'?'cq':'iq'}" placeholder="${ph}" value="${esc(st[key].q||'')}"><div class="icb pri" style="width:32px;height:32px" data-act="${act}">${ic('send','width:16px;height:16px')}</div></div>`;};
+const fmtChips=(act,cur)=>FMT.map(x=>`<span class="chip ${cur===x[0]?'on':''}" data-act="${act}" data-arg="${x[0]}">${x[1]}</span>`).join('');
+
+/* --- giáo trình riêng: bằng chứng mẫu và cách rút lộ trình --- */
+const STU=[
+ {id:'an',n:'An',c:'#F0522B',strong:[{les:'l3',bai:'“Lăng trụ đứng tam giác đều: tính thể tích” và 6 bài thể tích trước đó: 6/7 bài làm xong mà không cần mở lời giải.',hoi:'Không cần hỏi thêm ở phần này.'}],
+  weak:[{les:'l2',bai:'5/5 bài khoảng cách gần nhất đều phải mở gợi ý 2.',hoi:'“Kẻ đường vuông góc từ A xuống đường nào?” (hỏi ở 3 bài).'}]},
+ {id:'binh',n:'Bình',c:'#3B5BDB',strong:[{les:'l3',bai:'4/4 bài thể tích gần nhất làm xong mà không mở gợi ý 2.',hoi:'Không cần hỏi thêm ở phần này.'}],
+  weak:[{les:'l1',bai:'“Hình chóp S.ABCD: góc giữa SD và mặt đáy”: đã mở gợi ý 1, chưa làm xong.',hoi:'“Góc cần tìm là góc nào trên hình?” (2 lượt).'}]},
+ {id:'chi',n:'Chi',c:'#0F8A5F',strong:[{les:'l1',bai:'“Hình chóp S.ABCD: góc giữa SD và mặt đáy”: tự làm, không mở gợi ý nào.',hoi:'Không cần hỏi thêm ở phần này.'},{les:'l3',bai:'“Lăng trụ đứng tam giác đều: tính thể tích”: tự làm, không mở gợi ý nào.',hoi:'Không cần hỏi thêm ở phần này.'}],
+  weak:[{les:'l4',bai:'3 bài hình nón, hình trụ gần nhất: 2 bài phải mở gợi ý 2.',hoi:'“Đường sinh khác chiều cao ở chỗ nào?”'}]},
+ {id:'dung',n:'Dũng',c:'#7C4DFF',strong:[{les:'l4',bai:'4/4 bài hình trụ, hình nón gần nhất làm xong mà không mở gợi ý 2.',hoi:'Không cần hỏi thêm ở phần này.'}],
+  weak:[{les:'l1',bai:'“Hình chóp S.ABCD: góc giữa SD và mặt đáy”: đã mở cả hai gợi ý.',hoi:'“Góc cần tìm là góc nào trên hình?” (2 lượt).'}]},
+ {id:'ha',n:'Hà',c:'#0EA5E9',strong:[],weak:[{les:'l1',bai:'Chưa mở 2 bài đang giao; 3 bài về góc trước đó đều dừng ở gợi ý 1.',hoi:'Chưa hỏi câu nào.'}]}];
+const BANK={l1:['x4','x1','x3'],l2:['x2e','x2','p2'],l3:['x5'],l4:['p4','p5','x8']};
+const SID=id=>STU.find(s=>s.id===id);
+function buildProp(s){const rows=[];
+ Object.keys(LN).forEach(les=>{const items=st.curr.filter(k=>k.les===les),sg=s.strong.find(e=>e.les===les),wk=s.weak.find(e=>e.les===les);
+  if(sg)items.forEach((k,i)=>rows.push({les,p:k.p,in:i===0,tag:i===0?'giu':'luoc',why:i===0?'Giữ một bài tiêu biểu để ôn lại.':'Lược bớt vì phần này em đã vững.'}));
+  else if(wk){items.forEach(k=>rows.push({les,p:k.p,in:true,tag:'giu',why:''}));
+   const ex=BANK[les].find(id=>!inCurr(id));if(ex)rows.push({les,p:ex,in:true,tag:'them',why:'Bài luyện thêm cho phần em đang luyện.'});
+   rows.push({les,deep:1,in:true,tag:'goiy',why:'Chia gợi ý 2 thành các bước nhỏ hơn ở những bài của phần này.'});}
+  else items.forEach(k=>rows.push({les,p:k.p,in:true,tag:'giu',why:''}));});
+ rows.forEach(r=>{r.in0=r.in;});
+ const a=s.strong.map(e=>LN[e.les]).join(', '),b=s.weak.map(e=>LN[e.les]).join(', ');
+ return{sid:s.id,rows,approved:false,sum:`Giáo viên đã duyệt lộ trình riêng cho ${s.n}: ${[a&&'rút gọn phần đã vững ('+a+')',b&&'luyện thêm phần '+b].filter(Boolean).join('; ')}.`};}
+const pathStat=(s,les)=>s.strong.some(e=>e.les===les)?1:s.weak.some(e=>e.les===les)?2:0;
+
+Object.assign(VIEWS,{
+'gv-curr':()=>{const row=k=>{const p=PB(k.p),s=SRC[k.src],asg=st.asg.some(a=>a.p===k.p&&!a.self);
+  return `<div class="hint" style="align-items:center" data-row="${k.p}"${k.isNew?' data-new="1"':''}>${thumb(p,56,56,40)}<div class="grow col" style="gap:5px"><h3>${p.short}</h3>
+  <div class="row" style="gap:5px;flex-wrap:wrap"><span class="chip ${s[2]}">${ic(s[0])}${s[1]}</span>${mLbl(p.ok&&!k.rev)}${hLbl(1)}${k.isNew?'<span class="chip org">Mới lưu</span>':''}${modsOf(k).map(m=>`<span class="chip" data-mod="1">${ic('edit')}${m}</span>`).join('')}</div></div>
+  ${asg?`<span class="chip grn">${ic('check')}Đã giao</span>`:`<span class="btn sm" data-act="cassign" data-arg="${k.p}">${ic('send')}Giao bài</span>`}</div>`;};
+ const appr=STU.filter(s=>st.paths[s.id]),lids=Object.keys(KB),pend=lids.filter(id=>!kbOk(id)).length;
+ const lrow=id=>{const L=LK(id),gv=L.src==='gv',cm=L.src==='cmp',nw=L.isNew;return `<div class="hint" style="align-items:center" data-act="lec" data-arg="${id}" data-lec="${id}"${nw?` data-lnew="${nw}"`:''}><div class="icb ${gv||cm?'pri':'pur'}" style="width:36px;height:36px">${ic(gv?'file':'spark','width:18px;height:18px')}</div>
+   <div class="grow"><h3>${L.t}</h3><p style="word-break:break-word">${srcTxt(id)} · dùng ở bài học ${L.les[1]}${L.exT?' · có ví dụ':''}</p></div>${nw?`<span class="chip ${nw==='same'?'':'org'}">${{new:'Mới lưu',upd:'Vừa cập nhật từ file',same:'Vừa đối chiếu · trùng khớp'}[nw]}</span>`:''}${kbChip(id)}${kbOk(id)?'':`<span class="btn sm grn" data-act="kbok" data-arg="${id}">${ic('check')}Duyệt</span>`}</div>`;};
+ return shell('Giáo trình lớp 11A1',`Chặng 2 và 5 · giáo trình chung · ${st.curr.length} bài tập · Giáo viên mẫu`,`
+<div class="col grow scroll" style="gap:14px;min-width:0">
+ ${flow('Soạn với AI hoặc import → thầy cô <i>duyệt</i> → bài vào giáo trình → <i>Giao bài</i> cho lớp → học sinh làm.')}
+ ${CH.map(ch=>`<div class="card pad col" style="gap:14px"><div class="row"><div class="icb pri">${ic('book')}</div><div><h2 style="margin:0">${ch.t}</h2><div class="small muted">${st.curr.filter(k=>ch.les.includes(k.les)).length} bài tập</div></div></div>
+  ${ch.les.map(l=>{const it=st.curr.filter(k=>k.les===l);return `<div class="col" style="gap:8px" data-part="les-${l}"><div class="row"><b>Bài học ${l[1]} · ${LN[l]}</b><span class="chip">${it.length} bài tập</span></div>
+   ${it.map(row).join('')||'<div class="hint lock small muted" style="align-items:center">Chưa có bài tập. Soạn với AI hoặc import ở cột bên phải.</div>'}</div>`}).join('')}</div>`).join('')}
+ <div class="card pad col" style="gap:10px" data-part="lectures"><div class="row" style="flex-wrap:wrap"><div class="icb pur">${ic('file')}</div><div class="grow"><h2 style="margin:0">Bài giảng và khái niệm</h2><div class="small muted">${lids.length} bài giảng · học sinh mở từ các từ khóa trong gợi ý, lời giải và câu trả lời của trợ lý</div></div>
+   <span class="chip ${pend?'pur':'grn'}" data-part="lpend">${pend?ic('spark')+pend+' bài do AI viết chờ duyệt':ic('check')+'Đã duyệt hết'}</span></div>
+  ${lids.map(lrow).join('')}
+  <div class="tiny muted">Bài giảng lấy từ bài soạn của thầy cô. Khái niệm nào tài liệu chưa có thì AI viết thay, mang nhãn “AI soạn” cho tới khi thầy cô duyệt. Thầy cô cũng soạn được bài giảng với AI, hoặc import cả phần lý thuyết từ file giáo án. Bấm một dòng để đọc bài giảng.</div></div>
+</div>
+<div class="col" style="width:384px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:10px" data-part="entry"><h2 style="margin:0">Thêm bài vào giáo trình</h2>
+  <div class="hint" style="align-items:center" data-go="gv-compose"><div class="icb pur">${ic('spark')}</div><div class="grow"><h3>Soạn với AI</h3><p>Thầy cô định hướng, AI soạn bài tập hoặc bài giảng; thầy cô chỉnh qua chat.</p></div>${ic('arrow')}</div>
+  <div class="hint" style="align-items:center" data-act="impopen" data-arg="doc"><div class="icb pri">${ic('file')}</div><div class="grow"><h3>Import tài liệu</h3><p>Giáo án, ngân hàng bài tập (docx, xlsx, pdf): tách cả bài tập lẫn bài giảng.</p></div>${ic('arrow')}</div>
+  <div class="hint" style="align-items:center" data-act="impopen" data-arg="img"><div class="icb org">${ic('camera')}</div><div class="grow"><h3>Chụp hoặc chọn ảnh</h3><p>Nhiều ảnh cùng lúc; hệ thống đọc chữ trong ảnh.</p></div>${ic('arrow')}</div>
+  <div class="tiny muted">Bài tập và bài giảng chỉ vào giáo trình sau khi thầy cô duyệt. Chỉ giáo viên được mời hoặc đã được xác nhận mới dùng được các bước này.</div></div>
+ <div class="card pad col" style="gap:10px" data-part="personal"><div class="row"><div class="icb grn">${ic('users')}</div><div><h2 style="margin:0">Giáo trình riêng</h2><div class="small muted">Chặng 6 · rút từ giáo trình chung</div></div></div>
+  <div class="small muted">Theo phần mỗi em đã vững và đang luyện, có bằng chứng kèm theo. Thầy cô duyệt mới áp dụng.</div>
+  ${appr.map(s=>`<div class="row small"><div class="ava" style="width:26px;height:26px;font-size:11px;background:${s.c}">${s.n[0]}</div><b>${s.n}</b><span class="chip grn" style="margin-left:auto">${ic('check')}Đã duyệt</span></div>`).join('')}
+  <span class="btn soft" data-go="gv-personal">${ic('plus')}Tạo giáo trình riêng</span></div></div>`);},
+
+'gv-compose':()=>{const c=st.cmp,o=c.o,lo=c.lo,L=c.kind==='lec',has=L?!!c.lec:!!c.items,np=c.prop.length,YN=[['co','Có'],['khong','Không']];
+ const grp=(lbl,k,opts,multi,src)=>{const O=src||o;return `<div class="grp"><div class="lbl">${lbl}</div>${opts.map(x=>`<span class="chip ${(multi?O[k].includes(x[0]):O[k]===x[0])?'on':''}" data-act="cset" data-arg="${src?'lo.':''}${k},${x[0]}">${x[1]}</span>`).join('')}</div>`;};
+ const kind=`<div class="tabs" style="border:none;padding:0" data-part="kind">${[['ex','cube','Bài tập'],['lec','book','Bài giảng']].map(t=>`<span class="${c.kind===t[0]?'on':''}" data-act="ckind" data-arg="${t[0]}">${ic(t[1])}${t[2]}</span>`).join('')}</div>`;
+ const orient=L?(!has?`<div class="col" style="gap:9px" data-part="orient">${grp('Khái niệm cần giảng · giáo án của thầy cô chưa có','con',LCON,0,lo)}
+   <div class="row" style="gap:22px;align-items:flex-start">${grp('Diễn đạt cho lớp','lvl',[['11A1','11A1'],['9B','9B']],0,lo)}${grp('Ví dụ minh họa','ex',YN,0,lo)}</div>
+   <div class="row" style="gap:22px;align-items:flex-start">${grp('Độ dài','len',[['short','Ngắn'],['full','Đầy đủ']],0,lo)}${grp('Hình minh họa','fig',YN,0,lo)}</div></div>`
+  :`<div class="row small" style="gap:6px;flex-wrap:wrap" data-part="orient"><span class="chip">${KB[lo.con].t}</span><span class="chip">Lớp ${lo.lvl}</span><span class="chip">${lo.len==='short'?'Ngắn':'Đầy đủ'}</span><span class="chip">${lo.ex==='co'?'Có ví dụ':'Không ví dụ'}</span><span class="chip">${lo.fig==='co'?'Có hình':'Không hình'}</span></div>`)
+  :!has||c.edit?`<div class="col" style="gap:9px" data-part="orient">${grp('Chủ đề','topic',TOPIC)}${grp('Loại bài tập: tính… (chọn nhiều)','types',TYPE,1)}
+   <div class="row" style="gap:22px;align-items:flex-start">${grp('Số bài','n',[[2,'2'],[3,'3'],[4,'4']])}${grp('Mức độ','lv',[['Dễ','Dễ'],['Vừa','Vừa'],['Khó','Khó']])}</div>
+   ${grp('Hướng lời giải','dir',DIR)}${grp('Định dạng lời giải','fmt',FMT)}</div>`
+  :`<div class="row small" style="gap:6px;flex-wrap:wrap" data-part="orient"><span class="chip">${nm(TOPIC,o.topic)}</span><span class="chip">Tính ${o.types.map(t=>nm(TYPE,t).toLowerCase()).join(', ')}</span><span class="chip">${o.n} bài · ${o.lv}</span><span class="chip">${nm(DIR,o.dir)}</span><span class="chip">${nm(FMT,o.fmt)}</span><span class="chip pri" data-act="cset" data-arg="edit,1">${ic('edit')}Đổi định hướng</span></div>`;
+ const sugg=L?(has?['Sửa lại bài giảng','Thêm một ví dụ có số cụ thể','Viết lại cho dễ hiểu hơn, hợp với lớp 9B','Rút ngắn nội dung']:['Soạn theo định hướng đã chọn'])
+  :has?['Sửa lại bài 2','Đổi bài 2 sang mức dễ hơn','Viết lại lời giải bài 1 ngắn gọn hơn','Thêm một gợi ý cho bài 3','Gộp gợi ý của bài 3 thành một gợi ý ngắn']:['Soạn theo định hướng đã chọn','Soạn bài luyện cho tiết ôn tập cuối chương'];
+ const hello=has?`Thầy cô nhắn ${L?'':'theo số bài '}để tôi chỉnh${L?'':', ví dụ “bài 2: …”'}, hoặc bấm thẳng vào chữ trong bản nháp để sửa. Tôi chỉ đề xuất; thầy cô bấm “Nhận” thì bản nháp mới đổi.`
+  :L?'Thầy cô chọn khái niệm và vài định hướng ở trên rồi bấm gửi, hoặc gõ thêm yêu cầu. Tôi soạn nháp bài giảng; thầy cô duyệt thì bài giảng mới vào giáo trình.'
+  :'Thầy cô chọn định hướng ở trên rồi bấm gửi, hoặc gõ thêm yêu cầu. Tôi soạn bài tập, gợi ý và lời giải; thầy cô duyệt thì bài mới vào giáo trình.';
+ const empty=L?['Bản nháp bài giảng sẽ hiện ở đây','Tên khái niệm, nội dung ngắn, một ví dụ, hình nhỏ và từ khóa liên quan: đúng dạng hộp bài giảng học sinh mở từ từ khóa.']:['Bản nháp sẽ hiện ở đây','Mỗi bài có đề, hình, hai gợi ý, lời giải và đáp số, kèm nhãn kiểm chứng của máy.'];
+ return shell('Soạn với AI','Chặng 2 và 5 · thầy cô định hướng, AI soạn nháp bài tập hoặc bài giảng; thầy cô duyệt mới vào giáo trình',`
+<div class="card pad col" style="width:470px;flex-shrink:0;gap:10px;min-height:0" data-part="chat">
+ <div class="row"><div class="icb pur">${ic('spark')}</div><div><h2 style="margin:0">Trợ lý soạn bài</h2><div class="small muted">Chọn loại nội dung, định hướng bằng vài lựa chọn</div></div></div>
+ ${kind}${orient}
+ ${chatBox('cmp',c.chat,hello,sugg,has?'Nhắn để chỉnh bản nháp…':'Gõ yêu cầu, hoặc để trống và bấm gửi…')}</div>
+<div class="card pad col grow" style="gap:12px;min-width:0;min-height:0" data-part="draft">${!has?`<div class="col grow" style="align-items:center;justify-content:center;gap:10px;color:var(--muted);text-align:center"><div class="icb pur" style="width:72px;height:72px;border-radius:22px">${ic(L?'book':'file','width:34px;height:34px')}</div><b>${empty[0]}</b><div class="small" style="max-width:360px">${empty[1]}</div></div>`:`
+ <div class="row" style="flex-wrap:wrap;gap:7px"><h2 style="margin:0">${L?'Bản nháp bài giảng':`Bản nháp: ${c.items.length} bài · ${nm(TOPIC,o.topic)}`}</h2><span class="grow"></span>${np?`<span class="chip pur" data-part="npend">${np} đề xuất chờ thầy cô</span>`:''}${histBar('cmp')}<span class="chip pur">${ic('spark')}AI soạn · chờ thầy cô duyệt</span></div>
+ ${histPanel('cmp')}
+ <div class="col grow scroll" style="gap:12px;padding:2px">${L?lecCard(c.lec,'cmp',0):c.items.map((it,i)=>itemCard(it,i,'cmp')).join('')}</div>
+ <div class="row"><span class="btn ghost" data-act="creset">${ic('reset')}Soạn lại từ đầu</span><span class="small muted grow" style="text-align:right" data-part="savenote">AI không tự lưu: chỉ nút duyệt của thầy cô đưa bản nháp vào giáo trình.${np?` Còn ${np} đề xuất chưa quyết sẽ không được lưu.`:L?' Bấm vào chữ để sửa trực tiếp.':' Bài “Cần xem lại” giữ nguyên nhãn đó.'}</span><span class="btn grn" data-act="csave">${ic('check')}Duyệt và lưu vào giáo trình</span></div>`}</div>`,
+ {top:`<span class="btn sm ghost" data-go="gv-curr">${ic('arrow','transform:rotate(180deg)')}Giáo trình</span>`});},
+
+'gv-import':()=>{const m=st.imp,isImg=m.src==='img';
+ const tabs=`<div class="tabs" style="border:none;padding:0;width:420px">${[['doc','file','Tài liệu'],['img','camera','Ảnh chụp']].map(t=>`<span class="${m.src===t[0]?'on':''}" data-act="impsrc" data-arg="${t[0]}">${ic(t[1])}${t[2]}</span>`).join('')}</div>`;
+ const STEPS=[isImg?'Nhận diện chữ trong ảnh':'Đọc tài liệu',isImg?'AI tách thành từng bài':'AI tách thành từng bài tập và từng bài giảng (phần lý thuyết)','Dựng hình và kiểm chứng','Soạn gợi ý và lời giải theo định dạng của thầy cô'];
+ let body;
+ if(m.stage==='pick')body=`
+<div class="card pad col grow" style="gap:14px;min-width:0">${tabs}
+ ${!isImg?(m.file?`<div class="hint" style="align-items:center;border-color:var(--pri);background:#F5F7FF" data-part="file"><div class="icb pri" style="width:52px;height:52px">${ic('file','width:26px;height:26px')}</div><div class="grow"><h3 style="word-break:break-all">Giao-an-Hinh-khong-gian-11A1.docx</h3><p>Tài liệu Word · 39 KB (dung lượng minh họa)</p></div><span class="chip" data-act="impfile">${ic('x')}Bỏ</span></div>`
+   :`<div class="dz" data-part="file"><div class="icb pri" style="width:56px;height:56px">${ic('file','width:28px;height:28px')}</div><b>Chọn giáo án hoặc ngân hàng bài tập của thầy cô</b><span class="btn" data-act="impfile">${ic('plus')}Chọn tài liệu mẫu</span></div>`)
+   +`<div class="small muted">Chấp nhận tệp .docx, .xlsx, .pdf. Bản mẫu dùng sẵn tệp <b>Giao-an-Hinh-khong-gian-11A1.docx</b>.</div>`
+  :`<div class="dz" data-part="thumbs">${m.imgs.length?`<div class="row" style="gap:16px;align-items:flex-start;flex-wrap:wrap;justify-content:center">${m.imgs.map((p,i)=>`<div class="col" style="gap:6px;align-items:center"><div class="nb">${OCR[p].map(x=>Array.isArray(x)?x[0]:x).join('')}${sh[PB(p).shape]('#2B3A67')}</div>
+     <div class="row" style="gap:4px"><span class="chip" data-act="impmv" data-arg="${i},-1" title="Chuyển lên trước">←</span><b class="small">Ảnh ${i+1}</b><span class="chip" data-act="impmv" data-arg="${i},1" title="Chuyển ra sau">→</span><span class="chip red" data-act="impdel" data-arg="${i}" title="Bỏ ảnh này">${ic('x')}</span></div></div>`).join('')}</div>
+     <span class="btn ghost sm" data-act="imppick">${ic('camera')}Chọn lại ảnh mẫu</span>`
+    :`<div class="icb org" style="width:56px;height:56px">${ic('camera','width:28px;height:28px')}</div><b>Ảnh trang vở, đề in hoặc bảng viết tay</b><span class="btn" data-act="imppick">${ic('camera')}Chụp hoặc chọn nhiều ảnh</span>`}</div>
+   <div class="small muted">Bỏ từng ảnh bằng dấu ×, đổi thứ tự bằng ← →. Bản mẫu dùng sẵn 3 trang vở viết tay.</div>`}
+ <div class="grow"></div></div>
+<div class="card pad col" style="width:400px;flex-shrink:0;gap:13px">
+ <h2 style="margin:0">Định dạng lời giải mong muốn</h2><div class="grp" data-part="fmt">${fmtChips('impfmt',m.fmt)}</div>
+ <div class="lbl" style="margin:4px 0 0">Hệ thống sẽ làm bốn việc</div>${STEPS.map((t,i)=>`<div class="row small"><div class="num">${i+1}</div><span>${t}</span></div>`).join('')}
+ <div class="hint lock small" style="align-items:center"><div class="icb pur">${ic('shield')}</div><div>Kết quả là bản nháp “AI soạn”. Thầy cô xem trước, sửa, rồi duyệt thì bài mới vào giáo trình.</div></div>
+ <div class="grow"></div><span class="btn" style="padding:13px;${(isImg?m.imgs.length:m.file)?'':'opacity:.45'}" data-act="imprun">${ic('spark')}Đọc và nhận diện</span></div>`;
+ else if(m.stage==='run')body=`<div class="card pad col grow" style="align-items:center;justify-content:center;gap:16px"><div class="spin" style="width:60px;height:60px"></div><b>${isImg?`Đang đọc ${m.imgs.length} ảnh`:'Đang đọc Giao-an-Hinh-khong-gian-11A1.docx'}</b>
+  ${STEPS.map((t,i)=>`<div class="row" style="width:440px"><div class="num ${i<m.load?'done':i===m.load?'on':''}">${i<m.load?ic('check','width:14px;height:14px;stroke-width:3'):i+1}</div><b style="${i>m.load?'color:var(--faint)':''}">${t}</b></div>`).join('')}</div>`;
+ else{const bad=m.items.filter(it=>!PB(it.p).ok).length,u=uncLeft(),nw=m.items.filter(it=>!inCurr(it.p)).length,LG=m.lecs&&m.grp==='lec',np=m.prop.length,sel=m.lecs?m.lecs.filter(d=>d.sel):[],nu=sel.filter(d=>!lecSame(d)).length;
+  const sugg=isImg?['Sửa lại bài 1','Bài 2: viết lời giải theo hướng dùng hình chiếu','Gộp gợi ý của bài 3 thành một gợi ý ngắn']:LG?['Sửa lại bài giảng 5','Bài giảng 2: thêm một ví dụ có số cụ thể','Bài giảng 3: viết lại cho dễ hiểu hơn, hợp với lớp 9B']:['Sửa lại bài 2','Bài 4: viết lời giải ngắn gọn hơn','Gộp gợi ý của bài 5 thành một gợi ý ngắn'];
+  body=`
+<div class="col grow" style="gap:12px;min-width:0;min-height:0" data-part="results">
+ <div class="card pad row" style="gap:8px;flex-wrap:wrap;padding:12px 16px"><b>Nhận diện được ${m.items.length} bài${m.lecs?` tập và ${m.lecs.length} bài giảng`:''}</b><span class="chip grn">${ic('shield')}${m.items.length-bad} ${m.lecs?'bài tập ':''}đã kiểm chứng</span>${bad?`<span class="chip yel">${ic('flag')}${bad} cần xem lại</span>`:''}${isImg?`<span class="chip ${u?'yel':'grn'}">${u?`Còn ${u} chỗ máy chưa chắc`:'Đã xác nhận hết chỗ máy chưa chắc'}</span>`:`<span class="chip">${ic('file')}Giao-an-Hinh-khong-gian-11A1.docx</span>`}
+  <span class="grow"></span><span class="small muted">Định dạng lời giải</span>${fmtChips('impfmt',m.fmt)}</div>
+ <div class="row" style="gap:8px;flex-wrap:wrap" data-part="groups">${m.lecs?`<div class="tabs" style="border:none;padding:0;width:470px">${[['ex','cube',`Bài tập · ${m.items.length} bài`],['lec','book',`Bài giảng · ${m.lecs.length} mục lý thuyết`]].map(t=>`<span class="${m.grp===t[0]?'on':''}" data-act="impgrp" data-arg="${t[0]}" data-grp="${t[0]}">${ic(t[1])}${t[2]}</span>`).join('')}</div>`:''}<span class="grow"></span>${np?`<span class="chip pur" data-part="npend">${np} đề xuất chờ thầy cô</span>`:''}${histBar('imp')}</div>
+ ${histPanel('imp')}
+ <div class="col grow scroll" style="gap:12px;padding:2px">${LG?`<div class="small muted" data-part="lecnote">Các mục lý thuyết của giáo án được tách thành bài giảng. Kho của lớp đã có 7 bài giảng này từ bài soạn thầy cô đưa lên trước đó, nên hệ thống đối chiếu thay vì tạo bản trùng. Bỏ dấu chọn ở mục không muốn lưu.</div>`+m.lecs.map((d,i)=>lecCard(d,'imp',i)).join(''):m.items.map((it,i)=>itemCard(it,i,'imp')).join('')}</div>
+ <div class="row"><span class="btn ghost" data-act="impsrc" data-arg="${m.src}">${ic('reset')}Import lại</span><span class="small muted grow" style="text-align:right" data-part="savenote">${nw} bài${m.lecs?' tập':''} mới sẽ vào giáo trình${m.lecs?`; ${sel.length}/${m.lecs.length} bài giảng được chọn (${nu} sẽ cập nhật)`:''}. AI không tự lưu.${np?` Còn ${np} đề xuất chưa quyết sẽ không được lưu.`:' Bài “Cần xem lại” giữ nguyên nhãn đó.'}</span><span class="btn grn" data-act="impsave">${ic('check')}Duyệt và lưu vào giáo trình</span></div></div>
+<div class="card pad col" style="width:384px;flex-shrink:0;gap:10px;min-height:0" data-part="chat"><div class="row"><div class="icb pur">${ic('spark')}</div><div><h2 style="margin:0">Sửa bằng AI</h2><div class="small muted">Nhắn theo số bài${m.lecs?' hoặc số bài giảng':''}</div></div></div>
+ ${chatBox('imp',m.chat,`Thầy cô muốn sửa gì ở các ${m.lecs?'bài tập, bài giảng':'bài'} vừa nhận diện, cứ nhắn theo số, hoặc bấm thẳng vào chữ để sửa. Tôi chỉ đề xuất; thầy cô bấm “Nhận” thì bản nháp mới đổi.`,sugg,'Nhắn để sửa…')}</div>`;}
+ return shell('Import tài liệu và ảnh','Chặng 2 và 5 · hệ thống đọc, tách bài, dựng hình, soạn gợi ý và lời giải; thầy cô duyệt mới vào giáo trình',body,
+ {top:`<span class="btn sm ghost" data-go="gv-curr">${ic('arrow','transform:rotate(180deg)')}Giáo trình</span>`});},
+
+'gv-personal':()=>{const s=SID(st.per.sid),pr=st.per.prop;
+ const ev=(e,cls,icn)=>`<div class="hint" style="border-color:${cls==='grn'?'#B9E6D2':'#F4D58A'};background:var(--${cls}-s)"><div class="icb ${cls}" style="background:#fff">${ic(icn)}</div><div><h3>${LN[e.les]}</h3><p><b>Bài:</b> ${e.bai}</p><p><b>Câu hỏi:</b> ${e.hoi}</p></div></div>`;
+ const prow=(r,i)=>{const p=r.p&&PB(r.p),chg=r.in!==r.in0,tag=chg?`<span class="chip pri">${r.in?'Thầy cô giữ lại':'Thầy cô đã bỏ'}</span>`:{giu:'',luoc:'<span class="chip">Lược bớt</span>',them:'<span class="chip org">Bài thêm</span>',goiy:'<span class="chip yel">Gợi ý kỹ hơn</span>'}[r.tag];
+  return `<div class="hint" style="align-items:center;${r.in?'':'border-style:dashed;background:var(--soft)'}">${p?thumb(p,48,48,34):`<div class="icb yel" style="width:48px;height:48px">${ic('bulb')}</div>`}
+  <div class="grow"><h3 class="${r.in?'':'strike'}">${p?p.short:'Gợi ý kỹ hơn cho phần này'}</h3>${r.why&&!chg?`<p>${r.why}</p>`:''}</div>${tag}
+  ${pr.approved?(r.in?'':'<span class="chip">Không có trong lộ trình</span>'):`<span class="btn sm ghost" style="width:76px" data-act="ptog" data-arg="${i}" data-p="${r.p||'goiy-'+r.les}">${r.in?'Bỏ':ic('plus')+'Thêm'}</span>`}</div>`;};
+ return shell('Giáo trình riêng cho từng học sinh','Chặng 6 · AI đề xuất kèm bằng chứng; thầy cô duyệt mới áp dụng cho học sinh',`
+<div class="card pad col" style="width:216px;flex-shrink:0;gap:8px"><h2 style="margin:0">Lớp 11A1</h2><div class="tiny muted">Danh sách theo sổ lớp, không xếp hạng.</div>
+ ${STU.map(x=>`<div class="hint" style="align-items:center;padding:9px 10px;${x.id===s.id?'border-color:var(--pri);background:#F5F7FF':''}" data-act="psel" data-arg="${x.id}"><div class="ava" style="width:30px;height:30px;font-size:12px;background:${x.c}">${x.n[0]}</div><b class="grow">${x.n}</b>${st.paths[x.id]?`<span class="chip grn" style="padding:4px 6px">${ic('check')}</span>`:''}</div>`).join('')}</div>
+<div class="card pad col scroll" style="width:372px;flex-shrink:0;gap:10px" data-part="evid"><div class="row"><div class="ava" style="background:${s.c}">${s.n[0]}</div><div><h2 style="margin:0">${s.n} · bằng chứng học tập</h2><div class="small muted">Từ bài đã làm và câu đã hỏi</div></div></div>
+ <div class="lbl" style="margin:2px 0 0;color:var(--grn)">Đã vững</div>${s.strong.map(e=>ev(e,'grn','trend')).join('')||'<div class="hint lock small muted">Chưa đủ bằng chứng để ghi nhận phần đã vững.</div>'}
+ <div class="lbl" style="margin:2px 0 0;color:#9A6B00">Đang luyện</div>${s.weak.map(e=>ev(e,'yel','bulb')).join('')}
+ <div class="grow"></div><div class="tiny muted">Nhận định chỉ nói về bài làm của chính em, không so sánh với bạn khác.</div>
+ ${pr?'':`<span class="btn" style="padding:12px" data-act="ppropose">${ic('spark')}Đề xuất giáo trình riêng</span>`}</div>
+<div class="card pad col grow" style="gap:12px;min-width:0;min-height:0" data-part="prop">${!pr?`<div class="col grow" style="align-items:center;justify-content:center;gap:10px;color:var(--muted);text-align:center"><div class="icb pur" style="width:72px;height:72px;border-radius:22px">${ic('layers','width:34px;height:34px')}</div><b>Lộ trình đề xuất sẽ hiện ở đây</b><div class="small" style="max-width:340px">AI rút từ giáo trình chung: phần đã vững thì rút gọn, phần đang luyện thì thêm bài và gợi ý kỹ hơn.</div></div>`:`
+ <div class="row"><h2 style="margin:0">Lộ trình ${pr.approved?'':'đề xuất '}cho ${s.n}</h2><span class="chip ${pr.approved?'grn':'pur'}" style="margin-left:auto">${pr.approved?ic('check')+'Giáo viên đã duyệt · đang áp dụng':ic('spark')+'AI đề xuất · chờ thầy cô duyệt'}</span></div>
+ <div class="col grow scroll" style="gap:14px;padding:2px">${Object.keys(LN).filter(l=>pr.rows.some(r=>r.les===l)).map(l=>{const k=pathStat(s,l);return `<div class="col" style="gap:7px"><div class="row" style="flex-wrap:wrap;gap:6px"><b>${LN[l]}</b><span class="chip ${['','grn','yel'][k]}">${['Giữ như giáo trình chung','Đã vững · rút gọn','Đang luyện · thêm bài, gợi ý kỹ hơn'][k]}</span></div>
+  ${k?`<div class="small muted">Lý do: ${(k===1?s.strong:s.weak).find(e=>e.les===l).bai}</div>`:''}${pr.rows.map((r,i)=>r.les===l?prow(r,i):'').join('')}</div>`}).join('')}</div>
+ <div class="hint small" style="align-items:center;background:var(--soft)" data-part="approve"><div class="icb grn">${ic('heart')}</div><div class="grow"><b>Phụ huynh sẽ chỉ thấy dòng này:</b> ${pr.sum}</div>
+  ${pr.approved?'':`<span class="btn grn" style="padding:12px 16px" data-act="papprove">${ic('check')}Duyệt và áp dụng</span>`}</div>`}</div>`,
+ {top:`<span class="btn sm ghost" data-go="gv-curr">${ic('arrow','transform:rotate(180deg)')}Giáo trình</span>`});},
+
+'hs-path':()=>{const P=st.paths.an,s=SID('an'),back=`<span class="btn sm ghost" data-go="hs-home">${ic('arrow','transform:rotate(180deg)')}Bài của em</span>`;
+ if(!P)return shell('Lộ trình của em','Chặng 6 · lộ trình riêng do giáo viên duyệt',`<div class="card pad col grow" style="align-items:center;justify-content:center;gap:10px;color:var(--muted);text-align:center"><div class="icb pur" style="width:72px;height:72px;border-radius:22px">${ic('layers','width:34px;height:34px')}</div><b>Em chưa có lộ trình riêng</b><div class="small">Khi giáo viên duyệt lộ trình cho em, nó sẽ hiện ở đây.</div></div>`,{top:back});
+ const rows=P.rows.filter(r=>r.in),n=rows.filter(r=>r.p).length;
+ return shell('Lộ trình của em','Chặng 6 · giáo viên của em đã duyệt lộ trình này',`
+<div class="col grow scroll" style="gap:14px;min-width:0" data-part="path">
+ ${Object.keys(LN).filter(l=>rows.some(r=>r.les===l)).map(l=>{const k=pathStat(s,l),deep=rows.some(r=>r.les===l&&r.deep);return `<div class="card pad col" style="gap:9px"><div class="row" style="flex-wrap:wrap;gap:6px"><h2 style="margin:0">${LN[l]}</h2>${k?`<span class="chip ${['','grn','yel'][k]}">${['','Em đã vững · làm gọn','Em đang luyện · có thêm bài'][k]}</span>`:''}</div>
+  ${rows.filter(r=>r.les===l&&r.p).map(r=>{const p=PB(r.p),a=st.asg.find(x=>x.p===r.p&&!x.self);return `<div class="hint" style="align-items:center"${a?` data-act="open" data-arg="${a.id}"`:''}>${thumb(p,54,54,38)}<div class="grow"><h3>${p.short}</h3><p>${a?(a.seen?'Em đã xem lời giải':'Giáo viên đã giao, bấm để làm'):'Sẽ mở khi giáo viên giao'}</p></div>${r.tag==='them'?'<span class="chip org">Bài thêm cho em</span>':''}${a?`<span class="btn sm soft">${ic('play')}Mở bài</span>`:`<span class="chip">${ic('clock')}Chờ giao</span>`}</div>`}).join('')}
+  ${deep?`<div class="row small" style="color:#9A6B00;gap:8px">${ic('bulb','width:16px;height:16px')}Ở phần này, gợi ý 2 của em được chia thành các bước nhỏ hơn.</div>`:''}</div>`}).join('')}
+</div>
+<div class="col" style="width:320px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="background:linear-gradient(135deg,#7C4DFF,#3B5BDB);color:#fff;border:none;gap:6px"><div class="row"><div class="icb" style="background:rgba(255,255,255,.2);color:#fff">${ic('layers')}</div><div><div style="font-size:21px;font-weight:800">${n} bài trong lộ trình</div><div class="small" style="opacity:.85">Giáo viên của em đã duyệt</div></div></div></div>
+ <div class="card pad col" style="gap:8px"><h2 style="margin:0">Vì sao có lộ trình này?</h2><div class="small muted">Lộ trình dựa trên những bài em đã làm và câu em đã hỏi. Phần em đã vững được làm gọn lại; phần em đang luyện có thêm bài và gợi ý chia nhỏ hơn.</div><div class="small muted">Em vẫn xem gợi ý trước; lời giải mở theo giờ giáo viên đặt.</div></div></div>`,{top:back});}
+});
+MODALS.pv=()=>{const x=st.pv,ctx=st[x.k],it=ctx.items[x.i],v=IV(it,x.k==='cmp'?ctx.o.fmt:ctx.fmt),p=v.p,h=Math.min(x.h,v.hints.length);
+ return `<div class="ov"><div class="modal" style="width:600px;max-width:94%"><div class="row"><div class="icb pri">${ic('eye')}</div><div><h2 style="margin:0;font-size:18px">Xem như học sinh · Bài ${x.i+1}</h2><div class="small muted">Đúng những gì học sinh thấy khi bài được giao</div></div><span class="chip" style="margin-left:auto" data-act="modal" data-arg="">${ic('x')}Đóng</span></div>
+ <div class="row" style="align-items:stretch;gap:14px"><div class="col" style="width:240px;flex-shrink:0;gap:10px"><div class="hint small" style="font-weight:500">${v.t}</div>${FIGP(p.id)?`<div class="thumb grow" style="height:230px;min-height:230px;overflow:hidden;display:block">${figBox(p.id,'pv')}</div><div class="tiny muted">Kéo để xoay hình.</div>`:`<div class="thumb grow" style="height:auto;min-height:190px">${figStatic(p,'150px')}</div>`}<div class="row"><span class="chip ${v.ok?'grn':'yel'}">${ic('shield')}${v.ok?'Hình đã kiểm chứng':'Cần xem lại'}</span></div></div>
+ <div class="col grow" style="gap:9px" data-part="pvside"><div class="steps">${v.hints.map((_,i)=>`<i class="${i<h?'on':''}"></i>`).join('')}<i></i></div>
+  ${v.hints.slice(0,h).map((t,i)=>`<div class="hint ${i===h-1?'act':''}"><div class="icb yel">${ic('bulb')}</div><div><h3>Gợi ý${v.hints.length>1?' '+(i+1):''}</h3><p>${t}</p></div></div>`).join('')}
+  ${h<v.hints.length?`<span class="btn" data-act="pvhint">${ic('bulb')}Xem gợi ý ${h+1}</span>`:''}
+  <div class="hint lock" style="align-items:center"><div class="icb" style="background:#E7EBF4;color:var(--muted)">${ic('lock')}</div><div><h3>Lời giải đang khóa</h3><p>${v.steps.length} bước · mở theo giờ thầy cô đặt khi giao bài.</p></div></div></div></div></div></div>`;};
+
+/* ============ HÀNH ĐỘNG ============ */
+/* Trợ lý hỏi đáp (soạn sẵn): trả lời từ kho bài giảng / giáo trình, luôn kèm nguồn (PO-33); trước giờ mở không nêu đáp số (PO-37, PO-22);
+   câu hỏi ngoài giáo trình thì không tự trả lời. Kết quả: {t, src: mã bài giảng | 'bai', step, oos, deny} */
+const OOS=/oxyz|tọa độ|toạ độ|tích phân|đạo hàm|xác suất|phương trình|logarit|số phức|giới hạn|vectơ|véc tơ/;
+const OOS_T='Giáo trình của lớp chưa có phần này, nên mình không tự trả lời để tránh nói khác với bài thầy cô dạy. Em hỏi giáo viên nhé; câu hỏi của em đã được ghi lại để giáo viên thấy.';
+const QS=a=>{const p=PB(a.p),l=(KBP[p.id]||[])[0],n=VA(a).steps.length;
+ return [l?KB[l].q:'Em nên bắt đầu từ đâu?',p.id==='p1'?'Vì sao A là hình chiếu của S?':l?'Em nên bắt đầu từ đâu?':'Bài này cần dùng kiến thức nào?','Đáp số là bao nhiêu?','Phương trình mặt phẳng trong Oxyz viết thế nào?',`Giải thích bước ${Math.min(2,n)} của lời giải`];};
+const reply=q=>{const a=A(),p=PB(a.p),v=VA(a),s=q.toLowerCase(),nH=v.hints.length,lecs=KBP[p.id]||[],l0=lecs[0]||'bai';
+ const hintNow=v.hints[Math.max(0,Math.min(a.hints,nH)-1)],lockT=a.self?'mở sau khi em xem hết gợi ý':'mở '+a.rel;
+ const stepOf=id=>{const i=v.steps.findIndex(x=>KB[id].terms.some(t=>(x[1]+' '+x[2]).toLowerCase().includes(t)));return i<0?0:i;};
+ if(OOS.test(s))return{oos:1,t:OOS_T};
+ if(/đáp số|đáp án|kết quả|bao nhiêu|bằng mấy/.test(s)){
+  if(a.open)return{t:`Lời giải đã mở nên mình nói được: đáp số là ${p.ans}. Em xem lại cách ra kết quả ở bước cuối của lời giải.`,src:l0,step:v.steps.length-1};
+  return{deny:1,src:l0,t:`Mình chưa nêu đáp số được vì lời giải chưa mở (${lockT}). ${lecs[0]?`Em đọc lại bài giảng “${KB[lecs[0]].t}” rồi thử tiếp theo hướng này: `:'Em thử tiếp theo hướng này: '}${hintNow}`};}
+ const sm=s.match(/bước\s*(\d)/);
+ if(sm||/lời giải/.test(s)){
+  if(!a.open)return{src:l0,t:`Lời giải chưa mở (${lockT}) nên mình chưa đi vào từng bước được. Trong lúc chờ, em thử theo hướng này: ${hintNow}`};
+  const i=Math.max(0,Math.min(v.steps.length-1,(sm?+sm[1]:1)-1)),x=v.steps[i];
+  return{t:`Bước ${i+1} là “${x[0]}”. ${x[2]}`,step:i,src:lecs.find(id=>KB[id].terms.some(t=>(x[1]+' '+x[2]).toLowerCase().includes(t)))||l0};}
+ const id=kbFind(s);
+ if(id){const L=KB[id];let t=/chưa hiểu|giải thích thêm|ví dụ|khó hiểu/.test(s)?L.more:L.sum,step;
+  if(p.id==='p1'&&id==='hc'&&/của s|a là/.test(s))t+=' Trong bài này, SA vuông góc với mặt đáy tại A, nên chân đường vuông góc hạ từ S xuống mặt đáy chính là A.';
+  else if(a.open&&lecs.includes(id)){step=stepOf(id);t+=` Trong lời giải, phần này được dùng ở bước ${step+1}.`;}
+  else if(!a.open&&lecs.includes(id))t+=' Em thử chỉ ra điều đó trên hình của bài này.';
+  return{t,src:id,step};}
+ if(/bắt đầu|làm sao|làm thế nào|cách làm|hướng|gợi ý|bài này|vì sao|tại sao|giúp|kiến thức/.test(s))
+  return a.open?{t:`Em bắt đầu từ bước 1 của lời giải: “${v.steps[0][0]}”. ${v.steps[0][2]}`,src:l0,step:0}:{t:`Em thử theo hướng này: ${hintNow}`,src:l0};
+ return{oos:1,t:OOS_T};};
+const ACT={
+ open:id=>{st.cur=id;const a=A();a.isNew=false;a.acts++;st.tab=a.open&&a.hints>=nHof(a)?'sol':'hint';st.step=0;if(st.tab==='sol')a.seen=true;go('hs-work');},
+ tab:t=>{st.tab=t;const a=A();if(t==='sol'&&a.open&&!a.seen){a.seen=true;}render();},
+ hint:()=>{const a=A();if(a.hints>=nHof(a))return;a.hints++;a.acts++;if(a.self&&a.hints>=nHof(a)){a.open=true;toast('Em đã xem đủ hai gợi ý, lời giải đã mở');}render();},
+ step:i=>{st.step=+i;render();},
+ // thanh công cụ và nút góc nhìn điều khiển Fig3D; thông báo và việc đếm hoạt động nằm ở figEvent
+ tool:id=>{if(!FIG)return;if(id==='reset')FIG.reset();else FIG.setTool(id);updFigUI();},
+ view:v=>{if(!FIG)return;if(v==='default'){FIG.resetView();toast('Kéo trên hình để xoay tự do; chụm hai ngón để thu phóng');}else FIG.setView(v);},
+ gostep:i=>{const a=A();if(!a.open)return;st.tab='sol';st.step=+i;a.seen=true;st.modal=null;render();},
+ lec:id=>{if(!KB[id])return;st.lec=id;st.modal='lec';if(st.view==='hs-work'&&st.role==='hs')A().acts++;render();},
+ lecask:id=>{st.modal=null;st.tab='chat';ACT.ask(`Em chưa hiểu rõ “${KB[id].t}”, giải thích thêm giúp em.`);},
+ kbok:id=>{if(kbOk(id))return;st.kbok[id]=1;toast(`Đã duyệt bài giảng “${KB[id].t}”. Học sinh thấy nhãn “Giáo viên đã duyệt”.`);render();},
+ noop:()=>{},
+ ask:q=>{const a=A();q=q||document.getElementById('q').value.trim();if(!q)return;const r=reply(q);a.chat.push({me:1,t:q,ans:{src:r.src,oos:r.oos,deny:r.deny}});a.acts++;render();setTimeout(()=>{a.chat.push(r);if(st.view==='hs-work'&&st.tab==='chat')render();},650);},
+ build:()=>{const q=document.getElementById('selfq').value;const p=PROBS.find(p=>q.includes(p.t.slice(0,18)))||PB('p6');ACT.selfp(p.id);},
+ selfp:id=>{const lk=st.asg.find(x=>!x.self&&x.p===id&&!x.open);if(lk){toast('Đề này trùng bài đang được giao. Lời giải mở theo giờ giáo viên đặt.');return ACT.open(lk.id);}st.load=0;go('hs-loading');const t=setInterval(()=>{st.load++;if(st.load>=4){clearInterval(t);let a=st.asg.find(x=>x.self&&x.p===id);if(!a){a={id:'s'+Date.now(),p:id,cls:'',rel:'',open:false,hints:0,chat:[],seen:false,acts:0,self:true};st.asg.push(a);}ACT.open(a.id);if(!PB(id).ok)toast('Hình này do AI tự dựng, chưa qua kiểm chứng');}else render();},600);},
+ prob:id=>{st.pid=id;st.back=null;go('gv-prob');}, selcls:c=>{st.sel.cls=c;render();}, selrel:r=>{st.sel.rel=r;render();},
+ assign:()=>busy('Đang giao bài cho '+st.sel.cls+'…',700,()=>{const now=st.sel.rel==='ngay bây giờ';st.asg.unshift({id:'a'+Date.now(),p:st.pid,cls:st.sel.cls,rel:now?'đã mở':st.sel.rel,open:now,hints:0,chat:[],seen:false,acts:0,isNew:true});st.tr=st.asg[0].id;toast('Đã giao cho '+st.sel.cls+'. Học sinh thấy bài ngay.');go('gv-track');}),
+ track:id=>{st.tr=id;go('gv-track');},
+ release:id=>{const a=st.asg.find(x=>x.id===id);a.open=true;a.rel='đã mở';toast('Đã mở lời giải cho cả lớp');render();},
+ modal:m=>{st.modal=m||null;render();},
+ settime:r=>{const a=st.asg.find(x=>x.id===st.tr)||st.asg.find(x=>!x.self);a.rel=r;st.modal=null;toast('Đã đổi giờ mở: '+r);render();},
+ pt:x=>{const[i,d]=x.split(',').map(Number),c=st.grade.crit[i];if(st.grade.approved)return;c[2]=Math.max(0,Math.min(c[3],c[2]+d));c[4]=0;render();},
+ acc:i=>{if(st.grade.approved)return;const c=st.grade.crit[+i];c[4]=c[4]?0:1;render();},
+ approve:()=>{if(st.grade.crit.some(c=>!c[4]))return toast('Còn tiêu chí chưa nhận. Bấm "Nhận" ở từng dòng trước.');busy('Đang trả bài…',600,()=>{st.grade.approved=true;toast('Đã duyệt. Học sinh và phụ huynh thấy điểm.');render();});},
+ draft:()=>busy('Trợ lý đang soạn nháp từ kho đề của thầy cô…',1100,()=>{st.cop=1;render();}),
+ copok:()=>{st.cop=2;st.libExtra+=3;toast('Đã thêm 3 đề vào kho');render();},
+ adddone:()=>{st.libExtra+=1;toast('Đã đưa đề vào kho');go('gv-lib');},
+ psend:()=>{const v=document.getElementById('pm').value.trim();if(!v)return;st.msgs.push({f:'ph',t:v});render();setTimeout(()=>{st.msgs.push({f:'gv',t:'Cảm ơn anh chị. Ở nhà nên cùng con xem lại 2 bài khoảng cách đã có lời giải, mỗi bài khoảng 10 phút.'});if(st.role==='ph')render();},900);},
+ gsend:()=>{const v=document.getElementById('gq').value.trim();if(!v)return;st.grp.push(['An','#F0522B',v]);render();setTimeout(()=>{st.grp.push(['Trợ lý nhóm','#7C4DFF','Hướng đi hợp lý. Thử giải thích vì sao AH vuông góc với cả mặt (SBD), không chỉ với SO.']);if(st.view==='hs-group')render();},800);},
+ subj:s=>{st.subj=s;render();}, toastx:t=>toast(t)};
+/* --- hành động: giáo trình, soạn bài, import, giáo trình riêng --- */
+const clrNew=()=>{st.curr.forEach(k=>{delete k.isNew;});Object.keys(st.kbx).forEach(id=>{delete st.kbx[id].isNew;});};
+const saveItems=(items,src,dfmt)=>{clrNew();let n=0,d=0;
+ items.forEach(it=>{if(inCurr(it.p)){d++;return;}st.curr.push({id:'k'+(++st.kid),p:it.p,les:LES[it.p],src,fmt:it.fmt||dfmt,merged:it.merged?1:0,h3:it.h3?1:0,alt:it.alt?1:0,ed:it.ed||null,rev:it.rev?1:0,isNew:1});n++;});
+ return `Đã lưu ${n} bài vào giáo trình, nhãn “Giáo viên đã duyệt”`+(d?` · ${d} bài đã có sẵn nên bỏ qua`:'');};
+// bài giảng từ file: mục được chọn thì ghi vào kho; mục trùng khớp chỉ ghi nhận đã đối chiếu
+const saveLecs=lecs=>{let u=0,same=0;lecs.filter(d=>d.sel).forEach(d=>{const eq=lecSame(d);st.kbx[d.id]=Object.assign({},st.kbx[d.id],{body:d.body.slice(),exT:d.exT||null,fig:d.fig,isNew:eq?'same':'upd'});eq?same++:u++;});
+ return ` · Bài giảng: ${u} bài cập nhật, ${same} bài trùng khớp với kho`;};
+const lSent=lo=>`Soạn bài giảng “${KB[lo.con].t}”, diễn đạt cho lớp ${lo.lvl}, ${lo.len==='short'?'ngắn gọn':'đầy đủ'}, ${lo.ex==='co'?'có':'không'} ví dụ minh họa, ${lo.fig==='co'?'có':'không'} hình minh họa.`;
+const mkLec=lo=>{const L=KB[lo.con];let body=lo.len==='short'?[L.sum]:L.body.slice();if(lo.lvl==='9B')body=[L.more].concat(body);
+ return{id:lo.con,lvl:lo.lvl,body,exT:lo.ex==='co'?LEX[lo.con]:null,fig:lo.fig==='co'};};
+// AI không tự đổi bản nháp: mỗi thay đổi là một đề xuất gắn vào mục bị đổi, chờ giáo viên Nhận hoặc Bỏ (PO-46)
+function propose(ctx,x){ctx.prop=ctx.prop.filter(q=>!(q.k===x.k&&q.i===x.i));x.id=++ctx.pid;ctx.prop.push(x);
+ if(x.k==='ex'){ctx.last=x.i;ctx.llast=-1;if(ctx.lecs)ctx.grp='ex';}else{ctx.llast=x.i;ctx.last=-1;if(ctx.lecs)ctx.grp='lec';}
+ return{t:`Tôi đề xuất ${x.sum} ở ${tgtName(ctx,x.k,x.i)}. Phần trước → sau và lý do nằm ngay trên thẻ đó. Bản nháp chưa đổi: thầy cô bấm “Nhận” nếu hợp, “Bỏ” nếu không.`,unc:x.unc||''};}
+// lệnh chỉnh sửa mẫu của trợ lý: nhận số bài và một từ khóa; yêu cầu chưa rõ thì hỏi lại kèm lựa chọn
+function aiEdit(ctx,q,key){const s=q.toLowerCase(),o=ctx.o;
+ if(key==='cmp'?ctx.kind==='lec':(!!ctx.lecs&&(/bài giảng/.test(s)||(ctx.grp==='lec'&&!/bài\s*\d/.test(s)))))return aiLec(ctx,s);
+ const m=s.match(/bài\s*(\d+)/),n=m?+m[1]:0,it=ctx.items[n-1];
+ if(!it)return{t:'Thầy cô muốn sửa bài số mấy? Tôi chưa đoán để tránh sửa nhầm bài.',opts:ctx.items.slice(0,4).map((_,j)=>[`Bài ${j+1}`,`Sửa lại bài ${j+1}`])};
+ const p=PB(it.p),v=IV(it,key==='cmp'?o.fmt:ctx.fmt),base=key==='cmp'?`định hướng thầy cô đã chọn (${nm(TOPIC,o.topic).toLowerCase()}, mức ${o.lv.toLowerCase()})`:ctx.src==='doc'?`đề đọc từ tệp ${DOCN}`:'đề đọc từ ảnh thầy cô đưa lên';
+ const P=(part,sum,before,after,why,x)=>propose(ctx,Object.assign({k:'ex',i:n-1,part,sum,before,after,why},x)),tt=a=>a.map((x,j)=>`${j+1}. ${x[0]}`).join(' → ');
+ if(/dễ hơn/.test(s)){if(!p.easy)return `Bản mẫu chưa có phiên bản dễ hơn cho bài ${n}.`;const e=PB(p.easy);
+  return P('Đề bài','đổi đề sang mức dễ hơn',p.t,e.t,`Giữ nguyên hình và dữ kiện, chỉ đổi đại lượng cần tính để lời giải còn ${e.steps.length} bước thay vì ${p.steps.length}; dựa trên ${base}.`,
+   {swap:p.easy,unc:`Tôi chưa chắc mức “${DLV[e.id]}” có vừa với cả lớp 11A1 không: bài mới chỉ còn ${e.steps.length} bước. Thầy cô xem đề mới rồi quyết định.`,chk:`Máy kiểm lại sau thay đổi: hình, gợi ý và lời giải đã soạn lại, đáp số ${e.ans} đã kiểm chứng.`});}
+ if(/hình chiếu/.test(s)){if(!p.alt||it.alt)return `Lời giải bài ${n} hiện không dùng tọa độ nên tôi giữ nguyên.`;
+  return P('Lời giải','viết lời giải theo hướng dùng hình chiếu',tt(p.steps),tt(p.alt),`Thầy cô yêu cầu không dùng tọa độ, nên tôi dựng hình chiếu của điểm lên mặt phẳng thay cho hệ trục; dựa trên ${base}.`,{patch:{alt:1},chk:`Máy kiểm lại sau thay đổi: đáp số giữ nguyên ${p.ans}, đã tính lại theo cách mới.`});}
+ if(/gộp/.test(s)){if(it.merged)return `Gợi ý của bài ${n} đã được gộp rồi.`;
+  return P('Gợi ý','gộp các gợi ý thành một gợi ý ngắn',v.hints.map((h,j)=>`Gợi ý ${j+1}: ${h}`).join(' '),p.hm||p.hints.join(' '),'Gộp ý của các gợi ý thành một câu; không thêm thông tin mới và không nêu đáp số.',{patch:{merged:1,h3:0},chk:'Máy kiểm lại sau thay đổi: lời giải và đáp số không đổi.'});}
+ if(/thêm.*gợi ý/.test(s)){if(it.h3)return `Bài ${n} đã có gợi ý thêm rồi.`;
+  return P('Gợi ý',`thêm gợi ý ${v.hints.length+1}`,`Có ${v.hints.length} gợi ý trước lời giải.`,`Gợi ý ${v.hints.length+1}: ${p.h3||`Việc đầu tiên nên làm: ${p.steps[0][0].toLowerCase()}.`}`,'Gợi ý mới chỉ nêu bước kế tiếp, không nêu đáp số; học sinh vẫn xem gợi ý theo thứ tự trước khi tới lời giải.',{patch:{h3:1},chk:'Máy kiểm lại sau thay đổi: lời giải và đáp số không đổi.'});}
+ if(/ngắn/.test(s)){if(v.fmt==='short')return `Lời giải bài ${n} đang ở dạng ngắn gọn rồi.`;const x=v.steps[0];
+  return P('Lời giải','viết lời giải ngắn gọn hơn',`Bước 1: ${x[0]}. ${x[1]} Vì sao: ${x[2]}`,`Bước 1: ${x[1]}`,`Giữ đủ ${v.steps.length} bước tính và đáp số, chỉ bỏ phần “vì sao” ở mỗi bước, theo yêu cầu của thầy cô.`,{patch:{fmt:'short'},chk:`Máy kiểm lại sau thay đổi: các bước tính và đáp số ${p.ans} không đổi.`});}
+ if(/vì sao|từng bước|chi tiết/.test(s)){if(v.fmt==='full')return `Lời giải bài ${n} đang ở dạng từng bước kèm “vì sao” rồi.`;const x=v.steps[0];
+  return P('Lời giải','viết lời giải từng bước kèm “vì sao”',`Bước 1: ${x[1]}`,`Bước 1: ${x[0]}. ${x[1]} Vì sao: ${x[2]}`,'Thêm tên bước và phần “vì sao” cho mỗi bước; các bước tính giữ nguyên.',{patch:{fmt:'full'},chk:`Máy kiểm lại sau thay đổi: các bước tính và đáp số ${p.ans} không đổi.`});}
+ return{t:`Thầy cô muốn sửa phần nào của bài ${n}: đề, gợi ý hay lời giải? Tôi chưa đoán để tránh sửa nhầm.`,opts:[['Đề: đổi sang mức dễ hơn',`Bài ${n}: đổi đề sang mức dễ hơn`],['Gợi ý: thêm một gợi ý',`Bài ${n}: thêm một gợi ý`],['Gợi ý: gộp thành một',`Bài ${n}: gộp gợi ý thành một gợi ý ngắn`],['Lời giải: viết ngắn gọn hơn',`Bài ${n}: viết lời giải ngắn gọn hơn`]]};}
+function aiLec(ctx,s){const many=!!ctx.lecs;let i=0;
+ if(many){const m=s.match(/bài giảng\s*(\d+)/);i=m?+m[1]-1:-1;
+  if(!ctx.lecs[i])return{t:'Thầy cô muốn sửa bài giảng số mấy? Tôi chưa đoán để tránh sửa nhầm mục.',opts:ctx.lecs.slice(0,4).map((d,j)=>[`${j+1} · ${KB[d.id].t}`,`Sửa lại bài giảng ${j+1}`])};}
+ const d=many?ctx.lecs[i]:ctx.lec,L=KB[d.id],N=tgtName(ctx,'lec',i),pre=many?`Bài giảng ${i+1}: `:'',base=many?`${L.sec} trong tệp ${DOCN}`:'định hướng thầy cô đã chọn';
+ const P=(part,sum,before,after,why,x)=>propose(ctx,Object.assign({k:'lec',i,part,sum,before,after,why},x));
+ if(/ví dụ/.test(s)){
+  if(/bỏ/.test(s)){if(!d.exT)return `${cap(N)} hiện chưa có ví dụ nào để bỏ.`;return P('Ví dụ minh họa','bỏ ví dụ minh họa',d.exT,'Không còn ví dụ.','Theo yêu cầu của thầy cô; phần nội dung giữ nguyên.',{patch:{exT:null},chk:'Máy kiểm lại sau thay đổi: phần nội dung không đổi.'});}
+  if(d.exT)return `${cap(N)} đã có ví dụ minh họa. Thầy cô có thể bấm vào chữ của ví dụ để sửa trực tiếp.`;
+  if(!LEX[d.id])return `Bản mẫu chưa soạn sẵn ví dụ cho bài giảng “${L.t}”.`;
+  return P('Ví dụ minh họa','thêm một ví dụ có số cụ thể','Chưa có ví dụ.',LEX[d.id],`Ví dụ áp dụng đúng nội dung của ${base}; hình và số liệu khác với mọi bài tập trong giáo trình nên không làm lộ đáp số bài nào.`,{patch:{exT:LEX[d.id]},chk:'Máy kiểm lại sau thay đổi: đã tính lại các con số trong ví dụ, đạt.'});}
+ if(/9b|dễ hiểu|đơn giản|đời thường/.test(s)){if(d.body.includes(L.more))return `${cap(N)} đã mở đầu bằng cách diễn đạt đời thường rồi.`;const b9=/9b/.test(s);
+  return P('Nội dung · đoạn mở đầu','thêm đoạn mở đầu dễ hiểu hơn',`Mở đầu bằng định nghĩa: ${d.body[0]}`,`Mở đầu bằng hình ảnh quen thuộc, rồi mới tới định nghĩa: ${L.more}`,`Học sinh gặp một hình ảnh đời thường trước khi đọc định nghĩa; các đoạn còn lại lấy từ ${base} và giữ nguyên.`,{patch:{body:[L.more].concat(d.body),lvl:b9?'9B':d.lvl},unc:b9?unc9(d.id):'',chk:'Máy kiểm lại sau thay đổi: định nghĩa và công thức không đổi.'});}
+ if(/ngắn|rút gọn/.test(s)){if(d.body.length===1)return `Nội dung của ${N} đã chỉ còn một đoạn.`;
+  return P('Nội dung','rút nội dung còn một đoạn tóm tắt',`${d.body.length} đoạn, mở đầu là: ${d.body[0]}`,L.sum,'Giữ định nghĩa và công thức chính, bỏ phần cách làm và lưu ý; học sinh đọc nhanh hơn khi bấm từ khóa.',{patch:{body:[L.sum]},chk:'Máy kiểm lại sau thay đổi: định nghĩa và công thức chính còn đủ.'});}
+ if(/hình minh họa|bỏ hình|thêm hình/.test(s)){const can=LFIG[d.id]||LFIGX[d.id];if(!can)return `Bản mẫu chưa có hình minh họa cho bài giảng “${L.t}”.`;const on=d.fig!==false&&!!lecFig(d.id,d);
+  return P('Hình minh họa',on?'bỏ hình minh họa':'thêm hình minh họa',on?'Có một hình nhỏ bên phải nội dung.':'Không có hình.',on?'Không có hình.':'Có một hình nhỏ bên phải nội dung.','Theo yêu cầu của thầy cô; phần chữ giữ nguyên.',{patch:{fig:!on},chk:'Máy kiểm lại sau thay đổi: phần chữ không đổi.'});}
+ return{t:`Thầy cô muốn sửa phần nào của ${N}: ví dụ, cách diễn đạt hay độ dài? Tôi chưa đoán để tránh sửa nhầm.`,opts:[['Ví dụ: thêm một ví dụ có số cụ thể',pre+'thêm một ví dụ có số cụ thể'],['Diễn đạt: viết dễ hiểu hơn',pre+'viết lại cho dễ hiểu hơn'],['Độ dài: rút ngắn nội dung',pre+'rút ngắn nội dung']]};}
+const mtok=x=>(String(x).match(/[0-9]+(?:,[0-9]+)?|√|⊥|=|π|°|[A-Z][A-Z′]+/g)||[]).join(' ');      // số liệu và kí hiệu toán trong một đoạn chữ
+const R=r=>typeof r==='string'?{t:r}:r;
+Object.assign(ACT,{
+ cassign:p=>{st.pid=p;st.back='gv-curr';go('gv-prob');},
+ cset:x=>{const c=st.cmp,o=c.o,[k,v]=x.split(/,(.*)/);
+  if(k==='edit'){c.edit=!c.edit;return render();}
+  if(k.startsWith('lo.')){c.lo[k.slice(3)]=v;return render();}
+  if(k==='types'){const i=o.types.indexOf(v);if(i<0)o.types.push(v);else if(o.types.length>1)o.types.splice(i,1);}
+  else if(k==='n')o.n=+v;else{o[k]=v;if(k==='topic')o.types=TDEF[v].slice();}
+  render();},
+ ckind:k=>{const c=st.cmp;if(c.kind===k)return;if(c.items||c.lec)return toast('Thầy cô duyệt bản nháp hiện tại, hoặc bấm “Soạn lại từ đầu”, rồi mới đổi loại nội dung.','flag');c.kind=k;c.edit=false;render();},
+ csend:q=>{const c=st.cmp,o=c.o,L=c.kind==='lec';q=(q||c.q||'').trim();c.q='';
+  if(L?c.lec:c.items){if(!q)return;c.chat.push({me:1,t:q});render();setTimeout(()=>{c.chat.push(R(aiEdit(c,q,'cmp')));if(st.view==='gv-compose')render();},650);return;}
+  if(L){const lo=c.lo,T=KB[lo.con];c.chat.push({me:1,t:(q&&q!=='Soạn theo định hướng đã chọn'?q+' ':'')+lSent(lo)});c.edit=false;render();
+   busy('Trợ lý đang soạn bài giảng…',1100,()=>{const d=c.lec=mkLec(lo);
+    c.chat.push({t:`Tôi đã soạn nháp bài giảng “${T.t}”: ${d.body.length} đoạn nội dung${d.exT?', một ví dụ có số cụ thể':''}${lecFig(d.id,d)?', một hình nhỏ':''} và ${T.rel.length} từ khóa liên quan. Giáo án của thầy cô chưa có mục này nên tôi viết theo kiến thức chung của chương trình; bài giảng chỉ nêu khái niệm và phương pháp, không nêu đáp số của bài tập nào. Thầy cô chat để chỉnh, sửa thẳng vào chữ, hoặc duyệt để lưu.`,unc:lo.lvl==='9B'?unc9(lo.con):''});
+    render();});return;}
+  c.chat.push({me:1,t:(q&&q!=='Soạn theo định hướng đã chọn'?q+' ':'')+oSent(o)});c.edit=false;render();
+  busy('Trợ lý đang soạn bài tập, gợi ý và lời giải…',1100,()=>{
+   const pool=POOL.filter(x=>x[1]===o.topic&&o.types.some(t=>x[2].includes(t))&&!inCurr(x[0])).slice(0,o.n);
+   if(!pool.length){c.chat.push({t:'Bản mẫu chưa có bài soạn sẵn cho định hướng này, hoặc các bài phù hợp đã nằm trong giáo trình. Thầy cô thử đổi chủ đề hoặc loại bài tập.'});c.edit=true;return render();}
+   c.items=pool.map(x=>({p:x[0]}));c.last=-1;const bad=pool.filter(x=>!PB(x[0]).ok).length,k=pool.length;
+   c.chat.push({t:`Tôi đã soạn ${k} bài, mỗi bài có hình, hai gợi ý và lời giải ${nm(FMT,o.fmt).toLowerCase()}. ${bad?`${bad} bài máy chưa kiểm chứng được nên mang nhãn “Cần xem lại”.`:`Cả ${k} bài đã qua kiểm chứng bằng tính toán.`}${k<o.n?` Bản mẫu chỉ có sẵn ${k} bài cho định hướng này.`:''}${o.dir==='td'?' Bản mẫu chỉ có sẵn lời giải theo hướng hình chiếu.':''}${pool.some(x=>DLV[x[0]]!==o.lv)?' Mức của từng bài ghi trên thẻ.':''} Thầy cô chat tiếp để chỉnh, hoặc duyệt để lưu vào giáo trình.`});
+   render();});},
+ creset:()=>{const{o,lo,kind}=st.cmp;st.cmp=newCmp();Object.assign(st.cmp,{o,lo,kind});render();},
+ csave:()=>{const c=st.cmp,{o,lo}=c;
+  if(c.kind==='lec'){const d=c.lec;if(!d)return;return busy('Đang lưu bài giảng vào giáo trình…',700,()=>{clrNew();st.kbx[d.id]={src:'cmp',body:d.body.slice(),exT:d.exT||null,fig:!!d.fig,lvl:d.lvl,isNew:'new'};st.jump=d.id;
+    st.cmp=newCmp();Object.assign(st.cmp,{o,lo});toast(`Đã lưu bài giảng “${KB[d.id].t}”: nguồn “Soạn với AI”, nhãn “Giáo viên đã duyệt”. Học sinh bấm từ khóa sẽ thấy bài này.`);go('gv-curr');});}
+  if(!c.items)return;busy('Đang lưu vào giáo trình…',700,()=>{const t=saveItems(c.items,'ai',o.fmt);st.cmp=newCmp();Object.assign(st.cmp,{o,lo});toast(t);go('gv-curr');});},
+ // --- hội thoại hai chiều: Nhận, Bỏ, Hoàn tác, sửa tay, lịch sử (PO-46). key = 'cmp' | 'imp'
+ dacc:x=>{const[key,id]=x.split(','),ctx=st[key],q=ctx.prop.find(z=>z.id===+id);if(!q)return;const cur=tgtOf(ctx,q.k,q.i),N=tgtName(ctx,q.k,q.i);
+  ctx.undo={k:q.k,i:q.i,prev:clone(cur),what:q.sum};
+  if(q.swap)setTgt(ctx,'ex',q.i,{p:q.swap,chg:1,chkT:q.chk});
+  else{Object.assign(cur,q.patch,{chg:1,chkT:q.chk||cur.chkT});if(q.patch.merged&&cur.ed)cur.ed=cur.ed.t!=null?{t:cur.ed.t}:null;}
+  ctx.prop=ctx.prop.filter(z=>z!==q);ctx.hist.push({who:'ai',t:`${cap(N)}: ${q.sum}`,r:'Thầy cô đã nhận'});
+  ctx.chat.push({me:1,t:`Nhận: ${q.sum} ở ${N}`});ctx.chat.push({t:`Đã đưa thay đổi vào bản nháp. ${q.chk||''} Bản nháp vẫn chưa được lưu vào giáo trình; thầy cô hoàn tác được thay đổi này.`,undo:1});render();},
+ drej:x=>{const[key,id]=x.split(','),ctx=st[key],q=ctx.prop.find(z=>z.id===+id);if(!q)return;const N=tgtName(ctx,q.k,q.i);
+  ctx.prop=ctx.prop.filter(z=>z!==q);ctx.hist.push({who:'gv',t:`${cap(N)}: bỏ đề xuất “${q.sum}”`});
+  ctx.chat.push({me:1,t:`Bỏ: ${q.sum} ở ${N}`});ctx.chat.push({t:`Đã bỏ đề xuất này; ${N} giữ nguyên như trước. Thầy cô cần hướng khác thì cứ nhắn.`});render();},
+ dundo:key=>{const ctx=st[key],u=ctx.undo;if(!u)return;const N=tgtName(ctx,u.k,u.i);setTgt(ctx,u.k,u.i,u.prev);ctx.undo=null;
+  ctx.hist.push({who:'gv',t:`${cap(N)}: hoàn tác “${u.what}”`});ctx.chat.push({me:1,t:`Hoàn tác: ${u.what} ở ${N}`});ctx.chat.push({t:`Đã hoàn tác; ${N} trở lại như trước thay đổi đó.`});
+  if(u.k==='ex')ctx.last=u.i;else ctx.llast=u.i;render();},
+ dhist:key=>{st[key].showHist=!st[key].showHist;render();},
+ dedit:(x,val)=>{const[key,k,i,f]=x.split(','),ctx=st[key],o=tgtOf(ctx,k,+i);if(!o)return;val=String(val==null?'':val).replace(/\s+/g,' ').trim();
+  const N=tgtName(ctx,k,+i),j=+f.slice(1);let old,fn;
+  if(k==='ex'){const raw=IV(Object.assign({},o,{ed:null}),'full'),e=o.ed||{};old=e[f]!=null?e[f]:f==='t'?raw.t:raw.hints[j];fn=f==='t'?'đề bài':`gợi ý ${j+1}`;}
+  else{old=f==='ex'?o.exT:o.body[j];fn=f==='ex'?'ví dụ':`đoạn ${j+1}`;}
+  if(val===old)return;if(!val)return render();
+  ctx.undo={k,i:+i,prev:clone(o),what:`sửa tay ${fn}`};
+  if(k==='ex')o.ed=Object.assign({},o.ed,{[f]:val});else if(f==='ex')o.exT=val;else o.body[j]=val;
+  o.man=1;o.chg=1;const same=mtok(val)===mtok(old);let t;
+  if(k==='ex'){const p=PB(o.p);
+   if(f==='t'&&!same){o.rev=1;o.chkT='Máy chưa kiểm lại được sau khi thầy cô sửa đề: cần xem lại.';t=`Thầy cô vừa đổi dữ kiện trong đề ${N}. Lời giải và đáp số ${p.ans} được tính theo đề cũ nên có thể đã lệch; tôi chuyển nhãn máy sang “Cần xem lại” và không tự sửa lời giải. Thầy cô hoàn tác được chỗ sửa này.`;}
+   else if(f!=='t'&&p.ans.split(', ').map(a=>a.replace(/^.*[=≈]\s*/,'')).some(a=>a.length>=2&&val.includes(a))){o.chkT='Máy kiểm lại sau khi thầy cô sửa: lời giải không đổi, nhưng gợi ý có nêu đáp số.';t=`Cảnh báo: ${fn} của ${N} vừa sửa có nêu đáp số (${p.ans}). Học sinh sẽ thấy đáp số trước giờ mở lời giải; thầy cô cân nhắc bỏ con số này.`;}
+   else{o.chkT='Máy kiểm lại sau khi thầy cô sửa: đạt.';t=f==='t'?`Tôi đã kiểm lại đề ${N} sau khi thầy cô sửa: các dữ kiện không đổi nên lời giải và đáp số ${p.ans} vẫn đúng.`:`Tôi đã kiểm lại ${fn} của ${N} sau khi thầy cô sửa: gợi ý không nêu đáp số; lời giải và đáp số ${p.ans} không đổi.`;}}
+  else if(!same){o.rev=1;o.chkT='Máy chưa kiểm lại được sau khi thầy cô sửa: cần xem lại.';t=`Thầy cô vừa đổi số liệu hoặc kí hiệu ở ${fn} của ${N}. Tôi chưa kiểm lại được nên chuyển nhãn máy sang “Cần xem lại”. Thầy cô hoàn tác được chỗ sửa này.`;}
+  else{o.chkT='Máy kiểm lại sau khi thầy cô sửa: đạt.';t=`Tôi đã kiểm lại ${fn} của ${N} sau khi thầy cô sửa: số liệu và công thức không đổi, không có đáp số của bài tập nào.`;}
+  ctx.hist.push({who:'gv',t:`${cap(N)}: sửa tay ${fn}`});ctx.chat.push({t,undo:1});if(k==='ex')ctx.last=+i;else ctx.llast=+i;render();},
+ lpv:x=>{const[k,i]=x.split(',');st.lpv={k,i:+i};st.modal='lpv';render();},
+ lsel:i=>{const d=st.imp.lecs[+i];d.sel=!d.sel;st.imp.llast=-1;render();},
+ impgrp:g=>{st.imp.grp=g;st.imp.last=st.imp.llast=-1;render();},
+ pv:x=>{const[k,i]=x.split(',');st.pv={k,i:+i,h:1};delete st.figs.pv;st.modal='pv';render();},
+ pvhint:()=>{st.pv.h++;render();},
+ impopen:src=>{st.imp=newImp(src);go('gv-import');},
+ impsrc:src=>{const f=st.imp.fmt;st.imp=newImp(src);st.imp.fmt=f;render();},
+ impfile:()=>{st.imp.file=!st.imp.file;render();},
+ imppick:()=>{st.imp.imgs=IMGP.slice();render();},
+ impmv:x=>{const[i,d]=x.split(',').map(Number),a=st.imp.imgs,j=i+d;if(j<0||j>=a.length)return;[a[i],a[j]]=[a[j],a[i]];render();},
+ impdel:i=>{st.imp.imgs.splice(+i,1);render();},
+ impfmt:f=>{st.imp.fmt=f;render();},
+ imprun:()=>{const m=st.imp,img=m.src==='img';if(m.stage!=='pick')return;if(img?!m.imgs.length:!m.file)return toast(img?'Thầy cô chọn ảnh trước đã':'Thầy cô chọn tài liệu trước đã');
+  m.stage='run';m.load=0;render();
+  const tick=()=>{m.load++;if(m.load<4){render();return setTimeout(tick,550);}
+   m.stage='done';m.items=(img?m.imgs:DOCP).map(p=>({p}));if(!img)m.lecs=DOCL.map(id=>{const L=LK(id);return{id,body:L.body.slice(),exT:L.exT||null,fig:L.fig!==false,sel:true};});const bad=m.items.filter(it=>!PB(it.p).ok).length,u=img?uncLeft():0;
+   m.chat=[{t:`Tôi đọc được ${m.items.length} bài từ ${img?m.imgs.length+' ảnh':'tài liệu'}: ${m.items.length-bad} bài đã kiểm chứng${bad?`, ${bad} bài cần xem lại`:''}.${u?` Có ${u} chỗ chữ viết tay tôi chưa chắc, đã tô vàng để thầy cô sửa.`:''}${img?'':` Phần lý thuyết của giáo án tôi tách thành ${m.lecs.length} bài giảng, xem ở nhóm “Bài giảng”; cả ${m.lecs.length} đã có trong kho của lớp nên tôi đối chiếu thay vì tạo bản trùng.`}`}];
+   if(st.imp===m)render();};
+  setTimeout(tick,550);},
+ impchat:q=>{const m=st.imp;q=(q||m.q||'').trim();m.q='';if(!q||!m.items)return;m.chat.push({me:1,t:q});render();setTimeout(()=>{m.chat.push(R(aiEdit(m,q,'imp')));if(st.view==='gv-import'&&st.imp===m)render();},650);},
+ ocrok:(key,val)=>{const e=document.getElementById('u-'+key),[p,j]=key.split(':');st.imp.fix[key]=(val!=null?val:e?e.value.trim():'')||OCR[p][+j][0];render();},
+ ocredit:key=>{delete st.imp.fix[key];render();},
+ impsave:()=>{const m=st.imp;if(!m.items)return;busy('Đang lưu vào giáo trình…',700,()=>{const t=saveItems(m.items,m.src,m.fmt)+(m.lecs?saveLecs(m.lecs):'');st.imp=newImp(m.src);toast(t);go('gv-curr');});},
+ psel:id=>{st.per={sid:id,prop:st.paths[id]?JSON.parse(JSON.stringify(st.paths[id])):null};render();},
+ ppropose:()=>busy('Đang rút lộ trình từ giáo trình chung…',900,()=>{st.per.prop=buildProp(SID(st.per.sid));render();}),
+ ptog:i=>{const pr=st.per.prop;if(!pr||pr.approved)return;pr.rows[+i].in=!pr.rows[+i].in;render();},
+ papprove:()=>{const pr=st.per.prop;if(!pr||pr.approved)return;busy('Đang áp dụng lộ trình…',600,()=>{pr.approved=true;st.paths[pr.sid]=JSON.parse(JSON.stringify(pr));toast(`Đã duyệt. ${SID(pr.sid).n} thấy lộ trình mới; phụ huynh thấy một dòng tóm tắt.`);render();});}
+});
+document.addEventListener('click',e=>{
+ const dv=e.target.closest('[data-dev]');if(dv){dev=dv.dataset.dev;return render();}
+ const r=e.target.closest('[data-role]');if(r){const role=r.dataset.role;dev=null;return go(RAIL[role][0],role);}
+ const s=e.target.closest('[data-sc]');if(s){dev=null;const x=SC[+s.dataset.sc];if(x[1]==='hs-work'){st.role='hs';st.cur=st.asg.find(a=>a.p==='p1'&&!a.self).id;const a=A();st.tab=a.open?'sol':'hint';if(a.open)a.seen=true;st.step=0;return go('hs-work');}return go(x[1],x[0]);}
+ if(e.target.closest('[data-reset]')){st=init();toast('Đã đặt lại dữ liệu mẫu');return render();}
+ const a=e.target.closest('[data-act]');if(a){e.stopPropagation();return ACT[a.dataset.act](a.dataset.arg);}
+ const g=e.target.closest('[data-go]');if(g)go(g.dataset.go);});
+document.addEventListener('focusout',e=>{const d=e.target&&e.target.dataset&&e.target.dataset.edit;if(d)ACT.dedit(d,e.target.textContent);});
+document.addEventListener('keydown',e=>{if(e.key!=='Enter'||e.shiftKey)return;if(e.target.dataset&&e.target.dataset.edit){e.preventDefault();return e.target.blur();}const id=e.target.id;if(id==='q'){e.preventDefault();ACT.ask();}if(id==='pm'){e.preventDefault();ACT.psend();}if(id==='gq'){e.preventDefault();ACT.gsend();}if(id==='cq'){e.preventDefault();ACT.csend();}if(id==='iq'){e.preventDefault();ACT.impchat();}});
+document.addEventListener('input',e=>{if(e.target.id==='cq')st.cmp.q=e.target.value;if(e.target.id==='iq')st.imp.q=e.target.value;if(e.target.id==='rng'){st.pa=+e.target.value;render();const r=document.getElementById('rng');if(r)r.focus();}});
+window.addEventListener('resize',render);
+render();
+</script>
+<script src="tour.js"></script>
+</body>
+</html>

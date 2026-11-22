@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:54329/geo_test?ApplicationName=geo-test&connectTimeout=3&socketTimeout=30
+    hikari.leak-detection-threshold: 10000   # 10 giây ở môi trường thử (ADR-GEO-04)
+  flyway:
+    clean-disabled: false   # chỉ để IT dựng lại schema sạch; có chốt chặn chỉ cho phép geo_test
+    # Móc kiểm thử (D-GEO-169): SQL chỉ có ở profile test, nằm ở src/test/resources/db/testhooks
+    # (không vào gói chạy thật). ARCH viết nội dung; xem README ở thư mục đó.
+    locations: classpath:db/migration,classpath:db/testhooks
+geo:
+  redis.key-prefix: "geotest:"

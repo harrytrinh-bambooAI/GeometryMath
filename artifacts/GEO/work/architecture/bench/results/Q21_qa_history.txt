@@ -1,0 +1,13 @@
+                                                                                     QUERY PLAN                                                                                      
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.42..2.64 rows=1 width=595) (actual time=0.001..0.004 rows=18 loops=1)
+   Buffers: shared hit=13
+   ->  Index Scan using qa_turn_user_idx on qa_turn q  (cost=0.42..2.64 rows=1 width=595) (actual time=0.001..0.003 rows=18 loops=1)
+         Index Cond: ((org_id = '019dfd19-672a-7a09-be6b-20d63008896e'::uuid) AND (user_id = '019e97be-702f-7701-8695-ca06c246cdca'::uuid) AND (id < '9223372036854775807'::bigint))
+         Buffers: shared hit=13
+ Planning:
+   Buffers: shared hit=4
+ Planning Time: 0.014 ms
+ Execution Time: 0.006 ms
+(9 rows)
+

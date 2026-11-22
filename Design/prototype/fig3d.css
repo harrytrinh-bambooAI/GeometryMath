@@ -1,0 +1,21 @@
+/* Fig3D: style cho bộ hiển thị hình không gian (đi kèm fig3d.js) */
+.fig3d{position:relative;overflow:hidden;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+.fig3d.f3-grid{background-color:#F7F9FD;background-image:radial-gradient(#C9D2E6 1.1px,transparent 1.2px);background-size:22px 22px}
+.fig3d svg.f3-svg{display:block;width:100%;height:100%;max-width:none;touch-action:none;cursor:grab;font-family:inherit}
+.fig3d svg.f3-svg:active{cursor:grabbing}
+.fig3d svg.f3-svg text{pointer-events:none}
+
+/* thanh gợi ý và tùy chọn nhỏ, nằm trên cùng khung hình */
+.f3-hud{position:absolute;left:8px;right:8px;top:6px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;pointer-events:none;font-size:12.5px;line-height:1.3;color:#5B6785}
+.f3-hint{background:rgba(255,255,255,.86);border-radius:9px;padding:3px 8px}
+.f3-chips{display:flex;flex-wrap:wrap;gap:6px;pointer-events:auto}
+.f3-chip{font:inherit;font-weight:700;min-height:40px;padding:0 13px;border-radius:20px;border:1.5px solid #D5DCEC;background:#fff;color:#253150;cursor:pointer}
+.f3-chip.on{border-color:#3B5BDB;background:#EDF1FF;color:#3B5BDB}
+.f3-chip[data-f3="del"].on,.f3-chip[data-f3="clear"]{border-color:#F6C1B2;background:#FFF1EC;color:#C93F1F}
+
+/* phần mới của bước: vẽ dần (nét liền) hoặc hiện dần (nét đứt, mặt tô, nhãn) */
+.f3-draw{stroke-dasharray:1;animation:f3draw .65s ease-out both}
+.f3-fade{animation:f3fade .55s ease-out both}
+@keyframes f3draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes f3fade{from{opacity:0}}
+@media (prefers-reduced-motion:reduce){.f3-draw,.f3-fade{animation:none}}

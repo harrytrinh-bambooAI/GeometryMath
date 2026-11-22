@@ -1,0 +1,56 @@
+                                                                                              QUERY PLAN                                                                                               
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=1.54..9.79 rows=1 width=16) (actual time=0.007..0.007 rows=1 loops=1)
+   Buffers: shared hit=28
+   ->  Append  (cost=1.54..18.03 rows=2 width=16) (actual time=0.006..0.007 rows=1 loops=1)
+         Buffers: shared hit=28
+         ->  Nested Loop  (cost=1.54..9.32 rows=1 width=16) (actual time=0.006..0.007 rows=1 loops=1)
+               Buffers: shared hit=28
+               ->  Nested Loop  (cost=1.26..7.26 rows=1 width=51) (actual time=0.004..0.005 rows=2 loops=1)
+                     Buffers: shared hit=22
+                     ->  Nested Loop  (cost=0.98..5.21 rows=1 width=48) (actual time=0.003..0.004 rows=2 loops=1)
+                           Buffers: shared hit=16
+                           ->  Nested Loop  (cost=0.69..4.05 rows=1 width=32) (actual time=0.003..0.003 rows=2 loops=1)
+                                 Buffers: shared hit=11
+                                 ->  Index Only Scan using class_member_user_idx on class_member cm  (cost=0.41..1.53 rows=1 width=32) (actual time=0.001..0.001 rows=1 loops=1)
+                                       Index Cond: ((org_id = '019dfd12-fe8a-7bbe-a7c0-a4cce1d9db38'::uuid) AND (user_id = '019e981c-0537-71ac-aa2a-4cbb0981d745'::uuid))
+                                       Heap Fetches: 0
+                                       Buffers: shared hit=4
+                                 ->  Index Scan using assignment_class_problem_uq on assignment a  (cost=0.28..2.51 rows=1 width=64) (actual time=0.001..0.002 rows=2 loops=1)
+                                       Index Cond: ((org_id = '019dfd12-fe8a-7bbe-a7c0-a4cce1d9db38'::uuid) AND (class_id = cm.class_id))
+                                       Filter: ((release_at IS NULL) OR (release_at > now()))
+                                       Rows Removed by Filter: 3
+                                       Buffers: shared hit=7
+                           ->  Index Only Scan using problem_version_org_id_problem_id_id_key on problem_version cpv  (cost=0.28..1.15 rows=1 width=48) (actual time=0.000..0.000 rows=1 loops=2)
+                                 Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (problem_id = a.problem_id))
+                                 Heap Fetches: 0
+                                 Buffers: shared hit=5
+                     ->  Index Scan using problem_signature_pkey on problem_signature cat  (cost=0.28..2.04 rows=1 width=67) (actual time=0.000..0.000 rows=1 loops=2)
+                           Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (problem_version_id = cpv.id))
+                           Buffers: shared hit=6
+               ->  Index Scan using problem_signature_pkey on problem_signature me  (cost=0.28..2.05 rows=1 width=35) (actual time=0.001..0.001 rows=0 loops=2)
+                     Index Cond: ((org_id = '019dfd12-fe8a-7bbe-a7c0-a4cce1d9db38'::uuid) AND (problem_version_id = '019f03ea-9ac9-769a-8260-ef29d1c901b8'::uuid) AND (sig_version = cat.sig_version))
+                     Filter: (signature = cat.signature)
+                     Rows Removed by Filter: 0
+                     Buffers: shared hit=6
+         ->  Nested Loop  (cost=1.26..8.71 rows=1 width=16) (never executed)
+               Join Filter: (me_1.statement_hash = cpv_1.statement_hash)
+               ->  Nested Loop  (cost=0.98..6.56 rows=1 width=65) (never executed)
+                     ->  Nested Loop  (cost=0.69..4.04 rows=1 width=65) (never executed)
+                           ->  Index Only Scan using class_member_user_idx on class_member cm_1  (cost=0.41..1.53 rows=1 width=32) (never executed)
+                                 Index Cond: ((org_id = '019dfd12-fe8a-7bbe-a7c0-a4cce1d9db38'::uuid) AND (user_id = '019e981c-0537-71ac-aa2a-4cbb0981d745'::uuid))
+                                 Heap Fetches: 0
+                           ->  Index Scan using problem_version_org_id_id_key on problem_version me_1  (cost=0.28..2.50 rows=1 width=33) (never executed)
+                                 Index Cond: ((org_id = '019dfd12-fe8a-7bbe-a7c0-a4cce1d9db38'::uuid) AND (id = '019f03ea-9ac9-769a-8260-ef29d1c901b8'::uuid))
+                     ->  Index Scan using assignment_class_problem_uq on assignment a_1  (cost=0.28..2.51 rows=1 width=64) (never executed)
+                           Index Cond: ((org_id = '019dfd12-fe8a-7bbe-a7c0-a4cce1d9db38'::uuid) AND (class_id = cm_1.class_id))
+                           Filter: ((release_at IS NULL) OR (release_at > now()))
+               ->  Index Scan using problem_version_problem_id_version_key on problem_version cpv_1  (cost=0.28..2.13 rows=1 width=49) (never executed)
+                     Index Cond: (problem_id = a_1.problem_id)
+                     Filter: (org_id = '00000000-0000-7000-8000-000000000001'::uuid)
+ Planning:
+   Buffers: shared hit=18
+ Planning Time: 0.377 ms
+ Execution Time: 0.015 ms
+(52 rows)
+

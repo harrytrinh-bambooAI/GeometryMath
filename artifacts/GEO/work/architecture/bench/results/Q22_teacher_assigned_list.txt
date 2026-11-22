@@ -1,0 +1,30 @@
+                                                                            QUERY PLAN                                                                             
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=7.53..7.53 rows=1 width=104) (actual time=0.026..0.027 rows=21 loops=1)
+   Buffers: shared hit=131
+   ->  Sort  (cost=7.53..7.53 rows=1 width=104) (actual time=0.026..0.026 rows=21 loops=1)
+         Sort Key: x.id DESC
+         Sort Method: quicksort  Memory: 28kB
+         Buffers: shared hit=131
+         ->  Nested Loop  (cost=0.84..7.52 rows=1 width=104) (actual time=0.003..0.023 rows=30 loops=1)
+               Buffers: shared hit=131
+               ->  Nested Loop  (cost=0.56..5.01 rows=1 width=78) (actual time=0.002..0.009 rows=30 loops=1)
+                     Buffers: shared hit=41
+                     ->  Index Scan using class_teacher_idx on class c  (cost=0.28..2.49 rows=1 width=38) (actual time=0.001..0.001 rows=3 loops=1)
+                           Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (teacher_id = '019e306e-4994-7421-b184-efe9d1162e64'::uuid))
+                           Filter: (archived_at IS NULL)
+                           Buffers: shared hit=5
+                     ->  Limit  (cost=0.28..2.50 rows=1 width=72) (actual time=0.001..0.002 rows=10 loops=3)
+                           Buffers: shared hit=36
+                           ->  Index Scan using assignment_class_idx on assignment x  (cost=0.28..2.50 rows=1 width=72) (actual time=0.001..0.002 rows=10 loops=3)
+                                 Index Cond: ((org_id = c.org_id) AND (class_id = c.id) AND (id < 'ffffffff-ffff-ffff-ffff-ffffffffffff'::uuid))
+                                 Buffers: shared hit=36
+               ->  Index Scan using problem_org_id_id_owner_user_id_key on problem p  (cost=0.28..2.50 rows=1 width=58) (actual time=0.000..0.000 rows=1 loops=30)
+                     Index Cond: ((org_id = x.content_org_id) AND (id = x.problem_id))
+                     Buffers: shared hit=90
+ Planning:
+   Buffers: shared hit=9
+ Planning Time: 0.055 ms
+ Execution Time: 0.032 ms
+(26 rows)
+

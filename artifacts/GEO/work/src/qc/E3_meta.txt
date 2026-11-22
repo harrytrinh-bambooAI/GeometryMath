@@ -1,0 +1,56 @@
+# TC | AC | ưu tiên | loại | tầng | tài khoản | CL | ghi chú
+0300 | 301-SC1 | H | TB | TC | Học sinh An, iPad | UI-05 | PROVISIONAL KG-09
+0301 | 301-SC2 | H | TB | TC | Học sinh An, iPad | UI-05 | PROVISIONAL KG-09
+0302 | 301-SC3 | M | TB | TC | Máy tính, trình duyệt web | UI-01
+0303 | 301-SC4 | M | CN | TC | Học sinh An, iPad | FN-04
+0304 | 301-SC5 | M | CN | TC | Học sinh An, iPad | FN-04
+0305 | 301-SC6 | M | CN | TC | Học sinh An, iPad | FN-04
+0306 | 301-SC7 | H | CN | DV+TC | Học sinh An, iPad | FN-01
+0307 | 301-SC8 | M | CN | TC | Học sinh An, iPad | FN-01
+0308 | 301-FC1 | M | CN | TC | Học sinh An, iPad | FN-02
+0309 | 301-FC2 | M | CN | API | Học sinh An | FN-13
+0310 | 302-SC1 | H | TB | TC | Học sinh An, iPad | UI-05 | PROVISIONAL KG-09
+0311 | 302-SC2 | H | TB | TC | Học sinh An, iPad | UI-05 | PROVISIONAL KG-09
+0312 | 302-SC3 | H | TB | TC | Học sinh An, iPad | UI-05 | PROVISIONAL KG-09
+0313 | 302-SC4 | M | CN | API | Học sinh An | FN-13
+0314 | 302-FC1 | M | TB | TC | Học sinh An, iPad và iPhone | UI-05 | PROVISIONAL KG-09
+0315 | 302-FC2 | L | TB | TC | Học sinh An, iPad | UI-05 | PROVISIONAL KG-09
+0316 | 303-SC1 | H | CN | TC | Học sinh An, iPad | FN-01
+0317 | 303-SC2 | H | CN | DV+TC | Học sinh An, iPad | FN-01
+0318 | 303-SC3 | H | CN | DV+TC | Học sinh An, iPad | FN-01
+0319 | 303-SC4 | H | CN | DV+TC | Học sinh An, iPad | FN-01
+0320 | 303-SC5 | M | CN | TC | Học sinh An, iPad | FN-01
+0321 | 303-SC6 | M | CN | TC | Học sinh An, iPad | FN-01
+0322 | 303-FC1 | H | CN | DV+TC | Học sinh An, iPad | FN-03
+0323 | 303-FC2 | M | CN | DV+TC | Học sinh An, iPad | FN-03
+0324 | 303-FC3 | M | CN | TC | Học sinh An, iPad | UI-03
+0325 | 304-SC1 | H | CN | DV+TC | Học sinh An, iPad | FN-01
+0326 | 304-SC2 | H | CN | DV+TC | Học sinh An, iPad | FN-02
+0327 | 304-SC3 | M | CN | TC | Học sinh An, iPad | FN-01
+0328 | 304-SC4 | M | CN | TC | Học sinh An, iPad | FN-01
+0329 | 304-FC1 | M | CN | DV+TC | Học sinh An, iPad | FN-02
+0330 | 304-FC2 | L | CN | TC | Học sinh An, iPad | FN-02
+0331 | 305-SC1 | H | CN | TC | Học sinh An, iPad | FN-01
+0332 | 305-SC2 | H | CN | TC | Học sinh An, iPad | FN-01
+0333 | 305-SC3 | M | CN | TC | Học sinh An, iPad | FN-01
+0334 | 305-SC4 | H | CN | API+TC | Giáo viên mẫu rồi học sinh An | FN-09 | DT-7, cột Đã mở
+0335 | 305-SC5 | M | CN | TC | Học sinh An, iPad | FN-12
+0336 | 305-FC1 | H | CN | TC | Học sinh An, iPad | FN-07 | DT-7, cột Sắp mở; phần dữ liệu trả về kiểm ở TC-GEO-0340
+0337 | 305-FC2 | H | CN | TC | Học sinh An, iPad | FN-07 | đại lượng cùng vai trò (góc ASD)
+0338 | 305-FC3 | H | CN | TC | Học sinh An, iPad | FN-07 | DT-7, cột Chưa đặt giờ
+0339 | 305-FC4 | H | CN | API+TC | Học sinh An, iPad | FN-07 | DT-8
+0340 | 305-FC5 | H | DL | API | Học sinh An | FN-07 | soát thân phản hồi, không soát màn; tọa độ đỉnh trong dữ liệu trả về là dữ kiện của đề, không tính là lộ; chỉ tính khi hệ thống hiển thị hoặc trả giá trị đáp số (D-GEO-154, RV-GEO-05)
+0341 | 306-SC1 | H | TB | TC | Học sinh An, iPhone màn dọc | UI-01 | PROVISIONAL KG-09
+0342 | 306-SC2 | H | TB | TC | Học sinh An, iPhone màn dọc | UI-05 | PROVISIONAL KG-09
+0343 | 306-SC3 | M | TB | TC | Học sinh An, iPhone màn dọc | UI-05 | PROVISIONAL KG-09
+0344 | 306-SC4 | M | TB | TC | Học sinh An, iPhone màn dọc | UI-01 | PROVISIONAL KG-09
+0345 | 306-SC5 | H | TB | TC | Học sinh An, iPhone màn dọc | UI-01
+0346 | 306-FC1 | M | TB | TC | Học sinh An, iPhone | UI-04 | PROVISIONAL KG-09
+0347 | 307-SC1 | M | CN | TC | Học sinh An, iPad | FN-01 | hồi quy lỗi đã biết của bản cũ
+0348 | 307-SC2 | M | CN | DV+TC | Học sinh An, iPad | FN-01 | hồi quy lỗi đã biết
+0349 | 307-FC1 | M | CN | TC | Học sinh An, iPad | FN-03 | hồi quy lỗi đã biết
+0350 | 307-FC2 | L | CN | DV+TC | Học sinh An, iPad | FN-03
+0351 | 306-FC2 | M | TB | TC | Học sinh An, iPhone màn dọc | UI-05 | PROVISIONAL KG-09
+0352 | 305-SC6 | H | CN | API+TC | Giáo viên mẫu rồi học sinh An, iPad | FN-09 | hai đầu của quy tắc: giáo viên mở, học sinh đang đo
+# lượt sửa gom sau phản biện (M-304, M-217): tiêu chí mới của BA
+0353 | 301-SC9 | M | CN | TC | Học sinh An, iPad | FN-04 | D-GEO-134

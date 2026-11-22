@@ -1,0 +1,37 @@
+Q01_login	0.005	0.038	0	7	Nested Loop,Index Scan,Index Only Scan
+Q02_student_assignments	0.032	0.208	0	115	Limit,Sort,Nested Loop,Index Only Scan,Index Scan
+Q02b_student_self_assignments	0.010	0.160	0	13	Limit,Nested Loop,Index Scan
+Q03_class_assignments	0.076	0.169	0	132	Limit,Sort,Nested Loop,Index Only Scan,Index Scan
+Q04_assignment_detail	0.013	0.139	0	16	Nested Loop,Index Scan,Index Only Scan,Limit
+Q04b_release_state	0.006	0.034	0	7	Index Scan,Index Only Scan
+Q05_hint	0.009	0.088	0	14	Nested Loop,Index Scan,Index Only Scan
+Q05b_hint_self_inherited	0.023	0.042	0	37	Nested Loop,Index Scan
+Q05c_get_hint_call	0.047	0.002	0	30	
+Q06_solution_gate_body	0.007	0.078	0	10	Nested Loop,Index Scan,Index Only Scan
+Q06b_get_solution_call	0.015	0.002	0	10	
+Q06c_get_solution_self_call	0.031	0.001	0	38	
+Q07_event_batch_insert	0.092	0.058	0	259	Insert,Index Scan,Index Only Scan,Result
+Q07b_record_batch_call	0.138	0.007	0	266	
+Q08_progress_upsert	0.013	0.005	0	7	Insert,Result
+Q08b_record_durable_call	0.044	0.001	0	23	Result
+Q09_class_tracking	0.109	0.212	0	575	Limit,Sort,Nested Loop,Index Scan,Index Only Scan
+Q09b_class_cards	0.024	0.055	0	23	Nested Loop,Index Only Scan,Index Scan
+Q10_set_release_inner	0.024	0.008	0	9	Nested Loop,Index Scan,Update
+Q11_keyword_click	0.004	0.026	0	6	Nested Loop,Index Scan
+Q11d_lecture_keywords	0.003	0.008	0	3	Limit,Index Scan
+Q12_qa_source_retrieval	0.084	0.039	0	67	Nested Loop,Result,Limit,Bitmap Heap Scan,Index Scan,Sort
+Q13_catalog_list	0.007	0.031	0	19	Limit,Nested Loop,Index Scan
+Q13b_catalog_list_level_only	0.013	0.031	0	52	Limit,Nested Loop,Index Scan
+Q14_qa_recent	0.047	0.048	0	250	Limit,Nested Loop,Index Scan,Index Only Scan
+Q15_audit_history	0.002	0.014	0	2	Limit,Index Scan
+Q16_dup_locked_check	0.015	0.377	0	28	Limit,Nested Loop,Index Only Scan,Index Scan
+Q17_teacher_classes	0.015	0.024	0	17	Limit,Nested Loop,Index Scan,Index Only Scan
+Q18_share_grant_check	0.003	0.010	1	1	Limit,Seq Scan
+Q19_teacher_problem_detail	0.011	0.053	0	12	Nested Loop,Index Scan,Limit
+Q19b_teacher_solution_body	0.008	0.056	0	12	Nested Loop,Index Only Scan,Index Scan
+Q20_event_timeline	0.009	0.078	0	13	Limit,Index Scan
+Q20b_event_timeline_no_bound	0.014	0.119	4	13	Limit,Sort,Seq Scan,Index Scan
+Q21_qa_history	0.006	0.014	0	13	Limit,Index Scan
+Q22_teacher_assigned_list	0.032	0.055	0	131	Limit,Sort,Nested Loop,Index Scan
+Q23_teacher_preview	0.012	0.169	0	15	Nested Loop,Index Scan,Index Only Scan,Limit
+Q24_teacher_login	0.008	0.046	2	5	Nested Loop,Limit,Seq Scan,Index Scan

@@ -1,0 +1,1 @@
+# E2 — chỉnh của QC trên case sinh ra. Hiện không có chỉnh: AC và fixture của BA đã theo D-GEO-163 (M-217).

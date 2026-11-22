@@ -1,0 +1,34 @@
+                                                                          QUERY PLAN                                                                           
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+ GroupAggregate  (cost=0.98..8.13 rows=1 width=80) (actual time=0.016..0.017 rows=1 loops=1)
+   Group Key: a.class_id
+   Buffers: shared hit=23
+   ->  Nested Loop Left Join  (cost=0.98..6.56 rows=1 width=60) (actual time=0.003..0.009 rows=54 loops=1)
+         Buffers: shared hit=18
+         ->  Nested Loop  (cost=0.56..3.91 rows=1 width=48) (actual time=0.002..0.003 rows=1 loops=1)
+               Join Filter: (c.id = a.class_id)
+               Rows Removed by Join Filter: 2
+               Buffers: shared hit=12
+               ->  Index Only Scan using class_teacher_idx on class c  (cost=0.28..1.40 rows=1 width=32) (actual time=0.001..0.001 rows=3 loops=1)
+                     Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (teacher_id = '019e306e-4994-7421-b184-efe9d1162e64'::uuid))
+                     Heap Fetches: 0
+                     Buffers: shared hit=3
+               ->  Index Scan using assignment_org_id_id_key on assignment a  (cost=0.29..2.50 rows=1 width=48) (actual time=0.000..0.000 rows=1 loops=3)
+                     Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (id = '01a1b2ee-51df-79ad-8354-128825f23080'::uuid))
+                     Buffers: shared hit=9
+         ->  Index Scan using assignment_progress_pkey on assignment_progress ap  (cost=0.42..2.64 rows=1 width=60) (actual time=0.001..0.003 rows=54 loops=1)
+               Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (assignment_id = '01a1b2ee-51df-79ad-8354-128825f23080'::uuid))
+               Buffers: shared hit=6
+   SubPlan 1
+     ->  Aggregate  (cost=1.54..1.55 rows=1 width=8) (actual time=0.005..0.005 rows=1 loops=1)
+           Buffers: shared hit=5
+           ->  Index Only Scan using class_member_name_uq on class_member cm  (cost=0.41..1.53 rows=1 width=0) (actual time=0.001..0.003 rows=64 loops=1)
+                 Index Cond: ((org_id = a.org_id) AND (class_id = a.class_id))
+                 Heap Fetches: 0
+                 Buffers: shared hit=5
+ Planning:
+   Buffers: shared hit=9
+ Planning Time: 0.055 ms
+ Execution Time: 0.024 ms
+(30 rows)
+

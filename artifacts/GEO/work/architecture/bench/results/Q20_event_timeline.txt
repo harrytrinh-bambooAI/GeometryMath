@@ -1,0 +1,22 @@
+                                                                                                                                                                                    QUERY PLAN                                                                                                                                                                                    
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=1.69..10.62 rows=4 width=22) (actual time=0.002..0.005 rows=7 loops=1)
+   Buffers: shared hit=13
+   ->  Append  (cost=1.69..10.62 rows=4 width=22) (actual time=0.002..0.004 rows=7 loops=1)
+         Buffers: shared hit=13
+         ->  Index Scan using event_log_y2026m11_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m11 e_4  (cost=0.42..2.65 rows=1 width=22) (actual time=0.001..0.001 rows=0 loops=1)
+               Index Cond: ((org_id = '019dfcf2-f36a-7856-9078-881ceaa9959e'::uuid) AND (assignment_id = '01a1860e-19e4-7717-b3b9-7532ba79b755'::uuid) AND (user_id = '019e976c-4507-7958-922f-5ee5e4dd16fe'::uuid) AND (occurred_at >= '2026-08-24 17:55:39.585054+07'::timestamp with time zone) AND (occurred_at < '2026-11-23 17:55:39.585054+07'::timestamp with time zone))
+               Buffers: shared hit=3
+         ->  Index Scan using event_log_y2026m10_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m10 e_3  (cost=0.42..2.65 rows=1 width=22) (actual time=0.001..0.002 rows=7 loops=1)
+               Index Cond: ((org_id = '019dfcf2-f36a-7856-9078-881ceaa9959e'::uuid) AND (assignment_id = '01a1860e-19e4-7717-b3b9-7532ba79b755'::uuid) AND (user_id = '019e976c-4507-7958-922f-5ee5e4dd16fe'::uuid) AND (occurred_at >= '2026-08-24 17:55:39.585054+07'::timestamp with time zone) AND (occurred_at < '2026-11-23 17:55:39.585054+07'::timestamp with time zone))
+               Buffers: shared hit=4
+         ->  Index Scan using event_log_y2026m09_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m09 e_2  (cost=0.42..2.65 rows=1 width=22) (actual time=0.001..0.001 rows=0 loops=1)
+               Index Cond: ((org_id = '019dfcf2-f36a-7856-9078-881ceaa9959e'::uuid) AND (assignment_id = '01a1860e-19e4-7717-b3b9-7532ba79b755'::uuid) AND (user_id = '019e976c-4507-7958-922f-5ee5e4dd16fe'::uuid) AND (occurred_at >= '2026-08-24 17:55:39.585054+07'::timestamp with time zone) AND (occurred_at < '2026-11-23 17:55:39.585054+07'::timestamp with time zone))
+               Buffers: shared hit=3
+         ->  Index Scan using event_log_y2026m08_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m08 e_1  (cost=0.42..2.65 rows=1 width=22) (actual time=0.001..0.001 rows=0 loops=1)
+               Index Cond: ((org_id = '019dfcf2-f36a-7856-9078-881ceaa9959e'::uuid) AND (assignment_id = '01a1860e-19e4-7717-b3b9-7532ba79b755'::uuid) AND (user_id = '019e976c-4507-7958-922f-5ee5e4dd16fe'::uuid) AND (occurred_at >= '2026-08-24 17:55:39.585054+07'::timestamp with time zone) AND (occurred_at < '2026-11-23 17:55:39.585054+07'::timestamp with time zone))
+               Buffers: shared hit=3
+ Planning Time: 0.078 ms
+ Execution Time: 0.009 ms
+(18 rows)
+

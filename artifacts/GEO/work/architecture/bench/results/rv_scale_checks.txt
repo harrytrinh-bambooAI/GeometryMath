@@ -1,0 +1,91 @@
+===== (1) Q24 với 300.000 lần sai
+                                                                              QUERY PLAN                                                                              
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using teacher_access_code_selector_uq on teacher_access_code t  (cost=2.81..7.40 rows=1 width=48) (actual time=0.024..0.026 rows=1 loops=1)
+   Index Cond: (selector = 'CFTH'::text)
+   Buffers: shared hit=10
+   InitPlan 1
+     ->  Aggregate  (cost=2.66..2.67 rows=1 width=8) (actual time=0.011..0.011 rows=1 loops=1)
+           Buffers: shared hit=4
+           ->  Limit  (cost=0.43..2.65 rows=1 width=4) (actual time=0.008..0.008 rows=1 loops=1)
+                 Buffers: shared hit=4
+                 ->  Index Only Scan using auth_failure_ip_idx on auth_failure f  (cost=0.43..2.65 rows=1 width=4) (actual time=0.008..0.008 rows=1 loops=1)
+                       Index Cond: ((ip_key = '\x4dd1a1b6d06503aef7056b1ae2c966e59c48acafb810c10686cb874407d8bd88'::bytea) AND (at > (now() - '00:15:00'::interval)))
+                       Heap Fetches: 1
+                       Buffers: shared hit=4
+   SubPlan 2
+     ->  Aggregate  (cost=2.36..2.37 rows=1 width=8) (actual time=0.007..0.007 rows=1 loops=1)
+           Buffers: shared hit=2
+           ->  Limit  (cost=0.13..2.35 rows=1 width=4) (actual time=0.007..0.007 rows=0 loops=1)
+                 Buffers: shared hit=2
+                 ->  Index Only Scan using auth_failure_user_idx on auth_failure f_1  (cost=0.13..2.35 rows=1 width=4) (actual time=0.007..0.007 rows=0 loops=1)
+                       Index Cond: ((user_id = t.user_id) AND (at > (now() - '00:15:00'::interval)))
+                       Heap Fetches: 10
+                       Buffers: shared hit=2
+ Planning:
+   Buffers: shared hit=39
+ Planning Time: 0.179 ms
+ Execution Time: 0.046 ms
+(25 rows)
+
+===== (2a) Q21 KHÔNG có qa_turn_user_idx (như lược đồ trước, RV-19 đo 90 ms)
+                                                                       QUERY PLAN                                                                        
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=3138.70..3138.71 rows=1 width=558) (actual time=0.542..0.543 rows=18 loops=1)
+   Buffers: shared hit=325
+   ->  Sort  (cost=3138.70..3138.71 rows=1 width=558) (actual time=0.542..0.542 rows=18 loops=1)
+         Sort Key: id DESC
+         Sort Method: quicksort  Memory: 43kB
+         Buffers: shared hit=325
+         ->  Bitmap Heap Scan on qa_turn q  (cost=52.99..3138.69 rows=1 width=558) (actual time=0.182..0.537 rows=18 loops=1)
+               Recheck Cond: (org_id = '019dfd19-672a-7a09-be6b-20d63008896e'::uuid)
+               Filter: ((id < '9223372036854775807'::bigint) AND (user_id = '019e97be-702f-7701-8695-ca06c246cdca'::uuid))
+               Rows Removed by Filter: 3353
+               Heap Blocks: exact=293
+               Buffers: shared hit=325
+               ->  Bitmap Index Scan on qa_turn_org_id_request_id_key  (cost=0.00..52.99 rows=3196 width=0) (actual time=0.120..0.120 rows=3371 loops=1)
+                     Index Cond: (org_id = '019dfd19-672a-7a09-be6b-20d63008896e'::uuid)
+                     Buffers: shared hit=32
+ Planning:
+   Buffers: shared hit=29
+ Planning Time: 0.093 ms
+ Execution Time: 0.555 ms
+(19 rows)
+
+===== (2b) Q21 CÓ qa_turn_user_idx
+                                                                                     QUERY PLAN                                                                                      
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.42..2.64 rows=1 width=558) (actual time=0.007..0.010 rows=18 loops=1)
+   Buffers: shared hit=13
+   ->  Index Scan using qa_turn_user_idx on qa_turn q  (cost=0.42..2.64 rows=1 width=558) (actual time=0.006..0.009 rows=18 loops=1)
+         Index Cond: ((org_id = '019dfd19-672a-7a09-be6b-20d63008896e'::uuid) AND (user_id = '019e97be-702f-7701-8695-ca06c246cdca'::uuid) AND (id < '9223372036854775807'::bigint))
+         Buffers: shared hit=13
+ Planning:
+   Buffers: shared hit=27
+ Planning Time: 0.070 ms
+ Execution Time: 0.013 ms
+(9 rows)
+
+===== (3) Q16 khi hàng chục nghìn đề tự nhập trùng chữ ký (sig_version khác) với đề kho
+                                                                         QUERY PLAN                                                                          
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using problem_signature_lookup_idx on problem_signature cat  (cost=1.71..3.94 rows=1 width=16) (actual time=0.012..0.013 rows=1 loops=1)
+   Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (signature = (InitPlan 1).col1) AND (sig_version = 1))
+   Buffers: shared hit=10
+   InitPlan 1
+     ->  Limit  (cost=0.41..1.43 rows=1 width=49) (actual time=0.003..0.003 rows=1 loops=1)
+           Buffers: shared hit=4
+           ->  Index Scan using problem_signature_pkey on problem_signature s  (cost=0.41..61.27 rows=60 width=49) (actual time=0.003..0.003 rows=1 loops=1)
+                 Index Cond: (org_id = '00000000-0000-7000-8000-000000000001'::uuid)
+                 Buffers: shared hit=4
+ Planning:
+   Buffers: shared hit=36
+ Planning Time: 0.086 ms
+ Execution Time: 0.016 ms
+(13 rows)
+
+ signature_rows 
+----------------
+          23260
+(1 row)
+

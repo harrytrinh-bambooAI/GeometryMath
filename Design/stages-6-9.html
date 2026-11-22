@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Thiết kế chặng 6–9 – Hình Học Không Gian Cùng AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/ds.css">
+<style>
+/* ---------- bổ sung cho chặng 6–9 ---------- */
+.screen.ipad{width:1180px;height:820px}
+.screen.ipad .top{padding:0 22px}
+.screen.ipad .body{padding:4px 22px 22px;gap:16px}
+.rail a{text-align:center;line-height:1.2}
+.seg span{white-space:nowrap}.field{white-space:nowrap}
+.top .r{gap:8px}
+.top .r .chip{padding:7px 12px;font-size:12px}
+.top .r .ava{margin-left:4px}
+.toggle.off{background:#CBD3E3}
+.toggle.off::after{right:auto;left:3px}
+.toggle.lk{opacity:.55}
+.hd{display:flex;align-items:center;gap:10px}
+.hd h2{margin:0}
+.hd .end{margin-left:auto}
+.end{margin-left:auto}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sep{height:1px;background:var(--line);flex-shrink:0}
+.b{font-weight:700}
+.nowrap{white-space:nowrap}
+.box{border:1.5px solid var(--line);border-radius:14px;padding:12px 13px;background:#fff}
+.box.soft{background:var(--soft)}
+.box.grn{border-color:#B9E6D2;background:var(--grn-s)}
+.box.yel{border-color:#F4D58A;background:var(--yel-s)}
+.box.org{border-color:#F7C2B3;background:var(--org-s)}
+.box.pur{border-color:#D9CCFF;background:var(--pur-s)}
+.box.pri{border-color:#C9D3F5;background:#F5F7FF}
+.box.red{border-color:#F5B8B2;background:var(--red-s)}
+.box.sel{border-color:var(--pri);background:#F5F7FF;box-shadow:0 0 0 3px rgba(59,91,219,.10)}
+.box.dash{border-style:dashed;background:var(--soft)}
+.icb.s{width:32px;height:32px;border-radius:10px}.icb.s svg.ic{width:17px;height:17px}
+.icb.red{background:var(--red-s);color:var(--red)}
+.icb.gry{background:#E7EBF4;color:var(--muted)}
+.btn.red{background:var(--red)}
+.btn.line{background:#fff;color:var(--text);border:1.5px solid var(--line)}
+.btn.redl{background:#fff;color:var(--red);border:1.5px solid #F5B8B2}
+.btn.dis{background:#E7EBF4;color:var(--faint)}
+.btn.full{width:100%}
+.ck{width:20px;height:20px;border-radius:6px;border:2px solid #C3CBDD;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;background:#fff}
+.ck.on{background:var(--pri);border-color:var(--pri)}
+.ck svg.ic{width:13px;height:13px;stroke-width:3}
+.rd{width:20px;height:20px;border-radius:50%;border:2px solid #C3CBDD;flex-shrink:0;background:#fff}
+.rd.on{border:6px solid var(--pri)}
+.lv{display:flex;gap:4px}.lv i{width:26px;height:9px;border-radius:99px;background:#E7EBF4}
+.area{border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff;font-size:13.5px;line-height:1.55}
+.av{border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:#fff;flex-shrink:0}
+.tl{position:relative;padding-left:22px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl>div{position:relative}
+.tl>div::before{content:"";position:absolute;left:-21px;top:4px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--pri)}
+.tl>div.g::before{border-color:var(--grn)}.tl>div.y::before{border-color:var(--yel)}.tl>div.n::before{border-color:#C3CBDD}.tl>div.r::before{border-color:var(--red)}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:700}
+td.nr,th.nr{text-align:right}
+tr.sel td{background:#F5F7FF}
+tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--pri)}
+tbody tr:last-child td{border-bottom:none}
+/* điện thoại */
+.ph{height:100%;display:flex;flex-direction:column;background:var(--bg)}
+.ph-tag{display:flex;justify-content:space-between;align-items:center;padding:8px 14px 0;flex-shrink:0}
+.ph-tag .chip{font-size:10.5px;padding:3px 9px}
+.ph-hd{display:flex;align-items:center;gap:10px;padding:10px 14px 8px;flex-shrink:0}
+.ph-hd b.t{font-size:17px;font-weight:800;display:block;line-height:1.25}
+.ph-body{flex:1;min-height:0;padding:2px 14px 12px;display:flex;flex-direction:column;gap:10px}
+.ph .card{border-radius:16px}
+.ph .pad{padding:14px}
+.ph h2{font-size:15px}
+.tabbar{height:66px;background:#fff;border-top:1px solid var(--line);display:flex;flex-shrink:0;padding-bottom:6px}
+.tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10.5px;font-weight:700;color:var(--muted);position:relative}
+.tabbar a.on{color:var(--pri)}
+.tabbar a em{position:absolute;top:9px;left:calc(50% + 6px);min-width:16px;height:16px;border-radius:99px;background:var(--org);color:#fff;font-size:9.5px;font-style:normal;display:flex;align-items:center;justify-content:center;padding:0 4px}
+.ph-foot{background:#fff;border-top:1px solid var(--line);padding:10px 14px 18px;flex-shrink:0}
+.bub{padding:9px 12px;border-radius:16px;font-size:13.5px;line-height:1.45;max-width:270px}
+.bub.in{background:#fff;border:1px solid var(--line);border-top-left-radius:6px}
+.bub.out{background:var(--pri);color:#fff;border-top-right-radius:6px;margin-left:auto}
+/* video */
+.vt{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:8/5;display:flex;align-items:center;justify-content:center}
+.vt .nm{position:absolute;left:6px;bottom:6px;background:rgba(15,20,35,.72);color:#fff;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:7px;display:flex;align-items:center;gap:4px}
+.vt .nm svg.ic{width:11px;height:11px;stroke-width:2.4}
+.vt .bd{position:absolute;right:6px;top:6px}
+.vt.spk{box-shadow:0 0 0 3px #22C55E}
+.cb{width:54px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;font-weight:700;color:var(--muted)}
+.cb span{width:44px;height:44px;border-radius:50%;background:#EEF1F7;color:var(--text);display:flex;align-items:center;justify-content:center}
+/* thời khóa biểu */
+.tt{display:grid;grid-template-columns:64px repeat(6,1fr);gap:6px;flex:1;min-height:0;grid-template-rows:30px repeat(5,1fr)}
+.tt .h{font-size:12px;font-weight:700;color:var(--muted);display:flex;align-items:center;justify-content:center}
+.tt .p{font-size:11.5px;color:var(--muted);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700}
+.tt .c{border-radius:12px;padding:8px 10px;display:flex;flex-direction:column;justify-content:center;font-size:13px;font-weight:700;border-left:4px solid;min-width:0}
+.tt .c small{font-weight:500;font-size:11.5px;color:var(--muted);display:block}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="assets/ds.js"></script>
+<script>
+/* ---------- icon bổ sung (chỉ gán thêm trong trang này) ---------- */
+Object.assign(P,{
+ mic:"M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM6 11a6 6 0 0 0 12 0M12 17v4",
+ micoff:"M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM6 11a6 6 0 0 0 12 0M12 17v4M4 4l16 16",
+ video:"M3 7h12v10H3zM15 10.5l6-3.5v10l-6-3.5",
+ videooff:"M3 7h12v10H3zM15 10.5l6-3.5v10l-6-3.5M3 3l18 18",
+ hand:"M8 13V6a1.5 1.5 0 0 1 3 0v5M11 10V4.500a1.500 1.500 0 0 1 3 0V11M14 10.5V6.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-.5a5 5 0 0 1-4.300-2.500L4.200 14a1.500 1.500 0 0 1 2.600-1.500L8 14.500",
+ leave:"M4 15c5-5 11-5 16 0l-2 3-3.500-1.500v-2.500c-1.700-.500-3.300-.500-5 0v2.500L6 18z",
+ user:"M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M4 20a8 8 0 0 1 16 0",
+ link:"M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1",
+ down:"M12 4v12M6 11l6 6 6-6M5 20h14",
+ up:"M12 17V5M6 10l6-6 6 6M5 20h14",
+ sliders:"M4 7h10M18 7h2M4 17h2M10 17h10M16 7m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M8 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0",
+ chev:"M9 6l6 6-6 6",
+ alert:"M12 4l9 16H3zM12 10v4M12 17v.5",
+ info:"M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18M12 11v5M12 7.500v.5",
+ mail:"M3 6h18v12H3zM3 7l9 6 9-6",
+ pin:"M12 21s7-6.500 7-11a7 7 0 0 0-14 0c0 4.500 7 11 7 11zM12 12a2.500 2.500 0 1 0 0-5 2.500 2.500 0 0 0 0 5",
+ key:"M8 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8M12 11h9M18 11v3M15 11v2",
+ moon:"M20 14.500A8 8 0 0 1 9.500 4a8 8 0 1 0 10.500 10.500z",
+ img:"M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M9 9h.01",
+ grid:"M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z",
+ more:"M5 12h.01M12 12h.01M19 12h.01"
+});
+const I=(n,z)=>ic(n,z?`width:${z}px;height:${z}px`:'');
+const COL={An:'#F0522B','Bình':'#3B5BDB',Chi:'#E8A200','Dũng':'#B45309','Hà':'#D6336C',Lan:'#0F8A5F',Khoa:'#7C4DFF',Vy:'#0EA5E9',GV:'#3B5BDB'};
+const av=(n,z=32,c)=>`<span class="av" style="width:${z}px;height:${z}px;font-size:${Math.round(z*.38)}px;background:${c||COL[n]||'#64748B'}">${n==='GV'?'GV':n[0]}</span>`;
+const NV={
+ hs:[['home','Bài của em'],['cube','Tự học'],['trend','Tiến bộ'],['users','Nhóm học'],['clock','Lịch sử']],
+ gv:[['home','Tổng quan'],['book','Kho đề'],['users','Lớp học'],['chart','Theo dõi'],['shield','Nhóm học'],['layers','Cộng đồng']],
+ tr:[['home','Tổng quan'],['users','Lớp & GV'],['cal','Thời khóa biểu'],['bell','Thông báo'],['sliders','Chính sách'],['chart','Báo cáo']],
+ ql:[['home','Tổng quan'],['file','Văn bản'],['school','Trường'],['key','Ủy quyền'],['chart','Báo cáo']]};
+const WH={hs:['A','#F0522B'],gv:['GV','#3B5BDB'],tr:['QT','#7C4DFF'],ql:['QL','#0EA5E9']};
+const ROLE={hs:'Học sinh',gv:'Giáo viên',tr:'Quản trị trường',ql:'Cơ quan quản lý'};
+function frame(dev,id,role,on,title,crumb,body,st,top=''){
+ return `<section class="screen ${dev==='ipad'?'ipad':''}" id="${id}">
+ <nav class="rail"><div class="logo">${ic('cube')}</div>${NV[role].map((n,i)=>`<a class="${i===on?'on':''}">${ic(n[0],'width:22px;height:22px')}${n[1]}</a>`).join('')}<div class="sp"></div></nav>
+ <div class="main"><div class="top"><div><h1>${title}</h1>${crumb?`<div class="crumb">${crumb}</div>`:''}</div>
+ <div class="r">${top}<span class="chip">${ROLE[role]} · ${dev==='ipad'?'iPad ngang 1180×820':'Web 1440×900'}</span><span class="chip pur">${ic('spark')}Concept · Chặng ${st}</span><div class="ava" style="background:${WH[role][1]}">${WH[role][0]}</div></div></div>
+ <div class="body">${body}</div></div></section>`;}
+const web=(...a)=>frame('web',...a), ipad=(...a)=>frame('ipad',...a);
+const TABS={
+ ph:[['home','Tổng quan'],['trend','Tiến bộ'],['cal','Lịch'],['chat','Trao đổi']],
+ gv:[['home','Hôm nay'],['users','Lớp học'],['check','Điểm danh'],['bell','Thông báo']]};
+function phone(id,st,role,head,body,o={}){
+ return `<section class="screen mobile" id="${id}"><div class="ph">
+ <div class="ph-tag"><span class="chip">${role} · iPhone 390×844</span><span class="chip pur">${ic('spark')}Concept · Chặng ${st}</span></div>
+ ${head}<div class="ph-body">${body}</div>${o.foot||''}
+ ${o.tabs?`<div class="tabbar">${TABS[o.tabs].map((t,i)=>`<a class="${i===o.on?'on':''}">${I(t[0],22)}${t[1]}${o.badge&&o.badge[i]?`<em>${o.badge[i]}</em>`:''}</a>`).join('')}</div>`:''}
+ </div></section>`;}
+const back=`<div class="icb pri" style="width:36px;height:36px">${ic('arrow','transform:rotate(180deg);width:18px;height:18px')}</div>`;
+const lv=(n,c)=>`<span class="lv">${[1,2,3,4,5].map(i=>`<i style="${i<=n?`background:${c}`:''}"></i>`).join('')}</span>`;
+const SCREENS=[];
+</script>
+
+<!-- ======================= CHẶNG 6 ======================= -->
+<script>
+/* c6-01 · Học sinh · iPad · Tiến bộ của em */
+const kn=(shape,c,name,n,word,cls,note)=>`<div class="row" style="gap:14px">
+ <div style="width:46px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center">${sh[shape](c).replace('<svg','<svg style="height:40px"')}</div>
+ <div class="grow"><div class="b">${name}</div><div class="small muted">${note}</div></div>
+ ${lv(n,c)}<span class="chip ${cls}" style="width:112px;justify-content:center">${word}</span></div>`;
+SCREENS.push(ipad('c6-01-hs-tien-bo-cua-em','hs',2,'Tiến bộ của em','Chủ nhật 22/11 · so với chính em tuần trước, không xếp hạng với bạn khác',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="card" style="padding:18px 20px;background:linear-gradient(120deg,#3B5BDB,#7C4DFF);color:#fff;border:none;display:flex;align-items:center;gap:18px">
+  <div style="width:74px;height:74px;border-radius:22px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center">${I('trend',38)}</div>
+  <div class="grow"><div style="font-size:18px;font-weight:800">Em tự giải 4 bài không cần gợi ý!</div>
+   <div style="opacity:.9;margin-top:2px">Tuần trước là 2 bài. Em đang tiến rất chắc.</div></div>
+  <div style="display:flex;gap:10px">
+   ${[['5/6','bài đã xong'],['3','ngày liên tiếp'],['12','câu em đã hỏi']].map(x=>`<div style="background:rgba(255,255,255,.16);border-radius:14px;padding:9px 14px;text-align:center;min-width:92px"><div style="font-size:21px;font-weight:800;line-height:1.15">${x[0]}</div><div style="font-size:11.5px;opacity:.9">${x[1]}</div></div>`).join('')}</div></div>
+ <div class="card pad col grow" style="gap:0">
+  <div class="hd"><h2>Em nắm các khái niệm đến đâu</h2><span class="chip end">${I('info')}Ước lượng từ bài em đã làm</span></div>
+  <div class="col grow" style="justify-content:space-around;gap:6px;margin-top:8px">
+  ${kn('chop','#0F8A5F','Thể tích khối chóp',5,'Vững vàng','grn','7 bài · 6 bài em tự làm trọn vẹn')}
+  ${kn('lang','#0F8A5F','Hình chiếu vuông góc',4,'Vững vàng','grn','8 bài · em xác định hình chiếu rất nhanh')}
+  ${kn('chop','#3B5BDB','Góc giữa đường thẳng và mặt phẳng',3,'Đang tiến bộ','pri','6 bài · 2 bài gần nhất em tự sửa được chỗ nhầm')}
+  ${kn('hop','#E8A200','Khoảng cách từ điểm đến mặt phẳng',2,'Đang làm quen','yel','5 bài · em thường cần gợi ý ở bước dựng đường vuông góc')}
+  ${kn('lang','#7C4DFF','Góc giữa hai mặt phẳng',1,'Mới bắt đầu','pur','3 bài · chủ đề mới, cứ từ từ nhé')}
+  </div>
+  <div class="small muted" style="margin-top:6px">Chạm vào từng dòng để xem những bài và câu hỏi làm căn cứ.</div>
+ </div>
+</div>
+<div class="col" style="width:352px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Điều em đã làm tốt</h2>
+  ${[['check','grn','Tự phát hiện và sửa lỗi','Bài 19: em tự đổi SA/SD thành SA/AD trước khi nộp'],['bulb','yel','Hỏi đúng chỗ vướng','“Vì sao H nằm trên SO?” là một câu hỏi rất hay'],['flame','org','Học đều đặn','3 ngày liên tiếp, mỗi ngày khoảng 30 phút']].map(x=>`<div class="row" style="align-items:flex-start"><div class="icb s ${x[1]}">${ic(x[0])}</div><div><div class="b" style="font-size:13.5px">${x[2]}</div><div class="small muted">${x[3]}</div></div></div>`).join('')}
+ </div>
+ <div class="card pad col grow" style="gap:10px"><h2 style="margin:0">Gợi ý luyện tiếp</h2>
+  <div class="box pri col" style="gap:8px"><div class="row"><div class="icb s pri">${ic('cube')}</div><div class="grow"><div class="b" style="font-size:13.5px">Dựng đường vuông góc từ A xuống (SBD)</div><div class="tiny muted">3 bài ngắn · khoảng 10 phút · có gợi ý từng bước</div></div></div>
+   <div class="row"><span class="chip grn">${ic('shield')}Đã kiểm chứng</span><span class="btn sm end">${ic('play')}Luyện ngay</span></div></div>
+  <div class="box col" style="gap:8px"><div class="row"><div class="icb s pur">${ic('eye')}</div><div class="grow"><div class="b" style="font-size:13.5px">Xem lại bài 15 bằng hình 3D</div><div class="tiny muted">Lời giải đã mở · xoay hình để thấy tam giác vuông</div></div></div>
+   <div class="row"><span class="chip">Giáo viên gợi ý</span><span class="btn sm ghost end">Mở bài</span></div></div>
+  <div class="grow"></div>
+  <div class="row small muted" style="align-items:flex-start;gap:8px">${I('lock',16)}<span>Trang này chỉ có em và giáo viên của em xem. Phụ huynh chỉ thấy bản tóm tắt giáo viên đã duyệt.</span></div>
+ </div>
+</div>`,6));
+
+/* c6-02 · Giáo viên · Web · Ghi nhận can thiệp */
+const ev=(on,icn,cls,t,d,extra='')=>`<div class="box ${on?'':'soft'}" style="display:flex;gap:10px;align-items:flex-start;padding:10px 12px"><span class="ck ${on?'on':''}" style="margin-top:2px">${on?ic('check'):''}</span><div class="icb s ${cls}">${ic(icn)}</div><div class="grow"><div class="b" style="font-size:13.5px">${t}</div><div class="small muted">${d}</div>${extra}</div></div>`;
+const sug=(t,d,cf,cc,state)=>`<div class="box ${state==='x'?'dash':''}" style="display:flex;gap:12px;align-items:center;${state==='x'?'opacity:.75':''}">
+ <div class="grow"><div class="b" style="${state==='x'?'text-decoration:line-through;color:var(--muted)':''}">${t}</div><div class="small muted" style="margin-top:2px">${d}</div></div>
+ <span class="chip ${cc}">Tin cậy: ${cf}</span>
+ ${state==='ok'?`<span class="btn sm grn">${ic('check')}Đã xác nhận</span>`:state==='ed'?`<span class="btn sm soft">${ic('edit')}Đã sửa</span>`:state==='x'?`<span class="btn sm line">${ic('x')}Đã bỏ</span>`:''}
+ <span class="icb s gry">${ic('more')}</span></div>`;
+SCREENS.push(web('c6-02-gv-ghi-nhan-can-thiep','gv',3,'Ghi nhận can thiệp · An (11A1)','Theo dõi › Hồ sơ học tập › An › Ghi nhận mới · mọi nhận định đều gắn với bài và câu hỏi cụ thể',`
+<div class="card pad col" style="width:370px;flex-shrink:0;gap:10px">
+ <div class="hd"><h2>Bằng chứng</h2><span class="chip pri end">Đã chọn 4/5</span></div>
+ ${ev(1,'file','org','Bài 12 · câu 2 · nộp 13/11','Góc giữa SD và mặt đáy',`<div class="paper" style="padding:7px 11px;font-size:12.5px;line-height:1.6;margin-top:6px">tan SDA = SA / SD = a / a√2</div><div class="tiny" style="color:var(--org);font-weight:700;margin-top:4px">Dùng cạnh huyền SD thay cho cạnh kề AD</div>`)}
+ ${ev(1,'file','org','Bài 15 · câu 1 · nộp 17/11','Góc giữa SC và mặt đáy',`<div class="paper" style="padding:7px 11px;font-size:12.5px;line-height:1.6;margin-top:6px">tan SCA = SA / SC</div><div class="tiny" style="color:var(--org);font-weight:700;margin-top:4px">Dùng cạnh huyền SC thay cho cạnh kề AC</div>`)}
+ ${ev(1,'file','grn','Bài 19 · câu 1 · nộp 20/11','Góc giữa SD và mặt đáy',`<div class="paper" style="padding:7px 11px;font-size:12.5px;line-height:1.6;margin-top:6px">tan SDA = <s>SA / SD</s> SA / AD = 1</div><div class="tiny" style="color:var(--grn);font-weight:700;margin-top:4px">Em tự sửa trước khi nộp</div>`)}
+ ${ev(1,'chat','pur','Câu hỏi lúc 20:14 · 18/11','“Vì sao hình chiếu của A lên (SBD) lại nằm trên SO ạ?”')}
+ ${ev(0,'bulb','yel','Gợi ý đã dùng','5/5 bài khoảng cách đều mở đến gợi ý 2')}
+ <div class="grow"></div>
+ <div class="row small muted" style="gap:8px">${I('lock',16)}<span>Chỉ giáo viên dạy An xem được lịch sử câu hỏi.</span></div>
+</div>
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="card pad col" style="gap:10px">
+  <div class="hd"><h2>Nhận định do AI đề xuất</h2><span class="chip pur end">${ic('spark')}Đề xuất · giáo viên quyết định</span></div>
+  ${sug('Nhầm cạnh kề và cạnh huyền khi lập tan','Căn cứ: bài 12, 15, 19 · bài 19 em đã tự sửa','Cao','grn','ok')}
+  ${sug('Cần hỗ trợ ở bước dựng đường vuông góc','Căn cứ: gợi ý ở 5 bài, câu hỏi 18/11','Vừa','yel','ed')}
+  ${sug('Chưa vững định lý ba đường vuông góc','Ước lượng · chỉ dựa trên 1 câu hỏi','Thấp','','x')}
+ </div>
+ <div class="card pad col grow" style="gap:10px">
+  <div class="hd"><h2>Ghi nhận của giáo viên</h2><span class="chip end">Mô tả việc em làm, không gắn nhãn cho em</span></div>
+  <div class="area grow">An xác định hình chiếu đúng và nhanh. Ở 2/3 bài gần đây, em lập tỉ số tan với cạnh huyền thay cho cạnh kề; đến bài 19 em đã tự phát hiện và sửa. Với dạng khoảng cách, em cần gợi ý ở bước dựng đường vuông góc từ điểm xuống mặt phẳng.<div style="height:8px"></div>Hướng hỗ trợ: cho em luyện 3 bài ngắn về dựng đường vuông góc, yêu cầu em nói rõ “vuông góc với hai đường nào trong mặt phẳng”.</div>
+  <div class="g2">
+   <div class="box row"><div class="grow"><div class="b" style="font-size:13.5px">Hiện cho học sinh</div><div class="tiny muted">Ở mục “Gợi ý luyện tiếp”</div></div><span class="toggle"></span></div>
+   <div class="box row"><div class="grow"><div class="b" style="font-size:13.5px">Chia sẻ cho phụ huynh</div><div class="tiny muted">Chỉ bản tóm tắt đã duyệt</div></div><span class="toggle"></span></div>
+  </div>
+  <div class="row"><span class="tiny muted">Lưu nháp tự động lúc 16:42 · 22/11</span><span class="btn line end">Lưu nháp</span><span class="btn">${ic('check')}Lưu ghi nhận</span></div>
+ </div>
+</div>
+<div class="col" style="width:330px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:9px">
+  <div class="hd"><h2>Giao bài luyện</h2><span class="chip grn end">${ic('shield')}Đã kiểm chứng</span></div>
+  ${[['Khoảng cách từ A đến (SBD)','Hình chóp S.ABCD · 4 bước'],['Khoảng cách từ A đến (SBC)','Hình chóp S.ABCD · 3 bước'],['Khoảng cách từ O đến (SCD)','Hình chóp đều · 4 bước']].map(x=>`<div class="row"><span class="ck on">${ic('check')}</span><div class="grow"><div class="b" style="font-size:13px">${x[0]}</div><div class="tiny muted">${x[1]}</div></div></div>`).join('')}
+  <div class="row"><div class="grow"><div class="lbl">Hạn làm</div><div class="field" style="padding:8px 10px">${ic('cal')}26/11</div></div><div class="grow"><div class="lbl">Lời giải mở</div><div class="field" style="padding:8px 10px">${ic('clock')}26/11 · 19:00</div></div></div>
+ </div>
+ <div class="card pad col" style="gap:9px">
+  <h2 style="margin:0">Hẹn xem lại</h2>
+  <div class="field">${ic('cal')}Thứ Sáu 27/11/2026</div>
+  <div class="small muted">Sẽ nhắc giáo viên xem kết quả 3 bài luyện và ghi lại điều quan sát được.</div>
+  <div class="box dash row" style="padding:9px 12px"><div class="icb s gry">${ic('eye')}</div><div class="small"><b>Kết quả quan sát</b><div class="tiny muted">Ghi sau lần xem lại</div></div></div>
+ </div>
+ <div class="card pad col grow" style="gap:10px">
+  <h2 style="margin:0">Các lần trước</h2>
+  <div class="tl col" style="gap:12px">
+   <div class="g"><div class="b small">30/10 · Hướng dẫn dùng công cụ đo góc</div><div class="tiny muted">Xem lại 06/11: em dùng thành thạo</div></div>
+   <div class="g"><div class="b small">06/11 · Luyện xác định hình chiếu</div><div class="tiny muted">Xem lại 13/11: 4/4 bài tự làm đúng</div></div>
+   <div class="y"><div class="b small">13/11 · Nhắc cách lập tỉ số lượng giác</div><div class="tiny muted">Xem lại 20/11: bài 19 em tự sửa được</div></div>
+   <div><div class="b small">22/11 · Ghi nhận này</div><div class="tiny muted">Hẹn xem lại 27/11</div></div>
+  </div>
+ </div>
+</div>`,6));
+
+/* c6-03 · Phụ huynh · iPhone · Liên kết với con */
+const stp=(n,t,st)=>`<div style="flex:1;text-align:center"><div class="num ${st==='d'?'done':st==='a'?'on':''}" style="margin:0 auto 4px">${st==='d'?I('check',14):n}</div><div class="tiny ${st?'b':'muted'}" style="line-height:1.25">${t}</div></div>`;
+SCREENS.push(phone('c6-03-ph-lien-ket-voi-con',6,'Phụ huynh',`
+<div class="ph-hd">${back}<div class="grow"><b class="t">Liên kết với con</b><div class="tiny muted">Trường xác minh trước khi bạn xem thông tin</div></div></div>`,`
+<div class="card pad" style="display:flex;align-items:flex-start;gap:4px">
+ ${stp(1,'Nhập mã<br>của trường','d')}<div style="flex:.5;height:2px;background:var(--grn);margin-top:13px"></div>
+ ${stp(2,'Trường<br>xác minh','a')}<div style="flex:.5;height:2px;background:var(--line);margin-top:13px"></div>
+ ${stp(3,'Bắt đầu<br>theo dõi','')}</div>
+<div class="card pad col" style="gap:10px">
+ <div class="lbl" style="margin:0">Mã liên kết do trường cấp</div>
+ <div class="row" style="gap:6px;justify-content:space-between">${'K7M2-9QTA'.split('').map(c=>c==='-'?`<span class="muted b">–</span>`:`<span class="mono" style="width:34px;height:44px;border-radius:10px;border:1.5px solid #B9E6D2;background:var(--grn-s);display:flex;align-items:center;justify-content:center;font-size:18px">${c}</span>`).join('')}</div>
+ <div class="row small" style="color:var(--grn);font-weight:700;gap:6px">${I('check',16)}Mã hợp lệ · dùng được một lần</div>
+ <div class="sep"></div>
+ <div class="row">${av('An',40)}<div class="grow"><div class="b">An · lớp 11A1</div><div class="small muted">THPT Mẫu A · năm học 2026–2027</div></div></div>
+ <div class="row"><div class="grow"><div class="lbl">Quan hệ với học sinh</div><div class="field" style="padding:9px 12px">${ic('heart')}Mẹ</div></div></div>
+</div>
+<div class="box yel" style="display:flex;gap:11px"><div class="icb yel">${ic('clock')}</div><div><div class="b">Đang chờ trường xác minh</div><div class="small" style="color:#7A5600">Đã gửi lúc 08:12 · 22/11. Văn phòng trường đối chiếu với hồ sơ học sinh, thường trong 1–2 ngày làm việc.</div></div></div>
+<div class="card pad col" style="gap:8px">
+ <h2 style="margin:0">Sau khi được xác minh, bạn sẽ thấy</h2>
+ ${[['check','grn','Tiến độ, bài sắp tới và điểm giáo viên đã duyệt'],['check','grn','Nhận xét giáo viên chọn chia sẻ với gia đình'],['lock','gry','Không gồm: ghi chú riêng của giáo viên, trao đổi riêng của con với bạn']].map(x=>`<div class="row small" style="align-items:flex-start"><div class="icb s ${x[1]}" style="width:26px;height:26px">${I(x[0],14)}</div><span style="padding-top:3px">${x[2]}</span></div>`).join('')}
+</div>
+<div class="grow"></div>
+<div class="row"><span class="btn line grow">Hủy yêu cầu</span><span class="btn ghost grow">${ic('chat')}Hỏi văn phòng trường</span></div>
+<div class="tiny muted" style="text-align:center">Quyền xem tự kết thúc khi con chuyển trường hoặc trường thu hồi liên kết.</div>`));
+
+/* c6-04 · Phụ huynh · iPhone · Tổng quan của con */
+const ring=(v,t)=>`<svg viewBox="0 0 80 80" style="width:68px;height:68px;flex-shrink:0"><circle cx="40" cy="40" r="32" fill="none" stroke="#E7EBF4" stroke-width="9"/><circle cx="40" cy="40" r="32" fill="none" stroke="#0F8A5F" stroke-width="9" stroke-linecap="round" stroke-dasharray="${(201*v).toFixed(0)} 201" transform="rotate(-90 40 40)"/><text x="40" y="46" text-anchor="middle" font-size="19" font-weight="800" fill="#141B2D" font-family="Be Vietnam Pro">${t}</text></svg>`;
+SCREENS.push(phone('c6-04-ph-tong-quan-cua-con',6,'Phụ huynh',`
+<div class="ph-hd">${av('An',42)}<div class="grow"><b class="t">An · lớp 11A1</b><div class="tiny muted">THPT Mẫu A · Giáo viên Toán · 11A1</div></div><div class="icb" style="background:#fff;border:1px solid var(--line);position:relative">${ic('bell')}<span style="position:absolute;top:8px;right:9px;width:9px;height:9px;border-radius:50%;background:var(--org);border:2px solid #fff"></span></div></div>`,`
+<div><span class="chip grn">${ic('shield')}Thông tin đã được giáo viên duyệt · cập nhật 20/11</span></div>
+<div class="card pad col" style="gap:10px">
+ <div class="hd"><h2>Tuần này</h2><span class="tiny muted end">16–22/11</span></div>
+ <div class="row" style="gap:14px">${ring(5/6,'5/6')}
+  <div class="grow col" style="gap:6px"><div class="b">5 trên 6 bài đã hoàn thành</div>
+   <div class="row small muted" style="gap:6px">${I('clock',15)}2 giờ 40′ học</div>
+</div></div>
+ <div class="row" style="justify-content:space-between">${[['T2',1],['T3',0],['T4',1],['T5',0],['T6',1],['T7',1],['CN',1]].map(x=>`<div style="text-align:center"><div style="width:30px;height:30px;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;background:${x[1]?'var(--grn-s)':'#EEF1F7'};color:${x[1]?'var(--grn)':'var(--faint)'}">${x[1]?I('check',15):''}</div><span class="tiny muted">${x[0]}</span></div>`).join('')}</div>
+</div>
+<div class="card pad col" style="gap:9px">
+ <div class="hd"><h2>Sắp tới</h2><span class="tiny b end" style="color:var(--pri)">Xem lịch</span></div>
+ ${[['pri','Thứ Hai 23/11','Bài: Góc giữa SD và mặt đáy · hạn 19:00'],['pur','Thứ Sáu 27/11','Kiểm tra 15 phút · Chương 3']].map(x=>`<div class="row"><div class="icb s ${x[0]}">${ic('cal')}</div><div class="grow"><div class="b" style="font-size:13.5px">${x[1]}</div><div class="small muted">${x[2]}</div></div></div>`).join('')}
+</div>
+<div class="card pad col" style="gap:9px">
+ <div class="hd"><h2>Điểm đã duyệt</h2><span class="chip end">Giáo viên duyệt mới hiện</span></div>
+ ${[['Bài: Thể tích khối chóp','Duyệt 19/11','9,0'],['Kiểm tra 15 phút · Chương 2','Duyệt 12/11','8,5']].map(x=>`<div class="row"><div class="grow"><div class="b" style="font-size:13.5px">${x[0]}</div><div class="tiny muted">${x[1]}</div></div><span style="font-size:19px;font-weight:800;color:var(--pri)">${x[2]}</span></div>`).join('')}
+</div>
+<div class="g2" style="gap:10px">
+ <div class="box grn" style="padding:11px 12px"><div class="row tiny b" style="color:var(--grn);gap:5px">${I('trend',15)}Đang làm tốt</div><div class="b" style="font-size:13.5px;margin-top:4px">Thể tích khối chóp</div></div>
+ <div class="box yel" style="padding:11px 12px"><div class="row tiny b" style="color:#9A6B00;gap:5px">${I('bulb',15)}Nên luyện thêm</div><div class="b" style="font-size:13.5px;margin-top:4px">Khoảng cách điểm – mặt phẳng</div></div>
+</div>
+<div class="btn soft full">Xem chi tiết và gợi ý hỗ trợ ở nhà${ic('arrow')}</div>`,{tabs:'ph',on:0,badge:{3:1}}));
+
+/* c6-05 · Phụ huynh · iPhone · Chi tiết tiến bộ & gợi ý ở nhà */
+const pk=(n,l,c,w,cls)=>`<div><div class="row" style="margin-bottom:5px"><span class="grow b" style="font-size:13px">${n}</span><span class="chip ${cls}" style="font-size:10.5px;padding:2px 8px">${w}</span></div><div class="bar" style="height:7px"><i style="width:${l}%;background:${c}"></i></div></div>`;
+SCREENS.push(phone('c6-05-ph-tien-bo-va-goi-y',6,'Phụ huynh',`
+<div class="ph-hd">${back}<div class="grow"><b class="t">Tiến bộ của An</b><div class="tiny muted">Hình học không gian · so với chính con tuần trước</div></div></div>`,`
+<div class="card pad col" style="gap:11px">
+ <div class="hd"><h2>Mức nắm theo khái niệm</h2></div>
+ ${pk('Thể tích khối chóp',88,'#0F8A5F','Vững vàng','grn')}
+ ${pk('Hình chiếu vuông góc',82,'#0F8A5F','Vững vàng','grn')}
+ ${pk('Góc đường thẳng – mặt phẳng',64,'#3B5BDB','Đang tiến bộ','pri')}
+ ${pk('Khoảng cách điểm – mặt phẳng',38,'#E8A200','Đang làm quen','yel')}
+ <div class="tiny muted">Ước lượng từ bài con đã làm, không phải điểm số. Không so sánh với bạn khác, không xếp hạng trong lớp.</div>
+</div>
+<div class="card pad" style="display:flex;gap:10px">${av('GV',34)}<div class="grow"><div class="row"><span class="b" style="font-size:13.5px">Giáo viên Toán · 11A1</span><span class="chip grn end" style="font-size:10.5px;padding:2px 8px">Đã duyệt 20/11</span></div>
+ <div class="small" style="margin-top:4px">An xác định hình chiếu nhanh và đúng. Con từng chọn nhầm cạnh khi lập tỉ số lượng giác và đã tự sửa được ở bài gần nhất. Tuần tới con luyện thêm 3 bài về khoảng cách.</div></div></div>
+<div class="card pad col" style="gap:10px">
+ <div class="hd"><h2>Ở nhà, gia đình có thể</h2><span class="chip end">Không bắt buộc</span></div>
+ ${[['chat','pri','Nhờ con giảng lại một bài','“Con chỉ cho mẹ xem hình chiếu của đỉnh S nằm ở đâu?” Chỉ cần nghe con giải thích.'],['clock','yel','Dành 10 phút cho một bài đã mở lời giải','2 bài khoảng cách xem lại được bằng hình 3D.'],['heart','org','Ghi nhận nỗ lực cụ thể','Tuần này con tự làm 4 bài không cần gợi ý, tuần trước là 2.']].map(x=>`<div class="row" style="align-items:flex-start"><div class="icb s ${x[1]}">${ic(x[0])}</div><div class="grow"><div class="b" style="font-size:13.5px">${x[2]}</div><div class="small muted">${x[3]}</div></div></div>`).join('')}
+</div>
+`,{tabs:'ph',on:1,badge:{3:1}}));
+
+/* c6-06 · Phụ huynh · iPhone · Trao đổi & thông báo */
+SCREENS.push(phone('c6-06-ph-trao-doi-thong-bao',6,'Phụ huynh',`
+<div class="ph-hd">${av('GV',40)}<div class="grow"><b class="t" style="font-size:16px">Giáo viên Toán · 11A1</b><div class="tiny muted row" style="gap:4px">${I('shield',12)}Kênh do THPT Mẫu A quản lý</div></div><div class="icb" style="background:#fff;border:1px solid var(--line)">${ic('sliders')}</div></div>
+<div style="padding:0 14px 8px"><div class="seg" style="font-size:12.5px"><span class="on" style="flex:1;justify-content:center">${ic('chat')}Tin nhắn</span><span style="flex:1;justify-content:center">${ic('bell')}Thông báo · 2 mới</span></div></div>`,`
+<div class="box pur row" style="padding:9px 12px"><div class="icb s pur">${ic('moon')}</div><div class="small grow"><b>Đang trong giờ yên lặng (20:30–06:30)</b><div class="tiny" style="color:#5B3FC4">Tin gửi lúc này sẽ đến giáo viên vào 06:30 sáng mai.</div></div></div>
+<div class="tiny muted" style="text-align:center">Thứ Sáu 20/11</div>
+<div><div class="bub in">An tiến bộ rõ ở phần thể tích. Tuần này em luyện thêm dạng khoảng cách, tôi đã giao 3 bài ngắn.</div><div class="tiny muted" style="margin:3px 4px">16:45</div></div>
+<div><div class="bub out">Cảm ơn cô. Ở nhà tôi nên nhắc con thế nào cho phù hợp ạ?</div><div class="tiny muted" style="margin:3px 4px;text-align:right">19:20 · đã xem</div></div>
+<div><div class="bub in">Chị chỉ cần nhờ An giảng lại một bài mỗi tối, khoảng 10 phút là đủ ạ.</div><div class="tiny muted" style="margin:3px 4px">Thứ Bảy 21/11 · 07:40</div></div>
+<div class="card" style="padding:12px;display:flex;gap:10px;border-color:#C9D3F5"><div class="icb s pri">${ic('school')}</div><div class="grow"><div class="row"><span class="b" style="font-size:13.5px">Họp phụ huynh khối 11</span><span class="chip pri end" style="font-size:10.5px;padding:2px 8px">Thông báo của trường</span></div>
+ <div class="small muted">Thứ Bảy 28/11 · 08:00 · Hội trường A</div>
+ <div class="row" style="margin-top:8px"><span class="btn sm grow">${ic('check')}Xác nhận tham dự</span><span class="btn sm line grow">Không tham dự được</span></div></div></div>
+<div class="grow"></div>`,{foot:`<div class="ph-foot"><div class="field" style="background:var(--soft)">${ic('chat')}<span class="muted grow" style="font-weight:500">Nhắn giáo viên…</span><div class="icb s pri">${ic('send')}</div></div>
+<div class="tiny muted" style="margin-top:6px;text-align:center">Giáo viên thường trả lời trong 1–2 ngày làm việc. Việc khẩn cấp: gọi văn phòng trường.</div></div>`,tabs:'ph',on:3,badge:{3:1}}));
+</script>
+<!-- ======================= CHẶNG 7 ======================= -->
+<script>
+/* c7-01 · Học sinh · iPad · Danh sách nhóm học */
+const stack=(ns,more)=>`<span style="display:inline-flex">${ns.map((n,i)=>`<span style="margin-left:${i?-8:0}px;border:2px solid #fff;border-radius:50%;display:inline-flex">${av(n,28)}</span>`).join('')}${more?`<span class="av" style="margin-left:-8px;width:32px;height:32px;font-size:11px;background:#E7EBF4;color:var(--muted);border:2px solid #fff">+${more}</span>`:''}</span>`;
+const myGroup=(shape,c,t,chips,ns,more,gv,next,live)=>`<div class="card pad col" style="gap:10px">
+ <div class="row" style="align-items:flex-start"><div style="width:64px;height:60px;border-radius:14px;background:${c}14;display:flex;align-items:center;justify-content:center;flex-shrink:0">${sh[shape](c).replace('<svg','<svg style="height:46px"')}</div>
+  <div class="grow"><div class="b" style="font-size:15px">${t}</div><div class="row" style="gap:5px;margin-top:5px;flex-wrap:wrap">${chips}</div></div></div>
+ <div class="row">${stack(ns,more)}<span class="small muted">${gv}</span></div>
+ <div class="box ${live?'grn':'soft'} row" style="padding:9px 11px"><div class="icb s ${live?'grn':'pri'}">${ic(live?'video':'cal')}</div><div class="grow small"><b>${next[0]}</b><div class="tiny muted">${next[1]}</div></div><span class="btn sm ${live?'grn':''}">${live?'Vào buổi học':'Vào nhóm'}</span></div></div>`;
+const openGroup=(c,icn,t,d,n,gv,st,nx)=>`<div class="card pad col" style="gap:8px">
+ <div class="row"><div class="icb ${c}">${ic(icn)}</div><span class="chip end">${ic('users')}${n}</span></div>
+ <div class="b" style="font-size:14px">${t}</div><div class="small muted" style="margin-top:-6px">${d}</div>
+ <div class="tiny muted row" style="gap:5px">${I('school',14)}${gv}</div><div class="grow"></div>
+ <div class="box soft row tiny" style="padding:7px 9px;gap:7px">${I('cal',14)}<span><b>Buổi tới</b> · ${nx}</span></div>
+ ${st?`<span class="btn sm dis full">${ic('clock')}Đã gửi yêu cầu</span>`:`<span class="btn sm ghost full">Xin tham gia</span>`}</div>`;
+SCREENS.push(ipad('c7-01-hs-danh-sach-nhom','hs',3,'Nhóm học','Học cùng bạn trong lớp, trong trường và trường bạn · nhóm nào cũng có giáo viên điều phối',`
+<div class="col grow" style="gap:12px;min-width:0">
+ <div class="hd"><h2>Nhóm của em</h2><span class="chip">2 nhóm</span><span class="btn sm soft end">${ic('plus')}Đề xuất nhóm mới</span></div>
+ <div class="g2" style="gap:14px">
+  ${myGroup('chop','#3B5BDB','Hình không gian 11',`<span class="chip pur">${ic('link')}Liên trường · 2 trường</span><span class="chip">6 thành viên</span>`,['An','Bình','Lan','Khoa'],2,'Giáo viên điều phối · THPT Mẫu A',['Đang học từ 19:30','Bài 2: khoảng cách'],1)}
+  ${myGroup('hop','#F0522B','Ôn kiểm tra chương 3',`<span class="chip pri">Lớp 11A1</span><span class="chip">5 thành viên</span>`,['An','Chi','Dũng','Hà'],1,'Giáo viên Toán · 11A1',['Thứ Tư 25/11 · 19:30','Đã xong 1/3 việc nhóm'],0)}
+ </div>
+ <div class="hd" style="margin-top:4px"><h2>Nhóm mở trong trường</h2><span class="chip">THPT Mẫu A</span><div class="field end" style="padding:7px 11px;width:230px">${ic('search')}<span class="muted" style="font-weight:500">Tìm theo chủ đề</span></div></div>
+ <div class="g3" style="gap:14px;flex:1;min-height:0">
+  ${openGroup('pur','layers','Thiết diện của hình chóp','Luyện dựng thiết diện qua ba điểm','8/12','Tổ Toán · khối 11',0,'26/11 · 19:00')}
+  ${openGroup('grn','cube','Thể tích khối đa diện','Ôn công thức và bài tổng hợp','10/12','Tổ Toán · khối 12',1,'24/11 · 20:00')}
+  ${openGroup('yel','angle','Lượng giác trong hình học','Tỉ số lượng giác, định lý cosin','6/10','Tổ Toán · khối 11',0,'Chưa đặt lịch')}
+ </div>
+ <div class="box soft row small muted" style="padding:10px 12px">${I('info',16)}<span>Tiến độ nhóm tính theo việc cả nhóm hoàn thành, không xếp hạng từng bạn.</span></div>
+</div>
+<div class="col" style="width:340px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:10px">
+  <div class="hd"><h2>Lời mời liên trường</h2><span class="chip yel end">Chờ trường duyệt</span></div>
+  <div class="row" style="align-items:flex-start"><div class="icb pur">${ic('mail')}</div><div class="grow"><div class="b">Thiết diện và mặt cắt</div><div class="small muted">Câu lạc bộ Toán · THPT Mẫu B mời em tham gia</div></div></div>
+  <div class="tl col" style="gap:11px;margin-top:2px">
+   <div class="g"><div class="b small">THPT Mẫu B gửi lời mời</div><div class="tiny muted">20/11 · qua giáo viên điều phối</div></div>
+   <div class="y"><div class="b small">THPT Mẫu A xem xét</div><div class="tiny muted">Trường em cần đồng ý cho tham gia và chia sẻ</div></div>
+   <div class="n"><div class="b small muted">Em và phụ huynh đồng ý</div><div class="tiny muted">Mở sau khi trường duyệt</div></div>
+  </div>
+  <span class="btn dis full">${ic('lock')}Chưa thể tham gia</span>
+  <div class="tiny muted">Trường bạn chưa xem được tên hay bài làm của em cho tới khi cả hai trường duyệt.</div>
+ </div>
+ <div class="card pad col grow" style="gap:9px;border-color:#B9E6D2;background:var(--grn-s)">
+  <div class="row"><div class="icb s grn" style="background:#fff">${ic('shield')}</div><b>Học nhóm an toàn</b></div>
+  ${['Chỉ thành viên được duyệt mới vào được nhóm','Giáo viên điều phối theo dõi trao đổi và buổi video','Thấy điều gì không ổn, em bấm Báo cáo. Bạn khác không biết ai báo'].map(x=>`<div class="row small" style="align-items:flex-start;color:#17694D;gap:8px">${I('check',15)}<span>${x}</span></div>`).join('')}
+  <div class="grow"></div>
+  <span class="btn sm redl" style="align-self:flex-start">${ic('flag')}Báo cáo một vấn đề</span>
+ </div>
+</div>`,7));
+
+/* c7-02 · Học sinh · iPad · Buổi học nhóm có video */
+const vt=(n,c,o={})=>`<div class="vt ${o.spk?'spk':''}" style="background:${o.off?'#2A3350':`linear-gradient(140deg,${c}30,${c}70)`}">${o.off?`<span class="av" style="width:42px;height:42px;background:rgba(255,255,255,.14)">${I('videooff',19)}</span>`:av(n,46,c)}<span class="nm" ${o.mute?'style="background:rgba(217,45,32,.9)"':''}>${I(o.mute?'micoff':'mic')}${o.label||n}</span>${o.bd?`<span class="chip on bd" style="font-size:10px;padding:2px 7px">${o.bd}</span>`:''}</div>`;
+const cbtn=(icn,t,st)=>`<div class="cb"><span style="${st||''}">${I(icn,20)}</span>${t}</div>`;
+const figGroup=pyramid({}).replace('</svg>',`<polygon points="176,44 80,268 372,250" fill="#7C4DFF" fill-opacity=".14" stroke="#7C4DFF" stroke-width="2.2" stroke-dasharray="7 5"/><line x1="176" y1="44" x2="226" y2="259" stroke="#7C4DFF" stroke-width="2.2"/><line x1="196" y1="214" x2="226" y2="259" stroke="#0F8A5F" stroke-width="2.2" stroke-dasharray="5 4"/><line x1="196" y1="214" x2="209.300" y2="187.300" stroke="#F0522B" stroke-width="3.4" stroke-linecap="round"/><circle cx="226" cy="259" r="5.500" fill="#0F8A5F"/><text x="232" y="282" fill="#0F8A5F" font-size="17" font-weight="800">O</text><circle cx="209.300" cy="187.300" r="5.500" fill="#F0522B"/><text x="218" y="184" fill="#F0522B" font-size="17" font-weight="800">H</text><g><path d="M296,116 l0,22 l6,-6 l5,11 l4,-2 l-5,-11 l8,0z" fill="#0F8A5F"/><rect x="312" y="136" rx="8" width="44" height="22" fill="#0F8A5F"/><text x="322" y="152" fill="#fff" font-size="13" font-weight="700">Lan</text></g></svg>`);
+SCREENS.push(ipad('c7-02-hs-buoi-hoc-nhom-video','hs',3,'Buổi học nhóm · Hình không gian 11','ĐỂ SAU · ngoài phạm vi đầu của chặng 7 (PO-11) · nhóm liên trường · có giáo viên điều phối',`
+<div class="col grow" style="gap:12px;min-width:0">
+ <div class="canvas">
+  <div class="prob"><div class="icb pri">${ic('file')}</div><div class="grow"><b>Bài 2.</b> Hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính khoảng cách từ A đến (SBD).</div><span class="chip pri">${ic('users')}Hình dùng chung</span></div>
+  <div class="fig" style="top:92px;bottom:76px">${figGroup}</div>
+  <div class="views" style="top:98px"><span>${ic('eye')}Theo góc nhìn của Lan</span><span>${ic('cube')}Xoay tự do</span></div>
+  <div class="meas" style="bottom:84px"><span style="border-color:#7C4DFF;color:#7C4DFF">Bình dựng: mặt (SBD), SO</span><span>Lan dựng: AH ⊥ SO</span></div>
+  <div class="dock" style="bottom:12px;padding:5px">${[['cursor','Chọn',0],['point','Điểm',0],['line','Đường',1],['plane','Mặt phẳng',0],['ruler','Đo dài',0],['angle','Đo góc',0]].map(x=>`<b class="${x[2]?'on':''}" style="width:66px">${I(x[0],20)}${x[1]}</b>`).join('')}</div>
+ </div>
+ <div class="card row" style="padding:9px 16px;gap:14px;flex-shrink:0">
+  ${cbtn('mic','Mic bật','background:var(--pri-s);color:var(--pri)')}${cbtn('video','Camera','background:var(--pri-s);color:var(--pri)')}${cbtn('hand','Giơ tay')}${cbtn('chat','Trao đổi')}
+  <div style="width:1px;height:40px;background:var(--line)"></div>
+  <div class="grow small muted row" style="gap:8px">${I('shield',17)}<span>Buổi học<br>không ghi hình</span></div>
+  <span class="btn redl">${ic('flag')}Báo cáo</span><span class="btn red">${ic('leave')}Rời buổi</span>
+ </div>
+</div>
+<div class="col" style="width:316px;flex-shrink:0;gap:12px">
+ <div class="card col" style="padding:10px;gap:8px">
+  <div class="g2" style="gap:8px">
+   ${vt('GV','#3B5BDB',{label:'Giáo viên',bd:'Điều phối'})}
+   ${vt('Lan','#0F8A5F',{spk:1,label:'Lan · đang nói'})}
+   ${vt('An','#F0522B',{label:'An (em)'})}
+   ${vt('Bình','#3B5BDB')}
+   ${vt('Khoa','#7C4DFF',{off:1})}
+   ${vt('Vy','#0EA5E9',{mute:1})}
+  </div>
+  <div class="box pri row" style="padding:8px 10px"><div class="icb s pri">${ic('school')}</div><div class="tiny grow"><b style="font-size:12.5px">Giáo viên điều phối</b><div class="muted">Có thể tắt tiếng, mời ra khỏi phòng hoặc kết thúc buổi học</div></div></div>
+ </div>
+ <div class="card pad col grow" style="gap:9px;padding:14px">
+  <div class="box yel row tiny" style="padding:7px 10px;color:#7A5600;gap:7px">${I('micoff',15)}<span><b>Giáo viên đã tắt tiếng Vy</b> · có tiếng ồn xung quanh</span></div>
+  ${msg('Lan','#0F8A5F','THPT Mẫu B','Mình kẻ AH ⊥ SO rồi. Ai giải thích vì sao AH ⊥ (SBD)?')}
+  ${msg('An','#F0522B','THPT Mẫu A','BD ⊥ (SAC) nên BD ⊥ AH. Thêm AH ⊥ SO là đủ!',1)}
+  <div class="grow"></div>
+  <div class="field" style="background:var(--soft);padding:8px 10px">${ic('chat')}<span class="muted grow" style="font-weight:500">Nhắn cả nhóm…</span><div class="icb s pri">${ic('send')}</div></div>
+ </div>
+</div>`,7));
+
+/* c7-03 · Giáo viên · Web · Điều phối & an toàn nhóm */
+const caseRow=(sel,icn,cls,kind,t,d,grp,time,st,stc)=>`<tr class="${sel?'sel':''}"><td style="width:44px"><div class="icb s ${cls}">${ic(icn)}</div></td><td><div class="tiny b" style="color:var(--muted)">${kind}</div><div class="b">${t}</div><div class="small muted">${d}</div></td><td class="small">${grp}</td><td class="small muted nowrap">${time}</td><td><span class="chip ${stc}">${st}</span></td></tr>`;
+SCREENS.push(web('c7-03-gv-dieu-phoi-an-toan-nhom','gv',4,'Điều phối và an toàn nhóm','Nhóm học em điều phối · báo cáo của học sinh được xem trước, người báo cáo được giữ kín',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="row" style="gap:14px;align-items:stretch">
+  ${[['flag','org','3','việc chờ xử lý'],['users','pri','3','nhóm điều phối'],['clock','grn','2 giờ','phản hồi thường gặp'],['video','pur','1','buổi video đang mở']].map(x=>`<div class="card stat"><div class="icb ${x[1]}">${ic(x[0])}</div><div><b>${x[2]}</b><span class="small muted">${x[3]}</span></div></div>`).join('')}</div>
+ <div class="card pad col" style="gap:8px">
+  <div class="hd"><h2>Hàng chờ xử lý</h2><span class="chip on">Tất cả · 4</span><span class="chip">Báo cáo từ học sinh · 2</span><span class="chip">Gắn cờ tự động · 1</span><span class="chip">Đã xử lý</span></div>
+  <table><thead><tr><th></th><th>Nội dung</th><th>Nhóm</th><th>Thời điểm</th><th>Trạng thái</th></tr></thead><tbody>
+  ${caseRow(1,'flag','org','BÁO CÁO TỪ HỌC SINH','Lời lẽ làm bạn khó chịu','1 tin nhắn trong phần trao đổi của nhóm','Hình không gian 11<div class="tiny muted">Liên trường</div>','21/11 · 20:42','Mới','org')}
+  ${caseRow(0,'spark','pur','GẮN CỜ TỰ ĐỘNG · TIN CẬY VỪA','Có thể chia sẻ đáp số bài đang mở','Tin nhắn chứa kết quả của bài chưa đến giờ mở lời giải','Ôn kiểm tra chương 3<div class="tiny muted">Lớp 11A1</div>','21/11 · 19:05','Mới','org')}
+  ${caseRow(0,'flag','org','BÁO CÁO TỪ HỌC SINH','Liên kết ra ngoài nền tảng','Một thành viên mời cả nhóm sang ứng dụng nhắn tin khác','Thiết diện của hình chóp<div class="tiny muted">Trong trường</div>','20/11 · 21:10','Đang xem','yel')}
+  ${caseRow(0,'video','sky','BUỔI VIDEO','Người lạ xin vào phòng','Yêu cầu vào phòng từ tài khoản không thuộc nhóm đã bị từ chối tự động','Hình không gian 11<div class="tiny muted">Liên trường</div>','18/11 · 19:34','Đã chặn','grn')}
+  </tbody></table>
+ </div>
+ <div class="card pad col grow" style="gap:8px">
+  <div class="hd"><h2>Nhóm em điều phối</h2><span class="chip end">Cài đặt chung: trao đổi chỉ trong nhóm · không nhắn riêng giữa hai trường</span></div>
+  <table><thead><tr><th>Nhóm</th><th>Phạm vi</th><th>Thành viên</th><th>Buổi tới</th><th>Tình trạng</th></tr></thead><tbody>
+  ${[['Hình không gian 11','Liên trường · THPT Mẫu A, THPT Mẫu B','6','Đang học','<span class="chip org">1 báo cáo mới</span>'],['Ôn kiểm tra chương 3','Lớp 11A1','5','Thứ Tư 25/11 · 19:30','<span class="chip org">1 gắn cờ</span>'],['Thiết diện của hình chóp','Trong trường · khối 11','8','Thứ Năm 26/11 · 19:00','<span class="chip yel">Đang xem</span>']].map(x=>`<tr><td><b>${x[0]}</b></td><td class="small muted">${x[1]}</td><td>${x[2]}</td><td class="small">${x[3]}</td><td>${x[4]}</td></tr>`).join('')}
+  </tbody></table>
+ </div>
+</div>
+<div class="card col" style="width:440px;flex-shrink:0">
+ <div class="pad col grow" style="gap:10px">
+  <div class="hd"><h2>Chi tiết báo cáo</h2><span class="chip org end">Mới · 21/11 · 20:42</span></div>
+  <div class="box soft row" style="padding:9px 12px"><div class="icb s gry">${ic('lock')}</div><div class="small grow"><b>Người báo cáo: Lan (THPT Mẫu B)</b><div class="tiny muted">Chỉ giáo viên điều phối thấy. Các thành viên khác không biết ai báo.</div></div></div>
+  <div class="lbl" style="margin:0">Đoạn trao đổi liên quan · nhóm Hình không gian 11</div>
+  <div class="col" style="gap:8px">
+   <div class="row" style="align-items:flex-start">${av('Vy',28)}<div class="small"><b>Vy</b> <span class="muted">· 20:38</span><div>Cho mình hỏi lại, vì sao BD ⊥ (SAC) vậy?</div></div></div>
+   <div class="box org row" style="align-items:flex-start;padding:9px 11px">${av('Khoa',28)}<div class="small grow"><b>Khoa</b> <span class="muted">· 20:40 · THPT Mẫu B</span><div>Bài dễ thế mà cũng hỏi, đừng làm chậm cả nhóm.</div></div><span class="chip red">${ic('flag')}Bị báo cáo</span></div>
+   <div class="row" style="align-items:flex-start">${av('Bình',28)}<div class="small"><b>Bình</b> <span class="muted">· 20:41</span><div>Hỏi là tốt mà. Vy xem lại bước BD ⊥ AC nhé.</div></div></div>
+  </div>
+  <div class="g2" style="gap:8px">
+   <div class="box sel row" style="padding:10px 11px"><span class="rd on"></span><div class="small"><b>Nhắc nhở riêng</b><div class="tiny muted">Gửi lời nhắc cho Khoa</div></div></div>
+   <div class="box row" style="padding:10px 11px"><span class="rd"></span><div class="small"><b>Ẩn tin nhắn</b><div class="tiny muted">Vẫn lưu để đối chiếu</div></div></div>
+   <div class="box row" style="padding:10px 11px"><span class="rd"></span><div class="small"><b>Tạm khóa nhắn tin</b><div class="tiny muted">24 giờ trong nhóm này</div></div></div>
+   <div class="box row" style="padding:10px 11px"><span class="rd"></span><div class="small"><b>Chuyển cán bộ phụ trách</b><div class="tiny muted">An toàn học đường</div></div></div>
+  </div>
+  <div class="area small">Khoa ơi, trong nhóm bạn nào cũng được hỏi lại. Em xem lại cách nói với Vy và cùng giúp bạn ở bước BD ⊥ (SAC) nhé.</div>
+  <div class="box yel row small" style="padding:8px 11px;color:#7A5600">${I('info',16)}<span>Khoa học ở THPT Mẫu B: giáo viên điều phối bên trường bạn sẽ nhận bản ghi về hành động này.</span></div>
+  <div class="grow"></div>
+  <div class="row"><span class="btn line">Không vi phạm</span><span class="btn end">${ic('send')}Gửi nhắc nhở và ghi lại</span></div>
+  <div class="tiny muted">Mọi hành động điều phối được lưu vào nhật ký của nhóm.</div>
+ </div>
+</div>`,7));
+
+/* c7-04 · Giáo viên · Web · Cộng đồng giáo viên & chia sẻ tài nguyên */
+const res=(shape,c,t,n,owner,lic,exp,st)=>`<div class="card pad col ${st==='req'?'':''}" style="gap:8px;${st==='req'?'border-color:var(--pri);box-shadow:0 0 0 3px rgba(59,91,219,.10)':''}">
+ <div class="row" style="align-items:flex-start"><div style="width:58px;height:54px;border-radius:12px;background:${c}14;display:flex;align-items:center;justify-content:center;flex-shrink:0">${sh[shape](c).replace('<svg','<svg style="height:40px"')}</div>
+  <div class="grow"><div class="b" style="font-size:14px;line-height:1.3">${t}</div><div class="tiny muted" style="margin-top:2px">${n}</div></div></div>
+ <div class="col" style="gap:5px;font-size:12.5px">
+  <div class="row" style="gap:7px">${I('school',15)}<span class="muted">Chủ sở hữu</span><b class="end">${owner}</b></div>
+  <div class="row" style="gap:7px">${I('file',15)}<span class="muted">Giấy phép</span><b class="end">${lic}</b></div>
+  <div class="row" style="gap:7px">${I('clock',15)}<span class="muted">Thời hạn</span><b class="end">${exp}</b></div></div>
+ <div class="row" style="margin-top:2px">${{ok:`<span class="chip grn">${ic('check')}Đã được cấp quyền</span><span class="btn sm soft end">Mở</span>`,req:`<span class="chip pri">Đang soạn yêu cầu</span><span class="btn sm end">Xin cấp quyền</span>`,wait:`<span class="chip yel">${ic('clock')}Chờ trường bạn duyệt</span><span class="btn sm dis end">Đã gửi</span>`,none:`<span class="chip">Chưa có quyền</span><span class="btn sm ghost end">Xin cấp quyền</span>`,exp:`<span class="chip red">Đã hết hạn</span><span class="btn sm ghost end">Xin gia hạn</span>`,mine:`<span class="chip pur">Của trường mình</span><span class="btn sm line end">Quản lý chia sẻ</span>`}[st]}</div></div>`;
+SCREENS.push(web('c7-04-gv-cong-dong-chia-se-tai-nguyen','gv',5,'Cộng đồng giáo viên','Tài nguyên chia sẻ giữa các trường · mỗi tài nguyên có chủ sở hữu, giấy phép và thời hạn',`
+<div class="col grow" style="gap:12px;min-width:0">
+ <div class="row">
+  <div class="field grow">${ic('search')}<span class="muted" style="font-weight:500">Tìm bộ đề, giáo án, hình dựng sẵn…</span></div>
+  <span class="chip on">Hình không gian</span><span class="chip">Hình phẳng</span><span class="chip">THPT</span><span class="chip">THCS</span><span class="chip">${ic('shield')}Đã kiểm chứng</span></div>
+ <div class="g3" style="gap:14px">
+  ${res('chop','#7C4DFF','Bộ 20 đề thiết diện hình chóp','20 đề · có hình dựng sẵn','Tổ Toán · THPT Mẫu B','Trong lớp · không sửa','—','req')}
+  ${res('hop','#F0522B','Khoảng cách trong hình hộp','12 đề · 4 mức độ','Tổ Toán · THPT Mẫu D','Được sửa · ghi nguồn','Đến 31/05/2027','ok')}
+  ${res('lang','#0F8A5F','Giáo án: lăng trụ đứng','3 tiết · kèm phiếu học tập','Tổ Toán · THCS Mẫu C','Trong lớp · không sửa','Gửi 19/11','wait')}
+  ${res('non','#E8A200','Nón, trụ, cầu trong thực tế','15 đề ứng dụng','Tổ Toán · THCS Mẫu E','Được sửa · ghi nguồn','—','none')}
+  ${res('cau','#0EA5E9','Mặt cầu ngoại tiếp khối đa diện','10 đề nâng cao','Tổ Toán · THPT Mẫu B','Trong lớp · không sửa','Hết hạn 31/10/2026','exp')}
+  ${res('chop','#3B5BDB','Góc trong hình chóp S.ABCD','18 đề · 44 lượt dùng ở trường bạn','Tổ Toán · THPT Mẫu A','Được sửa · ghi nguồn','Đang chia sẻ cho 2 trường','mine')}
+ </div>
+ <div class="card pad col grow" style="gap:10px">
+  <div class="hd"><h2>Cộng đồng theo chủ đề</h2><span class="chip end">Tự nguyện tham gia · chỉ giáo viên đã được trường xác nhận</span></div>
+  <div class="g3" style="gap:12px">
+  ${[['cube','pri','Hình không gian THPT','148 giáo viên · 12 trường','Đã tham gia',1],['angle','yel','Dạy hình bằng công cụ','86 giáo viên · 9 trường','Tham gia',0],['edit','grn','Ra đề và xây thang chấm','112 giáo viên · 14 trường','Tham gia',0]].map(x=>`<div class="box col" style="gap:9px"><div class="row"><div class="icb ${x[1]}">${ic(x[0])}</div><div class="grow"><div class="b" style="font-size:13.5px">${x[2]}</div><div class="tiny muted">${x[3]}</div></div></div><span class="btn sm ${x[5]?'soft':'ghost'}">${x[5]?ic('check'):''}${x[4]}</span></div>`).join('')}
+  </div>
+  <div class="lbl" style="margin:2px 0 0">Thảo luận gần đây</div>
+  ${[['Cách giúp học sinh hình dung thiết diện đi qua ba điểm','Hình không gian THPT · 14 trả lời · hôm qua']].map(x=>`<div class="row small"><div class="icb s gry">${ic('chat')}</div><div class="grow"><b>${x[0]}</b><div class="tiny muted">${x[1]}</div></div>${I('chev',16)}</div>`).join('')}
+  <div class="grow"></div>
+  <div class="row small muted" style="gap:8px">${I('lock',16)}<span>Trong cộng đồng chỉ trao đổi về tài nguyên và cách dạy. Không đăng bài làm, điểm hay tên học sinh.</span></div>
+ </div>
+</div>
+<div class="card col" style="width:372px;flex-shrink:0">
+ <div class="pad col grow" style="gap:11px">
+  <div class="hd"><h2>Xin cấp quyền sử dụng</h2></div>
+  <div class="box soft col" style="gap:4px;padding:10px 12px"><div class="b">Bộ 20 đề thiết diện hình chóp</div><div class="small muted">Chủ sở hữu: Tổ Toán · THPT Mẫu B</div><div class="row" style="gap:6px;margin-top:4px"><span class="chip grn">${ic('shield')}Đã kiểm chứng</span><span class="chip">Trong lớp · không sửa</span></div></div>
+  <div><div class="lbl">Dùng cho lớp</div><div class="row" style="gap:6px"><span class="chip on">11A1</span><span class="chip on">11A3</span><span class="chip">${ic('plus')}Thêm lớp</span></div></div>
+  <div class="row"><div class="grow"><div class="lbl">Từ ngày</div><div class="field" style="padding:9px 11px">${ic('cal')}30/11/2026</div></div><div class="grow"><div class="lbl">Đến ngày</div><div class="field" style="padding:9px 11px">${ic('cal')}31/05/2027</div></div></div>
+  <div><div class="lbl">Mục đích</div><div class="area small">Giao bài luyện thiết diện cho hai lớp 11 trong học kỳ II. Giữ nguyên đề và ghi rõ nguồn THPT Mẫu B.</div></div>
+  <div class="lbl" style="margin:0">Trình tự duyệt</div>
+  <div class="tl col" style="gap:9px">
+   <div><div class="b small">Giáo viên gửi yêu cầu</div></div>
+   <div class="n"><div class="b small">Tổ trưởng Toán · THPT Mẫu A đồng ý</div></div>
+   <div class="n"><div class="b small">THPT Mẫu B cấp quyền</div><div class="tiny muted">Chủ sở hữu có thể rút quyền bất cứ lúc nào</div></div>
+  </div>
+  <div class="grow"></div>
+  <div class="box pri row small" style="padding:8px 11px">${I('info',16)}<span>Quyền tự hết hạn vào ngày kết thúc. Học sinh chỉ thấy đề khi giáo viên giao bài.</span></div>
+  <div class="row"><span class="btn line">Hủy</span><span class="btn grow">${ic('send')}Gửi yêu cầu</span></div>
+ </div>
+</div>`,7));
+</script>
+<!-- ======================= CHẶNG 8 ======================= -->
+<script>
+/* c8-01 · Quản trị trường · Web · Lớp, giáo viên, phân công */
+const okTxt=t=>`<span class="row small" style="gap:5px;color:var(--grn);font-weight:700">${I('check',15)}${t}</span>`;
+SCREENS.push(web('c8-01-qt-lop-giao-vien-phan-cong','tr',1,'Lớp, giáo viên và phân công','THPT Mẫu A · năm học 2026–2027 · học kỳ I · 36 lớp · 82 giáo viên · 1.420 học sinh',`
+<div class="card pad col" style="width:520px;flex-shrink:0;gap:10px">
+ <div class="hd"><h2>Lớp học</h2><span class="chip">Khối 10 · 12</span><span class="chip on">Khối 11 · 12</span><span class="chip">Khối 12 · 12</span></div>
+ <table style="font-size:13px"><thead><tr><th>Lớp</th><th class="nr">Sĩ số</th><th>Chủ nhiệm</th><th>Môn đã phân công</th></tr></thead><tbody>
+ ${[['11A1',40,'GV Toán 03',10,1],['11A2',41,'GV Văn 05',11],['11A3',39,'GV Anh 02',11],['11A4',40,'GV Lý 01',11],['11A5',38,'GV Hóa 04',11],['11A6',42,'GV Sinh 02',11],['11A7',40,'GV Toán 01',11],['11A8',39,'GV Sử 01',9],['11A9',38,'GV Văn 02',11],['11A10',40,'GV Anh 04',11],['11A11',37,'GV Địa 02',11],['11A12',39,'Chưa có',8]].map(x=>`<tr class="${x[4]?'sel':''}"><td style="padding:7px 10px"><b>${x[0]}</b></td><td class="nr" style="padding:7px 10px">${x[1]}</td><td style="padding:7px 10px" class="${x[2]==='Chưa có'?'':'muted'}">${x[2]==='Chưa có'?'<span class="chip red">Chưa có</span>':x[2]}</td><td style="padding:7px 10px"><div class="row"><div class="bar grow"><i style="width:${x[3]/11*100}%;background:${x[3]===11?'var(--grn)':x[3]>=10?'var(--yel)':'var(--org)'}"></i></div><span class="small ${x[3]===11?'muted':'b'}" style="width:38px;text-align:right">${x[3]}/11</span></div></td></tr>`).join('')}
+ </tbody></table>
+ <div class="lbl" style="margin:6px 0 0">Việc cần làm ở khối 11</div>
+ ${[['user','red','Lớp 11A12 chưa có chủ nhiệm','Chọn trong 5 giáo viên chưa nhận lớp','Chọn chủ nhiệm'],['book','org','6 môn chưa có giáo viên','11A1: 1 môn · 11A8: 2 môn · 11A12: 3 môn','Xem danh sách'],['alert','yel','3 giáo viên vượt định mức','Tổ Toán 1 · tổ Ngữ văn 2','Xem tải dạy']].map(x=>`<div class="box row" style="padding:9px 12px"><div class="icb s ${x[1]}">${ic(x[0])}</div><div class="grow"><div class="b small">${x[2]}</div><div class="tiny muted">${x[3]}</div></div><span class="btn sm ghost">${x[4]}</span></div>`).join('')}
+ <div class="grow"></div>
+ <div class="row"><span class="small muted">Khối 11: 473 học sinh</span><span class="btn sm line end">${ic('up')}Nhập từ tệp</span><span class="btn sm">${ic('plus')}Thêm lớp</span></div>
+</div>
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="card pad col" style="gap:8px">
+  <div class="hd"><h2>Phân công giảng dạy · 11A1</h2><span class="chip">Sĩ số 40</span><span class="chip">Chủ nhiệm: GV Toán 03</span><span class="chip yel end">10/11 môn đã có giáo viên</span></div>
+  <table style="font-size:13px"><thead><tr><th>Môn</th><th>Giáo viên</th><th class="nr">Tiết/tuần</th><th style="padding-left:28px">Tình trạng</th><th></th></tr></thead><tbody>
+  ${[['Toán','GV Toán 03',4,'w'],['Ngữ văn','GV Văn 05',3],['Tiếng Anh','GV Anh 02',3],['Vật lý','GV Lý 01',3],['Hóa học','GV Hóa 04',3],['Sinh học','GV Sinh 02',2],['Lịch sử','GV Sử 01',2],['Địa lý','GV Địa 02',2],['Tin học','',2,'x'],['Giáo dục thể chất','GV Thể chất 03',2],['Quốc phòng','GV Quốc phòng 01',1]].map(x=>`<tr><td style="padding:6px 10px"><b>${x[0]}</b></td><td style="padding:6px 10px">${x[1]?`<span class="row" style="gap:8px">${av(x[1].split(' ')[1],24,'#8792AB')}${x[1]}</span>`:'<span class="muted">Chưa phân công</span>'}</td><td class="nr" style="padding:6px 10px">${x[2]}</td><td style="padding:6px 10px 6px 28px">${x[3]==='w'?`<span class="chip yel">${ic('alert')}1 tiết trùng lịch</span>`:x[3]==='x'?`<span class="chip red">Chưa có giáo viên</span>`:okTxt('Đã phân công')}</td><td style="padding:6px 10px;text-align:right">${x[3]==='x'?`<span class="btn sm">Phân công</span>`:x[3]==='w'?`<span class="btn sm ghost">Xem thời khóa biểu</span>`:`<span class="small b" style="color:var(--pri)">Đổi</span>`}</td></tr>`).join('')}
+  </tbody></table>
+ </div>
+ <div class="card pad col grow" style="gap:9px">
+  <div class="hd"><h2>Tải giảng dạy · tổ Toán</h2><span class="chip end">Định mức 17 tiết/tuần · hiện 8/14 giáo viên</span></div>
+  <div class="g2" style="gap:13px 26px">
+  ${[['GV Toán 01',16],['GV Toán 02',17],['GV Toán 03',18],['GV Toán 04',12],['GV Toán 05',17],['GV Toán 06',15],['GV Toán 07',16],['GV Toán 08',14]].map(x=>`<div class="row"><span class="b small" style="width:92px">${x[0]}</span><div class="bar grow" style="height:10px"><i style="width:${Math.min(100,x[1]/19*100)}%;background:${x[1]>17?'var(--org)':x[1]<14?'var(--sky)':'var(--pri)'}"></i></div><span class="small ${x[1]>17?'b':'muted'}" style="width:118px;${x[1]>17?'color:var(--org)':''}">${x[1]}/17 tiết${x[1]>17?' · vượt 1':x[1]<14?' · còn 5':''}</span></div>`).join('')}
+  </div>
+  <div class="grow"></div>
+  <div class="box pri row small" style="padding:8px 12px">${I('bulb',16)}<span><b>Gợi ý:</b> GV Tin 02 còn trống 4 tiết và chưa trùng lịch với 11A1. Quản trị trường quyết định phân công.</span></div>
+ </div>
+</div>`,8));
+
+/* c8-02 · Quản trị trường · Web · Thời khóa biểu */
+const SUB={'Toán':['#3B5BDB','GV Toán 03'],'Ngữ văn':['#D6336C','GV Văn 05'],'Tiếng Anh':['#0EA5E9','GV Anh 02'],'Vật lý':['#7C4DFF','GV Lý 01'],'Hóa học':['#0F8A5F','GV Hóa 04'],'Sinh học':['#65A30D','GV Sinh 02'],'Lịch sử':['#B45309','GV Sử 01'],'Địa lý':['#0D9488','GV Địa 02'],'Tin học':['#64748B','Chưa có giáo viên'],'Thể chất':['#F0522B','GV Thể chất 03'],'Quốc phòng':['#475569','GV Quốc phòng 01'],'Chào cờ':['#98A2B8','Toàn trường'],'Trải nghiệm':['#E8A200','Chủ nhiệm'],'Sinh hoạt lớp':['#E8A200','Chủ nhiệm']};
+const TT=[['Chào cờ','Vật lý','Toán','Hóa học','Địa lý','Địa lý'],['Toán','Vật lý','Ngữ văn','Toán!','Vật lý','Sinh học'],['Toán','Hóa học','Ngữ văn','Tiếng Anh','Hóa học','Quốc phòng'],['Ngữ văn','Tiếng Anh','Tin học','Sinh học','Lịch sử','Trải nghiệm'],['Tiếng Anh','Lịch sử','Thể chất','Tin học','Thể chất','Sinh hoạt lớp']];
+const cell=x=>{const bad=x.endsWith('!');const n=x.replace('!','');const s=SUB[n];const room=n==='Thể chất'?'Sân tập':n==='Tin học'?'Phòng máy 2':n==='Chào cờ'?'Sân trường':'P.204';
+ return bad?`<div class="c" style="background:var(--red-s);border-color:var(--red);box-shadow:0 0 0 2px var(--red)"><span class="row" style="gap:5px;color:var(--red)">${I('alert',15)}${n}</span><small style="color:var(--red);font-weight:700">${s[1]} trùng với 11A4</small></div>`
+ :`<div class="c" style="background:${s[0]}14;border-color:${s[0]}">${n}<small>${s[1]} · ${room}</small></div>`;};
+const TIME=['07:00','07:50','08:50','09:40','10:30'];
+SCREENS.push(web('c8-02-qt-thoi-khoa-bieu','tr',2,'Thời khóa biểu','ĐỂ SAU · ngoài phạm vi đầu của chặng 8 (PO-26) · THPT Mẫu A · bản nháp chỉ quản trị trường thấy, công bố rồi mới đến giáo viên, học sinh và phụ huynh',`
+<div class="card pad col grow" style="gap:12px;min-width:0">
+ <div class="row">
+  <div class="field" style="padding:8px 12px">${ic('users')}Lớp 11A1${ic('chev','transform:rotate(90deg)')}</div>
+  <div class="seg"><span class="on">Theo lớp</span><span>Theo giáo viên</span><span>Theo phòng</span></div>
+  <span class="chip yel">${ic('edit')}Bản nháp 3</span><span class="small muted nowrap">Áp dụng từ 30/11/2026</span>
+  <span class="btn sm soft end">${ic('spark')}Gợi ý xếp lại</span></div>
+ <div class="tt">
+  <div></div>${['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'].map(d=>`<div class="h">${d}</div>`).join('')}
+  ${TT.map((r,i)=>`<div class="p"><span style="font-size:13px;color:var(--text)">Tiết ${i+1}</span>${TIME[i]}</div>${r.map(cell).join('')}`).join('')}
+ </div>
+ <div class="row small muted" style="gap:8px">${I('info',16)}<span>Kéo một ô sang vị trí khác để đổi tiết. Hệ thống kiểm tra trùng giáo viên và trùng phòng ngay khi thả.</span><span class="end">Buổi chiều: chưa xếp tiết</span></div>
+</div>
+<div class="col" style="width:330px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:10px">
+  <div class="hd"><h2>Kiểm tra xung đột</h2><span class="chip red end">1 cần sửa</span></div>
+  <div class="box red col" style="gap:6px"><div class="row"><div class="icb s red" style="background:#fff">${ic('alert')}</div><div class="grow"><div class="b small">Trùng giáo viên</div><div class="tiny" style="color:#8F1D14">Thứ Năm · tiết 2 · GV Toán 03 đang có tiết ở 11A4</div></div></div>
+   <div class="sep" style="background:#F5B8B2"></div>
+   <div class="tiny b" style="color:#8F1D14">Cách sửa gợi ý</div>
+   <div class="row small"><span class="rd on"></span><span class="grow">Đổi với <b>Sinh học</b> tiết 4 Thứ Năm</span></div>
+   <div class="row small"><span class="rd"></span><span class="grow">Chuyển sang tiết 1 Thứ Bảy</span></div>
+   <span class="btn sm red" style="align-self:flex-end">Áp dụng cách sửa</span></div>
+  ${[['Trùng phòng học','Không có'],['Giáo viên dạy quá 5 tiết liền','Không có'],['Môn chưa có giáo viên','Tin học · 2 tiết']].map((x,i)=>`<div class="row small"><span class="dot ${i<2?'g':'on'}" style="margin:0">${ic(i<2?'check':'alert')}</span><span class="grow">${x[0]}</span><span class="${i<2?'muted':'b'}">${x[1]}</span></div>`).join('')}
+ </div>
+ <div class="card pad col" style="gap:8px">
+  <div class="hd"><h2>Số tiết trong tuần</h2><span class="chip grn end">30/30 tiết</span></div>
+  <div class="row" style="flex-wrap:wrap;gap:6px">${[['Toán',4],['Ngữ văn',3],['Tiếng Anh',3],['Vật lý',3],['Hóa học',3],['Sinh học',2],['Lịch sử',2],['Địa lý',2],['Tin học',2],['Thể chất',2],['Khác',4]].map(x=>`<span class="chip" style="${SUB[x[0]]?`border-color:${SUB[x[0]][0]}55`:''}"><span style="width:8px;height:8px;border-radius:50%;background:${SUB[x[0]]?SUB[x[0]][0]:'#98A2B8'}"></span>${x[0]} ${x[1]}</span>`).join('')}</div>
+ </div>
+ <div class="card pad col grow" style="gap:9px">
+  <h2 style="margin:0">Công bố</h2>
+  <div class="small muted">Khi công bố, 11 giáo viên, 40 học sinh và phụ huynh lớp 11A1 nhận thông báo. Bản cũ được lưu lại để đối chiếu.</div>
+  <div class="grow"></div>
+  <span class="btn dis full">${ic('lock')}Công bố thời khóa biểu</span>
+  <div class="tiny muted" style="text-align:center">Cần sửa 1 xung đột trước khi công bố</div>
+ </div>
+</div>`,8));
+
+/* c8-03 · Quản trị trường · Web · Soạn thông báo & theo dõi */
+const trk=(n,sent,seen,ack)=>`<tr><td style="padding:7px 10px"><b>${n}</b></td><td class="nr" style="padding:7px 10px">${sent}</td><td style="padding:7px 10px"><div class="row" style="gap:8px"><div class="bar grow"><i style="width:${seen/sent*100}%"></i></div><span class="small muted" style="width:54px;text-align:right">${seen} · ${Math.round(seen/sent*100)}%</span></div></td><td style="padding:7px 10px"><div class="row" style="gap:8px"><div class="bar grow"><i style="width:${ack/sent*100}%;background:var(--grn)"></i></div><span class="small muted" style="width:54px;text-align:right">${ack} · ${Math.round(ack/sent*100)}%</span></div></td></tr>`;
+SCREENS.push(web('c8-03-qt-thong-bao-theo-doi','tr',3,'Thông báo của trường','Soạn một lần, gửi đúng đối tượng · theo dõi “đã xem” và “đã xác nhận” riêng từng nhóm',`
+<div class="card pad col" style="width:590px;flex-shrink:0;gap:11px">
+ <div class="hd"><h2>Soạn thông báo</h2><span class="chip yel end">Bản nháp · lưu 16:20</span></div>
+ <div><div class="lbl">Tiêu đề</div><div class="field">Lịch kiểm tra giữa học kỳ I · khối 11</div></div>
+ <div><div class="lbl">Gửi tới</div>
+  <div class="row" style="flex-wrap:wrap;gap:6px"><span class="chip on">${ic('check')}Học sinh khối 11 · 473</span><span class="chip on">${ic('check')}Phụ huynh khối 11 · 480</span><span class="chip on">${ic('check')}Giáo viên khối 11 · 31</span><span class="chip">${ic('plus')}Thêm đối tượng</span></div>
+  <div class="tiny muted" style="margin-top:5px">Phụ huynh chỉ gồm những người đã được trường xác minh liên kết với học sinh.</div></div>
+ <div class="col" style="gap:0"><div class="lbl">Nội dung</div>
+  <div class="area">Kính gửi phụ huynh, các thầy cô và các em học sinh khối 11,<div style="height:7px"></div>Nhà trường tổ chức kiểm tra giữa học kỳ I từ <b>Thứ Hai 07/12</b> đến <b>Thứ Sáu 11/12/2026</b>. Lịch từng môn và phòng kiểm tra có trong tệp đính kèm.<div style="height:7px"></div>Môn Toán kiểm tra sáng Thứ Ba 08/12, nội dung đến hết Chương 3.
+   <div class="row" style="margin-top:10px"><span class="chip">${ic('file')}lich-kiem-tra-giua-ky-khoi-11.pdf</span><span class="chip pur">${ic('spark')}Nhờ trợ lý rút gọn</span></div></div></div>
+ <div class="col grow" style="gap:0;min-height:0"><div class="lbl">Phụ huynh sẽ thấy trên điện thoại</div>
+  <div class="box soft grow" style="display:flex;align-items:center;justify-content:center">
+   <div class="card" style="width:330px;padding:12px;display:flex;gap:10px;border-radius:16px"><div class="icb s pri">${ic('school')}</div><div class="grow"><div class="row"><span class="b" style="font-size:13.5px">Lịch kiểm tra giữa học kỳ I</span></div><div class="tiny muted">THPT Mẫu A · thông báo của trường · 07:00</div><div class="small" style="margin-top:4px">Kiểm tra từ 07/12 đến 11/12/2026. Môn Toán: sáng Thứ Ba 08/12.</div><div class="row" style="margin-top:8px"><span class="btn sm grow">${ic('check')}Xác nhận đã đọc</span><span class="btn sm line">${ic('file')}Xem lịch</span></div></div></div>
+  </div></div>
+ <div class="g2">
+  <div class="box row"><div class="grow"><div class="b" style="font-size:13.5px">Yêu cầu xác nhận</div><div class="tiny muted">Hạn: Thứ Sáu 27/11</div></div><span class="toggle"></span></div>
+  <div class="box row"><div class="grow"><div class="b" style="font-size:13.5px">Gửi lúc 07:00 · 23/11</div><div class="tiny muted">Ngoài giờ yên lặng của trường</div></div><div class="icb s pur">${ic('moon')}</div></div>
+ </div>
+ <div class="row"><span class="small muted">Kênh: trong ứng dụng, thư điện tử</span><span class="btn line end">${ic('eye')}Xem trước</span><span class="btn">${ic('send')}Lên lịch gửi</span></div>
+</div>
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="card pad col" style="gap:10px">
+  <div class="hd"><div class="icb pri">${ic('cal')}</div><div class="grow"><h2>Họp phụ huynh khối 11</h2><div class="small muted">Đã gửi 16/11 · 07:00 · tới phụ huynh khối 11 · hạn xác nhận 25/11</div></div><span class="chip grn">Đã gửi</span></div>
+  <div class="g3">
+   ${[['480','đã gửi','pri','send',''],['412','đã xem · 86%','sky','eye',''],['374','đã xác nhận · 78%','grn','check','']].map(x=>`<div class="box row"><div class="icb s ${x[2]}">${ic(x[3])}</div><div><div style="font-size:20px;font-weight:800;line-height:1.1">${x[0]}</div><div class="tiny muted">${x[1]}</div></div></div>`).join('')}
+  </div>
+  <div class="tiny muted">“Đã xem” là đã mở thông báo. “Đã xác nhận” là đã bấm xác nhận tham dự. Hai số được đếm riêng.</div>
+ </div>
+ <div class="card pad col grow" style="gap:8px">
+  <div class="hd"><h2>Theo lớp</h2><span class="chip on">Phụ huynh</span><span class="chip">Học sinh</span><span class="chip">Giáo viên</span><span class="btn sm soft end">${ic('bell')}Nhắc 68 người chưa xem</span></div>
+  <table style="font-size:13px"><thead><tr><th>Lớp</th><th class="nr">Đã gửi</th><th style="width:36%">Đã xem</th><th style="width:36%">Đã xác nhận</th></tr></thead><tbody>
+  ${trk('11A1',40,38,35)}${trk('11A2',41,37,34)}${trk('11A3',39,35,32)}${trk('11A4',40,31,26)}${trk('11A5',38,34,32)}${trk('11A6',42,36,33)}${trk('11A7',40,35,31)}${trk('11A8',39,29,24)}
+${trk('11A9',40,35,33)}${trk('11A10',42,37,35)}${trk('11A11',38,31,28)}${trk('11A12',41,34,31)}
+  </tbody></table>
+  <div class="grow"></div>
+  <div class="row small muted" style="gap:8px">${I('lock',16)}<span>Chủ nhiệm xem được danh sách của lớp mình để nhắc trực tiếp. Quản trị trường chỉ thấy số liệu theo lớp.</span></div>
+ </div>
+</div>`,8));
+
+/* c8-04 · Quản trị trường · Web · Nhận diện & chính sách */
+const pol=(icn,cls,t,d,ctl,lock)=>`<div class="box ${lock?'soft':''} row" style="padding:10px 13px;gap:12px"><div class="icb s ${lock?'gry':cls}">${ic(lock?'lock':icn)}</div><div class="grow"><div class="b" style="font-size:13.5px">${t}</div><div class="tiny muted">${d}</div></div>${lock?`<span class="chip">${ic('lock')}${lock}</span>`:''}${ctl}</div>`;
+const tg=(on,lk)=>`<span class="toggle ${on?'':'off'} ${lk?'lk':''}"></span>`;
+const TEAL='#0D9488';
+SCREENS.push(web('c8-04-qt-nhan-dien-chinh-sach','tr',4,'Nhận diện và chính sách của trường','THPT Mẫu A · trường tự quyết trong giới hạn cấp trên cho phép · mục có ổ khóa là quy định bắt buộc',`
+<div class="col" style="width:400px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:11px">
+  <div class="hd"><h2>Nhận diện</h2></div>
+  <div class="row" style="gap:14px"><div style="width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,${TEAL},#0EA5E9);color:#fff;display:flex;align-items:center;justify-content:center">${I('school',36)}</div>
+   <div class="grow col" style="gap:6px"><div class="b">Logo trường</div><div class="tiny muted">Ảnh vuông, nền trong suốt, tối thiểu 256 điểm ảnh</div><span class="btn sm line" style="align-self:flex-start">${ic('up')}Tải logo khác</span></div></div>
+  <div><div class="lbl">Tên hiển thị</div><div class="field">Trường THPT Mẫu A</div></div>
+  <div><div class="lbl">Màu chính</div><div class="row" style="gap:9px">${[TEAL,'#3B5BDB','#7C4DFF','#D6336C','#F0522B','#141B2D'].map((c,i)=>`<span style="width:36px;height:36px;border-radius:11px;background:${c};${i===0?'box-shadow:0 0 0 3px #fff,0 0 0 5px '+c:''};display:flex;align-items:center;justify-content:center;color:#fff">${i===0?I('check',17):''}</span>`).join('')}<span class="chip end">Đủ độ tương phản</span></div></div>
+ </div>
+ <div class="card pad col grow" style="gap:10px">
+  <div class="hd"><h2>Xem trước</h2><span class="chip end">Màn hình của học sinh</span></div>
+  <div style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg)">
+   <div class="row" style="padding:10px 12px;background:#fff;border-bottom:1px solid var(--line)"><div style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,${TEAL},#0EA5E9);color:#fff;display:flex;align-items:center;justify-content:center">${I('school',17)}</div><b class="small grow">Trường THPT Mẫu A</b>${av('An',26)}</div>
+   <div class="col" style="padding:12px;gap:8px">
+    <div class="row" style="background:#fff;border:1px solid var(--line);border-radius:11px;padding:9px 11px"><div class="grow"><div class="b small">Góc giữa SD và mặt đáy</div><div class="tiny muted">Hạn 19:00 hôm nay</div></div><span class="btn sm" style="background:${TEAL}">Làm bài</span></div>
+    <div class="row" style="gap:6px"><span class="chip" style="background:${TEAL}1c;color:${TEAL};border-color:transparent">Bài của em</span><span class="chip">Tự học</span><span class="chip">Nhóm học</span></div>
+   </div></div>
+  <div class="small muted">Bố cục, biểu tượng và cách dùng giữ nguyên trên mọi trường, nên học sinh chuyển trường vẫn quen.</div>
+  <div class="grow"></div>
+  <div class="row"><span class="btn line grow">Hoàn tác</span><span class="btn grow">${ic('check')}Lưu thay đổi</span></div>
+ </div>
+</div>
+<div class="card pad col grow" style="gap:8px;min-width:0">
+ <div class="hd"><h2>Chính sách</h2><span class="chip">${ic('lock')}4 mục khóa bởi quy định cấp trên</span><span class="chip pri">6 mục trường tự quyết</span><span class="small b end" style="color:var(--pri)">Xem lịch sử thay đổi</span></div>
+ <div class="lbl" style="margin:2px 0 0">Trợ lý AI cho học sinh, theo môn</div>
+ <div class="g2" style="gap:8px">
+  ${pol('cube','pri','Toán','Gợi ý từng bước, lời giải mở theo lịch',tg(1))}
+  ${pol('spark','pur','Vật lý','Gợi ý từng bước',tg(1))}
+  ${pol('book','org','Ngữ văn','Tổ bộ môn đề nghị chưa bật',tg(0))}
+  ${pol('chat','sky','Tiếng Anh','Giải thích từ vựng và ngữ pháp',tg(1))}
+ </div>
+ <div class="lbl" style="margin:4px 0 0">Giới hạn với AI</div>
+ ${pol('','','AI không nêu đáp số khi bài đang mở','Chỉ gợi ý và giải thích khái niệm cho tới giờ giáo viên mở lời giải',tg(1,1),'Quy định của nền tảng')}
+ ${pol('','','Điểm do AI đề xuất phải được giáo viên duyệt','Học sinh và phụ huynh chỉ thấy điểm đã duyệt',tg(1,1),'Hướng dẫn 03/HD-M')}
+ <div class="lbl" style="margin:4px 0 0">Giao tiếp</div>
+ ${pol('moon','pur','Giờ yên lặng','Cấp trên yêu cầu tối thiểu 21:00–06:00. Trường được nới rộng, không được thu hẹp',`<div class="field" style="padding:7px 11px">${ic('clock')}20:30 – 06:30</div>`)}
+ <div class="lbl" style="margin:4px 0 0">Chia sẻ và dữ liệu</div>
+ ${pol('layers','yel','Chia sẻ tài nguyên ra ngoài trường cần tổ trưởng duyệt','Áp dụng cho bộ đề, giáo án, hình dựng sẵn',tg(1))}
+ ${pol('','','Nhóm học liên trường cần cả hai trường duyệt','Kèm đồng ý của phụ huynh trước khi học sinh tham gia',tg(1,1),'Hướng dẫn 05/HD-M')}
+ ${pol('eye','sky','Phụ huynh không xem nội dung câu con hỏi','Quy tắc của nền tảng, trường không đổi được. Phụ huynh thấy nhận xét giáo viên đã duyệt',`<span class="chip">${ic('lock')}Cố định</span>`)}
+ ${pol('','','Cơ quan quản lý chỉ nhận số liệu tổng hợp','Dữ liệu định danh cần ủy quyền riêng, có thời hạn và được ghi nhật ký',tg(1,1),'Quyết định 01/UQ-M')}
+</div>`,8));
+
+/* c8-05 · Giáo viên · iPhone · Điểm danh nhanh */
+const att=(n,st,note)=>`<div class="row" style="padding:6px 0;border-bottom:1px solid #EEF1F7;min-height:49px">${av(n,32)}<div class="grow"><div class="b" style="font-size:14px">${n}</div>${note?`<div class="tiny" style="color:${st===2?'var(--red)':st===1?'#9A6B00':'var(--muted)'}">${note}</div>`:''}</div>
+ <div style="display:flex;background:#EEF1F7;border-radius:10px;padding:3px;font-size:11.5px;font-weight:700">${['Có mặt','Muộn','Vắng'].map((t,i)=>`<span style="padding:6px 8px;border-radius:8px;${i===st?`background:${['var(--grn)','var(--yel)','var(--red)'][i]};color:#fff`:'color:var(--muted)'}">${t}</span>`).join('')}</div></div>`;
+SCREENS.push(phone('c8-05-gv-diem-danh-nhanh',8,'Giáo viên',`
+<div class="ph-hd">${back}<div class="grow"><b class="t">Điểm danh · 11A1</b><div class="tiny muted">Thứ Hai 23/11 · tiết 2 · Toán · 07:50</div></div><span class="chip grn" style="font-size:10.5px">${ic('clock')}Còn 4′</span></div><div class="chip yel" style="margin:0 14px 8px;justify-content:center;white-space:normal;text-align:center;padding:6px 10px">ĐỂ SAU · điểm danh ngoài phạm vi chặng 8 (PO-10)</div>`,`
+<div class="row" style="gap:8px">
+ ${[['37','Có mặt','grn'],['1','Muộn','yel'],['2','Vắng','red']].map(x=>`<div class="card" style="flex:1;padding:10px 12px"><div style="font-size:22px;font-weight:800;line-height:1.1;color:var(--${x[2]==='yel'?'text':x[2]})">${x[0]}</div><div class="tiny muted b">${x[1]}</div></div>`).join('')}
+ <div class="card" style="flex:1;padding:10px 12px;background:var(--pri-s);border-color:transparent"><div style="font-size:22px;font-weight:800;line-height:1.1;color:var(--pri)">40</div><div class="tiny b" style="color:var(--pri)">Sĩ số</div></div></div>
+<div class="box pri row small" style="padding:8px 11px">${I('bulb',16)}<span>Cả lớp đã được đặt là <b>Có mặt</b>. Chỉ cần chạm vào bạn muộn hoặc vắng.</span></div>
+<div class="card col grow" style="padding:6px 14px 10px;gap:0;min-height:0">
+ ${att('An',0)}${att('Bình',0)}${att('Chi',2,'Phụ huynh đã báo nghỉ')}${att('Dũng',0)}${att('Hà',1,'Vào lớp lúc 07:58')}${att('Khoa',0)}${att('Lan',0)}${att('Vy',2,'Chưa rõ lý do')}
+ <div class="tiny muted" style="padding-top:8px;text-align:center">32 bạn còn lại đều có mặt · kéo xuống để xem</div>
+</div>`,{foot:`<div class="ph-foot"><span class="btn full" style="padding:13px">${ic('check')}Xác nhận điểm danh · 40 học sinh</span>
+<div class="tiny muted" style="margin-top:6px;text-align:center">Phụ huynh của Vy nhận thông báo vắng sau khi giáo viên xác nhận.</div></div>`,tabs:'gv',on:2}));
+</script>
+<!-- ======================= CHẶNG 9 ======================= -->
+<script>
+/* c9-01 · Cơ quan quản lý · Web · Soạn và phát hành văn bản */
+const sec=(n,t,note)=>`<div class="row" style="gap:9px"><span class="num on">${n}</span><h2 style="margin:0">${t}</h2>${note?`<span class="small muted end">${note}</span>`:''}</div>`;
+const fld=(l,v,icn,w)=>`<div style="${w?`width:${w}px;flex-shrink:0`:'flex:1;min-width:0'}"><div class="lbl">${l}</div><div class="field" style="padding:9px 11px">${icn?ic(icn):''}${v}</div></div>`;
+SCREENS.push(web('c9-01-ql-soan-phat-hanh-van-ban','ql',1,'Soạn văn bản mới','Văn bản › Soạn mới · chỉ gửi được tới các trường trong phạm vi ủy quyền (24 trường)',`
+<div class="card pad col grow" style="gap:9px;min-width:0">
+ ${sec(1,'Nội dung')}
+ <div class="row" style="align-items:flex-end">
+  <div><div class="lbl">Loại văn bản</div><div class="row" style="gap:6px;height:41px"><span class="chip">Thông báo</span><span class="chip on">Hướng dẫn</span><span class="chip">Chính sách</span></div></div>
+  ${fld('Số hiệu','05/HD-M','file',150)}${fld('Phiên bản','1.0 · văn bản mới','layers')}</div>
+ <div><div class="lbl">Tiêu đề</div><div class="field">Hướng dẫn tổ chức học nhóm trực tuyến an toàn cho học sinh</div></div>
+ <div><div class="lbl">Tóm tắt cho nhà trường</div><div class="area small">Mỗi nhóm học trực tuyến phải có giáo viên điều phối và nút báo cáo. Nhóm liên trường cần cả hai trường duyệt và phụ huynh đồng ý. Buổi video không ghi hình.</div></div>
+ <div class="row"><span class="chip">${ic('file')}huong-dan-05-hoc-nhom-an-toan.pdf · 6 trang</span><span class="chip">${ic('file')}mau-bao-cao-BC-03.xlsx</span><span class="chip">${ic('plus')}Đính kèm</span></div>
+ ${sec(2,'Phạm vi nhận','Đang chọn 14/24 trường')}
+ <div class="row" style="flex-wrap:wrap;gap:6px"><span class="chip">Tất cả 24 trường</span><span class="chip on">${ic('check')}Trường THPT · 14</span><span class="chip">Trường THCS · 10</span><span class="chip">${ic('search')}Chọn từng trường</span></div>
+ <div class="small muted"><b style="color:var(--text)">Quản trị trường</b> nhận, xác nhận và nộp báo cáo · <b style="color:var(--text)">Giáo viên</b> nhận để đọc, không cần xác nhận</div>
+ <div class="sep"></div>
+ ${sec(3,'Hiệu lực và yêu cầu với nhà trường')}
+ <div class="row">${fld('Ngày ban hành','23/11/2026','cal')}${fld('Ngày hiệu lực','07/12/2026','cal')}${fld('Hạn xác nhận đã nhận','30/11/2026','check')}</div>
+ <div class="box pri col" style="gap:9px">
+  <div class="row"><div class="grow"><div class="b" style="font-size:13.5px">Yêu cầu báo cáo triển khai</div><div class="tiny muted">Theo dõi riêng với việc xác nhận đã nhận</div></div><span class="toggle"></span></div>
+  <div class="row">${fld('Mẫu báo cáo','BC-03 · Học nhóm an toàn','file')}${fld('Hạn nộp','21/12/2026','cal',170)}</div>
+  <div class="row" style="flex-wrap:wrap;gap:6px"><span class="small muted b">Minh chứng:</span><span class="chip on">Kế hoạch của trường</span><span class="chip on">Số nhóm có giáo viên điều phối</span><span class="chip">${ic('lock')}Không yêu cầu dữ liệu từng học sinh</span></div>
+ </div>
+ <div class="grow"></div>
+ <div class="row"><span class="tiny muted">Lưu nháp tự động 16:48 · 22/11</span><span class="btn line end">Lưu nháp</span><span class="btn">${ic('send')}Phát hành cho 14 trường</span></div>
+</div>
+<div class="col" style="width:450px;flex-shrink:0;gap:14px">
+ <div class="card pad col grow" style="gap:10px">
+  <div class="hd"><h2>Xem trước</h2><span class="chip end">${ic('eye')}Quản trị trường sẽ thấy</span></div>
+  <div class="box col" style="gap:9px;border-color:#BFE3F7;background:#F4FBFF">
+   <div class="row"><div class="icb sky">${ic('bldg')}</div><div class="grow"><div class="tiny b" style="color:var(--sky)">CƠ QUAN QUẢN LÝ MẪU</div><div class="small muted">Số 05/HD-M · phiên bản 1.0</div></div><span class="chip pri">${ic('shield')}Văn bản chính thức</span></div>
+   <div class="b" style="font-size:15.5px;line-height:1.35">Hướng dẫn tổ chức học nhóm trực tuyến an toàn cho học sinh</div>
+   <div class="row small muted" style="gap:14px"><span>Ban hành <b style="color:var(--text)">23/11/2026</b></span><span>Hiệu lực <b style="color:var(--text)">07/12/2026</b></span></div>
+   <div class="small">Mỗi nhóm học trực tuyến phải có giáo viên điều phối và nút báo cáo. Nhóm liên trường cần cả hai trường duyệt và phụ huynh đồng ý…</div>
+   <div class="row"><span class="chip">${ic('file')}Văn bản đầy đủ · 6 trang</span><span class="chip">${ic('file')}Mẫu BC-03</span></div>
+  </div>
+  <div class="lbl" style="margin:2px 0 0">Việc nhà trường cần làm · hai việc tách riêng</div>
+  <div class="box row"><span class="num on">1</span><div class="grow"><div class="b small">Xác nhận đã nhận</div><div class="tiny muted">Hạn 30/11/2026 · chỉ cho biết trường đã đọc văn bản</div></div><span class="btn sm">Xác nhận</span></div>
+  <div class="box row"><span class="num on">2</span><div class="grow"><div class="b small">Báo cáo triển khai</div><div class="tiny muted">Hạn 21/12/2026 · mẫu BC-03 kèm minh chứng</div></div><span class="btn sm ghost">Nộp báo cáo</span></div>
+  <div class="grow"></div>
+  <div class="box yel row small" style="padding:9px 12px;color:#7A5600">${I('info',16)}<span>Sau khi phát hành không sửa được nội dung. Muốn thay đổi phải ban hành phiên bản mới, trường sẽ xác nhận lại.</span></div>
+ </div>
+ <div class="card pad col" style="gap:8px">
+  <h2 style="margin:0">Dấu vết phát hành</h2>
+  ${[['Người soạn','Chuyên viên THPT','22/11 · 16:48'],['Người duyệt','Lãnh đạo đơn vị','Đã duyệt 22/11 · 15:10'],['Phạm vi','14 trường THPT','Theo quyết định 01/UQ-M']].map(x=>`<div class="row small"><span class="muted" style="width:86px">${x[0]}</span><b class="grow">${x[1]}</b><span class="tiny muted">${x[2]}</span></div>`).join('')}
+ </div>
+</div>`,9));
+
+/* c9-02 · Cơ quan quản lý · Web · Chi tiết triển khai của một trường */
+const track=(icn,cls,t,chip,cc,big,sub,extra='')=>`<div class="card col" style="flex:1 1 0;min-width:0;gap:7px;padding:14px 16px"><div class="row"><div class="icb s ${cls}">${ic(icn)}</div><span class="b muted tiny nowrap grow">${t}</span></div><div class="nowrap" style="font-size:17px;font-weight:800;line-height:1.2">${big}</div><div><span class="chip ${cc}">${chip}</span></div>${extra}<div class="tiny muted">${sub}</div></div>`;
+SCREENS.push(web('c9-02-ql-chi-tiet-trien-khai-truong','ql',2,'THCS Mẫu C · chi tiết triển khai','Trường › THCS Mẫu C › Hướng dẫn 03/HD-M: Dạy học hình học không gian bằng công cụ trực quan',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="row" style="gap:14px;align-items:stretch">
+  ${track('mail','sky','ĐÃ NHẬN','Đã nhận','grn','02/11/2026','Cùng ngày ban hành')}
+  ${track('check','grn','XÁC NHẬN','Đã xác nhận','grn','04/11/2026','Bởi quản trị trường · sau 2 ngày')}
+  ${track('trend','yel','TRIỂN KHAI','Đang triển khai','yel','6/24 lớp đang dùng','Bắt đầu 16/11/2026 · đạt 25%',`<div class="bar"><i style="width:25%;background:var(--yel)"></i></div>`)}
+  ${track('file','gry','BÁO CÁO','Chưa nộp','','Hạn 14/12/2026','Trường đã lưu bản nháp 20/11')}
+ </div>
+ <div class="box pri row small" style="padding:9px 13px">${I('info',16)}<span><b>Xác nhận và triển khai được theo dõi riêng.</b> Trường đã xác nhận đọc văn bản từ 04/11, còn mức triển khai lấy từ số lớp thực sự dùng và minh chứng trường nộp.</span></div>
+ <div class="card pad col" style="gap:8px">
+  <div class="hd"><h2>Minh chứng đã nộp</h2><span class="chip end">3/4 theo mẫu BC-02</span></div>
+  <table><thead><tr><th>Minh chứng</th><th>Dạng</th><th>Ngày nộp</th><th>Tình trạng</th><th></th></tr></thead><tbody>
+  ${[['Kế hoạch triển khai của trường','Tệp PDF · 4 trang','10/11/2026','<span class="chip grn">Đã ghi nhận</span>','Mở'],['Danh sách lớp tham gia','Số liệu tổng hợp · 6 lớp','16/11/2026','<span class="chip grn">Đã ghi nhận</span>','Mở'],['Biên bản tập huấn giáo viên','Tệp PDF · 2 trang','19/11/2026','<span class="chip yel">Chờ xem</span>','Xem và ghi nhận'],['Ảnh phòng học có thiết bị trình chiếu','Chưa nộp','—','<span class="chip">Còn thiếu</span>','Nhắc trường']].map((x,i)=>`<tr><td><b>${x[0]}</b></td><td class="small muted">${x[1]}</td><td class="small">${x[2]}</td><td>${x[3]}</td><td style="text-align:right"><span class="btn sm ${i===2?'':'ghost'}">${x[4]}</span></td></tr>`).join('')}
+  </tbody></table>
+ </div>
+ <div class="card pad col grow" style="gap:10px">
+  <div class="hd"><h2>Chỉ số tổng hợp của trường</h2><span class="chip end">${ic('lock')}Không có tên, bài làm hay điểm của từng học sinh</span></div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+   ${[['6/24','lớp đang dùng','25%','var(--yel)'],['5/8','giáo viên Toán đã tập huấn','62.5%','var(--pri)'],['31','bài đã giao từ 16/11','',''],['74%','bài giao được hoàn thành','74%','var(--grn)']].map(x=>`<div class="box col" style="gap:6px"><div style="font-size:22px;font-weight:800;line-height:1.1">${x[0]}</div><div class="small muted">${x[1]}</div>${x[2]?`<div class="bar"><i style="width:${x[2]};background:${x[3]}"></i></div>`:`<div class="tiny muted">Trung bình 5 bài mỗi lớp</div>`}</div>`).join('')}
+  </div>
+  <div class="grow"></div>
+  <div class="row small muted" style="gap:8px">${I('shield',16)}<span>Số liệu do hệ thống tổng hợp theo trường, cập nhật mỗi ngày. Lớp có dưới 10 học sinh được gộp để không suy ra cá nhân.</span></div>
+ </div>
+</div>
+<div class="col" style="width:420px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:10px">
+  <div class="hd"><h2>Vướng mắc trường báo</h2><span class="chip org end">2 đang mở</span></div>
+  <div class="box org col" style="gap:5px"><div class="row"><div class="icb s org" style="background:#fff">${ic('flag')}</div><div class="grow"><div class="b small">Thiếu thiết bị trình chiếu ở 4 phòng học</div><div class="tiny" style="color:#9A3412">Trường báo 18/11 · ảnh hưởng 8 lớp khối 9</div></div><span class="chip yel">Đang hỗ trợ</span></div></div>
+  <div class="box col" style="gap:5px"><div class="row"><div class="icb s yel">${ic('users')}</div><div class="grow"><div class="b small">3 giáo viên cần tập huấn thêm về công cụ dựng hình</div><div class="tiny muted">Trường báo 19/11</div></div><span class="chip org">Mới</span></div></div>
+ </div>
+ <div class="card pad col grow" style="gap:10px">
+  <div class="hd"><h2>Hỗ trợ</h2><span class="btn sm soft end">${ic('plus')}Ghi nhận hỗ trợ</span></div>
+  <div class="tl col" style="gap:12px">
+   <div class="g"><div class="b small">Đã kết nối với THPT Mẫu B để mượn 2 máy chiếu</div><div class="tiny muted">20/11 · chuyên viên phụ trách THCS · trường xác nhận đã nhận máy</div></div>
+   <div class="y"><div class="b small">Mời 3 giáo viên dự buổi tập huấn trực tuyến</div><div class="tiny muted">Thứ Tư 02/12 · 14:00 · chờ trường xác nhận người tham gia</div></div>
+   <div class="n"><div class="b small muted">Xem lại sau khi trường nộp báo cáo</div><div class="tiny muted">Hạn 14/12/2026</div></div>
+  </div>
+  <div class="box soft col" style="gap:6px;padding:10px 12px"><div class="row"><div class="icb s grn">${ic('trend')}</div><div class="small grow"><b>Cách làm hay có thể tham khảo</b><div class="tiny muted">THPT Mẫu B đồng ý chia sẻ kế hoạch dùng chung thiết bị theo tiết</div></div></div></div>
+  <div class="grow"></div>
+  <div class="lbl" style="margin:0">Gửi phản hồi cho trường</div>
+  <div class="area small" style="color:var(--muted)">Đề nghị trường cho biết 2 phòng còn lại dự kiến có thiết bị khi nào…</div>
+  <div class="row"><span class="tiny muted grow">Phản hồi gửi tới quản trị trường và được lưu trong hồ sơ triển khai.</span><span class="btn">${ic('send')}Gửi</span></div>
+ </div>
+</div>`,9));
+
+/* c9-03 · Cơ quan quản lý · Web · Phạm vi ủy quyền & quyền xem dữ liệu */
+const AG=`<span class="chip grn">Tổng hợp</span>`, NO=`<span class="chip">Không</span>`, IDN=`<span class="chip org">${ic('key')}Định danh · có hạn</span>`;
+const logRow=(t,who,what,kind)=>`<div class="row" style="align-items:flex-start;padding:8px 0;border-bottom:1px solid #EEF1F7"><span class="tiny muted mono" style="width:76px;padding-top:2px;font-weight:500">${t}</span><div class="grow"><div class="b small">${who}</div><div class="tiny muted">${what}</div></div>${kind==='i'?`<span class="chip org">Định danh</span>`:kind==='x'?`<span class="chip red">Bị từ chối</span>`:`<span class="chip grn">Tổng hợp</span>`}</div>`;
+SCREENS.push(web('c9-03-ql-uy-quyen-quyen-xem','ql',3,'Phạm vi ủy quyền và quyền xem dữ liệu','Ai được xem gì, ở mức tổng hợp hay định danh, đến khi nào · mọi lượt xem đều được ghi lại',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="card row" style="padding:14px 18px;gap:14px">
+  <div class="icb sky">${ic('key')}</div>
+  <div class="grow"><div class="b" style="font-size:15px">Quyết định ủy quyền 01/UQ-M</div><div class="small muted">Cơ quan quản lý mẫu · 24 trường (14 THPT, 10 THCS) · hiệu lực 01/09/2026 – 31/08/2027</div></div>
+  <span class="chip grn">${ic('check')}Đang hiệu lực</span><span class="chip">Còn 282 ngày</span><span class="btn sm line">${ic('file')}Xem văn bản</span></div>
+ <div class="card pad col" style="gap:8px">
+  <div class="hd"><h2>Ai được xem gì</h2><span class="chip end">Mặc định: chỉ số liệu tổng hợp theo trường</span></div>
+  <table><thead><tr><th>Vai trò</th><th>Phạm vi trường</th><th>Chỉ số triển khai</th><th>Kết quả học tập</th><th>Hồ sơ học sinh</th><th>Thời hạn</th></tr></thead><tbody>
+  ${[['Lãnh đạo đơn vị','2 tài khoản','24 trường',AG,AG,NO,'Đến 31/08/2027'],['Chuyên viên THPT','3 tài khoản','14 trường THPT',AG,AG,NO,'Đến 31/08/2027'],['Chuyên viên THCS','2 tài khoản','10 trường THCS',AG,AG,NO,'Đến 31/08/2027'],['Chuyên viên thống kê','1 tài khoản','24 trường',AG,NO,NO,'Đến 31/08/2027'],['Đoàn kiểm tra','2 tài khoản','THPT Mẫu D',AG,IDN,NO,'<b style="color:var(--org)">16/11 – 30/11</b>']].map((x,i)=>`<tr class="${i===4?'sel':''}"><td><b>${x[0]}</b><div class="tiny muted">${x[1]}</div></td><td class="small">${x[2]}</td><td>${x[3]}</td><td>${x[4]}</td><td>${x[5]}</td><td class="small">${x[6]}</td></tr>`).join('')}
+  </tbody></table>
+ </div>
+ <div class="card pad col grow" style="gap:10px">
+  <div class="hd"><h2>Quyền xem định danh đang mở</h2><span class="chip org end">1 quyền · tự đóng sau 8 ngày</span></div>
+  <div class="row" style="align-items:stretch;gap:12px">
+   <div class="box col grow" style="gap:6px;font-size:13px">
+    ${[['Người được cấp','Đoàn kiểm tra · 2 tài khoản'],['Dữ liệu','Điểm đã duyệt môn Toán khối 11 · THPT Mẫu D'],['Mục đích','Kiểm tra việc duyệt điểm theo Hướng dẫn 03/HD-M'],['Căn cứ','Quyết định kiểm tra mẫu số 07/QĐ-M'],['Không gồm','Lịch sử câu hỏi, đề xuất chấm của AI, ghi chú của giáo viên']].map(x=>`<div class="row" style="align-items:flex-start"><span class="muted" style="width:104px;flex-shrink:0">${x[0]}</span><b>${x[1]}</b></div>`).join('')}
+   </div>
+   <div class="col" style="width:270px;flex-shrink:0;gap:8px">
+    <div class="lbl" style="margin:0">Hai bước duyệt</div>
+    <div class="tl col" style="gap:9px">
+     <div class="g"><div class="b small">Lãnh đạo đơn vị duyệt</div><div class="tiny muted">13/11/2026</div></div>
+     <div class="g"><div class="b small">THPT Mẫu D được thông báo</div><div class="tiny muted">14/11/2026 · trường đã xác nhận</div></div>
+     <div class="r"><div class="b small">Tự đóng quyền</div><div class="tiny muted">30/11/2026 · 23:59</div></div>
+    </div>
+    <div class="grow"></div>
+    <div class="row"><span class="btn sm redl grow">Thu hồi ngay</span><span class="btn sm line grow">Gia hạn</span></div>
+   </div>
+  </div>
+  <div class="grow"></div>
+  <div class="row small muted" style="gap:8px">${I('shield',16)}<span>Tài khoản của cơ quan quản lý không duyệt được danh sách học sinh. Dữ liệu định danh chỉ mở khi có căn cứ, mục đích và thời hạn.</span></div>
+ </div>
+</div>
+<div class="card col" style="width:410px;flex-shrink:0">
+ <div class="pad col grow" style="gap:6px">
+  <div class="hd"><h2>Nhật ký truy cập</h2><span class="btn sm line end">${ic('down')}Xuất nhật ký</span></div>
+  <div class="row" style="gap:6px;margin-bottom:2px"><span class="chip on">Tất cả</span><span class="chip">Định danh · 3</span><span class="chip">Bị từ chối · 1</span><span class="chip">7 ngày qua</span></div>
+  ${logRow('22/11 15:02','Chuyên viên THPT','Xem tiến độ triển khai 03/HD-M · 14 trường')}
+  ${logRow('22/11 10:40','Đoàn kiểm tra','Xem điểm đã duyệt lớp 11A2 · THPT Mẫu D · 41 học sinh','i')}
+  ${logRow('21/11 16:15','Chuyên viên thống kê','Mở kết quả học tập theo trường · ngoài quyền được cấp','x')}
+  ${logRow('21/11 09:05','Lãnh đạo đơn vị','Xem bảng tổng hợp 24 trường')}
+  ${logRow('20/11 14:30','Chuyên viên THCS','Xem chi tiết triển khai · THCS Mẫu C')}
+  ${logRow('20/11 08:50','Đoàn kiểm tra','Xem điểm đã duyệt lớp 11A1 · THPT Mẫu D · 39 học sinh','i')}
+  ${logRow('19/11 11:20','Chuyên viên THPT','Tải báo cáo tổng hợp tháng 11')}
+  ${logRow('18/11 09:30','Đoàn kiểm tra','Xem điểm đã duyệt lớp 11A3 · THPT Mẫu D · 40 học sinh','i')}
+  <div class="grow"></div>
+  <div class="box soft row small muted" style="padding:9px 12px">${I('info',16)}<span>Trường xem được mọi lượt truy cập vào dữ liệu của trường mình. Nhật ký không sửa, không xóa được.</span></div>
+ </div>
+</div>`,9));
+</script>
+<!--NEXT-->
+<script>document.getElementById('root').innerHTML=SCREENS.join('');</script>
+</body>
+</html>

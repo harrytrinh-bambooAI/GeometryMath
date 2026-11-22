@@ -1,0 +1,45 @@
+# TC | AC | ưu tiên | loại | tầng | tài khoản | CL | ghi chú
+0700 | 701-SC1 | H | CN | API+TC | Giáo viên mẫu, máy tính | FN-01 | bộ số của khung `mvp-03`
+0701 | 701-SC2 | H | CN | API+TC | Giáo viên mẫu | FN-12
+0702 | 701-SC3 | H | CN | API+TC | Giáo viên mẫu | FN-04
+0703 | 701-SC4 | M | CN | API+TC | Giáo viên mẫu | FN-04 | nhãn thứ năm "Đã xem lời giải"
+0704 | 701-SC5 | M | CN | TC | Giáo viên mẫu | FN-01
+0705 | 701-SC6 | M | CN | TC | Giáo viên mẫu | FN-01
+0706 | 701-SC7 | M | TB | TC | Giáo viên mẫu, điện thoại | UI-01 | PROVISIONAL KG-09
+0707 | 701-FC1 | M | CN | API+TC | Giáo viên mẫu | FN-12 | BVA: lớp chưa có sự kiện
+0708 | 701-FC2 | M | CN | TC | Giáo viên mẫu | UI-03
+0709 | 701-FC3 | M | CN | TC | Giáo viên mẫu | UI-03
+0710 | 701-FC4 | H | PQ | API | Học sinh An | FN-05
+0711 | 701-FC5 | H | DL | API | Giáo viên mẫu | FN-07 | DT-9
+0712 | 701-FC6 | H | PCN | DB+API | Kỹ thuật (bộ đếm câu lệnh) | X-02 | công cụ: datasource-proxy (D-GEO-170)
+0713 | 702-SC1 | H | CN | API+TC | Giáo viên mẫu | FN-01
+0714 | 702-SC2 | M | CN | API+TC | Giáo viên mẫu | FN-01
+0715 | 702-SC3 | M | CN | API+TC | Giáo viên mẫu | FN-01
+0716 | 702-SC4 | M | CN | API+TC | Giáo viên mẫu | FN-01
+0717 | 702-SC5 | L | CN | DV | Kỹ thuật | FN-02
+0718 | 702-FC1 | L | CN | TC | Giáo viên mẫu | FN-12
+0719 | 702-FC2 | H | PQ | API | Giáo viên mẫu | FN-05
+0720 | 702-FC3 | M | CN | TC | Giáo viên mẫu | FN-14
+0721 | 703-SC1 | H | CN | API | Học sinh Hà | FN-13
+0722 | 703-SC2 | H | CN | API | Học sinh Hà | FN-13
+0723 | 703-SC3 | H | CN | API | Học sinh Hà | FN-13
+0724 | 703-SC4 | M | CN | DV | Kỹ thuật | FN-12 | BVA của M-GEO-08: 4/4 và 4/5
+0725 | 703-SC5 | M | CN | DV | Kỹ thuật | FN-09 | biên 29 phút 59 giây và 30 phút 0 giây ở TC-GEO-0740, 0741 (D-GEO-144)
+0726 | 703-SC6 | M | CN | API | Học sinh An | FN-13
+0727 | 703-FC1 | M | CN | API | Học sinh Hà | FN-13
+0728 | 703-FC2 | M | CN | API | Học sinh Hà | FN-10
+0729 | 703-FC3 | M | TB | TC | Học sinh Hà, iPad | UI-04
+0730 | 703-FC4 | H | PQ | API | Học sinh An | FN-05
+0731 | 703-FC5 | H | PQ | API | Học sinh An | FN-06
+0732 | 704-SC1 | M | PCN | DB | Kỹ thuật | X-02
+0733 | 704-SC2 | M | PCN | DB | Kỹ thuật | X-02
+0734 | 704-SC3 | H | CN | API | Kỹ thuật | FN-08
+0735 | 704-SC4 | H | PCN | DB | Kỹ thuật (`psql`, `bench/lint_queries.py`) | X-02
+0736 | 704-FC1 | H | PCN | DV | Kỹ thuật (bộ kiểm truy vấn) | X-03
+0737 | 704-FC2 | L | PCN | DB | Kỹ thuật | X-02
+0738 | 704-FC3 | M | CN | API | Kỹ thuật | FN-03
+# lượt sửa gom sau phản biện (M-304, M-217): tiêu chí mới của BA
+0740 | 703-SC8 | M | CN | DV+DB | Kỹ thuật | FN-09 | biên 29 phút 59 giây; tính bằng hàm của ứng dụng và bằng truy vấn ghi tiến độ của CSDL (D-GEO-144, RV-GEO-17)
+0741 | 703-SC9 | M | CN | DV+DB | Kỹ thuật | FN-09 | biên 30 phút 0 giây; tính bằng hàm của ứng dụng và bằng truy vấn ghi tiến độ của CSDL (D-GEO-144, RV-GEO-17)
+0743 | 703-SC7 | H | CN | API | Học sinh Hà rồi Giáo viên mẫu | FN-13 | D-GEO-162, RV-GEO-22
+0744 | 701-FC7 | M | CN | TC | Giáo viên mẫu, máy tính | UI-03 | D-GEO-129

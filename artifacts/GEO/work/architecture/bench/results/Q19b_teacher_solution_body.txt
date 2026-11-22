@@ -1,0 +1,29 @@
+                                                                                                     QUERY PLAN                                                                                                      
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=1.13..11.75 rows=1 width=286) (actual time=0.004..0.004 rows=1 loops=1)
+   Buffers: shared hit=12
+   ->  Nested Loop  (cost=0.85..9.24 rows=1 width=32) (actual time=0.003..0.003 rows=1 loops=1)
+         Buffers: shared hit=9
+         ->  Nested Loop  (cost=0.57..4.52 rows=1 width=48) (actual time=0.002..0.002 rows=1 loops=1)
+               Buffers: shared hit=6
+               ->  Index Only Scan using problem_version_org_id_problem_id_id_key on problem_version pv  (cost=0.28..1.99 rows=1 width=48) (actual time=0.001..0.001 rows=1 loops=1)
+                     Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (id = '019f0391-dc09-7ac8-8cf8-f0472515434b'::uuid))
+                     Heap Fetches: 0
+                     Buffers: shared hit=3
+               ->  Index Scan using app_user_pkey on app_user u  (cost=0.29..2.51 rows=1 width=0) (actual time=0.001..0.001 rows=1 loops=1)
+                     Index Cond: (id = '019e306e-4994-7421-b184-efe9d1162e64'::uuid)
+                     Filter: ((deactivated_at IS NULL) AND (account_kind = ANY ('{sample,verified}'::account_kind[])) AND (org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (role = 'teacher'::user_role))
+                     Buffers: shared hit=3
+         ->  Index Scan using problem_org_id_id_owner_user_id_key on problem p  (cost=0.28..2.50 rows=1 width=32) (actual time=0.001..0.001 rows=1 loops=1)
+               Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (id = pv.problem_id))
+               Filter: (source = 'catalog'::problem_source)
+               Buffers: shared hit=3
+   ->  Index Scan using solution_pkey on solution s  (cost=0.28..2.50 rows=1 width=302) (actual time=0.001..0.001 rows=1 loops=1)
+         Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (problem_version_id = '019f0391-dc09-7ac8-8cf8-f0472515434b'::uuid))
+         Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=12
+ Planning Time: 0.056 ms
+ Execution Time: 0.008 ms
+(25 rows)
+

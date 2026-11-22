@@ -1,0 +1,14 @@
+{
+  "name": "geo-e2e",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Kiểm thử đầu-cuối (Playwright, D-GEO-170) cho Hình Học Không Gian Cùng AI",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --project=api-smoke",
+    "install-browsers": "playwright install webkit chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1"
+  }
+}

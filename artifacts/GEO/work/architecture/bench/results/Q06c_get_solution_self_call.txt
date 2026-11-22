@@ -1,0 +1,8 @@
+                                                    QUERY PLAN                                                     
+-------------------------------------------------------------------------------------------------------------------
+ Function Scan on fn_get_solution  (cost=0.25..10.25 rows=1000 width=48) (actual time=0.029..0.029 rows=1 loops=1)
+   Buffers: shared hit=38
+ Planning Time: 0.001 ms
+ Execution Time: 0.031 ms
+(4 rows)
+

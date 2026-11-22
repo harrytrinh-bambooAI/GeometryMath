@@ -1,0 +1,43 @@
+                                                                                                             QUERY PLAN                                                                                                              
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=9.47..9.47 rows=1 width=106) (actual time=0.066..0.067 rows=10 loops=1)
+   Buffers: shared hit=132
+   ->  Sort  (cost=9.47..9.47 rows=1 width=106) (actual time=0.066..0.067 rows=10 loops=1)
+         Sort Key: x.id DESC
+         Sort Method: quicksort  Memory: 26kB
+         Buffers: shared hit=132
+         ->  Nested Loop  (cost=3.77..9.46 rows=1 width=106) (actual time=0.010..0.065 rows=10 loops=1)
+               Buffers: shared hit=132
+               ->  Nested Loop  (cost=1.12..6.79 rows=1 width=74) (actual time=0.004..0.014 rows=10 loops=1)
+                     Buffers: shared hit=75
+                     ->  Nested Loop  (cost=0.84..6.43 rows=1 width=100) (actual time=0.003..0.010 rows=10 loops=1)
+                           Buffers: shared hit=45
+                           ->  Nested Loop  (cost=0.56..3.92 rows=1 width=76) (actual time=0.002..0.004 rows=10 loops=1)
+                                 Buffers: shared hit=15
+                                 ->  Index Only Scan using class_teacher_idx on class c  (cost=0.28..1.40 rows=1 width=32) (actual time=0.001..0.001 rows=1 loops=1)
+                                       Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (teacher_id = '019e306e-4994-7421-b184-efe9d1162e64'::uuid) AND (id = '019e63ec-b0e8-7809-a77d-5445ef49f519'::uuid))
+                                       Heap Fetches: 0
+                                       Buffers: shared hit=3
+                                 ->  Limit  (cost=0.28..2.50 rows=1 width=76) (actual time=0.001..0.003 rows=10 loops=1)
+                                       Buffers: shared hit=12
+                                       ->  Index Scan using assignment_class_idx on assignment x  (cost=0.28..2.50 rows=1 width=76) (actual time=0.001..0.003 rows=10 loops=1)
+                                             Index Cond: ((org_id = c.org_id) AND (class_id = c.id) AND (id < 'ffffffff-ffff-ffff-ffff-ffffffffffff'::uuid))
+                                             Buffers: shared hit=12
+                           ->  Index Scan using problem_version_org_id_id_key on problem_version pv  (cost=0.28..2.50 rows=1 width=56) (actual time=0.000..0.000 rows=1 loops=10)
+                                 Index Cond: ((org_id = x.content_org_id) AND (id = x.problem_version_id))
+                                 Buffers: shared hit=30
+                     ->  Index Scan using problem_pkey on problem p  (cost=0.28..0.35 rows=1 width=54) (actual time=0.000..0.000 rows=1 loops=10)
+                           Index Cond: (id = pv.problem_id)
+                           Filter: (pv.org_id = org_id)
+                           Buffers: shared hit=30
+               ->  Aggregate  (cost=2.64..2.65 rows=1 width=16) (actual time=0.005..0.005 rows=1 loops=10)
+                     Buffers: shared hit=57
+                     ->  Index Scan using assignment_progress_pkey on assignment_progress ap  (cost=0.42..2.64 rows=1 width=8) (actual time=0.001..0.003 rows=55 loops=10)
+                           Index Cond: ((org_id = x.org_id) AND (assignment_id = x.id))
+                           Buffers: shared hit=57
+ Planning:
+   Buffers: shared hit=21
+ Planning Time: 0.169 ms
+ Execution Time: 0.076 ms
+(39 rows)
+

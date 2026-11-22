@@ -1,0 +1,87 @@
+### A. từng kịch bản riêng, 16 kết nối
+login        number of failed transactions: 0 (0.000%) latency average = 0.356 ms tps = 44930.001402 (without initial connection time) 
+list         number of failed transactions: 0 (0.000%) latency average = 0.383 ms tps = 41770.669889 (without initial connection time) 
+open         number of failed transactions: 0 (0.000%) latency average = 1.673 ms tps = 9565.565534 (without initial connection time) 
+event_batch  number of failed transactions: 0 (0.000%) latency average = 1.328 ms tps = 12050.560740 (without initial connection time) 
+hint         number of failed transactions: 0 (0.000%) latency average = 0.570 ms tps = 28086.933661 (without initial connection time) 
+critical     number of failed transactions: 0 (0.000%) latency average = 1.236 ms tps = 12945.461932 (without initial connection time) 
+gate_only    number of failed transactions: 0 (0.000%) latency average = 0.314 ms tps = 51016.380501 (without initial connection time) 
+qa           number of failed transactions: 0 (0.000%) latency average = 1.833 ms tps = 8729.504004 (without initial connection time) 
+keyword      number of failed transactions: 0 (0.000%) latency average = 0.177 ms tps = 90318.191437 (without initial connection time) 
+tracking     number of failed transactions: 0 (0.000%) latency average = 0.431 ms tps = 37137.121981 (without initial connection time) 
+catalog      number of failed transactions: 0 (0.000%) latency average = 0.101 ms tps = 158956.943619 (without initial connection time) 
+status       number of failed transactions: 0 (0.000%) latency average = 0.285 ms tps = 56231.381967 (without initial connection time) 
+### B. hỗn hợp theo 05_capacity.md §2 (không gồm thăm dò Q04b), theo số kết nối
+c=8    number of failed transactions: 0 (0.000%) latency average = 0.931 ms tps = 8589.074841 (without initial connection time)  - 4039 transactions (33.9% of total, tps = 2915.233049)  - number of failed transactions: 0 (0.000%)  - latency average = 0.317 ms  - latency stddev = 0.183 ms  - 1451 transactions (12.2% of total, tps = 1047.289714)  - number of failed transactions: 0 (0.000%)  - latency average = 0.513 ms  - latency stddev = 0.361 ms  - 1449 transactions (12.2% of total, tps = 1045.846172)  - number of failed transactions: 0 (0.000%)  - latency average = 0.070 ms  - latency stddev = 0.086 ms  - 1175 transactions (9.9% of total, tps = 848.080919)  - number of failed transactions: 0 (0.000%)  - latency average = 0.331 ms  - latency stddev = 0.273 ms  - 968 transactions (8.1% of total, tps = 698.674323)  - number of failed transactions: 0 (0.000%)  - latency average = 0.156 ms  - latency stddev = 0.140 ms  - 983 transactions (8.3% of total, tps = 709.500888)  - number of failed transactions: 0 (0.000%)  - latency average = 0.237 ms  - latency stddev = 0.138 ms  - 586 transactions (4.9% of total, tps = 422.957803)  - number of failed transactions: 0 (0.000%)  - latency average = 0.332 ms  - latency stddev = 0.269 ms  - 615 transactions (5.2% of total, tps = 443.889162)  - number of failed transactions: 0 (0.000%)  - latency average = 0.049 ms  - latency stddev = 0.107 ms  - 397 transactions (3.3% of total, tps = 286.543085)  - number of failed transactions: 0 (0.000%)  - latency average = 0.255 ms  - latency stddev = 0.330 ms  - 236 transactions (2.0% of total, tps = 170.337955)  - number of failed transactions: 0 (0.000%)  - latency average = 0.148 ms  - latency stddev = 0.176 ms 
+c=16   number of failed transactions: 0 (0.000%) latency average = 0.991 ms tps = 16137.907810 (without initial connection time)  - 6025 transactions (35.1% of total, tps = 5667.457132)  - number of failed transactions: 0 (0.000%)  - latency average = 0.508 ms  - latency stddev = 0.389 ms  - 2044 transactions (11.9% of total, tps = 1922.702469)  - number of failed transactions: 0 (0.000%)  - latency average = 0.719 ms  - latency stddev = 0.619 ms  - 2106 transactions (12.3% of total, tps = 1981.023190)  - number of failed transactions: 0 (0.000%)  - latency average = 0.115 ms  - latency stddev = 0.201 ms  - 1689 transactions (9.8% of total, tps = 1588.769311)  - number of failed transactions: 0 (0.000%)  - latency average = 0.507 ms  - latency stddev = 0.570 ms  - 1381 transactions (8.0% of total, tps = 1299.047021)  - number of failed transactions: 0 (0.000%)  - latency average = 0.234 ms  - latency stddev = 0.352 ms  - 1336 transactions (7.8% of total, tps = 1256.717465)  - number of failed transactions: 0 (0.000%)  - latency average = 0.355 ms  - latency stddev = 0.422 ms  - 910 transactions (5.3% of total, tps = 855.997675)  - number of failed transactions: 0 (0.000%)  - latency average = 0.509 ms  - latency stddev = 0.471 ms  - 823 transactions (4.8% of total, tps = 774.160534)  - number of failed transactions: 0 (0.000%)  - latency average = 0.075 ms  - latency stddev = 0.118 ms  - 522 transactions (3.0% of total, tps = 491.022842)  - number of failed transactions: 0 (0.000%)  - latency average = 0.371 ms  - latency stddev = 0.447 ms  - 319 transactions (1.9% of total, tps = 300.069515)  - number of failed transactions: 0 (0.000%)  - latency average = 0.228 ms  - latency stddev = 0.247 ms 
+c=32   number of failed transactions: 0 (0.000%) latency average = 1.922 ms tps = 16646.125120 (without initial connection time)  - 13184 transactions (34.8% of total, tps = 5795.001811)  - number of failed transactions: 0 (0.000%)  - latency average = 1.001 ms  - latency stddev = 3.531 ms  - 4500 transactions (11.9% of total, tps = 1977.966334)  - number of failed transactions: 0 (0.000%)  - latency average = 1.029 ms  - latency stddev = 2.768 ms  - 4606 transactions (12.2% of total, tps = 2024.558430)  - number of failed transactions: 0 (0.000%)  - latency average = 0.280 ms  - latency stddev = 2.624 ms  - 3922 transactions (10.4% of total, tps = 1723.907547)  - number of failed transactions: 0 (0.000%)  - latency average = 1.012 ms  - latency stddev = 3.928 ms  - 3056 transactions (8.1% of total, tps = 1343.258915)  - number of failed transactions: 0 (0.000%)  - latency average = 0.382 ms  - latency stddev = 1.804 ms  - 3001 transactions (7.9% of total, tps = 1319.083771)  - number of failed transactions: 0 (0.000%)  - latency average = 0.611 ms  - latency stddev = 2.417 ms  - 1850 transactions (4.9% of total, tps = 813.163937)  - number of failed transactions: 0 (0.000%)  - latency average = 0.866 ms  - latency stddev = 2.359 ms  - 1842 transactions (4.9% of total, tps = 809.647553)  - number of failed transactions: 0 (0.000%)  - latency average = 0.120 ms  - latency stddev = 0.283 ms  - 1171 transactions (3.1% of total, tps = 514.710795)  - number of failed transactions: 0 (0.000%)  - latency average = 0.486 ms  - latency stddev = 0.755 ms  - 733 transactions (1.9% of total, tps = 322.188738)  - number of failed transactions: 0 (0.000%)  - latency average = 0.416 ms  - latency stddev = 2.602 ms 
+c=64   number of failed transactions: 0 (0.000%) latency average = 3.403 ms tps = 18806.607907 (without initial connection time)  - 23216 transactions (35.1% of total, tps = 6598.470721)  - number of failed transactions: 0 (0.000%)  - latency average = 2.436 ms  - latency stddev = 8.477 ms  - 7940 transactions (12.0% of total, tps = 2256.713367)  - number of failed transactions: 0 (0.000%)  - latency average = 1.884 ms  - latency stddev = 8.371 ms  - 7838 transactions (11.8% of total, tps = 2227.722843)  - number of failed transactions: 0 (0.000%)  - latency average = 0.387 ms  - latency stddev = 2.450 ms  - 6532 transactions (9.9% of total, tps = 1856.530442)  - number of failed transactions: 0 (0.000%)  - latency average = 1.704 ms  - latency stddev = 7.667 ms  - 5474 transactions (8.3% of total, tps = 1555.824807)  - number of failed transactions: 0 (0.000%)  - latency average = 0.546 ms  - latency stddev = 2.436 ms  - 5351 transactions (8.1% of total, tps = 1520.865646)  - number of failed transactions: 0 (0.000%)  - latency average = 0.974 ms  - latency stddev = 4.504 ms  - 3277 transactions (5.0% of total, tps = 931.391650)  - number of failed transactions: 0 (0.000%)  - latency average = 1.600 ms  - latency stddev = 6.625 ms  - 3254 transactions (4.9% of total, tps = 924.854571)  - number of failed transactions: 0 (0.000%)  - latency average = 0.175 ms  - latency stddev = 0.692 ms  - 1900 transactions (2.9% of total, tps = 540.019571)  - number of failed transactions: 0 (0.000%)  - latency average = 0.760 ms  - latency stddev = 2.692 ms  - 1362 transactions (2.1% of total, tps = 387.108766)  - number of failed transactions: 0 (0.000%)  - latency average = 0.690 ms  - latency stddev = 4.147 ms 
+### C. đỉnh giờ mở: cổng thuần (đọc) và giao dịch đầy đủ (cổng + unlock bền lũy đẳng)
+gate_only c=20   number of failed transactions: 0 (0.000%) latency average = 0.429 ms tps = 46633.527597 (without initial connection time) 
+gate_only c=50   number of failed transactions: 0 (0.000%) latency average = 0.814 ms tps = 61392.052162 (without initial connection time) 
+gate_only c=100  number of failed transactions: 0 (0.000%) latency average = 1.598 ms tps = 62586.145899 (without initial connection time) 
+critical  c=20   number of failed transactions: 0 (0.000%) latency average = 1.021 ms tps = 19593.083917 (without initial connection time) 
+critical  c=50   number of failed transactions: 0 (0.000%) latency average = 2.437 ms tps = 20515.537176 (without initial connection time) 
+critical  c=100  number of failed transactions: 0 (0.000%) latency average = 4.742 ms tps = 21087.129017 (without initial connection time) 
+### D. mức chịu tải cố định: hỗn hợp + thăm dò Q04b thường trực ở 650 giao dịch/giây (576 nhu cầu đỉnh mới, 05_capacity.md §2), 32 kết nối, 30 giây
+number of failed transactions: 0 (0.000%)
+number of transactions skipped: 0 (0.000%)
+number of transactions above the 50.0 ms latency limit: 0/18882 (0.000%)
+latency average = 3.956 ms
+latency stddev = 2.840 ms
+tps = 629.619317 (without initial connection time)
+ - 5244 transactions (27.8% of total, tps = 174.860910)
+ - number of failed transactions: 0 (0.000%)
+ - number of transactions skipped: 0 (0.000%)
+ - latency average = 4.362 ms
+ - latency stddev = 2.856 ms
+ - 1674 transactions (8.9% of total, tps = 55.819444)
+ - number of failed transactions: 0 (0.000%)
+ - number of transactions skipped: 0 (0.000%)
+ - latency average = 4.866 ms
+ - latency stddev = 2.854 ms
+ - 1662 transactions (8.8% of total, tps = 55.419304)
+ - number of failed transactions: 0 (0.000%)
+ - number of transactions skipped: 0 (0.000%)
+ - latency average = 3.359 ms
+ - latency stddev = 2.793 ms
+ - 1381 transactions (7.3% of total, tps = 46.049374)
+ - number of failed transactions: 0 (0.000%)
+ - number of transactions skipped: 0 (0.000%)
+ - latency average = 4.355 ms
+ - latency stddev = 2.830 ms
+ - 1273 transactions (6.7% of total, tps = 42.448119)
+ - number of failed transactions: 0 (0.000%)
+ - number of transactions skipped: 0 (0.000%)
+ - latency average = 3.694 ms
+ - latency stddev = 2.689 ms
+ - 1130 transactions (6.0% of total, tps = 37.679792)
+ - number of failed transactions: 0 (0.000%)
+ - number of transactions skipped: 0 (0.000%)
+ - latency average = 3.859 ms
+ - latency stddev = 2.725 ms
+ - 712 transactions (3.8% of total, tps = 23.741603)
+ - number of failed transactions: 0 (0.000%)
+ - number of transactions skipped: 0 (0.000%)
+ - latency average = 4.398 ms
+ - latency stddev = 2.846 ms
+ - 711 transactions (3.8% of total, tps = 23.708258)
+ - number of failed transactions: 0 (0.000%)
+ - number of transactions skipped: 0 (0.000%)
+ - latency average = 3.249 ms
+ - latency stddev = 2.719 ms
+ - 452 transactions (2.4% of total, tps = 15.071917)
+ - number of failed transactions: 0 (0.000%)
+ - number of transactions skipped: 0 (0.000%)
+ - latency average = 4.314 ms
+ - latency stddev = 2.879 ms
+ - 296 transactions (1.6% of total, tps = 9.870105)
+ - number of failed transactions: 0 (0.000%)
+ - number of transactions skipped: 0 (0.000%)
+ - latency average = 4.132 ms
+ - latency stddev = 2.848 ms
+ - 4342 transactions (23.0% of total, tps = 144.783766)
+ - number of failed transactions: 0 (0.000%)
+ - number of transactions skipped: 0 (0.000%)
+ - latency average = 3.312 ms
+ - latency stddev = 2.697 ms

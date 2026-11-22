@@ -1,0 +1,196 @@
+===== Q11b fuzzy keyword @ 150k từ khóa
+                                                                QUERY PLAN                                                                
+------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=253.30..253.31 rows=5 width=49) (actual time=1.877..1.878 rows=5 loops=1)
+   Buffers: shared hit=192
+   ->  Sort  (cost=253.30..253.34 rows=15 width=49) (actual time=1.877..1.877 rows=5 loops=1)
+         Sort Key: (similarity(term_key, 'duong vuon goc'::text)) DESC, term_key
+         Sort Method: top-N heapsort  Memory: 25kB
+         Buffers: shared hit=192
+         ->  Bitmap Heap Scan on keyword k  (cost=236.43..253.05 rows=15 width=49) (actual time=1.166..1.854 rows=300 loops=1)
+               Recheck Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (term_key % 'duong vuon goc'::text))
+               Rows Removed by Index Recheck: 300
+               Heap Blocks: exact=12
+               Buffers: shared hit=189
+               ->  Bitmap Index Scan on keyword_trgm_idx  (cost=0.00..236.43 rows=15 width=0) (actual time=1.158..1.158 rows=600 loops=1)
+                     Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (term_key % 'duong vuon goc'::text))
+                     Buffers: shared hit=177
+ Planning:
+   Buffers: shared hit=61
+ Planning Time: 0.230 ms
+ Execution Time: 1.896 ms
+(18 rows)
+
+===== Q11 keyword click @ 150k
+                                                           QUERY PLAN                                                           
+--------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=0.71..5.15 rows=1 width=728) (actual time=0.008..0.008 rows=1 loops=1)
+   Buffers: shared hit=7
+   ->  Index Scan using keyword_pkey on keyword k  (cost=0.42..2.64 rows=1 width=32) (actual time=0.006..0.006 rows=1 loops=1)
+         Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (term_key = 'duong vuong goc 127'::text))
+         Buffers: shared hit=4
+   ->  Index Scan using lecture_pkey on lecture l  (cost=0.29..2.51 rows=1 width=744) (actual time=0.001..0.001 rows=1 loops=1)
+         Index Cond: (id = k.lecture_id)
+         Filter: (org_id = '00000000-0000-7000-8000-000000000001'::uuid)
+         Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=82
+ Planning Time: 0.187 ms
+ Execution Time: 0.014 ms
+(13 rows)
+
+===== Q12 qa retrieval @ 50k bài giảng (cụm hiếm: thiet dien)
+--- v1: xếp hạng mọi bài khớp
+                                                                        QUERY PLAN                                                                        
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=2212.25..2212.26 rows=5 width=120) (actual time=21.767..21.768 rows=5 loops=1)
+   Buffers: shared hit=8863
+   ->  Sort  (cost=2212.25..2216.21 rows=1585 width=120) (actual time=21.767..21.767 rows=5 loops=1)
+         Sort Key: (ts_rank(l.search_tsv, '''thiet'' & ''dien'' & ''chop'''::tsquery)) DESC, l.id
+         Sort Method: top-N heapsort  Memory: 32kB
+         Buffers: shared hit=8863
+         ->  Bitmap Heap Scan on lecture l  (cost=620.59..2185.92 rows=1585 width=120) (actual time=3.943..21.133 rows=10075 loops=1)
+               Recheck Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (search_tsv @@ '''thiet'' & ''dien'' & ''chop'''::tsquery))
+               Heap Blocks: exact=8377
+               Buffers: shared hit=8863
+               ->  Bitmap Index Scan on lecture_search_idx  (cost=0.00..620.19 rows=1585 width=0) (actual time=3.432..3.432 rows=10075 loops=1)
+                     Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (search_tsv @@ '''thiet'' & ''dien'' & ''chop'''::tsquery))
+                     Buffers: shared hit=486
+ Planning:
+   Buffers: shared hit=12
+ Planning Time: 0.176 ms
+ Execution Time: 21.776 ms
+(17 rows)
+
+--- v2: tập ứng viên giới hạn 200
+                                                                      QUERY PLAN                                                                       
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=836.90..849.23 rows=5 width=116) (actual time=3.710..3.720 rows=5 loops=1)
+   Buffers: shared hit=648
+   CTE q
+     ->  Result  (cost=0.00..0.01 rows=1 width=32) (actual time=0.000..0.000 rows=1 loops=1)
+   CTE cand
+     ->  Limit  (cost=607.77..826.76 rows=200 width=438) (actual time=3.579..3.644 rows=200 loops=1)
+           Buffers: shared hit=633
+           ->  Nested Loop  (cost=607.77..883.69 rows=252 width=438) (actual time=3.579..3.638 rows=200 loops=1)
+                 Buffers: shared hit=633
+                 ->  CTE Scan on q q_1  (cost=0.00..0.02 rows=1 width=32) (actual time=0.000..0.000 rows=1 loops=1)
+                 ->  Bitmap Heap Scan on lecture l_1  (cost=607.77..881.15 rows=252 width=438) (actual time=3.578..3.618 rows=200 loops=1)
+                       Recheck Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (search_tsv @@ q_1.tsq))
+                       Heap Blocks: exact=147
+                       Buffers: shared hit=633
+                       ->  Bitmap Index Scan on lecture_search_idx  (cost=0.00..607.70 rows=252 width=0) (actual time=3.071..3.071 rows=10075 loops=1)
+                             Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (search_tsv @@ q_1.tsq))
+                             Buffers: shared hit=486
+   ->  Limit  (cost=9.84..9.85 rows=5 width=20) (actual time=3.704..3.705 rows=5 loops=1)
+         Buffers: shared hit=633
+         ->  Sort  (cost=9.84..10.34 rows=200 width=20) (actual time=3.704..3.704 rows=5 loops=1)
+               Sort Key: (ts_rank(c.search_tsv, q.tsq)) DESC, c.id
+               Sort Method: top-N heapsort  Memory: 25kB
+               Buffers: shared hit=633
+               ->  Nested Loop  (cost=0.00..6.52 rows=200 width=20) (actual time=3.581..3.696 rows=200 loops=1)
+                     Buffers: shared hit=633
+                     ->  CTE Scan on q  (cost=0.00..0.02 rows=1 width=32) (actual time=0.000..0.001 rows=1 loops=1)
+                     ->  CTE Scan on cand c  (cost=0.00..4.00 rows=200 width=48) (actual time=3.579..3.665 rows=200 loops=1)
+                           Buffers: shared hit=633
+   ->  Index Scan using lecture_pkey on lecture l  (cost=0.29..2.51 rows=1 width=728) (actual time=0.001..0.001 rows=1 loops=5)
+         Index Cond: (id = c.id)
+         Filter: (org_id = '00000000-0000-7000-8000-000000000001'::uuid)
+         Buffers: shared hit=15
+ Planning:
+   Buffers: shared hit=165
+ Planning Time: 0.166 ms
+ Execution Time: 3.732 ms
+(36 rows)
+
+===== Q13 catalog @ 20k đề kho (lọc cấp + loại hình)
+                                                                                                                                                    QUERY PLAN                                                                                                                                                    
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.70..5.11 rows=1 width=54) (actual time=0.006..0.059 rows=21 loops=1)
+   Buffers: shared hit=108
+   ->  Nested Loop  (cost=0.70..5.11 rows=1 width=54) (actual time=0.006..0.059 rows=21 loops=1)
+         Buffers: shared hit=108
+         ->  Index Scan using problem_catalog_filter_idx on problem p  (cost=0.41..2.60 rows=1 width=62) (actual time=0.004..0.029 rows=21 loops=1)
+               Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (ROW(level, solid_kind, topic_id, id) > ROW('thpt'::geo.edu_level, 'box'::geo.solid_kind, 0, '00000000-0000-0000-0000-000000000000'::uuid)) AND (level = 'thpt'::geo.edu_level) AND (solid_kind = 'box'::geo.solid_kind))
+               Buffers: shared hit=45
+         ->  Index Scan using problem_version_pkey on problem_version pv  (cost=0.29..2.51 rows=1 width=24) (actual time=0.001..0.001 rows=1 loops=21)
+               Index Cond: (id = p.current_version_id)
+               Buffers: shared hit=63
+ Planning:
+   Buffers: shared hit=117
+ Planning Time: 0.282 ms
+ Execution Time: 0.071 ms
+(14 rows)
+
+===== Q13b catalog @ 20k đề kho (chỉ lọc cấp)
+                                                                                                                                QUERY PLAN                                                                                                                                
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.70..19.50 rows=21 width=54) (actual time=0.257..0.286 rows=21 loops=1)
+   Buffers: shared hit=171 read=1
+   I/O Timings: shared read=0.110
+   ->  Nested Loop  (cost=0.70..3210.05 rows=3585 width=54) (actual time=0.257..0.285 rows=21 loops=1)
+         Buffers: shared hit=171 read=1
+         I/O Timings: shared read=0.110
+         ->  Index Scan using problem_catalog_filter_idx on problem p  (cost=0.41..959.43 rows=3585 width=62) (actual time=0.254..0.267 rows=21 loops=1)
+               Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (ROW(level, solid_kind, topic_id, id) > ROW('thcs'::geo.edu_level, 'cube'::geo.solid_kind, 2, '00000000-0000-0000-0000-000000000000'::uuid)) AND (level = 'thcs'::geo.edu_level))
+               Buffers: shared hit=108 read=1
+               I/O Timings: shared read=0.110
+         ->  Index Scan using problem_version_pkey on problem_version pv  (cost=0.29..0.63 rows=1 width=24) (actual time=0.001..0.001 rows=1 loops=21)
+               Index Cond: (id = p.current_version_id)
+               Buffers: shared hit=63
+ Planning:
+   Buffers: shared hit=8
+ Planning Time: 0.044 ms
+ Execution Time: 0.291 ms
+(17 rows)
+
+===== Q18 share_grant @ 50k cấp phép
+                                                                                                 QUERY PLAN                                                                                                 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.41..2.65 rows=1 width=24) (actual time=0.115..0.116 rows=1 loops=1)
+   Buffers: shared hit=2 read=2
+   I/O Timings: shared read=0.111
+   ->  Index Scan using share_grant_lookup_idx on share_grant g  (cost=0.41..2.65 rows=1 width=24) (actual time=0.115..0.115 rows=1 loops=1)
+         Index Cond: ((grantee_org_id = '019dfc2d-1e10-7650-84f9-1d71d0cab35c'::uuid) AND (resource_kind = 'lecture'::geo.share_resource) AND (resource_id = '019f3124-7216-7c03-8b5c-b116b55fabf1'::uuid))
+         Filter: ((valid_from <= now()) AND (valid_until > now()))
+         Buffers: shared hit=2 read=2
+         I/O Timings: shared read=0.111
+ Planning:
+   Buffers: shared hit=40
+ Planning Time: 0.072 ms
+ Execution Time: 0.118 ms
+(12 rows)
+
+===== AP3 LIKE %x% @ 50k bài giảng
+--- xấu: LIKE %x% trên thân bài giảng (không chỉ mục dùng được)
+                                                        QUERY PLAN                                                        
+--------------------------------------------------------------------------------------------------------------------------
+ Limit (actual time=21.893..21.893 rows=0 loops=1)
+   Buffers: shared hit=8377
+   ->  Seq Scan on lecture l (actual time=21.893..21.893 rows=0 loops=1)
+         Filter: ((body ~~ '%khoa-khong-ton-tai-xyz%'::text) AND (org_id = '00000000-0000-7000-8000-000000000001'::uuid))
+         Rows Removed by Filter: 50300
+         Buffers: shared hit=8377
+ Planning:
+   Buffers: shared hit=1
+ Planning Time: 0.060 ms
+ Execution Time: 21.897 ms
+(10 rows)
+
+--- đúng: tìm kiếm văn bản (GIN)
+                                                                                                  QUERY PLAN                                                                                                  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit (actual time=3.299..3.299 rows=0 loops=1)
+   Buffers: shared hit=461
+   ->  Bitmap Heap Scan on lecture l (actual time=3.298..3.299 rows=0 loops=1)
+         Recheck Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (search_tsv @@ '''khoa-khong-ton-tai-xyz'' <-> ''khoa'' <-> ''khong'' <-> ''ton'' <-> ''tai'' <-> ''xyz'''::tsquery))
+         Buffers: shared hit=461
+         ->  Bitmap Index Scan on lecture_search_idx (actual time=3.297..3.297 rows=0 loops=1)
+               Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (search_tsv @@ '''khoa-khong-ton-tai-xyz'' <-> ''khoa'' <-> ''khong'' <-> ''ton'' <-> ''tai'' <-> ''xyz'''::tsquery))
+               Buffers: shared hit=461
+ Planning:
+   Buffers: shared hit=1
+ Planning Time: 0.033 ms
+ Execution Time: 3.304 ms
+(12 rows)
+

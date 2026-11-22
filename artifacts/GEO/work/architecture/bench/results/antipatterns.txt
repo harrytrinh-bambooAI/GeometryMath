@@ -1,0 +1,201 @@
+### AP1 OFFSET sâu so với keyset (qa_turn ~170.000 hàng, trang 20, trang thứ 7.500)
+                                                QUERY PLAN                                                 
+-----------------------------------------------------------------------------------------------------------
+ Limit (actual time=46.670..46.673 rows=20 loops=1)
+   Buffers: shared hit=142611 read=3246
+   I/O Timings: shared read=28.540
+   ->  Index Scan Backward using qa_turn_pkey on qa_turn q (actual time=0.338..44.129 rows=150020 loops=1)
+         Buffers: shared hit=142611 read=3246
+         I/O Timings: shared read=28.540
+ Planning:
+   Buffers: shared hit=43
+ Planning Time: 0.072 ms
+ Execution Time: 46.684 ms
+(10 rows)
+
+                                              QUERY PLAN                                              
+------------------------------------------------------------------------------------------------------
+ Limit (actual time=0.012..0.014 rows=20 loops=1)
+   Buffers: shared hit=23 read=1
+   I/O Timings: shared read=0.004
+   ->  Index Scan Backward using qa_turn_pkey on qa_turn q (actual time=0.012..0.014 rows=20 loops=1)
+         Index Cond: (id < 348000)
+         Buffers: shared hit=23 read=1
+         I/O Timings: shared read=0.004
+ Planning:
+   Buffers: shared hit=9
+ Planning Time: 0.021 ms
+ Execution Time: 0.018 ms
+(11 rows)
+
+### AP2 count(*) trên bảng lớn (event_log ~2 triệu hàng) so với LIMIT n+1
+                                                           QUERY PLAN                                                            
+---------------------------------------------------------------------------------------------------------------------------------
+ Finalize Aggregate (actual time=2918.965..2925.067 rows=1 loops=1)
+   Buffers: shared hit=109473 read=528689
+   I/O Timings: shared read=4342.949
+   ->  Gather (actual time=2918.869..2925.063 rows=3 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         Buffers: shared hit=109473 read=528689
+         I/O Timings: shared read=4342.949
+         ->  Partial Aggregate (actual time=2916.773..2916.776 rows=1 loops=3)
+               Buffers: shared hit=109473 read=528689
+               I/O Timings: shared read=4342.949
+               ->  Parallel Append (actual time=0.085..2578.194 rows=17222147 loops=3)
+                     Buffers: shared hit=109473 read=528689
+                     I/O Timings: shared read=4342.949
+                     ->  Seq Scan on event_log_y2026m07 event_log_1 (actual time=0.015..0.015 rows=0 loops=1)
+                     ->  Seq Scan on event_log_y2026m12 event_log_6 (actual time=0.017..0.018 rows=0 loops=1)
+                     ->  Seq Scan on event_log_y2027m01 event_log_7 (actual time=0.018..0.018 rows=0 loops=1)
+                     ->  Seq Scan on event_log_default event_log_8 (actual time=0.016..0.016 rows=0 loops=1)
+                     ->  Parallel Seq Scan on event_log_y2026m11 event_log_5 (actual time=0.197..2000.884 rows=16713695 loops=3)
+                           Buffers: shared hit=109430 read=509898
+                           I/O Timings: shared read=4245.803
+                     ->  Parallel Seq Scan on event_log_y2026m10 event_log_4 (actual time=0.005..71.032 rows=706978 loops=1)
+                           Buffers: shared hit=43 read=8686
+                           I/O Timings: shared read=46.231
+                     ->  Parallel Seq Scan on event_log_y2026m09 event_log_3 (actual time=0.153..29.384 rows=337447 loops=2)
+                           Buffers: shared read=8333
+                           I/O Timings: shared read=37.999
+                     ->  Parallel Seq Scan on event_log_y2026m08 event_log_2 (actual time=0.007..17.947 rows=143483 loops=1)
+                           Buffers: shared read=1772
+                           I/O Timings: shared read=12.916
+ Planning:
+   Buffers: shared hit=4
+ Planning Time: 0.044 ms
+ Execution Time: 2925.087 ms
+(34 rows)
+
+                                                                                                                                                                                    QUERY PLAN                                                                                                                                                                                    
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit (actual time=0.309..0.326 rows=8 loops=1)
+   Buffers: shared hit=12 read=2
+   I/O Timings: shared read=0.245
+   ->  Append (actual time=0.309..0.326 rows=8 loops=1)
+         Buffers: shared hit=12 read=2
+         I/O Timings: shared read=0.245
+         ->  Index Only Scan using event_log_y2026m11_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m11 e_4 (actual time=0.016..0.016 rows=0 loops=1)
+               Index Cond: ((org_id = '019dfc2c-33b0-7b91-a4c5-337da30d9af1'::uuid) AND (assignment_id = '01a16fd3-70fa-7169-875a-9c9ccf099f09'::uuid) AND (user_id = '019e96a5-8189-7a37-8dfa-8772da0decd9'::uuid) AND (occurred_at >= '2026-08-24 15:41:51.332006+07'::timestamp with time zone) AND (occurred_at < '2026-11-23 15:41:51.332006+07'::timestamp with time zone))
+               Heap Fetches: 0
+               Buffers: shared hit=4
+         ->  Index Only Scan using event_log_y2026m10_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m10 e_3 (actual time=0.293..0.293 rows=8 loops=1)
+               Index Cond: ((org_id = '019dfc2c-33b0-7b91-a4c5-337da30d9af1'::uuid) AND (assignment_id = '01a16fd3-70fa-7169-875a-9c9ccf099f09'::uuid) AND (user_id = '019e96a5-8189-7a37-8dfa-8772da0decd9'::uuid) AND (occurred_at >= '2026-08-24 15:41:51.332006+07'::timestamp with time zone) AND (occurred_at < '2026-11-23 15:41:51.332006+07'::timestamp with time zone))
+               Heap Fetches: 0
+               Buffers: shared hit=2 read=2
+               I/O Timings: shared read=0.245
+         ->  Index Only Scan using event_log_y2026m09_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m09 e_2 (actual time=0.008..0.008 rows=0 loops=1)
+               Index Cond: ((org_id = '019dfc2c-33b0-7b91-a4c5-337da30d9af1'::uuid) AND (assignment_id = '01a16fd3-70fa-7169-875a-9c9ccf099f09'::uuid) AND (user_id = '019e96a5-8189-7a37-8dfa-8772da0decd9'::uuid) AND (occurred_at >= '2026-08-24 15:41:51.332006+07'::timestamp with time zone) AND (occurred_at < '2026-11-23 15:41:51.332006+07'::timestamp with time zone))
+               Heap Fetches: 0
+               Buffers: shared hit=3
+         ->  Index Only Scan using event_log_y2026m08_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m08 e_1 (actual time=0.008..0.008 rows=0 loops=1)
+               Index Cond: ((org_id = '019dfc2c-33b0-7b91-a4c5-337da30d9af1'::uuid) AND (assignment_id = '01a16fd3-70fa-7169-875a-9c9ccf099f09'::uuid) AND (user_id = '019e96a5-8189-7a37-8dfa-8772da0decd9'::uuid) AND (occurred_at >= '2026-08-24 15:41:51.332006+07'::timestamp with time zone) AND (occurred_at < '2026-11-23 15:41:51.332006+07'::timestamp with time zone))
+               Heap Fetches: 0
+               Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=48
+ Planning Time: 0.187 ms
+ Execution Time: 0.336 ms
+(27 rows)
+
+### AP3 LIKE '%x%': đo ở quy mô 50.000 bài giảng nằm trong bench/03_scale_checks.sql (mục AP3), vì bảng thử chỉ có 300 bài
+### AP4 hàm bọc cột: lower(name_key) = x (chỉ có org_id dẫn đầu giúp) so với name_key = x kèm org_id, class_id (class_member ~20.000 hàng)
+                                        QUERY PLAN                                        
+------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on class_member cm (actual time=0.487..0.536 rows=1 loops=1)
+   Recheck Cond: (org_id = '019dfc2e-0870-7272-a317-d0145243359e'::uuid)
+   Filter: (lower(name_key) = 'hoc sinh 128'::text)
+   Rows Removed by Filter: 409
+   Heap Blocks: exact=18
+   Buffers: shared hit=21 read=5
+   I/O Timings: shared read=0.454
+   ->  Bitmap Index Scan on class_member_pkey (actual time=0.470..0.470 rows=410 loops=1)
+         Index Cond: (org_id = '019dfc2e-0870-7272-a317-d0145243359e'::uuid)
+         Buffers: shared hit=3 read=5
+         I/O Timings: shared read=0.454
+ Planning Time: 0.018 ms
+ Execution Time: 0.540 ms
+(13 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using class_member_pkey on class_member cm (actual time=0.003..0.005 rows=1 loops=1)
+   Index Cond: ((org_id = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND (class_id = '019e6325-f134-7262-a3c2-b98027fa7915'::uuid))
+   Filter: (name_key = 'hoc sinh 128'::text)
+   Rows Removed by Filter: 63
+   Buffers: shared hit=5
+ Planning Time: 0.010 ms
+ Execution Time: 0.008 ms
+(7 rows)
+
+### AP5 quên org_id: tra theo name_key trên toàn bảng so với có org_id, class_id
+                              QUERY PLAN                               
+-----------------------------------------------------------------------
+ Seq Scan on class_member cm (actual time=0.007..0.510 rows=1 loops=1)
+   Filter: (name_key = 'hoc sinh 128'::text)
+   Rows Removed by Filter: 19999
+   Buffers: shared hit=247
+ Planning Time: 0.005 ms
+ Execution Time: 0.511 ms
+(6 rows)
+
+                                                              QUERY PLAN                                                               
+---------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using class_member_pkey on class_member cm (actual time=0.002..0.005 rows=1 loops=1)
+   Index Cond: ((org_id = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND (class_id = '019e6325-f134-7262-a3c2-b98027fa7915'::uuid))
+   Filter: (name_key = 'hoc sinh 128'::text)
+   Rows Removed by Filter: 63
+   Buffers: shared hit=5
+ Planning Time: 0.008 ms
+ Execution Time: 0.006 ms
+(7 rows)
+
+### AP6 SELECT * kéo cột lớn: số byte kéo về cho 50 hàng bài giảng (lecture.body) so với chỉ cột cần
+ bytes_select_star | bytes_needed | ratio 
+-------------------+--------------+-------
+             56504 |         2874 |  19.7
+(1 row)
+
+ bytes_select_star_scene_build_20_rows | bytes_needed 
+---------------------------------------+--------------
+                                 16800 |          400
+(1 row)
+
+### AP7 sắp xếp không có chỉ mục: ORDER BY occurred_at trên một partition lớn không có chỉ mục theo thời gian
+                                                       QUERY PLAN                                                        
+-------------------------------------------------------------------------------------------------------------------------
+ Limit (actual time=3632.921..3639.563 rows=50 loops=1)
+   Buffers: shared hit=109602 read=509802
+   I/O Timings: shared read=3316.687
+   ->  Gather Merge (actual time=3632.921..3639.560 rows=50 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         Buffers: shared hit=109602 read=509802
+         I/O Timings: shared read=3316.687
+         ->  Sort (actual time=3631.072..3631.074 rows=39 loops=3)
+               Sort Key: e.occurred_at DESC
+               Sort Method: top-N heapsort  Memory: 28kB
+               Buffers: shared hit=109602 read=509802
+               I/O Timings: shared read=3316.687
+               Worker 0:  Sort Method: top-N heapsort  Memory: 27kB
+               Worker 1:  Sort Method: top-N heapsort  Memory: 27kB
+               ->  Parallel Append (actual time=0.088..3074.375 rows=16713695 loops=3)
+                     Buffers: shared hit=109526 read=509802
+                     I/O Timings: shared read=3316.687
+                     Subplans Removed: 4
+                     ->  Seq Scan on event_log_y2026m12 e_2 (actual time=0.016..0.016 rows=0 loops=1)
+                           Filter: (occurred_at >= date_trunc('month'::text, now()))
+                     ->  Seq Scan on event_log_y2027m01 e_3 (actual time=0.018..0.018 rows=0 loops=1)
+                           Filter: (occurred_at >= date_trunc('month'::text, now()))
+                     ->  Seq Scan on event_log_default e_4 (actual time=0.015..0.015 rows=0 loops=1)
+                           Filter: (occurred_at >= date_trunc('month'::text, now()))
+                     ->  Parallel Seq Scan on event_log_y2026m11 e_1 (actual time=0.072..2545.485 rows=16713695 loops=3)
+                           Filter: (occurred_at >= date_trunc('month'::text, now()))
+                           Buffers: shared hit=109526 read=509802
+                           I/O Timings: shared read=3316.687
+ Planning:
+   Buffers: shared hit=12
+ Planning Time: 0.111 ms
+ Execution Time: 3639.587 ms
+(33 rows)
+

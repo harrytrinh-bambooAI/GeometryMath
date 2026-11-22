@@ -1,0 +1,6 @@
+psql:bench/04_pgbench_setup.sql:2: NOTICE:  schema "bench" does not exist, skipping
+ pairs | terms | tcls 
+-------+-------+------
+ 19931 |   900 |  600
+(1 row)
+

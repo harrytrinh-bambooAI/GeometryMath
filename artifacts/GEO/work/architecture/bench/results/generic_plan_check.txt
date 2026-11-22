@@ -1,0 +1,221 @@
+== Q02 bài của em
+                  id                  |               class_id               |          release_at           |   title   | solid_kind | verify_status | approval_status  | hint_level_max |      solution_viewed_at       |        last_active_at         
+--------------------------------------+--------------------------------------+-------------------------------+-----------+------------+---------------+------------------+----------------+-------------------------------+-------------------------------
+ 01a1fe8e-41e0-749a-929a-027bee84008d | 019e63ec-b0e8-7809-a77d-5445ef49f519 | 2026-11-23 21:05:16.664667+07 | Đề kho 6  | sphere     | verified      | teacher_approved |              0 |                               | 2026-11-22 17:55:17.220777+07
+ 01a1b2ee-51df-79ad-8354-128825f23080 | 019e63ec-b0e8-7809-a77d-5445ef49f519 | 2026-11-09 18:55:15.935106+07 | Đề kho 48 | sphere     | verified      | teacher_approved |              1 | 2026-11-09 19:14:46.220208+07 | 2026-11-08 10:33:49.35574+07
+ 01a1a4e8-396b-7db7-b574-a6c90e6bf68d | 019e63ec-b0e8-7809-a77d-5445ef49f519 | 2026-11-06 23:06:34.991889+07 | Đề kho 1  | prism      | verified      | teacher_approved |              2 | 2026-11-06 23:19:40.03156+07  | 2026-11-05 08:13:08.239393+07
+ 01a14166-9ad0-72eb-80b1-032fb40685bd | 019e63ec-b0e8-7809-a77d-5445ef49f519 | 2026-11-24 22:41:08.758184+07 | Đề kho 35 | pyramid    | verified      | teacher_approved |              2 |                               | 2026-10-18 06:59:05.446962+07
+ 01a13577-b7da-7376-82b7-5cdc191425d1 | 019e63ec-b0e8-7809-a77d-5445ef49f519 |                               | Đề kho 53 | cone       | verified      | teacher_approved |              1 |                               | 2026-10-16 15:50:17.087978+07
+ 01a0feb0-0d31-7748-96f1-1dce8f7839ff | 019e63ec-b0e8-7809-a77d-5445ef49f519 |                               | Đề kho 40 | cylinder   | needs_review  | teacher_approved |              1 |                               | 2026-10-05 02:17:39.558586+07
+ 01a0f1a7-2306-7470-9d07-ff931765a383 | 019e63ec-b0e8-7809-a77d-5445ef49f519 | 2026-10-03 06:03:35.59731+07  | Đề kho 27 | sphere     | verified      | teacher_approved |              2 | 2026-10-03 06:28:23.121389+07 | 2026-10-02 05:13:29.692898+07
+ 01a0b11b-4f50-729f-afb6-d95b0b7a3a54 | 019e63ec-b0e8-7809-a77d-5445ef49f519 | 2026-09-20 16:34:43.851054+07 | Đề kho 32 | cone       | verified      | teacher_approved |              0 |                               | 2026-09-20 02:58:12.194452+07
+ 01a0aaaf-aaa0-768b-aa52-fa48dccc83d2 | 019e63ec-b0e8-7809-a77d-5445ef49f519 |                               | Đề kho 19 | cylinder   | verified      | teacher_approved |              1 |                               | 2026-09-19 04:20:30.447661+07
+ 01a0665f-0edc-7b2c-84ca-1338aab802f7 | 019e63ec-b0e8-7809-a77d-5445ef49f519 | 2026-09-05 15:46:23.013305+07 | Đề kho 14 | pyramid    | verified      | teacher_approved |                |                               | 
+(10 rows)
+
+                                                                                   QUERY PLAN                                                                                    
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=10.02..10.02 rows=1 width=92) (actual time=0.028..0.029 rows=10 loops=1)
+   Buffers: shared hit=115
+   ->  Sort  (cost=10.02..10.02 rows=1 width=92) (actual time=0.028..0.029 rows=10 loops=1)
+         Sort Key: x.id DESC
+         Sort Method: quicksort  Memory: 26kB
+         Buffers: shared hit=115
+         ->  Nested Loop Left Join  (cost=1.68..10.01 rows=1 width=92) (actual time=0.008..0.027 rows=10 loops=1)
+               Buffers: shared hit=115
+               ->  Nested Loop  (cost=1.26..6.92 rows=1 width=90) (actual time=0.006..0.018 rows=10 loops=1)
+                     Buffers: shared hit=76
+                     ->  Nested Loop  (cost=0.98..6.56 rows=1 width=96) (actual time=0.005..0.012 rows=10 loops=1)
+                           Buffers: shared hit=46
+                           ->  Nested Loop  (cost=0.69..4.06 rows=1 width=72) (actual time=0.004..0.006 rows=10 loops=1)
+                                 Buffers: shared hit=16
+                                 ->  Index Only Scan using class_member_user_idx on class_member mc  (cost=0.41..1.53 rows=1 width=32) (actual time=0.002..0.002 rows=1 loops=1)
+                                       Index Cond: ((org_id = $1) AND (user_id = $2))
+                                       Heap Fetches: 0
+                                       Buffers: shared hit=4
+                                 ->  Limit  (cost=0.28..2.50 rows=1 width=72) (actual time=0.002..0.004 rows=10 loops=1)
+                                       Buffers: shared hit=12
+                                       ->  Index Scan using assignment_class_idx on assignment x  (cost=0.28..2.50 rows=1 width=72) (actual time=0.002..0.003 rows=10 loops=1)
+                                             Index Cond: ((org_id = mc.org_id) AND (class_id = mc.class_id) AND (id < $3))
+                                             Buffers: shared hit=12
+                           ->  Index Scan using problem_version_pkey on problem_version pv  (cost=0.28..2.50 rows=1 width=56) (actual time=0.000..0.000 rows=1 loops=10)
+                                 Index Cond: (id = x.problem_version_id)
+                                 Buffers: shared hit=30
+                     ->  Index Scan using problem_pkey on problem p  (cost=0.28..0.35 rows=1 width=58) (actual time=0.000..0.000 rows=1 loops=10)
+                           Index Cond: (id = pv.problem_id)
+                           Filter: (pv.org_id = org_id)
+                           Buffers: shared hit=30
+               ->  Index Scan using assignment_progress_pkey on assignment_progress ap  (cost=0.42..2.64 rows=1 width=50) (actual time=0.001..0.001 rows=1 loops=10)
+                     Index Cond: ((org_id = x.org_id) AND (assignment_id = x.id) AND (user_id = $2))
+                     Buffers: shared hit=39
+ Planning Time: 0.002 ms
+ Execution Time: 0.074 ms
+(35 rows)
+
+== Q09 theo dõi lớp
+                                                                                   QUERY PLAN                                                                                    
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=5.04..8.88 rows=11 width=90) (actual time=0.044..0.112 rows=64 loops=1)
+   Buffers: shared hit=338 dirtied=2
+   ->  Nested Loop  (cost=5.04..8.88 rows=11 width=90) (actual time=0.044..0.110 rows=64 loops=1)
+         Join Filter: (c.id = a.class_id)
+         Buffers: shared hit=338 dirtied=2
+         ->  Nested Loop  (cost=4.77..8.51 rows=1 width=138) (actual time=0.040..0.082 rows=64 loops=1)
+               Buffers: shared hit=209 dirtied=2
+               ->  Merge Left Join  (cost=4.48..6.72 rows=1 width=122) (actual time=0.035..0.050 rows=64 loops=1)
+                     Merge Cond: (cm.user_id = ap.user_id)
+                     Buffers: shared hit=17 dirtied=2
+                     ->  Sort  (cost=4.06..4.06 rows=1 width=96) (actual time=0.032..0.034 rows=64 loops=1)
+                           Sort Key: cm.user_id
+                           Sort Method: quicksort  Memory: 32kB
+                           Buffers: shared hit=11 dirtied=2
+                           ->  Nested Loop  (cost=0.70..4.05 rows=1 width=96) (actual time=0.014..0.028 rows=64 loops=1)
+                                 Buffers: shared hit=11 dirtied=2
+                                 ->  Index Scan using assignment_org_id_id_key on assignment a  (cost=0.29..2.50 rows=1 width=48) (actual time=0.002..0.009 rows=1 loops=1)
+                                       Index Cond: ((org_id = $1) AND (id = $2))
+                                       Buffers: shared hit=5 dirtied=1
+                                 ->  Index Only Scan using class_member_name_uq on class_member cm  (cost=0.41..1.54 rows=1 width=48) (actual time=0.011..0.016 rows=64 loops=1)
+                                       Index Cond: ((org_id = $1) AND (class_id = a.class_id))
+                                       Filter: (user_id > $4)
+                                       Heap Fetches: 1
+                                       Buffers: shared hit=6 dirtied=1
+                     ->  Index Scan using assignment_progress_pkey on assignment_progress ap  (cost=0.42..2.64 rows=1 width=90) (actual time=0.002..0.006 rows=54 loops=1)
+                           Index Cond: ((org_id = $1) AND (assignment_id = $2))
+                           Buffers: shared hit=6
+               ->  Index Scan using app_user_pkey on app_user u  (cost=0.29..1.78 rows=1 width=48) (actual time=0.000..0.000 rows=1 loops=64)
+                     Index Cond: (id = cm.user_id)
+                     Filter: (org_id = $1)
+                     Buffers: shared hit=192
+         ->  Index Only Scan using class_teacher_idx on class c  (cost=0.28..0.36 rows=1 width=32) (actual time=0.000..0.000 rows=1 loops=64)
+               Index Cond: ((org_id = $1) AND (teacher_id = $3) AND (id = cm.class_id))
+               Heap Fetches: 0
+               Buffers: shared hit=129
+ Planning:
+   Buffers: shared hit=77 dirtied=2
+ Planning Time: 0.486 ms
+ Execution Time: 0.159 ms
+(39 rows)
+
+== Q13 kho đề (kiểu enum làm tham số)
+                                                                      QUERY PLAN                                                                      
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.42..4.87 rows=1 width=56) (actual time=0.006..0.010 rows=5 loops=1)
+   Buffers: shared hit=19
+   ->  Nested Loop  (cost=0.42..4.87 rows=1 width=56) (actual time=0.006..0.010 rows=5 loops=1)
+         Buffers: shared hit=19
+         ->  Index Scan using problem_catalog_filter_idx on problem p  (cost=0.14..2.36 rows=1 width=64) (actual time=0.005..0.006 rows=5 loops=1)
+               Index Cond: ((org_id = $1) AND (ROW(level, solid_kind, topic_id, id) > ROW($2, $3, $4, $5)) AND (level = $2) AND (solid_kind = $3))
+               Buffers: shared hit=4
+         ->  Index Scan using problem_version_pkey on problem_version pv  (cost=0.28..2.50 rows=1 width=24) (actual time=0.000..0.000 rows=1 loops=5)
+               Index Cond: (id = p.current_version_id)
+               Buffers: shared hit=15
+ Planning:
+   Buffers: shared hit=31
+ Planning Time: 0.088 ms
+ Execution Time: 0.050 ms
+(14 rows)
+
+== Q20 dòng thời gian (khoảng thời gian làm tham số)
+                                                                                                QUERY PLAN                                                                                                 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=10.76..10.78 rows=8 width=22) (actual time=0.057..0.058 rows=7 loops=1)
+   Buffers: shared hit=16
+   ->  Sort  (cost=10.76..10.78 rows=8 width=22) (actual time=0.057..0.057 rows=7 loops=1)
+         Sort Key: e.occurred_at DESC, e.id DESC
+         Sort Method: quicksort  Memory: 25kB
+         Buffers: shared hit=16
+         ->  Append  (cost=0.00..10.64 rows=8 width=22) (actual time=0.044..0.054 rows=7 loops=1)
+               Buffers: shared hit=13
+               Subplans Removed: 4
+               ->  Index Scan using event_log_y2026m08_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m08 e_1  (cost=0.42..2.65 rows=1 width=22) (actual time=0.016..0.016 rows=0 loops=1)
+                     Index Cond: ((org_id = $1) AND (assignment_id = $2) AND (user_id = $3) AND (occurred_at >= $4) AND (occurred_at < $5))
+                     Buffers: shared hit=3
+               ->  Index Scan using event_log_y2026m09_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m09 e_2  (cost=0.42..2.65 rows=1 width=22) (actual time=0.013..0.013 rows=0 loops=1)
+                     Index Cond: ((org_id = $1) AND (assignment_id = $2) AND (user_id = $3) AND (occurred_at >= $4) AND (occurred_at < $5))
+                     Buffers: shared hit=3
+               ->  Index Scan using event_log_y2026m10_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m10 e_3  (cost=0.42..2.65 rows=1 width=22) (actual time=0.015..0.016 rows=7 loops=1)
+                     Index Cond: ((org_id = $1) AND (assignment_id = $2) AND (user_id = $3) AND (occurred_at >= $4) AND (occurred_at < $5))
+                     Buffers: shared hit=4
+               ->  Index Scan using event_log_y2026m11_org_id_assignment_id_user_id_occurred_at_idx on event_log_y2026m11 e_4  (cost=0.42..2.65 rows=1 width=22) (actual time=0.008..0.008 rows=0 loops=1)
+                     Index Cond: ((org_id = $1) AND (assignment_id = $2) AND (user_id = $3) AND (occurred_at >= $4) AND (occurred_at < $5))
+                     Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=80
+ Planning Time: 0.231 ms
+ Execution Time: 0.098 ms
+(25 rows)
+
+== Q12 tìm nguồn (chuỗi tìm kiếm làm tham số)
+                                                                   QUERY PLAN                                                                    
+-------------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=7.40..12.16 rows=2 width=120) (actual time=1.448..1.459 rows=5 loops=1)
+   Buffers: shared hit=96
+   CTE q
+     ->  Result  (cost=0.00..0.51 rows=1 width=32) (actual time=1.294..1.294 rows=1 loops=1)
+           Buffers: shared hit=26
+   CTE cand
+     ->  Limit  (cost=4.28..6.52 rows=2 width=828) (actual time=0.032..0.097 rows=125 loops=1)
+           Buffers: shared hit=52
+           ->  Nested Loop  (cost=4.28..6.52 rows=2 width=828) (actual time=0.032..0.094 rows=125 loops=1)
+                 Buffers: shared hit=52
+                 ->  CTE Scan on q q_1  (cost=0.00..0.02 rows=1 width=32) (actual time=0.000..0.000 rows=1 loops=1)
+                 ->  Bitmap Heap Scan on lecture l_1  (cost=4.28..6.48 rows=2 width=828) (actual time=0.031..0.081 rows=125 loops=1)
+                       Recheck Cond: ((org_id = $1) AND (search_tsv @@ q_1.tsq))
+                       Heap Blocks: exact=43
+                       Buffers: shared hit=52
+                       ->  Bitmap Index Scan on lecture_search_idx  (cost=0.00..4.28 rows=2 width=0) (actual time=0.024..0.024 rows=125 loops=1)
+                             Index Cond: ((org_id = $1) AND (search_tsv @@ q_1.tsq))
+                             Buffers: shared hit=9
+   ->  Limit  (cost=0.10..0.10 rows=2 width=20) (actual time=1.443..1.443 rows=5 loops=1)
+         Buffers: shared hit=81
+         ->  Sort  (cost=0.10..0.10 rows=2 width=20) (actual time=1.443..1.443 rows=5 loops=1)
+               Sort Key: (ts_rank(c.search_tsv, q.tsq)) DESC, c.id
+               Sort Method: top-N heapsort  Memory: 25kB
+               Buffers: shared hit=81
+               ->  Nested Loop  (cost=0.00..0.09 rows=2 width=20) (actual time=1.329..1.435 rows=125 loops=1)
+                     Buffers: shared hit=78
+                     ->  CTE Scan on q  (cost=0.00..0.02 rows=1 width=32) (actual time=1.294..1.294 rows=1 loops=1)
+                           Buffers: shared hit=26
+                     ->  CTE Scan on cand c  (cost=0.00..0.04 rows=2 width=48) (actual time=0.032..0.116 rows=125 loops=1)
+                           Buffers: shared hit=52
+   ->  Index Scan using lecture_org_id_id_key on lecture l  (cost=0.27..2.49 rows=1 width=256) (actual time=0.001..0.001 rows=1 loops=5)
+         Index Cond: ((org_id = $1) AND (id = c.id))
+         Buffers: shared hit=15
+ Planning:
+   Buffers: shared hit=217
+ Planning Time: 0.162 ms
+ Execution Time: 1.524 ms
+(37 rows)
+
+== Q16 trùng đề đang khóa (băm làm tham số)
+                                                                         QUERY PLAN                                                                         
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=21.31..21.32 rows=1 width=24) (actual time=0.012..0.012 rows=0 loops=1)
+   Buffers: shared hit=31
+   InitPlan 1
+     ->  Index Only Scan using class_member_user_idx on class_member cm  (cost=0.41..1.53 rows=1 width=16) (actual time=0.002..0.002 rows=1 loops=1)
+           Index Cond: ((org_id = $2) AND (user_id = $3))
+           Heap Fetches: 0
+           Buffers: shared hit=4
+   ->  Sort  (cost=19.78..19.78 rows=1 width=24) (actual time=0.012..0.012 rows=0 loops=1)
+         Sort Key: a.id DESC
+         Sort Method: quicksort  Memory: 25kB
+         Buffers: shared hit=31
+         ->  Nested Loop  (cost=0.56..19.77 rows=1 width=24) (actual time=0.011..0.012 rows=0 loops=1)
+               Buffers: shared hit=31
+               ->  Index Scan using assignment_class_idx on assignment a  (cost=0.28..15.04 rows=1 width=40) (actual time=0.005..0.008 rows=5 loops=1)
+                     Index Cond: ((org_id = $2) AND (class_id = ANY ((InitPlan 1).col1)))
+                     Filter: ((release_at IS NULL) OR (release_at > now()))
+                     Rows Removed by Filter: 5
+                     Buffers: shared hit=16
+               ->  Index Scan using problem_version_pkey on problem_version pv  (cost=0.28..2.51 rows=1 width=16) (actual time=0.001..0.001 rows=0 loops=5)
+                     Index Cond: (id = a.problem_version_id)
+                     Filter: (statement_hash = decode($1, 'hex'::text))
+                     Rows Removed by Filter: 1
+                     Buffers: shared hit=15
+ Planning:
+   Buffers: shared hit=6
+ Planning Time: 0.087 ms
+ Execution Time: 0.047 ms
+(27 rows)
+

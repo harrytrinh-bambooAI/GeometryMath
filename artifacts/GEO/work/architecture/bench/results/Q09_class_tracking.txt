@@ -1,0 +1,42 @@
+                                                                                          QUERY PLAN                                                                                           
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=8.87..8.95 rows=34 width=104) (actual time=0.095..0.099 rows=64 loops=1)
+   Buffers: shared hit=575
+   ->  Sort  (cost=8.87..8.95 rows=34 width=104) (actual time=0.095..0.097 rows=64 loops=1)
+         Sort Key: cm.name_key, u.id
+         Sort Method: quicksort  Memory: 33kB
+         Buffers: shared hit=575
+         ->  Nested Loop  (cost=1.68..8.01 rows=34 width=104) (actual time=0.006..0.088 rows=64 loops=1)
+               Join Filter: (c.id = a.class_id)
+               Buffers: shared hit=575
+               ->  Nested Loop Left Join  (cost=1.41..7.67 rows=1 width=152) (actual time=0.005..0.067 rows=64 loops=1)
+                     Buffers: shared hit=446
+                     ->  Nested Loop  (cost=0.98..5.18 rows=1 width=126) (actual time=0.004..0.032 rows=64 loops=1)
+                           Buffers: shared hit=200
+                           ->  Nested Loop  (cost=0.70..4.05 rows=1 width=110) (actual time=0.003..0.008 rows=64 loops=1)
+                                 Buffers: shared hit=8
+                                 ->  Index Scan using assignment_org_id_id_key on assignment a  (cost=0.29..2.50 rows=1 width=48) (actual time=0.001..0.001 rows=1 loops=1)
+                                       Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (id = '01a1b2ee-51df-79ad-8354-128825f23080'::uuid))
+                                       Buffers: shared hit=3
+                                 ->  Index Only Scan using class_member_name_uq on class_member cm  (cost=0.41..1.54 rows=1 width=62) (actual time=0.002..0.005 rows=64 loops=1)
+                                       Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (class_id = a.class_id) AND (name_key >= ''::text))
+                                       Filter: (ROW(name_key, user_id) > ROW(''::text, '00000000-0000-0000-0000-000000000000'::uuid))
+                                       Heap Fetches: 0
+                                       Buffers: shared hit=5
+                           ->  Index Scan using app_user_pkey on app_user u  (cost=0.29..1.12 rows=1 width=48) (actual time=0.000..0.000 rows=1 loops=64)
+                                 Index Cond: (id = cm.user_id)
+                                 Filter: (org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid)
+                                 Buffers: shared hit=192
+                     ->  Index Scan using assignment_progress_pkey on assignment_progress ap  (cost=0.42..2.49 rows=1 width=90) (actual time=0.000..0.000 rows=1 loops=64)
+                           Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (assignment_id = '01a1b2ee-51df-79ad-8354-128825f23080'::uuid) AND (user_id = cm.user_id))
+                           Buffers: shared hit=246
+               ->  Index Only Scan using class_teacher_idx on class c  (cost=0.28..0.32 rows=1 width=32) (actual time=0.000..0.000 rows=1 loops=64)
+                     Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (teacher_id = '019e306e-4994-7421-b184-efe9d1162e64'::uuid) AND (id = cm.class_id))
+                     Heap Fetches: 0
+                     Buffers: shared hit=129
+ Planning:
+   Buffers: shared hit=18
+ Planning Time: 0.212 ms
+ Execution Time: 0.109 ms
+(38 rows)
+

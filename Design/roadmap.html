@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>Lộ trình</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F5FB;--line:#E3E8F2;--text:#141B2D;--muted:#5F6B85;--pri:#3B5BDB;--pri-s:#E9EEFF;--org:#F0522B;--org-s:#FFEDE7;--grn:#0F8A5F;--grn-s:#DFF5EC;--yel:#E8A200;--yel-s:#FFF4D6;--pur:#7C4DFF;--pur-s:#EFE9FF;--sky:#0EA5E9;--sky-s:#E0F4FE}
+*{box-sizing:border-box}
+body{margin:0;background:#D9DEEA;font-family:'Be Vietnam Pro',sans-serif;color:var(--text);font-size:15px;line-height:1.45}
+.gfx{width:1440px;background:var(--bg);padding:36px 40px 40px;margin:30px auto}
+h1{font-size:28px;margin:0 0 4px;font-weight:800;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 26px;font-size:16px}
+svg.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 1px 2px rgba(20,27,45,.05),0 6px 20px rgba(20,27,45,.06)}
+/* gantt */
+.gantt{padding:22px 24px 26px}
+.weeks,.lane{display:grid;grid-template-columns:230px repeat(12,1fr);align-items:center}
+.weeks div{text-align:center;font-size:13px;font-weight:700;color:var(--muted);padding-bottom:10px}
+.weeks div:first-child{text-align:left}
+.lane{border-top:1px solid #EEF1F7;padding:11px 0;position:relative}
+.lane .nm{display:flex;gap:12px;align-items:center;font-weight:700;font-size:15.5px}
+.icb{width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bar{height:50px;border-radius:14px;display:flex;align-items:center;padding:0 16px;font-weight:600;font-size:14px;color:#fff;white-space:nowrap;overflow:hidden}
+.c1{background:var(--pri)}.c2{background:var(--grn)}.c3{background:var(--org)}.c4{background:var(--yel)}.c5{background:var(--pur)}.c6{background:var(--sky)}
+.s1{background:var(--pri-s);color:var(--pri)}.s2{background:var(--grn-s);color:var(--grn)}.s3{background:var(--org-s);color:var(--org)}.s4{background:var(--yel-s);color:#B07A00}.s5{background:var(--pur-s);color:var(--pur)}.s6{background:var(--sky-s);color:var(--sky)}
+.legend{display:flex;gap:22px;margin-top:18px;color:var(--muted);font-size:14px;align-items:center}
+.flag{display:inline-flex;gap:7px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:6px 13px;font-weight:700;color:var(--text)}
+/* stages */
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative}
+.stage{padding:20px 18px 18px;display:flex;flex-direction:column;gap:10px;position:relative}
+.stage .n{font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.stage h3{margin:0;font-size:19px;font-weight:800;line-height:1.25}
+.stage ul{margin:0;padding-left:18px;color:#3A455E;font-size:14.5px}
+.stage li{margin-bottom:5px}
+.when{margin-top:auto;border-radius:12px;padding:9px 11px;font-size:13.5px;font-weight:600}
+.pill{align-self:flex-start;font-size:12.5px;font-weight:800;padding:4px 11px;border-radius:99px}
+.arrow{position:absolute;right:-17px;top:42px;width:18px;height:18px;color:#A9B3C8;z-index:2}
+</style></head><body>
+<div id="root"></div>
+<script>
+const P={rocket:"M5 15c-1.500 1.500-2 5-2 5s3.500-.500 5-2M9 15l-3-3c1-5 5-9 14-9 0 9-4 13-9 14l-2-2zM15 9m-1.500 0a1.500 1.500 0 1 0 3 0a1.500 1.500 0 1 0-3 0",shield:"M12 3l8 3v6c0 4.500-3.200 7.800-8 9-4.800-1.200-8-4.500-8-9V6zM8.500 12l2.500 2.500 4.500-5",cube:"M12 2l9 5v10l-9 5-9-5V7zM12 12l9-5M12 12v10M12 12L3 7",bulb:"M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.500c.700.700 1 1.500 1 2.500h6c0-1 .300-1.800 1-2.500A6 6 0 0 0 12 3z",school:"M3 10l9-5 9 5-9 5zM7 12.500v4.500c2 2 8 2 10 0v-4.500M21 10v6",users:"M16 19v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1M9.500 10a3.500 3.500 0 1 0 0-7 3.500 3.500 0 0 0 0 7M21 19v-1a4 4 0 0 0-3-3.800M15.500 3.200a3.500 3.500 0 0 1 0 6.600",flag:"M5 21V4M5 4h12l-2 4 2 4H5",arrow:"M5 12h14M13 6l6 6-6 6",layers:"M12 3l9 5-9 5-9-5zM3 13l9 5 9-5",check:"M5 12.500l4.500 4.500L19 7.500",book:"M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5M9 8h6",chart:"M4 20V10M10 20V4M16 20v-7M22 20H2",bldg:"M5 21V4h9v17M14 9h5v12M3 21h18M8 8h3M8 12h3M8 16h3",chat:"M4 5h16v11H9l-5 4z",spark:"M12 3l2 6.500 6.500 2-6.500 2-2 6.500-2-6.500L3.500 11.500l6.500-2z",lock:"M6 11h12v9H6zM8 11V8a4 4 0 0 1 8 0v3",globe:"M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"};
+const ic=n=>`<svg class="ic" viewBox="0 0 24 24"><path d="${P[n]}"/></svg>`;
+const M=[
+ ['rocket','Nền tảng','Ứng dụng web riêng, chạy với AI thật','Bản chạy đầu tiên và 20 đề mở đầu'],
+ ['shield','Hình đúng','Hình và đáp số được kiểm chứng bằng tính toán','Nhãn "Đã kiểm chứng" trên từng bài'],
+ ['cube','Tương tác 3D','Thêm điểm, đo đạc, nét khuất, dùng tốt trên điện thoại','Bộ công cụ thao tác hình hoàn chỉnh'],
+ ['bulb','Gợi ý, kho đề, bài giảng','Gợi ý từng mức, lời giải đi cùng hình, từ khóa mở bài giảng','Kho 40–60 đề; hỏi đáp có ghi nguồn'],
+ ['school','Giáo viên','Giao bài, đặt giờ mở lời giải, theo dõi lớp','Luồng giáo viên – học sinh khép kín'],
+ ['flag','Dùng thử','Lớp học dùng thử, thu góp ý, tổng kết','Bàn giao MVP']];
+const gantt=`<div class="gfx" id="roadmap-mvp"><h1>Lộ trình MVP · 6 bước</h1><p class="sub">Hình Học Không Gian Cùng AI · làm xong bước trước rồi mới sang bước sau; cuối mỗi bước có bản chạy thử để xem và góp ý</p>
+<div class="stages" style="grid-template-columns:repeat(3,1fr);row-gap:20px">${M.map((m,i)=>`<div class="card stage" style="flex-direction:row;gap:16px;align-items:flex-start;padding:22px"><div class="icb s${i+1}" style="width:54px;height:54px;border-radius:16px">${ic(m[0])}</div><div style="display:flex;flex-direction:column;gap:7px;flex:1"><div class="n" style="color:var(--${['pri','grn','org','yel','pur','sky'][i]})">Bước ${i+1}</div><h3>${m[1]}</h3><div style="color:#3A455E;font-size:15px">${m[2]}</div><div class="when s${i+1}" style="margin-top:6px">${ic('check').replace('class="ic"','class="ic" style="width:15px;height:15px;vertical-align:-2px;margin-right:5px;stroke-width:2.6"')}${m[3]}</div></div>${i%3<2?`<div class="arrow" style="top:44px">${ic('arrow')}</div>`:''}</div>`).join('')}</div></div>`;
+const S=[
+ ['MVP hình không gian','pri','s1','rocket',['Hình 3D đã kiểm chứng, thao tác trực tiếp','Gợi ý trước, lời giải mở theo giờ giáo viên đặt','Từ khóa mở bài giảng, hỏi đáp có ghi nguồn','Kho đề soạn sẵn, giao bài, theo dõi lớp'],'Đang triển khai'],
+ ['Trọn môn Hình học','grn','s2','layers',['Thêm hình học phẳng','Soạn đề và bài giảng với AI, import từ file và ảnh, chỉnh bằng chat','Duyệt lời giải; trình chiếu; bài luyện có chấm'],''],
+ ['Lớp học thật','org','s3','users',['Tài khoản giáo viên và học sinh chính thức','Nhiều lớp, giao bài theo bộ','Kết quả tổng hợp theo lớp'],''],
+ ['Môn học thứ hai','pur','s5','book',['Dùng lại khung môn học đã xây','Cùng cách học: thấy, thử, hiểu','Mở đường cho các môn tiếp theo'],''],
+ ['Đánh giá và trợ lý giáo viên','sky','s6','spark',['Nộp bài viết tay; AI đề xuất điểm, giáo viên duyệt','Kho tri thức do giáo viên tự quản lý','Trợ lý soạn giáo án, bộ đề, thông báo'],''],
+ ['Hồ sơ học tập và phụ huynh','yel','s4','chart',['Mức nắm từng khái niệm, dựa trên bằng chứng','Giáo viên ghi nhận, can thiệp, duyệt giáo trình riêng cho từng học sinh','Phụ huynh theo dõi tiến độ, trao đổi với giáo viên'],''],
+ ['Cộng tác và liên trường','pri','s1','chat',['Nhóm học, trao đổi có điều phối','Cộng đồng giáo viên theo môn','Chia sẻ tài nguyên giữa các trường'],''],
+ ['Vận hành nhà trường','grn','s2','bldg',['Lớp, giáo viên, thời khóa biểu, thông báo','Báo cáo tổng hợp theo tổ bộ môn','Mỗi trường giữ nhận diện riêng'],''],
+ ['Quản trị giáo dục','org','s3','globe',['Phát hành văn bản, hướng dẫn tới các trường','Theo dõi xác nhận và triển khai','Số liệu tổng hợp trong phạm vi được ủy quyền'],'']];
+const stages=`<div class="gfx" id="roadmap-dai-han"><h1>Lộ trình sản phẩm · 9 chặng</h1><p class="sub">Làm tốt một môn trước, rồi mở rộng thành hệ sinh thái. Xong chặng trước rồi mới sang chặng sau.</p>
+<div class="stages" style="grid-template-columns:repeat(3,1fr);row-gap:20px">${S.map((s,i)=>`<div class="card stage" style="flex-direction:row;gap:16px;align-items:flex-start;padding:22px"><div class="icb ${s[2]}" style="width:54px;height:54px;border-radius:16px">${ic(s[3])}</div><div style="display:flex;flex-direction:column;gap:8px;flex:1"><div class="n" style="color:var(--${s[1]})">Chặng ${i+1}${s[5]?` · ${s[5]}`:''}</div><h3>${s[0]}</h3><ul>${s[4].map(x=>`<li>${x}</li>`).join('')}</ul></div>${i%3<2?`<div class="arrow" style="top:44px">${ic('arrow')}</div>`:''}</div>`).join('')}</div>
+<div class="card" style="margin-top:20px;padding:18px 22px;display:flex;gap:16px;align-items:center"><div class="icb s5" style="width:54px;height:54px;border-radius:16px">${ic('lock')}</div><div><div class="n" style="color:var(--pur);font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase">Xuyên suốt mọi chặng</div><div style="font-size:16px;font-weight:600;margin-top:3px">An toàn và tin cậy: riêng tư dữ liệu học sinh, kiểm chứng kết quả AI, giáo viên là người quyết định cuối · Định danh và kết nối với hệ thống sẵn có của trường</div></div></div></div>`;
+document.getElementById('root').innerHTML=gantt+stages;
+</script></body></html>

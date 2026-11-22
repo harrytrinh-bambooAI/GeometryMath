@@ -1,0 +1,72 @@
+psql:bench/test_hooks.sql:12: NOTICE:  role "geo_tester" has already been granted membership in role "geo_app" by role "geo"
+Time: 0.113 ms
+ setseed 
+---------
+ 
+(1 row)
+
+Time: 0.251 ms
+Time: 0.094 ms
+Time: 0.106 ms
+Time: 1.039 ms
+Time: 0.519 ms
+Time: 0.342 ms
+Time: 0.447 ms
+Time: 0.973 ms
+Time: 1.948 ms
+Time: 0.352 ms
+Time: 0.682 ms
+Time: 0.614 ms
+Time: 0.137 ms
+Time: 0.519 ms
+Time: 0.121 ms
+Time: 4.335 ms
+Time: 633.805 ms
+Time: 67.439 ms
+Time: 117.372 ms
+Time: 10.927 ms
+Time: 93.001 ms
+Time: 98.201 ms
+Time: 60.882 ms
+Time: 73.916 ms
+Time: 72.591 ms
+Time: 85.700 ms
+Time: 43.754 ms
+Time: 1868.277 ms (00:01.868)
+Time: 58.439 ms
+Time: 29.814 ms
+Time: 3.953 ms
+Time: 4.792 ms
+Time: 2.371 ms
+Time: 0.176 ms
+Time: 5.892 ms
+Time: 55.149 ms
+Time: 47.250 ms
+Time: 0.908 ms
+Time: 66.890 ms
+Time: 969.001 ms
+Time: 7462.546 ms (00:07.463)
+Time: 3085.340 ms (00:03.085)
+Time: 154.245 ms
+Time: 7.097 ms
+Time: 39.906 ms
+Time: 5.214 ms
+Time: 1.606 ms
+Time: 0.085 ms
+Time: 565.877 ms
+        t         |  count  
+------------------+---------
+ org              |      56
+ class            |     600
+ student          |   20000
+ assignment_class |    6000
+ assignment_self  |    8000
+ progress         |  177762
+ event_log        | 2044126
+ qa_turn          |  169697
+ problem          |    8060
+ lecture          |     300
+ keyword          |     900
+(11 rows)
+
+Time: 37.545 ms

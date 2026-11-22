@@ -1,0 +1,346 @@
+
+const P={home:"M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z",book:"M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5M9 8h6",users:"M16 19v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1M9.5 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M21 19v-1a4 4 0 0 0-3-3.8M15.5 3.2a3.5 3.5 0 0 1 0 6.6",chart:"M4 20V10M10 20V4M16 20v-7M22 20H2",cube:"M12 2l9 5v10l-9 5-9-5V7zM12 12l9-5M12 12v10M12 12L3 7",bulb:"M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z",lock:"M6 11h12v9H6zM8 11V8a4 4 0 0 1 8 0v3",unlock:"M6 11h12v9H6zM8 11V8a4 4 0 0 1 7.5-2",check:"M5 12.5l4.5 4.5L19 7.5",shield:"M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6zM8.5 12l2.5 2.5 4.5-5",clock:"M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18M12 7v5l3 2",chat:"M4 5h16v11H9l-5 4z",send:"M4 12l16-8-6 16-3-6z",cursor:"M5 3l14 7-6 2-2 6z",point:"M12 12m-3.2 0a3.2 3.2 0 1 0 6.4 0a3.2 3.2 0 1 0-6.4 0",line:"M6.5 17.5l11-11M5 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M19 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0",plane:"M3 17l5-10h13l-5 10z",ruler:"M3 17L17 3l4 4L7 21zM7 13l2 2M10 10l2 2M13 7l2 2",angle:"M4 19h16M4 19L16 5M11.5 19a8 8 0 0 0-2.4-5.6",axes:"M5 20V4M5 20h15M5 20l8-7",reset:"M4 12a8 8 0 1 0 2.5-5.8M4 4v4h4",search:"M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14M20 20l-4-4",plus:"M12 5v14M5 12h14",camera:"M4 8h3l2-3h6l2 3h3v11H4zM12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7",flame:"M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3.500 1.500-5.500 1 1 2.500 1 3.500-4.500z",eye:"M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6",cal:"M4 6h16v14H4zM4 10h16M8 3v4M16 3v4",spark:"M12 3l2 6.500 6.500 2-6.500 2-2 6.500-2-6.500L3.500 11.500l6.500-2z",play:"M7 4l12 8-12 8z",edit:"M4 20h4L19 9l-4-4L4 16zM13 7l4 4",file:"M6 3h8l4 4v14H6zM14 3v4h4",school:"M3 10l9-5 9 5-9 5zM7 12.500v4.500c2 2 8 2 10 0v-4.500M21 10v6",bldg:"M5 21V4h9v17M14 9h5v12M3 21h18M8 8h3M8 12h3M8 16h3",bell:"M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 20.500a2 2 0 0 0 4 0",arrow:"M5 12h14M13 6l6 6-6 6",x:"M6 6l12 12M18 6L6 18",trend:"M3 17l6-6 4 4 8-8M15 7h6v6",heart:"M12 20s-7-4.500-7-10a4 4 0 0 1 7-2.500A4 4 0 0 1 19 10c0 5.500-7 10-7 10z",layers:"M12 3l9 5-9 5-9-5zM3 13l9 5 9-5",flag:"M5 21V4M5 4h12l-2 4 2 4H5"};
+const ic=(n,s)=>`<svg class="ic" viewBox="0 0 24 24"${s?` style="${s}"`:''}><path d="${P[n]}"/></svg>`;
+
+/* ---------- hình ---------- */
+function pyramid(o={}){const hl=o.hl, ang=o.ang, proj=o.proj, mid=o.mid;
+return `<svg viewBox="0 0 440 360" xmlns="http://www.w3.org/2000/svg">
+<polygon points="80,268 256,312 372,250 196,214" fill="#3B5BDB" fill-opacity=".09"/>
+<polygon points="176,44 256,312 372,250" fill="#3B5BDB" fill-opacity=".13"/>
+<polygon points="176,44 80,268 256,312" fill="#3B5BDB" fill-opacity=".07"/>
+${proj?`<polygon points="176,44 196,214 372,250" fill="#F0522B" fill-opacity=".16"/>`:''}
+<g stroke="#253150" stroke-width="2.4" fill="none" stroke-linecap="round"><path d="M80,268L256,312L372,250M176,44L80,268M176,44L256,312"/></g>
+<g stroke="#253150" stroke-width="1.8" fill="none" stroke-dasharray="7 6" opacity=".65"><path d="M80,268L196,214L372,250M176,44L196,214"/></g>
+${proj?`<line x1="196" y1="214" x2="372" y2="250" stroke="#F0522B" stroke-width="3" stroke-dasharray="8 6"/><path d="M194.4,200.1L208.1,202.9L209.7,216.8" fill="none" stroke="#F0522B" stroke-width="2"/>`:''}
+${hl?`<line x1="176" y1="44" x2="372" y2="250" stroke="#F0522B" stroke-width="4" stroke-linecap="round"/>`:`<line x1="176" y1="44" x2="372" y2="250" stroke="#253150" stroke-width="2.4" stroke-linecap="round"/>`}
+${ang?`<path d="M336,242.600 A36,36 0 0 1 347.200,223.900" fill="none" stroke="#F0522B" stroke-width="2.6"/><text x="300" y="236" fill="#F0522B" font-size="15" font-weight="800">45°</text>`:''}
+${mid?`<circle cx="274" cy="147" r="6" fill="#7C4DFF"/><text x="284" y="142" fill="#7C4DFF" font-size="16" font-weight="800">M</text>`:''}
+<g fill="#141B2D"><circle cx="80" cy="268" r="5"/><circle cx="256" cy="312" r="5"/><circle cx="372" cy="250" r="5"/><circle cx="196" cy="214" r="5"/><circle cx="176" cy="44" r="5"/></g>
+<g fill="#141B2D" font-size="19" font-weight="800" font-family="Be Vietnam Pro"><text x="160" y="34">S</text><text x="56" y="282">B</text><text x="250" y="340">C</text><text x="384" y="256">D</text><text x="168" y="210">A</text></g></svg>`;}
+const sh={
+ chop:c=>`<svg viewBox="0 0 100 90"><polygon points="20,70 62,80 88,62 46,54" fill="${c}" fill-opacity=".15"/><path d="M20,70L62,80L88,62M42,10L20,70M42,10L62,80M42,10L88,62" fill="none" stroke="${c}" stroke-width="2.4" stroke-linejoin="round"/><path d="M20,70L46,54L88,62M42,10L46,54" fill="none" stroke="${c}" stroke-width="1.6" stroke-dasharray="4 4" opacity=".7"/></svg>`,
+ hop:c=>`<svg viewBox="0 0 100 90"><polygon points="14,30 62,30 62,78 14,78" fill="${c}" fill-opacity=".14"/><path d="M14,30H62V78H14zM14,30L36,12H84L62,30M84,12V60L62,78" fill="none" stroke="${c}" stroke-width="2.4" stroke-linejoin="round"/><path d="M36,12V60H84M36,60L14,78" fill="none" stroke="${c}" stroke-width="1.6" stroke-dasharray="4 4" opacity=".7"/></svg>`,
+ lang:c=>`<svg viewBox="0 0 100 90"><polygon points="12,74 50,82 30,56" fill="${c}" fill-opacity=".16"/><path d="M12,74L50,82M12,74L52,22L90,30L50,82M52,22L70,4L90,30" fill="none" stroke="${c}" stroke-width="2.4" stroke-linejoin="round"/><path d="M12,74L30,56L50,82M30,56L70,4" fill="none" stroke="${c}" stroke-width="1.6" stroke-dasharray="4 4" opacity=".7"/></svg>`,
+ non:c=>`<svg viewBox="0 0 100 90"><ellipse cx="50" cy="70" rx="34" ry="11" fill="${c}" fill-opacity=".15"/><path d="M16,70A34,11 0 0 0 84,70M50,8L16,70M50,8L84,70" fill="none" stroke="${c}" stroke-width="2.4"/><path d="M16,70A34,11 0 0 1 84,70M50,8V70" fill="none" stroke="${c}" stroke-width="1.6" stroke-dasharray="4 4" opacity=".7"/></svg>`,
+ tru:c=>`<svg viewBox="0 0 100 90"><ellipse cx="50" cy="18" rx="30" ry="9" fill="${c}" fill-opacity=".15" stroke="${c}" stroke-width="2.4"/><path d="M20,18V70A30,9 0 0 0 80,70V18" fill="none" stroke="${c}" stroke-width="2.4"/><path d="M20,70A30,9 0 0 1 80,70" fill="none" stroke="${c}" stroke-width="1.6" stroke-dasharray="4 4" opacity=".7"/></svg>`,
+ cau:c=>`<svg viewBox="0 0 100 90"><circle cx="50" cy="45" r="34" fill="${c}" fill-opacity=".13" stroke="${c}" stroke-width="2.4"/><path d="M16,45A34,11 0 0 0 84,45" fill="none" stroke="${c}" stroke-width="2"/><path d="M16,45A34,11 0 0 1 84,45" fill="none" stroke="${c}" stroke-width="1.6" stroke-dasharray="4 4" opacity=".7"/></svg>`};
+
+/* ---------- khung ---------- */
+const NAV={
+ gv:[['home','Tổng quan'],['book','Kho đề'],['users','Lớp học'],['chart','Theo dõi']],
+ hs:[['home','Bài của em'],['cube','Tự học'],['clock','Lịch sử']],
+ nh:[['home','Bài của em'],['cube','Tự học'],['users','Nhóm học'],['clock','Lịch sử']],
+ ph:[['home','Tổng quan'],['chart','Tiến bộ'],['cal','Lịch'],['chat','Trao đổi']],
+ tr:[['home','Tổng quan'],['users','Lớp & GV'],['cal','Thời khóa biểu'],['bell','Thông báo'],['chart','Báo cáo']],
+ ql:[['home','Tổng quan'],['file','Chính sách'],['school','Trường'],['chart','Báo cáo']]};
+const WHO={nh:['A','#F0522B'],gv:['GV','#3B5BDB'],hs:['A','#F0522B'],ph:['PH','#0F8A5F'],tr:['QT','#7C4DFF'],ql:['QL','#0EA5E9']};
+function screen(id,role,on,title,crumb,body,o={}){
+ return `<section class="screen" id="${id}">
+ <nav class="rail"><div class="logo">${ic('cube')}</div>${NAV[role].map((n,i)=>`<a class="${i===on?'on':''}">${ic(n[0],'width:22px;height:22px')}${n[1]}</a>`).join('')}<div class="sp"></div></nav>
+ <div class="main"><div class="top"><div><h1>${title}</h1>${crumb?`<div class="crumb">${crumb}</div>`:''}</div>
+ <div class="r">${o.top||''}${o.concept?`<span class="chip pur" style="padding:8px 14px;font-size:12.5px">${ic('spark')}Concept · chưa có trong MVP</span>`:''}${o.noSeg?'':`<div class="seg"><span class="${role==='gv'?'on':''}">${ic('school')}Giáo viên</span><span class="${role==='hs'?'on':''}">${ic('users')}Học sinh</span></div>`}<div class="ava" style="background:${WHO[role][1]}">${WHO[role][0]}</div></div></div>
+ <div class="body">${body}</div></div></section>`;}
+
+/* =================== MVP =================== */
+const probCard=(t,topic,lv,shape,c,ok=true)=>`<div class="card pad col" style="gap:10px">
+ <div class="thumb">${sh[shape](c)}</div>
+ <div class="row" style="gap:6px"><span class="chip pri">${lv}</span><span class="chip">${topic}</span>${ok?`<span class="chip grn" style="margin-left:auto">${ic('shield')}Đã kiểm chứng</span>`:`<span class="chip yel" style="margin-left:auto">Cần xem lại</span>`}</div>
+ <div style="font-weight:600;font-size:13.5px;height:58px;overflow:hidden">${t}</div>
+ <div class="row"><span class="tiny muted row" style="gap:4px">${ic('spark','width:13px;height:13px')}AI soạn · 4 bước</span><span class="btn sm" style="margin-left:auto">${ic('send')}Giao bài</span></div></div>`;
+
+const T1=screen('mvp-01-kho-de','gv',1,'Kho đề hình không gian','48 đề · 44 đã kiểm chứng · tài liệu của Giáo viên mẫu',`
+<div class="col grow" style="gap:14px">
+ <div class="row">
+  <div class="field grow">${ic('search')}<span class="muted" style="font-weight:500">Tìm theo nội dung đề, ví dụ "góc giữa đường thẳng và mặt phẳng"</span></div>
+  <span class="btn ghost">${ic('plus')}Thêm đề (sắp có)</span></div>
+ <div class="row" style="flex-wrap:wrap;gap:8px">
+  <span class="small muted" style="font-weight:700">Cấp</span><span class="chip on">Tất cả</span><span class="chip">THCS</span><span class="chip">THPT</span>
+  <span class="small muted" style="font-weight:700;margin-left:14px">Hình</span>
+  <span class="chip on">Tất cả</span><span class="chip">${ic('layers')}Hình chóp</span><span class="chip">Lăng trụ</span><span class="chip">Hình hộp</span><span class="chip">Nón · Trụ · Cầu</span>
+  <span class="small muted" style="font-weight:700;margin-left:14px">Dạng bài</span><span class="chip">Góc</span><span class="chip">Khoảng cách</span><span class="chip">Thể tích</span><span class="chip">Thiết diện</span></div>
+ <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+  ${probCard('Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy.','Góc','THPT','chop','#3B5BDB')}
+  ${probCard('Cho hình lập phương ABCD.A′B′C′D′ cạnh a. Tính khoảng cách giữa AC và B′D′.','Khoảng cách','THPT','hop','#F0522B')}
+  ${probCard('Lăng trụ đứng tam giác có đáy là tam giác đều cạnh 4 cm, chiều cao 6 cm. Tính thể tích.','Thể tích','THCS','lang','#0F8A5F')}
+  ${probCard('Hình nón có bán kính đáy 3 cm, đường sinh 5 cm. Tính diện tích xung quanh và thể tích.','Thể tích','THCS','non','#7C4DFF')}
+  ${probCard('Hình trụ có chiều cao 10 cm, bán kính đáy 4 cm. Tính diện tích toàn phần.','Diện tích','THCS','tru','#0EA5E9')}
+  ${probCard('Cho hình chóp đều S.ABCD cạnh đáy a, cạnh bên a√2. Tính thể tích khối chóp.','Thể tích','THPT','chop','#E8A200')}
+  ${probCard('Mặt cầu ngoại tiếp hình lập phương cạnh a. Tính bán kính và thể tích khối cầu.','Mặt cầu','THPT','cau','#F0522B',false)}
+  ${probCard('Cho hình hộp chữ nhật có ba kích thước 3, 4, 12. Tính độ dài đường chéo.','Độ dài','THCS','hop','#3B5BDB')}
+ </div></div>`);
+
+const T2=screen('mvp-02-giao-bai','gv',1,'Chi tiết đề & giao bài','Kho đề › Hình chóp › Góc giữa đường thẳng và mặt phẳng',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="canvas" style="flex:none;height:400px">
+  <div class="prob"><div class="icb pri">${ic('file')}</div><div class="grow">Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy.</div><span class="chip grn">${ic('shield')}Đã kiểm chứng</span></div>
+  <div class="fig" style="bottom:14px">${pyramid({hl:1,ang:1,proj:1})}</div>
+  <div class="views"><span>${ic('eye')}Xem như học sinh</span><span>${ic('play')}Trình chiếu</span></div></div>
+ <div class="card pad grow" style="overflow:hidden">
+  <div class="row" style="margin-bottom:10px"><h2 style="margin:0">Lời giải</h2><span class="chip pur">${ic('spark')}AI soạn · tài liệu của Giáo viên mẫu</span><span class="chip grn">Đáp số khớp tính toán: 45°</span><span class="btn sm ghost" style="margin-left:auto">${ic('edit')}Sửa (sắp có)</span></div>
+  <div class="col" style="gap:9px">
+   <div class="row" style="align-items:flex-start"><div class="num done">1</div><div><h3>Tìm hình chiếu của SD lên mặt đáy</h3><div class="small muted">SA ⊥ (ABCD) nên A là hình chiếu của S. Hình chiếu của SD là AD.</div></div></div>
+   <div class="row" style="align-items:flex-start"><div class="num done">2</div><div><h3>Xác định góc cần tìm</h3><div class="small muted">Góc giữa SD và (ABCD) là góc SDA trong tam giác SAD vuông tại A.</div></div></div>
+   <div class="row" style="align-items:flex-start"><div class="num done">3</div><div><h3>Tính góc</h3><div class="small muted">tan SDA = SA / AD = a / a = 1, suy ra góc SDA = 45°.</div></div></div>
+  </div></div></div>
+<div class="card pad col" style="width:392px;flex-shrink:0;gap:14px">
+ <div class="row"><div class="icb org">${ic('send')}</div><div><h2 style="margin:0">Giao bài cho lớp</h2><div class="small muted">Ba bước, xong trong một phút</div></div></div>
+ <div><div class="lbl">1 · Chọn lớp</div><div class="row"><span class="chip on" style="padding:8px 13px;font-size:12.5px">${ic('check')}11A1 · THPT (5 HS)</span><span class="chip" style="padding:8px 13px;font-size:12.5px">9B · THCS (5 HS)</span></div></div>
+ <div><div class="lbl">2 · Học sinh được trợ giúp gì trong lúc làm</div>
+  <div class="col" style="gap:8px">
+   <div class="field">${ic('bulb')}<span class="grow">Gợi ý mức 1 và 2</span><div class="toggle"></div></div>
+   <div class="field">${ic('chat')}<span class="grow">Hỏi đáp (không nêu đáp số)</span><div class="toggle"></div></div></div></div>
+ <div><div class="lbl">3 · Thời điểm mở lời giải</div>
+  <div class="row"><div class="field grow">${ic('cal')}Thứ Hai, 23/11</div><div class="field" style="width:118px">${ic('clock')}19:00</div></div>
+  <div class="row" style="margin-top:8px;gap:6px"><span class="chip">Ngay bây giờ</span><span class="chip pri">19:00 thứ Hai</span><span class="chip">Sau buổi học tới</span></div></div>
+ <div class="hint lock" style="align-items:center"><div class="icb yel">${ic('lock')}</div><div class="small"><b>Trước 19:00 ngày 23/11</b>, học sinh chỉ thấy đề, hình và gợi ý. Lời giải và đáp số được giữ ở máy chủ.</div></div>
+ <div class="grow"></div>
+ <span class="btn" style="padding:13px">${ic('send')}Giao bài cho 11A1</span>
+ <div class="tiny muted" style="text-align:center">Có thể đổi giờ mở hoặc mở ngay bất cứ lúc nào.</div></div>`);
+
+const stRow=(n,c,open,h1,h2,q,t,st)=>`<tr><td><div class="row"><div class="ava" style="width:30px;height:30px;font-size:12px;background:${c}">${n[0]}</div><b>${n}</b></div></td>
+ <td>${open?`<span class="chip grn">${ic('check')}Đã mở</span>`:'<span class="chip">Chưa mở</span>'}</td>
+ <td><span class="dot ${h1?'on':''}">${ic('bulb')}</span><span class="dot ${h2?'on':''}">${ic('bulb')}</span></td>
+ <td>${q?`<span class="chip pri">${ic('chat')}${q} câu</span>`:'<span class="muted">—</span>'}</td><td class="muted">${t}</td><td>${st}</td></tr>`;
+const T3=screen('mvp-03-theo-doi-lop','gv',3,'Theo dõi lớp 11A1','Bài: Góc giữa SD và mặt đáy · giao lúc 14:30 hôm nay',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="row" style="gap:14px">
+  <div class="card stat"><div class="icb pri">${ic('eye')}</div><div><b>4/5</b><span class="small muted">đã mở bài</span></div></div>
+  <div class="card stat"><div class="icb yel">${ic('bulb')}</div><div><b>3</b><span class="small muted">dùng gợi ý</span></div></div>
+  <div class="card stat"><div class="icb pur">${ic('chat')}</div><div><b>7</b><span class="small muted">câu hỏi</span></div></div>
+  <div class="card stat"><div class="icb org">${ic('cube')}</div><div><b>12′</b><span class="small muted">thao tác hình</span></div></div></div>
+ <div class="card pad">
+  <div class="row" style="margin-bottom:6px"><h2 style="margin:0">Học sinh</h2><span class="chip" style="margin-left:auto">Dữ liệu mẫu</span></div>
+  <table><thead><tr><th>Học sinh</th><th>Mở bài</th><th>Gợi ý 1 · 2</th><th>Hỏi đáp</th><th>Thời gian</th><th>Tình trạng</th></tr></thead><tbody>
+  ${stRow('An','#F0522B',1,1,1,3,'18 phút','<span class="chip yel">Đang chờ lời giải</span>')}
+  ${stRow('Bình','#3B5BDB',1,1,0,2,'11 phút','<span class="chip pri">Đang làm</span>')}
+  ${stRow('Chi','#0F8A5F',1,0,0,0,'9 phút','<span class="chip grn">Tự làm, không cần gợi ý</span>')}
+  ${stRow('Dũng','#7C4DFF',1,1,1,2,'21 phút','<span class="chip yel">Đang chờ lời giải</span>')}
+  ${stRow('Hà','#0EA5E9',0,0,0,0,'—','<span class="chip">Chưa bắt đầu</span>')}
+  </tbody></table></div></div>
+<div class="col" style="width:372px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:12px;border-color:#F4D58A;background:#FFFBEE">
+  <div class="row"><div class="icb yel">${ic('lock')}</div><div><h2 style="margin:0">Lời giải đang khóa</h2><div class="small muted">Mở lúc 19:00 hôm nay · còn 3 giờ 12 phút</div></div></div>
+  <div class="row"><span class="btn org grow">${ic('unlock')}Mở ngay</span><span class="btn ghost grow">${ic('clock')}Đổi giờ</span></div></div>
+ <div class="card pad grow col" style="gap:10px">
+  <h2 style="margin:0">Học sinh đang hỏi gì</h2>
+  <div class="hint"><div class="icb pur">${ic('chat')}</div><div><h3>"Vì sao A là hình chiếu của S?"</h3><p>An, Dũng · 2 lượt</p></div></div>
+  <div class="hint"><div class="icb pur">${ic('chat')}</div><div><h3>"Góc cần tìm là góc nào trên hình?"</h3><p>Bình, An · 3 lượt</p></div></div>
+  <div class="hint" style="border-color:#C9D3F5;background:#F5F7FF"><div class="icb pri">${ic('flag')}</div><div><h3>Nên nhắc lại trên lớp</h3><p>3/4 học sinh vướng ở bước tìm hình chiếu của đường thẳng lên mặt phẳng.</p></div></div>
+ </div></div>`);
+
+const asg=(t,shape,c,st,p,cta)=>`<div class="card pad row" style="gap:16px;align-items:stretch">
+ <div class="thumb" style="width:132px;height:auto;flex-shrink:0">${sh[shape](c)}</div>
+ <div class="grow col" style="gap:8px"><div class="row">${st}</div><div style="font-weight:700;font-size:14.5px">${t}</div>
+ <div class="steps" style="max-width:260px">${[0,1,2].map(i=>`<i class="${i<p?(p===3?'g':'on'):''}"></i>`).join('')}</div>
+ <div class="tiny muted">${['Chưa bắt đầu','Đã xem gợi ý 1','Đã xem gợi ý 2','Đã xem lời giải'][p]}</div></div>
+ <div class="col" style="justify-content:center">${cta}</div></div>`;
+const S1=screen('mvp-04-bai-cua-em','hs',0,'Chào An 👋','Lớp 11A1 · hôm nay em có 2 bài cần làm',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <h2 style="margin:4px 0 0">Bài được giao</h2>
+ ${asg('Hình chóp S.ABCD: tính góc giữa SD và mặt đáy','chop','#3B5BDB',`<span class="chip yel">${ic('lock')}Lời giải mở lúc 19:00 hôm nay</span><span class="chip">Góc</span>`,2,`<span class="btn">${ic('play')}Làm tiếp</span>`)}
+ ${asg('Hình lập phương cạnh a: khoảng cách giữa AC và B′D′','hop','#F0522B',`<span class="chip yel">${ic('lock')}Lời giải mở thứ Tư 25/11</span><span class="chip">Khoảng cách</span>`,0,`<span class="btn soft">${ic('play')}Bắt đầu</span>`)}
+ ${asg('Lăng trụ đứng tam giác đều: tính thể tích','lang','#0F8A5F',`<span class="chip grn">${ic('unlock')}Lời giải đã mở</span><span class="chip">Thể tích</span>`,3,`<span class="btn ghost">${ic('eye')}Xem lại</span>`)}
+</div>
+<div class="col" style="width:372px;flex-shrink:0;gap:14px">
+ <div class="card pad" style="background:linear-gradient(135deg,#3B5BDB,#7C4DFF);color:#fff;border:none">
+  <div class="row"><div class="icb" style="background:rgba(255,255,255,.2);color:#fff">${ic('flame')}</div><div><div style="font-size:22px;font-weight:800">3 ngày liên tiếp</div><div class="small" style="opacity:.85">Em đã tự xoay hình ở 5 bài tuần này</div></div></div></div>
+ <div class="card pad col" style="gap:12px"><h2 style="margin:0">Em đang học tới đâu</h2>
+  ${[['Góc','#3B5BDB',70],['Khoảng cách','#F0522B',35],['Thể tích','#0F8A5F',85],['Thiết diện','#7C4DFF',15]].map(x=>`<div><div class="row small" style="margin-bottom:5px"><b>${x[0]}</b><span class="muted" style="margin-left:auto">${x[2]}%</span></div><div class="bar"><i style="width:${x[2]}%;background:${x[1]}"></i></div></div>`).join('')}
+  <div class="tiny muted">Tính theo số bài em đã làm trong từng dạng.</div></div>
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Tự khám phá</h2><div class="small muted">Dán đề của em hoặc chọn một hình mẫu để xoay thử.</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">${[['chop','#3B5BDB'],['hop','#F0522B'],['non','#7C4DFF']].map(x=>`<div class="thumb" style="height:74px">${sh[x[0]](x[1]).replace('<svg','<svg style="height:54px"')}</div>`).join('')}</div>
+  <span class="btn soft">${ic('cube')}Mở chế độ tự học</span></div></div>`);
+
+const dock=on=>`<div class="dock">${[['cursor','Chọn'],['point','Điểm'],['line','Đường'],['plane','Mặt phẳng']].map((x,i)=>`<b class="${i===on?'on':''}">${ic(x[0],'width:21px;height:21px')}${x[1]}</b>`).join('')}<i></i>${[['ruler','Đo dài'],['angle','Đo góc'],['axes','Oxyz']].map((x,i)=>`<b class="${i+4===on?'on':''}">${ic(x[0],'width:21px;height:21px')}${x[1]}</b>`).join('')}<i></i><b>${ic('reset','width:21px;height:21px')}Đặt lại</b></div>`;
+const probBar=`<div class="prob"><div class="icb pri">${ic('file')}</div><div class="grow">Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy.</div><span class="chip grn">${ic('shield')}Hình đã kiểm chứng</span></div>`;
+const views=`<div class="views"><span>${ic('eye')}Nhìn từ trước</span><span>${ic('layers')}Nhìn từ trên</span><span>${ic('cube')}Xoay tự do</span></div>`;
+
+const S2=screen('mvp-05-lam-bai','hs',0,'Góc giữa SD và mặt đáy','Bài được giao · lớp 11A1',`
+<div class="canvas">${probBar}<div class="fig">${pyramid({hl:1,mid:1})}</div>${views}
+ <div class="meas"><span>SA = a</span><span>AD = a</span></div>${dock(4)}</div>
+<div class="card side">
+ <div class="tabs"><span class="on">${ic('bulb')}Gợi ý</span><span>${ic('lock')}Lời giải</span><span>${ic('chat')}Hỏi đáp</span></div>
+ <div class="pad col grow" style="gap:11px">
+  <div><div class="row small" style="margin-bottom:6px"><b>Tiến độ của em</b><span class="muted" style="margin-left:auto">2/3</span></div><div class="steps"><i class="on"></i><i class="on"></i><i></i></div></div>
+  <div class="hint"><div class="icb yel">${ic('bulb')}</div><div><h3>Gợi ý 1 · Hướng nghĩ</h3><p>Góc giữa đường thẳng và mặt phẳng là góc giữa đường đó và hình chiếu của nó trên mặt phẳng.</p></div></div>
+  <div class="hint act"><div class="icb yel">${ic('bulb')}</div><div><h3>Gợi ý 2 · Bước kế tiếp</h3><p>Hình chiếu của S lên mặt đáy là điểm nào? Thử bấm vào điểm đó trên hình.</p><div class="row" style="margin-top:8px"><span class="chip pri">${ic('cursor')}Bấm chọn trên hình</span></div></div></div>
+  <div class="hint lock" style="align-items:center"><div class="icb" style="background:#E7EBF4;color:var(--muted)">${ic('lock')}</div><div><h3>Lời giải mở lúc 19:00 hôm nay</h3><p>Do giáo viên của em đặt. Còn 3 giờ 12 phút.</p></div></div>
+  <div class="grow"></div>
+  <div class="field" style="background:var(--soft)">${ic('chat')}<span class="muted grow" style="font-weight:500">Hỏi về bài này…</span><div class="icb pri" style="width:32px;height:32px">${ic('send','width:16px;height:16px')}</div></div>
+ </div></div>`);
+
+const S3=screen('mvp-06-loi-giai-da-mo','hs',0,'Góc giữa SD và mặt đáy','Bài được giao · lời giải đã mở lúc 19:00',`
+<div class="canvas">${probBar}<div class="fig">${pyramid({hl:1,ang:1,proj:1})}</div>${views}
+ <div class="meas"><span>SA = a</span><span>AD = a</span><span>∠SDA = 45°</span></div>${dock(0)}</div>
+<div class="card side">
+ <div class="tabs"><span>${ic('bulb')}Gợi ý</span><span class="on">${ic('unlock')}Lời giải</span><span>${ic('chat')}Hỏi đáp</span></div>
+ <div class="pad col grow" style="gap:10px">
+  <div class="row"><span class="chip grn">${ic('shield')}Đáp số đã kiểm chứng</span><span class="chip pur">${ic('spark')}AI soạn</span></div>
+  <div class="hint"><div class="num done">1</div><div><h3>Tìm hình chiếu của SD</h3><p>SA ⊥ (ABCD) nên A là hình chiếu của S. Hình chiếu của SD là AD.</p></div></div>
+  <div class="hint act"><div class="num on">2</div><div><h3>Xác định góc cần tìm</h3><p>Góc giữa SD và (ABCD) là góc SDA. Tam giác SAD vuông tại A.</p>
+   <div class="row" style="margin-top:8px;gap:6px"><span class="chip org">${ic('eye')}Đang tô trên hình: SD, AD, góc SDA</span></div>
+   <div class="small" style="margin-top:8px;padding:8px 10px;border-radius:10px;background:#fff;border:1px dashed #C9D3F5"><b style="color:var(--pri)">Vì sao nghĩ ra bước này?</b> Có hình chiếu rồi thì góc cần tìm nằm trong một tam giác vuông, tính được bằng tỉ số lượng giác.</div></div></div>
+  <div class="hint"><div class="num">3</div><div><h3>Tính góc</h3><p>tan SDA = SA / AD = 1, suy ra góc SDA = 45°.</p></div></div>
+  <div class="grow"></div>
+  <div class="row"><span class="btn ghost grow">${ic('arrow','transform:rotate(180deg)')}Bước trước</span><span class="btn grow">Bước sau${ic('arrow')}</span></div>
+ </div></div>`);
+
+const S4=screen('mvp-07-tu-hoc','hs',1,'Tự học','Dán đề của em, hoặc chọn một hình để khám phá',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="card pad col" style="gap:12px">
+  <div class="row"><div class="icb pri">${ic('edit')}</div><h2 style="margin:0">Đề bài của em</h2><span class="seg" style="margin-left:auto"><span>THCS</span><span class="on">THPT</span></span></div>
+  <div class="field" style="align-items:flex-start;height:104px;font-weight:500">Cho hình lăng trụ đứng ABC.A′B′C′ có đáy là tam giác vuông tại A, AB = 3, AC = 4, AA′ = 5. Tính khoảng cách từ A đến mặt phẳng (A′BC).</div>
+  <div class="row"><span class="btn ghost">${ic('camera')}Chụp hoặc dán ảnh đề</span><span class="small muted">Ảnh sẽ được đọc thành chữ để em sửa lại</span><span class="btn" style="margin-left:auto;padding:11px 22px">${ic('spark')}Dựng hình</span></div></div>
+ <div class="card pad grow"><h2>Hoặc chọn một hình mẫu</h2>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px">
+  ${[['chop','#3B5BDB','Hình chóp'],['lang','#0F8A5F','Lăng trụ'],['hop','#F0522B','Hình hộp'],['non','#7C4DFF','Hình nón'],['tru','#0EA5E9','Hình trụ'],['cau','#E8A200','Hình cầu']].map(x=>`<div class="col" style="gap:7px;align-items:center"><div class="thumb" style="width:100%;height:132px">${sh[x[0]](x[1])}</div><b class="small">${x[2]}</b></div>`).join('')}</div>
+  <div class="hint" style="margin-top:14px;align-items:center;background:var(--soft)"><div class="icb yel">${ic('bulb')}</div><div class="small">Ở chế độ tự học, em xem <b>gợi ý 1 và 2</b> trước, sau đó mới mở được lời giải.</div></div></div></div>
+<div class="card pad col" style="width:372px;flex-shrink:0;gap:10px"><h2 style="margin:0">Em đã tự học gần đây</h2>
+ ${[['Lăng trụ đứng tam giác: khoảng cách từ điểm đến mặt phẳng','lang','#0F8A5F','Hôm qua',1],['Hình nón: diện tích xung quanh','non','#7C4DFF','2 ngày trước',1],['Chóp tam giác đều: góc giữa cạnh bên và đáy','chop','#3B5BDB','Tuần trước',0]].map(x=>`<div class="hint" style="align-items:center"><div class="thumb" style="width:58px;height:58px;flex-shrink:0">${sh[x[1]](x[2]).replace('<svg','<svg style="height:42px"')}</div><div class="grow"><h3 style="font-size:13px">${x[0]}</h3><p class="row" style="gap:6px">${x[3]} ${x[4]?`<span class="chip grn">${ic('shield')}Đã kiểm chứng</span>`:'<span class="chip yel">Cần xem lại</span>'}</p></div></div>`).join('')}
+ <div class="grow"></div><div class="tiny muted">"Cần xem lại" nghĩa là hình do AI tự dựng và chưa qua kiểm tra bằng tính toán.</div></div>`);
+
+const M1=`<section class="screen mobile" id="mvp-08-dien-thoai"><div style="height:100%;display:flex;flex-direction:column">
+ <div class="row" style="padding:14px 16px 8px"><div class="icb pri" style="width:34px;height:34px">${ic('arrow','transform:rotate(180deg)')}</div><div class="grow"><b>Góc giữa SD và mặt đáy</b><div class="tiny muted">Lớp 11A1</div></div><span class="chip grn">${ic('shield')}</span></div>
+ <div class="canvas" style="margin:0 12px;flex:1;border-radius:18px">
+  <div class="fig" style="top:8px;bottom:70px">${pyramid({hl:1,mid:1})}</div>
+  <div class="dock" style="bottom:10px;padding:5px">${[['cursor',1],['point'],['line'],['plane'],['angle'],['reset']].map(x=>`<b class="${x[1]?'on':''}" style="width:48px;padding:9px 0">${ic(x[0],'width:21px;height:21px')}</b>`).join('')}</div></div>
+ <div class="card" style="margin:10px 12px 0;border-radius:22px 22px 0 0;border-bottom:none;padding:8px 14px 18px">
+  <div style="width:42px;height:5px;border-radius:9px;background:#D5DBE8;margin:0 auto 10px"></div>
+  <div class="tabs" style="padding:0 0 8px;border:none"><span class="on">${ic('bulb')}Gợi ý</span><span>${ic('lock')}Lời giải</span><span>${ic('chat')}Hỏi</span></div>
+  <div class="hint act"><div class="icb yel">${ic('bulb')}</div><div><h3>Gợi ý 2 · Bước kế tiếp</h3><p>Hình chiếu của S lên mặt đáy là điểm nào? Thử chạm vào điểm đó.</p></div></div>
+  <div class="hint lock" style="margin-top:8px;align-items:center;padding:9px 12px"><div class="icb" style="background:#E7EBF4;color:var(--muted);width:32px;height:32px">${ic('lock','width:16px;height:16px')}</div><b class="small">Lời giải mở lúc 19:00 hôm nay</b></div>
+ </div></div></section>`;
+
+/* =================== VISION (concept) =================== */
+const crit=(n,d,p,m,cf,st)=>`<div class="hint" style="align-items:center"><div class="grow"><h3>${n}</h3><p>${d}</p></div>
+ <div style="text-align:center;width:74px"><div style="font-size:19px;font-weight:800;color:var(--pri)">${p}<span class="muted" style="font-size:12px">/${m}</span></div><div class="tiny muted">AI đề xuất</div></div>
+ <span class="chip ${cf==='Cao'?'grn':'yel'}">Tin cậy: ${cf}</span>
+ ${st?`<span class="btn sm grn">${ic('check')}Đã nhận</span>`:`<span class="btn sm ghost">${ic('edit')}Sửa</span>`}</div>`;
+const V1=screen('vision-01-ai-cham-bai','gv',3,'Chấm bài · An (11A1)','AI đề xuất điểm theo từng tiêu chí, giáo viên duyệt mới thành điểm chính thức',`
+<div class="card pad col" style="width:470px;flex-shrink:0;gap:10px">
+ <div class="row"><h2 style="margin:0">Bài làm viết tay</h2><span class="chip" style="margin-left:auto">Ảnh gốc · trang 1/2</span></div>
+ <div class="paper grow">Ta có SA ⊥ (ABCD) nên A là hình chiếu của S<br>⇒ hình chiếu của SD lên đáy là AD<br>⇒ góc cần tìm là góc SDA<br>Tam giác SAD vuông tại A:<br>tan SDA = SA / SD = a / a√2<br>⇒ góc SDA ≈ 35°
+  <div class="mark" style="left:10px;right:60px;top:121px;height:56px"></div></div>
+ <div class="hint" style="border-color:#F7C2B3;background:var(--org-s);align-items:center"><div class="icb org">${ic('flag')}</div><div class="small"><b>AI tìm thấy chỗ sai:</b> dùng SD thay cho AD ở mẫu số. Đáp số đúng là 45°.</div></div></div>
+<div class="col grow" style="gap:12px;min-width:0">
+ <div class="card pad col" style="gap:10px"><div class="row"><h2 style="margin:0">Tiêu chí chấm</h2><span class="chip pur">${ic('spark')}Đề xuất của AI · chưa phải điểm chính thức</span></div>
+  ${crit('Xác định hình chiếu','Chỉ ra A là hình chiếu của S, AD là hình chiếu của SD','3','3','Cao',1)}
+  ${crit('Xác định góc','Nêu đúng góc SDA và tam giác vuông','3','3','Cao',1)}
+  ${crit('Tính toán','Lập đúng tỉ số lượng giác và ra đáp số','1','3','Cao',0)}
+  ${crit('Trình bày','Lập luận rõ ràng, đủ căn cứ','0,5','1','Vừa',0)}</div>
+ <div class="card pad row" style="gap:16px"><div><div class="small muted">Tổng điểm đề xuất</div><div style="font-size:30px;font-weight:800">7,5<span class="muted" style="font-size:16px">/10</span></div></div>
+  <div class="field grow" style="font-weight:500;color:var(--muted)">${ic('edit')}Nhận xét gửi học sinh: Em xác định góc đúng, xem lại cạnh kề trong tỉ số tan…</div>
+  <span class="btn grn" style="padding:13px 20px">${ic('check')}Duyệt và trả bài</span></div></div>`,{concept:1});
+
+const V2=screen('vision-02-ho-so-hoc-tap','gv',3,'Hồ sơ học tập · An','Nhận định dựa trên bằng chứng: bài đã làm, câu đã hỏi, gợi ý đã dùng',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="row" style="gap:14px">
+  <div class="card stat"><div class="icb pri">${ic('cube')}</div><div><b>24</b><span class="small muted">bài đã làm</span></div></div>
+  <div class="card stat"><div class="icb grn">${ic('trend')}</div><div><b>+18%</b><span class="small muted">tự làm không cần gợi ý</span></div></div>
+  <div class="card stat"><div class="icb pur">${ic('chat')}</div><div><b>41</b><span class="small muted">câu đã hỏi</span></div></div></div>
+ <div class="card pad grow col" style="gap:13px"><h2 style="margin:0">Mức nắm theo khái niệm</h2>
+  ${[['Hình chiếu vuông góc','#0F8A5F',82,'8 bài'],['Góc giữa đường thẳng và mặt phẳng','#3B5BDB',64,'6 bài'],['Khoảng cách điểm đến mặt phẳng','#E8A200',38,'5 bài'],['Góc giữa hai mặt phẳng','#F0522B',22,'3 bài'],['Thể tích khối chóp','#0F8A5F',88,'7 bài']].map(x=>`<div><div class="row small" style="margin-bottom:5px"><b>${x[0]}</b><span class="chip" style="margin-left:auto">${x[3]}</span><span class="muted" style="width:38px;text-align:right">${x[2]}%</span></div><div class="bar" style="height:10px"><i style="width:${x[2]}%;background:${x[1]}"></i></div></div>`).join('')}
+  <div class="tiny muted">Ước lượng từ kết quả bài làm; bấm vào từng dòng để xem bài và câu hỏi làm căn cứ.</div></div></div>
+<div class="col" style="width:400px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Chỗ em hay vướng</h2>
+  <div class="hint"><div class="icb org">${ic('flag')}</div><div><h3>Nhầm cạnh kề và cạnh huyền khi lập tan</h3><p>Thấy ở 3 bài · căn cứ: bài 12, 15, 19</p></div></div>
+  <div class="hint"><div class="icb yel">${ic('bulb')}</div><div><h3>Thường cần gợi ý ở bước dựng đường vuông góc</h3><p>5/5 bài khoảng cách đều mở gợi ý 2</p></div></div></div>
+ <div class="card pad col grow" style="gap:10px"><h2 style="margin:0">Giáo viên ghi nhận</h2>
+  <div class="hint"><div class="icb grn">${ic('edit')}</div><div><h3>Giao thêm 3 bài khoảng cách</h3><p>20/11 · hẹn xem lại ngày 27/11</p></div></div>
+  <span class="btn soft">${ic('plus')}Thêm ghi nhận</span></div></div>`,{concept:1});
+
+const V3=screen('vision-03-tro-ly-giao-vien','gv',0,'Trợ lý giáo viên','AI soạn nháp từ tài liệu của thầy cô; chỉ gửi đi khi thầy cô duyệt',`
+<div class="card pad col" style="width:420px;flex-shrink:0;gap:12px">
+ <h2 style="margin:0">Thầy cô cần gì hôm nay?</h2>
+ ${[['file','pri','Soạn giáo án','Từ sách, đề cương, tài liệu có sẵn'],['layers','org','Tạo bộ đề luyện tập','Phân hóa theo mức độ của lớp'],['chart','grn','Tổng hợp lỗi sai của lớp','Sau mỗi bài giao'],['chat','pur','Soạn thông báo, báo cáo phụ huynh','Bản nháp để thầy cô sửa']].map((x,i)=>`<div class="hint ${i===1?'act':''}" style="align-items:center"><div class="icb ${x[1]}">${ic(x[0])}</div><div><h3>${x[2]}</h3><p>${x[3]}</p></div></div>`).join('')}
+ <div class="grow"></div>
+ <div class="field" style="align-items:flex-start;height:84px;font-weight:500">Tạo 6 bài về khoảng cách từ điểm đến mặt phẳng cho 11A1, 2 dễ, 3 vừa, 1 khó.</div>
+ <span class="btn">${ic('spark')}Soạn nháp</span></div>
+<div class="card pad col grow" style="gap:12px;min-width:0">
+ <div class="row"><h2 style="margin:0">Bộ đề nháp: Khoảng cách từ điểm đến mặt phẳng</h2><span class="chip pur" style="margin-left:auto">${ic('spark')}Bản nháp của AI · cần thầy cô duyệt</span></div>
+ <div class="row small muted">${ic('book')}Nguồn đã dùng: Kho đề của thầy cô (12 bài) · Đề cương chương 3</div>
+ ${[['Dễ','grn','Hình chóp S.ABC có SA ⊥ (ABC). Tính khoảng cách từ S đến (ABC).','chop','#0F8A5F',1],['Vừa','yel','Lăng trụ đứng ABC.A′B′C′, đáy vuông tại A. Tính khoảng cách từ A đến (A′BC).','lang','#E8A200',1],['Khó','red','Hình chóp S.ABCD đáy hình thoi, tính khoảng cách từ trọng tâm tam giác SAB đến (SCD).','chop','#D92D20',0]].map(x=>`<div class="hint" style="align-items:center"><div class="thumb" style="width:66px;height:62px;flex-shrink:0">${sh[x[3]](x[4]).replace('<svg','<svg style="height:46px"')}</div><div class="grow"><div class="row" style="gap:6px;margin-bottom:3px"><span class="chip ${x[1]}">${x[0]}</span>${x[5]?`<span class="chip grn">${ic('shield')}Hình và đáp số đã kiểm chứng</span>`:'<span class="chip yel">Cần thầy cô xem lại</span>'}</div><h3 style="font-weight:600">${x[2]}</h3></div><span class="btn sm ghost">${ic('edit')}Sửa</span></div>`).join('')}
+ <div class="grow"></div>
+ <div class="row"><span class="btn ghost">${ic('reset')}Soạn lại</span><span class="btn grn" style="margin-left:auto">${ic('check')}Duyệt và đưa vào kho đề</span></div></div>`,{concept:1});
+
+const V4=screen('vision-04-phu-huynh','ph',0,'Con của bạn: An · lớp 11A1','Thông tin đã được giáo viên duyệt',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="row" style="gap:14px">
+  <div class="card stat"><div class="icb grn">${ic('check')}</div><div><b>5/6</b><span class="small muted">bài hoàn thành tuần này</span></div></div>
+  <div class="card stat"><div class="icb pri">${ic('clock')}</div><div><b>2 giờ 40′</b><span class="small muted">thời gian học</span></div></div>
+  <div class="card stat"><div class="icb yel">${ic('flame')}</div><div><b>3 ngày</b><span class="small muted">học liên tiếp</span></div></div></div>
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Điểm mạnh và phần cần luyện</h2>
+  <div class="row" style="gap:12px;align-items:stretch">
+   <div class="hint grow" style="border-color:#B9E6D2;background:var(--grn-s)"><div class="icb grn">${ic('trend')}</div><div><h3>Đang làm tốt</h3><p>Thể tích khối chóp, xác định hình chiếu</p></div></div>
+   <div class="hint grow" style="border-color:#F4D58A;background:var(--yel-s)"><div class="icb yel">${ic('bulb')}</div><div><h3>Nên luyện thêm</h3><p>Khoảng cách từ điểm đến mặt phẳng</p></div></div></div>
+  <div class="small muted">Gợi ý cho gia đình: cùng con xem lại 2 bài khoảng cách đã có lời giải, mỗi bài khoảng 10 phút.</div></div>
+ <div class="card pad col" style="gap:8px"><h2 style="margin:0">Sắp tới</h2>
+  ${[['Thứ Hai 23/11','Bài: Góc giữa SD và mặt đáy · lời giải mở 19:00','pri'],['Thứ Tư 25/11','Bài: Khoảng cách giữa hai đường thẳng','org'],['Thứ Sáu 27/11','Kiểm tra 15 phút chương 3','pur']].map(x=>`<div class="row"><div class="icb ${x[2]}">${ic('cal')}</div><div><b>${x[0]}</b><div class="small muted">${x[1]}</div></div></div>`).join('')}</div></div>
+<div class="col" style="width:392px;flex-shrink:0;gap:14px">
+ <div class="card pad col grow" style="gap:10px"><h2 style="margin:0">Trao đổi với giáo viên</h2>
+  <div class="hint"><div class="ava" style="background:#3B5BDB;width:34px;height:34px;font-size:12px">GV</div><div><h3>Giáo viên Toán · 11A1</h3><p>An tiến bộ rõ ở phần thể tích. Tuần này em cần luyện thêm dạng khoảng cách, tôi đã giao thêm 3 bài.</p><div class="tiny muted" style="margin-top:4px">20/11 · 16:45</div></div></div>
+  <div class="grow"></div>
+  <div class="field" style="background:var(--soft)">${ic('chat')}<span class="muted grow" style="font-weight:500">Nhắn giáo viên…</span></div>
+  <div class="tiny muted">Tin nhắn gửi trong giờ hành chính; giáo viên trả lời trong 1–2 ngày.</div></div></div>`,{concept:1,noSeg:1});
+
+const V5=screen('vision-05-truong','tr',0,'Trường THPT Mẫu','Năm học 2026–2027 · học kỳ I',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="row" style="gap:14px">
+  ${[['users','pri','36','lớp'],['school','org','82','giáo viên'],['cube','grn','1.420','học sinh'],['check','pur','87%','bài giao đã hoàn thành']].map(x=>`<div class="card stat"><div class="icb ${x[1]}">${ic(x[0])}</div><div><b>${x[2]}</b><span class="small muted">${x[3]}</span></div></div>`).join('')}</div>
+ <div class="card pad"><div class="row" style="margin-bottom:8px"><h2 style="margin:0">Hoạt động theo tổ bộ môn</h2><span class="chip" style="margin-left:auto">Số liệu tổng hợp, không hiển thị bài của từng học sinh</span></div>
+  <table><thead><tr><th>Tổ</th><th>Giáo viên</th><th>Bài đã giao (tuần)</th><th>Tỉ lệ hoàn thành</th><th>Thời gian trả bài</th></tr></thead><tbody>
+  ${[['Toán',14,96,88,'1,2 ngày'],['Vật lý',9,41,81,'1,8 ngày'],['Hóa học',8,37,84,'1,5 ngày'],['Ngữ văn',12,52,79,'2,6 ngày'],['Tiếng Anh',11,64,90,'1,1 ngày']].map(x=>`<tr><td><b>${x[0]}</b></td><td>${x[1]}</td><td>${x[2]}</td><td><div class="row"><div class="bar grow"><i style="width:${x[3]}%"></i></div><span class="small muted">${x[3]}%</span></div></td><td class="muted">${x[4]}</td></tr>`).join('')}</tbody></table></div></div>
+<div class="col" style="width:392px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Thông báo của trường</h2>
+  <div class="hint"><div class="icb org">${ic('bell')}</div><div><h3>Lịch kiểm tra giữa kỳ I</h3><p>Gửi tới: toàn trường · 92% đã xem</p></div></div>
+  <div class="hint"><div class="icb pri">${ic('cal')}</div><div><h3>Họp phụ huynh khối 11</h3><p>Thứ Bảy 28/11 · 78% đã xác nhận</p></div></div>
+  <span class="btn soft">${ic('plus')}Soạn thông báo</span></div>
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Nhận diện của trường</h2>
+  <div class="row"><div class="logo" style="margin:0;background:linear-gradient(135deg,#0F8A5F,#0EA5E9)">${ic('school')}</div><div><b>Trường THPT Mẫu</b><div class="small muted">Logo, màu, tên gọi riêng trên nền tảng chung</div></div></div>
+  <div class="row">${['#0F8A5F','#0EA5E9','#141B2D','#F3F5FB'].map(c=>`<div style="width:38px;height:38px;border-radius:10px;background:${c};border:1px solid var(--line)"></div>`).join('')}</div></div></div>`,{concept:1,noSeg:1});
+
+const V6=screen('vision-06-co-quan-quan-ly','ql',0,'Theo dõi triển khai','Phạm vi được ủy quyền: 24 trường · chỉ số tổng hợp',`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="card pad col" style="gap:10px"><div class="row"><div class="icb sky">${ic('file')}</div><div class="grow"><h2 style="margin:0">Hướng dẫn dạy học hình học không gian bằng công cụ trực quan</h2><div class="small muted">Ban hành 02/11/2026 · hiệu lực 16/11/2026 · gửi 24 trường</div></div><span class="chip pri">Văn bản chính thức</span></div>
+  <div class="row" style="gap:14px">
+   ${[['Đã nhận','24/24','grn',100],['Đã xác nhận','21/24','pri',88],['Đang triển khai','15/24','yel',63],['Đã báo cáo','9/24','org',38]].map(x=>`<div class="grow"><div class="row small" style="margin-bottom:5px"><b>${x[0]}</b><span class="muted" style="margin-left:auto">${x[1]}</span></div><div class="bar" style="height:10px"><i style="width:${x[3]}%;background:var(--${x[2]})"></i></div></div>`).join('')}</div>
+  <div class="tiny muted">"Đã xác nhận" và "Đang triển khai" được theo dõi riêng: xác nhận đã đọc không có nghĩa là đã làm.</div></div>
+ <div class="card pad"><h2>Trường trong phạm vi</h2>
+  <table><thead><tr><th>Trường</th><th>Xác nhận</th><th>Triển khai</th><th>Lớp đang dùng</th><th>Cần hỗ trợ</th></tr></thead><tbody>
+  ${[['THPT Mẫu A',1,'Đang triển khai','yel','12/36',''],['THPT Mẫu B',1,'Đã báo cáo','grn','20/30',''],['THCS Mẫu C',1,'Đang triển khai','yel','6/24','Thiếu thiết bị trình chiếu'],['THPT Mẫu D',0,'Chưa bắt đầu','','0/28','Chưa xác nhận sau 7 ngày'],['THCS Mẫu E',1,'Đã báo cáo','grn','18/22','']].map(x=>`<tr><td><b>${x[0]}</b></td><td>${x[1]?`<span class="chip grn">${ic('check')}Đã xác nhận</span>`:'<span class="chip red">Chưa</span>'}</td><td><span class="chip ${x[3]}">${x[2]}</span></td><td class="muted">${x[4]}</td><td>${x[5]?`<span class="chip org">${ic('flag')}${x[5]}</span>`:'<span class="muted">—</span>'}</td></tr>`).join('')}</tbody></table></div></div>
+<div class="col" style="width:372px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Cần chú ý</h2>
+  <div class="hint" style="border-color:#F7C2B3;background:var(--org-s)"><div class="icb org">${ic('flag')}</div><div><h3>2 trường cần hỗ trợ</h3><p>1 chưa xác nhận · 1 thiếu thiết bị</p></div></div>
+  <div class="hint"><div class="icb grn">${ic('trend')}</div><div><h3>Cách làm hay</h3><p>THPT Mẫu B chia sẻ bộ 20 đề thiết diện cho các trường khác</p></div></div></div>
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Quyền xem dữ liệu</h2>
+  <div class="small muted">Tài khoản này chỉ xem số liệu tổng hợp theo trường. Không xem được bài làm hay hồ sơ của từng học sinh.</div>
+  <span class="chip pri" style="align-self:flex-start">${ic('shield')}Theo phạm vi ủy quyền</span></div></div>`,{concept:1,noSeg:1});
+
+
+const msg=(n,c,sc,t,me)=>`<div class="row" style="align-items:flex-start;gap:9px;${me?'flex-direction:row-reverse':''}"><div class="ava" style="width:32px;height:32px;font-size:12px;background:${c}">${n[0]}</div><div style="max-width:250px"><div class="tiny muted" style="${me?'text-align:right':''}"><b style="color:var(--text)">${n}</b> · ${sc}</div><div style="margin-top:3px;padding:9px 12px;border-radius:14px;font-size:13px;background:${me?'var(--pri)':'var(--soft)'};color:${me?'#fff':'var(--text)'};border:1px solid ${me?'transparent':'var(--line)'}">${t}</div></div></div>`;
+const V7=screen('vision-07-cong-tac','nh',2,'Nhóm học: Hình không gian 11','Nhóm liên trường · 2 trường · 6 thành viên · có giáo viên điều phối',`
+<div class="col" style="width:250px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Thành viên</h2>
+  ${[['An','#F0522B','THPT Mẫu A',1],['Bình','#3B5BDB','THPT Mẫu A',1],['Lan','#0F8A5F','THPT Mẫu B',1],['Khoa','#7C4DFF','THPT Mẫu B',0],['Vy','#0EA5E9','THPT Mẫu B',0]].map(x=>`<div class="row"><div class="ava" style="width:32px;height:32px;font-size:12px;background:${x[1]}">${x[0][0]}</div><div class="grow"><b class="small">${x[0]}</b><div class="tiny muted">${x[2]}</div></div><span style="width:9px;height:9px;border-radius:50%;background:${x[3]?'#22C55E':'#D5DBE8'}"></span></div>`).join('')}
+  <div class="row" style="padding-top:8px;border-top:1px solid var(--line)"><div class="icb pri" style="width:32px;height:32px">${ic('school','width:17px;height:17px')}</div><div><b class="small">Giáo viên điều phối</b><div class="tiny muted">THPT Mẫu A</div></div></div></div>
+ <div class="card pad col" style="gap:9px"><h2 style="margin:0">Việc của nhóm</h2>
+  ${[['Bài 1: góc giữa SD và đáy',1],['Bài 2: khoảng cách từ A đến (SBD)',0],['Bài 3: thiết diện qua M',0]].map(x=>`<div class="row small"><span class="dot ${x[1]?'g':''}" style="margin:0">${ic('check')}</span><span style="${x[1]?'color:var(--muted);text-decoration:line-through':'font-weight:600'}">${x[0]}</span></div>`).join('')}
+  <div class="tiny muted">Tiến độ tính theo việc cả nhóm hoàn thành, không xếp hạng cá nhân.</div></div>
+ <div class="card pad col" style="gap:8px;border-color:#B9E6D2;background:var(--grn-s)"><div class="row"><div class="icb grn" style="width:32px;height:32px">${ic('shield','width:17px;height:17px')}</div><b class="small">Không gian an toàn</b></div><div class="tiny" style="color:#17694D">Nhóm do hai trường cùng duyệt. Chỉ thành viên được mời mới vào được.</div></div></div>
+<div class="canvas">
+ <div class="prob"><div class="icb pri">${ic('file')}</div><div class="grow"><b>Bài 2.</b> Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính khoảng cách từ A đến mặt phẳng (SBD).</div><span class="chip pri">${ic('users')}Hình dùng chung</span></div>
+ <div class="fig" style="top:120px;bottom:150px">${pyramid({mid:0}).replace('</svg>',`<polygon points="176,44 80,268 372,250" fill="#7C4DFF" fill-opacity=".16" stroke="#7C4DFF" stroke-width="2.4" stroke-dasharray="7 5"/><circle cx="226" cy="259" r="6" fill="#0F8A5F"/><text x="200" y="284" fill="#0F8A5F" font-size="17" font-weight="800">O</text><line x1="196" y1="214" x2="226" y2="259" stroke="#0F8A5F" stroke-width="2.6"/><g><path d="M300,120 l0,22 l6,-6 l5,11 l4,-2 l-5,-11 l8,0z" fill="#3B5BDB"/><rect x="316" y="140" rx="8" width="52" height="22" fill="#3B5BDB"/><text x="326" y="156" fill="#fff" font-size="13" font-weight="700">Bình</text></g><g><path d="M120,296 l0,22 l6,-6 l5,11 l4,-2 l-5,-11 l8,0z" fill="#0F8A5F"/><rect x="136" y="316" rx="8" width="44" height="22" fill="#0F8A5F"/><text x="146" y="332" fill="#fff" font-size="13" font-weight="700">Lan</text></g></svg>`)}</div>
+ <div class="views" style="top:126px"><span>${ic('eye')}Theo góc nhìn của Lan</span><span>${ic('cube')}Xoay tự do</span></div>
+ <div class="meas" style="bottom:96px"><span style="border-color:#7C4DFF;color:#7C4DFF">Bình dựng: mặt (SBD)</span><span style="border-color:#0F8A5F;color:#0F8A5F">Lan thêm: O = AC ∩ BD</span></div>${dock(3)}</div>
+<div class="card side" style="width:360px">
+ <div class="tabs"><span class="on">${ic('chat')}Trao đổi</span><span>${ic('file')}Tài liệu</span><span>${ic('cal')}Lịch nhóm</span></div>
+ <div class="pad col grow" style="gap:12px">
+  ${msg('Bình','#3B5BDB','THPT Mẫu A','Mình dựng mặt (SBD) rồi. Kẻ đường vuông góc từ A xuống đâu nhỉ?')}
+  ${msg('Lan','#0F8A5F','THPT Mẫu B','BD ⊥ AC và BD ⊥ SA nên BD ⊥ (SAC). Mình thêm điểm O rồi đó.')}
+  ${msg('An','#F0522B','THPT Mẫu A','Vậy kẻ AH ⊥ SO là xong đúng không?',1)}
+  <div class="hint" style="border-color:#D9CCFF;background:var(--pur-s);padding:10px 12px"><div class="icb pur" style="width:34px;height:34px">${ic('spark','width:17px;height:17px')}</div><div><h3 style="font-size:13px">Trợ lý nhóm</h3><p style="font-size:12.5px">Hướng đi của An hợp lý. Thử giải thích vì sao AH vuông góc với cả mặt (SBD), không chỉ với SO.</p><div class="tiny muted" style="margin-top:4px">Chỉ gợi ý, không nêu đáp số</div></div></div>
+  <div class="grow"></div>
+  <div class="field" style="background:var(--soft)">${ic('chat')}<span class="muted grow" style="font-weight:500">Nhắn cả nhóm…</span><div class="icb pri" style="width:32px;height:32px">${ic('send','width:16px;height:16px')}</div></div>
+  <div class="row tiny muted"><span class="chip red">${ic('flag')}Báo cáo</span><span>Trao đổi được giáo viên điều phối theo dõi.</span></div>
+ </div></div>`,{concept:1,noSeg:1});
+

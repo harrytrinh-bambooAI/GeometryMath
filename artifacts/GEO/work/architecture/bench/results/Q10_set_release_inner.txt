@@ -1,0 +1,30 @@
+                                                                     QUERY PLAN                                                                     
+----------------------------------------------------------------------------------------------------------------------------------------------------
+ LockRows  (cost=0.56..5.35 rows=1 width=40) (actual time=0.003..0.004 rows=1 loops=1)
+   Buffers: shared hit=9
+   ->  Nested Loop  (cost=0.56..5.34 rows=1 width=40) (actual time=0.003..0.003 rows=1 loops=1)
+         Buffers: shared hit=8
+         ->  Index Scan using assignment_org_id_id_key on assignment a  (cost=0.29..2.51 rows=1 width=50) (actual time=0.002..0.002 rows=1 loops=1)
+               Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (id = '01a1b2ee-51df-79ad-8354-128825f23080'::uuid))
+               Filter: (kind = 'class'::assignment_kind)
+               Buffers: shared hit=5
+         ->  Index Scan using class_org_id_id_key on class c  (cost=0.28..2.49 rows=1 width=54) (actual time=0.001..0.001 rows=1 loops=1)
+               Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (id = a.class_id))
+               Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=6
+ Planning Time: 0.035 ms
+ Execution Time: 0.007 ms
+(15 rows)
+
+                                                                 QUERY PLAN                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------
+ Update on assignment  (cost=0.29..2.51 rows=0 width=0) (actual time=0.022..0.022 rows=0 loops=1)
+   Buffers: shared hit=20
+   ->  Index Scan using assignment_org_id_id_key on assignment  (cost=0.29..2.51 rows=1 width=18) (actual time=0.001..0.001 rows=1 loops=1)
+         Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (id = '01a1b2ee-51df-79ad-8354-128825f23080'::uuid))
+         Buffers: shared hit=3
+ Planning Time: 0.008 ms
+ Execution Time: 0.024 ms
+(7 rows)
+

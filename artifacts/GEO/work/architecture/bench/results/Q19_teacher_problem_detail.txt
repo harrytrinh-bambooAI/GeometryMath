@@ -1,0 +1,30 @@
+                                                                                          QUERY PLAN                                                                                           
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=3.21..9.91 rows=1 width=1240) (actual time=0.005..0.005 rows=1 loops=1)
+   Buffers: shared hit=12
+   ->  Nested Loop  (cost=0.70..7.38 rows=1 width=1224) (actual time=0.003..0.003 rows=1 loops=1)
+         Buffers: shared hit=8
+         ->  Nested Loop  (cost=0.42..4.86 rows=1 width=471) (actual time=0.002..0.002 rows=1 loops=1)
+               Buffers: shared hit=5
+               ->  Index Scan using problem_catalog_filter_idx on problem p  (cost=0.14..2.36 rows=1 width=64) (actual time=0.001..0.001 rows=1 loops=1)
+                     Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (id = '019efe6b-8009-71bf-854f-2c8e8603c15a'::uuid))
+                     Buffers: shared hit=2
+               ->  Index Scan using problem_version_pkey on problem_version pv  (cost=0.28..2.50 rows=1 width=423) (actual time=0.000..0.001 rows=1 loops=1)
+                     Index Cond: (id = p.current_version_id)
+                     Buffers: shared hit=3
+         ->  Limit  (cost=0.28..2.50 rows=1 width=755) (actual time=0.001..0.001 rows=1 loops=1)
+               Buffers: shared hit=3
+               ->  Index Scan Backward using scene_build_org_id_problem_version_id_build_no_key on scene_build s  (cost=0.28..2.50 rows=1 width=755) (actual time=0.001..0.001 rows=1 loops=1)
+                     Index Cond: ((org_id = pv.org_id) AND (problem_version_id = pv.id))
+                     Buffers: shared hit=3
+   ->  Aggregate  (cost=2.51..2.52 rows=1 width=32) (actual time=0.001..0.001 rows=1 loops=1)
+         Buffers: shared hit=4
+         ->  Index Scan using hint_pkey on hint x  (cost=0.29..2.50 rows=1 width=184) (actual time=0.001..0.001 rows=2 loops=1)
+               Index Cond: ((org_id = pv.org_id) AND (problem_version_id = pv.id))
+               Buffers: shared hit=4
+ Planning:
+   Buffers: shared hit=6
+ Planning Time: 0.053 ms
+ Execution Time: 0.011 ms
+(26 rows)
+

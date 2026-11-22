@@ -1,0 +1,29 @@
+                                                                                                         QUERY PLAN                                                                                                         
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=1.27..8.02 rows=1 width=68) (actual time=0.004..0.004 rows=1 loops=1)
+   Buffers: shared hit=13
+   ->  Nested Loop Left Join  (cost=1.27..8.02 rows=1 width=68) (actual time=0.004..0.004 rows=1 loops=1)
+         Buffers: shared hit=13
+         ->  Nested Loop  (cost=0.85..5.37 rows=1 width=90) (actual time=0.003..0.003 rows=1 loops=1)
+               Buffers: shared hit=9
+               ->  Nested Loop  (cost=0.56..5.01 rows=1 width=116) (actual time=0.002..0.002 rows=1 loops=1)
+                     Buffers: shared hit=6
+                     ->  Index Scan using assignment_self_idx on assignment a  (cost=0.28..2.50 rows=1 width=96) (actual time=0.001..0.001 rows=1 loops=1)
+                           Index Cond: ((org_id = '019dfd06-2d4a-7607-be09-124bf8a4b35a'::uuid) AND (owner_user_id = '019e9780-1357-7f57-bd90-57e19908d609'::uuid) AND (id < 'ffffffff-ffff-ffff-ffff-ffffffffffff'::uuid))
+                           Buffers: shared hit=3
+                     ->  Index Scan using problem_version_org_id_id_key on problem_version pv  (cost=0.28..2.50 rows=1 width=52) (actual time=0.001..0.001 rows=1 loops=1)
+                           Index Cond: ((org_id = a.content_org_id) AND (id = a.problem_version_id))
+                           Buffers: shared hit=3
+               ->  Index Scan using problem_pkey on problem p  (cost=0.28..0.35 rows=1 width=54) (actual time=0.001..0.001 rows=1 loops=1)
+                     Index Cond: (id = pv.problem_id)
+                     Filter: (pv.org_id = org_id)
+                     Buffers: shared hit=3
+         ->  Index Scan using assignment_progress_pkey on assignment_progress ap  (cost=0.42..2.64 rows=1 width=58) (actual time=0.001..0.001 rows=1 loops=1)
+               Index Cond: ((org_id = '019dfd06-2d4a-7607-be09-124bf8a4b35a'::uuid) AND (assignment_id = a.id) AND (user_id = '019e9780-1357-7f57-bd90-57e19908d609'::uuid))
+               Buffers: shared hit=4
+ Planning:
+   Buffers: shared hit=33
+ Planning Time: 0.160 ms
+ Execution Time: 0.010 ms
+(25 rows)
+

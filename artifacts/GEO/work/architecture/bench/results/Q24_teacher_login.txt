@@ -1,0 +1,27 @@
+                                                                            QUERY PLAN                                                                            
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=0.46..4.93 rows=1 width=85) (actual time=0.003..0.004 rows=1 loops=1)
+   Buffers: shared hit=5
+   InitPlan 1
+     ->  Aggregate  (cost=0.01..0.02 rows=1 width=8) (actual time=0.001..0.001 rows=1 loops=1)
+           ->  Limit  (cost=0.00..0.00 rows=1 width=4) (actual time=0.001..0.001 rows=0 loops=1)
+                 ->  Seq Scan on auth_failure f  (cost=0.00..0.00 rows=1 width=4) (actual time=0.001..0.001 rows=0 loops=1)
+                       Filter: ((ip_key = '\xfec52565aa0cf18f57d7cf5b3ac728503b8992d2d6f7d46da1d1201090902b02'::bytea) AND (at > (now() - '00:15:00'::interval)))
+   ->  Index Scan using teacher_access_code_selector_uq on teacher_access_code t  (cost=0.14..2.36 rows=1 width=97) (actual time=0.001..0.001 rows=1 loops=1)
+         Index Cond: (selector = 'CFTH'::text)
+         Buffers: shared hit=2
+   ->  Index Scan using app_user_pkey on app_user u  (cost=0.29..2.51 rows=1 width=36) (actual time=0.001..0.001 rows=1 loops=1)
+         Index Cond: (id = t.user_id)
+         Filter: (org_id = t.org_id)
+         Buffers: shared hit=3
+   SubPlan 2
+     ->  Aggregate  (cost=0.01..0.02 rows=1 width=8) (actual time=0.001..0.001 rows=1 loops=1)
+           ->  Limit  (cost=0.00..0.00 rows=1 width=4) (actual time=0.000..0.000 rows=0 loops=1)
+                 ->  Seq Scan on auth_failure f_1  (cost=0.00..0.00 rows=1 width=4) (actual time=0.000..0.000 rows=0 loops=1)
+                       Filter: ((user_id = t.user_id) AND (at > (now() - '00:15:00'::interval)))
+ Planning:
+   Buffers: shared hit=12
+ Planning Time: 0.046 ms
+ Execution Time: 0.008 ms
+(23 rows)
+

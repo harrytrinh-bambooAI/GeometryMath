@@ -1,0 +1,68 @@
+spring:
+  application.name: geo-server
+  profiles.default: dev
+  threads.virtual.enabled: true          # mỗi yêu cầu một luồng ảo: chịu hàng nghìn yêu cầu chờ I/O
+  datasource:
+    url: ${GEO_DB_URL:jdbc:postgresql://127.0.0.1:54329/geo_dev?ApplicationName=geo-server&connectTimeout=3&socketTimeout=30}
+    username: ${GEO_DB_USER:geo}
+    password: ${GEO_DB_PASSWORD:}
+    # Giá trị và nguồn: app/docs/CONFIG.md (D-GEO-168, ADR-GEO-04, 05_capacity.md §4.2, §7)
+    hikari:
+      maximum-pool-size: ${GEO_DB_POOL:20}   # 20 kết nối MỖI NÚT; KHÔNG nâng theo số người dùng
+      minimum-idle: ${GEO_DB_POOL_MIN:20}    # nhóm cố định cỡ (khuyến nghị của HikariCP)
+      connection-timeout: 2000               # chờ lấy kết nối tối đa 2 giây rồi 503 SERVICE_OVERLOADED
+      max-lifetime: 1500000                  # 25 phút (ADR-GEO-04)
+      # statement_timeout 2 giây cho đường nóng; giao dịch treo quá 10 giây bị đóng (ADR-GEO-12)
+      connection-init-sql: SET statement_timeout = 2000; SET idle_in_transaction_session_timeout = 10000
+      pool-name: geo-pool
+  flyway:
+    locations: classpath:db/migration
+  data.redis:
+    host: ${GEO_REDIS_HOST:127.0.0.1}
+    port: ${GEO_REDIS_PORT:6389}
+    timeout: 100ms          # lệnh Redis tối đa 100 ms rồi bỏ qua bộ đệm (fail-open, ADR-GEO-05)
+    connect-timeout: 100ms
+  jackson:
+    default-property-inclusion: non_null
+    time-zone: UTC          # máy chủ trả ISO-8601 UTC ("...Z"); giao diện luôn hiển thị Asia/Ho_Chi_Minh
+  mvc:
+    problemdetails.enabled: false
+
+server:
+  port: ${GEO_PORT:8080}
+  shutdown: graceful
+  tomcat:
+    max-connections: 10000
+    accept-count: 500
+    connection-timeout: 10s
+    max-swallow-size: 2MB
+    max-http-form-post-size: 1MB
+
+geo:
+  http:
+    max-body-bytes: 1048576   # 1 MB
+    retry-after: 2s           # Retry-After mặc định cho 429 RATE_LIMITED / 503 SERVICE_OVERLOADED
+  time:
+    display-zone: Asia/Ho_Chi_Minh   # múi giờ hiển thị duy nhất (BR-GEO-233); lưu/truyền luôn UTC
+  paging:
+    default-limit: 20
+    max-limit: 100            # trần chung
+    max-limit-by-list:
+      "[content.problem-bank]": 50   # Kho đề (D-GEO-142)
+    # Khóa dev, KHÔNG dùng ngoài dev. Môi trường thật đặt GEO_CURSOR_KEY (base64 của 32 byte).
+    cursor-key: ${GEO_CURSOR_KEY:ZGV2LW9ubHktY3Vyc29yLWtleS0zMi1ieXRlcyEhISE=}
+  auth:
+    secret: ${GEO_AUTH_SECRET:dev-only-secret-change-me-0123456789abcdef}
+    ttl: PT8H
+  redis.key-prefix: ${GEO_REDIS_PREFIX:geo:}
+  ai:
+    provider: mock
+    timeout: 10s              # TẠM: chưa có nguồn (D-GEO-072, owner TechLead)
+
+management:
+  endpoints.web.exposure.include: health,info,metrics,prometheus
+  endpoint.health.probes.enabled: true
+  metrics.tags.application: geo-server
+
+logging:
+  pattern.console: "%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %-5level [%X{requestId:-}] %logger{36} - %msg%n"

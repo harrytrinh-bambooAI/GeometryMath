@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Fig3D: trang thử hình không gian</title>
+<link rel="stylesheet" href="fig3d.css">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#253150;background:#EEF1F7;overscroll-behavior:none}
+#app{height:100vh;height:100dvh;display:grid;grid-template-columns:minmax(0,1fr) 330px;grid-template-rows:auto minmax(0,1fr) auto;grid-template-areas:"top top" "stage side" "dock side";gap:10px;padding:10px}
+.top{grid-area:top;display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.top::-webkit-scrollbar,.dock::-webkit-scrollbar{display:none}
+.top b.t{font-size:15px;white-space:nowrap;margin-right:4px}
+.btn{font:inherit;font-size:13.5px;font-weight:700;min-height:44px;padding:0 14px;border-radius:13px;border:1.5px solid #D5DCEC;background:#fff;color:#253150;cursor:pointer;white-space:nowrap;flex:none}
+.btn.on{border-color:#3B5BDB;background:#3B5BDB;color:#fff}
+.btn:disabled{opacity:.4;cursor:default}
+.stagewrap{grid-area:stage;position:relative;background:#fff;border-radius:18px;border:1.5px solid #DDE3F0;overflow:hidden;min-height:0}
+#stage{position:absolute;inset:0}
+.views{position:absolute;right:8px;bottom:8px;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:calc(100% - 16px)}
+.views .btn{min-height:40px;padding:0 11px;font-size:12.5px;background:rgba(255,255,255,.92)}
+.dock{grid-area:dock;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;background:#fff;border-radius:16px;border:1.5px solid #DDE3F0;padding:6px}
+.dock .btn{border-color:transparent;flex:1 0 auto;padding:0 12px}
+.dock .btn.on{background:#EDF1FF;color:#3B5BDB;border-color:#3B5BDB}
+.dock i{width:1px;background:#DDE3F0;flex:none;margin:6px 2px}
+.side{grid-area:side;display:flex;flex-direction:column;gap:10px;min-height:0}
+.card{background:#fff;border-radius:16px;border:1.5px solid #DDE3F0;padding:12px}
+.card h3{margin:0 0 8px;font-size:13px;color:#5B6785;font-weight:700}
+.steprow{display:flex;gap:8px;align-items:center}
+.steprow .cur{flex:1;min-width:0;font-size:14px;font-weight:700}
+.steprow .cur small{display:block;font-weight:500;color:#5B6785;font-size:12px}
+.prob{font-size:13px;line-height:1.45;color:#3C486B;margin:0}
+.logcard{flex:1;min-height:0;display:flex;flex-direction:column}
+#log{flex:1;min-height:0;overflow:auto;font-size:12.5px;line-height:1.5;margin:0;padding:0;list-style:none}
+#log li{padding:3px 0;border-bottom:1px dashed #E7EBF4}
+#log li b{color:#3B5BDB;font-weight:700;margin-right:6px}
+@media (max-width:760px){
+  #app{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(300px,1fr) auto auto;grid-template-areas:"top" "stage" "dock" "side";gap:8px;padding:8px}
+  .top b.t{display:none}
+  .stagewrap{display:flex;flex-direction:column}
+  #stage{position:relative;inset:auto;flex:1;min-height:0}
+  .views{position:static;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;max-width:none;padding:6px;border-top:1.5px solid #E7EBF4}
+  .views .btn{padding:0 9px;font-size:12px}
+  #app{grid-template-rows:auto minmax(380px,1fr) auto auto}
+  .side{gap:8px}
+  .prob{display:none}
+  .logcard{flex:none;height:112px}
+  .card{padding:9px 10px}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="fig3d.js"></script>
+<script>
+/* Trang thử: cố ý vẽ lại TOÀN BỘ DOM sau mỗi thay đổi (như render() của index.html)
+   rồi mount lại Fig3D với cùng state, để chứng minh trạng thái nằm ở bên gọi. */
+(function(){
+  var PROB={p1:'Hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy.',
+    p2:'Hình lập phương ABCD.A′B′C′D′ cạnh a. Tính khoảng cách giữa AC và B′D′.',
+    p3:'Lăng trụ đứng có đáy là tam giác đều cạnh 4 cm, chiều cao 6 cm. Tính thể tích.',
+    p4:'Hình nón có bán kính đáy 3 cm, đường sinh 5 cm. Tính diện tích xung quanh và thể tích.',
+    p5:'Hình trụ có chiều cao 10 cm, bán kính đáy 4 cm. Tính diện tích toàn phần.',
+    p6:'Mặt cầu ngoại tiếp hình lập phương cạnh a. Tính bán kính và thể tích khối cầu.'};
+  var SHORT={p1:'Hình chóp',p2:'Lập phương',p3:'Lăng trụ',p4:'Hình nón',p5:'Hình trụ',p6:'Mặt cầu'};
+  var D={scene:'p1',states:{},log:[],open:false,handle:null};
+  window.demo=D;
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function st(){return D.states[D.scene]||(D.states[D.scene]=Fig3D.newState());}
+  function render(){
+    var s=st(),sc=Fig3D.SCENES[D.scene],n=sc.steps.length,step=s.step||0,tool=s.tool||'select';
+    var logTop=(document.getElementById('log')||{}).scrollTop;
+    document.getElementById('app').innerHTML=
+     '<div class="top"><b class="t">Fig3D</b>'+Object.keys(Fig3D.SCENES).map(function(id){return '<button class="btn'+(id===D.scene?' on':'')+'" data-scene="'+id+'">'+SHORT[id]+'</button>';}).join('')+'</div>'+
+     '<div class="stagewrap"><div id="stage"></div><div class="views">'+[['default','Mặc định'],['front','Từ trước'],['top','Từ trên'],['side','Từ bên']].map(function(v){return '<button class="btn" data-view="'+v[0]+'">'+v[1]+'</button>';}).join('')+
+       '<button class="btn" data-act="resetView">Đặt lại góc nhìn</button></div></div>'+
+     '<div class="dock">'+Fig3D.TOOLS.map(function(t,i){return (i===5?'<i></i>':'')+'<button class="btn'+(t[0]===tool?' on':'')+'" data-tool="'+t[0]+'">'+(t[0]==='extend'?'Kéo dài / Mở rộng':t[1])+'</button>';}).join('')+'<i></i><button class="btn" data-act="reset">Đặt lại</button></div>'+
+     '<div class="side"><div class="card"><h3>'+esc(sc.title)+'</h3><p class="prob">'+esc(PROB[D.scene])+'</p></div>'+
+       '<div class="card"><h3>Lời giải theo bước</h3><div class="steprow"><button class="btn" data-step="'+(step-1)+'"'+(step<=0?' disabled':'')+'>‹ Trước</button>'+
+         '<div class="cur">'+(step?'Bước '+step+' / '+n:'Hình gốc')+'<small>'+(step?esc(sc.steps[step-1].title):'Chưa mở bước nào ('+n+' bước)')+'</small></div>'+
+         '<button class="btn" data-step="'+(step+1)+'"'+(step>=n?' disabled':'')+'>Sau ›</button></div>'+
+         '<label style="display:flex;gap:8px;align-items:center;font-size:12.5px;margin-top:8px;min-height:32px"><input type="checkbox" data-open'+(D.open?' checked':'')+' style="width:20px;height:20px"> Lời giải đã mở (hiện cả số đo đang ẩn)</label></div>'+
+       '<div class="card logcard"><h3>Nhật ký sự kiện</h3><ul id="log">'+D.log.map(function(l){return '<li><b>'+l[0]+'</b>'+esc(l[1])+'</li>';}).join('')+'</ul></div></div>';
+    if(logTop)document.getElementById('log').scrollTop=logTop;
+    D.handle=Fig3D.mount(document.getElementById('stage'),D.scene,s,{grid:true,hidden:D.open?[]:undefined,
+      onChange:function(){render();},
+      onEvent:function(ev){D.log.unshift([ev.type,ev.detail.text||'']);if(D.log.length>60)D.log.pop();}});
+  }
+  document.getElementById('app').addEventListener('click',function(e){
+    var b=e.target.closest('[data-scene],[data-view],[data-tool],[data-act],[data-step],[data-open]');if(!b||b.disabled)return;
+    var d=b.dataset,h=D.handle;
+    if(d.scene){D.scene=d.scene;render();}
+    else if(d.view)h.setView(d.view);
+    else if(d.tool)h.setTool(d.tool);
+    else if(d.step!=null)h.setStep(+d.step);
+    else if(d.act==='reset')h.reset();
+    else if(d.act==='resetView')h.resetView();
+    else if('open' in d){D.open=b.checked;render();}
+  });
+  render();
+})();
+</script>
+</body>
+</html>

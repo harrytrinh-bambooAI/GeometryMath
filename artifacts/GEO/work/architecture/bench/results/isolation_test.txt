@@ -1,0 +1,103 @@
+PASS A1: geo_app KHÔNG đọc được geo.solution (insufficient_privilege)
+PASS A2: geo_app KHÔNG đọc được verification_report
+PASS A3: đọc cột final_answer bị chặn
+PASS A4: geo_app KHÔNG ghi được solution
+PASS A5: không bảng nào geo_app đọc được có cột tên solution/answer/steps (0)
+PASS A6: geo_app KHÔNG sửa được release_at trực tiếp (chỉ qua fn_set_release)
+PASS A7: geo_app KHÔNG xóa được audit_log
+PASS A8: geo_app KHÔNG đọc trực tiếp câu trả lời đã lưu (chỉ chủ câu hỏi qua fn_qa_history, D-GEO-159)
+PASS A9: geo_app KHÔNG đọc bảng mã Giáo viên mẫu (D-GEO-152)
+PASS A10: geo_app KHÔNG ghi thẳng event_log (chỉ qua hàm ghi sự kiện)
+PASS A11: geo_app KHÔNG ghi thẳng qa_turn (câu trả lời phải qua Kiểm soát đáp án, fn_record_qa của geo_ai)
+PASS A12: geo_app KHÔNG ghi thẳng audit_log (chỉ hàm SECURITY DEFINER ghi)
+PASS R1: geo_app KHÔNG tạo được tài khoản (giáo viên mẫu) bằng INSERT app_user
+PASS R2: geo_app KHÔNG ghi được kho đề nền tảng (chỉ geo_content)
+PASS R2b: geo_app KHÔNG thêm được version cho đề kho nền tảng
+PASS R3: geo_app KHÔNG tự gắn nhãn "Đã kiểm chứng" (UPDATE verify_status bị từ chối)
+PASS R3b: geo_app KHÔNG gọi được hàm đổi nhãn máy (chỉ geo_ai, geo_content kèm báo cáo)
+PASS R4: geo_app KHÔNG tự nâng hint_level_max (UPDATE assignment_progress bị từ chối)
+PASS R4b: geo_app KHÔNG chèn được hàng tiến độ
+PASS R5: geo_app KHÔNG INSERT bài giao (giờ mở quá khứ không qua hàm, không nhật ký)
+PASS R5b: fn_create_assignment từ chối giờ mở ở quá khứ (VALIDATION_PAST)
+PASS R5c: CHECK assignment_release_ck chặn giờ mở trước giờ tạo kể cả với vai chủ
+PASS T1: giáo viên mẫu xem được lời giải đề kho (1)
+PASS T2: giáo viên trường A KHÔNG xem được lời giải bài tự học của trường B (ca RV-04 tái hiện) (0)
+PASS T3: giáo viên KHÔNG xem được lời giải bài tự học của học sinh trường mình (0)
+PASS T4: tài khoản học sinh gọi hàm giáo viên => 0 hàng (0)
+PASS T5: tài khoản hệ thống (tác giả nền tảng) không dùng được để xem lời giải (0)
+PASS T6: org trong ngữ cảnh khác trường của giáo viên => 0 hàng (0)
+PASS B1: bài đã tới giờ mở, học sinh trong lớp nhận lời giải (status=OK)
+PASS B2: bài chưa đặt giờ / chưa tới giờ => LOCKED (FORBIDDEN, BR-GEO-251), không có nội dung (LOCKED)
+PASS B3: học sinh lớp/trường khác dù biết id bài => NOT_FOUND (NOT_FOUND)
+PASS B4: org_id sai trong ngữ cảnh => NOT_FOUND (NOT_FOUND)
+PASS B5a: chưa đặt giờ => khóa (BR-03, D-GEO-043)
+PASS B5: học sinh KHÔNG đặt được giờ mở => FORBIDDEN (FORBIDDEN)
+PASS B5b: giáo viên khác cùng trường => FORBIDDEN (FORBIDDEN)
+PASS B5c: bài của trường khác => NOT_FOUND (NOT_FOUND)
+PASS B6: sai release_rev => CONFLICT_REV kèm rev hiện hành (CONFLICT_REV)
+PASS B6b: đặt giờ ở quá khứ => VALIDATION_PAST (VALIDATION_PAST)
+PASS B7: giáo viên của lớp đặt giờ tương lai (chưa đặt -> sắp mở), rev tăng
+PASS B8: giờ mở ở tương lai => vẫn khóa
+PASS B8b: đổi giờ khi sắp mở thành công
+PASS B9: "mở ngay" (release_at := now() của CSDL) => học sinh trong lớp nhận lời giải
+PASS B10: đã mở thì không đổi giờ nữa => CONFLICT_ALREADY_OPEN (D-GEO-042 A, D-GEO-143)
+PASS B10b: bấm "mở ngay" khi đã mở cũng bị từ chối
+PASS B10c: sau các lần bị từ chối, lời giải vẫn mở
+PASS B11: audit_log ghi đúng 3 dòng theo thứ tự (release_set,release_change,release_now), lần bị từ chối không ghi
+PASS E0: vai ứng dụng KHÔNG gọi được fn_test_set_release (chỉ geo_tester ở profile test)
+PASS E1: t = R - 1 giây => khóa
+PASS E2: t = R đúng (release_at = now() của CSDL) => mở (D-GEO-041 phương án A)
+PASS E3: t = R + 1 giây => mở
+PASS C1: bài tự học chưa xem Gợi ý 1, 2 => khóa (BR-05, D-GEO-023)
+PASS C1b: xin Gợi ý 2 trước Gợi ý 1 => LEVEL_ORDER (D-GEO-108) (LEVEL_ORDER)
+PASS C1c: Gợi ý 1 của đề tự nhập; gửi lại cùng request_id không ghi thêm sự kiện (sự kiện hint mới=1, mức=1, RV-18)
+PASS C2: xem Gợi ý 2 qua fn_get_hint (đường duy nhất nâng mức) => mở (OK)
+PASS C3: học sinh khác không xem được bài tự học của bạn (NOT_FOUND)
+PASS C4: tự học khớp CHỮ KÝ (văn bản khác, băm khác) với đề kho của bài lớp còn khóa => khóa dù đã xem Gợi ý 2 (D-GEO-150)
+PASS C5: bài tự học kế thừa khóa nhận Gợi ý 2 của ĐỀ KHO, không phải gợi ý AI (D-GEO-155, RV-06) (catalog_inherited)
+PASS C6: bài lớp nguồn đã mở => bài tự học cũng mở
+PASS C7a: dán đề trước khi giáo viên giao: chưa có bài lớp khớp => mở sau Gợi ý 2 (OK)
+PASS C7b: giáo viên giao đúng đề kho đó SAU (chưa đặt giờ) => bài tự học khóa ngay ở lần xin kế tiếp (RV-03) (LOCKED)
+PASS C7c: từ lúc đó gợi ý lấy từ đề kho (catalog_inherited)
+PASS C8: đề tự nhập không dựng được hình (không chữ ký) => không có lời giải tự học dù đã xem Gợi ý 2 (LOCKED)
+PASS D1: sửa nội dung version đề bị chặn (BR-11)
+PASS D2: sửa đáp số lời giải tại chỗ bị chặn (BR-11)
+PASS D3: audit_log chỉ thêm
+PASS D4: khóa ngoại tổ hợp chặn tham chiếu chéo trường (progress -> assignment)
+PASS D5: khóa ngoại tổ hợp chặn thêm em trường khác vào lớp
+PASS D6: share_grant approved bắt buộc hai bên duyệt và có thời hạn (BR-28)
+PASS D7: báo cáo không thể ghi verified khi đáp số chưa khớp (BR-07)
+PASS D8: bài tự học không thể có lớp/giờ mở (CHECK assignment_kind_ck)
+PASS D9: bài giao không thể trỏ đề tự nhập của trường khác (CHECK nội dung + FK tổ hợp, RV-12)
+PASS D9b: bài tự học chỉ dùng đề tự nhập của chính em (FK (org, problem, owner))
+PASS D10: lock_source chỉ trỏ bài cùng trường (FK tổ hợp, RV-12)
+PASS D11: qa_turn.user_id thuộc đúng trường (FK tổ hợp, RV-12)
+PASS D12: đề kho bắt buộc topic_id (RV-31) và tác giả nền tảng (D-GEO-160)
+PASS D13: bài lớp chỉ giao đề kho nền tảng (CHECK assignment_content_ck)
+PASS D14: tài khoản sample phải là giáo viên của một trường; system chỉ ở nền tảng (app_user_kind_ck)
+PASS D15: giao lại cùng problem cho cùng lớp => CONFLICT_DUPLICATE (D-GEO-161, chỉ mục duy nhất một phần) (CONFLICT_DUPLICATE)
+PASS D15b: gửi lại cùng id bài giao không tạo bài thứ hai (DUPLICATE)
+PASS D16: giáo viên không dạy lớp giao bài => FORBIDDEN (FORBIDDEN)
+PASS D16b: lớp của trường khác => NOT_FOUND (NOT_FOUND)
+PASS D16c: giao đề tự nhập của học sinh cho lớp => NOT_FOUND (chỉ đề kho) (NOT_FOUND)
+PASS D17: tạo bài giao ghi đúng 1 dòng audit_log assignment_create (BR-GEO-240)
+PASS G1: lô sự kiện cho bài của lớp khác => NOT_FOUND, 0 hàng ghi (RV-26)
+PASS G2: lô mức A không mang được sự kiện mức B (unlock) (VALIDATION_KIND)
+PASS G3: lô mức A gồm tool + scene_shown (D-GEO-165) ghi đủ, giờ tương lai bị kẹp về giờ nhận
+PASS G4: ghi "đã xem lời giải" cho bài còn khóa bị từ chối (LOCKED) (LOCKED)
+PASS G5: open là sự kiện bền (D-GEO-162); gửi lại cùng request_id => DUPLICATE, 1 sự kiện (RV-18)
+PASS G6: biên phiên 29:59 cùng phiên (+1799 s), 30:00 phiên mới (+0 s) (D-GEO-144, RV-17) (1799, 0)
+PASS G7: chỉ cổng AI (geo_ai) ghi lượt hỏi đáp (câu trả lời đã qua Kiểm soát đáp án)
+PASS G8: lưu câu trả lời hỏi đáp (D-GEO-159); gửi lại cùng request_id không nhân đôi câu hỏi/ask_count (RV-18)
+PASS G9: lịch sử hỏi đáp (Q21) trả câu trả lời đã lưu cho chủ câu hỏi, người khác không thấy
+PASS L1: Giáo viên mẫu đăng nhập bằng mã của chính tài khoản (OK)
+PASS L2: 10 lần sai từ một IP trong 15 phút => lần 11 RATE_LIMITED kể cả mã đúng (D-GEO-173) (RATE_LIMITED)
+PASS L3: 10 lần sai vào một tài khoản từ 10 IP => tài khoản RATE_LIMITED (dò phân tán) (RATE_LIMITED)
+PASS L4: mã đã thu hồi (geo_ops) không đăng nhập được, dù đúng (INVALID_CODE)
+PASS L5: mã hết hạn không đăng nhập được (INVALID_CODE)
+PASS L6: bảng mã chỉ có selector + HMAC, không có cột mã rõ (D-GEO-152)
+PASS L7: fn_student_login tạo đúng một học sinh student/light; vào lại cùng tên => cùng người (D-GEO-106, D-GEO-158)
+PASS L8: chỉ geo_ops tạo Giáo viên mẫu và cấp mã (geo_app bị từ chối)
+PASS V1: không đổi được nhãn bằng báo cáo của version khác (NOT_FOUND)
+PASS V2: nhãn "Đã kiểm chứng" bắt buộc báo cáo verified của chính version, kể cả với vai chủ (trigger + CHECK)
+PASS V3: version mới do ứng dụng tạo luôn needs_review (không thể chèn sẵn verified)

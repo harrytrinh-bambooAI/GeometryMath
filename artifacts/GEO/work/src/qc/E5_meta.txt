@@ -1,0 +1,45 @@
+# TC | AC | ưu tiên | loại | tầng | tài khoản | CL | ghi chú
+0500 | 501-SC1 | H | CN | API+TC | Giáo viên mẫu, máy tính | FN-01
+0501 | 501-SC2 | H | CN | API+TC | Giáo viên mẫu | FN-02 | bảng quyết định bộ lọc: hai nhóm cùng lúc
+0502 | 501-SC3 | M | CN | API+TC | Giáo viên mẫu | FN-02
+0503 | 501-SC4 | M | CN | API+TC | Giáo viên mẫu | FN-12
+0504 | 501-SC5 | M | CN | TC | Giáo viên mẫu | UI-02
+0505 | 501-SC6 | M | TB | TC | Giáo viên mẫu, điện thoại | UI-01 | PROVISIONAL KG-09
+0506 | 501-FC1 | M | CN | API+TC | Giáo viên mẫu | FN-02
+0507 | 501-FC2 | H | PQ | API+TC | Học sinh An | FN-05
+0508 | 501-FC3 | M | CN | TC | Giáo viên mẫu | UI-03 | xác nhận hệ quả nhìn thấy của phần ngoài phạm vi (soạn, import)
+0509 | 501-FC4 | M | CN | API | Giáo viên mẫu | FN-03
+0510 | 502-SC1 | H | CN | API+TC | Giáo viên mẫu | FN-11
+0511 | 502-SC2 | H | CN | API+TC | Giáo viên mẫu | FN-11
+0512 | 502-SC3 | M | CN | TC | Giáo viên mẫu | UI-02
+0513 | 502-FC1 | H | CN | API | Giáo viên mẫu | FN-11
+0514 | 502-FC2 | M | CN | TC | Giáo viên mẫu | UI-02
+0515 | 503-SC1 | H | CN | TC | Giáo viên mẫu | FN-01
+0516 | 503-SC2 | H | PQ | API+TC | Giáo viên mẫu | FN-05 | DT-5: giáo viên thấy lời giải ở cả ba trạng thái giờ mở; D-GEO-153: giáo viên chỉ xem lời giải của đề kho nền tảng; ca đề tự nhập ở TC-GEO-0541, 0542
+0517 | 503-SC3 | M | CN | TC | Giáo viên mẫu | FN-11
+0518 | 503-SC4 | M | CN | TC | Giáo viên mẫu | FN-01
+0519 | 503-SC5 | M | TB | TC | Giáo viên mẫu, điện thoại | UI-01 | PROVISIONAL KG-09
+0520 | 503-FC1 | L | CN | API+TC | Giáo viên mẫu | FN-03
+0521 | 503-FC2 | M | CN | TC | Giáo viên mẫu | UI-03
+0522 | 503-FC3 | H | DL | API | Học sinh An | FN-07
+0523 | 503-FC4 | M | CN | API | Giáo viên mẫu | FN-03
+0524 | 504-SC1 | H | CN | DB | Kỹ thuật (nạp kho) | FN-01
+0525 | 504-SC2 | H | CN | DB | Kỹ thuật | FN-11
+0526 | 504-SC3 | M | CN | DB | Kỹ thuật | FN-11 | xung đột dữ liệu đã biết: nhãn HKG-06 trong tệp nguồn khác nhãn engine tính
+0527 | 504-SC4 | H | CN | DB | Kỹ thuật | FN-11
+0528 | 504-SC5 | H | CN | DB | Kỹ thuật | FN-04
+0529 | 504-SC6 | M | CN | DB | Kỹ thuật | FN-04
+0530 | 504-FC1 | M | CN | DB | Kỹ thuật | FN-03
+0531 | 504-FC2 | H | CN | DB | Kỹ thuật | FN-04
+0532 | 505-SC1 | H | CN | API+TC | Giáo viên mẫu | FN-08
+0533 | 505-SC2 | M | CN | API | Giáo viên mẫu | FN-10
+0534 | 505-SC3 | M | CN | API | Giáo viên mẫu | FN-08
+0535 | 505-SC4 | H | DL | API | Giáo viên mẫu | FN-08
+0536 | 505-SC5 | H | PCN | API | Kỹ thuật (bộ đếm câu lệnh) | X-03 | công cụ: datasource-proxy (D-GEO-170)
+0537 | 505-FC1 | M | CN | API+TC | Giáo viên mẫu | FN-08
+0538 | 505-FC2 | L | CN | TC | Giáo viên mẫu | FN-08
+0539 | 505-FC3 | M | CN | API | Giáo viên mẫu | FN-03
+0540 | 505-FC4 | M | CN | API | Giáo viên mẫu | FN-08 | BVA: kích thước trang 10000; trang mặc định 20, trần Kho đề 50 (D-GEO-142); kho thử 48 đề
+# lượt sửa gom sau phản biện (M-304, M-217): tiêu chí mới của BA
+0541 | 503-FC6 | H | PQ | API+DB | Giáo viên C (trường khác) | FN-06 | DT-10; tầng CSDL: hàm lời giải của giáo viên trả 0 hàng (D-GEO-153, RV-GEO-04)
+0542 | 503-FC5 | H | PQ | API+DB | Giáo viên mẫu | FN-05 | DT-10; tầng CSDL: hàm lời giải của giáo viên trả 0 hàng; đối chứng HKG-01 ở TC-GEO-0516 (D-GEO-153)

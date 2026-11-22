@@ -1,0 +1,114 @@
+# TC | AC | ưu tiên | loại | tầng | tài khoản | CL | ghi chú
+0600 | 601-SC1 | H | CN | DB | Kỹ thuật (nạp dữ liệu mẫu) | FN-01
+0601 | 601-SC2 | H | CN | DB | Kỹ thuật | FN-01
+0602 | 601-SC3 | M | CN | DB | Kỹ thuật | FN-01
+0603 | 601-SC4 | M | CN | DB | Kỹ thuật | FN-10
+0604 | 601-FC1 | M | CN | DB | Kỹ thuật | FN-01
+0605 | 602-SC1 | M | PQ | API+TC | Giáo viên mẫu, máy tính | FN-05
+0606 | 602-SC2 | H | CN | API+TC | Giáo viên mẫu rồi học sinh của lớp | FN-01 | hai đầu: màn giao bài và Bài của em
+0607 | 602-SC3 | L | CN | TC | Giáo viên mẫu | UI-02
+0608 | 602-SC4 | M | CN | API | Học sinh mới của lớp | FN-01
+0609 | 602-FC1 | M | CN | API+TC | Giáo viên mẫu | FN-10 | mã lỗi theo D-GEO-143; cùng đề là cùng problem (D-GEO-161); ca đồng thời ở TC-GEO-0696
+0610 | 602-FC2 | M | CN | API+TC | Giáo viên mẫu | FN-10
+0611 | 602-FC3 | M | CN | TC | Giáo viên mẫu | UI-03 | xác nhận hệ quả nhìn thấy của phần ngoài phạm vi (giao bộ đề)
+0612 | 603-SC1 | M | CN | TC | Giáo viên mẫu | FN-01
+0613 | 603-SC2 | H | CN | API+TC | Giáo viên mẫu rồi học sinh | FN-05 | bảng quyết định hai công tắc: gợi ý tắt
+0614 | 603-SC3 | H | CN | API+TC | Giáo viên mẫu rồi học sinh | FN-05 | bảng quyết định hai công tắc: hỏi đáp tắt
+0615 | 603-SC4 | M | CN | API+TC | Giáo viên mẫu rồi học sinh | FN-05 | bảng quyết định hai công tắc: cả hai tắt
+0616 | 603-SC5 | M | CN | API | Giáo viên mẫu rồi học sinh | FN-09
+0617 | 603-FC1 | M | CN | API+TC | Giáo viên mẫu | UI-03
+0618 | 604-SC1 | H | CN | API+TC | Giáo viên mẫu | FN-04 | chuyển trạng thái: giao bài với giờ tương lai → Sắp mở
+0619 | 604-SC2 | H | CN | API+TC | Giáo viên mẫu | FN-04 | BV-1
+0620 | 604-SC3 | L | CN | TC | Giáo viên mẫu | UI-02
+0621 | 604-SC4 | M | CN | API+TC | Giáo viên mẫu | FN-04
+0622 | 604-SC5 | H | CN | API+TC | Giáo viên mẫu | FN-12
+0623 | 604-SC6 | M | CN | TC | Giáo viên mẫu, thiết bị đặt múi giờ khác | FN-12
+0624 | 604-FC1 | M | CN | API+TC | Giáo viên mẫu | FN-02
+0625 | 604-FC2 | H | CN | API | Giáo viên mẫu | FN-09
+0626 | 604-FC3 | M | CN | TC | Giáo viên mẫu | UI-03
+0627 | 605-SC1 | H | CN | API+TC | Giáo viên mẫu rồi học sinh An | FN-04 | Sắp mở → Sắp mở
+0628 | 605-SC2 | H | CN | API+TC | Giáo viên mẫu rồi học sinh An | FN-04 | Chưa đặt giờ → Sắp mở
+0629 | 605-SC3 | M | CN | TC | Giáo viên mẫu | FN-04
+0630 | 605-SC4 | H | CN | API+TC | Giáo viên mẫu rồi học sinh An | FN-04 | BV-7: Sắp mở → Đã mở
+0631 | 605-SC5 | M | CN | API+TC | Giáo viên mẫu | FN-04
+0632 | 605-SC6 | H | CN | API+TC | Giáo viên mẫu rồi học sinh An | FN-04 | Chưa đặt giờ → Đã mở
+0633 | 605-SC7 | H | CN | API | Giáo viên mẫu rồi học sinh Khánh | FN-09 | BV-5, BV-6; T0 là giờ máy chủ đọc từ tiêu đề `Date`; chờ đồng hồ thật, không dùng giao dịch thử (D-GEO-169, RV-GEO-24)
+0634 | 605-SC8 | M | CN | DB | Kỹ thuật | FN-13
+0635 | 605-FC1 | H | CN | API+TC | Giáo viên mẫu | FN-04 | BV-8: chuyển cấm từ Đã mở; mã lỗi theo D-GEO-143
+0636 | 605-FC2 | M | CN | API | Giáo viên mẫu | FN-02
+0637 | 605-FC3 | M | CN | API | Giáo viên mẫu, hai cửa sổ | FN-10 | mã lỗi theo D-GEO-143
+0638 | 605-FC4 | M | CN | API+TC | Giáo viên mẫu | FN-04 | chuyển cấm Sắp mở → Chưa đặt giờ
+0639 | 606-SC1 | H | CN | API+TC | Học sinh An | FN-01
+0640 | 606-SC2 | M | CN | API+TC | Học sinh An | FN-01
+0641 | 606-SC3 | M | CN | API+TC | Học sinh An | FN-01
+0642 | 606-SC4 | M | CN | API+TC | Học sinh Chi | FN-12
+0643 | 606-SC5 | L | CN | TC | Học sinh An | FN-01
+0644 | 606-SC6 | H | TB | TC | Học sinh An, iPhone | UI-01 | PROVISIONAL KG-09
+0645 | 606-FC1 | L | CN | TC | Học sinh của lớp chưa có bài | FN-03
+0646 | 606-FC2 | H | DL | API | Học sinh An | FN-07
+0647 | 606-FC3 | M | CN | TC | Học sinh An | UI-03
+0648 | 606-FC4 | M | CN | API | Học sinh An | FN-08
+0649 | 607-SC1 | M | CN | TC | Giáo viên mẫu | FN-01
+0650 | 607-SC2 | H | CN | API+TC | Giáo viên mẫu | FN-07 | DT-4
+0651 | 607-SC3 | M | CN | API+TC | Giáo viên mẫu | FN-13
+0652 | 607-SC4 | L | CN | TC | Giáo viên mẫu | FN-01
+0653 | 607-FC1 | H | DL | API | Giáo viên mẫu (xem trước) | FN-07 | DT-4: soát thân phản hồi của màn xem trước; màn xem trước không gọi hàm lời giải (D-GEO-153)
+0654 | 607-FC2 | H | DL | API | Giáo viên mẫu (xem trước) | FN-07
+0655 | 607-FC3 | H | CN | API+TC | Giáo viên mẫu (xem trước) | FN-07
+0656 | 608-SC1 | H | CN | API+TC | Học sinh An | FN-07 | DT-1, cột Đã mở
+0657 | 608-SC2 | H | CN | DB+API | Học sinh Khánh | FN-09 | BV-3; móc kiểm thử `fn_test_set_release` của profile test (D-GEO-169, RV-GEO-24)
+0658 | 608-SC3 | M | CN | TC | Học sinh An | FN-12
+0659 | 608-SC4 | M | CN | TC | Học sinh An | UI-02
+0660 | 608-FC1 | H | DL | API | Học sinh An | FN-07 | DT-1, cột Chưa đặt giờ; BV-1
+0661 | 608-FC2 | H | DL | DB+API | Học sinh Khánh | FN-09 | BV-2; móc kiểm thử `fn_test_set_release` của profile test (D-GEO-169, RV-GEO-24)
+0662 | 608-FC3 | H | DL | API | Học sinh An | FN-07 | DT-1, cột Sắp mở; soát mọi phản hồi của trang và ba tab
+0663 | 608-FC4 | H | DL | API+TC | Học sinh An, iPad chỉnh đồng hồ | FN-09 | BV-9
+0664 | 608-FC5 | H | DL | API | Học sinh An rồi Khánh | FN-07 | giữ High (RV-GEO-09, D-GEO-157); tiêu đề không lưu đệm ở TC-GEO-0488, 0698, 0864 (D-GEO-145)
+0665 | 608-FC6 | H | PQ | API | Học sinh Khánh (lớp khác) | FN-05 | DT-2; giữ High (RV-GEO-09); quyền xem luôn qua cổng CSDL theo người, không đệm quyết định (D-GEO-157)
+0666 | 608-FC7 | H | DL | DB | Kỹ thuật (vai CSDL của ứng dụng) | FN-07
+0667 | 609-SC1 | H | DL | API+TC | Học sinh An | FN-14 | DT-6
+0668 | 609-SC2 | M | CN | API | Học sinh | FN-13
+0669 | 609-SC3 | M | CN | API+TC | Học sinh | FN-14
+0670 | 609-SC4 | H | CN | API+TC | Học sinh An | FN-09 | DT-6, cột Đã mở (ca đối chứng)
+0671 | 609-FC1 | H | DL | API | Học sinh Bình | FN-14 | kiểm lớp Kiểm soát đáp án bằng câu trả lời soạn sẵn của AI giả lập
+0672 | 609-FC2 | H | DL | API | Học sinh | FN-14
+0673 | 609-FC3 | H | DL | API | Học sinh | FN-14
+0674 | 609-FC4 | M | CN | API | Học sinh Hà | FN-14
+0675 | 609-FC5 | H | DL | API | Học sinh An | FN-14
+0676 | 610-SC1 | H | DL | API | Kỹ thuật (chạy bộ câu thử) | FN-14 | 22 câu F-GEO-210…231, 11 nhóm (D-GEO-176) ở `review/QC_test_design.md` §6; mỗi câu gắn quy tắc Kiểm soát đáp án của D-GEO-156 (KS-1…KS-5, chờ ADR-GEO-14); ca giả làm giáo viên ở TC-GEO-0862 (US-GEO-610-SC6), ca chặn đổi tên điểm ở TC-GEO-0876
+0677 | 610-SC2 | H | DL | API | Kỹ thuật | FN-07 | DT-8
+0678 | 610-SC3 | H | DL | API | Kỹ thuật | FN-07
+0679 | 610-SC4 | M | CN | API | Kỹ thuật | FN-01
+0680 | 610-FC1 | H | CN | API | Kỹ thuật | FN-14
+0681 | 610-FC2 | L | CN | API | Kỹ thuật | FN-12
+0682 | 611-SC1 | M | CN | DB | Kỹ thuật | FN-01
+0683 | 611-SC2 | M | CN | DB | Kỹ thuật | FN-01
+0684 | 611-SC3 | L | CN | DB | Kỹ thuật | FN-01
+0685 | 611-FC1 | L | CN | DB | Kỹ thuật | FN-03
+0686 | 611-FC2 | L | CN | DB | Kỹ thuật | FN-03
+0687 | 612-SC1 | H | CN | TC | Học sinh Khánh, iPad | FN-09 | BV-10; đo bằng đồng hồ bấm giây, lặp ba lần; chu kỳ hỏi lại ≤ 8 giây (D-GEO-157)
+0688 | 612-SC2 | M | CN | TC | Học sinh Khánh | FN-09
+0689 | 612-SC3 | H | CN | TC | Giáo viên mẫu rồi học sinh An | FN-09 | hai đầu; trang đang chờ khóa hỏi lại ≤ 8 giây, cộng đệm ≤ 2 giây nên ≤ 10 giây sau khi bấm (D-GEO-157); đo ba lần bằng đồng hồ bấm; chu kỳ hỏi lại đo tự động ở TC-GEO-0697
+0690 | 612-SC4 | M | CN | TC | Học sinh Khánh | FN-09
+0691 | 612-FC1 | M | TB | TC | Học sinh Khánh, iPad | UI-04
+0692 | 612-FC2 | H | DL | API | Học sinh Khánh | FN-07
+0693 | 612-FC3 | M | TB | TC | Học sinh Khánh, iPad | UI-04
+0694 | 612-FC4 | H | CN | TC | Học sinh Khánh, iPad chỉnh đồng hồ | FN-09
+# lượt sửa gom sau phản biện (M-304, M-217): tiêu chí mới của BA
+0696 | 602-FC4 | H | CN | API | Giáo viên mẫu, hai cửa sổ | FN-10 | đồng thời: hai yêu cầu chênh dưới 50 mili giây (D-GEO-161, RV-GEO-16)
+0699 | 605-FC5 | H | CN | API+TC | Giáo viên mẫu | FN-04 | BV-11; T0 đọc từ tiêu đề `Date` (RV-GEO-28)
+0698 | 608-FC8 | H | DL | API | Học sinh An | FN-07 | D-GEO-145, RV-GEO-25
+0864 | 612-FC5 | H | DL | E2E | Học sinh Khánh | FN-07 | công cụ: Playwright ghi tiêu đề mọi phản hồi trạng thái (D-GEO-145, 170)
+0865 | 602-FC5 | M | CN | API | Giáo viên mẫu | FN-10 | D-GEO-161
+0866 | 605-SC9 | M | TB | TC | Giáo viên mẫu, điện thoại | UI-01 | D-GEO-147
+0867 | 605-SC10 | M | TB | TC | Giáo viên mẫu, điện thoại | UI-01 | D-GEO-147
+0868 | 605-FC6 | H | CN | DB+API | Giáo viên mẫu rồi học sinh An | FN-09 | móc kiểm thử `fn_test_set_release` của profile test (D-GEO-169, RV-GEO-28)
+0869 | 606-SC7 | M | CN | API+TC | Học sinh An | FN-12 | D-GEO-138
+0870 | 607-SC5 | M | CN | TC | Giáo viên mẫu | FN-09 | D-GEO-146
+0871 | 607-SC6 | M | CN | API+TC | Giáo viên mẫu | FN-09 | D-GEO-139
+0872 | 607-FC4 | H | DL | API | Giáo viên mẫu (xem trước) | FN-07 | DT-4; màn xem trước không gọi đường lời giải (D-GEO-153, RV-GEO-27)
+0873 | 608-SC5 | H | DL | API | Học sinh An | FN-07 | D-GEO-154, RV-GEO-05
+0874 | 609-SC5 | M | CN | API | Học sinh An | FN-14 | quy tắc KS-3 (D-GEO-156)
+0875 | 609-FC6 | H | DL | API | Học sinh Dũng | FN-14 | quy tắc KS-5: đóng khi lỗi (D-GEO-156, RV-GEO-07)
+0876 | 610-SC5 | H | DL | API | Kỹ thuật (chạy bộ câu thử) | FN-14 | ca chặn của cổng phát hành F-GEO-226 (D-GEO-150, RV-GEO-01)
+0877 | 606-SC8 | L | CN | API+TC | Học sinh 11A1 đã xem lời giải mọi bài | FN-12 | D-GEO-182; BVA n = 0 (cặp với TC-GEO-0869)

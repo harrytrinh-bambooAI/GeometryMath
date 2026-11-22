@@ -1,0 +1,22 @@
+                                                                                                 QUERY PLAN                                                                                                  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=1.81..4.05 rows=1 width=43) (actual time=0.006..0.012 rows=3 loops=1)
+   Buffers: shared hit=17
+   ->  Nested Loop  (cost=1.81..4.05 rows=1 width=43) (actual time=0.006..0.011 rows=3 loops=1)
+         Buffers: shared hit=17
+         ->  Index Scan using class_teacher_idx on class c  (cost=0.28..2.50 rows=1 width=51) (actual time=0.001..0.001 rows=3 loops=1)
+               Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (teacher_id = '019e306e-4994-7421-b184-efe9d1162e64'::uuid) AND (id > '00000000-0000-0000-0000-000000000000'::uuid))
+               Filter: (archived_at IS NULL)
+               Buffers: shared hit=5
+         ->  Aggregate  (cost=1.54..1.55 rows=1 width=8) (actual time=0.003..0.003 rows=1 loops=3)
+               Buffers: shared hit=12
+               ->  Index Only Scan using class_member_name_uq on class_member cm  (cost=0.41..1.53 rows=1 width=0) (actual time=0.001..0.002 rows=46 loops=3)
+                     Index Cond: ((org_id = c.org_id) AND (class_id = c.id))
+                     Heap Fetches: 0
+                     Buffers: shared hit=12
+ Planning:
+   Buffers: shared hit=3
+ Planning Time: 0.024 ms
+ Execution Time: 0.015 ms
+(18 rows)
+

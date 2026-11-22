@@ -1,0 +1,11 @@
+                                                                  QUERY PLAN                                                                   
+-----------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.28..3.50 rows=3 width=35) (actual time=0.001..0.001 rows=3 loops=1)
+   Buffers: shared hit=3
+   ->  Index Scan using keyword_lecture_idx on keyword k  (cost=0.28..3.50 rows=3 width=35) (actual time=0.001..0.001 rows=3 loops=1)
+         Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (lecture_id = '019f31eb-297b-7775-8312-2f942639c7bc'::uuid))
+         Buffers: shared hit=3
+ Planning Time: 0.008 ms
+ Execution Time: 0.003 ms
+(7 rows)
+

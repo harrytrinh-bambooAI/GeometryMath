@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đề xuất style – Hình Học Không Gian Cùng AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#EEF0F3;color:#1c2333;font-family:'Inter',system-ui,sans-serif;line-height:1.5}
+  .page{max-width:1500px;margin:0 auto;padding:32px 28px 60px}
+  h1{font-size:26px;margin:0 0 6px}
+  .lead{color:#556;margin:0 0 26px;max-width:900px;font-size:14.5px}
+  .opt{background:#fff;border-radius:14px;padding:22px;margin-bottom:26px;border:1px solid #dfe3ea}
+  .opt-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+  .opt-head h2{margin:0;font-size:21px}
+  .tag{font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px;background:#1c2333;color:#fff}
+  .tag.rec{background:#0f8a5f}
+  .desc{color:#556;font-size:14px;margin:0 0 16px;max-width:980px}
+  .grid{display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:start}
+  .meta h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#778;margin:14px 0 6px}
+  .meta h4:first-child{margin-top:0}
+  .sw{display:flex;gap:6px;flex-wrap:wrap}
+  .sw div{width:44px;text-align:center;font-size:9.5px;color:#667}
+  .sw i{display:block;width:44px;height:34px;border-radius:7px;border:1px solid rgba(0,0,0,.12);margin-bottom:3px}
+  .meta ul{margin:0;padding-left:17px;font-size:13px;color:#445}
+  .meta li{margin-bottom:3px}
+  .type-h{font-size:22px;font-weight:700;line-height:1.2}
+  .type-b{font-size:13.5px;margin-top:3px}
+
+  /* ---------- mock screen ---------- */
+  .mock{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:13px}
+  .m-top{display:flex;align-items:center;gap:14px;padding:10px 16px;background:var(--top-bg);color:var(--top-text);border-bottom:1px solid var(--line)}
+  .m-logo{font-family:var(--font-head);font-weight:700;font-size:16px}
+  .m-nav{display:flex;gap:4px;margin-left:10px}
+  .m-nav span{padding:5px 10px;border-radius:var(--r-sm);font-weight:600;font-size:12.5px;opacity:.75}
+  .m-nav span.on{background:var(--top-active);opacity:1}
+  .m-role{margin-left:auto;display:flex;background:var(--seg-bg);border-radius:99px;padding:3px;font-size:12px;font-weight:600}
+  .m-role span{padding:4px 11px;border-radius:99px;color:var(--seg-text)}
+  .m-role span.on{background:var(--seg-on);color:var(--seg-on-text)}
+  .m-body{display:grid;grid-template-columns:54px 1fr 310px;min-height:430px}
+  .m-tools{background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 0}
+  .m-tools b{width:36px;height:36px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--muted);border:1px solid transparent;font-weight:600}
+  .m-tools b.on{background:var(--primary-soft);color:var(--primary);border-color:var(--primary)}
+  .m-canvas{position:relative;background:var(--canvas);display:flex;align-items:center;justify-content:center}
+  .m-canvas svg{width:74%;max-height:340px;margin-top:56px;margin-bottom:30px}
+  .m-prob{position:absolute;top:12px;left:14px;right:14px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:8px 12px;font-size:12.5px;display:flex;gap:10px;align-items:center}
+  .badge{flex-shrink:0;font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;background:var(--ok-soft);color:var(--ok)}
+  .m-meas{position:absolute;bottom:12px;left:14px;display:flex;gap:6px}
+  .chip{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:4px 10px;font-size:11.5px;font-family:var(--font-mono)}
+  .m-side{background:var(--panel);border-left:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:10px}
+  .m-tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);padding-bottom:8px}
+  .m-tabs span{padding:4px 10px;border-radius:var(--r-sm);font-weight:600;font-size:12.5px;color:var(--muted)}
+  .m-tabs span.on{background:var(--primary-soft);color:var(--primary)}
+  .hint{border:1px solid var(--line);border-radius:var(--r);padding:10px 12px;background:var(--card)}
+  .hint h5{margin:0 0 3px;font-family:var(--font-head);font-size:13.5px}
+  .hint p{margin:0;color:var(--muted);font-size:12.5px}
+  .hint.lock{border-style:dashed;background:transparent}
+  .lock-row{display:flex;align-items:center;gap:8px;color:var(--warn);font-weight:600;font-size:12.5px}
+  .btn{display:inline-block;padding:8px 14px;border-radius:var(--r-sm);font-weight:700;font-size:12.5px;background:var(--primary);color:var(--on-primary);text-align:center}
+  .btn.ghost{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
+  .row{display:flex;gap:8px;margin-top:auto}
+  .row .btn{flex:1}
+
+  /* ---------- A: Sổ tay học thuật ---------- */
+  .tA{--font-head:'Source Serif 4',Georgia,serif;--font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace;
+    --bg:#F0F2ED;--panel:#FFFFFF;--card:#FAFAF7;--canvas:#FCFCFA;--line:#D9DED2;--text:#1B2A4A;--muted:#5A6785;
+    --primary:#B98A2E;--primary-soft:#FBF3E4;--on-primary:#fff;--ok:#2F6F68;--ok-soft:#E3F0EE;--warn:#B0432E;
+    --top-bg:#1B2A4A;--top-text:#EFE9DC;--top-active:rgba(255,255,255,.14);--seg-bg:rgba(255,255,255,.12);--seg-text:#C7CEDC;--seg-on:#B98A2E;--seg-on-text:#fff;
+    --r:8px;--r-sm:6px;--edge:#1B2A4A;--face:#B98A2E;--hl:#C0392B;--pt:#2F6F68}
+  /* ---------- B: Phòng học sáng ---------- */
+  .tB{--font-head:'Be Vietnam Pro',sans-serif;--font-body:'Be Vietnam Pro',sans-serif;--font-mono:'JetBrains Mono',monospace;
+    --bg:#F5F7FB;--panel:#FFFFFF;--card:#F7F9FD;--canvas:#FFFFFF;--line:#E1E6F0;--text:#161D2E;--muted:#5D6880;
+    --primary:#3B5BDB;--primary-soft:#E9EEFF;--on-primary:#fff;--ok:#0F8A5F;--ok-soft:#DFF5EC;--warn:#C2540A;
+    --top-bg:#FFFFFF;--top-text:#161D2E;--top-active:#E9EEFF;--seg-bg:#EEF1F7;--seg-text:#5D6880;--seg-on:#3B5BDB;--seg-on-text:#fff;
+    --r:12px;--r-sm:9px;--edge:#253150;--face:#3B5BDB;--hl:#F0522B;--pt:#161D2E}
+  /* ---------- C: Studio tối ---------- */
+  .tC{--font-head:'Inter',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace;
+    --bg:#0F131C;--panel:#171C28;--card:#1D2331;--canvas:#0B0E15;--line:#2A3142;--text:#E8ECF4;--muted:#93A0B8;
+    --primary:#4CC9F0;--primary-soft:rgba(76,201,240,.14);--on-primary:#06202B;--ok:#5EE0A0;--ok-soft:rgba(94,224,160,.14);--warn:#FFB454;
+    --top-bg:#171C28;--top-text:#E8ECF4;--top-active:rgba(255,255,255,.08);--seg-bg:#0F131C;--seg-text:#93A0B8;--seg-on:#4CC9F0;--seg-on-text:#06202B;
+    --r:10px;--r-sm:7px;--edge:#C9D3E6;--face:#4CC9F0;--hl:#FF6B9D;--pt:#E8ECF4}
+
+  .common{background:#fff;border-radius:14px;padding:22px;border:1px solid #dfe3ea}
+  .common h2{margin:0 0 10px;font-size:19px}
+  .common ul{margin:0;padding-left:18px;font-size:14px;color:#334;columns:2;column-gap:40px}
+  .common li{margin-bottom:6px;break-inside:avoid}
+  @media (max-width:1100px){.grid{grid-template-columns:1fr}.common ul{columns:1}}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Đề xuất style giao diện — Hình Học Không Gian Cùng AI</h1>
+  <p class="lead">Ba hướng style cho cùng một màn hình "Học sinh làm bài được giao". Đây là bản phác để chọn hướng, chưa phải thiết kế cuối. Bố cục trong cả ba là như nhau; chỉ màu, chữ và độ bo góc khác nhau.</p>
+
+  <div id="opts"></div>
+
+  <div class="common">
+    <h2>Điểm chung cho cả ba hướng (bố cục đề xuất)</h2>
+    <ul>
+      <li><b>Hình 3D là trung tâm</b>, chiếm phần lớn màn hình thay vì nằm giữa cột như bản hiện tại.</li>
+      <li><b>Thanh công cụ dọc bên trái</b> dạng biểu tượng (chọn, điểm, đường, mặt phẳng, đo, Oxyz) thay cho cột form dài.</li>
+      <li><b>Bảng bên phải có tab</b>: Gợi ý · Lời giải · Hỏi đáp, thay cho ba khối xếp dọc.</li>
+      <li><b>Đề bài ghim phía trên hình</b>, kèm nhãn "Đã kiểm chứng" / "Cần xem lại".</li>
+      <li><b>Lời giải bị khóa</b> hiện rõ giờ mở do giáo viên đặt.</li>
+      <li><b>Chuyển vai trò</b> Giáo viên / Học sinh ở góc trên phải (vì dùng tài khoản mẫu).</li>
+      <li><b>Kết quả đo</b> (độ dài, góc) hiện thành nhãn ngay trên hình.</li>
+      <li><b>Điện thoại</b>: hình ở trên, bảng gợi ý trượt lên từ dưới.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const OPTS = [
+ {cls:'tA', name:'A — Sổ tay học thuật', tag:'Kế thừa bản hiện tại',
+  desc:'Giữ màu xanh mực, giấy ngà và vàng đồng của bản hiện tại; tiêu đề chữ có chân. Cảm giác sách giáo khoa, nghiêm túc, điềm tĩnh.',
+  pal:[['#1B2A4A','Mực'],['#F0F2ED','Giấy'],['#B98A2E','Đồng'],['#2F6F68','Teal'],['#C0392B','Nhấn']],
+  font:'Source Serif 4 + Inter',
+  pros:['Không phải làm lại nhận diện','Hợp giáo viên và học sinh THPT','Dễ đọc lời giải dài'],
+  cons:['Hơi trầm với học sinh THCS','Vàng đồng làm nút chính có độ tương phản thấp hơn xanh']},
+ {cls:'tB', name:'B — Phòng học sáng', tag:'Khuyến nghị', rec:true,
+  desc:'Nền trắng sáng, xanh chàm làm màu chính, cam làm màu nhấn trên hình; chữ Be Vietnam Pro không chân, bo góc lớn. Hiện đại, thân thiện, rõ ràng.',
+  pal:[['#3B5BDB','Chàm'],['#F5F7FB','Nền'],['#161D2E','Chữ'],['#0F8A5F','Đúng'],['#F0522B','Nhấn']],
+  font:'Be Vietnam Pro (một họ chữ)',
+  pros:['Hợp cả THCS và THPT','Nền trắng trình chiếu trên lớp rõ nhất','Chữ thiết kế cho tiếng Việt, dấu rõ'],
+  cons:['Phải đổi nhận diện so với bản hiện tại','Dễ giống các app học tập khác nếu không có điểm riêng']},
+ {cls:'tC', name:'C — Studio tối', tag:'Thiên về công cụ',
+  desc:'Nền tối, hình phát sáng với xanh cyan và hồng làm màu nhấn. Cảm giác phần mềm dựng hình chuyên nghiệp, hình 3D nổi bật nhất.',
+  pal:[['#0F131C','Nền'],['#171C28','Khung'],['#4CC9F0','Cyan'],['#5EE0A0','Đúng'],['#FF6B9D','Nhấn']],
+  font:'Inter + JetBrains Mono',
+  pros:['Hình 3D nổi bật, ấn tượng khi demo','Đỡ mỏi mắt khi học buổi tối'],
+  cons:['Trình chiếu máy chiếu trong lớp sáng sẽ khó nhìn','Đọc lời giải dài trên nền tối mệt hơn','Xa lạ với giáo viên']}
+];
+
+const pyramid = `
+<svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg" font-family="inherit">
+  <polygon points="90,250 250,290 350,235 190,205" fill="var(--face)" fill-opacity=".10" stroke="none"/>
+  <polygon points="170,50 250,290 350,235" fill="var(--face)" fill-opacity=".14" stroke="none"/>
+  <polygon points="170,50 90,250 250,290" fill="var(--face)" fill-opacity=".08" stroke="none"/>
+  <g stroke="var(--edge)" stroke-width="2" fill="none" stroke-linecap="round">
+    <line x1="90" y1="250" x2="250" y2="290"/><line x1="250" y1="290" x2="350" y2="235"/>
+    <line x1="170" y1="50" x2="90" y2="250"/><line x1="170" y1="50" x2="250" y2="290"/>
+  </g>
+  <g stroke="var(--edge)" stroke-width="1.6" fill="none" stroke-dasharray="6 5" opacity=".7">
+    <line x1="90" y1="250" x2="190" y2="205"/><line x1="190" y1="205" x2="350" y2="235"/><line x1="170" y1="50" x2="190" y2="205"/>
+    <line x1="90" y1="250" x2="350" y2="235"/>
+  </g>
+  <line x1="170" y1="50" x2="350" y2="235" stroke="var(--hl)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M318,236.8 A32,32 0 0 1 327,212" fill="none" stroke="var(--hl)" stroke-width="2"/>
+  <g fill="var(--pt)"><circle cx="90" cy="250" r="4.5"/><circle cx="250" cy="290" r="4.5"/><circle cx="350" cy="235" r="4.5"/><circle cx="190" cy="205" r="4.5"/><circle cx="170" cy="50" r="4.5"/></g>
+  <g fill="var(--text)" font-size="17" font-weight="700">
+    <text x="158" y="40">S</text><text x="68" y="262">B</text><text x="246" y="314">C</text><text x="360" y="240">D</text><text x="196" y="198">A</text>
+  </g>
+  <text x="286" y="222" fill="var(--hl)" font-size="13" font-weight="700">α</text>
+</svg>`;
+
+function mock(cls){ return `
+<div class="mock ${cls}">
+  <div class="m-top">
+    <div class="m-logo">Hình Học Không Gian</div>
+    <div class="m-nav"><span class="on">Bài được giao</span><span>Tự học</span><span>Lịch sử</span></div>
+    <div class="m-role"><span>Giáo viên</span><span class="on">Học sinh</span></div>
+  </div>
+  <div class="m-body">
+    <div class="m-tools"><b class="on">↖</b><b>•</b><b>╱</b><b>▱</b><b>∠</b><b>xyz</b><b>⟲</b></div>
+    <div class="m-canvas">
+      <div class="m-prob"><span>Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy.</span><span class="badge">✓ Đã kiểm chứng</span></div>
+      ${pyramid}
+      <div class="m-meas"><span class="chip">SD = a√2</span><span class="chip">α = (SD, đáy)</span></div>
+    </div>
+    <div class="m-side">
+      <div class="m-tabs"><span class="on">Gợi ý</span><span>Lời giải</span><span>Hỏi đáp</span></div>
+      <div class="hint"><h5>Gợi ý 1 · Hướng nghĩ</h5><p>Góc giữa đường thẳng và mặt phẳng là góc giữa đường đó và hình chiếu của nó.</p></div>
+      <div class="hint"><h5>Gợi ý 2 · Bước kế tiếp</h5><p>Tìm hình chiếu của S lên mặt đáy. Điểm nào trên hình?</p></div>
+      <div class="hint lock"><div class="lock-row">🔒 Lời giải mở lúc 19:00 hôm nay</div><p>Do giáo viên thiết lập.</p></div>
+      <div class="row"><span class="btn ghost">Hỏi thêm</span><span class="btn">Gợi ý tiếp</span></div>
+    </div>
+  </div>
+</div>`; }
+
+document.getElementById('opts').innerHTML = OPTS.map(o => `
+<section class="opt">
+  <div class="opt-head"><h2>${o.name}</h2><span class="tag ${o.rec?'rec':''}">${o.tag}</span></div>
+  <p class="desc">${o.desc}</p>
+  <div class="grid">
+    <div class="meta ${o.cls}">
+      <h4>Bảng màu</h4>
+      <div class="sw">${o.pal.map(p=>`<div><i style="background:${p[0]}"></i>${p[1]}</div>`).join('')}</div>
+      <h4>Chữ</h4>
+      <div style="font-family:var(--font-head)" class="type-h">Hình chóp S.ABCD</div>
+      <div style="font-family:var(--font-body)" class="type-b">Góc giữa đường thẳng và mặt phẳng — ${o.font}</div>
+      <h4>Ưu điểm</h4><ul>${o.pros.map(x=>`<li>${x}</li>`).join('')}</ul>
+      <h4>Hạn chế</h4><ul>${o.cons.map(x=>`<li>${x}</li>`).join('')}</ul>
+    </div>
+    ${mock(o.cls)}
+  </div>
+</section>`).join('');
+</script>
+</body>
+</html>

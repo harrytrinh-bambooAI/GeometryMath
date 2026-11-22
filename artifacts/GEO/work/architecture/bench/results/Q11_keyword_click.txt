@@ -1,0 +1,16 @@
+                                                               QUERY PLAN                                                                
+-----------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=0.55..5.00 rows=1 width=256) (actual time=0.002..0.002 rows=1 loops=1)
+   Buffers: shared hit=6
+   ->  Index Scan using keyword_pkey on keyword k  (cost=0.28..2.49 rows=1 width=32) (actual time=0.001..0.001 rows=1 loops=1)
+         Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (term_key = 'duong vuong goc 127'::text))
+         Buffers: shared hit=3
+   ->  Index Scan using lecture_org_id_id_key on lecture l  (cost=0.27..2.49 rows=1 width=272) (actual time=0.001..0.001 rows=1 loops=1)
+         Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (id = k.lecture_id))
+         Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=7
+ Planning Time: 0.026 ms
+ Execution Time: 0.004 ms
+(12 rows)
+

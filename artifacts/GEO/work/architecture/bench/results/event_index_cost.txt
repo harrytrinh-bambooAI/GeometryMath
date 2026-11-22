@@ -1,0 +1,30 @@
+psql:bench/10_event_index_cost.sql:5: NOTICE:  schema "bench_ev" does not exist, skipping
+=== C: không chỉ mục (chỉ nối thêm)
+Time: 1571.551 ms (00:01.572)
+=== A: cấu hình đề xuất (1 chỉ mục, không JSON)
+Time: 3470.925 ms (00:03.471)
+=== D: chỉ mục gọn (assignment_id, user_id, occurred_at), không org_id, không id
+Time: 3262.969 ms (00:03.263)
+=== E: assignment_id, user_id, occurred_at DESC, id DESC (không org_id trong khóa chỉ mục; có id làm khóa cursor)
+Time: 4261.602 ms (00:04.262)
+=== J: như A nhưng thêm cột payload jsonb ~40 byte
+Time: 4613.093 ms (00:04.613)
+=== B: khóa chính + 3 chỉ mục thêm (4 chỉ mục + khóa chính)
+Time: 9410.758 ms (00:09.411)
+                        cfg                        | table_size | index_size | n_idx | total_bytes_per_row 
+---------------------------------------------------+------------+------------+-------+---------------------
+ C không chỉ mục                                   | 97 MB      | 0 bytes    |     0 |                 101
+ A đề xuất (1 chỉ mục)                             | 97 MB      | 102 MB     |     1 |                 208
+ D chỉ mục gọn (không org_id, không id)            | 97 MB      | 69 MB      |     1 |                 173
+ E khóa (assignment, user, time, id), không org_id | 97 MB      | 88 MB      |     1 |                 193
+ J A + payload jsonb                               | 150 MB     | 102 MB     |     1 |                 264
+ B PK + 4 chỉ mục                                  | 97 MB      | 315 MB     |     5 |                 431
+(6 rows)
+
+psql:bench/10_event_index_cost.sql:49: NOTICE:  drop cascades to 6 other objects
+DETAIL:  drop cascades to table bench_ev.a
+drop cascades to table bench_ev.c
+drop cascades to table bench_ev.d
+drop cascades to table bench_ev.e
+drop cascades to table bench_ev.b
+drop cascades to table bench_ev.j

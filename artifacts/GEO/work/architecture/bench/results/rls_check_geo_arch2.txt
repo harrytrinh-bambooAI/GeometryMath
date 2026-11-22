@@ -1,0 +1,17 @@
+Đúng trường: số bài của lớp (mong đợi > 0)
+ count 
+    10
+Sai trường (dù viết sai lọc org_id hay quên lọc): số bài của lớp (mong đợi 0)
+ count 
+     0
+ count 
+     0
+ count 
+     0
+Sai trường nhưng nội dung nền tảng vẫn đọc được (kho đề, mong đợi > 0)
+ count 
+    60
+Không đặt app.org_id (đặt rỗng): mong đợi lỗi hoặc 0 hàng
+ 
+ count 
+     0

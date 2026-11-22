@@ -1,0 +1,18 @@
+                                                                                                                                QUERY PLAN                                                                                                                                
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.42..4.86 rows=1 width=56) (actual time=0.002..0.009 rows=16 loops=1)
+   Buffers: shared hit=52
+   ->  Nested Loop  (cost=0.42..4.86 rows=1 width=56) (actual time=0.002..0.009 rows=16 loops=1)
+         Buffers: shared hit=52
+         ->  Index Scan using problem_catalog_filter_idx on problem p  (cost=0.14..2.36 rows=1 width=64) (actual time=0.001..0.002 rows=16 loops=1)
+               Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (ROW(level, solid_kind, topic_id, id) > ROW('thcs'::geo.edu_level, 'cube'::geo.solid_kind, 2, '00000000-0000-0000-0000-000000000000'::uuid)) AND (level = 'thcs'::geo.edu_level))
+               Buffers: shared hit=4
+         ->  Index Scan using problem_version_pkey on problem_version pv  (cost=0.28..2.50 rows=1 width=24) (actual time=0.000..0.000 rows=1 loops=16)
+               Index Cond: (id = p.current_version_id)
+               Buffers: shared hit=48
+ Planning:
+   Buffers: shared hit=6
+ Planning Time: 0.031 ms
+ Execution Time: 0.013 ms
+(14 rows)
+

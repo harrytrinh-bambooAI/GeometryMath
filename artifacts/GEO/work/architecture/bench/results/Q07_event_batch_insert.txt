@@ -1,0 +1,29 @@
+                                                                                       QUERY PLAN                                                                                       
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Insert on event_log  (cost=6.44..6.69 rows=0 width=0) (actual time=0.084..0.085 rows=0 loops=1)
+   Buffers: shared hit=259 dirtied=1 written=1
+   I/O Timings: shared write=0.003
+   InitPlan 3
+     ->  Index Scan using assignment_org_id_id_key on assignment x  (cost=0.29..4.05 rows=1 width=0) (actual time=0.002..0.002 rows=1 loops=1)
+           Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (id = '01a1b2ee-51df-79ad-8354-128825f23080'::uuid))
+           Filter: (((kind = 'class'::assignment_kind) AND EXISTS(SubPlan 1)) OR ((kind = 'self'::assignment_kind) AND (owner_user_id = '019e976e-3137-7f97-802d-4fe0a56bf727'::uuid)))
+           Buffers: shared hit=7
+           SubPlan 1
+             ->  Index Only Scan using class_member_user_idx on class_member cm  (cost=0.41..1.54 rows=1 width=0) (actual time=0.001..0.001 rows=1 loops=1)
+                   Index Cond: ((org_id = x.org_id) AND (user_id = '019e976e-3137-7f97-802d-4fe0a56bf727'::uuid) AND (class_id = x.class_id))
+                   Heap Fetches: 0
+                   Buffers: shared hit=4
+   InitPlan 4
+     ->  Function Scan on generate_series g  (cost=0.00..1.00 rows=50 width=8) (actual time=0.001..0.004 rows=50 loops=1)
+   InitPlan 5
+     ->  Function Scan on generate_series g_1  (cost=0.00..0.50 rows=50 width=4) (actual time=0.001..0.002 rows=50 loops=1)
+   InitPlan 6
+     ->  Function Scan on generate_series g_2  (cost=0.00..0.88 rows=50 width=2) (actual time=0.001..0.002 rows=50 loops=1)
+   ->  Result  (cost=0.01..0.26 rows=10 width=70) (actual time=0.019..0.027 rows=50 loops=1)
+         One-Time Filter: (InitPlan 3).col1
+         Buffers: shared hit=57
+         ->  Function Scan on e  (cost=0.01..0.11 rows=10 width=14) (actual time=0.016..0.018 rows=50 loops=1)
+ Planning Time: 0.058 ms
+ Execution Time: 0.092 ms
+(25 rows)
+

@@ -1,0 +1,7 @@
+# Môi trường thật: bắt buộc đặt GEO_DB_URL, GEO_DB_PASSWORD, GEO_AUTH_SECRET, GEO_CURSOR_KEY.
+spring:
+  datasource:
+    url: ${GEO_DB_URL}
+geo:
+  paging.cursor-key: ${GEO_CURSOR_KEY}
+  auth.secret: ${GEO_AUTH_SECRET}

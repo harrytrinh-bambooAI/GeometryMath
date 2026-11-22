@@ -1,0 +1,35 @@
+                                                                                                QUERY PLAN                                                                                                
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=1.13..9.44 rows=1 width=1343) (actual time=0.005..0.006 rows=1 loops=1)
+   Buffers: shared hit=16
+   ->  Nested Loop  (cost=0.85..6.91 rows=1 width=479) (actual time=0.004..0.004 rows=1 loops=1)
+         Buffers: shared hit=13
+         ->  Nested Loop  (cost=0.57..6.55 rows=1 width=485) (actual time=0.003..0.003 rows=1 loops=1)
+               Buffers: shared hit=10
+               ->  Index Scan using assignment_org_id_id_key on assignment a  (cost=0.29..4.05 rows=1 width=62) (actual time=0.002..0.002 rows=1 loops=1)
+                     Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (id = '01a1b2ee-51df-79ad-8354-128825f23080'::uuid))
+                     Filter: (((kind = 'class'::geo.assignment_kind) AND EXISTS(SubPlan 1)) OR ((kind = 'self'::geo.assignment_kind) AND (owner_user_id = '019e976e-3137-7f97-802d-4fe0a56bf727'::uuid)))
+                     Buffers: shared hit=7
+                     SubPlan 1
+                       ->  Index Only Scan using class_member_user_idx on class_member cm  (cost=0.41..1.54 rows=1 width=0) (actual time=0.001..0.001 rows=1 loops=1)
+                             Index Cond: ((org_id = a.org_id) AND (user_id = '019e976e-3137-7f97-802d-4fe0a56bf727'::uuid) AND (class_id = a.class_id))
+                             Heap Fetches: 0
+                             Buffers: shared hit=4
+               ->  Index Scan using problem_version_org_id_id_key on problem_version pv  (cost=0.28..2.50 rows=1 width=439) (actual time=0.001..0.001 rows=1 loops=1)
+                     Index Cond: ((org_id = a.content_org_id) AND (id = a.problem_version_id))
+                     Buffers: shared hit=3
+         ->  Index Scan using problem_pkey on problem p  (cost=0.28..0.35 rows=1 width=58) (actual time=0.000..0.000 rows=1 loops=1)
+               Index Cond: (id = pv.problem_id)
+               Filter: (pv.org_id = org_id)
+               Buffers: shared hit=3
+   ->  Limit  (cost=0.28..2.50 rows=1 width=850) (actual time=0.001..0.001 rows=1 loops=1)
+         Buffers: shared hit=3
+         ->  Index Scan Backward using scene_build_org_id_problem_version_id_build_no_key on scene_build s  (cost=0.28..2.50 rows=1 width=850) (actual time=0.001..0.001 rows=1 loops=1)
+               Index Cond: ((org_id = pv.org_id) AND (problem_version_id = pv.id))
+               Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=18
+ Planning Time: 0.139 ms
+ Execution Time: 0.013 ms
+(31 rows)
+

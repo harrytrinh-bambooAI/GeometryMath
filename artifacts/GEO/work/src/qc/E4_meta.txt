@@ -1,0 +1,94 @@
+# TC | AC | ưu tiên | loại | tầng | tài khoản | CL | ghi chú
+0400 | 401-SC1 | H | CN | API+TC | Học sinh An | FN-01
+0401 | 401-SC2 | M | CN | TC | Học sinh An | FN-14
+0402 | 401-SC3 | M | CN | API | Học sinh An | FN-04
+0403 | 401-SC4 | L | CN | DV | Kỹ thuật | FN-13 | chỉ kiểm công thức trung vị; trên AI giả lập số đo không có nghĩa
+0404 | 401-FC1 | M | CN | API+TC | Học sinh An | FN-02
+0405 | 401-FC2 | M | CN | API | Học sinh An | FN-02 | BVA: 8000 được, 8001 không
+0406 | 401-FC3 | H | CN | API+TC | Học sinh An | FN-14
+0407 | 401-FC4 | M | CN | API | Học sinh An | FN-02
+0408 | 401-FC5 | H | PQ | API | Học sinh Bình gọi bài tự học của An | FN-05
+0409 | 402-SC1 | M | CN | API+TC | Học sinh An, iPhone | FN-14 | chữ đọc được là nội dung soạn sẵn của AI giả lập
+0410 | 402-SC2 | M | CN | TC | Học sinh An, iPhone | FN-01
+0411 | 402-SC3 | M | TB | TC | Học sinh An, iPad và iPhone | UI-01 | PROVISIONAL KG-09
+0412 | 402-FC1 | M | CN | API | Học sinh An | FN-03
+0413 | 402-FC2 | M | CN | API | Học sinh An | FN-02 | BVA: thân yêu cầu 1 MB
+0414 | 402-FC3 | M | CN | API | Học sinh An | FN-14
+0415 | 403-SC1 | M | CN | TC | Học sinh An | FN-01
+0416 | 403-SC2 | M | CN | TC | Học sinh An | FN-01
+0417 | 403-SC3 | M | CN | TC | Học sinh An | UI-03
+0418 | 403-FC1 | H | PQ | API | Chưa vào lớp | FN-05
+0419 | 404-SC1 | H | CN | API+TC | Học sinh Hà | FN-04
+0420 | 404-SC2 | H | CN | API+TC | Học sinh Hà | FN-04
+0421 | 404-SC3 | M | CN | API+TC | Học sinh rồi Giáo viên mẫu | FN-13 | hai đầu của quy tắc: màn học sinh và Theo dõi lớp
+0422 | 404-SC4 | M | CN | API | Học sinh | FN-10
+0423 | 404-SC5 | M | CN | API+TC | Học sinh An | FN-01
+0424 | 404-FC1 | H | CN | API+TC | Học sinh Hà | FN-04
+0425 | 404-FC2 | H | PQ | API+TC | Học sinh Khánh (9B) | FN-05
+0426 | 404-FC3 | H | DL | API | Học sinh Hà | FN-07 | tiêu đề không lưu đệm của phản hồi gợi ý ở TC-GEO-0488 (D-GEO-145)
+0427 | 404-FC4 | M | CN | TC | Học sinh Hà | UI-04
+0428 | 405-SC1 | H | CN | API+TC | Học sinh An | FN-04
+0429 | 405-SC2 | L | CN | DV | Kỹ thuật | FN-13
+0430 | 405-FC1 | H | CN | TC | Học sinh An | FN-04
+0431 | 405-FC2 | H | DL | API | Học sinh An | FN-07
+0432 | 405-FC3 | H | DL | API | Học sinh An | FN-07
+0433 | 405-FC4 | H | DL | API | Học sinh An | FN-07 | với AI giả lập: kiểm lớp Kiểm soát đáp án bằng câu trả lời soạn sẵn có chứa đáp số
+0434 | 406-SC1 | H | CN | API+TC | Học sinh An | FN-07 | DT-8, cột Sắp mở
+0435 | 406-SC2 | H | CN | API+TC | Giáo viên mẫu rồi học sinh An | FN-09 | DT-8, cột Đã mở
+0436 | 406-SC3 | M | CN | API | Học sinh An | FN-04
+0437 | 406-SC4 | M | PQ | API | Học sinh Khánh (9B) | FN-05
+0438 | 406-SC5 | H | CN | API | Học sinh An | FN-07 | ca chặn của cổng phát hành (D-GEO-150, RV-GEO-01): khớp theo chữ ký chuẩn (hình mẫu, tham số quy về a = 1, đại lượng đề hỏi); biến thể ở TC-GEO-0482, 0483, 0484, 0489
+0439 | 406-FC1 | H | DL | API | Học sinh An | FN-07
+0440 | 406-FC2 | H | CN | API | Giáo viên mẫu rồi học sinh Khánh | FN-09 | BV-5, BV-6; T0 là giờ máy chủ đọc từ tiêu đề `Date`; chờ đồng hồ thật, không dùng giao dịch thử (D-GEO-169, RV-GEO-24); kế thừa khóa kiểm ở mỗi lần xin (D-GEO-151)
+0441 | 407-SC1 | H | CN | TC | Học sinh An, iPad | FN-01
+0442 | 407-SC2 | M | CN | TC | Học sinh An, iPad | FN-04
+0443 | 407-SC3 | M | CN | TC | Học sinh An, iPad | FN-04
+0444 | 407-SC4 | M | CN | TC | Học sinh An | UI-02
+0445 | 407-SC5 | M | CN | API | Học sinh An | FN-13
+0446 | 407-SC6 | H | TB | TC | Học sinh An, iPhone | UI-01 | PROVISIONAL KG-09
+0447 | 407-FC1 | L | CN | TC | Học sinh An | FN-03
+0448 | 407-FC2 | M | CN | TC | Học sinh An | FN-10
+0449 | 408-SC1 | H | CN | TC | Học sinh An, iPad | FN-04
+0450 | 408-SC2 | M | CN | TC | Học sinh An | FN-01
+0451 | 408-SC3 | M | CN | TC | Học sinh An | FN-04
+0452 | 408-SC4 | M | CN | TC | Học sinh An | FN-04
+0453 | 408-FC1 | L | CN | TC | Học sinh An | FN-03
+0454 | 409-SC1 | H | CN | API+TC | Học sinh An | FN-01 | AI giả lập: chỉ kiểm có dòng nguồn và liên kết bài giảng, không chấm nội dung giải thích
+0455 | 409-SC2 | M | CN | API+TC | Học sinh Dũng | FN-12
+0456 | 409-SC3 | H | CN | API+TC | Học sinh An | FN-01
+0457 | 409-SC4 | M | CN | TC | Học sinh An | FN-14
+0458 | 409-SC5 | M | CN | API | Học sinh An | FN-13
+0459 | 409-SC6 | M | CN | API+TC | Học sinh An | FN-01
+0460 | 409-FC1 | H | CN | API+TC | Học sinh An | FN-14
+0461 | 409-FC2 | M | CN | API | Học sinh An | FN-02
+0462 | 409-FC3 | H | PQ | API+TC | Học sinh Khánh (9B) | FN-05
+0463 | 410-SC1 | M | CN | API+TC | Học sinh An | FN-01
+0464 | 410-SC2 | M | CN | API+TC | Học sinh An | FN-01 | hồi quy lỗi đã biết của bản cũ (REQ-GEO-36)
+0465 | 410-SC3 | L | CN | TC | Học sinh An | FN-01
+0466 | 410-SC4 | H | PQ | API | Học sinh An và Bình | FN-05
+0467 | 410-FC1 | L | CN | TC | Học sinh An | FN-03
+0468 | 410-FC2 | M | CN | API | Học sinh An | FN-08
+0469 | 411-SC1 | H | CN | TC | Học sinh An | FN-01
+0470 | 411-SC2 | M | CN | TC | Học sinh An | UI-02
+0471 | 411-SC3 | M | CN | TC | Học sinh An | FN-01
+0472 | 411-SC4 | L | CN | TC | Học sinh An | FN-01
+0473 | 411-FC1 | M | CN | TC | Học sinh An | FN-03
+0474 | 411-FC2 | H | DL | API | Học sinh An | FN-07
+0475 | 411-FC3 | M | CN | TC | Học sinh An | UI-02
+0476 | 412-SC1 | M | CN | DB | Kỹ thuật | FN-01
+0477 | 412-SC2 | M | CN | DB | Kỹ thuật | FN-01
+0478 | 412-SC3 | M | PQ | API | Học sinh An của lớp 9C (trường khác) | FN-06
+0479 | 412-FC1 | H | DL | DB | Kỹ thuật | FN-07
+0480 | 412-FC2 | L | CN | DB | Kỹ thuật | FN-03
+# lượt sửa gom sau phản biện (M-304, M-217): tiêu chí mới của BA
+0482 | 406-SC7 | H | DL | API+TC | Học sinh An | FN-07 | ca gần trùng đổi a thành 2a (D-GEO-150, RV-GEO-01)
+0485 | 406-SC9 | H | CN | API+TC | Học sinh An rồi Giáo viên mẫu | FN-09 | dán trước, giao sau (D-GEO-151, RV-GEO-03)
+0487 | 406-SC10 | M | DL | API | Học sinh An | FN-07 | D-GEO-155, RV-GEO-06
+0488 | 404-FC5 | M | DL | API | Học sinh Hà, iPad dùng chung | FN-07 | D-GEO-145, RV-GEO-25
+0489 | 406-SC8 | M | CN | API+TC | Học sinh An | FN-07 | cặp đảo của TC-GEO-0482 (khác tham số)
+0490 | 406-FC3 | H | DL | API | Học sinh An | FN-07 | D-GEO-151
+0491 | 406-FC4 | H | DL | API | Học sinh An | FN-07 | D-GEO-155
+0492 | 406-FC5 | H | DL | API+TC | Học sinh An | FN-07 | D-GEO-150
+0493 | 410-SC5 | H | DL | API+TC | Học sinh Bình | FN-07 | D-GEO-159
+0494 | 412-SC4 | M | CN | API+TC | Học sinh An rồi Giáo viên mẫu | UI-02 | D-GEO-181
+0486 | 406-FC6 | M | DL | API+TC | Học sinh An rồi Giáo viên mẫu | FN-09 | D-GEO-174, 151 (RV-GEO-03); case viết tay trước đó chuyển thành case bám tiêu chí, giữ id

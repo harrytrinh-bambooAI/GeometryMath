@@ -1,0 +1,18 @@
+                                                                    QUERY PLAN                                                                    
+--------------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop Left Join  (cost=0.69..4.04 rows=1 width=52) (actual time=0.002..0.002 rows=1 loops=1)
+   Buffers: shared hit=7
+   ->  Index Scan using class_join_code_uq on class c  (cost=0.28..2.49 rows=1 width=36) (actual time=0.001..0.001 rows=1 loops=1)
+         Index Cond: (join_code = 'C58A58'::text)
+         Filter: (archived_at IS NULL)
+         Buffers: shared hit=3
+   ->  Index Only Scan using class_member_name_uq on class_member cm  (cost=0.41..1.54 rows=1 width=48) (actual time=0.001..0.001 rows=1 loops=1)
+         Index Cond: ((org_id = c.org_id) AND (class_id = c.id) AND (name_key = 'hoc sinh 128'::text))
+         Heap Fetches: 0
+         Buffers: shared hit=4
+ Planning:
+   Buffers: shared hit=6
+ Planning Time: 0.038 ms
+ Execution Time: 0.005 ms
+(14 rows)
+

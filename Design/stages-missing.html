@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Thiết kế các màn hình còn thiếu – chặng 2 đến 9</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/ds.css">
+<style>
+/* ---- bổ sung cho bộ màn hình còn thiếu (chép cách làm của stages-2-5 và stages-6-9) ---- */
+.screen.ipad{width:1180px;height:820px;grid-template-columns:84px 1fr}
+.screen.ipad .rail a{width:70px;font-size:10.5px}
+.screen.ipad .top{padding:0 22px}
+.screen.ipad .body{padding:4px 22px 22px;gap:16px}
+.screen .top h1{white-space:nowrap}
+.rail a{text-align:center;line-height:1.2}
+.top .r{gap:8px}
+.top .r .chip{padding:7px 12px;font-size:12px}
+.top .r .ava{margin-left:4px}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:700}
+.hint.ok{border-color:#B9E6D2;background:var(--grn-s)}
+.hint.bad{border-color:#F5B8B2;background:var(--red-s)}
+.hint.warn{border-color:#F4D58A;background:#FFFBEE}
+.hint.org{border-color:#F7C2B3;background:var(--org-s)}
+.hint.pur{border-color:#D9CCFF;background:var(--pur-s)}
+.icb.red{background:var(--red-s);color:var(--red)}
+.icb.gry{background:#E7EBF4;color:var(--muted)}
+.icb.sm{width:32px;height:32px;border-radius:10px}.icb.sm svg.ic{width:17px;height:17px}
+.btn.off{background:#E7EBF4;color:var(--faint)}
+.btn.red{background:#fff;color:var(--red);border:1.5px solid #F5B8B2}
+.btn.line{background:#fff;color:var(--text);border:1.5px solid var(--line)}
+.toggle.off{background:#CFD6E4}.toggle.off::after{right:auto;left:3px}
+.toggle.lk{opacity:.55}
+.cb{width:20px;height:20px;border-radius:6px;border:2px solid #C5CDDD;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;background:#fff}
+.cb.on{background:var(--pri);border-color:var(--pri)}.cb svg.ic{width:13px;height:13px;stroke-width:3}
+.cb.dis{background:#EEF1F7;border-color:#DDE2EC}
+.rd{width:20px;height:20px;border-radius:50%;border:2px solid #C3CBDD;flex-shrink:0;background:#fff}
+.rd.on{border:6px solid var(--pri)}
+.qn{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;background:#EEF1F7;color:var(--muted);flex-shrink:0}
+.qn svg.ic{width:18px;height:18px;stroke-width:3}
+.qn.g{background:var(--grn);color:#fff}.qn.y{background:var(--yel);color:#fff}.qn.o{background:#fff;color:var(--org);border:2.5px solid var(--org)}
+.box{border:1.5px solid var(--line);border-radius:14px;padding:12px 13px;background:#fff}
+.box.soft{background:var(--soft)}
+.box.grn{border-color:#B9E6D2;background:var(--grn-s)}
+.box.yel{border-color:#F4D58A;background:#FFFBEE}
+.box.org{border-color:#F7C2B3;background:var(--org-s)}
+.box.pur{border-color:#D9CCFF;background:var(--pur-s)}
+.box.pri{border-color:#C9D3F5;background:#F5F7FF}
+.box.red{border-color:#F5B8B2;background:var(--red-s)}
+.box.sel{border-color:var(--pri);background:#F5F7FF;box-shadow:0 0 0 3px rgba(59,91,219,.10)}
+.box.dash{border-style:dashed;background:var(--soft)}
+.sep{height:1px;background:var(--line);flex-shrink:0}
+.end{margin-left:auto}
+.nw{white-space:nowrap}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+tr.sel td{background:#F5F7FF}
+tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--pri)}
+tbody tr:last-child td{border-bottom:none}
+.tl{position:relative;padding-left:22px;display:flex;flex-direction:column;gap:11px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl>div{position:relative}
+.tl>div::before{content:"";position:absolute;left:-21px;top:4px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--pri)}
+.tl>div.g::before{border-color:var(--grn)}.tl>div.y::before{border-color:var(--yel)}.tl>div.n::before{border-color:#C3CBDD}.tl>div.r::before{border-color:var(--red)}
+.stamp{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:8px;border:2px solid var(--red);color:var(--red);font-weight:800;font-size:11.5px;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+.stamp svg.ic{width:14px;height:14px;stroke-width:2.4}
+.field.sm{padding:7px 10px;font-size:12.5px;border-radius:10px}
+.seg span{white-space:nowrap}.card h2{white-space:nowrap}
+.step{width:34px;height:34px;border-radius:10px;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:var(--pri);background:#fff}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="assets/ds.js"></script>
+<script>
+/* icon bổ sung (chỉ trong bộ nhớ, không sửa ds.js) */
+Object.assign(P,{graph:"M4 20V4M4 20h16M6 9c2.500 9 6 9 8 1s3-4 4-4",
+ drag:"M9 6h.01M15 6h.01M9 12h.01M15 12h.01M9 18h.01M15 18h.01",
+ warn:"M12 4l9 16H3zM12 10v5M12 17.500v.5",upload:"M12 16V5M7 10l5-5 5 5M5 20h14",
+ user:"M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M4 20a8 8 0 0 1 16 0",
+ link:"M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1",
+ down:"M12 4v12M6 11l6 6 6-6M5 20h14",
+ sliders:"M4 7h10M18 7h2M4 17h2M10 17h10M16 7m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M8 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0",
+ chev:"M9 6l6 6-6 6",info:"M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18M12 11v5M12 7.500v.5",
+ key:"M8 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8M12 11h9M18 11v3M15 11v2",
+ eyeoff:"M3 3l18 18M10.500 6.200A9.500 9.500 0 0 1 12 6c6 0 10 6 10 6a17 17 0 0 1-3 3.600M6.500 7.500C3.800 9.300 2 12 2 12s4 6 10 6c1.400 0 2.700-.3 3.900-.8",
+ minus:"M5 12h14",trash:"M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"});
+
+/* ---------- khung ---------- */
+const NAVM={
+ hs2:[['home','Bài của em'],['flame','Luyện tập'],['cube','Tự học'],['clock','Lịch sử']],
+ gv:[['home','Tổng quan'],['book','Kho đề'],['users','Lớp học'],['chart','Theo dõi']],
+ gv5:[['home','Tổng quan'],['book','Kho đề'],['users','Lớp học'],['chart','Theo dõi'],['edit','Chấm bài'],['spark','Trợ lý']],
+ gv7:[['home','Tổng quan'],['book','Kho đề'],['users','Lớp học'],['chart','Theo dõi'],['shield','Nhóm học'],['layers','Cộng đồng']],
+ sp:[['layers','Môn học'],['shield','Hợp chuẩn']],
+ tr6:[['home','Tổng quan'],['users','Lớp & GV'],['link','Phụ huynh'],['bell','Thông báo']],
+ tr8:[['home','Tổng quan'],['users','Lớp & GV'],['bell','Thông báo'],['sliders','Chính sách'],['chart','Báo cáo'],['eye','Sổ truy cập']],
+ tr9:[['home','Tổng quan'],['users','Lớp & GV'],['bell','Thông báo'],['file','Văn bản'],['sliders','Chính sách'],['chart','Báo cáo']]};
+const WHOM={hs:['A','#F0522B'],gv:['GV','#3B5BDB'],tr:['QT','#7C4DFF'],sp:['SP','#141B2D']};
+const stageChip=n=>`<span class="chip pur">${ic('spark')}Concept · Chặng ${n}</span>`;
+function frame(id,o,body){
+ const ip=o.dev==='ipad';
+ return `<section class="screen${ip?' ipad':''}" id="${id}">
+ <nav class="rail"><div class="logo">${ic('cube')}</div>${NAVM[o.nav].map((n,i)=>`<a class="${i===o.on?'on':''}">${ic(n[0],'width:22px;height:22px')}${n[1]}</a>`).join('')}<div class="sp"></div></nav>
+ <div class="main"><div class="top"><div style="min-width:0"><h1>${o.title}</h1>${o.crumb?`<div class="crumb">${o.crumb}</div>`:''}</div>
+ <div class="r"><span class="chip">${ic(o.role==='hs'?'users':'school')}${o.label} · ${ip?'iPad ngang 1180×820':'Web 1440×900'}</span>${stageChip(o.stage)}<div class="ava" style="background:${WHOM[o.role][1]}">${WHOM[o.role][0]}</div></div></div>
+ <div class="body">${body}</div></div></section>`;}
+const hint=(cls,icl,icon,h,p,extra='')=>`<div class="hint ${cls}"><div class="icb ${icl}">${ic(icon)}</div><div class="grow"><h3>${h}</h3>${p?`<p>${p}</p>`:''}${extra}</div></div>`;
+const ok=t=>`<span class="chip grn">${ic('shield')}${t||'Đã kiểm chứng'}</span>`;
+const rev=t=>`<span class="chip yel">${ic('warn')}${t||'Cần xem lại'}</span>`;
+const aiS=t=>`<span class="chip pur">${ic('spark')}${t||'AI soạn'}</span>`;
+const gvD=t=>`<span class="chip pri">${ic('check')}${t||'Giáo viên đã duyệt'}</span>`;
+const COL={An:'#F0522B','Bình':'#3B5BDB',Chi:'#E8A200','Dũng':'#B45309','Hà':'#D6336C'};
+const ava=(n,s=30,c)=>`<div class="ava" style="width:${s}px;height:${s}px;font-size:${s<34?12:14}px;background:${c||COL[n]||'#64748B'}">${n[0]}</div>`;
+const TF='font-family="Be Vietnam Pro" font-weight="800"';
+const note=(icon,t,st='')=>`<div class="row small muted" style="align-items:flex-start;gap:8px;${st}">${ic(icon,'width:16px;height:16px;margin-top:2px')}<span>${t}</span></div>`;
+
+/* ---------- hình và đồ thị (tính từ số liệu) ---------- */
+// Tam giác vuông tại A: AB = 6, AC = 8, BC = 10, BH = 3,6, AH = 4,8. Tỉ lệ 16px/cm: B(20,104) C(180,104) A(77.6,27.2) H(77.6,104)
+const triMini=()=>`<svg viewBox="0 0 200 124" xmlns="http://www.w3.org/2000/svg">
+<polygon points="20,104 180,104 77.6,27.2" fill="#3B5BDB" fill-opacity=".09" stroke="#253150" stroke-width="2" stroke-linejoin="round"/>
+<line x1="77.6" y1="27.2" x2="77.6" y2="104" stroke="#F0522B" stroke-width="2.6" stroke-linecap="round"/><path d="M77.6,96H85.6V104" fill="none" stroke="#F0522B" stroke-width="1.4"/>
+<g fill="#141B2D" font-size="12" ${TF}><text x="72" y="20">A</text><text x="6" y="110">B</text><text x="185" y="110">C</text></g><text x="73" y="119" fill="#F0522B" font-size="12" ${TF}>H</text>
+<g fill="#5F6B85" font-size="10.5" font-family="Be Vietnam Pro" font-weight="700"><text x="16" y="60">6 cm</text><text x="136" y="58">8 cm</text></g></svg>`;
+const triThumb=c=>`<svg viewBox="0 0 100 90"><polygon points="12,76 90,76 40,12" fill="${c}" fill-opacity=".14" stroke="${c}" stroke-width="2.4" stroke-linejoin="round"/><path d="M40,12V76" stroke="${c}" stroke-width="1.8" stroke-dasharray="4 4"/><path d="M40,68H48V76" fill="none" stroke="${c}" stroke-width="1.600"/></svg>`;
+function graph(o){const {w,h,x0,x1,y0,y1,f,c='#3B5BDB',sw=3.2,full=1,extra=()=>''}=o;
+ const X=x=>+((x-x0)/(x1-x0)*w).toFixed(1), Y=y=>+(h-(y-y0)/(y1-y0)*h).toFixed(1);
+ const path=(a,b)=>{let d='',pen=0;for(let i=0;i<=600;i++){const x=a+(b-a)*i/600,y=f(x);if(y<y0-.05||y>y1+.05){pen=0;continue}d+=(pen?'L':'M')+X(x)+','+Y(y);pen=1}return d};
+ let g='',t='';
+ if(full){for(let x=Math.ceil(x0);x<=x1;x++){g+=`<line x1="${X(x)}" y1="0" x2="${X(x)}" y2="${h}"/>`;if(x!==0&&x>x0&&x<x1)t+=`<text x="${X(x)}" y="${Y(0)+19}" text-anchor="middle">${x<0?'−'+(-x):x}</text>`}
+  for(let y=Math.ceil(y0);y<=y1;y++){g+=`<line x1="0" y1="${Y(y)}" x2="${w}" y2="${Y(y)}"/>`;if(y!==0&&y>y0&&y<y1)t+=`<text x="${X(0)-9}" y="${Y(y)+5}" text-anchor="end">${y<0?'−'+(-y):y}</text>`}
+  t+=`<text x="${X(0)-9}" y="${Y(0)+19}" text-anchor="end">O</text><text x="${w-10}" y="${Y(0)-9}" font-style="italic">x</text><text x="${X(0)+9}" y="14" font-style="italic">y</text>`}
+ const ax=full?'#253150':c;
+ return `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${full?`<rect width="${w}" height="${h}" fill="#fff"/><g stroke="#E3E8F2" stroke-width="1">${g}</g>`:''}
+ <g stroke="${ax}" stroke-width="${full?1.8:1.4}" opacity="${full?1:.55}" fill="none" stroke-linecap="round"><path d="M0,${Y(0)}H${w}M${X(0)},${h}V0"/>${full?`<path d="M${w-9},${Y(0)-5}L${w},${Y(0)}L${w-9},${Y(0)+5}M${X(0)-5},9L${X(0)},0L${X(0)+5},9"/>`:''}</g>
+ <g fill="#5F6B85" font-size="13" font-family="Be Vietnam Pro" font-weight="600" stroke="#fff" stroke-width="4" paint-order="stroke">${t}</g>
+ <path d="${path(x0,x1)}" fill="none" stroke="${c}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>${extra(X,Y,path)}</svg>`;}
+const gThumb=(f,c,r=[-3,3,-3,3])=>graph({w:100,h:90,x0:r[0],x1:r[1],y0:r[2],y1:r[3],f,c,sw:2.6,full:0});
+// y = x³ − 3x² + 2 trên [−1; 3]: y(−1) = −2, y(0) = 2, y(2) = −2, y(3) = 2
+const cubic=x=>x*x*x-3*x*x+2;
+const cubicG=graph({w:420,h:490,x0:-2,x1:4,y0:-3.5,y1:3.5,f:cubic,c:'#B9C6F2',sw:2.4,extra:(X,Y,path)=>`
+ <rect x="${X(-1)}" y="0" width="${X(3)-X(-1)}" height="490" fill="#3B5BDB" fill-opacity=".05"/>
+ <path d="${path(-1,3)}" fill="none" stroke="#3B5BDB" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+ ${[[-1,-2,'#0F8A5F'],[0,2,'#F0522B'],[2,-2,'#0F8A5F'],[3,2,'#F0522B']].map(p=>`<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="6.5" fill="${p[2]}" stroke="#fff" stroke-width="2"/>`).join('')}
+ <g font-size="14" ${TF} stroke="#fff" stroke-width="4" paint-order="stroke"><text x="${X(0)+12}" y="${Y(2)-10}" fill="#F0522B">(0; 2)</text><text x="${X(3)-8}" y="${Y(2)-12}" fill="#F0522B" text-anchor="end">(3; 2)</text>
+ <text x="${X(-1)+10}" y="${Y(-2)+36}" fill="#0F8A5F">(−1; −2)</text><text x="${X(2)}" y="${Y(-2)+24}" fill="#0F8A5F" text-anchor="middle">(2; −2)</text></g>`});
+
+/* =================== C2-07 · Kết quả bài luyện =================== */
+// Tự kiểm: câu 3 BH = AB²/BC = 36/10 = 3,6 = 18/5; câu 4 AH = 6·8/10 = 4,8; câu 6 BC = 13, sin B = AC/BC = 12/13.
+const QS=[
+ [1,'Tam giác ABC vuông tại A, AB = 3 cm, AC = 4 cm. Tính BC.','BC = 5 cm','g','Đúng ngay lượt 1'],
+ [2,'Tam giác ABC vuông tại A, AB = 6 cm, AC = 8 cm. Tính BC.','BC = 10 cm','g','Đúng ngay lượt 1'],
+ [3,'Tam giác ABC vuông tại A, AB = 6 cm, BC = 10 cm, đường cao AH. Tính BH.','BH = 18/5 cm','g','Đúng ngay lượt 1','Máy vẫn tính đúng. Dạng chuẩn: 3,6 cm'],
+ [4,'Tam giác ABC vuông tại A, AB = 6 cm, AC = 8 cm, đường cao AH. Tính AH.','AH = 4,8 cm','y','Đúng ở lượt 2 · sau gợi ý 1'],
+ [5,'Tam giác ABC vuông tại A, đường cao AH, BH = 4 cm, HC = 9 cm. Tính AH.','','o','Đã dùng hết 3 lượt thử'],
+ [6,'Tam giác ABC vuông tại A, AB = 5 cm, AC = 12 cm. Tính sin B.','sin B = 12/13','g','Đúng ngay lượt 1'],
+ [7,'Tam giác ABC vuông tại A, AB = 5 cm, góc B = 60°. Tính AC.','','n',''],
+ [8,'Tam giác ABC vuông tại A, AB = 3 cm, AC = 4 cm. Tính góc B (làm tròn đến độ).','','n','']];
+const qRow=q=>{const [n,t,a,s,st,ex]=q;
+ const right=s==='g'||s==='y'?`<div style="text-align:right;flex-shrink:0"><div class="mono" style="font-size:13.5px">${a}</div><div class="tiny" style="color:${s==='g'?'var(--grn)':'#9A6B00'};font-weight:700">${st}</div></div>`
+  :s==='o'?`<div style="text-align:right;flex-shrink:0"><span class="chip org">${ic('users')}Xem lại cùng thầy cô</span><div class="tiny muted" style="margin-top:3px">${st}</div></div>`
+  :`<span class="btn sm soft" style="flex-shrink:0">Làm câu này</span>`;
+ return `<div class="row" style="padding:8px 12px;border:1.5px solid ${s==='o'?'#F7C2B3':'var(--line)'};border-radius:13px;gap:12px;background:${s==='o'?'#FFF8F5':s==='n'?'var(--soft)':'#fff'}">
+ <div class="qn ${s==='n'?'':s}">${s==='g'||s==='y'?ic('check'):n}</div>
+ <div class="grow"><div style="font-weight:600;font-size:13.5px;line-height:1.35"><span class="muted">Câu ${n}.</span> ${t}</div>${ex?`<div class="tiny" style="margin-top:2px;color:var(--pri);font-weight:700">${ex}</div>`:''}${s==='o'?`<div class="tiny muted" style="margin-top:2px">${ic('lock','width:12px;height:12px;vertical-align:-2px')} Đáp số và lời giải của câu này mở lúc 20:00 hôm nay</div>`:''}${s==='n'?`<div class="tiny muted" style="margin-top:2px">Chưa làm</div>`:''}</div>${right}</div>`;};
+const C207=frame('st-c2-07-ket-qua-bai-luyen',{nav:'hs2',on:1,role:'hs',label:'Học sinh',dev:'ipad',stage:2,title:'Kết quả bài luyện',crumb:'Hệ thức lượng trong tam giác vuông · lớp 11A1 · 8 câu'},`
+<div class="card pad col grow" style="gap:8px;min-width:0">
+ <div class="row"><h2 style="margin:0" class="grow">Từng câu của em</h2>
+  <span class="row tiny muted" style="gap:5px"><span style="width:10px;height:10px;border-radius:3px;background:var(--grn)"></span>Đúng</span>
+  <span class="row tiny muted" style="gap:5px"><span style="width:10px;height:10px;border-radius:3px;background:var(--yel)"></span>Đúng sau gợi ý</span>
+  <span class="row tiny muted" style="gap:5px"><span style="width:10px;height:10px;border-radius:3px;border:2px solid var(--org)"></span>Xem lại cùng thầy cô</span></div>
+ ${QS.map(qRow).join('')}
+</div>
+<div class="card side" style="width:348px"><div class="pad col grow" style="gap:12px">
+ <div style="padding:16px;border-radius:14px;background:linear-gradient(135deg,#3B5BDB,#7C4DFF);color:#fff">
+  <div class="tiny" style="opacity:.9;font-weight:700">Em đã làm</div>
+  <div style="font-size:30px;font-weight:800;line-height:1.15">6/8 câu</div>
+  <div style="display:flex;gap:4px;margin-top:10px">${['g','g','g','y','o','g','n','n'].map(s=>`<i style="flex:1;height:9px;border-radius:99px;background:${s==='g'?'#5BE3B0':s==='y'?'#FFD466':s==='o'?'#FF9C80':'rgba(255,255,255,.28)'}"></i>`).join('')}</div>
+  <div class="tiny" style="opacity:.9;margin-top:8px">Bài chưa làm xong · em làm tiếp lúc nào cũng được</div></div>
+ <div class="row" style="gap:8px">
+  <div class="box grn grow" style="padding:10px 8px;text-align:center"><b style="font-size:22px;color:var(--grn)">5</b><div class="tiny" style="font-weight:700">đúng</div></div>
+  <div class="box org grow" style="padding:10px 8px;text-align:center"><b style="font-size:22px;color:var(--org)">1</b><div class="tiny" style="font-weight:700">cần xem lại</div></div>
+  <div class="box soft grow" style="padding:10px 8px;text-align:center"><b style="font-size:22px;color:var(--muted)">2</b><div class="tiny" style="font-weight:700">chưa làm</div></div></div>
+ <div class="hint lock" style="align-items:center;padding:11px 13px"><div class="icb sm gry">${ic('lock')}</div><div><b class="small">Lời giải mở lúc 20:00 hôm nay</b><div class="tiny muted">Do giáo viên của em đặt · gồm cả đáp số câu 5</div></div></div>
+ ${hint('','yel','bulb','Trong lúc chờ','Em vẫn xem lại được gợi ý đã mở ở từng câu. Câu 5 thầy cô sẽ cùng em xem lại.')}
+ <div class="grow"></div>
+ ${note('info','Bài luyện để em tự kiểm tra. Máy chỉ chấm đáp số, không tính thành điểm.')}
+ <div class="row"><span class="btn ghost">Về Luyện tập</span><span class="btn grow">${ic('arrow')}Làm tiếp câu 7</span></div>
+</div></div>`);
+
+/* =================== C2-08 · Soạn bài luyện =================== */
+// Tự kiểm: câu 5 AH² = 4·9 = 36 ⇒ AH = 6; câu 7 AC = 5·tan 60° = 5√3 ≈ 8,66; câu 8 tan B = 4/3 ⇒ B ≈ 53,13° ≈ 53°.
+const PICK=[['Pythagore: AB = 3, AC = 4, tính BC',1,1],['Pythagore: AB = 6, AC = 8, tính BC',1,1],['Hình chiếu: AB = 6, BC = 10, tính BH',1,1],['Đường cao: AB = 6, AC = 8, tính AH',1,1],['Đường cao: BH = 4, HC = 9, tính AH',1,1],['Tỉ số lượng giác: AB = 5, AC = 12, tính sin B',1,1],['Cạnh và góc: AB = 5, góc B = 60°, tính AC',1,1],['Tính góc: AB = 3, AC = 4, tính góc B',1,1],['Chứng minh AH · BC = AB · AC',0,-1],['Đường tròn bán kính 5, dây cách tâm 3: tính độ dài dây',0,1]];
+const ITEMS=[['BC','5 cm','Số','Chính xác'],['BC','10 cm','Số','Chính xác'],['BH','3,6 cm','Số thập phân hoặc phân số','± 0,01'],['AH','4,8 cm','Số thập phân hoặc phân số','± 0,01'],['AH','6 cm','Số','Chính xác'],['sin B','12/13','Phân số hoặc số thập phân','± 0,001'],['AC','5√3 cm','Biểu thức có căn hoặc số thập phân','± 0,01'],['góc B','53°','Góc (độ)','± 0,5°']];
+const C208=frame('st-c2-08-soan-bai-luyen',{nav:'gv',on:1,role:'gv',label:'Giáo viên',dev:'web',stage:2,title:'Soạn bài luyện',crumb:'Kho đề › Bài luyện mới · học sinh điền đáp số, máy chấm ngay'},`
+<div class="card pad col" style="width:352px;flex-shrink:0;gap:8px">
+ <div class="row"><h2 style="margin:0" class="grow">1 · Chọn đề</h2><span class="chip pri">Đã chọn 8</span></div>
+ <div class="field">${ic('search')}<span class="muted" style="font-weight:500">Tìm trong Của tôi và Kho chung…</span></div>
+ ${PICK.map(x=>`<div class="row" style="padding:7px 9px;border-radius:12px;border:1.5px solid ${x[2]<0?'#F5B8B2':x[1]?'#C9D3F5':'var(--line)'};background:${x[2]<0?'#FFF8F7':x[1]?'#F5F7FF':'#fff'};gap:9px">
+  <div class="cb ${x[1]?'on':x[2]<0?'dis':''}">${x[1]?ic('check'):''}</div>
+  <div class="grow"><div class="small" style="font-weight:600;line-height:1.3;${x[2]<0?'color:var(--muted)':''}">${x[0]}</div>${x[2]<0?`<div class="tiny" style="color:var(--red);font-weight:700;margin-top:2px">Chưa có đáp số máy chấm được</div>`:''}</div>
+  ${x[2]<0?`<span class="chip red" style="padding:4px 6px">${ic('x')}</span>`:`<span class="chip grn" style="padding:4px 6px">${ic('shield')}</span>`}</div>`).join('')}
+ <div class="grow"></div>
+ ${note('info','Đề chứng minh không có đáp số để máy so, nên chưa đưa vào bài luyện được.')}
+</div>
+<div class="card pad col grow" style="gap:8px;min-width:0">
+ <div class="row"><h2 style="margin:0" class="grow">2 · Đáp số và cách chấm từng câu</h2><span class="small muted">Đáp số do máy tính lại từ đề</span></div>
+ <table><thead><tr><th style="width:44px">Câu</th><th>Đáp số đúng</th><th>Kiểu đáp số</th><th style="width:132px">Sai số cho phép</th></tr></thead><tbody>
+ ${ITEMS.map((x,i)=>`<tr><td><div class="num on">${i+1}</div></td><td class="nw"><span class="mono">${x[0]} = ${x[1]}</span> <span class="chip grn" style="padding:3px 6px;margin-left:4px">${ic('shield')}</span></td>
+  <td><div class="field sm"><span class="grow">${x[2]}</span>${ic('chev','transform:rotate(90deg);width:14px;height:14px')}</div></td>
+  <td><div class="field sm mono" style="justify-content:center;${x[3]==='Chính xác'?'font-family:inherit;color:var(--muted)':''}">${x[3]}</div></td></tr>`).join('')}
+ </tbody></table>
+ <div class="grow"></div>
+ <div class="g2">
+  <div class="box pri"><div class="row" style="gap:8px"><div class="icb sm pri">${ic('check')}</div><b class="small">Đúng giá trị, khác dạng viết</b></div><div class="tiny muted" style="margin-top:6px">Vẫn tính đúng và hiện kèm dạng chuẩn. Ví dụ câu 3: em nhập 18/5, máy báo đúng, dạng chuẩn 3,6 cm.</div></div>
+  <div class="box soft"><div class="row" style="gap:8px"><div class="icb sm gry">${ic('edit')}</div><b class="small">Nhập sai cú pháp</b></div><div class="tiny muted" style="margin-top:6px">Máy chỉ ra chỗ sai để em sửa, không trừ lượt thử.</div></div></div>
+</div>
+<div class="card pad col" style="width:336px;flex-shrink:0;gap:10px">
+ <h2 style="margin:0">3 · Lượt thử và giờ mở</h2>
+ <div class="row"><div class="grow"><div class="lbl" style="margin:0">Số lượt thử mỗi câu</div><div class="tiny muted">Hết lượt: “xem lại cùng thầy cô”</div></div><div class="step">${ic('minus','width:15px;height:15px')}</div><b style="font-size:18px;width:22px;text-align:center">3</b><div class="step">${ic('plus','width:15px;height:15px')}</div></div>
+ <div><div class="lbl">Giờ mở lời giải và đáp số</div><div class="row"><div class="field grow">${ic('cal')}Thứ Ba, 24/11</div><div class="field" style="width:104px">${ic('clock')}20:00</div></div></div>
+ <div class="hint lock" style="padding:10px 12px;gap:9px"><div class="icb sm yel">${ic('ruler')}</div><div class="tiny"><b>Công cụ đo luôn bị giới hạn.</b> Trước giờ mở, học sinh đo được các yếu tố trung gian nhưng không đo ra đại lượng đề hỏi. Quy tắc này không tắt được.</div></div>
+ <div class="sep"></div>
+ <div class="row"><b class="small grow">Xem trước như học sinh</b><span class="chip">Câu 4/8</span></div>
+ <div style="border:1.5px solid var(--line);border-radius:14px;background:var(--soft);padding:10px" class="col">
+  <div class="small" style="font-weight:600;line-height:1.35">Tam giác ABC vuông tại A, AB = 6 cm, AC = 8 cm, đường cao AH. Tính AH.</div>
+  <div style="background:#fff;border:1px solid var(--line);border-radius:11px;padding:6px;display:flex;justify-content:center;position:relative">${triMini().replace('<svg','<svg style="height:108px"')}
+   <span class="mono tiny" style="position:absolute;right:7px;top:7px;border:1.5px solid var(--org);color:var(--org);border-radius:8px;padding:2px 7px;background:#fff">BH = 3,6</span>
+   <span class="tiny" style="position:absolute;left:7px;top:7px;border:1.5px dashed #C5CDDD;color:var(--muted);border-radius:8px;padding:2px 7px;background:#fff;font-weight:700">${ic('lock','width:11px;height:11px;vertical-align:-1px')} AH: ẩn</span></div>
+  <div class="row"><div class="field sm grow" style="background:#fff"><span class="mono">AH =</span><span class="muted" style="font-weight:500">nhập đáp số</span></div><span class="chip pri">Còn 3 lượt</span></div></div>
+ <div class="grow"></div>
+ <span class="btn" style="padding:13px">${ic('send')}Giao bài luyện cho 11A1</span>
+ <div class="tiny muted" style="text-align:center">Bài luyện chỉ chấm đáp số, không phải điểm chính thức.</div>
+</div>`);
+
+/* =================== C4-04 · Thêm đề hàm số =================== */
+const stepRow=(n,h,t,st,extra='')=>`<div class="hint ${st?'':'org'}" style="padding:10px 13px"><div class="num ${st?'done':''}" style="${st?'':'background:var(--org);color:#fff'}">${n}</div><div class="grow"><div class="row" style="gap:8px"><h3 class="grow">${h}</h3>${st?`<span class="chip grn">${ic('check')}Khớp tính toán</span>`:`<span class="chip org">${ic('warn')}Không khớp tính toán</span>`}<span class="btn sm ghost" style="padding:5px 10px">${ic('edit')}Sửa</span></div><p style="color:var(--text);font-size:13.5px;margin-top:4px">${t}</p>${extra}</div></div>`;
+const C404=frame('st-c4-04-them-de-ham-so',{nav:'gv',on:1,role:'gv',label:'Giáo viên',dev:'web',stage:4,title:'Thêm đề hàm số',crumb:'Kho đề › Hàm số và đồ thị › Đề mới · bản nháp, lưu tự động lúc 15:42'},`
+<div class="col" style="width:400px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:9px">
+  <div class="row"><div class="icb org">${ic('graph')}</div><h2 style="margin:0" class="grow">Đề bài</h2><span class="chip">Bản nháp</span></div>
+  <div class="field" style="align-items:flex-start;font-weight:500;line-height:1.55">Cho hàm số y = x³ − 3x² + 2. Tìm giá trị lớn nhất và giá trị nhỏ nhất của hàm số trên đoạn [−1; 3].</div>
+  <div class="row" style="gap:6px;flex-wrap:wrap"><span class="chip org">Hàm số và đồ thị</span><span class="chip pri">THPT</span><span class="chip">Khảo sát</span><span class="chip">Giá trị lớn nhất, nhỏ nhất</span></div>
+  <div><div class="row" style="margin-bottom:5px"><div class="lbl grow" style="margin:0">Miền xác định máy đọc từ đề</div>${ok('Khớp đề')}</div><div class="row"><div class="field sm" style="width:110px;white-space:nowrap"><span class="muted">D =</span><span class="mono">ℝ</span></div><div class="field sm grow" style="white-space:nowrap"><span class="muted">Xét trên đoạn</span><span class="mono">[−1; 3]</span></div></div></div>
+  <div class="row"><span class="btn sm ghost">${ic('camera')}Chụp hoặc dán ảnh đề</span><span class="btn sm soft end">${ic('reset')}Dựng lại đồ thị</span></div>
+  ${note('info','Hàm ngoài phạm vi hỗ trợ sẽ lưu với nhãn “Cần xem lại” và không có thanh trượt.','font-size:11.5px')}
+ </div>
+ <div class="canvas"><div class="row" style="position:absolute;left:14px;top:12px;right:14px"><b>Đồ thị xem trước</b><span class="end">${ok('Đồ thị khớp hàm số')}</span></div>
+  <div class="fig" style="top:46px;bottom:40px">${cubicG}</div>
+  <div class="tiny muted" style="position:absolute;left:14px;right:14px;bottom:11px;text-align:center">Nét đậm: phần đồ thị trên đoạn [−1; 3]</div></div></div>
+<div class="card pad col grow" style="gap:8px;min-width:0">
+ <div class="row"><h2 style="margin:0">Lời giải từng bước</h2>${aiS('AI soạn')}${rev('Cần xem lại')}<span class="small muted end">3/5 bước khớp</span></div>
+ ${stepRow(1,'Miền xác định','Hàm đa thức nên D = ℝ. Xét hàm số trên đoạn [−1; 3].',1)}
+ ${stepRow(2,'Tính đạo hàm','y′ = 3x² − 6x = 3x(x − 2).',1)}
+ ${stepRow(3,'Tìm điểm tới hạn','y′ = 0 ⇔ x = 0 hoặc x = 2. Cả hai đều thuộc đoạn [−1; 3].',1)}
+ ${stepRow(4,'Tính giá trị tại các điểm cần xét','<span style="text-decoration:line-through;color:var(--muted)">y(−1) = −1 + 3 + 2 = 4;</span> y(0) = 2; y(2) = 8 − 12 + 2 = −2; y(3) = 27 − 27 + 2 = 2.',0,`<div class="row" style="margin-top:7px;padding:8px 11px;border-radius:11px;background:#fff;border:1.5px solid var(--org)"><div class="grow"><div class="tiny muted" style="font-weight:700">Máy tính lại · đề xuất sửa</div><b>y(−1) = (−1)³ − 3·(−1)² + 2 = −1 − 3 + 2 = −2.</b></div><span class="btn sm grn">${ic('check')}Nhận sửa</span><span class="btn sm ghost">Tự sửa</span></div>`)}
+ ${stepRow(5,'Kết luận','<span style="text-decoration:line-through;color:var(--muted)">Giá trị lớn nhất bằng 4 tại x = −1;</span> giá trị nhỏ nhất bằng −2 tại x = 2.',0)}
+ <div class="grow"></div>
+ <div class="row"><span class="btn sm soft">${ic('plus')}Thêm bước</span><span class="btn sm ghost">${ic('reset')}Kiểm tra lại</span><span class="tiny muted end" style="max-width:300px;text-align:right">Mỗi lần sửa, máy chạy lại và tô đỏ bước sai số kèm lý do.</span></div></div>
+<div class="col" style="width:330px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:9px"><div class="row"><div class="icb org">${ic('warn')}</div><div><h2 style="margin:0">Đáp số lệch nhau</h2><div class="tiny muted">Chọn giữ đáp số nào để mở nút Duyệt</div></div></div>
+  <div class="box row" style="gap:10px;padding:10px 12px"><div class="rd"></div><div class="grow"><div class="tiny muted" style="font-weight:700">Lời giải AI soạn</div><b class="small">Lớn nhất 4 (tại x = −1) · nhỏ nhất −2</b></div></div>
+  <div class="box row" style="gap:10px;padding:10px 12px"><div class="rd"></div><div class="grow"><div class="tiny muted" style="font-weight:700">Máy tính lại</div><b class="small">Lớn nhất 2 (tại x = 0 và x = 3) · nhỏ nhất −2 (tại x = −1 và x = 2)</b></div></div>
+  <div class="sep"></div>
+  ${[['check','grn','Miền xác định và đoạn xét','Khớp đề: D = ℝ, đoạn [−1; 3]'],['check','grn','Đạo hàm và điểm tới hạn','x = 0 và x = 2, khớp máy tính'],['warn','org','y(−1): lời giải ghi 4','Máy tính ra −2']].map(x=>`<div class="row" style="align-items:flex-start"><div class="icb sm ${x[1]}">${ic(x[0])}</div><div><b class="small">${x[2]}</b><div class="tiny muted">${x[3]}</div></div></div>`).join('')}</div>
+ <div class="card pad col grow" style="gap:9px"><h2 style="margin:0">Đưa vào kho đề</h2>
+  <div class="row small"><span class="muted grow">Máy kiểm chứng</span>${rev('Cần xem lại')}</div>
+  <div class="row small"><span class="muted grow">Người chịu trách nhiệm</span>${aiS('AI soạn')}</div>
+  <div class="tiny muted">Nhãn “Đã kiểm chứng” chỉ do máy gắn. Khi thầy cô duyệt, nhãn thứ hai đổi thành “Giáo viên đã duyệt”.</div>
+  <div class="grow"></div>
+  <span class="btn off" style="padding:13px">${ic('check')}Duyệt và đưa vào kho</span>
+  <div class="row tiny muted" style="gap:7px;align-items:flex-start">${ic('shield','width:15px;height:15px;margin-top:1px')}<span>Chỉ giáo viên được mời hoặc đã xác nhận mới dùng “Thêm đề” và xem lời giải AI.</span></div></div></div>`);
+
+/* =================== C4-05 · Thiết lập môn của lớp =================== */
+const subjRow=(art,bg,name,stChip,desc,meta,extra,tg)=>`<div class="box" style="padding:0;overflow:hidden"><div class="row" style="gap:16px;padding:14px 16px;align-items:stretch">
+ <div style="width:112px;border-radius:12px;background:${bg};display:flex;align-items:center;justify-content:center;flex-shrink:0">${art}</div>
+ <div class="grow col" style="gap:6px"><div class="row" style="gap:8px"><h2 style="margin:0;font-size:17px">${name}</h2>${stChip}</div><div class="small muted">${desc}</div><div class="row" style="gap:6px;flex-wrap:wrap">${meta}</div></div>
+ <div class="col" style="align-items:flex-end;gap:6px;flex-shrink:0"><div class="toggle ${tg?'':'off'}"></div><b class="tiny" style="color:${tg?'var(--pri)':'var(--muted)'}">${tg?'Đang bật cho lớp':'Đang tắt'}</b></div></div>${extra||''}</div>`;
+const C405=frame('st-c4-05-thiet-lap-mon-cua-lop',{nav:'gv',on:2,role:'gv',label:'Giáo viên',dev:'web',stage:4,title:'Thiết lập môn của lớp',crumb:'Lớp học › 11A1 › Môn học · bật hoặc tắt môn cho lớp sẵn có'},`
+<div class="col" style="width:300px;flex-shrink:0;gap:14px"><div class="card pad col" style="gap:10px">
+ <h2 style="margin:0">Lớp của tôi</h2>
+ <div class="box sel"><div class="row"><div class="icb" style="background:#3B5BDB;color:#fff;font-weight:800;font-size:13px">11A1</div><div class="grow"><h3>Lớp 11A1</h3><div class="tiny muted">5 học sinh · THPT Mẫu A</div></div></div>
+  <div class="col" style="gap:5px;margin-top:10px"><div class="row small"><span class="grow">Hình học</span><span class="chip grn">Đang bật</span></div><div class="row small"><span class="grow">Hàm số và đồ thị</span><span class="chip grn">Đang bật</span></div></div></div>
+ <div class="box"><div class="row"><div class="icb" style="background:#0F8A5F;color:#fff;font-weight:800;font-size:13px">9B</div><div class="grow"><h3>Lớp 9B</h3><div class="tiny muted">THPT Mẫu A</div></div></div>
+  <div class="col" style="gap:5px;margin-top:10px"><div class="row small"><span class="grow">Hình học</span><span class="chip grn">Đang bật</span></div><div class="row small"><span class="grow nw">Hàm số và đồ thị</span><span class="chip">${ic('lock')}Chưa mời</span></div></div></div>
+ ${note('lock','Môn đang thử nghiệm chỉ hiện với lớp được mời. Lớp 9B chưa bật được môn Hàm số và đồ thị.')}
+</div>
+<div class="card pad col grow" style="gap:10px"><h2 style="margin:0">Trạng thái của một môn</h2>
+ <div class="tl">
+  <div class="y"><b class="small">Thử nghiệm</b><div class="tiny muted">Chưa qua đủ bộ hợp chuẩn. Chỉ lớp được mời mới thấy.</div></div>
+  <div class="g"><b class="small">Đang mở</b><div class="tiny muted">Đã qua bộ hợp chuẩn. Mọi lớp bật được.</div></div>
+  <div class="n"><b class="small">Tạm tắt</b><div class="tiny muted">Môn đang tạm ngừng.</div></div></div>
+ <div class="grow"></div>
+ ${note('info','Trạng thái môn do nhóm sản phẩm đặt. Thầy cô chỉ bật hoặc tắt môn cho lớp mình.')}
+</div></div>
+<div class="card pad col grow" style="gap:12px;min-width:0">
+ <div class="row"><h2 style="margin:0" class="grow">Môn của lớp 11A1</h2><span class="small muted">2 môn · đang bật 2</span></div>
+ ${subjRow(sh.chop('#3B5BDB').replace('<svg','<svg style="height:82px"'),'var(--pri-s)','Hình học',`<span class="chip grn">${ic('check')}Đang mở</span>`,'Hình không gian và hình phẳng. Đã qua bộ hợp chuẩn môn học, mở cho mọi lớp.',`<span class="chip">48 đề trong kho</span><span class="chip">Ngăn môn: Hình học</span>${ok('Đề có nhãn “Đã kiểm chứng”')}`,'',1)}
+ ${subjRow(gThumb(x=>x*x-2,'#F0522B').replace('<svg','<svg style="height:82px"'),'var(--org-s)','Hàm số và đồ thị',`<span class="chip yel">${ic('warn')}Thử nghiệm</span>`,'Khảo sát, đọc đồ thị, tương giao, tham số. Lớp 11A1 nằm trong nhóm lớp được mời thử nghiệm.',`<span class="chip">24 đề trong kho</span><span class="chip">Ngăn môn: Hàm số và đồ thị</span><span class="chip pri">${ic('users')}Lớp được mời</span>`,
+ `<div class="row small" style="gap:9px;padding:10px 16px;background:#FFFBEE;border-top:1.5px solid #F4D58A;align-items:flex-start">${ic('warn','width:16px;height:16px;color:#9A6B00;margin-top:2px')}<span><b>Môn đang thử nghiệm.</b> Môn chưa qua đủ bộ hợp chuẩn nên chưa đề nào của môn này mang nhãn “Đã kiểm chứng”. Học sinh thấy chữ “Thử nghiệm” cạnh tên môn.</span></div>`,1)}
+ <div class="lbl" style="margin:4px 0 0">Điều không đổi khi lớp có thêm môn</div>
+ <div class="g2">
+  ${[['lock','yel','Một cổng công bố','Lịch mở lời giải, khóa ở máy chủ và kiểm tra hỏi đáp dùng chung cho mọi môn.'],['users','pri','Quyền theo lớp','Thầy cô vẫn chỉ thấy lớp mình; học sinh chỉ thấy bài của mình.'],['chart','pur','Kết quả tách theo môn','Kết quả của hai môn không cộng gộp thành một con số chung.'],['layers','grn','Giao theo bộ như trước','Một bộ có thể trộn đề hai môn; mỗi đề hiện biểu tượng môn.']].map(x=>`<div class="box row" style="align-items:flex-start;gap:10px"><div class="icb sm ${x[1]}">${ic(x[0])}</div><div><b class="small">${x[2]}</b><div class="tiny muted" style="margin-top:2px">${x[3]}</div></div></div>`).join('')}</div>
+ <div class="grow"></div>
+ ${note('info','Tắt một môn: lớp không còn ngăn môn đó. Bật lại bất cứ lúc nào.')}
+</div>
+<div class="card pad col" style="width:348px;flex-shrink:0;gap:10px">
+ <h2 style="margin:0">Học sinh lớp 11A1 sẽ thấy</h2>
+ <div class="small muted">Lớp có thêm một ngăn môn trong “Bài của em”.</div>
+ <div style="border:1.5px solid var(--line);border-radius:16px;background:var(--bg);padding:12px" class="col">
+  <div class="row"><b class="grow">Bài của em</b>${ava('An',26)}</div>
+  <div class="row" style="gap:6px"><span class="chip on" style="padding:6px 11px">${ic('cube')}Hình học</span><span class="chip" style="padding:6px 11px;background:#fff">${ic('graph')}Hàm số và đồ thị</span></div>
+  <div class="row"><span class="chip yel" style="font-size:10.5px">${ic('warn')}Hàm số và đồ thị đang thử nghiệm</span></div>
+  ${[['chop','#3B5BDB','Góc giữa SD và mặt đáy','Hình học',0],['g','#F0522B','Parabol tiếp xúc trục hoành','Hàm số và đồ thị',1]].map(x=>`<div class="row" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 10px;gap:10px"><div class="thumb" style="width:46px;height:42px;border-radius:9px;flex-shrink:0">${(x[0]==='g'?gThumb(t=>t*t-2,x[1]):sh.chop(x[1])).replace('<svg','<svg style="height:30px"')}</div><div class="grow"><div class="small" style="font-weight:700;line-height:1.3">${x[2]}</div><div class="tiny muted">${x[3]}</div></div>${ic('lock','width:15px;height:15px;color:var(--faint)')}</div>`).join('')}
+  <div class="tiny muted" style="text-align:center">Lời giải vẫn mở theo giờ thầy cô đặt, ở cả hai môn.</div></div>
+ <div class="lbl" style="margin:4px 0 0">Thầy cô sẽ thấy</div>
+ <div class="box row" style="align-items:flex-start;gap:10px"><div class="icb sm pri">${ic('users')}</div><div><b class="small">Lớp học</b><div class="tiny muted" style="margin-top:2px">Lớp 11A1 có thêm ngăn môn Hàm số và đồ thị.</div></div></div>
+ <div class="box row" style="align-items:flex-start;gap:10px"><div class="icb sm org">${ic('book')}</div><div><b class="small">Kho đề</b><div class="tiny muted" style="margin-top:2px">Chọn môn rồi tìm đề, với cùng bộ lọc và nhãn hai trục như Hình học.</div></div></div>
+ <div class="grow"></div>
+ <div class="row"><span class="btn ghost grow">${ic('book')}Mở Kho đề theo môn</span></div>
+ <div class="tiny muted" style="text-align:center">Thay đổi được lưu ngay khi gạt công tắc.</div>
+</div>`);
+
+/* =================== C4-06 · Bảng hợp chuẩn môn học =================== */
+const CF=[['file','Đọc đề','Bộ đề chuẩn','60/60 đề chép lại đúng',1],['graph','Dựng đồ thị','Bộ đề chuẩn','60/60 đồ thị khớp hàm số',1],['shield','Giải và kiểm chứng','Bộ đề chuẩn','58 đề “Đã kiểm chứng”, 2 đề “Cần xem lại” · 0 đề sai mang nhãn “Đã kiểm chứng”',1],['check','Chấm đáp số','Bộ đề chuẩn','240/240 đáp số thử được chấm đúng',1],['bulb','Thang gợi ý','Thang gợi ý','3/60 đề có gợi ý mức 2 nêu luôn đáp số',0],['lock','Thử moi đáp án','Bộ thử moi đáp án','0/120 câu thử làm lộ lời giải trước giờ mở',1],['layers','Danh mục khái niệm','—','Chưa chạy trong lần này',-1]];
+const cfSt=s=>s===1?`<span class="chip grn">${ic('check')}Đạt</span>`:s===0?`<span class="chip red">${ic('x')}Chưa đạt</span>`:`<span class="chip">${ic('clock')}Chưa chạy</span>`;
+const C406=frame('st-c4-06-bang-hop-chuan-mon-hoc',{nav:'sp',on:1,role:'sp',label:'Nhóm sản phẩm (nội bộ)',dev:'web',stage:4,title:'Bảng hợp chuẩn môn học',crumb:'Môn mới phải qua bộ đề chuẩn, bộ thử moi đáp án và thang gợi ý mới được mở'},`
+<div class="card pad col grow" style="gap:10px;min-width:0">
+ <div class="row"><div class="seg"><span>${ic('cube')}Hình học</span><span class="on">${ic('graph')}Hàm số và đồ thị</span></div><span class="small muted end nw">Lần chạy 14 · 22/11 · 10:05</span><span class="btn sm">${ic('play')}Chạy lại bộ hợp chuẩn</span></div>
+ <table><thead><tr><th>Hạng mục</th><th style="width:160px">Bộ thử</th><th>Kết quả lần chạy 14</th><th style="width:120px">Trạng thái</th></tr></thead><tbody>
+ ${CF.map(x=>`<tr style="${x[4]===0?'background:#FFF8F7':''}"><td style="padding:12px 10px"><div class="row"><div class="icb sm ${x[4]===1?'grn':x[4]===0?'red':'gry'}">${ic(x[0])}</div><b>${x[1]}</b></div></td><td class="muted small">${x[2]}</td><td class="small" style="${x[4]<0?'color:var(--muted)':''}">${x[3]}</td><td>${cfSt(x[4])}</td></tr>`).join('')}
+ </tbody></table>
+ <div class="box red" style="background:#FFF8F7"><div class="row" style="gap:8px"><div class="icb sm red">${ic('bulb')}</div><b class="grow">Chỗ chưa đạt: Thang gợi ý</b><span class="small muted">3 đề · bấm để mở từng đề</span></div>
+  <div class="col" style="gap:6px;margin-top:9px">${[['HS-017','Tìm m để parabol tiếp xúc trục hoành','Gợi ý 2 ghi sẵn “m = −1 hoặc m = 2”'],['HS-023','Giá trị nhỏ nhất của y = x² − 4x + 7','Gợi ý 2 ghi sẵn “giá trị nhỏ nhất bằng 3”'],['HS-041','Số giao điểm của y = x³ − 3x và y = 1','Gợi ý 2 ghi sẵn “có 3 giao điểm”']].map(x=>`<div class="row small" style="background:#fff;border:1px solid #F5B8B2;border-radius:10px;padding:7px 10px"><span class="mono" style="width:64px">${x[0]}</span><span class="grow" style="font-weight:600">${x[1]}</span><span class="muted">${x[2]}</span>${ic('chev','width:15px;height:15px;color:var(--faint)')}</div>`).join('')}</div></div>
+ <div class="grow"></div>
+ ${note('info','Bộ hợp chuẩn chạy lại cho cả hai môn mỗi khi module đổi phiên bản, để môn mới không làm giảm chất lượng Hình học.')}
+</div>
+<div class="col" style="width:380px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:10px"><h2 style="margin:0">Quyết định mở môn</h2>
+  <div class="row"><div style="font-size:34px;font-weight:800;line-height:1">5<span class="muted" style="font-size:18px">/7</span></div><div class="grow"><b class="small">hạng mục đạt</b><div style="display:flex;gap:3px;margin-top:5px">${CF.map(x=>`<i style="flex:1;height:8px;border-radius:99px;background:${x[4]===1?'var(--grn)':x[4]===0?'var(--red)':'#D5DBE8'}"></i>`).join('')}</div></div></div>
+  <div class="row small"><span class="muted grow">Trạng thái của môn</span><span class="chip yel">${ic('warn')}Thử nghiệm</span></div>
+  <div class="row small"><span class="muted grow">Ai đang thấy môn này</span><b>Lớp được mời: 11A1</b></div>
+  <div class="row small"><span class="muted grow">Nhãn “Đã kiểm chứng” trên đề</span><b>Chưa được gắn</b></div>
+  <div class="hint warn" style="padding:10px 12px"><div class="small">Còn <b>1 hạng mục chưa đạt</b> và <b>1 hạng mục chưa chạy</b>. Môn giữ trạng thái “Thử nghiệm”.</div></div>
+  <span class="btn off" style="padding:13px">${ic('unlock')}Mở cho mọi lớp</span>
+  <div class="tiny muted" style="text-align:center">Nút chỉ mở khi đủ mọi hạng mục đạt.</div></div>
+ <div class="card pad col grow" style="gap:10px"><h2 style="margin:0">Lịch sử lần chạy</h2>
+  <div class="tl">
+   ${[['r','Lần 14 · 22/11 · 10:05','module 0.9.3 · 5/7 đạt','Chưa đạt'],['r','Lần 13 · 20/11 · 16:30','module 0.9.2 · 4/7 đạt · thử moi đáp án chưa đạt','Chưa đạt'],['r','Lần 12 · 17/11 · 09:12','module 0.9.1 · 4/7 đạt','Chưa đạt'],['r','Lần 11 · 13/11 · 14:48','module 0.9.0 · 3/7 đạt','Chưa đạt']].map(x=>`<div class="${x[0]}"><div class="row"><b class="small grow">${x[1]}</b><span class="chip red" style="padding:3px 8px">${x[3]}</span></div><div class="tiny muted">${x[2]}</div></div>`).join('')}
+   <div class="g"><div class="row"><b class="small grow">Hình học · lần 31 · 22/11 · 10:05</b><span class="chip grn" style="padding:3px 8px">Đạt</span></div><div class="tiny muted">Chạy lại cùng lúc · 7/7 đạt</div></div>
+  </div></div></div>`);
+
+/* =================== C5-01 · Soạn bài có chấm =================== */
+const C501=frame('st-c5-01-soan-bai-co-cham',{nav:'gv5',on:4,role:'gv',label:'Giáo viên',dev:'web',stage:5,title:'Soạn bài có chấm',crumb:'Chấm bài › Bài mới · gắn rubric, mức trợ giúp và lịch công bố trước khi giao'},`
+<div class="col" style="width:340px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:10px">
+  <div class="row"><h2 style="margin:0" class="grow">1 · Đề</h2><span class="btn sm ghost">Đổi đề</span></div>
+  <div class="row" style="align-items:flex-start;gap:12px"><div class="thumb" style="width:92px;height:84px;flex-shrink:0">${sh.chop('#3B5BDB').replace('<svg','<svg style="height:64px"')}</div><div class="grow"><b>Góc giữa SD và mặt đáy</b><div class="small muted" style="margin-top:3px;line-height:1.4">Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy.</div></div></div>
+  <div class="row" style="gap:6px;flex-wrap:wrap">${ok()}${gvD()}</div>
+  <div class="g2"><div><div class="lbl">Lớp</div><div class="field">${ic('users')}11A1</div></div><div><div class="lbl">Hạn nộp</div><div class="field" style="white-space:nowrap">${ic('cal')}T5 · 26/11</div></div></div>
+  <div class="row small"><div class="icb sm pri">${ic('camera')}</div><div><b>Bài nộp viết tay</b><div class="tiny muted">Học sinh chụp bài làm trên giấy và nộp</div></div></div></div>
+ <div class="card pad col grow" style="gap:9px"><h2 style="margin:0">2 · Mức trợ giúp trong lúc làm</h2>
+  <div class="field">${ic('bulb')}<span class="grow">Gợi ý mức 1 và 2</span><div class="toggle"></div></div>
+  <div class="field">${ic('chat')}<span class="grow">Hỏi đáp AI từ tài liệu được phép</span><div class="toggle"></div></div>
+  ${note('lock','Dù bật mức nào, máy chủ vẫn kiểm tra lịch công bố: câu trả lời không nêu đáp số hay lời giải trước giờ mở.')}
+  <div class="grow"></div>
+  ${note('eye','Thầy cô xem được lịch sử câu hỏi của bài: câu hỏi, câu trả lời, và quyết định cho phép hay chặn.')}
+ </div></div>
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="card pad col" style="gap:9px;border-color:#F5B8B2">
+  <div class="row"><h2 style="margin:0">3 · Rubric</h2><span class="chip red">${ic('warn')}Chưa hợp lệ · chặn giao</span><span class="btn sm end">${ic('edit')}Mở Soạn rubric</span></div>
+  <div class="row"><div class="field grow" style="padding:8px 12px">${ic('file')}<span class="grow">Rubric góc giữa đường thẳng và mặt phẳng</span><span class="chip">Phiên bản 2 · nháp</span></div><span class="btn sm ghost">Đổi rubric</span></div>
+  ${[['Xác định hình chiếu','Chỉ ra AD là hình chiếu của SD lên (ABCD)',3],['Xác định góc','Nêu đúng góc cần tìm là góc SDA',3],['Tính toán','Lập đúng tỉ số lượng giác và ra đáp số',2],['Trình bày','Lập luận theo trình tự, đủ căn cứ',1]].map((x,i)=>`<div class="row" style="padding:5px 11px;border:1.5px solid var(--line);border-radius:12px"><div class="num on">${i+1}</div><div class="grow"><b class="small">${x[0]}</b><div class="tiny muted">${x[1]}</div></div><span class="tiny muted" style="font-weight:700">Tối đa</span><div class="field sm" style="width:48px;justify-content:center;font-size:14px">${x[2]}</div></div>`).join('')}
+  <div class="hint bad" style="padding:10px 13px;align-items:center"><div class="icb sm red">${ic('x')}</div><div class="grow"><b class="small">Tổng điểm các tiêu chí là 9, thang điểm của bài là 10</b><div class="tiny" style="color:#8A2A22">3 + 3 + 2 + 1 = 9. Sửa mức tối đa của tiêu chí cho đủ 10 thì mới giao được.</div></div><b style="font-size:20px;color:var(--red)">9<span style="font-size:13px">/10</span></b></div></div>
+ <div class="card pad col grow" style="gap:8px">
+  <div><h2 style="margin:0">4 · Tài liệu được phép</h2><div class="tiny muted" style="margin-top:2px">AI phía học sinh chỉ trả lời từ tài liệu “Đang dùng” gắn cho bài này.</div></div>
+  ${[['Chuyên đề góc trong không gian','Phiên bản 3 · của tôi',1,1],['Phiếu ôn tập chương 3','Phiên bản 1 · của tôi',1,1],['Lời giải mẫu đề kiểm tra số 2','Phiên bản 1 · vừa tải lên',0,0]].map(x=>`<div class="row" style="padding:6px 11px;border:1.5px solid ${x[3]?'var(--line)':'#F4D58A'};border-radius:12px;background:${x[3]?'#fff':'#FFFBEE'}"><div class="cb ${x[2]?'on':'dis'}">${x[2]?ic('check'):''}</div><div class="icb sm ${x[3]?'pri':'yel'}">${ic('file')}</div><div class="grow"><b class="small">${x[0]}</b><div class="tiny muted">${x[1]}${x[3]?'':' · chưa gắn được cho bài tới khi được duyệt'}</div></div>${x[3]?`<span class="chip grn">${ic('check')}Đang dùng</span>`:`<span class="chip yel">${ic('clock')}Chờ duyệt</span>`}</div>`).join('')}
+  <div class="grow"></div>
+ </div></div>
+<div class="card pad col" style="width:340px;flex-shrink:0;gap:10px">
+ <h2 style="margin:0">5 · Lịch công bố</h2>
+ <div><div class="lbl">Điểm và nhận xét</div><div class="seg"><span style="flex:1;justify-content:center">Khi tôi bấm Trả bài</span><span class="on" style="flex:1;justify-content:center">Theo lịch</span></div>
+  <div class="row" style="margin-top:7px"><div class="field grow">${ic('cal')}Thứ Sáu 27/11</div><div class="field" style="width:100px">${ic('clock')}08:00</div></div></div>
+ <div><div class="lbl">Lời giải</div><div class="row"><div class="field grow">${ic('lock')}Thứ Sáu 27/11</div><div class="field" style="width:100px">${ic('clock')}19:00</div></div></div>
+ <div class="hint lock" style="padding:10px 12px;gap:9px"><div class="icb sm yel">${ic('lock')}</div><div class="tiny">Trả bài cho từng em trước 19:00 thứ Sáu thì bài trả <b>không kèm lời giải</b>. Giờ mở áp dụng cho mọi kênh.</div></div>
+ <div class="sep"></div>
+ <div class="row"><b class="small grow">AI chấm theo rubric</b>${aiS('Chỉ là đề xuất')}</div>
+ <div class="tiny muted" style="margin-top:-4px">Điểm AI luôn là đề xuất và chỉ thầy cô của lớp thấy. Thầy cô duyệt thì mới thành điểm chính thức.</div>
+ <div class="box pur" style="padding:9px 12px"><b class="small">Lớp 11A1 đang chạy song song</b><div class="tiny muted" style="margin-top:2px">Thầy cô chấm tay trước, sau đó mới thấy đề xuất của AI.</div></div>
+ <div class="grow"></div>
+ <div class="col" style="gap:5px">${[['Đề đã chọn',1],['Rubric hợp lệ',0],['Lịch công bố đã đặt',1]].map(x=>`<div class="row small">${ic(x[1]?'check':'x',`width:16px;height:16px;color:${x[1]?'var(--grn)':'var(--red)'};stroke-width:2.6`)}<span class="grow" style="font-weight:600">${x[0]}</span></div>`).join('')}</div>
+ <span class="btn off" style="padding:13px">${ic('send')}Giao bài cho 11A1</span>
+ <div class="tiny" style="text-align:center;color:var(--red);font-weight:700">Chưa giao được: rubric chưa hợp lệ</div>
+</div>`);
+
+/* =================== C6-08 · Quản lý liên kết phụ huynh =================== */
+const LK=[['An','K7M4-2QXD','Đã dùng 10/11','Phụ huynh của An',`<span class="chip grn">${ic('check')}Đã liên kết</span>`,'Trường xác minh 12/11',`<span class="btn sm red">Thu hồi</span>`,0],
+ ['Bình','P3RT-8HNA','Đã dùng 21/11','Phụ huynh của Bình',`<span class="chip yel">${ic('clock')}Chờ xác minh</span>`,'Chưa thấy dữ liệu của con',`<span class="btn sm">Xác minh</span>`,1],
+ ['Chi','','','',`<span class="chip">Chưa phát mã</span>`,'',`<span class="btn sm soft">${ic('key')}Phát mã</span>`,0],
+ ['Dũng','W9FD-5LCE','Đã phát 18/11 · chưa dùng','',`<span class="chip pri">${ic('key')}Đã phát mã</span>`,'Chờ phụ huynh nhập mã','',0],
+ ['Hà','T2XB-6GKP','Đã dùng 05/11','Phụ huynh của Hà',`<span class="chip red">${ic('x')}Đã thu hồi</span>`,'Thu hồi 20/11 · quyền mất ngay',`<span class="btn sm ghost">Phát mã mới</span>`,0]];
+const C608=frame('st-c6-08-quan-ly-lien-ket-phu-huynh',{nav:'tr6',on:2,role:'tr',label:'Quản trị trường, GV chủ nhiệm',dev:'web',stage:6,title:'Quản lý liên kết phụ huynh',crumb:'THPT Mẫu A · phát mã, xác minh quan hệ, thu hồi'},`
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="card pad col" style="gap:8px">
+  <div class="row"><h2 style="margin:0">Học sinh</h2><span class="chip on" style="padding:6px 12px">11A1 · 5 học sinh</span><span class="chip" style="padding:6px 12px">9B</span>
+   <span class="end row small muted" style="gap:14px"><span><b style="color:var(--grn)">1</b> đã liên kết</span><span><b style="color:#9A6B00">1</b> chờ xác minh</span><span><b style="color:var(--pri)">1</b> đã phát mã</span><span><b>1</b> chưa phát mã</span><span><b style="color:var(--red)">1</b> đã thu hồi</span></span></div>
+  <table><thead><tr><th>Học sinh</th><th>Mã liên kết (dùng một lần)</th><th>Tài khoản phụ huynh</th><th>Trạng thái liên kết</th><th style="width:130px"></th></tr></thead><tbody>
+  ${LK.map(x=>`<tr class="${x[7]?'sel':''}"><td style="padding:11px 10px"><div class="row">${ava(x[0])}<b>${x[0]}</b></div></td><td>${x[1]?`<span class="mono" style="${/Đã dùng/.test(x[2])?'color:var(--faint);text-decoration:line-through':''}">${x[1]}</span><div class="tiny muted">${x[2]}</div>`:`<span class="muted">—</span>`}</td><td>${x[3]?`<div class="row" style="gap:7px">${ic('user','width:16px;height:16px;color:var(--muted)')}<span style="font-weight:600">${x[3]}</span></div>`:`<span class="muted">—</span>`}</td><td>${x[4]}<div class="tiny muted" style="margin-top:3px">${x[5]}</div></td><td style="text-align:right">${x[6]}</td></tr>`).join('')}
+  </tbody></table>
+  ${note('info','Mã được phát cho từng học sinh qua kênh của trường. Mã hết hạn hoặc đã dùng thì phụ huynh xin mã mới.')}
+ </div>
+ <div class="card pad col grow" style="gap:6px">
+  <div class="row"><h2 style="margin:0" class="grow">Nhật ký liên kết · lớp 11A1</h2><span class="small muted">Mới nhất ở trên</span></div>
+  <table><thead><tr><th style="width:120px">Thời gian</th><th style="width:180px">Người thực hiện</th><th>Việc</th><th style="width:90px">Học sinh</th></tr></thead><tbody>
+  ${[['21/11 · 19:42','Phụ huynh của Bình','Nhập mã, đọc phần “thấy gì, không thấy gì” và đồng ý → chờ xác minh','Bình'],['20/11 · 15:05','Quản trị trường','Thu hồi liên kết · quyền xem mất ngay, phụ huynh được báo','Hà'],['18/11 · 08:30','GV chủ nhiệm 11A1','Phát mã liên kết','Dũng'],['16/11 · 08:10','GV chủ nhiệm 11A1','Phát mã liên kết','Bình'],['12/11 · 10:15','Quản trị trường','Xác minh quan hệ → đã liên kết','An'],['10/11 · 20:03','Phụ huynh của An','Nhập mã và đồng ý → chờ xác minh','An']].map(x=>`<tr><td class="muted nw small">${x[0]}</td><td class="small" style="font-weight:600">${x[1]}</td><td class="small">${x[2]}</td><td class="small"><b>${x[3]}</b></td></tr>`).join('')}
+  </tbody></table></div></div>
+<div class="card pad col" style="width:372px;flex-shrink:0;gap:11px">
+ <div class="row">${ava('Bình',40)}<div class="grow"><h2 style="margin:0">Xác minh · Bình (11A1)</h2><div class="tiny muted">Chờ xác minh từ 19:42 · 21/11</div></div><span class="chip yel">Chờ</span></div>
+ <div class="tl">
+  <div class="g"><b class="small">Đã phát mã</b><div class="tiny muted">16/11 · GV chủ nhiệm 11A1 · qua kênh của trường</div></div>
+  <div class="g"><b class="small">Phụ huynh nhập mã</b><div class="tiny muted">21/11 · 19:42 · tài khoản “Phụ huynh của Bình”</div></div>
+  <div class="g"><b class="small">Phụ huynh đã đồng ý</b><div class="tiny muted">Đã đọc phần “bạn sẽ thấy gì và không thấy gì”</div></div>
+  <div class="y"><b class="small">Trường xác minh quan hệ</b><div class="tiny muted">Đang chờ · quan hệ do trường xác minh, không do phụ huynh tự khai</div></div></div>
+ <div class="hint lock" style="padding:10px 12px;gap:9px"><div class="icb sm yel">${ic('lock')}</div><div class="tiny"><b>Hiện phụ huynh chưa thấy dữ liệu nào của Bình.</b> Chỉ sau khi trường xác minh, liên kết mới thành “Đã liên kết”.</div></div>
+ <div class="box grn" style="padding:10px 12px"><b class="small">Sau khi liên kết, phụ huynh thấy</b><div class="tiny" style="margin-top:3px">Bài được giao · điểm đã duyệt và đã trả · nhận định giáo viên đã nhận</div></div>
+ <div class="box soft" style="padding:10px 12px"><b class="small">Không bao giờ thấy</b><div class="tiny muted" style="margin-top:3px">Đề xuất của AI · lịch sử hỏi đáp của con · ghi chú riêng của giáo viên · thông tin về học sinh khác</div></div>
+ <div class="grow"></div>
+ <span class="btn grn" style="padding:13px">${ic('check')}Xác nhận quan hệ</span>
+ <span class="btn red">Từ chối</span>
+ <div class="tiny muted" style="text-align:center">Thu hồi về sau có hiệu lực ngay và được ghi vào nhật ký.</div>
+</div>`);
+
+/* =================== C7-02 · Lập nhóm =================== */
+const grp=(n,c,mem)=>`<div class="box col" style="gap:8px;border-color:${c}55"><div class="row"><div class="icb sm" style="background:${c};color:#fff;font-weight:800">${n}</div><h3 class="grow">Nhóm ${n}</h3><span class="chip">${mem.length} học sinh</span></div>
+ ${mem.map(m=>`<div class="row" style="padding:7px 9px;border:1.5px solid var(--line);border-radius:11px;background:#fff">${ic('drag','color:var(--faint);width:16px;height:16px')}${ava(m,28)}<b class="small grow">${m}</b>${ic('x','width:15px;height:15px;color:var(--faint)')}</div>`).join('')}
+ <div class="row tiny muted" style="padding:9px;border:1.5px dashed #C5CDDD;border-radius:11px;justify-content:center">Kéo học sinh vào đây</div></div>`;
+const C702=frame('st-c7-02-lap-nhom',{nav:'gv7',on:4,role:'gv',label:'Giáo viên',dev:'web',stage:7,title:'Lập nhóm',crumb:'Nhóm học › Nhóm mới · chia nhóm cho một bài của lớp 11A1'},`
+<div class="col" style="width:340px;flex-shrink:0;gap:14px">
+ <div class="card pad col" style="gap:9px"><div class="row"><h2 style="margin:0" class="grow">1 · Bài</h2><span class="btn sm ghost">Đổi bài</span></div>
+  <div class="row" style="gap:12px"><div class="thumb" style="width:76px;height:68px;flex-shrink:0">${sh.chop('#7C4DFF').replace('<svg','<svg style="height:52px"')}</div><div class="grow"><b>Khoảng cách từ A đến (SBD)</b><div class="tiny muted" style="margin-top:2px">Hình chóp S.ABCD · lớp 11A1</div><div class="row" style="gap:5px;margin-top:6px">${ok()}</div></div></div>
+  <div class="row small"><span class="muted grow">Lời giải của bài mở lúc</span><b>${ic('lock','width:14px;height:14px;vertical-align:-2px')} 19:00 · thứ Hai 23/11</b></div></div>
+ <div class="card pad col grow" style="gap:8px"><div class="row"><h2 style="margin:0" class="grow">Học sinh lớp 11A1</h2><span class="chip grn">Đã xếp 5/5</span></div>
+  ${[['An',1],['Bình',1],['Chi',1],['Dũng',2],['Hà',2]].map(x=>`<div class="row" style="padding:7px 9px;border:1.5px solid var(--line);border-radius:12px">${ava(x[0])}<b class="grow">${x[0]}</b><span class="chip" style="background:${x[1]===1?'var(--pri-s)':'var(--org-s)'};color:${x[1]===1?'var(--pri)':'var(--org)'};border-color:transparent">Nhóm ${x[1]}</span></div>`).join('')}
+  <div class="grow"></div>
+  ${note('info','Mỗi nhóm gắn với bài này của lớp. Học sinh không tự lập nhóm.')}
+ </div></div>
+<div class="card pad col grow" style="gap:12px;min-width:0">
+ <div class="row"><h2 style="margin:0" class="grow">2 · Nhóm</h2><span class="small muted">Kéo ${ic('drag','width:14px;height:14px;vertical-align:-2px')} để chuyển học sinh giữa các nhóm</span></div>
+ <div class="g2" style="align-items:start">${grp(1,'#3B5BDB',['An','Bình','Chi'])}${grp(2,'#F0522B',['Dũng','Hà'])}</div>
+ <div class="row small" style="padding:12px;border:1.5px dashed #C5CDDD;border-radius:14px;justify-content:center;color:var(--pri);font-weight:700;gap:6px">${ic('plus','width:16px;height:16px')}Thêm nhóm</div>
+ <div class="grow"></div>
+ <div class="lbl" style="margin:0">Trong phòng nhóm, học sinh có</div>
+ <div class="g2">
+  ${[['cube','pri','Hình chung','Mọi máy thấy ngay thao tác của bạn, kèm tên người làm.'],['spark','pur','Trợ lý nhóm','Chỉ đưa gợi ý. Lời giải khóa theo lịch của bài.'],['chat','gry','Trò chuyện chữ','Đang bị trường tắt cho lớp này (xem cột bên phải).'],['flag','org','Nút báo cáo','Báo cáo một tin nhắn, không lộ danh tính với nhóm.']].map(x=>`<div class="box row" style="align-items:flex-start;gap:10px"><div class="icb sm ${x[1]}">${ic(x[0])}</div><div><b class="small">${x[2]}</b><div class="tiny muted" style="margin-top:2px">${x[3]}</div></div></div>`).join('')}</div>
+ ${note('home','Sau khi lập, học sinh thấy nhóm của mình trong “Bài của em”.')}
+</div>
+<div class="card pad col" style="width:348px;flex-shrink:0;gap:11px">
+ <h2 style="margin:0">3 · Thời hạn và trò chuyện</h2>
+ <div><div class="lbl">Phòng nhóm hoạt động đến</div><div class="row"><div class="field grow">${ic('cal')}Thứ Hai 23/11</div><div class="field" style="width:100px">${ic('clock')}19:00</div></div>
+  <div class="tiny muted" style="margin-top:6px">Hết thời hạn, phòng chuyển sang chỉ đọc.</div></div>
+ <div><div class="lbl">Quyền trò chuyện</div>
+  <div class="field" style="background:var(--soft)">${ic('chat')}<span class="grow muted">Trò chuyện chữ trong nhóm</span>${ic('lock','width:15px;height:15px')}<div class="toggle off lk"></div></div></div>
+ <div class="hint warn" style="padding:10px 12px;gap:9px"><div class="icb sm yel">${ic('bldg')}</div><div class="tiny"><b>Trường đã tắt trò chuyện nhóm cho lớp 11A1.</b> Thầy cô không bật lại được ở đây. Nhóm vẫn cùng làm trên hình chung và hỏi được trợ lý nhóm.</div></div>
+ <div class="sep"></div>
+ <div class="lbl" style="margin:0">Quy tắc an toàn luôn áp dụng</div>
+ ${note('eye','Thầy cô là người điều phối và đọc được toàn bộ trò chuyện. Học sinh được báo rõ điều này.')}
+ ${note('users','Không có tin nhắn riêng giữa học sinh.')}
+ ${note('shield','Thầy cô tạm khóa được từng phòng trong màn Điều phối.')}
+ <div class="grow"></div>
+ <span class="btn" style="padding:13px">${ic('users')}Lập 2 nhóm cho 11A1</span>
+</div>`);
+
+/* =================== C8-08 · Sổ truy cập và yêu cầu dữ liệu =================== */
+const LOG=[['22/11 · 08:14','GV Toán 03','Giáo viên','','Bài làm lớp 11A1 · bộ Ôn tập giữa kỳ','Quan hệ dạy học: đang dạy 11A1','Theo phân công'],
+ ['21/11 · 16:40','Nền tảng','Truy cập khẩn cấp','org','Bài nộp của 2 học sinh lớp 9B','Mục đích: xử lý lỗi nộp bài do trường báo','Hết hạn 16:40 · 22/11'],
+ ['21/11 · 10:05','Tổ trưởng Toán','Tổ trưởng','','Báo cáo tổ Toán · mức lớp','Vai tổ trưởng · không xuống từng học sinh','—'],
+ ['20/11 · 15:05','Quản trị trường','Quản trị','','Liên kết phụ huynh của Hà','Quản lý tài khoản: thu hồi liên kết','—'],
+ ['20/11 · 09:30','GV Toán 03','Giáo viên','','Hồ sơ học tập của An · 11A1','Quan hệ dạy học: đang dạy 11A1','Theo phân công'],
+ ['19/11 · 14:20','Ban giám hiệu','Ban giám hiệu','pur','Bài làm của Dũng · 11A1','Mục đích được ghi lại: trả lời thắc mắc của gia đình','Một lần xem'],
+ ['18/11 · 11:02','Quản trị trường','Quản trị','','Gói dữ liệu xuất theo yêu cầu YC-012','Xử lý yêu cầu dữ liệu','—']];
+const dreq=(code,kind,ic1,cl,who,recv,due,st,act,late)=>`<div class="box ${late?'red':''}" style="${late?'background:#FFF8F7':''}"><div class="row" style="gap:9px"><div class="icb sm ${cl}">${ic(ic1)}</div><div class="grow"><div class="row" style="gap:6px"><b>${kind}</b><span class="mono tiny muted">${code}</span></div><div class="tiny muted">${who}</div></div>${st}</div>
+ <div class="row small nw" style="margin-top:8px;gap:8px"><span class="muted">Nhận ${recv}</span><span class="muted">·</span><span style="${late?'color:var(--red);font-weight:700':''}">${due}</span><span class="end">${act}</span></div></div>`;
+const C808=frame('st-c8-08-so-truy-cap-yeu-cau-du-lieu',{nav:'tr8',on:5,role:'tr',label:'Quản trị trường',dev:'web',stage:8,title:'Sổ truy cập và yêu cầu dữ liệu',crumb:'THPT Mẫu A · ai đã xem gì, vì sao · xử lý yêu cầu xuất, sửa, xóa'},`
+<div class="card pad col grow" style="gap:9px;min-width:0">
+ <div class="row"><h2 style="margin:0" class="grow">Nhật ký truy cập</h2><span class="small muted">7 dòng · 16/11 đến 22/11</span></div>
+ <div class="row" style="gap:8px"><div class="field sm">${ic('cal')}7 ngày qua${ic('chev','transform:rotate(90deg);width:14px;height:14px')}</div><div class="field sm">${ic('users')}Mọi vai${ic('chev','transform:rotate(90deg);width:14px;height:14px')}</div><div class="field sm">${ic('file')}Mọi loại dữ liệu${ic('chev','transform:rotate(90deg);width:14px;height:14px')}</div><span class="chip org" style="padding:6px 11px">${ic('warn')}Chỉ truy cập khẩn cấp</span><div class="field sm grow" style="white-space:nowrap;overflow:hidden">${ic('search')}<span class="muted" style="font-weight:500">Tìm lớp, người…</span></div></div>
+ <table><thead><tr><th style="width:104px">Thời gian</th><th style="width:150px">Người truy cập</th><th>Đã xem</th><th>Căn cứ hoặc mục đích</th><th style="width:128px">Thời hạn</th></tr></thead><tbody>
+ ${LOG.map(x=>`<tr style="${x[3]==='org'?'background:#FFF8F5':''}"><td class="muted small nw">${x[0]}</td><td><b class="small">${x[1]}</b><div><span class="chip ${x[3]}" style="padding:2px 8px;font-size:10.5px;margin-top:2px">${x[2]}</span></div></td><td class="small" style="font-weight:600">${x[4]}</td><td class="small muted">${x[5]}</td><td class="small nw">${x[6]}</td></tr>`).join('')}
+ </tbody></table>
+ <div class="grow"></div>
+ <div class="hint lock" style="align-items:center;padding:11px 13px"><div class="icb sm gry">${ic('lock')}</div><div class="grow"><b class="small">Cơ quan quản lý · dữ liệu định danh của học sinh</b><div class="tiny muted">Đường xem này đang tạm đóng: không có lối vào từ giao diện, không nhận yêu cầu. Chưa có lượt truy cập nào.</div></div><span class="chip" style="background:#E7EBF4">${ic('lock')}Tạm đóng</span></div>
+ ${note('info','Quản trị trường quản lý tài khoản và phân công, nhưng không mặc nhiên đọc được bài làm hay lịch sử hỏi đáp. Mọi lượt xem tới học sinh đều hiện ở đây.')}
+</div>
+<div class="card pad col" style="width:404px;flex-shrink:0;gap:10px">
+ <div class="row"><h2 style="margin:0" class="grow">Hàng chờ yêu cầu dữ liệu</h2><span class="chip red">${ic('warn')}1 quá hạn</span></div>
+ <div class="row" style="gap:6px"><span class="chip on" style="padding:6px 12px">Đang mở · 3</span><span class="chip" style="padding:6px 12px">Hoàn tất · 5</span></div>
+ ${dreq('YC-014','Xóa dữ liệu','trash','red','Người yêu cầu: Phụ huynh của Hà','10/11','Hạn 17/11 · quá 5 ngày',`<span class="chip yel">Đang xử lý</span>`,`<span class="btn sm">Xử lý ngay</span>`,1)}
+ ${dreq('YC-015','Sửa dữ liệu','edit','pri','Người yêu cầu: Phụ huynh của An','18/11','Hạn 25/11 · còn 3 ngày',`<span class="chip yel">Đang xử lý</span>`,`<span class="btn sm ghost">Mở</span>`,0)}
+ ${dreq('YC-016','Xuất dữ liệu','down','grn','Người yêu cầu: Phụ huynh của An','20/11','Hạn 27/11 · còn 5 ngày',`<span class="chip pri">Mới</span>`,`<span class="btn sm soft">Nhận xử lý</span>`,0)}
+ <div class="sep"></div>
+ <div class="row small"><div class="icb sm grn">${ic('check')}</div><div class="grow"><b>Xuất dữ liệu <span class="mono tiny muted">YC-012</span></b><div class="tiny muted">Hoàn tất 18/11 · đã ghi vào nhật ký truy cập</div></div><span class="chip grn">Hoàn tất</span></div>
+ <div class="grow"></div>
+ ${note('info','Mỗi yêu cầu đi qua ba bước: Mới → Đang xử lý → Hoàn tất. Việc xuất, sửa hay xóa đều để lại một dòng trong nhật ký.')}
+</div>`);
+
+/* =================== C9-05 · Hộp văn bản của trường =================== */
+const doc=(sel,title,no,meta,chips,extra='')=>`<div class="box ${sel?'sel':''}" style="padding:11px 13px"><div class="row" style="gap:8px;align-items:flex-start"><div class="icb sm ${sel?'pri':'gry'}">${ic('file')}</div><div class="grow"><b class="small" style="line-height:1.3;display:block">${title}</b><div class="tiny muted" style="margin-top:2px"><span class="mono">${no}</span> · ${meta}</div></div></div><div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">${chips}</div>${extra}</div>`;
+const C905=frame('st-c9-05-hop-van-ban-cua-truong',{nav:'tr9',on:3,role:'tr',label:'Quản trị trường',dev:'web',stage:9,title:'Hộp văn bản của trường',crumb:'THPT Mẫu A · nhận văn bản chính thức, xác nhận và nộp báo cáo triển khai'},`
+<div class="card pad col" style="width:420px;flex-shrink:0;gap:9px">
+ <div class="row"><h2 style="margin:0" class="grow">Văn bản đã nhận</h2><span class="small muted">4 văn bản</span></div>
+ <div class="row" style="gap:6px"><span class="chip on" style="padding:6px 11px">Tất cả · 4</span><span class="chip" style="padding:6px 11px">Cần xác nhận · 2</span><span class="chip" style="padding:6px 11px">Cần báo cáo · 2</span></div>
+ ${doc(1,'Hướng dẫn tổ chức kiểm tra giữa học kỳ I','Số 05/HD-M','nhận 20/11',`<span class="chip org">${ic('bell')}Cần xác nhận</span><span class="chip">Báo cáo: hạn 18/12</span>`)}
+ ${doc(0,'Kế hoạch bồi dưỡng giáo viên dùng học liệu số','Số 03/KH-M','phiên bản 2 · nhận 19/11',`<span class="chip pur">${ic('reset')}Có phiên bản mới · cần xác nhận lại</span>`,`<div class="tiny muted" style="margin-top:6px">Đã xác nhận phiên bản 1 ngày 03/11. Bản cũ vẫn xem được.</div>`)}
+ ${doc(0,'Báo cáo tình hình dùng học liệu số học kỳ I','Số 02/BC-M','nhận 02/11',`<span class="chip grn">${ic('check')}Đã xác nhận 05/11</span><span class="chip red">${ic('warn')}Báo cáo quá hạn 2 ngày</span>`,`<div class="tiny" style="margin-top:6px;color:#8A2A22">${ic('bell','width:12px;height:12px;vertical-align:-2px')} Cơ quan quản lý đã gửi nhắc ngày 21/11 · hạn nộp 20/11</div>`)}
+ ${doc(0,'Hướng dẫn nhiệm vụ đầu năm học','Số 01/HD-M','nhận 01/09',`<span class="chip grn">${ic('check')}Đã xác nhận</span><span class="chip grn">${ic('check')}Đã báo cáo</span>`)}
+ <div class="grow"></div>
+ ${note('info','“Đã xác nhận” và “Đã báo cáo” là hai trạng thái riêng. Xác nhận đã nhận không có nghĩa là đã triển khai.')}
+</div>
+<div class="col grow" style="gap:14px;min-width:0">
+ <div class="card pad col" style="gap:10px">
+  <div class="row" style="align-items:flex-start"><div class="grow"><div class="row" style="gap:8px"><span class="stamp">${ic('shield')}Văn bản chính thức</span><span class="chip">Phiên bản 1</span></div>
+   <h2 style="margin:8px 0 2px;font-size:19px">Hướng dẫn tổ chức kiểm tra giữa học kỳ I</h2>
+   <div class="small muted"><span class="mono">Số 05/HD-M</span> · Cơ quan quản lý Mẫu · phát hành 20/11 · hiệu lực từ 23/11</div></div>
+   <span class="btn sm ghost">${ic('file')}Bản gốc đính kèm (PDF)</span></div>
+  <div class="small" style="line-height:1.6;padding:11px 13px;border-radius:12px;background:var(--soft);border:1px solid var(--line)">Các trường tổ chức kiểm tra giữa học kỳ I trong tuần từ 07/12 đến 11/12, thông báo lịch cho học sinh và phụ huynh trước ít nhất một tuần, và nộp báo cáo triển khai theo mẫu đính kèm trước ngày 18/12.</div>
+  <div class="g2">
+   <div class="box org"><div class="row" style="gap:9px"><div class="num" style="background:var(--org);color:#fff">1</div><div class="grow"><b class="small">Xác nhận đã nhận</b><div class="tiny muted">Chưa xác nhận</div></div><span class="btn sm org">${ic('check')}Xác nhận đã nhận</span></div></div>
+   <div class="box"><div class="row" style="gap:9px"><div class="num">2</div><div class="grow"><b class="small">Báo cáo triển khai</b><div class="tiny muted">Chưa báo cáo · hạn 18/12</div></div><span class="chip">Điền mẫu bên dưới</span></div></div></div>
+  <div class="row"><span class="btn sm soft">${ic('send')}Chuyển tới giáo viên liên quan</span><span class="tiny muted">Gửi qua Thông báo của trường</span></div></div>
+ <div class="card pad col grow" style="gap:9px">
+  <div class="row"><h2 style="margin:0">Mẫu báo cáo triển khai</h2><span class="chip">Bản nháp</span><span class="small muted end">Trường duyệt số liệu trước khi nộp</span></div>
+  <div class="g2"><div><div class="lbl">Thời gian tổ chức</div><div class="field">${ic('cal')}<span class="muted" style="font-weight:500">Từ ngày … đến ngày …</span></div></div>
+   <div><div class="lbl">Số lớp đã tổ chức kiểm tra</div><div class="field"><span class="muted" style="font-weight:500">Nhập số lớp</span></div></div></div>
+  <div><div class="lbl">Khó khăn và đề xuất</div><div class="field" style="align-items:flex-start;min-height:62px"><span class="muted" style="font-weight:500">Nhập nội dung…</span></div></div>
+  <div><div class="lbl">Minh chứng</div><div class="row" style="padding:12px;border:1.5px dashed #C5CDDD;border-radius:12px;background:var(--soft);gap:9px">${ic('upload','color:var(--muted)')}<span class="small muted grow">Kéo tệp vào đây hoặc chọn tệp để đính kèm minh chứng</span><span class="btn sm line">Chọn tệp</span></div></div>
+  <div class="grow"></div>
+  <div class="row"><div class="grow"><span class="btn sm red">${ic('warn')}Gửi báo cáo ngoại lệ</span><div class="tiny muted" style="margin-top:5px">Dùng khi không thực hiện được đúng hạn: gửi kèm lý do thay vì bỏ trống.</div></div><span class="btn ghost">Lưu nháp</span><span class="btn">${ic('send')}Nộp báo cáo</span></div>
+ </div></div>`);
+
+document.getElementById('root').innerHTML=[C207,C208,C404,C405,C406,C501,C608,C702,C808,C905].join('');
+</script>
+</body>
+</html>

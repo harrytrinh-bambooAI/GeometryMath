@@ -1,0 +1,13 @@
+                                                                                      QUERY PLAN                                                                                       
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.28..2.50 rows=1 width=52) (actual time=0.001..0.001 rows=0 loops=1)
+   Buffers: shared hit=2
+   ->  Index Scan using audit_log_target_idx on audit_log al  (cost=0.28..2.50 rows=1 width=52) (actual time=0.001..0.001 rows=0 loops=1)
+         Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (target_id = '01a1b2ee-51df-79ad-8354-128825f23080'::uuid) AND (id < '9223372036854775807'::bigint))
+         Buffers: shared hit=2
+ Planning:
+   Buffers: shared hit=3
+ Planning Time: 0.014 ms
+ Execution Time: 0.002 ms
+(9 rows)
+

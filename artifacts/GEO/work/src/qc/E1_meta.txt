@@ -1,0 +1,71 @@
+# TC | AC | ưu tiên | loại | tầng | tài khoản | CL | ghi chú
+0100 | 101-SC1 | H | CN | API+TC | Học sinh An (11A1) | FN-01
+0101 | 101-SC2 | M | CN | API+TC | Học sinh mới "Yến" | FN-01 | khôi phục: xóa học sinh Yến sau case (nếu không, số "4 / 5" của Theo dõi lớp thành "4 / 6")
+0102 | 101-SC3 | H | CN | API+TC | Học sinh An, thiết bị thứ hai | FN-10
+0103 | 101-SC4 | H | PQ | API+TC | Học sinh An của lớp 9C (trường khác) | FN-06
+0104 | 101-SC5 | H | DL | API+TC | Chưa vào lớp | X-04
+0105 | 101-SC6 | M | CN | API | Học sinh tên 60 ký tự | FN-02 | BVA cận trên hợp lệ; khôi phục: xóa học sinh vừa tạo
+0106 | 101-SC7 | H | TB | TC | Chưa vào lớp, iPhone | UI-01 | PROVISIONAL KG-09 (phiên bản tối thiểu)
+0107 | 101-FC1 | M | CN | API+TC | Chưa vào lớp | FN-02
+0108 | 101-FC2 | M | CN | API+TC | Chưa vào lớp | FN-02 | BVA cận trên không hợp lệ; chạy cả trên màn và gửi thẳng máy chủ
+0109 | 101-FC3 | H | DL | API+TC | Chưa vào lớp | FN-02
+0110 | 101-FC4 | M | CN | API | Học sinh An, thẻ hết hạn | FN-03
+0111 | 102-SC1 | H | CN | API+TC | Giáo viên mẫu, máy tính | FN-01
+0112 | 102-SC2 | M | TB | TC | Giáo viên mẫu, điện thoại | UI-01
+0113 | 102-FC1 | H | PQ | API+TC | Chưa vào | FN-05 | ca dò mã ở TC-GEO-0171, mã thu hồi và quá hạn ở TC-GEO-0175, 0176 (D-GEO-152)
+0114 | 102-FC2 | H | PQ | API | Học sinh An | FN-05
+0115 | 102-FC3 | M | CN | TC | Học sinh An | UI-03
+0116 | 103-SC1 | H | CN | API | Học sinh Dũng | FN-14 | chi phí 0,12 là số mô phỏng (KG-07)
+0117 | 103-SC2 | M | CN | API | Học sinh Dũng | FN-14
+0118 | 103-SC3 | H | DL | API | Học sinh An | FN-07
+0119 | 103-SC4 | H | DL | API | Học sinh An | X-04
+0120 | 103-FC1 | H | CN | API+TC | Học sinh An | FN-14
+0121 | 103-FC2 | M | CN | API | Học sinh An | FN-14 | thời gian chờ là giá trị cấu hình của lần chạy (chưa có nguồn)
+0122 | 103-FC3 | M | CN | API+TC | Học sinh An | FN-14
+0123 | 104-SC1 | H | PQ | API | Học sinh An | FN-05
+0124 | 104-SC2 | H | PQ | API+TC | Giáo viên mẫu | FN-05
+0125 | 104-SC3 | M | PQ | API | Giáo viên C (trường khác) | FN-06
+0126 | 104-SC4 | H | PQ | API | Học sinh An | FN-06
+0127 | 104-SC5 | M | DL | DB | Kỹ thuật (đọc CSDL) | FN-01
+0128 | 104-FC1 | H | PQ | API+TC | Học sinh An | FN-05
+0129 | 104-FC2 | H | PQ | API | Học sinh An | FN-06
+0130 | 104-FC3 | H | PQ | API | Học sinh An | FN-05
+0131 | 104-FC4 | H | PQ | API | Giáo viên C (trường khác) | FN-06
+0132 | 104-FC5 | H | PQ | API | Giáo viên C (trường khác) | FN-06
+0133 | 104-FC6 | H | PQ | API | Giáo viên mẫu | FN-06
+0134 | 104-FC7 | H | PQ | API | Thẻ đã sửa | FN-06
+0135 | 105-SC1 | H | CN | API | Kỹ thuật (chạy bộ đề chuẩn) | FN-01 | nhãn kỳ vọng của HKG-06 theo phép tính, khác nhãn trong tệp nguồn (QA-GEO-03)
+0136 | 105-SC2 | H | CN | API | Kỹ thuật | FN-11
+0137 | 105-SC3 | M | CN | API | Kỹ thuật | FN-01
+0138 | 105-SC4 | M | CN | DV | Kỹ thuật | FN-12 | BVA quanh ngưỡng đề xuất
+0139 | 105-SC5 | L | CN | API | Kỹ thuật | FN-12
+0140 | 105-FC1 | M | CN | DV | Kỹ thuật | FN-12
+0141 | 105-FC2 | M | CN | API | Kỹ thuật | FN-03
+0142 | 105-FC3 | H | DL | DB | Kỹ thuật (đọc và ghi CSDL) | FN-11
+0143 | 106-SC1 | H | CN | DB | Kỹ thuật | FN-01
+0144 | 106-SC2 | H | CN | DB | Kỹ thuật | FN-01
+0145 | 106-SC3 | M | CN | DB | Kỹ thuật | FN-01
+0146 | 106-SC4 | M | CN | DB | Kỹ thuật | FN-01
+0147 | 106-FC1 | M | CN | DB | Kỹ thuật | FN-03
+0148 | 106-FC2 | H | CN | DB | Kỹ thuật | FN-11
+0149 | 107-SC1 | H | PCN | TAI | Kỹ thuật (thử tải) | X-01 | kịch bản L1 của `review/test_plan.md` §13; công cụ: Gatling (D-GEO-170)
+0150 | 107-SC2 | H | PCN | TAI | Kỹ thuật (thử tải) | X-01 | kịch bản L1; công cụ: Gatling (D-GEO-170)
+0151 | 107-SC3 | H | PCN | TAI | Kỹ thuật (thử tải) | X-01 | kịch bản L1; công cụ: Gatling (D-GEO-170)
+0152 | 107-SC4 | H | PCN | TAI | Kỹ thuật (thử tải) | X-01 | kịch bản L2; công cụ: Gatling (D-GEO-170)
+0153 | 107-SC5 | H | DL | TAI | Kỹ thuật (thử tải) | FN-07 | kịch bản L2; số lộ = 0 là quy tắc, không phải ngưỡng đề xuất; công cụ: Gatling (D-GEO-170)
+0154 | 107-FC1 | M | PCN | TAI | Kỹ thuật (thử tải) | X-01 | công cụ: Gatling (D-GEO-170)
+0155 | 107-FC2 | M | PCN | TAI | Kỹ thuật (thử tải) | X-01 | kịch bản L4; công cụ: Gatling (D-GEO-170); mã lỗi `SERVICE_OVERLOADED` theo D-GEO-143
+0156 | 108-SC1 | H | PCN | DB | Kỹ thuật | X-01
+0157 | 108-SC2 | M | PCN | DB | Kỹ thuật | X-01
+0158 | 108-SC3 | M | PCN | DB | Kỹ thuật | X-01
+0159 | 108-FC1 | H | PCN | DB | Kỹ thuật | X-01
+0160 | 108-FC2 | M | PCN | DB | Kỹ thuật | X-04
+# lượt sửa gom sau phản biện (M-304, M-217): tiêu chí mới của BA
+0171 | 102-FC6 | H | PQ | API | Chưa vào (một máy, một địa chỉ IP) | FN-05 | công cụ: kiểm thử tích hợp API; BVA 10 / 11 lần (D-GEO-152, RV-GEO-02)
+0172 | 102-SC4 | H | DL | DB | Kỹ thuật (đọc CSDL và nhật ký máy chủ) | FN-07 | D-GEO-152, RV-GEO-02
+0173 | 101-FC5 | M | CN | API+TC | Chưa vào lớp, iPad | FN-02 | cặp đảo của TC-GEO-0171: học sinh giữ D-GEO-107
+0174 | 102-SC3 | H | PQ | API+TC | Giáo viên C (trường khác) | FN-06
+0175 | 102-FC4 | M | PQ | API+TC | Chưa vào | FN-05
+0176 | 102-FC5 | M | PQ | API | Chưa vào | FN-05 | BVA: hạn dùng qua lúc T0 − 1 phút
+0177 | 102-FC7 | H | DL | API | Học sinh An | FN-07 | ca giả làm giáo viên ở tầng API (PO-18)
+0178 | 104-FC9 | H | PQ | API | Giáo viên mẫu | FN-05 | D-GEO-159

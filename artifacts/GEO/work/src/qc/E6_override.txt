@@ -1,0 +1,11 @@
+# E6 — chỉnh của QC trên case sinh ra (xem đầu gen_cases.py). Gỡ dòng khi AC của BA đã mang nội dung tương ứng (bộ sinh in INFO "không còn khớp").
+TC-GEO-0657 | Pre-condition | set | • Chạy trên profile test: có hàm `fn_test_set_release` và vai kiểm thử (không có ở profile chạy thật)<br/>• BG-4 (đề HKG-04, lớp 9B); Khánh thuộc 9B | D-GEO-169
+TC-GEO-0657 | Test step | set | 1. Tầng CSDL: mở một giao dịch bằng vai kiểm thử<br/>2. Gọi `fn_test_set_release` đặt R của BG-4 bằng `now()` của chính giao dịch đó<br/>3. Trong cùng giao dịch, gọi cổng lời giải của CSDL cho (trường, Khánh, BG-4), rồi ROLLBACK<br/>4. Tầng API: gọi `fn_test_set_release` đặt R = giờ máy chủ + 2 giây<br/>5. Chờ tới khi giờ máy chủ ≥ R, rồi Khánh yêu cầu lời giải BG-4 qua API | D-GEO-169
+TC-GEO-0657 | Expected output | add | bước 3: cổng trả lời giải khi giờ đánh giá bằng đúng R | D-GEO-169
+TC-GEO-0657 | Expected output | add | bước 5: phản hồi API đầu tiên gửi sau R có lời giải HKG-04 | D-GEO-169
+TC-GEO-0661 | Pre-condition | set | • Chạy trên profile test: có hàm `fn_test_set_release` và vai kiểm thử (không có ở profile chạy thật)<br/>• BG-4 (đề HKG-04, lớp 9B); Khánh thuộc 9B | D-GEO-169
+TC-GEO-0661 | Test step | set | 1. Tầng CSDL: mở một giao dịch bằng vai kiểm thử<br/>2. Gọi `fn_test_set_release` đặt R của BG-4 = `now()` + 1 giây của giao dịch đó<br/>3. Trong cùng giao dịch, gọi cổng lời giải của CSDL cho (trường, Khánh, BG-4), rồi ROLLBACK<br/>4. Tầng API: gọi `fn_test_set_release` đặt R = giờ máy chủ + 2 giây<br/>5. Ngay lập tức (giờ máy chủ < R), Khánh gửi thẳng yêu cầu lời giải BG-4 qua API | D-GEO-169
+TC-GEO-0661 | Expected output | add | bước 3: cổng trả 0 hàng | D-GEO-169
+TC-GEO-0633 | Pre-condition | add | T0 là giờ máy chủ đọc từ tiêu đề `Date` của phản hồi khi giao BG-4; Giáo viên mẫu đặt R qua màn đổi giờ như thường | D-GEO-169
+TC-GEO-0633 | Test step | sub | 2. Tại T0 + 120 giây ⇒ 2. Tại T0 + 122 giây (R′ + 2 giây, bù độ phân giải giây của `Date`) | D-GEO-169
+TC-GEO-0665 | Pre-condition | add | An (11A1) vừa xem lời giải BG-3 ngay trước bước 1, để mọi dữ liệu đệm của BG-3 đang có | D-GEO-157

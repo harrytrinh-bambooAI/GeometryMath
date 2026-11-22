@@ -1,0 +1,13 @@
+                                                  QUERY PLAN                                                  
+--------------------------------------------------------------------------------------------------------------
+ Insert on assignment_progress ap  (cost=0.00..0.01 rows=0 width=0) (actual time=0.010..0.010 rows=0 loops=1)
+   Conflict Resolution: UPDATE
+   Conflict Arbiter Indexes: assignment_progress_pkey
+   Tuples Inserted: 0
+   Conflicting Tuples: 1
+   Buffers: shared hit=7
+   ->  Result  (cost=0.00..0.01 rows=1 width=98) (actual time=0.000..0.000 rows=1 loops=1)
+ Planning Time: 0.005 ms
+ Execution Time: 0.013 ms
+(9 rows)
+

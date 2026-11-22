@@ -1,0 +1,129 @@
+### list
+1 cơ sở (không RLS)         latency average = 0.487 ms tps = 32826.139862 (without initial connection time) 
+2 set_config, RLS tắt       latency average = 0.826 ms tps = 19375.392410 (without initial connection time) 
+3 RLS bật                   latency average = 0.853 ms tps = 18761.261701 (without initial connection time) 
+### tracking
+1 cơ sở (không RLS)         latency average = 0.641 ms tps = 24955.803673 (without initial connection time) 
+2 set_config, RLS tắt       latency average = 1.031 ms tps = 15523.642046 (without initial connection time) 
+3 RLS bật                   latency average = 1.018 ms tps = 15712.358840 (without initial connection time) 
+### event_batch
+1 cơ sở (không RLS)         latency average = 2.116 ms tps = 7563.145637 (without initial connection time) 
+2 set_config, RLS tắt       latency average = 3.275 ms tps = 4886.199118 (without initial connection time) 
+3 RLS bật                   latency average = 2.686 ms tps = 5956.696792 (without initial connection time) 
+### open
+1 cơ sở (không RLS)         latency average = 1.678 ms tps = 9532.678881 (without initial connection time) 
+2 set_config, RLS tắt       latency average = 1.968 ms tps = 8130.397228 (without initial connection time) 
+3 RLS bật                   latency average = 1.639 ms tps = 9760.326068 (without initial connection time) 
+### Kiểm cô lập khi RLS bật
+              set_config              
+--------------------------------------
+ 019dfc2e-0870-7272-a317-d0145243359e
+(1 row)
+Đúng trường: số bài của lớp (mong đợi > 0)
+ count 
+-------
+    10
+(1 row)
+              set_config              
+--------------------------------------
+ 019dfc2c-33b0-7b91-a4c5-337da30d9af1
+(1 row)
+Sai trường (dù viết sai lọc org_id hay quên lọc): số bài của lớp (mong đợi 0)
+ count 
+-------
+     0
+(1 row)
+ count 
+-------
+     0
+(1 row)
+ count 
+-------
+     0
+(1 row)
+Sai trường nhưng nội dung nền tảng vẫn đọc được (kho đề, mong đợi > 0)
+ count 
+-------
+    60
+(1 row)
+Không đặt app.org_id (đặt rỗng): mong đợi lỗi hoặc 0 hàng
+ set_config 
+------------
+ 
+(1 row)
+psql:bench/05_rls_check.sql:16: ERROR:  invalid input syntax for type uuid: ""
+### EXPLAIN Q02 với RLS bật (kế hoạch)
+              set_config              
+--------------------------------------
+ 019dfc2e-0870-7272-a317-d0145243359e
+(1 row)
+
+                                                                                                                                                                                                    QUERY PLAN                                                                                                                                                                                                     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=6.24..9.37 rows=34 width=90) (actual time=0.580..0.807 rows=64 loops=1)
+   Buffers: shared hit=344 read=8
+   I/O Timings: shared read=0.609
+   InitPlan 1
+     ->  Result  (cost=0.00..0.02 rows=1 width=16) (actual time=0.000..0.000 rows=1 loops=1)
+   InitPlan 2
+     ->  Result  (cost=0.00..0.02 rows=1 width=16) (actual time=0.000..0.000 rows=1 loops=1)
+   InitPlan 3
+     ->  Result  (cost=0.00..0.02 rows=1 width=16) (actual time=0.000..0.000 rows=1 loops=1)
+   InitPlan 4
+     ->  Result  (cost=0.00..0.02 rows=1 width=16) (actual time=0.001..0.001 rows=1 loops=1)
+   InitPlan 5
+     ->  Result  (cost=0.00..0.02 rows=1 width=16) (actual time=0.001..0.001 rows=1 loops=1)
+   ->  Result  (cost=6.15..9.28 rows=34 width=90) (actual time=0.580..0.803 rows=64 loops=1)
+         One-Time Filter: (((InitPlan 4).col1 = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND ((InitPlan 3).col1 = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND ((InitPlan 2).col1 = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND ((InitPlan 1).col1 = '019dfc2e-0870-7272-a317-d0145243359e'::uuid))
+         Buffers: shared hit=344 read=8
+         I/O Timings: shared read=0.609
+         ->  Nested Loop  (cost=6.15..9.28 rows=34 width=90) (actual time=0.576..0.794 rows=64 loops=1)
+               Join Filter: (c.id = a.class_id)
+               Buffers: shared hit=344 read=8
+               I/O Timings: shared read=0.609
+               ->  Nested Loop  (cost=5.87..8.94 rows=1 width=138) (actual time=0.406..0.588 rows=64 loops=1)
+                     Buffers: shared hit=217 read=6
+                     I/O Timings: shared read=0.452
+                     ->  Merge Left Join  (cost=5.58..7.82 rows=1 width=122) (actual time=0.298..0.330 rows=64 loops=1)
+                           Merge Cond: (cm.user_id = ap.user_id)
+                           Buffers: shared hit=28 read=3
+                           I/O Timings: shared read=0.248
+                           ->  Sort  (cost=5.16..5.17 rows=1 width=96) (actual time=0.286..0.288 rows=64 loops=1)
+                                 Sort Key: cm.user_id
+                                 Sort Method: quicksort  Memory: 32kB
+                                 Buffers: shared hit=5 read=3
+                                 I/O Timings: shared read=0.248
+                                 ->  Nested Loop  (cost=0.70..5.15 rows=1 width=96) (actual time=0.266..0.276 rows=64 loops=1)
+                                       Buffers: shared hit=5 read=3
+                                       I/O Timings: shared read=0.248
+                                       ->  Index Scan using assignment_org_id_id_key on assignment a  (cost=0.29..2.50 rows=1 width=48) (actual time=0.003..0.003 rows=1 loops=1)
+                                             Index Cond: ((org_id = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND (id = '01a1ded1-832d-7da8-91f9-0e62c3a77a5e'::uuid))
+                                             Buffers: shared hit=3
+                                       ->  Index Scan using class_member_name_uq on class_member cm  (cost=0.41..2.64 rows=1 width=48) (actual time=0.262..0.268 rows=64 loops=1)
+                                             Index Cond: ((org_id = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND (class_id = a.class_id))
+                                             Filter: (user_id > '00000000-0000-0000-0000-000000000000'::uuid)
+                                             Buffers: shared hit=2 read=3
+                                             I/O Timings: shared read=0.248
+                           ->  Result  (cost=0.42..2.64 rows=1 width=90) (actual time=0.009..0.024 rows=58 loops=1)
+                                 One-Time Filter: (((InitPlan 5).col1 = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND ((InitPlan 4).col1 = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND ((InitPlan 3).col1 = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND ((InitPlan 2).col1 = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND ((InitPlan 1).col1 = '019dfc2e-0870-7272-a317-d0145243359e'::uuid))
+                                 Buffers: shared hit=23
+                                 ->  Index Scan using assignment_progress_pkey on assignment_progress ap  (cost=0.42..2.64 rows=1 width=90) (actual time=0.007..0.016 rows=58 loops=1)
+                                       Index Cond: ((org_id = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND (assignment_id = '01a1ded1-832d-7da8-91f9-0e62c3a77a5e'::uuid))
+                                       Buffers: shared hit=23
+                     ->  Index Scan using app_user_pkey on app_user u  (cost=0.29..1.12 rows=1 width=48) (actual time=0.004..0.004 rows=1 loops=64)
+                           Index Cond: (id = cm.user_id)
+                           Filter: (org_id = '019dfc2e-0870-7272-a317-d0145243359e'::uuid)
+                           Buffers: shared hit=189 read=3
+                           I/O Timings: shared read=0.204
+               ->  Index Only Scan using class_teacher_idx on class c  (cost=0.28..0.32 rows=1 width=32) (actual time=0.003..0.003 rows=1 loops=64)
+                     Index Cond: ((org_id = '019dfc2e-0870-7272-a317-d0145243359e'::uuid) AND (teacher_id = '019e2fa7-89df-7423-8c89-c576d8089353'::uuid) AND (id = cm.class_id))
+                     Heap Fetches: 0
+                     Buffers: shared hit=127 read=2
+                     I/O Timings: shared read=0.157
+ Planning:
+   Buffers: shared hit=126 read=11 dirtied=4
+   I/O Timings: shared read=1.167
+ Planning Time: 2.271 ms
+ Execution Time: 0.855 ms
+(65 rows)
+

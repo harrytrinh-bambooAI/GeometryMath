@@ -1,0 +1,3 @@
+bản đầu của goal run: 40 case cho 39 tiêu chí
+lượt sửa gom sau phản biện (M-304): biên phiên 29 phút 59 giây và 30 phút 0 giây TC-GEO-0740, 0741 (D-GEO-144, RV-GEO-17); gửi lại câu hỏi không đếm đôi 0742 (RV-GEO-18); datasource-proxy cho 0712 (D-GEO-170): {tc} case cho {ac} tiêu chí
+đồng bộ với bàn giao của BA (M-217, M-218): case viết tay trùng tiêu chí mới chuyển thành case bám tiêu chí (giữ id), thêm case cho mọi tiêu chí mới, gỡ chỉnh không còn cần: {tc} case cho {ac} tiêu chí

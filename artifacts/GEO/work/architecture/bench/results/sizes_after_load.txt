@@ -1,0 +1,95 @@
+### Kích thước theo bảng (partition gộp về bảng cha)
+         tbl         | rows_est | table_size | index_size | n_index_on_parent 
+---------------------+----------+------------+------------+-------------------
+ event_log           | 40770360 | 4987 MB    | 6494 MB    |                 1
+ qa_turn             |   456779 | 77 MB      | 50 MB      |                 2
+ assignment_progress |   183284 | 33 MB      | 17 MB      |                 1
+ keyword             |      900 | 136 kB     | 33 MB      |                 3
+ lecture             |      300 | 384 kB     | 16 MB      |                 4
+ problem_version     |     8060 | 4344 kB    | 6600 kB    |                 4
+ problem             |     8060 | 2376 kB    | 6712 kB    |                 3
+ class_member        |    20000 | 2016 kB    | 6528 kB    |                 3
+ scene_build         |     8060 | 7208 kB    | 920 kB     |                 2
+ share_grant         |       35 | 48 kB      | 6256 kB    |                 2
+ hint                |    16120 | 4072 kB    | 1448 kB    |                 1
+ assignment          |    14000 | 2016 kB    | 2768 kB    |                 4
+ app_user            |    20201 | 1960 kB    | 2232 kB    |                 2
+ solution            |     8060 | 2976 kB    | 480 kB     |                 1
+ verification_report |     8060 | 1280 kB    | 368 kB     |                 1
+ audit_log           |     2257 | 304 kB     | 248 kB     |                 2
+ class               |      600 | 112 kB     | 200 kB     |                 4
+ problem_topic       |        5 | 48 kB      | 32 kB      |                 2
+ subject             |        1 | 48 kB      | 32 kB      |                 2
+ org                 |       56 | 48 kB      | 32 kB      |                 2
+ ai_call_log         |        0 | 64 kB      | 0 bytes    |                 0
+(21 rows)
+
+### Chỉ mục (không tính partition con): kích thước và số lần dùng
+         tbl         |                        idx                         |  size   | idx_scan 
+---------------------+----------------------------------------------------+---------+----------
+ app_user            | app_user_org_id_id_key                             | 1592 kB |    49000
+ app_user            | app_user_pkey                                      | 640 kB  | 43282458
+ assignment          | assignment_org_id_id_key                           | 896 kB  |  6697061
+ assignment          | assignment_self_idx                                | 792 kB  |       10
+ assignment          | assignment_class_idx                               | 552 kB  |  2514025
+ assignment          | assignment_pkey                                    | 528 kB  |     3893
+ assignment_progress | assignment_progress_pkey                           | 17 MB   | 29589083
+ audit_log           | audit_log_target_idx                               | 176 kB  |       12
+ audit_log           | audit_log_pkey                                     | 72 kB   |       12
+ class               | class_teacher_idx                                  | 64 kB   | 43221208
+ class               | class_org_id_id_key                                | 56 kB   |        5
+ class               | class_join_code_uq                                 | 40 kB   |   694499
+ class               | class_pkey                                         | 40 kB   |   727900
+ class_member        | class_member_name_uq                               | 2200 kB |  1990996
+ class_member        | class_member_pkey                                  | 2184 kB |   694527
+ class_member        | class_member_user_idx                              | 2144 kB |  6666972
+ hint                | hint_pkey                                          | 1448 kB |   368676
+ keyword             | keyword_lecture_idx                                | 13 MB   |       10
+ keyword             | keyword_trgm_idx                                   | 10 MB   |        1
+ keyword             | keyword_pkey                                       | 9800 kB |   986312
+ lecture             | lecture_search_idx                                 | 7904 kB |   328277
+ lecture             | lecture_org_id_slug_key                            | 4296 kB |        0
+ lecture             | lecture_org_id_id_key                              | 2456 kB |       98
+ lecture             | lecture_pkey                                       | 1560 kB |  1143018
+ org                 | org_pkey                                           | 16 kB   |        0
+ org                 | org_single_platform_uq                             | 16 kB   |        0
+ problem             | problem_org_id_id_key                              | 2520 kB |       36
+ problem             | problem_catalog_filter_idx                         | 2320 kB |  1600936
+ problem             | problem_pkey                                       | 1800 kB | 25993270
+ problem_topic       | problem_topic_pkey                                 | 16 kB   |        0
+ problem_topic       | problem_topic_subject_id_slug_key                  | 16 kB   |        0
+ problem_version     | problem_version_hash_idx                           | 2280 kB |       11
+ problem_version     | problem_version_org_id_id_key                      | 1760 kB |        0
+ problem_version     | problem_version_problem_id_version_key             | 1392 kB |    16836
+ problem_version     | problem_version_pkey                               | 1096 kB | 49616501
+ qa_turn             | qa_turn_assignment_idx                             | 40 MB   |       12
+ qa_turn             | qa_turn_pkey                                       | 11 MB   |       13
+ scene_build         | scene_build_org_id_problem_version_id_build_no_key | 656 kB  |   816294
+ scene_build         | scene_build_pkey                                   | 264 kB  |        0
+ share_grant         | share_grant_lookup_idx                             | 4184 kB |        1
+ share_grant         | share_grant_pkey                                   | 2024 kB |        0
+ solution            | solution_pkey                                      | 480 kB  |  3051026
+ subject             | subject_code_key                                   | 16 kB   |        0
+ subject             | subject_pkey                                       | 16 kB   |        0
+ verification_report | verification_report_pkey                           | 368 kB  |        0
+(45 rows)
+
+### Chỉ mục trên partition event_log (một partition đại diện: tháng có nhiều dữ liệu nhất)
+     partition      | table_size | index_size | rows_est 
+--------------------+------------+------------+----------
+ event_log_default  | 0 bytes    | 8192 bytes |        0
+ event_log_y2026m07 | 0 bytes    | 8192 bytes |        0
+ event_log_y2026m08 | 14 MB      | 20 MB      |   143483
+ event_log_y2026m09 | 65 MB      | 94 MB      |   674894
+ event_log_y2026m10 | 68 MB      | 101 MB     |   706978
+ event_log_y2026m11 | 4840 MB    | 6279 MB    | 39245004
+ event_log_y2026m12 | 0 bytes    | 8192 bytes |        0
+ event_log_y2027m01 | 0 bytes    | 8192 bytes |        0
+(8 rows)
+
+### HOT update trên assignment_progress
+ n_tup_upd | n_tup_hot_upd | pct_hot 
+-----------+---------------+---------
+   3143762 |       3124084 |    99.4
+(1 row)
+

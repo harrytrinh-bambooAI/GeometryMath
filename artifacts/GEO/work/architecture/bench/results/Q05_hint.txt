@@ -1,0 +1,26 @@
+                                                                             QUERY PLAN                                                                              
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=0.98..9.21 rows=1 width=184) (actual time=0.004..0.004 rows=1 loops=1)
+   Join Filter: (a.class_id = cm.class_id)
+   Buffers: shared hit=14
+   ->  Nested Loop  (cost=0.57..7.67 rows=1 width=216) (actual time=0.003..0.003 rows=1 loops=1)
+         Buffers: shared hit=10
+         ->  Index Scan using assignment_org_id_id_key on assignment a  (cost=0.29..5.16 rows=1 width=64) (actual time=0.002..0.002 rows=1 loops=1)
+               Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (id = '01a1b2ee-51df-79ad-8354-128825f23080'::uuid))
+               Filter: (allow_hint AND (kind = 'class'::geo.assignment_kind) AND (2 <= (1 + COALESCE(((SubPlan 1))::integer, 0))))
+               Buffers: shared hit=7
+               SubPlan 1
+                 ->  Index Scan using assignment_progress_pkey on assignment_progress ap  (cost=0.42..2.64 rows=1 width=2) (actual time=0.001..0.001 rows=1 loops=1)
+                       Index Cond: ((org_id = a.org_id) AND (assignment_id = a.id) AND (user_id = '019e976e-3137-7f97-802d-4fe0a56bf727'::uuid))
+                       Buffers: shared hit=4
+         ->  Index Scan using hint_pkey on hint h  (cost=0.29..2.51 rows=1 width=216) (actual time=0.001..0.001 rows=1 loops=1)
+               Index Cond: ((org_id = a.content_org_id) AND (problem_version_id = a.problem_version_id) AND (level = 2))
+               Buffers: shared hit=3
+   ->  Index Only Scan using class_member_user_idx on class_member cm  (cost=0.41..1.53 rows=1 width=32) (actual time=0.001..0.001 rows=1 loops=1)
+         Index Cond: ((org_id = '019dfcf4-c82a-7567-8143-476430b3f9cd'::uuid) AND (user_id = '019e976e-3137-7f97-802d-4fe0a56bf727'::uuid))
+         Heap Fetches: 0
+         Buffers: shared hit=4
+ Planning Time: 0.088 ms
+ Execution Time: 0.009 ms
+(22 rows)
+

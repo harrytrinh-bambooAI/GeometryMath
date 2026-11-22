@@ -1,0 +1,1 @@
+# E1 — chỉnh của QC trên case sinh ra. Hiện không có chỉnh: AC của BA đã mang D-GEO-143 (M-217).

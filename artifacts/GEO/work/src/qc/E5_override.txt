@@ -1,0 +1,1 @@
+# E5 — chỉnh của QC trên case sinh ra. Hiện không có chỉnh: AC của BA đã theo D-GEO-131, 142, 164 (M-217).

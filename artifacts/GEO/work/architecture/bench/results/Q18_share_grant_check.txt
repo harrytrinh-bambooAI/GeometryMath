@@ -1,0 +1,11 @@
+                                                                                                                                               QUERY PLAN                                                                                                                                               
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.00..2.05 rows=1 width=24) (actual time=0.001..0.001 rows=1 loops=1)
+   Buffers: shared hit=1
+   ->  Seq Scan on share_grant g  (cost=0.00..2.05 rows=1 width=24) (actual time=0.001..0.001 rows=1 loops=1)
+         Filter: ((grantee_org_id = '019dfcf3-ddca-7505-8514-57b4d0fbc64b'::uuid) AND (resource_kind = 'lecture'::geo.share_resource) AND (resource_id = '019f31eb-2d63-7aab-89b5-5d0ca2712ae5'::uuid) AND (status = 'approved'::geo.share_status) AND (valid_from <= now()) AND (valid_until > now()))
+         Buffers: shared hit=1
+ Planning Time: 0.010 ms
+ Execution Time: 0.003 ms
+(7 rows)
+

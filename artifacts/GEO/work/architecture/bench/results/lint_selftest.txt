@@ -1,0 +1,13 @@
+lint: 109 kiểm đạt, 12 vi phạm
+  FAIL Q_bad01_offset: R-Q01 OFFSET
+  FAIL Q_bad02_select_star: R-Q03 SELECT * / RETURNING *
+  FAIL Q_bad03_unbounded: R-Q04 danh sách không LIMIT
+  FAIL Q_bad04_count: R-Q04 danh sách không LIMIT
+  FAIL Q_bad04_count: R-Q05 count(*) (chỉ cho phép khi có lint-allow nêu phạm vi nhỏ)
+  FAIL Q_bad05_like: R-Q07 LIKE '%x' / ILIKE không có chỉ mục trigram
+  FAIL Q_bad06_func_on_col: R-Q08 hàm trên cột đã đánh chỉ mục / mẫu "(tham số IS NULL OR cột = tham số)"
+  FAIL Q_bad07_event_no_time: R-Q09 truy vấn event_log không có cận occurred_at
+  FAIL Q_bad08_no_org: R-Q10 bảng của trường ['assignment'] không có điều kiện org_id
+  FAIL Q_bad09_json_where: R-Q12 JSON trong WHERE/ORDER BY/ON
+  FAIL Q_bad10_solution: R-Q14 đọc bảng nhạy cảm ngoài hàm cổng
+  FAIL Q_bad11_param_is_null: R-Q08 hàm trên cột đã đánh chỉ mục / mẫu "(tham số IS NULL OR cột = tham số)"

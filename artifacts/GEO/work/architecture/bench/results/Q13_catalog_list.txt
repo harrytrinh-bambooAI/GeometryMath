@@ -1,0 +1,18 @@
+                                                                                                                                                    QUERY PLAN                                                                                                                                                    
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.42..4.86 rows=1 width=56) (actual time=0.002..0.004 rows=5 loops=1)
+   Buffers: shared hit=19
+   ->  Nested Loop  (cost=0.42..4.86 rows=1 width=56) (actual time=0.001..0.004 rows=5 loops=1)
+         Buffers: shared hit=19
+         ->  Index Scan using problem_catalog_filter_idx on problem p  (cost=0.14..2.36 rows=1 width=64) (actual time=0.001..0.001 rows=5 loops=1)
+               Index Cond: ((org_id = '00000000-0000-7000-8000-000000000001'::uuid) AND (ROW(level, solid_kind, topic_id, id) > ROW('thpt'::geo.edu_level, 'box'::geo.solid_kind, 0, '00000000-0000-0000-0000-000000000000'::uuid)) AND (level = 'thpt'::geo.edu_level) AND (solid_kind = 'box'::geo.solid_kind))
+               Buffers: shared hit=4
+         ->  Index Scan using problem_version_pkey on problem_version pv  (cost=0.28..2.50 rows=1 width=24) (actual time=0.000..0.000 rows=1 loops=5)
+               Index Cond: (id = p.current_version_id)
+               Buffers: shared hit=15
+ Planning:
+   Buffers: shared hit=6
+ Planning Time: 0.031 ms
+ Execution Time: 0.007 ms
+(14 rows)
+

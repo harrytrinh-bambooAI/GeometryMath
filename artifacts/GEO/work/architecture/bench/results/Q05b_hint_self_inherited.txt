@@ -1,0 +1,19 @@
+                                                                                                   QUERY PLAN                                                                                                   
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=1.10..7.78 rows=1 width=216) (actual time=0.019..0.020 rows=1 loops=1)
+   Buffers: shared hit=37
+   ->  Nested Loop Left Join  (cost=0.82..5.27 rows=1 width=80) (actual time=0.018..0.018 rows=1 loops=1)
+         Buffers: shared hit=34
+         ->  Index Scan using assignment_self_idx on assignment a  (cost=0.28..2.50 rows=1 width=64) (actual time=0.001..0.001 rows=1 loops=1)
+               Index Cond: ((org_id = '019dfd12-fe8a-7bbe-a7c0-a4cce1d9db38'::uuid) AND (owner_user_id = '019e981c-0537-71ac-aa2a-4cbb0981d745'::uuid) AND (id = '01a0d429-a6c7-7df5-bc5f-9addc08c6884'::uuid))
+               Buffers: shared hit=3
+         ->  Index Scan using assignment_org_id_id_key on assignment l  (cost=0.54..2.75 rows=1 width=64) (actual time=0.001..0.001 rows=1 loops=1)
+               Index Cond: ((org_id = '019dfd12-fe8a-7bbe-a7c0-a4cce1d9db38'::uuid) AND (id = fn_self_lock_source(a.org_id, a.owner_user_id, a.problem_version_id)))
+               Buffers: shared hit=3
+   ->  Index Scan using hint_pkey on hint h  (cost=0.29..2.51 rows=1 width=216) (actual time=0.001..0.001 rows=1 loops=1)
+         Index Cond: ((org_id = COALESCE(l.content_org_id, a.content_org_id)) AND (problem_version_id = COALESCE(l.problem_version_id, a.problem_version_id)) AND (level = 1))
+         Buffers: shared hit=3
+ Planning Time: 0.042 ms
+ Execution Time: 0.023 ms
+(15 rows)
+
