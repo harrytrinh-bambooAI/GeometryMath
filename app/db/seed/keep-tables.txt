@@ -1,0 +1,4 @@
+# Bảng KHÔNG bị xóa khi reset seed: lịch sử Flyway và dữ liệu tham chiếu do migration V… nạp.
+# Mỗi dòng một tên bảng (schema public). Thêm vào đây khi migration của epic nạp dữ liệu danh mục.
+flyway_schema_history
+health_probe
