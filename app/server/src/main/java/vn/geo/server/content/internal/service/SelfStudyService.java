@@ -237,4 +237,9 @@ public class SelfStudyService {
             : String.format(Locale.ROOT, "%.1f%%", 100.0 * c[0] / c[1]).replace('.', ',');
     return new ForeignRate(c[0], c[1], pct);
   }
+
+  /** Móc kiểm thử (dev/test). */
+  public long selfAssignmentCount(UUID userId) {
+    return repo.selfAssignmentCount(userId);
+  }
 }
