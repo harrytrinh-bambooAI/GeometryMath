@@ -77,6 +77,8 @@ Khi các nguồn mâu thuẫn, tài liệu này thắng, rồi tới `PRODUCT-MA
 | PO-50 | Final (chủ đầu tư, 22/11/2026) | Phát triển MVP theo đợt: Đợt 0 (QC sinh lại TC theo AC hiện hành bằng skill po-ba-qc; khung giao diện React + Vite + TypeScript; seed dữ liệu vàng; bộ E2E Playwright có chụp bằng chứng) rồi E1; dừng để chủ đầu tư xem trước khi làm E2–E7. Agent code dùng Opus, tối đa 2 song song. AI dùng nhà cung cấp giả lập (D-GEO-047). | Chạy thử một lát để kiểm cách làm trước khi chi ~6–8 triệu token cho cả MVP. |
 | PO-51 | Giả định (PO thay TechLead, 22/11/2026) | Profile `e2e`/test có móc đặt lại bộ đếm giới hạn đăng nhập (trả lời QF-E1-14); production không bật móc này. | Không có móc thì E2E đăng nhập sai làm các case sau bị chặn. |
 | PO-52 | Giả định (PO thay TechLead, 22/11/2026) | Bản build dev/e2e lộ móc chỉ đọc `window.__geoScene` (điểm, cạnh, mặt, camera) để E2E-UI đọc trạng thái cảnh 3D (trả lời QF-E3-08); bản production không lộ. | Kiểm hình 3D bằng dữ liệu thay vì chỉ so ảnh chụp. |
+| PO-53 | Giả định (PO, 22/11/2026) | Mã giáo viên: giữ khóa theo TÀI KHOẢN (10 lần sai/15 phút, D-GEO-185, TC-GEO-0179) cùng giới hạn theo IP; BR-GEO-286 "chỉ đếm IP" coi là đã được D-GEO-185 thay. Rủi ro khóa giáo viên thật (DoS) ghi cho chủ đầu tư. Bổ sung PO-51: móc test chạy ở profile `dev`/`test` (E2E chạy trên dev), không bao giờ ở `prod`. | Nguồn mới nhất thắng; bản soát E1 #3. |
+| PO-54 | Giả định (PO, 22/11/2026) | Migration được chứa DỮ LIỆU THAM CHIẾU bắt buộc (org nền tảng, user hệ thống, môn, chủ đề bài); seed mẫu/dữ liệu vàng chỉ nằm ở `app/db/seed`. | Bản soát E1 #8. |
 
 Các mã PO-16 đến PO-26 được đặt sau đợt phản biện (`review/RV_findings.md`); cách xử lý từng phát hiện nằm ở `review/RV_triage.md`.
 
