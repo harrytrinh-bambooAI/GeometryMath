@@ -1,0 +1,9 @@
+{
+  "_doc": "Ràng buộc mô tả hình (SceneSpec rút gọn) của sáu đề kho, dùng để kiểm 'hình thỏa ràng buộc' (M-GEO-01) trên tọa độ AI trả. len [P,Q,độ dài] · perp [P,Q,R,S]: PQ ⊥ RS · eq [P,Q,R,S]: |PQ| = |RS|. Tham số a = 1. Sai số: độ dài tương đối 1e-6, vuông góc |cos| ≤ 1e-6 + 1e-12 (D-GEO-040, 163, F-GEO-073).",
+  "HKG-01": [["len","A","B",1],["len","A","D",1],["len","S","A",1],["eq","A","B","D","C"],["eq","A","D","B","C"],["perp","A","B","A","D"],["perp","S","A","A","B"],["perp","S","A","A","D"]],
+  "HKG-02": [["len","A","B",1],["len","A","D",1],["len","A","A′",1],["perp","A","B","A","D"],["perp","A","A′","A","B"],["perp","A","A′","A","D"],["eq","A","C","A′","C′"],["eq","B","D","B′","D′"],["len","C","C′",1],["len","B","B′",1],["len","D","D′",1]],
+  "HKG-03": [["len","A","B",4],["len","B","C",4],["len","C","A",4],["len","A","A′",6],["len","B","B′",6],["len","C","C′",6],["perp","A","A′","A","B"],["perp","A","A′","A","C"]],
+  "HKG-04": [["len","O","M",3],["len","S","M",5],["perp","S","O","O","M"]],
+  "HKG-05": [["len","O","M",4],["len","O","O′",10],["perp","O","O′","O","M"],["len","O′","M′",4],["len","M","M′",10]],
+  "HKG-06": [["len","A","B",1],["len","A","D",1],["len","A","A′",1],["perp","A","B","A","D"],["perp","A","A′","A","B"],["eq","I","A","I","C′"],["eq","I","B","I","D′"],["eq","I","C","I","A′"],["eq","I","D","I","B′"]]
+}

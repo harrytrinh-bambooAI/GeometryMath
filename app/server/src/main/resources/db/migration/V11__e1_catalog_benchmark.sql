@@ -57,7 +57,9 @@ BEGIN
   INSERT INTO solution (org_id, problem_version_id, final_answer, steps, answer_forms, model, prompt_version, author_user_id, ai_authored)
   VALUES (platform_org_id(), p_pv, p_final, p_steps, p_forms, p_model, p_prompt,
           (SELECT u.id FROM app_user u WHERE u.org_id = platform_org_id() AND u.account_kind = 'system' ORDER BY u.id LIMIT 1), true)
-  ON CONFLICT (org_id, problem_version_id) DO NOTHING;
+  ON CONFLICT (org_id, problem_version_id) DO UPDATE
+     SET answer_forms = EXCLUDED.answer_forms, answer_forms_version = solution.answer_forms_version + 1
+   WHERE solution.answer_forms = '[]'::jsonb AND EXCLUDED.answer_forms <> '[]'::jsonb;  -- bổ sung đại lượng tham chiếu, không sửa lời giải
   RETURN 'OK';
 END $$;
 
