@@ -1,0 +1,7 @@
+# E5 — cột "Tự động hóa" (PO-50): chỉ ghi case khác mặc định của gen_cases.py (auto_default).
+# TC-GEO-nnnn | E2E-UI / E2E-API / IT / Manual | lý do (bắt buộc với Manual)
+TC-GEO-0505 | E2E-UI | Playwright giả lập điện thoại (F-GEO-103); kiểm bố cục và bộ lọc
+TC-GEO-0519 | E2E-UI | Playwright giả lập điện thoại (F-GEO-103); kiểm thứ tự các phần
+TC-GEO-0541 | E2E-API | gọi HTTP bằng thẻ của Giáo viên C; đề tự nhập nạp sẵn qua dữ liệu mẫu
+TC-GEO-0542 | E2E-API | gọi HTTP bằng thẻ của Giáo viên mẫu; đề tự nhập nạp sẵn qua dữ liệu mẫu
+TC-GEO-0536 | IT | đếm câu lệnh JDBC bằng datasource-proxy (D-GEO-170) ở phía máy chủ
