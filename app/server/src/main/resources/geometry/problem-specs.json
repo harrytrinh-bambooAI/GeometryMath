@@ -1,0 +1,45 @@
+{
+  "_doc": "E2: mô tả dựng (ProblemSpec) của sáu đề kho HKG-01…06 (fixture F-GEO-031…036): bộ dựng của engine, tham số dạng biểu thức theo a, đơn vị, thẻ ràng buộc (BR-GEO-130), đại lượng đề hỏi (tính từ tọa độ để kiểm chứng, BR-GEO-133) và đại lượng ẩn khi đo (D-GEO-024). Không chứa đáp số. Xem app/docs/SCENE-CONTRACT.md §3.",
+  "HKG-01": {
+    "template": "pyramid_square_sa", "params": { "a": "a", "sa": "a" }, "unit": "a",
+    "chips": [ { "text": "SA = a", "points": ["S", "A"] }, { "text": "AD = a", "points": ["A", "D"] } ],
+    "asked": [ { "name": "", "kind": "angle_line_plane", "points": ["S", "D", "A", "B", "D"] } ],
+    "hidden": ["ang:S-D-A"]
+  },
+  "HKG-02": {
+    "template": "cube", "params": { "a": "a" }, "unit": "a",
+    "chips": [ { "text": "AB = a", "points": ["A", "B"] } ],
+    "asked": [ { "name": "", "kind": "dist_lines", "points": ["A", "C", "B′", "D′"] } ],
+    "hidden": ["len:O-O′"]
+  },
+  "HKG-03": {
+    "template": "prism", "params": { "a": "4", "h": "6" }, "unit": "cm",
+    "chips": [ { "text": "AB = 4 cm", "points": ["A", "B"] }, { "text": "AA′ = 6 cm", "points": ["A", "A′"] } ],
+    "asked": [ { "name": "V", "kind": "volume_prism", "points": ["A", "B", "C", "A′"] } ],
+    "hidden": []
+  },
+  "HKG-04": {
+    "template": "cone_rl", "params": { "r": "3", "l": "5" }, "unit": "cm",
+    "chips": [ { "text": "OM = 3 cm", "points": ["O", "M"] }, { "text": "SM = 5 cm", "points": ["S", "M"] } ],
+    "asked": [
+      { "name": "Sxq", "kind": "cone_lateral", "points": ["S", "O", "M"] },
+      { "name": "V", "kind": "cone_volume", "points": ["S", "O", "M"] }
+    ],
+    "hidden": []
+  },
+  "HKG-05": {
+    "template": "cylinder", "params": { "r": "4", "h": "10" }, "unit": "cm",
+    "chips": [ { "text": "OM = 4 cm", "points": ["O", "M"] }, { "text": "OO′ = 10 cm", "points": ["O", "O′"] } ],
+    "asked": [ { "name": "Stp", "kind": "cyl_total_area", "points": ["O", "O′", "M"] } ],
+    "hidden": []
+  },
+  "HKG-06": {
+    "template": "sphere_circum_cube", "params": { "a": "a" }, "unit": "a",
+    "chips": [ { "text": "AB = a", "points": ["A", "B"] } ],
+    "asked": [
+      { "name": "R", "kind": "sphere_radius", "points": ["I", "A"] },
+      { "name": "V", "kind": "sphere_volume", "points": ["I", "A"] }
+    ],
+    "hidden": ["len:I-A", "len:I-B", "len:I-C", "len:I-D", "len:I-A′", "len:I-B′", "len:I-C′", "len:I-D′"]
+  }
+}
