@@ -15,7 +15,8 @@ fmt:     ; $(MVN) spotless:apply
 run:     up ; $(ENV) $(MVN) spring-boot:run
 ports:   ; @$(ENV) echo "PG $$GEO_PG_PORT · Redis $$GEO_REDIS_PORT · máy chủ $$GEO_PORT · web $$GEO_WEB_PORT"
 
-.PHONY: loadtest-smoke e2e-smoke
+.PHONY: loadtest-smoke e2e-smoke bench-seed
+bench-seed:     ; scripts/bench-seed.sh $(or $(DB),geo_bench)   # dữ liệu thử tải US-GEO-108 vào CSDL riêng geo_bench
 loadtest-smoke: ; cd loadtest && ../server/mvnw -B -ntp -f pom.xml gatling:test   # cần máy chủ chạy ở 8080 (-Dgeo.baseUrl=...)
 e2e-smoke:      ; $(ENV) cd e2e && npm ci && GEO_E2E_RESET=0 npm run test:smoke   # chỉ dự án api, vào máy chủ đang chạy ở GEO_PORT
 
