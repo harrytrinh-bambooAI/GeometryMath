@@ -1,0 +1,39 @@
+/*
+ * Token thiết kế, chép nguyên giá trị từ Design/assets/ds.css (bộ CSS mà Design/prototype/index.html nạp),
+ * phiên bản Design ngày 22/11/2026. Đổi màu/bo góc ở Design trước rồi chép lại đây; không đặt màu rời trong component.
+ */
+:root {
+  /* nền và chữ */
+  --bg: #f3f5fb;
+  --panel: #fff;
+  --soft: #f7f9fd;
+  --line: #e3e8f2;
+  --text: #141b2d;
+  --muted: #5f6b85;
+  --faint: #98a2b8;
+  /* màu nhấn: chính, cam, xanh lá, vàng, tím, xanh trời, đỏ (kèm nền nhạt -s) */
+  --pri: #3b5bdb;
+  --pri-d: #2f49b5;
+  --pri-s: #e9eeff;
+  --org: #f0522b;
+  --org-s: #ffede7;
+  --grn: #0f8a5f;
+  --grn-s: #dff5ec;
+  --yel: #e8a200;
+  --yel-s: #fff4d6;
+  --pur: #7c4dff;
+  --pur-s: #efe9ff;
+  --sky: #0ea5e9;
+  --sky-s: #e0f4fe;
+  --red: #d92d20;
+  --red-s: #fde7e5;
+  /* hình khối */
+  --r: 16px;
+  --r-sm: 11px;
+  --sh: 0 1px 2px rgba(20, 27, 45, 0.05), 0 6px 20px rgba(20, 27, 45, 0.06);
+  /* chữ */
+  --font: 'Be Vietnam Pro', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --fs: 14px;
+  --rail-w: 92px;
+}

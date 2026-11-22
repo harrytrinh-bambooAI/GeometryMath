@@ -1,14 +1,21 @@
 {
   "name": "geo-e2e",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Kiểm thử đầu-cuối (Playwright, D-GEO-170) cho Hình Học Không Gian Cùng AI",
+  "description": "Kiểm thử đầu-cuối có bằng chứng (Playwright, D-GEO-170, PO-50) cho Hình Học Không Gian Cùng AI",
+  "type": "module",
   "scripts": {
     "test": "playwright test",
-    "test:smoke": "playwright test --project=api-smoke",
+    "test:api": "playwright test --project=api",
+    "test:ui": "playwright test --project=ui-chromium --project=ui-webkit",
+    "test:smoke": "playwright test --project=api",
+    "traceability": "node scripts/traceability.ts",
+    "typecheck": "tsc --noEmit",
     "install-browsers": "playwright install webkit chromium"
   },
   "devDependencies": {
-    "@playwright/test": "1.65.1"
+    "@playwright/test": "1.65.1",
+    "@types/node": "26.6.6",
+    "typescript": "6.0.3"
   }
 }
