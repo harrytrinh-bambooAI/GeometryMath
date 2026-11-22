@@ -1,16 +1,11 @@
 package vn.geo.server.assignment.internal.web;
 
-import java.time.Instant;
 import java.util.UUID;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import vn.geo.server.assignment.internal.repo.LockStateRepository;
-import vn.geo.server.common.error.AppException;
-import vn.geo.server.common.error.ErrorCode;
-import vn.geo.server.common.security.AuthPrincipal;
-import vn.geo.server.common.security.Role;
-import vn.geo.server.common.security.Roles;
+import vn.geo.server.assignment.internal.service.LockStateService;
+import vn.geo.server.assignment.internal.service.LockStateService.LockState;
 import vn.geo.server.common.web.NoStore;
 
 /**
@@ -21,22 +16,15 @@ import vn.geo.server.common.web.NoStore;
 @RestController
 public class LockStateController {
 
-  public record LockState(boolean locked, String kind, Instant releaseAt) {}
+  private final LockStateService service;
 
-  private final LockStateRepository repo;
-
-  public LockStateController(LockStateRepository repo) {
-    this.repo = repo;
+  public LockStateController(LockStateService service) {
+    this.service = service;
   }
 
   @NoStore
   @GetMapping("/api/v1/student/assignments/{id}/lock")
   public LockState lock(@PathVariable UUID id) {
-    AuthPrincipal p = Roles.require(Role.STUDENT);
-    LockStateRepository.Gate g = repo.gate(p.userId(), id);
-    if ("NOT_FOUND".equals(g.status())) {
-      throw new AppException(ErrorCode.NOT_FOUND);
-    }
-    return new LockState(!"OK".equals(g.status()), g.kind(), g.releaseAt());
+    return service.lock(id);
   }
 }
