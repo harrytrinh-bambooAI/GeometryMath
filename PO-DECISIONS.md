@@ -75,6 +75,8 @@ Khi các nguồn mâu thuẫn, tài liệu này thắng, rồi tới `PRODUCT-MA
 
 | PO-49 | Giả định (PO) | Vị trí trong lộ trình của các yêu cầu Final PO-33 và PO-34: từ khóa bấm được, bài giảng có ghi nguồn và hỏi đáp dựa trên giáo trình nằm trong MVP ở mức bài giảng và giáo trình mẫu do hệ thống cung cấp (nguồn là giáo án mẫu của Giáo viên mẫu hoặc AI viết, ghi rõ nhãn). Giáo viên tự soạn và duyệt bài giảng thuộc chặng 2. Kho tri thức do giáo viên tự quản lý, kiểm soát đầy đủ thuộc chặng 5. PO-35 và PO-36 (hình tương tác, lời giải cập nhật hình) thuộc MVP. | Yêu cầu Final chưa nêu chặng; bản hiện tại đã có thuật ngữ bấm được và chat nên đặt vào MVP là bước nhỏ nhất. |
 | PO-50 | Final (chủ đầu tư, 22/11/2026) | Phát triển MVP theo đợt: Đợt 0 (QC sinh lại TC theo AC hiện hành bằng skill po-ba-qc; khung giao diện React + Vite + TypeScript; seed dữ liệu vàng; bộ E2E Playwright có chụp bằng chứng) rồi E1; dừng để chủ đầu tư xem trước khi làm E2–E7. Agent code dùng Opus, tối đa 2 song song. AI dùng nhà cung cấp giả lập (D-GEO-047). | Chạy thử một lát để kiểm cách làm trước khi chi ~6–8 triệu token cho cả MVP. |
+| PO-51 | Giả định (PO thay TechLead, 22/11/2026) | Profile `e2e`/test có móc đặt lại bộ đếm giới hạn đăng nhập (trả lời QF-E1-14); production không bật móc này. | Không có móc thì E2E đăng nhập sai làm các case sau bị chặn. |
+| PO-52 | Giả định (PO thay TechLead, 22/11/2026) | Bản build dev/e2e lộ móc chỉ đọc `window.__geoScene` (điểm, cạnh, mặt, camera) để E2E-UI đọc trạng thái cảnh 3D (trả lời QF-E3-08); bản production không lộ. | Kiểm hình 3D bằng dữ liệu thay vì chỉ so ảnh chụp. |
 
 Các mã PO-16 đến PO-26 được đặt sau đợt phản biện (`review/RV_findings.md`); cách xử lý từng phát hiện nằm ở `review/RV_triage.md`.
 
