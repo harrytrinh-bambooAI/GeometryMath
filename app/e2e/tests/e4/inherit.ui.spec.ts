@@ -85,21 +85,24 @@ test('Dán lại đề của bài giao Chưa đặt giờ thì lời giải tự
   await viewable(page);
 });
 
-for (const [tc, title, statement] of [
-  ['0482', 'Đề viết lại với cạnh 2a vẫn kế thừa', F077],
-  ['0483', 'Đề viết lại câu chữ, thêm chữ vẫn kế thừa khóa', F234],
-] as const) {
-  test(`${title} @TC-GEO-${tc}`, async ({ page, request }) => {
-    const { an } = await classWith(request, [{ key: 'BG-1', code: 'HKG-01' }]);
-    const id = await selfStudy(request, an.token, statement);
-    await openWorkspace(page, an, id);
-    await uiHints(page);
-    await lockedInherited(page);
-    const r = await call.solution(request, an.token, id);
-    expect(r.status()).toBe(403);
-    expectNoLeak(await r.text());
-  });
+async function inheritedVariant(page: Page, request: APIRequestContext, statement: string) {
+  const { an } = await classWith(request, [{ key: 'BG-1', code: 'HKG-01' }]);
+  const id = await selfStudy(request, an.token, statement);
+  await openWorkspace(page, an, id);
+  await uiHints(page);
+  await lockedInherited(page);
+  const r = await call.solution(request, an.token, id);
+  expect(r.status()).toBe(403);
+  expectNoLeak(await r.text());
 }
+
+test('Đề viết lại với cạnh 2a vẫn kế thừa @TC-GEO-0482', async ({ page, request }) => {
+  await inheritedVariant(page, request, F077);
+});
+
+test('Đề viết lại câu chữ, thêm chữ vẫn kế thừa khóa @TC-GEO-0483', async ({ page, request }) => {
+  await inheritedVariant(page, request, F234);
+});
 
 test('Cùng hình nhưng hỏi đại lượng khác thì không kế thừa khóa @TC-GEO-0484', async ({ page, request }) => {
   const { an } = await classWith(request, [{ key: 'BG-1', code: 'HKG-01' }]);

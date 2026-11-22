@@ -50,17 +50,28 @@ export function HintTab({ id, model }: { id: string; model: HelpModel }) {
       ) : (
         <>
           {help.hints.map((h) => (
-            <div key={h.level} className="card e4-hint" data-testid={tid('e4', 'hint', h.level)}>
-              <strong data-testid={tid('e4', 'hint', h.level, 'title')}>{h.title}</strong>
-              <p>
-                <KwText text={h.body} testId={tid('e4', 'hint', h.level, 'body')} />
-              </p>
+            // vỏ ngoài giữ mã e3-hint-n của khung E3 (TC-GEO-0346: gợi ý đã xem còn sau khi xoay máy)
+            <div key={h.level} data-testid={tid('e3', 'hint', h.level)}>
+              <div className="card e4-hint" data-testid={tid('e4', 'hint', h.level)}>
+                <strong data-testid={tid('e4', 'hint', h.level, 'title')}>{h.title}</strong>
+                <p>
+                  <KwText text={h.body} testId={tid('e4', 'hint', h.level, 'body')} />
+                </p>
+              </div>
             </div>
           ))}
           {next <= 2 && (
-            <button type="button" className="btn" disabled={busy} data-testid={tid('e4', 'hint', 'next')} onClick={() => void ask()}>
-              Xem gợi ý {next}
-            </button>
+            <span data-testid={tid('e3', 'hint', 'next')}>
+              <button
+                type="button"
+                className="btn"
+                disabled={busy}
+                data-testid={tid('e4', 'hint', 'next')}
+                onClick={() => void ask()}
+              >
+                Xem gợi ý {next}
+              </button>
+            </span>
           )}
         </>
       )}
