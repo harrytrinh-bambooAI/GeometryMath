@@ -19,7 +19,10 @@ import vn.geo.server.common.security.Role;
 import vn.geo.server.common.security.TokenService;
 import vn.geo.server.testing.StatementCountingConfig;
 
-/** Nền cho kiểm thử tích hợp: máy chủ thật trên cổng ngẫu nhiên, geo_test@54329, Redis 6389. */
+/**
+ * Nền cho kiểm thử tích hợp: máy chủ thật trên cổng ngẫu nhiên, geo_test@GEO_PG_PORT, Redis
+ * GEO_REDIS_PORT (mặc định 54329/6389).
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
 @Import({TestFlywayConfig.class, StatementCountingConfig.class})

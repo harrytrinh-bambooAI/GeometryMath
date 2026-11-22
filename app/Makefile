@@ -1,4 +1,11 @@
 # Lệnh thường dùng (chạy trong thư mục app/)
+# Cổng: biến môi trường > app/.env.ports (mỗi checkout/worktree một bản, không commit) > mặc định 54329/6389/8080/5173.
+-include .env.ports
+GEO_PG_PORT    ?= 54329
+GEO_REDIS_PORT ?= 6389
+GEO_PORT       ?= 8080
+GEO_WEB_PORT   ?= 5173
+export GEO_PG_PORT GEO_REDIS_PORT GEO_PORT GEO_WEB_PORT
 MVN = cd server && ./mvnw -B -ntp
 
 .PHONY: up down db verify build test fmt run
