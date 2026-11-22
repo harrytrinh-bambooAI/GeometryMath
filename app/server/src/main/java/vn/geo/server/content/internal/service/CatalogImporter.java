@@ -22,7 +22,9 @@ import vn.geo.server.content.internal.repo.ContentRepository;
  * (US-GEO-106). Một đề, một bản ghi cho cả kho đề và bộ đề chuẩn (BR-GEO-118); nạp lại cùng nội
  * dung không tạo bản sao; bộ đề đổi nội dung thì tăng phiên bản (BR-GEO-121). Cột "Trạng thái kiểm
  * chứng" KHÔNG được nạp làm nhãn máy (BR-GEO-120, D-GEO-004): đề mới luôn "Cần xem lại" cho tới khi
- * engine chạy. Đề thiếu đáp số vẫn nạp, được liệt kê trong kết quả (US-GEO-106-FC1).
+ * engine chạy. Đề thiếu đáp số vẫn nạp, được liệt kê trong kết quả (US-GEO-106-FC1). E5: đề đổi lời
+ * giải thì tạo version mới (BR-GEO-11); bỏ đề thiếu đáp số khỏi Kho đề là việc của {@link
+ * CatalogLoader}.
  */
 @Service
 public class CatalogImporter {
@@ -88,7 +90,8 @@ public class CatalogImporter {
       String statement = r.getOrDefault("E", "");
       String answer = r.getOrDefault("H", "");
       // cột J "Trạng thái kiểm chứng" cố ý KHÔNG đọc (BR-GEO-120)
-      UUID[] ids = upsertProblem(r, code, statement, author);
+      String stepsJson = mapper.writeValueAsString(steps.getOrDefault(code, List.of()));
+      UUID[] ids = upsertProblem(r, code, statement, answer, stepsJson, author);
       UUID problemId = ids[0];
       UUID versionId = ids[1];
       if (ids[2] != null) {
@@ -100,10 +103,11 @@ public class CatalogImporter {
         problems.add(code + ": thiếu đáp số tham chiếu");
       } else {
         List<AnswerExpr.Quantity> qs = AnswerExpr.parse(answer);
+        repo.setArchived(code, false); // đủ đáp số: (lại) vào Kho đề (US-GEO-504-FC1)
         repo.putSolution(
             versionId,
             answer,
-            mapper.writeValueAsString(steps.getOrDefault(code, List.of())),
+            stepsJson,
             mapper.writeValueAsString(AnswerExpr.forms(qs)),
             model,
             promptVersion);
@@ -129,10 +133,20 @@ public class CatalogImporter {
   }
 
   /** [problemId, versionId, versionId nếu vừa tạo version mới]. */
-  private UUID[] upsertProblem(Map<String, String> r, String code, String statement, UUID author) {
+  private UUID[] upsertProblem(
+      Map<String, String> r,
+      String code,
+      String statement,
+      String answer,
+      String stepsJson,
+      UUID author) {
     var existing = repo.problemByCode(code);
+    // cùng đề và cùng lời giải: giữ version; lời giải đổi (kể cả chỉ câu chữ một bước) thì tạo
+    // version mới,
+    // bài đã giao giữ version cũ (BR-GEO-11, US-GEO-504-SC5; E5)
     if (existing.isPresent()
-        && normalize(existing.get().statement()).equals(normalize(statement))) {
+        && normalize(existing.get().statement()).equals(normalize(statement))
+        && (answer.isBlank() || repo.solutionSame(existing.get().versionId(), answer, stepsJson))) {
       return new UUID[] {existing.get().problemId(), existing.get().versionId(), null};
     }
     UUID problemId;
@@ -161,6 +175,11 @@ public class CatalogImporter {
   /** Chuẩn hóa đề trước khi băm: bỏ khoảng trắng đầu/cuối, gộp khoảng trắng (khớp seed). */
   static String normalize(String s) {
     return s == null ? "" : s.strip().replaceAll("\\s+", " ");
+  }
+
+  /** Băm đề đã chuẩn hóa (problem_version.statement_hash). */
+  public static byte[] statementHash(String statement) {
+    return sha256(normalize(statement));
   }
 
   static byte[] sha256(String s) {
