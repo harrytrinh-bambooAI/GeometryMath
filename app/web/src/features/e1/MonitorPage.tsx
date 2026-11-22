@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { api } from '../../shared/api/client.ts';
 import { tid } from '../../shared/testid.ts';
+import { ReleaseCard } from '../e6/ReleaseCard.tsx';
 import { errorText } from './messages.ts';
 import { RELEASE_LABEL } from './studentApi.ts';
 import type { Monitor } from './studentApi.ts';
@@ -42,6 +43,8 @@ export function MonitorPage() {
         </span>{' '}
         <span className="chip">{RELEASE_LABEL[m.releaseState] ?? m.releaseState}</span>
       </p>
+      {/* E6: thẻ vàng "Lời giải đang khóa" với "Mở ngay", "Đổi giờ" (US-GEO-605) */}
+      <ReleaseCard assignmentId={id} />
       <table className="e1-table">
         <thead>
           <tr>

@@ -15,6 +15,10 @@ export interface StudentAssignment {
   allowQa: boolean;
   verifyStatus: 'verified' | 'needs_review';
   progress: Progress;
+  /** E6: tên bài, loại hình, dạng bài cho thẻ "Bài của em" (US-GEO-606). */
+  title?: string;
+  solidKind?: string;
+  topic?: string;
 }
 
 export interface Page<T> {
