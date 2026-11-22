@@ -88,6 +88,91 @@ public class ContentRepository {
         .update();
   }
 
+  /** Đề kho mới thuộc một bộ đề (E5: móc kiểm thử nạp đề vào bộ riêng). */
+  public void insertProblem(
+      UUID id,
+      String code,
+      String level,
+      String solidKind,
+      Short topicId,
+      UUID author,
+      String bank) {
+    insertProblem(id, code, level, solidKind, topicId, author);
+    jdbc.sql("UPDATE problem SET bank = :bank WHERE org_id = :orgId AND id = :id")
+        .param("bank", bank)
+        .param("orgId", PlatformOrg.ID)
+        .param("id", id)
+        .update();
+  }
+
+  /** Số đề kho của một bộ (đặt mã cho đề mới của móc kiểm thử). */
+  public long countInBank(String bank) {
+    return jdbc.sql(
+            """
+            SELECT count(*) FROM problem WHERE org_id = :orgId AND bank = :bank
+            -- sqllint:allow=unbounded một bộ đề ≤ 60 đề (móc kiểm thử E5)
+            """)
+        .param("orgId", PlatformOrg.ID)
+        .param("bank", bank)
+        .query(Long.class)
+        .single();
+  }
+
+  /** Đưa đề ra khỏi Kho đề (đề thiếu đáp số, US-GEO-504-FC1) hoặc đưa lại khi đã đủ. */
+  public void setArchived(String code, boolean archived) {
+    jdbc.sql(
+            """
+            UPDATE problem SET archived_at = CASE WHEN :archived THEN COALESCE(archived_at, now()) END
+            WHERE org_id = :orgId AND code = :code
+            """)
+        .param("archived", archived)
+        .param("orgId", PlatformOrg.ID)
+        .param("code", code)
+        .update();
+  }
+
+  /** Lời giải của version trùng lời giải trong tệp nạp (BR-GEO-11: khác thì tạo version mới). */
+  public boolean solutionSame(UUID versionId, String finalAnswer, String stepsJson) {
+    return Boolean.TRUE.equals(
+        jdbc.sql("SELECT fn_content_solution_same(:v, :final, CAST(:steps AS jsonb))")
+            .param("v", versionId)
+            .param("final", finalAnswer)
+            .param("steps", stepsJson)
+            .query(Boolean.class)
+            .single());
+  }
+
+  /** Một version hiện hành của đề kho (mọi bộ) cho bộ kiểm chứng cả kho. */
+  public record CatalogRef(
+      String code, String bank, UUID problemId, UUID versionId, String finalAnswer) {}
+
+  public List<CatalogRef> catalogReference() {
+    return jdbc.sql(
+            "SELECT code, bank, problem_id, problem_version_id, final_answer FROM fn_catalog_reference()")
+        .query((rs, i) ->
+            new CatalogRef(
+                rs.getString(1),
+                rs.getString(2),
+                rs.getObject(3, UUID.class),
+                rs.getObject(4, UUID.class),
+                rs.getString(5)))
+        .list();
+  }
+
+  /** Mã đề gốc mà bản dựng của version trỏ tới (đề thử của kho thử, seed E5); không có: rỗng. */
+  public Optional<String> specCode(UUID versionId) {
+    return jdbc.sql(
+            """
+            SELECT spec->>'spec_code' FROM scene_build WHERE org_id = :orgId AND problem_version_id = :v
+            ORDER BY build_no DESC LIMIT 1
+            """)
+        .param("orgId", PlatformOrg.ID)
+        .param("v", versionId)
+        .query((rs, i) -> Optional.ofNullable(rs.getString(1)))
+        .optional()
+        .flatMap(x -> x);
+  }
+
   public void insertVersion(
       UUID id, UUID problemId, int version, String statement, byte[] hash, UUID author) {
     jdbc.sql(

@@ -188,8 +188,11 @@ public class SceneService {
   public Optional<SceneDto> sceneOf(UUID contentOrg, UUID versionId, String code, String status) {
     Optional<SceneRepository.SceneRow> row = repo.latestScene(contentOrg, versionId);
     String sceneId = row.map(r -> r.id().toString()).orElse(null);
+    String specCode = code;
     if (row.isPresent()) {
       JsonNode spec = mapper.readTree(row.get().spec());
+      // E5: đề thử của kho thử (F-GEO-080) dựng theo mô tả dựng của đề gốc (spec_code)
+      specCode = spec.path("spec_code").asString(code);
       if (spec.has("topology")) {
         Figure f = stored(spec, mapper.readTree(row.get().coords()));
         return Optional.of(
@@ -204,7 +207,7 @@ public class SceneService {
                     status)));
       }
     }
-    Optional<ProblemSpec> ps = engine.catalogSpec(code);
+    Optional<ProblemSpec> ps = specCode == null ? Optional.empty() : engine.catalogSpec(specCode);
     if (ps.isEmpty()) {
       return Optional.empty();
     }

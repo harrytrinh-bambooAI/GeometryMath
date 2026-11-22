@@ -40,3 +40,17 @@
 
 - Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa". Không case nào bị bỏ.
 - Đối chiếu: 43 / 43 tiêu chí có case (100%); 43 / 43 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.
+
+## Dev (E5, Đợt 1; 23-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E5-D01 | Assumption | F-GEO-080; US-GEO-501, 505; TC-GEO-0125 (E1) | Kho thử 48 đề (F-GEO-080) và "Kho đề mọi trường đúng sáu đề" (TC-GEO-0125) không cùng đứng trên một kho nền tảng | V50: cột `problem.bank` + bảng `catalog_bank_access`; mọi trường thấy bộ `main` (kho thật), chỉ tổ chức thử "Nhóm thử E5" (seed `500_e5_catalog.sql`) thấy thêm bộ `kho_thu` (HKG-07…48 nhân từ HKG-01…06). Kho vẫn là nội dung nền tảng (`problem_scope_ck` giữ nguyên) | PO · xác nhận dùng bộ đề khi kho thật có 40–60 đề |
+| QF-E5-D02 | Assumption | US-GEO-504-FC1 ↔ US-GEO-106-FC1 (E1) | 504-FC1: đề thiếu đáp số "không vào kho", ghi "HKG-05: thiếu đáp số"; 106-FC1: vẫn thuộc bộ đề chuẩn, ghi "thiếu đáp số tham chiếu" | Bộ nạp E1 giữ nguyên (bộ đề chuẩn, TC-0147); `CatalogLoader` (E5) đưa đề thiếu đáp số ra khỏi Kho đề (`archived_at`) và ghi dòng của E5; nạp lại có đáp số thì đưa vào lại | BA · ghi chú chéo hai AC |
+| QF-E5-D03 | Gap | US-GEO-503-FC5 (TC-GEO-0542) Given | "An đã mở được lời giải của bài tự học": máy chủ nhánh này trả `FORBIDDEN "Lời giải chưa mở."` cho bài tự học F-GEO-060 (luồng mở lời giải tự học là E4) | Ca kiểm phía giáo viên (Then) không phụ thuộc bước này; khi gộp E4, thêm bước An mở lời giải vào ca | E4 · khi gộp |
+| QF-E5-D04 | Assumption | US-GEO-505-SC2, 502-FC1 | "Một đề mới được nạp vào kho giữa chừng" cần cách nạp trong lúc chạy | Móc kiểm thử `POST /test-hooks/e5/problems` (chỉ profile dev/test) nạp đề "Cần xem lại" mã `HKM-nn` vào bộ `kho_moi`, chỉ "Nhóm thử E5 nạp thêm" thấy | — |
+| QF-E5-D05 | Assumption | US-GEO-504-SC6 | Chưa có chỗ lưu phiên bản engine của báo cáo kiểm chứng | Ghi `checks.engine_version` (cấu hình `geo.engine.version`, mặc định `engine-1`); nhãn = báo cáo mới nhất qua `fn_record_verification` | ARCH · cân nhắc cột riêng |
+| QF-E5-D06 | Assumption | BR-GEO-204, 207; US-GEO-503-FC1 | Thẻ của đề chưa có lời giải không có số bước k | Thẻ ghi "AI soạn · chưa có lời giải" (vẫn có "AI soạn") | BA · câu chữ |
+| QF-E5-D07 | Assumption | F-GEO-080 | Fixture không nói đề nào trong 4 đề "Cần xem lại" | HKG-45…48 (HKG-48 không có lời giải, dùng cho 503-FC1; HKG-45 cho 502-SC2, 503-SC3) | QC · ghi vào fixture |
+| QF-E5-D08 | Fixed | màn E1 `/gv/kho-de`, E2 `/gv/de/:versionId`; bộ nạp E1 | Bản tối thiểu của E1, E2; bộ nạp chỉ tạo version mới khi đề đổi chữ | E5 thay bằng `features/e5/KhoDePage.tsx`, `ProblemDetailPage.tsx`, giữ data-testid `e1-…`, `e2-problem-…` nên ca E1, E2 không đổi. Bộ nạp: lời giải đổi (kể cả một bước) thì tạo version mới, bài đã giao giữ version cũ (BR-GEO-11) | — |
+| QF-E5-D09 | Gap | US-GEO-503 ↔ E4 | Lời giải đồng bộ hình của E4 chưa có trên nhánh | Khối "Lời giải" là bản đơn giản đọc dữ liệu đề (`SolutionBlock` trong `ProblemDetailPage.tsx`); chỗ cắm để E4 thay | E4 · khi gộp |

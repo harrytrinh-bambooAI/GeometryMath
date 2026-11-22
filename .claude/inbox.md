@@ -64,3 +64,10 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
   Còn chờ PO: cận trên tham số hình mẫu = 1000 là giả định Dev (QF-E2-D10). QC ghi nhận TC-0309 đổi tầng E2E-API → E2E-UI (QF-E3-D13).
 - **Nguồn:** bản soát độc lập E2 (Sonnet) 23/11/2026.
 - **Xong khi:** như FIX2 ở trên; thêm IT với kịch bản AI giả lập trả solid lạ / thiếu điểm / số dạng chuỗi.
+
+## Việc: FIX3 — tích hợp E4+E5 và phát hiện soát E4/E5 (23/11/2026)
+- **Mục tiêu:**
+  0. [BLOCKER tích hợp] Trên nhánh tích hợp 317a192: `CatalogE5IT.tc0528_newSolutionVersion:219` trượt — nạp lại tạo phiên bản mới (01a2047a-…) thay vì giữ 00000000-0000-7000-8000-000000100031 khi lời giải không đổi. Nghi tương tác E4 (chữ ký đề, tiêu đề đề trong seed D03, ghi solution/signature) × E5 (importer tạo phiên bản khi lời giải đổi). Mỗi nhánh riêng đạt.
+  1. [E5, tự nêu] Giáo viên bất kỳ giao được đề thuộc bank thử qua API; quyền bank chỉ áp ở danh sách/đếm.
+  (+ phát hiện soát E4/E5 bổ sung bên dưới khi có)
+- **Xong khi:** make verify xanh trên nhánh tích hợp; make e2e hai lượt đạt toàn bộ.
