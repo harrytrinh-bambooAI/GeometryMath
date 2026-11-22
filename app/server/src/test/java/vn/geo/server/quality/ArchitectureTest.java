@@ -72,6 +72,8 @@ class ArchitectureTest {
               "vn.geo.server.knowledge..",
               "vn.geo.server.events..",
               "vn.geo.server.aigateway..",
+              "vn.geo.server.assignment..",
+              "vn.geo.server.tracking..",
               "vn.geo.server.sample..");
 
   @ArchTest

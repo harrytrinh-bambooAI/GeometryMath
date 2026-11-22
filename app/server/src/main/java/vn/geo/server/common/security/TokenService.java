@@ -36,6 +36,11 @@ public class TokenService {
   }
 
   public String issue(AuthPrincipal p) {
+    return issue(p, props.ttl());
+  }
+
+  /** Phát thẻ với thời hạn riêng (profile dev/test dùng để tạo thẻ sắp hết hoặc đã hết hạn). */
+  public String issue(AuthPrincipal p, java.time.Duration ttl) {
     long now = clock.instant().getEpochSecond();
     Map<String, Object> claims =
         Map.of(
@@ -43,7 +48,7 @@ public class TokenService {
             "org", p.orgId().toString(),
             "role", p.role().name(),
             "iat", now,
-            "exp", now + props.ttl().toSeconds());
+            "exp", now + ttl.toSeconds());
     String payload = B64.encodeToString(mapper.writeValueAsBytes(claims));
     String signingInput = HEADER + "." + payload;
     return signingInput + "." + B64.encodeToString(hmac(signingInput));

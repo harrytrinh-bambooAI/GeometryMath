@@ -11,10 +11,12 @@ import { tid } from '../shared/testid.ts';
 export function AreaLayout({ area, title, nav }: { area: 'gv' | 'hs'; title: string; nav: NavItem[] }) {
   const navigate = useNavigate();
   useEffect(() => {
-    const onUnauth = () => navigate('/', { replace: true });
+    // E1: phiên hết hạn -> về màn đăng nhập của vùng, hiện MSG-GEO-02 (US-GEO-101-FC4)
+    const onUnauth = () =>
+      navigate(area === 'hs' ? '/hs/vao-lop' : '/gv/dang-nhap', { replace: true, state: { expired: true } });
     window.addEventListener(UNAUTHENTICATED_EVENT, onUnauth);
     return () => window.removeEventListener(UNAUTHENTICATED_EVENT, onUnauth);
-  }, [navigate]);
+  }, [navigate, area]);
 
   return (
     <div className="shell" data-testid={tid(area, 'shell')}>

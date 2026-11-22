@@ -21,7 +21,8 @@ import vn.geo.server.common.error.ErrorResponseWriter;
 @Order(Ordered.HIGHEST_PRECEDENCE + 20)
 public class AuthFilter extends OncePerRequestFilter {
 
-  static final List<String> PUBLIC_PREFIXES = List.of("/health", "/actuator", "/dev/");
+  static final List<String> PUBLIC_PREFIXES =
+      List.of("/health", "/actuator", "/dev/", "/api/v1/auth/", "/test-hooks/");
 
   private final TokenService tokens;
   private final ErrorResponseWriter writer;

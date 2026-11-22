@@ -39,7 +39,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     } else {
       log.debug("Lỗi ứng dụng {}: {}", ex.code(), ex.getMessage());
     }
-    return build(ex.code(), ex.getMessage(), List.of(), ex.retryAfter());
+    return build(ex.code(), ex.getMessage(), ex.details(), ex.retryAfter());
   }
 
   @ExceptionHandler({QueryTimeoutException.class})

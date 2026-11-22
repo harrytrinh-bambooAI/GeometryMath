@@ -5,4 +5,14 @@ package vn.geo.server.aigateway.api;
  */
 public interface AiGateway {
   AiResponse complete(AiRequest request);
+
+  /** Model đang hiệu lực (ghi vào báo cáo bộ đề chuẩn). */
+  default String model() {
+    return "unknown";
+  }
+
+  /** Phiên bản prompt đang hiệu lực. */
+  default String promptVersion() {
+    return "unknown";
+  }
 }

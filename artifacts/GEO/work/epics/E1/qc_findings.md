@@ -45,3 +45,18 @@
 
 - Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi chỉ là cột "Tự động hóa" và TC-GEO-0179. Không case nào bị bỏ.
 - Đối chiếu: 70 / 70 tiêu chí có case (100%); 76 / 76 case trỏ về tiêu chí của BA hoặc NFR-GEO (72 trỏ tiêu chí của BA, 4 case X); kiểm bằng `work/tools/check_ac_tc.py`.
+
+## Dev (agent E1, nhánh mvp-e1; 22-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E1-D01 | To ARCH | `architecture/03_schema.sql`; migration V10 | Lược đồ ARCH đặt trong schema `geo` và `platform_org_id()` = `…0001`, trùng UUID của F-GEO-001 "THPT Mẫu A" trong `app/db/seed/fixture-ids.json`; seed E2E của khung làm việc trên schema `public` | V10 sinh từ 03_schema.sql bằng `app/db/tools/gen-v10.sh`: schema `public`, `platform_org_id()` = `…f001`, bỏ `REVOKE ALL ON SCHEMA`. ARCH xác nhận hoặc đổi nguồn trước khi V10 lên môi trường thật | ARCH · trước đợt E2 |
+| QF-E1-D02 | Question (PO) | US-GEO-103-SC3; TC-GEO-0118 | Kỳ vọng gồm "một lượt dựng hình tự học"; màn Tự học thuộc E2, chưa có | TC-GEO-0118 kiểm lượt hỏi đáp + toàn bộ phản hồi và mã trang (HTML/JS/CSS): 0 chỗ chứa `KHOA-THU-KHONG-LO`. Phần dựng hình tự học thêm vào cùng test khi E2 xong | QC/E2 · khi có Tự học |
+| QF-E1-D03 | Note | US-GEO-103; ADR-GEO-14 | Kiểm soát đáp án (kênh qa) thuộc E6; E1 lưu câu trả lời với `guard_version = g0-e1`, nhà cung cấp giả lập trả câu chung không chứa đáp số | Không đổi AC; E6 thay `g0-e1` bằng bộ kiểm thật | E6 |
+| QF-E1-D04 | Note | US-GEO-101-SC2; TC-GEO-0101 (dòng khôi phục, QF-E1-02) | Test UI chạy song song trên hai dự án (Chromium máy tính, WebKit iPad) dùng chung học sinh "Yến"; xóa Yến giữa lượt làm ca của dự án kia thấy 5 học sinh | Không xóa Yến trong lượt; seed vàng nạp lại đầu mỗi lượt (`global-setup`). TC-GEO-0105 (tên 60 "A") tự dọn bằng móc `/test-hooks/students/leave` (chỉ dev/test) | QC · ghi nhận |
+| QF-E1-D05 | Question (PO) | US-GEO-102-FC3; BR-GEO-104; trang `/` của khung (Đợt 0) | Trang chủ của khung có hai thẻ "Giáo viên" / "Học sinh" dẫn vào vùng `/gv`, `/hs` không cần mã (chỉ khung, không có dữ liệu vì máy chủ đòi thẻ). Màn "Bài của em" và thanh bên không có công tắc (TC-GEO-0115 đạt) | Đề nghị `/` chuyển thẳng tới "Vào lớp" khi PO duyệt (sửa test khung @TC-KHUNG-03 cùng lúc) | PO · trước demo |
+| QF-E1-D06 | Note | TC-GEO-0802 | Kế hoạch Q09 tra `app_user` theo khóa chính rồi kiểm `org_id` ở Filter (0 hàng bị loại) | Luật kiểm: Seq Scan trên bảng > 10.000 hàng, hoặc Filter `org_id` có hàng bị loại sau quét = lỗi; tra khóa chính + kiểm `org_id` không loại hàng nào được coi là đạt | ARCH · xác nhận |
+| QF-E1-D07 | To BA | F-GEO-071 và F-GEO-079; D-GEO-040, 163, 178 | Hai công thức dung sai khác nhau (tương đối 1e-4·\|q\| và max(1e-6, nửa đơn vị chữ số cuối)) | Bộ đề chuẩn E1 dùng max(1e-4·\|q\|, nửa đơn vị chữ số cuối) + 1e-12; E2 (engine) chốt một công thức | BA/E2 |
+| QF-E1-D08 | Note | BR-GEO-286 | Giá trị `Retry-After` của 429 đăng nhập giáo viên chưa có nguồn | Dùng 900 giây (hết cửa sổ 15 phút) | TechLead |
+| QF-E1-D09 | Note | TC-GEO-0170 | Danh sách Kho đề và lời giải đề kho là nội dung hệ thống dùng chung (D-GEO-076): đề HKG-01…03 xuất hiện hợp lệ với thẻ trường C | Bộ kiểm cách ly không tính đề kho là rò rỉ; vẫn kiểm không có tên lớp, học sinh, mã bài giao của trường A | QC · ghi nhận |
+| QF-E1-D10 | Note | TC-GEO-0106, 0149…0155, 0803 (Manual) | Giữ nguyên lý do Manual (thiết bị thật; thử tải Gatling theo lịch riêng). Dữ liệu thử tải sinh được bằng `make bench-seed` (TC-GEO-0156…0160 đạt) | Chạy Gatling trên môi trường thử tải khi có (Q-TL-02) | TechLead |

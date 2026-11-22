@@ -42,6 +42,7 @@ geo:
   http:
     max-body-bytes: 1048576   # 1 MB
     retry-after: 2s           # Retry-After mặc định cho 429 RATE_LIMITED / 503 SERVICE_OVERLOADED
+    trust-forwarded-for: false  # chỉ bật sau proxy tin cậy (dev/test bật để E2E mô phỏng nhiều IP, TC-GEO-0179)
   time:
     display-zone: Asia/Ho_Chi_Minh   # múi giờ hiển thị duy nhất (BR-GEO-233); lưu/truyền luôn UTC
   paging:
@@ -54,10 +55,16 @@ geo:
   auth:
     secret: ${GEO_AUTH_SECRET:dev-only-secret-change-me-0123456789abcdef}
     ttl: PT8H
+    # Khóa HMAC của mã Giáo viên mẫu và IP (D-GEO-152: CSDL chỉ lưu băm). Môi trường thật đặt GEO_AUTH_CODE_PEPPER.
+    code-pepper: ${GEO_AUTH_CODE_PEPPER:dev-only-code-pepper-0123456789abcdef}
   redis.key-prefix: ${GEO_REDIS_PREFIX:geo:}
   ai:
     provider: mock
     timeout: 10s              # TẠM: chưa có nguồn (D-GEO-072, owner TechLead)
+    model: ${GEO_AI_MODEL:gia-lap-1}        # F-GEO-096; đổi model bằng cấu hình (US-GEO-103-SC2)
+    prompt-version: p1
+    cost-per-call: 0.12       # chi phí mô phỏng mỗi lượt (đơn vị chưa xác định, KG-07)
+    api-key: ${GEO_AI_API_KEY:}             # chỉ ở máy chủ, không bao giờ xuống trình duyệt (BR-GEO-106)
 
 management:
   endpoints.web.exposure.include: health,info,metrics,prometheus

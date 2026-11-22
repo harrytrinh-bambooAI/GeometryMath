@@ -9,3 +9,5 @@ spring:
     locations: classpath:db/migration,classpath:db/testhooks
 geo:
   redis.key-prefix: "geotest:"
+  http.trust-forwarded-for: true
+  ai.api-key: KHOA-THU-KHONG-LO

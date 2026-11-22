@@ -1,1 +1,6 @@
 # Profile dev (mặc định): bật /dev/token để thử bằng curl. Không bật ở môi trường thật.
+# Móc kiểm thử dev/E2E (không có ở prod): /test-hooks/* (PO-51), tin X-Forwarded-For để mô phỏng nhiều IP.
+geo:
+  http.trust-forwarded-for: true
+  # Khóa thử của nhà cung cấp AI (US-GEO-103-SC3): kiểm rằng chuỗi này không bao giờ xuống trình duyệt.
+  ai.api-key: ${GEO_AI_API_KEY:KHOA-THU-KHONG-LO}
