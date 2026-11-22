@@ -42,3 +42,16 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** bản soát độc lập E3 (Sonnet) 23/11/2026.
 - **Xong khi:** make verify xanh; web typecheck/lint/test/build xanh + grep `__geoScene` trong `web/dist` = 0; make e2e hai lượt đạt toàn bộ.
 - **Ngoài phạm vi:** tính năng mới; sửa stories_ac/test_cases.
+
+## Việc: FIX2 (tiếp) — phát hiện soát E2 (diff 0f2bcf4..23f120b, 23/11/2026)
+- **Mục tiêu:** đóng 2 major + 6 minor; thêm test với kịch bản AI giả lập trả dữ liệu sai.
+  1. [major] `SelfStudyService.java:~147` + `SceneRepository.java:157-158`: `solid` từ AI ghi thẳng vào enum `solid_kind` → 500 với "tetrahedron". Kiểm danh mục; ngoài danh mục → đề lạ kèm MSG-16 (hoặc MSG-18), không 500.
+  2. [major] `SelfStudyService.build()` → `DefaultGeometryEngine.java:233-288`: `asked`/điểm thiếu → IndexOutOfBounds 500. Kiểm số điểm theo kind; mọi lỗi dữ liệu AI → MSG-18, không 500.
+  3. [minor] `SceneService.java:~85` hình mẫu gắn cứng "verified" không chạy `engine.check`; không có cận trên tham số.
+  4. [minor] `SceneService.java:~87` MSG-19 luôn gắn ô tham số đầu tiên → gắn đúng ô gây lỗi.
+  5. [minor] `TemplateCatalogService.validate:~85` không kiểm key tham số khớp bộ dựng, không thử dựng bằng mặc định; `load()` không kiểm `solid_kind`.
+  6. [minor] `DefaultGeometryEngine.specFrom:62` `Double.toString` ra ký hiệu E mà AnswerMatch không đọc; tọa độ chuỗi "abc" → 0 lặng lẽ.
+  7. [minor] TC-0205 `GeometryEngineE2Test` nhãn tự suy (luôn đúng) → đi qua đường kiểm chứng thật.
+  8. [minor] TC-0218 `labels.ui.spec.ts` kiểm phủ định yếu; `ProblemDetailPage.tsx:~63` không đặt lại `scene` khi `assignmentId` đổi.
+- **Nguồn:** bản soát độc lập E2 (Sonnet) 23/11/2026.
+- **Xong khi:** như FIX2 ở trên; thêm IT với kịch bản AI giả lập trả solid lạ / thiếu điểm / số dạng chuỗi.
