@@ -1,7 +1,12 @@
-# Môi trường thật: bắt buộc đặt GEO_DB_URL, GEO_DB_PASSWORD, GEO_AUTH_SECRET, GEO_CURSOR_KEY.
+# Môi trường thật: bắt buộc đặt GEO_DB_URL, GEO_DB_PASSWORD, GEO_AUTH_SECRET, GEO_AUTH_CODE_PEPPER, GEO_CURSOR_KEY.
+# Không có giá trị mặc định; ProfileGuard từ chối khởi động nếu thiếu, rỗng, còn giá trị dev, hoặc bật cùng dev/test.
 spring:
   datasource:
     url: ${GEO_DB_URL}
 geo:
   paging.cursor-key: ${GEO_CURSOR_KEY}
-  auth.secret: ${GEO_AUTH_SECRET}
+  auth:
+    secret: ${GEO_AUTH_SECRET}
+    code-pepper: ${GEO_AUTH_CODE_PEPPER}
+  # chỉ tin X-Forwarded-For khi có proxy tin cậy phía trước; bật tường minh bằng GEO_TRUST_FORWARDED_FOR=true
+  http.trust-forwarded-for: ${GEO_TRUST_FORWARDED_FOR:false}

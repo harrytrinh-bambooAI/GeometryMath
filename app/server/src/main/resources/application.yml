@@ -1,6 +1,6 @@
 spring:
   application.name: geo-server
-  profiles.default: dev
+  # KHÔNG có profile mặc định: phải bật tường minh dev | test | prod (ProfileGuard từ chối khởi động nếu thiếu).
   threads.virtual.enabled: true          # mỗi yêu cầu một luồng ảo: chịu hàng nghìn yêu cầu chờ I/O
   datasource:
     url: ${GEO_DB_URL:jdbc:postgresql://127.0.0.1:${GEO_PG_PORT:54329}/geo_dev?ApplicationName=geo-server&connectTimeout=3&socketTimeout=30}

@@ -12,7 +12,7 @@ verify:  ; scripts/verify.sh            # build + lint + đơn vị + quét SQL 
 build:   ; $(MVN) -DskipTests package
 test:    ; $(MVN) test                  # đơn vị + quét SQL + kiến trúc (không cần hạ tầng)
 fmt:     ; $(MVN) spotless:apply
-run:     up ; $(ENV) $(MVN) spring-boot:run
+run:     up ; $(ENV) $(MVN) spring-boot:run -Dspring-boot.run.profiles=dev   # profile dev tường minh (không còn mặc định)
 ports:   ; @$(ENV) echo "PG $$GEO_PG_PORT · Redis $$GEO_REDIS_PORT · máy chủ $$GEO_PORT · web $$GEO_WEB_PORT"
 
 .PHONY: loadtest-smoke e2e-smoke bench-seed
