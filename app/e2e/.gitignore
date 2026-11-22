@@ -1,3 +1,5 @@
 node_modules/
 playwright-report/
 test-results/
+# Bằng chứng mỗi lượt chạy: giữ ngoài git (PO-50)
+evidence/
