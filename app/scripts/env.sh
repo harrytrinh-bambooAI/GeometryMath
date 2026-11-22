@@ -4,9 +4,15 @@
 # Mặc định giữ nguyên như checkout chính: PG 54329, Redis 6389, máy chủ 8080, Vite 5173.
 _GEO_APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 if [ -f "$_GEO_APP_DIR/.env.ports" ]; then
-  # chỉ đặt biến chưa có trong môi trường
-  while IFS='=' read -r k v; do
+  # chỉ đặt biến chưa có trong môi trường; chỉ nhận khóa GEO_* và PGBIN (khóa khác: cảnh báo, bỏ qua).
+  # `|| [ -n "$k" ]`: vẫn đọc dòng cuối không có ký tự xuống dòng.
+  while IFS='=' read -r k v || [ -n "$k" ]; do
+    k="${k%$'\r'}"; v="${v%$'\r'}"
     case "$k" in ''|\#*) continue ;; esac
+    if ! [[ "$k" =~ ^(GEO_[A-Z0-9_]+|PGBIN)$ ]]; then
+      echo "env.sh: bỏ qua khóa '$k' trong .env.ports (chỉ nhận GEO_* và PGBIN)" >&2
+      continue
+    fi
     if [ -z "${!k+x}" ]; then export "$k=$v"; fi
   done < "$_GEO_APP_DIR/.env.ports"
 fi
