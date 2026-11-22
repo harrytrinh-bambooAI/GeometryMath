@@ -137,13 +137,18 @@ export async function tapFace(page: Page, id: string) {
     return;
   }
   const tris = f!.triangles.length ? f!.triangles : [[0, 1, 2]];
-  let best = { area: -1, x: 0, y: 0 };
+  // mặt nhiều đỉnh (có thể lõm): trọng tâm diện tích của các tam giác tô
+  let sa = 0;
+  let sx = 0;
+  let sy = 0;
   for (const t of tris) {
     const [a, b, c] = t.map((i) => f!.screen[i]!) as [number[], number[], number[]];
     const area = Math.abs((b[0]! - a[0]!) * (c[1]! - a[1]!) - (c[0]! - a[0]!) * (b[1]! - a[1]!)) / 2;
-    if (area > best.area) best = { area, x: (a[0]! + b[0]! + c[0]!) / 3, y: (a[1]! + b[1]! + c[1]!) / 3 };
+    sa += area;
+    sx += (area * (a[0]! + b[0]! + c[0]!)) / 3;
+    sy += (area * (a[1]! + b[1]! + c[1]!)) / 3;
   }
-  await tapAt(page, best.x, best.y);
+  await tapAt(page, sx / sa, sy / sa);
 }
 
 /** Kéo trên khung hình (xoay) bằng chuột. */
