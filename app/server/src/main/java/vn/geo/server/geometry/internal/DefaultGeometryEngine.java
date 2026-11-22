@@ -90,6 +90,51 @@ public class DefaultGeometryEngine implements GeometryEngine {
   }
 
   @Override
+  public Optional<Signature> signature(ProblemSpec spec) {
+    Builders.Spec b = spec == null ? null : Builders.ALL.get(spec.template());
+    if (b == null || spec.asked() == null || spec.asked().isEmpty()) {
+      return Optional.empty();
+    }
+    Map<String, Double> at1 = spec.paramsAt(1);
+    Double scale = at1.get(b.params().get(0));
+    if (scale == null || !(Math.abs(scale) > 1e-12) || !Double.isFinite(scale)) {
+      return Optional.empty();
+    }
+    Map<String, Double> norm = new LinkedHashMap<>();
+    List<String> parts = new ArrayList<>();
+    for (String k : b.params()) {
+      Double v = at1.get(k);
+      if (v == null || !Double.isFinite(v)) {
+        return Optional.empty();
+      }
+      java.math.BigDecimal d =
+          java.math.BigDecimal.valueOf(v / scale)
+              .setScale(6, java.math.RoundingMode.HALF_UP)
+              .stripTrailingZeros();
+      norm.put(k, d.doubleValue());
+      parts.add(k + "=" + d.toPlainString());
+    }
+    List<String> asked = new ArrayList<>();
+    for (AskedQuantity q : spec.asked()) {
+      asked.add(q.kind() + ":" + String.join(",", q.points()));
+    }
+    String askedText = String.join("+", asked);
+    String canonical =
+        SIG_VERSION + "|" + spec.template() + "|" + String.join(";", parts) + "|" + askedText;
+    byte[] hash;
+    try {
+      hash =
+          java.security.MessageDigest.getInstance("SHA-256")
+              .digest(canonical.getBytes(java.nio.charset.StandardCharsets.UTF_8));
+    } catch (java.security.NoSuchAlgorithmException e) {
+      throw new IllegalStateException(e);
+    }
+    return Optional.of(
+        new Signature(
+            spec.template(), b.solidKind(), Map.copyOf(norm), askedText, canonical, hash));
+  }
+
+  @Override
   public boolean knows(String template) {
     return template != null && Builders.ALL.containsKey(template);
   }

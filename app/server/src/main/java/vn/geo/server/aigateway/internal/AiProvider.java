@@ -19,11 +19,23 @@ public interface AiProvider {
    * @param simulation chỉ nhà cung cấp giả lập dùng (chế độ lỗi/quá thời gian của móc kiểm thử)
    * @param scenario chỉ nhà cung cấp giả lập dùng: kịch bản trả lời của móc kiểm thử (E2:
    *     F-GEO-111, F-GEO-112); không phải định danh
+   * @param delayMs chỉ nhà cung cấp giả lập dùng: độ trễ kịch bản của móc kiểm thử (E4: "trả lời
+   *     sau 5 giây", US-GEO-401-SC2, 409-SC4)
    */
   record ProviderCall(
-      String task, String model, String prompt, Simulation simulation, String scenario) {
+      String task,
+      String model,
+      String prompt,
+      Simulation simulation,
+      String scenario,
+      long delayMs) {
     public ProviderCall(String task, String model, String prompt, Simulation simulation) {
-      this(task, model, prompt, simulation, null);
+      this(task, model, prompt, simulation, null, 0);
+    }
+
+    public ProviderCall(
+        String task, String model, String prompt, Simulation simulation, String scenario) {
+      this(task, model, prompt, simulation, scenario, 0);
     }
   }
 

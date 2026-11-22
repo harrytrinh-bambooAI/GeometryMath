@@ -38,12 +38,14 @@ public class MockAiProvider implements AiProvider {
   private final JsonMapper mapper = JsonMapper.builder().build();
   private final Map<String, JsonNode> canned;
   private final JsonNode sceneRules;
+  private final JsonNode e4;
 
   public MockAiProvider(AiProperties props, MockAiControl control) {
     this.props = props;
     this.control = control;
     this.canned = loadCanned();
     this.sceneRules = loadScene();
+    this.e4 = load("/mock-ai/e4.json");
   }
 
   @Override
@@ -57,6 +59,9 @@ public class MockAiProvider implements AiProvider {
     if (!props.mockLatency().isZero()) {
       Thread.sleep(props.mockLatency());
     }
+    if (call.delayMs() > 0) {
+      Thread.sleep(call.delayMs());
+    }
     switch (call.simulation()) {
       case ERROR -> throw new IllegalStateException("nhà cung cấp giả lập: chế độ lỗi");
       case TIMEOUT -> {
@@ -69,6 +74,18 @@ public class MockAiProvider implements AiProvider {
     }
     if ("scene".equals(call.task())) {
       return mapper.writeValueAsString(scene(call.prompt(), call.scenario()));
+    }
+    if ("solution".equals(call.task()) && !CODE.matcher(call.prompt()).find()) {
+      return mapper.writeValueAsString(selfSolution(statementOf(call.prompt())));
+    }
+    if ("hint".equals(call.task()) && call.prompt().startsWith("Đề bài:")) {
+      return mapper.writeValueAsString(selfHints(statementOf(call.prompt())));
+    }
+    if ("ocr".equals(call.task())) {
+      return mapper.writeValueAsString(ocr(call.prompt()));
+    }
+    if ("qa".equals(call.task())) {
+      return mapper.writeValueAsString(qa(call.prompt()));
     }
     if ("solution".equals(call.task())) {
       Matcher m = CODE.matcher(call.prompt());
@@ -137,6 +154,91 @@ public class MockAiProvider implements AiProvider {
       return a;
     }
     return n;
+  }
+
+  // ---------------------------------------------------------------- E4 (mock-ai/e4.json)
+
+  private static String statementOf(String prompt) {
+    Matcher sm = STATEMENT.matcher(prompt);
+    return sm.find() ? sm.group(1).strip() : prompt;
+  }
+
+  private JsonNode firstMatch(JsonNode rules, String text) {
+    for (JsonNode r : rules) {
+      if (Pattern.compile(r.path("pattern").asString()).matcher(text).find()) {
+        return r;
+      }
+    }
+    return null;
+  }
+
+  /** Lời giải của đề tự nhập: {answer, steps[]}. */
+  ObjectNode selfSolution(String statement) {
+    JsonNode r = firstMatch(e4.path("solution"), statement);
+    JsonNode src = r != null ? r : e4.path("solutionFallback");
+    ObjectNode out = mapper.createObjectNode();
+    out.put("answer", src.path("answer").asString(""));
+    out.set("steps", src.path("steps").deepCopy());
+    return out;
+  }
+
+  /** Gợi ý 1, 2 của đề tự nhập: {hints: [h1, h2]}. */
+  ObjectNode selfHints(String statement) {
+    JsonNode r = firstMatch(e4.path("hint"), statement);
+    ObjectNode out = mapper.createObjectNode();
+    out.set("hints", (r != null ? r.path("hints") : e4.path("hintFallback")).deepCopy());
+    return out;
+  }
+
+  /** Câu trả lời hỏi đáp: {kind, reply, source?}. Câu không khớp: lời gợi mở chung, không nguồn. */
+  ObjectNode qa(String prompt) {
+    JsonNode r = firstMatch(e4.path("qa"), prompt);
+    ObjectNode out = mapper.createObjectNode();
+    if (r == null) {
+      out.put("kind", "hint");
+      out.put("reply", QA_REPLY);
+      return out;
+    }
+    out.put("kind", r.path("kind").asString("hint"));
+    out.put("reply", r.path("reply").asString(""));
+    if (r.hasNonNull("source")) {
+      out.put("source", r.get("source").asString());
+    }
+    return out;
+  }
+
+  private static final Pattern IMAGE = Pattern.compile("Ảnh đề \\(base64\\): ([A-Za-z0-9+/=]+)");
+
+  /**
+   * Chữ đọc từ ảnh: ảnh dữ liệu vàng mang dấu "GEO-FIXTURE:F-GEO-nnn"; ảnh khác = chưa đọc được.
+   */
+  ObjectNode ocr(String prompt) {
+    ObjectNode out = mapper.createObjectNode();
+    Matcher m = IMAGE.matcher(prompt);
+    String text = "";
+    if (m.find()) {
+      byte[] bytes;
+      try {
+        bytes = java.util.Base64.getDecoder().decode(m.group(1));
+      } catch (IllegalArgumentException e) {
+        bytes = new byte[0];
+      }
+      String raw = new String(bytes, java.nio.charset.StandardCharsets.ISO_8859_1);
+      Matcher f = Pattern.compile("GEO-FIXTURE:(F-GEO-[0-9]{3})").matcher(raw);
+      if (f.find()) {
+        text = e4.path("ocr").path(f.group(1)).asString("");
+      }
+    }
+    out.put("text", text);
+    return out;
+  }
+
+  private JsonNode load(String path) {
+    try (InputStream in = MockAiProvider.class.getResourceAsStream(path)) {
+      return in == null ? mapper.createObjectNode() : mapper.readTree(in);
+    } catch (IOException e) {
+      throw new IllegalStateException("không đọc được " + path, e);
+    }
   }
 
   private JsonNode loadScene() {

@@ -54,12 +54,15 @@ public class TrackingRepository {
             """
             SELECT pv.statement, a.allow_qa
             FROM assignment a
-            JOIN class_member cm ON cm.org_id = :orgId AND cm.class_id = a.class_id AND cm.user_id = :userId
-                                AND cm.left_at IS NULL
             JOIN problem_version pv ON pv.org_id = a.content_org_id AND pv.id = a.problem_version_id
-            WHERE a.org_id = :orgId AND a.id = :id AND a.kind = 'class'
+            WHERE a.org_id = :orgId AND a.id = :id
+              AND ((a.kind = 'class' AND EXISTS (
+                     SELECT 1 FROM class_member cm WHERE cm.org_id = :orgId AND cm.class_id = a.class_id
+                       AND cm.user_id = :userId AND cm.left_at IS NULL))
+                OR (a.kind = 'self' AND a.owner_user_id = :userId))
             LIMIT 1
-            -- sqllint:allow=ownership,tenant đề (nội dung nền tảng) của bài lớp em đang thuộc
+            -- sqllint:allow=ownership,tenant đề (nội dung nền tảng hoặc đề tự nhập của em) của bài lớp em đang thuộc
+            -- hoặc bài tự học của chính em (E4: hỏi đáp trên bài tự học, US-GEO-405-FC4)
             """)
         .param("userId", userId)
         .param("id", assignmentId)
@@ -73,11 +76,15 @@ public class TrackingRepository {
       UUID requestId,
       String question,
       String reply,
-      String guardVersion) {
+      String guardVersion,
+      String replyKind,
+      UUID source) {
     return jdbc.sql(
             """
             SELECT status, qa_id FROM fn_record_qa(:orgId, :userId, :id, :requestId, :question,
-                   CAST('concept' AS qa_reply_kind), :reply, :guard, CAST('{}' AS uuid[]))
+                   CAST(:kind AS qa_reply_kind), :reply, :guard,
+                   CASE WHEN CAST(:source AS uuid) IS NULL THEN CAST('{}' AS uuid[])
+                        ELSE ARRAY[CAST(:source AS uuid)] END)
             """)
         .param("userId", userId)
         .param("id", assignmentId)
@@ -85,6 +92,8 @@ public class TrackingRepository {
         .param("question", question)
         .param("reply", reply)
         .param("guard", guardVersion)
+        .param("kind", replyKind)
+        .param("source", source)
         .query((rs, i) -> {
           long id = rs.getLong(2);
           return new QaRecorded(rs.getString(1), rs.wasNull() ? null : id);
@@ -124,6 +133,62 @@ public class TrackingRepository {
                 rs.getString(5),
                 rs.getString(6)))
         .optional();
+  }
+
+  /** E4: một lượt hỏi đáp đã lưu của chính học sinh, kèm nguồn (fn_qa_turn, V40). */
+  public record Turn(
+      long id,
+      UUID assignmentId,
+      Instant askedAt,
+      String question,
+      String kind,
+      String reply,
+      UUID source) {}
+
+  public Optional<Turn> turn(UUID userId, long id) {
+    return jdbc.sql(
+            """
+            SELECT id, assignment_id, asked_at, question, reply_kind, reply_text, source_lecture_ids[1]
+            FROM fn_qa_turn(:orgId, :userId, :id)
+            """)
+        .param("userId", userId)
+        .param("id", id)
+        .query((rs, i) ->
+            new Turn(
+                rs.getLong(1),
+                rs.getObject(2, UUID.class),
+                instant(rs, 3),
+                rs.getString(4),
+                rs.getString(5),
+                rs.getString(6),
+                rs.getObject(7, UUID.class)))
+        .optional();
+  }
+
+  /**
+   * E4 (US-GEO-410): nhật ký hỏi đáp của chính học sinh, mới nhất trước, lọc theo bài (fn_qa_log).
+   */
+  public record LogRow(
+      long id, UUID assignmentId, Instant askedAt, String question, String problemTitle) {}
+
+  public List<LogRow> log(UUID userId, UUID assignmentId, Long beforeId, int fetch) {
+    return jdbc.sql(
+            """
+            SELECT id, assignment_id, asked_at, question, problem_title
+            FROM fn_qa_log(:orgId, :userId, :assignment, :before, :fetch)
+            """)
+        .param("userId", userId)
+        .param("assignment", assignmentId)
+        .param("before", beforeId)
+        .param("fetch", fetch)
+        .query((rs, i) ->
+            new LogRow(
+                rs.getLong(1),
+                rs.getObject(2, UUID.class),
+                instant(rs, 3),
+                rs.getString(4),
+                rs.getString(5)))
+        .list();
   }
 
   /** Học sinh này có thuộc một lớp do giáo viên này dạy không. */

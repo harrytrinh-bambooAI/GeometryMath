@@ -14,8 +14,6 @@ public class FigureEventRepository {
 
   public record BatchResult(String status, int inserted) {}
 
-  public record HintRow(String status, Integer level, String body, String source) {}
-
   private final TenantJdbc jdbc;
 
   public FigureEventRepository(TenantJdbc jdbc) {
@@ -46,24 +44,6 @@ public class FigureEventRepository {
         .param("id", assignmentId)
         .param("requestId", requestId)
         .query(String.class)
-        .single();
-  }
-
-  public HintRow hint(UUID userId, UUID assignmentId, int level, UUID requestId) {
-    return jdbc.sql(
-            """
-            SELECT status, level, body, hint_source
-            FROM fn_get_hint(:orgId, :userId, :id, CAST(:level AS smallint), :requestId)
-            """)
-        .param("userId", userId)
-        .param("id", assignmentId)
-        .param("level", level)
-        .param("requestId", requestId)
-        .query((rs, i) -> {
-          int lv = rs.getInt(2);
-          return new HintRow(
-              rs.getString(1), rs.wasNull() ? null : lv, rs.getString(3), rs.getString(4));
-        })
         .single();
   }
 }

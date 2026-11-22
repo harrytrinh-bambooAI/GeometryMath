@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import vn.geo.server.common.web.NoStore;
+import vn.geo.server.learning.api.HintApi;
 import vn.geo.server.tracking.internal.service.FigureEventService;
 
 /** Sự kiện của trang Làm bài (E3): thao tác trên hình, mở bài, gợi ý. Trường lấy từ thẻ. */
@@ -36,7 +37,7 @@ public class FigureEventController {
 
   @NoStore
   @PostMapping("/api/v1/student/assignments/{id}/hints/{level}")
-  public FigureEventService.Hint hint(
+  public HintApi.HintResult hint(
       @PathVariable UUID id, @PathVariable int level, @RequestBody RequestIdBody b) {
     return service.hint(id, level, b.requestId());
   }

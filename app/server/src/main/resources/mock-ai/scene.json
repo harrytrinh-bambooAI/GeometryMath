@@ -2,6 +2,17 @@
   "_doc": "E2 · Kịch bản của nhà cung cấp AI GIẢ LẬP cho tác vụ 'scene' (D-GEO-047): đọc đề tự nhập và trả mô tả dựng. AI thật sẽ nhận ra loại hình; ở MVP nhận ra bằng mẫu chữ. Quy tắc đầu tiên khớp được dùng; '$1'…'$9' thay bằng nhóm bắt được (dấu phẩy thành dấu chấm). Trả: kind 'plane' (hình phẳng, MSG-GEO-17) | 'space' kèm template + params (engine dựng) hoặc points + edges + faces (đề lạ: tọa độ AI). 'scenarios' ghi đè trường của kết quả theo móc kiểm thử (POST /test-hooks/ai {scenario, userId, lane}).",
   "rules": [
     {
+      "id": "E4 · F-GEO-235 cùng hình HKG-01, hỏi thể tích (khác chữ ký)",
+      "pattern": "hình chóp S\\.ABCD, đáy là hình vuông cạnh a, SA ⊥ \\(ABCD\\), SA = a\\. Tính thể tích khối chóp",
+      "response": {
+        "kind": "space", "solid": "pyramid", "level": "thpt",
+        "template": "pyramid_square_sa", "params": { "a": "a", "sa": "a" }, "unit": "a",
+        "chips": [ { "text": "SA = a", "points": ["S", "A"] }, { "text": "AD = a", "points": ["A", "D"] } ],
+        "asked": [ { "name": "V", "kind": "volume_pyramid", "points": ["S", "A", "B", "C", "D"] } ],
+        "hidden": []
+      }
+    },
+    {
       "id": "HKG-01 (F-GEO-031)",
       "pattern": "hình chóp S\\.ABCD, đáy là hình vuông cạnh a, SA ⊥ \\(ABCD\\), SA = a\\.",
       "response": {
@@ -12,6 +23,102 @@
         "hidden": ["ang:S-D-A", "ang:A-S-D"],
         "answer": "45°",
         "points": { "A": [0, 0, 0], "B": [1, 0, 0], "C": [1, 1, 0], "D": [0, 1, 0], "S": [0, 0, 1] }
+      }
+    },
+    {
+      "id": "E4 · F-GEO-063 đổi tên điểm S.MNPQ (cùng chữ ký HKG-01)",
+      "pattern": "hình chóp S\\.MNPQ, đáy là hình vuông cạnh a, SM ⊥ \\(MNPQ\\), SM = a\\. Tính góc giữa SQ và mặt đáy",
+      "response": {
+        "kind": "space", "solid": "pyramid", "level": "thpt",
+        "template": "pyramid_square_sa", "params": { "a": "a", "sa": "a" }, "unit": "a",
+        "chips": [ { "text": "SM = a", "points": ["S", "A"] }, { "text": "MQ = a", "points": ["A", "D"] } ],
+        "asked": [ { "name": "", "kind": "angle_line_plane", "points": ["S", "D", "A", "B", "D"] } ],
+        "hidden": ["ang:S-D-A", "ang:A-S-D"],
+        "answer": "45°"
+      }
+    },
+    {
+      "id": "E4 · F-GEO-077 cạnh 2a, viết lại câu (cùng chữ ký HKG-01)",
+      "pattern": "hình chóp S\\.ABCD có đáy ABCD là hình vuông cạnh 2a, cạnh SA vuông góc với mặt phẳng \\(ABCD\\) và SA = 2a\\. Hãy tính góc tạo bởi đường thẳng SD",
+      "response": {
+        "kind": "space", "solid": "pyramid", "level": "thpt",
+        "template": "pyramid_square_sa", "params": { "a": "2a", "sa": "2a" }, "unit": "a",
+        "chips": [ { "text": "SA = 2a", "points": ["S", "A"] }, { "text": "AD = 2a", "points": ["A", "D"] } ],
+        "asked": [ { "name": "", "kind": "angle_line_plane", "points": ["S", "D", "A", "B", "D"] } ],
+        "hidden": ["ang:S-D-A", "ang:A-S-D"],
+        "answer": "45°"
+      }
+    },
+    {
+      "id": "E4 · F-GEO-234 viết lại câu, thêm chữ (cùng chữ ký HKG-01)",
+      "pattern": "Bài tập về nhà số 3\\. Cho hình chóp S\\.ABCD có đáy ABCD là hình vuông cạnh a, cạnh bên SA vuông góc với mặt phẳng \\(ABCD\\) và SA = a\\. Hãy tính góc giữa đường thẳng SD và mặt phẳng đáy",
+      "response": {
+        "kind": "space", "solid": "pyramid", "level": "thpt",
+        "template": "pyramid_square_sa", "params": { "a": "a", "sa": "a" }, "unit": "a",
+        "chips": [ { "text": "SA = a", "points": ["S", "A"] }, { "text": "AD = a", "points": ["A", "D"] } ],
+        "asked": [ { "name": "", "kind": "angle_line_plane", "points": ["S", "D", "A", "B", "D"] } ],
+        "hidden": ["ang:S-D-A", "ang:A-S-D"],
+        "answer": "45°"
+      }
+    },
+    {
+      "id": "E4 · F-GEO-078 SA = a√3 (khác tham số HKG-01)",
+      "pattern": "hình chóp S\\.ABCD, đáy là hình vuông cạnh a, SA ⊥ \\(ABCD\\), SA = a√3\\. Tính góc giữa SD và mặt đáy",
+      "response": {
+        "kind": "space", "solid": "pyramid", "level": "thpt",
+        "template": "pyramid_square_sa", "params": { "a": "a", "sa": "a√3" }, "unit": "a",
+        "chips": [ { "text": "SA = a√3", "points": ["S", "A"] }, { "text": "AD = a", "points": ["A", "D"] } ],
+        "asked": [ { "name": "", "kind": "angle_line_plane", "points": ["S", "D", "A", "B", "D"] } ],
+        "hidden": ["ang:S-D-A", "ang:A-S-D"],
+        "answer": "60°"
+      }
+    },
+    {
+      "id": "E4 · HKG-02 nguyên văn",
+      "pattern": "hình lập phương ABCD\\.A′B′C′D′ cạnh a\\. Tính khoảng cách giữa AC và B′D′",
+      "response": {
+        "kind": "space", "solid": "cube", "level": "thpt",
+        "template": "cube", "params": { "a": "a" }, "unit": "a",
+        "chips": [ { "text": "AB = a", "points": ["A", "B"] } ],
+        "asked": [ { "name": "", "kind": "dist_lines", "points": ["A", "C", "B′", "D′"] } ],
+        "hidden": ["len:O-O′", "dll:A-C|B′-D′"],
+        "answer": "a"
+      }
+    },
+    {
+      "id": "E4 · HKG-04 nguyên văn (hình nón r, đường sinh l)",
+      "pattern": "(?iu)hình nón có bán kính đáy (\\d+(?:[,.]\\d+)?) cm, đường sinh (\\d+(?:[,.]\\d+)?) cm\\. Tính diện tích xung quanh và thể tích",
+      "response": {
+        "kind": "space", "solid": "cone", "level": "thcs",
+        "template": "cone_rl", "params": { "r": "$1", "l": "$2" }, "unit": "cm",
+        "chips": [ { "text": "OM = $1 cm", "points": ["O", "M"] }, { "text": "SM = $2 cm", "points": ["S", "M"] } ],
+        "asked": [ { "name": "Sxq", "kind": "cone_lateral", "points": ["S", "O", "M"] }, { "name": "V", "kind": "cone_volume", "points": ["S", "O", "M"] } ],
+        "hidden": [],
+        "answer": "Sxq = 15π cm²; V = 12π cm³"
+      }
+    },
+    {
+      "id": "E4 · HKG-05 nguyên văn (hình trụ)",
+      "pattern": "(?iu)hình trụ có chiều cao (\\d+(?:[,.]\\d+)?) cm, bán kính đáy (\\d+(?:[,.]\\d+)?) cm\\. Tính diện tích toàn phần",
+      "response": {
+        "kind": "space", "solid": "cylinder", "level": "thcs",
+        "template": "cylinder", "params": { "r": "$2", "h": "$1" }, "unit": "cm",
+        "chips": [ { "text": "OM = $2 cm", "points": ["O", "M"] }, { "text": "OO′ = $1 cm", "points": ["O", "O′"] } ],
+        "asked": [ { "name": "Stp", "kind": "cyl_total_area", "points": ["O", "O′", "M"] } ],
+        "hidden": [],
+        "answer": "112π cm²"
+      }
+    },
+    {
+      "id": "E4 · HKG-06 nguyên văn (mặt cầu ngoại tiếp hình lập phương)",
+      "pattern": "Mặt cầu ngoại tiếp hình lập phương cạnh a\\. Tính bán kính và thể tích khối cầu",
+      "response": {
+        "kind": "space", "solid": "sphere", "level": "thpt",
+        "template": "sphere_circum_cube", "params": { "a": "a" }, "unit": "a",
+        "chips": [ { "text": "AB = a", "points": ["A", "B"] } ],
+        "asked": [ { "name": "R", "kind": "sphere_radius", "points": ["I", "A"] }, { "name": "V", "kind": "sphere_volume", "points": ["I", "A"] } ],
+        "hidden": ["len:I-A", "len:I-B", "len:I-C", "len:I-D", "len:I-A′", "len:I-B′", "len:I-C′", "len:I-D′"],
+        "answer": "R = a√3/2; V = (√3/2)·π·a³"
       }
     },
     {

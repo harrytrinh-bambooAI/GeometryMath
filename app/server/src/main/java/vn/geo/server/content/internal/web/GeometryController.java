@@ -51,6 +51,14 @@ public class GeometryController {
     return selfStudy.create(body == null ? null : body.statement());
   }
 
+  public record OcrRequest(String image) {}
+
+  /** E4 (US-GEO-402): đọc chữ từ ảnh đề để học sinh xem, sửa; không dựng hình. */
+  @PostMapping("/api/v1/student/self-study/ocr")
+  public SelfStudyService.OcrResult ocr(@RequestBody(required = false) OcrRequest body) {
+    return selfStudy.ocr(body == null ? null : body.image());
+  }
+
   @GetMapping("/api/v1/student/self-study/{assignmentId}")
   public SelfStudyDto selfStudy(@PathVariable UUID assignmentId) {
     return selfStudy.get(assignmentId);
