@@ -11,10 +11,45 @@ Modular monolith Java: Spring Boot 4 + luồng ảo + PostgreSQL (SQL tường m
 ## Dựng hạ tầng
 ```
 scripts/dev-up.sh     # bật PostgreSQL + Redis riêng (dữ liệu ở .data/)
-scripts/db-init.sh    # tạo geo_dev và geo_test nếu chưa có
-scripts/dev-down.sh   # tắt
+scripts/db-init.sh    # tạo geo_dev, geo_test, geo_e2e nếu chưa có
+scripts/dev-down.sh   # tắt (chỉ cụm của thư mục này)
 ```
-(hoặc `make up` / `make down`)
+(hoặc `make up` / `make down`; `make ports` in cổng đang dùng)
+
+### Chạy nhiều checkout / worktree song song (cổng riêng)
+Mọi script và `make` đọc cổng qua `scripts/env.sh`: biến môi trường > tệp `app/.env.ports` (không commit) > mặc định.
+
+| Biến | Mặc định (checkout chính) | Ví dụ worktree `mvp-foundation` |
+|---|---|---|
+| `GEO_PG_PORT` | 54329 | 54339 |
+| `GEO_REDIS_PORT` | 6389 | 6399 |
+| `GEO_PORT` (máy chủ) | 8080 | 8090 |
+| `GEO_WEB_PORT` (Vite) | 5173 | 5174 |
+
+Tạo `app/.env.ports` trong worktree:
+```
+GEO_PG_PORT=54339
+GEO_REDIS_PORT=6399
+GEO_PORT=8090
+GEO_WEB_PORT=5174
+```
+Mỗi worktree có `app/.data` riêng (cụm PG + Redis riêng). `dev-up.sh` từ chối chạy nếu cổng đang do cụm của thư mục khác
+phục vụ, nên không bao giờ dùng nhầm cơ sở dữ liệu của checkout chính. IT (`make verify`) và chốt chặn xóa schema cũng
+theo `GEO_PG_PORT`. Thư mục quá sâu thì socket Unix của PG đặt ở `/tmp/geo-pg-<cổng>`.
+
+## Giao diện và E2E
+```
+make web-install      # npm ci trong web/
+make web-dev          # Vite ở GEO_WEB_PORT, proxy -> máy chủ GEO_PORT (chạy `make run` ở terminal khác)
+make web-build        # typecheck + lint + test hàm thuần + build -> web/dist
+make e2e              # bật máy chủ (DB geo_e2e) + web (bản build) trên cổng riêng, reset seed vàng, chạy api + ui,
+                      # sinh e2e/evidence/<run>/index.html + summary.json + traceability.txt, rồi tắt
+make e2e ARGS="--project=api"   # tham số thêm cho Playwright
+make e2e-report       # in truy vết và mở báo cáo lượt mới nhất
+make e2e-reset        # đưa geo_e2e về trạng thái vàng (DB=geo_dev cho dev)
+make traceability ARGS="--all"  # TC nào có test, đạt/trượt, TC E2E chưa có test
+```
+Chi tiết: [web/README.md](web/README.md), [e2e/README.md](e2e/README.md), seed: [db/seed/README.md](db/seed/README.md).
 
 ## Build, chạy
 ```
@@ -45,11 +80,11 @@ make fmt                  # tự sửa định dạng (Spotless); verify chỉ k
 | Quét SQL | `quality/SqlScanTest` + `SqlLint`, cấu hình `server/quality/sql-lint.properties` | OFFSET, SELECT * / alias.* / RETURNING *, LIKE đầu mẫu `%`, SELECT bảng lớn thiếu LIMIT, thiếu `org_id = :orgId` trên bảng thuộc trường, truy cập bảng của module khác, tham chiếu bảng cấm (`forbidden.app.tables`, không ngoại lệ); khóa cấu hình lạ |
 | Kiến trúc | `quality/ArchitectureTest` (ArchUnit) | module khác đụng `internal`, chu trình giữa module, web gọi thẳng dữ liệu/JDBC, JDBC ngoài `repo`, JPA/Hibernate, `common` biết module, field injection |
 | Đơn vị | `*Test` (surefire) | UUIDv7, con trỏ (gắn trường + danh sách + phiên bản), phân trang và trần theo danh sách, thẻ, cổng AI, mã lỗi + `Retry-After`, `@NoStore` |
-| Tích hợp | `*IT` (failsafe) trên `geo_test`@54329 + Redis 6389 tiền tố `geotest:` | schema sạch bằng Flyway mỗi lần chạy, health, lỗi thống nhất, 413, keyset qua HTTP, cách ly trường, kế hoạch truy vấn dùng chỉ mục, cấu hình khớp CONFIG.md (`ConfigIT`), số câu lệnh SQL mỗi yêu cầu (`StatementCountIT`), móc kiểm thử profile test |
+| Tích hợp | `*IT` (failsafe) trên `geo_test`@GEO_PG_PORT + Redis GEO_REDIS_PORT (mặc định 54329/6389) tiền tố `geotest:` | schema sạch bằng Flyway mỗi lần chạy, health, lỗi thống nhất, 413, keyset qua HTTP, cách ly trường, kế hoạch truy vấn dùng chỉ mục, cấu hình khớp CONFIG.md (`ConfigIT`), số câu lệnh SQL mỗi yêu cầu (`StatementCountIT`), móc kiểm thử profile test |
 | Thử tải | `loadtest/` Gatling (ngoài verify; `make loadtest-smoke`) | kịch bản khói `/health` |
-| E2E | `e2e/` Playwright (ngoài verify; `make e2e-smoke`) | test khói HTTP; trình duyệt WebKit khi có giao diện |
+| E2E | `e2e/` Playwright (ngoài verify; `make e2e`) | dự án `api`, `ui-chromium`, `ui-webkit` (iPad ngang); mọi test có ảnh chụp + trace (+ video với ui) trong `e2e/evidence/<run>/` |
 
-IT tự xóa và dựng lại schema `geo_test` mỗi lần (có chốt chặn: từ chối nếu URL không phải `geo_test@54329`).
+IT tự xóa và dựng lại schema `geo_test` mỗi lần (có chốt chặn: từ chối nếu URL không phải `127.0.0.1:<GEO_PG_PORT>/geo_test`).
 
 ## Cấu trúc gói (`server/src/main/java/vn/geo/server`)
 | Gói | Vai trò |

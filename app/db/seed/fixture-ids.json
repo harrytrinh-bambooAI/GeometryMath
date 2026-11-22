@@ -1,0 +1,21 @@
+{
+  "_doc": "Mã UUID cố định của các hàng fixture (artifacts/GEO/work/fixture.md, bản 22/11/2026). Quy tắc: 00000000-0000-7000-8000-<số F 12 chữ số>. SQL seed và test E2E dùng chung tệp này; thêm hàng khi epic thêm bảng.",
+  "orgs": {
+    "F-GEO-001": { "id": "00000000-0000-7000-8000-000000000001", "name": "THPT Mẫu A" },
+    "F-GEO-002": { "id": "00000000-0000-7000-8000-000000000002", "name": "THCS Mẫu C" }
+  },
+  "users": {
+    "F-GEO-003": { "id": "00000000-0000-7000-8000-000000000003", "org": "F-GEO-001", "role": "TEACHER", "displayName": "Giáo viên mẫu" },
+    "F-GEO-005": { "id": "00000000-0000-7000-8000-000000000005", "org": "F-GEO-002", "role": "TEACHER", "displayName": "Giáo viên C" },
+    "F-GEO-020": { "id": "00000000-0000-7000-8000-000000000020", "org": "F-GEO-001", "role": "STUDENT", "displayName": "An" },
+    "F-GEO-021": { "id": "00000000-0000-7000-8000-000000000021", "org": "F-GEO-001", "role": "STUDENT", "displayName": "Bình" },
+    "F-GEO-022": { "id": "00000000-0000-7000-8000-000000000022", "org": "F-GEO-001", "role": "STUDENT", "displayName": "Chi" },
+    "F-GEO-023": { "id": "00000000-0000-7000-8000-000000000023", "org": "F-GEO-001", "role": "STUDENT", "displayName": "Dũng" },
+    "F-GEO-024": { "id": "00000000-0000-7000-8000-000000000024", "org": "F-GEO-001", "role": "STUDENT", "displayName": "Hà" }
+  },
+  "classes": {
+    "F-GEO-010": { "id": "00000000-0000-7000-8000-000000000010", "org": "F-GEO-001", "name": "11A1", "code": "HK7M2A" },
+    "F-GEO-011": { "id": "00000000-0000-7000-8000-000000000011", "org": "F-GEO-001", "name": "9B", "code": "HK9B4T" },
+    "F-GEO-012": { "id": "00000000-0000-7000-8000-000000000012", "org": "F-GEO-002", "name": "9C", "code": "MC9C6R" }
+  }
+}
