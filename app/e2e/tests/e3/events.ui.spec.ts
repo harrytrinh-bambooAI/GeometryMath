@@ -1,5 +1,5 @@
 import { expect, test } from '../../support/fixtures.ts';
-import { drag, e3Lane, gotoWorkspace, laneProgressE3, signInE3Student, snap, tapEdge, tool } from './e3.ts';
+import { drag, e3Lane, pinch, gotoWorkspace, laneProgressE3, signInE3Student, snap, tapEdge, tool } from './e3.ts';
 
 /**
  * TC-GEO-0309 (US-GEO-301-FC2; BR-GEO-144) bằng thao tác THẬT trên trình duyệt (soát E3 #4: bản API cũ không xoay gì
@@ -15,12 +15,16 @@ test('Xoay và thu phóng không tính là thao tác trên hình @TC-GEO-0309', 
 
   const v0 = (await snap(page)).camera;
   await drag(page, -200, 30); // xoay
-  const box = (await snap(page)).viewport;
-  await page.mouse.move(box.left + box.width / 2, box.top + box.height / 2);
-  await page.mouse.wheel(0, -240); // thu phóng
-  const v1 = (await snap(page)).camera;
-  expect(v1.yaw).not.toBe(v0.yaw);
-  expect(v1.zoom).not.toBe(v0.zoom);
+  // thu phóng: bánh xe chuột trên máy tính, hai ngón trên iPad (WebKit di động không có bánh xe)
+  if (testInfo.project.name === 'ui-chromium') {
+    const box = (await snap(page)).viewport;
+    await page.mouse.move(box.left + box.width / 2, box.top + box.height / 2);
+    await page.mouse.wheel(0, -240);
+  } else {
+    await pinch(page, 60, 180);
+  }
+  await expect.poll(async () => (await snap(page)).camera.zoom).not.toBe(v0.zoom);
+  expect((await snap(page)).camera.yaw).not.toBe(v0.yaw);
   await tool(page, 'reset'); // "Đặt lại"
   await expect.poll(async () => (await snap(page)).camera.yaw).toBe(v0.yaw);
   expect((await snap(page)).opCount).toBe(0);
