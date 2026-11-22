@@ -38,6 +38,18 @@ REVOKE ALL ON FUNCTION fn_solution_text(jsonb), fn_catalog_bank_visible(uuid, te
 GRANT EXECUTE ON FUNCTION fn_solution_text(jsonb) TO geo_content;
 GRANT EXECUTE ON FUNCTION fn_catalog_bank_visible(uuid, text) TO geo_app, geo_content;
 
+-- Bài tự học của chính học sinh có đang kế thừa khóa của một bài lớp không (D-GEO-151, 155; soát E4 #13): khi đó gợi ý
+-- lấy từ đề kho, máy chủ không sinh gợi ý AI. Hàm cổng vì module learning không đọc thẳng bảng assignment.
+CREATE FUNCTION fn_self_lock_inherited(p_org uuid, p_user uuid, p_assignment uuid)
+RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path = public, pg_temp
+AS $$
+  SELECT COALESCE((SELECT fn_self_lock_source(p_org, p_user, a.problem_version_id) IS NOT NULL
+                   FROM assignment a
+                   WHERE a.org_id = p_org AND a.id = p_assignment AND a.kind = 'self' AND a.owner_user_id = p_user), false)
+$$;
+REVOKE ALL ON FUNCTION fn_self_lock_inherited(uuid, uuid, uuid) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION fn_self_lock_inherited(uuid, uuid, uuid) TO geo_app;
+
 -- ---------------------------------------------------------------- 9.5 Bài giao: thêm điều kiện bộ đề (FIX3)
 CREATE OR REPLACE FUNCTION fn_create_assignment(p_org uuid, p_actor uuid, p_assignment_id uuid, p_class uuid, p_problem_version uuid,
                                      p_release_at timestamptz, p_allow_hint boolean, p_allow_qa boolean, p_request uuid DEFAULT NULL)

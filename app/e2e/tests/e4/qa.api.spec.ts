@@ -22,6 +22,10 @@ test('Xem lời giải được ghi nhận đúng một lần @TC-GEO-0445', asy
     progress: { k: number; label: string };
   };
   expect(mine.progress).toMatchObject({ k: 3, label: 'Đã xem lời giải' });
+  // nhật ký sự kiện: đúng MỘT sự kiện mở lời giải (unlock) dù mở ba lần (soát E4 #15)
+  const ev = await request.get(`${API}/test-hooks/e4/events?assignmentId=${bg1}&userId=${an.id}&kind=unlock`);
+  expect(ev.status()).toBe(200);
+  expect(((await ev.json()) as { count: number }).count).toBe(1);
 });
 
 test('Câu hỏi được ghi nhận ở Theo dõi lớp và nhật ký @TC-GEO-0458', async ({ request }) => {
@@ -114,7 +118,10 @@ test('Mọi trường đọc được cùng bài giảng @TC-GEO-0478', async ({
   const c = await call.lecture(request, anC, 'Diện tích xung quanh hình nón');
   const a = await call.lecture(request, anA, 'Diện tích xung quanh hình nón');
   expect(c.status()).toBe(200);
+  expect(a.status()).toBe(200);
   expect(await c.json()).toEqual(await a.json());
   expect(((await c.json()) as { title: string }).title).toBe('Diện tích xung quanh hình nón');
-  expect(bearer(anC)).toBeTruthy();
+  // hai thẻ thật của HAI trường khác nhau (soát E4 #15: thay kiểm luôn đúng)
+  const orgOf = (t: string) => (JSON.parse(Buffer.from(t.split('.')[1]!, 'base64url').toString()) as { org: string }).org;
+  expect(orgOf(anC)).not.toBe(orgOf(anA));
 });

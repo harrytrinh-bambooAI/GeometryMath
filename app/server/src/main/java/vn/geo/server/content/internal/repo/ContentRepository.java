@@ -106,6 +106,14 @@ public class ContentRepository {
   }
 
   /** Số đề kho của một bộ (đặt mã cho đề mới của móc kiểm thử). */
+  /** Khóa giao dịch theo bộ đề: các lần thêm đề song song (móc kiểm thử E5) cấp mã lần lượt. */
+  public void lockBank(String bank) {
+    jdbc.sql("SELECT pg_advisory_xact_lock(hashtext('geo:bank:' || :bank))")
+        .param("bank", bank)
+        .query()
+        .singleRow();
+  }
+
   public long countInBank(String bank) {
     return jdbc.sql(
             """

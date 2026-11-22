@@ -80,6 +80,41 @@ public class SandboxRepository {
         .single();
   }
 
+  /**
+   * Móc điều khiển giờ mở (dev/test): giờ mở đã hẹn của bài giao thử coi như vừa trôi qua — đặt
+   * release_at = now() − 1 giây, giữ nguyên release_rev (không phải thao tác "Mở ngay" của giáo
+   * viên). Chỉ bài lớp của tổ chức thử E4 có giờ mở ở tương lai.
+   */
+  public int releasePassed(UUID assignmentId) {
+    return jdbc.sql(
+            """
+            UPDATE assignment SET release_at = now() - interval '1 second'
+            WHERE org_id = :org AND id = :id AND kind = 'class' AND release_at > now()
+            -- sqllint:allow=ownership,tenant móc kiểm thử E4 dev/test: giờ mở hẹn coi như đã qua (TC-GEO-0486)
+            """)
+        .param("org", ORG)
+        .param("id", assignmentId)
+        .update();
+  }
+
+  /**
+   * Số sự kiện một loại của một học sinh trong một bài giao thử E4 (đếm event_log, TC-GEO-0445).
+   */
+  public long countEvents(UUID assignmentId, UUID userId, String kind) {
+    return jdbc.sql(
+            """
+            SELECT count(*) FROM event_log
+            WHERE org_id = :org AND assignment_id = :id AND user_id = :user AND kind::text = :kind
+            -- sqllint:allow=ownership,tenant,unbounded móc kiểm thử E4 dev/test: đếm sự kiện của bài giao thử
+            """)
+        .param("org", ORG)
+        .param("id", assignmentId)
+        .param("user", userId)
+        .param("kind", kind)
+        .query(Long.class)
+        .single();
+  }
+
   public String openNow(UUID assignmentId) {
     return jdbc.sql("SELECT status FROM fn_set_release(:org, :teacher, :id, true, NULL, 0, NULL)")
         .param("org", ORG)

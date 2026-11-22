@@ -2,7 +2,21 @@ import type { APIRequestContext, Page } from '@playwright/test';
 import { expect, test } from '../../support/fixtures.ts';
 import { PV } from '../e1/e1.ts';
 import { addMidpointSD, snap } from '../e3/e3.ts';
-import { API, MSG, aiCalls, bearer, call, openWorkspace, sandbox, setAiFor, signIn, tab, type Person, type Sandbox } from './e4.ts';
+import {
+  API,
+  MSG,
+  aiCalls,
+  bearer,
+  call,
+  openWorkspace,
+  recordResponses,
+  sandbox,
+  setAiFor,
+  signIn,
+  tab,
+  type Person,
+  type Sandbox,
+} from './e4.ts';
 
 /** E4 · E2E-UI: hỏi đáp có nguồn (US-GEO-409), nhật ký (410), từ khóa và hộp bài giảng (411, 412). */
 
@@ -189,18 +203,16 @@ test('Câu trả lời từng bị chặn mở lại vẫn là câu thay thế @
   expect((await call.hint(request, binh.token, as(sb, 'BG-1'), 1)).status()).toBe(200);
   const asked = (await (await call.ask(request, binh.token, as(sb, 'BG-1'), F056)).json()) as { reply: string };
   expect(asked.reply.startsWith(MSG['35'])).toBe(true);
-  const bodies: string[] = [];
-  page.on('response', async (r) => {
-    if (r.url().includes('/api/')) bodies.push(await r.text().catch(() => ''));
-  });
+  // chờ ĐỦ thân mọi phản hồi API (đọc bất đồng bộ) rồi mới kiểm — tránh đạt giả khi thân chưa kịp gom (soát E4 #14)
+  const responses = recordResponses(page);
   await openHistory(page, binh);
   const row = page.locator('[data-testid^="e4-log-row-"]').filter({ hasText: F056 });
   await row.locator('[data-testid^="e4-log-open-"]').click();
   await expect(row.locator('[data-testid$="-text"]')).toHaveText(asked.reply);
-  for (const b of bodies) {
-    expect(b).not.toContain('45°');
-    expect(b).not.toContain('Góc giữa SD và mặt đáy là 45°.');
-  }
+  const all = await responses();
+  expect(all, 'đã gom được câu trả lời của nhật ký').toContain(F056);
+  expect(all).not.toContain('45°');
+  expect(all).not.toContain('Góc giữa SD và mặt đáy là 45°.');
 });
 
 // ---------------------------------------------------------------- US-GEO-411, 412

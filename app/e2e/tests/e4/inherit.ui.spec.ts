@@ -2,6 +2,7 @@ import type { APIRequestContext, Page } from '@playwright/test';
 import { expect, test } from '../../support/fixtures.ts';
 import { PV } from '../e1/e1.ts';
 import {
+  API,
   F061,
   F077,
   F078,
@@ -14,6 +15,7 @@ import {
   expectNoLeak,
   hints12,
   openWorkspace,
+  recordResponses,
   sandbox,
   selfStudy,
   tab,
@@ -107,14 +109,13 @@ test('Đề viết lại câu chữ, thêm chữ vẫn kế thừa khóa @TC-GEO
 test('Cùng hình nhưng hỏi đại lượng khác thì không kế thừa khóa @TC-GEO-0484', async ({ page, request }) => {
   const { an } = await classWith(request, [{ key: 'BG-1', code: 'HKG-01' }]);
   const id = await selfStudy(request, an.token, F235);
-  const bodies: string[] = [];
-  page.on('response', async (r) => {
-    if (r.url().includes('/api/')) bodies.push(await r.text().catch(() => ''));
-  });
+  const responses = recordResponses(page); // chờ đủ thân phản hồi trước khi kiểm (soát E4 #14)
   await openWorkspace(page, an, id);
   await uiHints(page);
   await viewable(page);
-  for (const b of bodies) expect(b).not.toContain('45°');
+  const all = await responses();
+  expect(all, 'đã gom được phản hồi gợi ý').toContain('"level":2');
+  expect(all).not.toContain('45°');
 });
 
 test('Cùng hình nhưng khác tham số thì không kế thừa @TC-GEO-0489', async ({ page, request }) => {
@@ -125,9 +126,10 @@ test('Cùng hình nhưng khác tham số thì không kế thừa @TC-GEO-0489', 
   await viewable(page);
 });
 
-async function assignLater(request: APIRequestContext, sb: Sandbox, code: string, releaseAt: string | null) {
+async function assignLater(request: APIRequestContext, sb: Sandbox, code: string, releaseAt: string | null): Promise<string> {
   const r = await call.assign(request, sb.teacher.token, sb.classes[0]!.id, PV(code), releaseAt);
   expect(r.status(), await r.text()).toBe(201);
+  return ((await r.json()) as { id: string }).id;
 }
 
 test('Dán đề trước, giáo viên giao sau: lần xin kế tiếp bị khóa @TC-GEO-0485', async ({ page, request }) => {
@@ -144,15 +146,15 @@ test('Dán đề trước, giáo viên giao sau: lần xin kế tiếp bị khó
 });
 
 test('Đã xem lời giải tự học, sau đó giáo viên giao đúng đề: xin lại thì bị khóa @TC-GEO-0486', async ({ page, request }) => {
-  test.setTimeout(90_000);
   const { sb, an } = await classWith(request);
   const id = await selfStudy(request, an.token, HKG['05']);
   await hints12(request, an.token, id);
   const seen = await call.solution(request, an.token, id);
   expect(((await seen.json()) as { finalAnswer: string }).finalAnswer).toBe('112π cm²');
-  // BG-7 (F-GEO-049): giờ mở "T0 + 30 phút" thu về T0 + 20 giây để ca chạy được (cùng hành vi: Sắp mở rồi Đã mở)
-  const releaseAt = new Date(Date.now() + 20_000).toISOString();
-  await assignLater(request, sb, 'HKG-05', releaseAt);
+  // BG-7 (F-GEO-049): giờ mở "T0 + 30 phút"; giờ trôi qua bằng móc điều khiển giờ mở thay vì chờ đồng hồ thật
+  // (soát E4 #16: cửa sổ 20 giây dễ đỏ giả trên máy chậm)
+  const releaseAt = new Date(Date.now() + 30 * 60_000).toISOString();
+  const bg7 = await assignLater(request, sb, 'HKG-05', releaseAt);
   await openWorkspace(page, an, id);
   await tab(page, 'solution');
   await expect(page.getByTestId('e4-solution-locked')).toHaveText(MSG['31']);
@@ -160,7 +162,8 @@ test('Đã xem lời giải tự học, sau đó giáo viên giao đúng đề: 
   const r = await call.solution(request, an.token, id);
   expect(r.status()).toBe(403);
   expect(await r.text()).not.toContain('112π');
-  await page.waitForTimeout(Math.max(0, Date.parse(releaseAt) - Date.now() + 1500));
+  const passed = await request.post(`${API}/test-hooks/e4/release-passed`, { data: { assignmentId: bg7 } });
+  expect(passed.status(), await passed.text()).toBe(200);
   await page.reload();
   await tab(page, 'solution');
   await expect(page.getByTestId('e4-solution-answer')).toContainText('112π cm²');

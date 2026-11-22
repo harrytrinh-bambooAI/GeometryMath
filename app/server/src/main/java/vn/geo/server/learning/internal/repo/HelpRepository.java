@@ -88,15 +88,12 @@ public class HelpRepository {
     return Boolean.TRUE.equals(
         jdbc.sql(
                 """
-                SELECT fn_self_lock_source(:orgId, :userId, a.problem_version_id) IS NOT NULL
-                FROM assignment a
-                WHERE a.org_id = :orgId AND a.id = :id AND a.kind = 'self' AND a.owner_user_id = :userId
+                SELECT fn_self_lock_inherited(:orgId, :userId, :id)
                 """)
             .param("userId", userId)
             .param("id", assignmentId)
             .query(Boolean.class)
-            .optional()
-            .orElse(false));
+            .single());
   }
 
   /** Gợi ý đã xem (đọc lại, không ghi sự kiện). */

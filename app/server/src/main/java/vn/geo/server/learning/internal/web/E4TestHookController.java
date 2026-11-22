@@ -11,9 +11,13 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 import org.springframework.context.annotation.Profile;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import vn.geo.server.common.error.AppException;
+import vn.geo.server.common.error.ErrorCode;
 import vn.geo.server.common.id.Uuid7;
 import vn.geo.server.common.security.AuthPrincipal;
 import vn.geo.server.common.security.Role;
@@ -101,6 +105,24 @@ public class E4TestHookController {
     UUID teacher = SandboxService.TEACHER;
     return new SandboxOut(
         org, new Person(teacher, tokens.issue(new AuthPrincipal(org, teacher, Role.TEACHER))), out);
+  }
+
+  public record ReleasePassed(UUID assignmentId) {}
+
+  /** Giờ mở đã hẹn của bài giao thử coi như vừa trôi qua; 404 nếu không phải bài hẹn giờ của E4. */
+  @PostMapping("/test-hooks/e4/release-passed")
+  public Map<String, Object> releasePassed(@RequestBody ReleasePassed req) {
+    if (req == null || req.assignmentId() == null || !sandbox.releasePassed(req.assignmentId())) {
+      throw new AppException(ErrorCode.NOT_FOUND);
+    }
+    return Map.of("assignmentId", req.assignmentId());
+  }
+
+  /** Đếm sự kiện (event_log) của một học sinh trong bài giao thử E4: kiểm "ghi đúng một lần". */
+  @GetMapping("/test-hooks/e4/events")
+  public Map<String, Object> events(
+      @RequestParam UUID assignmentId, @RequestParam UUID userId, @RequestParam String kind) {
+    return Map.of("count", sandbox.countEvents(assignmentId, userId, kind));
   }
 
   private static String joinCode() {
