@@ -5,7 +5,7 @@ import { hiddenRatio, occludersOf, segmentRuns, styleOf, type LineStyle, type Ru
 
 /**
  * Mô hình vẽ: chiếu mọi đối tượng lên màn hình và tính nét đứt. Thuần (không DOM) nên dùng chung cho SVG, cho chọn
- * bằng chạm và cho móc kiểm thử `window.__geoScene`.
+ * bằng chạm và cho móc kiểm thử của E2E (sceneHook.ts).
  */
 export interface P2 {
   x: number;

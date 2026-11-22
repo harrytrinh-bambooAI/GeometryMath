@@ -34,6 +34,9 @@ public class FigureEventService {
 
   static final int MAX_BATCH = 200;
   private static final Duration BATCH_TTL = Duration.ofDays(1);
+  private static final Duration PENDING_TTL = Duration.ofMinutes(2);
+  private static final String PENDING = "pending";
+  private static final String DONE = "done";
 
   private final FigureEventRepository repo;
   private final StringRedisTemplate redis;
@@ -70,17 +73,31 @@ public class FigureEventService {
       }
       rows.add(Map.of("tool", e.tool(), "at", (e.at() == null ? now : e.at()).toString()));
     }
+    // Chống ghi trùng khi gửi lại (soát E3 #6): giữ chỗ ngắn hạn "pending" để hai lần gửi đồng thời
+    // không cùng ghi;
+    // chỉ đánh dấu "done" (TTL 1 ngày) SAU KHI ghi DB thành công. Ghi lỗi (DB, lô không thuộc học
+    // sinh) thì gỡ khóa
+    // để lần gửi lại (cùng batchId) được ghi.
     String key = keys.key("figbatch", p.orgId().toString(), batchId.toString());
-    Boolean fresh = redis.opsForValue().setIfAbsent(key, "1", BATCH_TTL);
+    Boolean fresh = redis.opsForValue().setIfAbsent(key, PENDING, PENDING_TTL);
     if (Boolean.FALSE.equals(fresh)) {
-      return new Recorded(0); // lô đã ghi (gửi lại do mạng): không ghi trùng
+      if (DONE.equals(redis.opsForValue().get(key))) {
+        return new Recorded(0); // lô đã ghi (gửi lại do mạng): không ghi trùng
+      }
+      throw new AppException(ErrorCode.CONFLICT, "Lô đang được ghi, gửi lại sau.");
     }
-    FigureEventRepository.BatchResult r =
-        repo.recordTools(p.userId(), assignmentId, mapper.writeValueAsString(rows));
+    FigureEventRepository.BatchResult r;
+    try {
+      r = repo.recordTools(p.userId(), assignmentId, mapper.writeValueAsString(rows));
+    } catch (RuntimeException ex) {
+      redis.delete(key);
+      throw ex;
+    }
     if (!"OK".equals(r.status())) {
       redis.delete(key);
       throw new AppException(ErrorCode.NOT_FOUND);
     }
+    redis.opsForValue().set(key, DONE, BATCH_TTL);
     return new Recorded(r.inserted());
   }
 

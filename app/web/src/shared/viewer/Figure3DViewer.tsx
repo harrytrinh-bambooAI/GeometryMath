@@ -3,7 +3,6 @@ import type { ReactNode, PointerEvent as RPointerEvent } from 'react';
 import { tid } from '../testid.ts';
 import { clampPitch, DEFAULT_VIEW, VIEW_PRESETS, wrapYaw, zoomAround, type ViewState } from './camera.ts';
 import { add, dot, norm, scale, sub, unit, type Vec3 } from './geometry.ts';
-import { sceneHookEnabled } from './hookGate.ts';
 import { VIEWER_MSG, VIEWER_TEXT } from './messages.ts';
 import {
   addPointOn,
@@ -21,7 +20,6 @@ import {
 import { pick } from './pick.ts';
 import { buildRender, type P2, type RenderModel } from './render.ts';
 import { overlayShapes, overlaySnapshot, SolutionOverlay, type ViewerOverlay } from './overlay.tsx';
-import { installSceneHook, snapshot } from './sceneHook.ts';
 import { TOOL_EVENT_CODE, type LockState, type ToolId, type ViewerSolid } from './types.ts';
 import './viewer.css';
 
@@ -138,18 +136,29 @@ export function Figure3DViewer({
     hookData.current = { fig: figL, rm, view, tool, opCount, menu, shapes, highlight };
   });
   useEffect(() => {
-    if (!sceneHookEnabled(import.meta.env)) return;
-    return installSceneHook(() => {
-      const d = hookData.current;
-      if (!d?.rm || !svgRef.current) return undefined;
-      const r = svgRef.current.getBoundingClientRect();
-      return snapshot(d.fig, d.rm, d.view, d.tool, { left: r.left, top: r.top }, {
-        ready: true,
-        opCount: d.opCount,
-        pointMenu: d.menu ? { line: d.menu.lineId, t: d.menu.t } : null,
-        solution: overlaySnapshot(d.rm, d.shapes, d.highlight, { left: r.left, top: r.top }),
+    // Điều kiện viết trực tiếp (không qua hàm) + import động: bản production thay hằng false, Vite bỏ cả nhánh và
+    // không sinh tệp sceneHook (kiểm: scripts/check-dist.mjs quét tên móc trong dist).
+    if (!(import.meta.env.DEV || import.meta.env.VITE_GEO_TEST_HOOKS === '1')) return;
+    let off: (() => void) | undefined;
+    let gone = false;
+    void import('./sceneHook.ts').then(({ installSceneHook, snapshot }) => {
+      if (gone) return;
+      off = installSceneHook(() => {
+        const d = hookData.current;
+        if (!d?.rm || !svgRef.current) return undefined;
+        const r = svgRef.current.getBoundingClientRect();
+        return snapshot(d.fig, d.rm, d.view, d.tool, { left: r.left, top: r.top }, {
+          ready: true,
+          opCount: d.opCount,
+          pointMenu: d.menu ? { line: d.menu.lineId, t: d.menu.t } : null,
+          solution: overlaySnapshot(d.rm, d.shapes, d.highlight, { left: r.left, top: r.top }),
+        });
       });
     });
+    return () => {
+      gone = true;
+      off?.();
+    };
   }, []);
 
   // ---------------------------------------------------------------- thông báo

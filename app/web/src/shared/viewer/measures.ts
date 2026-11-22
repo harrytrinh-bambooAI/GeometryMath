@@ -1,11 +1,15 @@
 import {
   cross,
+  dist,
   dot,
+  lineRelation,
   norm,
   planeFrom3,
   polygonPlane,
   samePlane,
   samePoint,
+  signedDist,
+  scale,
   sub,
   unit,
   type Plane,
@@ -169,4 +173,55 @@ export function sameMeasure(x: GeoMeasure, y: GeoMeasure): boolean {
       return pair(x.f1, x.f2, o.f1, o.f2, (a, b) => samePlane(a, b));
     }
   }
+}
+
+/** Giá trị của một đại lượng (độ dài; góc tính bằng độ), cùng công thức với công cụ đo của model.ts. */
+export function measureValue(g: GeoMeasure): number {
+  switch (g.kind) {
+    case 'len':
+      return dist(g.a, g.b);
+    case 'ang':
+      return (Math.acos(Math.max(-1, Math.min(1, dot(g.u, g.v)))) * 180) / Math.PI;
+    case 'dpp':
+      return Math.abs(signedDist(g.plane, g.p));
+    case 'dpl':
+      return norm(cross(sub(g.p, g.line.p), g.line.d));
+    case 'dll': {
+      const r = lineRelation(g.l1.p, g.l1.d, g.l2.p, g.l2.d);
+      return r.kind === 'skew' || r.kind === 'parallel' ? r.distance : 0;
+    }
+    case 'dff': {
+      const parallel = Math.abs(Math.abs(dot(g.f1.n, g.f2.n)) - 1) < 1e-9;
+      return parallel ? Math.abs(signedDist(g.f2, scale(g.f1.n, g.f1.d))) : 0;
+    }
+  }
+}
+/** Loại số đo: góc so với góc, mọi loại khoảng cách / độ dài so với nhau. */
+export const measureClass = (g: GeoMeasure): 'angle' | 'length' => (g.kind === 'ang' ? 'angle' : 'length');
+
+/** Dung sai so khớp đáp số (AnswerMatch, đề có tham số): 1e-4·max(1, |q|) + 1e-12 (D-GEO-163). */
+export const valueTolerance = (q: number): number => 1e-4 * Math.max(1, Math.abs(q)) + 1e-12;
+
+/** Giá trị của các đại lượng ẩn, tính một lần từ hình gốc. */
+export interface HiddenValue {
+  cls: 'angle' | 'length';
+  value: number;
+}
+export const hiddenValuesOf = (hidden: readonly GeoMeasure[]): HiddenValue[] =>
+  hidden.map((h) => ({ cls: measureClass(h), value: measureValue(h) })).filter((h) => Number.isFinite(h.value));
+
+/**
+ * PO-56 (soát E3 #1): khi lời giải còn khóa, một kết quả đo bị ẩn nếu (a) trùng một đại lượng ẩn theo hình học, HOẶC
+ * (b) có giá trị trùng giá trị một đại lượng ẩn cùng loại trong dung sai AnswerMatch — chặn đo gián tiếp (khoảng cách
+ * điểm–mặt thay cho mặt–mặt, điểm–đường thay cho đường–đường, đoạn bằng nhau…). Giá trị khác (ví dụ SM = SD/2) vẫn hiện.
+ */
+export function revealsHidden(
+  cls: 'angle' | 'length',
+  value: number,
+  g: GeoMeasure | null,
+  hidden: readonly GeoMeasure[],
+  values: readonly HiddenValue[],
+): boolean {
+  if (g && hidden.some((h) => sameMeasure(h, g))) return true;
+  return Number.isFinite(value) && values.some((h) => h.cls === cls && Math.abs(value - h.value) <= valueTolerance(h.value));
 }

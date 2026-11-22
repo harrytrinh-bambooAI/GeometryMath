@@ -80,6 +80,8 @@ Khi các nguồn mâu thuẫn, tài liệu này thắng, rồi tới `PRODUCT-MA
 | PO-53 | Giả định (PO, 22/11/2026) | Mã giáo viên: giữ khóa theo TÀI KHOẢN (10 lần sai/15 phút, D-GEO-185, TC-GEO-0179) cùng giới hạn theo IP; BR-GEO-286 "chỉ đếm IP" coi là đã được D-GEO-185 thay. Rủi ro khóa giáo viên thật (DoS) ghi cho chủ đầu tư. Bổ sung PO-51: móc test chạy ở profile `dev`/`test` (E2E chạy trên dev), không bao giờ ở `prod`. | Nguồn mới nhất thắng; bản soát E1 #3. |
 | PO-54 | Giả định (PO, 22/11/2026) | Migration được chứa DỮ LIỆU THAM CHIẾU bắt buộc (org nền tảng, user hệ thống, môn, chủ đề bài); seed mẫu/dữ liệu vàng chỉ nằm ở `app/db/seed`. | Bản soát E1 #8. |
 | PO-55 | Final (chủ đầu tư "Go đợt 1", 22/11/2026) | Đợt 1 = E2, E3, E4. Lượt 1a: E2 ‖ E3 (E2 chốt hợp đồng dữ liệu cảnh trước); lượt 1b: E4 sau khi E2 gộp. Opus tối đa 2 song song; mỗi epic soát độc lập + sửa gom lô như Đợt 0. Giả định PO-51…54 chủ đầu tư xem sau. | E3, E4 phụ thuộc engine và dữ liệu cảnh của E2. |
+| PO-56 | Giả định (PO, 23/11/2026) | Khi lời giải còn khóa, bộ xem 3D ẩn MỌI số đo có giá trị trùng một đại lượng đang ẩn (trong dung sai AnswerMatch.tolerance), không chỉ cùng loại/cùng đối tượng. Đo yếu tố trung gian khác giá trị vẫn được phép (D-GEO-024). | Soát E3 #1: đo gián tiếp lộ đáp số. |
+| PO-57 | Giả định (PO, 23/11/2026) | Tham số hình mẫu có cận trên 1000 (QF-E2-D10); TC-GEO-0309 chạy ở tầng E2E-UI trên làn E3 riêng thay cho E2E-API trên Hà (QF-E3-D13) — QC cập nhật test_cases ở lượt sau. | AC chưa nêu cận; tách số đếm tránh test giẫm nhau. |
 
 Các mã PO-16 đến PO-26 được đặt sau đợt phản biện (`review/RV_findings.md`); cách xử lý từng phát hiện nằm ở `review/RV_triage.md`.
 

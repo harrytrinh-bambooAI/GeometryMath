@@ -59,7 +59,9 @@ public class DefaultGeometryEngine implements GeometryEngine {
     Map<String, String> params = new LinkedHashMap<>();
     for (var e : n.get("params").properties()) {
       JsonNode v = e.getValue();
-      params.put(e.getKey(), v.isNumber() ? Double.toString(v.asDouble()) : v.asString());
+      // số: dạng thập phân thường (không ký hiệu E mà AnswerMatch không đọc; soát E2 #6); chuỗi giữ
+      // nguyên ("2a")
+      params.put(e.getKey(), v.isNumber() ? plain(v.asDouble()) : v.asString());
     }
     List<SceneDto.SceneChip> chips = new ArrayList<>();
     for (JsonNode c : n.path("chips")) {
@@ -82,6 +84,14 @@ public class DefaultGeometryEngine implements GeometryEngine {
         List.copyOf(chips),
         List.copyOf(asked),
         List.copyOf(hidden));
+  }
+
+  /** Số thực ra chuỗi thập phân không ký hiệu khoa học: 1e-5 → "0.00001", 2.0 → "2". */
+  static String plain(double x) {
+    if (!Double.isFinite(x)) {
+      throw new IllegalArgumentException("tham số không hữu hạn");
+    }
+    return java.math.BigDecimal.valueOf(x).stripTrailingZeros().toPlainString();
   }
 
   @Override
@@ -132,6 +142,12 @@ public class DefaultGeometryEngine implements GeometryEngine {
     return Optional.of(
         new Signature(
             spec.template(), b.solidKind(), Map.copyOf(norm), askedText, canonical, hash));
+  }
+
+  @Override
+  public List<String> paramKeys(String template) {
+    Builders.Spec sp = template == null ? null : Builders.ALL.get(template);
+    return sp == null ? List.of() : List.copyOf(sp.params());
   }
 
   @Override
@@ -276,7 +292,18 @@ public class DefaultGeometryEngine implements GeometryEngine {
 
   @Override
   public double measure(Figure f, AskedQuantity q) {
-    List<String> n = q.points();
+    List<String> n = q.points() == null ? List.of() : q.points();
+    // dữ liệu AI có thể thiếu điểm (soát E2 #2): kiểm số điểm theo loại trước khi tính, lỗi là
+    // IllegalArgumentException
+    Integer need = q.kind() == null ? null : ARITY.get(q.kind());
+    if (need == null) {
+      throw new IllegalArgumentException("đại lượng không biết: " + q.kind());
+    }
+    boolean ok = "volume_prism".equals(q.kind()) ? n.size() >= need : n.size() == need;
+    if (!ok) {
+      throw new IllegalArgumentException(
+          "đại lượng " + q.kind() + " cần " + need + " điểm, nhận " + n.size());
+    }
     return switch (q.kind()) {
       case "length" -> V.dist(f.point(n.get(0)), f.point(n.get(1)));
       case "angle" -> {
@@ -333,6 +360,24 @@ public class DefaultGeometryEngine implements GeometryEngine {
       default -> throw new IllegalArgumentException("đại lượng không biết: " + q.kind());
     };
   }
+
+  /**
+   * Số điểm của từng loại đại lượng (volume_prism: ít nhất 4 — ba đỉnh đáy trở lên và một đỉnh
+   * trên).
+   */
+  static final Map<String, Integer> ARITY =
+      Map.ofEntries(
+          Map.entry("length", 2),
+          Map.entry("angle", 3),
+          Map.entry("angle_line_plane", 5),
+          Map.entry("dist_lines", 4),
+          Map.entry("dist_point_plane", 4),
+          Map.entry("volume_prism", 4),
+          Map.entry("cone_lateral", 3),
+          Map.entry("cone_volume", 3),
+          Map.entry("cyl_total_area", 3),
+          Map.entry("sphere_radius", 2),
+          Map.entry("sphere_volume", 2));
 
   private static double clamp(double x) {
     return Math.max(-1, Math.min(1, x));

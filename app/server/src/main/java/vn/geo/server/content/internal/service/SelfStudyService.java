@@ -25,7 +25,6 @@ import vn.geo.server.geometry.api.Figure;
 import vn.geo.server.geometry.api.GeometryEngine;
 import vn.geo.server.geometry.api.GeometryEngine.ProblemSpec;
 import vn.geo.server.geometry.api.GeometryEngine.Verification;
-import vn.geo.server.geometry.api.SceneBuildException;
 import vn.geo.server.geometry.api.SceneDto;
 import vn.geo.server.geometry.api.SelfStudyDto;
 
@@ -267,20 +266,82 @@ public class SelfStudyService {
         Map<String, double[]> pts = new LinkedHashMap<>();
         for (var e : out.get("points").properties()) {
           JsonNode c = e.getValue();
-          pts.put(
-              e.getKey(),
-              c.isArray() && c.size() == 3
-                  ? new double[] {c.get(0).asDouble(), c.get(1).asDouble(), c.get(2).asDouble()}
-                  : null);
+          pts.put(e.getKey(), coords(c));
+        }
+        // loại hình ghi vào enum solid_kind: ngoài danh mục thì không 500 (soát E2 #1) — tên đồng
+        // nghĩa quy về danh
+        // mục (tứ diện là hình chóp; đề vẫn là đề lạ, nhãn Cần xem lại + MSG-GEO-16), còn lại
+        // MSG-GEO-18.
+        String solid = solidKind(out.path("solid").asString("pyramid"));
+        if (solid == null) {
+          throw AppException.invalidField("statement", MSG_18);
         }
         Figure f = engine.fromAi(pts, lists(out.path("edges")), lists(out.path("faces")));
-        String solid = out.path("solid").asString("pyramid").toLowerCase(Locale.ROOT);
         return new Built(f, "ai", null, null, level, solid, out.path("unit").asString(""));
       }
-    } catch (SceneBuildException | IllegalArgumentException e) {
+    } catch (AppException e) {
+      throw e;
+    } catch (RuntimeException e) {
+      // mọi lỗi dữ liệu AI (thiếu điểm, sai kiểu, đại lượng lạ…) là MSG-GEO-18, không bao giờ 500
+      // (soát E2 #2)
       throw AppException.invalidField("statement", MSG_18);
     }
     throw AppException.invalidField("statement", MSG_18);
+  }
+
+  /** Danh mục solid_kind (V10) và tên đồng nghĩa AI hay trả. */
+  static final java.util.Set<String> SOLIDS =
+      java.util.Set.of("pyramid", "prism", "box", "cube", "cone", "cylinder", "sphere");
+
+  static final Map<String, String> SOLID_ALIASES =
+      Map.of(
+          "tetrahedron", "pyramid",
+          "triangular_pyramid", "pyramid",
+          "cuboid", "box",
+          "rectangular_box", "box",
+          "triangular_prism", "prism");
+
+  /** Loại hình trong danh mục, hoặc null nếu không quy được. */
+  static String solidKind(String raw) {
+    String k = raw == null ? "" : raw.trim().toLowerCase(Locale.ROOT).replace(' ', '_');
+    if (SOLIDS.contains(k)) {
+      return k;
+    }
+    return SOLID_ALIASES.get(k);
+  }
+
+  /**
+   * Tọa độ một điểm: mảng đúng 3 số hữu hạn; số dạng chuỗi ("1.5", "1,5") đọc chặt. Sai kiểu
+   * ("abc", null, thiếu phần tử) thì null để engine báo tọa độ hỏng → MSG-GEO-18 — trước đây "abc"
+   * lặng lẽ thành 0 (soát E2 #6).
+   */
+  static double[] coords(JsonNode c) {
+    if (c == null || !c.isArray() || c.size() != 3) {
+      return null;
+    }
+    double[] out = new double[3];
+    for (int i = 0; i < 3; i++) {
+      Double v = number(c.get(i));
+      if (v == null) {
+        return null;
+      }
+      out[i] = v;
+    }
+    return out;
+  }
+
+  private static Double number(JsonNode x) {
+    Double v = null;
+    if (x != null && x.isNumber()) {
+      v = x.asDouble();
+    } else if (x != null && x.isString()) {
+      try {
+        v = Double.parseDouble(x.asString().trim().replace(',', '.'));
+      } catch (NumberFormatException e) {
+        return null;
+      }
+    }
+    return v != null && Double.isFinite(v) ? v : null;
   }
 
   private static List<List<String>> lists(JsonNode arr) {

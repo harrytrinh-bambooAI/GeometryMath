@@ -84,10 +84,45 @@ public class SceneService {
     try {
       f = engine.build(t.builder(), params);
     } catch (SceneBuildException e) {
-      throw AppException.invalidField(params.keySet().iterator().next(), MSG_19);
+      throw AppException.invalidField(culprit(t, params), MSG_19);
     }
-    return engine.toScene(f, new SceneMeta(null, "engine", "", List.of(), List.of(), "verified"));
+    // soát E2 #3: nhãn máy theo kết quả kiểm ràng buộc thật, không gắn cứng "verified"
+    String label =
+        engine.check(f.points(), f.constraints()).satisfied() ? "verified" : "needs_review";
+    return engine.toScene(f, new SceneMeta(null, "engine", "", List.of(), List.of(), label));
   }
+
+  /**
+   * Ô tham số gây lỗi dựng (soát E2 #4): ô đầu tiên mà khi trả về mặc định thì dựng được. Không
+   * tách được (lỗi do tổ hợp nhiều ô) thì ô đầu tiên khác mặc định; mọi ô đều mặc định thì ô đầu
+   * tiên.
+   */
+  private String culprit(TemplateCatalogService.Template t, Map<String, Double> params) {
+    String firstChanged = null;
+    for (TemplateDto.Param p : t.dto().params()) {
+      if (params.get(p.key()) == p.defaultValue()) {
+        continue;
+      }
+      if (firstChanged == null) {
+        firstChanged = p.key();
+      }
+      Map<String, Double> trial = new LinkedHashMap<>(params);
+      trial.put(p.key(), p.defaultValue());
+      try {
+        engine.build(t.builder(), trial);
+        return p.key();
+      } catch (SceneBuildException e) {
+        // ô này không phải nguyên nhân duy nhất
+      }
+    }
+    return firstChanged != null ? firstChanged : params.keySet().iterator().next();
+  }
+
+  /**
+   * Cận trên của tham số hình mẫu (soát E2 #3): quá lớn thì hình vô nghĩa trên màn hình và dễ tràn
+   * số.
+   */
+  static final double MAX_PARAM = 1000;
 
   /** Số lớn hơn 0 (BR-GEO-132): nhận dấu phẩy thập phân. */
   static double positive(String field, Object v) {
@@ -101,7 +136,7 @@ public class SceneService {
       }
       d = Double.parseDouble(s);
     }
-    if (!Double.isFinite(d) || d <= 0) {
+    if (!Double.isFinite(d) || d <= 0 || d > MAX_PARAM) {
       throw AppException.invalidField(field, MSG_19);
     }
     return d;

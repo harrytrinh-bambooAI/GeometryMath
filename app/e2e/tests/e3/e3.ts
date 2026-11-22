@@ -22,10 +22,16 @@ const E3_ORG = '00000000-0000-7000-8000-000000e30001';
 const E3_TEACHER = '00000000-0000-7000-8000-000000e30003';
 const e3Id = (n: string) => `00000000-0000-7000-8000-000000e3${n}`;
 
-/** Làn dữ liệu E3 riêng: TC-0334 → k = 1 (chromium) / 2 (webkit); TC-0352 → 3 / 4. */
-export function e3Lane(testInfo: TestInfo, tc: '0334' | '0352') {
-  const k = (tc === '0334' ? 1 : 3) + (testInfo.project.name === 'ui-chromium' ? 0 : 1);
-  return { assignmentId: e3Id(`004${k}`), studentId: e3Id(`002${k}`), k };
+/**
+ * Làn dữ liệu E3 riêng (seed 300_e3: k = 1…c, hex): TC-0334 → 1 (chromium) / 2 (webkit); TC-0352 → 3 / 4;
+ * TC-0309 → 5 / 6. Lượt chạy lại (retry) dùng làn +6 để không gặp bài đã "Mở ngay" hay đã có thao tác ở lượt trước
+ * (soát E3 #5).
+ */
+export function e3Lane(testInfo: TestInfo, tc: '0334' | '0352' | '0309') {
+  const base = { '0334': 1, '0352': 3, '0309': 5 }[tc];
+  const k = base + (testInfo.project.name === 'ui-chromium' ? 0 : 1) + (testInfo.retry > 0 ? 6 : 0);
+  const h = k.toString(16);
+  return { assignmentId: e3Id(`004${h}`), studentId: e3Id(`002${h}`), classId: e3Id(`001${h}`), k };
 }
 
 async function tokenRaw(request: APIRequestContext, orgId: string, userId: string, role: string) {
@@ -34,14 +40,29 @@ async function tokenRaw(request: APIRequestContext, orgId: string, userId: strin
   return ((await r.json()) as { token: string }).token;
 }
 
-/** Giáo viên E3 bấm "Mở ngay" (POST release openNow) cho bài của làn E3. */
+/** Giáo viên E3 bấm "Mở ngay" (POST release openNow) cho bài của làn E3; rev đọc từ danh sách bài của lớp (khóa lạc quan). */
 export async function openNowE3(request: APIRequestContext, assignmentId: string) {
   const t = await tokenRaw(request, E3_ORG, E3_TEACHER, 'TEACHER');
+  const classId = e3Id(`001${assignmentId.slice(-1)}`);
+  const list = await request.get(`${API}/api/v1/teacher/classes/${classId}/assignments`, { headers: { Authorization: `Bearer ${t}` } });
+  expect(list.status(), await list.text()).toBe(200);
+  const items = ((await list.json()) as { items: Array<{ id: string; releaseRev: number }> }).items;
+  const expectedRev = items.find((a) => a.id === assignmentId)?.releaseRev;
+  expect(expectedRev, `releaseRev của ${assignmentId}`).toBeDefined();
   const r = await request.post(`${API}/api/v1/teacher/assignments/${assignmentId}/release`, {
     headers: { Authorization: `Bearer ${t}` },
-    data: { openNow: true, expectedRev: 1 }, // release_rev của seed 300_e3 (khóa lạc quan)
+    data: { openNow: true, expectedRev },
   });
   expect(r.status(), await r.text()).toBe(200);
+}
+
+/** Tiến độ của học sinh làn E3 trên Theo dõi lớp (giáo viên E3; đệm sống 5 giây). */
+export async function laneProgressE3(request: APIRequestContext, assignmentId: string) {
+  const t = await tokenRaw(request, E3_ORG, E3_TEACHER, 'TEACHER');
+  const r = await request.get(`${API}/api/v1/teacher/assignments/${assignmentId}/monitor`, { headers: { Authorization: `Bearer ${t}` } });
+  expect(r.status(), await r.text()).toBe(200);
+  const m = (await r.json()) as { students: Array<{ opened: boolean; toolCount: number }> };
+  return m.students[0]!;
 }
 
 /** Đăng nhập học sinh E3 (làn riêng) trên trình duyệt. */
