@@ -17,6 +17,17 @@ case "$DB" in
 esac
 PSQL=("$PGBIN/psql" -h 127.0.0.1 -p "$GEO_PG_PORT" -U geo -d "$DB" -v ON_ERROR_STOP=1 -qtA)
 
+# Chốt chặn (giống dev-up.sh): cổng phải do CỤM CỦA THƯ MỤC NÀY phục vụ, để không bao giờ TRUNCATE CSDL của checkout khác.
+OWN_PGDATA="$PWD/.data/pg"
+actual=$("$PGBIN/psql" -h 127.0.0.1 -p "$GEO_PG_PORT" -U geo -d postgres -tAc "SHOW data_directory" 2>/dev/null || true)
+if [ -z "$actual" ] || [ ! -d "$OWN_PGDATA" ] || [ "$(cd "$actual" 2>/dev/null && pwd -P)" != "$(cd "$OWN_PGDATA" && pwd -P)" ]; then
+  echo "LỖI: cổng $GEO_PG_PORT không do cụm của thư mục này ($OWN_PGDATA) phục vụ (thực tế: ${actual:-không kết nối được}). Không reset. Đặt GEO_PG_PORT trong app/.env.ports (xem README)." >&2
+  exit 4
+fi
+case "${GEO_E2E_REDIS_PREFIX:-geoe2e:}" in
+  geo:*|geotest:*|"") echo "LỖI: GEO_E2E_REDIS_PREFIX không được rỗng hoặc trùng tiền tố dev/test (geo:, geotest:)." >&2; exit 5 ;;
+esac
+
 if [ "$("${PSQL[@]}" -c "SELECT to_regclass('public.flyway_schema_history') IS NOT NULL")" != "t" ]; then
   echo "LỖI: $DB chưa có schema (chưa chạy Flyway). Khởi động máy chủ trỏ vào $DB trước (make e2e làm việc này)." >&2
   exit 3
