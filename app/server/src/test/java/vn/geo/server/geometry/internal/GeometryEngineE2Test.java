@@ -118,9 +118,77 @@ class GeometryEngineE2Test {
   void tc0205_aboveThreshold() {
     var r = engine.check(perpWithError(1.01e-6), List.of(Constraint.perp("P", "Q", "R", "S")));
     assertThat(r.satisfied()).isFalse();
-    // hình không thỏa ràng buộc => nhãn máy "Cần xem lại" dù đáp số khớp (bảng nhãn, dòng 3)
-    assertThat(DefaultGeometryEngine.label(r.satisfied() ? "verified" : "needs_review"))
-        .isEqualTo("Cần xem lại");
+    // soát E2 #7: đi qua đường kiểm chứng THẬT (verify) với hình lệch vượt ngưỡng; đáp số đúng 45°
+    // vẫn khớp nhưng
+    // hình không thỏa ràng buộc => nhãn máy "Cần xem lại" (bảng nhãn, dòng 3). Đối chứng: không
+    // lệch => "Đã kiểm tra".
+    Verification bad = perturbed(1e-5).verify(spec("HKG-01"), "45°");
+    assertThat(bad.sceneOk()).isFalse();
+    assertThat(bad.answerOk()).isTrue();
+    assertThat(bad.status()).isEqualTo("needs_review");
+    assertThat(bad.label()).isEqualTo("Cần xem lại");
+    Verification ok = perturbed(0).verify(spec("HKG-01"), "45°");
+    assertThat(ok.sceneOk()).isTrue();
+    assertThat(ok.label()).isEqualTo(DefaultGeometryEngine.label("verified"));
+    assertThat(ok.label()).isNotEqualTo("Cần xem lại");
+  }
+
+  /** Engine thật, chỉ dời đỉnh S theo trục x một đoạn d sau khi dựng (giả lập sai số tọa độ). */
+  private static DefaultGeometryEngine perturbed(double d) {
+    return new DefaultGeometryEngine(JsonMapper.builder().build()) {
+      @Override
+      public Figure build(String template, Map<String, Double> params) {
+        Figure f = super.build(template, params);
+        LinkedHashMap<String, double[]> pts = new LinkedHashMap<>(f.points());
+        double[] s = pts.get("S").clone();
+        s[0] += d;
+        pts.put("S", s);
+        return new Figure(
+            f.template(),
+            f.solidKind(),
+            f.params(),
+            pts,
+            f.edges(),
+            f.faces(),
+            f.surfaces(),
+            f.constraints());
+      }
+    };
+  }
+
+  @Test
+  @DisplayName(
+      "Dev-E2-01 đại lượng AI thiếu điểm hoặc loại lạ: IllegalArgumentException, không 500")
+  void devE201_measureArity() {
+    Figure f = figure("HKG-01", 1);
+    for (AskedQuantity q :
+        List.of(
+            new AskedQuantity("x", "angle", List.of("S", "D")),
+            new AskedQuantity("x", "dist_lines", List.of("A", "B", "C")),
+            new AskedQuantity("x", "length", List.of()),
+            new AskedQuantity("x", "volume_prism", List.of("A", "B", "C")),
+            new AskedQuantity("x", "length", List.of("S", "Z")),
+            new AskedQuantity("x", "torus_volume", List.of("A", "B")))) {
+      assertThatThrownBy(() -> engine.measure(f, q))
+          .as(q.kind() + " " + q.points())
+          .isInstanceOf(IllegalArgumentException.class);
+    }
+  }
+
+  @Test
+  @DisplayName("Dev-E2-02 tham số số nhỏ không ra ký hiệu E (AnswerMatch đọc được)")
+  void devE202_plainParams() {
+    var n =
+        JsonMapper.builder()
+            .build()
+            .readTree(
+                "{'template':'cube','params':{'a':0.00001,'b':2.0,'c':'2a'}}".replace('\'', '"'));
+    ProblemSpec sp = engine.specFrom(n);
+    assertThat(sp.params())
+        .containsEntry("a", "0.00001")
+        .containsEntry("b", "2")
+        .containsEntry("c", "2a");
+    assertThat(sp.paramsAt(1).get("a")).isEqualTo(1e-5);
   }
 
   @Test

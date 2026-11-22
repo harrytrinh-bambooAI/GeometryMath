@@ -2,7 +2,9 @@ package vn.geo.server.content.internal.service;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
 import vn.geo.server.content.internal.repo.SceneRepository;
+import vn.geo.server.geometry.api.Figure;
 import vn.geo.server.geometry.api.GeometryEngine;
 import vn.geo.server.geometry.api.TemplateDto;
 
@@ -74,6 +77,9 @@ public class TemplateCatalogService {
           name.isBlank() || code.isBlank()
               ? Optional.of((name.isBlank() ? code : name) + ": thiếu tên hoặc mã")
               : validate(name, spec);
+      if (err.isEmpty()) {
+        err = validateKind(name, it.path("solid_kind").asString(""), spec);
+      }
       if (err.isPresent()) {
         errors.add(err.get());
         continue;
@@ -110,6 +116,47 @@ public class TemplateCatalogService {
       if (!(d.asDouble() > 0)) {
         return Optional.of(name + ": giá trị mặc định của " + label + " phải lớn hơn 0");
       }
+    }
+    // soát E2 #5: khóa tham số phải khớp đúng bộ dựng, và dựng thử bằng giá trị mặc định phải qua
+    // kiểm ràng buộc
+    String builder = spec.path("builder").asString();
+    List<String> keys = new ArrayList<>();
+    params.forEach(p -> keys.add(p.path("key").asString("")));
+    List<String> need = engine.paramKeys(builder);
+    if (keys.size() != need.size()
+        || !new java.util.HashSet<>(keys).equals(new java.util.HashSet<>(need))) {
+      return Optional.of(
+          name + ": tham số " + keys + " không khớp bộ dựng " + builder + " " + need);
+    }
+    try {
+      Map<String, Double> defaults = new LinkedHashMap<>();
+      params.forEach(p -> defaults.put(p.path("key").asString(), p.path("default").asDouble()));
+      Figure f = engine.build(builder, defaults);
+      if (!engine.check(f.points(), f.constraints()).satisfied()) {
+        return Optional.of(name + ": hình dựng bằng giá trị mặc định không qua kiểm ràng buộc");
+      }
+    } catch (RuntimeException e) {
+      return Optional.of(name + ": không dựng được bằng giá trị mặc định (" + e.getMessage() + ")");
+    }
+    return Optional.empty();
+  }
+
+  /** Loại hình của danh mục khớp enum solid_kind (V10) và đúng loại của bộ dựng. */
+  Optional<String> validateKind(String name, String kind, JsonNode spec) {
+    if (!SelfStudyService.SOLIDS.contains(kind)) {
+      return Optional.of(name + ": loại hình '" + kind + "' ngoài danh mục");
+    }
+    try {
+      Map<String, Double> defaults = new LinkedHashMap<>();
+      spec.path("params")
+          .forEach(p -> defaults.put(p.path("key").asString(), p.path("default").asDouble()));
+      String built = engine.build(spec.path("builder").asString(), defaults).solidKind();
+      if (!kind.equals(built)) {
+        return Optional.of(
+            name + ": loại hình '" + kind + "' khác loại của bộ dựng '" + built + "'");
+      }
+    } catch (RuntimeException e) {
+      return Optional.of(name + ": không dựng được bằng giá trị mặc định");
     }
     return Optional.empty();
   }

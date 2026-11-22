@@ -28,6 +28,9 @@ public interface GeometryEngine {
   /** Bộ dựng engine biết (SCENE-CONTRACT.md §3). */
   boolean knows(String template);
 
+  /** Khóa tham số bộ dựng cần, theo thứ tự; bộ dựng không biết: danh sách rỗng. */
+  List<String> paramKeys(String template);
+
   /** Mô tả dựng của đề kho theo mã bài (HKG-01…06), từ {@code geometry/problem-specs.json}. */
   java.util.Optional<ProblemSpec> catalogSpec(String problemCode);
 

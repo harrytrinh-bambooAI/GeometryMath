@@ -60,8 +60,9 @@ export interface ToolEventRow {
   at: string;
 }
 /** Gửi một lô sự kiện thao tác; `keepalive` để lô cuối vẫn đi khi rời trang. */
-export function sendToolEvents(id: string, events: ToolEventRow[], keepalive = false): Promise<unknown> {
-  const body = { batchId: crypto.randomUUID(), events };
+/** batchId: mã lô; gửi lại một lô (lỗi mạng) phải dùng LẠI mã cũ để máy chủ không ghi trùng (soát E3 #6). */
+export function sendToolEvents(id: string, events: ToolEventRow[], keepalive = false, batchId: string = crypto.randomUUID()): Promise<unknown> {
+  const body = { batchId, events };
   if (!keepalive) return apiRequest(`/api/v1/student/assignments/${enc(id)}/figure-events`, { method: 'POST', body });
   const token = getToken();
   return fetch(`/api/v1/student/assignments/${enc(id)}/figure-events`, {
