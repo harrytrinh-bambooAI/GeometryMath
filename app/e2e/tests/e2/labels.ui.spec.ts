@@ -23,8 +23,18 @@ test('Thẻ ràng buộc hiện ở góc hình @TC-GEO-0202', async ({ page, req
   expect(c.y + c.height).toBeGreaterThan(f.y + f.height / 2);
 });
 
+/**
+ * Một chuỗi nhãn (BR-GEO-136): mọi thẻ nhãn máy trên màn là đúng "Đã kiểm chứng" hoặc "Cần xem lại", có ít nhất một
+ * thẻ, và không có biến thể chữ khác (soát E2 #8: bản cũ chỉ cấm một biến thể nên gần như luôn đúng).
+ */
 async function noWrongLabel(page: Page) {
-  expect(await page.locator('body').innerText()).not.toContain('Hình đã kiểm chứng');
+  const text = await page.locator('body').innerText();
+  for (const bad of ['Hình đã kiểm chứng', 'Chưa kiểm chứng', 'Đã xác minh', 'Đã được kiểm chứng', 'Verified', 'Needs review']) {
+    expect(text, bad).not.toContain(bad);
+  }
+  const labels = (await page.locator('.chip').allInnerTexts()).map((s) => s.trim()).filter((s) => /kiểm chứng|xem lại/i.test(s));
+  expect(labels.length).toBeGreaterThan(0);
+  for (const l of labels) expect(['Đã kiểm chứng', 'Cần xem lại']).toContain(l);
 }
 
 test('Một chuỗi nhãn trên mọi màn @TC-GEO-0218', async ({ page, request, browser }, testInfo) => {

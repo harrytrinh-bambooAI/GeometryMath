@@ -17,6 +17,7 @@ import {
   planeFrom3,
   planePolygonTrace,
   planeSegment,
+  pointInPolygon3D,
   polygonPlane,
   samePlane,
   samePoint,
@@ -27,7 +28,7 @@ import {
   type Plane,
   type Vec3,
 } from './geometry.ts';
-import { resolveMeasure, sameMeasure, type GeoMeasure } from './measures.ts';
+import { hiddenValuesOf, resolveMeasure, revealsHidden, type GeoMeasure, type HiddenValue } from './measures.ts';
 import { VIEWER_MSG, VIEWER_TEXT, type ViewerMsgCode } from './messages.ts';
 import type { LockState, MeasureRef, ToolId, ViewerSolid } from './types.ts';
 
@@ -99,6 +100,8 @@ export interface Base {
   unit: ViewerSolid['unit'];
   unitSuffix: string;
   hidden: GeoMeasure[];
+  /** Giá trị của các đại lượng ẩn (PO-56: ẩn mọi số đo trùng giá trị trong dung sai khi lời giải còn khóa). */
+  hiddenValues: HiddenValue[];
   center: Vec3;
   radius: number;
   /** Thứ tự tên đỉnh để gọi tên cạnh, mặt ổn định ("Cạnh SD", "Mặt SAD", "Mặt ABCD"). */
@@ -188,7 +191,7 @@ export function buildBase(solid: ViewerSolid): Base {
     const g = resolveMeasure(m, pt);
     return g ? [g] : [];
   });
-  return { points, edges, faces, circles: solid.circles ?? [], unit: solid.unit ?? null, unitSuffix: solid.unitSuffix ?? '', hidden, center, radius, rank };
+  return { points, edges, faces, circles: solid.circles ?? [], unit: solid.unit ?? null, unitSuffix: solid.unitSuffix ?? '', hidden, hiddenValues: hiddenValuesOf(hidden), center, radius, rank };
 }
 function circleBox(c: { center: Vec3; radius: number; normal: Vec3 }): Vec3[] {
   const n = unit(c.normal);
@@ -324,8 +327,11 @@ export function clearAll(s: FigureState): FigureState {
 
 export function setLock(s: FigureState, lock: LockState): FigureState {
   if (s.lock === lock) return s;
-  // đổi trạng thái khóa: số đo đã hiện giữ nguyên; số đo đang ẩn chỉ hiện ở LẦN ĐO KẾ TIẾP (US-GEO-305-SC6)
-  return { ...s, lock };
+  // mở khóa: số đo đang ẩn chỉ hiện ở LẦN ĐO KẾ TIẾP (US-GEO-305-SC6).
+  if (lock === 'open') return { ...s, lock };
+  // khóa lại (soát E3 #8): số đo đã hiện mà trùng đại lượng ẩn phải ẩn lại ngay, giá trị bị xóa khỏi trạng thái.
+  const measures = s.measures.map((m) => (m.hidden || !concealed(s, m.kind, m.ref, m.value) ? m : { ...m, value: NaN, text: null, hidden: true }));
+  return { ...s, lock, measures };
 }
 
 export type PointMode = { kind: 'mid' } | { kind: 'ratio'; m: number; n: number; from: string } | { kind: 'free'; t: number };
@@ -405,6 +411,67 @@ export function lineTap(s: FigureState, t: Target | null): Outcome {
   return intersectLines(s, first.id, t.id);
 }
 
+/**
+ * Thiết diện của hình với mặt phẳng `pl` (soát E3 #8): nối các đoạn giao tuyến với từng mặt thành một vòng kín, nên đúng
+ * cả với thiết diện lõm (lăng trụ đáy chữ L). Không nối được thành đúng một vòng (mặt phẳng chỉ chạm cạnh/đỉnh, hình
+ * không kín, nhiều mảnh) hoặc vòng không chứa ba điểm đã chọn thì dùng bao lồi như trước (thiết diện hình lồi là lồi).
+ */
+function sectionPolygon(s: FigureState, pl: Plane, through: Vec3[]): Vec3[] {
+  const hull = () => {
+    const cut = [...through];
+    for (const e of s.base.edges) {
+      const x = planeSegment(pl, e.a, e.b);
+      if (x) cut.push(x);
+    }
+    return planarHull(cut, pl.n);
+  };
+  const tol = 1e-7 * Math.max(1, s.base.radius);
+  const segs: Array<[Vec3, Vec3]> = [];
+  for (const f of s.base.faces) {
+    const fp = planeOfFace(f);
+    if (!fp) continue;
+    if (samePlane(fp, pl)) return hull();
+    for (const sg of planePolygonTrace(pl, f.poly)) {
+      if (dist(sg[0], sg[1]) <= tol) continue;
+      // cạnh chung của hai mặt nằm trong mặt phẳng: chỉ lấy một lần
+      if (segs.some((o) => (samePoint(o[0], sg[0], tol) && samePoint(o[1], sg[1], tol)) || (samePoint(o[0], sg[1], tol) && samePoint(o[1], sg[0], tol)))) continue;
+      segs.push(sg);
+    }
+  }
+  const loop = chainLoop(segs, tol);
+  if (!loop || loop.length < 3) return hull();
+  const inLoop = (p: Vec3) =>
+    pointInPolygon3D(p, loop) || loop.some((q, i) => distPointSegment(p, q, loop[(i + 1) % loop.length]!) <= tol * 10);
+  return through.every(inLoop) ? loop : hull();
+}
+/** Nối các đoạn thành một vòng kín duy nhất (mỗi đầu mút dùng đúng hai lần); bỏ đỉnh thẳng hàng. Không được: null. */
+function chainLoop(segs: Array<[Vec3, Vec3]>, tol: number): Vec3[] | null {
+  if (segs.length < 3) return null;
+  const rest = segs.slice(1);
+  const loop: Vec3[] = [segs[0]![0], segs[0]![1]];
+  while (rest.length) {
+    const tail = loop[loop.length - 1]!;
+    const i = rest.findIndex((sg) => samePoint(sg[0], tail, tol) || samePoint(sg[1], tail, tol));
+    if (i < 0) return null;
+    const [sg] = rest.splice(i, 1);
+    loop.push(samePoint(sg![0], tail, tol) ? sg![1] : sg![0]);
+  }
+  if (!samePoint(loop[0]!, loop[loop.length - 1]!, tol)) return null;
+  loop.pop();
+  for (let i = 0; i < loop.length; i++) for (let j = i + 1; j < loop.length; j++) if (samePoint(loop[i]!, loop[j]!, tol)) return null;
+  const out = loop.filter((p, i) => {
+    const prev = loop[(i + loop.length - 1) % loop.length]!;
+    const next = loop[(i + 1) % loop.length]!;
+    return !collinear(prev, p, next);
+  });
+  return out.length >= 3 ? out : null;
+}
+function distPointSegment(p: Vec3, a: Vec3, b: Vec3): number {
+  const d = sub(b, a);
+  const t = Math.max(0, Math.min(1, dot(sub(p, a), d) / Math.max(dot(d, d), 1e-30)));
+  return dist(p, add(a, scale(d, t)));
+}
+
 /** "Mặt phẳng" (BR-GEO-150): ba điểm không thẳng hàng; vẽ thiết diện và giao tuyến với các mặt của hình. */
 export function planeTap(s: FigureState, t: Target | null): Outcome {
   if (!t || t.kind !== 'point') return { state: { ...s, pending: [] } };
@@ -420,12 +487,7 @@ export function planeTap(s: FigureState, t: Target | null): Outcome {
   if (s.planes.some((p) => samePlane(planeFrom3(...(p.names.map((n) => pointPos(s, n)!) as [Vec3, Vec3, Vec3]))!, pl))) {
     return { state: { ...s, pending: [] } };
   }
-  const cut: Vec3[] = [a, b, c];
-  for (const e of s.base.edges) {
-    const x = planeSegment(pl, e.a, e.b);
-    if (x) cut.push(x);
-  }
-  const poly = planarHull(cut, pl.n);
+  const poly = sectionPolygon(s, pl, [a, b, c]);
   const traces: Trace[] = [];
   for (const f of s.base.faces) {
     const fp = planeOfFace(f);
@@ -458,9 +520,13 @@ export function extendTap(s: FigureState, t: Target | null): Outcome {
 }
 
 // ------------------------------------------------------------------ đo (BR-GEO-16, 155…158)
-function finishMeasure(s: FigureState, kind: Measure['kind'], ref: MeasureRef, label: string, value: number, draw: Measure['draw']): Outcome {
+/** Kết quả đo có lộ đại lượng ẩn không (cùng hình học, hoặc trùng giá trị trong dung sai — PO-56). */
+function concealed(s: FigureState, kind: Measure['kind'], ref: MeasureRef, value: number): boolean {
   const g = resolveMeasure(ref, (n) => pointPos(s, n));
-  const hidden = s.lock === 'locked' && !!g && s.base.hidden.some((h) => sameMeasure(h, g));
+  return revealsHidden(kind === 'angle' ? 'angle' : 'length', value, g, s.base.hidden, s.base.hiddenValues);
+}
+function finishMeasure(s: FigureState, kind: Measure['kind'], ref: MeasureRef, label: string, value: number, draw: Measure['draw']): Outcome {
+  const hidden = s.lock === 'locked' && concealed(s, kind, ref, value);
   const text = hidden
     ? null
     : kind === 'angle'

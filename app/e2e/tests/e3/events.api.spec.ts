@@ -5,7 +5,8 @@ import { API, BG, bearer, devToken } from './e3.ts';
 
 /**
  * Sự kiện thao tác trên hình (US-GEO-301-SC9, US-GEO-302-SC3; BR-GEO-144) và danh sách đại lượng ẩn (BR-GEO-155).
- * 0309 rồi 0313 chạy TUẦN TỰ trên Hà (F-GEO-024) ở BG-1: 0309 cần Hà chưa có thao tác nào.
+ * TC-GEO-0313 dùng Hà (F-GEO-024) ở BG-1, đếm theo chênh lệch. TC-GEO-0309 (xoay/thu phóng thật trên trình duyệt) ở
+ * events.ui.spec.ts, trên làn E3 riêng.
  */
 
 async function haProgress(request: APIRequestContext) {
@@ -16,41 +17,23 @@ async function haProgress(request: APIRequestContext) {
   return m.students.find((s) => s.displayName === 'Hà')!;
 }
 
-test.describe.serial('Thao tác trên hình của Hà ở BG-1', () => {
-  test('Xoay và thu phóng không tính là thao tác trên hình @TC-GEO-0309', async ({ request }) => {
-    const ha = await devToken(request, 'F-GEO-024');
-    // Hà mở BG-1 lần đầu: trang Làm bài ghi một sự kiện mở bài; xoay, thu phóng, "Đặt lại" không gửi sự kiện nào
-    // (bộ xem không phát ToolEvent cho các thao tác này — kiểm ở E2E-UI qua opCount = 0, TC-GEO-0300/0305).
-    const open = await request.post(`${API}/api/v1/student/assignments/${BG('BG-1')}/open`, {
-      headers: bearer(ha),
-      data: { requestId: randomUUID() },
-    });
-    expect(open.status(), await open.text()).toBe(200);
-    // đệm Theo dõi lớp sống 5 giây
-    await expect
-      .poll(async () => {
-        const p = await haProgress(request);
-        return { opened: p.opened, toolCount: p.toolCount };
-      }, { timeout: 20_000, intervals: [500, 1000, 2000] })
-      .toEqual({ opened: true, toolCount: 0 });
-  });
-
-  test('Mỗi lần chọn là một thao tác trên hình @TC-GEO-0313', async ({ request }) => {
-    const ha = await devToken(request, 'F-GEO-024');
-    const at = new Date().toISOString();
-    // Hà dùng "Chọn" chạm cạnh SD rồi mặt SAD: trang gửi một lô hai sự kiện công cụ Chọn (mã 1, D-GEO-058)
-    const body = { batchId: randomUUID(), events: [{ tool: 1, at }, { tool: 1, at }] };
-    const r = await request.post(`${API}/api/v1/student/assignments/${BG('BG-1')}/figure-events`, { headers: bearer(ha), data: body });
-    expect(r.status(), await r.text()).toBe(200);
-    expect(((await r.json()) as { inserted: number }).inserted).toBe(2);
-    // gửi lại đúng lô (mạng chập chờn) không tính hai lần
-    const again = await request.post(`${API}/api/v1/student/assignments/${BG('BG-1')}/figure-events`, { headers: bearer(ha), data: body });
-    expect(again.status()).toBe(200);
-    expect(((await again.json()) as { inserted: number }).inserted).toBe(0);
-    await expect
-      .poll(async () => (await haProgress(request)).toolCount, { timeout: 20_000, intervals: [500, 1000, 2000] })
-      .toBe(2);
-  });
+test('Mỗi lần chọn là một thao tác trên hình @TC-GEO-0313', async ({ request }) => {
+  const ha = await devToken(request, 'F-GEO-024');
+  // đếm theo chênh lệch so với lúc bắt đầu: chạy lại (retry) không vỡ vì số đã có từ lượt trước (soát E3 #5)
+  const before = (await haProgress(request)).toolCount;
+  const at = new Date().toISOString();
+  // Hà dùng "Chọn" chạm cạnh SD rồi mặt SAD: trang gửi một lô hai sự kiện công cụ Chọn (mã 1, D-GEO-058)
+  const body = { batchId: randomUUID(), events: [{ tool: 1, at }, { tool: 1, at }] };
+  const r = await request.post(`${API}/api/v1/student/assignments/${BG('BG-1')}/figure-events`, { headers: bearer(ha), data: body });
+  expect(r.status(), await r.text()).toBe(200);
+  expect(((await r.json()) as { inserted: number }).inserted).toBe(2);
+  // gửi lại đúng lô (mạng chập chờn) không tính hai lần
+  const again = await request.post(`${API}/api/v1/student/assignments/${BG('BG-1')}/figure-events`, { headers: bearer(ha), data: body });
+  expect(again.status()).toBe(200);
+  expect(((await again.json()) as { inserted: number }).inserted).toBe(0);
+  await expect
+    .poll(async () => (await haProgress(request)).toolCount, { timeout: 20_000, intervals: [500, 1000, 2000] })
+    .toBe(before + 2);
 });
 
 test('Danh sách đại lượng ẩn không mang giá trị @TC-GEO-0340', async ({ request }) => {

@@ -9,15 +9,23 @@ import { sendToolEvents, type ToolEventRow } from './api.ts';
 export function useToolEvents(assignmentId: string | null) {
   const queue = useRef<ToolEventRow[]>([]);
   const timer = useRef<number | undefined>(undefined);
+  // lô gửi lỗi chờ gửi lại NGUYÊN mã lô (máy chủ bỏ qua lô đã ghi, không đếm trùng; soát E3 #6)
+  const retry = useRef<Array<{ batchId: string; events: ToolEventRow[] }>>([]);
 
   const flush = useCallback(
     (keepalive = false) => {
       window.clearTimeout(timer.current);
-      if (!assignmentId || queue.current.length === 0) return;
-      const batch = queue.current.splice(0, 200);
-      void sendToolEvents(assignmentId, batch, keepalive).catch(() => {
-        queue.current.unshift(...batch); // thử lại ở lần gửi sau
-      });
+      if (!assignmentId) return;
+      const batches = retry.current.splice(0, keepalive ? retry.current.length : 1);
+      // rời trang: gửi cả lô chờ gửi lại lẫn sự kiện mới; bình thường: mỗi lần một lô
+      if (queue.current.length > 0 && (keepalive || batches.length === 0)) {
+        batches.push({ batchId: crypto.randomUUID(), events: queue.current.splice(0, 200) });
+      }
+      for (const batch of batches) {
+        void sendToolEvents(assignmentId, batch.events, keepalive, batch.batchId).catch(() => {
+          retry.current.push(batch); // thử lại ở lần gửi sau, cùng mã lô
+        });
+      }
     },
     [assignmentId],
   );
