@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { ViewerHighlight } from '../../shared/viewer/Figure3DViewer.tsx';
 import type { ViewerOverlay } from '../../shared/viewer/overlay.tsx';
+import { rankNames } from '../../shared/viewer/model.ts';
 import type { ViewerSolid } from '../../shared/viewer/types.ts';
 import { e4Api, type Asked, type HelpState, type SolutionStep, type SolutionView } from './api.ts';
 
@@ -76,14 +77,20 @@ export function useHelp(assignmentId: string) {
 }
 export type HelpModel = ReturnType<typeof useHelp>;
 
-/** Tên cạnh của lời giải ("AD") → id cạnh của bộ xem theo thứ tự đỉnh trong đề ("DA" nếu cạnh khai báo D→A). */
+/**
+ * Tên cạnh của lời giải ("AD") → id cạnh của bộ xem: hai tên đỉnh xếp theo thứ tự của bộ xem (S trước, rồi chữ cái, rồi
+ * số dấu phẩy trên; model.ts rankNames), ví dụ "AD", "SD", "AA′".
+ */
 export function resolveHighlight(h: ViewerHighlight | undefined, solid: ViewerSolid | null): ViewerHighlight | undefined {
   if (!h || !solid) return h;
-  const ids = new Set(solid.edges.map(([a, b]) => `${a}${b}`));
+  const names = solid.points.map((p) => p.name);
+  const rank = rankNames(names);
+  const byLen = [...names].sort((a, b) => b.length - a.length);
   const edges = (h.edges ?? []).map((e) => {
-    if (ids.has(e)) return e;
-    for (const [a, b] of solid.edges) if (`${b}${a}` === e) return `${a}${b}`;
-    return e;
+    const first = byLen.find((n) => e.startsWith(n));
+    const second = first ? e.slice(first.length) : '';
+    if (!first || !names.includes(second)) return e;
+    return (rank.get(first) ?? 0) <= (rank.get(second) ?? 0) ? first + second : second + first;
   });
   return { ...h, edges };
 }

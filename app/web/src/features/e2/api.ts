@@ -22,4 +22,6 @@ export interface TeacherProblem {
   verifyStatus: 'verified' | 'needs_review';
   label: string;
   scene?: Scene;
+  /** E4: Gợi ý 1, 2 của đề kho (từ khóa bấm được, US-GEO-412-SC4). */
+  hints?: string[];
 }

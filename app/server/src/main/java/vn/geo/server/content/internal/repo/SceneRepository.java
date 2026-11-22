@@ -148,6 +148,20 @@ public class SceneRepository {
         .optional();
   }
 
+  /** E4 (US-GEO-412-SC4): Gợi ý 1, 2 của một đề kho cho trang chi tiết đề của giáo viên. */
+  public java.util.List<String> catalogHints(UUID versionId) {
+    return jdbc.sql(
+            """
+            SELECT h.body FROM hint h
+            WHERE h.org_id = platform_org_id() AND h.problem_version_id = :pv
+            ORDER BY h.level LIMIT 2
+            -- sqllint:allow=tenant nội dung hệ thống (org nền tảng, D-GEO-076): gợi ý của đề kho
+            """)
+        .param("pv", versionId)
+        .query(String.class)
+        .list();
+  }
+
   // ------------------------------------------------------------------ đề tự nhập (tự học)
 
   public void insertStudentProblem(

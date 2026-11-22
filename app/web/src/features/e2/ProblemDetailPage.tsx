@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router';
 import { ApiError } from '../../shared/api/errors.ts';
 import type { Scene } from '../../shared/scene/types.ts';
 import { tid } from '../../shared/testid.ts';
+import { KwText, LectureProvider } from '../e4/Lecture.tsx';
 import { errorText } from '../e1/messages.ts';
 import { e2Api } from './api.ts';
 import type { TeacherProblem } from './api.ts';
@@ -49,6 +50,19 @@ export function ProblemDetailPage() {
       <p className="e1-statement" data-testid={tid('e2', 'problem', 'statement')}>
         {p.statement}
       </p>
+      {/* E4: Gợi ý 1, 2 của đề kho, từ khóa bấm được mở hộp bài giảng (US-GEO-411, 412-SC4) */}
+      {p.hints && p.hints.length > 0 ? (
+        <LectureProvider>
+          <section className="card" data-testid={tid('e4', 'teacher', 'hints')}>
+            {p.hints.map((h, i) => (
+              <p key={i}>
+                <strong>Gợi ý {i + 1}: </strong>
+                <KwText text={h} testId={tid('e4', 'teacher', 'hint', i + 1)} />
+              </p>
+            ))}
+          </section>
+        </LectureProvider>
+      ) : null}
       {p.scene ? <SceneFrame scene={p.scene as Scene} /> : <p className="muted">Không có hình vẽ cho bài này.</p>}
       <p>
         <Link className="btn ghost" to="/gv/kho-de">
