@@ -21,10 +21,16 @@ public class DevTokenController {
     this.tokens = tokens;
   }
 
-  public record DevTokenRequest(UUID orgId, UUID userId, Role role) {}
+  /** ttlSeconds: tùy chọn; âm = thẻ đã hết hạn (ca phiên hết hạn, US-GEO-101-FC4). */
+  public record DevTokenRequest(UUID orgId, UUID userId, Role role, Long ttlSeconds) {}
 
   @PostMapping("/dev/token")
   public Map<String, String> token(@RequestBody DevTokenRequest r) {
-    return Map.of("token", tokens.issue(new AuthPrincipal(r.orgId(), r.userId(), r.role())));
+    AuthPrincipal p = new AuthPrincipal(r.orgId(), r.userId(), r.role());
+    return Map.of(
+        "token",
+        r.ttlSeconds() == null
+            ? tokens.issue(p)
+            : tokens.issue(p, java.time.Duration.ofSeconds(r.ttlSeconds())));
   }
 }
