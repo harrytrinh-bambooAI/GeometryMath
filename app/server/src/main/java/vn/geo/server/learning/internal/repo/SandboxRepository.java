@@ -82,13 +82,15 @@ public class SandboxRepository {
 
   /**
    * Móc điều khiển giờ mở (dev/test): giờ mở đã hẹn của bài giao thử coi như vừa trôi qua — đặt
-   * release_at = now() − 1 giây, giữ nguyên release_rev (không phải thao tác "Mở ngay" của giáo
-   * viên). Chỉ bài lớp của tổ chức thử E4 có giờ mở ở tương lai.
+   * release_at = now() − 1 giây (lùi created_at theo, ràng buộc release_at ≥ created_at), giữ
+   * nguyên release_rev (không phải thao tác "Mở ngay" của giáo viên). Chỉ bài lớp của tổ chức thử
+   * E4 có giờ mở ở tương lai.
    */
   public int releasePassed(UUID assignmentId) {
     return jdbc.sql(
             """
-            UPDATE assignment SET release_at = now() - interval '1 second'
+            UPDATE assignment SET release_at = now() - interval '1 second',
+                                  created_at = LEAST(created_at, now() - interval '2 seconds')
             WHERE org_id = :org AND id = :id AND kind = 'class' AND release_at > now()
             -- sqllint:allow=ownership,tenant móc kiểm thử E4 dev/test: giờ mở hẹn coi như đã qua (TC-GEO-0486)
             """)
