@@ -33,7 +33,7 @@ mặt cong), `epics/E2/stories_ac.md` (BR-GEO-06, 08, 127…140).
 | `faces` | `[[P, Q, R, …]]` | có | mặt phẳng của khối, đỉnh theo thứ tự vòng, đa giác lồi (chia tam giác kiểu quạt từ đỉnh đầu, FR-3D-1) |
 | `surfaces` | `[SceneSurface]` | có (có thể rỗng) | mặt cong: nón, trụ, cầu (mục 2.1) |
 | `chips` | `[{text, points}]` | có (có thể rỗng) | thẻ ràng buộc độ dài ở **góc dưới trái** khung hình (BR-GEO-130), ví dụ `"SA = a"` |
-| `hiddenMeasures` | `[chuỗi]` | có (có thể rỗng) | đại lượng đề hỏi mà công cụ đo phải ẩn giá trị trước giờ mở (D-GEO-024): `ang:S-D-A` = góc tại D giữa DS và DA; `len:O-O′` = độ dài OO′ (cùng cú pháp `fig3d.js`). Chỉ có biểu thức, không có giá trị |
+| `hiddenMeasures` | `[chuỗi]` | có (có thể rỗng) | đại lượng đề hỏi mà công cụ đo phải ẩn giá trị trước giờ mở (D-GEO-024): `ang:S-D-A` = góc tại D giữa DS và DA; `len:O-O′` = độ dài OO′ (cùng cú pháp `fig3d.js`); `dll:A-C|B′-D′` = khoảng cách giữa hai đường thẳng AC và B′D′ (thêm 22/11 theo yêu cầu E3, US-GEO-305-FC3). HKG-01: `["ang:S-D-A", "ang:A-S-D"]` (US-GEO-305-FC2); HKG-02: `["len:O-O′", "dll:A-C|B′-D′"]`. Chỉ có biểu thức, không có giá trị |
 | `axes` | `{available, origin, up}` | có | hệ trục Oxyz bật được trên mọi hình (US-GEO-205-SC1); gốc tại gốc tọa độ của đề; `up = "z"` |
 | `verification` | `{status, label, warning?}` | có | nhãn máy (mục 2.2) |
 
@@ -83,11 +83,13 @@ Tọa độ mẫu: A tại gốc, AB theo trục x, AD (hoặc AC) theo trục y
 |---|---|---|
 | `GET /api/v1/geometry/templates` | mọi vai, mọi trường (D-GEO-076) | `{items: SolidTemplate[]}` sắp theo `order` |
 | `POST /api/v1/geometry/templates/{code}/scene` thân `{params: {r: 3, h: 4}}` | mọi vai | `Scene` (engine, **không gọi AI**, không lưu). Tham số ≤ 0 / không phải số ⇒ `VALIDATION_FAILED` (MSG-GEO-19) |
-| `POST /api/v1/student/self-study` thân `{statement}` | học sinh | `SelfStudy` (tạo đề tự nhập + bài tự học). Hình phẳng ⇒ `VALIDATION_FAILED`, `details[0].code = "MSG-GEO-17"`; không dựng được ⇒ `details[0].code = "MSG-GEO-18"`; không tạo bài |
+| `POST /api/v1/student/self-study` thân `{statement}` | học sinh | `SelfStudy` (tạo đề tự nhập + bài tự học). Hình phẳng ⇒ `VALIDATION_FAILED`, `message` = `details[0].message` = câu MSG-GEO-17, `details[0].field = "statement"`; không dựng được ⇒ tương tự với câu MSG-GEO-18; không tạo đề, không tạo bài |
 | `GET /api/v1/student/self-study/{assignmentId}` | học sinh chủ bài | `SelfStudy` (tải lại trang vẫn có cảnh và cảnh báo) |
 | `GET /api/v1/student/assignments/{id}/scene` | học sinh của lớp / chủ bài tự học | `Scene` của đề trong bài |
 | `GET /api/v1/teacher/problems/{versionId}` | giáo viên | `{versionId, code, statement, verifyStatus, label, scene}` (trang chi tiết đề) |
 | `PUT /api/v1/problems/{versionId}/verify-status` | không ai | luôn `FORBIDDEN` (MSG-GEO-03): nhãn máy chỉ do engine tính (BR-GEO-135) |
+
+Không có điểm cuối gợi ý trong E2 (đường `/hints/{level}` thuộc E3, FigureEventController).
 
 ## 5. Ví dụ JSON
 
@@ -113,7 +115,7 @@ Tọa độ mẫu: A tại gốc, AB theo trục x, AD (hoặc AC) theo trục y
   "faces": [["A","B","C","D"],["S","A","B"],["S","B","C"],["S","C","D"],["S","D","A"]],
   "surfaces": [],
   "chips": [ { "text": "SA = a", "points": ["S","A"] }, { "text": "AD = a", "points": ["A","D"] } ],
-  "hiddenMeasures": ["ang:S-D-A"],
+  "hiddenMeasures": ["ang:S-D-A", "ang:A-S-D"],
   "axes": { "available": true, "origin": [0, 0, 0], "up": "z" },
   "verification": { "status": "verified", "label": "Đã kiểm chứng" }
 }
@@ -153,4 +155,4 @@ Tọa độ mẫu: A tại gốc, AB theo trục x, AD (hoặc AC) theo trục y
 - `scene_build.spec` (jsonb, `schema_version = 1`): `{schema_version, solid, params, template?, unit?, chips?, hidden?,
   topology?: {edges, faces}}`. `scene_build.coords`: `{tên: [x, y, z]}`. Bản dựng của seed E1 (chỉ có `solid`, `params`)
   được engine dựng lại theo mã bài khi đọc (hàm thuần, cùng kết quả).
-- Lịch sử: v1 (22/11/2026, E2) bản đầu.
+- Lịch sử: v1 (22/11/2026, E2) bản đầu. v1 (22/11/2026, E2) sửa tài liệu §4: lỗi tự học ghi câu thông điệp ở `details[0].message` (mô hình lỗi chung `{field, message}`), không đổi DTO. v1 (22/11/2026, E2) thêm giá trị `hiddenMeasures` (`ang:A-S-D` của HKG-01, dạng mới `dll:` cho HKG-02) theo yêu cầu E3; không đổi trường.

@@ -80,7 +80,9 @@ public class InstrumentedAiGateway implements AiGateway {
     String promptVersion = settings.promptVersion();
     Simulation sim =
         control.simulationFor(who == null ? null : who.userId().toString(), currentLane());
-    ProviderCall call = new ProviderCall(request.task(), model, request.prompt(), sim);
+    String scenario =
+        control.scenarioFor(who == null ? null : who.userId().toString(), currentLane());
+    ProviderCall call = new ProviderCall(request.task(), model, request.prompt(), sim, scenario);
     Future<String> future = executor.submit(() -> provider.complete(call));
     String content = "";
     try {

@@ -4,13 +4,13 @@
     "template": "pyramid_square_sa", "params": { "a": "a", "sa": "a" }, "unit": "a",
     "chips": [ { "text": "SA = a", "points": ["S", "A"] }, { "text": "AD = a", "points": ["A", "D"] } ],
     "asked": [ { "name": "", "kind": "angle_line_plane", "points": ["S", "D", "A", "B", "D"] } ],
-    "hidden": ["ang:S-D-A"]
+    "hidden": ["ang:S-D-A", "ang:A-S-D"]
   },
   "HKG-02": {
     "template": "cube", "params": { "a": "a" }, "unit": "a",
     "chips": [ { "text": "AB = a", "points": ["A", "B"] } ],
     "asked": [ { "name": "", "kind": "dist_lines", "points": ["A", "C", "B′", "D′"] } ],
-    "hidden": ["len:O-O′"]
+    "hidden": ["len:O-O′", "dll:A-C|B′-D′"]
   },
   "HKG-03": {
     "template": "prism", "params": { "a": "4", "h": "6" }, "unit": "cm",

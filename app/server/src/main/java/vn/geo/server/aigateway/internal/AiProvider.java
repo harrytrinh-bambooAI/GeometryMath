@@ -17,8 +17,15 @@ public interface AiProvider {
    * @param model model đang cấu hình
    * @param prompt nội dung (đề, câu hỏi); không chứa định danh
    * @param simulation chỉ nhà cung cấp giả lập dùng (chế độ lỗi/quá thời gian của móc kiểm thử)
+   * @param scenario chỉ nhà cung cấp giả lập dùng: kịch bản trả lời của móc kiểm thử (E2:
+   *     F-GEO-111, F-GEO-112); không phải định danh
    */
-  record ProviderCall(String task, String model, String prompt, Simulation simulation) {}
+  record ProviderCall(
+      String task, String model, String prompt, Simulation simulation, String scenario) {
+    public ProviderCall(String task, String model, String prompt, Simulation simulation) {
+      this(task, model, prompt, simulation, null);
+    }
+  }
 
   /** Chế độ của nhà cung cấp giả lập (US-GEO-103-FC1, FC2). */
   enum Simulation {
