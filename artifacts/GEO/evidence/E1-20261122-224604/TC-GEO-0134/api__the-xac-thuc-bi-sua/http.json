@@ -1,0 +1,40 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "role": "STUDENT"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b952-7633-a254-d1e816ce807b",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 5
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/student/assignments",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 401,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b957-7049-8e42-eff05a2a678e",
+      "content-type": "application/json;charset=UTF-8",
+      "content-length": "135",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"code\":\"UNAUTHENTICATED\",\"message\":\"Bạn cần đăng nhập để tiếp tục.\",\"requestId\":\"01a203ef-b957-7049-8e42-eff05a2a678e\"}",
+    "ms": 5
+  }
+]

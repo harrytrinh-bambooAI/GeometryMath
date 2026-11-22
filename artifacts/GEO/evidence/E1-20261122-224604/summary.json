@@ -1,0 +1,1718 @@
+{
+  "run": "20261122-224604",
+  "startedAt": "2026-11-22T15:46:10.622Z",
+  "finishedAt": "2026-11-22T15:46:22.851Z",
+  "status": "passed",
+  "t0": "2026-11-22T15:46:10.684Z",
+  "projects": [
+    "api",
+    "ui-chromium",
+    "ui-webkit"
+  ],
+  "totals": {
+    "tests": 67,
+    "passed": 67,
+    "failed": 0,
+    "interrupted": 0,
+    "skipped": 0,
+    "tcs": 43,
+    "tcsPassed": 43,
+    "tcsFailed": 0
+  },
+  "tcs": {
+    "TC-GEO-0129": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0129",
+          "title": "Học sinh gọi bài của trường khác @TC-GEO-0129",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 70,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 422,
+          "retry": 0,
+          "dir": "TC-GEO-0129/api__hoc-sinh-goi-bai-cua-truong-khac",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0129/api__hoc-sinh-goi-bai-cua-truong-khac/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0129/api__hoc-sinh-goi-bai-cua-truong-khac/http.json",
+            "trace": "TC-GEO-0129/api__hoc-sinh-goi-bai-cua-truong-khac/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0123": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0123",
+          "title": "Học sinh chỉ nhận bài của lớp mình @TC-GEO-0123",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 15,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 426,
+          "retry": 0,
+          "dir": "TC-GEO-0123/api__hoc-sinh-chi-nhan-bai-cua-lop-minh",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0123/api__hoc-sinh-chi-nhan-bai-cua-lop-minh/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0123/api__hoc-sinh-chi-nhan-bai-cua-lop-minh/http.json",
+            "trace": "TC-GEO-0123/api__hoc-sinh-chi-nhan-bai-cua-lop-minh/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0105": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0105",
+          "title": "Tên dài đúng 60 ký tự được nhận @TC-GEO-0105",
+          "file": "tests/e1/auth.api.spec.ts",
+          "line": 9,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 432,
+          "retry": 0,
+          "dir": "TC-GEO-0105/api__ten-dai-dung-60-ky-tu-duoc-nhan",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0105/api__ten-dai-dung-60-ky-tu-duoc-nhan/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0105/api__ten-dai-dung-60-ky-tu-duoc-nhan/http.json",
+            "trace": "TC-GEO-0105/api__ten-dai-dung-60-ky-tu-duoc-nhan/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0125": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0125",
+          "title": "Nội dung hệ thống đọc được từ mọi trường @TC-GEO-0125",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 26,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 456,
+          "retry": 0,
+          "dir": "TC-GEO-0125/api__noi-dung-he-thong-doc-duoc-tu-moi-truong",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0125/api__noi-dung-he-thong-doc-duoc-tu-moi-truong/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0125/api__noi-dung-he-thong-doc-duoc-tu-moi-truong/http.json",
+            "trace": "TC-GEO-0125/api__noi-dung-he-thong-doc-duoc-tu-moi-truong/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0126": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0126",
+          "title": "Bản ghi mới mang trường của người tạo @TC-GEO-0126",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 42,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 455,
+          "retry": 0,
+          "dir": "TC-GEO-0126/api__ban-ghi-moi-mang-truong-cua-nguoi-tao",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0126/api__ban-ghi-moi-mang-truong-cua-nguoi-tao/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0126/api__ban-ghi-moi-mang-truong-cua-nguoi-tao/http.json",
+            "trace": "TC-GEO-0126/api__ban-ghi-moi-mang-truong-cua-nguoi-tao/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0130": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0130",
+          "title": "Học sinh gọi dữ liệu của bạn cùng lớp @TC-GEO-0130",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 84,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 127,
+          "retry": 0,
+          "dir": "TC-GEO-0130/api__hoc-sinh-goi-du-lieu-cua-ban-cung-lop",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0130/api__hoc-sinh-goi-du-lieu-cua-ban-cung-lop/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0130/api__hoc-sinh-goi-du-lieu-cua-ban-cung-lop/http.json",
+            "trace": "TC-GEO-0130/api__hoc-sinh-goi-du-lieu-cua-ban-cung-lop/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0132": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0132",
+          "title": "Giáo viên trường khác xem Theo dõi lớp @TC-GEO-0132",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 119,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 120,
+          "retry": 0,
+          "dir": "TC-GEO-0132/api__giao-vien-truong-khac-xem-theo-doi-lop",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0132/api__giao-vien-truong-khac-xem-theo-doi-lop/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0132/api__giao-vien-truong-khac-xem-theo-doi-lop/http.json",
+            "trace": "TC-GEO-0132/api__giao-vien-truong-khac-xem-theo-doi-lop/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0114": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0114",
+          "title": "Học sinh không làm được việc của giáo viên @TC-GEO-0114",
+          "file": "tests/e1/auth.api.spec.ts",
+          "line": 24,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 163,
+          "retry": 0,
+          "dir": "TC-GEO-0114/api__hoc-sinh-khong-lam-duoc-viec-cua-giao-vien",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0114/api__hoc-sinh-khong-lam-duoc-viec-cua-giao-vien/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0114/api__hoc-sinh-khong-lam-duoc-viec-cua-giao-vien/http.json",
+            "trace": "TC-GEO-0114/api__hoc-sinh-khong-lam-duoc-viec-cua-giao-vien/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0131": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0131",
+          "title": "Giáo viên trường khác đổi giờ mở @TC-GEO-0131",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 97,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 183,
+          "retry": 0,
+          "dir": "TC-GEO-0131/api__giao-vien-truong-khac-doi-gio-mo",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0131/api__giao-vien-truong-khac-doi-gio-mo/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0131/api__giao-vien-truong-khac-doi-gio-mo/http.json",
+            "trace": "TC-GEO-0131/api__giao-vien-truong-khac-doi-gio-mo/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0134": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0134",
+          "title": "Thẻ xác thực bị sửa @TC-GEO-0134",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 145,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 99,
+          "retry": 0,
+          "dir": "TC-GEO-0134/api__the-xac-thuc-bi-sua",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0134/api__the-xac-thuc-bi-sua/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0134/api__the-xac-thuc-bi-sua/http.json",
+            "trace": "TC-GEO-0134/api__the-xac-thuc-bi-sua/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0133": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0133",
+          "title": "Giao bài chéo trường @TC-GEO-0133",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 127,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 183,
+          "retry": 0,
+          "dir": "TC-GEO-0133/api__giao-bai-cheo-truong",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0133/api__giao-bai-cheo-truong/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0133/api__giao-bai-cheo-truong/http.json",
+            "trace": "TC-GEO-0133/api__giao-bai-cheo-truong/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0178": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0178",
+          "title": "Giáo viên không đọc được câu trả lời đã lưu của học sinh @TC-GEO-0178",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 200,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 207,
+          "retry": 0,
+          "dir": "TC-GEO-0178/api__giao-vien-khong-doc-duoc-cau-tra-loi-da-luu-cua-",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0178/api__giao-vien-khong-doc-duoc-cau-tra-loi-da-luu-cua-/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0178/api__giao-vien-khong-doc-duoc-cau-tra-loi-da-luu-cua-/http.json",
+            "trace": "TC-GEO-0178/api__giao-vien-khong-doc-duoc-cau-tra-loi-da-luu-cua-/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0800": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0800",
+          "title": "Con trỏ phân trang của trường này dùng với thẻ của trường khác @TC-GEO-0800",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 229,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 200,
+          "retry": 0,
+          "dir": "TC-GEO-0800/api__con-tro-phan-trang-cua-truong-nay-dung-voi-the-c",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0800/api__con-tro-phan-trang-cua-truong-nay-dung-voi-the-c/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0800/api__con-tro-phan-trang-cua-truong-nay-dung-voi-the-c/http.json",
+            "trace": "TC-GEO-0800/api__con-tro-phan-trang-cua-truong-nay-dung-voi-the-c/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0804": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0804",
+          "title": "Khóa bộ nhớ đệm của trường này không đọc được bằng thẻ trường khác @TC-GEO-0804",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 246,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 246,
+          "retry": 0,
+          "dir": "TC-GEO-0804/api__khoa-bo-nho-dem-cua-truong-nay-khong-doc-duoc-ba",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0804/api__khoa-bo-nho-dem-cua-truong-nay-khong-doc-duoc-ba/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0804/api__khoa-bo-nho-dem-cua-truong-nay-khong-doc-duoc-ba/http.json",
+            "trace": "TC-GEO-0804/api__khoa-bo-nho-dem-cua-truong-nay-khong-doc-duoc-ba/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0171": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0171",
+          "title": "Dò mã: lần thử thứ 11 trong 15 phút bị chặn @TC-GEO-0171",
+          "file": "tests/e1/auth.api.spec.ts",
+          "line": 40,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 300,
+          "retry": 0,
+          "dir": "TC-GEO-0171/api__do-ma-lan-thu-thu-11-trong-15-phut-bi-chan",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0171/api__do-ma-lan-thu-thu-11-trong-15-phut-bi-chan/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0171/api__do-ma-lan-thu-thu-11-trong-15-phut-bi-chan/http.json",
+            "trace": "TC-GEO-0171/api__do-ma-lan-thu-thu-11-trong-15-phut-bi-chan/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0170": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0170",
+          "title": "Bộ kiểm cách ly duyệt mọi điểm cuối bằng thẻ của trường khác @TC-GEO-0170",
+          "file": "tests/e1/isolation.api.spec.ts",
+          "line": 158,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 316,
+          "retry": 0,
+          "dir": "TC-GEO-0170/api__bo-kiem-cach-ly-duyet-moi-diem-cuoi-bang-the-cua",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0170/api__bo-kiem-cach-ly-duyet-moi-diem-cuoi-bang-the-cua/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0170/api__bo-kiem-cach-ly-duyet-moi-diem-cuoi-bang-the-cua/http.json",
+            "trace": "TC-GEO-0170/api__bo-kiem-cach-ly-duyet-moi-diem-cuoi-bang-the-cua/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-KHUNG-01": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-KHUNG-01",
+          "title": "health trả UP và có X-Request-Id @TC-KHUNG-01",
+          "file": "tests/health.api.spec.ts",
+          "line": 4,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 106,
+          "retry": 0,
+          "dir": "TC-KHUNG-01/api__health-tra-up-va-co-x-request-id",
+          "evidence": {
+            "screenshots": [
+              "TC-KHUNG-01/api__health-tra-up-va-co-x-request-id/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-KHUNG-01/api__health-tra-up-va-co-x-request-id/http.json",
+            "trace": "TC-KHUNG-01/api__health-tra-up-va-co-x-request-id/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-KHUNG-01",
+          "title": "API cần đăng nhập trả lỗi UNAUTHENTICATED tiếng Việt @TC-KHUNG-01",
+          "file": "tests/health.api.spec.ts",
+          "line": 11,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 97,
+          "retry": 0,
+          "dir": "TC-KHUNG-01/api__api-can-dang-nhap-tra-loi-unauthenticated-tieng-",
+          "evidence": {
+            "screenshots": [
+              "TC-KHUNG-01/api__api-can-dang-nhap-tra-loi-unauthenticated-tieng-/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-KHUNG-01/api__api-can-dang-nhap-tra-loi-unauthenticated-tieng-/http.json",
+            "trace": "TC-KHUNG-01/api__api-can-dang-nhap-tra-loi-unauthenticated-tieng-/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0176": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0176",
+          "title": "Mã quá hạn dùng @TC-GEO-0176",
+          "file": "tests/e1/auth.api.spec.ts",
+          "line": 63,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 112,
+          "retry": 0,
+          "dir": "TC-GEO-0176/api__ma-qua-han-dung",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0176/api__ma-qua-han-dung/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0176/api__ma-qua-han-dung/http.json",
+            "trace": "TC-GEO-0176/api__ma-qua-han-dung/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-KHUNG-02": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-KHUNG-02",
+          "title": "seed vàng: mỗi trường chỉ thấy dữ liệu của mình @TC-KHUNG-02",
+          "file": "tests/seed.api.spec.ts",
+          "line": 10,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 138,
+          "retry": 0,
+          "dir": "TC-KHUNG-02/api__seed-vang-moi-truong-chi-thay-du-lieu-cua-minh",
+          "evidence": {
+            "screenshots": [
+              "TC-KHUNG-02/api__seed-vang-moi-truong-chi-thay-du-lieu-cua-minh/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-KHUNG-02/api__seed-vang-moi-truong-chi-thay-du-lieu-cua-minh/http.json",
+            "trace": "TC-KHUNG-02/api__seed-vang-moi-truong-chi-thay-du-lieu-cua-minh/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-KHUNG-02",
+          "title": "con trỏ của trường A dùng với thẻ trường C bị từ chối @TC-KHUNG-02",
+          "file": "tests/seed.api.spec.ts",
+          "line": 23,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 145,
+          "retry": 0,
+          "dir": "TC-KHUNG-02/api__con-tro-cua-truong-a-dung-voi-the-truong-c-bi-tu",
+          "evidence": {
+            "screenshots": [
+              "TC-KHUNG-02/api__con-tro-cua-truong-a-dung-voi-the-truong-c-bi-tu/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-KHUNG-02/api__con-tro-cua-truong-a-dung-voi-the-truong-c-bi-tu/http.json",
+            "trace": "TC-KHUNG-02/api__con-tro-cua-truong-a-dung-voi-the-truong-c-bi-tu/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0177": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0177",
+          "title": "Phiên học sinh không dùng được đường lời giải của giáo viên @TC-GEO-0177",
+          "file": "tests/e1/auth.api.spec.ts",
+          "line": 77,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 87,
+          "retry": 0,
+          "dir": "TC-GEO-0177/api__phien-hoc-sinh-khong-dung-duoc-duong-loi-giai-cu",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0177/api__phien-hoc-sinh-khong-dung-duoc-duong-loi-giai-cu/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0177/api__phien-hoc-sinh-khong-dung-duoc-duong-loi-giai-cu/http.json",
+            "trace": "TC-GEO-0177/api__phien-hoc-sinh-khong-dung-duoc-duong-loi-giai-cu/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0179": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0179",
+          "title": "Dò mã từ nhiều địa chỉ IP: lần thử thứ 11 trên cùng một tài khoản bị chặn @TC-GEO-0179",
+          "file": "tests/e1/auth.api.spec.ts",
+          "line": 86,
+          "project": "api",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 240,
+          "retry": 0,
+          "dir": "TC-GEO-0179/api__do-ma-tu-nhieu-dia-chi-ip-lan-thu-thu-11-tren-cu",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0179/api__do-ma-tu-nhieu-dia-chi-ip-lan-thu-thu-11-tren-cu/screenshot.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0179/api__do-ma-tu-nhieu-dia-chi-ip-lan-thu-thu-11-tren-cu/http.json",
+            "trace": "TC-GEO-0179/api__do-ma-tu-nhieu-dia-chi-ip-lan-thu-thu-11-tren-cu/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0100": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0100",
+          "title": "Vào lớp bằng tên và mã lớp đúng @TC-GEO-0100",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 8,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 630,
+          "retry": 0,
+          "dir": "TC-GEO-0100/ui-chromium__vao-lop-bang-ten-va-ma-lop-dung",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0100/ui-chromium__vao-lop-bang-ten-va-ma-lop-dung/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0100/ui-chromium__vao-lop-bang-ten-va-ma-lop-dung/video.webm",
+            "trace": "TC-GEO-0100/ui-chromium__vao-lop-bang-ten-va-ma-lop-dung/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0100",
+          "title": "Vào lớp bằng tên và mã lớp đúng @TC-GEO-0100",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 8,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1380,
+          "retry": 0,
+          "dir": "TC-GEO-0100/ui-webkit__vao-lop-bang-ten-va-ma-lop-dung",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0100/ui-webkit__vao-lop-bang-ten-va-ma-lop-dung/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0100/ui-webkit__vao-lop-bang-ten-va-ma-lop-dung/video.webm",
+            "trace": "TC-GEO-0100/ui-webkit__vao-lop-bang-ten-va-ma-lop-dung/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0118": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0118",
+          "title": "Khóa của nhà cung cấp không xuống trình duyệt @TC-GEO-0118",
+          "file": "tests/e1/ai-gateway.ui.spec.ts",
+          "line": 31,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 898,
+          "retry": 0,
+          "dir": "TC-GEO-0118/ui-chromium__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0118/ui-chromium__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/screenshot.png",
+              "TC-GEO-0118/ui-chromium__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/screenshot-2.png",
+              "TC-GEO-0118/ui-chromium__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0118/ui-chromium__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/http.json",
+            "video": "TC-GEO-0118/ui-chromium__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/video.webm",
+            "trace": "TC-GEO-0118/ui-chromium__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0118",
+          "title": "Khóa của nhà cung cấp không xuống trình duyệt @TC-GEO-0118",
+          "file": "tests/e1/ai-gateway.ui.spec.ts",
+          "line": 31,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1924,
+          "retry": 0,
+          "dir": "TC-GEO-0118/ui-webkit__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0118/ui-webkit__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/screenshot.png",
+              "TC-GEO-0118/ui-webkit__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/screenshot-2.png",
+              "TC-GEO-0118/ui-webkit__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0118/ui-webkit__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/http.json",
+            "video": "TC-GEO-0118/ui-webkit__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/video.webm",
+            "trace": "TC-GEO-0118/ui-webkit__khoa-cua-nha-cung-cap-khong-xuong-trinh-duyet/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0102": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0102",
+          "title": "Vào lại với cùng tên thì giữ đúng dữ liệu của mình @TC-GEO-0102",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 44,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 845,
+          "retry": 0,
+          "dir": "TC-GEO-0102/ui-chromium__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0102/ui-chromium__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/screenshot.png",
+              "TC-GEO-0102/ui-chromium__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/screenshot-2.png",
+              "TC-GEO-0102/ui-chromium__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0102/ui-chromium__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/http.json",
+            "video": "TC-GEO-0102/ui-chromium__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/video.webm",
+            "trace": "TC-GEO-0102/ui-chromium__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0102",
+          "title": "Vào lại với cùng tên thì giữ đúng dữ liệu của mình @TC-GEO-0102",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 44,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1445,
+          "retry": 0,
+          "dir": "TC-GEO-0102/ui-webkit__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0102/ui-webkit__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/screenshot.png",
+              "TC-GEO-0102/ui-webkit__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/screenshot-2.png",
+              "TC-GEO-0102/ui-webkit__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0102/ui-webkit__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/http.json",
+            "video": "TC-GEO-0102/ui-webkit__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/video.webm",
+            "trace": "TC-GEO-0102/ui-webkit__vao-lai-voi-cung-ten-thi-giu-dung-du-lieu-cua-mi/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0104": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0104",
+          "title": "Màn \"Vào lớp\" chỉ có hai ô nhập @TC-GEO-0104",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 68,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 582,
+          "retry": 0,
+          "dir": "TC-GEO-0104/ui-chromium__man-vao-lop-chi-co-hai-o-nhap",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0104/ui-chromium__man-vao-lop-chi-co-hai-o-nhap/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0104/ui-chromium__man-vao-lop-chi-co-hai-o-nhap/video.webm",
+            "trace": "TC-GEO-0104/ui-chromium__man-vao-lop-chi-co-hai-o-nhap/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0104",
+          "title": "Màn \"Vào lớp\" chỉ có hai ô nhập @TC-GEO-0104",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 68,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 733,
+          "retry": 0,
+          "dir": "TC-GEO-0104/ui-webkit__man-vao-lop-chi-co-hai-o-nhap",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0104/ui-webkit__man-vao-lop-chi-co-hai-o-nhap/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0104/ui-webkit__man-vao-lop-chi-co-hai-o-nhap/video.webm",
+            "trace": "TC-GEO-0104/ui-webkit__man-vao-lop-chi-co-hai-o-nhap/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0103": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0103",
+          "title": "Mã lớp quyết định trường và lớp @TC-GEO-0103",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 56,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 871,
+          "retry": 0,
+          "dir": "TC-GEO-0103/ui-chromium__ma-lop-quyet-dinh-truong-va-lop",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0103/ui-chromium__ma-lop-quyet-dinh-truong-va-lop/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0103/ui-chromium__ma-lop-quyet-dinh-truong-va-lop/video.webm",
+            "trace": "TC-GEO-0103/ui-chromium__ma-lop-quyet-dinh-truong-va-lop/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0103",
+          "title": "Mã lớp quyết định trường và lớp @TC-GEO-0103",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 56,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1003,
+          "retry": 0,
+          "dir": "TC-GEO-0103/ui-webkit__ma-lop-quyet-dinh-truong-va-lop",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0103/ui-webkit__ma-lop-quyet-dinh-truong-va-lop/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0103/ui-webkit__ma-lop-quyet-dinh-truong-va-lop/video.webm",
+            "trace": "TC-GEO-0103/ui-webkit__ma-lop-quyet-dinh-truong-va-lop/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0101": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0101",
+          "title": "Tên chưa có trong lớp thì thành học sinh mới của lớp đó @TC-GEO-0101",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 18,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1246,
+          "retry": 0,
+          "dir": "TC-GEO-0101/ui-chromium__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0101/ui-chromium__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/screenshot.png",
+              "TC-GEO-0101/ui-chromium__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/screenshot-2.png",
+              "TC-GEO-0101/ui-chromium__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0101/ui-chromium__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/http.json",
+            "video": "TC-GEO-0101/ui-chromium__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/video.webm",
+            "trace": "TC-GEO-0101/ui-chromium__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0101",
+          "title": "Tên chưa có trong lớp thì thành học sinh mới của lớp đó @TC-GEO-0101",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 18,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1456,
+          "retry": 0,
+          "dir": "TC-GEO-0101/ui-webkit__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0101/ui-webkit__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/screenshot.png",
+              "TC-GEO-0101/ui-webkit__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/screenshot-2.png",
+              "TC-GEO-0101/ui-webkit__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0101/ui-webkit__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/http.json",
+            "video": "TC-GEO-0101/ui-webkit__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/video.webm",
+            "trace": "TC-GEO-0101/ui-webkit__ten-chua-co-trong-lop-thi-thanh-hoc-sinh-moi-cua/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0107": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0107",
+          "title": "Tên hiển thị rỗng @TC-GEO-0107",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 86,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 530,
+          "retry": 0,
+          "dir": "TC-GEO-0107/ui-chromium__ten-hien-thi-rong",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0107/ui-chromium__ten-hien-thi-rong/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0107/ui-chromium__ten-hien-thi-rong/video.webm",
+            "trace": "TC-GEO-0107/ui-chromium__ten-hien-thi-rong/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0107",
+          "title": "Tên hiển thị rỗng @TC-GEO-0107",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 86,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 893,
+          "retry": 0,
+          "dir": "TC-GEO-0107/ui-webkit__ten-hien-thi-rong",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0107/ui-webkit__ten-hien-thi-rong/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0107/ui-webkit__ten-hien-thi-rong/video.webm",
+            "trace": "TC-GEO-0107/ui-webkit__ten-hien-thi-rong/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0120": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0120",
+          "title": "Nhà cung cấp trả lỗi @TC-GEO-0120",
+          "file": "tests/e1/ai-gateway.ui.spec.ts",
+          "line": 66,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 723,
+          "retry": 0,
+          "dir": "TC-GEO-0120/ui-chromium__nha-cung-cap-tra-loi",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0120/ui-chromium__nha-cung-cap-tra-loi/screenshot.png",
+              "TC-GEO-0120/ui-chromium__nha-cung-cap-tra-loi/screenshot-2.png",
+              "TC-GEO-0120/ui-chromium__nha-cung-cap-tra-loi/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0120/ui-chromium__nha-cung-cap-tra-loi/http.json",
+            "video": "TC-GEO-0120/ui-chromium__nha-cung-cap-tra-loi/video.webm",
+            "trace": "TC-GEO-0120/ui-chromium__nha-cung-cap-tra-loi/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0120",
+          "title": "Nhà cung cấp trả lỗi @TC-GEO-0120",
+          "file": "tests/e1/ai-gateway.ui.spec.ts",
+          "line": 66,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1602,
+          "retry": 0,
+          "dir": "TC-GEO-0120/ui-webkit__nha-cung-cap-tra-loi",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0120/ui-webkit__nha-cung-cap-tra-loi/screenshot.png",
+              "TC-GEO-0120/ui-webkit__nha-cung-cap-tra-loi/screenshot-2.png",
+              "TC-GEO-0120/ui-webkit__nha-cung-cap-tra-loi/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0120/ui-webkit__nha-cung-cap-tra-loi/http.json",
+            "video": "TC-GEO-0120/ui-webkit__nha-cung-cap-tra-loi/video.webm",
+            "trace": "TC-GEO-0120/ui-webkit__nha-cung-cap-tra-loi/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0109": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0109",
+          "title": "Mã lớp không tồn tại @TC-GEO-0109",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 121,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 612,
+          "retry": 0,
+          "dir": "TC-GEO-0109/ui-chromium__ma-lop-khong-ton-tai",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0109/ui-chromium__ma-lop-khong-ton-tai/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0109/ui-chromium__ma-lop-khong-ton-tai/video.webm",
+            "trace": "TC-GEO-0109/ui-chromium__ma-lop-khong-ton-tai/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0109",
+          "title": "Mã lớp không tồn tại @TC-GEO-0109",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 121,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 905,
+          "retry": 0,
+          "dir": "TC-GEO-0109/ui-webkit__ma-lop-khong-ton-tai",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0109/ui-webkit__ma-lop-khong-ton-tai/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0109/ui-webkit__ma-lop-khong-ton-tai/video.webm",
+            "trace": "TC-GEO-0109/ui-webkit__ma-lop-khong-ton-tai/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0108": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0108",
+          "title": "Tên hiển thị 61 ký tự @TC-GEO-0108",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 102,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 783,
+          "retry": 0,
+          "dir": "TC-GEO-0108/ui-chromium__ten-hien-thi-61-ky-tu",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0108/ui-chromium__ten-hien-thi-61-ky-tu/screenshot.png",
+              "TC-GEO-0108/ui-chromium__ten-hien-thi-61-ky-tu/screenshot-2.png",
+              "TC-GEO-0108/ui-chromium__ten-hien-thi-61-ky-tu/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0108/ui-chromium__ten-hien-thi-61-ky-tu/http.json",
+            "video": "TC-GEO-0108/ui-chromium__ten-hien-thi-61-ky-tu/video.webm",
+            "trace": "TC-GEO-0108/ui-chromium__ten-hien-thi-61-ky-tu/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0108",
+          "title": "Tên hiển thị 61 ký tự @TC-GEO-0108",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 102,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1429,
+          "retry": 0,
+          "dir": "TC-GEO-0108/ui-webkit__ten-hien-thi-61-ky-tu",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0108/ui-webkit__ten-hien-thi-61-ky-tu/screenshot.png",
+              "TC-GEO-0108/ui-webkit__ten-hien-thi-61-ky-tu/screenshot-2.png",
+              "TC-GEO-0108/ui-webkit__ten-hien-thi-61-ky-tu/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0108/ui-webkit__ten-hien-thi-61-ky-tu/http.json",
+            "video": "TC-GEO-0108/ui-webkit__ten-hien-thi-61-ky-tu/video.webm",
+            "trace": "TC-GEO-0108/ui-webkit__ten-hien-thi-61-ky-tu/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0110": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0110",
+          "title": "Phiên hết hạn @TC-GEO-0110",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 133,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 802,
+          "retry": 0,
+          "dir": "TC-GEO-0110/ui-chromium__phien-het-han",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0110/ui-chromium__phien-het-han/screenshot.png",
+              "TC-GEO-0110/ui-chromium__phien-het-han/screenshot-2.png",
+              "TC-GEO-0110/ui-chromium__phien-het-han/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0110/ui-chromium__phien-het-han/http.json",
+            "video": "TC-GEO-0110/ui-chromium__phien-het-han/video.webm",
+            "trace": "TC-GEO-0110/ui-chromium__phien-het-han/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0110",
+          "title": "Phiên hết hạn @TC-GEO-0110",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 133,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1396,
+          "retry": 0,
+          "dir": "TC-GEO-0110/ui-webkit__phien-het-han",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0110/ui-webkit__phien-het-han/screenshot.png",
+              "TC-GEO-0110/ui-webkit__phien-het-han/screenshot-2.png",
+              "TC-GEO-0110/ui-webkit__phien-het-han/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0110/ui-webkit__phien-het-han/http.json",
+            "video": "TC-GEO-0110/ui-webkit__phien-het-han/video.webm",
+            "trace": "TC-GEO-0110/ui-webkit__phien-het-han/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0122": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0122",
+          "title": "Bấm \"Thử lại\" sau lỗi @TC-GEO-0122",
+          "file": "tests/e1/ai-gateway.ui.spec.ts",
+          "line": 91,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 772,
+          "retry": 0,
+          "dir": "TC-GEO-0122/ui-chromium__bam-thu-lai-sau-loi",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0122/ui-chromium__bam-thu-lai-sau-loi/screenshot.png",
+              "TC-GEO-0122/ui-chromium__bam-thu-lai-sau-loi/screenshot-2.png",
+              "TC-GEO-0122/ui-chromium__bam-thu-lai-sau-loi/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0122/ui-chromium__bam-thu-lai-sau-loi/http.json",
+            "video": "TC-GEO-0122/ui-chromium__bam-thu-lai-sau-loi/video.webm",
+            "trace": "TC-GEO-0122/ui-chromium__bam-thu-lai-sau-loi/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0122",
+          "title": "Bấm \"Thử lại\" sau lỗi @TC-GEO-0122",
+          "file": "tests/e1/ai-gateway.ui.spec.ts",
+          "line": 91,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1463,
+          "retry": 0,
+          "dir": "TC-GEO-0122/ui-webkit__bam-thu-lai-sau-loi",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0122/ui-webkit__bam-thu-lai-sau-loi/screenshot.png",
+              "TC-GEO-0122/ui-webkit__bam-thu-lai-sau-loi/screenshot-2.png",
+              "TC-GEO-0122/ui-webkit__bam-thu-lai-sau-loi/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0122/ui-webkit__bam-thu-lai-sau-loi/http.json",
+            "video": "TC-GEO-0122/ui-webkit__bam-thu-lai-sau-loi/video.webm",
+            "trace": "TC-GEO-0122/ui-webkit__bam-thu-lai-sau-loi/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0173": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0173",
+          "title": "Gõ sai mã lớp nhiều lần không bị khóa riêng @TC-GEO-0173",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 152,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1076,
+          "retry": 0,
+          "dir": "TC-GEO-0173/ui-chromium__go-sai-ma-lop-nhieu-lan-khong-bi-khoa-rieng",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0173/ui-chromium__go-sai-ma-lop-nhieu-lan-khong-bi-khoa-rieng/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0173/ui-chromium__go-sai-ma-lop-nhieu-lan-khong-bi-khoa-rieng/video.webm",
+            "trace": "TC-GEO-0173/ui-chromium__go-sai-ma-lop-nhieu-lan-khong-bi-khoa-rieng/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0173",
+          "title": "Gõ sai mã lớp nhiều lần không bị khóa riêng @TC-GEO-0173",
+          "file": "tests/e1/student-join.ui.spec.ts",
+          "line": 152,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1606,
+          "retry": 0,
+          "dir": "TC-GEO-0173/ui-webkit__go-sai-ma-lop-nhieu-lan-khong-bi-khoa-rieng",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0173/ui-webkit__go-sai-ma-lop-nhieu-lan-khong-bi-khoa-rieng/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0173/ui-webkit__go-sai-ma-lop-nhieu-lan-khong-bi-khoa-rieng/video.webm",
+            "trace": "TC-GEO-0173/ui-webkit__go-sai-ma-lop-nhieu-lan-khong-bi-khoa-rieng/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0111": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0111",
+          "title": "Mã giáo viên đúng @TC-GEO-0111",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 27,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 635,
+          "retry": 0,
+          "dir": "TC-GEO-0111/ui-chromium__ma-giao-vien-dung",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0111/ui-chromium__ma-giao-vien-dung/screenshot.png",
+              "TC-GEO-0111/ui-chromium__ma-giao-vien-dung/screenshot-2.png",
+              "TC-GEO-0111/ui-chromium__ma-giao-vien-dung/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0111/ui-chromium__ma-giao-vien-dung/http.json",
+            "video": "TC-GEO-0111/ui-chromium__ma-giao-vien-dung/video.webm",
+            "trace": "TC-GEO-0111/ui-chromium__ma-giao-vien-dung/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0111",
+          "title": "Mã giáo viên đúng @TC-GEO-0111",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 27,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1085,
+          "retry": 0,
+          "dir": "TC-GEO-0111/ui-webkit__ma-giao-vien-dung",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0111/ui-webkit__ma-giao-vien-dung/screenshot.png",
+              "TC-GEO-0111/ui-webkit__ma-giao-vien-dung/screenshot-2.png",
+              "TC-GEO-0111/ui-webkit__ma-giao-vien-dung/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0111/ui-webkit__ma-giao-vien-dung/http.json",
+            "video": "TC-GEO-0111/ui-webkit__ma-giao-vien-dung/video.webm",
+            "trace": "TC-GEO-0111/ui-webkit__ma-giao-vien-dung/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0113": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0113",
+          "title": "Mã giáo viên sai @TC-GEO-0113",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 47,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 631,
+          "retry": 0,
+          "dir": "TC-GEO-0113/ui-chromium__ma-giao-vien-sai",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0113/ui-chromium__ma-giao-vien-sai/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0113/ui-chromium__ma-giao-vien-sai/video.webm",
+            "trace": "TC-GEO-0113/ui-chromium__ma-giao-vien-sai/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0113",
+          "title": "Mã giáo viên sai @TC-GEO-0113",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 47,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 731,
+          "retry": 0,
+          "dir": "TC-GEO-0113/ui-webkit__ma-giao-vien-sai",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0113/ui-webkit__ma-giao-vien-sai/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0113/ui-webkit__ma-giao-vien-sai/video.webm",
+            "trace": "TC-GEO-0113/ui-webkit__ma-giao-vien-sai/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0128": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0128",
+          "title": "Học sinh gọi bài của lớp khác cùng trường @TC-GEO-0128",
+          "file": "tests/e1/ai-gateway.ui.spec.ts",
+          "line": 119,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 645,
+          "retry": 0,
+          "dir": "TC-GEO-0128/ui-chromium__hoc-sinh-goi-bai-cua-lop-khac-cung-truong",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0128/ui-chromium__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/screenshot.png",
+              "TC-GEO-0128/ui-chromium__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/screenshot-2.png",
+              "TC-GEO-0128/ui-chromium__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0128/ui-chromium__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/http.json",
+            "video": "TC-GEO-0128/ui-chromium__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/video.webm",
+            "trace": "TC-GEO-0128/ui-chromium__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0128",
+          "title": "Học sinh gọi bài của lớp khác cùng trường @TC-GEO-0128",
+          "file": "tests/e1/ai-gateway.ui.spec.ts",
+          "line": 119,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 721,
+          "retry": 0,
+          "dir": "TC-GEO-0128/ui-webkit__hoc-sinh-goi-bai-cua-lop-khac-cung-truong",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0128/ui-webkit__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/screenshot.png",
+              "TC-GEO-0128/ui-webkit__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/screenshot-2.png",
+              "TC-GEO-0128/ui-webkit__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0128/ui-webkit__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/http.json",
+            "video": "TC-GEO-0128/ui-webkit__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/video.webm",
+            "trace": "TC-GEO-0128/ui-webkit__hoc-sinh-goi-bai-cua-lop-khac-cung-truong/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0112": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0112",
+          "title": "Vào được từ điện thoại @TC-GEO-0112",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 35,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1122,
+          "retry": 0,
+          "dir": "TC-GEO-0112/ui-chromium__vao-duoc-tu-dien-thoai",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0112/ui-chromium__vao-duoc-tu-dien-thoai/screenshot.png",
+              "TC-GEO-0112/ui-chromium__vao-duoc-tu-dien-thoai/screenshot-2.png",
+              "TC-GEO-0112/ui-chromium__vao-duoc-tu-dien-thoai/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0112/ui-chromium__vao-duoc-tu-dien-thoai/http.json",
+            "video": "TC-GEO-0112/ui-chromium__vao-duoc-tu-dien-thoai/video.webm",
+            "trace": "TC-GEO-0112/ui-chromium__vao-duoc-tu-dien-thoai/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0112",
+          "title": "Vào được từ điện thoại @TC-GEO-0112",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 35,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1216,
+          "retry": 0,
+          "dir": "TC-GEO-0112/ui-webkit__vao-duoc-tu-dien-thoai",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0112/ui-webkit__vao-duoc-tu-dien-thoai/screenshot.png",
+              "TC-GEO-0112/ui-webkit__vao-duoc-tu-dien-thoai/screenshot-2.png",
+              "TC-GEO-0112/ui-webkit__vao-duoc-tu-dien-thoai/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0112/ui-webkit__vao-duoc-tu-dien-thoai/http.json",
+            "video": "TC-GEO-0112/ui-webkit__vao-duoc-tu-dien-thoai/video.webm",
+            "trace": "TC-GEO-0112/ui-webkit__vao-duoc-tu-dien-thoai/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0174": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0174",
+          "title": "Mỗi mã vào đúng tài khoản được cấp @TC-GEO-0174",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 69,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 592,
+          "retry": 0,
+          "dir": "TC-GEO-0174/ui-chromium__moi-ma-vao-dung-tai-khoan-duoc-cap",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0174/ui-chromium__moi-ma-vao-dung-tai-khoan-duoc-cap/screenshot.png",
+              "TC-GEO-0174/ui-chromium__moi-ma-vao-dung-tai-khoan-duoc-cap/screenshot-2.png",
+              "TC-GEO-0174/ui-chromium__moi-ma-vao-dung-tai-khoan-duoc-cap/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0174/ui-chromium__moi-ma-vao-dung-tai-khoan-duoc-cap/http.json",
+            "video": "TC-GEO-0174/ui-chromium__moi-ma-vao-dung-tai-khoan-duoc-cap/video.webm",
+            "trace": "TC-GEO-0174/ui-chromium__moi-ma-vao-dung-tai-khoan-duoc-cap/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0174",
+          "title": "Mỗi mã vào đúng tài khoản được cấp @TC-GEO-0174",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 69,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 1113,
+          "retry": 0,
+          "dir": "TC-GEO-0174/ui-webkit__moi-ma-vao-dung-tai-khoan-duoc-cap",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0174/ui-webkit__moi-ma-vao-dung-tai-khoan-duoc-cap/screenshot.png",
+              "TC-GEO-0174/ui-webkit__moi-ma-vao-dung-tai-khoan-duoc-cap/screenshot-2.png",
+              "TC-GEO-0174/ui-webkit__moi-ma-vao-dung-tai-khoan-duoc-cap/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0174/ui-webkit__moi-ma-vao-dung-tai-khoan-duoc-cap/http.json",
+            "video": "TC-GEO-0174/ui-webkit__moi-ma-vao-dung-tai-khoan-duoc-cap/video.webm",
+            "trace": "TC-GEO-0174/ui-webkit__moi-ma-vao-dung-tai-khoan-duoc-cap/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0115": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0115",
+          "title": "Không có công tắc đổi vai @TC-GEO-0115",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 54,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 827,
+          "retry": 0,
+          "dir": "TC-GEO-0115/ui-chromium__khong-co-cong-tac-doi-vai",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0115/ui-chromium__khong-co-cong-tac-doi-vai/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0115/ui-chromium__khong-co-cong-tac-doi-vai/video.webm",
+            "trace": "TC-GEO-0115/ui-chromium__khong-co-cong-tac-doi-vai/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0115",
+          "title": "Không có công tắc đổi vai @TC-GEO-0115",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 54,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 952,
+          "retry": 0,
+          "dir": "TC-GEO-0115/ui-webkit__khong-co-cong-tac-doi-vai",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0115/ui-webkit__khong-co-cong-tac-doi-vai/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0115/ui-webkit__khong-co-cong-tac-doi-vai/video.webm",
+            "trace": "TC-GEO-0115/ui-webkit__khong-co-cong-tac-doi-vai/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0175": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0175",
+          "title": "Mã đã thu hồi @TC-GEO-0175",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 78,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 646,
+          "retry": 0,
+          "dir": "TC-GEO-0175/ui-chromium__ma-da-thu-hoi",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0175/ui-chromium__ma-da-thu-hoi/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0175/ui-chromium__ma-da-thu-hoi/video.webm",
+            "trace": "TC-GEO-0175/ui-chromium__ma-da-thu-hoi/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0175",
+          "title": "Mã đã thu hồi @TC-GEO-0175",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 78,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 761,
+          "retry": 0,
+          "dir": "TC-GEO-0175/ui-webkit__ma-da-thu-hoi",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0175/ui-webkit__ma-da-thu-hoi/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-GEO-0175/ui-webkit__ma-da-thu-hoi/video.webm",
+            "trace": "TC-GEO-0175/ui-webkit__ma-da-thu-hoi/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-GEO-0124": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-GEO-0124",
+          "title": "Giáo viên chỉ thấy lớp mình dạy @TC-GEO-0124",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 84,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 589,
+          "retry": 0,
+          "dir": "TC-GEO-0124/ui-chromium__giao-vien-chi-thay-lop-minh-day",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0124/ui-chromium__giao-vien-chi-thay-lop-minh-day/screenshot.png",
+              "TC-GEO-0124/ui-chromium__giao-vien-chi-thay-lop-minh-day/screenshot-2.png",
+              "TC-GEO-0124/ui-chromium__giao-vien-chi-thay-lop-minh-day/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0124/ui-chromium__giao-vien-chi-thay-lop-minh-day/http.json",
+            "video": "TC-GEO-0124/ui-chromium__giao-vien-chi-thay-lop-minh-day/video.webm",
+            "trace": "TC-GEO-0124/ui-chromium__giao-vien-chi-thay-lop-minh-day/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-GEO-0124",
+          "title": "Giáo viên chỉ thấy lớp mình dạy @TC-GEO-0124",
+          "file": "tests/e1/teacher-login.ui.spec.ts",
+          "line": 84,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 953,
+          "retry": 0,
+          "dir": "TC-GEO-0124/ui-webkit__giao-vien-chi-thay-lop-minh-day",
+          "evidence": {
+            "screenshots": [
+              "TC-GEO-0124/ui-webkit__giao-vien-chi-thay-lop-minh-day/screenshot.png",
+              "TC-GEO-0124/ui-webkit__giao-vien-chi-thay-lop-minh-day/screenshot-2.png",
+              "TC-GEO-0124/ui-webkit__giao-vien-chi-thay-lop-minh-day/screenshot-3.png"
+            ],
+            "other": [],
+            "http": "TC-GEO-0124/ui-webkit__giao-vien-chi-thay-lop-minh-day/http.json",
+            "video": "TC-GEO-0124/ui-webkit__giao-vien-chi-thay-lop-minh-day/video.webm",
+            "trace": "TC-GEO-0124/ui-webkit__giao-vien-chi-thay-lop-minh-day/trace.zip"
+          }
+        }
+      ]
+    },
+    "TC-KHUNG-03": {
+      "status": "passed",
+      "tests": [
+        {
+          "tc": "TC-KHUNG-03",
+          "title": "trang chủ mở, máy chủ sẵn sàng, giờ Việt Nam, vào vùng Giáo viên @TC-KHUNG-03",
+          "file": "tests/home.ui.spec.ts",
+          "line": 4,
+          "project": "ui-chromium",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 578,
+          "retry": 0,
+          "dir": "TC-KHUNG-03/ui-chromium__trang-chu-mo-may-chu-san-sang-gio-viet-nam-vao-v",
+          "evidence": {
+            "screenshots": [
+              "TC-KHUNG-03/ui-chromium__trang-chu-mo-may-chu-san-sang-gio-viet-nam-vao-v/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-KHUNG-03/ui-chromium__trang-chu-mo-may-chu-san-sang-gio-viet-nam-vao-v/video.webm",
+            "trace": "TC-KHUNG-03/ui-chromium__trang-chu-mo-may-chu-san-sang-gio-viet-nam-vao-v/trace.zip"
+          }
+        },
+        {
+          "tc": "TC-KHUNG-03",
+          "title": "trang chủ mở, máy chủ sẵn sàng, giờ Việt Nam, vào vùng Giáo viên @TC-KHUNG-03",
+          "file": "tests/home.ui.spec.ts",
+          "line": 4,
+          "project": "ui-webkit",
+          "status": "passed",
+          "outcome": "expected",
+          "ok": true,
+          "durationMs": 650,
+          "retry": 0,
+          "dir": "TC-KHUNG-03/ui-webkit__trang-chu-mo-may-chu-san-sang-gio-viet-nam-vao-v",
+          "evidence": {
+            "screenshots": [
+              "TC-KHUNG-03/ui-webkit__trang-chu-mo-may-chu-san-sang-gio-viet-nam-vao-v/screenshot.png"
+            ],
+            "other": [],
+            "video": "TC-KHUNG-03/ui-webkit__trang-chu-mo-may-chu-san-sang-gio-viet-nam-vao-v/video.webm",
+            "trace": "TC-KHUNG-03/ui-webkit__trang-chu-mo-may-chu-san-sang-gio-viet-nam-vao-v/trace.zip"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000003",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bafe-7571-b114-27cea2a38450",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 5
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000002",
+      "userId": "00000000-0000-7000-8000-000000000005",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bb03-7419-9d2b-2bcb94796232",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 3
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/sample/items?limit=2",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bb07-7255-b530-2a648e1c989c",
+      "content-type": "application/json",
+      "content-length": "317",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"items\":[{\"id\":\"00000000-0000-7000-8000-000000900003\",\"title\":\"Mẫu A · 3\",\"createdAt\":\"2026-11-22T15:45:10.684Z\"},{\"id\":\"00000000-0000-7000-8000-000000900002\",\"title\":\"Mẫu A · 2\",\"createdAt\":\"2026-11-22T15:44:10.684Z\"}],\"nextCursor\":\"Ag-nO9weKiXRAndomxdrAZQJRziiWHSJhWUtPiAfmTMGD_x4JW-IjdzwBlnjItmuRqVa1fHAtg\"}",
+    "ms": 5
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/sample/items?limit=2&cursor=Ag-nO9weKiXRAndomxdrAZQJRziiWHSJhWUtPiAfmTMGD_x4JW-IjdzwBlnjItmuRqVa1fHAtg",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bb0c-7492-91f8-f872be940227",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"INVALID_CURSOR\",\"message\":\"Con trỏ phân trang không hợp lệ.\",\"requestId\":\"01a203ef-bb0c-7492-91f8-f872be940227\"}",
+    "ms": 6
+  }
+]

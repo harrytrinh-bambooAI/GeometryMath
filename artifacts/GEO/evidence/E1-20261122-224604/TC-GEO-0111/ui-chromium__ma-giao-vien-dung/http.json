@@ -1,0 +1,22 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/test-hooks/auth-failures/reset",
+    "requestBody": {
+      "ips": [
+        "10.212.26.184"
+      ]
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c4b0-74ce-8cf9-0b0c3e49051a",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"deleted\":0}",
+    "ms": 8
+  }
+]

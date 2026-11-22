@@ -1,0 +1,62 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000003",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-be91-70e9-8efd-bdf078c03df1",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:13 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 24
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/teacher/assignments/00000000-0000-7000-8000-000000000040/monitor",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-be9b-7637-af44-5867968d0d28",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "2905",
+      "date": "Sun, 22 Nov 2026 15:46:13 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"problemCode\":\"HKG-01\",\"className\":\"11A1\",\"releaseState\":\"upcoming\",\"studentCount\":5,\"openedCount\":4,\"students\":[{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"displayName\":\"An\",\"opened\":true,\"k\":2,\"label\":\"Đã xem gợi ý 2\",\"hintLevel\":2,\"askCount\":5,\"toolCount\":4,\"activeMinutes\":23},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000021\",\"displayName\":\"Bình\",\"opened\":true,\"k\":1,\"label\":\"Đã xem gợi ý 1\",\"hintLevel\":1,\"askCount\":2,\"toolCount\":2,\"activeMinutes\":11},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000022\",\"displayName\":\"Chi\",\"opened\":true,\"k\":0,\"label\":\"Đã mở bài\",\"hintLevel\":0,\"askCount\":0,\"toolCount\":6,\"activeMinutes\":9},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000023\",\"displayName\":\"Dũng\",\"opened\":true,\"k\":2,\"label\":\"Đã xem gợi ý 2\",\"hintLevel\":2,\"askCount\":2,\"toolCount\":3,\"activeMinutes\":21},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000024\",\"displayName\":\"Hà\",\"opened\":false,\"k\":0,\"label\":\"Chưa bắt đầu\",\"hintLevel\":0,\"askCount\":0,\"toolCount\":0,\"activeMinutes\":0}],\"questions\":[{\"id\":9,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:46:12.008824Z\",\"askerName\":\"An\"},{\"id\":8,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S? (1795362371405)\",\"askedAt\":\"2026-11-22T15:46:11.430823Z\",\"askerName\":\"An\"},{\"id\":7,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Tan của một góc là gì?\",\"askedAt\":\"2026-11-22T15:23:10.684Z\",\"askerName\":\"Dũng\"},{\"id\":6,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Cho em xin đáp số luôn được không?\",\"askedAt\":\"2026-11-22T15:22:10.684Z\",\"askerName\":\"An\"},{\"id\":5,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:21:10.684Z\",\"askerName\":\"An\"},{\"id\":4,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:20:10.684Z\",\"askerName\":\"Bình\"},{\"id\":3,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:19:10.684Z\",\"askerName\":\"Bình\"},{\"id\":2,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:18:10.684Z\",\"askerName\":\"Dũng\"},{\"id\":1,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:17:10.684Z\",\"askerName\":\"An\"}]}",
+    "ms": 22
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/teacher/assignments/00000000-0000-7000-8000-000000000040/monitor",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c0ab-72e8-9a5f-766948eb9c03",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "3311",
+      "date": "Sun, 22 Nov 2026 15:46:13 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"problemCode\":\"HKG-01\",\"className\":\"11A1\",\"releaseState\":\"upcoming\",\"studentCount\":6,\"openedCount\":4,\"students\":[{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"displayName\":\"An\",\"opened\":true,\"k\":2,\"label\":\"Đã xem gợi ý 2\",\"hintLevel\":2,\"askCount\":6,\"toolCount\":4,\"activeMinutes\":23},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000021\",\"displayName\":\"Bình\",\"opened\":true,\"k\":1,\"label\":\"Đã xem gợi ý 1\",\"hintLevel\":1,\"askCount\":2,\"toolCount\":2,\"activeMinutes\":11},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000022\",\"displayName\":\"Chi\",\"opened\":true,\"k\":0,\"label\":\"Đã mở bài\",\"hintLevel\":0,\"askCount\":0,\"toolCount\":6,\"activeMinutes\":9},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000023\",\"displayName\":\"Dũng\",\"opened\":true,\"k\":2,\"label\":\"Đã xem gợi ý 2\",\"hintLevel\":2,\"askCount\":2,\"toolCount\":3,\"activeMinutes\":21},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000024\",\"displayName\":\"Hà\",\"opened\":false,\"k\":0,\"label\":\"Chưa bắt đầu\",\"hintLevel\":0,\"askCount\":0,\"toolCount\":0,\"activeMinutes\":0},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"01a203ef-be30-7297-908e-aa5ae505ef60\",\"displayName\":\"Yến\",\"opened\":false,\"k\":0,\"label\":\"Chưa bắt đầu\",\"hintLevel\":0,\"askCount\":0,\"toolCount\":0,\"activeMinutes\":0}],\"questions\":[{\"id\":10,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:46:13.365300Z\",\"askerName\":\"An\"},{\"id\":9,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:46:12.008824Z\",\"askerName\":\"An\"},{\"id\":8,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S? (1795362371405)\",\"askedAt\":\"2026-11-22T15:46:11.430823Z\",\"askerName\":\"An\"},{\"id\":7,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Tan của một góc là gì?\",\"askedAt\":\"2026-11-22T15:23:10.684Z\",\"askerName\":\"Dũng\"},{\"id\":6,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Cho em xin đáp số luôn được không?\",\"askedAt\":\"2026-11-22T15:22:10.684Z\",\"askerName\":\"An\"},{\"id\":5,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:21:10.684Z\",\"askerName\":\"An\"},{\"id\":4,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:20:10.684Z\",\"askerName\":\"Bình\"},{\"id\":3,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:19:10.684Z\",\"askerName\":\"Bình\"},{\"id\":2,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:18:10.684Z\",\"askerName\":\"Dũng\"},{\"id\":1,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:17:10.684Z\",\"askerName\":\"An\"}]}",
+    "ms": 9
+  }
+]

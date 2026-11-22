@@ -1,0 +1,296 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/test-hooks/auth-failures/reset",
+    "requestBody": {
+      "ips": [
+        "203.0.113.10",
+        "203.0.113.20",
+        "203.0.113.30"
+      ],
+      "userIds": [
+        "00000000-0000-7000-8000-000000000003"
+      ]
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bbd3-77eb-bb5b-c0dfeef74231",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"deleted\":0}",
+    "ms": 6
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/auth/teacher",
+    "requestHeaders": {
+      "X-Forwarded-For": "203.0.113.10"
+    },
+    "requestBody": {
+      "code": "GQ7KAAAAAAAA"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bbd9-7007-aabe-3e5a3919ed41",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"VALIDATION_FAILED\",\"message\":\"Mã giáo viên không đúng.\",\"requestId\":\"01a203ef-bbd9-7007-aabe-3e5a3919ed41\",\"details\":[{\"field\":\"code\",\"message\":\"Mã giáo viên không đúng.\"}]}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/auth/teacher",
+    "requestHeaders": {
+      "X-Forwarded-For": "203.0.113.10"
+    },
+    "requestBody": {
+      "code": "GQ7KAAAAAAAA"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bbde-75e3-9fe8-8fe7c6f579dc",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"VALIDATION_FAILED\",\"message\":\"Mã giáo viên không đúng.\",\"requestId\":\"01a203ef-bbde-75e3-9fe8-8fe7c6f579dc\",\"details\":[{\"field\":\"code\",\"message\":\"Mã giáo viên không đúng.\"}]}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/auth/teacher",
+    "requestHeaders": {
+      "X-Forwarded-For": "203.0.113.10"
+    },
+    "requestBody": {
+      "code": "GQ7KAAAAAAAA"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bbe3-7093-841a-7312685fe677",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"VALIDATION_FAILED\",\"message\":\"Mã giáo viên không đúng.\",\"requestId\":\"01a203ef-bbe3-7093-841a-7312685fe677\",\"details\":[{\"field\":\"code\",\"message\":\"Mã giáo viên không đúng.\"}]}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/auth/teacher",
+    "requestHeaders": {
+      "X-Forwarded-For": "203.0.113.10"
+    },
+    "requestBody": {
+      "code": "GQ7KAAAAAAAA"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bbe8-7370-bd2a-ee115a6d4608",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"VALIDATION_FAILED\",\"message\":\"Mã giáo viên không đúng.\",\"requestId\":\"01a203ef-bbe8-7370-bd2a-ee115a6d4608\",\"details\":[{\"field\":\"code\",\"message\":\"Mã giáo viên không đúng.\"}]}",
+    "ms": 7
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/auth/teacher",
+    "requestHeaders": {
+      "X-Forwarded-For": "203.0.113.10"
+    },
+    "requestBody": {
+      "code": "GQ7KAAAAAAAA"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bbf0-73d3-8f43-c9ac3c28c0d4",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"VALIDATION_FAILED\",\"message\":\"Mã giáo viên không đúng.\",\"requestId\":\"01a203ef-bbf0-73d3-8f43-c9ac3c28c0d4\",\"details\":[{\"field\":\"code\",\"message\":\"Mã giáo viên không đúng.\"}]}",
+    "ms": 6
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/auth/teacher",
+    "requestHeaders": {
+      "X-Forwarded-For": "203.0.113.20"
+    },
+    "requestBody": {
+      "code": "GQ7KBBBBBBBB"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bbf6-717a-a9ee-30cb0c656daa",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"VALIDATION_FAILED\",\"message\":\"Mã giáo viên không đúng.\",\"requestId\":\"01a203ef-bbf6-717a-a9ee-30cb0c656daa\",\"details\":[{\"field\":\"code\",\"message\":\"Mã giáo viên không đúng.\"}]}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/auth/teacher",
+    "requestHeaders": {
+      "X-Forwarded-For": "203.0.113.20"
+    },
+    "requestBody": {
+      "code": "GQ7KBBBBBBBB"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bbfa-7191-a6fc-aa959c799397",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"VALIDATION_FAILED\",\"message\":\"Mã giáo viên không đúng.\",\"requestId\":\"01a203ef-bbfa-7191-a6fc-aa959c799397\",\"details\":[{\"field\":\"code\",\"message\":\"Mã giáo viên không đúng.\"}]}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/auth/teacher",
+    "requestHeaders": {
+      "X-Forwarded-For": "203.0.113.20"
+    },
+    "requestBody": {
+      "code": "GQ7KBBBBBBBB"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bbff-7471-9e70-518e600ca207",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"VALIDATION_FAILED\",\"message\":\"Mã giáo viên không đúng.\",\"requestId\":\"01a203ef-bbff-7471-9e70-518e600ca207\",\"details\":[{\"field\":\"code\",\"message\":\"Mã giáo viên không đúng.\"}]}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/auth/teacher",
+    "requestHeaders": {
+      "X-Forwarded-For": "203.0.113.20"
+    },
+    "requestBody": {
+      "code": "GQ7KBBBBBBBB"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bc03-7371-9393-65a0ded70f34",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"VALIDATION_FAILED\",\"message\":\"Mã giáo viên không đúng.\",\"requestId\":\"01a203ef-bc03-7371-9393-65a0ded70f34\",\"details\":[{\"field\":\"code\",\"message\":\"Mã giáo viên không đúng.\"}]}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/auth/teacher",
+    "requestHeaders": {
+      "X-Forwarded-For": "203.0.113.20"
+    },
+    "requestBody": {
+      "code": "GQ7KBBBBBBBB"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bc07-714d-b121-4b525f80bdb9",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"VALIDATION_FAILED\",\"message\":\"Mã giáo viên không đúng.\",\"requestId\":\"01a203ef-bc07-714d-b121-4b525f80bdb9\",\"details\":[{\"field\":\"code\",\"message\":\"Mã giáo viên không đúng.\"}]}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/auth/teacher",
+    "requestHeaders": {
+      "X-Forwarded-For": "203.0.113.30"
+    },
+    "requestBody": {
+      "code": "GQ7KX2MTB4HN"
+    },
+    "status": 429,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bc0c-7592-ad3d-01a85f9a0406",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "retry-after": "900",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"code\":\"RATE_LIMITED\",\"message\":\"Đã nhập sai mã quá nhiều lần. Vui lòng thử lại sau ít phút.\",\"requestId\":\"01a203ef-bc0c-7592-ad3d-01a85f9a0406\"}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/test-hooks/auth-failures/reset",
+    "requestBody": {
+      "ips": [
+        "203.0.113.10",
+        "203.0.113.20",
+        "203.0.113.30"
+      ],
+      "userIds": [
+        "00000000-0000-7000-8000-000000000003"
+      ]
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-bc12-7256-918a-4d97cb1f564a",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"deleted\":10}",
+    "ms": 6
+  }
+]

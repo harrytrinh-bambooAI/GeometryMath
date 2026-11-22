@@ -1,0 +1,42 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "role": "STUDENT"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-e1bf-7575-9f18-d410b372990b",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:22 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/test-hooks/ai",
+    "requestBody": {
+      "mode": "ok",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "lane": "ui-webkit-10"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-e2bc-7295-930d-b072a071d017",
+      "content-type": "application/json",
+      "content-length": "39",
+      "date": "Sun, 22 Nov 2026 15:46:22 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"model\":\"gia-lap-1\",\"timeoutMs\":10000}",
+    "ms": 3
+  }
+]

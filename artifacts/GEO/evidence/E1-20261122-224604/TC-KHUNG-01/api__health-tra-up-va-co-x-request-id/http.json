@@ -1,0 +1,17 @@
+[
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/health",
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-ba9f-767a-99c8-64432b5dd40a",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"db\":\"UP\",\"redis\":\"UP\",\"status\":\"UP\"}",
+    "ms": 9
+  }
+]

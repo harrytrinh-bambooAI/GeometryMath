@@ -1,0 +1,23 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "role": "STUDENT",
+      "ttlSeconds": -60
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-d746-75cc-9f1d-c57f952e417d",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:19 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 16
+  }
+]

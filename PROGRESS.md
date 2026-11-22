@@ -1,41 +1,20 @@
-# Tiến độ
+# PROGRESS · GeometryMath (GEO) · cập nhật 22/11/2026 22:50
+Mục tiêu hiện tại: phát triển MVP theo đợt (PO-50). Đợt 0 + E1 đã đạt; DỪNG chờ chủ đầu tư xem trước khi làm E2–E7.
 
-## Đợt chạy nhiều agent (22/11/2026)
-| # | Hạng mục | Agent | Trạng thái | Sản phẩm | Token |
-|---|---|---|---|---|---|
-| 1 | Trình chiếu có chú thích | TOUR | Đã nghiệm thu, còn khoảng trống | `Design/prototype/tour.js`, `tour.css` | 194k |
-| 2 | Hồ sơ domain | DOMAIN | Đã nghiệm thu, còn khoảng trống | `DOMAIN-PROFILE.md` | 138k |
-| 3 | Brainstorm và thiết kế chặng 2–9 | STAGES | Đã nghiệm thu, còn khoảng trống | `STAGES-AFTER-MVP.md` | 192k |
-| 4 | Màn hình chặng 2–5 | DESIGN-2-5 | Đã nghiệm thu, còn khoảng trống | `Design/stages-2-5.html`, 18 ảnh | 266k |
-| 5 | Màn hình chặng 6–9 | DESIGN-6-9 | Đã nghiệm thu, còn khoảng trống | `Design/stages-6-9.html`, 18 ảnh | 302k |
+Đã xong (nhánh `worktree-mvp-wave0`):
+- QC sinh lại 469 TC theo 453 AC, thêm cột Tự động hóa (E2E-UI 240 / E2E-API 121 / IT 91 / Manual 17) — gộp 5261948
+- FOUNDATION: web React 19 + Vite 8 + TS 6 (`app/web`), seed vàng (`app/db/seed`), E2E Playwright có bằng chứng, cổng theo biến môi trường — gộp 4d3570a
+- E1 (US-GEO-101…108): 67/67 TC tự động đạt; 62/70 AC kiểm tự động, 8 AC chỉ có TC Manual (iPhone thật, Gatling) — gộp f3fe5d3
+- Soát độc lập Đợt 0 + E1 (Sonnet), sửa gom lô 15 phát hiện (FIX1) — gộp 2f55df8; seed-reset chốt cụm 3d192fe
+- Kiểm lần cuối trên nhánh gộp: make verify 94/94 đơn vị + 47/47 IT; web 6/6 + build; make e2e 67/67 (E1 67/67 TC, 0 trượt)
+- Bằng chứng: `artifacts/GEO/evidence/E1-20261122-224604/index.html` (115 ảnh; trace/video không lưu vì chứa JWT dev)
 
-Đã dùng: khoảng 1,09 triệu token cho 5 agent. Đợt này không có ước lượng duyệt trước.
+Đang dở: không.
 
-## Việc tiếp theo (chờ chủ đầu tư đồng ý kế hoạch)
-1. Áp các phán quyết còn lại trên `board/BOARD.md` (M-006a, M-012a, M-013, phần còn lại của M-007 và M-009).
-3. Phản biện bởi một agent khác model cho: `STAGES-AFTER-MVP.md`, `DOMAIN-PROFILE.md`, hai bộ màn hình.
-4. Đối chiếu danh sách màn hình của STAGES (61 màn) với ảnh đã vẽ; liệt kê màn còn thiếu.
-5. Cập nhật `MVP.md`, `PRODUCT-MASTER.md`, `ROADMAP.md` và xuất lại PDF.
+Bước tiếp theo: chủ đầu tư xem bằng chứng E1 + PO-51…54, rồi duyệt Đợt 1 (E2, E3, E4 song song, Opus ×2 → chia 2 lượt) ~1,5–2,5 triệu token.
+Cách chạy lại: tạo `app/.env.ports` với cổng riêng (mẫu ở app/README.md "Chạy nhiều checkout") → `cd app && make up && make verify && make e2e`.
 
-## Đợt "gọn" (chủ đầu tư duyệt, ước lượng 250–350k token)
-| # | Hạng mục | Ai | Trạng thái | Sản phẩm | Token |
-|---|---|---|---|---|---|
-| 6 | Phản biện hai tài liệu | RV (model khác tác giả) | Xong | `review/RV_findings.md` | 213k |
-| 7 | Phán và áp phát hiện | PO | Xong, còn khoảng trống | `review/RV_triage.md`, PO-16…PO-26 | — |
-| 8 | Sửa ba chỗ lệch ở màn hình, đối chiếu 61 màn | PO / A | Xong | `Design/stages/COVERAGE.md` | — |
-
-Thực dùng 213k, trong ước lượng.
-
-## Đợt bổ sung (22/11/2026)
-| # | Hạng mục | Ai | Trạng thái | Sản phẩm | Token |
-|---|---|---|---|---|---|
-| 9 | Vẽ 10 màn hình còn thiếu | DESIGN-MISSING | Đã nghiệm thu, còn khoảng trống | `Design/stages-missing.html`, 10 ảnh | 295k (ước lượng 150–250k) |
-| 10 | Tài liệu mẫu của giáo viên | A | Xong | `materials/*.docx`, `*.xlsx` | — |
-| 11 | Soạn bài, import, giáo trình, giáo trình riêng trong prototype + kịch bản trình chiếu | PROTO-CURR | Đã nghiệm thu, còn khoảng trống | `Design/prototype/*` | 354k (ước lượng 250–350k) |
-| 12 | Bộ hình 3D tương tác | FIG3D | Đã nghiệm thu, còn khoảng trống | `Design/prototype/fig3d.js`, trang thử | 182k (ước lượng 150–250k) |
-| 13 | Ghép hình 3D, từ khóa, bài giảng, hỏi đáp theo giáo trình, trình chiếu | PROTO-INT | Đã nghiệm thu, còn khoảng trống | `Design/prototype/*` | 466k (ước lượng 250–350k, vượt ngưỡng 30%) |
-
-Tổng token của các agent trong đợt bổ sung: 295k + 354k + 182k + 466k ≈ 1,3 triệu.
-| 14 | Soạn bài giảng với AI, import file tách bài giảng, hội thoại hai chiều giáo viên–AI, mở rộng trình chiếu | PROTO-LECT | Đã nghiệm thu, còn khoảng trống | `Design/prototype/*` | 325k (ước lượng 300–450k) |
-| 15 | Cập nhật ROADMAP, PRODUCT-MASTER (và MVP) theo năng lực mới, xuất lại PDF | PO / A | Xong | `ROADMAP.pdf`, `PRODUCT-MASTER.pdf`, `MVP.pdf` | — |
-
+Inbox còn: 2 mục mở (.claude/inbox.md): BenchmarkE1IT.tc0148 kiểm yếu; trace/video UI còn JWT dev.
+Quyết định đã chốt: PO-DECISIONS.md (mới nhất: PO-50…PO-54, 22/11/2026)
+Cần chủ đầu tư/BA: QF-E1-13 (BA, AC cho D-GEO-185), QF-E6-13; QF-E1-D01 (ARCH: org nền tảng …f001), D05 (trang `/` có thẻ vào vùng không cần mã), D07 (hai công thức dung sai — E2 chốt).
+Rủi ro / chặn: PO-53 khóa theo tài khoản có thể bị lợi dụng khóa giáo viên thật 15 phút (DoS). Token đợt này ≈ 1,5 triệu (agent) + điều phối.

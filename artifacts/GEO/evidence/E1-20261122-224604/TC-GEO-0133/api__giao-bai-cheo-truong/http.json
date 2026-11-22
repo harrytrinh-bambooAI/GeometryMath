@@ -1,0 +1,124 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000003",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b8fa-7569-b8b0-921dd3dc1808",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/teacher/assignments",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "requestBody": {
+      "classId": "00000000-0000-7000-8000-000000000012",
+      "problemVersionId": "00000000-0000-7000-8000-000000100031"
+    },
+    "status": 404,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b8ff-75b9-9878-3cc4b3d23061",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"code\":\"NOT_FOUND\",\"message\":\"Không tìm thấy dữ liệu yêu cầu.\",\"requestId\":\"01a203ef-b8ff-75b9-9878-3cc4b3d23061\"}",
+    "ms": 10
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000002",
+      "userId": "00000000-0000-7000-8000-000000000005",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b90c-7315-bb4b-46640af14fa0",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 6
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/teacher/classes/00000000-0000-7000-8000-000000000012/assignments?limit=50",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b912-7498-a856-841332c4ebd0",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "118",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"items\":[{\"id\":\"00000000-0000-7000-8000-000000000045\",\"problemCode\":\"HKG-04\",\"releaseState\":\"unset\",\"releaseRev\":0}]}",
+    "ms": 9
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000002",
+      "userId": "00000000-0000-7000-8000-000000026001",
+      "role": "STUDENT"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b91b-72ec-b7e4-fa4f53438440",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 5
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/student/assignments",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b920-77bf-9d79-84bfb6589c60",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "346",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"items\":[{\"id\":\"00000000-0000-7000-8000-000000000045\",\"problemCode\":\"HKG-04\",\"statement\":\"Hình nón có bán kính đáy 3 cm, đường sinh 5 cm. Tính diện tích xung quanh và thể tích.\",\"className\":\"9C\",\"releaseState\":\"unset\",\"allowHint\":true,\"allowQa\":true,\"verifyStatus\":\"verified\",\"progress\":{\"k\":0,\"label\":\"Chưa bắt đầu\"}}]}",
+    "ms": 10
+  }
+]

@@ -1,0 +1,96 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000003",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b719-71ef-b248-5bd10923881a",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 61
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000002",
+      "userId": "00000000-0000-7000-8000-000000000005",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b751-778e-a8fd-eb4c63f212c5",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 7
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/catalog/problems?limit=50",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b758-74cb-a645-23fe9b4f6742",
+      "content-type": "application/json",
+      "content-length": "1905",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"items\":[{\"id\":\"00000000-0000-7000-8000-000000000031\",\"code\":\"HKG-01\",\"level\":\"thpt\",\"solidKind\":\"pyramid\",\"topic\":\"Góc\",\"versionId\":\"00000000-0000-7000-8000-000000100031\",\"statement\":\"Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy.\",\"verifyStatus\":\"verified\"},{\"id\":\"00000000-0000-7000-8000-000000000032\",\"code\":\"HKG-02\",\"level\":\"thpt\",\"solidKind\":\"cube\",\"topic\":\"Khoảng cách\",\"versionId\":\"00000000-0000-7000-8000-000000100032\",\"statement\":\"Cho hình lập phương ABCD.A′B′C′D′ cạnh a. Tính khoảng cách giữa AC và B′D′.\",\"verifyStatus\":\"verified\"},{\"id\":\"00000000-0000-7000-8000-000000000033\",\"code\":\"HKG-03\",\"level\":\"thcs\",\"solidKind\":\"prism\",\"topic\":\"Thể tích\",\"versionId\":\"00000000-0000-7000-8000-000000100033\",\"statement\":\"Lăng trụ đứng tam giác có đáy là tam giác đều cạnh 4 cm, chiều cao 6 cm. Tính thể tích.\",\"verifyStatus\":\"verified\"},{\"id\":\"00000000-0000-7000-8000-000000000034\",\"code\":\"HKG-04\",\"level\":\"thcs\",\"solidKind\":\"cone\",\"topic\":\"Thể tích\",\"versionId\":\"00000000-0000-7000-8000-000000100034\",\"statement\":\"Hình nón có bán kính đáy 3 cm, đường sinh 5 cm. Tính diện tích xung quanh và thể tích.\",\"verifyStatus\":\"verified\"},{\"id\":\"00000000-0000-7000-8000-000000000035\",\"code\":\"HKG-05\",\"level\":\"thcs\",\"solidKind\":\"cylinder\",\"topic\":\"Diện tích\",\"versionId\":\"00000000-0000-7000-8000-000000100035\",\"statement\":\"Hình trụ có chiều cao 10 cm, bán kính đáy 4 cm. Tính diện tích toàn phần.\",\"verifyStatus\":\"verified\"},{\"id\":\"00000000-0000-7000-8000-000000000036\",\"code\":\"HKG-06\",\"level\":\"thpt\",\"solidKind\":\"sphere\",\"topic\":\"Mặt cầu\",\"versionId\":\"00000000-0000-7000-8000-000000100036\",\"statement\":\"Mặt cầu ngoại tiếp hình lập phương cạnh a. Tính bán kính và thể tích khối cầu.\",\"verifyStatus\":\"verified\"}]}",
+    "ms": 15
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/catalog/problems?limit=50",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b766-7554-8fa7-65793ba6d94b",
+      "content-type": "application/json",
+      "content-length": "1905",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"items\":[{\"id\":\"00000000-0000-7000-8000-000000000031\",\"code\":\"HKG-01\",\"level\":\"thpt\",\"solidKind\":\"pyramid\",\"topic\":\"Góc\",\"versionId\":\"00000000-0000-7000-8000-000000100031\",\"statement\":\"Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy.\",\"verifyStatus\":\"verified\"},{\"id\":\"00000000-0000-7000-8000-000000000032\",\"code\":\"HKG-02\",\"level\":\"thpt\",\"solidKind\":\"cube\",\"topic\":\"Khoảng cách\",\"versionId\":\"00000000-0000-7000-8000-000000100032\",\"statement\":\"Cho hình lập phương ABCD.A′B′C′D′ cạnh a. Tính khoảng cách giữa AC và B′D′.\",\"verifyStatus\":\"verified\"},{\"id\":\"00000000-0000-7000-8000-000000000033\",\"code\":\"HKG-03\",\"level\":\"thcs\",\"solidKind\":\"prism\",\"topic\":\"Thể tích\",\"versionId\":\"00000000-0000-7000-8000-000000100033\",\"statement\":\"Lăng trụ đứng tam giác có đáy là tam giác đều cạnh 4 cm, chiều cao 6 cm. Tính thể tích.\",\"verifyStatus\":\"verified\"},{\"id\":\"00000000-0000-7000-8000-000000000034\",\"code\":\"HKG-04\",\"level\":\"thcs\",\"solidKind\":\"cone\",\"topic\":\"Thể tích\",\"versionId\":\"00000000-0000-7000-8000-000000100034\",\"statement\":\"Hình nón có bán kính đáy 3 cm, đường sinh 5 cm. Tính diện tích xung quanh và thể tích.\",\"verifyStatus\":\"verified\"},{\"id\":\"00000000-0000-7000-8000-000000000035\",\"code\":\"HKG-05\",\"level\":\"thcs\",\"solidKind\":\"cylinder\",\"topic\":\"Diện tích\",\"versionId\":\"00000000-0000-7000-8000-000000100035\",\"statement\":\"Hình trụ có chiều cao 10 cm, bán kính đáy 4 cm. Tính diện tích toàn phần.\",\"verifyStatus\":\"verified\"},{\"id\":\"00000000-0000-7000-8000-000000000036\",\"code\":\"HKG-06\",\"level\":\"thpt\",\"solidKind\":\"sphere\",\"topic\":\"Mặt cầu\",\"versionId\":\"00000000-0000-7000-8000-000000100036\",\"statement\":\"Mặt cầu ngoại tiếp hình lập phương cạnh a. Tính bán kính và thể tích khối cầu.\",\"verifyStatus\":\"verified\"}]}",
+    "ms": 8
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/teacher/classes",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b774-72cb-b4fa-d246e43d49ea",
+      "content-type": "application/json",
+      "content-length": "84",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"items\":[{\"id\":\"00000000-0000-7000-8000-000000000012\",\"name\":\"9C\",\"level\":\"thcs\"}]}",
+    "ms": 11
+  }
+]
