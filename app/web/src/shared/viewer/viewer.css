@@ -79,6 +79,7 @@
 .gv-toast {
   position: absolute; top: 54px; left: 50%; transform: translateX(-50%); max-width: 90%;
   padding: 10px 14px; border-radius: var(--r-sm); background: var(--text); color: #fff; font-size: 14px; box-shadow: var(--sh); z-index: 3;
+  pointer-events: none; /* thông báo không chặn chạm vào hình bên dưới */
 }
 .gv-menu { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); z-index: 4; padding: 12px; max-width: 96%; }
 .gv-menu-title { font-weight: 700; margin-bottom: 8px; }
