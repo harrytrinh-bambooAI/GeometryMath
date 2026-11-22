@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { FormEvent } from 'react';
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 import { api } from '../../shared/api/client.ts';
 import { ApiError } from '../../shared/api/errors.ts';
 import { tid } from '../../shared/testid.ts';
@@ -62,6 +62,12 @@ export function StudentAssignmentPage() {
       </p>
       {/* E2: hình của đề (thẻ ràng buộc, nhãn máy; US-GEO-201-SC3) */}
       <AssignmentScene assignmentId={a.id} />
+      <p>
+        {/* E3: không gian làm bài trên hình 3D */}
+        <Link className="btn primary" to={`/hs/lam-bai/${encodeURIComponent(a.id)}`} data-testid={tid('e1', 'assignment-page', 'workspace')}>
+          Làm bài trên hình
+        </Link>
+      </p>
       {a.allowQa ? <QaPanel assignmentId={a.id} /> : <p className="muted">Bài này không bật Hỏi đáp.</p>}
     </div>
   );

@@ -29,7 +29,7 @@ scripts/db-init.sh >/dev/null
 
 if [ "${GEO_E2E_SKIP_BUILD:-0}" != "1" ]; then
   echo "== build máy chủ"; (cd server && ./mvnw -B -ntp -q -DskipTests package)
-  echo "== build web";     (cd web && { [ -d node_modules ] || npm ci --no-audit --no-fund; } && npm run build >/dev/null)
+  echo "== build web (móc kiểm thử __geoScene bật, PO-52)"; (cd web && { [ -d node_modules ] || npm ci --no-audit --no-fund; } && VITE_GEO_TEST_HOOKS=1 npm run build >/dev/null)
 fi
 (cd e2e && { [ -d node_modules ] || npm ci --no-audit --no-fund; })
 
