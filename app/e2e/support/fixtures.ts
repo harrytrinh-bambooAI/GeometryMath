@@ -113,7 +113,7 @@ async function snapshotExchanges(browser: Browser, log: Exchange[], testInfo: Te
       (x, i) => `<tr><td>${i + 1}</td><td><b>${esc(x.method)}</b> ${esc(x.url)}${
         x.requestHeaders ? `<pre>${esc(JSON.stringify(x.requestHeaders, null, 2))}</pre>` : ''
       }${
-        x.requestBody !== undefined ? `<pre>${esc(JSON.stringify(x.requestBody, null, 2))}</pre>` : ''
+        x.requestBody !== undefined ? `<pre>${esc(JSON.stringify(x.requestBody, null, 2).slice(0, 3000))}</pre>` : '' // E4: thân lớn (ảnh base64) cắt như phản hồi
       }</td><td class="s${String(x.status)[0]}">${x.status}<br><small>${x.ms} ms</small><br><small>${esc(
         x.responseHeaders['x-request-id'] ?? '',
       )}</small></td><td><pre>${esc(pretty(x.responseBody)).slice(0, 3000)}</pre></td></tr>`,
