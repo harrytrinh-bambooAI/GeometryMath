@@ -47,13 +47,18 @@ public class AiTestHookController {
    * @param lane làn kiểm thử (tiêu đề X-Geo-Test-Lane)
    * @param model đổi model đang hiệu lực
    * @param timeoutMs đổi thời gian chờ đang hiệu lực
+   * @param scenario kịch bản trả lời "scene" (E2: F-GEO-111, F-GEO-112; "" = bỏ) cho userId/lane
    */
-  public record AiHook(String mode, String userId, String lane, String model, Long timeoutMs) {}
+  public record AiHook(
+      String mode, String userId, String lane, String model, Long timeoutMs, String scenario) {}
 
   @PostMapping("/test-hooks/ai")
   public Map<String, Object> set(@RequestBody AiHook h) {
     if (h.mode() != null) {
       control.set(h.userId(), h.lane(), Simulation.valueOf(h.mode().toUpperCase()));
+    }
+    if (h.scenario() != null) {
+      control.setScenario(h.userId(), h.lane(), h.scenario());
     }
     if (h.model() != null) {
       settings.model(h.model());

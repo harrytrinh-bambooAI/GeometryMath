@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import vn.geo.server.geometry.api.AnswerMatch;
 
 /**
  * Đáp số dạng chữ → các đại lượng số (M-GEO-03): "Sxq = 15π cm²; V = 12π cm³" thành hai đại lượng;
  * "a" theo tham số a; "24√3 cm³", "45°", "(√3/2)·π·a³". Bỏ đơn vị; dấu phẩy thập phân. Chỉ dùng cho
- * kiểm chứng đáp số của bộ đề chuẩn (engine đầy đủ thuộc E2).
+ * kiểm chứng đáp số của bộ đề chuẩn; phép tính và dung sai dùng chung {@link AnswerMatch} của E2.
  */
 public final class AnswerExpr {
 
@@ -19,7 +20,7 @@ public final class AnswerExpr {
     }
 
     public double valueAt(double a) {
-      return new Parser(expr, a).parse();
+      return new AnswerMatch.Quantity(name, expr, decimals).valueAt(a);
     }
   }
 
@@ -62,8 +63,9 @@ public final class AnswerExpr {
 
   /**
    * Hai đáp số khớp từng đại lượng (theo tên nếu cả hai có tên, nếu không theo thứ tự), tại a = 1,
-   * 2, 3. Dung sai: max(1e-4·|tham chiếu|, nửa đơn vị chữ số thập phân cuối mà đáp số ghi) + 1e-12
-   * (D-GEO-040, 163, 178 PROVISIONAL).
+   * 2, 3. Dung sai: công thức DUY NHẤT của engine E2 ({@link AnswerMatch#tolerance}, BR-GEO-134;
+   * chốt QF-E1-D07): đại lượng có tham số a dùng tương đối 1e-4·max(1, |q|), không tham số dùng
+   * max(1e-6, nửa đơn vị chữ số thập phân cuối mà đáp số ghi); cộng ε = 1e-12.
    */
   public static boolean matches(String given, List<Quantity> reference) {
     List<Quantity> g;
@@ -81,9 +83,8 @@ public final class AnswerExpr {
         for (double a : new double[] {1, 2, 3}) {
           double q = ref.valueAt(a);
           double v = mine.valueAt(a);
-          double half = mine.decimals() > 0 ? 0.5 * Math.pow(10, -mine.decimals()) : 0;
-          double tol = Math.max(1e-4 * Math.abs(q), half) + 1e-12;
-          if (!(Math.abs(v - q) <= tol)) {
+          boolean parametric = ref.dependsOnA() || mine.dependsOnA();
+          if (!AnswerMatch.close(v, q, parametric, mine.decimals())) {
             return false;
           }
         }
@@ -123,134 +124,5 @@ public final class AnswerExpr {
       out.add(Map.of("name", q.name(), "expr", q.expr(), "values", values));
     }
     return out;
-  }
-
-  /** Bộ phân tích biểu thức: + − · × * / ^ ² ³ √ π a ⅓, nhân ngầm, ngoặc. */
-  private static final class Parser {
-    private final String s;
-    private final double a;
-    private int i;
-
-    Parser(String expr, double a) {
-      this.s = expr.replace(',', '.').replace('−', '-').replace('–', '-');
-      this.a = a;
-    }
-
-    double parse() {
-      double v = expr();
-      if (i != s.length()) {
-        throw new IllegalArgumentException("thừa ký tự ở " + i + ": " + s);
-      }
-      return v;
-    }
-
-    private double expr() {
-      double v = term();
-      while (i < s.length()) {
-        char c = s.charAt(i);
-        if (c == '+') {
-          i++;
-          v += term();
-        } else if (c == '-') {
-          i++;
-          v -= term();
-        } else {
-          break;
-        }
-      }
-      return v;
-    }
-
-    private double term() {
-      double v = power();
-      while (i < s.length()) {
-        char c = s.charAt(i);
-        if (c == '*' || c == '·' || c == '×' || c == '⋅') {
-          i++;
-          v *= power();
-        } else if (c == '/') {
-          i++;
-          v /= power();
-        } else if (startsPrimary(c)) {
-          v *= power();
-        } else {
-          break;
-        }
-      }
-      return v;
-    }
-
-    private double power() {
-      double v = unary();
-      while (i < s.length()) {
-        char c = s.charAt(i);
-        if (c == '²') {
-          i++;
-          v = v * v;
-        } else if (c == '³') {
-          i++;
-          v = v * v * v;
-        } else if (c == '^') {
-          i++;
-          v = Math.pow(v, unary());
-        } else {
-          break;
-        }
-      }
-      return v;
-    }
-
-    private double unary() {
-      if (i >= s.length()) {
-        throw new IllegalArgumentException("thiếu toán hạng: " + s);
-      }
-      char c = s.charAt(i);
-      if (c == '-') {
-        i++;
-        return -unary();
-      }
-      if (c == '√') {
-        i++;
-        return Math.sqrt(power());
-      }
-      return primary();
-    }
-
-    private double primary() {
-      char c = s.charAt(i);
-      if (c == '(') {
-        i++;
-        double v = expr();
-        if (i >= s.length() || s.charAt(i) != ')') {
-          throw new IllegalArgumentException("thiếu ')': " + s);
-        }
-        i++;
-        return v;
-      }
-      if (c == 'π') {
-        i++;
-        return Math.PI;
-      }
-      if (c == '⅓') {
-        i++;
-        return 1.0 / 3;
-      }
-      if (c == 'a') {
-        i++;
-        return a;
-      }
-      int st = i;
-      while (i < s.length() && (Character.isDigit(s.charAt(i)) || s.charAt(i) == '.')) {
-        i++;
-      }
-      if (st == i) {
-        throw new IllegalArgumentException("ký tự lạ '" + c + "' trong: " + s);
-      }
-      return Double.parseDouble(s.substring(st, i));
-    }
-
-    private static boolean startsPrimary(char c) {
-      return c == '(' || c == 'π' || c == 'a' || c == '√' || c == '⅓' || Character.isDigit(c);
-    }
   }
 }
