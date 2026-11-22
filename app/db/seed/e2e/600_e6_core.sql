@@ -44,3 +44,17 @@ FROM (VALUES
 
 INSERT INTO org (id, parent_id, kind, name) VALUES
   ('00000000-0000-7000-8000-000000e60001', '00000000-0000-7000-8000-00000000f001', 'group', 'Nhóm thử E6');
+
+-- 4) Chỉ dữ liệu thử (seed không chạy ở môi trường thật): chép lời giải của phiên bản hiện hành sang phiên bản lời giải mới
+--    (số 9) cho ca US-GEO-602-FC5 ("cùng đề nhưng lời giải đã có phiên bản mới"); bước cuối đổi chữ để hai bản khác nhau.
+CREATE OR REPLACE FUNCTION fn_e6_test_copy_solution(p_code text, p_v9 uuid) RETURNS integer
+LANGUAGE sql AS $$
+  INSERT INTO solution (org_id, problem_version_id, final_answer, steps, schema_version, answer_forms, answer_forms_version,
+                        model, prompt_version, author_user_id, ai_authored)
+  SELECT s.org_id, p_v9, s.final_answer, jsonb_set(s.steps, '{0,why}', '"Phiên bản lời giải 9 (dữ liệu thử E6)."'),
+         s.schema_version, s.answer_forms, s.answer_forms_version, s.model, s.prompt_version, s.author_user_id, s.ai_authored
+  FROM problem p JOIN solution s ON s.org_id = p.org_id AND s.problem_version_id = p.current_version_id
+  WHERE p.org_id = platform_org_id() AND p.code = p_code
+  ON CONFLICT DO NOTHING;
+  SELECT 1;
+$$;

@@ -111,6 +111,43 @@ public class E6SandboxRepository {
   }
 
   /**
+   * US-GEO-602-FC5: một phiên bản lời giải mới của đề (số phiên bản 9, không đổi phiên bản hiện
+   * hành của kho để không giẫm ca E5) — cùng problem, khác problem_version. Lũy đẳng; trả id phiên
+   * bản mới.
+   */
+  public UUID ensureNewVersion(String code) {
+    jdbc.sql(
+            """
+            INSERT INTO problem_version (id, org_id, problem_id, version, statement, statement_hash, verify_status,
+                                         verification_report_id, approval_status, ai_authored, created_by)
+            SELECT uuid_v7(), pv.org_id, pv.problem_id, 9, pv.statement, sha256(convert_to('e6-v9:' || p.code, 'UTF8')),
+                   'needs_review', NULL, pv.approval_status, pv.ai_authored, pv.created_by
+            FROM problem p JOIN problem_version pv ON pv.org_id = p.org_id AND pv.id = p.current_version_id
+            WHERE p.org_id = platform_org_id() AND p.code = :code AND p.source = 'catalog'
+            ON CONFLICT (problem_id, version) DO NOTHING
+            -- sqllint:allow=ownership,tenant móc kiểm thử E6 dev/test: phiên bản lời giải mới (US-GEO-504-SC5)
+            """)
+        .param("code", code)
+        .update();
+    UUID v9 =
+        jdbc.sql(
+                """
+                SELECT pv.id FROM problem p JOIN problem_version pv ON pv.org_id = p.org_id AND pv.problem_id = p.id
+                WHERE p.org_id = platform_org_id() AND p.code = :code AND pv.version = 9 LIMIT 1
+                -- sqllint:allow=ownership,tenant móc kiểm thử E6 dev/test
+                """)
+            .param("code", code)
+            .query(UUID.class)
+            .single();
+    jdbc.sql("SELECT fn_e6_test_copy_solution(:code, :v9)")
+        .param("code", code)
+        .param("v9", v9)
+        .query((rs, i) -> 0)
+        .list();
+    return v9;
+  }
+
+  /**
    * D-GEO-169: đặt giờ mở = giờ máy chủ + n giây (n có thể âm tới lúc tạo bài). Chỉ móc kiểm thử;
    * đường thật là fn_set_release. Trả giờ mở mới.
    */

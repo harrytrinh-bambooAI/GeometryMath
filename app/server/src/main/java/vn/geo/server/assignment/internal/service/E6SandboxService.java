@@ -113,6 +113,11 @@ public class E6SandboxService {
         org, new Person(teacher, tokens.issue(new AuthPrincipal(org, teacher, Role.TEACHER))), out);
   }
 
+  /** US-GEO-602-FC5: phiên bản lời giải mới của một đề kho (không đổi phiên bản hiện hành). */
+  public UUID newVersion(String code) {
+    return repo.ensureNewVersion(code);
+  }
+
   /** D-GEO-169: giờ mở = giờ máy chủ + n giây. */
   public OffsetDateTime releaseIn(UUID assignmentId, double seconds) {
     return repo.setReleaseIn(assignmentId, seconds);

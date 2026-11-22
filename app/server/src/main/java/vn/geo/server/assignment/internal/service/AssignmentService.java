@@ -72,12 +72,15 @@ public class AssignmentService {
   private final vn.geo.server.assignment.internal.repo.ReleaseRepository release;
   private final Paging paging;
   private final JsonMapper mapper;
+  private final SolutionRateLimiter limiter;
 
   public AssignmentService(
       AssignmentRepository repo,
       vn.geo.server.assignment.internal.repo.ReleaseRepository release,
       Paging paging,
-      JsonMapper mapper) {
+      JsonMapper mapper,
+      SolutionRateLimiter limiter) {
+    this.limiter = limiter;
     this.repo = repo;
     this.release = release;
     this.paging = paging;
@@ -101,6 +104,7 @@ public class AssignmentService {
 
   public SolutionView mySolution(UUID id) {
     AuthPrincipal p = Roles.require(Role.STUDENT);
+    limiter.check(p.userId()); // NFR-GEO-056: 5 yêu cầu / 10 giây
     AssignmentRepository.Solution s = repo.solution(p.userId(), id);
     return switch (s.status()) {
       case "OK" -> new SolutionView(s.finalAnswer(), mapper.readTree(s.steps()));

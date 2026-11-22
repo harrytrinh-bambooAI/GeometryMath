@@ -57,6 +57,11 @@ public class E6TestHookController {
         "releaseAt", sandbox.releaseIn(r.assignmentId(), r.seconds() == null ? 0 : r.seconds()));
   }
 
+  @PostMapping("/test-hooks/e6/new-version")
+  public Map<String, UUID> newVersion(@RequestParam String code) {
+    return Map.of("versionId", sandbox.newVersion(code));
+  }
+
   @PostMapping("/test-hooks/e6/probe/run")
   public Map<String, Object> run(@RequestBody(required = false) ProbeRunner.RunOptions o) {
     return runner.view(runner.run(o == null ? new ProbeRunner.RunOptions(null, null, false) : o));
