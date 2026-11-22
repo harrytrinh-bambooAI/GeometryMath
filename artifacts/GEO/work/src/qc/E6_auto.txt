@@ -1,0 +1,6 @@
+# E6 — cột "Tự động hóa" (PO-50): chỉ ghi case khác mặc định của gen_cases.py (auto_default).
+# TC-GEO-nnnn | E2E-UI / E2E-API / IT / Manual | lý do (bắt buộc với Manual)
+TC-GEO-0644 | E2E-UI | Playwright giả lập iPhone màn dọc; kiểm bố cục
+TC-GEO-0693 | E2E-UI | Playwright cắt mạng (offline) qua giờ mở rồi nối lại (NFR-GEO-008)
+TC-GEO-0866 | Manual | bộ chọn ngày giờ gốc của điện thoại thật; Playwright giả lập dùng bộ chọn của máy tính
+TC-GEO-0867 | E2E-UI | Playwright giả lập điện thoại; hộp xác nhận "Mở ngay" là phần tử của trang
