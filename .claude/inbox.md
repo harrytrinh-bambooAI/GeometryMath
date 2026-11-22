@@ -71,3 +71,11 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
   1. [E5, tự nêu] Giáo viên bất kỳ giao được đề thuộc bank thử qua API; quyền bank chỉ áp ở danh sách/đếm.
   (+ phát hiện soát E4/E5 bổ sung bên dưới khi có)
 - **Xong khi:** make verify xanh trên nhánh tích hợp; make e2e hai lượt đạt toàn bộ.
+- Phát hiện soát E5 (Sonnet, 23/11/2026) — 4 BLOCKER cùng gốc "quyền bank chỉ áp ở danh sách/đếm" (mở rộng mục 1):
+  2. `V10__schema_mvp.sql:886-900` fn_create_assignment không kiểm bank → giao đề ngoài bank (201).
+  3. `V10:1033-1048` fn_get_solution_teacher + `GET /api/v1/teacher/problems/{versionId}/solution` lộ lời giải/đáp số đề ngoài bank.
+  4. `CatalogRepository.detail()` (~128-137) `GET /api/v1/teacher/catalog/problems/{versionId}` lộ đề/cảnh/gợi ý/lời giải.
+  5. `SceneRepository.catalogVersion()` (133-150) + `GeometryController:73` lộ đề/cảnh/gợi ý.
+  Sửa: điều kiện `p.bank='main' OR EXISTS(catalog_bank_access WHERE org_id=:orgId AND bank=p.bank)` ở cả 4 chỗ, trả NOT_FOUND; thêm guard Java dùng chung (vì E6 có thể định nghĩa lại fn_create_assignment); TC Dev "giáo viên ngoài bank → 404" cho chi tiết/lời giải/cảnh/giao bài.
+  6. [minor] `CatalogTestHooks.java:~35` mã HKM-%02d từ count+1 có thể trùng khi chạy song song → sinh mã duy nhất.
+  7. [minor] TC-0533 chưa chạm ca đề mới chèn TRƯỚC con trỏ (BR-GEO-217).
