@@ -1,4 +1,5 @@
-import { dist, sub, type Vec3 } from './geometry.ts';
+import type { Scene } from '../scene/types.ts';
+import { add, dist, scale, sub, unit as unitVec, type Vec3 } from './geometry.ts';
 import { parseMeasure } from './measures.ts';
 import type { MeasureRef, ViewerSolid } from './types.ts';
 
@@ -79,11 +80,65 @@ export function topologyFor(kind: SolidKind, coords: Coords): Pick<ViewerSolid, 
   return { edges, faces };
 }
 
+/**
+ * Đại lượng ẩn theo hợp đồng cảnh v1 (`ang:S-D-A`, `len:O-O′`) hoặc dạng chữ (`góc SDA`, `d(AC, B′D′)`).
+ * Mở rộng của E3 cùng cú pháp: `dll:A-C|B′-D′`, `dpp:S|A-B-C-D`, `dff:A-B-C-D|A′-B′-C′-D′`, `dpl:S|A-B`.
+ */
+export function parseHiddenOne(s: string): MeasureRef | null {
+  const m = /^(ang|len|dll|dpp|dff|dpl):(.+)$/.exec(s.trim());
+  if (!m) return parseMeasure(s);
+  const parts = m[2]!.split('|').map((x) => x.split('-').map((n) => n.trim()).filter(Boolean));
+  const [x = [], y = []] = parts;
+  switch (m[1]) {
+    case 'ang':
+      return x.length === 3 ? { kind: 'ang', a: x[0]!, o: x[1]!, b: x[2]! } : null;
+    case 'len':
+      return x.length === 2 ? { kind: 'len', a: x[0]!, b: x[1]! } : null;
+    case 'dll':
+      return x.length === 2 && y.length === 2 ? { kind: 'dll', l1: [x[0]!, x[1]!], l2: [y[0]!, y[1]!] } : null;
+    case 'dpp':
+      return x.length === 1 && y.length >= 3 ? { kind: 'dpp', p: x[0]!, plane: y } : null;
+    case 'dpl':
+      return x.length === 1 && y.length === 2 ? { kind: 'dpl', p: x[0]!, line: [y[0]!, y[1]!] } : null;
+    case 'dff':
+      return x.length >= 3 && y.length >= 3 ? { kind: 'dff', f1: x, f2: y } : null;
+  }
+  return null;
+}
 export function parseHidden(list: readonly string[] | undefined): MeasureRef[] {
   return (list ?? []).flatMap((s) => {
-    const m = parseMeasure(s);
+    const m = parseHiddenOne(s);
     return m ? [m] : [];
   });
+}
+
+/** Hợp đồng cảnh v1 của E2 (`app/docs/SCENE-CONTRACT.md`) → đầu vào bộ xem. */
+export function fromScene(scene: Scene): ViewerSolid {
+  const points = scene.points.map((p) => ({ name: p.name, pos: [p.x, p.y, p.z] as Vec3 }));
+  const circles: NonNullable<ViewerSolid['circles']> = [];
+  for (const [i, sf] of scene.surfaces.entries()) {
+    const axis = unitVec(sf.axis ?? [0, 0, 1]);
+    if (sf.kind === 'cone') circles.push({ id: `đáy-${i}`, center: sf.center, radius: sf.radius, normal: axis });
+    if (sf.kind === 'cylinder') {
+      circles.push({ id: `đáy-dưới-${i}`, center: sf.center, radius: sf.radius, normal: axis });
+      circles.push({ id: `đáy-trên-${i}`, center: add(sf.center, scale(axis, sf.height ?? 0)), radius: sf.radius, normal: axis });
+    }
+    if (sf.kind === 'sphere') {
+      circles.push({ id: `xích-đạo-${i}`, center: sf.center, radius: sf.radius, normal: [0, 0, 1] });
+      circles.push({ id: `kinh-tuyến-${i}`, center: sf.center, radius: sf.radius, normal: [0, 1, 0] });
+    }
+  }
+  const a = scene.params.a;
+  return {
+    points,
+    edges: scene.edges.map(([x, y]) => [x, y] as [string, string]),
+    faces: scene.faces.map((f) => [...f]),
+    circles,
+    unit: scene.unit === 'a' && typeof a === 'number' && a > 0 ? { symbol: 'a', value: a } : null,
+    unitSuffix: scene.unit === 'cm' ? 'cm' : '',
+    hiddenMeasures: parseHidden(scene.hiddenMeasures),
+    chips: scene.chips.map((c) => c.text),
+  };
 }
 
 export function fromCoords(

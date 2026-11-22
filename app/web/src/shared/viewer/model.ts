@@ -97,6 +97,7 @@ export interface Base {
   faces: FaceObj[];
   circles: NonNullable<ViewerSolid['circles']>;
   unit: ViewerSolid['unit'];
+  unitSuffix: string;
   hidden: GeoMeasure[];
   center: Vec3;
   radius: number;
@@ -187,7 +188,7 @@ export function buildBase(solid: ViewerSolid): Base {
     const g = resolveMeasure(m, pt);
     return g ? [g] : [];
   });
-  return { points, edges, faces, circles: solid.circles ?? [], unit: solid.unit ?? null, hidden, center, radius, rank };
+  return { points, edges, faces, circles: solid.circles ?? [], unit: solid.unit ?? null, unitSuffix: solid.unitSuffix ?? '', hidden, center, radius, rank };
 }
 function circleBox(c: { center: Vec3; radius: number; normal: Vec3 }): Vec3[] {
   const n = unit(c.normal);
@@ -460,7 +461,11 @@ export function extendTap(s: FigureState, t: Target | null): Outcome {
 function finishMeasure(s: FigureState, kind: Measure['kind'], ref: MeasureRef, label: string, value: number, draw: Measure['draw']): Outcome {
   const g = resolveMeasure(ref, (n) => pointPos(s, n));
   const hidden = s.lock === 'locked' && !!g && s.base.hidden.some((h) => sameMeasure(h, g));
-  const text = hidden ? null : kind === 'angle' ? formatAngle(value) : formatLength(value, s.base.unit);
+  const text = hidden
+    ? null
+    : kind === 'angle'
+      ? formatAngle(value)
+      : `${formatLength(value, s.base.unit)}${s.base.unitSuffix && !s.base.unit ? ` ${s.base.unitSuffix}` : ''}`;
   const m: Measure = { id: `m${s.seq + 1}`, kind, ref, label, value: hidden ? NaN : value, text, hidden, draw };
   const state = bump({ ...s, measures: [...s.measures, m], pending: [] });
   return { state, op: kind === 'angle' ? 'angle' : 'length', notice: hidden ? msg('24') : undefined };

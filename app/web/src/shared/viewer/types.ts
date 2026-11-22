@@ -15,7 +15,11 @@ export interface ViewerSolid {
   faces: string[][];
   circles?: Array<{ id: string; center: Vec3; radius: number; normal: Vec3 }>;
   unit?: LengthUnit | null;
+  /** Đơn vị viết sau số đo khi hình không có tham số (ví dụ "cm"). */
+  unitSuffix?: string;
   hiddenMeasures?: MeasureRef[];
+  /** Thẻ ràng buộc ở góc dưới trái (BR-GEO-130), ví dụ "SA = a". */
+  chips?: string[];
 }
 
 /** Một đại lượng đo được, mô tả bằng tên đối tượng (dùng cho danh sách ẩn và cho kết quả đo). */

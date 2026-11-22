@@ -1,0 +1,115 @@
+/* Bộ xem 3D dùng chung (E3). Màu lấy từ token (src/styles/tokens.css); bố cục điện thoại ≤ 600px (mvp-08). */
+.gv-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  height: 100%;
+}
+.gv-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 300px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background-color: var(--panel);
+  background-image: radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 18px 18px;
+  overflow: hidden;
+  touch-action: none;
+}
+.gv-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  cursor: grab;
+}
+.gv-viewer:not([data-tool='free']) .gv-canvas {
+  cursor: crosshair;
+}
+
+/* lớp hình */
+.gv-face { fill: var(--pri); fill-opacity: 0.06; stroke: none; }
+.gv-plane { fill: var(--pur); fill-opacity: 0.16; stroke: var(--pur); stroke-opacity: 0.4; stroke-width: 1; }
+.gv-extface { fill: var(--sky); fill-opacity: 0.12; stroke: var(--sky); stroke-dasharray: 4 4; stroke-width: 1; }
+.gv-face.gv-selected, .gv-plane.gv-selected, .gv-extface.gv-selected { fill: var(--org); fill-opacity: 0.32; }
+.gv-face.gv-hl { fill: var(--org); fill-opacity: 0.2; }
+.gv-circle { fill: none; stroke: var(--text); stroke-width: 1.6; }
+.gv-line line { stroke: var(--text); stroke-width: 2.2; stroke-linecap: round; }
+.gv-line line.gv-dash { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 6 5; }
+.gv-segment line, .gv-segment line.gv-dash { stroke: var(--pur); }
+.gv-extended line, .gv-extended line.gv-dash { stroke: var(--sky); stroke-width: 1.4; }
+.gv-line.gv-selected line, .gv-line.gv-hl line { stroke: var(--org); stroke-width: 4.5; }
+.gv-trace line { stroke: var(--org); stroke-width: 3.4; stroke-linecap: round; }
+.gv-trace line.gv-dash { stroke-dasharray: 7 5; }
+.gv-mline { stroke: var(--grn); stroke-width: 3; }
+.gv-perp { stroke-dasharray: 5 4; }
+.gv-arc { fill: none; stroke: var(--grn); stroke-width: 2.4; }
+.gv-point circle { fill: var(--text); stroke: var(--panel); stroke-width: 1.5; }
+.gv-point.gv-user circle { fill: var(--pur); }
+.gv-point.gv-selected circle, .gv-point.gv-hl circle { fill: var(--org); }
+.gv-point text { font: 700 17px var(--font); fill: var(--text); paint-order: stroke; stroke: var(--panel); stroke-width: 4px; }
+.gv-point.gv-user text { fill: var(--pur); }
+.gv-axis line { stroke: var(--sky); stroke-width: 1.6; }
+.gv-axis text { font: 700 15px var(--font); fill: var(--sky); }
+
+/* lớp chữ trên khung */
+.gv-views { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 6px; }
+.gv-view {
+  min-height: 36px; padding: 6px 12px; border: 1px solid var(--line); border-radius: var(--r-sm);
+  background: var(--panel); color: var(--muted); font: 600 13px var(--font); box-shadow: var(--sh); cursor: pointer;
+}
+.gv-view[aria-pressed='true'] { color: var(--pri); border-color: var(--pri); }
+.gv-selection { position: absolute; top: 10px; left: 10px; background: var(--org-s); color: var(--org); font-weight: 700; }
+.gv-banner {
+  position: absolute; left: 10px; right: 160px; top: 52px; padding: 8px 12px; border-radius: var(--r-sm);
+  background: var(--yel-s); color: var(--text); font-size: 13px; border: 1px solid var(--yel);
+}
+.gv-chips { position: absolute; left: 10px; bottom: 10px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; max-width: 60%; }
+.gv-chip {
+  padding: 4px 10px; border: 1.5px solid var(--org); border-radius: 8px; background: var(--panel);
+  color: var(--org); font: 600 13px var(--font-mono);
+}
+.gv-measure { border-color: var(--grn); color: var(--grn); }
+.gv-measure.gv-hidden { border-color: var(--faint); color: var(--muted); }
+.gv-toast {
+  position: absolute; top: 54px; left: 50%; transform: translateX(-50%); max-width: 90%;
+  padding: 10px 14px; border-radius: var(--r-sm); background: var(--text); color: #fff; font-size: 14px; box-shadow: var(--sh); z-index: 3;
+}
+.gv-menu { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); z-index: 4; padding: 12px; max-width: 96%; }
+.gv-menu-title { font-weight: 700; margin-bottom: 8px; }
+.gv-menu-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 6px; }
+.gv-menu .btn { min-height: 44px; }
+.gv-ratio { width: 56px; min-height: 44px; text-align: center; font-size: 16px; }
+.gv-inline-error { color: var(--red); margin-top: 8px; font-size: 14px; }
+
+/* thanh công cụ */
+.gv-toolbar {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; padding: 6px;
+  border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); box-shadow: var(--sh);
+}
+.gv-tool {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  min-width: 64px; min-height: 52px; padding: 4px 8px; border: 0; border-radius: var(--r-sm);
+  background: transparent; color: var(--muted); font: 600 12px var(--font); cursor: pointer;
+}
+.gv-tool svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.gv-tool[aria-pressed='true'] { background: var(--pri); color: #fff; }
+.gv-tool-more { display: none; }
+
+@media (max-width: 600px) {
+  .gv-stage { min-height: 0; }
+  .gv-views { top: 8px; right: 8px; }
+  .gv-view { min-height: 44px; font-size: 12px; padding: 4px 8px; }
+  .gv-tool { min-width: 44px; min-height: 44px; width: 48px; height: 48px; padding: 0; }
+  .gv-tool span { display: none; }
+  .gv-extra { display: none; }
+  .gv-tool-more { display: flex; }
+  .gv-more-open .gv-extra { display: flex; }
+  .gv-chips { max-width: 55%; }
+  .gv-banner { right: 10px; }
+}
