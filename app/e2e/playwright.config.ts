@@ -13,6 +13,7 @@ import type { Project } from '@playwright/test';
  * - `api`        tests/**\/*.api.spec.ts, chỉ HTTP; bằng chứng: trace + ảnh chụp bảng yêu cầu/phản hồi + http.json.
  * - `ui-chromium` tests/**\/*.ui.spec.ts trên Chromium máy tính (giáo viên, F-GEO-102); ảnh chụp + trace + video.
  * - `ui-webkit`  cùng test trên WebKit iPad màn ngang (học sinh, F-GEO-100; iPad Safari = WebKit theo PO-01).
+ * - `ui-iphone`  tests/**\/*.iphone.spec.ts trên WebKit iPhone màn dọc (F-GEO-101; E3 US-GEO-306).
  * Mọi kiểm tra giờ chạy với múi giờ Asia/Ho_Chi_Minh (BR-GEO-233).
  */
 function vnStamp(): string {
@@ -50,6 +51,12 @@ if (withWebkit) {
     name: 'ui-webkit',
     testMatch: /.*\.ui\.spec\.ts/,
     use: { ...devices['iPad (gen 7) landscape'], baseURL: webURL, ...uiEvidence },
+  });
+  // E3 (US-GEO-306): bố cục điện thoại trên WebKit iPhone màn dọc (F-GEO-101); chỉ các tệp *.iphone.spec.ts
+  projects.push({
+    name: 'ui-iphone',
+    testMatch: /.*\.iphone\.spec\.ts/,
+    use: { ...devices['iPhone 13'], baseURL: webURL, ...uiEvidence },
   });
 }
 
