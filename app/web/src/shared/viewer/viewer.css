@@ -106,7 +106,8 @@
   .gv-stage { min-height: 0; }
   .gv-views { top: 8px; right: 8px; }
   .gv-view { min-height: 44px; font-size: 12px; padding: 4px 8px; }
-  .gv-tool { min-width: 44px; min-height: 44px; width: 48px; height: 48px; padding: 0; }
+  .gv-toolbar { gap: 2px; padding: 4px; justify-content: space-between; }
+  .gv-tool { min-width: 44px; min-height: 44px; width: 44px; height: 48px; padding: 0; }
   .gv-tool span { display: none; }
   .gv-extra { display: none; }
   .gv-tool-more { display: flex; }

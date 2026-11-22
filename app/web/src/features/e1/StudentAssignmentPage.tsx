@@ -60,14 +60,15 @@ export function StudentAssignmentPage() {
           {a.progress.k}/3 · {a.progress.label}
         </span>
       </p>
-      {/* E2: hình của đề (thẻ ràng buộc, nhãn máy; US-GEO-201-SC3) */}
-      <AssignmentScene assignmentId={a.id} />
       <p>
         {/* E3: không gian làm bài trên hình 3D */}
         <Link className="btn primary" to={`/hs/lam-bai/${encodeURIComponent(a.id)}`} data-testid={tid('e1', 'assignment-page', 'workspace')}>
           Làm bài trên hình
         </Link>
       </p>
+      {/* E2: hình của đề (thẻ ràng buộc, nhãn máy; US-GEO-201-SC3) */}
+      <AssignmentScene assignmentId={a.id} />
+
       {a.allowQa ? <QaPanel assignmentId={a.id} /> : <p className="muted">Bài này không bật Hỏi đáp.</p>}
     </div>
   );

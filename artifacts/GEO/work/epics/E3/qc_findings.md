@@ -39,3 +39,16 @@
 
 - Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa". Không case nào bị bỏ.
 - Đối chiếu: 54 / 54 tiêu chí có case (100%); 54 / 54 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.
+
+## Dev (E3, Đợt 1; 23-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E3-D01 | Note | TC-GEO-0334, 0352 ("Giáo viên mẫu bấm Mở ngay") | Màn giáo viên của E1 chưa có nút "Mở ngay"; bấm trên BG-1 thật sẽ đổi trạng thái của các ca khác chạy song song | Gọi `POST /api/v1/teacher/assignments/{id}/release {openNow}` (điểm cuối E1) trên bài HKG-01 Sắp mở của làn riêng E3 (seed `300_e3_core.sql`, mỗi ca × dự án một lớp) | E5–E7 · nút giao diện |
+| QF-E3-D02 | Note | TC-GEO-0159 (E1) × seed E3 | TC-GEO-0159 đếm cứng số lớp (2), học sinh (10) của THPT Mẫu A và số trường (2) | Dữ liệu E3 nằm trong tổ chức riêng kiểu `group` ("Nhóm thử E3"); không đổi seed và test của E1 | QC · ghi nhận |
+| QF-E3-D03 | Note | TC-GEO-0305, 0308 (chụm/dang ngón trên iPad) | Playwright không có cử chỉ hai ngón | Phát hai con trỏ cảm ứng (PointerEvent `touch`) vào khung hình; cảm ứng thật vẫn ở TC-GEO-0301, 0342 (Manual) | QC · ghi nhận |
+| QF-E3-D04 | Note | TC-GEO-0309, 0313 (E2E-API) | Xoay/thu phóng/đặt lại là thao tác trên trình duyệt | Ca API kiểm phía máy chủ (sự kiện mở bài, `toolCount` qua Theo dõi lớp, lô gửi lại không tính hai lần); phía trình duyệt kiểm `opCount = 0` khi xoay ở TC-GEO-0300 | QC · ghi nhận |
+| QF-E3-D05 | Note | TC-GEO-0350 (lăng trụ đáy chữ L) | Kho đề không có hình này | Trang thử `/hs/thu-hinh/lang-tru-l` chỉ có khi bật móc kiểm thử (dev, `VITE_GEO_TEST_HOOKS=1`); vùng tô kiểm bằng `isPointInFill` của phần tử SVG tại điểm mẫu trong/ngoài, kèm ảnh chụp | QC · ghi nhận |
+| QF-E3-D06 | Fixed | US-GEO-305-SC6; US-GEO-307-SC3 | (1) Thông báo MSG-GEO-24 che đỉnh S nên lần đo ngay sau đó không nhận chạm; (2) chọn mặt lõm theo trọng tâm đỉnh rơi vào đỉnh lõm | (1) thông báo không nhận chạm (`pointer-events: none`); (2) bộ chọn dùng trọng tâm diện tích các tam giác tô | E3 · xong |
+| QF-E3-D07 | Note | TC-GEO-0335 ("đo đường sinh") | Hình mẫu nón của engine E2 có S, O và M trên đường tròn đáy | Đo SM trên `/hs/hinh-mau/cone?r=2,5&h=4` | QC · ghi nhận |
+| QF-E3-D08 | Note | US-GEO-306-SC4; tab Lời giải, Hỏi | Nội dung tab thuộc E4 | E3 dựng khung tab + bảng trượt điện thoại và chỗ cắm `slots` (`features/e3/WorkspacePanel.tsx`); tab Gợi ý tối thiểu gọi `/hints/{level}` | E4 |
