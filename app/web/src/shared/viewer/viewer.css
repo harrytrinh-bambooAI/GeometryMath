@@ -115,3 +115,10 @@
   .gv-chips { max-width: 55%; }
   .gv-banner { right: 10px; }
 }
+
+/* E4: lớp vẽ của lời giải (overlay.tsx) */
+.gv-sol path { fill: none; stroke: var(--org); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.gv-sol-angle path { fill: var(--org); fill-opacity: 0.25; stroke-width: 2.5; }
+.gv-sol-segment path { stroke-width: 5; stroke-opacity: 0.85; }
+.gv-sol-right path { stroke-width: 2; }
+.gv-sol text { fill: var(--org); font-weight: 800; font-size: 14px; pointer-events: none; }

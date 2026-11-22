@@ -43,3 +43,15 @@
 
 - Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa". Không case nào bị bỏ.
 - Đối chiếu: 93 / 93 tiêu chí có case (100%); 95 / 95 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.
+
+## Dev (E4, Đợt 1; 23-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E4-D01 | Question | US-GEO-406-FC6, TC-GEO-0486 | Giờ mở BG-7 "T0 + 30 phút" không chờ được trong E2E | Test thu về T0 + 20 giây (cùng chuỗi Sắp mở → Đã mở), ghi trong test | QC · R3 |
+| QF-E4-D02 | Fixed (Dev) | US-GEO-405-FC4, 410-SC5; BR-GEO-02 | Kiểm soát đáp án đầy đủ thuộc E6 (US-GEO-609) chưa có | E4 cài bộ kiểm tối thiểu (AnswerGuardApi, guard_version g1-e4): đáp số mọi dạng E4 nhận ra, kết luận "vế trái = vế phải" của bước, nguyên văn bước; không bắt đáp số một ký tự (F-GEO-116). E6 thay cài đặt; chưa ghi answer_guard_log | E6 |
+| QF-E4-D03 | Question | US-GEO-410-SC1 | Tên bài "Hình chóp S.ABCD: tính góc giữa SD và mặt đáy" không có trong dữ liệu (problem.title = mã) | Seed 401_e4 đặt tên ngắn cho sáu đề kho theo mẫu Design/prototype | BA (fixture) · R3 |
+| QF-E4-D04 | Question | MSG-GEO-35 | Chưa xem gợi ý nào thì "{gợi ý cao nhất em đã xem}" rỗng | Dùng MSG-GEO-34 "Em xem Gợi ý 1 trước nhé." làm phần đuôi | BA · R3 |
+| QF-E4-D05 | Fixed (Dev) | TC-GEO-0346 (E3) | Tab Gợi ý của E4 hiện sẵn gợi ý đã xem (US-GEO-404-SC4); An dữ liệu vàng đã xem Gợi ý 2 trên BG-1 nên không còn nút | Test E3 chỉ bấm khi còn nút; mức kiểm giữ nguyên (Gợi ý 1 còn sau khi xoay) | — |
+| QF-E4-D06 | Question | US-GEO-401-SC1 | "Màn Làm bài của bài tự học" | Sau "Dựng hình" vẫn mở trang kết quả tự học của E2 (hình, đề, nhãn máy), có nút "Làm bài trên hình" sang /hs/lam-bai/:id (tab Gợi ý/Lời giải/Hỏi) | PO · R3 |
+| QF-E4-D07 | Question | US-GEO-402; D-GEO-110 | Ảnh F-GEO-066…068 không có tệp; AI giả lập không đọc chữ; ảnh gửi base64 nên ảnh gốc > ~750 KB đã vượt trần 1 MB | E2E dùng PNG giả mang dấu "GEO-FIXTURE:F-GEO-066"; thu nhỏ ảnh ở thiết bị còn mở | PO, ARCH |

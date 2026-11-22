@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import vn.geo.server.common.paging.Page;
 import vn.geo.server.common.web.NoStore;
 import vn.geo.server.tracking.internal.service.TrackingService;
 
@@ -37,6 +39,16 @@ public class TrackingController {
   @GetMapping("/api/v1/questions/{id}/answer")
   public TrackingService.SavedAnswer answer(@PathVariable long id) {
     return service.answer(id);
+  }
+
+  /** E4 (US-GEO-410): nhật ký hỏi đáp của chính em, lọc theo bài, theo con trỏ. */
+  @NoStore
+  @GetMapping("/api/v1/student/qa-log")
+  public Page<TrackingService.LogItem> log(
+      @RequestParam(required = false) UUID assignmentId,
+      @RequestParam(required = false) Integer limit,
+      @RequestParam(required = false) String cursor) {
+    return service.log(assignmentId, limit, cursor);
   }
 
   @NoStore

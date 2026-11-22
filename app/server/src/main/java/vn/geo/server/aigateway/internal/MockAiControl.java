@@ -20,6 +20,7 @@ public class MockAiControl {
   private final Map<String, Simulation> byKey = new ConcurrentHashMap<>();
   private final Map<String, String> answerOverrides = new ConcurrentHashMap<>();
   private final Map<String, String> scenarios = new ConcurrentHashMap<>();
+  private final Map<String, Long> delays = new ConcurrentHashMap<>();
   private final Deque<String> received = new ArrayDeque<>();
 
   public static String key(String userId, String lane) {
@@ -58,6 +59,23 @@ public class MockAiControl {
     return s != null ? s : scenarios.get(key(userId, null));
   }
 
+  /** Độ trễ trả lời (ms) của nhà cung cấp giả lập theo người dùng và làn (E4); 0 hoặc null = bỏ. */
+  public void setDelay(String userId, String lane, Long delayMs) {
+    if (delayMs == null || delayMs <= 0) {
+      delays.remove(key(userId, lane));
+    } else {
+      delays.put(key(userId, lane), Math.min(delayMs, 30_000L));
+    }
+  }
+
+  public long delayFor(String userId, String lane) {
+    Long d = delays.get(key(userId, lane));
+    if (d == null) {
+      d = delays.get(key(userId, null));
+    }
+    return d == null ? 0 : d;
+  }
+
   public void overrideAnswer(String problemCode, String answer) {
     if (answer == null) {
       answerOverrides.remove(problemCode);
@@ -87,6 +105,7 @@ public class MockAiControl {
     byKey.clear();
     answerOverrides.clear();
     scenarios.clear();
+    delays.clear();
     received.clear();
   }
 }

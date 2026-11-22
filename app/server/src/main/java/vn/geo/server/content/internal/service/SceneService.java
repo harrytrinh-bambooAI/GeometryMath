@@ -42,7 +42,8 @@ public class SceneService {
       String statement,
       String verifyStatus,
       String label,
-      SceneDto scene) {}
+      SceneDto scene,
+      java.util.List<String> hints) {}
 
   private final SceneRepository repo;
   private final TemplateCatalogService catalog;
@@ -167,7 +168,8 @@ public class SceneService {
         "verified".equals(v.verifyStatus())
             ? GeometryEngine.LABEL_VERIFIED
             : GeometryEngine.LABEL_NEEDS_REVIEW,
-        scene);
+        scene,
+        repo.catalogHints(v.versionId()));
   }
 
   /**

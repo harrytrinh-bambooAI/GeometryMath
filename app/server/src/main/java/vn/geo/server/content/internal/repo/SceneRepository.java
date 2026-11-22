@@ -148,6 +148,20 @@ public class SceneRepository {
         .optional();
   }
 
+  /** E4 (US-GEO-412-SC4): Gợi ý 1, 2 của một đề kho cho trang chi tiết đề của giáo viên. */
+  public java.util.List<String> catalogHints(UUID versionId) {
+    return jdbc.sql(
+            """
+            SELECT h.body FROM hint h
+            WHERE h.org_id = platform_org_id() AND h.problem_version_id = :pv
+            ORDER BY h.level LIMIT 2
+            -- sqllint:allow=tenant nội dung hệ thống (org nền tảng, D-GEO-076): gợi ý của đề kho
+            """)
+        .param("pv", versionId)
+        .query(String.class)
+        .list();
+  }
+
   // ------------------------------------------------------------------ đề tự nhập (tự học)
 
   public void insertStudentProblem(
@@ -201,6 +215,55 @@ public class SceneRepository {
         .param("spec", specJson)
         .param("coords", coordsJson)
         .update();
+  }
+
+  /**
+   * E4: chữ ký chuẩn của đề tự nhập (D-GEO-150) — chỉ đề dựng bằng bộ dựng của engine; đề tọa độ AI
+   * không có hàng (không kế thừa khóa, không có lời giải tự học, D-GEO-177).
+   */
+  public void insertSignature(
+      UUID versionId,
+      int sigVersion,
+      String solidKind,
+      String paramsJson,
+      String asked,
+      byte[] signature) {
+    jdbc.sql(
+            """
+            INSERT INTO problem_signature (org_id, problem_version_id, sig_version, template_id,
+                                           params_norm, asked_quantity, signature)
+            SELECT :orgId, :pv, :sv, st.id, CAST(:params AS jsonb), :asked, :sig
+            FROM solid_template st WHERE st.code = :solid
+            """)
+        .param("pv", versionId)
+        .param("sv", sigVersion)
+        .param("params", paramsJson)
+        .param("asked", asked)
+        .param("sig", signature)
+        .param("solid", solidKind)
+        .update();
+  }
+
+  /** E4: lời giải của đề tự nhập qua hàm cổng V40 (mã ứng dụng không chạm bảng lời giải). */
+  public String putSelfSolution(
+      UUID userId,
+      UUID versionId,
+      String finalAnswer,
+      String stepsJson,
+      String model,
+      String prompt) {
+    return jdbc.sql(
+            """
+            SELECT fn_put_self_solution(:orgId, :userId, :pv, :fa, CAST(:steps AS jsonb), :model, :prompt)
+            """)
+        .param("userId", userId)
+        .param("pv", versionId)
+        .param("fa", finalAnswer)
+        .param("steps", stepsJson)
+        .param("model", model)
+        .param("prompt", prompt)
+        .query(String.class)
+        .single();
   }
 
   /** Hàm cổng V20: ghi báo cáo + đặt nhãn máy theo báo cáo; trả nhãn. */

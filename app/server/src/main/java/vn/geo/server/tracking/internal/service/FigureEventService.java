@@ -15,14 +15,15 @@ import vn.geo.server.common.redis.RedisKeys;
 import vn.geo.server.common.security.AuthPrincipal;
 import vn.geo.server.common.security.Role;
 import vn.geo.server.common.security.Roles;
+import vn.geo.server.learning.api.HintApi;
 import vn.geo.server.tracking.internal.repo.FigureEventRepository;
 
 /**
  * Thao tác trên hình (E3): chỉ công cụ Chọn, Điểm, Đường, Mặt phẳng, Mở rộng, Đo dài, Đo góc (mã
  * 1…7) là "thao tác trên hình"; xoay, thu phóng, đặt lại không gửi sự kiện (BR-GEO-144, 147;
  * D-GEO-058). Lô lũy đẳng theo batchId (ADR-GEO-11, khóa Redis một ngày). Mở bài: sự kiện 'open'
- * lũy đẳng theo requestId. Gợi ý: fn_get_hint (US-GEO-404, phần tối thiểu để bảng dưới của iPhone
- * hiện Gợi ý; E4 làm đủ).
+ * lũy đẳng theo requestId. Gợi ý: ủy quyền cho HintApi của E4 (module learning: fn_get_hint, gợi ý
+ * AI của bài tự học, thông điệp MSG-GEO-32, 34).
  */
 @Service
 public class FigureEventService {
@@ -30,8 +31,6 @@ public class FigureEventService {
   public record ToolEvent(Integer tool, Instant at) {}
 
   public record Recorded(int inserted) {}
-
-  public record Hint(int level, String body) {}
 
   static final int MAX_BATCH = 200;
   private static final Duration BATCH_TTL = Duration.ofDays(1);
@@ -43,13 +42,26 @@ public class FigureEventService {
   private final StringRedisTemplate redis;
   private final RedisKeys keys;
   private final JsonMapper mapper;
+  private final HintApi hints;
 
+  /** Không có gợi ý (dùng ở kiểm thử lô sự kiện của E3). */
   public FigureEventService(
       FigureEventRepository repo, StringRedisTemplate redis, RedisKeys keys, JsonMapper mapper) {
+    this(repo, redis, keys, mapper, null);
+  }
+
+  @org.springframework.beans.factory.annotation.Autowired
+  public FigureEventService(
+      FigureEventRepository repo,
+      StringRedisTemplate redis,
+      RedisKeys keys,
+      JsonMapper mapper,
+      HintApi hints) {
     this.repo = repo;
     this.redis = redis;
     this.keys = keys;
     this.mapper = mapper;
+    this.hints = hints;
   }
 
   public Recorded recordTools(UUID assignmentId, UUID batchId, List<ToolEvent> events) {
@@ -108,19 +120,8 @@ public class FigureEventService {
     return Map.of("status", "DUPLICATE".equals(s) ? "DUPLICATE" : "OK");
   }
 
-  public Hint hint(UUID assignmentId, int level, UUID requestId) {
-    AuthPrincipal p = Roles.require(Role.STUDENT);
-    if (requestId == null) {
-      throw AppException.invalidField("requestId", "Thiếu mã yêu cầu.");
-    }
-    FigureEventRepository.HintRow r = repo.hint(p.userId(), assignmentId, level, requestId);
-    return switch (r.status()) {
-      case "OK" -> new Hint(r.level(), r.body());
-      case "VALIDATION_KIND" -> throw AppException.invalidField("level", "Mức gợi ý là 1 hoặc 2.");
-      case "LEVEL_ORDER" -> throw new AppException(ErrorCode.CONFLICT, "Em cần xem Gợi ý 1 trước.");
-      case "HINT_DISABLED" ->
-          throw new AppException(ErrorCode.FORBIDDEN, "Bài này không bật gợi ý.");
-      default -> throw new AppException(ErrorCode.NOT_FOUND);
-    };
+  /** Gợi ý: logic đầy đủ của E4 (module learning, US-GEO-404, 406) qua HintApi. */
+  public HintApi.HintResult hint(UUID assignmentId, int level, UUID requestId) {
+    return hints.hint(assignmentId, level, requestId);
   }
 }

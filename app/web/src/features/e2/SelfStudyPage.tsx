@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 import { ApiError } from '../../shared/api/errors.ts';
 import type { Scene, SelfStudy, SolidTemplate } from '../../shared/scene/types.ts';
 import { tid } from '../../shared/testid.ts';
 import { errorText, fieldError } from '../e1/messages.ts';
+import { e4Api, isAssistantError, M } from '../e4/api.ts';
+import { AskTab } from '../e4/AskTab.tsx';
+import { LectureProvider } from '../e4/Lecture.tsx';
+import { useHelp } from '../e4/useHelp.ts';
 import { e2Api } from './api.ts';
 import { SceneFrame } from './SceneFrame.tsx';
 import { MSG_19, parseParam } from './sceneMath.ts';
@@ -20,6 +24,12 @@ export function SelfStudyPage() {
   const [buildError, setBuildError] = useState<string | null>(null);
   const [templates, setTemplates] = useState<SolidTemplate[] | null>(null);
   const [picked, setPicked] = useState<SolidTemplate | null>(null);
+  // E4 (US-GEO-401, 402): cấp, đọc ảnh đề, màn chờ MSG-GEO-13, lỗi trợ lý MSG-GEO-14 + "Thử lại"
+  const [level, setLevel] = useState<'thcs' | 'thpt'>('thpt');
+  const [ocrBusy, setOcrBusy] = useState(false);
+  const [retry, setRetry] = useState<null | 'build' | 'ocr'>(null);
+  const lastImage = useRef<string | null>(null);
+  const fileRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -32,27 +42,89 @@ export function SelfStudyPage() {
     };
   }, []);
 
-  const submit = async (ev: FormEvent) => {
-    ev.preventDefault();
-    if (!statement.trim()) return;
+  const build = async () => {
+    // E4: đề rỗng / quá 8000 ký tự báo ngay, không gửi (US-GEO-401-FC1, FC2)
+    if (!statement.trim()) {
+      setBuildError(M['20']);
+      return;
+    }
+    if (statement.trim().length > 8000) {
+      setBuildError(M['21']);
+      return;
+    }
     setBusy(true);
     setBuildError(null);
+    setRetry(null);
+    const t0 = performance.now();
     try {
-      const r = await e2Api.build(statement);
+      const r = await e2Api.build(statement, level);
+      sessionStorage.setItem(`geo.e4.sentAt.${r.assignmentId}`, String(Date.now() - (performance.now() - t0)));
       navigate(`/hs/tu-hoc/${r.assignmentId}`);
     } catch (e) {
       // đề giữ nguyên trong ô nhập (US-GEO-201-FC2, US-GEO-204-FC2)
-      setBuildError(fieldError(e, 'statement') ?? errorText(e));
+      if (isAssistantError(e)) {
+        setBuildError(M['14']);
+        setRetry('build');
+      } else setBuildError(fieldError(e, 'statement') ?? errorText(e));
     } finally {
       setBusy(false);
     }
+  };
+  const submit = (ev: FormEvent) => {
+    ev.preventDefault();
+    void build();
+  };
+  // E4 (US-GEO-402): ảnh được đọc thành chữ, điền vào ô đề để em xem và sửa; chưa dựng hình (BR-GEO-170)
+  const readImage = async (dataUrl: string) => {
+    setOcrBusy(true);
+    setBuildError(null);
+    setRetry(null);
+    try {
+      const r = await e4Api.ocr(dataUrl);
+      setStatement(r.statement);
+    } catch (e) {
+      if (isAssistantError(e)) {
+        setBuildError(M['14']);
+        setRetry('ocr');
+      } else if (e instanceof ApiError && e.code === 'PAYLOAD_TOO_LARGE') setBuildError(M['06']);
+      else if (e instanceof ApiError && e.code === 'NETWORK') setBuildError(M['08']);
+      else setBuildError(fieldError(e, 'image') ?? M['22']);
+    } finally {
+      setOcrBusy(false);
+    }
+  };
+  const onFile = (f: File | undefined) => {
+    if (!f) return;
+    const fr = new FileReader();
+    fr.onload = () => {
+      lastImage.current = String(fr.result);
+      void readImage(lastImage.current);
+    };
+    fr.readAsDataURL(f);
   };
 
   return (
     <div data-testid={tid('e2', 'self-study')}>
       <h2>Tự học</h2>
       <form className="card e2-input" onSubmit={submit}>
-        <label htmlFor="e2-statement">Đề bài</label>
+        <label htmlFor="e2-statement">Đề bài của em</label>
+        <div className="row">
+          <select value={level} onChange={(e) => setLevel(e.target.value as 'thcs' | 'thpt')} data-testid={tid('e4', 'level')}
+            aria-label="Cấp học">
+            <option value="thcs">THCS</option>
+            <option value="thpt">THPT</option>
+          </select>
+          <button type="button" className="btn ghost" disabled={busy || ocrBusy} data-testid={tid('e4', 'photo')}
+            onClick={() => fileRef.current?.click()}>
+            Chụp hoặc dán ảnh đề
+          </button>
+          <input ref={fileRef} type="file" accept="image/*" hidden data-testid={tid('e4', 'photo', 'input')}
+            onChange={(e) => {
+              onFile(e.target.files?.[0]);
+              e.target.value = '';
+            }} />
+          <span className="muted small">Ảnh sẽ được đọc thành chữ để em sửa lại</span>
+        </div>
         <textarea
           id="e2-statement"
           rows={4}
@@ -66,14 +138,20 @@ export function SelfStudyPage() {
             {buildError}
           </p>
         ) : null}
-        <button type="submit" className="btn" disabled={busy} data-testid={tid('e2', 'build')}>
+        <button type="submit" className="btn" disabled={busy || ocrBusy} data-testid={tid('e2', 'build')}>
           Dựng hình
         </button>
-        {busy ? (
+        {busy || ocrBusy ? (
           <span className="muted small" data-testid={tid('e2', 'ai-wait')}>
             {' '}
-            Đang dựng hình…
+            {M['13']}
           </span>
+        ) : null}
+        {retry ? (
+          <button type="button" className="btn ghost" data-testid={tid('e4', 'retry')}
+            onClick={() => (retry === 'ocr' && lastImage.current ? void readImage(lastImage.current) : void build())}>
+            Thử lại
+          </button>
         ) : null}
       </form>
 
@@ -175,6 +253,7 @@ export function SelfStudyResultPage() {
   const [data, setData] = useState<SelfStudy | null>(null);
   const [error, setError] = useState<unknown>(null);
   const [tab, setTab] = useState<'hinh' | 'hoi-dap'>('hinh');
+  const help = useHelp(id);
 
   useEffect(() => {
     let alive = true;
@@ -197,6 +276,7 @@ export function SelfStudyResultPage() {
   }
   if (!data) return <p className="muted">Đang tải…</p>;
   const v = data.scene.verification;
+  void reportSceneShown(id);
   return (
     <div data-testid={tid('e2', 'self-study', 'result')}>
       <h2>Tự học</h2>
@@ -217,13 +297,33 @@ export function SelfStudyResultPage() {
           Hỏi đáp
         </button>
       </div>
+      <p>
+        {/* E4: gợi ý, lời giải, hỏi đáp của bài tự học trên trang Làm bài (E3) */}
+        <Link className="btn primary" to={`/hs/lam-bai/${encodeURIComponent(id)}`} data-testid={tid('e4', 'open', 'workspace')}>
+          Làm bài trên hình
+        </Link>
+      </p>
       {tab === 'hinh' ? (
         <SceneFrame scene={data.scene} />
       ) : (
         <section className="card" data-testid={tid('e2', 'qa')}>
-          <p className="muted">Hỏi đáp cho bài tự học sẽ có ở bản đầy đủ (E4).</p>
+          <LectureProvider>
+            <AskTab id={id} model={help} />
+          </LectureProvider>
         </section>
       )}
     </div>
   );
+}
+
+/**
+ * E4 (BR-GEO-169, M-GEO-09): khi hình của bài tự học vừa dựng hiện lần đầu, gửi sự kiện không bền 'scene_shown' kèm thời
+ * lượng từ lúc gửi đề tới lúc hình hiện (mốc gửi lưu ở sessionStorage lúc bấm "Dựng hình"; mở lại bài không gửi nữa).
+ */
+async function reportSceneShown(id: string): Promise<void> {
+  const k = `geo.e4.sentAt.${id}`;
+  const sent = Number(sessionStorage.getItem(k));
+  if (!sent) return;
+  sessionStorage.removeItem(k);
+  await e4Api.sceneShown(id, Math.max(0, Date.now() - sent)).catch(() => undefined);
 }

@@ -75,7 +75,12 @@ test('Xoay ngang máy giữa chừng @TC-GEO-0346', async ({ page, request }) =>
   await openWorkspace(page, request);
   await addMidpointSD(page);
   await page.getByTestId('e3-tab-hint').click();
-  await page.getByTestId('e3-hint-next').click();
+  // E4: tab Gợi ý hiện sẵn gợi ý em đã xem (US-GEO-404-SC4); An của dữ liệu vàng đã xem Gợi ý 1, 2 trên BG-1 nên
+  // có thể không còn nút "Xem gợi ý"; chỉ bấm khi còn nút.
+  await expect(page.getByTestId('e3-hint-1').or(page.getByTestId('e3-hint-next'))).toBeVisible();
+  if (await page.getByTestId('e3-hint-next').isVisible() && !(await page.getByTestId('e3-hint-1').isVisible())) {
+    await page.getByTestId('e3-hint-next').click();
+  }
   await expect(page.getByTestId('e3-hint-1')).toBeVisible();
   await page.evaluate(() => ((window as unknown as { __noReload: boolean }).__noReload = true));
   const portrait = page.viewportSize()!;

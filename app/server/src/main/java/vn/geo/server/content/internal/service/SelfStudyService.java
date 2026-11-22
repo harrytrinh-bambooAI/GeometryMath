@@ -80,6 +80,14 @@ public class SelfStudyService {
       String unit) {}
 
   public SelfStudyDto create(String statement) {
+    return create(statement, null);
+  }
+
+  /**
+   * @param chosenLevel cấp học sinh chọn ở màn Tự học ("thcs" | "thpt", BR-GEO-166; E4); null =
+   *     theo nhận dạng của cổng AI
+   */
+  public SelfStudyDto create(String statement, String chosenLevel) {
     AuthPrincipal me = Roles.require(Role.STUDENT);
     String st = statement == null ? "" : statement.strip();
     if (st.isEmpty()) {
@@ -97,7 +105,23 @@ public class SelfStudyService {
     if ("plane".equals(out.path("kind").asString(""))) {
       throw AppException.invalidField("statement", MSG_17);
     }
-    Built b = build(out);
+    Built b0 = build(out);
+    Built b =
+        "thcs".equals(chosenLevel) || "thpt".equals(chosenLevel)
+            ? new Built(
+                b0.figure(),
+                b0.coordSource(),
+                b0.spec(),
+                b0.verification(),
+                chosenLevel,
+                b0.solid(),
+                b0.unit())
+            : b0;
+    // E4: chữ ký chuẩn (kế thừa khóa, D-GEO-150) + lời giải tự học (chỉ đề dựng bằng hình mẫu,
+    // D-GEO-177)
+    GeometryEngine.Signature sig =
+        b.spec() == null ? null : engine.signature(b.spec()).orElse(null);
+    SelfSolution sol = sig == null ? null : selfSolution(st, out.path("answer").asString(""));
     UUID problemId = Uuid7.next();
     UUID versionId = Uuid7.next();
     UUID sceneId = Uuid7.next();
@@ -129,6 +153,22 @@ public class SelfStudyService {
                     mapper.writeValueAsString(v.report()),
                     me.userId());
           }
+          if (sig != null) {
+            repo.insertSignature(
+                versionId,
+                GeometryEngine.SIG_VERSION,
+                sig.solidKind(),
+                mapper.writeValueAsString(sig.paramsNorm()),
+                sig.asked(),
+                sig.sha256());
+            repo.putSelfSolution(
+                me.userId(),
+                versionId,
+                sol.finalAnswer(),
+                sol.stepsJson(),
+                ai.model(),
+                ai.promptVersion());
+          }
           String r = repo.createSelfAssignment(me.userId(), assignmentId, versionId);
           if (!"OK".equals(r)) {
             throw new AppException(ErrorCode.INTERNAL, "không tạo được bài tự học: " + r);
@@ -137,6 +177,74 @@ public class SelfStudyService {
         });
     SceneDto scene = scenes.sceneOf(me.orgId(), versionId, null, status).orElseThrow();
     return new SelfStudyDto(assignmentId.toString(), versionId.toString(), st, scene);
+  }
+
+  /** Lời giải của đề tự nhập do AI soạn (nhãn người "AI soạn", BR-GEO-09). */
+  private record SelfSolution(String finalAnswer, String stepsJson) {}
+
+  static final String NO_ANSWER = "Chưa có đáp số";
+  public static final String MSG_22 = "Chưa đọc được chữ trong ảnh. Em chụp lại rõ hơn hoặc gõ đề.";
+
+  private SelfSolution selfSolution(String statement, String sceneAnswer) {
+    JsonNode sol;
+    try {
+      sol =
+          mapper.readTree(ai.complete(new AiRequest("solution", "Đề bài: " + statement)).content());
+    } catch (JacksonException e) {
+      sol = mapper.createObjectNode();
+    }
+    String answer = sol.path("answer").asString("");
+    if (answer.isBlank()) {
+      answer = sceneAnswer.isBlank() ? NO_ANSWER : sceneAnswer;
+    }
+    JsonNode steps = sol.path("steps");
+    String stepsJson;
+    if (steps.isArray() && !steps.isEmpty()) {
+      stepsJson = mapper.writeValueAsString(steps);
+    } else {
+      stepsJson =
+          mapper.writeValueAsString(
+              List.of(Map.of("title", "Lời giải", "body", "Đáp số: " + answer, "why", "")));
+    }
+    return new SelfSolution(answer.length() > 500 ? answer.substring(0, 500) : answer, stepsJson);
+  }
+
+  /** Kết quả đọc ảnh đề (US-GEO-402): chữ để học sinh xem và sửa; chưa dựng hình (BR-GEO-170). */
+  public record OcrResult(String statement) {}
+
+  private static final java.util.regex.Pattern BASE64 =
+      java.util.regex.Pattern.compile("[A-Za-z0-9+/=\\s]+");
+
+  /**
+   * Đọc chữ từ ảnh đề qua cổng AI (tác vụ "ocr", ghi mục đích 'scene'). Ảnh không lưu (lược đồ
+   * không có bảng ảnh). Ảnh không đọc được: MSG-GEO-22; ảnh vượt 1 MB bị chặn ở bộ lọc thân yêu
+   * cầu.
+   */
+  public OcrResult ocr(String imageBase64) {
+    Roles.require(Role.STUDENT);
+    String b64 = imageBase64 == null ? "" : imageBase64.strip();
+    int comma = b64.indexOf(',');
+    if (b64.startsWith("data:") && comma > 0) {
+      b64 = b64.substring(comma + 1);
+    }
+    if (b64.isEmpty() || !BASE64.matcher(b64).matches()) {
+      throw AppException.invalidField("image", MSG_22);
+    }
+    String text;
+    try {
+      text =
+          mapper
+              .readTree(ai.complete(new AiRequest("ocr", "Ảnh đề (base64): " + b64)).content())
+              .path("text")
+              .asString("")
+              .strip();
+    } catch (JacksonException e) {
+      text = "";
+    }
+    if (text.isEmpty()) {
+      throw AppException.invalidField("image", MSG_22);
+    }
+    return new OcrResult(text);
   }
 
   private Built build(JsonNode out) {

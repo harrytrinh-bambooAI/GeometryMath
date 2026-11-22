@@ -144,7 +144,7 @@ function primes(n: string) {
   return (n.match(/[′']/g) ?? []).length;
 }
 /** Đỉnh S (đỉnh chóp) gọi trước, rồi theo chữ cái, rồi theo số dấu phẩy trên (A, B, …, A′, B′). */
-function rankNames(ns: string[]): Map<string, number> {
+export function rankNames(ns: string[]): Map<string, number> {
   const sorted = [...ns].sort((x, y) => {
     const sx = x === 'S' ? 0 : 1;
     const sy = y === 'S' ? 0 : 1;

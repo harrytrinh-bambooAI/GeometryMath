@@ -82,7 +82,9 @@ public class InstrumentedAiGateway implements AiGateway {
         control.simulationFor(who == null ? null : who.userId().toString(), currentLane());
     String scenario =
         control.scenarioFor(who == null ? null : who.userId().toString(), currentLane());
-    ProviderCall call = new ProviderCall(request.task(), model, request.prompt(), sim, scenario);
+    long delay = control.delayFor(who == null ? null : who.userId().toString(), currentLane());
+    ProviderCall call =
+        new ProviderCall(request.task(), model, request.prompt(), sim, scenario, delay);
     Future<String> future = executor.submit(() -> provider.complete(call));
     String content = "";
     try {
@@ -128,7 +130,11 @@ public class InstrumentedAiGateway implements AiGateway {
       String content,
       long ms,
       String outcome) {
-    String purpose = PURPOSES.contains(request.task()) ? request.task() : "qa";
+    // "ocr" (E4: đọc chữ từ ảnh đề để dựng hình, US-GEO-402) ghi mục đích 'scene' của ai_purpose
+    String purpose =
+        "ocr".equals(request.task())
+            ? "scene"
+            : PURPOSES.contains(request.task()) ? request.task() : "qa";
     String status =
         switch (outcome) {
           case "success" -> "ok";

@@ -2,6 +2,7 @@ package vn.geo.server.geometry.api;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Engine dựng hình và kiểm chứng (US-GEO-201, 203). Hàm thuần: cùng đầu vào cho cùng kết quả
@@ -121,4 +122,26 @@ public interface GeometryEngine {
       List<SceneDto.SceneChip> chips,
       List<String> hidden,
       String verifyStatus) {}
+
+  /**
+   * Chữ ký chuẩn của đề (D-GEO-150, ADR-GEO-15; E4 US-GEO-406): (bộ dựng; bộ tham số đã quy về a =
+   * 1 — chia cho tham số đầu tiên của bộ dựng, làm tròn 6 chữ số; đại lượng đề hỏi theo nhãn đỉnh
+   * chuẩn của bộ dựng). Không phụ thuộc tên điểm, cách viết, chữ thêm. {@code canonical} có dạng
+   * {@code 1|pyramid_square_sa|a=1;sa=1|angle_line_plane:S,D,A,B,D}; {@code sha256} là băm UTF-8
+   * của chuỗi đó (cột problem_signature.signature). Rỗng khi bộ dựng không có hoặc đề không có đại
+   * lượng hỏi.
+   */
+  Optional<Signature> signature(ProblemSpec spec);
+
+  /** Phiên bản thuật toán chữ ký (problem_signature.sig_version). */
+  int SIG_VERSION = 1;
+
+  /** Chữ ký chuẩn của một đề; {@code solidKind} để tra solid_template. */
+  record Signature(
+      String template,
+      String solidKind,
+      Map<String, Double> paramsNorm,
+      String asked,
+      String canonical,
+      byte[] sha256) {}
 }

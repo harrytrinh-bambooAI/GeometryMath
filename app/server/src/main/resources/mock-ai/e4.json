@@ -1,0 +1,126 @@
+{
+  "_doc": "E4 · Nội dung soạn sẵn của nhà cung cấp AI GIẢ LẬP (D-GEO-047) cho tự học và hỏi đáp: 'solution' (lời giải của đề tự nhập, theo mẫu chữ của đề), 'hint' (Gợi ý 1, 2 của đề tự nhập không kế thừa khóa, D-GEO-155), 'qa' (câu trả lời có mã bài giảng làm nguồn, theo mẫu chữ của câu hỏi và đề), 'ocr' (chữ đọc từ ảnh đề: ảnh dữ liệu vàng mang dấu 'GEO-FIXTURE:<mã F>'). Quy tắc đầu tiên khớp được dùng. Không chấm chất lượng AI thật (QF-E4-03).",
+  "solution": [
+    {
+      "id": "F-GEO-060",
+      "pattern": "(?iu)lăng trụ đứng ABC\\.A′B′C′ có đáy là tam giác vuông tại A, AB = 3, AC = 4, AA′ = 5",
+      "answer": "60/√769",
+      "steps": [
+        { "title": "Nhận ra tứ diện vuông", "body": "AB, AC, AA′ đôi một vuông góc tại A nên A.A′BC là tứ diện vuông tại A.", "why": "Lăng trụ đứng có cạnh bên vuông góc với đáy, đáy vuông tại A." },
+        { "title": "Dùng hệ thức đường cao", "body": "1/d² = 1/AB² + 1/AC² + 1/AA′² = 1/9 + 1/16 + 1/25 = 769/3600.", "why": "Với tứ diện vuông, nghịch đảo bình phương đường cao bằng tổng nghịch đảo bình phương ba cạnh góc vuông." },
+        { "title": "Kết luận", "body": "d(A, (A′BC)) = 60/√769 ≈ 2,1637.", "why": "Lấy căn bậc hai rồi nghịch đảo." }
+      ]
+    },
+    {
+      "id": "HKG-01 và biến thể (góc giữa cạnh bên và đáy)",
+      "pattern": "(?iu)hình chóp S\\.(ABCD|MNPQ).*hình vuông cạnh (2)?a.*S[AM] = (2)?a\\..*góc",
+      "answer": "45°",
+      "steps": [
+        { "title": "Tìm hình chiếu của SD", "body": "SA ⊥ (ABCD) nên A là hình chiếu của S. Hình chiếu của SD là AD.", "why": "Muốn tìm góc giữa đường và mặt, việc đầu tiên là tìm hình chiếu của đường lên mặt." },
+        { "title": "Xác định góc cần tìm", "body": "Góc giữa SD và (ABCD) là góc SDA. Tam giác SAD vuông tại A.", "why": "Có hình chiếu rồi thì góc cần tìm nằm trong một tam giác vuông." },
+        { "title": "Tính góc", "body": "tan SDA = SA / AD = 1, suy ra góc SDA = 45°.", "why": "Trong tam giác vuông, tan của góc nhọn bằng cạnh đối chia cạnh kề." }
+      ]
+    },
+    {
+      "id": "F-GEO-078",
+      "pattern": "(?iu)SA = a√3\\. Tính góc giữa SD",
+      "answer": "60°",
+      "steps": [
+        { "title": "Tìm hình chiếu của SD", "body": "SA ⊥ (ABCD) nên hình chiếu của SD là AD.", "why": "Tìm hình chiếu của đường lên mặt." },
+        { "title": "Tính góc", "body": "tan SDA = SA / AD = √3, suy ra góc SDA = 60°.", "why": "Tỉ số lượng giác trong tam giác vuông SAD." }
+      ]
+    },
+    {
+      "id": "F-GEO-235",
+      "pattern": "(?iu)Tính thể tích khối chóp S\\.ABCD",
+      "answer": "a³/3",
+      "steps": [
+        { "title": "Diện tích đáy", "body": "Đáy là hình vuông cạnh a nên S = a².", "why": "Diện tích hình vuông." },
+        { "title": "Thể tích", "body": "V = ⅓ · SA · S = a³/3.", "why": "Thể tích khối chóp bằng một phần ba diện tích đáy nhân chiều cao." }
+      ]
+    },
+    {
+      "id": "HKG-02",
+      "pattern": "(?iu)khoảng cách giữa AC và B′D′",
+      "answer": "a",
+      "steps": [
+        { "title": "Nhận xét vị trí", "body": "AC ⊂ (ABCD), B′D′ ⊂ (A′B′C′D′), và hai mặt phẳng này song song.", "why": "Hai đường chéo nhau thường được đưa về hai mặt phẳng song song chứa chúng." },
+        { "title": "Tính khoảng cách", "body": "Khoảng cách giữa hai mặt đáy bằng cạnh a. Vậy d(AC, B′D′) = a.", "why": "Đoạn nối tâm hai đáy vuông góc với cả AC và B′D′." }
+      ]
+    },
+    {
+      "id": "HKG-04",
+      "pattern": "(?iu)hình nón có bán kính đáy 3 cm, đường sinh 5 cm",
+      "answer": "Sxq = 15π cm²; V = 12π cm³",
+      "steps": [
+        { "title": "Diện tích xung quanh", "body": "Sxq = π·3·5 = 15π cm².", "why": "Công thức πrl với l là đường sinh." },
+        { "title": "Thể tích", "body": "h = √(5² − 3²) = 4 cm. V = ⅓·π·3²·4 = 12π cm³.", "why": "Cần chiều cao trước khi tính thể tích." }
+      ]
+    },
+    {
+      "id": "HKG-05",
+      "pattern": "(?iu)hình trụ có chiều cao 10 cm, bán kính đáy 4 cm",
+      "answer": "112π cm²",
+      "steps": [
+        { "title": "Áp dụng công thức", "body": "Stp = 2π·4·(4 + 10) = 112π cm².", "why": "Gộp diện tích xung quanh 2πrh và hai đáy 2πr²." }
+      ]
+    },
+    {
+      "id": "HKG-06",
+      "pattern": "(?iu)mặt cầu ngoại tiếp hình lập phương cạnh a",
+      "answer": "R = a√3/2; V = (√3/2)·π·a³",
+      "steps": [
+        { "title": "Bán kính", "body": "Đường chéo hình lập phương bằng a√3, nên R = a√3 / 2.", "why": "Mặt cầu ngoại tiếp đi qua cả 8 đỉnh." },
+        { "title": "Thể tích", "body": "V = 4/3·π·R³ = (√3/2)·π·a³.", "why": "Thay R vào công thức thể tích khối cầu." }
+      ]
+    },
+    {
+      "id": "HKG-03 (lăng trụ đáy tam giác đều)",
+      "pattern": "(?iu)lăng trụ đứng tam giác có đáy là tam giác đều",
+      "answer": "",
+      "steps": [
+        { "title": "Tính diện tích đáy", "body": "S = a²·√3 / 4 với a là cạnh đáy.", "why": "Đáy là tam giác đều nên dùng công thức a²√3 / 4." },
+        { "title": "Tính thể tích", "body": "V = S · h.", "why": "Lăng trụ đứng: V = diện tích đáy × chiều cao." }
+      ]
+    }
+  ],
+  "solutionFallback": {
+    "answer": "",
+    "steps": [ { "title": "Lời giải", "body": "Dùng các dữ kiện của đề để tính đại lượng cần tìm.", "why": "Bắt đầu từ dữ kiện đã cho trên hình." } ]
+  },
+  "hint": [
+    {
+      "id": "F-GEO-060",
+      "pattern": "(?iu)lăng trụ đứng ABC\\.A′B′C′ có đáy là tam giác vuông tại A",
+      "hints": [
+        "Ba cạnh AB, AC, AA′ có quan hệ gì với nhau? Em thử nhìn A.A′BC như một tứ diện đặc biệt.",
+        "Khoảng cách từ A tới mặt phẳng (A′BC) là đường cao kẻ từ A của tứ diện vuông A.A′BC."
+      ]
+    }
+  ],
+  "hintFallback": [
+    "Em đọc kỹ dữ kiện và xác định đại lượng đề hỏi nằm ở đâu trên hình.",
+    "Em tìm một tam giác vuông hoặc một mặt phẳng chứa đại lượng đó để tính."
+  ],
+  "qa": [
+    { "id": "F-GEO-055", "pattern": "(?iu)Câu hỏi: Vì sao A là hình chiếu của S", "kind": "concept",
+      "reply": "Vì SA vuông góc với mặt đáy nên đường thẳng qua S vuông góc với mặt đáy chính là SA, chân của nó là A. Theo định nghĩa hình chiếu vuông góc, A là hình chiếu của S trên mặt đáy.",
+      "source": "hinh-chieu-vuong-goc" },
+    { "id": "F-GEO-058", "pattern": "(?iu)Câu hỏi: Tan của một góc là gì", "kind": "concept",
+      "reply": "Trong tam giác vuông, tan của góc nhọn bằng cạnh đối chia cạnh kề. Em xem lại Tỉ số lượng giác trong tam giác vuông.",
+      "source": "ti-so-luong-giac-trong-tam-giac-vuong" },
+    { "id": "F-GEO-059", "pattern": "(?iu)Câu hỏi: Thủ đô", "kind": "out_of_curriculum", "reply": "" },
+    { "id": "F-GEO-056 (F-GEO-114)", "pattern": "(?iu)Câu hỏi: Góc cần tìm là góc nào", "kind": "hint",
+      "reply": "Góc giữa SD và mặt đáy là 45°.", "source": "goc-giua-duong-thang-va-mat-phang" },
+    { "id": "F-GEO-057", "pattern": "(?iu)Câu hỏi: Cho em xin đáp số", "kind": "refused_answer",
+      "reply": "Mình chưa nêu đáp số được. Em thử làm theo gợi ý đang có nhé." },
+    { "id": "Đáp số bài tự học F-GEO-060", "pattern": "(?isu)lăng trụ đứng ABC\\.A′B′C′ có đáy là tam giác vuông.*Câu hỏi: Đáp số", "kind": "hint",
+      "reply": "Đáp số là 60/√769 ≈ 2,1637." },
+    { "id": "F-GEO-093 (thiết diện)", "pattern": "(?iu)Câu hỏi: .*thiết diện", "kind": "concept",
+      "reply": "Phần chung của mặt phẳng cắt với hình chóp gọi là thiết diện. Em tìm giao tuyến của mặt phẳng đó với từng mặt của hình; muốn vậy thường phải biết đường thẳng nào vuông góc với mặt phẳng.",
+      "source": "duong-thang-vuong-goc-voi-mat-phang" }
+  ],
+  "ocr": {
+    "F-GEO-066": "Lăng trụ đứng tam giác có đáy là tam giác đều cạnh 4 cm, chiều cao 6 cm. Tính thể tích."
+  }
+}

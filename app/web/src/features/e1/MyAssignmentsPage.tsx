@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { api } from '../../shared/api/client.ts';
 import { tid } from '../../shared/testid.ts';
 import { formatVnDateTime } from '../../shared/time/vnTime.ts';
+import { ExploreBlock } from '../e4/Explore.tsx';
 import { getMe } from './e1Session.ts';
 import { errorText } from './messages.ts';
 import { RELEASE_LABEL } from './studentApi.ts';
@@ -59,6 +60,8 @@ export function MyAssignmentsPage() {
           </Link>
         ))}
       </div>
+      {/* E4: khối "Tự khám phá" (US-GEO-403-SC1, SC2) */}
+      <ExploreBlock />
     </div>
   );
 }

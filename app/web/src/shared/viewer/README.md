@@ -20,6 +20,8 @@ const solid = useMemo(() => fromScene(scene), [scene]); // Scene: hợp đồng 
 | `readOnly` | `boolean` | Ẩn thanh công cụ; vẫn xoay, thu phóng, góc nhìn. |
 | `banner` | `ReactNode` | Thông điệp cố định trên khung (ví dụ MSG-GEO-16 của hình AI dựng). |
 | `highlight` | `{points?, edges?, faces?}` | Tô màu đối tượng theo tên/id (E4: bước lời giải). Id cạnh = hai tên đỉnh nối liền theo thứ tự đề (`SD`), id mặt = tên đỉnh đi vòng (`SAD`, `ABCD`). |
+| `highlight.angles` | `string[]` | E4: góc được tô, ba tên đỉnh với đỉnh góc ở giữa (`SDA`). |
+| `overlays` | `ViewerOverlay[]` (`overlay.tsx`) | E4: phần vẽ thêm của lời giải: `segment {a,b}` đường phụ, `right {at,a,b}` ký hiệu góc vuông, `arc {at,a,b,label}` cung góc kèm số đo. Dựng 3D rồi chiếu. Móc kiểm thử thêm khóa `solution: {highlight, shapes}`. |
 | `testId` | `string` | Tiền tố data-testid (mặc định `viewer`). Hai bộ xem trên cùng trang phải khác tiền tố. |
 | `className` | `string` | Lớp CSS cho khung ngoài; khung cần có chiều cao (bộ xem cao 100 %). |
 
@@ -41,3 +43,4 @@ Chỉ đọc, bật ở `vite` dev hoặc bản build có `VITE_GEO_TEST_HOOKS=1
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.0 | 23/11/2026 | Bản đầu: API component, cử chỉ, móc kiểm thử | agent E3b |
+| v1.1 | 23/11/2026 | E4: `highlight.angles`, `overlays` (overlay.tsx), khóa `solution` của móc; `rankNames` xuất khẩu để E4 tính id cạnh | agent E4 |

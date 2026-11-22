@@ -31,7 +31,7 @@ public class GeometryController {
 
   public record TemplateSceneRequest(Map<String, Object> params) {}
 
-  public record SelfStudyRequest(String statement) {}
+  public record SelfStudyRequest(String statement, String level) {}
 
   public record LabelRequest(String verifyStatus) {}
 
@@ -48,7 +48,16 @@ public class GeometryController {
 
   @PostMapping("/api/v1/student/self-study")
   public SelfStudyDto createSelfStudy(@RequestBody SelfStudyRequest body) {
-    return selfStudy.create(body == null ? null : body.statement());
+    return selfStudy.create(
+        body == null ? null : body.statement(), body == null ? null : body.level());
+  }
+
+  public record OcrRequest(String image) {}
+
+  /** E4 (US-GEO-402): đọc chữ từ ảnh đề để học sinh xem, sửa; không dựng hình. */
+  @PostMapping("/api/v1/student/self-study/ocr")
+  public SelfStudyService.OcrResult ocr(@RequestBody(required = false) OcrRequest body) {
+    return selfStudy.ocr(body == null ? null : body.image());
   }
 
   @GetMapping("/api/v1/student/self-study/{assignmentId}")
