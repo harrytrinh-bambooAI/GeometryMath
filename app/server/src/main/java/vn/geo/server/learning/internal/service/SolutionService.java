@@ -90,6 +90,8 @@ public class SolutionService {
    * giải đúng một lần (BR-GEO-186). Còn khóa: FORBIDDEN với thông điệp khóa, không có bước hay đáp
    * số.
    */
+  static final String AI_AUTHORED = "AI soạn";
+
   public SolutionView open(UUID assignmentId) {
     AuthPrincipal p = Roles.require(Role.STUDENT);
     HelpRepository.Opened o = repo.openSolution(p.userId(), assignmentId);
@@ -99,7 +101,7 @@ public class SolutionService {
               o.finalAnswer(),
               mapper.readTree(o.stepsJson()),
               "verified".equals(o.verifyStatus()) ? "Đã kiểm chứng" : "Cần xem lại",
-              "AI soạn",
+              o.aiAuthored() ? AI_AUTHORED : null, // nhãn người theo nguồn lời giải (BR-GEO-185)
               3,
               o.firstView());
       case "LOCKED" -> {

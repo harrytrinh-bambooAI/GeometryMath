@@ -18,6 +18,7 @@ import vn.geo.server.common.security.AuthPrincipal;
 import vn.geo.server.common.security.RequestContext;
 import vn.geo.server.common.security.Role;
 import vn.geo.server.it.e1.AbstractE1IT;
+import vn.geo.server.learning.api.HintApi;
 import vn.geo.server.tracking.internal.repo.FigureEventRepository;
 import vn.geo.server.tracking.internal.service.FigureEventService;
 import vn.geo.server.tracking.internal.service.FigureEventService.ToolEvent;
@@ -32,6 +33,7 @@ class FigureBatchE3IT extends AbstractE1IT {
   @Autowired TenantJdbc tenantJdbc;
   @Autowired StringRedisTemplate redis;
   @Autowired RedisKeys keys;
+  @Autowired HintApi hints;
 
   @Test
   @DisplayName(
@@ -48,7 +50,7 @@ class FigureBatchE3IT extends AbstractE1IT {
             return super.recordTools(userId, assignmentId, eventsJson);
           }
         };
-    FigureEventService service = new FigureEventService(flaky, redis, keys, mapper);
+    FigureEventService service = new FigureEventService(flaky, redis, keys, mapper, hints);
     AuthPrincipal an = new AuthPrincipal(ORG_A, AN, Role.STUDENT);
     UUID batch = UUID.randomUUID();
     List<ToolEvent> events =

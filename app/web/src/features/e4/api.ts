@@ -41,7 +41,8 @@ export interface SolutionView {
   finalAnswer: string;
   steps: SolutionStep[];
   machineLabel: string;
-  humanLabel: string;
+  /** "AI soạn" khi lời giải do AI soạn (BR-GEO-185); null khi không (FIX3 #11). */
+  humanLabel: string | null;
   k: number;
   firstView: boolean;
 }

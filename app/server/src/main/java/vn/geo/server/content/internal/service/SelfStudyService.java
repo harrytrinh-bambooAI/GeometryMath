@@ -215,10 +215,14 @@ public class SelfStudyService {
   private static final java.util.regex.Pattern BASE64 =
       java.util.regex.Pattern.compile("[A-Za-z0-9+/=\\s]+");
 
+  /** Trần kích thước ẢNH sau giải mã base64 (BR-GEO-171, D-GEO-110: 1 MB của ảnh). */
+  public static final int MAX_IMAGE_BYTES = 1_048_576;
+
   /**
    * Đọc chữ từ ảnh đề qua cổng AI (tác vụ "ocr", ghi mục đích 'scene'). Ảnh không lưu (lược đồ
-   * không có bảng ảnh). Ảnh không đọc được: MSG-GEO-22; ảnh vượt 1 MB bị chặn ở bộ lọc thân yêu
-   * cầu.
+   * không có bảng ảnh). Kiểm trước khi gọi AI (FIX3): ảnh sau giải mã vượt 1 MB → PAYLOAD_TOO_LARGE
+   * (MSG-GEO-06); không phải ảnh JPEG/PNG/HEIC/WebP theo byte đầu tệp (magic bytes) hoặc không đọc
+   * được: MSG-GEO-22. Bộ lọc thân yêu cầu cho đường này nới theo cỡ base64 của 1 MB ảnh.
    */
   public OcrResult ocr(String imageBase64) {
     Roles.require(Role.STUDENT);
@@ -228,6 +232,18 @@ public class SelfStudyService {
       b64 = b64.substring(comma + 1);
     }
     if (b64.isEmpty() || !BASE64.matcher(b64).matches()) {
+      throw AppException.invalidField("image", MSG_22);
+    }
+    byte[] img;
+    try {
+      img = java.util.Base64.getMimeDecoder().decode(b64);
+    } catch (IllegalArgumentException e) {
+      throw AppException.invalidField("image", MSG_22);
+    }
+    if (img.length > MAX_IMAGE_BYTES) {
+      throw new AppException(ErrorCode.PAYLOAD_TOO_LARGE);
+    }
+    if (!isImage(img)) {
       throw AppException.invalidField("image", MSG_22);
     }
     String text;
@@ -245,6 +261,26 @@ public class SelfStudyService {
       throw AppException.invalidField("image", MSG_22);
     }
     return new OcrResult(text);
+  }
+
+  /** Byte đầu tệp của ảnh nhận đọc: JPEG, PNG, HEIC/HEIF (hộp ftyp), WebP. */
+  static boolean isImage(byte[] b) {
+    if (b.length >= 3 && (b[0] & 0xFF) == 0xFF && (b[1] & 0xFF) == 0xD8 && (b[2] & 0xFF) == 0xFF) {
+      return true; // JPEG
+    }
+    byte[] png = {(byte) 0x89, 'P', 'N', 'G', '\r', '\n', 0x1A, '\n'};
+    if (b.length >= 8 && java.util.Arrays.equals(java.util.Arrays.copyOf(b, 8), png)) {
+      return true;
+    }
+    if (b.length >= 12 && ascii(b, 4, 4).equals("ftyp")) {
+      return java.util.Set.of("heic", "heix", "hevc", "hevx", "heim", "heis", "mif1", "msf1")
+          .contains(ascii(b, 8, 4));
+    }
+    return b.length >= 12 && ascii(b, 0, 4).equals("RIFF") && ascii(b, 8, 4).equals("WEBP");
+  }
+
+  private static String ascii(byte[] b, int from, int n) {
+    return new String(b, from, n, java.nio.charset.StandardCharsets.ISO_8859_1);
   }
 
   private Built build(JsonNode out) {

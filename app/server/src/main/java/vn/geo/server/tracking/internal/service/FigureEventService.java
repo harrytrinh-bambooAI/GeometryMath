@@ -44,13 +44,6 @@ public class FigureEventService {
   private final JsonMapper mapper;
   private final HintApi hints;
 
-  /** Không có gợi ý (dùng ở kiểm thử lô sự kiện của E3). */
-  public FigureEventService(
-      FigureEventRepository repo, StringRedisTemplate redis, RedisKeys keys, JsonMapper mapper) {
-    this(repo, redis, keys, mapper, null);
-  }
-
-  @org.springframework.beans.factory.annotation.Autowired
   public FigureEventService(
       FigureEventRepository repo,
       StringRedisTemplate redis,
