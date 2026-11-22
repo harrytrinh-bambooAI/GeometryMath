@@ -79,3 +79,13 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
   Sửa: điều kiện `p.bank='main' OR EXISTS(catalog_bank_access WHERE org_id=:orgId AND bank=p.bank)` ở cả 4 chỗ, trả NOT_FOUND; thêm guard Java dùng chung (vì E6 có thể định nghĩa lại fn_create_assignment); TC Dev "giáo viên ngoài bank → 404" cho chi tiết/lời giải/cảnh/giao bài.
   6. [minor] `CatalogTestHooks.java:~35` mã HKM-%02d từ count+1 có thể trùng khi chạy song song → sinh mã duy nhất.
   7. [minor] TC-0533 chưa chạm ca đề mới chèn TRƯỚC con trỏ (BR-GEO-217).
+- Phát hiện soát E4 (Sonnet, 23/11/2026) — 0 blocker:
+  8. [major] `HintService.java:generateSelfHints` gợi ý AI tự học không qua AnswerGuard (BR-GEO-179, US-405) → chạy guard trước khi lưu/trả.
+  9. [major] `SelfStudyService.ocr` + BodySizeLimitFilter: không kiểm loại tệp (magic bytes JPEG/PNG/HEIC…) và kích thước ảnh sau giải mã (D07 1 MB của ẢNH, không phải thân yêu cầu).
+  10. [minor] `AnswerGuard.addAnswer` bỏ qua đáp số < 2 ký tự ("a" của HKG-02, F-GEO-116).
+  11. [minor] `SolutionService.open` luôn gán "AI soạn", bỏ qua `aiAuthored()`.
+  12. [minor] `FigureEventService` constructor 4 tham số để hints=null → NPE; bỏ hoặc sửa.
+  13. [minor] `HintService`: hai yêu cầu đầu đồng thời gọi AI 2 lần; bài kế thừa khóa mà đề kho thiếu gợi ý sinh gợi ý AI rồi trả NOT_FOUND.
+  14. [minor] TC-0493 `qa.ui.spec.ts`, TC-0484 `inherit.ui.spec.ts`: gom body response bất đồng bộ → có thể đạt giả; chờ đủ response trước khi kiểm.
+  15. [minor] TC-0478 `expect(bearer(anC)).toBeTruthy()` luôn đúng; TC-0445 cần đếm event_log.
+  16. [minor] TC-0486 cửa sổ 20 s dễ đỏ giả trên máy chậm → dùng móc điều khiển giờ mở thay vì đồng hồ thật.
