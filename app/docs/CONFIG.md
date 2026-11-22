@@ -100,3 +100,9 @@ Tạo lỗi có `Retry-After` trong mã: `AppException.rateLimited(Duration)`, `
 | Khóa bắt buộc ngoài dev/test | `GEO_AUTH_SECRET` (`geo.auth.secret`), `GEO_AUTH_CODE_PEPPER` (`geo.auth.code-pepper`), `GEO_CURSOR_KEY` (`geo.paging.cursor-key`): không có mặc định trong `application-prod.yml`; rỗng hoặc còn giá trị dev thì từ chối khởi động | D-GEO-152 |
 | `geo.http.trust-forwarded-for` | `false` (mặc định và prod; prod chỉ bật bằng `GEO_TRUST_FORWARDED_FOR=true` khi có proxy tin cậy); `true` ở dev/test để E2E mô phỏng nhiều IP | TC-GEO-0179 |
 | `/dev/token`, `/test-hooks/*` | chỉ có ở dev/test (`@Profile`); ngoài dev/test không công khai trong `AuthFilter` (không thẻ => 401, có thẻ => 404) | PO-51 |
+
+## 9. Quyền bộ đề (bank) của Kho đề — guard bắt buộc (FIX3)
+- Bộ `main` mọi trường thấy; bộ khác chỉ tổ chức có hàng `catalog_bank_access` thấy (E5, V50). Không thấy = `NOT_FOUND` (BR-GEO-112), không lộ là đề có tồn tại.
+- **Mọi đường đọc hoặc giao một version đề kho theo id PHẢI gọi `vn.geo.server.content.api.BankAccess.requireVisible(versionId)` ở tầng dịch vụ trước khi đọc/ghi**: chi tiết đề (`CatalogService.detail`), lời giải giáo viên (`CatalogService.teacherSolution`), trang chi tiết có cảnh (`SceneService.teacherProblem`), tạo bài giao (`AssignmentService.create`), và mọi đường thêm sau này.
+- Lớp SQL cũng kiểm (V59: `fn_catalog_bank_visible` trong `fn_create_assignment`, `fn_get_solution_teacher`; điều kiện bộ trong `CatalogRepository.detail`, `SceneRepository.catalogVersion`). Migration nào định nghĩa lại các hàm này PHẢI giữ điều kiện `fn_catalog_bank_visible`; guard Java vẫn chặn nếu quên.
+- Kiểm thử: `it/e5/BankAccessE5IT` (Dev-E5-01…04: giáo viên ngoài bộ → 404 cho chi tiết, lời giải, cảnh, giao bài).
