@@ -27,3 +27,18 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - J hỏi đáp lũy đẳng theo requestId — **ĐÓNG** 76952cb (IT: cùng requestId → cùng câu trả lời, số lượt gọi AI không tăng).
 - Mới, còn MỞ (ngoài phạm vi FIX1): `BenchmarkE1IT.tc0148` thay chuỗi "Tính góc giữa SD và mặt đáy." không khớp XML (chữ có dấu ở dạng thực thể) nên không tạo phiên bản mới như chú thích nói; ca vẫn đạt nhưng kiểm yếu hơn ý định.
 - Mới, còn MỞ: trace/video của dự án UI vẫn chứa JWT (mục D chỉ phạm vi http.json + ảnh bảng).
+
+## Việc: FIX2 — phát hiện soát E3 (diff 0742560..09b0076, 23/11/2026) · sửa gom cùng E2/E4
+- **Mục tiêu:** đóng 3 major + 5 minor; thêm test cho từng mục.
+  1. [major] `shared/viewer/measures.ts:144-171` đo gián tiếp lộ đại lượng ẩn (dpp thay dff, dpl thay dll, SM=SD/2). Theo PO-56: ẩn mọi số đo có giá trị trùng một đại lượng đang ẩn trong dung sai (AnswerMatch.tolerance) khi lời giải còn khóa; thêm TC Dev.
+  2. [major] `hookGate.ts:6`, `Figure3DViewer.tsx:125`, `features/e3/index.tsx:12`: móc `__geoScene` + LPrismSandboxPage còn trong bản production. Dùng `import.meta.env.DEV || import.meta.env.VITE_GEO_TEST_HOOKS === '1'` trực tiếp + import động; thêm kiểm `grep __geoScene dist` = 0 trong `make verify` hoặc web build.
+  3. [major] `scripts/e2e.sh:32` + `vite.config.ts:19`: bản e2e ghi vào `web/dist`; dùng outDir `dist-e2e`.
+  4. [minor] TC-0309 `tests/e3/events.api.spec.ts:20-35` luôn đúng → thêm bước xoay/thu phóng thật rồi kiểm toolCount.
+  5. [minor] `openNowE3` `expectedRev:1` và describe.serial 0309/0313 vỡ khi retry → đọc rev hiện tại / reset làn.
+  6. [minor] `FigureEventService.java:68-74` khóa Redis figbatch đặt trước khi ghi DB → đặt sau khi ghi thành công; client giữ batchId khi gửi lại.
+  7. [minor] `visibility.ts:40` lấy mẫu 32 đoạn → tìm điểm chuyển chính xác (chia đôi); ghi rõ giới hạn mặt cong.
+  8. [minor] `model.ts:325` khóa lại phải ẩn lại số đo đã hiện; `model.ts:271` planarHull sai với thiết diện lõm.
+  + Thiếu test an ninh API E3: vai sai (403), học sinh khác bài/khác trường (404) cho figure-events, open, hints, lock.
+- **Nguồn:** bản soát độc lập E3 (Sonnet) 23/11/2026.
+- **Xong khi:** make verify xanh; web typecheck/lint/test/build xanh + grep `__geoScene` trong `web/dist` = 0; make e2e hai lượt đạt toàn bộ.
+- **Ngoài phạm vi:** tính năng mới; sửa stories_ac/test_cases.
