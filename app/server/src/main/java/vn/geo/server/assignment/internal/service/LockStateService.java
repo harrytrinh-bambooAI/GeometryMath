@@ -14,7 +14,13 @@ import vn.geo.server.common.security.Roles;
 @Service
 public class LockStateService {
 
-  public record LockState(boolean locked, String kind, Instant releaseAt) {}
+  /**
+   * state: unset | upcoming | open (bài lớp, M-GEO-13) hoặc locked | open (tự học); serverNow: giờ
+   * máy chủ để thiết bị đếm ngược "Còn …" mà không tin đồng hồ của mình (US-GEO-608-SC3, 612-SC2,
+   * FC4).
+   */
+  public record LockState(
+      boolean locked, String kind, Instant releaseAt, String state, Instant serverNow) {}
 
   private final LockStateRepository repo;
 
@@ -28,6 +34,11 @@ public class LockStateService {
     if ("NOT_FOUND".equals(g.status())) {
       throw new AppException(ErrorCode.NOT_FOUND);
     }
-    return new LockState(!"OK".equals(g.status()), g.kind(), g.releaseAt());
+    boolean locked = !"OK".equals(g.status());
+    String state =
+        !locked
+            ? "open"
+            : "self".equals(g.kind()) ? "locked" : g.releaseAt() == null ? "unset" : "upcoming";
+    return new LockState(locked, g.kind(), g.releaseAt(), state, g.serverNow());
   }
 }

@@ -10,7 +10,7 @@ import vn.geo.server.common.db.TenantJdbc;
 @Repository
 public class LockStateRepository {
 
-  public record Gate(String status, Instant releaseAt, String kind) {}
+  public record Gate(String status, Instant releaseAt, String kind, Instant serverNow) {}
 
   private final TenantJdbc jdbc;
 
@@ -21,7 +21,7 @@ public class LockStateRepository {
   public Gate gate(UUID userId, UUID assignmentId) {
     return jdbc.sql(
             """
-            SELECT g.status, a.release_at, CAST(a.kind AS text)
+            SELECT g.status, a.release_at, CAST(a.kind AS text), now()
             FROM fn_solution_gate(:orgId, :userId, :id) g
             LEFT JOIN assignment a ON a.org_id = :orgId AND a.id = :id
             LIMIT 1
@@ -30,7 +30,11 @@ public class LockStateRepository {
         .param("id", assignmentId)
         .query((rs, i) -> {
           OffsetDateTime ts = rs.getObject(2, OffsetDateTime.class);
-          return new Gate(rs.getString(1), ts == null ? null : ts.toInstant(), rs.getString(3));
+          return new Gate(
+              rs.getString(1),
+              ts == null ? null : ts.toInstant(),
+              rs.getString(3),
+              rs.getObject(4, OffsetDateTime.class).toInstant());
         })
         .single();
   }

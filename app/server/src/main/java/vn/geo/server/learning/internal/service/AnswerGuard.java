@@ -1,50 +1,38 @@
 package vn.geo.server.learning.internal.service;
 
-import java.text.Normalizer;
-import java.util.LinkedHashSet;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
 import java.util.UUID;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
 import vn.geo.server.common.security.AuthPrincipal;
 import vn.geo.server.common.security.Role;
 import vn.geo.server.common.security.Roles;
-import vn.geo.server.geometry.api.AnswerMatch;
 import vn.geo.server.learning.api.AnswerGuardApi;
+import vn.geo.server.learning.internal.repo.GuardRepository;
 import vn.geo.server.learning.internal.repo.HelpRepository;
 
 /**
- * Kiểm soát đáp án tối thiểu của E4 (xem {@link AnswerGuardApi}). Khi lời giải còn khóa: các dạng
- * viết của đáp số (giá trị sau dấu "=", dạng độ "45°" / "45 độ" / radian / chữ, giá trị thập phân
- * 2–4 chữ số với dấu phẩy và dấu chấm), các kết luận "vế trái = vế phải cuối" trong từng bước (ví
- * dụ "tan SDA = 1") và nguyên văn từng bước. So khớp không phân biệt hoa thường, bỏ khoảng trắng.
- * Không bắt đáp số một ký tự (ví dụ "a", F-GEO-116: việc của bộ kiểm đầy đủ E6).
+ * Kiểm soát đáp án đầy đủ của E6 (xem {@link AnswerGuardApi}, quy tắc ở {@link AnswerRules}). Thay
+ * bộ tối thiểu "g1-e4" của E4 ở cùng chỗ gọi. Ngữ cảnh lời giải lấy qua fn_guard_context (V60), chỉ
+ * dùng phía máy chủ.
  */
 @Service
 public class AnswerGuard implements AnswerGuardApi {
 
-  static final String VERSION = "g1-e4";
+  static final String VERSION = "g2-e6";
 
-  private static final Pattern DEG = Pattern.compile("(\\d+(?:[.,]\\d+)?)\\s*°");
-  private static final Map<String, List<String>> SPECIAL_DEG =
-      Map.of(
-          "30", List.of("π/6", "ba mươi độ"),
-          "45", List.of("π/4", "bốn mươi lăm độ"),
-          "60", List.of("π/3", "sáu mươi độ"),
-          "90", List.of("π/2", "chín mươi độ"),
-          "120", List.of("2π/3", "một trăm hai mươi độ"));
-
-  private final HelpRepository repo;
+  private final GuardRepository repo;
+  private final HelpRepository help;
+  private final GuardFaults faults;
   private final JsonMapper mapper;
 
-  public AnswerGuard(HelpRepository repo, JsonMapper mapper) {
+  public AnswerGuard(
+      GuardRepository repo, HelpRepository help, GuardFaults faults, JsonMapper mapper) {
     this.repo = repo;
+    this.help = help;
+    this.faults = faults;
     this.mapper = mapper;
   }
 
@@ -54,91 +42,80 @@ public class AnswerGuard implements AnswerGuardApi {
   }
 
   @Override
-  public Screened screen(UUID assignmentId, String reply) {
+  public Screened screen(UUID assignmentId, String question, String reply) {
     AuthPrincipal p = Roles.require(Role.STUDENT);
-    HelpRepository.GuardContext g = repo.guardContext(p.userId(), assignmentId);
-    if (!"OK".equals(g.status()) || !g.locked() || reply == null) {
-      return new Screened(false, reply);
-    }
-    Set<String> terms = new LinkedHashSet<>();
-    addAnswer(terms, g.finalAnswer());
-    addAnswer(terms, g.ownFinalAnswer());
-    addSteps(terms, g.stepsJson());
-    addSteps(terms, g.ownStepsJson());
-    String r = norm(reply);
-    for (String t : terms) {
-      String n = norm(t);
-      if (n.length() >= 2 && r.contains(n)) {
-        List<HelpRepository.SeenHint> seen = repo.seenHints(p.userId(), assignmentId);
-        String highest = seen.isEmpty() ? null : seen.get(seen.size() - 1).body();
-        return new Screened(true, HelpMessages.msg35(highest));
+    long started = System.nanoTime();
+    String rule;
+    try {
+      faults.check(p.userId());
+      GuardRepository.Context g = repo.context(p.userId(), assignmentId);
+      if (!"OK".equals(g.status()) || !g.locked() || faults.bypassed(p.userId())) {
+        return new Screened(false, reply, null);
       }
+      rule = AnswerRules.check(question, reply, locked(g.finalAnswer(), g.steps(), g.forms()));
+      if (rule == null && g.ownFinalAnswer() != null) {
+        rule =
+            AnswerRules.check(
+                question, reply, locked(g.ownFinalAnswer(), g.ownSteps(), g.ownForms()));
+      }
+    } catch (RuntimeException e) {
+      logQuietly(assignmentId, "error_closed", "ERR_GUARD", started);
+      throw new GuardFailure("Kiểm soát đáp án lỗi: đóng (KS-5)", e);
     }
-    return new Screened(false, reply);
+    if (rule == null) {
+      return new Screened(false, reply, null);
+    }
+    logQuietly(assignmentId, "blocked", rule, started);
+    List<HelpRepository.SeenHint> seen = help.seenHints(p.userId(), assignmentId);
+    String highest = seen.isEmpty() ? null : seen.get(seen.size() - 1).body();
+    return new Screened(true, HelpMessages.msg35(highest), rule);
   }
 
-  static String norm(String s) {
-    return Normalizer.normalize(s, Normalizer.Form.NFC)
-        .toLowerCase(Locale.ROOT)
-        .replaceAll("\\s+", "");
+  @Override
+  public Screened screenPreview(
+      UUID problemVersionId, String question, String reply, String highestHint) {
+    AuthPrincipal p = Roles.require(Role.TEACHER);
+    String rule;
+    try {
+      faults.check(p.userId());
+      GuardRepository.Catalog c = repo.catalog(p.userId(), problemVersionId).orElse(null);
+      // không có lời giải để so (đề lạ): vẫn chặn câu hỏi đòi đáp số
+      rule =
+          c == null
+              ? AnswerRules.check(question, reply, new AnswerRules.Locked(null, null, List.of()))
+              : AnswerRules.check(question, reply, locked(c.finalAnswer(), c.steps(), c.forms()));
+    } catch (RuntimeException e) {
+      throw new GuardFailure("Kiểm soát đáp án lỗi: đóng (KS-5)", e);
+    }
+    return rule == null
+        ? new Screened(false, reply, null)
+        : new Screened(true, HelpMessages.msg35(highestHint), rule);
   }
 
-  /** Dạng viết của đáp số (có thể nhiều đại lượng "Sxq = …; V = …"). */
-  static void addAnswer(Set<String> terms, String answer) {
-    if (answer == null || answer.isBlank()) {
-      return;
-    }
-    for (String part : answer.split(";")) {
-      String v = part.contains("=") ? part.substring(part.lastIndexOf('=') + 1) : part;
-      v = v.strip();
-      if (v.length() < 2) {
-        continue;
-      }
-      terms.add(v);
-      Matcher d = DEG.matcher(v);
-      if (d.find()) {
-        String n = d.group(1).replace(',', '.');
-        terms.add(n + " độ");
-        terms.addAll(SPECIAL_DEG.getOrDefault(n, List.of()));
-        continue;
-      }
-      try {
-        double x = new AnswerMatch.Quantity("", v, 0).valueAt(1);
-        if (Double.isFinite(x) && Math.abs(x - Math.rint(x)) > 1e-9) {
-          for (int dp = 2; dp <= 4; dp++) {
-            String f = String.format(Locale.ROOT, "%." + dp + "f", x);
-            terms.add(f);
-            terms.add(f.replace('.', ','));
-          }
-        }
-      } catch (RuntimeException e) {
-        // biểu thức AnswerMatch không đọc được: chỉ so nguyên văn
+  private AnswerRules.Locked locked(String answer, String stepsJson, String formsJson) {
+    List<String> bodies = new ArrayList<>();
+    if (stepsJson != null) {
+      for (JsonNode st : mapper.readTree(stepsJson)) {
+        bodies.add(st.path("body").asString(""));
       }
     }
-  }
-
-  /** Nguyên văn từng bước và các kết luận "vế trái = vế phải cuối" của bước. */
-  void addSteps(Set<String> terms, String stepsJson) {
-    if (stepsJson == null) {
-      return;
-    }
-    JsonNode steps = mapper.readTree(stepsJson);
-    for (JsonNode st : steps) {
-      String body = st.path("body").asString("");
-      if (body.isBlank()) {
-        continue;
-      }
-      terms.add(body);
-      for (String clause : body.split("[,;.]|suy ra|Vậy")) {
-        String[] parts = clause.split("=");
-        if (parts.length >= 2) {
-          String lhs = parts[0].strip();
-          String rhs = parts[parts.length - 1].strip();
-          if (!lhs.isEmpty() && lhs.length() <= 24 && !rhs.isEmpty()) {
-            terms.add(lhs + " = " + rhs);
-          }
+    List<String> forms = new ArrayList<>();
+    if (formsJson != null) {
+      for (JsonNode f : mapper.readTree(formsJson)) {
+        if (f.isString()) {
+          forms.add(f.asString());
         }
       }
+    }
+    return new AnswerRules.Locked(answer, bodies.toArray(String[]::new), forms);
+  }
+
+  private void logQuietly(UUID assignmentId, String outcome, String rule, long started) {
+    try {
+      repo.log(
+          assignmentId, outcome, rule, VERSION, (int) ((System.nanoTime() - started) / 1_000_000));
+    } catch (RuntimeException e) {
+      // nhật ký chặn không được làm hỏng đường trả lời (câu trả lời đã bị thay)
     }
   }
 }
