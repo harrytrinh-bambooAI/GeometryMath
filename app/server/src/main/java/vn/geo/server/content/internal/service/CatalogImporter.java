@@ -10,6 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tools.jackson.databind.json.JsonMapper;
@@ -39,10 +40,22 @@ public class CatalogImporter {
 
   private final ContentRepository repo;
   private final JsonMapper mapper;
+  private final String model;
+  private final String promptVersion;
 
-  public CatalogImporter(ContentRepository repo, JsonMapper mapper) {
+  /**
+   * @param model, promptVersion nguồn gốc lời giải ghi kèm (BR-GEO-113 "Lời giải có model, phiên
+   *     bản prompt, tác giả"; US-GEO-104-SC5): model và phiên bản prompt của cổng AI đang cấu hình.
+   */
+  public CatalogImporter(
+      ContentRepository repo,
+      JsonMapper mapper,
+      @Value("${geo.ai.model}") String model,
+      @Value("${geo.ai.prompt-version}") String promptVersion) {
     this.repo = repo;
     this.mapper = mapper;
+    this.model = model;
+    this.promptVersion = promptVersion;
   }
 
   @Transactional
@@ -92,8 +105,8 @@ public class CatalogImporter {
             answer,
             mapper.writeValueAsString(steps.getOrDefault(code, List.of())),
             mapper.writeValueAsString(AnswerExpr.forms(qs)),
-            null,
-            null);
+            model,
+            promptVersion);
       }
       codes.add(code);
       items.add(new Object[] {code, problemId, versionId, missing});

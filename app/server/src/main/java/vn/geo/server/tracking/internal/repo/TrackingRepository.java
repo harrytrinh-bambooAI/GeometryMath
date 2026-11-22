@@ -92,6 +92,21 @@ public class TrackingRepository {
         .single();
   }
 
+  /** Lượt hỏi đã lưu của chính học sinh với requestId này (lũy đẳng, khóa (org_id, request_id)). */
+  public Optional<Long> qaIdByRequest(UUID userId, UUID assignmentId, UUID requestId) {
+    return jdbc.sql(
+            """
+            SELECT id FROM qa_turn
+            WHERE org_id = :orgId AND request_id = :requestId AND user_id = :userId AND assignment_id = :id
+            LIMIT 1
+            """)
+        .param("userId", userId)
+        .param("id", assignmentId)
+        .param("requestId", requestId)
+        .query(Long.class)
+        .optional();
+  }
+
   public Optional<Answer> answer(UUID userId, long id) {
     return jdbc.sql(
             """

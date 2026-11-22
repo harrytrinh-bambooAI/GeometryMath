@@ -10,7 +10,9 @@ import type { FullConfig, FullResult, Reporter, Suite, TestCase, TestResult } fr
  * Mã TC lấy từ tag của test: '@TC-GEO-0100' (TC của QC) hoặc '@TC-KHUNG-nn' (test khung, không thuộc test_cases.md).
  * Test không gắn mã TC vẫn có bằng chứng, xếp vào thư mục _khong-ma-TC.
  */
-const TC_TAG = /^@(TC-[A-Z]+-[0-9A-Z-]+)$/;
+const TC_TAG = /^@(TC-GEO-\d{4}|TC-KHUNG-\d+)$/;
+/** Chuỗi trông giống mã TC (để cảnh báo khi sai định dạng, ví dụ @TC-GEO-120, TC_GEO_0120, @tc-geo-0120). */
+const TC_LIKE = /@?\bTC[-_ ]?[A-Z]*[-_ ]?\d+[0-9A-Z-]*/gi;
 const NO_TC = '_khong-ma-TC';
 
 type Evidence = { screenshots: string[]; trace?: string; video?: string; http?: string; error?: string; other: string[] };
@@ -44,6 +46,8 @@ export default class EvidenceReporter implements Reporter {
   private entries: Entry[] = [];
   private usedDirs = new Set<string>();
   private projects: string[] = [];
+  private suite: Suite | undefined;
+  private warned = new Set<string>();
 
   constructor(options: { outDir?: string } = {}) {
     this.outRoot = path.resolve(options.outDir ?? 'evidence');
@@ -53,11 +57,30 @@ export default class EvidenceReporter implements Reporter {
     return false;
   }
 
-  onBegin(config: FullConfig, _suite: Suite): void {
+  onBegin(config: FullConfig, suite: Suite): void {
+    this.suite = suite;
+    for (const t of suite.allTests()) this.warnMalformedTc(t);
     this.run = process.env.GEO_E2E_RUN ?? 'local';
     this.runDir = path.join(this.outRoot, this.run);
     this.projects = config.projects.map((p) => p.name);
     mkdirSync(this.runDir, { recursive: true });
+  }
+
+  /** Tiêu đề/tag có chuỗi giống mã TC nhưng sai định dạng (@TC-GEO-nnnn, @TC-KHUNG-n) => cảnh báo, không tính. */
+  private warnMalformedTc(test: TestCase): void {
+    const valid = new Set(test.tags.filter((t) => TC_TAG.test(t)));
+    const candidates = [...test.title.matchAll(TC_LIKE), ...test.tags.join(' ').matchAll(TC_LIKE)].map((m) => m[0]);
+    for (const c of candidates) {
+      const tag = c.startsWith('@') ? c : `@${c}`;
+      if (valid.has(tag) && c.startsWith('@')) continue;
+      const key = `${test.location.file}:${test.location.line}|${c}`;
+      if (this.warned.has(key)) continue;
+      this.warned.add(key);
+      process.stderr.write(
+        `[bằng chứng] CẢNH BÁO: "${c}" ở ${path.relative(process.cwd(), test.location.file)}:${test.location.line} ` +
+          `("${test.title}") không đúng định dạng mã TC (@TC-GEO-nnnn hoặc @TC-KHUNG-n); không được tính vào truy vết.\n`,
+      );
+    }
   }
 
   onTestEnd(test: TestCase, result: TestResult): void {
@@ -124,10 +147,42 @@ export default class EvidenceReporter implements Reporter {
   }
 
   onEnd(result: FullResult): void {
+    // Test không chạy tới (lượt bị ngắt, dừng sớm vì quá số lỗi, bị bỏ qua trước khi chạy): onTestEnd không
+    // được gọi => vẫn đưa vào summary với trạng thái tương ứng (interrupted / skipped), không có bằng chứng.
+    const seen = new Set(this.entries.map((e) => `${e.file}:${e.line}|${e.project}`));
+    for (const t of this.suite?.allTests() ?? []) {
+      const project = t.parent.project()?.name ?? 'khong-ro';
+      const file = path.relative(process.cwd(), t.location.file);
+      if (seen.has(`${file}:${t.location.line}|${project}`)) continue;
+      const status: TestResult['status'] =
+        result.status === 'interrupted' || result.status === 'timedout' ? 'interrupted' : 'skipped';
+      const tcs = t.tags.map((x) => TC_TAG.exec(x)?.[1]).filter((x): x is string => !!x);
+      for (const tc of tcs.length ? tcs : [NO_TC]) {
+        this.entries.push({
+          tc,
+          title: t.title,
+          file,
+          line: t.location.line,
+          project,
+          status,
+          outcome: t.outcome(),
+          ok: false,
+          durationMs: 0,
+          retry: 0,
+          dir: '',
+          evidence: { screenshots: [], other: [] },
+        });
+      }
+    }
+
     // Lần thử cuối cùng của mỗi (TC, test, project) quyết định trạng thái.
     const last = new Map<string, Entry>();
     for (const e of this.entries) last.set(`${e.tc}|${e.file}:${e.line}|${e.project}`, e);
     const finals = [...last.values()];
+    // Tổng số test đếm theo (test, project), KHÔNG nhân theo số mã TC gắn trên một test.
+    const perTest = new Map<string, Entry>();
+    for (const e of finals) perTest.set(`${e.file}:${e.line}|${e.project}`, e);
+    const tests = [...perTest.values()];
 
     const tcs: Record<string, { status: 'passed' | 'failed' | 'skipped'; tests: Entry[] }> = {};
     for (const e of this.entries) (tcs[e.tc] ??= { status: 'passed', tests: [] }).tests.push(e);
@@ -140,10 +195,11 @@ export default class EvidenceReporter implements Reporter {
           : 'passed';
     }
     const totals = {
-      tests: finals.length,
-      passed: finals.filter((e) => e.ok && e.status !== 'skipped').length,
-      failed: finals.filter((e) => !e.ok && e.status !== 'skipped').length,
-      skipped: finals.filter((e) => e.status === 'skipped').length,
+      tests: tests.length,
+      passed: tests.filter((e) => e.ok && e.status !== 'skipped').length,
+      failed: tests.filter((e) => !e.ok && e.status !== 'skipped' && e.status !== 'interrupted').length,
+      interrupted: tests.filter((e) => e.status === 'interrupted').length,
+      skipped: tests.filter((e) => e.status === 'skipped').length,
       tcs: Object.keys(tcs).length,
       tcsPassed: Object.values(tcs).filter((t) => t.status === 'passed').length,
       tcsFailed: Object.values(tcs).filter((t) => t.status === 'failed').length,
@@ -192,7 +248,7 @@ export default class EvidenceReporter implements Reporter {
           link(e.evidence.http, 'http.json'),
           link(e.evidence.error, 'lỗi'),
           ...e.evidence.other.map((p) => link(p, path.basename(p))),
-          link(e.dir + '/', 'thư mục'),
+          e.dir ? link(e.dir + '/', 'thư mục') : '(không chạy tới, không có bằng chứng)',
         ]
           .filter(Boolean)
           .join(' · ')}</td></tr>`,
@@ -218,6 +274,7 @@ tr.bad td{background:#FFF8F7} a{color:#3B5BDB}
 <div class="cards">
 <div class="card"><b>${t.passed}/${t.tests}</b>test đạt</div>
 <div class="card"><b>${t.failed}</b>test trượt</div>
+<div class="card"><b>${t.interrupted}</b>không chạy tới · <b style="display:inline;font-size:14px">${t.skipped}</b> bỏ qua</div>
 <div class="card"><b>${t.tcsPassed}/${t.tcs}</b>mã TC đạt</div>
 <div class="card"><a href="summary.json">summary.json</a><br><a href="traceability.txt">traceability.txt</a></div>
 </div>

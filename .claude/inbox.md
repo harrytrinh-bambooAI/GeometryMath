@@ -11,3 +11,19 @@
 - **Xong khi:** `make verify` xanh; `npm run typecheck && npm run lint && npm run build` xanh; `make e2e` đạt; khởi động không có profile → lỗi rõ ràng.
 - **Ngoài phạm vi:** tính năng nghiệp vụ; tài liệu sản phẩm.
 - Đã sửa ngay (có thể xóa dữ liệu): #1 seed-reset thiếu chốt cụm, #7 tiền tố Redis — xem git log.
+- **Trạng thái (FIX1, nhánh mvp-fix1, 22/11/2026):** #1 ĐÓNG b0da801 · #2 ĐÓNG 17cb003 · #3 ĐÓNG 17cb003 · #4 ĐÓNG 17cb003 · #5 ĐÓNG 17cb003.
+
+## Việc: FIX1 — lô A…J (soát Đợt 0 + soát E1) · nhánh mvp-fix1
+Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/build đạt; `make e2e` hai lượt liên tiếp 67/67 test (api 23, chromium 22, webkit 22), E1 67/67 TC có test, 0 trượt.
+- A [major] profile mặc định, prod thiếu khóa, lộ /dev, /test-hooks — **ĐÓNG** b0da801 (ProfileGuard, ProfileGuardTest, ProdProfileIT, CONFIG.md §8).
+- B env.sh — **ĐÓNG** 17cb003.
+- C client.ts URL khác nguồn — **ĐÓNG** 17cb003 (url.ts + url.test.ts).
+- D che token trong bằng chứng — **ĐÓNG** 17cb003.
+- E evidence-reporter — **ĐÓNG** 17cb003.
+- F reset thử sai chéo file (TC-0171/0179) — **ĐÓNG** 76952cb (reset theo ips/userIds; khóa liên tiến trình F-GEO-003 giữa TC-0179 và TC-0111/0112).
+- G TC-0122 assertion luôn đúng; TC-0120 phía máy chủ — **ĐÓNG** 76952cb (đếm đúng +1, không trùng, bản ghi cũ còn nguyên; khóa AN_AI_LOCK; IT tc0120).
+- H TC-0127 chỉ đọc seed — **ĐÓNG** 76952cb. Phát hiện kèm: CatalogImporter ghi lời giải với model/prompt NULL (trái BR-GEO-113) → sửa: ghi `geo.ai.model`/`geo.ai.prompt-version`. Dữ liệu hình (scene_build) chưa có đường tạo trong E1 nên vẫn kiểm bản seed.
+- I TC-0802 SQL chép tay — **ĐÓNG** 76952cb (repository thật + auto_explain thu kế hoạch cả trong hàm plpgsql; Q20 chưa có repo, giữ truy vấn danh mục).
+- J hỏi đáp lũy đẳng theo requestId — **ĐÓNG** 76952cb (IT: cùng requestId → cùng câu trả lời, số lượt gọi AI không tăng).
+- Mới, còn MỞ (ngoài phạm vi FIX1): `BenchmarkE1IT.tc0148` thay chuỗi "Tính góc giữa SD và mặt đáy." không khớp XML (chữ có dấu ở dạng thực thể) nên không tạo phiên bản mới như chú thích nói; ca vẫn đạt nhưng kiểm yếu hơn ý định.
+- Mới, còn MỞ: trace/video của dự án UI vẫn chứa JWT (mục D chỉ phạm vi http.json + ảnh bảng).

@@ -1,4 +1,4 @@
-# Profile dev (mặc định): bật /dev/token để thử bằng curl. Không bật ở môi trường thật.
+# Profile dev (bật tường minh: SPRING_PROFILES_ACTIVE=dev; make run / make e2e tự đặt): bật /dev/token để thử bằng curl. Không bật ở môi trường thật.
 # Móc kiểm thử dev/E2E (không có ở prod): /test-hooks/* (PO-51), tin X-Forwarded-For để mô phỏng nhiều IP.
 geo:
   http.trust-forwarded-for: true

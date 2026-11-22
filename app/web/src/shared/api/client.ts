@@ -1,5 +1,6 @@
 import { getToken, signalUnauthenticated } from '../auth/session.ts';
 import { ApiError, isApiErrorBody, toErrorCode } from './errors.ts';
+import { buildUrl, type Query } from './url.ts';
 
 /**
  * Máy khách HTTP duy nhất của giao diện.
@@ -11,24 +12,13 @@ import { ApiError, isApiErrorBody, toErrorCode } from './errors.ts';
 export interface RequestOptions {
   method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
   body?: unknown;
-  query?: Record<string, string | number | boolean | undefined>;
+  query?: Query;
   signal?: AbortSignal;
   /** Bỏ gắn thẻ (gọi công khai như /health). */
   anonymous?: boolean;
 }
 
-export const API_BASE = '/api/v1';
-
-function buildUrl(path: string, query?: RequestOptions['query']): string {
-  const url = path.startsWith('/') ? path : `${API_BASE}/${path}`;
-  if (!query) return url;
-  const qs = new URLSearchParams();
-  for (const [k, v] of Object.entries(query)) {
-    if (v !== undefined) qs.set(k, String(v));
-  }
-  const s = qs.toString();
-  return s ? `${url}?${s}` : url;
-}
+export { API_BASE } from './url.ts';
 
 export async function apiRequest<T>(path: string, opts: RequestOptions = {}): Promise<T> {
   const headers: Record<string, string> = { Accept: 'application/json' };
@@ -40,9 +30,10 @@ export async function apiRequest<T>(path: string, opts: RequestOptions = {}): Pr
     body = JSON.stringify(opts.body);
   }
 
+  const url = buildUrl(path, opts.query); // ném lỗi lập trình nếu đường dẫn sang nguồn khác (không gửi thẻ)
   let res: Response;
   try {
-    res = await fetch(buildUrl(path, opts.query), {
+    res = await fetch(url, {
       method: opts.method ?? 'GET',
       headers,
       body,

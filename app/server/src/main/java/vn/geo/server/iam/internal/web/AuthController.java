@@ -64,9 +64,19 @@ public class AuthController {
       return Map.of("left", auth.leaveClass(b.joinCode(), b.displayName()));
     }
 
+    /** Phạm vi đặt lại: địa chỉ IP (như X-Forwarded-For ca kiểm gửi) và/hoặc tài khoản. */
+    public record ResetScope(List<String> ips, List<java.util.UUID> userIds) {}
+
     @PostMapping("/test-hooks/auth-failures/reset")
-    public Map<String, Integer> reset() {
-      return Map.of("deleted", auth.resetAuthFailures());
+    public org.springframework.http.ResponseEntity<Map<String, Object>> reset(
+        @RequestBody ResetScope b) {
+      if ((b.ips() == null || b.ips().isEmpty())
+          && (b.userIds() == null || b.userIds().isEmpty())) {
+        return org.springframework.http.ResponseEntity.badRequest()
+            .body(Map.of("error", "cần ips hoặc userIds (không xóa toàn bảng)"));
+      }
+      return org.springframework.http.ResponseEntity.ok(
+          Map.of("deleted", auth.resetAuthFailures(b.ips(), b.userIds())));
     }
   }
 }

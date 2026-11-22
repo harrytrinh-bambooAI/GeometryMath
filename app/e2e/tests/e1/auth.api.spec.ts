@@ -1,5 +1,5 @@
 import { expect, test } from '../../support/fixtures.ts';
-import { BG, CODE, MSG, PV, bearer, devToken, ipFor, leaveClass, resetAuthFailures } from './e1.ts';
+import { BG, CODE, MSG, PV, USER, bearer, devToken, ipFor, leaveClass, resetAuthFailures, withLock } from './e1.ts';
 
 /** US-GEO-101-SC6, US-GEO-102 (mã giáo viên, dò mã, phân quyền vai) — gọi thẳng máy chủ. */
 test.describe.configure({ mode: 'serial' }); // các ca dò mã dùng chung bộ đếm theo tài khoản F-GEO-003
@@ -39,7 +39,7 @@ test('Học sinh không làm được việc của giáo viên @TC-GEO-0114', as
 
 test('Dò mã: lần thử thứ 11 trong 15 phút bị chặn @TC-GEO-0171', async ({ request }, testInfo) => {
   const ip = ipFor(testInfo);
-  await resetAuthFailures(request);
+  await resetAuthFailures(request, { ips: [ip] });
   try {
     for (let i = 1; i <= 10; i++) {
       const r = await request.post('/api/v1/auth/teacher', {
@@ -56,21 +56,22 @@ test('Dò mã: lần thử thứ 11 trong 15 phút bị chặn @TC-GEO-0171', as
     expect(body).toMatchObject({ code: 'RATE_LIMITED', message: MSG['59'] });
     expect(body.token).toBeUndefined();
   } finally {
-    await resetAuthFailures(request);
+    await resetAuthFailures(request, { ips: [ip] });
   }
 });
 
 test('Mã quá hạn dùng @TC-GEO-0176', async ({ request }, testInfo) => {
-  await resetAuthFailures(request);
+  const ip = ipFor(testInfo);
+  await resetAuthFailures(request, { ips: [ip] });
   const r = await request.post('/api/v1/auth/teacher', {
-    headers: { 'X-Forwarded-For': ipFor(testInfo) },
+    headers: { 'X-Forwarded-For': ip },
     data: { code: CODE['F-GEO-007'] },
   });
   expect(r.status()).toBe(400);
   const body = (await r.json()) as Err & { token?: string };
   expect(body.message).toBe(MSG['12']);
   expect(body.token).toBeUndefined();
-  await resetAuthFailures(request);
+  await resetAuthFailures(request, { ips: [ip] });
 });
 
 test('Phiên học sinh không dùng được đường lời giải của giáo viên @TC-GEO-0177', async ({ request }) => {
@@ -83,27 +84,31 @@ test('Phiên học sinh không dùng được đường lời giải của giáo
 });
 
 test('Dò mã từ nhiều địa chỉ IP: lần thử thứ 11 trên cùng một tài khoản bị chặn @TC-GEO-0179', async ({ request }) => {
-  await resetAuthFailures(request);
-  try {
-    const send = (ip: string, code: string) =>
-      request.post('/api/v1/auth/teacher', { headers: { 'X-Forwarded-For': ip }, data: { code } });
-    for (const [ip, code] of [
-      ['203.0.113.10', 'GQ7KAAAAAAAA'],
-      ['203.0.113.20', 'GQ7KBBBBBBBB'],
-    ] as const) {
-      for (let i = 0; i < 5; i++) {
-        const r = await send(ip, code);
-        expect(r.status()).toBe(400);
-        expect((await r.json()) as Err).toMatchObject({ code: 'VALIDATION_FAILED', message: MSG['12'] });
+  // tài khoản F-GEO-003 dùng chung với TC-GEO-0111/0112 (UI) => giữ khóa liên tiến trình suốt ca
+  const scope = { ips: ['203.0.113.10', '203.0.113.20', '203.0.113.30'], userIds: [USER('F-GEO-003')] };
+  await withLock('teacher-F-GEO-003', async () => {
+    await resetAuthFailures(request, scope);
+    try {
+      const send = (ip: string, code: string) =>
+        request.post('/api/v1/auth/teacher', { headers: { 'X-Forwarded-For': ip }, data: { code } });
+      for (const [ip, code] of [
+        ['203.0.113.10', 'GQ7KAAAAAAAA'],
+        ['203.0.113.20', 'GQ7KBBBBBBBB'],
+      ] as const) {
+        for (let i = 0; i < 5; i++) {
+          const r = await send(ip, code);
+          expect(r.status()).toBe(400);
+          expect((await r.json()) as Err).toMatchObject({ code: 'VALIDATION_FAILED', message: MSG['12'] });
+        }
       }
+      const r = await send('203.0.113.30', CODE['F-GEO-003']!);
+      expect(r.status()).toBe(429);
+      expect(r.headers()['retry-after']).toMatch(/^\d+$/);
+      const body = (await r.json()) as Err & { token?: string };
+      expect(body).toMatchObject({ code: 'RATE_LIMITED', message: MSG['59'] });
+      expect(body.token).toBeUndefined();
+    } finally {
+      await resetAuthFailures(request, scope); // móc PO-51: không để ca sau bị chặn
     }
-    const r = await send('203.0.113.30', CODE['F-GEO-003']!);
-    expect(r.status()).toBe(429);
-    expect(r.headers()['retry-after']).toMatch(/^\d+$/);
-    const body = (await r.json()) as Err & { token?: string };
-    expect(body).toMatchObject({ code: 'RATE_LIMITED', message: MSG['59'] });
-    expect(body.token).toBeUndefined();
-  } finally {
-    await resetAuthFailures(request); // móc PO-51: không để ca sau bị chặn
-  }
+  });
 });

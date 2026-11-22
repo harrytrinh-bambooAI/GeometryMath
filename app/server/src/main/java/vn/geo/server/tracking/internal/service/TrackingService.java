@@ -3,6 +3,7 @@ package vn.geo.server.tracking.internal.service;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -108,6 +109,15 @@ public class TrackingService {
     if (!ctx.allowQa()) {
       throw new AppException(ErrorCode.FORBIDDEN, "Bài này không bật Hỏi đáp.");
     }
+    // Lũy đẳng (RV-18): gửi lại cùng requestId => trả câu trả lời ĐÃ LƯU, không gọi AI lần nữa.
+    if (requestId != null) {
+      Optional<Asked> saved =
+          repo.qaIdByRequest(p.userId(), assignmentId, requestId)
+              .flatMap(id -> savedAsked(p.userId(), id));
+      if (saved.isPresent()) {
+        return saved.get();
+      }
+    }
     String prompt =
         "Vai trò: trợ lý học hình học không gian, gợi mở, không nêu đáp số.\n"
             + "Đề bài: "
@@ -121,8 +131,17 @@ public class TrackingService {
     if (r.id() == null) {
       throw new AppException(ErrorCode.NOT_FOUND);
     }
+    if ("DUPLICATE".equals(r.status())) {
+      // hai yêu cầu cùng requestId chạy đua: trả bản đã lưu (bản ghi đầu), bỏ câu trả lời vừa sinh
+      return savedAsked(p.userId(), r.id())
+          .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
+    }
     evictMonitor(p.orgId(), assignmentId);
     return new Asked(r.id(), q, "concept", reply);
+  }
+
+  private Optional<Asked> savedAsked(UUID userId, long id) {
+    return repo.answer(userId, id).map(a -> new Asked(a.id(), a.question(), a.kind(), a.reply()));
   }
 
   /** Câu trả lời đã lưu: chỉ người hỏi (giáo viên: FORBIDDEN; người khác: NOT_FOUND). */

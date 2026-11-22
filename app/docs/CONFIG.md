@@ -90,3 +90,13 @@ Tạo lỗi có `Retry-After` trong mã: `AppException.rateLimited(Duration)`, `
 | Kiểm ranh giới đúng R qua API | R = giờ máy chủ + 2 giây rồi chờ | D-GEO-169 |
 | E2E | Playwright (`app/e2e`), múi giờ `Asia/Ho_Chi_Minh` | D-GEO-170 |
 | Thử tải | Gatling Java DSL (`app/loadtest`) | D-GEO-170 |
+
+## 8. Profile và khóa bí mật (chốt khởi động `ProfileGuard`)
+| Hạng mục | Giá trị | Nguồn |
+|---|---|---|
+| Profile mặc định | **không có**; phải bật tường minh `dev`, `test` hoặc `prod`. Không bật thì máy chủ từ chối khởi động | soát Đợt 0 (22/11/2026) |
+| Cách bật | `make run`: `-Dspring-boot.run.profiles=dev`; `scripts/e2e.sh`: `--spring.profiles.active=dev`; IT: `@ActiveProfiles("test")` | — |
+| `prod` cùng `dev`/`test` | từ chối khởi động | — |
+| Khóa bắt buộc ngoài dev/test | `GEO_AUTH_SECRET` (`geo.auth.secret`), `GEO_AUTH_CODE_PEPPER` (`geo.auth.code-pepper`), `GEO_CURSOR_KEY` (`geo.paging.cursor-key`): không có mặc định trong `application-prod.yml`; rỗng hoặc còn giá trị dev thì từ chối khởi động | D-GEO-152 |
+| `geo.http.trust-forwarded-for` | `false` (mặc định và prod; prod chỉ bật bằng `GEO_TRUST_FORWARDED_FOR=true` khi có proxy tin cậy); `true` ở dev/test để E2E mô phỏng nhiều IP | TC-GEO-0179 |
+| `/dev/token`, `/test-hooks/*` | chỉ có ở dev/test (`@Profile`); ngoài dev/test không công khai trong `AuthFilter` (không thẻ => 401, có thẻ => 404) | PO-51 |

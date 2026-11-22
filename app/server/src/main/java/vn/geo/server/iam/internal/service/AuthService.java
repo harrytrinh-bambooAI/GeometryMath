@@ -108,8 +108,13 @@ public class AuthService {
         joinCode == null ? "" : joinCode.strip().toUpperCase(Locale.ROOT), NameKey.of(displayName));
   }
 
-  public int resetAuthFailures() {
-    return repo.resetAuthFailures();
+  /**
+   * Móc kiểm thử: xóa lần thử sai của các địa chỉ IP (dạng rõ, băm như lúc đăng nhập) và tài khoản.
+   */
+  public int resetAuthFailures(List<String> ips, List<UUID> userIds) {
+    return repo.resetAuthFailures(
+        ips == null ? List.of() : ips.stream().map(ip -> hmac("ip:" + ip)).toList(),
+        userIds == null ? List.of() : userIds);
   }
 
   private byte[] hmac(String data) {

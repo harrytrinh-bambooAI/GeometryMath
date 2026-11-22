@@ -55,7 +55,8 @@ Chi tiết: [web/README.md](web/README.md), [e2e/README.md](e2e/README.md), seed
 ```
 cd server
 ./mvnw -DskipTests package
-java -jar target/geo-server-0.1.0-SNAPSHOT.jar        # profile dev, cổng 8080, DB geo_dev
+java -jar target/geo-server-0.1.0-SNAPSHOT.jar --spring.profiles.active=dev   # cổng 8080, DB geo_dev
+# Không bật profile thì máy chủ từ chối khởi động (không còn mặc định dev; xem docs/CONFIG.md "Profile").
 ```
 Thử nhanh:
 ```

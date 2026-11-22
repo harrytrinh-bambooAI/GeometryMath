@@ -25,6 +25,7 @@ export const fixtureIds: FixtureIds = JSON.parse(
 type Exchange = {
   method: string;
   url: string;
+  requestHeaders?: Record<string, string>;
   requestBody?: unknown;
   status: number;
   responseHeaders: Record<string, string>;
@@ -34,6 +35,36 @@ type Exchange = {
 
 const METHODS = ['get', 'post', 'put', 'patch', 'delete', 'head', 'fetch'] as const;
 
+/**
+ * Che bí mật trong bằng chứng (http.json, ảnh bảng yêu cầu/phản hồi): giá trị trường `token`, tiêu đề
+ * `Authorization`, và mọi chuỗi dạng JWT / `Bearer ...` / `"token":"..."` còn sót trong văn bản.
+ */
+export const MASK = '***(đã che)***';
+const SECRET_KEYS = /^(token|authorization)$/i;
+const JWT = /eyJ[\w-]+\.[\w-]+\.[\w-]+/g;
+const BEARER = /Bearer\s+[^\s"',]+/g;
+const TOKEN_FIELD = /("token"\s*:\s*")[^"]*(")/gi;
+export function redactText(s: string): string {
+  return s.replace(BEARER, `Bearer ${MASK}`).replace(JWT, MASK).replace(TOKEN_FIELD, `$1${MASK}$2`);
+}
+export function redact(v: unknown): unknown {
+  if (typeof v === 'string') return redactText(v);
+  if (Array.isArray(v)) return v.map(redact);
+  if (v && typeof v === 'object') {
+    return Object.fromEntries(
+      Object.entries(v as Record<string, unknown>).map(([k, x]) => [k, SECRET_KEYS.test(k) && x != null ? MASK : redact(x)]),
+    );
+  }
+  return v;
+}
+function redactBody(body: string): string {
+  try {
+    return JSON.stringify(redact(JSON.parse(body)));
+  } catch {
+    return redactText(body);
+  }
+}
+
 function wrapRequest(ctx: APIRequestContext, log: Exchange[]): APIRequestContext {
   return new Proxy(ctx, {
     get(target, prop, receiver) {
@@ -41,7 +72,7 @@ function wrapRequest(ctx: APIRequestContext, log: Exchange[]): APIRequestContext
       if (typeof prop !== 'string' || !(METHODS as readonly string[]).includes(prop) || typeof orig !== 'function') {
         return typeof orig === 'function' ? orig.bind(target) : orig;
       }
-      return async (url: string, options?: { data?: unknown; method?: string }) => {
+      return async (url: string, options?: { data?: unknown; method?: string; headers?: Record<string, string> }) => {
         const started = Date.now();
         const res: APIResponse = await orig.call(target, url, options);
         let body = '';
@@ -53,10 +84,11 @@ function wrapRequest(ctx: APIRequestContext, log: Exchange[]): APIRequestContext
         log.push({
           method: (options?.method ?? (prop === 'fetch' ? 'GET' : prop)).toUpperCase(),
           url: res.url(),
-          requestBody: options?.data,
+          requestHeaders: options?.headers ? (redact(options.headers) as Record<string, string>) : undefined,
+          requestBody: redact(options?.data),
           status: res.status(),
-          responseHeaders: res.headers(),
-          responseBody: body,
+          responseHeaders: redact(res.headers()) as Record<string, string>,
+          responseBody: redactBody(body),
           ms: Date.now() - started,
         });
         return res;
@@ -79,6 +111,8 @@ async function snapshotExchanges(browser: Browser, log: Exchange[], testInfo: Te
   const rows = log
     .map(
       (x, i) => `<tr><td>${i + 1}</td><td><b>${esc(x.method)}</b> ${esc(x.url)}${
+        x.requestHeaders ? `<pre>${esc(JSON.stringify(x.requestHeaders, null, 2))}</pre>` : ''
+      }${
         x.requestBody !== undefined ? `<pre>${esc(JSON.stringify(x.requestBody, null, 2))}</pre>` : ''
       }</td><td class="s${String(x.status)[0]}">${x.status}<br><small>${x.ms} ms</small><br><small>${esc(
         x.responseHeaders['x-request-id'] ?? '',

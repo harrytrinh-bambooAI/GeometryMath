@@ -1,7 +1,7 @@
 import { execFileSync } from 'node:child_process';
 import type { APIRequestContext } from '@playwright/test';
 import { expect, test } from '../../support/fixtures.ts';
-import { BG, CLASS, MSG, ORG_C, PV, USER, bearer, devToken } from './e1.ts';
+import { AN_AI_LOCK, BG, CLASS, MSG, ORG_C, PV, USER, bearer, devToken, withLock } from './e1.ts';
 
 /** US-GEO-104 — Cách ly dữ liệu theo trường và phân quyền ở máy chủ (gọi thẳng máy chủ). */
 
@@ -42,10 +42,12 @@ test('Nội dung hệ thống đọc được từ mọi trường @TC-GEO-0125'
 test('Bản ghi mới mang trường của người tạo @TC-GEO-0126', async ({ request }) => {
   const an = await devToken(request, 'F-GEO-020');
   const question = `Vì sao A là hình chiếu của S? (${Date.now()})`;
-  const r = await request.post(`/api/v1/student/assignments/${BG('BG-1')}/questions`, {
-    headers: bearer(an),
-    data: { question, orgId: ORG_C, schoolId: ORG_C }, // cố ý kèm định danh trường THCS Mẫu C
-  });
+  const r = await withLock(AN_AI_LOCK, () =>
+    request.post(`/api/v1/student/assignments/${BG('BG-1')}/questions`, {
+      headers: bearer(an),
+      data: { question, orgId: ORG_C, schoolId: ORG_C }, // cố ý kèm định danh trường THCS Mẫu C
+    }),
+  );
   expect(r.status()).toBe(200);
   const a = await devToken(request, 'F-GEO-003');
   await expect
@@ -198,10 +200,12 @@ test('Bộ kiểm cách ly duyệt mọi điểm cuối bằng thẻ của trư�
 test('Giáo viên không đọc được câu trả lời đã lưu của học sinh @TC-GEO-0178', async ({ request }) => {
   const an = await devToken(request, 'F-GEO-020');
   const asked = await json<{ id: number; reply: string }>(
-    await request.post(`/api/v1/student/assignments/${BG('BG-1')}/questions`, {
-      headers: bearer(an),
-      data: { question: 'Vì sao A là hình chiếu của S?' },
-    }),
+    await withLock(AN_AI_LOCK, () =>
+      request.post(`/api/v1/student/assignments/${BG('BG-1')}/questions`, {
+        headers: bearer(an),
+        data: { question: 'Vì sao A là hình chiếu của S?' },
+      }),
+    ),
   );
   const own = await request.get(`/api/v1/questions/${asked.id}/answer`, { headers: bearer(an) });
   expect(own.status()).toBe(200);

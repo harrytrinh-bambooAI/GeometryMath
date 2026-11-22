@@ -1,5 +1,5 @@
 import { expect, test } from '../../support/fixtures.ts';
-import { CODE, MSG, PV, ipFor, resetAuthFailures, signInPage, studentJoinUI } from './e1.ts';
+import { CODE, MSG, PV, ipFor, resetAuthFailures, signInPage, studentJoinUI, withLock } from './e1.ts';
 
 /** US-GEO-102 — Giáo viên mẫu vào hệ thống; US-GEO-104-SC2 lớp của giáo viên ở bước "1 · Chọn lớp". */
 
@@ -16,20 +16,26 @@ async function teacherLogin(page: import('@playwright/test').Page, code: string)
 
 const classChips = (page: import('@playwright/test').Page) => page.getByTestId('e1-my-classes').locator('.chip');
 
-test('Mã giáo viên đúng @TC-GEO-0111', async ({ page, request }) => {
-  await resetAuthFailures(request);
-  await teacherLogin(page, CODE['F-GEO-003']!);
-  await expect(page).toHaveURL(/\/gv\/kho-de$/);
+/** Đăng nhập đúng bằng F-GEO-003 trong khóa chung với TC-GEO-0179 (dò mã cùng tài khoản). */
+async function loginAsSampleTeacher(page: import('@playwright/test').Page) {
+  await withLock('teacher-F-GEO-003', async () => {
+    await teacherLogin(page, CODE['F-GEO-003']!);
+    await expect(page).toHaveURL(/\/gv\/kho-de$/);
+  });
+}
+
+test('Mã giáo viên đúng @TC-GEO-0111', async ({ page, request }, testInfo) => {
+  await resetAuthFailures(request, { ips: [ipFor(testInfo)] });
+  await loginAsSampleTeacher(page);
   await expect(page.getByTestId('e1-catalog')).toBeVisible();
   await expect(classChips(page)).toHaveText(['11A1', '9B']);
   await expect(page.getByTestId('e1-teacher-name')).toHaveText('Giáo viên mẫu');
 });
 
-test('Vào được từ điện thoại @TC-GEO-0112', async ({ page, request }) => {
-  await resetAuthFailures(request);
+test('Vào được từ điện thoại @TC-GEO-0112', async ({ page, request }, testInfo) => {
+  await resetAuthFailures(request, { ips: [ipFor(testInfo)] });
   await page.setViewportSize({ width: 390, height: 844 }); // điện thoại màn dọc (F-GEO-103)
-  await teacherLogin(page, CODE['F-GEO-003']!);
-  await expect(page).toHaveURL(/\/gv\/kho-de$/);
+  await loginAsSampleTeacher(page);
   await expect(page.getByTestId('e1-problem-HKG-01')).toBeVisible();
   const assign = page.getByTestId('e1-problem-HKG-01-assign');
   await expect(assign).toHaveText('Giao bài');
@@ -60,8 +66,8 @@ test('Không có công tắc đổi vai @TC-GEO-0115', async ({ page }) => {
   await expect(page.getByTestId('e1-teacher-login-code')).toBeVisible();
 });
 
-test('Mỗi mã vào đúng tài khoản được cấp @TC-GEO-0174', async ({ page, request }) => {
-  await resetAuthFailures(request);
+test('Mỗi mã vào đúng tài khoản được cấp @TC-GEO-0174', async ({ page, request }, testInfo) => {
+  await resetAuthFailures(request, { ips: [ipFor(testInfo)] });
   await teacherLogin(page, CODE['F-GEO-005']!);
   await expect(page).toHaveURL(/\/gv\/kho-de$/);
   await expect(page.getByTestId('e1-teacher-name')).toHaveText('Giáo viên C');
