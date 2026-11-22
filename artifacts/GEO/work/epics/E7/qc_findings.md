@@ -29,3 +29,12 @@
 ### Đồng bộ với bàn giao của BA (M-217, M-218)
 - TC-GEO-0740 → 703-SC8, 0741 → 703-SC9 (giữ id, theo dữ liệu của BA); mới: 0743 (703-SC7, `open` bền), 0744 (701-FC7). QF-E7-04, 07 đóng.
 - Đối chiếu cuối: 43 / 43 tiêu chí có case (100%); 45 / 45 case trỏ về tiêu chí có thật của BA hoặc NFR-GEO; 0 case trỏ tiêu chí không tồn tại (bộ sinh và phép đối chiếu độc lập).
+
+## Sinh lại theo AC hiện hành (PO-50, Đợt 0; 22-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E7-08 | Fixed | mọi case của E7 | Case chưa có trường cho biết tự động hóa bằng cách nào; cột "Tầng tự động hóa" cũ ghi E2E trình duyệt = 0 | Thêm cột "Tự động hóa" do bộ sinh suy từ tầng và loại; QC chỉnh từng case ở `work/src/qc/E7_auto.txt`. Kết quả: E2E-UI 18 / E2E-API 16 / IT 11 / Manual 0 | QC · xong |
+
+- Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa". Không case nào bị bỏ.
+- Đối chiếu: 43 / 43 tiêu chí có case (100%); 45 / 45 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.

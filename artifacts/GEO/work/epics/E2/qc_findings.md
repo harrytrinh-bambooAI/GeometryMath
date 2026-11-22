@@ -29,3 +29,12 @@
 - mới: TC-GEO-0234 (203-SC7), 0235 (203-FC6) cho đề không tham số (D-GEO-140). Gỡ chỉnh TC-GEO-0216 (AC đã ghi 45,0044). QF-E2-07 và QF-E2-02 đóng.
 - Đối chiếu cuối: 36 / 36 tiêu chí có case (100%); 36 / 36 case trỏ về tiêu chí có thật của BA hoặc NFR-GEO; 0 case trỏ tiêu chí không tồn tại (bộ sinh và phép đối chiếu độc lập).
 - Sau M-306, M-220, M-221 (D-GEO-173…183): mới TC-GEO-0236 (203-SC8, D-GEO-178); TC-GEO-0235 theo dữ liệu mới "41,56 cm³". Đối chiếu: 37 / 37 tiêu chí, 37 / 37 case.
+
+## Sinh lại theo AC hiện hành (PO-50, Đợt 0; 22-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E2-08 | Fixed | mọi case của E2 | Case chưa có trường cho biết tự động hóa bằng cách nào; cột "Tầng tự động hóa" cũ ghi E2E trình duyệt = 0 | Thêm cột "Tự động hóa" do bộ sinh suy từ tầng và loại; QC chỉnh từng case ở `work/src/qc/E2_auto.txt`. Kết quả: E2E-UI 12 / E2E-API 5 / IT 20 / Manual 0 | QC · xong |
+
+- Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa". Không case nào bị bỏ.
+- Đối chiếu: 37 / 37 tiêu chí có case (100%); 37 / 37 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.

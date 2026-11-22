@@ -28,3 +28,14 @@
 ### Đồng bộ với bàn giao của BA (M-217, M-218)
 - mới: TC-GEO-0353 (301-SC9, "Xóa hết"). QF-E3-07 đóng phần "Xóa hết".
 - Đối chiếu cuối: 54 / 54 tiêu chí có case (100%); 54 / 54 case trỏ về tiêu chí có thật của BA hoặc NFR-GEO; 0 case trỏ tiêu chí không tồn tại (bộ sinh và phép đối chiếu độc lập).
+
+## Sinh lại theo AC hiện hành (PO-50, Đợt 0; 22-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E3-08 | Question (TechLead) | Bộ E2E (D-GEO-170, PO-50); 46 case E2E-UI của E3, các case tô hình ở E4 (TC-GEO-0441…0453, 0446) | Kỳ vọng nằm trên khung hình 3D (cạnh nét đứt, đối tượng được tô, góc nhìn, điểm mới nằm trên cạnh): Playwright không đọc được nội dung WebGL nếu ứng dụng không lộ trạng thái cảnh | Đề nghị profile test có móc chỉ đọc trạng thái cảnh (vd. `window.__geoScene`: camera, mức thu phóng, danh sách điểm / đoạn / mặt với tên, kiểu nét, đối tượng đang chọn, tọa độ màn hình của đỉnh) và `data-testid` cho thanh công cụ; phần không đọc được bằng móc thì so ảnh chụp với ảnh mẫu có ngưỡng. Thiếu móc thì các case này chỉ chạy được bằng so ảnh | TechLead · trước khi viết E2E của E3 |
+| QF-E3-09 | Fixed | TC-GEO-0300, 0302, 0310…0312, 0315, 0341, 0345, 0346, 0351 | Mặc định "thiết bị → Manual" quá chặt: kéo chuột, lăn chuột, chạm đơn, bố cục và vùng chạm trên iPhone chạy được bằng giả lập của Playwright | Chuyển thành E2E-UI ở `work/src/qc/E3_auto.txt`, ghi rõ phần còn kiểm trên máy thật. Còn Manual: chụm ngón (0301, 0342), chỗ chạm chồng nhau (0314), nút đặt lại và bảng trượt trên iPhone (0343, 0344) | QC · xong |
+| QF-E3-10 | Fixed | mọi case của E3 | Case chưa có trường cho biết tự động hóa bằng cách nào; cột "Tầng tự động hóa" cũ ghi E2E trình duyệt = 0 | Thêm cột "Tự động hóa" do bộ sinh suy từ tầng và loại; QC chỉnh từng case ở `work/src/qc/E3_auto.txt`. Kết quả: E2E-UI 46 / E2E-API 3 / IT 0 / Manual 5 (Manual: TC-GEO-0301, 0314, 0342, 0343, 0344, lý do ở từng case) | QC · xong |
+
+- Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa". Không case nào bị bỏ.
+- Đối chiếu: 54 / 54 tiêu chí có case (100%); 54 / 54 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.

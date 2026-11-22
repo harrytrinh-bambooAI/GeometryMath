@@ -2,3 +2,4 @@ bản đầu của goal run: 82 case cho 82 tiêu chí
 lượt sửa gom sau phản biện (M-304): TC-GEO-0438 là ca chặn, thêm biến thể gần trùng 0482…0484 (D-GEO-150, RV-GEO-01); dán trước, giao sau 0485, 0486 (D-GEO-151, RV-GEO-03); gợi ý đề kho cho tự học 0487 (D-GEO-155); không lưu đệm 0488 (D-GEO-145); viết lại bước ranh giới TC-GEO-0440 (D-GEO-169, RV-GEO-24): {tc} case cho {ac} tiêu chí
 đồng bộ với bàn giao của BA (M-217, M-218): case viết tay trùng tiêu chí mới chuyển thành case bám tiêu chí (giữ id), thêm case cho mọi tiêu chí mới, gỡ chỉnh không còn cần: {tc} case cho {ac} tiêu chí
 đồng bộ M-222: TC-GEO-0486 nối vào US-GEO-406-FC6 (dữ liệu HKG-05, BG-7 của BA): {tc} case cho {ac} tiêu chí
+sinh lại theo AC hiện hành (PO-50, Đợt 0): bộ sinh cho cùng nội dung với AC hiện hành (không case nào lệch); thêm cột "Tự động hóa" (E2E-UI / E2E-API / IT / Manual có lý do) cho mọi case; case tô hình cần móc đọc cảnh (QF-E3-08): {tc} case cho {ac} tiêu chí

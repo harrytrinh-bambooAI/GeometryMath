@@ -41,3 +41,13 @@
 - TC-GEO-0696 → 602-FC4, 0699 → 605-FC5, 0698 → 608-FC8 (giữ id); 0862 trỏ 610-SC6; mới (dải 0860…0879 của E6 vì 0600…0699 đã hết): 0864 (612-FC5), 0865 (602-FC5), 0866 (605-SC9), 0867 (605-SC10), 0868 (605-FC6), 0869 (606-SC7), 0870 (607-SC5), 0871 (607-SC6), 0872 (607-FC4), 0873 (608-SC5), 0874 (609-SC5, KS-3), 0875 (609-FC6, KS-5), 0876 (610-SC5, ca chặn F-GEO-226). Gỡ chỉnh của TC-GEO-0609, 0635, 0637, 0664, 0689 (AC đã đổi). QF-E6-07, 08, 09, 10 đóng.
 - Đối chiếu cuối: 112 / 112 tiêu chí có case (100%); 117 / 117 case trỏ về tiêu chí có thật của BA hoặc NFR-GEO; 0 case trỏ tiêu chí không tồn tại (bộ sinh và phép đối chiếu độc lập).
 - Sau M-306, M-220, M-221 (D-GEO-173…183): mới TC-GEO-0877 (606-SC8, D-GEO-182); TC-GEO-0862 dẫn D-GEO-176, bỏ PROVISIONAL; TC-GEO-0676 chạy 22 câu. Đối chiếu: 113 / 113 tiêu chí, 118 / 118 case (116 trỏ tiêu chí của BA, 2 case X).
+
+## Sinh lại theo AC hiện hành (PO-50, Đợt 0; 22-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E6-13 | To BA | US-GEO-609-FC1; D-GEO-184 (M-307); KS-2 | PO chốt KS-2 chặn cả số đã làm tròn tới ≥ 2 chữ số có nghĩa của đáp số; AC của 609 chưa có tiêu chí hay ví dụ số làm tròn | Thêm TC-GEO-0878 ("0,79" và "0,785" cho π/4 trên BG-1 → MSG-GEO-35, dữ liệu trả về không chứa hai số đó), PROVISIONAL D-GEO-184; dữ liệu `F-GEO-241` ở `review/QC_test_design.md` §6. Đề xuất BA thêm một tiêu chí (hoặc một dòng Then) cho số làm tròn; chưa viết case cho số 1 chữ số có nghĩa ("0,8") vì D-GEO-184 không nói | BA · R3 của E6 |
+| QF-E6-14 | Fixed | mọi case của E6 | Case chưa có trường cho biết tự động hóa bằng cách nào; cột "Tầng tự động hóa" cũ ghi E2E trình duyệt = 0 | Thêm cột "Tự động hóa" do bộ sinh suy từ tầng và loại; QC chỉnh từng case ở `work/src/qc/E6_auto.txt`. Kết quả: E2E-UI 61 / E2E-API 38 / IT 18 / Manual 2 (Manual: TC-GEO-0866, 0691, lý do ở từng case) | QC · xong |
+
+- Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa" và case mới nêu trên. Không case nào bị bỏ.
+- Đối chiếu: 113 / 113 tiêu chí có case (100%); 119 / 119 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.

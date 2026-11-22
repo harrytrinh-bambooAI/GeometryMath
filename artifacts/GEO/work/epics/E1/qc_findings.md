@@ -34,3 +34,14 @@
 - TC-GEO-0171 → US-GEO-102-FC6, 0172 → 102-SC4 (case viết tay trước đó chuyển thành case bám tiêu chí, giữ id); mới: 0173 (101-FC5), 0174 (102-SC3), 0175 (102-FC4), 0176 (102-FC5), 0177 (102-FC7), 0178 (104-FC9). Gỡ chỉnh TC-GEO-0155 (AC đã ghi `SERVICE_OVERLOADED`). QF-E1-10 đóng (fixture mã 12 ký tự `F-GEO-003…009`); QF-E1-11 còn mở ở M-113 và M-216.
 - Đối chiếu cuối: 70 / 70 tiêu chí có case (100%); 75 / 75 case trỏ về tiêu chí có thật của BA hoặc NFR-GEO; 0 case trỏ tiêu chí không tồn tại (bộ sinh và phép đối chiếu độc lập).
 - Sau M-306, M-220, M-221 (D-GEO-173…183): TC-GEO-0171 theo D-GEO-173, TC-GEO-0172…0177 không đổi. Đối chiếu: 70 / 70 tiêu chí, 75 / 75 case (71 trỏ tiêu chí của BA, 4 case X).
+
+## Sinh lại theo AC hiện hành (PO-50, Đợt 0; 22-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E1-13 | To BA | US-GEO-102-FC6; D-GEO-185 (M-307) | PO nhận thêm quy tắc đếm thử sai theo tài khoản (4 ký tự đầu của mã định vị tài khoản) bên cạnh theo IP; AC giữ nguyên quy tắc theo IP nên hành vi mới chưa có tiêu chí và chưa có ngưỡng riêng | Thêm TC-GEO-0179 (ba IP, cùng tiền tố `GQ7K`, lần 11 → `RATE_LIMITED`), PROVISIONAL D-GEO-185, ngưỡng giả định bằng D-GEO-173; dữ liệu `F-GEO-240` ở `review/QC_test_design.md` §6. Đề xuất BA thêm một tiêu chí cho quy tắc theo tài khoản và ghi ngưỡng | BA · R3 của E1 |
+| QF-E1-14 | Question (TechLead) | Bộ E2E (D-GEO-170, PO-50); TC-GEO-0111, 0113, 0171, 0175, 0179 | Bộ E2E chạy nhiều lần đăng nhập giáo viên từ cùng một máy: giới hạn 10 lần sai / 15 phút (theo IP và theo tài khoản) làm case sau nhận `RATE_LIMITED` không do lỗi của case | Đề nghị profile test có móc đặt lại bộ đếm thử sai giữa các case và cho đặt IP nguồn (proxy tin cậy, `X-Forwarded-For`); thiếu móc này thì chạy các case đăng nhập sai ở cuối lượt, tách khỏi case đăng nhập đúng | TechLead · trước khi viết E2E của E1 |
+| QF-E1-15 | Fixed | mọi case của E1 | Case chưa có trường cho biết tự động hóa bằng cách nào; cột "Tầng tự động hóa" cũ ghi E2E trình duyệt = 0 | Thêm cột "Tự động hóa" do bộ sinh suy từ tầng và loại; QC chỉnh từng case ở `work/src/qc/E1_auto.txt` (12 case). Kết quả: E2E-UI 21 · E2E-API 19 · IT 27 · Manual 9 (8 case thử tải Gatling, 1 case bàn phím ảo iPhone) | QC · xong |
+
+- Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi chỉ là cột "Tự động hóa" và TC-GEO-0179. Không case nào bị bỏ.
+- Đối chiếu: 70 / 70 tiêu chí có case (100%); 76 / 76 case trỏ về tiêu chí của BA hoặc NFR-GEO (72 trỏ tiêu chí của BA, 4 case X); kiểm bằng `work/tools/check_ac_tc.py`.

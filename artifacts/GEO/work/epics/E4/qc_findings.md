@@ -34,3 +34,12 @@
 - TC-GEO-0482 → 406-SC7, 0485 → 406-SC9, 0487 → 406-SC10, 0488 → 404-FC5 (giữ id, chuyển thành case bám tiêu chí); mới: 0489 (406-SC8), 0490 (406-FC3), 0491 (406-FC4), 0492 (406-FC5), 0493 (410-SC5). Case viết tay còn lại: 0481, 0483 (viết lại câu chữ), 0484 (khác đại lượng hỏi), 0486 (đã xem rồi giáo viên giao, trỏ 406-SC9). QF-E4-12 đóng.
 - Đối chiếu cuối: 91 / 91 tiêu chí có case (100%); 94 / 94 case trỏ về tiêu chí có thật của BA hoặc NFR-GEO; 0 case trỏ tiêu chí không tồn tại (bộ sinh và phép đối chiếu độc lập).
 - Sau M-306, M-220, M-221 (D-GEO-173…183): mới TC-GEO-0494 (412-SC4, D-GEO-181); TC-GEO-0486 nối vào US-GEO-406-FC6 (M-222). Đối chiếu: 93 / 93 tiêu chí, 95 / 95 case.
+
+## Sinh lại theo AC hiện hành (PO-50, Đợt 0; 22-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E4-13 | Fixed | mọi case của E4 | Case chưa có trường cho biết tự động hóa bằng cách nào; cột "Tầng tự động hóa" cũ ghi E2E trình duyệt = 0 | Thêm cột "Tự động hóa" do bộ sinh suy từ tầng và loại; QC chỉnh từng case ở `work/src/qc/E4_auto.txt`. Kết quả: E2E-UI 59 / E2E-API 29 / IT 6 / Manual 1 (Manual: TC-GEO-0411, lý do ở từng case) | QC · xong |
+
+- Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa". Không case nào bị bỏ.
+- Đối chiếu: 93 / 93 tiêu chí có case (100%); 95 / 95 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.

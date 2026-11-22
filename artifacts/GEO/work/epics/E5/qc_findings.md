@@ -31,3 +31,12 @@
 - TC-GEO-0541 → 503-FC6, 0542 → 503-FC5 (giữ id; AC của BA chốt `NOT_FOUND` nên QF-E5-07 đóng nếu PO không phán khác ở M-216). Gỡ mọi chỉnh của `E5_override.txt` (AC đã theo D-GEO-131, 142, 164); QF-E5-08 đóng.
 - Đối chiếu cuối: 43 / 43 tiêu chí có case (100%); 43 / 43 case trỏ về tiêu chí có thật của BA hoặc NFR-GEO; 0 case trỏ tiêu chí không tồn tại (bộ sinh và phép đối chiếu độc lập).
 - Sau M-306, M-220, M-221 (D-GEO-173…183): TC-GEO-0542 theo D-GEO-175. Đối chiếu: 43 / 43 tiêu chí, 43 / 43 case.
+
+## Sinh lại theo AC hiện hành (PO-50, Đợt 0; 22-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E5-09 | Fixed | mọi case của E5 | Case chưa có trường cho biết tự động hóa bằng cách nào; cột "Tầng tự động hóa" cũ ghi E2E trình duyệt = 0 | Thêm cột "Tự động hóa" do bộ sinh suy từ tầng và loại; QC chỉnh từng case ở `work/src/qc/E5_auto.txt`. Kết quả: E2E-UI 23 / E2E-API 11 / IT 9 / Manual 0 | QC · xong |
+
+- Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa". Không case nào bị bỏ.
+- Đối chiếu: 43 / 43 tiêu chí có case (100%); 43 / 43 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.
