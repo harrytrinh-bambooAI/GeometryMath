@@ -124,7 +124,7 @@ function History() {
                   {r.problemTitle}
                 </span>
                 <span className="small muted" data-testid={tid('e4', 'log', 'time')}>
-                  {formatVnDateTime(r.askedAt)}
+                  {formatVnDateTime(r.askedAt).replace(' ', ', ') /* HH:mm, dd/MM/yyyy (glossary) */}
                 </span>
               </button>
               {o === 'loading' && <p className="muted">Đang tải…</p>}

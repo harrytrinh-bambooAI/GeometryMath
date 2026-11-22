@@ -147,7 +147,7 @@ export function SolutionOverlay({
   );
 }
 
-/** Phần lời giải trong móc kiểm thử `window.__geoScene.solution` (tọa độ màn hình px trang). */
+/** Phần lời giải trong móc kiểm thử của bộ xem, khóa "solution" (tọa độ màn hình px trang). */
 export function overlaySnapshot(
   rm: RenderModel,
   shapes: OverlayShape[],
