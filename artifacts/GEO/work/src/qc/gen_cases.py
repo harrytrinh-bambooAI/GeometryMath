@@ -21,6 +21,34 @@ PRI = {'H': 'High', 'M': 'Medium', 'L': 'Low'}
 LOAI = {'CN': 'chức năng', 'PQ': 'phân quyền', 'DL': 'dữ liệu trả về', 'PCN': 'phi chức năng', 'TB': 'thiết bị'}
 TANG = {'DV': 'đơn vị', 'API': 'tích hợp API', 'DB': 'tích hợp CSDL', 'E2E': 'E2E trình duyệt', 'TAI': 'tải', 'TC': 'thủ công trên thiết bị'}
 COLS = ['No', 'Tiêu đề', 'Priority', 'Type', 'Loại', 'Tầng tự động hóa', 'User Type/Account Permission', 'Pre-condition', 'Test data/Input data', 'Test step', 'Expected output', 'Remark']
+# Cột "Tự động hóa" (PO-50, Đợt 0): cách tự động hóa chính của case, đầu vào trực tiếp của bộ E2E Playwright.
+# Mặc định suy từ "Tầng tự động hóa" và "Loại"; QC chỉnh từng case ở E<n>_auto.txt (TC-GEO-nnnn | E2E-UI/E2E-API/IT/Manual | lý do).
+AUTO = ('E2E-UI', 'E2E-API', 'IT', 'Manual')
+COLS_OUT = COLS[:6] + ['Tự động hóa'] + COLS[6:]
+LY_DO_THIET_BI = 'cần thiết bị thật (bàn phím ảo, cảm ứng hoặc màn hình của máy thật); Playwright giả lập không thay được'
+LY_DO_TAI = 'thử tải bằng Gatling (D-GEO-170) trên môi trường thử tải, chạy theo lịch riêng, không nằm trong bộ E2E / IT của mỗi bản dựng'
+
+def auto_default(tang, loai):
+    t = set(tang)
+    if TANG['TAI'] in t: return 'Manual — ' + LY_DO_TAI
+    if TANG['E2E'] in t or (TANG['TC'] in t and TANG['API'] in t): return 'E2E-UI'
+    if TANG['TC'] in t: return ('Manual — ' + LY_DO_THIET_BI) if loai == LOAI['TB'] else 'E2E-UI'
+    if TANG['DB'] in t or TANG['DV'] in t: return 'IT'
+    if TANG['API'] in t: return 'E2E-API'
+    return 'Manual — chưa phân loại'
+
+def load_auto(epic, errs):
+    """E<n>_auto.txt: TC-GEO-nnnn | E2E-UI / E2E-API / IT / Manual | lý do (bắt buộc với Manual; với loại khác là ghi chú)."""
+    m = {}; p = os.path.join(HERE, f'{epic}_auto.txt')
+    if not os.path.exists(p): return m
+    for ln, line in enumerate(open(p, encoding='utf-8'), 1):
+        if not line.strip() or line.lstrip().startswith('#'): continue
+        q = [x.strip() for x in line.rstrip('\n').split(' | ')]
+        if len(q) < 2 or q[1] not in AUTO: errs.append(f'auto dòng {ln}: cần "TC-GEO-nnnn | {" / ".join(AUTO)} | lý do"'); continue
+        why = ' | '.join(q[2:]).strip()
+        if q[1] == 'Manual' and not why: errs.append(f'auto dòng {ln}: Manual phải có lý do'); continue
+        m[q[0]] = q[1] + (f' — {why}' if why and q[1] == 'Manual' else '')
+    return m
 GLOSS = collections.OrderedDict([
     ('TC-GEO-', ('`TC-GEO-nnnn`', 'test case; hàng trăm là epic, 0800…0899 là case xuyên epic', 'cột No')),
     ('US-GEO-', ('`US-GEO-nnn` · `SCn` / `FCn`', 'story của BA · tiêu chí thành công / thất bại của story đó', 'cột Remark; `stories_ac.md` cùng thư mục')),
@@ -170,6 +198,13 @@ def main():
     for c in cases:
         r = rowmap[c['id']]; c['pri'] = r[2]; c['loai'] = r[4]; c['tang'] = [t.strip() for t in r[5].split('+')]; c['prov'] = 'PROVISIONAL' in r[-1]
         c['nfr'] |= set(re.findall(r'NFR-GEO-\d{3}', r[-1]))
+    # ---------- cột Tự động hóa (PO-50)
+    amap = load_auto(epic, errs)
+    for k in amap:
+        if k not in rowmap: errs.append(f'auto: {k} không có')
+    for c in cases:
+        r = rowmap[c['id']]; c['auto'] = amap.get(c['id']) or auto_default(c['tang'], c['loai'])
+        r.insert(6, cell(c['auto']))
     ids = [c['id'] for c in cases]
     for d in sorted({i for i in ids if ids.count(i) > 1}): errs.append(f'trùng id {d}')
     for i in ids:
@@ -191,15 +226,16 @@ def main():
              '- **Expected output**: mỗi gạch đầu dòng là một điều phải đúng; chữ trong ngoặc kép và giá trị phải khớp nguyên văn. Case đạt khi mọi gạch đầu dòng đều đúng.',
              '- **Loại**: chức năng · phân quyền · dữ liệu trả về (soát thân phản hồi của máy chủ, không chỉ giao diện) · phi chức năng · thiết bị.',
              '- **Tầng tự động hóa**: đơn vị · tích hợp API · tích hợp CSDL · E2E trình duyệt (Playwright) · tải (Gatling) · thủ công trên thiết bị; đếm câu lệnh JDBC dùng datasource-proxy (D-GEO-170). Case có chữ ENG ở Remark cần công cụ kỹ thuật và thuộc tờ kỹ thuật; case còn lại người kiểm thử chạy trên màn.',
+             '- **Tự động hóa** (PO-50): cách tự động hóa chính của case, đầu vào của bộ E2E. `E2E-UI` · Playwright qua trình duyệt, theo đúng bước trên màn và kỳ vọng nhìn thấy (phần "máy chủ trả …" của kỳ vọng thì soát thêm qua phản hồi mạng mà trang nhận) · `E2E-API` · gọi HTTP thẳng tới máy chủ, soát `code` và thân phản hồi · `IT` · kiểm thử tích hợp phía máy chủ (CSDL, bộ quét, tầng dịch vụ) · `Manual` · người chạy, lý do ghi ngay sau.',
              '- **PROVISIONAL**: kỳ vọng theo một giả định chưa được xác nhận, mã ghi ngay sau. Vẫn chạy; nếu màn chỉ khác ở đúng điểm đó thì ghi lại điều thấy và đánh dấu Blocked, không đánh Fail.',
              '- Thực tế khác kỳ vọng thì ghi vào vòng thực thi, không sửa ô Expected.', '']
-    hdr = '| ' + ' | '.join(COLS) + ' |'; sep = '|' + '---|' * len(COLS)
+    hdr = '| ' + ' | '.join(COLS_OUT) + ' |'; sep = '|' + '---|' * len(COLS_OUT)
     for s, rows in rows_by_story.items():
         if not rows: continue
         body += [f'### {s} — {stories[s]}' if s != 'X' else '### X — Case xuyên suốt và phi chức năng (trỏ về NFR-GEO, BR-GEO hoặc REQ-GEO)', '', hdr, sep]
         body += ['| ' + ' | '.join(r) + ' |' for r in sorted(rows, key=lambda r: r[0])] + ['']
     cnt = collections.Counter
-    by_pri, by_loai = cnt(c['pri'] for c in cases), cnt(c['loai'] for c in cases); by_tang = cnt(t for c in cases for t in c['tang'])
+    by_pri, by_loai = cnt(c['pri'] for c in cases), cnt(c['loai'] for c in cases); by_tang = cnt(t for c in cases for t in c['tang']); by_auto = cnt(c['auto'].split(' — ')[0] for c in cases)
     nprov = sum(c['prov'] for c in cases); fwd = 100.0 * (len(active) - len(missing)) / max(1, len(active)); rev = 100.0 * (len(cases) - len(notrace)) / max(1, len(cases)); rev2 = 100.0 * (len(cases) - len(orphan)) / max(1, len(cases))
     summ = ['## 1. Tóm tắt', '', '| Story | Số tiêu chí (SC / FC) | Số case | PROVISIONAL |', '|---|---|---|---|']
     for s in stories:
@@ -210,7 +246,8 @@ def main():
     summ += [f"| **Tổng** | **{len(acs)}** | **{len(cases)}** | **{nprov}** |", '',
              '| Theo ưu tiên | Số case |', '|---|---|'] + [f'| {p} | {by_pri.get(p, 0)} |' for p in ('High', 'Medium', 'Low')] + ['',
              '| Theo loại | Số case |', '|---|---|'] + [f'| {v} | {by_loai.get(v, 0)} |' for v in LOAI.values()] + ['',
-             '| Theo tầng tự động hóa (một case có thể ở hai tầng) | Số case |', '|---|---|'] + [f'| {v} | {by_tang.get(v, 0)} |' for v in TANG.values()] + ['']
+             '| Theo tầng tự động hóa (một case có thể ở hai tầng) | Số case |', '|---|---|'] + [f'| {v} | {by_tang.get(v, 0)} |' for v in TANG.values()] + ['',
+             '| Theo Tự động hóa (một case một loại) | Số case |', '|---|---|'] + [f'| {v} | {by_auto.get(v, 0)} |' for v in AUTO] + [f'| **Tổng** | **{len(cases)}** |', '']
     trace = ['## 3. Đối chiếu hai chiều AC ↔ TC', '', f'### 3.1 Chiều xuôi: tiêu chí → case ({len(active) - len(missing)} / {len(active)} tiêu chí còn hiệu lực có case, {fwd:.1f}%)', '',
              '| User story | Criterion ID | Kind | What it checks | Status | Test cases |', '|---|---|---|---|---|---|']
     for k, a in acs.items():
@@ -251,6 +288,7 @@ def main():
     for x in stale: print('INFO override không còn khớp (AC đã đổi? gỡ dòng override):', x)
     print(f"{epic}: AC {len(acs)} (active {len(active)}) · TC {len(cases)} (bám tiêu chí {sum(not c['extra'] for c in cases)}, viết tay {sum(c['extra'] for c in cases)}) · "
           f"High {by_pri.get('High', 0)} / Medium {by_pri.get('Medium', 0)} / Low {by_pri.get('Low', 0)} · " + ' / '.join(f'{v} {by_loai.get(v, 0)}' for v in LOAI.values()) +
+          ' · Tự động hóa ' + ' / '.join(f'{v} {by_auto.get(v, 0)}' for v in AUTO) +
           f" · PROVISIONAL {nprov} · override {n_ovr} (không khớp {len(stale)}) · AC→TC {fwd:.1f}% · TC→AC {rev:.1f}% · TC→AC hoặc NFR {rev2:.1f}% · lỗi {len(errs)}")
     return 1 if errs else 0
 if __name__ == '__main__': sys.exit(main())

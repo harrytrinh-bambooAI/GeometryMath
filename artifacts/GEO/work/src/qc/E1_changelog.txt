@@ -1,3 +1,4 @@
 bản đầu của goal run: 67 case cho 62 tiêu chí
 lượt sửa gom sau phản biện (M-304): thêm TC-GEO-0171 (dò mã giáo viên → RATE_LIMITED), 0172 (mã lưu băm) theo D-GEO-152, RV-GEO-02; TC-GEO-0155 mã SERVICE_OVERLOADED (D-GEO-143); công cụ Gatling cho case tải và tầng, công cụ cho 4 case X (D-GEO-170, RV-GEO-35); dẫn D-GEO-125 ở case X; con trỏ gắn trường (D-GEO-168): {tc} case cho {ac} tiêu chí
 đồng bộ với bàn giao của BA (M-217, M-218): case viết tay trùng tiêu chí mới chuyển thành case bám tiêu chí (giữ id), thêm case cho mọi tiêu chí mới, gỡ chỉnh không còn cần: {tc} case cho {ac} tiêu chí
+sinh lại theo AC hiện hành (PO-50, Đợt 0): bộ sinh cho cùng nội dung với AC hiện hành (không case nào lệch); thêm cột "Tự động hóa" (E2E-UI / E2E-API / IT / Manual có lý do) cho mọi case; thêm TC-GEO-0179 (đếm thử sai theo tài khoản, PROVISIONAL D-GEO-185): {tc} case cho {ac} tiêu chí
