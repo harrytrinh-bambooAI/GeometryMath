@@ -1,4 +1,6 @@
-# Brief chung cho agent epic (Đợt 1+) · v1.0 · 22/11/2026
+# Brief chung cho agent epic (Đợt 1+) · v1.1 · 22/11/2026
+
+> **Tránh bị cắt phản hồi (bài học E3, v1.1):** mỗi lần Write/Edit không quá ~250 dòng; tệp lớn thì tạo khung rồi Edit thêm từng phần; tách component/spec thành nhiều tệp; không in lại nội dung tệp dài vào phản hồi; đọc tệp có mục tiêu (grep, offset/limit).
 
 Áp cho mọi agent code epic E2…E7 của GEO. Phần riêng (epic, cổng, phụ thuộc, ngân sách) nằm trong brief của từng agent.
 
