@@ -20,6 +20,7 @@ import {
 } from './model.ts';
 import { pick } from './pick.ts';
 import { buildRender, type P2, type RenderModel } from './render.ts';
+import { overlayShapes, overlaySnapshot, SolutionOverlay, type ViewerOverlay } from './overlay.tsx';
 import { installSceneHook, snapshot } from './sceneHook.ts';
 import { TOOL_EVENT_CODE, type LockState, type ToolId, type ViewerSolid } from './types.ts';
 import './viewer.css';
@@ -38,6 +39,8 @@ export interface ViewerHighlight {
   points?: string[];
   edges?: string[];
   faces?: string[];
+  /** E4: góc được tô, tên ba đỉnh với đỉnh góc ở giữa ("SDA"). */
+  angles?: string[];
 }
 export interface Figure3DViewerProps {
   solid: ViewerSolid;
@@ -51,6 +54,8 @@ export interface Figure3DViewerProps {
   banner?: ReactNode;
   /** Tô màu đối tượng theo tên (E4: bước lời giải). */
   highlight?: ViewerHighlight;
+  /** E4: phần vẽ thêm của lời giải (đường phụ, ký hiệu góc vuông, cung góc kèm số đo); xem overlay.tsx. */
+  overlays?: ViewerOverlay[];
   /** Tiền tố data-testid (mặc định 'viewer'). */
   testId?: string;
   className?: string;
@@ -76,6 +81,7 @@ export function Figure3DViewer({
   readOnly = false,
   banner,
   highlight,
+  overlays,
   testId = 'viewer',
   className,
 }: Figure3DViewerProps) {
@@ -117,9 +123,19 @@ export function Figure3DViewer({
   }, []);
 
   // ---------------------------------------------------------------- móc kiểm thử (PO-52)
-  const hookData = useRef<{ fig: FigureState; rm: RenderModel | null; view: ViewState; tool: ToolId; opCount: number; menu: PointMenu | null }>(null);
+  const shapes = useMemo(() => (rm ? overlayShapes(rm, highlight?.angles, overlays) : []), [rm, highlight, overlays]);
+  const hookData = useRef<{
+    fig: FigureState;
+    rm: RenderModel | null;
+    view: ViewState;
+    tool: ToolId;
+    opCount: number;
+    menu: PointMenu | null;
+    shapes: ReturnType<typeof overlayShapes>;
+    highlight?: ViewerHighlight;
+  }>(null);
   useEffect(() => {
-    hookData.current = { fig: figL, rm, view, tool, opCount, menu };
+    hookData.current = { fig: figL, rm, view, tool, opCount, menu, shapes, highlight };
   });
   useEffect(() => {
     if (!sceneHookEnabled(import.meta.env)) return;
@@ -131,6 +147,7 @@ export function Figure3DViewer({
         ready: true,
         opCount: d.opCount,
         pointMenu: d.menu ? { line: d.menu.lineId, t: d.menu.t } : null,
+        solution: overlaySnapshot(d.rm, d.shapes, d.highlight, { left: r.left, top: r.top }),
       });
     });
   }, []);
@@ -304,6 +321,7 @@ export function Figure3DViewer({
           onPointerCancel={onPointerUp}
         >
           {rm && <Scene rm={rm} fig={figL} sel={sel} hl={hl} T={T} />}
+          {rm && shapes.length > 0 && <SolutionOverlay rm={rm} shapes={shapes} T={T} />}
         </svg>
         {banner && (
           <div className="gv-banner" data-testid={T('banner')}>

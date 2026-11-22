@@ -81,6 +81,14 @@ public class SelfStudyService {
       String unit) {}
 
   public SelfStudyDto create(String statement) {
+    return create(statement, null);
+  }
+
+  /**
+   * @param chosenLevel cấp học sinh chọn ở màn Tự học ("thcs" | "thpt", BR-GEO-166; E4); null =
+   *     theo nhận dạng của cổng AI
+   */
+  public SelfStudyDto create(String statement, String chosenLevel) {
     AuthPrincipal me = Roles.require(Role.STUDENT);
     String st = statement == null ? "" : statement.strip();
     if (st.isEmpty()) {
@@ -98,7 +106,18 @@ public class SelfStudyService {
     if ("plane".equals(out.path("kind").asString(""))) {
       throw AppException.invalidField("statement", MSG_17);
     }
-    Built b = build(out);
+    Built b0 = build(out);
+    Built b =
+        "thcs".equals(chosenLevel) || "thpt".equals(chosenLevel)
+            ? new Built(
+                b0.figure(),
+                b0.coordSource(),
+                b0.spec(),
+                b0.verification(),
+                chosenLevel,
+                b0.solid(),
+                b0.unit())
+            : b0;
     // E4: chữ ký chuẩn (kế thừa khóa, D-GEO-150) + lời giải tự học (chỉ đề dựng bằng hình mẫu,
     // D-GEO-177)
     GeometryEngine.Signature sig =

@@ -6,7 +6,9 @@ export const e2Api = {
   templates: () => api.get<{ items: SolidTemplate[] }>('/api/v1/geometry/templates'),
   templateScene: (code: string, params: Record<string, number>) =>
     api.post<Scene>(`/api/v1/geometry/templates/${encodeURIComponent(code)}/scene`, { params }),
-  build: (statement: string) => api.post<SelfStudy>('/api/v1/student/self-study', { statement }),
+  /** level (E4, BR-GEO-166): cấp học sinh chọn, 'thcs' | 'thpt'. */
+  build: (statement: string, level?: 'thcs' | 'thpt') =>
+    api.post<SelfStudy>('/api/v1/student/self-study', { statement, level }),
   selfStudy: (id: string) => api.get<SelfStudy>(`/api/v1/student/self-study/${encodeURIComponent(id)}`),
   assignmentScene: (id: string) => api.get<Scene>(`/api/v1/student/assignments/${encodeURIComponent(id)}/scene`),
   teacherProblem: (versionId: string) =>
