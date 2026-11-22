@@ -45,6 +45,13 @@ test('Khóa của nhà cung cấp không xuống trình duyệt @TC-GEO-0118', a
   await withLock(AN_AI_LOCK, async () => {
     await page.getByTestId('e1-qa-send').click();
     await expect(page.getByTestId('e1-qa-answer')).toHaveCount(1);
+    // một lượt dựng hình tự học (màn Tự học của E2; QF-E1-D02): đề F-GEO-060 qua cổng AI tác vụ "scene"
+    await page.goto('/hs/tu-hoc');
+    await page.getByTestId('e2-statement').fill(
+      'Cho hình lăng trụ đứng ABC.A′B′C′ có đáy là tam giác vuông tại A, AB = 3, AC = 4, AA′ = 5. Tính khoảng cách từ A đến mặt phẳng (A′BC).',
+    );
+    await page.getByTestId('e2-build').click();
+    await expect(page.getByTestId('e2-self-study-result')).toBeVisible();
   });
   // toàn bộ dữ liệu trả về + mã trang (HTML, JS, CSS) đã tải về thiết bị
   bodies.push(await page.content());
@@ -53,7 +60,6 @@ test('Khóa của nhà cung cấp không xuống trình duyệt @TC-GEO-0118', a
   }
   expect(bodies.length).toBeGreaterThan(3);
   expect(bodies.filter((b) => b.includes('KHOA-THU-KHONG-LO'))).toEqual([]);
-  // Phần "một lượt dựng hình tự học" cần màn Tự học của E2: ghi ở qc_findings mục Dev (QF-E1-D03).
 });
 
 /** Câu hỏi mới nhất An đã lưu (id) — kiểm "không lưu gì" phía máy chủ. */

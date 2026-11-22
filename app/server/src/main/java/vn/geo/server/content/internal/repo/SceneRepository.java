@@ -258,4 +258,17 @@ public class SceneRepository {
         .query((rs, i) -> new long[] {rs.getLong(1), rs.getLong(2)})
         .single();
   }
+
+  /** Móc kiểm thử (dev/test): số bài tự học của một học sinh (US-GEO-204-FC3 "không tạo bài"). */
+  public long selfAssignmentCount(UUID userId) {
+    return system
+        .sql(
+            """
+            SELECT count(*) FROM assignment WHERE kind = 'self' AND owner_user_id = :u
+            -- sqllint:allow=ownership,tenant,unbounded móc kiểm thử dev/test, đếm theo một học sinh
+            """)
+        .param("u", userId)
+        .query(Long.class)
+        .single();
+  }
 }

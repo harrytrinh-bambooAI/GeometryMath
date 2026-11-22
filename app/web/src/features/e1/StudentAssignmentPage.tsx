@@ -5,6 +5,7 @@ import { api } from '../../shared/api/client.ts';
 import { ApiError } from '../../shared/api/errors.ts';
 import { tid } from '../../shared/testid.ts';
 import { formatVnDateTime } from '../../shared/time/vnTime.ts';
+import { AssignmentScene } from '../e2/ProblemDetailPage.tsx';
 import { MSG, errorText } from './messages.ts';
 import { RELEASE_LABEL, VERIFY_LABEL } from './studentApi.ts';
 import type { Asked, StudentAssignment } from './studentApi.ts';
@@ -65,6 +66,9 @@ export function StudentAssignmentPage() {
           Làm bài trên hình
         </Link>
       </p>
+      {/* E2: hình của đề (thẻ ràng buộc, nhãn máy; US-GEO-201-SC3) */}
+      <AssignmentScene assignmentId={a.id} />
+
       {a.allowQa ? <QaPanel assignmentId={a.id} /> : <p className="muted">Bài này không bật Hỏi đáp.</p>}
     </div>
   );
