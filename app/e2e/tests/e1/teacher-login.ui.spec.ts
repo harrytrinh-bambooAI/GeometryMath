@@ -86,6 +86,7 @@ test('Giáo viên chỉ thấy lớp mình dạy @TC-GEO-0124', async ({ page, r
   await page.goto(`/gv/giao-bai/${PV('HKG-01')}`);
   const step = page.getByTestId('e1-assign-step-class');
   await expect(step.getByRole('heading')).toHaveText('1 · Chọn lớp');
-  await expect(step.locator('label')).toHaveText(['11A1', '9B']);
+  // E6 (US-GEO-602-SC1, BR-GEO-223): nhãn đầy đủ "{tên lớp} · {cấp} ({số học sinh} HS)"; sĩ số đổi khi ca E1 khác thêm học sinh
+  await expect(step.locator('label')).toHaveText([/^11A1 · THPT \(\d+ HS\)$/, /^9B · THCS \(\d+ HS\)$/]);
   await expect(step).not.toContainText('9C');
 });

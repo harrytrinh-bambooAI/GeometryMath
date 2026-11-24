@@ -57,7 +57,8 @@ public class AiTestHookController {
       String model,
       Long timeoutMs,
       String scenario,
-      Long delayMs) {}
+      Long delayMs,
+      java.util.List<String> qaReplies) {}
 
   @PostMapping("/test-hooks/ai")
   public Map<String, Object> set(@RequestBody AiHook h) {
@@ -69,6 +70,9 @@ public class AiTestHookController {
     }
     if (h.delayMs() != null) {
       control.setDelay(h.userId(), h.lane(), h.delayMs());
+    }
+    if (h.qaReplies() != null) {
+      control.setQaScript(h.userId(), h.lane(), h.qaReplies());
     }
     if (h.model() != null) {
       settings.model(h.model());

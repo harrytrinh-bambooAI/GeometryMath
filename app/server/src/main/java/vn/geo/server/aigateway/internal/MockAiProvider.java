@@ -85,6 +85,11 @@ public class MockAiProvider implements AiProvider {
       return mapper.writeValueAsString(ocr(call.prompt()));
     }
     if ("qa".equals(call.task())) {
+      String scripted = control.nextQa(call.scenario());
+      if (scripted != null) {
+        return scripted; // E6: câu soạn sẵn của ca kiểm (văn bản thuần hoặc JSON {kind, reply,
+        // source})
+      }
       return mapper.writeValueAsString(qa(call.prompt()));
     }
     if ("solution".equals(call.task())) {

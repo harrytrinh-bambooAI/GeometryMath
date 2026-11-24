@@ -179,9 +179,16 @@ public class TrackingService {
             + "\nCâu hỏi: "
             + q;
     Reply rep = interpret(ai.complete(new AiRequest("qa", prompt)).content());
-    // Kiểm soát đáp án (E4 tối thiểu, E6 thay): câu lưu và câu trả về là câu ĐÃ qua bộ kiểm
-    // (D-GEO-159)
-    AnswerGuardApi.Screened sc = guard.screen(assignmentId, rep.text());
+    // Kiểm soát đáp án (E6, US-GEO-609): câu lưu và câu trả về là câu ĐÃ qua bộ kiểm (D-GEO-159).
+    // Bộ kiểm lỗi => đóng: không lưu, không gửi câu của AI, học sinh thấy MSG-GEO-14 (D-GEO-183).
+    AnswerGuardApi.Screened sc;
+    try {
+      sc = guard.screen(assignmentId, q, rep.text());
+    } catch (AnswerGuardApi.GuardFailure e) {
+      log.warn("Kiểm soát đáp án lỗi, đóng: {}", e.getMessage());
+      throw new AppException(
+          ErrorCode.DEPENDENCY_UNAVAILABLE, "Trợ lý đang bận. Em thử lại sau ít phút nhé.");
+    }
     if (sc.blocked()) {
       rep = new Reply("refused_answer", sc.text(), null);
     }

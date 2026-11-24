@@ -46,7 +46,10 @@ public class AssignmentService {
       boolean allowHint,
       boolean allowQa,
       String verifyStatus,
-      Progress progress) {}
+      Progress progress,
+      String title,
+      String solidKind,
+      String topic) {}
 
   public record ClassAssignment(
       UUID id, String problemCode, Instant releaseAt, String releaseState, int releaseRev) {}
@@ -57,15 +60,33 @@ public class AssignmentService {
 
   public record SolutionView(String finalAnswer, JsonNode steps) {}
 
+  /** Thông điệp (nguyên văn work/05_dictionary.md). */
+  static final String MSG_42 = "Đề này đã được giao cho lớp %s.";
+
+  static final String MSG_43 =
+      "Giờ mở lời giải phải sau thời điểm hiện tại. Muốn mở luôn, hãy chọn “Ngay bây giờ”.";
+  static final String MSG_48 = "Lời giải đã mở nên không đổi giờ hay khóa lại được.";
+  static final String MSG_49 = "Giờ mở vừa được thay đổi ở nơi khác. Hãy tải lại để xem giờ mới.";
+  static final String MSG_EMPTY = "Hãy chọn ngày và giờ mở lời giải.";
+
   private final AssignmentRepository repo;
+  private final vn.geo.server.assignment.internal.repo.ReleaseRepository release;
   private final Paging paging;
   private final JsonMapper mapper;
+  private final SolutionRateLimiter limiter;
 
   private final BankAccess bank;
 
   public AssignmentService(
-      AssignmentRepository repo, Paging paging, JsonMapper mapper, BankAccess bank) {
+      AssignmentRepository repo,
+      vn.geo.server.assignment.internal.repo.ReleaseRepository release,
+      Paging paging,
+      JsonMapper mapper,
+      SolutionRateLimiter limiter,
+      BankAccess bank) {
+    this.limiter = limiter;
     this.repo = repo;
+    this.release = release;
     this.paging = paging;
     this.mapper = mapper;
     this.bank = bank;
@@ -88,6 +109,7 @@ public class AssignmentService {
 
   public SolutionView mySolution(UUID id) {
     AuthPrincipal p = Roles.require(Role.STUDENT);
+    limiter.check(p.userId()); // NFR-GEO-056: 5 yêu cầu / 10 giây
     AssignmentRepository.Solution s = repo.solution(p.userId(), id);
     return switch (s.status()) {
       case "OK" -> new SolutionView(s.finalAnswer(), mapper.readTree(s.steps()));
@@ -136,9 +158,10 @@ public class AssignmentService {
     return switch (r.status()) {
       case "OK", "DUPLICATE" -> new Created(id, r.releaseRev());
       case "CONFLICT_DUPLICATE" ->
-          throw new AppException(ErrorCode.CONFLICT, "Lớp này đã được giao đề này.");
-      case "VALIDATION_PAST" ->
-          throw new AppException(ErrorCode.VALIDATION_FAILED, "Giờ mở phải ở tương lai.");
+          throw new AppException(
+              ErrorCode.CONFLICT,
+              String.format(MSG_42, release.classNameOfTeacher(p.userId(), classId).orElse("")));
+      case "VALIDATION_PAST" -> throw AppException.invalidField("releaseAt", MSG_43);
       // lớp của giáo viên khác cùng trường cũng như không tồn tại (BR-GEO-20, BR-GEO-112)
       default -> throw new AppException(ErrorCode.NOT_FOUND);
     };
@@ -146,15 +169,16 @@ public class AssignmentService {
 
   public Release setRelease(UUID id, boolean openNow, OffsetDateTime releaseAt, Integer rev) {
     AuthPrincipal p = Roles.require(Role.TEACHER);
+    if (!openNow && releaseAt == null) {
+      // không có thao tác xóa giờ đã đặt (US-GEO-605-FC4)
+      throw AppException.invalidField("releaseAt", MSG_EMPTY);
+    }
     FnResult r = repo.setRelease(p.userId(), id, openNow, releaseAt, rev == null ? 0 : rev);
     return switch (r.status()) {
       case "OK" -> new Release(r.releaseRev(), r.releaseAt());
-      case "CONFLICT_ALREADY_OPEN" ->
-          throw new AppException(ErrorCode.CONFLICT, "Lời giải đã mở, không đổi giờ được nữa.");
-      case "CONFLICT_REV" ->
-          throw new AppException(ErrorCode.CONFLICT, "Giờ mở vừa được đổi ở nơi khác.");
-      case "VALIDATION_PAST" ->
-          throw new AppException(ErrorCode.VALIDATION_FAILED, "Giờ mở phải ở tương lai.");
+      case "CONFLICT_ALREADY_OPEN" -> throw new AppException(ErrorCode.CONFLICT, MSG_48);
+      case "CONFLICT_REV" -> throw new AppException(ErrorCode.CONFLICT, MSG_49);
+      case "VALIDATION_PAST" -> throw AppException.invalidField("releaseAt", MSG_43);
       default -> throw new AppException(ErrorCode.NOT_FOUND);
     };
   }
@@ -181,7 +205,10 @@ public class AssignmentService {
         r.allowHint(),
         r.allowQa(),
         r.verifyStatus(),
-        progress(r.opened(), r.hintLevel(), r.solutionViewed()));
+        progress(r.opened(), r.hintLevel(), r.solutionViewed()),
+        r.title(),
+        r.solidKind(),
+        r.topic());
   }
 
   private static ClassAssignment view(ClassAssignmentRow r) {
