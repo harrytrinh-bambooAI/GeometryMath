@@ -104,11 +104,18 @@ test('Dữ liệu đổi giữa chừng: không lặp, 28 đề còn lại đủ
   const first = (await r1.json()) as PageBody;
   expect(first.items).toHaveLength(20);
   const firstCodes = first.items.map((x) => x.code);
-  // một đề mới được nạp vào kho ngay sau trang đầu
+  // hai đề mới được nạp vào kho ngay sau trang đầu: một đề sắp SAU con trỏ (HKM-…) và một đề sắp TRƯỚC con trỏ
+  // (HKA-… < HKG-01, BR-GEO-217): phân trang theo khóa không lặp, không đẩy lệch đề cũ sang trang sau
   const add = await request.post(`${API}/test-hooks/e5/problems`, {
     data: { statement: `Đề nạp giữa chừng (${Date.now()}): cho hình chóp S.ABCD, tính khoảng cách từ A đến (SBC).` },
   });
   expect(add.status()).toBe(200);
+  const before = await request.post(`${API}/test-hooks/e5/problems`, {
+    data: { statement: `Đề nạp trước con trỏ (${Date.now()}): cho hình chóp S.ABCD, tính góc giữa SC và (ABCD).`, prefix: 'HKA' },
+  });
+  expect(before.status()).toBe(200);
+  const beforeCode = ((await before.json()) as { code: string }).code;
+  expect(beforeCode < firstCodes[firstCodes.length - 1]!, `${beforeCode} sắp trước con trỏ`).toBe(true);
   const rest: string[] = [];
   let cursor = first.nextCursor;
   while (cursor) {
@@ -119,8 +126,10 @@ test('Dữ liệu đổi giữa chừng: không lặp, 28 đề còn lại đủ
     cursor = p.nextCursor;
   }
   for (const c of firstCodes) expect(rest, `${c} của trang đầu không lặp lại`).not.toContain(c);
+  expect(rest, 'đề chèn trước con trỏ không làm lặp hay lệch trang sau').not.toContain(beforeCode);
   const remaining = ALL_CODES.filter((c) => !firstCodes.includes(c));
-  expect(remaining).toHaveLength(28);
+  // lượt chạy lại (retry) có thể còn đề HKA-… của lượt trước ở đầu trang: vẫn đủ 48 đề kho thử chia hai phía con trỏ
+  expect(remaining).toHaveLength(48 - firstCodes.filter((c) => ALL_CODES.includes(c)).length);
   for (const c of remaining) expect(rest.filter((x) => x === c), c).toHaveLength(1);
   expect(new Set(rest).size).toBe(rest.length);
 });

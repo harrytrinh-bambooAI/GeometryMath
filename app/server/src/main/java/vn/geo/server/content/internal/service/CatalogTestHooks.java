@@ -25,9 +25,15 @@ public class CatalogTestHooks {
     this.repo = repo;
   }
 
+  /**
+   * @param prefix tiền tố mã ("HKM" mặc định, sắp SAU kho thử; "HKA" sắp TRƯỚC con trỏ của trang
+   *     đầu: TC-GEO-0533, BR-GEO-217)
+   */
   @Transactional
-  public Map<String, Object> addNewProblem(String statement) {
-    String code = String.format("HKM-%02d", repo.countInBank(BANK) + 1);
+  public Map<String, Object> addNewProblem(String statement, String prefix) {
+    // khóa theo bộ trong giao dịch: hai lần gọi song song không cùng đếm ra một mã (soát E5 #6)
+    repo.lockBank(BANK);
+    String code = String.format("%s-%02d", prefix, repo.countInBank(BANK) + 1);
     UUID author = repo.platformAuthor();
     UUID problemId = Uuid7.next();
     UUID versionId = Uuid7.next();

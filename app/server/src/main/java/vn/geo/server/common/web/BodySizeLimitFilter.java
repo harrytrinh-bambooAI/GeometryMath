@@ -17,6 +17,9 @@ import vn.geo.server.common.error.ErrorResponseWriter;
 
 /**
  * Từ chối thân yêu cầu quá cỡ: theo Content-Length ngay, hoặc cắt giữa chừng khi truyền chunked.
+ * Đường gửi ảnh (đọc ảnh đề) mang ảnh dạng base64 (to hơn ảnh 4/3): trần thân = cỡ base64 của một
+ * ảnh {@code maxBodyBytes} cộng phần JSON; trần 1 MB của chính ảnh kiểm ở dịch vụ sau khi giải mã
+ * (BR-GEO-171, FIX3).
  */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE + 10)
@@ -34,12 +37,21 @@ public class BodySizeLimitFilter extends OncePerRequestFilter {
   protected void doFilterInternal(
       HttpServletRequest request, HttpServletResponse response, FilterChain chain)
       throws ServletException, IOException {
-    long limit = props.maxBodyBytes();
+    long limit = limitFor(request);
     if (request.getContentLengthLong() > limit) {
       writer.write(response, ErrorCode.PAYLOAD_TOO_LARGE);
       return;
     }
     chain.doFilter(new Limited(request, limit), response);
+  }
+
+  /** Đường nhận ảnh base64 trong thân JSON. */
+  static final java.util.Set<String> IMAGE_PATHS =
+      java.util.Set.of("/api/v1/student/self-study/ocr");
+
+  long limitFor(HttpServletRequest request) {
+    long base = props.maxBodyBytes();
+    return IMAGE_PATHS.contains(request.getRequestURI()) ? (base + 2) / 3 * 4 + 16_384 : base;
   }
 
   private static final class Limited extends HttpServletRequestWrapper {

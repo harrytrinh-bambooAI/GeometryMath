@@ -24,6 +24,15 @@ public class SandboxService {
     repo.createClass(id, name, level, joinCode);
   }
 
+  /** Giờ mở đã hẹn coi như vừa trôi qua (thay chờ đồng hồ thật trong E2E, TC-GEO-0486). */
+  public boolean releasePassed(UUID assignmentId) {
+    return repo.releasePassed(assignmentId) == 1;
+  }
+
+  public long countEvents(UUID assignmentId, UUID userId, String kind) {
+    return repo.countEvents(assignmentId, userId, kind);
+  }
+
   public UUID join(String joinCode, String nameKey, String displayName) {
     return repo.joinStudent(joinCode, nameKey, displayName);
   }

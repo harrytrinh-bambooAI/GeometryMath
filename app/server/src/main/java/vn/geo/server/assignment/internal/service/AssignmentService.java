@@ -21,6 +21,7 @@ import vn.geo.server.common.paging.Paging;
 import vn.geo.server.common.security.AuthPrincipal;
 import vn.geo.server.common.security.Role;
 import vn.geo.server.common.security.Roles;
+import vn.geo.server.content.api.BankAccess;
 
 /**
  * Bài giao (US-GEO-101 "Bài của em", US-GEO-104 cách ly, US-GEO-102-FC2 học sinh không đặt giờ).
@@ -60,10 +61,14 @@ public class AssignmentService {
   private final Paging paging;
   private final JsonMapper mapper;
 
-  public AssignmentService(AssignmentRepository repo, Paging paging, JsonMapper mapper) {
+  private final BankAccess bank;
+
+  public AssignmentService(
+      AssignmentRepository repo, Paging paging, JsonMapper mapper, BankAccess bank) {
     this.repo = repo;
     this.paging = paging;
     this.mapper = mapper;
+    this.bank = bank;
   }
 
   public Page<StudentAssignment> myAssignments(Integer limit, String cursor) {
@@ -115,6 +120,9 @@ public class AssignmentService {
     if (classId == null || problemVersionId == null) {
       throw new AppException(ErrorCode.VALIDATION_FAILED, "Cần chọn lớp và đề.");
     }
+    // quyền bộ đề kiểm ở dịch vụ, độc lập với fn_create_assignment (FIX3; migration sau có thể định
+    // nghĩa lại hàm SQL)
+    bank.requireVisible(problemVersionId);
     UUID id = assignmentId == null ? Uuid7.next() : assignmentId;
     FnResult r =
         repo.create(

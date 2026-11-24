@@ -18,6 +18,7 @@ import vn.geo.server.common.paging.Paging;
 import vn.geo.server.common.security.AuthPrincipal;
 import vn.geo.server.common.security.Role;
 import vn.geo.server.common.security.Roles;
+import vn.geo.server.content.api.BankAccess;
 import vn.geo.server.content.internal.repo.CatalogRepository;
 import vn.geo.server.geometry.api.GeometryEngine;
 import vn.geo.server.geometry.api.SceneDto;
@@ -90,13 +91,19 @@ public class CatalogService {
   private final Paging paging;
   private final JsonMapper mapper;
   private final SceneService scenes;
+  private final BankAccess bank;
 
   public CatalogService(
-      CatalogRepository repo, Paging paging, JsonMapper mapper, SceneService scenes) {
+      CatalogRepository repo,
+      Paging paging,
+      JsonMapper mapper,
+      SceneService scenes,
+      BankAccess bank) {
     this.repo = repo;
     this.paging = paging;
     this.mapper = mapper;
     this.scenes = scenes;
+    this.bank = bank;
   }
 
   public CatalogPage list(Integer limit, String cursor, String level, String solid, String topic) {
@@ -148,6 +155,7 @@ public class CatalogService {
 
   public ProblemDetail detail(UUID versionId) {
     AuthPrincipal p = Roles.require(Role.TEACHER);
+    bank.requireVisible(versionId); // quyền bộ đề (FIX3)
     CatalogRepository.DetailRow d =
         repo.detail(versionId).orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
     List<String> hints =
@@ -180,6 +188,7 @@ public class CatalogService {
 
   public TeacherSolution teacherSolution(UUID versionId) {
     AuthPrincipal p = Roles.require(Role.TEACHER);
+    bank.requireVisible(versionId); // quyền bộ đề (FIX3)
     return repo.teacherSolution(p.userId(), versionId)
         .map(s -> new TeacherSolution(s.versionId(), s.finalAnswer(), mapper.readTree(s.steps())))
         .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));

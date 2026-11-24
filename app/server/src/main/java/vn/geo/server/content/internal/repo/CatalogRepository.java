@@ -116,7 +116,28 @@ public class CatalogRepository {
         .single();
   }
 
-  /** Một đề kho (version bất kỳ của đề kho đang dùng); đề tự nhập, trường khác: rỗng. */
+  /**
+   * Guard quyền bộ đề (FIX3, {@code content.api.BankAccess}): version đề kho thuộc bộ trường thấy.
+   */
+  public boolean bankVisible(UUID versionId) {
+    return Boolean.TRUE.equals(
+        jdbc.sql(
+                """
+                SELECT EXISTS (
+                  SELECT 1 FROM problem_version pv
+                  JOIN problem p ON p.org_id = pv.org_id AND p.id = pv.problem_id
+                  WHERE pv.org_id = platform_org_id() AND pv.id = :pv AND p.source = 'catalog'
+                    AND (p.bank = 'main' OR EXISTS (SELECT 1 FROM catalog_bank_access b
+                                                    WHERE b.org_id = :orgId AND b.bank = p.bank))
+                  LIMIT 1)
+                -- sqllint:allow=tenant,ownership nội dung hệ thống (org nền tảng, D-GEO-076); quyền bộ theo :orgId
+                """)
+            .param("pv", versionId)
+            .query(Boolean.class)
+            .single());
+  }
+
+  /** Một đề kho (version bất kỳ của đề kho đang dùng) thuộc bộ trường thấy; ngoài ra: rỗng. */
   public Optional<DetailRow> detail(UUID versionId) {
     return jdbc.sql(
             """
@@ -126,6 +147,7 @@ public class CatalogRepository {
             JOIN problem p ON p.org_id = pv.org_id AND p.id = pv.problem_id
             JOIN problem_topic t ON t.id = p.topic_id
             WHERE pv.org_id = platform_org_id() AND pv.id = :pv AND p.source = 'catalog' AND p.archived_at IS NULL
+              AND (p.bank = 'main' OR EXISTS (SELECT 1 FROM catalog_bank_access b WHERE b.org_id = :orgId AND b.bank = p.bank))
             LIMIT 1
             -- sqllint:allow=tenant,ownership nội dung hệ thống (org nền tảng, D-GEO-076); tên tác giả nền tảng (D-GEO-160)
             """)

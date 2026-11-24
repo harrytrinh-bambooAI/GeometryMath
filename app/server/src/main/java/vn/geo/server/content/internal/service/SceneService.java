@@ -15,6 +15,7 @@ import vn.geo.server.common.security.AuthPrincipal;
 import vn.geo.server.common.security.RequestContext;
 import vn.geo.server.common.security.Role;
 import vn.geo.server.common.security.Roles;
+import vn.geo.server.content.api.BankAccess;
 import vn.geo.server.content.internal.repo.SceneRepository;
 import vn.geo.server.geometry.api.Figure;
 import vn.geo.server.geometry.api.GeometryEngine;
@@ -49,16 +50,19 @@ public class SceneService {
   private final TemplateCatalogService catalog;
   private final GeometryEngine engine;
   private final JsonMapper mapper;
+  private final BankAccess bank;
 
   public SceneService(
       SceneRepository repo,
       TemplateCatalogService catalog,
       GeometryEngine engine,
-      JsonMapper mapper) {
+      JsonMapper mapper,
+      BankAccess bank) {
     this.repo = repo;
     this.catalog = catalog;
     this.engine = engine;
     this.mapper = mapper;
+    this.bank = bank;
   }
 
   /** Danh mục hình mẫu: mọi người đã đăng nhập, mọi trường (D-GEO-076). */
@@ -155,6 +159,7 @@ public class SceneService {
   /** Trang chi tiết đề kho của giáo viên: đề, nhãn máy, hình. Không có thao tác đổi nhãn. */
   public TeacherProblem teacherProblem(UUID versionId) {
     Roles.require(Role.TEACHER);
+    bank.requireVisible(versionId); // quyền bộ đề (FIX3)
     SceneRepository.CatalogVersion v =
         repo.catalogVersion(versionId).orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
     SceneDto scene =
