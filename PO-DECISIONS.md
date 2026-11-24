@@ -83,6 +83,7 @@ Khi các nguồn mâu thuẫn, tài liệu này thắng, rồi tới `PRODUCT-MA
 | PO-56 | Giả định (PO, 23/11/2026) | Khi lời giải còn khóa, bộ xem 3D ẩn MỌI số đo có giá trị trùng một đại lượng đang ẩn (trong dung sai AnswerMatch.tolerance), không chỉ cùng loại/cùng đối tượng. Đo yếu tố trung gian khác giá trị vẫn được phép (D-GEO-024). | Soát E3 #1: đo gián tiếp lộ đáp số. |
 | PO-57 | Giả định (PO, 23/11/2026) | Tham số hình mẫu có cận trên 1000 (QF-E2-D10); TC-GEO-0309 chạy ở tầng E2E-UI trên làn E3 riêng thay cho E2E-API trên Hà (QF-E3-D13) — QC cập nhật test_cases ở lượt sau. | AC chưa nêu cận; tách số đếm tránh test giẫm nhau. |
 | PO-58 | Final (chủ đầu tư /goal, 23/11/2026) | Làm hết các epic còn lại (E5, E6, E7) và các lô sửa sau soát, tự duyệt không hỏi lại. Thứ tự: E5 ‖ E4 → E6 → E7; mỗi epic soát độc lập + sửa gom; Opus tối đa 2 song song. | Chủ đầu tư giao toàn quyền chạy tiếp. |
+| PO-59 | Final (chủ đầu tư, 25/11/2026) | Luôn giữ 2 agent chạy song song tới khi xong MVP; việc phụ thuộc thì 1 agent gỡ trước rồi mở lại 2 agent cho đợt kế. Lộ trình: e6 ‖ e7 → (soát E6 + inbox cũ) ‖ e7 → soát E7 ‖ FIX4 → kiểm cuối. | Chủ đầu tư đặt goal "finish MVP", muốn ra sản phẩm nhanh. |
 
 Các mã PO-16 đến PO-26 được đặt sau đợt phản biện (`review/RV_findings.md`); cách xử lý từng phát hiện nằm ở `review/RV_triage.md`.
 
