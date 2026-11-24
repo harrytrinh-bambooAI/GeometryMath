@@ -143,6 +143,14 @@ public class E7TestHookController {
     return Map.of("assignmentId", req.assignmentId(), "cacheDropped", Boolean.TRUE.equals(deleted));
   }
 
+  /** Số sự kiện theo loại (event_log) của một học sinh trên một bài của tổ chức thử E7. */
+  @org.springframework.web.bind.annotation.GetMapping("/test-hooks/e7/events")
+  public Map<String, Long> events(
+      @org.springframework.web.bind.annotation.RequestParam UUID assignmentId,
+      @org.springframework.web.bind.annotation.RequestParam UUID userId) {
+    return repo.eventCounts(assignmentId, userId);
+  }
+
   private static String joinCode() {
     StringBuilder b = new StringBuilder();
     for (int i = 0; i < 6; i++) {

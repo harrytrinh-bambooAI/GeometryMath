@@ -49,4 +49,8 @@ public class E7SandboxService {
   public void question(UUID assignmentId, UUID userId, String text, int minutesAgo) {
     repo.question(assignmentId, userId, text, minutesAgo);
   }
+
+  public java.util.Map<String, Long> eventCounts(UUID assignmentId, UUID userId) {
+    return repo.eventCounts(assignmentId, userId);
+  }
 }

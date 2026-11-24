@@ -138,4 +138,22 @@ public class E7SandboxRepository {
         .param("q", text)
         .update();
   }
+
+  /** Số sự kiện theo loại của một học sinh trên một bài (trong 2 ngày gần nhất). */
+  public java.util.Map<String, Long> eventCounts(UUID assignmentId, UUID userId) {
+    java.util.Map<String, Long> m = new java.util.TreeMap<>();
+    jdbc.sql(
+            """
+            SELECT kind::text, count(*) FROM event_log
+            WHERE org_id = :org AND assignment_id = :id AND user_id = :user
+              AND occurred_at >= now() - interval '2 days'
+            GROUP BY kind LIMIT 20
+            """)
+        .param("org", ORG)
+        .param("id", assignmentId)
+        .param("user", userId)
+        .query((rs, i) -> m.put(rs.getString(1), rs.getLong(2)))
+        .list();
+    return m;
+  }
 }
