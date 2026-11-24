@@ -89,3 +89,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
   14. [minor] TC-0493 `qa.ui.spec.ts`, TC-0484 `inherit.ui.spec.ts`: gom body response bất đồng bộ → có thể đạt giả; chờ đủ response trước khi kiểm.
   15. [minor] TC-0478 `expect(bearer(anC)).toBeTruthy()` luôn đúng; TC-0445 cần đếm event_log.
   16. [minor] TC-0486 cửa sổ 20 s dễ đỏ giả trên máy chậm → dùng móc điều khiển giờ mở thay vì đồng hồ thật.
+- **Trạng thái (FIX3, nhánh mvp-fix3, 23/11/2026):** ĐÓNG cả 17 mục (0…16).
+  #0 ĐÓNG · b55989b — gốc: seed E4 (401) thêm khóa `highlight`/`draw` vào bước lời giải; bộ nạp E5 so nguyên jsonb → "lời giải đổi". V59 `fn_content_solution_same` so phần chữ (title/body/why) + đáp số; tc0528 đạt, không nới assertion (QF-E5-D10).
+  #1–5 ĐÓNG · b55989b (+ 94c20b8 LIMIT) — V59 `fn_catalog_bank_visible` trong `fn_create_assignment`, `fn_get_solution_teacher`; điều kiện bộ ở `CatalogRepository.detail`, `SceneRepository.catalogVersion`; guard Java `content.api.BankAccess` ở 4 dịch vụ; ghi bắt buộc `app/docs/CONFIG.md` §9; IT `it/e5/BankAccessE5IT` Dev-E5-01…05 (QF-E5-D11).
+  #6, #7 ĐÓNG · 94c20b8 — móc nạp đề khóa theo bộ + `prefix`; TC-0533 thêm đề HKA-… trước con trỏ (QF-E5-D12).
+  #8–#13 ĐÓNG · fc71662 (+ 94c20b8 `fn_self_lock_inherited`) — IT `it/e4/HelpFix3E4IT` Dev-E4-01…06, unit `AnswerGuardShortAnswerTest` Dev-E4-07 (QF-E4-D08…D13).
+  #14–#16 ĐÓNG · 94c20b8 — `recordResponses`, móc `GET /test-hooks/e4/events`, `POST /test-hooks/e4/release-passed` (QF-E4-D14).
