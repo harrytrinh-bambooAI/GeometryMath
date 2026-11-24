@@ -24,9 +24,12 @@ export function AreaLayout({ area, title, nav }: { area: 'gv' | 'hs'; title: str
         <NavLink to="/" className="logo" data-testid={tid('shell', 'home')} aria-label="Trang chủ">
           H
         </NavLink>
-        <NavLink to={`/${area}`} end data-testid={tid(area, 'nav', 'overview')}>
-          Tổng quan
-        </NavLink>
+        {/* BR-GEO-307 (D-GEO-129): thanh bên của giáo viên không có "Tổng quan", "Lớp học" ở MVP */}
+        {area === 'hs' ? (
+          <NavLink to={`/${area}`} end data-testid={tid(area, 'nav', 'overview')}>
+            Tổng quan
+          </NavLink>
+        ) : null}
         {nav.map((n) => (
           <NavLink key={n.to} to={`/${area}/${n.to}`} data-testid={n.testId}>
             {n.label}

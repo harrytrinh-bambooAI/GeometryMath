@@ -1,15 +1,22 @@
 import type { FeatureModule } from '../types.ts';
+import { AssignedPage } from './AssignedPage.tsx';
+import { MonitorPage } from './MonitorPage.tsx';
+import './e7.css';
 
 /**
  * E7 — Theo dõi lớp và ghi sự kiện.
- * Chỗ cắm của epic: thêm route/mục rail vào đây; màn, hook, gọi API đặt trong thư mục src/features/e7/.
- * data-testid của epic bắt đầu bằng 'e7-' (xem app/web/README.md).
+ * Giáo viên: /gv/theo-doi (mục "Theo dõi": bài đã giao, US-GEO-701-SC6), /gv/theo-doi/:id (Theo dõi lớp đầy đủ; thay
+ * bản tối thiểu của E1 — khung cho route cùng đường dẫn của epic sau thắng).
+ * data-testid của epic bắt đầu bằng 'e7-'.
  */
 export const feature: FeatureModule = {
   id: 'e7',
   title: 'Theo dõi lớp và ghi sự kiện',
-  teacherRoutes: [],
+  teacherRoutes: [
+    { path: 'theo-doi', element: <AssignedPage /> },
+    { path: 'theo-doi/:id', element: <MonitorPage /> },
+  ],
   studentRoutes: [],
-  teacherNav: [],
+  teacherNav: [{ to: 'theo-doi', label: 'Theo dõi', testId: 'e7-nav-theo-doi' }],
   studentNav: [],
 };

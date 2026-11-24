@@ -37,6 +37,16 @@ function RouteError() {
   );
 }
 
+/**
+ * Route con của một vùng: epic sau khai báo cùng đường dẫn thì THAY route của epic trước (bản đầy đủ thay bản tối
+ * thiểu, ví dụ Theo dõi lớp /gv/theo-doi/:id của E7 thay bản E1).
+ */
+const childRoutes = (pick: 'teacherRoutes' | 'studentRoutes'): RouteObject[] => {
+  const byPath = new Map<string, RouteObject>();
+  for (const r of features.flatMap((f) => f[pick] ?? [])) byPath.set(r.path ?? '', r);
+  return [...byPath.values()];
+};
+
 const overview = (pick: 'teacherRoutes' | 'studentRoutes') =>
   features.map((f) => ({ id: f.id, title: f.title, screens: f[pick]?.length ?? 0 }));
 
@@ -48,7 +58,7 @@ export const routes: RouteObject[] = [
     errorElement: <RouteError />,
     children: [
       { index: true, element: <AreaOverview area="gv" items={overview('teacherRoutes')} /> },
-      ...features.flatMap((f) => f.teacherRoutes ?? []),
+      ...childRoutes('teacherRoutes'),
     ],
   },
   {
@@ -57,7 +67,7 @@ export const routes: RouteObject[] = [
     errorElement: <RouteError />,
     children: [
       { index: true, element: <AreaOverview area="hs" items={overview('studentRoutes')} /> },
-      ...features.flatMap((f) => f.studentRoutes ?? []),
+      ...childRoutes('studentRoutes'),
     ],
   },
   { path: '*', element: <NotFound /> },
