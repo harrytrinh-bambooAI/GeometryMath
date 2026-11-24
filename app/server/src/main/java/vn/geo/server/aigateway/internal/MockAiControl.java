@@ -21,6 +21,8 @@ public class MockAiControl {
   private final Map<String, String> answerOverrides = new ConcurrentHashMap<>();
   private final Map<String, String> scenarios = new ConcurrentHashMap<>();
   private final Map<String, Long> delays = new ConcurrentHashMap<>();
+  private final Map<String, java.util.List<String>> qaScripts = new ConcurrentHashMap<>();
+  private final Map<String, Integer> qaCursor = new ConcurrentHashMap<>();
   private final Deque<String> received = new ArrayDeque<>();
 
   public static String key(String userId, String lane) {
@@ -76,6 +78,35 @@ public class MockAiControl {
     return d == null ? 0 : d;
   }
 
+  /**
+   * E6: kịch bản câu trả lời hỏi đáp soạn sẵn (F-GEO-113…116, 241) theo người dùng và làn. Lần hỏi
+   * thứ n nhận câu thứ n; hết danh sách thì lặp lại câu cuối. Danh sách rỗng hoặc null = bỏ.
+   */
+  public void setQaScript(String userId, String lane, java.util.List<String> replies) {
+    String id = "qa:" + key(userId, lane);
+    if (replies == null || replies.isEmpty()) {
+      qaScripts.remove(id);
+      qaCursor.remove(id);
+      if (id.equals(scenarioFor(userId, lane))) {
+        setScenario(userId, lane, null);
+      }
+      return;
+    }
+    qaScripts.put(id, java.util.List.copyOf(replies));
+    qaCursor.put(id, 0);
+    setScenario(userId, lane, id);
+  }
+
+  /** Câu kế tiếp của kịch bản hỏi đáp (scenario do setQaScript đặt), null nếu không có. */
+  public String nextQa(String scenario) {
+    java.util.List<String> list = scenario == null ? null : qaScripts.get(scenario);
+    if (list == null) {
+      return null;
+    }
+    int i = qaCursor.merge(scenario, 1, Integer::sum) - 1;
+    return list.get(Math.min(i, list.size() - 1));
+  }
+
   public void overrideAnswer(String problemCode, String answer) {
     if (answer == null) {
       answerOverrides.remove(problemCode);
@@ -106,6 +137,8 @@ public class MockAiControl {
     answerOverrides.clear();
     scenarios.clear();
     delays.clear();
+    qaScripts.clear();
+    qaCursor.clear();
     received.clear();
   }
 }

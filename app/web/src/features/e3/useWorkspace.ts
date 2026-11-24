@@ -30,7 +30,7 @@ export function useWorkspace(id: string) {
       let info: Omit<WorkspaceData, 'solid' | 'scene'> & { scene?: Scene };
       try {
         const a = await e3Api.assignment(id);
-        info = { kind: 'class', title: a.problemCode, subtitle: `Lớp ${a.className}`, statement: a.statement };
+        info = { kind: 'class', title: a.problemCode, subtitle: `Bài được giao · lớp ${a.className}`, statement: a.statement }; // E6 US-GEO-606-SC5
       } catch (e) {
         try {
           const s = await e3Api.selfStudy(id);

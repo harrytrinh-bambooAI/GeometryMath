@@ -31,7 +31,10 @@ public class AssignmentRepository {
       String verifyStatus,
       boolean opened,
       int hintLevel,
-      boolean solutionViewed) {}
+      boolean solutionViewed,
+      String title,
+      String solidKind,
+      String topic) {}
 
   public record ClassAssignmentRow(
       UUID id, String problemCode, Instant releaseAt, String releaseState, int releaseRev) {}
@@ -45,12 +48,14 @@ public class AssignmentRepository {
       SELECT a.id, p.code, pv.statement, c.name, a.release_at,
              CASE WHEN a.release_at IS NULL THEN 'unset' WHEN a.release_at > now() THEN 'upcoming' ELSE 'open' END,
              a.release_rev, a.allow_hint, a.allow_qa, pv.verify_status::text,
-             ap.first_opened_at IS NOT NULL, COALESCE(ap.hint_level_max, 0), ap.solution_viewed_at IS NOT NULL
+             ap.first_opened_at IS NOT NULL, COALESCE(ap.hint_level_max, 0), ap.solution_viewed_at IS NOT NULL,
+             p.title, p.solid_kind::text, t.name
       FROM class_member cm
       JOIN class c ON c.org_id = :orgId AND c.id = cm.class_id
       JOIN assignment a ON a.org_id = :orgId AND a.class_id = cm.class_id AND a.kind = 'class' AND a.archived_at IS NULL
       JOIN problem_version pv ON pv.org_id = a.content_org_id AND pv.id = a.problem_version_id
       JOIN problem p ON p.org_id = pv.org_id AND p.id = pv.problem_id
+      LEFT JOIN problem_topic t ON t.id = p.topic_id
       LEFT JOIN assignment_progress ap ON ap.org_id = :orgId AND ap.assignment_id = a.id AND ap.user_id = cm.user_id
       WHERE cm.org_id = :orgId AND cm.user_id = :userId AND cm.left_at IS NULL
       -- sqllint:allow=ownership,tenant,unbounded read model Q02: bài của lớp em + đề kho (org nền tảng) + tiến độ
@@ -190,7 +195,10 @@ public class AssignmentRepository {
         rs.getString(10),
         rs.getBoolean(11),
         rs.getInt(12),
-        rs.getBoolean(13));
+        rs.getBoolean(13),
+        rs.getString(14),
+        rs.getString(15),
+        rs.getString(16));
   }
 
   private static Instant instant(ResultSet rs, int col) throws SQLException {

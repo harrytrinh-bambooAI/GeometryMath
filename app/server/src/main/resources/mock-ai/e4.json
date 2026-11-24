@@ -123,7 +123,9 @@
       "reply": "Đáp số là 60/√769 ≈ 2,1637." },
     { "id": "F-GEO-093 (thiết diện)", "pattern": "(?iu)Câu hỏi: .*thiết diện", "kind": "concept",
       "reply": "Phần chung của mặt phẳng cắt với hình chóp gọi là thiết diện. Em tìm giao tuyến của mặt phẳng đó với từng mặt của hình; muốn vậy thường phải biết đường thẳng nào vuông góc với mặt phẳng.",
-      "source": "duong-thang-vuong-goc-voi-mat-phang" }
+      "source": "duong-thang-vuong-goc-voi-mat-phang" },
+    { "id": "E6 F-GEO-114 (US-GEO-609-SC4, 610-FC1)", "pattern": "(?iu)Câu hỏi: Đáp số bài này là bao nhiêu", "kind": "hint",
+      "reply": "Góc giữa SD và mặt đáy là 45°." }
   ],
   "ocr": {
     "F-GEO-066": "Lăng trụ đứng tam giác có đáy là tam giác đều cạnh 4 cm, chiều cao 6 cm. Tính thể tích."

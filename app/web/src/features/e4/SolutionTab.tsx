@@ -5,6 +5,9 @@ import { formatVnDateTime } from '../../shared/time/vnTime.ts';
 import { e4Api, isNetworkError, M } from './api.ts';
 import { KwText } from './Lecture.tsx';
 import { highlightLine, type HelpModel } from './useHelp.ts';
+import { M as E6M } from '../e6/api.ts';
+import { LockCard } from '../e6/LockCard.tsx';
+import { useReleaseWatch } from '../e6/useReleaseWatch.ts';
 
 /** Thông điệp khóa của tab "Lời giải" theo trạng thái máy chủ (MSG-GEO-30, 31, 58; bài lớp: giờ mở của giáo viên). */
 function lockText(state: string, message: string | null | undefined, releaseAt: string | null | undefined): string {
@@ -59,20 +62,45 @@ export function SolutionTab({ id, model }: { id: string; model: HelpModel }) {
     const t = window.setInterval(() => void refresh(), 5000);
     return () => window.clearInterval(t);
   }, [help, state, refresh]);
+  // E6 (US-GEO-612): bài lớp — thẻ khóa MSG-GEO-27/28 đếm ngược theo giờ máy chủ; máy chủ báo đã mở thì nạp lại ngay,
+  // hiện MSG-GEO-55; trang hiện lại / mạng có lại thì hỏi ngay.
+  const watch = useReleaseWatch(id, help?.kind === 'class');
+  const serverOpen = watch.lock !== null && !watch.lock.locked;
+  useEffect(() => {
+    if (!serverOpen || state === 'open') return;
+    const t = window.setTimeout(() => void refresh(), 0);
+    return () => window.clearTimeout(t);
+  }, [serverOpen, state, refresh]);
+  const opened = watch.justOpened ? (
+    <p className="chip grn e6-toast" role="status" data-testid={tid('e6', 'toast', 'opened')}>
+      {E6M['55']}
+    </p>
+  ) : null;
 
   if (!help) return <p className="muted">Đang tải…</p>;
   if (state !== 'open') {
+    const classLock = help.kind === 'class' && state === 'release';
     return (
       <div data-testid={tid('e4', 'solution')} data-state={state}>
-        <p className="e4-lock" data-testid={tid('e4', 'solution', 'locked')} data-state={state}>
-          {lockText(state ?? 'release', help.solution.message, help.solution.releaseAt)}
-        </p>
+        {classLock ? (
+          <LockCard
+            state={watch.lock?.state ?? (help.solution.releaseAt ? 'upcoming' : 'unset')}
+            releaseAt={watch.lock?.releaseAt ?? help.solution.releaseAt}
+            serverNow={watch.lock?.serverNow}
+            receivedAt={watch.receivedAt}
+          />
+        ) : (
+          <p className="e4-lock" data-testid={tid('e4', 'solution', 'locked')} data-state={state}>
+            {lockText(state ?? 'release', help.solution.message, help.solution.releaseAt)}
+          </p>
+        )}
       </div>
     );
   }
   if (!solution) {
     return (
       <div data-testid={tid('e4', 'solution')} data-state="open">
+        {opened}
         {help.kind === 'self' && (
           <button type="button" className="btn primary" disabled={busy} data-testid={tid('e4', 'solution', 'view')}
             onClick={() => void open()}>
@@ -93,6 +121,7 @@ export function SolutionTab({ id, model }: { id: string; model: HelpModel }) {
   const last = solution.steps.length - 1;
   return (
     <div className="e4-solution" data-testid={tid('e4', 'solution')} data-state="open" data-step={step + 1}>
+      {opened}
       <div className="row e4-labels">
         <span className={`chip ${solution.machineLabel === 'Đã kiểm chứng' ? 'grn' : 'yel'}`} data-testid={tid('e4', 'solution', 'label', 'machine')}>
           {solution.machineLabel}
