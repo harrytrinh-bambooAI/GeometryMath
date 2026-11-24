@@ -138,8 +138,9 @@ public class SceneRepository {
             JOIN problem p ON p.org_id = pv.org_id AND p.id = pv.problem_id
             WHERE pv.org_id = platform_org_id() AND pv.id = :pv AND p.source = 'catalog'
               AND p.archived_at IS NULL
+              AND (p.bank = 'main' OR EXISTS (SELECT 1 FROM catalog_bank_access b WHERE b.org_id = :orgId AND b.bank = p.bank))
             LIMIT 1
-            -- sqllint:allow=tenant nội dung hệ thống (org nền tảng, D-GEO-076)
+            -- sqllint:allow=tenant nội dung hệ thống (org nền tảng, D-GEO-076); quyền bộ đề theo :orgId (FIX3)
             """)
         .param("pv", versionId)
         .query((rs, i) ->

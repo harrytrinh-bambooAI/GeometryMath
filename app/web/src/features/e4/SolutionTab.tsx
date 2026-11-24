@@ -126,9 +126,11 @@ export function SolutionTab({ id, model }: { id: string; model: HelpModel }) {
         <span className={`chip ${solution.machineLabel === 'Đã kiểm chứng' ? 'grn' : 'yel'}`} data-testid={tid('e4', 'solution', 'label', 'machine')}>
           {solution.machineLabel}
         </span>
-        <span className="chip pur" data-testid={tid('e4', 'solution', 'label', 'human')}>
-          {solution.humanLabel}
-        </span>
+        {solution.humanLabel && (
+          <span className="chip pur" data-testid={tid('e4', 'solution', 'label', 'human')}>
+            {solution.humanLabel}
+          </span>
+        )}
       </div>
       <ol className="e4-steps" data-testid={tid('e4', 'steps')}>
         {solution.steps.map((s, i) => (

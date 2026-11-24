@@ -71,3 +71,27 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
   1. [E5, tự nêu] Giáo viên bất kỳ giao được đề thuộc bank thử qua API; quyền bank chỉ áp ở danh sách/đếm.
   (+ phát hiện soát E4/E5 bổ sung bên dưới khi có)
 - **Xong khi:** make verify xanh trên nhánh tích hợp; make e2e hai lượt đạt toàn bộ.
+- Phát hiện soát E5 (Sonnet, 23/11/2026) — 4 BLOCKER cùng gốc "quyền bank chỉ áp ở danh sách/đếm" (mở rộng mục 1):
+  2. `V10__schema_mvp.sql:886-900` fn_create_assignment không kiểm bank → giao đề ngoài bank (201).
+  3. `V10:1033-1048` fn_get_solution_teacher + `GET /api/v1/teacher/problems/{versionId}/solution` lộ lời giải/đáp số đề ngoài bank.
+  4. `CatalogRepository.detail()` (~128-137) `GET /api/v1/teacher/catalog/problems/{versionId}` lộ đề/cảnh/gợi ý/lời giải.
+  5. `SceneRepository.catalogVersion()` (133-150) + `GeometryController:73` lộ đề/cảnh/gợi ý.
+  Sửa: điều kiện `p.bank='main' OR EXISTS(catalog_bank_access WHERE org_id=:orgId AND bank=p.bank)` ở cả 4 chỗ, trả NOT_FOUND; thêm guard Java dùng chung (vì E6 có thể định nghĩa lại fn_create_assignment); TC Dev "giáo viên ngoài bank → 404" cho chi tiết/lời giải/cảnh/giao bài.
+  6. [minor] `CatalogTestHooks.java:~35` mã HKM-%02d từ count+1 có thể trùng khi chạy song song → sinh mã duy nhất.
+  7. [minor] TC-0533 chưa chạm ca đề mới chèn TRƯỚC con trỏ (BR-GEO-217).
+- Phát hiện soát E4 (Sonnet, 23/11/2026) — 0 blocker:
+  8. [major] `HintService.java:generateSelfHints` gợi ý AI tự học không qua AnswerGuard (BR-GEO-179, US-405) → chạy guard trước khi lưu/trả.
+  9. [major] `SelfStudyService.ocr` + BodySizeLimitFilter: không kiểm loại tệp (magic bytes JPEG/PNG/HEIC…) và kích thước ảnh sau giải mã (D07 1 MB của ẢNH, không phải thân yêu cầu).
+  10. [minor] `AnswerGuard.addAnswer` bỏ qua đáp số < 2 ký tự ("a" của HKG-02, F-GEO-116).
+  11. [minor] `SolutionService.open` luôn gán "AI soạn", bỏ qua `aiAuthored()`.
+  12. [minor] `FigureEventService` constructor 4 tham số để hints=null → NPE; bỏ hoặc sửa.
+  13. [minor] `HintService`: hai yêu cầu đầu đồng thời gọi AI 2 lần; bài kế thừa khóa mà đề kho thiếu gợi ý sinh gợi ý AI rồi trả NOT_FOUND.
+  14. [minor] TC-0493 `qa.ui.spec.ts`, TC-0484 `inherit.ui.spec.ts`: gom body response bất đồng bộ → có thể đạt giả; chờ đủ response trước khi kiểm.
+  15. [minor] TC-0478 `expect(bearer(anC)).toBeTruthy()` luôn đúng; TC-0445 cần đếm event_log.
+  16. [minor] TC-0486 cửa sổ 20 s dễ đỏ giả trên máy chậm → dùng móc điều khiển giờ mở thay vì đồng hồ thật.
+- **Trạng thái (FIX3, nhánh mvp-fix3, 23/11/2026):** ĐÓNG cả 17 mục (0…16).
+  #0 ĐÓNG · b55989b — gốc: seed E4 (401) thêm khóa `highlight`/`draw` vào bước lời giải; bộ nạp E5 so nguyên jsonb → "lời giải đổi". V59 `fn_content_solution_same` so phần chữ (title/body/why) + đáp số; tc0528 đạt, không nới assertion (QF-E5-D10).
+  #1–5 ĐÓNG · b55989b (+ 94c20b8 LIMIT) — V59 `fn_catalog_bank_visible` trong `fn_create_assignment`, `fn_get_solution_teacher`; điều kiện bộ ở `CatalogRepository.detail`, `SceneRepository.catalogVersion`; guard Java `content.api.BankAccess` ở 4 dịch vụ; ghi bắt buộc `app/docs/CONFIG.md` §9; IT `it/e5/BankAccessE5IT` Dev-E5-01…05 (QF-E5-D11).
+  #6, #7 ĐÓNG · 94c20b8 — móc nạp đề khóa theo bộ + `prefix`; TC-0533 thêm đề HKA-… trước con trỏ (QF-E5-D12).
+  #8–#13 ĐÓNG · fc71662 (+ 94c20b8 `fn_self_lock_inherited`) — IT `it/e4/HelpFix3E4IT` Dev-E4-01…06, unit `AnswerGuardShortAnswerTest` Dev-E4-07 (QF-E4-D08…D13).
+  #14–#16 ĐÓNG · 94c20b8 — `recordResponses`, móc `GET /test-hooks/e4/events`, `POST /test-hooks/e4/release-passed` (QF-E4-D14).

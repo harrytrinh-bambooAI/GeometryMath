@@ -90,6 +90,11 @@
   },
   "hint": [
     {
+      "id": "Dev-E4-01 AI trả gợi ý lộ đáp số (FIX3: gợi ý tự học qua Kiểm soát đáp án, BR-GEO-179)",
+      "pattern": "\\[Dev-E4-01\\]",
+      "hints": ["Em tính ra khoảng cách bằng 60/√769 là xong.", "Em nhìn A.A′BC như một tứ diện vuông tại A."]
+    },
+    {
       "id": "F-GEO-060",
       "pattern": "(?iu)lăng trụ đứng ABC\\.A′B′C′ có đáy là tam giác vuông tại A",
       "hints": [

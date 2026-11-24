@@ -71,6 +71,29 @@ public class AnswerGuard implements AnswerGuardApi {
     return new Screened(true, HelpMessages.msg35(highest), rule);
   }
 
+  /**
+   * Văn bản có lộ đáp số/bước giải của bài khi lời giải còn khóa với học sinh không — dùng cho gợi
+   * ý AI của bài tự học trước khi lưu (BR-GEO-179, FIX3). Cùng quy tắc {@link AnswerRules} như hỏi
+   * đáp (không có câu hỏi đi kèm).
+   */
+  boolean leaks(UUID userId, UUID assignmentId, String text) {
+    if (text == null) {
+      return false;
+    }
+    GuardRepository.Context g = repo.context(userId, assignmentId);
+    if (!"OK".equals(g.status()) || !g.locked()) {
+      return false;
+    }
+    return leaks(g, text);
+  }
+
+  boolean leaks(GuardRepository.Context g, String text) {
+    return AnswerRules.check(null, text, locked(g.finalAnswer(), g.steps(), g.forms())) != null
+        || (g.ownFinalAnswer() != null
+            && AnswerRules.check(null, text, locked(g.ownFinalAnswer(), g.ownSteps(), g.ownForms()))
+                != null);
+  }
+
   @Override
   public Screened screenPreview(
       UUID problemVersionId, String question, String reply, String highestHint) {

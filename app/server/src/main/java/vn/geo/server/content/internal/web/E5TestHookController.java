@@ -22,13 +22,17 @@ public class E5TestHookController {
     this.hooks = hooks;
   }
 
-  public record NewProblem(String statement) {}
+  public record NewProblem(String statement, String prefix) {}
 
   @PostMapping("/test-hooks/e5/problems")
   public Map<String, Object> add(@RequestBody NewProblem body) {
     if (body == null || body.statement() == null || body.statement().isBlank()) {
       throw AppException.invalidField("statement", "Cần đề bài.");
     }
-    return hooks.addNewProblem(body.statement().strip());
+    String prefix = body.prefix() == null ? "HKM" : body.prefix();
+    if (!prefix.matches("HK[A-Z]")) {
+      throw AppException.invalidField("prefix", "Tiền tố mã dạng HK + một chữ hoa.");
+    }
+    return hooks.addNewProblem(body.statement().strip(), prefix);
   }
 }

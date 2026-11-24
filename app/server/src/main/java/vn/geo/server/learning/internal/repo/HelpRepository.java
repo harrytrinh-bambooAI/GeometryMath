@@ -80,6 +80,22 @@ public class HelpRepository {
         .single();
   }
 
+  /**
+   * Bài tự học của chính học sinh đang kế thừa khóa của một bài lớp (D-GEO-151, kiểm mỗi lần): khi
+   * đó gợi ý lấy từ đề kho, không sinh gợi ý AI (D-GEO-155).
+   */
+  public boolean selfLockInherited(UUID userId, UUID assignmentId) {
+    return Boolean.TRUE.equals(
+        jdbc.sql(
+                """
+                SELECT fn_self_lock_inherited(:orgId, :userId, :id)
+                """)
+            .param("userId", userId)
+            .param("id", assignmentId)
+            .query(Boolean.class)
+            .single());
+  }
+
   /** Gợi ý đã xem (đọc lại, không ghi sự kiện). */
   public List<SeenHint> seenHints(UUID userId, UUID assignmentId) {
     return jdbc.sql(

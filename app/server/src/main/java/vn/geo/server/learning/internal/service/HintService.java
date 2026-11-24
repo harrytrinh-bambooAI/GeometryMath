@@ -1,8 +1,10 @@
 package vn.geo.server.learning.internal.service;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import tools.jackson.core.JacksonException;
 import tools.jackson.databind.JsonNode;
@@ -11,6 +13,7 @@ import vn.geo.server.aigateway.api.AiGateway;
 import vn.geo.server.aigateway.api.AiRequest;
 import vn.geo.server.common.error.AppException;
 import vn.geo.server.common.error.ErrorCode;
+import vn.geo.server.common.redis.RedisKeys;
 import vn.geo.server.common.security.AuthPrincipal;
 import vn.geo.server.common.security.Role;
 import vn.geo.server.common.security.Roles;
@@ -27,14 +30,33 @@ import vn.geo.server.learning.internal.repo.HelpRepository;
 @Service
 public class HintService implements HintApi {
 
+  /**
+   * Thời hạn khóa "đang sinh gợi ý AI" của một bài tự học và thời gian chờ tối đa của yêu cầu sau.
+   */
+  static final Duration GEN_LOCK = Duration.ofSeconds(30);
+
+  static final Duration GEN_WAIT = Duration.ofSeconds(15);
+
   private final HelpRepository repo;
   private final AiGateway ai;
   private final JsonMapper mapper;
+  private final AnswerGuard guard;
+  private final StringRedisTemplate redis;
+  private final RedisKeys keys;
 
-  public HintService(HelpRepository repo, AiGateway ai, JsonMapper mapper) {
+  public HintService(
+      HelpRepository repo,
+      AiGateway ai,
+      JsonMapper mapper,
+      AnswerGuard guard,
+      StringRedisTemplate redis,
+      RedisKeys keys) {
     this.repo = repo;
     this.ai = ai;
     this.mapper = mapper;
+    this.guard = guard;
+    this.redis = redis;
+    this.keys = keys;
   }
 
   @Override
@@ -46,9 +68,10 @@ public class HintService implements HintApi {
     HelpRepository.HintRow r = repo.hint(p.userId(), assignmentId, level, requestId);
     if ("NO_HINT".equals(r.status())) {
       HelpRepository.State st = repo.state(p.userId(), assignmentId);
-      if ("self".equals(st.kind())) {
-        generateSelfHints(p.userId(), assignmentId, st.statement());
-        r = repo.hint(p.userId(), assignmentId, level, requestId);
+      // bài kế thừa khóa dùng gợi ý của đề kho, không gọi AI (D-GEO-155): đề kho thiếu gợi ý thì
+      // NOT_FOUND mà không sinh gợi ý AI vô ích
+      if ("self".equals(st.kind()) && !repo.selfLockInherited(p.userId(), assignmentId)) {
+        r = generateOnce(p.userId(), assignmentId, level, requestId, st.statement());
       }
     }
     return switch (r.status()) {
@@ -64,7 +87,43 @@ public class HintService implements HintApi {
     };
   }
 
-  /** Gợi ý AI của đề tự nhập; prompt chỉ có đề (BR-GEO-108). Lỗi AI: MSG-GEO-14 ở thiết bị. */
+  /**
+   * Sinh gợi ý AI MỘT lần cho bài tự học kể cả khi nhiều yêu cầu đầu đến cùng lúc: khóa Redis theo
+   * bài; yêu cầu giữ khóa xem lại (có thể yêu cầu trước vừa ghi xong) rồi mới gọi AI; yêu cầu khác
+   * chờ khóa nhả rồi đọc gợi ý đã ghi.
+   */
+  private HelpRepository.HintRow generateOnce(
+      UUID userId, UUID assignmentId, int level, UUID requestId, String statement) {
+    String key = keys.key("selfhints", assignmentId.toString());
+    if (Boolean.TRUE.equals(redis.opsForValue().setIfAbsent(key, requestId.toString(), GEN_LOCK))) {
+      try {
+        HelpRepository.HintRow again = repo.hint(userId, assignmentId, level, requestId);
+        if (!"NO_HINT".equals(again.status())) {
+          return again;
+        }
+        generateSelfHints(userId, assignmentId, statement);
+      } finally {
+        redis.delete(key);
+      }
+    } else {
+      long deadline = System.nanoTime() + GEN_WAIT.toNanos();
+      while (Boolean.TRUE.equals(redis.hasKey(key)) && System.nanoTime() < deadline) {
+        try {
+          Thread.sleep(50);
+        } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+          break;
+        }
+      }
+    }
+    return repo.hint(userId, assignmentId, level, requestId);
+  }
+
+  /**
+   * Gợi ý AI của đề tự nhập; prompt chỉ có đề (BR-GEO-108). Lỗi AI: MSG-GEO-14 ở thiết bị. Mỗi gợi
+   * ý qua Kiểm soát đáp án trước khi lưu (BR-GEO-179, US-GEO-405): lộ đáp số/bước giải thì thay
+   * bằng câu gợi mở chung.
+   */
   private void generateSelfHints(UUID userId, UUID assignmentId, String statement) {
     List<String> hints = new ArrayList<>();
     try {
@@ -77,6 +136,12 @@ public class HintService implements HintApi {
     hints.removeIf(h -> h.isEmpty() || h.length() > 4000);
     String h1 = hints.size() > 0 ? hints.get(0) : FALLBACK_1;
     String h2 = hints.size() > 1 ? hints.get(1) : FALLBACK_2;
+    if (guard.leaks(userId, assignmentId, h1)) {
+      h1 = FALLBACK_1;
+    }
+    if (guard.leaks(userId, assignmentId, h2)) {
+      h2 = FALLBACK_2;
+    }
     repo.putSelfHints(userId, assignmentId, h1, h2);
   }
 

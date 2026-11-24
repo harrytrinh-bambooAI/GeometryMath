@@ -12,6 +12,7 @@ import vn.geo.server.common.error.AppException;
 import vn.geo.server.common.error.ErrorCode;
 import vn.geo.server.common.security.Role;
 import vn.geo.server.common.security.Roles;
+import vn.geo.server.content.api.BankAccess;
 import vn.geo.server.learning.api.AnswerGuardApi;
 
 /**
@@ -36,13 +37,16 @@ public class PreviewService {
   private final AiGateway ai;
   private final AnswerGuardApi guard;
   private final JsonMapper mapper;
+  private final BankAccess bank;
 
   public PreviewService(
       ReleaseRepository repo,
       ReleaseService release,
       AiGateway ai,
       AnswerGuardApi guard,
-      JsonMapper mapper) {
+      JsonMapper mapper,
+      BankAccess bank) {
+    this.bank = bank;
     this.repo = repo;
     this.release = release;
     this.ai = ai;
@@ -52,6 +56,8 @@ public class PreviewService {
 
   public PreviewPage page(UUID versionId, UUID classId, OffsetDateTime releaseAt) {
     Roles.require(Role.TEACHER);
+    // quyền bộ đề (FIX3): bộ ngoài quyền = không tồn tại
+    bank.requireVisible(versionId);
     ReleaseRepository.CatalogProblem cp =
         repo.catalogProblem(versionId).orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
     return new PreviewPage(
@@ -65,6 +71,8 @@ public class PreviewService {
     if (q.isEmpty() || q.codePointCount(0, q.length()) > 1000) {
       throw AppException.invalidField("question", MSG_37);
     }
+    // quyền bộ đề (FIX3): bộ ngoài quyền = không tồn tại
+    bank.requireVisible(versionId);
     ReleaseRepository.CatalogProblem cp =
         repo.catalogProblem(versionId).orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
     String prompt =
