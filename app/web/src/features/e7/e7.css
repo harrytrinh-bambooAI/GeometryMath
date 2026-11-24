@@ -55,9 +55,8 @@
   border: 0;
   cursor: pointer;
 }
-.e7-lock {
-  background: var(--yel-s);
-  border: 1px solid var(--yel);
+.e7-lock > p {
+  margin: 4px 4px 0;
 }
 .e7-lock .row,
 .e7-right .row {

@@ -62,11 +62,12 @@ test('Thẻ vàng khi lời giải khóa @TC-GEO-0704', async ({ page, request }
   await openMonitor(page, b, 'BG-1');
   const lock = page.getByTestId('e7-lock');
   await expect(lock).toContainText('Lời giải đang khóa');
-  await expect(page.getByTestId('e7-lock-line')).toHaveText(/^Mở lúc \d{2}:\d{2}, \d{2}\/\d{2}\/\d{4} · còn 1 giờ 0 phút$/);
+  await expect(lock.getByTestId('e6-release-card-when')).toHaveText(/^Mở lúc \d{2}:\d{2}, \d{2}\/\d{2}\/\d{4}$/);
+  await expect(page.getByTestId('e7-lock-left')).toHaveText('còn 1 giờ 0 phút');
   await expect(lock.getByRole('button', { name: 'Mở ngay' })).toBeVisible();
   await expect(lock.getByRole('button', { name: 'Đổi giờ' })).toBeVisible();
   await page.goto(`/gv/theo-doi/${asg(b, 'BG-2')}`);
-  await expect(page.getByTestId('e7-lock-line')).toHaveText('Chưa đặt giờ mở');
+  await expect(page.getByTestId('e7-lock').getByTestId('e6-release-card-when')).toHaveText('Chưa đặt giờ mở');
   await expect(page.getByTestId('e7-lock').getByRole('button', { name: 'Mở ngay' })).toBeVisible();
   await expect(page.getByTestId('e7-lock').getByRole('button', { name: 'Đổi giờ' })).toBeVisible();
   await page.goto(`/gv/theo-doi/${asg(b, 'BG-3')}`);

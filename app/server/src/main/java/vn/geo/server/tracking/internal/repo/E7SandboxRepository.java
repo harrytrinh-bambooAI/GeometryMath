@@ -148,6 +148,7 @@ public class E7SandboxRepository {
             WHERE org_id = :org AND assignment_id = :id AND user_id = :user
               AND occurred_at >= now() - interval '2 days'
             GROUP BY kind LIMIT 20
+            -- sqllint:allow=tenant móc kiểm thử E7 dev/test: tổ chức thử cố định, không có thẻ
             """)
         .param("org", ORG)
         .param("id", assignmentId)

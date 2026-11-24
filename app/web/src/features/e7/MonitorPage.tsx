@@ -143,7 +143,7 @@ export function MonitorPage() {
           </section>
         </div>
         <aside className="e7-right" data-testid={tid('e7', 'right')}>
-          <LockSlot assignmentId={id} releaseState={m.releaseState} releaseAt={m.releaseAt} onChanged={load} />
+          <LockSlot assignmentId={id} releaseState={m.releaseState} releaseAt={m.releaseAt} />
           <section className="card" data-testid={tid('e7', 'asking')}>
             <h3>Học sinh đang hỏi gì</h3>
             {m.questionGroups.length === 0 ? (
