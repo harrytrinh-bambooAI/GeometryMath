@@ -95,3 +95,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
   #6, #7 ĐÓNG · 94c20b8 — móc nạp đề khóa theo bộ + `prefix`; TC-0533 thêm đề HKA-… trước con trỏ (QF-E5-D12).
   #8–#13 ĐÓNG · fc71662 (+ 94c20b8 `fn_self_lock_inherited`) — IT `it/e4/HelpFix3E4IT` Dev-E4-01…06, unit `AnswerGuardShortAnswerTest` Dev-E4-07 (QF-E4-D08…D13).
   #14–#16 ĐÓNG · 94c20b8 — `recordResponses`, móc `GET /test-hooks/e4/events`, `POST /test-hooks/e4/release-passed` (QF-E4-D14).
+
+## Việc: FIX4a — phát hiện soát E6 + 2 mục cũ (25/11/2026) · nhánh mvp-fix4a
+- **Mục tiêu:** đóng 3 major + 7 minor trong `.claude/reviews/E6-review.md` (soát Sonnet, diff 5278808..2f4c5d0) và 2 mục MỞ cũ: `BenchmarkE1IT.tc0148` kiểm yếu (chuỗi thực thể XML); trace/video UI còn JWT.
+- **Nguồn:** `.claude/reviews/E6-review.md` v1.0 · 25/11/2026; inbox mục FIX1.
+- **Xong khi:** make verify xanh; web typecheck/lint/test/build xanh; make e2e hai lượt đạt toàn bộ; mỗi major có test (TC Dev).
+- **Ngoài phạm vi:** code E7; stories_ac/test_cases; tính năng mới.
