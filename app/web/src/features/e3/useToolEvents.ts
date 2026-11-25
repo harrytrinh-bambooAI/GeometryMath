@@ -32,9 +32,18 @@ export function useToolEvents(assignmentId: string | null) {
 
   useEffect(() => {
     const onHide = () => flush(true);
+    // E7 (US-GEO-703-FC3, BR-GEO-279): lô gửi lỗi khi mất mạng được gửi lại ngay khi có mạng, và ít nhất mỗi 5 giây,
+    // nên thao tác được tính trong vòng 10 giây sau khi có mạng mà không cần thao tác mới.
+    const retryNow = () => {
+      if (retry.current.length > 0) flush(false);
+    };
+    const t = window.setInterval(retryNow, 5000);
     window.addEventListener('pagehide', onHide);
+    window.addEventListener('online', retryNow);
     return () => {
+      window.clearInterval(t);
       window.removeEventListener('pagehide', onHide);
+      window.removeEventListener('online', retryNow);
       flush(true);
     };
   }, [flush]);

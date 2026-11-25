@@ -107,7 +107,7 @@ public class SandboxRepository {
             """
             SELECT count(*) FROM event_log
             WHERE org_id = :org AND assignment_id = :id AND user_id = :user AND kind::text = :kind
-            -- sqllint:allow=ownership,tenant,unbounded móc kiểm thử E4 dev/test: đếm sự kiện của bài giao thử
+            -- sqllint:allow=ownership,tenant,unbounded,timebound móc kiểm thử E4 dev/test: đếm sự kiện của bài giao thử
             """)
         .param("org", ORG)
         .param("id", assignmentId)

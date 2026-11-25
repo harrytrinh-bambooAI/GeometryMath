@@ -1,0 +1,114 @@
+/* E7 — Theo dõi lớp (khung Design/mvp-03); token ở styles/tokens.css. */
+.e7-head h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+.e7-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 16px;
+  margin-top: 12px;
+}
+.e7-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.e7-stat b {
+  font-size: 26px;
+  display: block;
+}
+.e7-table-wrap {
+  overflow-x: auto;
+}
+.e7-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.e7-table th,
+.e7-table td {
+  text-align: left;
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.e7-table th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 13px;
+}
+.e7-dot {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 4px;
+  background: var(--line);
+}
+.e7-dot.on {
+  background: var(--yel);
+}
+.chip.pri {
+  background: var(--pri-s);
+  color: var(--pri);
+  border: 0;
+  cursor: pointer;
+}
+.e7-lock > p {
+  margin: 4px 4px 0;
+}
+.e7-lock .row,
+.e7-right .row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.e7-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.e7-group {
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 8px 10px;
+  margin-top: 8px;
+}
+.e7-popover {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+}
+.e7-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.e7-monitor .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+@media (max-width: 900px) {
+  .e7-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .e7-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .e7-table th,
+  .e7-table td {
+    padding: 6px 3px;
+    font-size: 13px;
+  }
+  .e7-dot {
+    width: 12px;
+    height: 12px;
+  }
+}

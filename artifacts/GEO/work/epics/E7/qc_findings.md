@@ -38,3 +38,13 @@
 
 - Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa". Không case nào bị bỏ.
 - Đối chiếu: 43 / 43 tiêu chí có case (100%); 45 / 45 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.
+
+## Dev (E7, Đợt 1, nhánh mvp-e7, 25/11/2026)
+
+| Id | Trạng thái | Case / tiêu chí | Phát hiện | Cách xử lý ở mã | Ai |
+|---|---|---|---|---|---|
+| Dev-E7-01 | Open (BA) | US-GEO-702-SC4, TC-GEO-0716 | Then của SC4 liệt kê bốn nhóm theo thứ tự hỏi lần đầu, còn BR-GEO-275 ghi "nhóm có câu hỏi mới nhất ở trên" | Làm theo BR-GEO-275 (mới nhất ở trên); test kiểm đủ bốn nhóm, tên, số lượt và thứ tự theo BR | Dev |
+| Dev-E7-02 | Open (QC) | TC-GEO-0723, 0743 ("máy chủ ứng dụng bị khởi động lại") | E2E không khởi động lại được máy chủ giữa ca | Sự kiện bền ghi đồng bộ trong cùng giao dịch CSDL (fn_get_hint, fn_record_durable); test giả lập khởi động lại bằng móc /test-hooks/e7/restart (bỏ đệm Theo dõi lớp), đọc lại chỉ từ CSDL, kiểm đúng 1 sự kiện | Dev |
+| Dev-E7-03 | Fixed | TC-GEO-0729 (US-GEO-703-FC3) | Lô thao tác gửi lỗi khi mất mạng chỉ được gửi lại khi có thao tác mới hoặc rời trang, nên không đạt "tính trong vòng 10 giây sau khi có mạng" | E3 useToolEvents: gửi lại khi có sự kiện `online` và mỗi 5 giây khi còn lô chờ (cùng mã lô, không ghi trùng) | Dev |
+| Dev-E7-04 | Open (QC) | TC-GEO-0727 | Oxyz, góc nhìn, Đặt lại, xoay, thu phóng không phát sự kiện ở bộ xem (đã kiểm bằng trình duyệt ở TC-GEO-0309) nên ở tầng API không có gì để gửi | Test API: gửi thẳng mã ngoài 1…7 thì VALIDATION_FAILED, số thao tác vẫn 0 | Dev |
+| Dev-E7-05 | Open (BA) | US-GEO-701-SC5, BR-GEO-269 | Thẻ vàng dùng chung của E6 (ReleaseCard, US-GEO-605) chỉ ghi "Mở lúc …", không có "· còn {thời gian}" | Theo dõi lớp hiện "còn 1 giờ 0 phút" ngay dưới thẻ của E6; không sửa thẻ của E6 | Dev |

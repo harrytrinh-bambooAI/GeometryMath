@@ -18,10 +18,11 @@ import java.util.stream.Stream;
 /**
  * Bộ quét SQL tĩnh: trích mọi chuỗi SQL trong mã Java và áp luật chống "smell" truy vấn. Luật:
  * NO_OFFSET, NO_SELECT_STAR, NO_LEADING_WILDCARD_LIKE, LARGE_TABLE_NEEDS_LIMIT,
- * TENANT_FILTER_REQUIRED, TABLE_OWNERSHIP, FORBIDDEN_TABLE. Ngoại lệ có chủ đích: chú thích trong
- * SQL {@code -- sqllint:allow=<luật>[,<luật>]} (bí danh: {@code unbounded} =
- * LARGE_TABLE_NEEDS_LIMIT, {@code tenant} = TENANT_FILTER_REQUIRED, {@code ownership} =
- * TABLE_OWNERSHIP). FORBIDDEN_TABLE không có ngoại lệ.
+ * TENANT_FILTER_REQUIRED, TABLE_OWNERSHIP, FORBIDDEN_TABLE, EVENT_TIME_BOUND (E7, BR-GEO-282: đọc
+ * bảng sự kiện chia theo tháng phải có cận thời gian trên occurred_at; bí danh {@code timebound}).
+ * Ngoại lệ có chủ đích: chú thích trong SQL {@code -- sqllint:allow=<luật>[,<luật>]} (bí danh:
+ * {@code unbounded} = LARGE_TABLE_NEEDS_LIMIT, {@code tenant} = TENANT_FILTER_REQUIRED, {@code
+ * ownership} = TABLE_OWNERSHIP). FORBIDDEN_TABLE không có ngoại lệ.
  *
  * <p>Tên bảng so khớp không kèm tiền tố schema ({@code geo.problem} = {@code problem}). Khóa cấu
  * hình hỗ trợ: {@link Config#SUPPORTED_KEYS} và {@code owner.<bảng>}; khóa lạ làm quét thất bại
@@ -106,7 +107,13 @@ public final class SqlLint {
       Map.of(
           "unbounded", "large_table_needs_limit",
           "tenant", "tenant_filter_required",
-          "ownership", "table_ownership");
+          "ownership", "table_ownership",
+          "timebound", "event_time_bound");
+
+  /** Bảng chia partition theo thời gian: SELECT phải có cận dưới occurred_at (BR-GEO-282). */
+  static final Set<String> TIME_BOUND_TABLES = Set.of("event_log");
+
+  private static final Pattern TIME_BOUND = Pattern.compile("\\boccurred_at\\s*(>=|>|between\\b)");
   private static final Set<String> NOT_SUPPRESSIBLE = Set.of("forbidden_table");
 
   /** Quét mọi .java dưới root (ví dụ src/main/java). */
@@ -197,6 +204,13 @@ public final class SqlLint {
           break;
         }
       }
+    }
+    if (isSelect
+        && tables.stream().anyMatch(TIME_BOUND_TABLES::contains)
+        && !TIME_BOUND.matcher(sql).find()) {
+      c.add(
+          "EVENT_TIME_BOUND",
+          "Đọc bảng sự kiện phải có cận thời gian (occurred_at >= …) để chỉ chạm partition cần thiết.");
     }
     long tenantRefs = tables.stream().filter(cfg.tenantTables()::contains).count();
     if (tenantRefs > 0) {

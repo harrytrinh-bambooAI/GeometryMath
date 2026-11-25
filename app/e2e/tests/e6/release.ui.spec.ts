@@ -8,7 +8,7 @@ import type { Sb } from './e6.ts';
 async function monitor(page: Page, sb: Sb, key: string) {
   await signIn(page, sb.teacher, 'Giáo viên mẫu', 'teacher');
   await page.goto(`/gv/theo-doi/${asg(sb, key)}`);
-  await expect(page.getByTestId('e1-monitor')).toBeVisible();
+  await expect(page.getByTestId('e7-monitor')).toBeVisible();
 }
 async function view(sb: Sb, key: string, request: Parameters<typeof api.releaseView>[0]) {
   return (await (await api.releaseView(request, sb.teacher.token, asg(sb, key))).json()) as {

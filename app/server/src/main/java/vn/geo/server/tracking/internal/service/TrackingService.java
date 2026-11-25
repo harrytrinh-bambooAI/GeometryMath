@@ -28,6 +28,8 @@ import vn.geo.server.common.security.Role;
 import vn.geo.server.common.security.Roles;
 import vn.geo.server.knowledge.api.LectureCatalog;
 import vn.geo.server.learning.api.AnswerGuardApi;
+import vn.geo.server.tracking.internal.domain.MonitorView;
+import vn.geo.server.tracking.internal.repo.MonitorRepository;
 import vn.geo.server.tracking.internal.repo.TrackingRepository;
 import vn.geo.server.tracking.internal.repo.TrackingRepository.ProgressRow;
 import vn.geo.server.tracking.internal.repo.TrackingRepository.QuestionRow;
@@ -89,8 +91,13 @@ public class TrackingService {
       int hintLevel,
       int askCount,
       int toolCount,
-      int activeMinutes) {}
+      int activeMinutes,
+      String status) {}
 
+  /**
+   * Theo dõi lớp (E1 tối thiểu, E7 đầy đủ: US-GEO-701, 702). Bốn thẻ: openedCount/studentCount,
+   * hintUsers, questionCount, figureMinutes (M-GEO-15, 21, 22, 23). Không chứa lời giải, đáp số.
+   */
   public record Monitor(
       UUID assignmentId,
       String problemCode,
@@ -99,9 +106,18 @@ public class TrackingService {
       int studentCount,
       int openedCount,
       List<StudentProgress> students,
-      List<Question> questions) {}
+      List<Question> questions,
+      String problemTitle,
+      Instant assignedAt,
+      Instant releaseAt,
+      int hintUsers,
+      int questionCount,
+      int figureMinutes,
+      List<MonitorView.Group> questionGroups,
+      List<MonitorView.Asked> askedQuestions) {}
 
   private final TrackingRepository repo;
+  private final MonitorRepository monitorRepo;
   private final AiGateway ai;
   private final StringRedisTemplate redis;
   private final RedisKeys keys;
@@ -112,6 +128,7 @@ public class TrackingService {
 
   public TrackingService(
       TrackingRepository repo,
+      MonitorRepository monitorRepo,
       AiGateway ai,
       StringRedisTemplate redis,
       RedisKeys keys,
@@ -120,6 +137,7 @@ public class TrackingService {
       LectureCatalog lectures,
       Paging paging) {
     this.repo = repo;
+    this.monitorRepo = monitorRepo;
     this.ai = ai;
     this.redis = redis;
     this.keys = keys;
@@ -298,22 +316,33 @@ public class TrackingService {
     return repo.progressOf(studentId).stream().map(TrackingService::progress).toList();
   }
 
-  /** Theo dõi lớp của một bài (chỉ giáo viên của lớp; trường khác: NOT_FOUND, BR-GEO-112). */
+  /**
+   * Theo dõi lớp của một bài (chỉ giáo viên của lớp; trường khác: NOT_FOUND, BR-GEO-112; học sinh:
+   * FORBIDDEN). Ba câu lệnh cố định, không phụ thuộc cỡ lớp, không đọc event_log (US-GEO-701-FC6).
+   */
   public Monitor monitor(UUID assignmentId) {
     AuthPrincipal p = Roles.require(Role.TEACHER);
     // quyền luôn kiểm ở CSDL, kể cả khi có đệm (đệm chỉ chứa dữ liệu, khóa mang tiền tố trường)
-    TrackingRepository.MonitorHeader h =
-        repo.monitorHeader(p.userId(), assignmentId)
+    MonitorRepository.Header h =
+        monitorRepo
+            .header(p.userId(), assignmentId)
             .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
     String key = monitorKey(p.orgId(), assignmentId);
     Monitor cached = readCache(key);
-    if (cached != null) {
+    if (cached != null && h.releaseState().equals(cached.releaseState())) {
       return cached;
     }
-    List<StudentProgress> students =
-        repo.monitorStudents(assignmentId).stream().map(TrackingService::progress).toList();
-    List<Question> questions =
-        repo.monitorQuestions(assignmentId).stream().map(TrackingService::question).toList();
+    boolean locked = !"open".equals(h.releaseState());
+    List<ProgressRow> rows = repo.monitorStudents(assignmentId);
+    List<StudentProgress> students = rows.stream().map(r -> progress(r, locked)).toList();
+    List<MonitorView.Asked> asked = monitorRepo.questions(assignmentId);
+    List<Question> latest = new java.util.ArrayList<>();
+    for (int i = asked.size() - 1; i >= 0 && latest.size() < 20; i--) {
+      MonitorView.Asked a = asked.get(i);
+      latest.add(new Question(a.id(), assignmentId, a.question(), a.askedAt(), a.name()));
+    }
+    List<MonitorView.Asked> newestFirst = new java.util.ArrayList<>(asked);
+    java.util.Collections.reverse(newestFirst);
     Monitor m =
         new Monitor(
             h.assignmentId(),
@@ -323,7 +352,16 @@ public class TrackingService {
             students.size(),
             (int) students.stream().filter(StudentProgress::opened).count(),
             students,
-            questions);
+            latest,
+            h.problemTitle(),
+            h.assignedAt(),
+            h.releaseAt(),
+            (int) students.stream().filter(s -> s.hintLevel() >= 1).count(),
+            students.stream().mapToInt(StudentProgress::askCount).sum(),
+            MonitorView.averageMinutes(
+                rows.stream().map(ProgressRow::activeSeconds).toList(), students.size()),
+            MonitorView.groups(asked),
+            newestFirst);
     writeCache(key, m);
     return m;
   }
@@ -376,6 +414,10 @@ public class TrackingService {
   }
 
   private static StudentProgress progress(ProgressRow r) {
+    return progress(r, false);
+  }
+
+  private static StudentProgress progress(ProgressRow r, boolean locked) {
     int k;
     String label;
     if (r.solutionViewed()) {
@@ -398,6 +440,7 @@ public class TrackingService {
         r.hintLevel(),
         r.askCount(),
         r.toolCount(),
-        (r.activeSeconds() + 30) / 60);
+        MonitorView.minutes(r.activeSeconds()),
+        MonitorView.status(r.opened(), r.solutionViewed(), r.hintLevel(), r.askCount(), locked));
   }
 }

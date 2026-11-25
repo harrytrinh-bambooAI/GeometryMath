@@ -44,10 +44,10 @@ test('Giáo viên thấy mức gợi ý vừa dùng @TC-GEO-0421', async ({ page
   expect((await call.hint(request, s['Hà']!.token, bg1, 1)).status()).toBe(200); // Hà vừa xem Gợi ý 1
   await signIn(page, sb.teacher, 'Giáo viên mẫu', '11A1', 'teacher');
   await page.goto(`/gv/theo-doi/${bg1}`);
-  const ha = page.getByTestId('e1-monitor-student-Ha');
+  const ha = page.getByTestId('e7-student-Ha');
   await expect(ha).toBeVisible();
   await expect(ha).toContainText('1/3 · Đã xem gợi ý 1'); // đèn "Gợi ý 1" của dòng Hà (Theo dõi lớp tối thiểu của E1)
-  const rows = page.locator('[data-testid^="e1-monitor-student-"]');
+  const rows = page.locator('[data-testid^="e7-student-"]');
   await expect(rows).toHaveCount(5);
   // thẻ "dùng gợi ý": số học sinh đã xem ít nhất một gợi ý = 4
   const mon = (await (

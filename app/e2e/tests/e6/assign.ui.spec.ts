@@ -153,7 +153,7 @@ test('Không đổi được công tắc sau khi giao @TC-GEO-0617', async ({ pa
   const sb = await twoClasses(request, [{ key: 'BG-1', code: 'HKG-01' }]);
   await signIn(page, sb.teacher, 'Giáo viên mẫu', 'teacher');
   await page.goto(`/gv/theo-doi/${asg(sb, 'BG-1')}`);
-  await expect(page.getByTestId('e1-monitor')).toBeVisible();
+  await expect(page.getByTestId('e7-monitor')).toBeVisible();
   await expect(page.getByRole('switch')).toHaveCount(0);
   await page.goto(`/gv/de/${PV('HKG-01')}`);
   await expect(page.getByTestId('e5-part-assign')).toBeVisible();
