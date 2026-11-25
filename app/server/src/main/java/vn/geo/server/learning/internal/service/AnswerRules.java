@@ -48,9 +48,18 @@ public final class AnswerRules {
   private static final Pattern ASKS_ANSWER =
       Pattern.compile(
           "dap so|dap an|ket qua|bang bao nhieu|bao nhieu do|la bao nhieu|la may|giai giup|giai ho"
-              + "|tung buoc|loi giai|giai bai|bo dong cuoi|radian|tan cua goc can tim|chu so"
-              + "|don vi la gi|lon hon hay nho hon|what is|co phai .*khong|vuong can|dua loi giai"
-              + "|in loi giai|hien loi giai|the angle");
+              + "|tung buoc|loi giai|giai bai|bo dong cuoi|(dang|bang|sang|ra|theo) radian"
+              + "|tan cua goc can tim|chu so (dau|thu|cuoi|tiep|hang)"
+              + "|don vi la gi|lon hon hay nho hon|what is|co phai .*khong|dua loi giai"
+              + "|in loi giai|hien loi giai");
+
+  // soát E6 m1: bỏ "radian", "vuong can", "chu so", "the angle" đứng một mình (câu khái niệm như
+  // "Radian là gì?", "Tam giác vuông cân có tính chất gì?" được hỏi khi khóa; BR-GEO-252/253). Câu
+  // xác nhận "… có phải vuông cân không?" vẫn chặn qua "co phai .*khong".
+
+  /** Số trong câu hỏi chỉ là số thứ tự câu/bài/bước, không phải giá trị đưa ra (soát E6 m2). */
+  private static final Pattern NUMBERING =
+      Pattern.compile("\\b(cau|bai|phan|y|buoc|goi y|vi du|trang|muc)\\s*\\d+[a-z]?\\b");
 
   private static final Pattern CONFIRM_HEAD =
       Pattern.compile(
@@ -66,25 +75,14 @@ public final class AnswerRules {
     if (ASKS_ANSWER.matcher(plain(q)).find()) {
       return "R1";
     }
-    Set<String> forms = forms(lk);
-    String rn = norm(r);
-    String rs = squash(r);
-    for (String f : forms) {
-      String fn = norm(f);
-      String fs = squash(f);
-      if ((fn.length() >= 2 && rn.contains(fn)) || (fs.length() >= 3 && rs.contains(fs))) {
-        return "R2";
-      }
-    }
-    if (numberLeak(r, values(lk))) {
-      return "R3";
-    }
-    if (shortConclusion(r, lk.finalAnswer())) {
-      return "R4";
+    String v = valueLeak(r, lk);
+    if (v != null) {
+      return v;
     }
     if (confirms(q, r)) {
       return "R5";
     }
+    String rn = norm(r);
     for (String s : stepTerms(lk.stepBodies())) {
       String sn = norm(s);
       if (sn.length() >= 6 && rn.contains(sn)) {
@@ -92,6 +90,48 @@ public final class AnswerRules {
       }
     }
     return null;
+  }
+
+  /**
+   * Chỉ phần dựa trên giá trị (R2, R3, R4) của {@link #check}, không xét câu hỏi: dùng để đếm lộ
+   * trong bộ câu thử (Dev-E6-03), bắt cả dạng viết/làm tròn chứ không chỉ chuỗi nguyên văn.
+   */
+  public static String valueLeak(String text, Locked lk) {
+    String r = text == null ? "" : text;
+    String rn = norm(r);
+    String rs = squash(r);
+    for (String f : forms(lk)) {
+      String fn = norm(f);
+      String fs = squash(f);
+      if (DIGITS.matcher(fn).matches()) {
+        // dạng toàn chữ số ("45"): khớp theo ranh giới số, không khớp "450", "2045" (soát E6 m3)
+        if (numberAt(r, fn)) {
+          return "R2";
+        }
+        continue;
+      }
+      if ((fn.length() >= 2 && rn.contains(fn)) || (fs.length() >= 3 && rs.contains(fs))) {
+        return "R2";
+      }
+    }
+    if (numberLeak(r, values(lk))) {
+      return "R3";
+    }
+    return shortConclusion(r, lk.finalAnswer()) ? "R4" : null;
+  }
+
+  private static final Pattern DIGITS = Pattern.compile("\\d+(?:[.,]\\d+)?");
+
+  /** Văn bản có số đứng riêng bằng đúng chuỗi số n (không là một phần của số dài hơn). */
+  static boolean numberAt(String text, String n) {
+    Matcher m = NUM.matcher(text);
+    String want = n.replace(',', '.');
+    while (m.find()) {
+      if (m.group().replace(',', '.').equals(want)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   // ---------------------------------------------------------------- dạng viết (R2)
@@ -114,6 +154,9 @@ public final class AnswerRules {
       String bare = UNIT.matcher(v).replaceAll("").strip();
       if (bare.length() >= 2) {
         out.add(bare);
+        if (bare.contains("π")) {
+          out.add(bare.replace("π", "pi")); // "15 pi", "15pi" (soát E6 M3)
+        }
       }
       Matcher d = DEG.matcher(v);
       if (d.find()) {
@@ -173,8 +216,10 @@ public final class AnswerRules {
         if (Math.abs(x - v) < 1e-9) {
           return true; // đúng bằng đáp số (45, 12…)
         }
-        if (sig >= 2 && decimals > 0 && Math.abs(x - v) <= 0.5 * Math.pow(10, -decimals) + 1e-9) {
-          return true; // đáp số đã làm tròn tới ≥ 2 chữ số có nghĩa (D-GEO-184)
+        if (sig >= 2 && decimals > 0 && Math.abs(x - v) < Math.pow(10, -decimals) - 1e-12) {
+          // đáp số đã làm tròn (D-GEO-184) hoặc cắt cụt ("0,78" cho 0,7854; soát E6 m4) tới ≥ 2 chữ
+          // số có nghĩa
+          return true;
         }
       }
     }
@@ -208,7 +253,8 @@ public final class AnswerRules {
   // ---------------------------------------------------------------- xác nhận / phủ nhận (R5)
   static boolean confirms(String question, String reply) {
     String q = plain(question);
-    boolean offersValue = NUM.matcher(q).find() || q.contains("vuong can") || q.contains("bang a");
+    String qv = NUMBERING.matcher(q).replaceAll(" ");
+    boolean offersValue = NUM.matcher(qv).find() || q.contains("vuong can") || q.contains("bang a");
     if (!offersValue) {
       return false;
     }

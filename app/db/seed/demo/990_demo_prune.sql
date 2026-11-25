@@ -3,7 +3,9 @@
 -- Dữ liệu thử tải ("Trường thử …") nằm ở CSDL riêng geo_bench nên không bao giờ có ở đây.
 -- Cách chạy: scripts/seed-reset.sh geo_dev rồi psql -f db/seed/demo/990_demo_prune.sql (vai chủ sở hữu). Trong giao dịch,
 -- tạm tắt trigger (session_replication_role = replica) để xóa được cả bảng chỉ-thêm của các tổ chức thử.
-SET LOCAL session_replication_role = replica;
+-- SET (không LOCAL) + RESET ở cuối: chạy được cả bằng psql -f không giao dịch lẫn trong giao dịch (soát E6 m6).
+-- CHỈ chạy trên CSDL trình diễn/dev dựng từ seed: script xóa MỌI tổ chức kind = 'group' và "THCS Mẫu C".
+SET session_replication_role = replica;
 DO $$
 DECLARE t record; v_orgs uuid[];
 BEGIN
@@ -18,3 +20,4 @@ BEGIN
   END LOOP;
   DELETE FROM org WHERE id = ANY (v_orgs);
 END $$;
+RESET session_replication_role;

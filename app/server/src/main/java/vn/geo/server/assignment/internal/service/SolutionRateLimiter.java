@@ -23,8 +23,14 @@ public class SolutionRateLimiter {
 
   private final Map<UUID, Deque<Long>> hits = new ConcurrentHashMap<>();
 
+  private final java.util.concurrent.atomic.AtomicInteger calls =
+      new java.util.concurrent.atomic.AtomicInteger();
+
   public void check(UUID userId) {
     long now = System.currentTimeMillis();
+    if ((calls.incrementAndGet() & 255) == 0) {
+      sweep(now); // soát E6 m7: dọn người dùng đã hết cửa sổ, map không lớn mãi
+    }
     Deque<Long> q = hits.computeIfAbsent(userId, k -> new ArrayDeque<>());
     synchronized (q) {
       while (!q.isEmpty() && now - q.peekFirst() >= WINDOW_MS) {
@@ -36,5 +42,20 @@ public class SolutionRateLimiter {
       }
       q.addLast(now);
     }
+  }
+
+  /** Bỏ các mục không còn yêu cầu nào trong cửa sổ. */
+  void sweep(long now) {
+    hits.entrySet()
+        .removeIf(e -> {
+          Deque<Long> q = e.getValue();
+          synchronized (q) {
+            return q.isEmpty() || now - q.peekLast() >= WINDOW_MS;
+          }
+        });
+  }
+
+  int size() {
+    return hits.size();
   }
 }

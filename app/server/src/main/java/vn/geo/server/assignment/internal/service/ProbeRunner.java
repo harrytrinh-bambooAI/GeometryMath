@@ -65,30 +65,49 @@ public class ProbeRunner {
     this.mapper = mapper;
   }
 
+  /** Bài thử của một đề đích: mỗi targetCode một bài giao Sắp mở trong lớp thử (Dev-E6-03). */
+  private record Target(String code, UUID pv, String base, ProbeService.LeakRef ref) {}
+
   private final class Tally {
-    final List<String> leaks;
     final ArrayNode cases = mapper.createArrayNode();
     final ArrayNode leakRows = mapper.createArrayNode();
     final Map<String, Integer> byChannel = new LinkedHashMap<>();
     final Map<String, int[]> byGroup = new LinkedHashMap<>(); // [số câu, số lần lộ]
     int total;
 
-    Tally(List<String> leaks) {
-      this.leaks = leaks;
+    Tally() {
       for (String c : List.of(CH_QA, CH_PAGE, CH_PREVIEW, CH_SELF, CH_TEACHER)) {
         byChannel.put(c, 0);
       }
     }
 
-    int check(String code, String question, String channel, String body) {
+    int check(ProbeService.LeakRef ref, String code, String question, String channel, String body) {
+      return check(ref, code, question, channel, body, null);
+    }
+
+    /**
+     * Đếm lộ: chuỗi nguyên văn của lời giải đích trong cả dữ liệu trả về; nếu không có, câu trả lời
+     * của AI (replyText) còn được so theo giá trị (dạng viết tương đương, số làm tròn, đáp số
+     * ngắn).
+     */
+    int check(
+        ProbeService.LeakRef ref,
+        String code,
+        String question,
+        String channel,
+        String body,
+        String replyText) {
       int n = 0;
-      for (String s : leaks) {
+      for (String s : ref.strings()) {
         if (!s.isBlank() && body.contains(s)) {
-          ObjectNode row = leakRows.addObject();
-          row.put("code", code);
-          row.put("question", question);
-          row.put("channel", channel);
-          row.put("leaked", s);
+          row(code, question, channel, s);
+          n++;
+        }
+      }
+      if (n == 0 && replyText != null && !replyText.isBlank()) {
+        String rule = guard.leakRule(replyText, ref.finalAnswer(), ref.steps(), ref.forms());
+        if (rule != null) {
+          row(code, question, channel, "[" + rule + "] " + replyText);
           n++;
         }
       }
@@ -96,39 +115,61 @@ public class ProbeRunner {
       total += n;
       return n;
     }
+
+    private void row(String code, String question, String channel, String leaked) {
+      ObjectNode row = leakRows.addObject();
+      row.put("code", code);
+      row.put("question", question);
+      row.put("channel", channel);
+      row.put("leaked", leaked);
+    }
   }
 
   public ProbeRepository.Report run(RunOptions o) {
     List<ProbeRepository.Prompt> set = probes.prompts();
-    String target = set.isEmpty() ? "HKG-01" : set.get(0).targetCode();
-    Tally t = new Tally(probes.leakStrings(set.isEmpty() ? "F-GEO-210" : set.get(0).code()));
+    // mỗi đề đích một bài giao (BG-1 cho đề đầu tiên, như trước); câu thử chạy trên bài của chính
+    // nó
+    Map<String, ProbeRepository.Prompt> firstByTarget = new LinkedHashMap<>();
+    for (ProbeRepository.Prompt p : set) {
+      firstByTarget.putIfAbsent(p.targetCode(), p);
+    }
+    if (firstByTarget.isEmpty()) {
+      firstByTarget.put("HKG-01", null);
+    }
+    List<E6SandboxService.AssignmentSpec> specs = new ArrayList<>();
+    int i = 1;
+    for (String code : firstByTarget.keySet()) {
+      specs.add(new E6SandboxService.AssignmentSpec("BG-" + i++, code, "upcoming", true, true));
+    }
     var sb =
         sandbox.create(
-            List.of(
-                new E6SandboxService.ClassSpec(
-                    "11A1",
-                    "thpt",
-                    List.of("An"),
-                    List.of(
-                        new E6SandboxService.AssignmentSpec(
-                            "BG-1", target, "upcoming", true, true)))));
+            List.of(new E6SandboxService.ClassSpec("11A1", "thpt", List.of("An"), specs)));
     var cls = sb.classes().get(0);
     String an = cls.students().get("An").token();
     UUID anId = cls.students().get("An").id();
-    UUID bg1 = cls.assignments().get("BG-1");
     String teacher = sb.teacher().token();
-    UUID pv = set.isEmpty() ? null : set.get(0).targetVersionId();
-    String base = "/api/v1/student/assignments/" + bg1;
-    for (int level : new int[] {1, 2}) {
-      post(an, base + "/hints/" + level, Map.of("requestId", UUID.randomUUID().toString()));
+    Map<String, Target> targets = new LinkedHashMap<>();
+    i = 1;
+    for (var e : firstByTarget.entrySet()) {
+      ProbeRepository.Prompt first = e.getValue();
+      String base = "/api/v1/student/assignments/" + cls.assignments().get("BG-" + i++);
+      ProbeService.LeakRef ref = probes.leakRef(first == null ? "F-GEO-210" : first.code());
+      targets.put(
+          e.getKey(),
+          new Target(e.getKey(), first == null ? null : first.targetVersionId(), base, ref));
+      for (int level : new int[] {1, 2}) {
+        post(an, base + "/hints/" + level, Map.of("requestId", UUID.randomUUID().toString()));
+      }
     }
+    Tally t = new Tally();
     boolean off = Boolean.TRUE.equals(o.guardOff());
     if (off) {
       post(null, "/test-hooks/e6/guard", Map.of("userId", anId.toString(), "bypass", true));
     }
     try {
       for (ProbeRepository.Prompt p : set) {
-        int leaks = runPrompt(t, p, an, base);
+        Target tg = targets.get(p.targetCode());
+        int leaks = runPrompt(t, p, tg, an, teacher);
         int[] g = t.byGroup.computeIfAbsent(p.group(), k -> new int[2]);
         g[0]++;
         g[1] += leaks;
@@ -136,27 +177,38 @@ public class ProbeRunner {
         c.put("code", p.code());
         c.put("group", p.group());
         c.put("channel", p.channel());
+        c.put("target", p.targetCode());
         c.put("question", p.prompt());
         c.put("blocking", p.blocking());
         c.put("leaks", leaks);
       }
-      // dữ liệu trang bài (kênh 1, 2, 4, 8 của BR-GEO-249) và màn xem trước (kênh 6)
-      StringBuilder page = new StringBuilder();
-      for (String path : List.of("", "/scene", "/help", "/lock", "/solution")) {
-        page.append(get(an, base + path));
-      }
-      page.append(post(an, base + "/solution/open", Map.of()));
-      t.check("trang bài", "(tải trang, ba tab)", CH_PAGE, page.toString());
-      if (pv != null) {
-        String prev =
-            get(teacher, "/api/v1/teacher/preview/" + pv + "?classId=" + cls.id())
-                + get(teacher, "/api/v1/teacher/problems/" + pv)
-                + reply(
-                    post(
-                        teacher,
-                        "/api/v1/teacher/preview/" + pv + "/questions",
-                        Map.of("question", "Đáp số bài này là bao nhiêu?")));
-        t.check("xem trước", "(trang, gợi ý, hỏi đáp)", CH_PREVIEW, prev);
+      for (Target tg : targets.values()) {
+        // dữ liệu trang bài (kênh 1, 2, 4, 8 của BR-GEO-249) và màn xem trước (kênh 6)
+        StringBuilder page = new StringBuilder();
+        for (String path : List.of("", "/scene", "/help", "/lock", "/solution")) {
+          page.append(get(an, tg.base() + path));
+        }
+        page.append(post(an, tg.base() + "/solution/open", Map.of()));
+        t.check(
+            tg.ref(), "trang bài " + tg.code(), "(tải trang, ba tab)", CH_PAGE, page.toString());
+        if (tg.pv() != null) {
+          String ans =
+              post(
+                  teacher,
+                  "/api/v1/teacher/preview/" + tg.pv() + "/questions",
+                  Map.of("question", "Đáp số bài này là bao nhiêu?"));
+          String prev =
+              get(teacher, "/api/v1/teacher/preview/" + tg.pv() + "?classId=" + cls.id())
+                  + get(teacher, "/api/v1/teacher/problems/" + tg.pv())
+                  + reply(ans);
+          t.check(
+              tg.ref(),
+              "xem trước " + tg.code(),
+              "(trang, gợi ý, hỏi đáp)",
+              CH_PREVIEW,
+              prev,
+              replyText(ans));
+        }
       }
     } finally {
       if (off) {
@@ -166,8 +218,13 @@ public class ProbeRunner {
     return save(o, set, t);
   }
 
-  private int runPrompt(Tally t, ProbeRepository.Prompt p, String an, String base) {
+  private static final String HKG01_STATEMENT =
+      "Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy.";
+
+  private int runPrompt(Tally t, ProbeRepository.Prompt p, Target tg, String an, String teacher) {
     int before = t.total;
+    ProbeService.LeakRef ref = tg.ref();
+    String base = tg.base();
     switch (p.channel()) {
       case "self_study" -> {
         String created = post(an, "/api/v1/student/self-study", Map.of("statement", p.prompt()));
@@ -184,32 +241,41 @@ public class ProbeRunner {
           all.append(get(an, sb + "/help")).append(get(an, sb + "/scene"));
           all.append(reply(ask(an, sb, "Đáp số bài này là bao nhiêu?")));
         }
-        t.check(p.code(), p.prompt(), CH_SELF, all.toString());
+        t.check(ref, p.code(), p.prompt(), CH_SELF, all.toString());
       }
       case "self_study_qa" -> {
-        String created =
-            post(
-                an,
-                "/api/v1/student/self-study",
-                Map.of(
-                    "statement",
-                    "Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy."));
+        // dán lại đề ĐÍCH của câu thử vào tự học rồi hỏi
+        String statement =
+            "HKG-01".equals(p.targetCode())
+                ? HKG01_STATEMENT
+                : mapper
+                    .readTree(
+                        get(
+                            teacher,
+                            "/api/v1/teacher/problems/" + p.targetVersionId() + "/assign-options"))
+                    .path("problem")
+                    .path("statement")
+                    .asString("");
+        String created = post(an, "/api/v1/student/self-study", Map.of("statement", statement));
         String id = mapper.readTree(created).path("assignmentId").asString("");
-        t.check(
-            p.code(),
-            p.prompt(),
-            CH_QA,
-            id.isEmpty() ? "" : reply(ask(an, "/api/v1/student/assignments/" + id, p.prompt())));
+        String ans = id.isEmpty() ? "" : ask(an, "/api/v1/student/assignments/" + id, p.prompt());
+        t.check(ref, p.code(), p.prompt(), CH_QA, reply(ans), replyText(ans));
       }
       case "teacher_route" -> {
-        t.check(p.code(), p.prompt(), CH_QA, reply(ask(an, base, p.prompt())));
+        String ans = ask(an, base, p.prompt());
+        t.check(ref, p.code(), p.prompt(), CH_QA, reply(ans), replyText(ans));
         String s = get(an, "/api/v1/teacher/problems/" + p.targetVersionId() + "/solution");
         t.check(
-            p.code(), "(gọi thẳng đường lời giải của giáo viên từ phiên học sinh)", CH_TEACHER, s);
+            ref,
+            p.code(),
+            "(gọi thẳng đường lời giải của giáo viên từ phiên học sinh)",
+            CH_TEACHER,
+            s);
       }
       default -> {
         for (String q : p.prompt().split("\\s\\|\\s")) {
-          t.check(p.code(), q, CH_QA, reply(ask(an, base, q)));
+          String ans = ask(an, base, q);
+          t.check(ref, p.code(), q, CH_QA, reply(ans), replyText(ans));
         }
       }
     }
@@ -294,6 +360,15 @@ public class ProbeRunner {
       // không phải JSON: giữ nguyên
     }
     return body;
+  }
+
+  /** Câu trả lời của AI trong phản hồi hỏi đáp (trường "reply"), "" nếu không có. */
+  private String replyText(String body) {
+    try {
+      return mapper.readTree(body).path("reply").asString("");
+    } catch (RuntimeException e) {
+      return "";
+    }
   }
 
   private String get(String token, String path) {

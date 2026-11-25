@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import vn.geo.server.common.web.NoStore;
 import vn.geo.server.content.internal.service.SceneService;
 import vn.geo.server.content.internal.service.SelfStudyService;
 import vn.geo.server.geometry.api.SceneDto;
@@ -65,11 +66,13 @@ public class GeometryController {
     return selfStudy.get(assignmentId);
   }
 
+  @NoStore // BR-GEO-249 (11), soát E6 m5
   @GetMapping("/api/v1/student/assignments/{id}/scene")
   public SceneDto assignmentScene(@PathVariable UUID id) {
     return scenes.studentScene(id);
   }
 
+  @NoStore // BR-GEO-249 (11), soát E6 m5
   @GetMapping("/api/v1/teacher/problems/{versionId}")
   public SceneService.TeacherProblem teacherProblem(@PathVariable UUID versionId) {
     return scenes.teacherProblem(versionId);

@@ -12,6 +12,7 @@ import vn.geo.server.common.error.ErrorCode;
 import vn.geo.server.common.security.AuthPrincipal;
 import vn.geo.server.common.security.Role;
 import vn.geo.server.common.security.Roles;
+import vn.geo.server.content.api.BankAccess;
 
 /**
  * E6: màn "Chi tiết đề &amp; giao bài" (US-GEO-602…604), thẻ vàng giờ mở và nhật ký đổi giờ
@@ -58,13 +59,16 @@ public class ReleaseService {
       String state, Instant releaseAt, Instant serverNow, UUID assignmentId) {}
 
   private final ReleaseRepository repo;
+  private final BankAccess bank;
 
-  public ReleaseService(ReleaseRepository repo) {
+  public ReleaseService(ReleaseRepository repo, BankAccess bank) {
     this.repo = repo;
+    this.bank = bank;
   }
 
   public AssignOptions options(UUID versionId) {
     AuthPrincipal p = Roles.require(Role.TEACHER);
+    bank.requireVisible(versionId); // quyền bộ đề (FIX3, Dev-E6-01)
     ReleaseRepository.CatalogProblem cp =
         repo.catalogProblem(versionId).orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
     List<ClassChoice> classes =
@@ -111,6 +115,7 @@ public class ReleaseService {
    */
   public PreviewLock previewLock(UUID versionId, UUID classId, OffsetDateTime releaseAt) {
     AuthPrincipal p = Roles.require(Role.TEACHER);
+    bank.requireVisible(versionId); // quyền bộ đề (FIX3, Dev-E6-01)
     ReleaseRepository.CatalogProblem cp =
         repo.catalogProblem(versionId).orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
     Instant now = repo.now();
@@ -123,7 +128,11 @@ public class ReleaseService {
     }
     if (releaseAt != null) {
       Instant r = releaseAt.toInstant();
-      return new PreviewLock(r.isAfter(now) ? "upcoming" : "open", r, now, null);
+      // giờ chọn đã qua: bài chưa giao được với giờ này (VALIDATION_PAST) → Chưa đặt giờ, không
+      // hiện "Đã mở" cho đề chưa giao (soát E6 m7)
+      if (r.isAfter(now)) {
+        return new PreviewLock("upcoming", r, now, null);
+      }
     }
     return new PreviewLock("unset", null, now, null);
   }
