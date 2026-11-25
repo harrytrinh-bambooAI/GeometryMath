@@ -1,24 +1,18 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 25/11/2026 07:20
-Mục tiêu hiện tại: làm hết MVP E1–E7 + các lô sửa sau soát, tự duyệt (PO-58). Nhánh tích hợp: `worktree-mvp-wave0` (worktree `.claude/worktrees/mvp-wave0`, đã push tới 75f6802; phần sau chưa push).
+# PROGRESS · GeometryMath (GEO) · cập nhật 25/11/2026 08:00
+Mục tiêu hiện tại: MVP E1–E7 + các lô sửa sau soát — ĐÃ HOÀN TẤT trên nhánh tích hợp `worktree-mvp-wave0` (worktree `.claude/worktrees/mvp-wave0`). Đã push tới 75f6802; phần sau CHƯA push (chủ đầu tư tự push).
 
 Đã xong (gộp vào nhánh tích hợp):
-- Đợt 0: TC 469/453 AC (5261948), FOUNDATION (4d3570a), E1 67/67 TC (f3fe5d3), FIX1 (2f55df8), bằng chứng `artifacts/GEO/evidence/E1-20261122-224604/`
-- E2 37/37 TC (0742560) · E3 49/49 TC tự động, 5 Manual (09b0076) · FIX2 16 phát hiện soát E2/E3 (36f7519); e2e 190/190 hai lượt
+- Đợt 0 + E1 67/67 (f3fe5d3), FIX1 (2f55df8) · E2 37/37 (0742560) · E3 49/49 + 5 Manual (09b0076) · FIX2 (36f7519)
+- E4 94/94 (c4951f5) · E5 43/43 (317a192) · FIX3 17 mục (5278808)
+- E6 117/117 (2f4c5d0) · E7 45/45 (9751359) · FIX4a soát E6 + tc0148 + JWT trace (467619b) · FIX4b soát E7 (gộp sau 467619b)
+Kiểm cuối 25/11 sau gộp FIX4b: make verify (đơn vị 130/130, IT 131/131) xanh; web 41/41 + build xanh; make e2e hai lượt 615/616 đạt, 0 trượt (bỏ qua TC-0302 chỉ chromium); truy vết 452/452 TC tự động.
+Bằng chứng: `artifacts/GEO/evidence/MVP-20261125/` (README + 2 lượt).
 
-Đã gộp thêm: E4 94/94 TC (c4951f5) · E5 43/43 TC (317a192) · FIX3 17/17 mục (5278808, gồm tc0528 + quyền bộ đề); make verify tích hợp sau FIX3 xanh (IT 90/90).
-E6 117/117 TC tự động (2f4c5d0; e2e 554 đạt hai lượt trên nhánh e6, bằng chứng worktree e6 `app/e2e/evidence/20261125-06*`).
-E7 45/45 TC tự động (9751359; e2e 605/606 hai lượt trên nhánh e7). Soát E6: 0 blocker/3 major/7 minor (`.claude/reviews/E6-review.md`).
-
-Đang chạy từ 25/11 06:35 (2 Opus song song, tiến độ `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/progress/<tên>.md`):
-- fix4a (Opus, nhánh `mvp-fix4a`, worktree con fix4a, cổng 54459/6509/8101/5185, V80–84): phát hiện soát E6 + tc0148 + JWT trace
-- review-e7 (Sonnet, chỉ đọc diff 78a7387..6b7117a) → `.claude/reviews/E7-review.md`
-Agent phiên 23/11 đã dừng khi /clear; FIX3 lúc đó đã xong (inbox commit 359f180).
+Đang dở: không.
 Bước tiếp theo:
-1. review-e7 xong → FIX4b (Opus) phát hiện E7, song song fix4a
-2. fix4a xong → merge (có thể xung đột testid E6 do E7 sửa), FIX4b xong → merge
-3. Kiểm cuối trên nhánh tích hợp: tạo `app/.env.ports` (54359/6419/8092/5176) → `cd app && make up && make verify && make e2e`; lưu bằng chứng vào `artifacts/GEO/evidence/`; commit; nhắc chủ đầu tư push
-Mẫu brief: `.claude/briefs/epic-common.md` v1.1 (agent ghi tệp theo phần nhỏ).
-
-Inbox còn: xem `.claude/inbox.md` (FIX1/FIX2 đã đóng; 2 mục cũ mở: tc0148 yếu, JWT trong trace/video).
-Quyết định đã chốt: PO-DECISIONS.md (mới nhất PO-58). Giả định PO-51…57 chủ đầu tư xem sau.
-Rủi ro / chặn: agent e6 có thể đã tạo DB rỗng `geo_e2e` ở cổng 54329 (checkout chính) — chờ chủ đầu tư kiểm/xóa. push bị auto mode chặn → chủ đầu tư tự push. Cổng 54329/6389/8080 là của checkout chính, không đụng.
+1. Chủ đầu tư push nhánh `worktree-mvp-wave0`; mở PR vào main nếu muốn.
+2. Chủ đầu tư xem các giả định PO-51…57 và mục chờ PO/BA (inbox): cận tham số hình mẫu 1000 (QF-E2-D10), BR-GEO-267 xếp theo tên (Dev-E7-10), R3 số cắt cụt (D-GEO-184), giới hạn tần suất mở lời giải/AI giáo viên (NFR-GEO-056/D-GEO-125).
+3. Trước triển khai thật: ProfileGuard chưa cấm `geo.ai.provider: mock` ở prod (inbox, MỞ); nối AI thật.
+Inbox còn MỞ: 1 mục kỹ thuật (mock AI ở prod) + các mục chờ PO/BA ở trên (.claude/inbox.md).
+Quyết định đã chốt: PO-DECISIONS.md (mới nhất PO-59: giữ 2 agent song song).
+Rủi ro / chặn: agent e6 có thể đã tạo DB rỗng `geo_e2e` ở cổng 54329 (checkout chính) — chủ đầu tư kiểm/xóa. Push bị auto mode chặn. Cổng 54329/6389/8080 là của checkout chính.

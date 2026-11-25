@@ -1,0 +1,473 @@
+TRUY VẾT TC ↔ E2E   nguồn TC: ../../artifacts/GEO/work/epics   lượt: 20261125-074424
+
+Epic  Tổng TC  Ứng viên  Bắt buộc  Có test  Đạt   Trượt  Ứng viên chưa có test
+E1    76       67        67        67       67    0      0
+E2    37       37        37        37       37    0      0
+E3    54       49        49        49       49    0      0
+E4    95       94        94        94       94    0      0
+E5    43       43        43        43       43    0      0
+E6    119      117       117       117      117   0      0
+E7    45       45        45        45       45    0      0
+
+TC có test (452):
+  TC-GEO-0100  [passed]  Vào lớp bằng tên và mã lớp đúng  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0101  [passed]  Tên chưa có trong lớp thì thành học sinh mới của lớp đó  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0102  [passed]  Vào lại với cùng tên thì giữ đúng dữ liệu của mình  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0103  [passed]  Mã lớp quyết định trường và lớp  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0104  [passed]  Màn "Vào lớp" chỉ có hai ô nhập  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0105  [passed]  Tên dài đúng 60 ký tự được nhận  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0107  [passed]  Tên hiển thị rỗng  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0108  [passed]  Tên hiển thị 61 ký tự  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0109  [passed]  Mã lớp không tồn tại  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0110  [passed]  Phiên hết hạn  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0173  [passed]  Gõ sai mã lớp nhiều lần không bị khóa riêng  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0111  [passed]  Mã giáo viên đúng  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0112  [passed]  Vào được từ điện thoại  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0113  [passed]  Mã giáo viên sai  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0114  [passed]  Học sinh không làm được việc của giáo viên  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0115  [passed]  Không có công tắc đổi vai  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0171  [passed]  Dò mã: lần thử thứ 11 trong 15 phút bị chặn  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0172  [passed]  Máy chủ không lưu mã rõ  <- server/src/test/java/vn/geo/server/it/e1/IdentityE1IT.java
+  TC-GEO-0174  [passed]  Mỗi mã vào đúng tài khoản được cấp  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0175  [passed]  Mã đã thu hồi  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0176  [passed]  Mã quá hạn dùng  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0177  [passed]  Phiên học sinh không dùng được đường lời giải của giáo viên  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0179  [passed]  Dò mã từ nhiều địa chỉ IP: lần thử thứ 11 trên cùng một tài khoản bị chặn  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0116  [passed]  Một lượt gọi, một bản ghi đủ trường  <- server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java
+  TC-GEO-0117  [passed]  Đổi model bằng cấu hình  <- server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java
+  TC-GEO-0118  [passed]  Khóa của nhà cung cấp không xuống trình duyệt  <- tests/e1/ai-gateway.ui.spec.ts
+  TC-GEO-0119  [passed]  Không gửi định danh học sinh cho nhà cung cấp  <- server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java
+  TC-GEO-0120  [passed]  Nhà cung cấp trả lỗi  <- tests/e1/ai-gateway.ui.spec.ts
+  TC-GEO-0121  [passed]  Nhà cung cấp quá thời gian  <- server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java
+  TC-GEO-0122  [passed]  Bấm "Thử lại" sau lỗi  <- tests/e1/ai-gateway.ui.spec.ts
+  TC-GEO-0123  [passed]  Học sinh chỉ nhận bài của lớp mình  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0124  [passed]  Giáo viên chỉ thấy lớp mình dạy  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0125  [passed]  Nội dung hệ thống đọc được từ mọi trường  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0126  [passed]  Bản ghi mới mang trường của người tạo  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0127  [passed]  Bản ghi có chủ sở hữu, phiên bản lược đồ, nguồn gốc lời giải  <- server/src/test/java/vn/geo/server/it/e1/IdentityE1IT.java
+  TC-GEO-0128  [passed]  Học sinh gọi bài của lớp khác cùng trường  <- tests/e1/ai-gateway.ui.spec.ts
+  TC-GEO-0129  [passed]  Học sinh gọi bài của trường khác  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0130  [passed]  Học sinh gọi dữ liệu của bạn cùng lớp  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0131  [passed]  Giáo viên trường khác đổi giờ mở  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0132  [passed]  Giáo viên trường khác xem Theo dõi lớp  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0133  [passed]  Giao bài chéo trường  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0134  [passed]  Thẻ xác thực bị sửa  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0170  [passed]  Bộ kiểm cách ly duyệt mọi điểm cuối bằng thẻ của trường khác  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0178  [passed]  Giáo viên không đọc được câu trả lời đã lưu của học sinh  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0800  [passed]  Con trỏ phân trang của trường này dùng với thẻ của trường khác  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0135  [passed]  Báo cáo của một lần chạy trên sáu đề  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0136  [passed]  Một đề có đáp số sai làm tỉ lệ giảm đúng công thức  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0137  [passed]  Chạy lại khi đổi model giữ cả hai báo cáo  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0138  [passed]  So với ngưỡng đề xuất  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0139  [passed]  Ghi chú AI giả lập  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0140  [passed]  Bộ đề trống  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0141  [passed]  Một đề thiếu đáp số tham chiếu  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0142  [passed]  Không bản ghi nào mang "Đã kiểm chứng" khi hình hoặc đáp số chưa khớp  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0143  [passed]  Sáu đề có đáp số tham chiếu đúng nguồn  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0144  [passed]  Đáp số nhiều giá trị lưu thành từng đại lượng  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0145  [passed]  Đáp số theo tham số có ba bộ giá trị kiểm  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0146  [passed]  Một đề, một bản ghi cho cả kho đề và bộ đề chuẩn  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0147  [passed]  Đề thiếu đáp số không vào bộ đề chuẩn một cách im lặng  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0148  [passed]  Nhãn trong tệp nguồn không thành nhãn máy  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0156  [passed]  Sinh đủ quy mô bằng một lệnh  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0157  [passed]  Phân bố theo công thức  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0158  [passed]  Chạy lại cho cùng quy mô  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0159  [passed]  Không lẫn vào dữ liệu mẫu  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0160  [passed]  Tên sinh ra không phải tên thật  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0801  [passed]  Bộ quét SQL bắt các mẫu cấm  <- server/src/test/java/vn/geo/server/quality/SqlLintPatternsTest.java
+  TC-GEO-0802  [passed]  Truy vấn nóng không quét tuần tự bảng lớn  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0804  [passed]  Khóa bộ nhớ đệm của trường này không đọc được bằng thẻ trường khác  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0200  [passed]  Dựng hình HKG-01 thỏa mọi ràng buộc  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0201  [passed]  Dựng hình có số đo cụ thể  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0202  [passed]  Thẻ ràng buộc hiện ở góc hình  <- tests/e2/labels.ui.spec.ts
+  TC-GEO-0203  [passed]  Sai số sát dưới ngưỡng vẫn thỏa  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0204  [passed]  Cùng đầu vào cho cùng hình  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0205  [passed]  Sai số vượt ngưỡng  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0206  [passed]  Ràng buộc mâu thuẫn  <- server/src/test/java/vn/geo/server/it/e2/GeometryE2IT.java
+  TC-GEO-0207  [passed]  Hình suy biến  <- server/src/test/java/vn/geo/server/it/e2/GeometryE2IT.java
+  TC-GEO-0208  [passed]  Chọn hình mẫu và thấy hình ngay, không gọi AI  <- tests/e2/templates.ui.spec.ts
+  TC-GEO-0209  [passed]  Đổi tham số thì hình đổi theo  <- tests/e2/templates.ui.spec.ts
+  TC-GEO-0210  [passed]  Nhận số thập phân dấu phẩy  <- tests/e2/templates.ui.spec.ts
+  TC-GEO-0211  [passed]  Sáu hình mẫu đều dựng được  <- tests/e2/templates.ui.spec.ts
+  TC-GEO-0212  [passed]  Tham số không hợp lệ  <- tests/e2/templates.ui.spec.ts
+  TC-GEO-0213  [passed]  Đề khớp mang "Đã kiểm chứng"  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0214  [passed]  Đề không khớp mang "Cần xem lại"  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0215  [passed]  Đáp số theo tham số kiểm trên ba bộ giá trị  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0216  [passed]  Sai lệch sát dưới ngưỡng vẫn khớp  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0217  [passed]  Nhãn do engine tính có thể khác nhãn trong tệp nguồn  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0218  [passed]  Một chuỗi nhãn trên mọi màn  <- tests/e2/labels.ui.spec.ts
+  TC-GEO-0219  [passed]  Sai lệch vượt ngưỡng  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0220  [passed]  Đáp số hai giá trị, một giá trị sai  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0221  [passed]  AI tự khai nhãn bị bỏ qua  <- tests/e2/e2.api.spec.ts
+  TC-GEO-0222  [passed]  Giáo viên không đặt được nhãn máy  <- tests/e2/labels.ui.spec.ts
+  TC-GEO-0223  [passed]  Nhãn không kéo theo giá trị tính xuống thiết bị học sinh  <- tests/e2/e2.api.spec.ts
+  TC-GEO-0234  [passed]  Đề không tham số khớp theo dung sai tuyệt đối  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0235  [passed]  Đề không tham số: lệch vượt dung sai theo chữ số ghi  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0236  [passed]  Đáp số thập phân khớp theo nửa đơn vị chữ số cuối  <- server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java
+  TC-GEO-0224  [passed]  Đề lạ có hình kèm cảnh báo  <- tests/e2/self-study.ui.spec.ts
+  TC-GEO-0225  [passed]  Cảnh báo luôn hiện  <- tests/e2/self-study.ui.spec.ts
+  TC-GEO-0226  [passed]  Đề lạ được đếm vào tỉ lệ đề lạ  <- server/src/test/java/vn/geo/server/it/e2/GeometryE2IT.java
+  TC-GEO-0227  [passed]  Đề lạ không bao giờ "Đã kiểm chứng"  <- tests/e2/e2.api.spec.ts
+  TC-GEO-0228  [passed]  Tọa độ AI hỏng  <- tests/e2/e2.api.spec.ts
+  TC-GEO-0229  [passed]  Đề hình phẳng  <- tests/e2/self-study.ui.spec.ts
+  TC-GEO-0230  [passed]  Danh mục đủ hình  <- server/src/test/java/vn/geo/server/it/e2/GeometryE2IT.java
+  TC-GEO-0231  [passed]  Sáu thẻ hình mẫu trên màn "Tự học"  <- tests/e2/templates.ui.spec.ts
+  TC-GEO-0232  [passed]  Trường nào cũng đọc được danh mục  <- tests/e2/e2.api.spec.ts
+  TC-GEO-0233  [passed]  Hình mẫu thiếu giá trị mặc định  <- server/src/test/java/vn/geo/server/it/e2/GeometryE2IT.java
+  TC-GEO-0300  [passed]  Kéo để xoay  <- tests/e3/view.ui.spec.ts
+  TC-GEO-0302  [passed]  Lăn chuột để thu phóng trên máy tính  <- tests/e3/view.ui.spec.ts
+  TC-GEO-0303  [passed]  "Nhìn từ trên"  <- tests/e3/view.ui.spec.ts
+  TC-GEO-0304  [passed]  "Nhìn từ trước"  <- tests/e3/view.ui.spec.ts
+  TC-GEO-0305  [passed]  "Đặt lại" về góc nhìn ban đầu  <- tests/e3/view.ui.spec.ts
+  TC-GEO-0306  [passed]  Cạnh khuất vẽ nét đứt và tính lại khi xoay  <- tests/e3/view.ui.spec.ts
+  TC-GEO-0307  [passed]  Bật, tắt trục Oxyz  <- tests/e3/view.ui.spec.ts
+  TC-GEO-0308  [passed]  Thu phóng có giới hạn  <- tests/e3/view.ui.spec.ts
+  TC-GEO-0309  [passed]  Xoay và thu phóng không tính là thao tác trên hình  <- tests/e3/events.ui.spec.ts
+  TC-GEO-0353  [passed]  "Xóa hết" xóa phần vẽ thêm, giữ hình gốc và góc nhìn  <- tests/e3/view.ui.spec.ts
+  TC-GEO-0310  [passed]  Chạm chọn một cạnh  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0311  [passed]  Chạm chọn một mặt  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0312  [passed]  Chạm chọn một điểm  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0313  [passed]  Mỗi lần chọn là một thao tác trên hình  <- tests/e3/events.api.spec.ts
+  TC-GEO-0315  [passed]  Chạm ra ngoài hình  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0316  [passed]  Vẽ đoạn nối hai điểm  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0317  [passed]  Giao điểm của hai đường cắt nhau có tên  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0318  [passed]  Dựng mặt phẳng qua ba điểm  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0319  [passed]  Giao tuyến của mặt phẳng mới với mặt của hình  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0320  [passed]  Mở rộng một mặt  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0321  [passed]  Kéo dài một cạnh  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0322  [passed]  Hai đường chéo nhau  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0323  [passed]  Ba điểm thẳng hàng  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0324  [passed]  Không có điều khiển kéo mặt phẳng  <- tests/e3/draw.ui.spec.ts
+  TC-GEO-0325  [passed]  Thêm trung điểm  <- tests/e3/points.ui.spec.ts
+  TC-GEO-0326  [passed]  Thêm điểm chia tỉ lệ  <- tests/e3/points.ui.spec.ts
+  TC-GEO-0327  [passed]  Thêm điểm tự do trên cạnh  <- tests/e3/points.ui.spec.ts
+  TC-GEO-0328  [passed]  Điểm mới dùng được cho công cụ khác  <- tests/e3/points.ui.spec.ts
+  TC-GEO-0329  [passed]  Tỉ lệ không hợp lệ  <- tests/e3/points.ui.spec.ts
+  TC-GEO-0330  [passed]  Điểm trùng điểm đã có  <- tests/e3/points.ui.spec.ts
+  TC-GEO-0331  [passed]  Đo độ dài một yếu tố trung gian khi đang khóa  <- tests/e3/measure.ui.spec.ts
+  TC-GEO-0332  [passed]  Đo một góc trung gian khi đang khóa  <- tests/e3/measure.ui.spec.ts
+  TC-GEO-0333  [passed]  Đo khoảng cách từ điểm tới mặt  <- tests/e3/measure.ui.spec.ts
+  TC-GEO-0334  [passed]  Sau giờ mở, đại lượng đề hỏi đo được  <- tests/e3/measure.ui.spec.ts
+  TC-GEO-0335  [passed]  Số đo dùng dấu phẩy  <- tests/e3/measure.ui.spec.ts
+  TC-GEO-0336  [passed]  Đo đại lượng đề hỏi khi đang khóa  <- tests/e3/measure.ui.spec.ts
+  TC-GEO-0337  [passed]  Đo đại lượng cùng vai trò khi đang khóa  <- tests/e3/measure.ui.spec.ts
+  TC-GEO-0338  [passed]  Bài Chưa đặt giờ cũng ẩn  <- tests/e3/measure.ui.spec.ts
+  TC-GEO-0339  [passed]  Bài tự học đang khóa cũng ẩn  <- tests/e3/measure.ui.spec.ts
+  TC-GEO-0340  [passed]  Danh sách đại lượng ẩn không mang giá trị  <- tests/e3/events.api.spec.ts
+  TC-GEO-0352  [passed]  Bài chuyển Đã mở khi đang mở sẵn công cụ đo  <- tests/e3/measure.ui.spec.ts
+  TC-GEO-0341  [passed]  Bố cục điện thoại  <- tests/e3/phone.iphone.spec.ts
+  TC-GEO-0345  [passed]  Sáu nút chính và nút "Thêm" trên iPhone  <- tests/e3/phone.iphone.spec.ts
+  TC-GEO-0346  [passed]  Xoay ngang máy giữa chừng  <- tests/e3/phone.iphone.spec.ts
+  TC-GEO-0351  [passed]  Vùng chạm đủ lớn  <- tests/e3/phone.iphone.spec.ts
+  TC-GEO-0347  [passed]  Tên mặt không lặp chữ  <- tests/e3/fixes.ui.spec.ts
+  TC-GEO-0348  [passed]  Mặt bốn đỉnh tô kín  <- tests/e3/fixes.ui.spec.ts
+  TC-GEO-0349  [passed]  Hai đường chéo nhau trên hình lập phương  <- tests/e3/fixes.ui.spec.ts
+  TC-GEO-0350  [passed]  Mặt lõm  <- tests/e3/fixes.ui.spec.ts
+  TC-GEO-0400  [passed]  Dán đề và nhận hình  <- tests/e4/selfstudy.ui.spec.ts
+  TC-GEO-0401  [passed]  Màn chờ rõ ràng  <- tests/e4/selfstudy.ui.spec.ts
+  TC-GEO-0402  [passed]  Bài tự học mới bắt đầu ở mức 0  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0403  [passed]  Ghi thời gian từ gửi đề tới có hình  <- server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java
+  TC-GEO-0404  [passed]  Đề rỗng  <- tests/e4/selfstudy.ui.spec.ts
+  TC-GEO-0405  [passed]  Đề 8001 ký tự  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0406  [passed]  Trợ lý lỗi khi dựng hình  <- tests/e4/selfstudy.ui.spec.ts
+  TC-GEO-0407  [passed]  Đề không phải hình học  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0408  [passed]  Bạn khác không thấy bài tự học của mình  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0409  [passed]  Ảnh rõ được đọc thành chữ để sửa  <- tests/e4/selfstudy.ui.spec.ts
+  TC-GEO-0410  [passed]  Sửa chữ rồi dựng hình  <- tests/e4/selfstudy.ui.spec.ts
+  TC-GEO-0412  [passed]  Ảnh mờ  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0413  [passed]  Ảnh vượt 1 MB  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0414  [passed]  Trợ lý lỗi khi đọc ảnh  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0415  [passed]  Vào từ "Tự khám phá" của Bài của em  <- tests/e4/selfstudy.ui.spec.ts
+  TC-GEO-0416  [passed]  "Mở chế độ tự học"  <- tests/e4/selfstudy.ui.spec.ts
+  TC-GEO-0417  [passed]  Màn khám phá không có gợi ý, lời giải, hỏi đáp  <- tests/e4/selfstudy.ui.spec.ts
+  TC-GEO-0418  [passed]  Chưa vào lớp  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0419  [passed]  Xem Gợi ý 1  <- tests/e4/hints.ui.spec.ts
+  TC-GEO-0420  [passed]  Xem Gợi ý 2  <- tests/e4/hints.ui.spec.ts
+  TC-GEO-0421  [passed]  Giáo viên thấy mức gợi ý vừa dùng  <- tests/e4/hints.ui.spec.ts
+  TC-GEO-0422  [passed]  Xem lại gợi ý không làm tăng tiến độ  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0423  [passed]  Gợi ý trên bài tự học  <- tests/e4/hints.ui.spec.ts
+  TC-GEO-0424  [passed]  Xin Gợi ý 2 khi chưa xem Gợi ý 1  <- tests/e4/hints.ui.spec.ts
+  TC-GEO-0425  [passed]  Giáo viên đã tắt gợi ý  <- tests/e4/hints.ui.spec.ts
+  TC-GEO-0426  [passed]  Gợi ý chưa xin thì chưa được gửi xuống  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0427  [passed]  Mất mạng lúc bấm  <- tests/e4/hints.ui.spec.ts
+  TC-GEO-0488  [passed]  Phản hồi gợi ý không cho lưu đệm  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0428  [passed]  Đủ hai gợi ý thì mở được lời giải  <- tests/e4/hints.ui.spec.ts
+  TC-GEO-0429  [passed]  Đếm lượt gợi ý trước khi mở lời giải  <- server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java
+  TC-GEO-0430  [passed]  Chưa xem gợi ý nào  <- tests/e4/hints.ui.spec.ts
+  TC-GEO-0431  [passed]  Mới xem Gợi ý 1 mà gọi thẳng lời giải  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0432  [passed]  Trang bài tự học không mang sẵn lời giải  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0433  [passed]  Hỏi đáp không mở trước lời giải của bài tự học  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0434  [passed]  Dán lại đề đang khóa thì bị khóa theo bài giao  <- tests/e4/inherit.ui.spec.ts
+  TC-GEO-0435  [passed]  Bài giao mở thì bài tự học kế thừa cũng mở  <- tests/e4/inherit.ui.spec.ts
+  TC-GEO-0436  [passed]  Đề trùng bài đã mở thì không kế thừa  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0437  [passed]  Bài của lớp khác không gây kế thừa  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0438  [passed]  Đề gần trùng cũng kế thừa  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0439  [passed]  Gọi thẳng lời giải của bài kế thừa khóa  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0440  [passed]  Giáo viên dời giờ mở  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0481  [passed]  Dán lại đề của bài giao Chưa đặt giờ thì lời giải tự học cũng khóa  <- tests/e4/inherit.ui.spec.ts
+  TC-GEO-0482  [passed]  Đề viết lại với cạnh 2a vẫn kế thừa  <- tests/e4/inherit.ui.spec.ts
+  TC-GEO-0483  [passed]  Đề viết lại câu chữ, thêm chữ vẫn kế thừa khóa  <- tests/e4/inherit.ui.spec.ts
+  TC-GEO-0484  [passed]  Cùng hình nhưng hỏi đại lượng khác thì không kế thừa khóa  <- tests/e4/inherit.ui.spec.ts
+  TC-GEO-0485  [passed]  Dán đề trước, giáo viên giao sau: lần xin kế tiếp bị khóa  <- tests/e4/inherit.ui.spec.ts
+  TC-GEO-0486  [passed]  Đã xem lời giải tự học, sau đó giáo viên giao đúng đề: xin lại thì bị khóa  <- tests/e4/inherit.ui.spec.ts
+  TC-GEO-0487  [passed]  Bài kế thừa khóa dùng gợi ý của đề kho  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0489  [passed]  Cùng hình nhưng khác tham số thì không kế thừa  <- tests/e4/inherit.ui.spec.ts
+  TC-GEO-0490  [passed]  Dán trước, giao sau: gọi thẳng lời giải bị từ chối  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0491  [passed]  Dữ liệu gợi ý của bài kế thừa khóa không lộ  <- tests/e4/selfstudy.api.spec.ts
+  TC-GEO-0492  [passed]  Đề không dựng được bằng hình mẫu không có lời giải tự học  <- tests/e4/inherit.ui.spec.ts
+  TC-GEO-0441  [passed]  Bấm một bước, hình tô đúng đối tượng  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0442  [passed]  Đổi bước thì đổi phần tô  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0443  [passed]  "Bước sau", "Bước trước"  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0444  [passed]  Nhãn của lời giải  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0445  [passed]  Xem lời giải được ghi nhận  <- tests/e4/qa.api.spec.ts
+  TC-GEO-0446  [passed]  Trên iPhone  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0447  [passed]  Bước không có đối tượng để tô  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0448  [passed]  Chuyển bước nhanh  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0449  [passed]  Phần vẽ thêm hiện dần theo bước  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0450  [passed]  "Vì sao nghĩ ra bước này?"  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0451  [passed]  Quay lại bước trước thì phần vẽ thêm bớt đi  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0452  [passed]  Nhảy thẳng tới bước cuối  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0453  [passed]  Bước không có phần vẽ thêm  <- tests/e4/solution.ui.spec.ts
+  TC-GEO-0454  [passed]  Câu trả lời có nguồn "Giáo án mẫu"  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0455  [passed]  Câu trả lời có nguồn "AI soạn"  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0456  [passed]  Câu hỏi ngoài giáo trình  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0457  [passed]  Màn chờ khi trợ lý đang trả lời  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0458  [passed]  Câu hỏi được ghi nhận  <- tests/e4/qa.api.spec.ts
+  TC-GEO-0459  [passed]  Nguồn nêu ra luôn mở được  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0460  [passed]  Trợ lý lỗi  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0461  [passed]  Câu hỏi rỗng hoặc quá dài  <- tests/e4/qa.api.spec.ts
+  TC-GEO-0462  [passed]  Giáo viên đã tắt hỏi đáp  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0463  [passed]  Xem nhật ký của mình  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0464  [passed]  Lọc theo bài  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0465  [passed]  Mở lại câu trả lời đã lưu  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0466  [passed]  Chỉ thấy câu của mình  <- tests/e4/qa.api.spec.ts
+  TC-GEO-0467  [passed]  Bài chưa có câu hỏi  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0468  [passed]  Con trỏ hỏng  <- tests/e4/qa.api.spec.ts
+  TC-GEO-0493  [passed]  Câu trả lời từng bị chặn mở lại vẫn là câu thay thế  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0469  [passed]  Bấm từ khóa trong gợi ý  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0470  [passed]  Bài giảng do AI viết mang nhãn chờ duyệt  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0471  [passed]  Từ khóa trong lời giải  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0472  [passed]  Đóng hộp bài giảng  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0473  [passed]  Cụm từ không có bài giảng  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0474  [passed]  Bài giảng không lộ đáp số của bài đang khóa  <- tests/e4/qa.api.spec.ts
+  TC-GEO-0475  [passed]  Không dùng nhãn "Giáo viên đã duyệt"  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0476  [passed]  Đủ 10 bài giảng với nguồn và nhãn  <- server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java
+  TC-GEO-0477  [passed]  Mỗi bài có từ khóa trỏ tới  <- server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java
+  TC-GEO-0478  [passed]  Mọi trường đọc được  <- tests/e4/qa.api.spec.ts
+  TC-GEO-0479  [passed]  Bài giảng chứa lời giải của một đề trong kho  <- server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java
+  TC-GEO-0480  [passed]  Bài giảng "Giáo án mẫu" thiếu tham chiếu nguồn  <- server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java
+  TC-GEO-0494  [passed]  Cờ chờ soát hiện cho học sinh và giáo viên  <- tests/e4/qa.ui.spec.ts
+  TC-GEO-0500  [passed]  Mở Kho đề  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0501  [passed]  Lọc theo hai nhóm cùng lúc  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0502  [passed]  Lọc theo hình  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0503  [passed]  Dòng đếm không đổi theo bộ lọc  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0504  [passed]  Nội dung một thẻ đề  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0505  [passed]  Dùng được trên điện thoại  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0506  [passed]  Lọc không có kết quả  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0507  [passed]  Học sinh gọi Kho đề  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0508  [passed]  Không có tìm kiếm và thêm đề  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0509  [passed]  Giá trị lọc không hợp lệ  <- tests/e5/catalog.api.spec.ts
+  TC-GEO-0510  [passed]  Đề đã kiểm chứng  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0511  [passed]  Đề cần xem lại  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0512  [passed]  Kho đề đứng tên Giáo viên mẫu  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0513  [passed]  Đề chưa tính nhãn  <- tests/e5/catalog.api.spec.ts
+  TC-GEO-0514  [passed]  Không có "Giáo viên đã duyệt"  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0515  [passed]  Bốn phần của trang chi tiết  <- tests/e5/detail.ui.spec.ts
+  TC-GEO-0516  [passed]  Giáo viên thấy lời giải dù bài đang khóa với học sinh  <- tests/e5/detail.ui.spec.ts
+  TC-GEO-0517  [passed]  Chip đáp số khớp tính toán  <- tests/e5/detail.ui.spec.ts
+  TC-GEO-0518  [passed]  Hình xoay được trên trang chi tiết  <- tests/e5/detail.ui.spec.ts
+  TC-GEO-0519  [passed]  Xem trên điện thoại  <- tests/e5/detail.ui.spec.ts
+  TC-GEO-0520  [passed]  Đề không có lời giải  <- tests/e5/detail.ui.spec.ts
+  TC-GEO-0521  [passed]  Không có nút "Sửa (sắp có)" và "Trình chiếu"  <- tests/e5/detail.ui.spec.ts
+  TC-GEO-0522  [passed]  Học sinh gọi trang chi tiết đề  <- tests/e5/catalog.api.spec.ts
+  TC-GEO-0523  [passed]  Mã đề không tồn tại  <- tests/e5/catalog.api.spec.ts, tests/e5/detail.ui.spec.ts
+  TC-GEO-0541  [passed]  Giáo viên trường khác gọi lời giải của đề tự nhập  <- tests/e5/catalog.api.spec.ts
+  TC-GEO-0542  [passed]  Giáo viên gọi lời giải của đề tự nhập của học sinh trường mình  <- tests/e5/catalog.api.spec.ts
+  TC-GEO-0524  [passed]  Nạp sáu đề nguồn đủ trường  <- server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java
+  TC-GEO-0525  [passed]  Nhãn do engine tính lại  <- server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java
+  TC-GEO-0526  [passed]  Kết quả nạp nêu chỗ nhãn khác tệp  <- server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java
+  TC-GEO-0527  [passed]  Đếm số đề đã kiểm chứng so với tiêu chí MVP  <- server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java
+  TC-GEO-0528  [passed]  Sửa lời giải tạo phiên bản mới, bài đã giao giữ phiên bản cũ  <- server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java
+  TC-GEO-0529  [passed]  Tính lại nhãn khi engine đổi  <- server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java
+  TC-GEO-0530  [passed]  Đề thiếu đáp số  <- server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java
+  TC-GEO-0531  [passed]  Sửa tại chỗ lời giải đã giao bị từ chối  <- server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java
+  TC-GEO-0532  [passed]  Tải lần lượt hết kho  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0533  [passed]  Dữ liệu đổi giữa chừng  <- tests/e5/catalog.api.spec.ts
+  TC-GEO-0534  [passed]  Phân trang cùng bộ lọc  <- tests/e5/catalog.api.spec.ts
+  TC-GEO-0535  [passed]  Phản hồi không có tổng số  <- tests/e5/catalog.api.spec.ts
+  TC-GEO-0536  [passed]  Không OFFSET, không truy vấn lặp theo dòng  <- server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java
+  TC-GEO-0537  [passed]  Hết danh sách  <- tests/e5/catalog.api.spec.ts, tests/e5/catalog.ui.spec.ts
+  TC-GEO-0538  [passed]  Đổi bộ lọc giữa chừng  <- tests/e5/catalog.ui.spec.ts
+  TC-GEO-0539  [passed]  Con trỏ hỏng  <- tests/e5/catalog.api.spec.ts, tests/e5/catalog.ui.spec.ts
+  TC-GEO-0540  [passed]  Xin trang quá lớn  <- tests/e5/catalog.api.spec.ts
+  TC-GEO-0600  [passed]  Trường, giáo viên, lớp, học sinh mẫu  <- server/src/test/java/vn/geo/server/it/e6/DataE6IT.java
+  TC-GEO-0601  [passed]  Bài giao mẫu đủ ba trạng thái  <- server/src/test/java/vn/geo/server/it/e6/DataE6IT.java
+  TC-GEO-0602  [passed]  Tiến độ mẫu của lớp 11A1  <- server/src/test/java/vn/geo/server/it/e6/DataE6IT.java
+  TC-GEO-0603  [passed]  Nạp lại không nhân đôi  <- server/src/test/java/vn/geo/server/it/e6/DataE6IT.java
+  TC-GEO-0604  [passed]  Không lẫn dữ liệu thử tải  <- server/src/test/java/vn/geo/server/it/e6/DataE6IT.java
+  TC-GEO-0605  [passed]  Danh sách lớp ở bước 1  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0606  [passed]  Giao cho một lớp  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0607  [passed]  Nút giao ghi tên lớp đang chọn  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0608  [passed]  Học sinh vào lớp sau vẫn thấy bài  <- tests/e6/assign.api.spec.ts
+  TC-GEO-0609  [passed]  Giao lại cùng đề cho cùng lớp  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0610  [passed]  Bấm đúp nút giao  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0611  [passed]  Không có giao theo bộ  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0696  [passed]  Hai yêu cầu giao cùng đề gửi đồng thời  <- tests/e6/assign.api.spec.ts
+  TC-GEO-0865  [passed]  Cùng đề nhưng lời giải đã có phiên bản mới vẫn là cùng đề  <- tests/e6/assign.api.spec.ts
+  TC-GEO-0612  [passed]  Mặc định cả hai bật  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0613  [passed]  Tắt gợi ý rồi giao  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0614  [passed]  Tắt hỏi đáp rồi giao  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0615  [passed]  Tắt cả hai vẫn giao được  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0616  [passed]  Giờ mở độc lập với công tắc  <- tests/e6/assign.api.spec.ts
+  TC-GEO-0617  [passed]  Không đổi được công tắc sau khi giao  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0618  [passed]  Đặt giờ tương lai  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0619  [passed]  Để trống giờ mở  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0620  [passed]  Dòng nhắc trước khi giao  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0621  [passed]  "Ngay bây giờ"  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0622  [passed]  Giờ Việt Nam, lưu UTC  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0623  [passed]  Thiết bị ở múi giờ khác  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0624  [passed]  Giờ ở quá khứ  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0625  [passed]  Đồng hồ máy giáo viên sai  <- tests/e6/assign.api.spec.ts
+  TC-GEO-0626  [passed]  Không có "Sau buổi học tới"  <- tests/e6/assign.ui.spec.ts
+  TC-GEO-0627  [passed]  Đổi giờ khi Sắp mở  <- tests/e6/release.ui.spec.ts
+  TC-GEO-0628  [passed]  Đặt giờ lần đầu cho bài Chưa đặt giờ  <- tests/e6/release.ui.spec.ts
+  TC-GEO-0629  [passed]  Mở ngay có hộp xác nhận  <- tests/e6/release.ui.spec.ts
+  TC-GEO-0630  [passed]  Xác nhận mở ngay  <- tests/e6/release.ui.spec.ts
+  TC-GEO-0631  [passed]  Hủy mở ngay  <- tests/e6/release.ui.spec.ts
+  TC-GEO-0632  [passed]  Mở ngay từ Chưa đặt giờ  <- tests/e6/release.ui.spec.ts
+  TC-GEO-0633  [passed]  Dời giờ muộn hơn thì giờ cũ không còn hiệu lực  <- tests/e6/assign.api.spec.ts
+  TC-GEO-0634  [passed]  Ghi nhật ký đổi giờ  <- server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java
+  TC-GEO-0635  [passed]  Đổi giờ khi đã Đã mở  <- tests/e6/release.ui.spec.ts
+  TC-GEO-0636  [passed]  Đổi giờ về quá khứ  <- tests/e6/assign.api.spec.ts
+  TC-GEO-0637  [passed]  Hai lần đổi chồng nhau  <- tests/e6/assign.api.spec.ts
+  TC-GEO-0638  [passed]  Không có thao tác xóa giờ đã đặt  <- tests/e6/release.ui.spec.ts
+  TC-GEO-0699  [passed]  Giờ mở trôi qua trong lúc đang mở hộp "Đổi giờ"  <- tests/e6/release.ui.spec.ts
+  TC-GEO-0867  [passed]  "Mở ngay" trên điện thoại  <- tests/e6/release.iphone.spec.ts
+  TC-GEO-0868  [passed]  Đổi sang giờ chỉ sau giờ máy chủ một giây  <- server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java
+  TC-GEO-0639  [passed]  Bài Sắp mở, đang làm dở  <- tests/e6/mine.ui.spec.ts
+  TC-GEO-0640  [passed]  Bài Chưa đặt giờ, chưa bắt đầu  <- tests/e6/mine.ui.spec.ts
+  TC-GEO-0641  [passed]  Bài Đã mở, đã xem lời giải  <- tests/e6/mine.ui.spec.ts
+  TC-GEO-0642  [passed]  Đã mở bài nhưng chưa dùng gợi ý  <- tests/e6/mine.ui.spec.ts
+  TC-GEO-0643  [passed]  Bấm vào một bài  <- tests/e6/mine.ui.spec.ts
+  TC-GEO-0644  [passed]  Trên iPhone  <- tests/e6/mine.iphone.spec.ts
+  TC-GEO-0645  [passed]  Lớp chưa có bài  <- tests/e6/mine.ui.spec.ts
+  TC-GEO-0646  [passed]  Danh sách không mang lời giải  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0647  [passed]  Không có thẻ chuỗi ngày và phần trăm theo dạng  <- tests/e6/mine.ui.spec.ts
+  TC-GEO-0648  [passed]  Con trỏ hỏng  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0869  [passed]  Dòng "Hôm nay em có n bài cần làm"  <- tests/e6/mine.ui.spec.ts
+  TC-GEO-0877  [passed]  Không còn bài cần làm  <- tests/e6/mine.ui.spec.ts
+  TC-GEO-0649  [passed]  Mở xem trước  <- tests/e6/preview.ui.spec.ts
+  TC-GEO-0650  [passed]  Lời giải khóa trong xem trước  <- tests/e6/preview.ui.spec.ts
+  TC-GEO-0651  [passed]  Gợi ý xem được, không ghi sự kiện  <- tests/e6/preview.ui.spec.ts
+  TC-GEO-0652  [passed]  Thoát xem trước  <- tests/e6/preview.ui.spec.ts
+  TC-GEO-0653  [passed]  Dữ liệu của màn xem trước không chứa lời giải  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0654  [passed]  Hỏi đáp trong xem trước cũng không lộ  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0655  [passed]  Công cụ đo trong xem trước ẩn đại lượng đề hỏi  <- tests/e6/preview.ui.spec.ts
+  TC-GEO-0870  [passed]  Đã chọn giờ ở bước 3: thẻ khóa ghi giờ đang chọn  <- tests/e6/preview.ui.spec.ts
+  TC-GEO-0871  [passed]  Đề đã giao: theo giờ mở của chính bài giao  <- tests/e6/preview.ui.spec.ts
+  TC-GEO-0872  [passed]  Xem trước bài đã Đã mở không tải lời giải  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0656  [passed]  Đã mở thì trả lời giải  <- tests/e6/lock.ui.spec.ts
+  TC-GEO-0657  [passed]  Đúng giờ mở thì mở  <- server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java
+  TC-GEO-0658  [passed]  Thẻ khóa của bài Sắp mở  <- tests/e6/lock.ui.spec.ts
+  TC-GEO-0659  [passed]  Thẻ khóa của bài Chưa đặt giờ  <- tests/e6/lock.ui.spec.ts
+  TC-GEO-0660  [passed]  Chưa đặt giờ: gửi thẳng yêu cầu lời giải  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0661  [passed]  Một giây trước giờ mở  <- server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java
+  TC-GEO-0662  [passed]  Dữ liệu trang Làm bài của bài đang khóa  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0663  [passed]  Đồng hồ thiết bị bị chỉnh  <- tests/e6/lock.ui.spec.ts
+  TC-GEO-0664  [passed]  Lời giải đã mở cho lớp này không lọt sang lớp còn khóa  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0665  [passed]  Học sinh lớp khác gọi lời giải của bài đã mở  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0666  [passed]  Đường đọc thông thường không tới được nơi lưu lời giải  <- server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java
+  TC-GEO-0695  [passed]  Một giây sau giờ mở thì vẫn mở  <- server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java
+  TC-GEO-0698  [passed]  Phản hồi lời giải không cho lưu đệm  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0863  [passed]  Vai CSDL của ứng dụng không tự ghi được giờ mở, tiến độ, nhãn máy, tài khoản giáo viên  <- server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java
+  TC-GEO-0873  [passed]  Tọa độ đỉnh trong dữ liệu trang là dữ kiện, không tính là lộ  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0667  [passed]  Hỏi thẳng đáp số khi đang khóa  <- tests/e6/lock.ui.spec.ts
+  TC-GEO-0668  [passed]  Nhắc lại gợi ý không tính thêm lượt  <- tests/e6/guard.api.spec.ts
+  TC-GEO-0669  [passed]  Công thức và phương pháp tổng quát vẫn được trả lời  <- tests/e6/lock.ui.spec.ts
+  TC-GEO-0670  [passed]  Sau giờ mở, trợ lý được nêu đáp số  <- tests/e6/lock.ui.spec.ts
+  TC-GEO-0671  [passed]  AI buột ra đáp số: bị chặn ở máy chủ  <- tests/e6/guard.api.spec.ts
+  TC-GEO-0672  [passed]  Dạng viết tương đương của đáp số  <- tests/e6/guard.api.spec.ts
+  TC-GEO-0673  [passed]  Xin giải từng bước  <- tests/e6/guard.api.spec.ts
+  TC-GEO-0674  [passed]  Học sinh chưa xem gợi ý nào  <- tests/e6/guard.api.spec.ts
+  TC-GEO-0675  [passed]  Bài Chưa đặt giờ cũng được bảo vệ  <- tests/e6/guard.api.spec.ts
+  TC-GEO-0874  [passed]  Chữ "a" không ở vị trí kết luận không bị chặn  <- tests/e6/guard.api.spec.ts
+  TC-GEO-0875  [passed]  Bộ kiểm soát đáp án lỗi thì không trả câu trả lời  <- tests/e6/guard.api.spec.ts
+  TC-GEO-0878  [passed]  AI nêu đáp số đã làm tròn: bị chặn ở máy chủ  <- tests/e6/guard.api.spec.ts
+  TC-GEO-0676  [passed]  Một lần chạy sạch  <- tests/e6/probe.api.spec.ts
+  TC-GEO-0677  [passed]  Có ca dán lại đề đang khóa vào tự học  <- tests/e6/probe.api.spec.ts
+  TC-GEO-0678  [passed]  Kiểm cả dữ liệu trả về của các kênh  <- tests/e6/probe.api.spec.ts
+  TC-GEO-0679  [passed]  Chạy lại khi đổi model  <- tests/e6/probe.api.spec.ts
+  TC-GEO-0680  [passed]  Một câu làm lộ  <- tests/e6/probe.api.spec.ts
+  TC-GEO-0681  [passed]  Ghi chú AI giả lập  <- tests/e6/probe.api.spec.ts
+  TC-GEO-0862  [passed]  Bộ câu thử: ca giả làm giáo viên không moi được đáp án  <- tests/e6/probe.api.spec.ts
+  TC-GEO-0876  [passed]  Có ca đề gần trùng (đổi tên điểm) và đây là ca chặn phát hành  <- tests/e6/probe.api.spec.ts
+  TC-GEO-0682  [passed]  Bộ câu thử đủ số câu và nhóm  <- server/src/test/java/vn/geo/server/it/e6/DataE6IT.java
+  TC-GEO-0683  [passed]  Mỗi câu gắn bài và đáp số tham chiếu  <- server/src/test/java/vn/geo/server/it/e6/DataE6IT.java
+  TC-GEO-0684  [passed]  Phiên bản bộ câu thử  <- server/src/test/java/vn/geo/server/it/e6/DataE6IT.java
+  TC-GEO-0685  [passed]  Câu trùng  <- server/src/test/java/vn/geo/server/it/e6/DataE6IT.java
+  TC-GEO-0686  [passed]  Câu không gắn bài  <- server/src/test/java/vn/geo/server/it/e6/DataE6IT.java
+  TC-GEO-0687  [passed]  Tới giờ thì lời giải tự mở  <- tests/e6/auto.ui.spec.ts
+  TC-GEO-0688  [passed]  Đếm ngược trên thẻ khóa  <- tests/e6/auto.ui.spec.ts
+  TC-GEO-0689  [passed]  Giáo viên mở ngay khi học sinh đang xem  <- tests/e6/auto.ui.spec.ts
+  TC-GEO-0690  [passed]  "Bài của em" đang mở cũng đổi nhãn  <- tests/e6/auto.ui.spec.ts
+  TC-GEO-0692  [passed]  Trước giờ mở trang không giữ sẵn lời giải  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0693  [passed]  Mất mạng đúng lúc tới giờ  <- tests/e6/auto.ui.spec.ts
+  TC-GEO-0694  [passed]  Đồng hồ thiết bị nhanh  <- tests/e6/auto.ui.spec.ts
+  TC-GEO-0697  [passed]  Trang đang chờ khóa hỏi lại trạng thái không quá 8 giây một lần  <- tests/e6/auto.ui.spec.ts
+  TC-GEO-0864  [passed]  Phản hồi trạng thái khóa không cho lưu đệm  <- tests/e6/auto.ui.spec.ts
+  TC-GEO-0860  [passed]  Nhật ký đổi giờ chỉ thêm, không sửa, không xóa  <- server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java
+  TC-GEO-0861  [passed]  Vượt giới hạn yêu cầu lời giải thì bị chặn, dùng bình thường thì không  <- tests/e6/lock.api.spec.ts
+  TC-GEO-0700  [passed]  Bốn thẻ tổng  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0701  [passed]  Bảng học sinh  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0702  [passed]  Tình trạng khi bài còn khóa  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0703  [passed]  Tình trạng sau khi mở lời giải  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0704  [passed]  Thẻ vàng khi lời giải khóa  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0705  [passed]  Vào trang từ mục "Theo dõi"  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0706  [passed]  Xem nhanh trên điện thoại  <- tests/e7/monitor.iphone.spec.ts
+  TC-GEO-0707  [passed]  Chưa em nào mở bài  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0708  [passed]  Không có xếp hạng, không sắp theo kết quả  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0709  [passed]  Không có "Nên nhắc lại trên lớp"  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0710  [passed]  Học sinh gọi Theo dõi lớp  <- tests/e7/monitor.api.spec.ts
+  TC-GEO-0711  [passed]  Trang không mang lời giải  <- tests/e7/monitor.api.spec.ts
+  TC-GEO-0712  [passed]  Trang không đọc bảng sự kiện, không truy vấn lặp theo học sinh  <- server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java
+  TC-GEO-0744  [passed]  Thanh bên không có "Tổng quan" và "Lớp học"  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0713  [passed]  Mức gợi ý của từng em  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0714  [passed]  Số câu hỏi của từng em  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0715  [passed]  Câu hỏi của một em  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0716  [passed]  Khối "Học sinh đang hỏi gì" gộp câu trùng  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0717  [passed]  Gộp không phân biệt hoa thường và khoảng trắng  <- server/src/test/java/vn/geo/server/tracking/MonitorViewE7Test.java
+  TC-GEO-0718  [passed]  Chưa ai hỏi  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0719  [passed]  Không lẫn câu hỏi của bài khác, lớp khác  <- tests/e7/monitor.api.spec.ts
+  TC-GEO-0720  [passed]  Không có nhận định do AI viết  <- tests/e7/monitor.ui.spec.ts
+  TC-GEO-0721  [passed]  Mở bài tạo sự kiện mở bài  <- tests/e7/events.api.spec.ts
+  TC-GEO-0722  [passed]  Mỗi công cụ là một thao tác trên hình  <- tests/e7/events.api.spec.ts
+  TC-GEO-0723  [passed]  Sự kiện gợi ý ghi bền  <- tests/e7/events.api.spec.ts
+  TC-GEO-0724  [passed]  Tỉ lệ phiên có thao tác trên hình  <- server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java
+  TC-GEO-0725  [passed]  Ranh giới phiên làm bài  <- server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java
+  TC-GEO-0726  [passed]  Bài tự học cũng ghi sự kiện  <- tests/e7/events.api.spec.ts
+  TC-GEO-0727  [passed]  Công cụ không tính  <- tests/e7/events.api.spec.ts
+  TC-GEO-0728  [passed]  Gửi lại cùng một lô  <- tests/e7/events.api.spec.ts
+  TC-GEO-0729  [passed]  Mất mạng khi đang thao tác  <- tests/e7/offline.ui.spec.ts
+  TC-GEO-0730  [passed]  Không ghi sự kiện thay người khác  <- tests/e7/events.api.spec.ts
+  TC-GEO-0731  [passed]  Sự kiện cho bài không thuộc lớp mình  <- tests/e7/events.api.spec.ts
+  TC-GEO-0740  [passed]  Khoảng nghỉ 29 phút 59 giây vẫn cùng phiên  <- server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java
+  TC-GEO-0741  [passed]  Khoảng nghỉ đúng 30 phút 0 giây mở phiên mới  <- server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java
+  TC-GEO-0742  [passed]  Gửi lại câu hỏi sau khi hết thời gian chờ không đếm hai lần  <- tests/e7/monitor.api.spec.ts
+  TC-GEO-0743  [passed]  Sự kiện mở bài ghi bền  <- tests/e7/events.api.spec.ts
+  TC-GEO-0732  [passed]  Sự kiện vào đúng phần theo thời gian  <- server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java
+  TC-GEO-0733  [passed]  Luôn có phần cho thời gian sắp tới  <- server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java
+  TC-GEO-0734  [passed]  Đọc sự kiện theo con trỏ, không trùng không sót  <- tests/e7/cursor.api.spec.ts
+  TC-GEO-0735  [passed]  Truy vấn nóng không quét toàn bảng  <- server/src/test/java/vn/geo/server/it/e7/PlansE7IT.java
+  TC-GEO-0736  [passed]  Truy vấn sự kiện không có cận thời gian hoặc dùng OFFSET  <- server/src/test/java/vn/geo/server/quality/SqlLintE7Test.java
+  TC-GEO-0737  [passed]  Giờ thiết bị ở tương lai bị kẹp về giờ nhận  <- server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java
+  TC-GEO-0738  [passed]  Con trỏ hỏng  <- tests/e7/cursor.api.spec.ts
+  TC-GEO-0739  [passed]  Hai sự kiện trùng mốc thời gian ở ranh giới trang không lặp, không sót  <- tests/e7/cursor.api.spec.ts
+
+Mã trong test nhưng không có trong test_cases.md (test khung hoặc gõ sai) (3):
+  TC-KHUNG-01  [passed]  <- tests/health.api.spec.ts
+  TC-KHUNG-02  [passed]  <- tests/seed.api.spec.ts
+  TC-KHUNG-03  [passed]  <- tests/home.ui.spec.ts
+
+TC tự động hóa (E2E-UI / E2E-API / IT) CHƯA có test (0):
+
+Ứng viên E2E khác chưa có test (0) — 15 mục đầu, thêm --all để xem hết:
