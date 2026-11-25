@@ -94,7 +94,12 @@ public class PreviewService {
     }
     AnswerGuardApi.Screened sc;
     try {
-      sc = guard.screenPreview(versionId, q, text, highestHint);
+      // gợi ý do thiết bị gửi chỉ để ghép vào MSG-GEO-35: giới hạn độ dài (soát E6 m7)
+      String hint =
+          highestHint == null || highestHint.codePointCount(0, highestHint.length()) > 1000
+              ? null
+              : highestHint;
+      sc = guard.screenPreview(versionId, q, text, hint);
     } catch (AnswerGuardApi.GuardFailure e) {
       throw new AppException(
           ErrorCode.DEPENDENCY_UNAVAILABLE, "Trợ lý đang bận. Em thử lại sau ít phút nhé.");

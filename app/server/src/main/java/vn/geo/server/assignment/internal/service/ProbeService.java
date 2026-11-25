@@ -38,6 +38,8 @@ public class ProbeService {
   public record Reference(
       String code, String group, String targetCode, String answer, List<String> forms) {}
 
+  static final Set<String> CHANNELS = Set.of("qa", "self_study", "self_study_qa", "teacher_route");
+
   private final ProbeRepository repo;
   private final JsonMapper mapper;
 
@@ -55,6 +57,7 @@ public class ProbeService {
   public LoadResult load(List<Item> items) {
     List<ItemResult> out = new ArrayList<>();
     Set<String> seen = new HashSet<>();
+    repo.lockLoad(); // soát E6 m7: nạp đồng thời
     int version = repo.currentVersion();
     int added = 0;
     for (Item it : items) {
@@ -75,6 +78,10 @@ public class ProbeService {
         continue;
       }
       String channel = it.channel() == null ? "qa" : it.channel();
+      if (!CHANNELS.contains(channel)) {
+        out.add(new ItemResult(code, "thiếu dữ liệu")); // kênh lạ: không chạm CHECK → 500 (m7)
+        continue;
+      }
       String key = key(channel, it.prompt());
       if (!seen.add(pv.get() + key) || repo.duplicate(pv.get(), key) || repo.exists(code)) {
         out.add(new ItemResult(code, "câu trùng"));
@@ -123,29 +130,47 @@ public class ProbeService {
         });
   }
 
-  /** Chuỗi bị coi là lộ của một bài: đáp số, dạng tương đương, nội dung từng bước (M-GEO-06). */
-  public List<String> leakStrings(String code) {
-    List<String> out = new ArrayList<>();
+  /**
+   * Lời giải tham chiếu của bài mà câu thử gắn vào (theo targetCode của chính câu đó, Dev-E6-03):
+   * chuỗi lộ nguyên văn (đáp số, dạng tương đương, nội dung từng bước; M-GEO-06) và dữ liệu để so
+   * theo giá trị.
+   */
+  public record LeakRef(
+      List<String> strings, String finalAnswer, List<String> steps, List<String> forms) {}
+
+  public LeakRef leakRef(String code) {
+    List<String> forms = new ArrayList<>();
+    List<String> steps = new ArrayList<>();
+    String[] answer = {null};
     repo.reference(code)
         .ifPresent(r -> {
-          if (r.finalAnswer() != null) {
-            out.add(r.finalAnswer());
-          }
+          answer[0] = r.finalAnswer();
           if (r.forms() != null) {
             for (JsonNode f : mapper.readTree(r.forms())) {
-              out.add(f.asString());
+              forms.add(f.asString());
             }
           }
           if (r.steps() != null) {
             for (JsonNode s : mapper.readTree(r.steps())) {
               String b = s.path("body").asString("");
               if (!b.isBlank()) {
-                out.add(b);
+                steps.add(b);
               }
             }
           }
         });
-    return out;
+    List<String> out = new ArrayList<>();
+    if (answer[0] != null) {
+      out.add(answer[0]);
+    }
+    out.addAll(forms);
+    out.addAll(steps);
+    return new LeakRef(out, answer[0], steps, forms);
+  }
+
+  /** Chuỗi bị coi là lộ của một bài: đáp số, dạng tương đương, nội dung từng bước (M-GEO-06). */
+  public List<String> leakStrings(String code) {
+    return leakRef(code).strings();
   }
 
   public long save(ProbeRepository.Report r) {

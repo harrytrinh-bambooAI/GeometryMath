@@ -1,6 +1,9 @@
-import { copyFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import type { FullConfig, FullResult, Reporter, Suite, TestCase, TestResult } from '@playwright/test/reporter';
+import { redactText } from '../support/redact.ts';
 
 /**
  * Reporter bằng chứng (PO-50). Với MỖI test (đạt hay trượt) chép ảnh chụp, trace, video, http.json, lỗi vào
@@ -10,6 +13,40 @@ import type { FullConfig, FullResult, Reporter, Suite, TestCase, TestResult } fr
  * Mã TC lấy từ tag của test: '@TC-GEO-0100' (TC của QC) hoặc '@TC-KHUNG-nn' (test khung, không thuộc test_cases.md).
  * Test không gắn mã TC vẫn có bằng chứng, xếp vào thư mục _khong-ma-TC.
  */
+/** Tệp văn bản trong trace.zip (sự kiện, mạng, tài nguyên JSON/HTML/JS, mã nguồn test): che JWT/Bearer/token. */
+const TRACE_TEXT = /\.(trace|network|stacks|json|txt|html|js|ts|css|xml)$/i;
+
+/**
+ * Che bí mật trong trace.zip (FIX4a: trace dự án UI còn JWT ở tiêu đề Authorization, phản hồi /dev/token,
+ * localStorage). Giải nén vào thư mục tạm, che từng tệp văn bản, nén lại vào target; trace vẫn mở được bằng
+ * `playwright show-trace`. Lỗi (thiếu zip/unzip) thì KHÔNG chép trace (không để lộ), trả false.
+ */
+export function redactTraceZip(src: string, target: string): boolean {
+  const tmp = mkdtempSync(path.join(os.tmpdir(), 'geo-trace-'));
+  try {
+    execFileSync('unzip', ['-q', '-o', src, '-d', tmp]);
+    const walk = (d: string): string[] =>
+      readdirSync(d).flatMap((n) => {
+        const f = path.join(d, n);
+        return statSync(f).isDirectory() ? walk(f) : [f];
+      });
+    for (const f of walk(tmp)) {
+      if (!TRACE_TEXT.test(f)) continue;
+      const s = readFileSync(f, 'utf8');
+      const r = redactText(s);
+      if (r !== s) writeFileSync(f, r);
+    }
+    rmSync(target, { force: true });
+    execFileSync('zip', ['-q', '-r', '-X', path.resolve(target), '.'], { cwd: tmp });
+    return true;
+  } catch {
+    rmSync(target, { force: true });
+    return false;
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+}
+
 const TC_TAG = /^@(TC-GEO-\d{4}|TC-KHUNG-\d+)$/;
 /** Chuỗi trông giống mã TC (để cảnh báo khi sai định dạng, ví dụ @TC-GEO-120, TC_GEO_0120, @tc-geo-0120). */
 const TC_LIKE = /@?\bTC[-_ ]?[A-Z]*[-_ ]?\d+[0-9A-Z-]*/gi;
@@ -112,7 +149,10 @@ export default class EvidenceReporter implements Reporter {
         else if (a.name === 'video') name = 'video.webm';
         else name = a.name.includes('.') ? a.name : `${a.name || `dinh-kem-${i}`}${extOf(a.contentType)}`;
         const target = path.join(dir, name);
-        if (a.path && existsSync(a.path)) copyFileSync(a.path, target);
+        if (a.path && existsSync(a.path) && name === 'trace.zip') {
+          if (!redactTraceZip(a.path, target)) return;
+          copyFileSync(target, a.path); // bản thô trong test-results cũng được che
+        } else if (a.path && existsSync(a.path)) copyFileSync(a.path, target);
         else if (a.body) writeFileSync(target, a.body);
         else return;
         const r = path.relative(this.runDir, target);

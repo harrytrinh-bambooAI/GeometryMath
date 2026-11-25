@@ -50,6 +50,14 @@ public class ProbeRepository {
     this.jdbc = jdbc;
   }
 
+  /** Khóa giao dịch cho lần nạp bộ câu thử: hai lần nạp đồng thời không cùng lấy version+1. */
+  public void lockLoad() {
+    jdbc.sql(
+            "SELECT pg_advisory_xact_lock(hashtext('probe_set_load')) -- sqllint:allow=tenant kiểm thử")
+        .query((rs, i) -> 1)
+        .single();
+  }
+
   public int currentVersion() {
     return jdbc.sql(
             "SELECT COALESCE(max(version), 0) FROM probe_set_version -- sqllint:allow=tenant dữ liệu kiểm thử")

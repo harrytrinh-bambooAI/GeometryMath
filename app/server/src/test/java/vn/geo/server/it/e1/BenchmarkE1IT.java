@@ -222,12 +222,29 @@ class BenchmarkE1IT extends AbstractE1IT {
             "UPDATE problem_version SET verify_status = 'needs_review', verification_report_id = NULL WHERE org_id = platform_org_id()")
         .update();
     // tệp ghi "Đã kiểm chứng" cho HKG-01 (đề sửa nhẹ để chắc chắn tạo version mới) và "Cần xem lại"
-    // cho HKG-06
+    // cho HKG-06. Chữ có dấu trong sheet1.xml ở dạng thực thể XML (FIX4a: trước đây thay chuỗi
+    // Unicode không khớp nên không có version mới).
+    String stmt = "T&#237;nh g&#243;c gi&#7919;a SD v&#224; m&#7863;t &#273;&#225;y.";
+    String current =
+        "SELECT p.current_version_id::text FROM problem p WHERE p.org_id = platform_org_id() AND p.code = 'HKG-01'";
+    String before = jdbc.sql(current).query(String.class).single();
     Path file =
-        variant(
-            x -> x.replace("Tính góc giữa SD và mặt đáy.", "Tính góc giữa SD và mặt đáy (ABCD)."));
+        variant(x -> {
+          assertThat(x).as("chuỗi đề HKG-01 trong sheet1.xml").contains(stmt);
+          return x.replace(stmt, stmt.replace("&#273;&#225;y.", "&#273;&#225;y (ABCD)."));
+        });
     var r = importer.importXlsx(file);
     assertThat(r.codes()).hasSize(6);
+    assertThat(jdbc.sql(current).query(String.class).single())
+        .as("HKG-01 có version mới")
+        .isNotEqualTo(before);
+    assertThat(
+            jdbc.sql(
+                    "SELECT pv.statement FROM problem p JOIN problem_version pv ON pv.id = p.current_version_id"
+                        + " WHERE p.org_id = platform_org_id() AND p.code = 'HKG-01'")
+                .query(String.class)
+                .single())
+        .endsWith("mặt đáy (ABCD).");
     assertThat(
             count(
                 "SELECT count(*) FROM problem_version WHERE org_id = platform_org_id() AND verify_status = 'verified'"))

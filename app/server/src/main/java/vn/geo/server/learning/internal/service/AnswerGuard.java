@@ -37,6 +37,20 @@ public class AnswerGuard implements AnswerGuardApi {
   }
 
   @Override
+  public String leakRule(
+      String text, String finalAnswer, List<String> stepBodies, List<String> forms) {
+    if (text == null || text.startsWith(HelpMessages.MSG_35_PREFIX)) {
+      return null; // câu thay thế của chính máy chủ (gợi ý đã xem), không phải câu AI
+    }
+    return AnswerRules.valueLeak(
+        text,
+        new AnswerRules.Locked(
+            finalAnswer,
+            stepBodies == null ? null : stepBodies.toArray(String[]::new),
+            forms == null ? List.of() : forms));
+  }
+
+  @Override
   public String version() {
     return VERSION;
   }

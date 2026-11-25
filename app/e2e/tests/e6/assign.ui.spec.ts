@@ -272,3 +272,35 @@ test('Không có "Sau buổi học tới" @TC-GEO-0626', async ({ page, request 
   await expect(step.getByRole('button')).toHaveText(['Ngay bây giờ']);
   await expect(step).not.toContainText('Sau buổi học tới');
 });
+
+/** FIX4a: "Ngay bây giờ" lũy đẳng khi bấm lại sau lỗi giữa chừng (soát E6 M2). */
+async function nowRetry(page: Page, request: Parameters<typeof api.mine>[0], lose: 'assign' | 'release') {
+  const sb = await twoClasses(request);
+  await openAssign(page, sb, 'HKG-06');
+  let first = true;
+  const pattern = lose === 'assign' ? '**/api/v1/teacher/assignments' : '**/api/v1/teacher/assignments/*/release';
+  await page.route(pattern, async (route) => {
+    if (route.request().method() !== 'POST' || !first) return route.fallback();
+    first = false;
+    await route.fetch(); // máy chủ đã ghi, phản hồi mất trên đường về
+    await route.abort('failed');
+  });
+  await classRadio(page, '11A1').click();
+  await page.getByTestId('e6-release-now').click();
+  await submit(page).click();
+  await expect(page.getByTestId('e6-assign-error')).toBeVisible();
+  await submit(page).click();
+  await expect(page.getByTestId('e6-assign-done')).toHaveText(msg41('11A1'));
+  await expect(page.getByTestId('e6-assign-error')).toHaveCount(0);
+  const items = (await mineCodes(request, stu(sb, 'An').token)).filter((x) => x.problemCode === 'HKG-06');
+  expect(items).toHaveLength(1);
+  expect(items[0]?.releaseState).toBe('open');
+}
+
+test('Dev-E6-02 "Ngay bây giờ": mất phản hồi lệnh giao, bấm lại → một bài, đã mở, không MSG-42', async ({ page, request }) => {
+  await nowRetry(page, request, 'assign');
+});
+
+test('Dev-E6-02 "Ngay bây giờ": mất phản hồi lệnh mở, bấm lại → một bài, đã mở, không MSG-48', async ({ page, request }) => {
+  await nowRetry(page, request, 'release');
+});

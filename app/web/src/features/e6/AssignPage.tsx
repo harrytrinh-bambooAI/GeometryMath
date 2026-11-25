@@ -25,6 +25,9 @@ export function AssignPage() {
   const [done, setDone] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const sending = useRef(false);
+  // Lũy đẳng khi bấm lại sau lỗi (Dev-E6-02): cùng lớp + cài đặt thì giữ nguyên assignmentId, nên lệnh giao
+  // lặp lại trả DUPLICATE (không phải MSG-42); "Ngay bây giờ" chỉ mở khi bài chưa mở.
+  const attempt = useRef<{ key: string; id: string; created: boolean } | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -55,16 +58,27 @@ export function AssignPage() {
     sending.current = true;
     setBusy(true);
     setError(null);
+    const key = JSON.stringify([cls.id, iso, now, hint, qa]);
+    if (attempt.current?.key !== key) attempt.current = { key, id: crypto.randomUUID(), created: false };
+    const a = attempt.current;
     try {
+      const retry = a.created;
       const r = await e6Api.assign({
-        assignmentId: crypto.randomUUID(),
+        assignmentId: a.id,
         classId: cls.id,
         problemVersionId: versionId,
         releaseAt: iso,
         allowHint: hint,
         allowQa: qa,
       });
-      if (now) await e6Api.setRelease(r.id, { openNow: true, expectedRev: r.releaseRev });
+      a.created = true;
+      if (now) {
+        // Lần bấm lại: lần trước có thể đã mở được (chỉ mất phản hồi) → đọc trạng thái trước khi mở.
+        const v = retry ? await e6Api.releaseView(r.id) : null;
+        if (v?.releaseState !== 'open') {
+          await e6Api.setRelease(r.id, { openNow: true, expectedRev: v ? v.releaseRev : r.releaseRev });
+        }
+      }
       setDone(msg41(cls.name));
     } catch (e) {
       setError(errText(e));
