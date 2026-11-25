@@ -101,3 +101,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** `.claude/reviews/E6-review.md` v1.0 · 25/11/2026; inbox mục FIX1.
 - **Xong khi:** make verify xanh; web typecheck/lint/test/build xanh; make e2e hai lượt đạt toàn bộ; mỗi major có test (TC Dev).
 - **Ngoài phạm vi:** code E7; stories_ac/test_cases; tính năng mới.
+
+## Việc: FIX4b — phát hiện soát E7 (25/11/2026) · nhánh mvp-fix4b
+- **Mục tiêu:** đóng 3 major + 8 minor trong `.claude/reviews/E7-review.md` (soát Sonnet, diff 78a7387..6b7117a).
+- **Nguồn:** `.claude/reviews/E7-review.md` v1.0 · 25/11/2026.
+- **Xong khi:** make verify xanh; web typecheck/lint/test/build xanh; make e2e hai lượt đạt toàn bộ; mỗi major có test (Dev-E7-xx).
+- **Ngoài phạm vi:** phần FIX4a (E6: ReleaseService, AssignPage, ProbeRunner, AnswerRules, tc0148, trace JWT); stories_ac/test_cases; tính năng mới.
