@@ -107,3 +107,15 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** `.claude/reviews/E7-review.md` v1.0 · 25/11/2026.
 - **Xong khi:** make verify xanh; web typecheck/lint/test/build xanh; make e2e hai lượt đạt toàn bộ; mỗi major có test (Dev-E7-xx).
 - **Ngoài phạm vi:** phần FIX4a (E6: ReleaseService, AssignPage, ProbeRunner, AnswerRules, tc0148, trace JWT); stories_ac/test_cases; tính năng mới.
+- **Trạng thái (fix4b, 25/11/2026):**
+  - M1 ĐÓNG · fb6cd43 (Dev-E7-06: e2e `e7/fix4b.ui.spec.ts` 2 ca bấm thật + IT đệm)
+  - M2 ĐÓNG · 8d4677e (Dev-E7-07: V85 quy tắc 30 phút trong lô; IT lô cách 23 giờ)
+  - M3 ĐÓNG · 8d4677e (Dev-E7-08: lũy đẳng lô trong durable_request; IT xóa khóa Redis rồi gửi lại, gửi đồng thời)
+  - m1 ĐÓNG · fb6cd43 (toolRetry: 4xx bỏ lô, mạng/5xx tối đa 12 lần; sự kiện mới không kẹt)
+  - m2 ĐÓNG · fb6cd43 (@Profile E7Sandbox*, SandboxRepository E4; ArchUnit testHooksAreProfileScoped)
+  - m3 ĐÓNG · fb6cd43 (trần 100 em/2000 câu mới nhất, cờ truncated + dòng báo; IT ranh giới 100/101)
+  - m4 ĐÓNG · fb6cd43 (một nguồn: câu hỏi của học sinh còn trong lớp; IT em rời lớp)
+  - m5 ĐÓNG · fb6cd43 (404 userId ngoài lớp; e2e 403/404); phần "bài lưu trữ" không sửa (Dev-E7-10)
+  - m6 ĐÓNG · fb6cd43 (vượt trần báo lỗi, ghi "chưa phơi ra"); chỉ mục không sửa (chưa có điểm cuối)
+  - m7 ĐÓNG · fb6cd43 (EVENT_TIME_BOUND chỉ nhận vị từ); móc restart không sửa (Dev-E7-02/08)
+  - m8 ĐÓNG · fb6cd43 (routeMerge + test, tự làm mới 30 s, trần 366 ngày); BR-GEO-267 tên/họ tên không sửa — chờ BA (Dev-E7-10)
