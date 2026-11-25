@@ -57,4 +57,21 @@ class SqlLintE7Test {
             1);
     assertThat(v).isEmpty();
   }
+
+  @Test
+  @DisplayName(
+      "FIX4b m7 \"occurred_at >\" ngoài vị từ (SELECT, ORDER BY) không được tính là cận thời gian")
+  void boundOutsideWhereFails() throws Exception {
+    var v =
+        SqlLint.lint(
+            """
+            SELECT e.id, e.occurred_at > now() - interval '1 day' AS recent FROM event_log e
+            WHERE e.org_id = :orgId AND e.user_id = :userId ORDER BY e.occurred_at DESC LIMIT 51
+            """,
+            "tracking",
+            cfg(),
+            "X.java",
+            1);
+    assertThat(v).extracting(SqlLint.Violation::rule).contains("EVENT_TIME_BOUND");
+  }
 }

@@ -34,6 +34,12 @@ public class ClassMonitorService {
   /** Cận thời gian mặc định khi không truyền from: 31 ngày trước to. */
   static final Duration DEFAULT_SPAN = Duration.ofDays(31);
 
+  /** Bề rộng tối đa của [from, to) khi đọc sự kiện (FIX4b m8: không quét mọi partition). */
+  static final Duration MAX_SPAN = Duration.ofDays(366);
+
+  /** Trần số sự kiện của báo cáo phiên (FIX4b m6: vượt trần thì báo lỗi, không cắt im lặng). */
+  static final int SESSION_EVENTS_MAX = 200_000;
+
   private static final UUID NIL = new UUID(0, 0);
 
   public record Assigned(
@@ -88,10 +94,16 @@ public class ClassMonitorService {
     AuthPrincipal p = Roles.require(Role.TEACHER);
     PageRequest req = paging.request(EVENTS, limit == null ? EVENTS_PAGE : limit, cursor);
     repo.header(p.userId(), assignmentId).orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
+    if (!repo.isMember(assignmentId, userId)) {
+      throw new AppException(ErrorCode.NOT_FOUND); // FIX4b m5: không phải học sinh của lớp
+    }
     Instant hi = to == null ? Instant.now().plusSeconds(1) : to;
     Instant lo = from == null ? hi.minus(DEFAULT_SPAN) : from;
     if (!lo.isBefore(hi)) {
       throw AppException.invalidField("from", "Cận thời gian không hợp lệ.");
+    }
+    if (Duration.between(lo, hi).compareTo(MAX_SPAN) > 0) {
+      throw AppException.invalidField("from", "Khoảng thời gian tối đa 366 ngày.");
     }
     Instant beforeAt = req.after() == null ? null : req.after().instant(0);
     Long beforeId = req.after() == null ? null : req.after().longKey(1);
@@ -103,9 +115,17 @@ public class ClassMonitorService {
         .map(r -> new Event(r.id(), r.occurredAt(), r.kind(), r.arg()));
   }
 
-  /** M-GEO-08 trên các sự kiện của trường hiện tại trong [from, to). */
+  /**
+   * M-GEO-08 trên các sự kiện của trường hiện tại trong [from, to). Báo cáo nền, CHƯA phơi ra qua
+   * HTTP (FIX4b m6, ghi ở status.md). Quá {@link #SESSION_EVENTS_MAX} sự kiện thì báo lỗi để chia
+   * nhỏ khoảng, không tính trên phần bị cắt.
+   */
   public SessionReport sessionReport(Instant from, Instant to) {
-    List<MonitorView.Session> s = MonitorView.sessions(repo.eventsForSessions(from, to));
+    List<MonitorView.Ev> evs = repo.eventsForSessions(from, to, SESSION_EVENTS_MAX + 1);
+    if (evs.size() > SESSION_EVENTS_MAX) {
+      throw AppException.invalidField("from", "Quá nhiều sự kiện trong khoảng, hãy chia nhỏ.");
+    }
+    List<MonitorView.Session> s = MonitorView.sessions(evs);
     int tool = (int) s.stream().filter(MonitorView.Session::tool).count();
     return new SessionReport(
         s.size(), tool, MonitorView.toolSessionRate(s), MonitorView.TOOL_SESSION_THRESHOLD);

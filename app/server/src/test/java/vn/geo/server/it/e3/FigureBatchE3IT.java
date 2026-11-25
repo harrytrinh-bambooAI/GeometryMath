@@ -43,11 +43,12 @@ class FigureBatchE3IT extends AbstractE1IT {
     FigureEventRepository flaky =
         new FigureEventRepository(tenantJdbc) {
           @Override
-          public BatchResult recordTools(UUID userId, UUID assignmentId, String eventsJson) {
+          public BatchResult recordTools(
+              UUID userId, UUID assignmentId, UUID batchId, String eventsJson) {
             if (failNext.getAndSet(false)) {
               throw new DataAccessResourceFailureException("CSDL giả lập hỏng");
             }
-            return super.recordTools(userId, assignmentId, eventsJson);
+            return super.recordTools(userId, assignmentId, batchId, eventsJson);
           }
         };
     FigureEventService service = new FigureEventService(flaky, redis, keys, mapper, hints);

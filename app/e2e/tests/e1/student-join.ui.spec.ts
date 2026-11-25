@@ -136,8 +136,10 @@ test('Phiên hết hạn @TC-GEO-0110', async ({ page, request }) => {
   // thẻ hết hạn (thời hạn thẻ: giả định của ARCH, NFR-GEO-059): thay bằng thẻ của An đã quá hạn
   const expired = await devToken(request, 'F-GEO-020', -60);
   await page.evaluate((t) => sessionStorage.setItem('geo.token', t), expired);
-  const res = page.waitForResponse((r) => r.url().includes(`/api/v1/student/assignments/${BG('BG-1')}`));
-  await page.getByTestId('e1-assignment-HKG-01').click();
+  // FIX4b: danh sách Bài của em (E6) tự hỏi lại mỗi 5 giây; với thẻ hết hạn, lượt hỏi đó có thể nhận 401 và chuyển trang
+  // trước cú bấm. Chấp nhận 401 đầu tiên của bất kỳ yêu cầu học sinh nào (bấm mở bài hoặc lượt hỏi lại).
+  const res = page.waitForResponse((r) => r.url().includes('/api/v1/student/assignments') && r.status() === 401);
+  await page.getByTestId('e1-assignment-HKG-01').click({ timeout: 5000 }).catch(() => undefined);
   const r = await res;
   expect(r.status()).toBe(401);
   expect(((await r.json()) as { code: string }).code).toBe('UNAUTHENTICATED');

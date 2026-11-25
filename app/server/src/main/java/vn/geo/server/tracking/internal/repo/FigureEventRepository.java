@@ -20,18 +20,22 @@ public class FigureEventRepository {
     this.jdbc = jdbc;
   }
 
-  /** {@code eventsJson}: mảng {at: ISO-8601, tool: 1…20}, theo thứ tự. */
-  public BatchResult recordTools(UUID userId, UUID assignmentId, String eventsJson) {
+  /**
+   * {@code eventsJson}: mảng {at: ISO-8601, tool: 1…20}, theo thứ tự. Lũy đẳng bền theo {@code
+   * batchId} (durable_request, V85; trả 'DUPLICATE' khi lô đã ghi).
+   */
+  public BatchResult recordTools(UUID userId, UUID assignmentId, UUID batchId, String eventsJson) {
     return jdbc.sql(
             """
             WITH e AS (SELECT x.v, x.n FROM jsonb_array_elements(CAST(:ev AS jsonb)) WITH ORDINALITY AS x(v, n))
             SELECT status, inserted FROM fn_record_batch(:orgId, :userId, :id,
                    ARRAY(SELECT CAST(e.v->>'at' AS timestamptz) FROM e ORDER BY e.n),
                    ARRAY(SELECT CAST('tool' AS event_kind) FROM e ORDER BY e.n),
-                   ARRAY(SELECT CAST(e.v->>'tool' AS smallint) FROM e ORDER BY e.n))
+                   ARRAY(SELECT CAST(e.v->>'tool' AS smallint) FROM e ORDER BY e.n), :batchId)
             """)
         .param("userId", userId)
         .param("id", assignmentId)
+        .param("batchId", batchId)
         .param("ev", eventsJson)
         .query((rs, i) -> new BatchResult(rs.getString(1), rs.getInt(2)))
         .single();

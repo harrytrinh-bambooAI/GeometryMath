@@ -2,6 +2,7 @@ package vn.geo.server.tracking.internal.repo;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import vn.geo.server.common.id.Uuid7;
@@ -13,6 +14,7 @@ import vn.geo.server.common.id.Uuid7;
  * fn_create_assignment, fn_set_release); tiến độ và câu hỏi ghi thẳng để dựng lại F-GEO-050…058 (18
  * phút, 11 phút… không chờ thật). Giáo viên và lớp tạo trực tiếp vì MVP không có điểm cuối tạo.
  */
+@Profile({"dev", "test"}) // FIX4b m2: móc kiểm thử không lọt prod
 @Repository
 public class E7SandboxRepository {
 

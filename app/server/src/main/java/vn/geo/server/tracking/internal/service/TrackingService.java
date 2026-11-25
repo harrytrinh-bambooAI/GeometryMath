@@ -114,7 +114,16 @@ public class TrackingService {
       int questionCount,
       int figureMinutes,
       List<MonitorView.Group> questionGroups,
-      List<MonitorView.Asked> askedQuestions) {}
+      List<MonitorView.Asked> askedQuestions,
+      // FIX4b m3: lớp trên MONITOR_STUDENTS em / bài trên MONITOR_QUESTIONS câu hỏi: báo, không cắt
+      // im lặng (bảng và thẻ chỉ tính phần hiện; câu hỏi giữ phần MỚI nhất)
+      boolean studentsTruncated,
+      boolean questionsTruncated) {}
+
+  /** Trần dòng của Theo dõi lớp (trần trang chung 100, stories_ac E7 §chung). */
+  public static final int MONITOR_STUDENTS = 100;
+
+  public static final int MONITOR_QUESTIONS = 2000;
 
   private final TrackingRepository repo;
   private final MonitorRepository monitorRepo;
@@ -329,13 +338,27 @@ public class TrackingService {
             .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
     String key = monitorKey(p.orgId(), assignmentId);
     Monitor cached = readCache(key);
-    if (cached != null && h.releaseState().equals(cached.releaseState())) {
+    // FIX4b M1 (Dev-E7-06): đệm 5 s chỉ dùng khi trạng thái VÀ giờ mở lời giải chưa đổi ("Mở ngay",
+    // "Đổi giờ" thấy ngay ở lần tải lại)
+    if (cached != null
+        && h.releaseState().equals(cached.releaseState())
+        && java.util.Objects.equals(h.releaseAt(), cached.releaseAt())) {
       return cached;
     }
     boolean locked = !"open".equals(h.releaseState());
-    List<ProgressRow> rows = repo.monitorStudents(assignmentId);
+    List<ProgressRow> rows = repo.monitorStudents(assignmentId, MONITOR_STUDENTS + 1);
+    boolean studentsTruncated = rows.size() > MONITOR_STUDENTS;
+    if (studentsTruncated) {
+      rows = rows.subList(0, MONITOR_STUDENTS);
+    }
     List<StudentProgress> students = rows.stream().map(r -> progress(r, locked)).toList();
-    List<MonitorView.Asked> asked = monitorRepo.questions(assignmentId);
+    List<MonitorView.Asked> asked =
+        new java.util.ArrayList<>(monitorRepo.questions(assignmentId, MONITOR_QUESTIONS + 1));
+    boolean questionsTruncated = asked.size() > MONITOR_QUESTIONS;
+    if (questionsTruncated) {
+      asked = new java.util.ArrayList<>(asked.subList(0, MONITOR_QUESTIONS));
+    }
+    java.util.Collections.reverse(asked); // truy vấn trả mới trước; dưới đây cần cũ trước
     List<Question> latest = new java.util.ArrayList<>();
     for (int i = asked.size() - 1; i >= 0 && latest.size() < 20; i--) {
       MonitorView.Asked a = asked.get(i);
@@ -361,7 +384,9 @@ public class TrackingService {
             MonitorView.averageMinutes(
                 rows.stream().map(ProgressRow::activeSeconds).toList(), students.size()),
             MonitorView.groups(asked),
-            newestFirst);
+            newestFirst,
+            studentsTruncated,
+            questionsTruncated);
     writeCache(key, m);
     return m;
   }

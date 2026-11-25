@@ -8,7 +8,7 @@ import type { ReleaseView } from './api.ts';
  * hai nút "Mở ngay" (có hộp xác nhận) và "Đổi giờ" (hộp chọn ngày, giờ; không có lựa chọn bỏ giờ). Bài Đã mở không có
  * thẻ. Khóa lạc quan theo releaseRev đã thấy (hai cửa sổ đổi chồng nhau: MSG-GEO-49). Dùng được trên điện thoại.
  */
-export function ReleaseCard({ assignmentId }: { assignmentId: string }) {
+export function ReleaseCard({ assignmentId, onChanged }: { assignmentId: string; onChanged?: () => void }) {
   const [v, setV] = useState<ReleaseView | null>(null);
   const [dialog, setDialog] = useState<'none' | 'open' | 'change'>('none');
   const [date, setDate] = useState('');
@@ -39,6 +39,7 @@ export function ReleaseCard({ assignmentId }: { assignmentId: string }) {
       setToast(ok(r.releaseAt));
       setDialog('none');
       setV(await e6Api.releaseView(assignmentId));
+      onChanged?.(); // FIX4b M1: trang chứa thẻ (Theo dõi lớp) tải lại dữ liệu của mình
     } catch (e) {
       setError(errText(e));
     } finally {

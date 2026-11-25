@@ -4,6 +4,7 @@ import { features } from '../features/index.ts';
 import { HomePage } from '../pages/HomePage.tsx';
 import { tid } from '../shared/testid.ts';
 import { AreaLayout, AreaOverview } from './AreaLayout.tsx';
+import { liveCounts, mergeRoutes } from './routeMerge.ts';
 
 /**
  * Bản đồ đường dẫn:
@@ -41,14 +42,14 @@ function RouteError() {
  * Route con của một vùng: epic sau khai báo cùng đường dẫn thì THAY route của epic trước (bản đầy đủ thay bản tối
  * thiểu, ví dụ Theo dõi lớp /gv/theo-doi/:id của E7 thay bản E1).
  */
-const childRoutes = (pick: 'teacherRoutes' | 'studentRoutes'): RouteObject[] => {
-  const byPath = new Map<string, RouteObject>();
-  for (const r of features.flatMap((f) => f[pick] ?? [])) byPath.set(r.path ?? '', r);
-  return [...byPath.values()];
-};
+const childRoutes = (pick: 'teacherRoutes' | 'studentRoutes'): RouteObject[] =>
+  mergeRoutes<RouteObject>(features.map((f) => f[pick] ?? []));
 
-const overview = (pick: 'teacherRoutes' | 'studentRoutes') =>
-  features.map((f) => ({ id: f.id, title: f.title, screens: f[pick]?.length ?? 0 }));
+/** Số màn của từng epic: chỉ tính màn còn dùng (màn bị epic sau thay không tính, FIX4b m8). */
+const overview = (pick: 'teacherRoutes' | 'studentRoutes') => {
+  const counts = liveCounts<RouteObject>(features.map((f) => f[pick] ?? []));
+  return features.map((f, i) => ({ id: f.id, title: f.title, screens: counts[i] ?? 0 }));
+};
 
 export const routes: RouteObject[] = [
   { path: '/', element: <HomePage />, errorElement: <RouteError /> },

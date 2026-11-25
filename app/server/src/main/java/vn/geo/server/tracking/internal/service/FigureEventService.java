@@ -21,9 +21,9 @@ import vn.geo.server.tracking.internal.repo.FigureEventRepository;
 /**
  * Thao tác trên hình (E3): chỉ công cụ Chọn, Điểm, Đường, Mặt phẳng, Mở rộng, Đo dài, Đo góc (mã
  * 1…7) là "thao tác trên hình"; xoay, thu phóng, đặt lại không gửi sự kiện (BR-GEO-144, 147;
- * D-GEO-058). Lô lũy đẳng theo batchId (ADR-GEO-11, khóa Redis một ngày). Mở bài: sự kiện 'open'
- * lũy đẳng theo requestId. Gợi ý: ủy quyền cho HintApi của E4 (module learning: fn_get_hint, gợi ý
- * AI của bài tự học, thông điệp MSG-GEO-32, 34).
+ * D-GEO-058). Lô lũy đẳng theo batchId (bền trong CSDL, V85; Redis một ngày là đường nhanh). Mở
+ * bài: sự kiện 'open' lũy đẳng theo requestId. Gợi ý: ủy quyền cho HintApi của E4 (module learning:
+ * fn_get_hint, gợi ý AI của bài tự học, thông điệp MSG-GEO-32, 34).
  */
 @Service
 public class FigureEventService {
@@ -34,8 +34,6 @@ public class FigureEventService {
 
   static final int MAX_BATCH = 200;
   private static final Duration BATCH_TTL = Duration.ofDays(1);
-  private static final Duration PENDING_TTL = Duration.ofMinutes(2);
-  private static final String PENDING = "pending";
   private static final String DONE = "done";
 
   private final FigureEventRepository repo;
@@ -73,32 +71,43 @@ public class FigureEventService {
       }
       rows.add(Map.of("tool", e.tool(), "at", (e.at() == null ? now : e.at()).toString()));
     }
-    // Chống ghi trùng khi gửi lại (soát E3 #6): giữ chỗ ngắn hạn "pending" để hai lần gửi đồng thời
-    // không cùng ghi;
-    // chỉ đánh dấu "done" (TTL 1 ngày) SAU KHI ghi DB thành công. Ghi lỗi (DB, lô không thuộc học
-    // sinh) thì gỡ khóa
-    // để lần gửi lại (cùng batchId) được ghi.
+    // Lũy đẳng lô (BR-GEO-280; FIX4b M3, Dev-E7-08): nguồn sự thật là CSDL (batch_id vào
+    // durable_request cùng giao dịch với event_log, V85), nên gửi lại sau khi khóa Redis hết hạn
+    // hoặc
+    // bị xóa vẫn không cộng đôi; hai lần gửi đồng thời tuần tự hóa ở khóa chính. Redis chỉ là đường
+    // nhanh "đã ghi" (không bắt buộc: Redis lỗi thì đi thẳng CSDL). Ghi lỗi (CSDL) thì giao dịch
+    // hoàn tác cả khóa lô, lần gửi lại cùng batchId được ghi (Dev-E3-07).
     String key = keys.key("figbatch", p.orgId().toString(), batchId.toString());
-    Boolean fresh = redis.opsForValue().setIfAbsent(key, PENDING, PENDING_TTL);
-    if (Boolean.FALSE.equals(fresh)) {
-      if (DONE.equals(redis.opsForValue().get(key))) {
-        return new Recorded(0); // lô đã ghi (gửi lại do mạng): không ghi trùng
-      }
-      throw new AppException(ErrorCode.CONFLICT, "Lô đang được ghi, gửi lại sau.");
+    if (DONE.equals(redisGet(key))) {
+      return new Recorded(0);
     }
-    FigureEventRepository.BatchResult r;
-    try {
-      r = repo.recordTools(p.userId(), assignmentId, mapper.writeValueAsString(rows));
-    } catch (RuntimeException ex) {
-      redis.delete(key);
-      throw ex;
+    FigureEventRepository.BatchResult r =
+        repo.recordTools(p.userId(), assignmentId, batchId, mapper.writeValueAsString(rows));
+    if ("DUPLICATE".equals(r.status())) {
+      redisMarkDone(key);
+      return new Recorded(0); // lô đã ghi (gửi lại do mạng): không ghi trùng
     }
     if (!"OK".equals(r.status())) {
-      redis.delete(key);
       throw new AppException(ErrorCode.NOT_FOUND);
     }
-    redis.opsForValue().set(key, DONE, BATCH_TTL);
+    redisMarkDone(key);
     return new Recorded(r.inserted());
+  }
+
+  private String redisGet(String key) {
+    try {
+      return redis.opsForValue().get(key);
+    } catch (RuntimeException ex) {
+      return null; // đường nhanh hỏng: CSDL vẫn bảo đảm lũy đẳng
+    }
+  }
+
+  private void redisMarkDone(String key) {
+    try {
+      redis.opsForValue().set(key, DONE, BATCH_TTL);
+    } catch (RuntimeException ex) {
+      // bỏ qua: lần gửi lại sẽ gặp DUPLICATE ở CSDL
+    }
   }
 
   public Map<String, String> recordOpen(UUID assignmentId, UUID requestId) {

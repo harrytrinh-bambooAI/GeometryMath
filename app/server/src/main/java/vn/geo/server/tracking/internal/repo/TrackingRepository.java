@@ -262,6 +262,11 @@ public class TrackingRepository {
 
   /** Q09: mọi học sinh của lớp (kể cả chưa mở bài), sắp theo tên. */
   public List<ProgressRow> monitorStudents(UUID assignmentId) {
+    return monitorStudents(assignmentId, 101);
+  }
+
+  /** Q09 với trần {@code fetch} dòng (bên gọi lấy thừa một dòng để biết có bị cắt, FIX4b m3). */
+  public List<ProgressRow> monitorStudents(UUID assignmentId, int fetch) {
     return jdbc.sql(
             """
             SELECT a.id, u.id, u.display_name, ap.first_opened_at IS NOT NULL,
@@ -272,10 +277,11 @@ public class TrackingRepository {
             JOIN app_user u ON u.org_id = :orgId AND u.id = cm.user_id
             LEFT JOIN assignment_progress ap ON ap.org_id = :orgId AND ap.assignment_id = a.id AND ap.user_id = cm.user_id
             WHERE a.org_id = :orgId AND a.id = :id
-            ORDER BY cm.name_key, cm.user_id LIMIT 101
+            ORDER BY cm.name_key, cm.user_id LIMIT :fetch
             -- sqllint:allow=ownership thành viên lớp, tên (iam), bài giao (assignment)
             """)
         .param("id", assignmentId)
+        .param("fetch", fetch)
         .query(TrackingRepository::progress)
         .list();
   }

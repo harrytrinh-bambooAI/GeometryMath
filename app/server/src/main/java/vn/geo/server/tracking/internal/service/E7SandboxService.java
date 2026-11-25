@@ -2,10 +2,12 @@ package vn.geo.server.tracking.internal.service;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import vn.geo.server.tracking.internal.repo.E7SandboxRepository;
 
 /** MÓC KIỂM THỬ E7 (chỉ gọi từ controller profile dev/test): lớp mỏng trên E7SandboxRepository. */
+@Profile({"dev", "test"}) // FIX4b m2: móc kiểm thử không lọt prod
 @Service
 public class E7SandboxService {
 

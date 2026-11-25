@@ -113,7 +113,10 @@ public final class SqlLint {
   /** Bảng chia partition theo thời gian: SELECT phải có cận dưới occurred_at (BR-GEO-282). */
   static final Set<String> TIME_BOUND_TABLES = Set.of("event_log");
 
-  private static final Pattern TIME_BOUND = Pattern.compile("\\boccurred_at\\s*(>=|>|between\\b)");
+  // FIX4b m7: cận phải là vị từ (sau WHERE/AND/ON), không chỉ là chữ "occurred_at >" ở bất kỳ đâu
+  // (SELECT, ORDER BY)
+  private static final Pattern TIME_BOUND =
+      Pattern.compile("(?i)\\b(where|and|on)\\s+(\\w+\\.)?occurred_at\\s*(>=|>|between\\b)");
   private static final Set<String> NOT_SUPPRESSIBLE = Set.of("forbidden_table");
 
   /** Quét mọi .java dưới root (ví dụ src/main/java). */

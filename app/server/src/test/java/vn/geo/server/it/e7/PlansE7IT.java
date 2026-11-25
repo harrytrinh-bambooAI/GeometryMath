@@ -151,7 +151,7 @@ class PlansE7IT extends AbstractE1IT {
               plans.label = "Theo dõi lớp: học sinh";
               assertThat(tracking.monitorStudents(asg)).isNotEmpty();
               plans.label = "Theo dõi lớp: câu hỏi";
-              monitor.questions(asg);
+              monitor.questions(asg, 2001);
               plans.label = "Theo dõi: bài đã giao";
               assertThat(monitor.assigned(teacher, null, 21)).isNotEmpty();
               plans.label = "Kho đề (page)";

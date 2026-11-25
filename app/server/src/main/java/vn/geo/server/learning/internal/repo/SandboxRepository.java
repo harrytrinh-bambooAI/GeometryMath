@@ -2,6 +2,7 @@ package vn.geo.server.learning.internal.repo;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
  * sản phẩm (fn_student_login, fn_create_assignment, fn_set_release). Lớp tạo trực tiếp vì MVP không
  * có điểm cuối tạo lớp.
  */
+@Profile({"dev", "test"}) // FIX4b m2: móc kiểm thử không lọt prod
 @Repository
 public class SandboxRepository {
 
