@@ -101,3 +101,10 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** `.claude/reviews/E6-review.md` v1.0 · 25/11/2026; inbox mục FIX1.
 - **Xong khi:** make verify xanh; web typecheck/lint/test/build xanh; make e2e hai lượt đạt toàn bộ; mỗi major có test (TC Dev).
 - **Ngoài phạm vi:** code E7; stories_ac/test_cases; tính năng mới.
+- **Trạng thái (25/11/2026, nhánh mvp-fix4a):** chi tiết ở `artifacts/GEO/work/epics/E6/qc_findings.md` mục Dev (QF-E6-D01…D12).
+  M1 ĐÓNG · 92f1d05 — Dev-E6-01 (`it/e6/FixE6IT`). M2 ĐÓNG · 92f1d05 — Dev-E6-02 (e2e `e6/assign.ui.spec.ts`, 2 ca × 2 trình duyệt). M3 ĐÓNG · 92f1d05 — Dev-E6-03 (`FixE6IT`).
+  m1–m6 ĐÓNG · 92f1d05 — Dev-E6-04…07 (`AnswerRulesTest`); m1 không sửa "bao nhiêu độ", "đơn vị là gì" (đòi giá trị, F-GEO-211/228).
+  m7 ĐÓNG một phần · 92f1d05 — Dev-E6-08; không sửa: giới hạn tần suất `POST /solution/open` và AI xem trước (chờ NFR-GEO-056/D-GEO-125), nhiều nút, `highestHint` thuộc đề.
+  tc0148 ĐÓNG · 92f1d05. Trace JWT ĐÓNG · 92f1d05 (che trong trace.zip; video không chứa chuỗi JWT; quét 563 trace lượt 20261125-071230: 0).
+  Kiểm: make verify 123 đơn vị + 112 IT xanh; web 33/33 + build xanh; make e2e 558 đạt / 1 bỏ qua (TC-0302 WebKit, có từ trước) hai lượt 20261125-070629, 20261125-071230; truy vết E6 117/117.
+  MỞ mới (ngoài FIX4a): `geo.ai.provider: mock` mặc định, ProfileGuard không cấm mock ở prod (không thuộc E6).
