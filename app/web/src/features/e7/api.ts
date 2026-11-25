@@ -42,6 +42,9 @@ export interface Monitor {
   students: StudentRow[];
   questionGroups: QuestionGroup[];
   askedQuestions: AskedQuestion[];
+  /** FIX4b m3: lớp/bài vượt trần dòng của trang (máy chủ báo, không cắt im lặng). */
+  studentsTruncated?: boolean;
+  questionsTruncated?: boolean;
 }
 export interface Assigned {
   id: string;

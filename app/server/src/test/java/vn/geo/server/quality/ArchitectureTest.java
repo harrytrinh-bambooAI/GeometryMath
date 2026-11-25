@@ -156,5 +156,16 @@ class ArchitectureTest {
           .should()
           .resideInAPackage("..repo..");
 
+  /** FIX4b m2: bean móc kiểm thử (Sandbox, TestHook) chỉ tạo ở profile dev/test, không lọt prod. */
+  @ArchTest
+  static final ArchRule testHooksAreProfileScoped =
+      classes()
+          .that()
+          .areTopLevelClasses()
+          .and()
+          .haveNameMatching(".*\\.[^.$]*(Sandbox|TestHook)[^.$]*")
+          .should()
+          .beAnnotatedWith(org.springframework.context.annotation.Profile.class);
+
   @ArchTest static final ArchRule noFieldInjection = NO_CLASSES_SHOULD_USE_FIELD_INJECTION;
 }

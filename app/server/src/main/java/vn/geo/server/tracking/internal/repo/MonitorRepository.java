@@ -74,17 +74,25 @@ public class MonitorRepository {
         .optional();
   }
 
-  /** Mọi câu hỏi của lớp trên một bài (tối đa 2000, cũ trước): một câu lệnh, gộp ở ứng dụng. */
-  public List<MonitorView.Asked> questions(UUID assignmentId) {
+  /**
+   * Câu hỏi của học sinh CÒN trong lớp trên một bài, MỚI trước, tối đa {@code fetch} (FIX4b m3: giữ
+   * phần mới nhất; m4: cùng nguồn với cột "Hỏi đáp" và thẻ "câu hỏi"). Một câu lệnh.
+   */
+  public List<MonitorView.Asked> questions(UUID assignmentId, int fetch) {
     return jdbc.sql(
             """
             SELECT q.id, q.user_id, u.display_name, q.question, q.asked_at
-            FROM qa_turn q JOIN app_user u ON u.org_id = :orgId AND u.id = q.user_id
+            FROM qa_turn q
+            JOIN assignment a ON a.org_id = :orgId AND a.id = q.assignment_id
+            JOIN class_member cm ON cm.org_id = :orgId AND cm.class_id = a.class_id AND cm.user_id = q.user_id
+                                AND cm.left_at IS NULL
+            JOIN app_user u ON u.org_id = :orgId AND u.id = q.user_id
             WHERE q.org_id = :orgId AND q.assignment_id = :id
-            ORDER BY q.id LIMIT 2000
-            -- sqllint:allow=ownership tên người hỏi (iam)
+            ORDER BY q.id DESC LIMIT :fetch
+            -- sqllint:allow=ownership tên người hỏi, thành viên lớp (iam), bài giao
             """)
         .param("id", assignmentId)
+        .param("fetch", fetch)
         .query((rs, i) ->
             new MonitorView.Asked(
                 rs.getLong(1),
@@ -131,6 +139,21 @@ public class MonitorRepository {
         .list();
   }
 
+  /** Học sinh có (hoặc đã từng có) trong lớp của bài giao (FIX4b m5: người ngoài lớp → 404). */
+  public boolean isMember(UUID assignmentId, UUID userId) {
+    return jdbc.sql(
+            """
+            SELECT EXISTS (SELECT 1 FROM assignment a
+              JOIN class_member cm ON cm.org_id = :orgId AND cm.class_id = a.class_id AND cm.user_id = :userId
+              WHERE a.org_id = :orgId AND a.id = :id LIMIT 1)
+            -- sqllint:allow=ownership thành viên lớp (iam), bài giao
+            """)
+        .param("id", assignmentId)
+        .param("userId", userId)
+        .query(Boolean.class)
+        .single();
+  }
+
   /**
    * Q20: sự kiện của một học sinh trên một bài trong [from, to), mới nhất trước, keyset
    * (occurred_at, id); chỉ chạm các partition trong cận thời gian (BR-GEO-282).
@@ -170,16 +193,18 @@ public class MonitorRepository {
 
   /**
    * Sự kiện của một trường trong [from, to) để tính phiên (M-GEO-08, báo cáo nền, không phải truy
-   * vấn nóng); tối đa 200 000 dòng.
+   * vấn nóng); tối đa {@code fetch} dòng (bên gọi lấy thừa một dòng để báo khi vượt trần, FIX4b
+   * m6).
    */
-  public List<MonitorView.Ev> eventsForSessions(Instant from, Instant to) {
+  public List<MonitorView.Ev> eventsForSessions(Instant from, Instant to, int fetch) {
     return jdbc.sql(
             """
             SELECT e.user_id, e.assignment_id, e.kind::text, e.occurred_at FROM event_log e
             WHERE e.org_id = :orgId AND e.occurred_at >= :from AND e.occurred_at < :to
               AND e.kind <> 'scene_shown'
-            ORDER BY e.occurred_at LIMIT 200000
+            ORDER BY e.occurred_at LIMIT :fetch
             """)
+        .param("fetch", fetch)
         .param("from", utc(from))
         .param("to", utc(to))
         .query((rs, i) ->

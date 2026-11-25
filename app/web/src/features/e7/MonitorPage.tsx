@@ -9,6 +9,7 @@ import { LockSlot } from './LockSlot.tsx';
 
 const MSG_52 = 'Chưa có học sinh nào mở bài.';
 const MSG_53 = 'Chưa có câu hỏi nào.';
+const REFRESH_MS = 30_000;
 
 const STATUS_CLASS: Record<string, string> = {
   'Đang chờ lời giải': 'yel',
@@ -40,7 +41,14 @@ export function MonitorPage() {
   }, [id]);
   useEffect(() => {
     const t = window.setTimeout(load, 0);
-    return () => window.clearTimeout(t);
+    // FIX4b m8: tự làm mới khi trang đang hiện (máy chủ đệm 5 s), giáo viên không phải F5 để thấy em mới mở bài
+    const poll = window.setInterval(() => {
+      if (document.visibilityState === 'visible') load();
+    }, REFRESH_MS);
+    return () => {
+      window.clearTimeout(t);
+      window.clearInterval(poll);
+    };
   }, [load]);
 
   if (error) {
@@ -77,6 +85,11 @@ export function MonitorPage() {
           </div>
           <section className="card">
             <h3>Học sinh</h3>
+            {m.studentsTruncated ? (
+              <p className="small muted" role="note" data-testid={tid('e7', 'students', 'truncated')}>
+                Lớp có hơn {m.students.length} học sinh: bảng và các thẻ chỉ tính {m.students.length} em đầu (A → Z).
+              </p>
+            ) : null}
             {m.openedCount === 0 ? (
               <p className="empty" data-testid={tid('e7', 'empty-opened')}>
                 {MSG_52}
@@ -143,9 +156,14 @@ export function MonitorPage() {
           </section>
         </div>
         <aside className="e7-right" data-testid={tid('e7', 'right')}>
-          <LockSlot assignmentId={id} releaseState={m.releaseState} releaseAt={m.releaseAt} />
+          <LockSlot assignmentId={id} releaseState={m.releaseState} releaseAt={m.releaseAt} onChanged={load} />
           <section className="card" data-testid={tid('e7', 'asking')}>
             <h3>Học sinh đang hỏi gì</h3>
+            {m.questionsTruncated ? (
+              <p className="small muted" role="note" data-testid={tid('e7', 'asking', 'truncated')}>
+                Chỉ tính {m.askedQuestions.length} câu hỏi mới nhất.
+              </p>
+            ) : null}
             {m.questionGroups.length === 0 ? (
               <p className="empty" data-testid={tid('e7', 'asking', 'empty')}>
                 {MSG_53}
