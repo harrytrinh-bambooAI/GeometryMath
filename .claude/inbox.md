@@ -126,3 +126,12 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
   - m6 ĐÓNG · fb6cd43 (vượt trần báo lỗi, ghi "chưa phơi ra"); chỉ mục không sửa (chưa có điểm cuối)
   - m7 ĐÓNG · fb6cd43 (EVENT_TIME_BOUND chỉ nhận vị từ); móc restart không sửa (Dev-E7-02/08)
   - m8 ĐÓNG · fb6cd43 (routeMerge + test, tự làm mới 30 s, trần 366 ngày); BR-GEO-267 tên/họ tên không sửa — chờ BA (Dev-E7-10)
+
+## Việc: FIX5 — phát hiện soát T-04 (diff 1ce17bd..6b62557, 26/11/2026, Sonnet) · 0 blocker, 0 major
+- **Mục tiêu:** đóng 3 minor, mỗi mục có test.
+  1. [minor] `AiSettings.costMicro` model không có trong `geo.ai.pricing` → cost 0 lặng lẽ; InstrumentedAiGateway không cảnh báo. Sửa: log cảnh báo (hoặc từ chối khởi động khi provider=anthropic mà model không có giá).
+  2. [minor] `AnthropicAiProvider.java:150-166` + `application.yml` `ai.anthropic.fallbacks: default`: chi phí tính theo model yêu cầu, không theo model API trả về khi fallback; header beta chưa kiểm với API thật (xem kết quả T-05).
+  3. [minor] `ContentPackLoader.java:72-114` mỗi lần khởi động `setArchived(code,false)` + ghi version mới → bật lại/ghi đè đề quản trị đã lưu trữ/sửa. Gắn NEEDS C2 (nạp ở prod).
+- **Nguồn:** báo cáo soát T-04 26/11/2026; tiến độ `.claude/progress/review-t04.md`.
+- **Xong khi:** `make verify` xanh; `make bench-mvp` (mock) exit 0; test mới cho từng mục.
+- **Ngoài phạm vi:** dữ liệu đề; e2e spec.
