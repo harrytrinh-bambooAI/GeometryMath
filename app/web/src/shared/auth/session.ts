@@ -29,8 +29,38 @@ export function clearToken(): void {
   }
 }
 
-/** Gọi khi máy chủ trả 401: xóa thẻ, báo cho khung app (khung tự chuyển về trang chủ). */
+/**
+ * Gọi khi máy chủ trả 401: xóa thẻ, báo cho khung app (khung tự chuyển về màn đăng nhập MVP của vùng).
+ * Phiên đăng nhập bằng mã người dùng (S2-E1) thì về màn "Đăng nhập" bằng mã kèm câu "Phiên đã hết" (US-S2E1-02-FC5).
+ */
 export function signalUnauthenticated(): void {
+  const area = takeCodeLoginArea();
   clearToken();
+  if (area) {
+    window.location.assign(`/${area}/dang-nhap-ma?het-phien=1`);
+    return;
+  }
   window.dispatchEvent(new CustomEvent(UNAUTHENTICATED_EVENT));
+}
+
+const MODE_KEY = 'geo.s2e1.area';
+
+/** S2-E1: đánh dấu phiên hiện tại do đăng nhập bằng mã người dùng (vùng 'gv' hoặc 'hs'). */
+export function markCodeLogin(area: 'gv' | 'hs'): void {
+  try {
+    sessionStorage.setItem(MODE_KEY, area);
+  } catch {
+    /* bỏ qua */
+  }
+}
+
+/** Lấy và xóa dấu đăng nhập bằng mã (null nếu phiên MVP hoặc chưa đăng nhập). */
+export function takeCodeLoginArea(): 'gv' | 'hs' | null {
+  try {
+    const v = sessionStorage.getItem(MODE_KEY);
+    sessionStorage.removeItem(MODE_KEY);
+    return v === 'gv' || v === 'hs' ? v : null;
+  } catch {
+    return null;
+  }
 }

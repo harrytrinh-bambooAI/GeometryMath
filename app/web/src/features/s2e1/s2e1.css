@@ -1,0 +1,180 @@
+/* S2-E1 — màn C3-01 (đăng ký, mã người dùng, đăng nhập bằng mã, khôi phục) theo Design/prototype/s23b.js, s23d.js.
+   Màu, bo góc, font CHỈ qua token (styles/tokens.css); chữ phụ ≥ 14 px (PO-66 G17). */
+.s2e1-auth {
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+.s2e1-card {
+  width: 100%;
+  max-width: 500px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-sizing: border-box;
+  padding: 26px;
+}
+.s2e1-card h2 {
+  margin: 0;
+  font-size: 22px;
+}
+.s2e1-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+.s2e1-field input {
+  font-family: var(--font-math); /* mã, mật khẩu: chữ dễ đọc kể cả ở theme chữ tay */
+  font-size: 17px;
+  font-weight: 400;
+  min-height: max(var(--touch), var(--ctl-h));
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  color: var(--text);
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+.s2e1-field input[aria-invalid='true'] {
+  border-color: var(--red);
+}
+.s2e1-help {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.s2e1-err {
+  color: var(--red);
+  font-weight: 600;
+  font-size: 14px;
+}
+.s2e1-roles {
+  display: flex;
+  gap: 8px;
+}
+.s2e1-role {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: max(var(--touch), var(--ctl-h));
+  padding: 8px 14px;
+  font: inherit;
+  color: var(--text);
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--r-btn);
+  background: var(--panel);
+  font-weight: 600;
+  cursor: pointer;
+}
+.s2e1-role.on {
+  border-color: var(--pri);
+  background: var(--pri-s);
+  color: var(--pri-d);
+}
+.s2e1-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--touch);
+  font-size: 15px;
+}
+.s2e1-check input {
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0;
+  flex: none;
+}
+.s2e1-wide {
+  width: 100%;
+}
+.s2e1-btn-off,
+.s2e1-wide:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.s2e1-link {
+  color: var(--pri);
+  font-weight: 700;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.s2e1-foot {
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+.s2e1-ban {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: var(--r-sm);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.s2e1-ban.pri {
+  background: var(--pri-s);
+  color: var(--text);
+}
+.s2e1-ban.yel {
+  background: var(--yel-s);
+  color: var(--text);
+  border: 1px solid var(--yel);
+}
+.s2e1-ban.grn {
+  background: var(--grn-s);
+  color: var(--text);
+}
+.s2e1-ban.red {
+  background: var(--red-s);
+  color: var(--text);
+  border: 1px solid var(--red);
+}
+.s2e1-code-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.s2e1-code {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-math);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 12px 14px;
+  border-radius: var(--r-sm);
+  background: var(--soft);
+  border: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.s2e1-notice {
+  white-space: pre-line;
+  font-size: 14px;
+  line-height: 1.55;
+  max-height: 220px;
+  overflow: auto;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--soft);
+}
+@media print {
+  .rail,
+  .top,
+  .s2e1-noprint {
+    display: none !important;
+  }
+}
