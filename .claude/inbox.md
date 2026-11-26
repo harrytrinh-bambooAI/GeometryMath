@@ -207,3 +207,14 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent T-20; `artifacts/GEO/work/epics/S2-E5/qc_findings.md` (26/11/2026).
 - **Xong khi:** TC-GEO-0209 đạt 20 lượt lặp liên tiếp; mục 2–3 có quyết định ghi DECISIONS/PO-DECISIONS trước gate T-26.
 - **Ngoài phạm vi:** US-S2E5-05 (thuộc T-22).
+
+## Việc: câu mở sau T-21 (S2-E8) · ghi 26/11/2026 đêm
+- **Mục tiêu:** đóng các điểm T-21 để mở.
+  1. [FIX Dev] thêm `subject.api.AnswerGrader` có kiểu thay bean cầu nối JDK `subjectAnswerGrader` (cùng loại với `geometry/api/StepCheck` của T-20).
+  2. [PO/BA] có cho hai bài luyện cùng lớp trùng đề không (hiện CONFLICT, D-GEO-161); có giữ việc ẩn câu bài luyện khỏi "Bài của em" không; QA-S2E8-10 danh sách "câu cần xem lại" cho giáo viên chưa có AC; lời nhắc "viết dạng chính xác (có căn)" hiện với mọi số thập phân Sai.
+  3. [Dev] bài luyện chưa có hình 3D, "Xem trước như học sinh" chưa có hình; "đề máy chấm được" chưa nhận đáp số có đơn vị chữ.
+  4. [QC] e2e-affected không chạy ui-webkit (iPad) cho spec s2e8; 5 TC Manual cần thiết bị thật; ca kiểm dùng lớp dựng qua móc sandbox, không phải lớp mẫu MVP.
+  5. [Dev] các IT để lại lớp/học sinh trong ORG_A (không gây lỗi nhưng làm test phụ thuộc trạng thái chung).
+- **Nguồn:** báo cáo agent T-21 và agent sửa IT; `artifacts/GEO/work/epics/S2-E8/qc_findings.md` (26/11/2026).
+- **Xong khi:** mục 1–2 có quyết định ghi DECISIONS/PO-DECISIONS trước gate T-26; mục 4 chạy ở lượt regression trọn bộ 6 project.
+- **Ngoài phạm vi:** tính năng mới ngoài S2-E8.

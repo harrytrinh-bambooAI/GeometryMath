@@ -125,7 +125,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-18, T-261126-19, T-261126-45
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(geometry/internal/stepcheck|content)/|app/server/src/main/resources/db/migration/V1[67][0-9]__|app/server/src/test/java/vn/geo/server/(it/s2e5|geometry|content)/|app/web/src/features/s2e5/|app/e2e/tests/s2e5/|app/db/seed/(e2e/82[0-9]_|fixture-ids\.d/s2e5)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E5/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W5
-## T-261126-21 · S2-E8 · L5 Dev · epic-common v1.3 · wt s2-e8 · ‖20 · 5h/12M · Bài luyện điền đáp số + mô hình bộ bài chung [running]
+## T-261126-21 · S2-E8 · L5 Dev · epic-common v1.3 · wt s2-e8 · ‖20 · 5h/12M · Bài luyện điền đáp số + mô hình bộ bài chung [done]
 - Mục tiêu: US-S2E8-01…05: C2-06/07/08, bàn phím toán, grade dạng tương đương (subject/internal/grade), assignment_set/item đủ cột cho S3 + item giao sinh hàng assignment MVP (PLAN A4, PO-66 G1), practice_attempt (A5), khóa đáp số tới giờ mở, nút "Em nghĩ đáp số này đúng"; giao cho lớp mẫu 11A1
 - Nguồn: epics/S2-E8 (ebec17a 26/11); PLAN_code-s23 v1.0 §1 A4–A5; STAGES Ch2 §5 luồng C, §7; PO-66 G1
 - Xong khi: như 18 (gồm spec *.p0m.ui.spec.ts điện thoại) + bench-mvp không lùi
