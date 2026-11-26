@@ -228,23 +228,37 @@ h3 {
 /* Điện thoại: thanh dọc thành thanh ngang dưới cùng (khung Design/mvp-08-dien-thoai) */
 @media (max-width: 720px) {
   .shell {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: 1fr auto;
   }
+  /*
+   * Chặng 3 thanh giáo viên có ~15 mục: không co mục (chữ vỡ từng ký tự, thanh cao che nút) và không đẩy trang
+   * rộng ra (cuộn ngang cả trang). Thanh dưới giữ một hàng, cuộn ngang bên trong thanh.
+   */
   .rail {
     order: 2;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 6px 0;
+    justify-content: flex-start;
+    padding: 6px 4px;
     border-right: none;
     border-top: 1px solid var(--line);
     position: sticky;
     bottom: 0;
+    min-width: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .rail::-webkit-scrollbar {
+    display: none;
   }
   .rail a {
     width: auto;
-    flex: 0 1 76px;
-    min-width: 0;
+    flex: 0 0 auto;
+    min-width: 64px;
+    padding-left: 6px;
+    padding-right: 6px;
+    white-space: nowrap;
   }
   .rail .logo {
     display: none;
