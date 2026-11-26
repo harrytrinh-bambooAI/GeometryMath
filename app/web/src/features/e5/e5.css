@@ -2,6 +2,8 @@
 .e5-bank,
 .e5-detail { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .e5-summary { margin: 0; font-weight: 600; }
+/* Giữ chỗ cho dòng đếm và chip lớp tải sau: không đẩy bộ lọc xuống ngay lúc người dùng chạm (điện thoại, T-261126-02) */
+.e5-bank .e1-chips { min-height: 24px; }
 .e5-bank .chip.pri,
 .e5-detail .chip.pri { background: var(--pri-s); color: var(--pri); }
 .e5-bank .tiny,
@@ -51,5 +53,6 @@
   /* stretch: align-items: start của lưới máy tính làm khung hình co về bề rộng nội dung (≈ 0) trên điện thoại (T-261126-02) */
   .e5-detail { display: flex; flex-direction: column; align-items: stretch; }
   .e5-viewer { height: 320px; }
+  .e5-summary { min-height: 3em; } /* dòng đếm xuống hai dòng trên điện thoại */
   .e5-filter-title { min-width: 0; width: 100%; }
 }
