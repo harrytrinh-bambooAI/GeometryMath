@@ -161,6 +161,7 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 
 ## Việc: FIX sau T-41 (26/11/2026) — gom vào FIX T-261126-43
 - **Mục tiêu:** (a) `scripts/dev-up.sh` chờ Redis nhận kết nối (ping lặp có hạn giờ) trước khi kiểm thư mục cổng — hết lỗi "cổng thuộc thư mục khác ()" lần đầu; (b) `router.tsx`: ẩn feature 0 màn ở trang tổng quan /gv, /hs; (c) test chập chờn khi 2 worktree chạy e2e cùng lúc: TC-GEO-0428 (`e4/hints.ui.spec.ts:129`, chromium, toBeVisible 4,3 s) và TC-GEO-0485 (`e4/inherit.ui.spec.ts:135`, webkit) — trượt ở lượt kiểm lại T-41 16:37, đạt ở 2 lượt của agent; chờ theo trạng thái thay vì thời gian.
+  (e) Test nhạy tải (3 bộ e2e cùng lúc, load ~48, lượt 29,7 phút): TC-GEO-0804 (`e1/isolation.api.spec.ts:257`, không thấy khóa `:mon:` trong Redis — có thể test khác reset Redis), TC-GEO-0688 (`e6/auto.ui.spec.ts:58`, đếm ngược không bắt được mẫu nào trong cửa sổ thời gian), TC-GEO-0222 (`e2/labels.ui.spec.ts`, toHaveText 5 s). Đạt ở lượt khác cùng mã. Cân nhắc: giới hạn 1 bộ e2e chạy cùng lúc trên máy (khóa tệp trong e2e.sh) thay vì nới test.
   (d) `scripts/e2e.sh`: khi bị ngắt (agent chết) để lại máy chủ/vite mồ côi giữ cổng → `make down` không dọn được → e2e sau báo "cổng đang bận". Thêm trap EXIT/INT/TERM tắt tiến trình con + ghi pid để `make down` dọn. (gặp 26/11 18:40 ở fix-43)
 - **Nguồn:** báo cáo T-41 (26/11).
 - **Xong khi:** `make up` từ trạng thái sạch đạt 3 lần liên tiếp; e2e tổng quan /gv không có dòng feature rỗng.
