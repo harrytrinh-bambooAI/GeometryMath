@@ -15,7 +15,31 @@ test('Giao bộ mới cho lớp đã lưu trữ @TC-S3E6-19', async ({ request }
     data: { title: 'Bộ bài tuần 16', classId: c.id },
   });
   expect(d.status()).toBe(409);
-  expect((await err(d)).code).toBe('CONFLICT');
+  const created = await err(d);
+  expect(created.code).toBe('CONFLICT');
+  // đường giao bộ đã soạn (practice-sets/{id}/assign, fn_assign_practice_set): cũng CONFLICT, cùng câu (FIX T-34)
+  const p = await request.get(`${API}/api/v1/teacher/practice/problems`, { headers: bearer(lan.token) });
+  expect(p.status()).toBe(200);
+  const v = ((await p.json()) as { items: Array<{ code: string; problemVersionId: string }> }).items.find((i) => i.code === 'TUAN-11')!.problemVersionId;
+  const draft = await request.post(`${API}/api/v1/teacher/practice-sets`, {
+    headers: bearer(lan.token),
+    data: {
+      title: 'Bộ bài tuần 16',
+      releaseAt: new Date(Date.now() + 7_200_000).toISOString(),
+      items: [{ problemVersionId: v, answerKind: 'exact', tolerance: null, maxAttempts: 3, releaseAt: null }],
+    },
+  });
+  expect(draft.status(), await draft.text()).toBe(201);
+  const draftId = ((await draft.json()) as { id: string }).id;
+  const a = await request.post(`${API}/api/v1/teacher/practice-sets/${draftId}/assign`, {
+    headers: bearer(lan.token),
+    data: { classId: c.id, confirmPastRelease: false },
+  });
+  expect(a.status(), await a.text()).toBe(409);
+  const assigned = await err(a);
+  expect(assigned.code).toBe('CONFLICT');
+  expect(assigned.message).toBe(created.message);
+  await request.delete(`${API}/api/v1/teacher/practice-sets/${draftId}`, { headers: bearer(lan.token) });
   const notes = await request.get(`${API}/api/v1/notifications`, { headers: bearer(w.people['Quốc Bảo']!.token) });
   expect(await notes.text()).not.toContain('Bộ bài tuần 16');
   const after = (await (await request.get(`${API}/api/v1/teacher/assignment-sets`, { headers: bearer(lan.token) })).text()).length;

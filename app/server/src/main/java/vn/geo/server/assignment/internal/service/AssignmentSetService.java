@@ -311,6 +311,8 @@ public class AssignmentSetService {
     switch (status) {
       case "OK" -> {}
       case "NOT_FOUND" -> throw new AppException(ErrorCode.NOT_FOUND);
+      // lớp lưu trữ sau khi tạo nháp (US-S3E6-02-FC2, BR-S3E6-14)
+      case "CONFLICT_ARCHIVED" -> throw new AppException(ErrorCode.CONFLICT, MSG_ARCHIVED_CLASS);
       case "CONFLICT_ASSIGNED" -> {
         if (requestKey != null && !requestKey.isBlank()) {
           return detail(own(p.userId(), setId));

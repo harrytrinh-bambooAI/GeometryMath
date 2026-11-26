@@ -193,6 +193,9 @@ public class PracticeSetService implements PracticeSets {
     switch (status) {
       case "OK" -> {}
       case "NOT_FOUND" -> throw new AppException(ErrorCode.NOT_FOUND);
+      // lớp của mình Đã lưu trữ: CONFLICT như đường tạo bộ (US-S3E6-02-FC2, BR-S3E6-14)
+      case "CONFLICT_ARCHIVED" ->
+          throw new AppException(ErrorCode.CONFLICT, AssignmentSetService.MSG_ARCHIVED_CLASS);
       case "CONFLICT_ASSIGNED" ->
           throw new AppException(ErrorCode.CONFLICT, "Bài này đã giao rồi.");
       case "EMPTY" -> throw AppException.invalidField("items", MSG_ITEMS_EMPTY);
