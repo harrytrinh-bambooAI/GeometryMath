@@ -189,7 +189,8 @@ class IdentityS2E1IT extends AbstractE1IT {
       JsonNode body = json(me);
       assertThat(body.get("userCode").asString()).isEqualTo(r.userCode());
       assertThat(body.get("hasRecoveryCode").asBoolean()).isTrue();
-      assertThat(me.body()).doesNotContain("RC-");
+      // Không dò "RC-" trơn: mã người dùng ngẫu nhiên có thể chứa "RC-" (xác suất 1/1024 mỗi mã).
+      assertThat(me.body()).doesNotContainPattern(MigrationS2E1IT.RECOVERY_CODE);
     } finally {
       deleteUsers(List.of(r.userId()));
     }
