@@ -146,6 +146,8 @@ Kế hoạch: `artifacts/GEO/work/s23/PLAN_code-s23.md` (module, cổng, khoản
 <!-- --- T-261126-41 (khung) --- -->
 <!-- --- T-261126-18 (S2-E1) --- -->
 <!-- --- T-261126-19 (S2-E2) --- -->
+- **S2-E2 khung môn học + hình phẳng:** `subject.api.SubjectEngine` (parse, solve, verify, render, hint, grade + concepts; thao tác để mặc định = thiếu ⇒ `SubjectRegistry` từ chối lúc khởi động), `SubjectRegistry.forKind(ProblemKind)`; môn "Hình học" = `geometry/internal/GeometrySubject` (phẳng: `geometry/internal/plane`, không gian: `geometry/internal/solid/SolidAdapter` bọc engine MVP). API nội bộ `GET /api/v1/subjects`, `POST /api/v1/subjects/{id}/solve|render` (giáo viên). `problem.kind` (`space` | `plane`, V130), mô tả dựng `plane_problem_spec`, hợp đồng cảnh `docs/SCENE-CONTRACT-2D.md`, bộ vẽ `web/src/shared/scene2d`. Màn học sinh `/hs/bai-phang/:id` (`GET /api/v1/student/assignments/{id}/plane`).
+- **Bộ đề chuẩn phẳng + bench:** `server/src/main/resources/content/plane/plane-benchmark.json` (30 đề PLS-nn) nạp bằng `PlaneBenchmarkLoader` (kiểm đáp số tham chiếu với engine) vào `plane_benchmark_problem`; `make bench-s2` (AI giả lập, từ chối khi có `GEO_AI_PROVIDER`≠mock hoặc `GEO_AI_API_KEY`) xuất `artifacts/GEO/evidence/S2-BENCH-<thời điểm>/report.md`.
 <!-- --- T-261126-20 (S2-E5) --- -->
 <!-- --- T-261126-21 (S2-E8) --- -->
 <!-- --- T-261126-22 (S2-E3) --- -->
