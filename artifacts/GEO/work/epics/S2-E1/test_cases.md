@@ -49,13 +49,13 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|---|
 | US-S2E1-01 Đăng ký bằng tên hiển thị và vai, nhận mã người dùng và mã khôi phục | 18 | 18 | 18 / 0 |
 | US-S2E1-02 Đăng nhập bằng mã và mật khẩu; khóa 10 lần sai trong 15 phút theo tài khoản | 12 | 12 | 12 / 0 |
-| US-S2E1-03 Giáo viên tự khôi phục mật khẩu bằng mã khôi phục (TẠM) | 8 | 8 | 7 / 1 |
+| US-S2E1-03 Giáo viên và học sinh tự khôi phục mật khẩu bằng mã khôi phục | 10 | 10 | 9 / 1 |
 | US-S2E1-04 Dữ liệu: chuyển tài khoản mẫu MVP sang mô hình mã người dùng | 6 | 6 | 6 / 0 |
-| **Tổng** | **44** | **44** | **43 / 1** |
+| **Tổng** | **46** | **46** | **45 / 1** |
 
 | Theo ưu tiên | Số case |
 |---|---|
-| High | 26 |
+| High | 28 |
 | Medium | 16 |
 | Low | 2 |
 
@@ -66,7 +66,7 @@ Phiên bản: v0.2 · 2026-11-26
 | No | Tiêu đề | Priority | Type | Loại | Tầng tự động hóa | Tự động hóa | Status | User Type/Account Permission | Pre-condition | Test data/Input data | Test step | Expected output | Remark |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | TC-S2E1-001 | Giáo viên đăng ký và nhận hai mã | High | Normal (Success case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Người chưa có tài khoản (vai chọn khi đăng ký) | • Màn "Đăng ký" ở web; chưa có tài khoản tên "Cô Trang" (FX-01) | • Tên "Cô Trang"; mật khẩu `Trang@2026x` | 1. Chọn vai "Giáo viên"; gõ tên "Cô Trang", mật khẩu `Trang@2026x`; tick "đã đọc thông báo riêng tư (bản 1.0)"; bấm "Đăng ký" | • Màn mã hiện mã người dùng dạng `GV-xxxx-xxxx` (8 ký tự hợp lệ)<br>• hiện mã khôi phục dạng `RC-xxxx-xxxx-xxxx`<br>• có nút "Sao chép" và "In / lưu ảnh"<br>• có dòng cảnh báo mất cả mật khẩu lẫn mã khôi phục thì không lấy lại được | US-S2E1-01-SC1; PO-61; DQ-16 |
-| TC-S2E1-002 | Học sinh đăng ký chỉ nhận mã người dùng | High | Normal (Success case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Người chưa có tài khoản (vai chọn khi đăng ký) | • Màn "Đăng ký" ở iPad; chưa có tài khoản tên "An" | • Tên "An"; mật khẩu `AnHoc#2026` | 1. Chọn vai "Học sinh"; gõ tên "An", mật khẩu `AnHoc#2026`; tick đã đọc thông báo; bấm "Đăng ký" | • Màn mã hiện mã dạng `HS-xxxx-xxxx`<br>• không hiện mã khôi phục<br>• có dòng "Quên mật khẩu thì nhờ giáo viên của lớp đặt lại" | US-S2E1-01-SC2; PO-61; DQ-17 |
+| TC-S2E1-002 | Học sinh đăng ký nhận mã người dùng và mã khôi phục | High | Normal (Success case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Người chưa có tài khoản (vai chọn khi đăng ký) | • Màn "Đăng ký" ở iPad; chưa có tài khoản tên "An" | • Tên "An"; mật khẩu `AnHoc#2026` | 1. Chọn vai "Học sinh"; gõ tên "An", mật khẩu `AnHoc#2026`; tick đã đọc thông báo; bấm "Đăng ký" | • Màn mã hiện mã dạng `HS-xxxx-xxxx` và mã khôi phục `RC-xxxx-xxxx-xxxx`<br>• có dòng "Quên mật khẩu thì dùng mã khôi phục này; nếu đã vào lớp, thầy cô cũng đặt lại được" | US-S2E1-01-SC2; PO-61; PO-66 |
 | TC-S2E1-003 | Nút Tiếp tục chỉ mở khi đã tick "Tôi đã lưu mã" | High | Normal (Success case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Người chưa có tài khoản (vai chọn khi đăng ký) | • Màn mã đang hiện (giáo viên) | — | 1. Bấm "Tiếp tục" khi chưa tick<br>2. tick "Tôi đã lưu mã" rồi bấm "Tiếp tục" | • Lần 1: nút bị khóa, không chuyển màn<br>• lần 2: chuyển vào Kho đề đã đăng nhập | US-S2E1-01-SC3; DQ-16 |
 | TC-S2E1-004 | Mã khôi phục không hiện lại lần hai | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Người chưa có tài khoản (vai chọn khi đăng ký) | • Giáo viên vừa qua màn mã | — | 1. Đăng xuất; đăng nhập lại; mở mọi màn tài khoản | • Không màn nào hiện lại mã khôi phục; dữ liệu trả về của mọi yêu cầu sau đăng ký không chứa mã khôi phục (chỉ chứa dấu hiệu "đã có") | US-S2E1-01-SC4; DQ-16; PO-61 |
 | TC-S2E1-005 | Hai người cùng tên có hai mã khác nhau | Medium | Normal (Success case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Người chưa có tài khoản (vai chọn khi đăng ký) | • Đã có học sinh "An" mã `HS-3F8A-2L6P` | — | 1. Đăng ký thêm học sinh tên "An" | • Tạo thành công, mã mới khác `HS-3F8A-2L6P`; hai tài khoản tồn tại độc lập | US-S2E1-01-SC5; DQ-25; BR-S2E1-02 |
@@ -101,7 +101,7 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S2E1-029 | Để trống một trong hai ô | Medium | Failure (Error case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Học sinh An (FX-02) hoặc giáo viên Cô Trang (FX-01) | • Màn "Đăng nhập" | — | 1. Bấm "Đăng nhập" khi ô mã trống; rồi khi ô mật khẩu trống | • Hiện lỗi cạnh ô trống; không gửi yêu cầu lên máy chủ; không tính một lần sai | US-S2E1-02-FC4; DQ-18 |
 | TC-S2E1-030 | Phiên hết hạn thì yêu cầu bị từ chối | Medium | Failure (Error case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Học sinh An (FX-02) hoặc giáo viên Cô Trang (FX-01) | • Học sinh An đã đăng nhập; phiên bị hết hạn ở máy chủ | — | 1. Bấm vào một bài trong "Bài của em" | • Hiện "Phiên đã hết. Vui lòng vào lại."<br>• chuyển về màn "Đăng nhập"; mã lỗi UNAUTHENTICATED | US-S2E1-02-FC5; MVP, MSG-GEO-02 |
 
-### US-S2E1-03 — Giáo viên tự khôi phục mật khẩu bằng mã khôi phục (TẠM)
+### US-S2E1-03 — Giáo viên và học sinh tự khôi phục mật khẩu bằng mã khôi phục
 
 | No | Tiêu đề | Priority | Type | Loại | Tầng tự động hóa | Tự động hóa | Status | User Type/Account Permission | Pre-condition | Test data/Input data | Test step | Expected output | Remark |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -109,10 +109,12 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S2E1-032 | Mật khẩu cũ và mã khôi phục cũ hết hiệu lực | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01) | • Cô Trang vừa khôi phục thành công | — | 1. Đăng nhập bằng mật khẩu cũ; dùng lại mã khôi phục cũ để khôi phục lần nữa | • Mật khẩu cũ bị từ chối<br>• mã khôi phục cũ bị từ chối với câu lỗi chung | US-S2E1-03-SC2; BR-S2E1-10; QA-S2E1-01 |
 | TC-S2E1-033 | Sai mã khôi phục hiện câu chung | High | Failure (Error case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Giáo viên Cô Trang (FX-01) | • Cô Trang | — | 1. Nhập mã người dùng đúng, mã khôi phục sai; bấm "Đặt lại" | • Hiện "Mã người dùng hoặc mã khôi phục chưa đúng"; mật khẩu không đổi | US-S2E1-03-FC1; PO-61 |
 | TC-S2E1-034 | Sai 9 lần chưa khóa, sai 10 lần khóa đường khôi phục | High | Boundary (Edge case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01) | • Cô Trang, bộ đếm khôi phục bằng 0 | — | 1. Nhập sai mã khôi phục 9 lần; nhập đúng ở lần 10 (nhánh A)<br>2. nhánh B: sai 10 lần rồi nhập mã đúng ở lần 11 | • Nhánh A: lần 10 thành công<br>• nhánh B: sau lần sai thứ 10 bị khóa 15 phút, lần 11 đúng vẫn bị từ chối (RATE_LIMITED); đường đăng nhập bằng mật khẩu cũ vẫn dùng được | US-S2E1-03-BV1; BR-S2E1-11; PO-53 |
-| TC-S2E1-035 | Mã học sinh dùng đường khôi phục nhận câu chung | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01) | • Học sinh An (FX-02) | — | 1. Nhập mã `HS-3F8A-2L6P` và một chuỗi bất kỳ làm mã khôi phục | • Hiện cùng câu "Mã người dùng hoặc mã khôi phục chưa đúng"; không nói "học sinh không có mã khôi phục" | US-S2E1-03-FC2; BR-S2E1-12; DQ-17 |
+| TC-S2E1-035 | Học sinh Tự học khôi phục được bằng mã khôi phục của mình | High | Normal (Success case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Học sinh An (FX-02), chưa vào lớp | • An chưa vào lớp nào, đã lưu mã khôi phục `RC-4F7H-2K9M-6Q3V` | Mật khẩu mới `AnMoi#2027` | 1. Nhập mã `HS-3F8A-2L6P`, mã khôi phục đúng, mật khẩu mới; bấm "Đặt lại"<br>2. Đăng nhập bằng mật khẩu mới | • Đặt lại thành công, hiện mã khôi phục mới một lần<br>• đăng nhập được, lịch sử Tự học cũ còn nguyên | US-S2E1-03-FC2; BR-S2E1-12; PO-66 |
 | TC-S2E1-036 | Mật khẩu mới 7 ký tự bị chặn, 8 ký tự nhận | Medium | Boundary (Edge case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01) | • Cô Trang, mã khôi phục hợp lệ | • Mật khẩu 7 và 8 ký tự | 1. Đặt lại với mật khẩu mới 7 ký tự; đặt lại với 8 ký tự | • Lần 1: lỗi "Mật khẩu từ 8 đến 64 ký tự.", mã khôi phục vẫn còn hiệu lực<br>• lần 2: thành công | US-S2E1-03-BV2; BR-S2E1-10 |
 | TC-S2E1-037 | Màn đăng ký nói rõ không lấy lại được khi mất cả hai | Medium | Normal (Success case) | chức năng | thủ công, có lý do | Manual — chữ cảnh báo cần mắt người xét rõ ràng | Not run | Giáo viên Cô Trang (FX-01) | • Màn mã sau đăng ký của giáo viên | — | 1. Đọc dòng cảnh báo cạnh mã khôi phục | • Có câu: mất cả mật khẩu lẫn mã khôi phục thì không lấy lại được tài khoản | US-S2E1-03-SC3; BRD delta mục 2 dòng 6; PO-61 |
 | TC-S2E1-038 | Đổi mật khẩu bằng khôi phục hủy phiên đang đăng nhập khác | Medium | Failure (Error case) | chức năng | tích hợp (máy chủ + cơ sở dữ liệu) | IT | Not run | Giáo viên Cô Trang (FX-01) | • Cô Trang đang đăng nhập ở máy B | — | 1. Khôi phục mật khẩu ở máy A; ở máy B bấm sang một màn khác | • Máy B nhận UNAUTHENTICATED và về màn "Đăng nhập" | US-S2E1-03-FC3; QA-S2E1-01 |
+| TC-S2E1-045 | Học sinh Chờ duyệt khôi phục được mật khẩu | High | Normal (Success case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Học sinh Bình (FX-03), Chờ duyệt | • Bình Chờ duyệt vào 11A1, có mã khôi phục hợp lệ | — | 1. Khôi phục bằng mã `HS-5B7C-8R2T` và mã khôi phục đúng | • Khôi phục thành công<br>• trạng thái Chờ duyệt giữ nguyên, không phải tạo tài khoản mới | US-S2E1-03-SC4; BR-S2E1-12; PO-66 |
+| TC-S2E1-046 | Mã khôi phục của người khác không dùng được cho mã HS khác | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Học sinh An (FX-02) | • An và Bình mỗi em có mã khôi phục riêng | — | 1. Nhập mã `HS-3F8A-2L6P` kèm mã khôi phục của Bình | • Hiện "Mã người dùng hoặc mã khôi phục chưa đúng"<br>• mật khẩu của An không đổi<br>• lần sai tính vào bộ đếm của An | US-S2E1-03-FC4; BR-S2E1-11; PO-66 |
 
 ### US-S2E1-04 — Dữ liệu: chuyển tài khoản mẫu MVP sang mô hình mã người dùng
 
@@ -166,6 +168,8 @@ Phiên bản: v0.2 · 2026-11-26
 | US-S2E1-03-FC2 | TC-S2E1-035 |
 | US-S2E1-03-BV2 | TC-S2E1-036 |
 | US-S2E1-03-SC3 | TC-S2E1-037 |
+| US-S2E1-03-SC4 | TC-S2E1-045 |
+| US-S2E1-03-FC4 | TC-S2E1-046 |
 | US-S2E1-03-FC3 | TC-S2E1-038 |
 | US-S2E1-04-SC1 | TC-S2E1-039 |
 | US-S2E1-04-SC2 | TC-S2E1-040 |

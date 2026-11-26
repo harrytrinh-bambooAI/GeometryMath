@@ -56,8 +56,8 @@ Phiên bản: v0.2 · 2026-11-26
 
 - **Story:** Là giáo viên hoặc học sinh, tôi muốn tự đăng ký chỉ bằng tên hiển thị và vai, để dùng ứng dụng mà không phải đưa email, số điện thoại hay ngày sinh · Loại UI · Mức P0 · Khung LOGIN
 - **Nguồn:** PO-61, PO-62; DQ-15, DQ-16; BR-S2-01
-- **Góc nhìn người vận hành:** học sinh ngồi trước iPad ở đầu buổi, giáo viên ngồi máy tính ở nhà. Ca đáng kể: quên chép mã sau khi đăng ký; hai bạn cùng tên "An"; gõ tên có khoảng trắng thừa; bấm Đăng ký liên tiếp. Mã khôi phục chỉ có giáo viên (DQ-17).
-- **Phụ thuộc:** PO-63 (giới hạn tần suất tạo tài khoản); nội dung thông báo riêng tư bản 1.0 thuộc S3-E5 (xem QA-S2E1-07)
+- **Góc nhìn người vận hành:** học sinh ngồi trước iPad ở đầu buổi, giáo viên ngồi máy tính ở nhà. Ca đáng kể: quên chép mã sau khi đăng ký; hai bạn cùng tên "An"; gõ tên có khoảng trắng thừa; bấm Đăng ký liên tiếp. Mã khôi phục có cho cả giáo viên và học sinh, kể cả học sinh Tự học hoặc Chờ duyệt (PO-66 G3).
+- **Phụ thuộc:** PO-63 (giới hạn tần suất tạo tài khoản); văn bản thông báo riêng tư bản 1.0 lấy từ US-S3E5-02 (S3-E5): tick "đã đọc" ở S2-E1 hiện đúng văn bản đó và lưu cờ (PO-66 G5, QA-S2E1-07); nút "Xóa tài khoản" và chính sách lưu/xóa ở US-S3E5-05 (QA-S2E1-09)
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
@@ -65,7 +65,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S2E1-02 | Tên hiển thị từ 1 đến 60 ký tự sau khi bỏ khoảng trắng đầu và cuối; trùng tên được phép, mã người dùng phân biệt | MVP (BR-GEO-102), DQ-25 |
 | BR-S2E1-03 | Mật khẩu từ 8 đến 64 ký tự, người dùng tự đặt (TẠM, QA-S2E1-02) | PO-61 |
 | BR-S2E1-04 | Mã người dùng duy nhất toàn hệ thống, dạng `GV-` hoặc `HS-` cộng 8 ký tự chữ hoa và số, bỏ ký tự dễ nhầm O, 0, I, 1 (TẠM, DQ-16) | PO-61, DQ-16 |
-| BR-S2E1-05 | Mã khôi phục `RC-xxxx-xxxx-xxxx` chỉ sinh cho giáo viên, hiện đúng một lần, buộc tick "đã lưu" mới đi tiếp; học sinh không có mã khôi phục | PO-61, DQ-16, DQ-17 |
+| BR-S2E1-05 | Mã khôi phục `RC-xxxx-xxxx-xxxx` sinh cho mọi tài khoản mới (giáo viên và học sinh), hiện đúng một lần, buộc tick "đã lưu" mới đi tiếp | PO-61, DQ-16, DQ-17; PO-66 (G3) |
 | BR-S2E1-06 | Tối đa 5 lần đăng ký mỗi giờ mỗi địa chỉ mạng, quá thì RATE_LIMITED; bộ đếm theo địa chỉ mạng chỉ giữ tạm tối đa 1 giờ, không lưu thành bảng (BR-S3E5-37) (TẠM, QA-S2E1-03) | PO-63 |
 | BR-S2E1-16 | Tên hiển thị không được trông như email hoặc số điện thoại; luật chi tiết ở BR-S3E5-35 (US-S3E5-03) và phải chạy cùng đợt với đăng ký của chặng 2 (TẠM, RV_s23 M-06) | PO-61; BR-S3E5-35 |
 
@@ -76,10 +76,10 @@ Phiên bản: v0.2 · 2026-11-26
 - When: Chọn vai "Giáo viên"; gõ tên "Cô Trang", mật khẩu `Trang@2026x`; tick "đã đọc thông báo riêng tư (bản 1.0)"; bấm "Đăng ký"
 - Then: Màn mã hiện mã người dùng dạng `GV-xxxx-xxxx` (8 ký tự hợp lệ); hiện mã khôi phục dạng `RC-xxxx-xxxx-xxxx`; có nút "Sao chép" và "In / lưu ảnh"; có dòng cảnh báo mất cả mật khẩu lẫn mã khôi phục thì không lấy lại được
 
-**US-S2E1-01-SC2 — Học sinh đăng ký chỉ nhận mã người dùng** · Nguồn: PO-61; DQ-17
+**US-S2E1-01-SC2 — Học sinh đăng ký nhận mã người dùng và mã khôi phục** · Nguồn: PO-61; PO-66 (G3)
 - Given: Màn "Đăng ký" ở iPad; chưa có tài khoản tên "An"
 - When: Chọn vai "Học sinh"; gõ tên "An", mật khẩu `AnHoc#2026`; tick đã đọc thông báo; bấm "Đăng ký"
-- Then: Màn mã hiện mã dạng `HS-xxxx-xxxx`; không hiện mã khôi phục; có dòng "Quên mật khẩu thì nhờ giáo viên của lớp đặt lại"
+- Then: Màn mã hiện mã dạng `HS-xxxx-xxxx` và mã khôi phục dạng `RC-xxxx-xxxx-xxxx`; có dòng "Quên mật khẩu thì dùng mã khôi phục này; nếu đã vào lớp, thầy cô cũng đặt lại được"
 
 **US-S2E1-01-SC3 — Nút Tiếp tục chỉ mở khi đã tick "Tôi đã lưu mã"** · Nguồn: DQ-16
 - Given: Màn mã đang hiện (giáo viên)
@@ -241,17 +241,17 @@ Phiên bản: v0.2 · 2026-11-26
 - **Mở và quyết định đang dùng:** QA-S2E1-08 (mã không phân biệt hoa thường)
 - **DoR:** ready for R3, mức P0.
 
-## US-S2E1-03 — Giáo viên tự khôi phục mật khẩu bằng mã khôi phục (TẠM)
+## US-S2E1-03 — Giáo viên và học sinh tự khôi phục mật khẩu bằng mã khôi phục
 
-- **Story:** Là giáo viên quên mật khẩu, tôi muốn tự đặt lại bằng mã khôi phục đã lưu, để không phải nhờ ai · Loại UI · Mức P0 · Khung LOGIN
-- **Nguồn:** PO-61 (TẠM · vừa); DQ-17
-- **Góc nhìn người vận hành:** giáo viên quên mật khẩu sau kỳ nghỉ hè nhưng vẫn giữ tờ in mã khôi phục. Ca đáng kể: mất cả hai thì không có đường lấy lại, đã nói rõ lúc đăng ký (BRD delta mục 2 dòng 6); học sinh dùng nhầm đường này.
+- **Story:** Là giáo viên hoặc học sinh quên mật khẩu, tôi muốn tự đặt lại bằng mã khôi phục đã lưu, để không phải nhờ ai (học sinh Tự học hoặc Chờ duyệt không có giáo viên nào để nhờ) · Loại UI · Mức P0 · Khung LOGIN
+- **Nguồn:** PO-61; DQ-17; PO-66 (G3: mã khôi phục cho cả học sinh)
+- **Góc nhìn người vận hành:** giáo viên quên mật khẩu sau kỳ nghỉ hè nhưng vẫn giữ tờ in mã khôi phục. Ca đáng kể: mất cả hai thì không có đường lấy lại, đã nói rõ lúc đăng ký (BRD delta mục 2 dòng 6); học sinh Tự học quên mật khẩu (trước đây chỉ có đường tạo tài khoản mới và mất bài làm).
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E1-10 | Khôi phục cần mã người dùng giáo viên, mã khôi phục và mật khẩu mới (8 đến 64 ký tự); thành công thì mã khôi phục cũ hết hiệu lực và hiện mã khôi phục mới một lần (TẠM, QA-S2E1-01) | PO-61 |
+| BR-S2E1-10 | Khôi phục cần mã người dùng (`GV-` hoặc `HS-`), mã khôi phục và mật khẩu mới (8 đến 64 ký tự); thành công thì mã khôi phục cũ hết hiệu lực và hiện mã khôi phục mới một lần (TẠM, QA-S2E1-01) | PO-61 |
 | BR-S2E1-11 | Sai mã khôi phục tính vào một bộ đếm riêng: 10 lần sai trong 15 phút khóa đường khôi phục của tài khoản đó 15 phút | PO-53, BR-S2-01 |
-| BR-S2E1-12 | Học sinh không có đường khôi phục này; mã `HS-` dùng ở đây nhận cùng câu lỗi chung, không lộ vai | PO-61, DQ-17 |
+| BR-S2E1-12 | Học sinh ở mọi trạng thái lớp (Tự học, Chờ duyệt, Đang học) khôi phục như giáo viên; mã khôi phục của học sinh chỉ dùng được với đúng mã `HS-` của em; đặt lại bởi giáo viên của lớp (US-S3E1-04) vẫn là đường thứ hai cho em đã vào lớp | PO-61, DQ-17; PO-66 (G3) |
 
 ### Tiêu chí chấp nhận
 
@@ -275,10 +275,20 @@ Phiên bản: v0.2 · 2026-11-26
 - When: Nhập sai mã khôi phục 9 lần; nhập đúng ở lần 10 (nhánh A); nhánh B: sai 10 lần rồi nhập mã đúng ở lần 11
 - Then: Nhánh A: lần 10 thành công; nhánh B: sau lần sai thứ 10 bị khóa 15 phút, lần 11 đúng vẫn bị từ chối (RATE_LIMITED); đường đăng nhập bằng mật khẩu cũ vẫn dùng được
 
-**US-S2E1-03-FC2 — Mã học sinh dùng đường khôi phục nhận câu chung** · Nguồn: BR-S2E1-12; DQ-17
-- Given: Học sinh An (FX-02)
-- When: Nhập mã `HS-3F8A-2L6P` và một chuỗi bất kỳ làm mã khôi phục
-- Then: Hiện cùng câu "Mã người dùng hoặc mã khôi phục chưa đúng"; không nói "học sinh không có mã khôi phục"
+**US-S2E1-03-FC2 — Học sinh Tự học khôi phục được bằng mã khôi phục của mình** · Nguồn: BR-S2E1-12; PO-66 (G3)
+- Given: Học sinh An (FX-02) chưa vào lớp nào (Tự học), đã lưu mã khôi phục `RC-4F7H-2K9M-6Q3V`
+- When: Nhập mã `HS-3F8A-2L6P`, mã khôi phục đúng và mật khẩu mới `AnMoi#2027`; bấm "Đặt lại"; đăng nhập bằng mật khẩu mới
+- Then: Đặt lại thành công, hiện mã khôi phục mới một lần; đăng nhập được và thấy lịch sử Tự học cũ nguyên vẹn (không mất bài làm)
+
+**US-S2E1-03-SC4 — Học sinh Chờ duyệt khôi phục được mật khẩu** · Nguồn: BR-S2E1-12; PO-66 (G3)
+- Given: Học sinh Bình (FX-03) đang Chờ duyệt vào lớp 11A1, giáo viên chưa duyệt, có mã khôi phục hợp lệ
+- When: Bình khôi phục bằng mã `HS-5B7C-8R2T` và mã khôi phục đúng
+- Then: Khôi phục thành công; trạng thái Chờ duyệt giữ nguyên; Bình không cần nhờ giáo viên và không phải tạo tài khoản mới
+
+**US-S2E1-03-FC4 — Mã khôi phục của người khác không dùng được cho mã HS khác** · Nguồn: BR-S2E1-11; BR-S2E1-12; PO-66 (G3)
+- Given: Học sinh An và Bình mỗi em có mã khôi phục riêng
+- When: Nhập mã `HS-3F8A-2L6P` kèm mã khôi phục của Bình
+- Then: Hiện "Mã người dùng hoặc mã khôi phục chưa đúng"; mật khẩu của An không đổi; lần sai tính vào bộ đếm khôi phục của An (BR-S2E1-11)
 
 **US-S2E1-03-BV2 — Mật khẩu mới 7 ký tự bị chặn, 8 ký tự nhận** · Nguồn: BR-S2E1-10
 - Given: Cô Trang, mã khôi phục hợp lệ
@@ -349,7 +359,7 @@ Phiên bản: v0.2 · 2026-11-26
 
 ## Kiểm phủ
 
-- Story trong epic: 4; tiêu chí: 44. Mọi story của epic trong `story-map-s23.md` đều có mặt, không story thừa.
+- Story trong epic: 4; tiêu chí: 46. Mọi story của epic trong `story-map-s23.md` đều có mặt, không story thừa.
 - Câu hỏi mở và đề xuất đổi story map: `questions.md` cùng thư mục (không sửa story map, R2 đã khóa).
 
 ## Lịch sử
