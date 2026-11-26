@@ -7,14 +7,18 @@ Phiên bản: v0.1 · 2026-11-26 · <dự án> — agenda họp SỐNG duy nhấ
 ## A. Việc owner phải làm tay (env, quyền, thiết bị, dữ liệu, deploy)
 | # | Việc | Vì sao cần | Task chờ |
 |---|---|---|---|
+| A1 | Đặt `GEO_AI_API_KEY` (key Anthropic) trong shell chạy đo, báo "có key" | đo thật 4 chỉ số §9 (PO-60, vùng cấm F7) | T-261126-05 |
+| A2 | Xem / xóa DB rỗng `geo_e2e` ở cổng 54329 (checkout chính) | dọn rác agent e6 (PROGRESS 25/11) | — |
 
 ## B. Quyết định Claude đã tự chốt (owner OK / sửa)
 | # | Quyết định | Lý do + nguồn (giờ raw) | Ảnh hưởng | Hoàn tác |
 |---|---|---|---|---|
+| B1 | Sửa skill delivery-lead: `install.sh` (`-d .git`→`-e`) và `check_project.py` (`isdir`→`exists`) | worktree có `.git` là TỆP → script định `git init` lồng (26/11 11:30) | chỉ 2 dòng trong ~/.claude/skills/delivery-lead/scripts | đổi lại 2 dòng |
 
 ## C. Câu chỉ owner trả lời được (gồm xác nhận brief; một danh sách, gửi MỘT lần; mỗi câu: mã + nghĩa + lựa chọn + Claude nghiêng gì)
 | # | Câu hỏi | Lựa chọn → hệ quả | Mặc định đang dùng (TẠM) |
 |---|---|---|---|
+| C1 | Các câu chờ PO/BA còn mở từ trước: QF-E2-D10 (cận tham số 1000), Dev-E7-10 (BR-GEO-267 theo tên), D-GEO-184 (R3 số cắt cụt), NFR-GEO-056/D-GEO-125 (giới hạn tần suất); giả định PO-51…57 | OK → giữ; sửa → lô sửa sau MVP | giữ giả định hiện tại |
 
 ## Sau họp
 Cập nhật KQ + bỏ TẠM → chạy lại audit → chuyển dòng đã chốt sang DECISIONS.md.
