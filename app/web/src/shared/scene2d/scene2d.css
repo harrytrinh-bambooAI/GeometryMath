@@ -1,0 +1,70 @@
+/* Bộ vẽ 2D (S2-E2). Chỉ dùng token theme (styles/tokens.css), không mã màu cứng. */
+.s2d {
+  position: relative;
+  margin: 0 auto;
+  max-width: 100%;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  touch-action: manipulation;
+}
+.s2d-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.s2d-seg {
+  stroke: var(--text);
+  stroke-width: 2;
+}
+.s2d-circle {
+  fill: none;
+  stroke: var(--pri);
+  stroke-width: 2;
+}
+.s2d-vertex {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  font: inherit;
+}
+.s2d-vertex:focus-visible {
+  outline: 2px solid var(--pri);
+}
+.s2d-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--text);
+}
+.s2d-vertex.on .s2d-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--pri);
+  box-shadow: 0 0 0 4px var(--pri-s);
+}
+.s2d-label {
+  position: absolute;
+  left: 70%;
+  top: -6px;
+  font-family: var(--font-math, var(--font));
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--panel);
+  border-radius: var(--r-sm);
+  padding: 0 4px;
+  line-height: 1.3;
+}

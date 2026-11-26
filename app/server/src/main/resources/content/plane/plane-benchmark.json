@@ -1,0 +1,1114 @@
+{
+ "_doc": "Phiên bản: v1.0 · 2026-11-26 · T-261126-19 (US-S2E2-04). Bộ đề chuẩn hình phẳng chặng 2: 30 đề PLS-nn (tam giác 13, tứ giác 10, đường tròn 7; BR-S2E2-13). Mỗi đề: mã, đề, mô tả dựng (spec: dạng + ràng buộc + đại lượng hỏi, SCENE-CONTRACT-2D.md §2), đáp số tham chiếu, kiểu đáp số, người soát. PLS-01…04 = FX-10…13 (alias PL-01…04). Nạp: PlaneBenchmarkLoader (đáp số tham chiếu phải khớp engine, BR-S2E2-14). Người soát: TẠM, chờ giáo viên Toán (QA-S2E2-02).",
+ "version": 1,
+ "problems": [
+  {
+   "code": "PLS-01",
+   "alias": "PL-01",
+   "statement": "Tam giác ABC có AB = 5, AC = 12, BC = 13. Tính góc A.",
+   "spec": {
+    "shape": "triangle",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 5
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "C"
+      ],
+      "value": 12
+     },
+     {
+      "type": "length",
+      "of": [
+       "B",
+       "C"
+      ],
+      "value": 13
+     }
+    ],
+    "asked": {
+     "name": "góc A",
+     "kind": "angle",
+     "of": [
+      "B",
+      "A",
+      "C"
+     ]
+    }
+   },
+   "answer": "90°",
+   "answerType": "số đo góc",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-02",
+   "alias": "PL-02",
+   "statement": "Tam giác ABC cân tại A, góc A = 40°. Tính góc B.",
+   "spec": {
+    "shape": "isosceles_triangle",
+    "at": "A",
+    "given": [
+     {
+      "type": "angle",
+      "of": [
+       "B",
+       "A",
+       "C"
+      ],
+      "value": 40
+     }
+    ],
+    "asked": {
+     "name": "góc B",
+     "kind": "angle",
+     "of": [
+      "A",
+      "B",
+      "C"
+     ]
+    }
+   },
+   "answer": "70°",
+   "answerType": "số đo góc",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-03",
+   "alias": "PL-03",
+   "statement": "Hình chữ nhật ABCD có AB = 6, AD = 8. Tính AC.",
+   "spec": {
+    "shape": "rectangle",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 6
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "D"
+      ],
+      "value": 8
+     }
+    ],
+    "asked": {
+     "name": "AC",
+     "kind": "length",
+     "of": [
+      "A",
+      "C"
+     ]
+    }
+   },
+   "answer": "10",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-04",
+   "alias": "PL-04",
+   "statement": "Tam giác đều ABC cạnh 4. Tính diện tích tam giác.",
+   "spec": {
+    "shape": "equilateral_triangle",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 4
+     }
+    ],
+    "asked": {
+     "name": "S",
+     "kind": "area",
+     "of": []
+    }
+   },
+   "answer": "4√3",
+   "answerType": "diện tích",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-05",
+   "statement": "Tam giác ABC vuông tại A có AB = 3, AC = 4. Tính BC.",
+   "spec": {
+    "shape": "right_triangle",
+    "at": "A",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 3
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "C"
+      ],
+      "value": 4
+     }
+    ],
+    "asked": {
+     "name": "BC",
+     "kind": "length",
+     "of": [
+      "B",
+      "C"
+     ]
+    }
+   },
+   "answer": "5",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-06",
+   "statement": "Tam giác ABC có AB = 7, AC = 8, góc A = 60°. Tính BC.",
+   "spec": {
+    "shape": "triangle",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 7
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "C"
+      ],
+      "value": 8
+     },
+     {
+      "type": "angle",
+      "of": [
+       "B",
+       "A",
+       "C"
+      ],
+      "value": 60
+     }
+    ],
+    "asked": {
+     "name": "BC",
+     "kind": "length",
+     "of": [
+      "B",
+      "C"
+     ]
+    }
+   },
+   "answer": "√57",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-07",
+   "statement": "Tam giác đều ABC cạnh 6. Tính diện tích tam giác.",
+   "spec": {
+    "shape": "equilateral_triangle",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 6
+     }
+    ],
+    "asked": {
+     "name": "S",
+     "kind": "area",
+     "of": []
+    }
+   },
+   "answer": "9√3",
+   "answerType": "diện tích",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-08",
+   "statement": "Tam giác ABC vuông tại B có góc A = 30°, BC = 5. Tính AC.",
+   "spec": {
+    "shape": "right_triangle",
+    "at": "B",
+    "given": [
+     {
+      "type": "angle",
+      "of": [
+       "B",
+       "A",
+       "C"
+      ],
+      "value": 30
+     },
+     {
+      "type": "length",
+      "of": [
+       "B",
+       "C"
+      ],
+      "value": 5
+     }
+    ],
+    "asked": {
+     "name": "AC",
+     "kind": "length",
+     "of": [
+      "A",
+      "C"
+     ]
+    }
+   },
+   "answer": "10",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-09",
+   "statement": "Tam giác ABC cân tại A có AB = AC = 10, BC = 12. Tính diện tích tam giác.",
+   "spec": {
+    "shape": "isosceles_triangle",
+    "at": "A",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 10
+     },
+     {
+      "type": "length",
+      "of": [
+       "B",
+       "C"
+      ],
+      "value": 12
+     }
+    ],
+    "asked": {
+     "name": "S",
+     "kind": "area",
+     "of": []
+    }
+   },
+   "answer": "48",
+   "answerType": "diện tích",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-10",
+   "statement": "Tam giác ABC có AB = 7, BC = 3, CA = 5. Tính góc C.",
+   "spec": {
+    "shape": "triangle",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 7
+     },
+     {
+      "type": "length",
+      "of": [
+       "B",
+       "C"
+      ],
+      "value": 3
+     },
+     {
+      "type": "length",
+      "of": [
+       "C",
+       "A"
+      ],
+      "value": 5
+     }
+    ],
+    "asked": {
+     "name": "góc C",
+     "kind": "angle",
+     "of": [
+      "A",
+      "C",
+      "B"
+     ]
+    }
+   },
+   "answer": "120°",
+   "answerType": "số đo góc",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-11",
+   "statement": "Tam giác ABC vuông tại C có AC = 6, BC = 8. Tính khoảng cách từ C đến AB.",
+   "spec": {
+    "shape": "right_triangle",
+    "at": "C",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "C"
+      ],
+      "value": 6
+     },
+     {
+      "type": "length",
+      "of": [
+       "B",
+       "C"
+      ],
+      "value": 8
+     }
+    ],
+    "asked": {
+     "name": "d",
+     "kind": "distance",
+     "of": [
+      "C",
+      "A",
+      "B"
+     ]
+    }
+   },
+   "answer": "4,8",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-12",
+   "statement": "Tam giác ABC có AB = 13, BC = 14, CA = 15. Tính diện tích tam giác.",
+   "spec": {
+    "shape": "triangle",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 13
+     },
+     {
+      "type": "length",
+      "of": [
+       "B",
+       "C"
+      ],
+      "value": 14
+     },
+     {
+      "type": "length",
+      "of": [
+       "C",
+       "A"
+      ],
+      "value": 15
+     }
+    ],
+    "asked": {
+     "name": "S",
+     "kind": "area",
+     "of": []
+    }
+   },
+   "answer": "84",
+   "answerType": "diện tích",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-13",
+   "statement": "Tam giác đều ABC cạnh 2. Tính khoảng cách từ A đến BC.",
+   "spec": {
+    "shape": "equilateral_triangle",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 2
+     }
+    ],
+    "asked": {
+     "name": "d",
+     "kind": "distance",
+     "of": [
+      "A",
+      "B",
+      "C"
+     ]
+    }
+   },
+   "answer": "√3",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-14",
+   "statement": "Tam giác ABC cân tại A có AB = 5, góc A = 120°. Tính BC.",
+   "spec": {
+    "shape": "isosceles_triangle",
+    "at": "A",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 5
+     },
+     {
+      "type": "angle",
+      "of": [
+       "B",
+       "A",
+       "C"
+      ],
+      "value": 120
+     }
+    ],
+    "asked": {
+     "name": "BC",
+     "kind": "length",
+     "of": [
+      "B",
+      "C"
+     ]
+    }
+   },
+   "answer": "5√3",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-15",
+   "statement": "Hình vuông ABCD cạnh 5. Tính đường chéo AC.",
+   "spec": {
+    "shape": "square",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 5
+     }
+    ],
+    "asked": {
+     "name": "AC",
+     "kind": "length",
+     "of": [
+      "A",
+      "C"
+     ]
+    }
+   },
+   "answer": "5√2",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-16",
+   "statement": "Hình chữ nhật ABCD có AB = 5, đường chéo AC = 13. Tính diện tích hình chữ nhật.",
+   "spec": {
+    "shape": "rectangle",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 5
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "C"
+      ],
+      "value": 13
+     }
+    ],
+    "asked": {
+     "name": "S",
+     "kind": "area",
+     "of": []
+    }
+   },
+   "answer": "60",
+   "answerType": "diện tích",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-17",
+   "statement": "Hình bình hành ABCD có AB = 6, AD = 4, góc A = 60°. Tính diện tích hình bình hành.",
+   "spec": {
+    "shape": "parallelogram",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 6
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "D"
+      ],
+      "value": 4
+     },
+     {
+      "type": "angle",
+      "of": [
+       "D",
+       "A",
+       "B"
+      ],
+      "value": 60
+     }
+    ],
+    "asked": {
+     "name": "S",
+     "kind": "area",
+     "of": []
+    }
+   },
+   "answer": "12√3",
+   "answerType": "diện tích",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-18",
+   "statement": "Hình bình hành ABCD có AB = 5, AD = 3, góc A = 60°. Tính đường chéo BD.",
+   "spec": {
+    "shape": "parallelogram",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 5
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "D"
+      ],
+      "value": 3
+     },
+     {
+      "type": "angle",
+      "of": [
+       "D",
+       "A",
+       "B"
+      ],
+      "value": 60
+     }
+    ],
+    "asked": {
+     "name": "BD",
+     "kind": "length",
+     "of": [
+      "B",
+      "D"
+     ]
+    }
+   },
+   "answer": "√19",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-19",
+   "statement": "Hình thang cân ABCD (AB ∥ CD) có AB = 10, CD = 4, AD = 5. Tính diện tích hình thang.",
+   "spec": {
+    "shape": "trapezoid",
+    "isosceles": true,
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 10
+     },
+     {
+      "type": "length",
+      "of": [
+       "C",
+       "D"
+      ],
+      "value": 4
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "D"
+      ],
+      "value": 5
+     }
+    ],
+    "asked": {
+     "name": "S",
+     "kind": "area",
+     "of": []
+    }
+   },
+   "answer": "28",
+   "answerType": "diện tích",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-20",
+   "statement": "Hình thang ABCD vuông tại A (AB ∥ CD) có AB = 6, CD = 3, AD = 4. Tính BC.",
+   "spec": {
+    "shape": "trapezoid",
+    "at": "A",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 6
+     },
+     {
+      "type": "length",
+      "of": [
+       "C",
+       "D"
+      ],
+      "value": 3
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "D"
+      ],
+      "value": 4
+     }
+    ],
+    "asked": {
+     "name": "BC",
+     "kind": "length",
+     "of": [
+      "B",
+      "C"
+     ]
+    }
+   },
+   "answer": "5",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-21",
+   "statement": "Hình vuông ABCD có đường chéo AC = 6. Tính diện tích hình vuông.",
+   "spec": {
+    "shape": "square",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "C"
+      ],
+      "value": 6
+     }
+    ],
+    "asked": {
+     "name": "S",
+     "kind": "area",
+     "of": []
+    }
+   },
+   "answer": "18",
+   "answerType": "diện tích",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-22",
+   "statement": "Hình chữ nhật ABCD có AB = 8, AD = 6. Tính khoảng cách từ A đến BD.",
+   "spec": {
+    "shape": "rectangle",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 8
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "D"
+      ],
+      "value": 6
+     }
+    ],
+    "asked": {
+     "name": "d",
+     "kind": "distance",
+     "of": [
+      "A",
+      "B",
+      "D"
+     ]
+    }
+   },
+   "answer": "4,8",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-23",
+   "statement": "Hình thang ABCD (AB ∥ CD) có AB = 10, CD = 6, AD = 4, góc A = 60°. Tính diện tích hình thang.",
+   "spec": {
+    "shape": "trapezoid",
+    "given": [
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 10
+     },
+     {
+      "type": "length",
+      "of": [
+       "C",
+       "D"
+      ],
+      "value": 6
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "D"
+      ],
+      "value": 4
+     },
+     {
+      "type": "angle",
+      "of": [
+       "D",
+       "A",
+       "B"
+      ],
+      "value": 60
+     }
+    ],
+    "asked": {
+     "name": "S",
+     "kind": "area",
+     "of": []
+    }
+   },
+   "answer": "16√3",
+   "answerType": "diện tích",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-24",
+   "statement": "Đường tròn tâm O bán kính 5, dây AB = 8. Tính khoảng cách từ O đến AB.",
+   "spec": {
+    "shape": "circle_chord",
+    "given": [
+     {
+      "type": "radius",
+      "of": [
+       "O"
+      ],
+      "value": 5
+     },
+     {
+      "type": "length",
+      "of": [
+       "A",
+       "B"
+      ],
+      "value": 8
+     }
+    ],
+    "asked": {
+     "name": "d",
+     "kind": "distance",
+     "of": [
+      "O",
+      "A",
+      "B"
+     ]
+    }
+   },
+   "answer": "3",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-25",
+   "statement": "Đường tròn tâm O bán kính 6, góc AOB = 60°. Tính dây AB.",
+   "spec": {
+    "shape": "circle_chord",
+    "given": [
+     {
+      "type": "radius",
+      "of": [
+       "O"
+      ],
+      "value": 6
+     },
+     {
+      "type": "angle",
+      "of": [
+       "A",
+       "O",
+       "B"
+      ],
+      "value": 60
+     }
+    ],
+    "asked": {
+     "name": "AB",
+     "kind": "length",
+     "of": [
+      "A",
+      "B"
+     ]
+    }
+   },
+   "answer": "6",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-26",
+   "statement": "Đường tròn tâm O bán kính 10, dây AB cách O một khoảng 6. Tính AB.",
+   "spec": {
+    "shape": "circle_chord",
+    "given": [
+     {
+      "type": "radius",
+      "of": [
+       "O"
+      ],
+      "value": 10
+     },
+     {
+      "type": "distance",
+      "of": [
+       "O",
+       "A",
+       "B"
+      ],
+      "value": 6
+     }
+    ],
+    "asked": {
+     "name": "AB",
+     "kind": "length",
+     "of": [
+      "A",
+      "B"
+     ]
+    }
+   },
+   "answer": "16",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-27",
+   "statement": "Từ điểm M ngoài đường tròn (O; 3) với OM = 5 kẻ tiếp tuyến MT (T là tiếp điểm). Tính MT.",
+   "spec": {
+    "shape": "circle_tangent",
+    "given": [
+     {
+      "type": "radius",
+      "of": [
+       "O"
+      ],
+      "value": 3
+     },
+     {
+      "type": "length",
+      "of": [
+       "O",
+       "M"
+      ],
+      "value": 5
+     }
+    ],
+    "asked": {
+     "name": "MT",
+     "kind": "length",
+     "of": [
+      "M",
+      "T"
+     ]
+    }
+   },
+   "answer": "4",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-28",
+   "statement": "Từ điểm M ngoài đường tròn (O; 5) kẻ tiếp tuyến MT = 12 (T là tiếp điểm). Tính OM.",
+   "spec": {
+    "shape": "circle_tangent",
+    "given": [
+     {
+      "type": "radius",
+      "of": [
+       "O"
+      ],
+      "value": 5
+     },
+     {
+      "type": "length",
+      "of": [
+       "M",
+       "T"
+      ],
+      "value": 12
+     }
+    ],
+    "asked": {
+     "name": "OM",
+     "kind": "length",
+     "of": [
+      "O",
+      "M"
+     ]
+    }
+   },
+   "answer": "13",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-29",
+   "statement": "Từ điểm M ngoài đường tròn (O; 4) với OM = 8 kẻ tiếp tuyến MT. Tính góc OMT.",
+   "spec": {
+    "shape": "circle_tangent",
+    "given": [
+     {
+      "type": "radius",
+      "of": [
+       "O"
+      ],
+      "value": 4
+     },
+     {
+      "type": "length",
+      "of": [
+       "O",
+       "M"
+      ],
+      "value": 8
+     }
+    ],
+    "asked": {
+     "name": "góc OMT",
+     "kind": "angle",
+     "of": [
+      "O",
+      "M",
+      "T"
+     ]
+    }
+   },
+   "answer": "30°",
+   "answerType": "số đo góc",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  },
+  {
+   "code": "PLS-30",
+   "statement": "Đường tròn tâm O bán kính 2, góc AOB = 120°. Tính dây AB.",
+   "spec": {
+    "shape": "circle_chord",
+    "given": [
+     {
+      "type": "radius",
+      "of": [
+       "O"
+      ],
+      "value": 2
+     },
+     {
+      "type": "angle",
+      "of": [
+       "A",
+       "O",
+       "B"
+      ],
+      "value": 120
+     }
+    ],
+    "asked": {
+     "name": "AB",
+     "kind": "length",
+     "of": [
+      "A",
+      "B"
+     ]
+    }
+   },
+   "answer": "2√3",
+   "answerType": "độ dài",
+   "reviewer": "TẠM · đáp số tính tay bởi Dev (runner-T-261126-19), chờ giáo viên Toán soát (QA-S2E2-02, STAGES Ch2 §9)"
+  }
+ ]
+}
