@@ -4,6 +4,7 @@ import { api } from '../shared/api/client.ts';
 import { formatVnDateTime } from '../shared/time/vnTime.ts';
 import { tid } from '../shared/testid.ts';
 import { ErrorNotice } from '../shared/ui/ErrorNotice.tsx';
+import { Icon } from '../shared/ui/Icon.tsx';
 
 type Health = { status: string };
 
@@ -46,7 +47,7 @@ export function HomePage() {
           <h3>Trạng thái máy chủ</h3>
           {health ? (
             <p>
-              <span className="chip grn" data-testid={tid('home', 'server', 'status')} data-status={health.status}>
+              <span className="chip grn" data-testid={tid('home', 'server', 'status')} data-status={health.status}><Icon name="check" />
                 Máy chủ sẵn sàng
               </span>
             </p>

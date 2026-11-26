@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { tid } from '../../shared/testid.ts';
 import { M, msg27, remaining } from './api.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /**
  * Thẻ khóa của tab "Lời giải" (khung Design/mvp-05): Sắp mở → MSG-GEO-27 "Lời giải mở lúc {HH:mm, dd/MM/yyyy}" và dòng
@@ -19,7 +20,7 @@ export function LockCard(props: { state: string; releaseAt?: string | null; serv
   if (state === 'open') {
     return (
       <div className="card e6-lock" data-testid={tid('e6', 'lock')} data-state="open">
-        <strong data-testid={tid('e6', 'lock', 'title')}>{M['29']}</strong>
+        <strong data-testid={tid('e6', 'lock', 'title')}><Icon name="unlock" inline />{M['29']}</strong>
       </div>
     );
   }
@@ -28,7 +29,7 @@ export function LockCard(props: { state: string; releaseAt?: string | null; serv
     const left = new Date(releaseAt).getTime() - (tick + offset);
     return (
       <div className="card e6-lock" data-testid={tid('e6', 'lock')} data-state="upcoming">
-        <strong data-testid={tid('e6', 'lock', 'title')}>{msg27(releaseAt)}</strong>
+        <strong data-testid={tid('e6', 'lock', 'title')}><Icon name="schedule" inline />{msg27(releaseAt)}</strong>
         <p className="small" data-testid={tid('e6', 'lock', 'sub')}>
           {M['27sub']} <span data-testid={tid('e6', 'lock', 'left')}>{remaining(left)}.</span>
         </p>
@@ -37,7 +38,7 @@ export function LockCard(props: { state: string; releaseAt?: string | null; serv
   }
   return (
     <div className="card e6-lock" data-testid={tid('e6', 'lock')} data-state="unset">
-      <strong data-testid={tid('e6', 'lock', 'title')}>{M['28']}</strong>
+      <strong data-testid={tid('e6', 'lock', 'title')}><Icon name="lock" inline />{M['28']}</strong>
       <p className="small" data-testid={tid('e6', 'lock', 'sub')}>
         {M['28sub']}
       </p>

@@ -22,6 +22,7 @@ import { buildRender, type P2, type RenderModel } from './render.ts';
 import { overlayShapes, overlaySnapshot, SolutionOverlay, type ViewerOverlay } from './overlay.tsx';
 import { TOOL_EVENT_CODE, type LockState, type ToolId, type ViewerSolid } from './types.ts';
 import './viewer.css';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /**
  * BỘ XEM 3D DÙNG CHUNG (E3; E4 dùng lại cho lời giải đồng bộ hình). API: xem README.md cùng thư mục.
@@ -355,7 +356,7 @@ export function Figure3DViewer({
         </div>
         <Chips solid={solid} measures={figL.measures} T={T} />
         {toast && (
-          <div className="gv-toast" role="status" data-testid={T('toast')} data-code={toast.code ? `MSG-GEO-${toast.code}` : ''}>
+          <div className="gv-toast" role="status" data-testid={T('toast')} data-code={toast.code ? `MSG-GEO-${toast.code}` : ''}><Icon name="info" />
             {toast.text}
           </div>
         )}

@@ -1,4 +1,5 @@
 import type { RouteObject } from 'react-router';
+import type { IconName } from '../shared/ui/icons.ts';
 
 /** Mục trên thanh dọc (rail) của vùng Giáo viên / Học sinh. */
 export interface NavItem {
@@ -8,6 +9,8 @@ export interface NavItem {
   label: string;
   /** data-testid của mục, theo quy ước tid(): ví dụ 'e2-nav-kho-de'. */
   testId: string;
+  /** Icon trên thanh dọc (tên trong shared/ui/icons.ts); bỏ trống = icon chung 'layers'. */
+  icon?: IconName;
 }
 
 /** Mã feature: MVP e1…e7; chặng 2 s2e1…s2e9; chặng 3 s3e1…s3e6 (chỗ cắm do T-261126-41 tạo sẵn). */

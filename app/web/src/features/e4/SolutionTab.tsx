@@ -8,6 +8,8 @@ import { highlightLine, type HelpModel } from './useHelp.ts';
 import { M as E6M } from '../e6/api.ts';
 import { LockCard } from '../e6/LockCard.tsx';
 import { useReleaseWatch } from '../e6/useReleaseWatch.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
+import { verifyIcon } from '../../shared/ui/icons.ts';
 
 /** Thông điệp khóa của tab "Lời giải" theo trạng thái máy chủ (MSG-GEO-30, 31, 58; bài lớp: giờ mở của giáo viên). */
 function lockText(state: string, message: string | null | undefined, releaseAt: string | null | undefined): string {
@@ -72,7 +74,7 @@ export function SolutionTab({ id, model }: { id: string; model: HelpModel }) {
     return () => window.clearTimeout(t);
   }, [serverOpen, state, refresh]);
   const opened = watch.justOpened ? (
-    <p className="chip grn e6-toast" role="status" data-testid={tid('e6', 'toast', 'opened')}>
+    <p className="chip grn e6-toast" role="status" data-testid={tid('e6', 'toast', 'opened')}><Icon name="unlock" />
       {E6M['55']}
     </p>
   ) : null;
@@ -90,7 +92,7 @@ export function SolutionTab({ id, model }: { id: string; model: HelpModel }) {
             receivedAt={watch.receivedAt}
           />
         ) : (
-          <p className="e4-lock" data-testid={tid('e4', 'solution', 'locked')} data-state={state}>
+          <p className="e4-lock" data-testid={tid('e4', 'solution', 'locked')} data-state={state}><Icon name="lock" inline />
             {lockText(state ?? 'release', help.solution.message, help.solution.releaseAt)}
           </p>
         )}
@@ -103,7 +105,7 @@ export function SolutionTab({ id, model }: { id: string; model: HelpModel }) {
         {opened}
         {help.kind === 'self' && (
           <button type="button" className="btn primary" disabled={busy} data-testid={tid('e4', 'solution', 'view')}
-            onClick={() => void open()}>
+            onClick={() => void open()}><Icon name="eye" />
             Xem lời giải
           </button>
         )}
@@ -123,11 +125,11 @@ export function SolutionTab({ id, model }: { id: string; model: HelpModel }) {
     <div className="e4-solution" data-testid={tid('e4', 'solution')} data-state="open" data-step={step + 1}>
       {opened}
       <div className="row e4-labels">
-        <span className={`chip ${solution.machineLabel === 'Đã kiểm chứng' ? 'grn' : 'yel'}`} data-testid={tid('e4', 'solution', 'label', 'machine')}>
+        <span className={`chip ${solution.machineLabel === 'Đã kiểm chứng' ? 'grn' : 'yel'}`} data-testid={tid('e4', 'solution', 'label', 'machine')}><Icon name={verifyIcon(solution.machineLabel === 'Đã kiểm chứng')} />
           {solution.machineLabel}
         </span>
         {solution.humanLabel && (
-          <span className="chip pur" data-testid={tid('e4', 'solution', 'label', 'human')}>
+          <span className="chip pur" data-testid={tid('e4', 'solution', 'label', 'human')}><Icon name="shield" />
             {solution.humanLabel}
           </span>
         )}
@@ -162,11 +164,11 @@ export function SolutionTab({ id, model }: { id: string; model: HelpModel }) {
       )}
       <div className="row">
         <button type="button" className="btn ghost" disabled={step === 0} data-testid={tid('e4', 'step', 'prev')}
-          onClick={() => setStep(Math.max(0, step - 1))}>
+          onClick={() => setStep(Math.max(0, step - 1))}><Icon name="prev" />
           Bước trước
         </button>
         <button type="button" className="btn ghost" disabled={step === last} data-testid={tid('e4', 'step', 'next')}
-          onClick={() => setStep(Math.min(last, step + 1))}>
+          onClick={() => setStep(Math.min(last, step + 1))}><Icon name="next" />
           Bước sau
         </button>
       </div>

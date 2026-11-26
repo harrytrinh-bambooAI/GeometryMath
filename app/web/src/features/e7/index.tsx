@@ -17,6 +17,6 @@ export const feature: FeatureModule = {
     { path: 'theo-doi/:id', element: <MonitorPage /> },
   ],
   studentRoutes: [],
-  teacherNav: [{ to: 'theo-doi', label: 'Theo dõi', testId: 'e7-nav-theo-doi' }],
+  teacherNav: [{ to: 'theo-doi', label: 'Theo dõi', testId: 'e7-nav-theo-doi', icon: 'chart' }],
   studentNav: [],
 };

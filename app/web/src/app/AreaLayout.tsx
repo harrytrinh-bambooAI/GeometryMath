@@ -4,6 +4,7 @@ import type { NavItem } from '../features/index.ts';
 import { UNAUTHENTICATED_EVENT } from '../shared/auth/session.ts';
 import { tid } from '../shared/testid.ts';
 import { syncAccountTheme } from '../shared/theme/theme.ts';
+import { Icon } from '../shared/ui/Icon.tsx';
 
 /**
  * Khung một vùng (Giáo viên `gv` / Học sinh `hs`): rail bên trái + vùng nội dung.
@@ -29,20 +30,23 @@ export function AreaLayout({ area, title, nav }: { area: 'gv' | 'hs'; title: str
     <div className="shell" data-testid={tid(area, 'shell')}>
       <nav className="rail" aria-label={`Điều hướng ${title}`} data-testid={tid(area, 'rail')}>
         <NavLink to="/" className="logo" data-testid={tid('shell', 'home')} aria-label="Trang chủ">
-          H
+          <Icon name="cube" />
         </NavLink>
         {/* BR-GEO-307 (D-GEO-129): thanh bên của giáo viên không có "Tổng quan", "Lớp học" ở MVP */}
         {area === 'hs' ? (
           <NavLink to={`/${area}`} end data-testid={tid(area, 'nav', 'overview')}>
+            <Icon name="home" />
             Tổng quan
           </NavLink>
         ) : null}
         {nav.map((n) => (
           <NavLink key={n.to} to={`/${area}/${n.to}`} data-testid={n.testId}>
+            <Icon name={n.icon ?? 'layers'} />
             {n.label}
           </NavLink>
         ))}
         <NavLink to={`/${area}/cai-dat`} className="rail-end" data-testid={tid(area, 'nav', 'settings')}>
+          <Icon name="settings" />
           Cài đặt
         </NavLink>
       </nav>

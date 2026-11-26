@@ -5,6 +5,7 @@ import { tid } from '../../shared/testid.ts';
 import { e4Api, isNetworkError, M, type Asked } from './api.ts';
 import { KwText, useOpenLecture } from './Lecture.tsx';
 import type { AskTurn, HelpModel } from './useHelp.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /** Một câu trả lời của trợ lý: nội dung (từ khóa bấm được) + dòng "Nguồn: …" kèm tên bài giảng bấm được (BR-GEO-189). */
 export function AnswerView({ a, testId }: { a: Asked; testId: string }) {
@@ -90,7 +91,7 @@ export function AskTab({ id, model }: { id: string; model: HelpModel }) {
               <p role="alert" className="e4-err" data-testid={tid('e4', 'qa', 'error')}>
                 {errorOf(t.error)}{' '}
                 {!(t.error instanceof ApiError && t.error.code === 'FORBIDDEN') && (
-                  <button type="button" className="btn ghost" data-testid={tid('e4', 'qa', 'retry')} onClick={() => void send(t)}>
+                  <button type="button" className="btn ghost" data-testid={tid('e4', 'qa', 'retry')} onClick={() => void send(t)}><Icon name="redo" />
                     Thử lại
                   </button>
                 )}
@@ -109,7 +110,7 @@ export function AskTab({ id, model }: { id: string; model: HelpModel }) {
           data-testid={tid('e4', 'qa', 'input')}
           aria-label="Câu hỏi"
         />
-        <button type="submit" className="btn" disabled={pending} data-testid={tid('e4', 'qa', 'send')}>
+        <button type="submit" className="btn" disabled={pending} data-testid={tid('e4', 'qa', 'send')}><Icon name="send" />
           Gửi
         </button>
       </form>

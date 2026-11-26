@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { tid } from '../../shared/testid.ts';
 import { ReleaseCard } from '../e6/ReleaseCard.tsx';
 import { remaining } from './format.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /**
  * Thẻ vàng "Lời giải đang khóa" của Theo dõi lớp (BR-GEO-269): bài Chưa đặt giờ hoặc Sắp mở; bài Đã mở không có thẻ.
@@ -34,7 +35,7 @@ export function LockSlot({
     >
       <ReleaseCard assignmentId={assignmentId} onChanged={onChanged} />
       {!open && releaseAt ? (
-        <p className="small muted" data-testid={tid('e7', 'lock', 'left')}>
+        <p className="small muted" data-testid={tid('e7', 'lock', 'left')}><Icon name="schedule" inline />
           {remaining(new Date(releaseAt).getTime() - now)}
         </p>
       ) : null}

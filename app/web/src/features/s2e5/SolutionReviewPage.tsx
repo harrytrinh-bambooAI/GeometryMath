@@ -10,6 +10,7 @@ import { ReviewBox } from './ReviewBox.tsx';
 import { StepList } from './StepList.tsx';
 import { TrustLabels } from './TrustLabels.tsx';
 import './s2e5.css';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 interface Notice {
   kind: 'info' | 'error';
@@ -199,15 +200,15 @@ function ReviewScreen({ id }: { id: string }) {
             {readOnly ? `Bản cũ, chỉ đọc (mới nhất v${doc.latestVersion})` : dirty ? 'Có thay đổi chưa lưu' : 'Đang soạn'}
           </span>
           <span className="s2e5-grow" />
-          <button type="button" className="btn ghost" disabled={busy || dirty} onClick={check} title={dirty ? 'Lưu trước khi kiểm' : undefined} data-testid="s2e5-check">
+          <button type="button" className="btn ghost" disabled={busy || dirty} onClick={check} title={dirty ? 'Lưu trước khi kiểm' : undefined} data-testid="s2e5-check"><Icon name="check" />
             Kiểm tra lại
           </button>
           {readOnly ? (
-            <button type="button" className="btn" disabled={busy} onClick={() => run(() => reuseVersion(id, v.version))} data-testid="s2e5-reuse">
+            <button type="button" className="btn" disabled={busy} onClick={() => run(() => reuseVersion(id, v.version))} data-testid="s2e5-reuse"><Icon name="redo" />
               Dùng bản này
             </button>
           ) : (
-            <button type="button" className="btn" disabled={busy} onClick={save} data-testid="s2e5-save">
+            <button type="button" className="btn" disabled={busy} onClick={save} data-testid="s2e5-save"><Icon name="save" />
               Lưu
             </button>
           )}
@@ -240,7 +241,7 @@ function ReviewScreen({ id }: { id: string }) {
           </div>
         )}
         {issue && (
-          <p className="alert" role="alert" data-testid="s2e5-issue">
+          <p className="alert" role="alert" data-testid="s2e5-issue"><Icon name="warn" />
             {issue.message}
           </p>
         )}
@@ -248,7 +249,7 @@ function ReviewScreen({ id }: { id: string }) {
           <div className={notice.kind === 'error' ? 'alert' : 's2e5-ban pri'} role="status" data-testid="s2e5-notice">
             {notice.text}
             {notice.retry && (
-              <button type="button" className="btn ghost s2e5-retry" onClick={notice.retry} data-testid="s2e5-retry">
+              <button type="button" className="btn ghost s2e5-retry" onClick={notice.retry} data-testid="s2e5-retry"><Icon name="redo" />
                 Thử lại
               </button>
             )}

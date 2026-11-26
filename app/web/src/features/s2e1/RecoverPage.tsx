@@ -6,6 +6,7 @@ import type { CodeSession } from '../../shared/auth/codeSession.ts';
 import { tid } from '../../shared/testid.ts';
 import { CodeBox, SavedGate } from './CodeBox.tsx';
 import { MSG, checkPassword, codeOf, fieldErrorOf, messageOf, s2e1Api } from './api.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /**
  * C3-01 "Lấy lại tài khoản bằng mã khôi phục" (US-S2E1-03): mã người dùng + mã khôi phục + mật khẩu mới. Xong thì
@@ -137,7 +138,7 @@ export function RecoverPage({ area }: { area: 'gv' | 'hs' }) {
           ) : null}
         </label>
         {error ? (
-          <div className={locked ? 's2e1-ban red' : 'alert'} role="alert" data-testid={tid('s2e1', 'recover', 'error')} data-error-code={error.code}>
+          <div className={locked ? 's2e1-ban red' : 'alert'} role="alert" data-testid={tid('s2e1', 'recover', 'error')} data-error-code={error.code}><Icon name={locked ? 'lock' : 'warn'} inline />
             {error.text}
           </div>
         ) : null}

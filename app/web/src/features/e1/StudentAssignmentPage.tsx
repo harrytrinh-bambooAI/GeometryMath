@@ -9,6 +9,8 @@ import { AssignmentScene } from '../e2/ProblemDetailPage.tsx';
 import { MSG, errorText } from './messages.ts';
 import { RELEASE_LABEL, VERIFY_LABEL } from './studentApi.ts';
 import type { Asked, StudentAssignment } from './studentApi.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
+import { verifyIcon, releaseIcon } from '../../shared/ui/icons.ts';
 
 /**
  * Một bài giao của học sinh (tối thiểu cho E1): đề, trạng thái giờ mở, tiến độ, nhãn máy và khung Hỏi đáp
@@ -49,11 +51,11 @@ export function StudentAssignmentPage() {
         {a.statement}
       </p>
       <p>
-        <span className="chip" data-testid={tid('e1', 'assignment-page', 'release')} data-status={a.releaseState}>
+        <span className="chip" data-testid={tid('e1', 'assignment-page', 'release')} data-status={a.releaseState}><Icon name={releaseIcon(a.releaseState)} />
           Lời giải: {RELEASE_LABEL[a.releaseState]}
           {a.releaseState === 'upcoming' && a.releaseAt ? ` · mở lúc ${formatVnDateTime(a.releaseAt)}` : ''}
         </span>{' '}
-        <span className="chip" data-testid={tid('e1', 'assignment-page', 'label')} data-status={a.verifyStatus}>
+        <span className="chip" data-testid={tid('e1', 'assignment-page', 'label')} data-status={a.verifyStatus}><Icon name={verifyIcon(a.verifyStatus === 'verified')} />
           {VERIFY_LABEL[a.verifyStatus]}
         </span>{' '}
         <span className="chip" data-testid={tid('e1', 'assignment-page', 'progress')}>
@@ -62,7 +64,7 @@ export function StudentAssignmentPage() {
       </p>
       <p>
         {/* E3: không gian làm bài trên hình 3D */}
-        <Link className="btn primary" to={`/hs/lam-bai/${encodeURIComponent(a.id)}`} data-testid={tid('e1', 'assignment-page', 'workspace')}>
+        <Link className="btn primary" to={`/hs/lam-bai/${encodeURIComponent(a.id)}`} data-testid={tid('e1', 'assignment-page', 'workspace')}><Icon name="pencil" />
           Làm bài trên hình
         </Link>
       </p>
@@ -126,7 +128,7 @@ function QaPanel({ assignmentId }: { assignmentId: string }) {
           <div className="alert" role="alert" data-testid={tid('e1', 'qa', 'error')}
             data-error-code={failed.error instanceof ApiError ? failed.error.code : 'UNKNOWN'}>
             {busyOrServer(failed.error) ? MSG['14'] : errorText(failed.error)}{' '}
-            <button type="button" className="btn ghost" onClick={() => void send(failed.question)} data-testid={tid('e1', 'qa', 'retry')}>
+            <button type="button" className="btn ghost" onClick={() => void send(failed.question)} data-testid={tid('e1', 'qa', 'retry')}><Icon name="redo" />
               Thử lại
             </button>
           </div>
@@ -140,7 +142,7 @@ function QaPanel({ assignmentId }: { assignmentId: string }) {
           disabled={pending !== null}
           data-testid={tid('e1', 'qa', 'input')}
         />
-        <button type="submit" className="btn" disabled={pending !== null} data-testid={tid('e1', 'qa', 'send')}>
+        <button type="submit" className="btn" disabled={pending !== null} data-testid={tid('e1', 'qa', 'send')}><Icon name="send" />
           Gửi
         </button>
       </form>

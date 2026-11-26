@@ -19,5 +19,5 @@ export const feature: FeatureModule = {
     { path: 'kham-pha/:code', element: <ExplorePage /> },
   ],
   teacherNav: [],
-  studentNav: [{ to: 'lich-su', label: 'Lịch sử', testId: 'e4-nav-lich-su' }],
+  studentNav: [{ to: 'lich-su', label: 'Lịch sử', testId: 'e4-nav-lich-su', icon: 'clock' }],
 };

@@ -4,6 +4,8 @@ import { measure, type Measure, type MeasureKind } from '../../shared/scene2d/ge
 import { Scene2DView } from '../../shared/scene2d/Scene2DView.tsx';
 import { fetchPlane, type PlaneView } from './api.ts';
 import './s2e2.css';
+import { Icon } from '../../shared/ui/Icon.tsx';
+import { verifyIcon } from '../../shared/ui/icons.ts';
 
 export const MSG_LOCKED = 'Đại lượng này là đáp số, chưa đo được';
 export const MSG_OFFLINE = 'Không tải được bài. Kiểm tra mạng rồi bấm Thử lại.';
@@ -81,7 +83,7 @@ export function PlaneWorkPage() {
       <div className="s2e2-page">
         <div className="alert" role="alert" data-testid="s2e2-error">
           {MSG_OFFLINE}{' '}
-          <button type="button" className="btn" onClick={() => setAttempt((n) => n + 1)} data-testid="s2e2-retry">
+          <button type="button" className="btn" onClick={() => setAttempt((n) => n + 1)} data-testid="s2e2-retry"><Icon name="redo" />
             Thử lại
           </button>
         </div>
@@ -94,7 +96,7 @@ export function PlaneWorkPage() {
     <div className="s2e2-page" data-testid="s2e2-page" data-code={d.code}>
       <section className="card s2e2-figure-card">
         <header className="s2e2-labels" data-testid="s2e2-labels">
-          <span className={`chip ${d.machineLabel === VERIFIED ? 'grn' : 'yel'}`} data-testid="s2e2-label-machine">
+          <span className={`chip ${d.machineLabel === VERIFIED ? 'grn' : 'yel'}`} data-testid="s2e2-label-machine"><Icon name={verifyIcon(d.machineLabel === VERIFIED)} />
             {d.machineLabel}
           </span>
           <span className="chip" data-testid="s2e2-label-human">
@@ -139,7 +141,7 @@ export function PlaneWorkPage() {
             {tool === 'length' ? 'Chạm hai đỉnh' : 'Chạm ba đỉnh, đỉnh của góc ở giữa'} ({picked.length}/{need})
           </p>
           {notice ? (
-            <p className="s2e2-notice" role="status" data-testid="s2e2-locked">
+            <p className="s2e2-notice" role="status" data-testid="s2e2-locked"><Icon name="lock" inline />
               {notice}
             </p>
           ) : null}

@@ -13,6 +13,8 @@
  *   hình khối --r (thẻ) --r-sm (ô nhỏ) --r-btn (nút) --r-chip --sh (bóng thẻ) --focus (vòng tiêu điểm)
  *   chữ       --font --font-mono --font-math (nội dung toán) --fs --fs-sm --fs-chip --fs-rail
  *             (cả 4 theme: chữ phụ --fs-sm/--fs-chip ≥ 14 px theo PO-66 G17, T-261126-44; nhãn thanh dọc --fs-rail 12 px)
+ *   icon      --ic (cỡ icon trong nút, thanh dọc, ghi chú) --ic-chip (trong chip, nút nhỏ); màu icon = currentColor
+ *             (một bộ Material Symbols Rounded đặc cho cả 4 theme, lệnh owner 26/11; luật ở icons.css)
  *   mật độ    --ctl-h (cao nút/ô nhập với chuột) --gap --pad-card --rail-w --rail-bg
  * Cảm ứng (iPad/iPhone, pointer: coarse): base.css nâng vùng chạm lên tối thiểu --touch (44 px) cho mọi theme.
  */
@@ -63,6 +65,8 @@
   --fs-chip: 14px;
   --fs-rail: 12px;
   --ctl-h: 36px;
+  --ic: 18px;
+  --ic-chip: 14px;
   --gap: 14px;
   --pad-card: 14px 16px;
   --rail-w: 92px;
@@ -115,6 +119,8 @@
   --fs-chip: 14px;
   --fs-rail: 12px;
   --ctl-h: 52px;
+  --ic: 24px;
+  --ic-chip: 18px;
   --gap: 20px;
   --pad-card: 20px;
   --rail-w: 92px;
@@ -166,6 +172,8 @@
   --fs-chip: 14px;
   --fs-rail: 12px;
   --ctl-h: 48px;
+  --ic: 20px;
+  --ic-chip: 16px;
   --gap: 16px;
   --pad-card: 20px;
   --rail-w: 92px;
@@ -220,6 +228,8 @@
   --fs-chip: 14px;
   --fs-rail: 12px;
   --ctl-h: 44px;
+  --ic: 22px;
+  --ic-chip: 16px;
   --gap: 18px;
   --pad-card: 18px;
   --rail-w: 92px;

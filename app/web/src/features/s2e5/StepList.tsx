@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { CheckState, StepView } from './api.ts';
 import { MAX_STEPS, MSG, type DraftStep } from './logic.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 const CHIP: Record<CheckState, { cls: string; label: string }> = {
   pass: { cls: 'chip grn', label: 'Đạt' },
@@ -79,13 +80,13 @@ export function StepList({ draft, saved, changedFrom, readOnly, issueIndex, onCh
               </span>
               {!readOnly && (
                 <span className="s2e5-step-actions">
-                  <button type="button" className="btn ghost" disabled={i === 0} onClick={() => onMove(i, i - 1)} aria-label={`Đưa bước ${no} lên`} data-testid={`s2e5-step-up-${no}`}>
+                  <button type="button" className="btn ghost" disabled={i === 0} onClick={() => onMove(i, i - 1)} aria-label={`Đưa bước ${no} lên`} data-testid={`s2e5-step-up-${no}`}><Icon name="up" />
                     Lên
                   </button>
-                  <button type="button" className="btn ghost" disabled={i === draft.length - 1} onClick={() => onMove(i, i + 1)} aria-label={`Đưa bước ${no} xuống`} data-testid={`s2e5-step-down-${no}`}>
+                  <button type="button" className="btn ghost" disabled={i === draft.length - 1} onClick={() => onMove(i, i + 1)} aria-label={`Đưa bước ${no} xuống`} data-testid={`s2e5-step-down-${no}`}><Icon name="down" />
                     Xuống
                   </button>
-                  <button type="button" className="btn ghost" onClick={() => onDelete(i)} aria-label={`Xóa bước ${no}`} data-testid={`s2e5-step-delete-${no}`}>
+                  <button type="button" className="btn ghost" onClick={() => onDelete(i)} aria-label={`Xóa bước ${no}`} data-testid={`s2e5-step-delete-${no}`}><Icon name="trash" />
                     Xóa
                   </button>
                 </span>

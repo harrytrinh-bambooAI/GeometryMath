@@ -29,6 +29,8 @@ Mọi phiên bản thư viện ghim chính xác (`.npmrc` có `save-exact=true`)
 | `src/shared/time/vnTime.ts` | `formatVnDateTime/Date/Time`: LUÔN giờ Asia/Ho_Chi_Minh (BR-GEO-233) |
 | `src/shared/figure3d/Figure3D.tsx` | chỗ đặt hình 3D; `loadThree()` nạp Three.js động (chưa làm tính năng) |
 | `src/shared/ui/ErrorNotice.tsx` | hiển thị lỗi + mã yêu cầu + nút Thử lại |
+| `src/shared/ui/Icon.tsx`, `icons.ts` | icon dùng chung `<Icon name="check" />` (aria-hidden, màu `currentColor` theo token theme). MỘT bộ Material Symbols Rounded đặc cho cả 4 theme (DECISIONS 26/11). Mục rail khai báo `icon` trong `NavItem` |
+| `src/styles/icons.css`, `src/assets/fonts/` | luật `.ms` + font icon TỰ LƯU (chỉ các glyph trong `icons.ts`, ~7 KB, Apache-2.0; không gọi Google lúc chạy). Thêm icon: sửa `icons.ts` rồi `node scripts/fetch-icon-font.mjs` |
 | `src/styles/tokens.css` | token màu, bo góc, bóng, font chép từ `Design/assets/ds.css` (bộ CSS của `Design/prototype/index.html`) |
 
 ### Epic cắm màn như thế nào
