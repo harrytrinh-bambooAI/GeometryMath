@@ -1,0 +1,17 @@
+{
+  "_doc": "S2-E5 (T-261126-20): mã cố định của app/db/seed/e2e/820_s2e5_core.sql. F-S2-82nnnn → 00000000-0000-7000-8002-00000082nnnn. Sổ lời giải theo (TC, làn): F-S2-(820000000 + TC × 100 + làn), làn 0…5 = api, ui-chromium, ui-webkit, ui-iphone, mobile-iphone, mobile-pixel; chủ sổ là Cô Trang FX-01 (F-S2-001, s2e1.json), riêng TC 36 và 65 thuộc Cô Trang F-S2-820003 của \"Nhóm thử S2-E5\".",
+  "orgs": {
+    "F-S2-820001": { "id": "00000000-0000-7000-8002-000000820001", "name": "Nhóm thử S2-E5" }
+  },
+  "users": {
+    "F-S2-820002": { "id": "00000000-0000-7000-8002-000000820002", "org": "F-S2-100", "role": "TEACHER", "displayName": "Cô Lan" },
+    "F-S2-820003": { "id": "00000000-0000-7000-8002-000000820003", "org": "F-S2-820001", "role": "TEACHER", "displayName": "Cô Trang" },
+    "F-S2-820020": { "id": "00000000-0000-7000-8002-000000820020", "org": "F-S2-820001", "role": "STUDENT", "displayName": "An" }
+  },
+  "problems": {
+    "F-S2-820100": { "id": "00000000-0000-7000-8002-000000820100", "versionId": "00000000-0000-7000-8002-000000820101", "code": "SP-01", "note": "làn k = 0…6: đề 820100 + 10k, version 820101 + 10k" }
+  },
+  "assignments": {
+    "F-S2-823600": { "id": "00000000-0000-7000-8002-000000823600", "code": "SP-01", "state": "locked" }
+  }
+}
