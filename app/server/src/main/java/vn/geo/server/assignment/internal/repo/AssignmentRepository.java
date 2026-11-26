@@ -72,6 +72,9 @@ public class AssignmentRepository {
     return jdbc.sql(
             STUDENT_SELECT
                 + " AND a.id < COALESCE(CAST(:afterId AS uuid), 'ffffffff-ffff-ffff-ffff-ffffffffffff')"
+                // S2-E8: câu của bài luyện (assignment_item) hiện ở "Bài luyện", không lặp ở "Bài
+                // của em"
+                + " AND NOT EXISTS (SELECT 1 FROM assignment_item ai WHERE ai.org_id = :orgId AND ai.assignment_id = a.id)"
                 + " ORDER BY a.id DESC LIMIT :fetch")
         .param("userId", userId)
         .param("afterId", afterId)
