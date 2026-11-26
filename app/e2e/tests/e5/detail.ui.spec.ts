@@ -61,7 +61,10 @@ test('Hình xoay được trên trang chi tiết @TC-GEO-0518', async ({ page, r
   await openDetail(page, PV('HKG-01'));
   await waitScene(page);
   const before = (await snap(page)).camera;
+  // điện thoại (mobile-*): khung hình nằm dưới đề, cuộn tới trước khi kéo; khung phải rộng gần hết bề ngang (T-261126-02)
+  await page.getByTestId('viewer').scrollIntoViewIfNeeded();
   const box = (await page.getByTestId('viewer').boundingBox())!;
+  expect(box.width, 'khung hình không bị co').toBeGreaterThan(Math.min(300, page.viewportSize()!.width * 0.6));
   const cx = box.x + box.width / 2;
   const cy = box.y + box.height / 2;
   await page.mouse.move(cx, cy);

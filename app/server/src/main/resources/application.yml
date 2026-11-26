@@ -45,6 +45,10 @@ geo:
     trust-forwarded-for: false  # chỉ bật sau proxy tin cậy (dev/test bật để E2E mô phỏng nhiều IP, TC-GEO-0179)
   time:
     display-zone: Asia/Ho_Chi_Minh   # múi giờ hiển thị duy nhất (BR-GEO-233); lưu/truyền luôn UTC
+  content:
+    # Gói nội dung Kho đề MVP (content/catalog-mvp.json + geometry/problem-specs.json, T-261126-02): nạp vào bộ 'main' khi
+    # khởi động rồi engine tính nhãn. Profile test và make e2e tắt (Kho đề e2e giữ sáu đề, TC-GEO-0125).
+    pack.load-on-start: ${GEO_CONTENT_PACK_ON_START:true}
   paging:
     default-limit: 20
     max-limit: 100            # trần chung

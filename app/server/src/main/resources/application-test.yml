@@ -9,5 +9,6 @@ spring:
     locations: classpath:db/migration,classpath:db/testhooks
 geo:
   redis.key-prefix: "geotest:"
+  content.pack.load-on-start: false   # IT nạp gói tường minh (ContentPackMvpIT)
   http.trust-forwarded-for: true
   ai.api-key: KHOA-THU-KHONG-LO
