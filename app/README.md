@@ -49,6 +49,18 @@ make e2e-report       # in truy vết và mở báo cáo lượt mới nhất
 make e2e-reset        # đưa geo_e2e về trạng thái vàng (DB=geo_dev cho dev)
 make traceability ARGS="--all"  # TC nào có test, đạt/trượt, TC E2E chưa có test
 ```
+Chạy trên máy dùng chung / tải cao (T-261126-43):
+- `GEO_E2E_WORKERS=<n>`: số worker Playwright (mặc định nửa số lõi, tối thiểu 2). Máy đang tải cao thì hạ, ví dụ
+  `GEO_E2E_WORKERS=2 make e2e`. Không bật retries để che lỗi.
+- `GEO_E2E_EVIDENCE=fail|full`: mặc định `fail` (lượt chạy của task Dev) — ảnh chụp mọi test, video + trace chỉ giữ
+  khi test trượt. `full` = video + trace cho mọi test như trước; dùng ở gate tester (T-26/T-33) và khi cần báo cáo bằng
+  chứng đủ cho `make e2e-report`: `GEO_E2E_EVIDENCE=full make e2e`. Video + trace mọi test là phần tải lớn nhất của E2E.
+- Máy chủ E2E dùng trần CSDL 10 s (`GEO_E2E_DB_STATEMENT_MS`, `GEO_E2E_DB_CONN_MS`) thay cho 2 s của sản phẩm: khi CPU
+  bị chiếm, SELECT một dòng có thể quá 2 s và trả 504/503 giả. Trần 2 s được kiểm ở tầng tích hợp máy chủ; đặt hai biến
+  về 2000 để chạy E2E với trần thật. Tương tự lệnh Redis: E2E 1000 ms (`GEO_E2E_REDIS_MS`) thay cho 100 ms. Chờ máy chủ/web lên: `GEO_E2E_SERVER_WAIT` (mặc định 180 s), `GEO_E2E_WEB_WAIT` (60 s).
+- `dev-up.sh` chờ PostgreSQL và Redis nhận kết nối (lặp có hạn giờ `GEO_DEV_UP_WAIT`, mặc định 60 s) rồi mới kiểm cụm/thư mục.
+- Test UI chờ theo phản hồi API (`e2e/support/wait.ts`: `untilApi`) thay vì chờ theo thời gian.
+
 Chi tiết: [web/README.md](web/README.md), [e2e/README.md](e2e/README.md), seed: [db/seed/README.md](db/seed/README.md).
 
 ## Build, chạy
