@@ -4,6 +4,8 @@ import { ApiError } from '../../shared/api/errors.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { verifyIcon } from '../../shared/ui/icons.ts';
 import { practiceApi, type PlayView, type ResultItem, type ResultView, type SetLine, type SolutionView } from './api.ts';
+import type { RunnerChoice } from './choice.ts';
+import { choiceApi } from './choiceApi.ts';
 import { STATUS_LABEL, useLoad } from './load.ts';
 import { LoadError } from './LoadError.tsx';
 import { PracticeRunner, type RunnerDriver } from './PracticeRunner.tsx';
@@ -40,6 +42,7 @@ export function StudentListPage() {
 const realDriver: RunnerDriver = {
   check: (item, answer, key) => practiceApi.attempt(item.assignmentId, answer, key),
   report: (item, note) => practiceApi.report(item.assignmentId, note),
+  checkChoice: (item, choiceId, key) => choiceApi.attempt(item.assignmentId, choiceId, key),
   figures: true,
 };
 
@@ -47,7 +50,11 @@ const realDriver: RunnerDriver = {
 export function PlayPage() {
   const { id = '' } = useParams();
   const navigate = useNavigate();
-  const [load, retry] = useLoad<PlayView>(`play:${id}`, (s) => practiceApi.open(id, s));
+  const [load, retry] = useLoad<{ view: PlayView; choices: Record<string, RunnerChoice> }>(`play:${id}`, async (s) => {
+    // S2-E9: lựa chọn của các câu trắc nghiệm (không có cờ đúng) tải cùng bài
+    const [view, choices] = await Promise.all([practiceApi.open(id, s), choiceApi.forStudent(id, s)]);
+    return { view, choices: Object.fromEntries(choices.items.map((c) => [c.assignmentId, c])) };
+  });
   if (load.state === 'loading') {
     return (
       <div className="s2e8-play" aria-busy="true" data-testid="s2e8-loading">
@@ -66,8 +73,10 @@ export function PlayPage() {
     );
   }
   if (load.state === 'error') return <LoadError notFound={load.notFound} onRetry={retry} what="bài luyện" />;
-  if (load.data.status === 'closed') return <Navigate to="ket-qua" replace />;
-  return <PracticeRunner view={load.data} driver={realDriver} onFinish={() => void navigate('ket-qua')} />;
+  if (load.data.view.status === 'closed') return <Navigate to="ket-qua" replace />;
+  return (
+    <PracticeRunner view={load.data.view} choices={load.data.choices} driver={realDriver} onFinish={() => void navigate('ket-qua')} />
+  );
 }
 
 const VERIFIED = 'Đã kiểm chứng';

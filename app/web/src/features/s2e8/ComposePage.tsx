@@ -4,6 +4,9 @@ import { ApiError } from '../../shared/api/errors.ts';
 import { formatVnDateTime } from '../../shared/time/vnTime.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { practiceApi, type AttemptView, type Candidate, type PlayView, type SetDetail, type SetInput } from './api.ts';
+import { emptyChoice, maxChoiceAttempts, validateChoice, type ChoiceOptionDraft, type RunnerChoice, type TeacherChoice } from './choice.ts';
+import { choiceApi } from './choiceApi.ts';
+import { ChoiceEditor } from './ChoiceEditor.tsx';
 import { STATUS_LABEL, useLoad } from './load.ts';
 import { LoadError } from './LoadError.tsx';
 import { PracticeRunner, type RunnerDriver } from './PracticeRunner.tsx';
@@ -17,12 +20,16 @@ interface Row {
   tolerance: string;
   attempts: number;
   release: string;
+  /** S2-E9: kiểu câu — điền đáp số (mặc định) hoặc trắc nghiệm */
+  type: 'fill' | 'choice';
+  options: ChoiceOptionDraft[];
 }
 
 interface Refs {
   problems: Candidate[];
   classes: Array<{ id: string; name: string }>;
   set: SetDetail | null;
+  choices: TeacherChoice[];
 }
 
 /** ISO → giá trị của ô datetime-local (giờ máy) và ngược lại. */
@@ -37,10 +44,29 @@ const toIso = (local: string): string | null => (local ? new Date(local).toISOSt
 const lowerFirst = (s: string) => (s ? s.charAt(0).toLocaleLowerCase('vi') + s.slice(1) : s);
 
 /** "Xem trước như học sinh": chấm thử ở máy chủ, không ghi Attempt; lượt chỉ đếm trong phiên xem trước (BR-S2E8-28). */
-function previewDriver(setId: string): RunnerDriver {
+function previewDriver(setId: string, choices: TeacherChoice[]): RunnerDriver {
   const wrong = new Map<number, number>();
+  const picked = new Map<number, string[]>();
   return {
     figures: false,
+    // Câu trắc nghiệm: giáo viên đã biết đáp án nên chấm thử ngay trên máy, không gọi máy chủ, không ghi gì.
+    checkChoice: (item, choiceId) => {
+      const ok = choices.find((c) => c.position === item.position)?.options.find((o) => o.id === choiceId)?.correct === true;
+      const used = (wrong.get(item.position) ?? 0) + (ok ? 0 : 1);
+      wrong.set(item.position, used);
+      const dimmed = [...(picked.get(item.position) ?? []), ...(ok ? [] : [choiceId])];
+      picked.set(item.position, dimmed);
+      const left = Math.max(0, item.maxAttempts - used);
+      return Promise.resolve({
+        outcome: ok ? 'correct' : 'wrong',
+        message: ok ? 'Đúng rồi!' : left > 0 ? `Chưa đúng. Còn ${left} lượt.` : 'Chưa đúng. Em xem lại cùng thầy cô nhé.',
+        attemptsLeft: left,
+        maxAttempts: item.maxAttempts,
+        state: ok ? 'correct' : left === 0 ? 'review' : 'doing',
+        dimmed,
+        canReport: false,
+      });
+    },
     check: async (item, answer) => {
       const r = await practiceApi.previewCheck(setId, item.position, answer);
       const used = (wrong.get(item.position) ?? 0) + (r.outcome === 'wrong' ? 1 : 0);
@@ -98,8 +124,11 @@ function previewView(set: SetDetail): PlayView {
   };
 }
 
-function Preview({ set, onClose }: { set: SetDetail; onClose: () => void }) {
-  const driver = useMemo(() => previewDriver(set.id), [set.id]);
+function Preview({ set, choices, onClose }: { set: SetDetail; choices: TeacherChoice[]; onClose: () => void }) {
+  const driver = useMemo(() => previewDriver(set.id, choices), [set.id, choices]);
+  const runnerChoices: Record<string, RunnerChoice> = Object.fromEntries(
+    choices.map((c) => [`xem-truoc-${c.position}`, { options: c.options.map((o) => ({ id: o.id, text: o.text })), dimmed: [], chosen: null }]),
+  );
   return (
     <section className="s2e8-preview" data-testid="s2e8-preview">
       <div className="s2e8-head">
@@ -108,7 +137,7 @@ function Preview({ set, onClose }: { set: SetDetail; onClose: () => void }) {
           Thoát xem trước
         </button>
       </div>
-      <PracticeRunner view={previewView(set)} driver={driver} onFinish={onClose} finishLabel="Thoát xem trước" preview />
+      <PracticeRunner view={previewView(set)} choices={runnerChoices} driver={driver} onFinish={onClose} finishLabel="Thoát xem trước" preview />
     </section>
   );
 }
@@ -117,12 +146,13 @@ function Preview({ set, onClose }: { set: SetDetail; onClose: () => void }) {
 export function ComposePage() {
   const { id } = useParams();
   const [load, retry] = useLoad<Refs>(`compose:${id ?? 'moi'}`, async (s) => {
-    const [problems, classes, set] = await Promise.all([
+    const [problems, classes, set, choices] = await Promise.all([
       practiceApi.problems(s),
       practiceApi.classes(s),
       id ? practiceApi.set(id, s) : Promise.resolve(null),
+      id ? choiceApi.ofSet(id, s) : Promise.resolve({ items: [] as TeacherChoice[] }),
     ]);
-    return { problems: problems.items, classes: classes.items, set };
+    return { problems: problems.items, classes: classes.items, set, choices: choices.items };
   });
   if (load.state === 'loading') return <p className="muted" data-testid="s2e8-loading">Đang tải…</p>;
   if (load.state === 'error') return <LoadError notFound={load.notFound} onRetry={retry} what="bài luyện" />;
@@ -134,14 +164,20 @@ function ComposeForm({ refs }: { refs: Refs }) {
   const [title, setTitle] = useState(refs.set?.title ?? '');
   const [release, setRelease] = useState(toLocalInput(refs.set?.releaseAt ?? null));
   const [rows, setRows] = useState<Row[]>(
-    (refs.set?.items ?? []).map((i) => ({
-      versionId: i.problemVersionId,
-      kind: i.answerKind,
-      tolerance: i.tolerance == null ? '' : String(i.tolerance).replace('.', ','),
-      attempts: i.maxAttempts,
-      release: refs.set?.status === 'draft' ? toLocalInput(i.releaseAt) : '',
-    })),
+    (refs.set?.items ?? []).map((i) => {
+      const choice = refs.choices.find((c) => c.position === i.position);
+      return {
+        versionId: i.problemVersionId,
+        kind: i.answerKind,
+        tolerance: i.tolerance == null ? '' : String(i.tolerance).replace('.', ','),
+        attempts: i.maxAttempts,
+        release: refs.set?.status === 'draft' ? toLocalInput(i.releaseAt) : '',
+        type: choice ? ('choice' as const) : ('fill' as const),
+        options: choice ? choice.options.map((o) => ({ text: o.text, correct: o.correct })) : [],
+      };
+    }),
   );
+  const [choices, setChoices] = useState<TeacherChoice[]>(refs.choices);
   const [classId, setClassId] = useState(refs.set?.classId ?? refs.classes[0]?.id ?? '');
   const [error, setError] = useState<string | null>(null);
   const [saved, setSaved] = useState<string | null>(null);
@@ -157,7 +193,7 @@ function ComposeForm({ refs }: { refs: Refs }) {
     setRows((all) =>
       picked.has(p.problemVersionId)
         ? all.filter((r) => r.versionId !== p.problemVersionId)
-        : [...all, { versionId: p.problemVersionId, kind: 'exact', tolerance: '', attempts: 3, release: '' }],
+        : [...all, { versionId: p.problemVersionId, kind: 'exact', tolerance: '', attempts: 3, release: '', type: 'fill', options: [] }],
     );
   };
   const patch = (versionId: string, change: Partial<Row>) => {
@@ -187,9 +223,24 @@ function ComposeForm({ refs }: { refs: Refs }) {
       setError(body);
       return null;
     }
+    // S2-E9: câu trắc nghiệm sai quy tắc thì báo ngay, KHÔNG lưu gì (US-S2E9-03-FC2, FC4)
+    for (const r of rows) {
+      const bad = r.type === 'choice' ? validateChoice(r.options, r.attempts) : null;
+      if (bad) {
+        setError(bad);
+        return null;
+      }
+    }
     setBusy(true);
     try {
-      const out = set ? await practiceApi.update(set.id, body) : await practiceApi.create(body);
+      let out = set ? await practiceApi.update(set.id, body) : await practiceApi.create(body);
+      const kept: TeacherChoice[] = [];
+      for (const [i, r] of rows.entries()) {
+        if (r.type === 'choice') kept.push(await choiceApi.save(out.id, i + 1, r.options, r.attempts));
+        else if (set) await choiceApi.remove(out.id, i + 1);
+      }
+      if (kept.length > 0) out = await practiceApi.set(out.id);
+      setChoices(kept);
       setSet(out);
       setSaved('Đã lưu nháp');
       return out;
@@ -233,7 +284,7 @@ function ComposeForm({ refs }: { refs: Refs }) {
     }
   };
 
-  if (preview && set) return <Preview set={set} onClose={() => setPreview(false)} />;
+  if (preview && set) return <Preview set={set} choices={choices} onClose={() => setPreview(false)} />;
   const className = refs.classes.find((c) => c.id === classId)?.name ?? set?.className ?? '';
   return (
     <div className="s2e8-compose" data-testid="s2e8-compose" data-status={set?.status ?? 'new'}>
@@ -309,10 +360,29 @@ function ComposeForm({ refs }: { refs: Refs }) {
               </b>
               <div className="s2e8-item-grid">
                 <label className="s2e8-field">
+                  Kiểu câu
+                  <select
+                    value={r.type}
+                    disabled={locked}
+                    onChange={(e) =>
+                      patch(
+                        r.versionId,
+                        e.target.value === 'choice'
+                          ? { type: 'choice', attempts: 1, options: r.options.length > 0 ? r.options : emptyChoice() }
+                          : { type: 'fill', attempts: 3 },
+                      )
+                    }
+                    data-testid={`s2e9-item-type-${i + 1}`}
+                  >
+                    <option value="fill">Điền đáp số</option>
+                    <option value="choice">Trắc nghiệm</option>
+                  </select>
+                </label>
+                <label className="s2e8-field">
                   Kiểu đáp số
                   <select
                     value={r.kind}
-                    disabled={locked}
+                    disabled={locked || r.type === 'choice'}
                     onChange={(e) => patch(r.versionId, { kind: e.target.value === 'approx' ? 'approx' : 'exact' })}
                     data-testid={`s2e8-item-kind-${i + 1}`}
                   >
@@ -324,7 +394,7 @@ function ComposeForm({ refs }: { refs: Refs }) {
                   Sai số ±
                   <input
                     value={r.kind === 'approx' ? r.tolerance : ''}
-                    disabled={locked || r.kind !== 'approx'}
+                    disabled={locked || r.kind !== 'approx' || r.type === 'choice'}
                     inputMode="decimal"
                     placeholder={r.kind === 'approx' ? '0,5' : 'không áp dụng'}
                     onChange={(e) => patch(r.versionId, { tolerance: e.target.value })}
@@ -340,7 +410,10 @@ function ComposeForm({ refs }: { refs: Refs }) {
                     onChange={(e) => patch(r.versionId, { attempts: Number(e.target.value) })}
                     data-testid={`s2e8-item-attempts-${i + 1}`}
                   >
-                    {[1, 2, 3, 4, 5].map((n) => (
+                    {(r.type === 'choice'
+                      ? Array.from({ length: Math.max(r.attempts, maxChoiceAttempts(r.options.length)) }, (_, k) => k + 1)
+                      : [1, 2, 3, 4, 5]
+                    ).map((n) => (
                       <option key={n} value={n}>
                         {n}
                       </option>
@@ -358,6 +431,9 @@ function ComposeForm({ refs }: { refs: Refs }) {
                   />
                 </label>
               </div>
+              {r.type === 'choice' ? (
+                <ChoiceEditor n={i + 1} options={r.options} disabled={locked} onChange={(options) => patch(r.versionId, { options })} />
+              ) : null}
               {locked && set?.items[i]?.releaseAt ? (
                 <span className="s2e8-help" data-testid={`s2e8-item-release-label-${i + 1}`}>
                   Lời giải mở lúc {formatVnDateTime(set.items[i]!.releaseAt!)}

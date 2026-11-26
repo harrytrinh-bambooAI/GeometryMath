@@ -1,0 +1,176 @@
+/* S2-E9 · Xuất đề, biến thể, liên kết chỉ xem (chưa có khung thiết kế, QA-S2E9-01: dùng lớp chung .card/.btn/.chip).
+   Màu, bo góc, font CHỈ qua token theme (styles/tokens.css); chữ phụ ≥ 14 px (PO-66 G17); nội dung toán dùng
+   --font-math; vùng chạm ≥ 44 px. */
+.s2e9-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  max-width: 1100px;
+  min-width: 0;
+}
+.s2e9-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  min-width: 0;
+}
+@media (min-width: 820px) {
+  .s2e9-cols {
+    grid-template-columns: minmax(0, 3fr) minmax(320px, 2fr);
+    align-items: start;
+  }
+}
+.s2e9-head,
+.s2e9-labels,
+.s2e9-actions,
+.s2e9-form,
+.s2e9-new {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.s2e9-form,
+.s2e9-new {
+  align-items: flex-end;
+}
+.s2e9-title {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--pri-t);
+  font-size: 22px;
+  overflow-wrap: anywhere;
+}
+.s2e9-h {
+  margin: 0;
+  font-size: 17px;
+  color: var(--pri-t);
+}
+.s2e9-panel,
+.s2e9-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.s2e9-panel {
+  padding: 14px;
+}
+.s2e9-side {
+  gap: 14px;
+}
+.s2e9-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.s2e9-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  min-width: 0;
+}
+.s2e9-row[data-picked='true'] {
+  border-color: var(--pri-line);
+  background: var(--pri-s);
+}
+.s2e9-grow {
+  flex: 1 1 220px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.s2e9-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: var(--touch);
+  min-width: var(--touch);
+  cursor: pointer;
+}
+.s2e9-link {
+  color: var(--pri-t);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
+}
+.s2e9-statement {
+  margin: 0;
+  font-family: var(--font-math, var(--font));
+  font-size: var(--fs);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.s2e9-help {
+  margin: 0;
+  font-size: max(14px, var(--fs-sm));
+  color: var(--muted);
+}
+.s2e9-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: max(14px, var(--fs-sm));
+  color: var(--muted);
+  flex: 1 1 160px;
+  min-width: 0;
+}
+.s2e9-field input,
+.s2e9-field select {
+  min-height: var(--touch);
+  min-width: 0;
+  font: inherit;
+  color: var(--text);
+}
+.s2e9-done {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: var(--r-sm);
+  background: var(--grn-s);
+  color: var(--grn);
+  font-weight: 600;
+}
+.s2e9-confirm {
+  border: 1px solid var(--yel);
+  border-radius: var(--r-sm);
+  background: var(--yel-s);
+  color: var(--text);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.s2e9-confirm p {
+  margin: 0;
+  font-weight: 600;
+}
+.s2e9-figure {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+.s2e9-svg {
+  width: min(100%, 420px);
+  height: auto;
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1.6;
+}
+.s2e9-svg text {
+  fill: var(--pri-t);
+  stroke: none;
+  font-size: 14px;
+  font-family: var(--font-math, var(--font));
+}
