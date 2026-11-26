@@ -28,6 +28,7 @@ Phiên bản: v0.1 · 2026-11-26 · quyết định đã chốt — 1 dòng / qu
 | 2026-11-26 | T-22 ‖ T-23 chạy 2 agent con Dev bằng Opus (đổi lại từ Fable cho đợt này); phiên điều phối vẫn Fable | lệnh owner 26/11 đêm ("T-22 ‖ T-23, 2 agent Opus"), đã nêu số đo Fable rẻ hơn ~46% token/LoC và owner vẫn chọn Opus |
 | 2026-11-27 | Regression C (trọn bộ 6 project) dời tới sau khi T-22 gộp, một lượt phủ cả T-22 + T-23 | tiết kiệm một lượt ~40 phút; hai task đã qua e2e-affected L1 trên bản kết hợp |
 | 2026-11-27 | Từ đợt T-24 ‖ T-25 trở đi (tới hết chặng 3): agent con Dev chạy Fable, 2 agent song song; phiên điều phối Fable | lệnh owner 27/11 ("tiếp tục bằng sub agent Fable", mục tiêu "xong chặng 3"); số đo đợt trước: Fable 1,00M token/1.000 LoC so với Opus 1,51M |
+| 2026-11-27 | Regression C trên wave0 sau T-22 + T-23 (9662508): ĐẠT, 1379/1383 đạt, 4 bỏ qua có chủ đích trên ui-webkit (TC-GEO-0302 lăn chuột, 3 ca theme/icon), 0 trượt, 630/630 mã TC; 13,6 phút | bằng chứng `app/e2e/evidence/20261126-235648/`; mục "chạy ui-webkit cho s2e8" của inbox sau T-21 đã được phủ |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
