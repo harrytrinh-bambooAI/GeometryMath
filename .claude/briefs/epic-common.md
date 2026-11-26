@@ -1,4 +1,4 @@
-# Brief chung cho agent epic (Đợt 1+, chặng 2–3) · v1.2 · 26/11/2026
+# Brief chung cho agent epic (Đợt 1+, chặng 2–3) · v1.6 · 27/11/2026
 
 > **Tránh bị cắt phản hồi (bài học E3, v1.1):** mỗi lần Write/Edit không quá ~250 dòng; tệp lớn thì tạo khung rồi Edit thêm từng phần; tách component/spec thành nhiều tệp; không in lại nội dung tệp dài vào phản hồi; đọc tệp có mục tiêu (grep, offset/limit).
 
@@ -40,6 +40,7 @@ Không sửa `stories_ac.md`, `test_cases.md`, `test_design.md` (AC/TC sai → m
 - Commit sau mỗi bước qua lệnh kiểm, message nêu bước + mã US; cuối message: `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. Không commit node_modules, dist, .data, evidence, `.env.ports`.
 - Sau mỗi bước ghi 1 dòng `<giờ> · <bước> · <trạng thái> · <commit>` vào `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0/.claude/progress/<tên-agent>.md` (đường dẫn tuyệt đối của repo điều phối, `echo ... >>`). Không dùng chữ "xong"/"DONE" trừ dòng cuối `<E> · XONG · <commit>`.
 - Mỗi lỗi lặp tối đa 3 lần sửa; quá thì ghi lại và chuyển việc.
+- **Tắt cụm khi xong (v1.6):** sau lượt kiểm cuối, trước khi báo cáo, chạy `cd app && make down` trong worktree của mình (tắt Postgres + Redis + server của worktree; không đụng cụm của checkout khác). Agent chính sẽ `make up` lại nếu cần kiểm thêm.
 
 ## Báo cáo cuối (không quá 10 dòng)
 AC đạt/tổng; TC tự động đạt/tổng theo loại; kết quả make verify, web, e2e (2 lượt), traceability `--strict`, bench (nếu có); đường dẫn index bằng chứng; phát hiện Dev; phần làm hộ epic khác; tệp ngoài phạm vi cần FIX; danh sách commit; token ước tính.
@@ -47,6 +48,7 @@ AC đạt/tổng; TC tự động đạt/tổng theo loại; kết quả make ve
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
+| v1.6 | 2026-11-27 | Bắt buộc `make down` trong worktree trước khi báo xong (cụm CSDL bị bỏ chạy sau khi gộp) | delivery-lead |
 | v1.5 | 2026-11-26 | E2E theo mức ảnh hưởng (make e2e-affected), bỏ trọn bộ hai lượt mỗi task | delivery-lead |
 | v1.4 | 2026-11-26 | Theme mặc định C + Bad Script; nội dung toán dùng --font-math | delivery-lead |
 | v1.3 | 2026-11-26 | Giao diện theo HTML bản mẫu + token theme (style D mặc định, T-50) | delivery-lead |

@@ -29,6 +29,9 @@ Phiên bản: v0.1 · 2026-11-26 · quyết định đã chốt — 1 dòng / qu
 | 2026-11-27 | Regression C (trọn bộ 6 project) dời tới sau khi T-22 gộp, một lượt phủ cả T-22 + T-23 | tiết kiệm một lượt ~40 phút; hai task đã qua e2e-affected L1 trên bản kết hợp |
 | 2026-11-27 | Từ đợt T-24 ‖ T-25 trở đi (tới hết chặng 3): agent con Dev chạy Fable, 2 agent song song; phiên điều phối Fable | lệnh owner 27/11 ("tiếp tục bằng sub agent Fable", mục tiêu "xong chặng 3"); số đo đợt trước: Fable 1,00M token/1.000 LoC so với Opus 1,51M |
 | 2026-11-27 | Regression C trên wave0 sau T-22 + T-23 (9662508): ĐẠT, 1379/1383 đạt, 4 bỏ qua có chủ đích trên ui-webkit (TC-GEO-0302 lăn chuột, 3 ca theme/icon), 0 trượt, 630/630 mã TC; 13,6 phút | bằng chứng `app/e2e/evidence/20261126-235648/`; mục "chạy ui-webkit cho s2e8" của inbox sau T-21 đã được phủ |
+| 2026-11-27 | Mỗi worktree task phải tắt cụm (`make down`) khi xong: agent con trước khi báo cáo (epic-common v1.6); agent chính sau khi gộp, rồi xoá worktree đã gộp (`git worktree remove`, giữ nhánh) | owner hỏi vì sao gộp rồi Postgres vẫn chạy; 27/11 dọn 11 worktree + 11 cụm, lấy lại ~22 GB |
+| 2026-11-27 | Xoá CSDL `geo_arch` (12 GB, bản đo tải lược đồ cũ; số liệu đã ghi trong architecture/07_verification.md) và 5 lượt e2e evidence cũ + test-results của wave0; giữ `geo_arch2` và lượt evidence 20261126-235648 | lệnh owner 27/11 "xoá geo_arch và dọn kết quả e2e cũ" |
+| 2026-11-27 | Gộp T-25 (S2-E9) trên bản kết hợp T-24: e2e-affected L1 802/802, traceability MVP..S2-E9 đạt → code chặng 2 đủ 9 epic | bằng chứng `app/e2e/evidence/20261127-020725` (worktree s2-e9, đã xoá sau gộp) |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |

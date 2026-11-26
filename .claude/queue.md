@@ -165,7 +165,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-22, T-261126-23
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(content/.*(importer|authoring|dedup|Importer|Authoring|Dedup)|aigateway/internal)|app/server/src/main/resources/(db/migration/V2[67][0-9]__|ai/)|app/server/src/test/java/vn/geo/server/(it/s2e4|content|aigateway)/|app/web/src/features/s2e4/|app/server/pom\.xml|app/e2e/tests/s2e4/|app/db/seed/(e2e/86[0-9]_|fixture-ids\.d/s2e4)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E4/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W7
-## T-261126-25 · S2-E9 · L5 Dev (P1) · epic-common v1.3 · wt s2-e9 · ‖24 · 4h/10M · Biến thể đề + xuất PDF + liên kết chỉ xem [running]
+## T-261126-25 · S2-E9 · L5 Dev (P1) · epic-common v1.3 · wt s2-e9 · ‖24 · 4h/10M · Biến thể đề + xuất PDF + liên kết chỉ xem [done]
 - Mục tiêu: US-S2E9-01…03: ProblemVariant (sinh số liệu + tính lại đáp số qua SubjectEngine), xuất ảnh/PDF (phía web, chủ package.json đợt W7), liên kết chỉ xem (share_grant), trắc nghiệm trong bài luyện
 - Nguồn: epics/S2-E9 (ebec17a 26/11); PLAN_code-s23 v1.0 §5; STAGES Ch2 §3 ý 7, §4 P1
 - Xong khi: như 18 + bench-s2, bench-mvp không lùi
@@ -190,7 +190,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Ngoài phạm vi: deploy do owner làm
 - Chờ: owner duyệt + deploy
 - Phụ thuộc: T-261126-26
-## T-261126-42 · S3 · L5 Dev dữ liệu mẫu chung · epic-common v1.3 · wt s3-base · ‖26 · 1h/3M · Seed F-S3-001…053 [running]
+## T-261126-42 · S3 · L5 Dev dữ liệu mẫu chung · epic-common v1.3 · wt s3-base · ‖26 · 1h/3M · Seed F-S3-001…053 [done]
 - Mục tiêu: nạp dữ liệu mẫu chung chặng 3 (F-S3-001…053: 2 giáo viên, 3 lớp, học sinh đủ trạng thái Đang học/Chờ duyệt/Đã rời, bộ tuần 15/16, bảng trạng thái 11A1) vào 910_s3_core.sql + fixture-ids.d/s3.json, chỉ dùng schema MVP + S2 (class_member.status từ 18, assignment_set/item từ 21)
 - Nguồn: epics/S3-E1/stories_ac.md mục "Dữ liệu mẫu chung" (ebec17a 26/11); PLAN_code-s23 v1.0 §4; app/db/seed/README.md
 - Xong khi: seed-reset nạp sạch trên geo_e2e; e2e MVP + S2 vẫn xanh; mỗi mã F-S3 trong bảng có UUID trong fixture-ids.d/s3.json

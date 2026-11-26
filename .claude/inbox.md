@@ -263,3 +263,13 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent T-24; `artifacts/GEO/work/epics/S2-E4/qc_findings.md` (27/11/2026).
 - **Xong khi:** mục 1 có IT "vượt hạn mức dán chữ → bị chặn"; mục 3 ghi PO-DECISIONS trước gate T-26.
 - **Ngoài phạm vi:** bài giảng với AI (chặng 5).
+
+## Việc: câu mở sau T-25 (S2-E9) và T-42 (seed S3) · ghi 27/11/2026 02:30
+- **Mục tiêu:** đóng các điểm hai task để mở.
+  1. [FIX Dev] thêm `/api/v1/share/` vào AuthFilter (hiện là bộ lọc riêng ShareLinkPublicFilter); gộp trắc nghiệm vào PracticeSetService/PracticeService (hiện ChoiceGuardInterceptor + đọc practice_attempt); thêm `SubjectEngine.variants` thay bean cầu nối planeVariantGenerator.
+  2. [ARCH/PO] liên kết chỉ xem dùng bảng riêng `problem_share_link` thay `share_grant`; ngưỡng chống dò mã 100 lần sai/10 phút/IP; miền số mặc định của biến thể; có cần PDF chữ thật (hiện mỗi trang là ảnh JPEG); khung thiết kế Xuất đề + trang chia sẻ (QA-S2E9-01).
+  3. [Dev, T-28] thêm cột `class.academic_year` và cập nhật lớp F-S3; nới chỉ mục `class_member_name_uq` (trùng tên trong lớp — "Hoàng Nam" thứ hai đang dùng name_key kèm mã người dùng).
+  4. [PO/BA] lớp 10B "4 em" — seed chọn Mi Na, Bình An (2), Phương Thảo, Chi Mai; giờ hạn/mở lời giải ghi tuyệt đối nên "Sắp mở" chỉ đúng tới 06/12/2026 08:00.
+- **Nguồn:** báo cáo agent T-25, T-42; `epics/S2-E9/qc_findings.md` (14 giả định); đầu tệp `app/db/seed/e2e/910_s3_core.sql` (27/11/2026).
+- **Xong khi:** mục 2 ghi PO-DECISIONS trước gate T-26; mục 3 làm trong T-28.
+- **Ngoài phạm vi:** thiết diện động (Q7).
