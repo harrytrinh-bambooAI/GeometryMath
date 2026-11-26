@@ -220,7 +220,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-26, T-261126-42
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/assignment/|app/server/src/main/resources/db/migration/V3(3[5-9]|4[0-9]|5[0-4])__|app/server/src/test/java/vn/geo/server/(it/s3e2|assignment)/|app/web/src/features/s3e2/|app/web/package(-lock)?\.json|app/e2e/tests/s3e2/|app/db/seed/(e2e/92[0-9]_|fixture-ids\.d/s3e2)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S3-E2/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W9
-## T-261126-30 · S3-E3 · L5 Dev · epic-common v1.3 · wt s3-e3 · ‖31 · 4h/10M · Kết quả lớp + Cả lớp vướng ở đâu [running]
+## T-261126-30 · S3-E3 · L5 Dev · epic-common v1.3 · wt s3-e3 · ‖31 · 4h/10M · Kết quả lớp + Cả lớp vướng ở đâu [done]
 - Mục tiêu: US-S3E3-01…03: C3-04, bảng lớp × bài (không cột tổng, không sắp hạng), ô bấm ra bằng chứng, học sinh đã rời đánh dấu, nhận định gộp chỉ khi đủ ngưỡng 5 bài (Q6)
 - Nguồn: epics/S3-E3 (ebec17a 26/11); PLAN_code-s23 v1.0 §2 (module tracking); STAGES Ch3 §5 luồng C; §0.3 ý 6
 - Xong khi: như 18
