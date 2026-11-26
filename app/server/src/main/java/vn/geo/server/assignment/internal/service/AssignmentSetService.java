@@ -173,18 +173,21 @@ public class AssignmentSetService {
   private final AssignmentRepository assignments;
   private final PracticeGrader grader;
   private final JsonMapper mapper;
+  private final AuditEventService audit;
 
   public AssignmentSetService(
       AssignmentSetRepository repo,
       PracticeSetRepository practice,
       AssignmentRepository assignments,
       PracticeGrader grader,
-      JsonMapper mapper) {
+      JsonMapper mapper,
+      AuditEventService audit) {
     this.repo = repo;
     this.practice = practice;
     this.assignments = assignments;
     this.grader = grader;
     this.mapper = mapper;
+    this.audit = audit;
   }
 
   // ------------------------------------------------------------------ giáo viên: soạn
@@ -320,6 +323,8 @@ public class AssignmentSetService {
           throw AppException.invalidField(
               "items", "Có đề chưa có đáp số máy chấm được. Thêm đáp số ở Soát lời giải.");
     }
+    // S3-E4 (T-261126-31): thông báo "bài mới" cho học sinh Đang học của lớp (US-S3E4-03-SC1)
+    audit.assigned(p, setId, s.classId(), s.title(), repo.now());
     return detail(own(p.userId(), setId));
   }
 
@@ -368,6 +373,11 @@ public class AssignmentSetService {
       }
     }
     repo.setReleaseOfSet(p.userId(), setId, at);
+    // S3-E4 + US-S3E5-01 (T-261126-31): đổi giờ sau khi bộ Đã giao = một AuditEvent
+    // RELEASE_TIME_CHANGE
+    // + thông báo "giờ mở đổi" (BR-S3E5-06, BR-S3E4-14); đặt giờ khi còn Nháp ở nhánh trên không
+    // ghi.
+    audit.timeChanged(p, setId, s.classId(), s.title(), s.releaseAt(), at.toInstant(), now, null);
     return detail(own(p.userId(), setId));
   }
 

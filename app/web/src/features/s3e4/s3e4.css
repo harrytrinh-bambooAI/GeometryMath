@@ -1,0 +1,184 @@
+/* S3-E4 · C3-05 Tổng quan giáo viên, C3-06 Theo dõi nhanh, thông báo trong ứng dụng.
+   Màu, bo góc, font CHỈ qua token theme (styles/tokens.css); chữ phụ ≥ 14 px (PO-66 G17); vùng chạm ≥ 44 px;
+   một cột ở màn hẹp, không cuộn ngang (BR-S3E4-04, US-S3E4-02-FC9). */
+.s3e4-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  max-width: 1100px;
+  min-width: 0;
+}
+.s3e4-head,
+.s3e4-actions,
+.s3e4-pick {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.s3e4-title {
+  margin: 0;
+  font-size: 24px;
+}
+.s3e4-h2 {
+  margin: 0;
+  font-size: 18px;
+  overflow-wrap: anywhere;
+}
+.s3e4-grow {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.s3e4-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  min-width: 0;
+}
+@media (min-width: 900px) {
+  .s3e4-cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: start;
+  }
+}
+.s3e4-card {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.s3e4-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.s3e4-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  color: inherit;
+  text-decoration: none;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+a.s3e4-row:hover,
+button.s3e4-row:hover {
+  border-color: var(--pri-line);
+}
+button.s3e4-row {
+  cursor: pointer;
+}
+.s3e4-note.unread {
+  background: var(--soft);
+  border-color: var(--pri-line);
+}
+.s3e4-log {
+  font-size: var(--fs-sm);
+}
+.s3e4-help {
+  margin: 0;
+  color: var(--muted);
+  font-size: max(14px, var(--fs-sm));
+}
+.s3e4-block {
+  display: block;
+  font-weight: 400;
+}
+.s3e4-big {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.s3e4-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.s3e4-empty p {
+  margin: 0;
+}
+.s3e4-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: max(14px, var(--fs-sm));
+  font-weight: 700;
+  min-width: 0;
+  flex: 1 1 160px;
+}
+.s3e4-field select,
+.s3e4-field input {
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  color: inherit;
+  font: inherit;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.s3e4-actions .btn {
+  min-height: 44px;
+  flex: 1 1 140px;
+}
+.s3e4-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--r-sm);
+  background: var(--yel-s);
+  color: var(--yel-t);
+  min-width: 0;
+}
+.s3e4-summary {
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.s3e4-bellbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+.s3e4-bell {
+  min-height: 44px;
+  text-decoration: none;
+}
+.s3e4-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 7px;
+  border-radius: var(--r-chip);
+  background: var(--red-s);
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 800;
+  box-sizing: border-box;
+}
