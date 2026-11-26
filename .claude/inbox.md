@@ -142,3 +142,4 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** T-261126-08: watcher exit DONE ở dòng "14:38 · PO-62..65 vào PO-DECISIONS · xong" khi agent còn chạy. Brief (queue.py brief) dặn mọi bước ghi trạng thái → mâu thuẫn.
 - **Xong khi:** quy ước bước cuối riêng (ví dụ `· HOÀN TẤT ·` hoặc `DONE`) trong brief + agent_watch; chạy thử trên tệp tiến độ mẫu không báo DONE ở bước trung gian.
 - **Ngoài phạm vi:** code dự án GEO.
+- **Trạng thái (26/11):** ĐÓNG — queue.py v0.4 dòng 235: brief ghi "bước giữa `ok`, CHỈ bước cuối `xong`"; BRIEF.md đã có luật; agent_watch giữ nguyên. Kiểm: `queue.py brief T-261126-15` có dòng mới, ast parse OK.
