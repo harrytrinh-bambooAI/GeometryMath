@@ -4,6 +4,8 @@ import { api } from '../../shared/api/client.ts';
 import { tid } from '../../shared/testid.ts';
 import type { Page, StudentAssignment } from '../e1/studentApi.ts';
 import { M, e6Api, errText, vnDateTime } from './api.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
+import { releaseIcon } from '../../shared/ui/icons.ts';
 
 /** Nhãn giờ mở theo trạng thái máy chủ trả (BR-GEO-242). */
 export function releaseLabel(a: Pick<StudentAssignment, 'releaseState' | 'releaseAt'>): string {
@@ -83,7 +85,7 @@ export function AssignmentCards() {
                   </span>
                   <b>{a.title ?? a.problemCode}</b>
                   <span className={`chip ${a.releaseState === 'open' ? 'grn' : 'yel'}`}
-                    data-testid={tid('e1', 'assignment', a.problemCode, 'release')} data-status={a.releaseState}>
+                    data-testid={tid('e1', 'assignment', a.problemCode, 'release')} data-status={a.releaseState}><Icon name={releaseIcon(a.releaseState)} />
                     {releaseLabel(a)}
                   </span>
                   <span className="e6-bar" data-testid={tid('e6', 'card', a.problemCode, 'bar')} data-k={k}>

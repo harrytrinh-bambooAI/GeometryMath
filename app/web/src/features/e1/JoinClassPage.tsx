@@ -7,6 +7,7 @@ import { tid } from '../../shared/testid.ts';
 import { saveLogin } from './e1Session.ts';
 import type { LoginResponse } from './e1Session.ts';
 import { MSG, errorText, fieldError } from './messages.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /**
  * Màn "Vào lớp" (US-GEO-101): đúng hai ô "Tên hiển thị", "Mã lớp", nút "Vào lớp" và liên kết "Tôi là giáo viên"
@@ -93,7 +94,7 @@ export function JoinClassPage() {
             {formError}
           </div>
         ) : null}
-        <button type="submit" className="btn e1-wide" disabled={busy} data-testid={tid('e1', 'join', 'submit')}>
+        <button type="submit" className="btn e1-wide" disabled={busy} data-testid={tid('e1', 'join', 'submit')}><Icon name="login" />
           Vào lớp
         </button>
         <Link to="/gv/dang-nhap" className="e1-link" data-testid={tid('e1', 'join', 'teacher-link')}>

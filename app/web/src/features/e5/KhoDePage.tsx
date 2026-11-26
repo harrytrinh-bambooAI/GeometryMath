@@ -9,6 +9,8 @@ import type { ClassItem } from '../e1/studentApi.ts';
 import { e5Api } from './api.ts';
 import type { CatalogFilter, CatalogItem, CatalogSummary } from './api.ts';
 import { authoredLine, levelLabel, LEVELS, SolidThumb, SOLIDS, TOPICS } from './labels.tsx';
+import { Icon } from '../../shared/ui/Icon.tsx';
+import { verifyIcon } from '../../shared/ui/icons.ts';
 
 /** MSG-GEO-40 (05_dictionary.md). */
 export const MSG_40 = 'Không có đề nào khớp bộ lọc. Hãy bỏ bớt điều kiện.';
@@ -171,7 +173,7 @@ function ProblemCard({ p }: { p: CatalogItem }) {
         <span className="chip pri" data-testid={tid('e5', 'level', p.code)}>{levelLabel(p.level)}</span>
         <span className="chip" data-testid={tid('e5', 'topic', p.code)}>{p.topic}</span>
         <span className={`chip ${p.verifyStatus === 'verified' ? 'grn' : 'yel'} e5-label`} data-status={p.verifyStatus}
-          data-testid={tid('e5', 'label', p.code)}>
+          data-testid={tid('e5', 'label', p.code)}><Icon name={verifyIcon(p.verifyStatus === 'verified')} />
           {p.label}
         </span>
       </div>
@@ -180,7 +182,7 @@ function ProblemCard({ p }: { p: CatalogItem }) {
       </Link>
       <div className="e5-card-foot">
         <span className="tiny muted" data-testid={tid('e5', 'authored', p.code)}>{authoredLine(p.stepCount)}</span>
-        <Link className="btn sm" to={`/gv/giao-bai/${p.versionId}`} data-testid={tid('e1', 'problem', p.code, 'assign')}>
+        <Link className="btn sm" to={`/gv/giao-bai/${p.versionId}`} data-testid={tid('e1', 'problem', p.code, 'assign')}><Icon name="assign" />
           Giao bài
         </Link>
       </div>

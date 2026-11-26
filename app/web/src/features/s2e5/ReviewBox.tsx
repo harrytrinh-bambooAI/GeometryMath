@@ -3,6 +3,7 @@ import { formatVnDateTime } from '../../shared/time/vnTime.ts';
 import type { DocView, ProposalView } from './api.ts';
 import { TrustLabels } from './TrustLabels.tsx';
 import { MSG } from './logic.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 interface Props {
   doc: DocView;
@@ -52,13 +53,13 @@ export function ReviewBox({ doc, dirty, busy, onApprove, onProposal, onEditPropo
                   {p.content}
                 </p>
                 <div className="s2e5-row">
-                  <button type="button" className="btn" disabled={dirty || busy || !v.latest} onClick={() => onProposal('accept', p)} data-testid="s2e5-proposal-accept">
+                  <button type="button" className="btn" disabled={dirty || busy || !v.latest} onClick={() => onProposal('accept', p)} data-testid="s2e5-proposal-accept"><Icon name="check" />
                     Nhận
                   </button>
-                  <button type="button" className="btn ghost" disabled={dirty || busy || !v.latest} onClick={() => onEditProposal(p)} data-testid="s2e5-proposal-edit">
+                  <button type="button" className="btn ghost" disabled={dirty || busy || !v.latest} onClick={() => onEditProposal(p)} data-testid="s2e5-proposal-edit"><Icon name="pencil" />
                     Sửa
                   </button>
-                  <button type="button" className="btn ghost" disabled={busy} onClick={() => onProposal('dismiss', p)} data-testid="s2e5-proposal-dismiss">
+                  <button type="button" className="btn ghost" disabled={busy} onClick={() => onProposal('dismiss', p)} data-testid="s2e5-proposal-dismiss"><Icon name="x" />
                     Bỏ
                   </button>
                 </div>
@@ -119,12 +120,12 @@ export function ReviewBox({ doc, dirty, busy, onApprove, onProposal, onEditPropo
             {v.approvedAt ? ` · ${formatVnDateTime(v.approvedAt)}` : ''}
           </p>
         ) : a.blockedReason ? (
-          <p className="s2e5-ban red" role="status" data-testid="s2e5-blocked">
+          <p className="s2e5-ban red" role="status" data-testid="s2e5-blocked"><Icon name="lock" inline />
             {a.blockedReason}
             {v.finalState === 'mismatch' && v.finalNote ? `. ${v.finalNote}` : ''}
           </p>
         ) : a.needsConfirm ? (
-          <p className="s2e5-ban yel" data-testid="s2e5-approve-hint">
+          <p className="s2e5-ban yel" data-testid="s2e5-approve-hint"><Icon name="eye" inline />
             Duyệt lúc này sẽ giữ nhãn "Cần xem lại" cho đến khi máy kiểm đạt.
           </p>
         ) : null}
@@ -135,7 +136,7 @@ export function ReviewBox({ doc, dirty, busy, onApprove, onProposal, onEditPropo
             disabled={locked}
             onClick={() => (a.needsConfirm ? setConfirming(true) : onApprove(false))}
             data-testid="s2e5-approve"
-          >
+          ><Icon name="shield" />
             Duyệt lời giải này
           </button>
         )}

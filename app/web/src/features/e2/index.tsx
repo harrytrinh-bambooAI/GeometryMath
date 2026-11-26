@@ -17,5 +17,5 @@ export const feature: FeatureModule = {
     { path: 'tu-hoc/:id', element: <SelfStudyResultPage /> },
   ],
   teacherNav: [],
-  studentNav: [{ to: 'tu-hoc', label: 'Tự học', testId: 'e2-nav-tu-hoc' }],
+  studentNav: [{ to: 'tu-hoc', label: 'Tự học', testId: 'e2-nav-tu-hoc', icon: 'cube' }],
 };

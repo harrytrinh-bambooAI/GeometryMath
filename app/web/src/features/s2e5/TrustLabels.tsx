@@ -1,3 +1,5 @@
+import { Icon } from '../../shared/ui/Icon.tsx';
+import { verifyIcon } from '../../shared/ui/icons.ts';
 const VERIFIED = 'Đã kiểm chứng';
 const APPROVED = 'Giáo viên đã duyệt';
 const AI = 'AI soạn';
@@ -19,10 +21,10 @@ export function TrustLabels({ machineLabel, machineNote, humanLabel, where }: Pr
   const human = humanLabel === AI ? 'chip s2e5-pur' : humanLabel === APPROVED ? 'chip grn' : 'chip';
   return (
     <div className="s2e5-labels" data-testid={`s2e5-labels-${where}`}>
-      <span className={`chip ${machineLabel === VERIFIED ? 'grn' : 'yel'}`} data-testid={`s2e5-machine-${where}`}>
+      <span className={`chip ${machineLabel === VERIFIED ? 'grn' : 'yel'}`} data-testid={`s2e5-machine-${where}`}><Icon name={verifyIcon(machineLabel === VERIFIED)} />
         {machineLabel}
       </span>
-      <span className={human} data-testid={`s2e5-human-${where}`}>
+      <span className={human} data-testid={`s2e5-human-${where}`}><Icon name={humanLabel === APPROVED ? 'shield' : humanLabel === AI ? 'spark' : 'pencil'} />
         {humanLabel}
       </span>
       {machineNote && (

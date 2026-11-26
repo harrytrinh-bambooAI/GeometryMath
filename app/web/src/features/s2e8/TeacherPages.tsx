@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import { ApiError } from '../../shared/api/errors.ts';
 import { formatVnDateTime } from '../../shared/time/vnTime.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 import { practiceApi, type ReportView, type SetLine } from './api.ts';
 import { STATUS_LABEL, useLoad } from './load.ts';
 import { LoadError } from './LoadError.tsx';
@@ -15,10 +16,10 @@ export function TeacherListPage() {
     <div className="s2e8-page" data-testid="s2e8-teacher-list">
       <div className="s2e8-head">
         <h1 className="s2e8-title">Bài luyện</h1>
-        <Link className="btn" to="moi" data-testid="s2e8-new">
+        <Link className="btn" to="moi" data-testid="s2e8-new"><Icon name="plus" />
           Soạn bài luyện
         </Link>
-        <Link className="btn ghost" to="bao-cham-sai" data-testid="s2e8-reports-link">
+        <Link className="btn ghost" to="bao-cham-sai" data-testid="s2e8-reports-link"><Icon name="warn" />
           Báo chấm sai
         </Link>
       </div>
@@ -106,10 +107,10 @@ export function ReportsPage() {
             </span>
             {r.status === 'pending' ? (
               <div className="s2e8-actions">
-                <button type="button" className="btn" disabled={busy === r.id} onClick={() => void decide(r.id, 'confirm')} data-testid="s2e8-report-confirm">
+                <button type="button" className="btn" disabled={busy === r.id} onClick={() => void decide(r.id, 'confirm')} data-testid="s2e8-report-confirm"><Icon name="check" />
                   Xác nhận đúng
                 </button>
-                <button type="button" className="btn ghost" disabled={busy === r.id} onClick={() => void decide(r.id, 'keep')} data-testid="s2e8-report-keep">
+                <button type="button" className="btn ghost" disabled={busy === r.id} onClick={() => void decide(r.id, 'keep')} data-testid="s2e8-report-keep"><Icon name="x" />
                   Giữ nguyên
                 </button>
               </div>

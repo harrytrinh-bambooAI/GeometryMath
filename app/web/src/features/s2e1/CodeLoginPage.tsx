@@ -5,6 +5,7 @@ import { homeOf, saveCodeLogin } from '../../shared/auth/codeSession.ts';
 import type { CodeSession } from '../../shared/auth/codeSession.ts';
 import { tid } from '../../shared/testid.ts';
 import { MSG, codeOf, messageOf, s2e1Api } from './api.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /**
  * C3-01 "Đăng nhập" bằng mã người dùng + mật khẩu (US-S2E1-02). Chỉ hai ô; mã không phân biệt hoa thường (máy chủ
@@ -102,7 +103,7 @@ export function CodeLoginPage({ area }: { area: 'gv' | 'hs' }) {
             {error.text}
           </div>
         ) : null}
-        <button type="submit" className="btn s2e1-wide" disabled={busy} data-testid={tid('s2e1', 'login', 'submit')}>
+        <button type="submit" className="btn s2e1-wide" disabled={busy} data-testid={tid('s2e1', 'login', 'submit')}><Icon name="login" />
           Đăng nhập
         </button>
         <div className="s2e1-help">

@@ -10,6 +10,7 @@ import '../e3/e3.css';
 import { M, e6Api, errText } from './api.ts';
 import type { PreviewPage as PreviewData } from './api.ts';
 import { LockCard } from './LockCard.tsx';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 interface TeacherProblem {
   statement: string;
@@ -83,7 +84,7 @@ export function PreviewPage() {
     <div className="e3-workspace e6-preview" data-testid={tid('e6', 'preview')}>
       <div className="e6-banner row" data-testid={tid('e6', 'preview', 'banner')}>
         <span>{M['51']}</span>
-        <button type="button" className="btn sm" data-testid={tid('e6', 'preview', 'exit')} onClick={() => void nav(`/gv/de/${versionId}`)}>
+        <button type="button" className="btn sm" data-testid={tid('e6', 'preview', 'exit')} onClick={() => void nav(`/gv/de/${versionId}`)}><Icon name="x" />
           Thoát xem trước
         </button>
       </div>

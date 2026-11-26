@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { ApiError } from '../../shared/api/errors.ts';
 import { tid } from '../../shared/testid.ts';
 import { e4Api, M, type Keyword, type Lecture } from './api.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /**
  * Từ khóa bấm được và hộp bài giảng (US-GEO-411; BR-GEO-198, 199, 296). Cụm từ trùng một từ khóa của kho (dài trước,
@@ -127,7 +128,7 @@ function LectureModal({ req, onClose }: { req: { term?: string; slug?: string };
           <>
             <h3 data-testid={tid('e4', 'lecture', 'title')}>{lec.title}</h3>
             {lec.aiLabel && (
-              <span className="chip pur" data-testid={tid('e4', 'lecture', 'ai-label')}>
+              <span className="chip pur" data-testid={tid('e4', 'lecture', 'ai-label')}><Icon name="spark" />
                 {lec.aiLabel}
               </span>
             )}
@@ -147,7 +148,7 @@ function LectureModal({ req, onClose }: { req: { term?: string; slug?: string };
             )}
           </>
         )}
-        <button type="button" className="btn ghost" data-testid={tid('e4', 'lecture', 'close')} onClick={onClose}>
+        <button type="button" className="btn ghost" data-testid={tid('e4', 'lecture', 'close')} onClick={onClose}><Icon name="x" />
           Đóng
         </button>
       </div>

@@ -6,6 +6,7 @@ import { tid } from '../../shared/testid.ts';
 import { CodeBox, SavedGate } from './CodeBox.tsx';
 import { checkName, checkPassword, fieldErrorOf, messageOf, s2e1Api } from './api.ts';
 import type { Notice, Registered, Role } from './api.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 type Errors = Partial<Record<'displayName' | 'role' | 'password' | 'privacyAck' | 'form', string>>;
 
@@ -203,7 +204,7 @@ function CodesScreen({ r }: { r: Registered }) {
           </div>
         )}
         <div className="s2e1-noprint">
-          <button type="button" className="btn ghost" onClick={() => window.print()} data-testid={tid('s2e1', 'print')}>
+          <button type="button" className="btn ghost" onClick={() => window.print()} data-testid={tid('s2e1', 'print')}><Icon name="print" />
             In / lưu ảnh
           </button>
         </div>

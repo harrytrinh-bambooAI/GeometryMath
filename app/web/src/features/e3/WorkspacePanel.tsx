@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { tid } from '../../shared/testid.ts';
 import type { LockState } from '../../shared/viewer/types.ts';
 import { e3Api } from './api.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 export type PanelTab = 'hint' | 'solution' | 'ask';
 export const PANEL_TABS: Array<{ id: PanelTab; label: string }> = [
@@ -61,7 +62,7 @@ export function WorkspacePanel(props: {
         {tab === 'hint' && (props.slots?.hint ?? <HintTab id={props.assignmentId} hints={props.hints} onHints={props.onHints} />)}
         {tab === 'solution' &&
           (props.slots?.solution ?? (
-            <p className="muted">{props.lock === 'locked' ? 'Lời giải sẽ hiện khi đến giờ mở.' : 'Lời giải từng bước (E4).'}</p>
+            <p className="muted">{props.lock === 'locked' ? <Icon name="lock" inline /> : null}{props.lock === 'locked' ? 'Lời giải sẽ hiện khi đến giờ mở.' : 'Lời giải từng bước (E4).'}</p>
           ))}
         {tab === 'ask' && (props.slots?.ask ?? <p className="muted">Hỏi trợ lý về bài này (E4).</p>)}
       </div>
@@ -94,7 +95,7 @@ function HintTab({ id, hints, onHints }: { id: string; hints: HintState; onHints
         </div>
       ))}
       {next <= 2 && (
-        <button type="button" className="btn" disabled={busy} data-testid={tid('e3', 'hint', 'next')} onClick={() => void ask()}>
+        <button type="button" className="btn" disabled={busy} data-testid={tid('e3', 'hint', 'next')} onClick={() => void ask()}><Icon name="hint" />
           Xem gợi ý {next}
         </button>
       )}

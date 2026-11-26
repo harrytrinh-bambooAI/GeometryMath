@@ -6,6 +6,7 @@ import { ErrorNotice } from '../../shared/ui/ErrorNotice.tsx';
 import { fromScene } from '../../shared/viewer/adapter.ts';
 import { Figure3DViewer } from '../../shared/viewer/Figure3DViewer.tsx';
 import { e2Api } from '../e2/api.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /**
  * Khối "Tự khám phá" ở "Bài của em" (US-GEO-403-SC1, SC2; khung mvp-04): hình mẫu nhỏ (bấm mở màn khám phá) và nút
@@ -33,7 +34,7 @@ export function ExploreBlock() {
           </Link>
         ))}
       </div>
-      <Link className="btn" to="/hs/tu-hoc" data-testid={tid('e4', 'open', 'self-study')}>
+      <Link className="btn" to="/hs/tu-hoc" data-testid={tid('e4', 'open', 'self-study')}><Icon name="cube" />
         Mở chế độ tự học
       </Link>
     </section>

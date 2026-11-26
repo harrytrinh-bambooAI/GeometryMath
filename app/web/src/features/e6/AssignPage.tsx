@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router';
 import { tid } from '../../shared/testid.ts';
 import { M, e6Api, errText, msg41, msg44, vnToIso } from './api.ts';
 import type { AssignOptions } from './api.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /**
  * "Chi tiết đề &amp; giao bài" (US-GEO-602, 603, 604; khung Design/mvp-02). Ba bước: 1 · Chọn lớp ("{tên lớp} · {cấp}
@@ -97,7 +98,7 @@ export function AssignPage() {
       <div className="row e6-head">
         <h2>Chi tiết đề &amp; giao bài</h2>
         <button type="button" className="btn ghost" data-testid={tid('e6', 'preview', 'open')}
-          onClick={() => void nav(`/gv/xem-truoc/${versionId}?${previewQuery.toString()}`)}>
+          onClick={() => void nav(`/gv/xem-truoc/${versionId}?${previewQuery.toString()}`)}><Icon name="eye" />
           Xem như học sinh
         </button>
       </div>
@@ -169,7 +170,7 @@ export function AssignPage() {
         </div>
       ) : null}
       {done ? (
-        <p className="toast chip grn" role="status" data-testid={tid('e6', 'assign', 'done')}>
+        <p className="toast chip grn" role="status" data-testid={tid('e6', 'assign', 'done')}><Icon name="check" />
           {done}
         </p>
       ) : null}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { tid } from '../../shared/testid.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /** Một mã (mã người dùng hoặc mã khôi phục) với nút "Sao chép". */
 export function CodeBox({ label, code, name }: { label: string; code: string; name: string }) {
@@ -19,7 +20,7 @@ export function CodeBox({ label, code, name }: { label: string; code: string; na
         <div className="s2e1-code" data-testid={tid('s2e1', name)}>
           {code}
         </div>
-        <button type="button" className="btn ghost s2e1-noprint" onClick={copy} data-testid={tid('s2e1', 'copy', name)}>
+        <button type="button" className="btn ghost s2e1-noprint" onClick={copy} data-testid={tid('s2e1', 'copy', name)}><Icon name="copy" />
           {copied ? 'Đã chép' : 'Sao chép'}
         </button>
       </div>

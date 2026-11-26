@@ -12,6 +12,8 @@ import { useHelp } from '../e4/useHelp.ts';
 import { e2Api } from './api.ts';
 import { SceneFrame } from './SceneFrame.tsx';
 import { MSG_19, parseParam } from './sceneMath.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
+import { verifyIcon } from '../../shared/ui/icons.ts';
 
 /**
  * Màn "Tự học" (US-GEO-202, 204, 205): ô nhập đề + "Dựng hình" (cổng AI nhận ra hình; engine dựng hoặc tọa độ AI kèm
@@ -115,7 +117,7 @@ export function SelfStudyPage() {
             <option value="thpt">THPT</option>
           </select>
           <button type="button" className="btn ghost" disabled={busy || ocrBusy} data-testid={tid('e4', 'photo')}
-            onClick={() => fileRef.current?.click()}>
+            onClick={() => fileRef.current?.click()}><Icon name="camera" />
             Chụp hoặc dán ảnh đề
           </button>
           <input ref={fileRef} type="file" accept="image/*" hidden data-testid={tid('e4', 'photo', 'input')}
@@ -138,7 +140,7 @@ export function SelfStudyPage() {
             {buildError}
           </p>
         ) : null}
-        <button type="submit" className="btn" disabled={busy || ocrBusy} data-testid={tid('e2', 'build')}>
+        <button type="submit" className="btn" disabled={busy || ocrBusy} data-testid={tid('e2', 'build')}><Icon name="cube" />
           Dựng hình
         </button>
         {busy || ocrBusy ? (
@@ -149,7 +151,7 @@ export function SelfStudyPage() {
         ) : null}
         {retry ? (
           <button type="button" className="btn ghost" data-testid={tid('e4', 'retry')}
-            onClick={() => (retry === 'ocr' && lastImage.current ? void readImage(lastImage.current) : void build())}>
+            onClick={() => (retry === 'ocr' && lastImage.current ? void readImage(lastImage.current) : void build())}><Icon name="redo" />
             Thử lại
           </button>
         ) : null}
@@ -283,7 +285,7 @@ export function SelfStudyResultPage() {
       <p className="e1-statement" data-testid={tid('e2', 'self-study', 'statement')}>
         {data.statement}{' '}
         <span className={`chip ${v.status === 'verified' ? 'grn' : 'yel'}`} data-testid={tid('e2', 'problem', 'label')}
-          data-status={v.status}>
+          data-status={v.status}><Icon name={verifyIcon(v.status === 'verified')} />
           {v.label}
         </span>
       </p>
@@ -299,7 +301,7 @@ export function SelfStudyResultPage() {
       </div>
       <p>
         {/* E4: gợi ý, lời giải, hỏi đáp của bài tự học trên trang Làm bài (E3) */}
-        <Link className="btn primary" to={`/hs/lam-bai/${encodeURIComponent(id)}`} data-testid={tid('e4', 'open', 'workspace')}>
+        <Link className="btn primary" to={`/hs/lam-bai/${encodeURIComponent(id)}`} data-testid={tid('e4', 'open', 'workspace')}><Icon name="pencil" />
           Làm bài trên hình
         </Link>
       </p>

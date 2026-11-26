@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { tid } from '../../shared/testid.ts';
 import { confirmOpen, e6Api, errText, msg46, msg47, vnDateTime, vnToIso } from './api.ts';
 import type { ReleaseView } from './api.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /**
  * Thẻ vàng "Lời giải đang khóa" trên Theo dõi lớp (US-GEO-605; khung Design/mvp-03): bài Chưa đặt giờ hoặc Sắp mở có
@@ -51,7 +52,7 @@ export function ReleaseCard({ assignmentId, onChanged }: { assignmentId: string;
   return (
     <div data-testid={tid('e6', 'release-card-wrap')}>
       {toast ? (
-        <p className="toast chip grn" role="status" data-testid={tid('e6', 'toast')}>
+        <p className="toast chip grn" role="status" data-testid={tid('e6', 'toast')}><Icon name="check" />
           {toast}
         </p>
       ) : null}
@@ -61,7 +62,7 @@ export function ReleaseCard({ assignmentId, onChanged }: { assignmentId: string;
         </p>
       ) : null}
       {v.releaseState === 'open' ? (
-        <p className="chip grn" data-testid={tid('e6', 'release', 'opened')}>
+        <p className="chip grn" data-testid={tid('e6', 'release', 'opened')}><Icon name="unlock" />
           Lời giải đã mở{v.releaseAt ? ` lúc ${vnDateTime(v.releaseAt)}` : ''}
         </p>
       ) : (
@@ -71,7 +72,7 @@ export function ReleaseCard({ assignmentId, onChanged }: { assignmentId: string;
             {v.releaseAt ? `Mở lúc ${vnDateTime(v.releaseAt)}` : 'Chưa đặt giờ mở'}
           </p>
           <div className="row">
-            <button type="button" className="btn primary" data-testid={tid('e6', 'open-now')} onClick={() => setDialog('open')}>
+            <button type="button" className="btn primary" data-testid={tid('e6', 'open-now')} onClick={() => setDialog('open')}><Icon name="unlock" />
               Mở ngay
             </button>
             <button type="button" className="btn ghost" data-testid={tid('e6', 'change-time')}
@@ -80,7 +81,7 @@ export function ReleaseCard({ assignmentId, onChanged }: { assignmentId: string;
                 setDate('');
                 setTime('');
                 setDialog('change');
-              }}>
+              }}><Icon name="schedule" />
               Đổi giờ
             </button>
           </div>

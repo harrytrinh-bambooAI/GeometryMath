@@ -7,6 +7,7 @@ import { tid } from '../../shared/testid.ts';
 import { saveLogin } from './e1Session.ts';
 import type { LoginResponse } from './e1Session.ts';
 import { MSG, errorText, fieldError } from './messages.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 
 /**
  * Màn "Giáo viên mẫu" (US-GEO-102): một ô "Mã giáo viên", nút "Vào". Vai giáo viên chỉ có được bằng mã
@@ -62,7 +63,7 @@ export function TeacherLoginPage() {
             </small>
           ) : null}
         </label>
-        <button type="submit" className="btn e1-wide" disabled={busy} data-testid={tid('e1', 'teacher-login', 'submit')}>
+        <button type="submit" className="btn e1-wide" disabled={busy} data-testid={tid('e1', 'teacher-login', 'submit')}><Icon name="login" />
           Vào
         </button>
         <Link to="/hs/vao-lop" className="e1-link" data-testid={tid('e1', 'teacher-login', 'student-link')}>

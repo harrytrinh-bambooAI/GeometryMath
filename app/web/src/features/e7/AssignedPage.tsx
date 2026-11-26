@@ -5,6 +5,8 @@ import { errorText } from '../e1/messages.ts';
 import { e7Api } from './api.ts';
 import type { Assigned } from './api.ts';
 import { RELEASE_STATE, vnDateTime } from './format.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
+import { releaseIcon } from '../../shared/ui/icons.ts';
 
 /**
  * Mục "Theo dõi" (US-GEO-701-SC6, D-GEO-129): bài đã giao của các lớp mình dạy, mới giao ở trên, tải theo con trỏ.
@@ -50,7 +52,7 @@ export function AssignedPage() {
               {' '}
               · {a.className} · giao lúc {vnDateTime(a.assignedAt)}
             </span>{' '}
-            <span className={`chip ${a.releaseState === 'open' ? 'grn' : 'yel'}`} data-testid={tid('e7', 'assigned', 'state')}>
+            <span className={`chip ${a.releaseState === 'open' ? 'grn' : 'yel'}`} data-testid={tid('e7', 'assigned', 'state')}><Icon name={releaseIcon(a.releaseState)} />
               {RELEASE_STATE[a.releaseState] ?? a.releaseState}
             </span>
           </li>

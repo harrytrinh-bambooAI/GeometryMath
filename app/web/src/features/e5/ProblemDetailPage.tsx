@@ -9,6 +9,8 @@ import { KwText, LectureProvider } from '../e4/Lecture.tsx';
 import { e5Api } from './api.ts';
 import type { ProblemDetail } from './api.ts';
 import { levelLabel } from './labels.tsx';
+import { Icon } from '../../shared/ui/Icon.tsx';
+import { verifyIcon } from '../../shared/ui/icons.ts';
 
 /** MSG-GEO-54 (05_dictionary.md). */
 export const MSG_54 = 'Đề này chưa có lời giải.';
@@ -59,7 +61,7 @@ export function ProblemDetailPage() {
           <span className="chip pri">{levelLabel(p.level)}</span>
           <span className="chip">{p.topic}</span>
           <span className={`chip ${p.verifyStatus === 'verified' ? 'grn' : 'yel'}`} data-testid={tid('e2', 'problem', 'label')}
-            data-status={p.verifyStatus}>
+            data-status={p.verifyStatus}><Icon name={verifyIcon(p.verifyStatus === 'verified')} />
             {p.label}
           </span>
         </p>
@@ -98,10 +100,10 @@ export function ProblemDetailPage() {
         </section>
       </LectureProvider>
       <section className="card e5-part e5-part-assign" data-testid={tid('e5', 'part', 'assign')}>
-        <Link className="btn" to={`/gv/giao-bai/${p.versionId}`} data-testid={tid('e5', 'assign')}>
+        <Link className="btn" to={`/gv/giao-bai/${p.versionId}`} data-testid={tid('e5', 'assign')}><Icon name="assign" />
           Giao bài
         </Link>{' '}
-        <Link className="btn ghost" to="/gv/kho-de">
+        <Link className="btn ghost" to="/gv/kho-de"><Icon name="prev" />
           Về Kho đề
         </Link>
       </section>
@@ -129,7 +131,7 @@ function SolutionBlock({ p }: { p: ProblemDetail }) {
           </p>
           {p.answerMatch ? (
             <p>
-              <span className="chip grn" data-testid={tid('e5', 'answer-match')}>
+              <span className="chip grn" data-testid={tid('e5', 'answer-match')}><Icon name="check" />
                 Đáp số khớp tính toán: {p.answerMatch}
               </span>
             </p>

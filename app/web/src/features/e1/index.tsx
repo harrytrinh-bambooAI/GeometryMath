@@ -25,6 +25,6 @@ export const feature: FeatureModule = {
     { path: 'bai-cua-em', element: <MyAssignmentsPage /> },
     { path: 'bai/:id', element: <StudentAssignmentPage /> },
   ],
-  teacherNav: [{ to: 'kho-de', label: 'Kho đề', testId: 'e1-nav-kho-de' }],
-  studentNav: [{ to: 'bai-cua-em', label: 'Bài của em', testId: 'e1-nav-bai-cua-em' }],
+  teacherNav: [{ to: 'kho-de', label: 'Kho đề', testId: 'e1-nav-kho-de', icon: 'file' }],
+  studentNav: [{ to: 'bai-cua-em', label: 'Bài của em', testId: 'e1-nav-bai-cua-em', icon: 'assign' }],
 };

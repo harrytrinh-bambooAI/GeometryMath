@@ -3,6 +3,8 @@ import type { PointerEvent as RPointerEvent } from 'react';
 import type { Scene, ScenePoint } from '../../shared/scene/types.ts';
 import { tid } from '../../shared/testid.ts';
 import { fmtNum, lengthHidden, lengthOf, project } from './sceneMath.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
+import { verifyIcon } from '../../shared/ui/icons.ts';
 
 /**
  * Khung hình TẠM của E2 (SVG, chiếu song song): đủ cho tiêu chí E2 — hình hiện, xoay được (kéo hoặc nút),
@@ -109,22 +111,22 @@ export function SceneFrame({ scene, testId = tid('e2', 'scene') }: { scene: Scen
           className={`chip ${scene.verification.status === 'verified' ? 'grn' : 'yel'}`}
           data-testid={tid('e2', 'scene', 'label')}
           data-status={scene.verification.status}
-        >
+        ><Icon name={verifyIcon(scene.verification.status === 'verified')} />
           {scene.verification.label}
         </span>
         <span className="e2-rotate">
           <button type="button" className="btn ghost" aria-label="Xoay trái" data-testid={tid('e2', 'scene', 'rotate', 'left')}
             onClick={() => setView((v) => ({ ...v, yaw: v.yaw - 15 }))}>
-            ⟲
+            <Icon name="rotateLeft" />
           </button>
           <button type="button" className="btn ghost" aria-label="Xoay phải" data-testid={tid('e2', 'scene', 'rotate', 'right')}
             onClick={() => setView((v) => ({ ...v, yaw: v.yaw + 15 }))}>
-            ⟳
+            <Icon name="rotateRight" />
           </button>
         </span>
       </div>
       {warning ? (
-        <div className="e2-warning" role="note" data-testid={tid('e2', 'scene', 'warning')} data-code={warning.code}>
+        <div className="e2-warning" role="note" data-testid={tid('e2', 'scene', 'warning')} data-code={warning.code}><Icon name="warn" inline />
           {warning.text}
         </div>
       ) : null}
