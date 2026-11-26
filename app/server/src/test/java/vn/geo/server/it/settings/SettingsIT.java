@@ -66,18 +66,18 @@ class SettingsIT extends AbstractIT {
   }
 
   @Test
-  void defaultIsDAndSavedPerAccount() throws Exception {
+  void defaultIsCAndSavedPerAccount() throws Exception {
     UUID[] o = newOrgWithUsers();
     String gv = token(o[0], o[1], Role.TEACHER);
     String hs = token(o[0], o[2], Role.STUDENT);
-    assertThat(theme(gv)).isEqualTo("d");
-    assertThat(theme(hs)).isEqualTo("d");
+    assertThat(theme(gv)).isEqualTo("c");
+    assertThat(theme(hs)).isEqualTo("c");
 
     assertThat(put(hs, "{\"theme\":\"a\"}").statusCode()).isEqualTo(200);
     assertThat(put(gv, "{\"theme\":\"b\"}").statusCode()).isEqualTo(200);
-    assertThat(put(gv, "{\"theme\":\"c\"}").statusCode()).isEqualTo(200); // ghi đè
+    assertThat(put(gv, "{\"theme\":\"d\"}").statusCode()).isEqualTo(200); // ghi đè
     assertThat(theme(hs)).isEqualTo("a");
-    assertThat(theme(gv)).isEqualTo("c");
+    assertThat(theme(gv)).isEqualTo("d");
   }
 
   @Test
@@ -86,7 +86,7 @@ class SettingsIT extends AbstractIT {
     String gv = token(o[0], o[1], Role.TEACHER);
     assertThat(put(gv, "{\"theme\":\"x\"}").statusCode()).isEqualTo(400);
     assertThat(put(gv, "{}").statusCode()).isEqualTo(400);
-    assertThat(theme(gv)).isEqualTo("d");
+    assertThat(theme(gv)).isEqualTo("c");
     assertThat(get("/api/v1/me/settings", null).statusCode()).isEqualTo(401);
   }
 
@@ -97,6 +97,6 @@ class SettingsIT extends AbstractIT {
     // thẻ mang trường khác với trường của tài khoản: không ghi được hàng chéo trường
     String wrong = token(other[0], o[1], Role.TEACHER);
     assertThat(put(wrong, "{\"theme\":\"b\"}").statusCode()).isEqualTo(404);
-    assertThat(theme(token(o[0], o[1], Role.TEACHER))).isEqualTo("d");
+    assertThat(theme(token(o[0], o[1], Role.TEACHER))).isEqualTo("c");
   }
 }
