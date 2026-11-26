@@ -1,0 +1,15 @@
+{
+  "_doc": "S3-E2 (T-261126-29): mã cố định của app/db/seed/e2e/920_s3e2_core.sql. Tổ chức thử F-S3E2-001 thấy bộ đề 's3e2_kho' (22 đề phẳng BOB-01…22: đề F-S3E2-921nnn, phiên bản 922nnn, báo cáo kiểm chứng 923nnn; Đề 3 'Cần xem lại'). Ca kiểm dựng Cô Lan/Thầy Khôi/lớp/học sinh riêng qua /test-hooks/s3e2/sandbox. F-S3E2-050: bộ Đã giao của lớp 10B (F-S3-012) cho ca Chi Mai hai lớp.",
+  "orgs": {
+    "F-S3E2-001": { "id": "00000000-0000-7000-8003-000000920001", "name": "Nhóm thử S3-E2" }
+  },
+  "problems": {
+    "F-S3E2-921001": { "id": "00000000-0000-7000-8003-000000921001", "code": "BOB-01", "versionId": "00000000-0000-7000-8003-000000922001", "title": "Đề 1 SC-đáy" },
+    "F-S3E2-921002": { "id": "00000000-0000-7000-8003-000000921002", "code": "BOB-02", "versionId": "00000000-0000-7000-8003-000000922002", "title": "Đề 2 d(A,SBC)" },
+    "F-S3E2-921003": { "id": "00000000-0000-7000-8003-000000921003", "code": "BOB-03", "versionId": "00000000-0000-7000-8003-000000922003", "title": "Đề 3 hai mặt phẳng" },
+    "F-S3E2-921004": { "id": "00000000-0000-7000-8003-000000921004", "code": "BOB-04", "versionId": "00000000-0000-7000-8003-000000922004", "title": "Đề 4 thể tích" }
+  },
+  "assignmentSets": {
+    "F-S3E2-050": { "id": "00000000-0000-7000-8003-000000920050", "title": "Bộ bài tuần 15 lớp 10B", "class": "F-S3-012" }
+  }
+}
