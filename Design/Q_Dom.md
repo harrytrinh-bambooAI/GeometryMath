@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26 · GEO — câu hỏi cho Designer (một danh sách, trả lời một lần)
+Phiên bản: v0.2 · 2026-11-26 · GEO — câu hỏi cho Designer (một danh sách, trả lời một lần)
 Nguồn: `Design/s23/DQ.md` v0.1 (T-261126-10, 26/11), `artifacts/GEO/work/s23/story-map-s23.md` (T-08, 26/11), `.claude/plans/STAGE-2-3-PLAN.md` v0.2, `STAGES-AFTER-MVP.md` (22/11).
 Cách trả lời: mỗi câu ghi OK (giữ mặc định) hoặc đáp án mới. Câu nào không trả lời → giữ mặc định TẠM.
 
@@ -55,4 +55,5 @@ Còn lại: DQ-01, 03, 07–10, 13–15, 18–21, 23–25, 27, 28 — OK cả l�
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
+| v0.2 | 2026-11-26 | Đổi tên DESIGNER-QUESTIONS.md → Q_Dom.md theo yêu cầu owner | delivery-lead |
 | v0.1 | 2026-11-26 | Bản đầu: A cách làm, B 10 DQ ưu tiên + 18 còn lại, C 8 màn thiếu, D 6 câu chặng 4–9 | delivery-lead |
