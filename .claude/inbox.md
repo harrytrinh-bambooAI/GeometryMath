@@ -136,3 +136,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Xong khi:** `make verify` xanh; `make bench-mvp` (mock) exit 0; test mới cho từng mục.
 - **Ngoài phạm vi:** dữ liệu đề; e2e spec.
 - **Trạng thái (26/11 14:36):** #1–#3 ĐÓNG 51ff36c, gộp vào worktree-mvp-wave0; phiên chính chạy lại verify 201 + 137 IT, bench-mvp mock exit 0.
+
+## Việc: delivery-lead agent_watch.py báo DONE nhầm (26/11 14:50)
+- **Mục tiêu:** watcher chỉ báo DONE ở bước cuối, không ở bước trung gian có trạng thái `xong`.
+- **Nguồn:** T-261126-08: watcher exit DONE ở dòng "14:38 · PO-62..65 vào PO-DECISIONS · xong" khi agent còn chạy. Brief (queue.py brief) dặn mọi bước ghi trạng thái → mâu thuẫn.
+- **Xong khi:** quy ước bước cuối riêng (ví dụ `· HOÀN TẤT ·` hoặc `DONE`) trong brief + agent_watch; chạy thử trên tệp tiến độ mẫu không báo DONE ở bước trung gian.
+- **Ngoài phạm vi:** code dự án GEO.
