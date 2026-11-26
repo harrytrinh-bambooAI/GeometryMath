@@ -303,7 +303,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Model: opus · Ngân sách: 1.5 giờ · Cổng: FIX W4 54649 · 6699 · 8124 · 5204
 - Phụ thuộc: T-261126-41
 
-## T-261126-44 · FIX · L5 Dev theme hoàn thiện · epic-common v1.3 · wt fix-44 · 1.5h/3M · Màu cứng → token, chữ D ≥ 14 px, font toán ở theme C, sql-lint user_preference [todo]
+## T-261126-44 · FIX · L5 Dev theme hoàn thiện · epic-common v1.3 · wt fix-44 · 1.5h/3M · Màu cứng → token, chữ D ≥ 14 px, font toán ở theme C, sql-lint user_preference [running]
 - Mục tiêu: (1) đăng ký `user_preference` trong `app/server/quality/sql-lint.properties` (tenant.tables / owner.user_preference=settings, dùng khóa hậu tố dưới mốc task); (2) thay 26 màu cứng ở `app/web/src/features/{e2,e4,e5,e6}/*.css` + `shared/viewer/viewer.css` bằng token; chữ dùng `--pri-t` (không dùng `--pri` làm màu chữ) để đạt AA ở cả 4 theme; (3) theme D: chữ phụ ≥ 14 px (PO-66 G17); (4) theme C mặc định (Bad Script): mọi nội dung toán ở màn MVP E1–E7 (đề, đáp số, bàn phím toán, bảng số, nhãn hình 3D) dùng `--font-math`/`data-math`, kiểm bố cục không tràn với chữ tay; ảnh 4 theme chụp lại
 - Nguồn: báo cáo T-50 (26/11) câu mở 1–3; `Design/styles/` (STYLES.md, contrast.js)
 - Xong khi: verify + web-build + e2e 2 lượt xanh; `grep -rEc '#[0-9A-Fa-f]{3,8}' app/web/src/features/e{2,4,5,6} app/web/src/shared/viewer` = 0 (trừ comment); ảnh 4 theme mới trong `artifacts/GEO/evidence/theme/`
