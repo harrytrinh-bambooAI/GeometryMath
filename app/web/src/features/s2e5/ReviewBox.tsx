@@ -4,6 +4,7 @@ import type { DocView, ProposalView } from './api.ts';
 import { TrustLabels } from './TrustLabels.tsx';
 import { MSG } from './logic.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { AssignedBox } from './AssignedBox.tsx';
 
 interface Props {
   doc: DocView;
@@ -14,10 +15,12 @@ interface Props {
   onProposal: (action: 'accept' | 'dismiss', p: ProposalView) => void;
   onEditProposal: (p: ProposalView) => void;
   onViewVersion: (version: number) => void;
+  /** US-S2E5-05: sau "Áp dụng cho lớp". */
+  onApplied: (d: DocView) => void;
 }
 
 /** Hộp duyệt chung của C2-03 (US-S2E5-03, 04): nhãn hai trục, đề xuất của AI, lịch sử phiên bản, nút Duyệt. */
-export function ReviewBox({ doc, dirty, busy, onApprove, onProposal, onEditProposal, onViewVersion }: Props) {
+export function ReviewBox({ doc, dirty, busy, onApprove, onProposal, onEditProposal, onViewVersion, onApplied }: Props) {
   const [confirming, setConfirming] = useState(false);
   const v = doc.version;
   const a = doc.approve;
@@ -102,14 +105,7 @@ export function ReviewBox({ doc, dirty, busy, onApprove, onProposal, onEditPropo
       </section>
 
       {doc.assignments.length > 0 && (
-        <section className="s2e5-sec" data-testid="s2e5-assigned">
-          <h3 className="s2e5-cap">Đã giao</h3>
-          {doc.assignments.map((x) => (
-            <p key={`${x.className}-${x.version}`} className="s2e5-sub">
-              Đã giao cho {x.className} (v{x.version})
-            </p>
-          ))}
-        </section>
+        <AssignedBox doc={doc} latestApproved={v.latest && a.approved} busy={busy || dirty} onApplied={onApplied} />
       )}
 
       <section className="s2e5-sec s2e5-approve">

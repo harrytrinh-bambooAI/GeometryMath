@@ -57,6 +57,19 @@ public final class SolutionViews {
   public record AssignedView(String className, int version) {}
 
   /**
+   * US-S2E5-05: chi tiết bài giao đang ghim (cho "Áp dụng cho lớp"): số học sinh đã xem lời giải,
+   * lời giải còn khóa (giờ máy chủ trước {@code release_at}).
+   */
+  public record AssignedPinView(
+      String className, int version, UUID assignmentId, int viewers, boolean locked) {}
+
+  /**
+   * Đối chiếu ba đáp số (S2-E3, US-S2E3-04): đề ghi / AI giải / máy tính lại (chuỗi hiển thị, null
+   * = chưa có); state = match | mismatch | unknown.
+   */
+  public record AnswersView(String stated, String ai, String computed, String state) {}
+
+  /**
    * Toàn bộ màn C2-03. {@code saved} sai khi bấm Lưu mà không có thay đổi; {@code scene} là cảnh 3D
    * của đề (không chứa đáp số), null khi không dựng được.
    */
@@ -74,7 +87,10 @@ public final class SolutionViews {
       ApproveView approve,
       List<HistoryItem> history,
       List<ProposalView> proposals,
-      List<AssignedView> assignments) {}
+      List<AssignedView> assignments,
+      List<AssignedPinView> assignedPins,
+      AnswersView answers,
+      String figureSource) {}
 
   /** Một dòng danh sách đề đang soát. */
   public record DocSummary(

@@ -42,6 +42,7 @@ public class InstrumentedAiGateway implements AiGateway {
 
   private static final Logger log = LoggerFactory.getLogger(InstrumentedAiGateway.class);
   private static final Set<String> PURPOSES = Set.of("scene", "solution", "hint", "qa", "lecture");
+  private static final Set<String> DRAFT_SCENE = Set.of("draft_ocr", "draft_read", "draft_build");
 
   private final AiProvider provider;
   private final AiSettings settings;
@@ -157,10 +158,13 @@ public class InstrumentedAiGateway implements AiGateway {
       long ms,
       String outcome) {
     // "ocr" (E4: đọc chữ từ ảnh đề để dựng hình, US-GEO-402) ghi mục đích 'scene' của ai_purpose
+    // S2-E3: đọc / dựng của nháp đề ghi 'scene', soạn lời giải nháp ghi 'solution'
     String purpose =
-        "ocr".equals(request.task())
+        "ocr".equals(request.task()) || DRAFT_SCENE.contains(request.task())
             ? "scene"
-            : PURPOSES.contains(request.task()) ? request.task() : "qa";
+            : "draft_solve".equals(request.task())
+                ? "solution"
+                : PURPOSES.contains(request.task()) ? request.task() : "qa";
     String status =
         switch (outcome) {
           case "success" -> "ok";

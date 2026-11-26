@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # S2-E5 — Phát hiện QC
 
 ## Dev
@@ -21,8 +21,14 @@ Ghi bởi runner-T-261126-20 (L5 Dev). Không sửa `stories_ac.md`, `test_cases
 | Dev-S2E5-12 | TC-S2E5-038 (Manual) | Cần iPhone thật xét cắt chữ. | Có kiểm máy phần đo được (`phone.p0m.ui.spec.ts`: nhãn trong khung nhìn, không cắt, chữ ≥ 14 px, không cuộn ngang) trên iPhone 13 / Pixel 7 giả lập; chưa chạy máy thật. | Tester thiết bị |
 | Dev-S2E5-13 | US-S2E5-02-BV4 (10 giây) | Trần CSDL 2 s của sản phẩm không áp cho phép kiểm (hàm thuần, chạy ngoài giao dịch). | Engine chạy trong luồng riêng với hạn 10 000 ms, đo bằng đồng hồ tiêm được (test dùng đồng hồ giả: đúng 10 s có kết quả, 11 s `TIMEOUT` 504, xóa kết quả, nhãn máy "Cần xem lại"). Hằng số trong mã, chưa có khóa cấu hình (ConfigIT đòi khai ở `docs/CONFIG.md`, ngoài phạm vi). TẠM · vừa · QA-S2E5-04 | L4 nếu cần cấu hình |
 | Dev-S2E5-14 | BR-S2E5-11 "học sinh không đọc được StepCheck"; TC-GEO-0666 (MVP: vai ứng dụng không có SELECT trên cột `steps`, `final_answer`…) | Bảng phiên bản lời giải mới chứa bước giải và giá trị máy tính lại; cấp SELECT cả bảng cho `geo_app` làm đỏ TC-GEO-0666 và mở đường đọc lời giải ngoài cổng. | `geo_app` chỉ có SELECT trên cột siêu dữ liệu; bước giải, lý do / giá trị StepCheck, ghi chú đối chiếu đáp số, nội dung đề xuất của AI đọc qua hàm SECURITY DEFINER `fn_solution_content_teacher(org, user, doc, version)` (chỉ trả hàng cho giáo viên đang hoạt động là chủ sổ); IT `SolutionS2E5IT.sensitiveColumnsOnlyThroughOwnerGate` chạy mọi câu lệnh của ứng dụng dưới vai `geo_app`. TẠM · cao · V10 mục quyền, D-GEO-158 | L4 xác nhận; T-22 dùng lại hàm cổng |
+| Dev-S2E5-15 | US-S2E5-05 (runner-T-261126-22), PLAN §5 (`assignment/**/ApplyRevision*`) | Bảng ghim `solution_assignment_pin` thuộc module `content`; module `assignment` không được ghi bảng của `content`. | Lớp ứng dụng "Áp dụng cho lớp" là `content/internal/solution/service/ApplyRevisionService` (đổi `version_id` của đúng một bài giao); bài giao, số học sinh đã xem lời giải (`assignment_progress.solution_viewed_at`) đọc dạng read model. Không tạo tệp trong `assignment`. TẠM · cao · README "Luật" | L4 |
+| Dev-S2E5-16 | US-S2E5-05-FC1 "API ghi đè nội dung v2" | MVP không có API sửa phiên bản. | `PUT /api/v1/teacher/solutions/{id}/versions/{n}` luôn `CONFLICT`: bản đang giao "Bản đã giao không sửa được, hãy tạo phiên bản mới"; bản chưa giao "Phiên bản đã lưu không sửa được, hãy tạo phiên bản mới". Trigger V160 vẫn chặn đổi `steps`. TẠM · cao · BR-S2E5-22 | — |
+| Dev-S2E5-17 | US-S2E5-05-FC3, FC4 (xác nhận) | Áp dụng khi có cảnh báo gọi API thiếu xác nhận thì sao. | `GET …/assignments/{aid}/apply` trả cảnh báo; `POST` thiếu `confirm` khi có cảnh báo → `CONFLICT` kèm đúng câu cảnh báo, bài giao không đổi. Đáp số so theo giá trị (dung sai 0,01) giữa bước cuối hai phiên bản. Kết quả đã chấm (`practice_attempt`) không bị đụng. TẠM · cao · BR-S2E5-25, 26 | — |
+| Dev-S2E5-18 | US-S2E5-05-SC5 "nội dung theo v3" | Màn làm bài E3/E4 (thẻ hình, lời giải) ngoài phạm vi tệp. | Học sinh nhận nội dung theo phiên bản ghim qua `fn_get_solution` (V210 thay thân hàm, giữ cổng giờ mở; bước "Bước n", đáp số = phần sau dấu "=" / "bằng" cuối); màn `/hs/nhan-loi-giai/:id` hiện nhãn + số phiên bản (ca TC-064 kiểm `data-version` 2 → 3 sau tải lại). TẠM · vừa · Dev-S2E5-06 | L4 nối màn làm bài |
+| Dev-S2E5-19 | US-S2E5-03-SC4 "Chặn duyệt" khi có đáp số đề ghi (S2-E3) | Hai câu chặn: S2-E5 "đáp số lệch máy tính lại", S2-E3 "đáp số chưa khớp". | Sổ có đáp số đề ghi (đề từ C2-02) dùng "Chặn duyệt: đáp số chưa khớp" kèm bảng "Đề ghi / AI giải / Máy tính lại"; sổ khác giữ câu cũ của S2-E5. TẠM · cao · US-S2E3-04-SC4 | BA thống nhất câu |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mục Dev (14 phát hiện) | runner-T-261126-20 |
+| v0.2 | 2026-11-26 | Thêm Dev-S2E5-15…19 (US-S2E5-05, nối S2-E3) | runner-T-261126-22 |

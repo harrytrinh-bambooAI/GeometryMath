@@ -1,0 +1,17 @@
+{
+  "_doc": "S2-E3 (T-261126-22): mã cố định của app/db/seed/e2e/840_s2e3_core.sql. F-S2-84nnnn → 00000000-0000-7000-8002-00000084nnnn. Giáo viên theo (TC, làn) của S2-E3: F-S2-(841000000 + TC × 100 + làn), làn 0…5 = api, ui-chromium, ui-webkit, ui-iphone, mobile-iphone, mobile-pixel (tests/s2e3/s2e3.ts tự tính). US-S2E5-05 theo (TC, làn), n = TC × 10 + làn: sổ F-S2-(843000000 + n), BG-1/BG-2 F-S2-(845000000 + n × 10 + 1/2), đề kho F-S2-(842000000 + n × 10), version + 1.",
+  "orgs": {
+    "F-S2-840001": { "id": "00000000-0000-7000-8002-000000840001", "name": "Nhóm thử S2-E3" }
+  },
+  "users": {
+    "F-S2-840002": { "id": "00000000-0000-7000-8002-000000840002", "org": "F-S2-840001", "role": "TEACHER", "displayName": "Cô Lan" },
+    "F-S2-840003": { "id": "00000000-0000-7000-8002-000000840003", "org": "F-S2-840001", "role": "TEACHER", "displayName": "Cô Trang" },
+    "F-S2-840021": { "id": "00000000-0000-7000-8002-000000840021", "org": "F-S2-840001", "role": "STUDENT", "displayName": "An" },
+    "F-S2-840022": { "id": "00000000-0000-7000-8002-000000840022", "org": "F-S2-840001", "role": "STUDENT", "displayName": "Chi" },
+    "F-S2-840023": { "id": "00000000-0000-7000-8002-000000840023", "org": "F-S2-840001", "role": "STUDENT", "displayName": "Bình" }
+  },
+  "classes": {
+    "F-S2-840011": { "id": "00000000-0000-7000-8002-000000840011", "org": "F-S2-840001", "name": "11A1" },
+    "F-S2-840012": { "id": "00000000-0000-7000-8002-000000840012", "org": "F-S2-840001", "name": "11A2" }
+  }
+}

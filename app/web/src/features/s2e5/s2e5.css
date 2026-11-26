@@ -373,3 +373,48 @@
   display: grid;
   gap: 8px;
 }
+
+/* T-261126-22: đối chiếu đáp số (S2-E3) và hộp "Đã giao" có "Áp dụng cho lớp" (US-S2E5-05) */
+.s2e5-answers {
+  display: grid;
+  gap: 10px;
+}
+.s2e5-ans-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.s2e5-ans-table th,
+.s2e5-ans-table td {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--line);
+}
+.s2e5-ans-val {
+  font-family: var(--font-math);
+  font-weight: 700;
+}
+.s2e5-ans-bad {
+  background: var(--red-s);
+}
+.s2e5-ans-bad .s2e5-ans-val {
+  color: var(--red);
+}
+.s2e5-ans-actions {
+  display: grid;
+  gap: 8px;
+}
+.s2e5-ans-input {
+  min-height: var(--touch);
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-family: var(--font-math);
+  font-size: 15px;
+  background: var(--panel);
+  color: var(--text);
+}
+.s2e5-assigned-item {
+  display: grid;
+  gap: 6px;
+}
