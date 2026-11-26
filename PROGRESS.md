@@ -1,25 +1,21 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 00:00
-Mục tiêu hiện tại: CODE tới hết chặng 3. Phiên điều phối chạy Fable; agent con Dev: T-20/T-21 Fable, T-22/T-23 Opus (owner đang so sánh hai model trên cùng quy trình). Luôn 2 agent song song (≤ 2 Opus/Fable). Delivery-lead tự quyết + ghi DECISIONS. Nhánh: `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`).
-Tiến độ epic (code đã gộp): 7/15 — S2-E1 (T-18), S2-E2 (T-19), S2-E5 đủ (T-20 + US-05 trong T-22), S2-E8 (T-21), S2-E3 (T-22, d9f76eb), S2-E6 + S2-E7 (T-23, 93e3fec).
-Đã xong (26/11 tối → đêm):
-- T-45 e2e-affected + smoke (b5f15e5) · T-44 theme hoàn thiện (fd23b06) · Icon chung 4 theme: Design/styles v0.2 + app, font tự lưu 7 KB.
-- T-20 S2-E5 (Fable): verify 237 UT + 172 IT, e2e-affected L1 409/410 (0209 chập chờn).
-- T-21 S2-E8 (Fable): bản kết hợp T-20 verify 266 UT + 178 IT, e2e-affected L1 594/594; FIX test chập chờn `RC-` S2-E1.
-- T-23 S2-E6+E7 (Opus): verify 266 UT + 184 IT, e2e-affected L1 506/507 (0539 chập chờn, chạy lại đạt).
-- T-22 S2-E3 + US-S2E5-05 (Opus): trên bản đã gộp T-23, verify 272 UT + 192 IT, e2e-affected L1 576/576.
-Đang dở: REGRESSION C trọn bộ 6 project trên HEAD wave0 (sau T-22 + T-23), chạy nền từ ~23:57; lúc 00:00 đạt 418/1383, 0 trượt. Log: /Users/harry/.claude/jobs/74cc88b7/tmp/regC.log; bằng chứng: `app/e2e/evidence/<lượt mới nhất>/summary.json` (xem `app/e2e/evidence/latest.txt`). CHƯA có kết quả cuối.
+# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 02:05
+Mục tiêu hiện tại: CODE tới hết chặng 3 (goal "xong chặng 3"). Phiên điều phối + agent con Dev chạy Fable (DECISIONS 27/11). Luôn 2 agent song song. Delivery-lead tự quyết + ghi DECISIONS. Nhánh: `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`).
+Tiến độ epic (code đã gộp): 8/15 — S2-E1, S2-E2, S2-E3, S2-E4 (T-24, ca680d3), S2-E5, S2-E6, S2-E7, S2-E8.
+Đã xong 27/11:
+- Regression C trên wave0 sau T-22 + T-23: ĐẠT 1379/1383 (4 bỏ qua có chủ đích ui-webkit, 0 trượt, 630/630 TC) — be30127.
+- T-24 S2-E4 (Fable): 282 UT + 199 IT, e2e-affected L2 665/665, traceability S2-E4 27/27, bench-mvp OK — gộp ca680d3.
+Đang dở (02:05, cả hai bị ngắt 00:40 vì đăng nhập hết hạn, đã gửi tin cho chạy tiếp):
+- T-25 S2-E9 (wt `s2-e9`, cổng PG 54719): mã + test viết xong; đang gộp lại wave0 (có T-24) rồi chạy lại chuỗi kiểm. Tiến độ: .claude/progress/runner-T-261126-25.md
+- T-42 seed chặng 3 (wt `s3-base`, cổng PG 54729): chạy lại từ đầu. Tiến độ: .claude/progress/runner-T-261126-42.md
 Bước tiếp theo:
-1. Đọc kết quả regression C (`summary.json` của lượt mới nhất trong `app/e2e/evidence/`); trượt thì chỉ chạy lại spec trượt, lỗi thật thì mở FIX. Ghi kết quả vào DECISIONS/PROGRESS.
-2. Theo queue: 24 ‖ 25 (xong 25: regression B) → 26 gate L6 ‖ 42 → 27 → 28 ‖ 29 → 30 ‖ 31 → 32 → 33 gate L6 → 34. Hỏi owner model cho đợt kế (khuyến nghị Fable: ít token hơn ~34%/LoC, nhanh hơn ~18%).
-3. Mỗi task: `git worktree add <mvp-wave0>/.claude/worktrees/<wt> -b <nhánh> HEAD` → `python3 ~/.claude/skills/epic-runner/queue.py --queue .claude/queue.md brief <ID> > $CLAUDE_JOB_DIR/tmp/briefNN.txt` → Agent đọc brief + Bổ sung (worktree tuyệt đối; epic-common v1.5; dùng `shared/ui/Icon`; TRƯỚC KHI BÁO XONG gộp wave0 mới nhất rồi chạy lại verify + web-build + e2e-affected; không commit; báo cáo ≤ 10 dòng kèm L0/L1/L2).
-4. Lưu ý vận hành: lệnh git trong worktree lồng phải `cd` vào rồi git trơn, mỗi lệnh một lần gọi. KHÔNG `source scripts/env.sh` trong shell chạy make (đè cổng thành 8080). Nhánh có migration số thấp gộp vào CSDL thử đã ở số cao hơn → `dropdb geo_e2e` của cụm riêng worktree đó. Lượt e2e dài: cắm sạc, không gập máy.
-Inbox còn: 7 việc mở mới (sau T-44/T-45, T-20, T-21, icon, T-23, T-22) + BA sửa AC góc 174,87° (sau T-19) + FIX sau T-41 (.claude/inbox.md).
-Quyết định đã chốt: DECISIONS.md (mới nhất: đợt 22‖23 Dev chạy Opus; quy tắc migration khi gộp song song; icon một bộ cho 4 theme; giả định tạm T-20/T-21 tới gate T-26). Tự quyết chưa ghi DECISIONS: dời regression C tới sau khi T-22 gộp (một lượt phủ cả 22 + 23).
+1. Nghiệm thu T-25: `git status --porcelain -uall` trong wt (đối chiếu regex brief25), đọc summary.json e2e + báo cáo JUnit; commit trên nhánh s2-e9; `git merge --no-ff s2-e9` vào wave0. Tương tự T-42 (nhánh s3-base).
+2. Regression B trọn bộ trên wave0 (dropdb geo_e2e cụm wave0 cổng 54359 rồi `make e2e`).
+3. Queue: 26 gate L6 (Tester, sonnet) → 27 → 28 ‖ 29 → 30 ‖ 31 → 32 → 33 gate L6 → 34.
+4. Mỗi task: `git worktree add .claude/worktrees/<wt> -b <nhánh> HEAD` (lệnh git đơn, không ghép) → ghi `app/.env.ports` cổng riêng (đã dùng tới PG 54729/Redis 6779/server 8136/web 5216) → `queue.py brief <ID> > $CLAUDE_JOB_DIR/tmp/briefNN.txt` → Agent Fable với mục Bổ sung (xem tin gửi T-24/T-25: worktree tuyệt đối, epic-common v1.5, Icon, không source env.sh, git đơn, merge wave0 trước khi báo xong, không commit, báo cáo ≤ 10 dòng).
+Inbox còn: 8 việc mở (thêm câu mở sau T-24) + BA AC góc 174,87° + FIX sau T-41 (.claude/inbox.md).
+Quyết định đã chốt: DECISIONS.md (mới nhất 27/11: Fable tới hết chặng 3; regression C đạt).
 Rủi ro / chặn:
-- CHƯA push: 150+ commit chỉ nằm trên máy (lệnh push bị lớp kiểm quyền từ chối). Owner chạy: `! git push origin worktree-mvp-wave0`.
-- T-20…T-23 chưa qua soát độc lập (CLAUDE.md §7); mỗi task ~14–15 giả định tạm trong `epics/<epic>/qc_findings.md`.
-- Test chập chờn còn mở: TC-GEO-0209 (e2/templates), TC-GEO-0804 (e1/isolation), TC-GEO-0539 (e5/catalog trên mobile-iphone).
-- `LibraryQuota.consume` (T-23) chưa được gọi ở luồng tạo đề (T-22); font chữ vẫn gọi Google (chỉ icon đã tự lưu).
-- T-05 đo thật cần owner chạy (trước T-34). Hạn mức tài khoản.
-So sánh model (cùng quy trình e2e-affected, 2 epic mỗi bên): Fable 1,00M token quy đổi / 1.000 LoC, 146 LoC/phút, 20 lượt gọi / 1.000 LoC; Opus 1,51M, 124 LoC/phút, 39 lượt gọi. Thời gian mỗi epic 36–50 phút ở cả hai. Script đo: /Users/harry/.claude/jobs/74cc88b7/tmp/cmp.py (tạm, mất khi xoá job).
-Việc owner: push (ở trên); T-05 — `! cd /Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0/app && eval "$(grep '^export GEO_AI_API_KEY=' ~/.zshrc)" && GEO_AI_PROVIDER=anthropic make bench-mvp > /tmp/geo-bench-real.log 2>&1; echo rc=$?` (~$3).
+- CHƯA push 150+ commit (push bị lớp kiểm quyền từ chối). Owner: `! git push origin worktree-mvp-wave0`.
+- T-20…T-24 chưa qua soát độc lập (§7). Test chập chờn mở: 0209, 0804, 0539.
+- `DraftService.create` (S2-E3) chưa gọi LibraryQuota; impact-map thiếu luật pom.xml (→ L2). Font chữ vẫn gọi Google.
+- T-05 đo AI thật cần owner chạy trước T-34.
