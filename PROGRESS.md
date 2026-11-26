@@ -1,17 +1,16 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 05:35
-**CODE CHẶNG 3 XONG** — regression 6 project 1855/1855 (4 bỏ qua), traceability strict ĐẠT (DECISIONS 27/11). Việc kế: dựng app local cho owner thử; FIX inbox trước gate T-34; kho bài giảng Toán 11 chạy ở phiên khác theo `artifacts/GEO/materials/PLAN-kho-bai-giang.md`.
-Mục tiêu (goal owner): xong code chặng 3 + e2e theo nhóm 2 epic (feature) + regression cuối phase. Agent con Opus, mỗi agent một epic/nhóm US, 2 song song. Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`), push tới 5db3799 (sau đó còn commit cục bộ).
-Đã gộp vào wave0:
-- Chặng 2: S2-E1…S2-E9 đủ.
-- Chặng 3: T-42 seed F-S3; S3-E1 + E5-02/04 (T-28); S3-E2 (T-29); S3-E3 (T-30, agent chính sửa SQL lọc org_id); S3-E4 + E5-01 AuditEvent + E6-03 nhắc việc (T-31 lượt 2); FIX tích hợp (thanh dưới màn ≤720px cuộn ngang; TC-0744 theo thanh bên chặng 3; TC-0804 sửa gốc).
-E2E theo nhóm (DECISIONS 27/11): F1 = S3-E1+E2 → 900/909 trước FIX; F2 = S3-E3+E4 → 624/636 trước FIX; sau FIX spec trượt 110/110, phần ảnh hưởng 107/107. Lệnh: `cd app && node scripts/e2e-affected.mjs --files "$(paste -sd, <danh sách tệp>)"`; danh sách = `git diff --name-only <gộp trước> <gộp sau> -- app` (F2 bỏ application.yml).
-Đã xong thêm: F3 (S3-E5-03/05 + S3-E6-01/02, T-32) gộp; e2e F3 540/553 → FIX 13 ca xanh; regression cuối phase lượt 1 1842/1851 → FIX (traceability đọc JUnit, TC-0209 gốc) → lượt 20261127-050757 1855 đạt / 0 trượt; traceability strict ĐẠT. Không còn agent/worktree code nào đang chạy.
+# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 07:10
+**CODE CHẶNG 3 XONG + FIX trước gate T-34 đã gộp.** Regression cuối phase 1855/1855 (DECISIONS 27/11). Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`), còn commit cục bộ chưa push.
+Đã xong phiên 27/11 sáng:
+- FIX T-34 (nhánh `fix-t34`, worktree lồng `.claude/worktrees/fix-t34`, đã gộp): Dev-S3E5-08 adc4a30, Dev-S3E5-16 77ccd29, assign lớp lưu trữ → CONFLICT 3f1d412 (V417). make verify 301 UT + 243 IT; e2e-affected 805/806 → ca 0605 chạy lại đạt.
+- Soát độc lập T-20…T-32 có trọng tâm (an ninh/dữ liệu): `artifacts/GEO/evidence/REVIEW-T20-T32-20261127.md` — 0 critical, 4 major, 9 minor; ghi lô FIX vào inbox.
+- App local cho owner thử: `make up` + `make run` (8092) + `make web-dev` (5176), geo_dev nạp seed e2e (F-S3). Đăng nhập: Cô Lan GV-7K2M-9QPA / Lan@2026x; Thầy Khôi GV-4D8R-2WNX / Khoi@2026x; học sinh HocSinh#2026 (mã trong `app/db/seed/fixture-ids.d/s3.json`).
 Bước tiếp theo:
-1. Dựng app local cho owner thử (make up, server + web cổng wave0 trong app/.env.ports, seed mẫu F-S3: cô Lan, thầy Khôi, lớp 11A1/10B).
-2. FIX inbox trước gate T-34: iam phát StudentPasswordResetEvent sau commit (Dev-S3E5-08); danh sách AuditEvent LEFT JOIN app_user; practice-sets/{id}/assign lớp lưu trữ → CONFLICT.
-3. Soát độc lập code T-20…T-32 (CLAUDE.md §7); T-05 đo AI thật (owner); gate T-27, T-34 (owner).
+1. FIX lô soát T-20…T-32 (inbox "FIX lô soát độc lập"): ca thử tái hiện ClassAiSwitchFilter `;x=1` trước; REVOKE hàm SECURITY DEFINER; giới hạn audit denied; AccountPurgeJob trễ đầu. Kèm 2 ca chập chờn mới (probeLockedSolution phút 45, TC-GEO-0605).
+2. Ghi PO-DECISIONS các mục [PO]/[BA] trong inbox trước gate T-34 (gồm phạm vi US-S3E5-05 với học sinh vào lớp bằng tên).
+3. Owner: T-05 đo AI thật; gate T-27, T-34.
 4. Kho bài giảng Toán 11: phiên khác, `artifacts/GEO/materials/PLAN-kho-bai-giang.md`.
-Lưu ý vận hành: git trong worktree lồng = `cd` riêng rồi git trơn, mỗi lệnh một lần gọi; không ghép `cd …; git` trong cùng lệnh; Makefile dùng `make up` (không có dev-up). GEO_E2E_EVIDENCE mặc định off.
-Inbox: câu mở sau T-24/25/42/28/29/31 (.claude/inbox.md). Quan trọng: FIX iam phát StudentPasswordResetEvent sau commit (Dev-S3E5-08) trước gate T-34.
-Quyết định: DECISIONS.md (mới nhất 27/11: mỗi agent một epic; e2e theo nhóm 2 epic; cỡ US T-shirt; FIX tích hợp).
-Rủi ro: hạn mức 5 giờ (đã chạm 03:30); ngữ cảnh phiên điều phối ~410k; T-20…T-31 chưa soát độc lập.
+Vùng chưa soát: xem cuối báo cáo REVIEW-T20-T32.
+Lưu ý vận hành: hook worktree chặn `source`/lệnh ghép — dùng đích make và `git -C <repo>`; worktree con tạo trong `.claude/worktrees/` của wave0; cổng fix-t34 54369/6429/8102/5186.
+Inbox: .claude/inbox.md (lô FIX soát + câu mở PO/BA).
+Quyết định: DECISIONS.md (mới nhất 27/11).
+Rủi ro: hạn mức 5 giờ; vùng code chưa soát; major #1 chưa có ca thử xác nhận.
