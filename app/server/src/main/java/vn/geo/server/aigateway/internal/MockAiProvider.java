@@ -40,6 +40,7 @@ public class MockAiProvider implements AiProvider {
   private final JsonNode sceneRules;
   private final JsonNode e4;
   private final MockDraftReplies drafts;
+  private final MockAuthoringReplies authoring;
 
   public MockAiProvider(AiProperties props, MockAiControl control) {
     this.props = props;
@@ -48,6 +49,7 @@ public class MockAiProvider implements AiProvider {
     this.sceneRules = loadScene();
     this.e4 = load("/mock-ai/e4.json");
     this.drafts = new MockDraftReplies(mapper);
+    this.authoring = new MockAuthoringReplies(mapper);
   }
 
   @Override
@@ -77,6 +79,9 @@ public class MockAiProvider implements AiProvider {
       default -> {
         // tiếp tục
       }
+    }
+    if (MockAuthoringReplies.handles(call.task())) {
+      return authoring.reply(call.prompt()); // S2-E4: chat chỉnh nháp đề
     }
     if (MockDraftReplies.handles(call.task())) {
       return drafts.reply(call.task(), call.prompt(), call.scenario()); // S2-E3 (ai/s2e3-mock.json)

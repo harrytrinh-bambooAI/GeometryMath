@@ -47,6 +47,8 @@ s2e1-migrate: ; $(ENV) $(MVN) spring-boot:run -Dspring-boot.run.profiles=$(or $(
 # --- T-261126-22 (S2-E3) ---
 # --- T-261126-23 (S2-E6, S2-E7) ---
 # --- T-261126-24 (S2-E4) ---
+.PHONY: s2e4-fixtures
+s2e4-fixtures: ; $(MVN) -q test -Dtest=ImportFilesTest -Dgeo.s2e4.fixtures=write -Dsurefire.failIfNoSpecifiedTests=false   # sinh lại tệp pdf mẫu của E2E import (e2e/tests/s2e4/fixtures: có lớp chữ, ảnh quét, đặt mật khẩu) bằng PDFBox
 # --- T-261126-25 (S2-E9) ---
 # --- T-261126-42 (S3 dữ liệu mẫu) ---
 # --- T-261126-28 (S3-E1, S3-E5) ---

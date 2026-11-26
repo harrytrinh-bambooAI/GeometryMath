@@ -1,0 +1,215 @@
+/* S2-E4 · C2-04a "Chỉnh nháp với AI", C2-04b…d "Nhập từ tệp" (T-261126-24). Màu, bo góc, font chỉ qua token theme; chữ phụ ≥ 14 px. */
+.s2e4-page {
+  display: grid;
+  gap: var(--gap);
+  max-width: 1180px;
+  min-width: 0;
+}
+.s2e4-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.s2e4-grow {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.s2e4-title {
+  margin: 0;
+  font-size: 22px;
+}
+.s2e4-h {
+  margin: 0;
+  font-size: 17px;
+}
+.s2e4-cap {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.s2e4-sub {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.s2e4-sub.bad {
+  color: var(--red);
+  font-weight: 600;
+}
+.s2e4-card {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  align-content: start;
+}
+.s2e4-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--gap);
+  align-items: start;
+}
+.s2e4-cols > .s2e4-summary {
+  position: sticky;
+  top: 12px;
+}
+.s2e4-side {
+  display: grid;
+  gap: var(--gap);
+  min-width: 0;
+}
+@media (max-width: 900px) {
+  .s2e4-cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Chat */
+.s2e4-thread {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 52vh;
+  overflow-y: auto;
+}
+.s2e4-bubble {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+  max-width: 92%;
+  padding: 10px 14px;
+  border-radius: var(--r-sm);
+  background: var(--soft);
+  border: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.s2e4-bubble.teacher {
+  align-self: flex-end;
+  background: var(--pri-s);
+  border-color: var(--pri-line);
+  color: var(--text);
+}
+.s2e4-bubble.system {
+  align-self: center;
+  background: transparent;
+  border-style: dashed;
+  color: var(--muted);
+  font-size: 14px;
+}
+.s2e4-compose {
+  display: grid;
+  gap: 8px;
+}
+.s2e4-compose textarea {
+  width: 100%;
+  resize: vertical;
+}
+.s2e4-statement {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--soft);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.s2e4-diff {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+.s2e4-diff-cell {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--soft);
+  min-width: 0;
+}
+.s2e4-diff-cell.after {
+  background: var(--panel);
+  border-color: var(--pri-line);
+}
+.s2e4-diff-cell.before .s2e4-diff-text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+.s2e4-diff-text {
+  font-size: 17px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.s2e4-diff-cell input {
+  width: 100%;
+}
+.s2e4-unsure {
+  color: var(--yel-t);
+}
+.s2e4-done {
+  color: var(--grn);
+  font-weight: 600;
+}
+
+/* Danh sách nháp, mục import */
+.s2e4-list,
+.s2e4-notes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.s2e4-notes {
+  gap: 4px;
+}
+.s2e4-item {
+  display: grid;
+  gap: 8px;
+}
+.s2e4-item-title {
+  font-size: 16px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.s2e4-imp {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 10px;
+  align-items: start;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+}
+.s2e4-imp[data-state='exists'] {
+  background: var(--soft);
+  border-style: dashed;
+}
+.s2e4-imp > input[type='checkbox'] {
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+}
+.s2e4-imp-body {
+  font-size: 15px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.s2e4-imp > .s2e4-row {
+  grid-column: 2;
+}
+.s2e4-file {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
