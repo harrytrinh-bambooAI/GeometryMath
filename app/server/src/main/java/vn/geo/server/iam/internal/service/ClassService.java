@@ -479,6 +479,11 @@ public class ClassService {
             return "NOT_FOUND";
           }
           repo.recordReset(p.orgId(), Uuid7.next(), p.userId(), userId, classId, now);
+          // Dev-S3E5-08 (BR-S3E5-04): phát TRONG giao dịch; người nghe đồng bộ ghi AuditEvent
+          // PASSWORD_RESET cùng giao dịch, ghi lỗi thì đổi mật khẩu quay lui trọn.
+          events.publish(
+              new StudentPasswordResetEvent(
+                  Uuid7.next(), p.orgId(), now, p.userId(), classId, userId));
           return "OK";
         });
     if ("NOT_FOUND".equals(out)) {
@@ -488,8 +493,6 @@ public class ClassService {
       throw AppException.rateLimited(wait.isNegative() ? Duration.ofSeconds(1) : wait, MSG_08);
     }
     revocations.revoked(userId, now);
-    events.publish(
-        new StudentPasswordResetEvent(Uuid7.next(), p.orgId(), now, p.userId(), classId, userId));
     return new TempPassword(
         temp.substring(0, 3) + "-" + temp.substring(3, 6) + "-" + temp.substring(6),
         now.plus(TEMP_TTL));

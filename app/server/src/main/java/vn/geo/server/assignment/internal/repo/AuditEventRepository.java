@@ -108,14 +108,23 @@ public class AuditEventRepository {
         .single();
   }
 
-  /** Nhật ký của một lớp, mới nhất trước; chỉ sự kiện Thành công của ba loại chặng 3. */
+  /** Nhãn thay mã người dùng của tài khoản đã xóa (BR-S3E5-53, bia mộ V415). */
+  public static final String DELETED_USER = "đã xóa";
+
+  /**
+   * Nhật ký của một lớp, mới nhất trước; chỉ sự kiện Thành công của ba loại chặng 3. LEFT JOIN
+   * (Dev-S3E5-16): người làm hoặc học sinh đã xóa tài khoản (mã người dùng thành UUID 0) vẫn có
+   * dòng, mã hiện "đã xóa".
+   */
   public List<EventRow> ofClass(UUID classId) {
     return jdbc.sql(
             """
-            SELECT l.id, l.action::text, ua.user_code, l.actor_role, l.target_type, l.target_id, ut.user_code,
+            SELECT l.id, l.action::text, CASE WHEN ua.id IS NULL THEN :deleted ELSE ua.user_code END,
+                   l.actor_role, l.target_type, l.target_id,
+                   CASE WHEN l.target_type = 'user' AND ut.id IS NULL THEN :deleted ELSE ut.user_code END,
                    l.class_id, l.before_release_at, l.after_release_at, l.outcome, l.occurred_at
             FROM audit_log l
-            JOIN app_user ua ON ua.org_id = :orgId AND ua.id = l.actor_user_id
+            LEFT JOIN app_user ua ON ua.org_id = :orgId AND ua.id = l.actor_user_id
             LEFT JOIN app_user ut ON ut.org_id = :orgId AND ut.id = l.target_id AND l.target_type = 'user'
             WHERE l.org_id = :orgId AND l.class_id = :classId AND l.outcome = 'success'
             ORDER BY l.id DESC
@@ -123,6 +132,7 @@ public class AuditEventRepository {
             -- sqllint:allow=ownership mã người dùng (iam) của người thực hiện và của học sinh được đặt lại mật khẩu
             """)
         .param("classId", classId)
+        .param("deleted", DELETED_USER)
         .query(AuditEventRepository::row)
         .list();
   }

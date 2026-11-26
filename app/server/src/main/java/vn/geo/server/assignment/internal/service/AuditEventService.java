@@ -141,7 +141,8 @@ public class AuditEventService {
 
   /**
    * Giáo viên vừa đặt lại mật khẩu cho học sinh lớp mình (iam, US-S3E1-04): ghi PASSWORD_RESET. Sự
-   * kiện không mang mật khẩu hay băm nên bản ghi cũng không có (BR-S3E5-03).
+   * kiện không mang mật khẩu hay băm nên bản ghi cũng không có (BR-S3E5-03). Chạy đồng bộ trong
+   * giao dịch đổi mật khẩu của iam (Dev-S3E5-08): ghi lỗi thì mật khẩu không đổi (BR-S3E5-04).
    */
   @EventListener
   public void on(StudentPasswordResetEvent e) {

@@ -1,4 +1,4 @@
-Phiên bản: v0.3 · 2026-11-27
+Phiên bản: v0.5 · 2026-11-27
 # S3-E5 — phát hiện QC / Dev
 
 ## Dev (runner-T-261126-28: US-S3E5-02, 04)
@@ -15,7 +15,7 @@ Phiên bản: v0.3 · 2026-11-27
 ## Dev (runner-T-261126-31: US-S3E5-01 AuditEvent)
 | Mã | Nội dung | Mức | Xử lý TẠM |
 |---|---|---|---|
-| Dev-S3E5-08 | TC-S3E5-07 (BR-S3E5-04) với đặt lại mật khẩu: iam (T-28) phát `StudentPasswordResetEvent` SAU khi giao dịch đổi mật khẩu đã ghi, nên khi ghi AuditEvent lỗi thì máy chủ trả lỗi, không có AuditEvent nhưng mật khẩu ĐÃ đổi. Mở ngay / Đổi giờ (assignment) cùng giao dịch nên quay lui trọn. `AuditFailureS3E5IT` chỉ khẳng định phần đúng được. | Vừa | FIX iam: phát sự kiện trong giao dịch (hoặc gọi ghi AuditEvent trước khi commit). |
+| Dev-S3E5-08 | TC-S3E5-07 (BR-S3E5-04) với đặt lại mật khẩu: iam (T-28) phát `StudentPasswordResetEvent` SAU khi giao dịch đổi mật khẩu đã ghi, nên khi ghi AuditEvent lỗi thì máy chủ trả lỗi, không có AuditEvent nhưng mật khẩu ĐÃ đổi. Mở ngay / Đổi giờ (assignment) cùng giao dịch nên quay lui trọn. `AuditFailureS3E5IT` chỉ khẳng định phần đúng được. | Vừa | ĐÓNG 2026-11-27 (runner-fix-t34): `ClassService.resetPassword` phát sự kiện TRONG giao dịch, người nghe đồng bộ ghi AuditEvent cùng giao dịch; ghi lỗi thì mật khẩu, lượt đặt lại, hủy phiên đều không xảy ra. `AuditFailureS3E5IT` khẳng định trọn TC-S3E5-07. |
 | Dev-S3E5-09 | TC-S3E5-14: bản ghi "Từ chối" của lần đặt lại thứ 11 (RATE_LIMITED) do luồng giới hạn tần suất của iam (T-28) quyết định; spec chỉ kiểm có đúng 10 PASSWORD_RESET thành công. | Thấp | — |
 | Dev-S3E5-10 | AuditEvent ghi bằng `fn_audit_event` (V386) trên `audit_log` (A8), chỉ ba loại EARLY_RELEASE, RELEASE_TIME_CHANGE, PASSWORD_RESET; bản ghi Từ chối ghi ở giao dịch riêng (vẫn còn khi thao tác bị từ chối). Móc đọc bản ghi Từ chối `/test-hooks/s3e4/denied` chỉ profile dev/test. | Thấp | — |
 
@@ -27,7 +27,7 @@ Phiên bản: v0.3 · 2026-11-27
 | Dev-S3E5-13 | BR-S3E5-34 (`RequestFieldGuard`): thân yêu cầu kiểu record có khóa cấp một ngoài record → VALIDATION_FAILED, `details[0].field` = khóa. Ngoại lệ hợp đồng MVP TC-GEO-0119 (lượt hỏi trợ lý, test MVP kỳ vọng 200 khi gửi kèm `orgId` và chỉ kiểm không tới nhà cung cấp): giữ "bỏ qua" cho đúng một đường. Thân tự do (Map/JsonNode) và khóa lồng không xét. | Vừa | Đã FIX 2026-11-27 (runner-fix-s3f3): bỏ ngoại lệ, TC-GEO-0119/0730, TC-S2E1-006, TC-S2E8-055 đổi kỳ vọng sang 400. Trước: FIX: đổi kỳ vọng TC-GEO-0119 sang 400 rồi bỏ ngoại lệ. Rủi ro: ca E2E cũ gửi khóa thừa sẽ đỏ ở lượt e2e tích hợp. |
 | Dev-S3E5-14 | Test chặn trường mới: quét tĩnh mọi `@RestController` (không gắn `@Profile`) trong `make test` + quét `information_schema` và gọi thật 26 API GET chặng 3 bằng F-S3 trong IT. Kiểu trả về tự do (Map) ngoài các API đã gọi không được phủ tĩnh. | Thấp | — |
 | Dev-S3E5-15 | Xóa tài khoản: có hiệu lực ngay (bia mộ "Đã xóa", hết mã, mật khẩu, mã khôi phục, cờ đã đọc; mọi phiên hủy) và xóa NGAY bài làm, lượt hỏi AI, thành viên lớp, thông báo, nhật ký đo (≤ 30 ngày). Công việc dọn hằng ngày (`geo.s3e5.account-purge-interval`) xóa hẳn bia mộ ở T+30 nếu không còn nội dung dùng chung trỏ tới; giáo viên còn đề/lời giải/lớp đã lưu trữ giữ bia mộ ẩn danh. Mã người dùng không cấp lại: chỉ giữ SHA-256 ở `retired_user_code`. | Vừa | PO xác nhận nội dung dùng chung của giáo viên đã xóa (đề trong Kho chung) được giữ ẩn danh. |
-| Dev-S3E5-16 | AuditEvent của người đã xóa: mã người dùng (người làm hoặc đối tượng) thay bằng UUID 0 ("đã xóa"); `fn_account_purge_rows` tạm tắt trigger chỉ-thêm bằng `session_replication_role` (cần chủ migration là superuser như hiện tại). Danh sách AuditEvent của S3-E4 (`AuditEventRepository`, `ReleaseRepository`) JOIN `app_user` nên dòng có người làm đã xóa sẽ không hiện. | Vừa | FIX S3-E4: LEFT JOIN, hiện "đã xóa". |
+| Dev-S3E5-16 | AuditEvent của người đã xóa: mã người dùng (người làm hoặc đối tượng) thay bằng UUID 0 ("đã xóa"); `fn_account_purge_rows` tạm tắt trigger chỉ-thêm bằng `session_replication_role` (cần chủ migration là superuser như hiện tại). Danh sách AuditEvent của S3-E4 (`AuditEventRepository`, `ReleaseRepository`) JOIN `app_user` nên dòng có người làm đã xóa sẽ không hiện. | Vừa | ĐÓNG 2026-11-27 (runner-fix-t34): `AuditEventRepository.ofClass` và `ReleaseRepository.releaseLog` LEFT JOIN `app_user`; người làm / học sinh đã xóa hiện mã "đã xóa" (BR-S3E5-53). IT `AccountDeletionS3E5IT` (TC-S3E5-56) kiểm danh sách AuditEvent của lớp. |
 | Dev-S3E5-17 | BR-S3E5-55 idempotent: lần gọi lại sau khi đã xóa gặp 401 (thẻ đã hủy) thay vì 200 như lần đầu; `requestId` nhận nhưng không lưu. Nút giao diện khóa khi đang gửi. | Thấp | TẠM. |
 | Dev-S3E5-18 | "Xóa tài khoản" đặt ở Cài đặt bằng route `cai-dat` của `features/s3e5` (bọc màn Cài đặt chung, không sửa `features/settings`); màn xem lại thông báo `/gv|hs/rieng-tu`; liên kết "Cài đặt › Xóa tài khoản" ở cả màn cổng thông báo. | Thấp | — |
 | Dev-S3E5-19 | Câu lỗi tên hiển thị (S2-E1) đổi sang MSG-S3-82 "…không nên là email…" (trước: "không được"); văn bản thông báo 1.0 sửa tại chỗ ở V415 thêm chính sách lưu/xóa (như Dev-S3E5-01, không tăng bản). | Thấp | PO xác nhận như Dev-S3E5-01. |
@@ -40,3 +40,5 @@ Phiên bản: v0.3 · 2026-11-27
 | v0.1 | 2026-11-27 | Mục Dev đầu tiên | runner-T-261126-28 |
 | v0.2 | 2026-11-27 | Mục Dev của US-S3E5-01 (Dev-S3E5-08…10) | runner-T-261126-31 |
 | v0.3 | 2026-11-27 | Mục Dev của US-S3E5-03, 05 (Dev-S3E5-11…21) | runner-T-261126-32 |
+| v0.4 | 2026-11-27 | ĐÓNG Dev-S3E5-08 | runner-fix-t34 |
+| v0.5 | 2026-11-27 | ĐÓNG Dev-S3E5-16 | runner-fix-t34 |

@@ -12,9 +12,8 @@ import vn.geo.server.it.s3e4.AbstractS3E4IT;
 /**
  * US-S3E5-01-FC1 (BR-S3E5-04): việc ghi AuditEvent được giả lập báo lỗi (trigger tạm ở CSDL). Mở
  * ngay và Đổi giờ (module assignment) nằm cùng giao dịch với AuditEvent nên quay lui trọn vẹn. Đặt
- * lại mật khẩu (module iam, T-261126-28) phát sự kiện SAU khi giao dịch của nó đã ghi: ca này kiểm
- * phần máy chủ trả lỗi và không có AuditEvent; phần "mật khẩu không đổi, phiên không bị hủy" cần
- * sửa trong iam (Dev-S3E5-08 ở qc_findings.md) nên CHƯA được khẳng định ở đây.
+ * lại mật khẩu (module iam) phát sự kiện TRONG giao dịch đổi mật khẩu (FIX Dev-S3E5-08) nên cũng
+ * quay lui: mật khẩu không đổi, không có lượt đặt lại, phiên của em vẫn dùng được.
  */
 class AuditFailureS3E5IT extends AbstractS3E4IT {
 
@@ -31,9 +30,17 @@ class AuditFailureS3E5IT extends AbstractS3E4IT {
         .update();
   }
 
+  private String passwordHashOf(UUID userId) {
+    return jdbc.sql("SELECT password_hash FROM app_user WHERE id = ?")
+        .param(userId)
+        .query(String.class)
+        .optional()
+        .orElse(null);
+  }
+
   @Test
   @DisplayName(
-      "TC-S3E5-07 Ghi nhật ký lỗi thì thao tác không xảy ra: Mở ngay / Đổi giờ quay lui trọn giao dịch; đặt lại mật khẩu trả lỗi máy chủ, không có AuditEvent (mật khẩu không đổi: chờ FIX iam, Dev-S3E5-08)")
+      "TC-S3E5-07 Ghi nhật ký lỗi thì thao tác không xảy ra: Mở ngay / Đổi giờ / đặt lại mật khẩu quay lui trọn giao dịch (Dev-S3E5-08)")
   void auditFailureRollsBackOperation() throws Exception {
     World w = world();
     String lan = w.people().get("Cô Lan").token();
@@ -72,6 +79,8 @@ class AuditFailureS3E5IT extends AbstractS3E4IT {
       assertThat(list.get("items").get(0).get("body").asString())
           .isEqualTo("Có bài mới: Bộ bài tuần 15");
 
+      UUID mai = w.people().get("Chi Mai").id();
+      String hashBefore = passwordHashOf(mai);
       var reset =
           send(
               "POST",
@@ -84,6 +93,13 @@ class AuditFailureS3E5IT extends AbstractS3E4IT {
       assertThat(count("SELECT count(*) FROM audit_log WHERE class_id = ?", c11a1))
           .as("không có AuditEvent PASSWORD_RESET")
           .isZero();
+      assertThat(passwordHashOf(mai)).as("mật khẩu không đổi (Dev-S3E5-08)").isEqualTo(hashBefore);
+      assertThat(count("SELECT count(*) FROM student_password_reset WHERE student_id = ?", mai))
+          .as("không có lượt đặt lại")
+          .isZero();
+      var maiSession =
+          send("GET", "/api/v1/notifications", w.people().get("Chi Mai").token(), null);
+      assertThat(maiSession.statusCode()).as("phiên của Chi Mai không bị hủy").isEqualTo(200);
     } finally {
       jdbc.sql("DROP TRIGGER IF EXISTS it_s3e5_audit_down ON audit_log").update();
     }
