@@ -273,3 +273,13 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent T-25, T-42; `epics/S2-E9/qc_findings.md` (14 giả định); đầu tệp `app/db/seed/e2e/910_s3_core.sql` (27/11/2026).
 - **Xong khi:** mục 2 ghi PO-DECISIONS trước gate T-26; mục 3 làm trong T-28.
 - **Ngoài phạm vi:** thiết diện động (Q7).
+
+## Việc: câu mở sau T-29 (S3-E2) · ghi 27/11/2026
+- **Mục tiêu:** đóng các điểm T-29 để mở.
+  1. [PO] đề "Của tôi" của chính giáo viên CHƯA chọn được vào bộ (fn_assign_practice_set chỉ nhận đề Kho chung có đáp số) — P0 hay FIX sau.
+  2. [Dev, T-31] S3-E2 chưa phát DomainEvent khi giao → thông báo "bài mới" (TC-S3E2-14) chờ module notify của T-31; tổng quan giáo viên thật thuộc T-31.
+  3. [QC/seed] F-S3-052 chỉ 2 đề (TC ghi 4); mọi đề 's3_tuan' đều "Cần xem lại"; TC-29 "2 / 4" lệch F-S3-051 (4/4). E2E S3-E2 dùng sandbox riêng 's3e2_kho'.
+  4. [Dev, T-28/30/31] seed 920 thêm một bộ Đã giao cho lớp 10B (F-S3E2-050) — test đếm bộ của 10B thấy thêm 1.
+- **Nguồn:** báo cáo agent T-29; `epics/S3-E2/qc_findings.md` (11 mục, 27/11/2026).
+- **Xong khi:** mục 1 ghi PO-DECISIONS; mục 2 làm trong T-31.
+- **Ngoài phạm vi:** —
