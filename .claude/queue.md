@@ -63,7 +63,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Kiểm: `L=~/.claude/skills/synced/0891cb95-9cc4-4f0d-9b03-4f74eb7fe957_32199e3b-7799-4318-8c09-109bf13815a9/po-ba-qc/tools/lint; for e in S3-E1 S3-E2 S3-E3 S3-E4 S3-E5 S3-E6; do python3 $L/lint_stories.py artifacts/GEO/work/epics/$e/stories_ac.md && python3 $L/lint_tests.py artifacts/GEO/work/epics/$e/test_cases.md || exit 1; done`
 - Ngoài phạm vi: epic chặng 2
 - Phụ thuộc: T-261126-08, T-261126-10
-## T-261126-15 · S23 · L3 soát phản biện + L0 tester · po-ba-qc (adversarial RV) + tester SKILL · wt s23-spec · 2h/2.6M · RV + AC→TC + domain profile tester [running]
+## T-261126-15 · S23 · L3 soát phản biện + L0 tester · po-ba-qc (adversarial RV) + tester SKILL · wt s23-spec · 2h/2.6M · RV + AC→TC + domain profile tester [done]
 - Mục tiêu: phản biện 15 epic (chỉ báo lỗi, BA/QC sửa gom trong cùng task); mở rộng `check_ac_tc.py` nhận S2-/S3- (giữ E1–E7); bản xem nhanh R3; tester `domains/geo/profile.md` + `scope.json` (chỉ localhost, `confirmed:false`)
 - Nguồn: epics S2-*, S3-* (task 12, 14); tester SKILL v0.05 (25/11); delivery-profile §3–4 (26/11)
 - Xong khi: AC→TC đủ, 0 lỗi; `review/RV_s23.md` 0 blocker mở; hai tệp tester có
