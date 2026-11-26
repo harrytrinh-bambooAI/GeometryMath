@@ -38,6 +38,7 @@ Chưa có trong khung (sẽ thêm khi có tác vụ nền thật): nhóm riêng 
 | Khóa | Giá trị | Ở đâu | Nguồn |
 |---|---|---|---|
 | Kích thước mặc định | 20 | `geo.paging.default-limit` | ADR-GEO-12 |
+| Gói nội dung Kho đề MVP | nạp `content/catalog-mvp.json` (đề HKN-xx, mô tả dựng ở `geometry/problem-specs.json`) vào bộ `main` khi khởi động, engine tính nhãn; mặc định **bật**, profile `test` và `make e2e` tắt (`GEO_CONTENT_PACK_ON_START=false`) | `geo.content.pack.load-on-start`; `ContentPackRunner` | T-261126-02; PO-60 |
 | Trần chung | **100** | `geo.paging.max-limit` | M-004 (2); D-GEO-168 |
 | Trần Kho đề | **50** (mặc định 20) | `geo.paging.max-limit-by-list."[content.problem-bank]"` | D-GEO-142 |
 | Trần riêng khác | thêm khóa `max-limit-by-list."[<mã danh sách>]"`; chỉ được thấp hơn trần chung | `PagingProperties.maxLimitFor` | ADR-GEO-12, `04_query_catalogue.md` |

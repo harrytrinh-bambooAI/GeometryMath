@@ -48,6 +48,7 @@ wait_http() { # url, tên, số giây
 echo "== bật máy chủ $API_URL (geo_e2e@$GEO_PG_PORT, Redis $GEO_REDIS_PORT '$GEO_E2E_REDIS_PREFIX')"
 GEO_DB_URL="jdbc:postgresql://127.0.0.1:$GEO_PG_PORT/geo_e2e?ApplicationName=geo-e2e&connectTimeout=3&socketTimeout=30" \
 GEO_REDIS_PREFIX="$GEO_E2E_REDIS_PREFIX" \
+GEO_CONTENT_PACK_ON_START=false \
   java -jar server/target/geo-server-0.1.0-SNAPSHOT.jar --spring.profiles.active=dev >"$LOGDIR/server.log" 2>&1 &
 PIDS+=($!)
 wait_http "$API_URL/health" "máy chủ" 90
