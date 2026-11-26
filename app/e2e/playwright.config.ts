@@ -56,10 +56,14 @@ const withWebkit = process.env.GEO_E2E_WEBKIT !== '0' && webkitInstalled;
  * GEO_E2E_EVIDENCE (T-261126-43): `fail` (mặc định, lượt chạy của task Dev) = ảnh chụp mọi test, video + trace chỉ giữ
  * khi trượt; `full` = như trước (video + trace mọi test), dùng ở gate tester và khi cần báo cáo bằng chứng đủ.
  * Lý do: video (ffmpeg) + trace cho MỌI test UI là phần tải lớn nhất khi máy dùng chung đang tải cao.
+ * `off` (MẶC ĐỊNH từ 27/11, lệnh owner "chưa cần evidence" tới hết code chặng 3): không ảnh, không video, không trace;
+ * reporter vẫn ghi summary.json + kết quả từng TC (traceability cần). Muốn có bằng chứng: GEO_E2E_EVIDENCE=fail|full.
  */
-const evidenceFull = process.env.GEO_E2E_EVIDENCE === 'full';
-const keep = evidenceFull ? 'on' : 'retain-on-failure';
-const uiEvidence = { screenshot: 'on', video: keep, trace: keep } as const;
+const evidenceMode = process.env.GEO_E2E_EVIDENCE ?? 'off';
+const evidenceFull = evidenceMode === 'full';
+const evidenceOff = evidenceMode === 'off';
+const keep = evidenceOff ? 'off' : evidenceFull ? 'on' : 'retain-on-failure';
+const uiEvidence = { screenshot: evidenceOff ? 'off' : 'on', video: keep, trace: keep } as const;
 /**
  * Spec UI P0 chạy thêm trên điện thoại (T-261126-02): học sinh vào lớp, làm bài (nhãn, hình), gợi ý, lời giải đã mở,
  * hỏi đáp; giáo viên Kho đề, chi tiết đề, giao bài, giờ mở, theo dõi lớp.
