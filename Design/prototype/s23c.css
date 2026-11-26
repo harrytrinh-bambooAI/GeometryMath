@@ -1,0 +1,10 @@
+/* s23c.css · Phiên bản: v0.1 · 2026-11-26 · Designer Dom · thành phần cho s23c.js (giữ token của s23-base.css) */
+.ins{background:var(--grn-s);color:#0B5E41;border-radius:4px;padding:0 3px;font-weight:600}
+.mark{background:var(--yel-s);border-radius:4px;padding:0 3px}
+.skel{border-radius:10px;background:linear-gradient(90deg,#E7EBF4,#F3F5FA,#E7EBF4)}
+.fr{display:inline-flex;flex-direction:column;align-items:center;font-size:24px;line-height:1.1;margin:0 4px}
+.fr i{display:block;height:2px;width:100%;background:#141B2D;margin:3px 0}
+.fr .box{border:2px dashed var(--pri);border-radius:6px;padding:0 8px;color:var(--pri);min-width:34px;text-align:center}
+.kbd-adv{grid-template-columns:repeat(6,1fr)}.kbd-adv b{flex-direction:column;gap:2px;min-height:58px}.kbd-adv b small{font-size:11px;font-weight:600;font-family:'Be Vietnam Pro',sans-serif;opacity:.75}
+.kbd2 b.w4{grid-column:span 4}
+.icb.red{background:var(--red-s);color:var(--red)}

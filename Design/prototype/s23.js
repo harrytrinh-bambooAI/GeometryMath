@@ -1,4 +1,4 @@
-/* s23.js · Phiên bản: v0.1 · 2026-11-26 · khung + màn C2 (C2-02, 03, 04, 06, 07, 08). Dữ liệu mẫu, không AI thật. */
+/* s23.js · Phiên bản: v0.2 (Dom: chữ HS lớn hơn; thêm nút "Xem lại cùng thầy cô" + "Em nghĩ đáp số này đúng" ở trạng thái hết lượt) · v0.1 · 2026-11-26 · khung + màn C2 (C2-02, 03, 04, 06, 07, 08). Dữ liệu mẫu, không AI thật. */
 NAV.gv=[['home','Tổng quan'],['book','Kho đề'],['layers','Giáo trình'],['users','Lớp học'],['chart','Theo dõi'],['edit','Chấm bài'],['spark','Trợ lý']];
 NAV.hs=[['home','Bài của em'],['cube','Tự học'],['users','Nhóm học'],['layers','Môn khác'],['clock','Lịch sử']];
 const DEVS={web:[1440,900],ipad:[1180,820],phone:[390,844]};
@@ -108,8 +108,8 @@ const lp=(v,s)=>`<div class="row" style="gap:8px;flex-wrap:wrap"><span class="ch
 function luyen(dev,s){ // s: 'key' | 'bad' | 'out'
  const ph=dev==='phone';
  const mi=s==='bad'?`<div class="mathin bad"><span class="v">60°</span></div>`:s==='out'?`<div class="mathin bad" style="opacity:.6"><span class="v">60°</span></div>`:`<div class="mathin"><span class="v">45°</span><span class="cur1"></span><span class="grow"></span><span class="tiny muted" style="font-family:inherit;font-weight:600">đơn vị: độ</span></div>`;
- const fb=s==='bad'?ban('yel','bulb','Chưa đúng. Còn 1 lượt.',`Gợi ý: góc giữa SC và mặt đáy là góc giữa SC và <b>hình chiếu</b> của nó lên đáy. Hình chiếu của SC là đoạn nào?`):s==='out'?ban('red','lock','Hết lượt cho câu này.','Lời giải còn khóa đến 18:00 thứ Sáu (thầy cô đặt). Em vẫn xem được gợi ý.'):`<div class="small muted">Nhập đáp số rồi bấm Kiểm tra. Chấp nhận sai số ±0,5°.</div>`;
- const body=ph?`<div class="col grow" style="gap:10px;min-width:0">${lp(2,s)}<div class="card pad" style="font-size:12.8px;line-height:1.5">${PROB}</div><div style="height:140px" class="card">${fig()}</div>${mi}${fb}</div>${s==='out'?'':kbd()}`
+ const fb=s==='bad'?ban('yel','bulb','Chưa đúng. Còn 1 lượt.',`Gợi ý: góc giữa SC và mặt đáy là góc giữa SC và <b>hình chiếu</b> của nó lên đáy. Hình chiếu của SC là đoạn nào?`):s==='out'?ban('red','lock','Hết lượt cho câu này.','Lời giải còn khóa đến 18:00 thứ Sáu (thầy cô đặt). Em vẫn xem được gợi ý.')+`<div class="row" style="gap:8px">${btn('Xem lại cùng thầy cô','soft','users')}${btn('Em nghĩ đáp số này đúng','ghost','flag')}</div>`:`<div class="small muted">Nhập đáp số rồi bấm Kiểm tra. Chấp nhận sai số ±0,5°.</div>`;
+ const body=ph?`<div class="col grow" style="gap:10px;min-width:0">${lp(2,s)}<div class="card pad" style="font-size:15px;line-height:1.5">${PROB}</div><div style="height:140px" class="card">${fig()}</div>${mi}${fb}</div>${s==='out'?'':kbd()}`
  :`<div class="canvas c3d grow" style="min-width:0"><div class="prob"><div class="icb pri">${I('file')}</div><div class="grow">${PROB}</div></div><div class="fig">${pyramid({})}</div></div>
  <div class="card side pad col" style="gap:12px;width:400px">${lp(2,s)}<div class="pt">ĐÁP SỐ CỦA EM</div>${mi}${fb}<div class="grow"></div>${s==='out'?`<div class="row">${btn('Xem gợi ý','ghost','bulb')}${btn('Câu tiếp theo','','arrow')}</div>`:kbd()}</div>`;
  return screen('x','hs',0,s==='out'?'Hết lượt':'Bài luyện: Góc trong hình chóp','Bài của em › Bộ luyện 11A1 › Câu 2',body,{noSeg:1,concept:1});}
