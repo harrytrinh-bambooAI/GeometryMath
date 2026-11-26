@@ -250,7 +250,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-30, T-261126-31
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(tracking|iam|notify)/|app/server/src/main/resources/db/migration/V4(1[5-9]|2[0-9]|3[0-9])__|app/server/src/test/java/vn/geo/server/(it/s3e5|it/s3e6|tracking|iam|notify|quality)/|app/web/src/features/(s3e5|s3e6)/|app/web/package(-lock)?\.json|app/server/pom\.xml|app/e2e/tests/(s3e5|s3e6)/|app/db/seed/(e2e/95[0-9]_|fixture-ids\.d/s3e6)|app/server/quality/sql-lint\.properties|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/(S3-E5|S3-E6)/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W11
-## T-261126-33 · S3 · L6 Tester · tester SKILL + Playwright · wt mvp-wave0 · 2.5h/3M · Kiểm thử chặng 3 [todo]
+## T-261126-33 · S3 · L6 Tester · tester SKILL + Playwright · wt mvp-wave0 · 2.5h/3M · Kiểm thử chặng 3 [done]
 - Mục tiêu: như 26 cho chặng 3; ca quyền theo quan hệ (học sinh lớp khác, giáo viên khác), không lộ trường dữ liệu cá nhân
 - Nguồn: epics/S3-*/test_cases.md (ebec17a 26/11); scope.json; PLAN_code-s23 v1.0 §7
 - Xong khi: mọi TC có status; lệch audit = 0

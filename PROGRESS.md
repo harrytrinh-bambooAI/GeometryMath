@@ -1,4 +1,5 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 ~05:00
+# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 05:35
+**CODE CHẶNG 3 XONG** — regression 6 project 1855/1855 (4 bỏ qua), traceability strict ĐẠT (DECISIONS 27/11). Việc kế: dựng app local cho owner thử; FIX inbox trước gate T-34; kho bài giảng Toán 11 chạy ở phiên khác theo `artifacts/GEO/materials/PLAN-kho-bai-giang.md`.
 Mục tiêu (goal owner): xong code chặng 3 + e2e theo nhóm 2 epic (feature) + regression cuối phase. Agent con Opus, mỗi agent một epic/nhóm US, 2 song song. Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`), push tới 5db3799 (sau đó còn commit cục bộ).
 Đã gộp vào wave0:
 - Chặng 2: S2-E1…S2-E9 đủ.
