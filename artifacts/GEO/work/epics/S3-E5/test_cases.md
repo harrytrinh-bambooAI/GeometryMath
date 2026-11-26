@@ -217,4 +217,4 @@ Phiên bản: v0.3 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 52 case của S3-E5 | runner-T-261126-14 (QC) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
-| v0.3 | 2026-11-26 | G5: story mới US-S3E5-05 (xóa tài khoản, chính sách lưu/xóa) gồm BR-S3E5-50…55 và 8 AC/TC; G3: văn bản nêu mã khôi phục của học sinh; bỏ nhãn PROVISIONAL (PO-66) | runner-T-261126-37 (BA/QC) |
+| v0.3 | 2026-11-26 | G5: story mới US-S3E5-05 (xóa tài khoản, chính sách lưu/xóa) gồm BR-S3E5-50…55 và 8 AC/TC; G3: văn bản nêu mã khôi phục của học sinh; bỏ nhãn giả định chưa chốt (PO-66) | runner-T-261126-37 (BA/QC) |

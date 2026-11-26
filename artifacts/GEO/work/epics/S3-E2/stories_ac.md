@@ -135,9 +135,9 @@ Phiên bản: v0.3 · 2026-11-26
 
 
 **US-S3E2-01-SC7 — Bài luyện giao ở chặng 2 hiện như một bộ bài ở chặng 3** · Nguồn: BR-S3E2-07; BR-S2E8-32; PO-66 (G1)
-- Given: Bài luyện BL-1 (5 câu) đã giao cho lớp mẫu 11A1 ở chặng 2, An đã làm câu 1 đúng
+- Given: Bài luyện mẫu (5 câu, bài luyện chuẩn của S2-E8) đã giao cho lớp mẫu 11A1 ở chặng 2, An đã làm câu 1 đúng
 - When: Giáo viên chủ lớp 11A1 mở "Bài đang giao" ở chặng 3
-- Then: Bộ BL-1 hiện như một bộ Đã giao của 11A1 với 5 đề; kết quả và số lượt đã làm của An còn nguyên; bảng lớp (US-S3E3-01) đọc được ô của An; không có bản sao hay bảng bài luyện thứ hai
+- Then: Bộ bài luyện mẫu hiện như một bộ Đã giao của 11A1 với 5 đề; kết quả và số lượt đã làm của An còn nguyên; bảng lớp (US-S3E3-01) đọc được ô của An; không có bản sao hay bảng bài luyện thứ hai
 
 **US-S3E2-01-FC1 — Bộ không có đề không giao được** · Nguồn: BR-S3E2-01
 - Given: bộ nháp chưa có đề nào, đã chọn lớp 11A1
@@ -419,4 +419,4 @@ Phiên bản: v0.3 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: story và AC của S3-E2, ready for R3 | runner-T-261126-14 (BA) |
 | v0.2 | 2026-11-26 | Sửa theo RV_s23: BR-S3E2-12 làm rõ kênh Trình chiếu của giáo viên (mâu thuẫn với US-S2E7-03); đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
-| v0.3 | 2026-11-26 | G1: BR-S3E2-07 và SC7; G5: story mới US-S3E2-04 (đóng, lưu trữ bộ) gồm BR-S3E2-30…33 và 7 AC/TC; bỏ nhãn PROVISIONAL (PO-66) | runner-T-261126-37 (BA/QC) |
+| v0.3 | 2026-11-26 | G1: BR-S3E2-07 và SC7; G5: story mới US-S3E2-04 (đóng, lưu trữ bộ) gồm BR-S3E2-30…33 và 7 AC/TC; bỏ nhãn giả định chưa chốt (PO-66) | runner-T-261126-37 (BA/QC) |

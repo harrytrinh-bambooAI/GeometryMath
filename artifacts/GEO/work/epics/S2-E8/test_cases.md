@@ -342,4 +342,4 @@ Phiên bản: v0.3 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 113 case cho 110 tiêu chí, có cột Tự động hóa | runner-T-261126-12 (QC) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
-| v0.3 | 2026-11-26 | G1: BR-S2E8-32 một mô hình bộ bài, giao cho lớp mẫu 11A1; thêm SC10, FC10; bỏ nhãn TẠM (PO-66) | runner-T-261126-37 (BA/QC) |
+| v0.3 | 2026-11-26 | G1: BR-S2E8-32 một mô hình bộ bài, giao cho lớp mẫu 11A1; thêm SC10, FC10; bỏ nhãn giả định chưa chốt (PO-66) | runner-T-261126-37 (BA/QC) |

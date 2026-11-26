@@ -104,4 +104,4 @@ Giờ máy chủ t = 05/12/2026 21:00:00; giờ mở hiện tại 06/12/2026 08:
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: thiết kế kiểm thử S3-E4 | runner-T-261126-14 (QC) |
-| v0.2 | 2026-11-26 | Áp PO-66: bỏ nhãn TẠM | runner-T-261126-37 (BA/QC) |
+| v0.2 | 2026-11-26 | Áp PO-66: bỏ nhãn giả định chưa chốt | runner-T-261126-37 (BA/QC) |

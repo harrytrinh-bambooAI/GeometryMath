@@ -74,4 +74,4 @@ Manual chỉ khi cần mắt người (bố cục thiết bị, cảm giác thao
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới | runner-T-261126-12 (QC) |
-| v0.2 | 2026-11-26 | Áp PO-66: bỏ nhãn TẠM | runner-T-261126-37 (BA/QC) |
+| v0.2 | 2026-11-26 | Áp PO-66: bỏ nhãn giả định chưa chốt | runner-T-261126-37 (BA/QC) |

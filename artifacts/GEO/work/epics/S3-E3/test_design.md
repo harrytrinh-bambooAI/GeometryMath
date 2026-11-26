@@ -121,4 +121,4 @@ total, sum, score, point, grade, percent, pct, rank, ranking, order_by_result, a
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: thiết kế kiểm thử S3-E3 | runner-T-261126-14 (QC) |
-| v0.2 | 2026-11-26 | Áp PO-66: bỏ nhãn TẠM | runner-T-261126-37 (BA/QC) |
+| v0.2 | 2026-11-26 | Áp PO-66: bỏ nhãn giả định chưa chốt | runner-T-261126-37 (BA/QC) |

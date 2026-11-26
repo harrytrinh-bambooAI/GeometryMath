@@ -524,4 +524,4 @@ Phiên bản: v0.3 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: story và AC của S3-E1, ready for R3 | runner-T-261126-14 (BA) |
 | v0.2 | 2026-11-26 | thêm BR-S3E1-16 và US-S3E1-01-SC6 (lớp MVP đã chuyển), RV_s23 M-02; đổi mã mẫu sai bảng ký tự (RV_s23 m-01) | runner-T-261126-15 (QC soát phản biện, RV_s23) |
-| v0.3 | 2026-11-26 | G4: BR-S3E1-06/-11 duyệt bắt buộc, BR-S3E1-17 giới hạn tổng lượt (30 lần/24 giờ), thêm FC8, BV1; G5: US-S3E1-05 và Bị từ chối được nhận; bỏ nhãn PROVISIONAL (PO-66) | runner-T-261126-37 (BA/QC) |
+| v0.3 | 2026-11-26 | G4: BR-S3E1-06/-11 duyệt bắt buộc, BR-S3E1-17 giới hạn tổng lượt (30 lần/24 giờ), thêm FC8, BV1; G5: US-S3E1-05 và Bị từ chối được nhận; bỏ nhãn giả định chưa chốt (PO-66) | runner-T-261126-37 (BA/QC) |

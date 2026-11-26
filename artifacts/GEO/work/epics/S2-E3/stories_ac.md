@@ -336,4 +336,4 @@ Phiên bản: v0.3 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 4 story, 39 tiêu chí, ready for R3 | runner-T-261126-12 (BA) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
-| v0.3 | 2026-11-26 | Áp PO-66 (gate R3, T-261126-37): bỏ nhãn TẠM/PROVISIONAL, ghi "đã chốt PO-66" | runner-T-261126-37 (BA/QC) |
+| v0.3 | 2026-11-26 | Áp PO-66 (gate R3, T-261126-37): bỏ nhãn giả định chưa chốt, ghi "đã chốt PO-66" | runner-T-261126-37 (BA/QC) |

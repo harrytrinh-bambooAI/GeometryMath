@@ -368,4 +368,4 @@ Phiên bản: v0.3 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 4 story, 44 tiêu chí, ready for R3 | runner-T-261126-12 (BA) |
 | v0.2 | 2026-11-26 | Sửa theo RV_s23: BR-S2E1-06 nêu cách giữ bộ đếm IP; thêm BR-S2E1-16 trỏ luật tên giống email hoặc số điện thoại; đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
-| v0.3 | 2026-11-26 | G3: mã khôi phục cho học sinh (BR-S2E1-05, -10, -12; SC2, FC2 đổi; thêm SC4, FC4); tick trỏ văn bản S3-E5 và xóa tài khoản trỏ US-S3E5-05 (G5); bỏ nhãn TẠM (PO-66) | runner-T-261126-37 (BA/QC) |
+| v0.3 | 2026-11-26 | G3: mã khôi phục cho học sinh (BR-S2E1-05, -10, -12; SC2, FC2 đổi; thêm SC4, FC4); tick trỏ văn bản S3-E5 và xóa tài khoản trỏ US-S3E5-05 (G5); bỏ nhãn giả định chưa chốt (PO-66) | runner-T-261126-37 (BA/QC) |
