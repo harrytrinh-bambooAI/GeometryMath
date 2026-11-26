@@ -283,3 +283,15 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent T-29; `epics/S3-E2/qc_findings.md` (11 mục, 27/11/2026).
 - **Xong khi:** mục 1 ghi PO-DECISIONS; mục 2 làm trong T-31.
 - **Ngoài phạm vi:** —
+
+## Việc: câu mở sau T-28 (S3-E1 + S3-E5 02/04) · ghi 27/11/2026
+- **Mục tiêu:** đóng các điểm T-28 để mở.
+  1. [QC] TC-S3E1-01 phản hồi tạo lớp có thêm `id` — chấp nhận? API lớp ở `/api/v1/teacher/my-classes/**` (vì `/teacher/classes` là của MVP).
+  2. [FIX S2-E1?] TC-S3E5-22: màn Đăng ký S2-E1 khoá nút khi chưa tick nên không hiện MSG-S3-84 (máy chủ trả đúng).
+  3. [PO] văn bản riêng tư 1.0 sửa tại chỗ hay phát hành 1.1; tập "phải đọc thông báo" nạp lúc khởi động (chuyển tài khoản bằng lệnh MVP chỉ bị chặn sau khi khởi động lại).
+  4. [Dev] KHÔNG nới `class_member_name_uq` (đăng nhập tên MVP dựa vào nó): em trùng tên nhận name_key kèm mã người dùng; `fn_student_login` chỉ nhận lớp join_mode='name'.
+  5. [Test chập chờn] TC-GEO-0804 (khoá Redis `:mon:`, trượt 2/4 lượt), TC-GEO-0494 (e4 mobile).
+  6. [Tổ hợp] T-28 kiểm trên wave0 chưa có T-29 — T-30/T-31 kiểm trên bản kết hợp.
+- **Nguồn:** báo cáo agent T-28; `epics/S3-E1/qc_findings.md` (12), `S3-E5/qc_findings.md` (7).
+- **Xong khi:** mục 1–3 ghi PO-DECISIONS trước gate T-34; mục 5 FIX riêng.
+- **Ngoài phạm vi:** —
