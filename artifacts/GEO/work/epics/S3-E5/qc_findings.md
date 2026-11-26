@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-27
+Phiên bản: v0.2 · 2026-11-27
 # S3-E5 — phát hiện QC / Dev
 
 ## Dev (runner-T-261126-28: US-S3E5-02, 04)
@@ -12,7 +12,15 @@ Phiên bản: v0.1 · 2026-11-27
 | Dev-S3E5-06 | TC-S3E5-51 ("AI gộp" giáo viên): "Cả lớp vướng ở đâu" thuộc S3-E3 (task 30), chưa có; IT kiểm công tắc chỉ áp vai học sinh. | Thấp | Task 30 kiểm lại. |
 | Dev-S3E5-07 | TC-S3E5-42 "ô trên Kết quả lớp cập nhật", "mở thông báo": Kết quả lớp (task 30) và thông báo (task 31) chưa có; ca kiểm Bài của em, mở đề, gợi ý mức 1, gửi đáp số, 0 lượt gọi AI. | Thấp | Task 30/31. |
 
+## Dev (runner-T-261126-31: US-S3E5-01 AuditEvent)
+| Mã | Nội dung | Mức | Xử lý TẠM |
+|---|---|---|---|
+| Dev-S3E5-08 | TC-S3E5-07 (BR-S3E5-04) với đặt lại mật khẩu: iam (T-28) phát `StudentPasswordResetEvent` SAU khi giao dịch đổi mật khẩu đã ghi, nên khi ghi AuditEvent lỗi thì máy chủ trả lỗi, không có AuditEvent nhưng mật khẩu ĐÃ đổi. Mở ngay / Đổi giờ (assignment) cùng giao dịch nên quay lui trọn. `AuditFailureS3E5IT` chỉ khẳng định phần đúng được. | Vừa | FIX iam: phát sự kiện trong giao dịch (hoặc gọi ghi AuditEvent trước khi commit). |
+| Dev-S3E5-09 | TC-S3E5-14: bản ghi "Từ chối" của lần đặt lại thứ 11 (RATE_LIMITED) do luồng giới hạn tần suất của iam (T-28) quyết định; spec chỉ kiểm có đúng 10 PASSWORD_RESET thành công. | Thấp | — |
+| Dev-S3E5-10 | AuditEvent ghi bằng `fn_audit_event` (V386) trên `audit_log` (A8), chỉ ba loại EARLY_RELEASE, RELEASE_TIME_CHANGE, PASSWORD_RESET; bản ghi Từ chối ghi ở giao dịch riêng (vẫn còn khi thao tác bị từ chối). Móc đọc bản ghi Từ chối `/test-hooks/s3e4/denied` chỉ profile dev/test. | Thấp | — |
+
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-27 | Mục Dev đầu tiên | runner-T-261126-28 |
+| v0.2 | 2026-11-27 | Mục Dev của US-S3E5-01 (Dev-S3E5-08…10) | runner-T-261126-31 |
