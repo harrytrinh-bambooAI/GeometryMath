@@ -27,13 +27,13 @@ test('Lưu trữ không tính vào giới hạn 20 lớp @TC-S3E6-23', async ({ 
   const lan = w.people['Cô Lan']!;
   const ids: string[] = [];
   for (let i = 1; i <= 20; i++) {
-    const r = await teacherApi.create(request, lan.token, { name: `Lớp ${i}`, grade: 10 });
+    const r = await teacherApi.create(request, lan.token, { name: `Lớp ${i}`, grade: 10, academicYear: '2026–2027' });
     expect(r.status(), await r.text()).toBe(201);
     ids.push(((await r.json()) as { id: string }).id);
   }
-  expect((await teacherApi.create(request, lan.token, { name: 'Lớp 21', grade: 10 })).status()).toBe(400);
+  expect((await teacherApi.create(request, lan.token, { name: 'Lớp 21', grade: 10, academicYear: '2026–2027' })).status()).toBe(400);
   expect((await teacherApi.archive(request, lan.token, ids[0]!)).status()).toBe(200);
-  const made = await teacherApi.create(request, lan.token, { name: 'Lớp 21', grade: 10 });
+  const made = await teacherApi.create(request, lan.token, { name: 'Lớp 21', grade: 10, academicYear: '2026–2027' });
   expect(made.status()).toBe(201);
   const list = (await (await teacherApi.list(request, lan.token)).json()) as { items: Array<{ status: string }> };
   expect(list.items).toHaveLength(21);
@@ -69,9 +69,17 @@ test('Lịch mở lời giải của lớp đã lưu trữ vẫn chạy @TC-S3E6
   expect((await teacherApi.archive(request, lan.token, c.id)).status()).toBe(200);
   // trước giờ mở: vẫn khóa
   await setRelease(request, set.id, 60);
-  expect((await solution()).status()).not.toBe(200);
+  const locked = await solution();
+  expect(locked.status()).toBe(200);
+  const lockedBody = (await locked.json()) as { releaseState: string; finalAnswer?: string; steps?: unknown };
+  expect(lockedBody.releaseState).toBe('upcoming');
+  expect(lockedBody.finalAnswer ?? null).toBeNull();
+  expect(lockedBody.steps ?? null).toBeNull();
   // tới giờ mở: lời giải trả đầy đủ, chỉ đọc
   await setRelease(request, set.id, -1);
   const open = await solution();
   expect(open.status(), await open.text()).toBe(200);
+  const body = (await open.json()) as { releaseState: string; steps: unknown[] | null };
+  expect(body.releaseState).toBe('open');
+  expect(body.steps?.length ?? 0).toBeGreaterThan(0);
 });

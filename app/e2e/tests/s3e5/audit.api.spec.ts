@@ -137,7 +137,7 @@ test('@TC-S3E5-09 thao tác bị từ chối ghi một bản ghi Từ chối ch�
   const w = await smallWorld(request);
   const set = await assignedSet(request, lan(w), klass(w, '11A1').id);
   expect(await deniedOf(request, khoi(w).id)).toEqual([]);
-  const r = await api.openNow(request, khoi(w).token, set.id, { requestKey: randomUUID(), note: 'nội dung yêu cầu' });
+  const r = await api.openNow(request, khoi(w).token, set.id, { requestKey: randomUUID() });
   expect(r.status()).toBe(404);
   expect((await err(r)).code).toBe('NOT_FOUND');
   const denied = await deniedOf(request, khoi(w).id);

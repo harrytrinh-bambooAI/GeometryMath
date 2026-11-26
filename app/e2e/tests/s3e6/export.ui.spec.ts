@@ -36,7 +36,8 @@ test('Tên tệp không chứa tên học sinh @TC-S3E6-12', async ({ page, requ
   const { name } = await download(page);
   expect(name).toMatch(/^ket-qua-11A1-bo-bai-tuan-15-\d{8}$|^ket-qua-11A1-bo-bai-tuan-15-\d{8}\.csv$/);
   for (const s of Object.values(sb.classes[0]!.students)) expect(name).not.toContain(s.userCode);
-  expect(name).not.toMatch(/binh|an-|mai|huy/i);
+  // tên học sinh như một đoạn của tên tệp ("tuan" trong tên bộ không phải tên em An)
+  expect(name).not.toMatch(/(^|-)(binh|an|mai|huy)(-|\.|$)/i);
 });
 
 test('Ô bắt đầu bằng dấu công thức được vô hiệu @TC-S3E6-13', async ({ page, request }) => {

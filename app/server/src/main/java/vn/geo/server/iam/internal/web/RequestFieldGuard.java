@@ -29,7 +29,8 @@ import vn.geo.server.common.error.AppException;
  * buộc nằm trong danh sách, không khớp mẫu tên cấm, không có {@code org_id}), nên email, phone,
  * schoolName, Truong, org_id gửi kèm đều bị từ chối. Thân tự do (Map, JsonNode, chuỗi) không xét:
  * đó là dữ liệu hình/đề, không phải trường của người dùng. {@code details[0].field} là khóa bị từ
- * chối.
+ * chối. Không có ngoại lệ theo đường: hợp đồng MVP cũ "bỏ qua trường thừa" (TC-GEO-0119,
+ * TC-GEO-0730, TC-S2E1-006, TC-S2E8-055) do BR-S3E5-34 (PO-61) thay thế.
  */
 @ControllerAdvice
 public class RequestFieldGuard extends RequestBodyAdviceAdapter {
@@ -49,35 +50,7 @@ public class RequestFieldGuard extends RequestBodyAdviceAdapter {
       Type targetType,
       Class<? extends HttpMessageConverter<?>> converterType) {
     Class<?> raw = ResolvableType.forType(targetType).resolve();
-    return raw != null
-        && raw.isRecord()
-        && raw.getName().startsWith("vn.geo.server.")
-        && !legacyLenient(parameter);
-  }
-
-  /**
-   * Hợp đồng MVP cũ "bỏ qua trường thừa, không chuyển tới nhà cung cấp AI" (TC-GEO-0119, lượt hỏi
-   * trợ lý của học sinh): giữ nguyên cho tới khi FIX đổi kỳ vọng của test MVP sang
-   * VALIDATION_FAILED (qc_findings Dev-S3E5-13).
-   */
-  static final Set<String> LEGACY_LENIENT = Set.of("/api/v1/student/assignments/{id}/questions");
-
-  static boolean legacyLenient(MethodParameter parameter) {
-    if (parameter.getMethod() == null) {
-      return false;
-    }
-    org.springframework.web.bind.annotation.RequestMapping m =
-        org.springframework.core.annotation.AnnotatedElementUtils.findMergedAnnotation(
-            parameter.getMethod(), org.springframework.web.bind.annotation.RequestMapping.class);
-    if (m == null) {
-      return false;
-    }
-    for (String p : m.path()) {
-      if (LEGACY_LENIENT.contains(p)) {
-        return true;
-      }
-    }
-    return false;
+    return raw != null && raw.isRecord() && raw.getName().startsWith("vn.geo.server.");
   }
 
   @Override

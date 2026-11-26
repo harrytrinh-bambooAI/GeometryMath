@@ -159,6 +159,10 @@ public class AssignmentSetService {
 
   static final String MSG_24 = "Đề này đã có trong bộ.";
   static final String MSG_25 = "Chưa chọn lớp để giao.";
+
+  /** Không có mã MSG riêng trong spec (US-S3E6-02-FC2 chỉ đòi CONFLICT); câu theo BR-S3E6-14. */
+  static final String MSG_ARCHIVED_CLASS = "Lớp này đã lưu trữ, không giao bộ mới được.";
+
   static final String MSG_26 = "Lời giải đã mở, không đổi giờ được.";
   static final String MSG_REV = "Giờ mở vừa được thay đổi ở nơi khác. Hãy tải lại để xem giờ mới.";
   static final String MSG_TITLE = "Hãy đặt tên bộ bài (tối đa 80 ký tự).";
@@ -527,7 +531,11 @@ public class AssignmentSetService {
       return null; // Nháp chưa chọn lớp (US-S3E2-01-FC4)
     }
     return repo.ownClass(teacherId, classId)
-        .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND))
+        .orElseThrow(() ->
+            repo.ownArchivedClass(teacherId, classId)
+                // lớp của mình nhưng Đã lưu trữ: không giao bộ mới (BR-S3E6-14, US-S3E6-02-FC2)
+                ? new AppException(ErrorCode.CONFLICT, MSG_ARCHIVED_CLASS)
+                : new AppException(ErrorCode.NOT_FOUND))
         .id();
   }
 

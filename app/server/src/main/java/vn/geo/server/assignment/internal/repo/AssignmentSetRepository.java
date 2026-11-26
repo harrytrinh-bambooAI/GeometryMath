@@ -206,6 +206,22 @@ public class AssignmentSetRepository {
         .optional();
   }
 
+  /** Lớp của giáo viên nhưng Đã lưu trữ (BR-S3E6-14: không giao bộ mới → CONFLICT). */
+  public boolean ownArchivedClass(UUID teacherId, UUID classId) {
+    return jdbc.sql(
+            """
+            SELECT 1 FROM class
+            WHERE org_id = :orgId AND id = :id AND teacher_id = :teacherId AND archived_at IS NOT NULL
+            LIMIT 1
+            -- sqllint:allow=ownership lớp của giáo viên (iam) đã lưu trữ, chặn giao bộ mới
+            """)
+        .param("teacherId", teacherId)
+        .param("id", classId)
+        .query(Integer.class)
+        .optional()
+        .isPresent();
+  }
+
   public List<ClassRow> classesOf(UUID teacherId) {
     return jdbc.sql(
             """

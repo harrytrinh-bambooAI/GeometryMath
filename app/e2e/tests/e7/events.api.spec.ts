@@ -96,8 +96,15 @@ test('Không ghi sự kiện thay người khác @TC-GEO-0730', async ({ request
   const id = asg(b, 'BG-1');
   const an = st(b, 'An');
   const binh = st(b, 'Bình');
-  const r = await send.tools(request, an.token, id, [1, 2], crypto.randomUUID(), { userId: binh.id, studentId: binh.id });
-  expect(r.status()).toBe(200);
+  // BR-S3E5-34 (PO-61, chặng 3) thay hợp đồng cũ "bỏ qua trường thừa": thân ghi định danh người khác bị từ chối, không ghi gì
+  const bad = await send.tools(request, an.token, id, [1, 2], crypto.randomUUID(), { userId: binh.id, studentId: binh.id });
+  expect(bad.status()).toBe(400);
+  expect((await bad.json()).code).toBe('VALIDATION_FAILED');
+  const before = await freshMonitor(request, b.teacher.token, id);
+  expect(row(before, 'An').toolCount).toBe(4);
+  expect(row(before, 'Bình').toolCount).toBe(2);
+  // lô hợp lệ của An chỉ tính cho An
+  expect((await send.tools(request, an.token, id, [1, 2], crypto.randomUUID())).status()).toBe(200);
   const m = await freshMonitor(request, b.teacher.token, id);
   expect(row(m, 'An').toolCount).toBe(6); // 4 + 2
   expect(row(m, 'Bình').toolCount).toBe(2);
