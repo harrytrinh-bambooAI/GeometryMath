@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8">
+<title>Đánh giá task 26–27/11</title>
+<style>
+  @page { size: A4 landscape; margin: 14mm 12mm; }
+  body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10.5pt; color: #1d2433; line-height: 1.45; }
+  h1 { font-size: 18pt; margin: 0 0 2mm; }
+  h2 { font-size: 13.5pt; margin: 7mm 0 2mm; border-bottom: 1.5px solid #c9d2e3; padding-bottom: 1mm; }
+  .meta { color: #5b6478; font-size: 9.5pt; margin-bottom: 4mm; }
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 3mm; font-size: 9.5pt; }
+  th, td { border: 1px solid #d5dbe7; padding: 1.6mm 2mm; text-align: left; vertical-align: top; }
+  th { background: #eef2f8; }
+  tr { page-break-inside: avoid; }
+  .ok { color: #1a7f37; font-weight: 600; white-space: nowrap; }
+  .warn { color: #b35900; font-weight: 600; white-space: nowrap; }
+  .q { color: #5b6478; font-weight: 600; }
+  ul, ol { margin: 1mm 0 2mm; padding-left: 6mm; }
+  .box { background: #f6f8fb; border-left: 3px solid #4a6fa5; padding: 2mm 3mm; margin: 2mm 0; }
+  .page { page-break-before: always; }
+  .small { font-size: 8.5pt; color: #5b6478; }
+</style></head><body>
+
+<h1>Đánh giá task theo epic · 26–27/11/2026</h1>
+<div class="meta">Dự án GeometryMath (GEO) · nhánh <code>worktree-mvp-wave0</code> · Phiên bản: v1.0 · 27/11/2026 · Nguồn: <code>.claude/progress/runner-*.md</code> (tiến độ từng agent), DECISIONS.md, báo cáo agent con</div>
+
+<div class="box"><b>Câu hỏi:</b> task nào phải làm lại, task nào làm liền mạch một lần là xong?<br>
+<b>Trả lời ngắn:</b> không task nào phải làm lại từ đầu; mọi vòng lặp là sửa cục bộ. Ngày 26 buổi chiều lặp nhiều vì <b>môi trường e2e</b> (máy tải nặng, Redis/AI mock quá giờ, máy ngủ), không phải vì mã. Từ T-20 trở đi (sau T-43 ổn định môi trường và T-45 e2e theo mức ảnh hưởng) các epic gần như một lần là xong, 35–50 phút mỗi epic. Ngày 27 mất thời gian chủ yếu do đăng nhập hết hạn và chạm hạn mức tài khoản.</div>
+
+<h2>Ngày 26/11</h2>
+<table>
+<tr><th style="width:17%">Epic / việc</th><th style="width:7%">Task</th><th style="width:10%">Thời gian</th><th style="width:12%">Liền mạch?</th><th>Vòng làm lại</th></tr>
+<tr><td>Spec S2/S3 theo gate R3</td><td>T-37</td><td>15:39–15:48</td><td class="ok">✅ Một lần</td><td>Không</td></tr>
+<tr><td>Thiết kế: rà màn (Dom)</td><td>design-dom</td><td>15:10–15:27</td><td class="ok">✅ Một lần</td><td>Chụp lại ảnh sau khi sửa phím 44px (nhỏ)</td></tr>
+<tr><td>Bản mẫu nav, trình chiếu</td><td>T-38</td><td>15:47</td><td class="ok">✅ Một lần</td><td>Không</td></tr>
+<tr><td>4 hướng style</td><td>T-39</td><td>15:43–15:53</td><td class="ok">✅ Một lần</td><td>Không</td></tr>
+<tr><td>(không rõ)</td><td>T-40</td><td>16:02</td><td class="q">❓</td><td>Chỉ có một dòng "đọc mã nguồn bản mẫu" rồi dừng; tệp tiến độ không ghi lý do</td></tr>
+<tr><td>Khung chung chặng 2–3</td><td>T-41</td><td>16:03–16:34</td><td class="ok">✅ Gần một lần</td><td><code>verify</code> đỏ vì định dạng (Spotless), sửa và chạy lại. e2e 2 lượt × 859 test mất ~25 phút</td></tr>
+<tr><td>Hệ theme A/B/C/D</td><td>T-50</td><td>16:20–~18:00</td><td class="warn">⚠️ Kéo dài</td><td>e2e 2 lượt trượt 3 và 9 ca, mỗi lượt khác nhau (504 quá giờ ở AI mock, Redis khởi động chậm). Lỗi môi trường, không phải mã theme. Mất ~1,5 giờ</td></tr>
+<tr><td>Ổn định môi trường e2e</td><td>T-43</td><td>17:31–~18:00</td><td class="ok">✅</td><td>Task mở ra để chữa lỗi môi trường của T-50</td></tr>
+<tr><td><b>S2-E1</b> định danh</td><td>T-18</td><td>18:05–19:56</td><td class="warn">⚠️ Nhiều vòng</td><td>3 lượt e2e trọn bộ (~900 test/lượt): lượt 1 trượt 3 ca ngoài epic do tải; gộp T-43 + T-50 giữa chừng phải sửa CSS theo token mới; lượt A trượt 0209; lượt B đạt. Mã S2-E1 đạt 53/53 ngay từ đầu</td></tr>
+<tr><td><b>S2-E2</b> khung môn + hình phẳng</td><td>T-19</td><td>18:05–20:04</td><td class="warn">⚠️ Nhiều vòng</td><td>e2e lượt 1 trượt rải rác ngoài epic; dừng lượt 2 để gộp T-50; bench-s2 lỗi (khoá profile test), sửa và chạy lại. Mã S2-E2 15/15 ngay từ đầu</td></tr>
+<tr><td>e2e theo mức ảnh hưởng + smoke</td><td>T-45</td><td>20:09–21:31</td><td class="warn">⚠️</td><td>Lượt L2 trượt 26 ca vì máy ngủ (gập máy 20:18 → 21:0x); thêm <code>caffeinate</code>, chạy lại các spec trượt thì đạt</td></tr>
+<tr><td>Theme hoàn thiện</td><td>T-44</td><td>21:25–21:36</td><td class="ok">✅ Một lần</td><td>Không</td></tr>
+<tr><td><b>S2-E5</b> duyệt lời giải</td><td>T-20</td><td>21:33–22:16</td><td class="ok">✅ Gần một lần</td><td><code>verify</code> đỏ 1 lần: lỗi quyền đọc cột nhạy cảm (lỗi thật, sửa đúng chỗ). 0209 chập chờn, chạy lại đạt</td></tr>
+<tr><td><b>S2-E8</b> bài luyện</td><td>T-21</td><td>21:37–22:23</td><td class="ok">✅ Một lần</td><td>Không. Sau đó có FIX nhỏ cho test chập chờn <code>RC-</code> của S2-E1</td></tr>
+<tr><td>Icon chung 4 theme</td><td>fix-icon</td><td>22:19–22:51</td><td class="warn">⚠️ 1 vòng</td><td>Lượt L2 trượt 2 test icon (540/542), sửa, rồi 199/199</td></tr>
+<tr><td><b>S2-E3</b> thêm đề có AI</td><td>T-22</td><td>23:06–23:55</td><td class="ok">✅ Gần một lần</td><td>e2e-affected 571/576 → sửa tên mục rail (đụng luật TC-0508) và 2 test so sánh lệch → 576/576</td></tr>
+<tr><td><b>S2-E6 + E7</b> kho đề + trình chiếu</td><td>T-23</td><td>23:06–23:41</td><td class="ok">✅ Một lần</td><td>0539 chập chờn ngoài epic, chạy lại đạt</td></tr>
+</table>
+
+<b>Nhận xét ngày 26</b>
+<ol>
+<li>Không task nào phải làm lại từ đầu.</li>
+<li>Từ chiều tới 20h, phần lớn vòng lặp do môi trường: e2e trọn bộ 2 lượt trên máy tải nặng, Redis và AI mock quá giờ, máy ngủ khi gập. Mã S2-E1, S2-E2, theme đều đạt ngay lần đầu, nhưng mỗi task mất 1,5–2 giờ để chạy đi chạy lại e2e trọn bộ.</li>
+<li>Bước ngoặt: T-43 (ổn định môi trường) và T-45 (chỉ chạy e2e phần bị ảnh hưởng). Sau đó T-20…T-23 xong trong 35–50 phút, chỉ còn tối đa 1 vòng sửa lỗi thật.</li>
+<li>Lỗi thật tìm ra: quyền đọc cột nhạy cảm (T-20); đăng ký người dùng sai đường quyền (T-18); tên mục rail vi phạm luật E5 (T-22); khoá profile của bench (T-19).</li>
+</ol>
+
+<h2 class="page">Ngày 27/11 (00:00 → ~03:30)</h2>
+<table>
+<tr><th style="width:19%">Epic</th><th style="width:7%">Task</th><th style="width:12%">Liền mạch?</th><th style="width:8%">Lượt kiểm</th><th>Chi tiết</th></tr>
+<tr><td><b>S2-E4</b> chat chỉnh nháp + import</td><td>T-24</td><td class="ok">✅ Một lần</td><td>1</td><td>00:03 → 00:38 (35 phút). <code>verify</code> xanh lần đầu. Chỉ một chỉnh nhỏ: helper tải tệp 10 MB của test làm hết bộ nhớ, sửa trong 2 phút. e2e-affected L2 665/665</td></tr>
+<tr><td><b>S2-E9</b> biến thể + xuất PDF + liên kết</td><td>T-25</td><td class="warn">⚠️ Gián đoạn, có sửa</td><td>3</td><td>Mã xong 00:37 (34 phút). Đăng nhập hết hạn làm đứng 00:40 → 02:05 (~1 giờ 25 phút chết). Lượt 1 bắt <b>1 lỗi thật</b> (bấm đôi chọn đáp án bị đua, sửa ChoiceService). Lượt 2 hỏng vì định dạng mã (Spotless). Lượt 3 xanh: 802/802</td></tr>
+<tr><td><b>S3 dữ liệu mẫu</b> (F-S3)</td><td>T-42</td><td class="warn">⚠️ Gián đoạn, sửa 1 lần</td><td>2</td><td>Bị ngắt ngay sau khi đọc brief (00:39), chạy lại 02:06. <code>verify</code> đầu trượt vì seed mới làm lệch số đề trong một test cũ (48 → 54); đổi 6 đề sang loại phẳng thì xanh. Làm thực tế ~13 phút</td></tr>
+<tr><td><b>S3-E1 + E5</b> lớp, mã lớp, riêng tư, công tắc AI</td><td>T-28</td><td class="ok">✅ Liền mạch (đang chạy)</td><td>–</td><td>02:21 → 02:51: máy chủ, web, e2e 108/108 ngay lần đầu. Bị cắt vì chạm hạn mức 5 giờ ở bước kiểm cuối, đã cho chạy tiếp</td></tr>
+<tr><td><b>S3-E2</b> bộ bài</td><td>T-29</td><td class="ok">✅ Một lần</td><td>1</td><td>02:31 → 02:53: e2e riêng 63/63, <code>verify</code> + <code>web-build</code> xanh lần đầu; e2e-affected L1 470/470. Bị cắt vì hạn mức sau khi kiểm xong; đã gộp</td></tr>
+</table>
+
+<b>Ngoài task</b>
+<ul>
+<li><b>Regression C</b> (trọn bộ 6 project sau T-22 + T-23): chạy một lần, đạt 1379/1383 (4 bỏ qua có chủ đích, 0 trượt).</li>
+<li><b>Regression B</b>: dừng giữa chừng theo lệnh owner (ưu tiên tốc độ code). <code>verify</code> bản kết hợp đạt; tổ hợp seed chặng 3 + S2-E9 chưa có lượt e2e trọn bộ kiểm chung (T-28, T-29 phủ một phần qua e2e-affected).</li>
+<li><b>Làm lại do điều phối</b>: kiểm trạng thái worktree phải làm lại (chạy <code>cd</code> song song không tin được); một lệnh cập nhật queue bị từ chối vì ghép <code>git add</code>; gửi T-28 một tin hiểu sai ý owner ("bỏ e2e") rồi đính chính. Không hỏng mã, nhưng tốn thêm token.</li>
+<li><b>Dọn dẹp</b>: xoá 13 worktree đã gộp, tắt 12 cụm Postgres bỏ chạy, xoá CSDL <code>geo_arch</code> 12 GB và kết quả e2e cũ: ổ đĩa trống từ 157 GB lên 200 GB. Thêm quy tắc <code>make down</code> + xoá worktree sau khi gộp (epic-common v1.6).</li>
+</ul>
+
+<b>Nhận xét ngày 27</b>
+<ol>
+<li>Về phía agent con, các epic đều liền mạch; chỉ lặp vòng nhỏ: 1 lỗi thật, 1 lỗi định dạng, 1 lệch test do seed.</li>
+<li>Lãng phí lớn nhất: ~1 giờ 25 phút chết do đăng nhập hết hạn, và lần chạm hạn mức 5 giờ lúc ~03:30 khi 2 agent Fable chạy song song.</li>
+</ol>
+
+<h2>Tiến độ tới cuối 27/11 (lúc lập báo cáo)</h2>
+<table>
+<tr><th style="width:30%">Hạng mục</th><th>Trạng thái</th></tr>
+<tr><td>Code chặng 2 (S2-E1…S2-E9)</td><td class="ok">✅ Đủ 9/9 epic, đã gộp</td></tr>
+<tr><td>Dữ liệu mẫu chặng 3 (T-42)</td><td class="ok">✅ Đã gộp</td></tr>
+<tr><td>S3-E2 bộ bài (T-29)</td><td class="ok">✅ Đã gộp</td></tr>
+<tr><td>S3-E1 + E5 (T-28)</td><td class="warn">🔄 Đang kiểm cuối</td></tr>
+<tr><td>Còn lại chặng 3</td><td>T-30 ‖ T-31 (sau T-28) → T-32 → T-33 Tester chặng 3; T-26 Tester chặng 2; gate owner T-27, T-34</td></tr>
+</table>
+
+<h2>Lịch sử</h2>
+<table>
+<tr><th>Phiên bản</th><th>Ngày</th><th>Thay đổi</th><th>Ai</th></tr>
+<tr><td>v1.0</td><td>27/11/2026</td><td>Bản đầu: gộp đánh giá ngày 26 và 27</td><td>delivery-lead (Claude)</td></tr>
+</table>
+<p class="small">Nguồn sự thật: <code>.claude/progress/runner-T-261126-*.md</code>, <code>runner-fix-*.md</code>, <code>runner-design-dom.md</code>; DECISIONS.md; báo cáo cuối của agent con. Giờ ghi theo giờ máy (UTC+7).</p>
+</body></html>
