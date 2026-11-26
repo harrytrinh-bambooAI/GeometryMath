@@ -210,7 +210,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-26, T-261126-42
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(iam|aigateway/.*ClassAiSwitch)|app/server/src/main/resources/db/migration/V3(1[5-9]|2[0-9]|3[0-4])__|app/server/src/test/java/vn/geo/server/(it/s3e1|it/s3e5|iam|aigateway)/|app/web/src/features/(s3e1|s3e5)/|app/server/pom\.xml|app/e2e/tests/(s3e1|s3e5)/|app/db/seed/(e2e/91[1-9]_|fixture-ids\.d/s3e1)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/(S3-E1|S3-E5)/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W9
-## T-261126-29 · S3-E2 · L5 Dev · epic-common v1.3 · wt s3-e2 · ‖28 · 4h/10M · Bộ bài [todo]
+## T-261126-29 · S3-E2 · L5 Dev · epic-common v1.3 · wt s3-e2 · ‖28 · 4h/10M · Bộ bài [running]
 - Mục tiêu: US-S3E2-01…04: C3-03/08 trên mô hình bộ bài của 21 (PLAN A4, không đổi schema nếu không buộc), due_at là nhãn, release_at theo bộ hoặc từng bài, xem trước, cảnh báo đề "Cần xem lại", vòng đời Đã đóng/Lưu trữ; câu thử moi đáp án theo bộ
 - Nguồn: epics/S3-E2 (ebec17a 26/11); PLAN_code-s23 v1.0 §1 A4; STAGES Ch3 §5 luồng B; PO-66 G1, G5
 - Xong khi: như 18
