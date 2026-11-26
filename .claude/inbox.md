@@ -295,3 +295,14 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent T-28; `epics/S3-E1/qc_findings.md` (12), `S3-E5/qc_findings.md` (7).
 - **Xong khi:** mục 1–3 ghi PO-DECISIONS trước gate T-34; mục 5 FIX riêng.
 - **Ngoài phạm vi:** —
+
+## Việc: câu mở sau T-31 lượt 2 (S3-E4 + S3-E5-01 + S3-E6-03) · ghi 27/11/2026
+- **Mục tiêu:** đóng các điểm agent A để mở.
+  1. [FIX iam, Dev-S3E5-08] iam phát `StudentPasswordResetEvent` SAU commit → ghi AuditEvent lỗi thì mật khẩu vẫn đổi; TC-S3E5-07 chưa đạt trọn (Mở ngay/Đổi giờ quay lui đúng). Cần phát trong giao dịch hoặc outbox.
+  2. [PO] giờ yên lặng chỉ áp cho nhắc "sắp hết hạn"; lời giải mở theo lịch chỉ xét bộ có giờ mở trong 1 ngày gần nhất; em đã nhận "Mở ngay" không nhận lần hai; lùi hạn sau khi nhắc → nhắc thêm theo hạn mới.
+  3. [BA] MSG-S3-95 "Bộ {tên bộ}" lệch câu ví dụ AC; tạm: tên đã bắt đầu "Bộ " thì không thêm.
+  4. [Vận hành] tác vụ nhắc chạy mỗi phút ở mọi profile; tắt bằng `GEO_S3E6_REMINDER_CRON=-`.
+  5. [Manual] TC-S3E4-02, 21, 27.
+- **Nguồn:** báo cáo agent A; `epics/S3-E4/qc_findings.md`, `S3-E5/qc_findings.md` v0.2 (Dev-S3E5-08…10).
+- **Xong khi:** mục 1 FIX trước gate T-34; mục 2–3 ghi PO-DECISIONS.
+- **Ngoài phạm vi:** —

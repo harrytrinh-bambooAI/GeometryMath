@@ -230,7 +230,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-28, T-261126-29
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/tracking/|app/server/src/main/resources/db/migration/V3(6[5-9]|7[0-9]|8[0-4])__|app/server/src/test/java/vn/geo/server/(it/s3e3|tracking)/|app/web/src/features/s3e3/|app/server/pom\.xml|app/e2e/tests/s3e3/|app/db/seed/(e2e/93[0-9]_|fixture-ids\.d/s3e3)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S3-E3/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W10
-## T-261126-31 · S3-E4+E5-01 · L5 Dev · epic-common v1.3 · wt s3-e4 · ‖30 · 3.5h/9M · Tổng quan giáo viên + theo dõi nhanh + thông báo + AuditEvent [running]
+## T-261126-31 · S3-E4+E5-01 · L5 Dev · epic-common v1.3 · wt s3-e4 · ‖30 · 3.5h/9M · Tổng quan giáo viên + theo dõi nhanh + thông báo + AuditEvent [done]
 - Mục tiêu: US-S3E4-01…03: C3-05/06 web + điện thoại, Mở ngay / Đổi giờ, Notification trong ứng dụng (module notify, PLAN A9); US-S3E5-01: AuditEvent trên audit_log (A8) cho mở sớm, đổi giờ, đặt lại mật khẩu (nghe DomainEvent của 28)
 - Nguồn: epics/S3-E4, S3-E5 (ebec17a 26/11); PLAN_code-s23 v1.0 §1 A8–A9, §3; STAGES Ch3 §5 luồng C, §7
 - Xong khi: như 18 (gồm spec *.p0m.ui.spec.ts điện thoại; S3-E5 trừ 03, 05)
