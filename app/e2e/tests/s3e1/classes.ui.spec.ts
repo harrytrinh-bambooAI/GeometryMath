@@ -79,12 +79,14 @@ test('Tắt "Cho vào lớp bằng mã" thì mã bị khóa, bật lại thì d�
   const w = await world(request);
   const bao = w.people['Gia Bảo']!;
   await openClass(page, w, '11A2');
-  await page.getByTestId('s3e1-switch-code-join').uncheck();
+  // công tắc đổi ngay trên màn (lạc quan); chờ máy chủ lưu xong rồi mới thử mã (dưới tải, PUT có thể về sau lệnh join)
+  const saved = () => page.waitForResponse((r) => r.request().method() === 'PUT' && /\/settings$/.test(new URL(r.url()).pathname));
+  await Promise.all([saved(), page.getByTestId('s3e1-switch-code-join').uncheck()]);
   await expect(page.getByTestId('s3e1-switch-code-join')).not.toBeChecked();
   const shut = await join(request, bao.token, w.classes['11A2']!.code);
   expect(shut.status()).toBe(400);
   expect(((await shut.json()) as { message: string }).message).toBe(MSG.s01);
-  await page.getByTestId('s3e1-switch-code-join').check();
+  await Promise.all([saved(), page.getByTestId('s3e1-switch-code-join').check()]);
   await expect(page.getByTestId('s3e1-switch-code-join')).toBeChecked();
   expect((await join(request, bao.token, w.classes['11A2']!.code)).status()).toBe(200);
   await page.reload();

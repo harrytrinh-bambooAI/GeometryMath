@@ -188,14 +188,22 @@ function TemplateExplorer({ template }: { template: SolidTemplate }) {
   const [scene, setScene] = useState<Scene | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
 
-  const redraw = (params: Record<string, number>) =>
-    e2Api
+  // Gõ nhanh gửi nhiều yêu cầu dựng lại; phản hồi có thể về sai thứ tự (máy chủ bận). Chỉ phản hồi của yêu cầu MỚI
+  // NHẤT được vẽ, phản hồi cũ về sau bị bỏ (trước đây hình có thể giữ tham số cũ, TC-GEO-0209 chập chờn trên WebKit).
+  const seq = useRef(0);
+  const redraw = (params: Record<string, number>) => {
+    const mine = ++seq.current;
+    return e2Api
       .templateScene(template.code, params)
       .then((s) => {
+        if (mine !== seq.current) return;
         setScene(s);
         setLoadError(null);
       })
-      .catch((e: unknown) => setLoadError(errorText(e)));
+      .catch((e: unknown) => {
+        if (mine === seq.current) setLoadError(errorText(e));
+      });
+  };
 
   useEffect(() => {
     void redraw(values.current);

@@ -112,7 +112,12 @@ test('@TC-S3E4-25 giờ điện thoại chạy nhanh 3 giờ gửi kèm bị b�
   const set = await assignedSet(request, lan(w), klass(w, '11A1').id);
   const clientTime = new Date(Date.now() + 3 * 3_600_000).toISOString();
   const t0 = Date.now();
-  const opened = await ok<Follow>(await api.openNow(request, lan(w).token, set.id, { requestKey: randomUUID(), clientTime, releaseAt: clientTime }));
+  // BR-S3E5-34: khóa ngoài hợp đồng (releaseAt) bị từ chối, không mở bộ; giờ điện thoại đi qua trường clientTime (BR-S3E4-11)
+  const bad = await api.openNow(request, lan(w).token, set.id, { requestKey: randomUUID(), clientTime, releaseAt: clientTime });
+  expect(bad.status()).toBe(400);
+  expect((await err(bad)).code).toBe('VALIDATION_FAILED');
+  expect((await follow(request, lan(w).token, set.id)).releaseState).toBe('upcoming');
+  const opened = await ok<Follow>(await api.openNow(request, lan(w).token, set.id, { requestKey: randomUUID(), clientTime }));
   const at = ms(opened.releaseAt)!;
   expect(Math.abs(at - t0), 'giờ mở = giờ máy chủ lúc xử lý').toBeLessThan(60_000);
   const r = await api.audit(request, lan(w).token, klass(w, '11A1').id);
