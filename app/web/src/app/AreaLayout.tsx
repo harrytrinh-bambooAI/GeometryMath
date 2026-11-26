@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router';
 import type { NavItem } from '../features/index.ts';
 import { UNAUTHENTICATED_EVENT } from '../shared/auth/session.ts';
@@ -26,13 +26,25 @@ export function AreaLayout({ area, title, nav }: { area: 'gv' | 'hs'; title: str
     void syncAccountTheme();
   }, [pathname]);
 
+  // Điện thoại: thanh dưới cuộn ngang (base.css) -> đưa mục đang chọn vào khung nhìn của thanh, không cuộn trang.
+  const railRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const rail = railRef.current;
+    const active = rail?.querySelector<HTMLElement>('a.active');
+    if (!rail || !active || rail.scrollWidth <= rail.clientWidth) return;
+    const left = active.offsetLeft; // thanh dưới là sticky nên là offsetParent của mục
+    if (left < rail.scrollLeft || left + active.offsetWidth > rail.scrollLeft + rail.clientWidth) {
+      rail.scrollLeft = left - (rail.clientWidth - active.offsetWidth) / 2;
+    }
+  }, [pathname]);
+
   return (
     <div className="shell" data-testid={tid(area, 'shell')}>
-      <nav className="rail" aria-label={`Điều hướng ${title}`} data-testid={tid(area, 'rail')}>
+      <nav ref={railRef} className="rail" aria-label={`Điều hướng ${title}`} data-testid={tid(area, 'rail')}>
         <NavLink to="/" className="logo" data-testid={tid('shell', 'home')} aria-label="Trang chủ">
           <Icon name="cube" />
         </NavLink>
-        {/* BR-GEO-307 (D-GEO-129): thanh bên của giáo viên không có "Tổng quan", "Lớp học" ở MVP */}
+        {/* Mục "Tổng quan" của học sinh do khung vẽ; của giáo viên do S3-E4 (tong-quan) cắm qua teacherNav, "Lớp học" do S3-E1 (BR-GEO-307 chỉ ràng buộc MVP) */}
         {area === 'hs' ? (
           <NavLink to={`/${area}`} end data-testid={tid(area, 'nav', 'overview')}>
             <Icon name="home" />

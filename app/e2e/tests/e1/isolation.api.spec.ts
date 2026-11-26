@@ -246,15 +246,21 @@ test('Con trỏ phân trang của trường này dùng với thẻ của trườ
 test('Khóa bộ nhớ đệm của trường này không đọc được bằng thẻ trường khác @TC-GEO-0804', async ({ request }) => {
   const a = await devToken(request, 'F-GEO-003');
   const url = `/api/v1/teacher/assignments/${BG('BG-1')}/monitor`;
-  expect((await request.get(url, { headers: bearer(a) })).status()).toBe(200); // tạo dữ liệu đệm
   const prefix = process.env.GEO_E2E_REDIS_PREFIX ?? 'geoe2e:';
-  const keys = execFileSync('redis-cli', ['-p', process.env.GEO_REDIS_PORT ?? '6389', '--scan', '--pattern', `${prefix}*`], {
-    encoding: 'utf8',
-  })
-    .split('\n')
-    .filter(Boolean);
+  const scan = () =>
+    execFileSync('redis-cli', ['-p', process.env.GEO_REDIS_PORT ?? '6389', '--scan', '--pattern', `${prefix}*`], { encoding: 'utf8' })
+      .split('\n')
+      .filter(Boolean);
+  // Đệm Theo dõi lớp sống 5 giây và bị xóa khi có sự kiện mới của bài (TrackingService.evictMonitor); ca song song khác
+  // ghi sự kiện vào BG-1 của dữ liệu vàng có thể xóa khóa giữa lượt GET và lượt quét -> tạo lại đệm rồi quét lại (≤ 5 lần).
+  let keys: string[] = [];
+  for (let i = 0; i < 5; i++) {
+    expect((await request.get(url, { headers: bearer(a) })).status()).toBe(200); // tạo dữ liệu đệm
+    keys = scan();
+    if (keys.some((k) => k.includes(':mon:') && k.includes(BG('BG-1')))) break;
+  }
   const monitorKeys = keys.filter((k) => k.includes(':mon:'));
-  expect(monitorKeys.length).toBeGreaterThan(0);
+  expect(monitorKeys.filter((k) => k.includes(BG('BG-1'))).length).toBeGreaterThan(0);
   for (const k of monitorKeys) expect(k, 'khóa đệm mang tiền tố trường').toMatch(new RegExp(`^${prefix}t:[0-9a-f-]{36}:mon:`));
   expect(monitorKeys.filter((k) => k.includes(BG('BG-1'))).every((k) => k.includes(`t:00000000-0000-7000-8000-000000000001:`))).toBe(true);
   const c = await devToken(request, 'F-GEO-005');

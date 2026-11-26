@@ -156,8 +156,13 @@ test('Thanh bên không có "Tổng quan" và "Lớp học" @TC-GEO-0744', async
   await openMonitor(page, b);
   const rail = page.getByTestId('gv-rail');
   await expect(rail.getByTestId('e7-nav-theo-doi')).toHaveText('Theo dõi');
-  await expect(rail).not.toContainText('Tổng quan');
-  await expect(rail).not.toContainText('Lớp học');
+  // BR-GEO-307 (D-GEO-129) chỉ ràng buộc MVP: chặng 3 cố ý thêm "Lớp học" (S3-E1) và "Tổng quan" (S3-E4 US-S3E4-01).
+  // Giữ phần còn lại của ý: mỗi mục chỉ một lần, và đúng của epic chặng 3 (không có mục "Tổng quan" của khung như vùng học sinh).
+  await expect(rail.getByText('Tổng quan', { exact: true })).toHaveCount(1);
+  await expect(rail.getByTestId('s3e4-nav-tong-quan')).toHaveText('Tổng quan');
+  await expect(rail.getByTestId('gv-nav-overview')).toHaveCount(0);
+  await expect(rail.getByText('Lớp học', { exact: true })).toHaveCount(1);
+  await expect(rail.getByTestId('s3e1-nav-lop-hoc')).toHaveText('Lớp học');
 });
 
 test('Mức gợi ý của từng em @TC-GEO-0713', async ({ page, request }) => {
