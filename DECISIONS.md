@@ -5,6 +5,7 @@ Phiên bản: v0.1 · 2026-11-26 · quyết định đã chốt — 1 dòng / qu
 | 2026-11-26 | Dùng delivery-lead v0.2, small_task = direct | phiên ngắn | setup L0 | Harry |
 | 2026-11-26 | Quyết định sản phẩm vẫn ghi ở `PO-DECISIONS.md` (PO-xx); tệp này chỉ ghi quyết định điều phối | tránh hai nguồn quyết định | setup L0 | phiên chính |
 | 2026-11-26 | Hoàn thành MVP = PO-60 (xem PO-DECISIONS.md); 2 agent Opus song song T-261126-01 ‖ T-261126-02 | AskUserQuestion 26/11 | PO-60 | Harry |
+| 2026-11-26 | `make bench-mvp` với mock chỉ đo các đề có câu trả lời mẫu (6 HKG, kiểm hồi quy CI); đo đủ 52 đề (gồm 46 HKN) chỉ với `GEO_AI_PROVIDER=anthropic` (T-05) | mock trả rỗng cho đề mới → 11,5 % là giả tạo, không phản ánh chất lượng | T-03 gộp, bench 13:00 trượt | phiên chính (TẠM) |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |

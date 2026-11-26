@@ -19,6 +19,8 @@ Phiên bản: v0.1 · 2026-11-26 · <dự án> — agenda họp SỐNG duy nhấ
 | # | Câu hỏi | Lựa chọn → hệ quả | Mặc định đang dùng (TẠM) |
 |---|---|---|---|
 | C1 | Các câu chờ PO/BA còn mở từ trước: QF-E2-D10 (cận tham số 1000), Dev-E7-10 (BR-GEO-267 theo tên), D-GEO-184 (R3 số cắt cụt), NFR-GEO-056/D-GEO-125 (giới hạn tần suất); giả định PO-51…57 | OK → giữ; sửa → lô sửa sau MVP | giữ giả định hiện tại |
+| C2 | Gói 46 đề HKN (`content/catalog-mvp.json`) tự nạp khi máy chủ khởi động ở dev **và prod** (`geo.content.pack.load-on-start`) | giữ tự nạp → đơn giản, mỗi lần khởi động kiểm lũy đẳng; chuyển sang lệnh nạp riêng → kiểm soát lúc nào dữ liệu vào prod. Claude nghiêng: lệnh nạp riêng cho prod | tự nạp BẬT (TẠM, mvp-content 26/11) |
+| C3 | Engine chưa dựng được đề thiết diện / một số dạng thể tích chóp → các đề này không vào kho | bổ sung engine (lô sau MVP) / giữ ngoài MVP. Claude nghiêng: ngoài MVP | ngoài kho |
 
 ## Sau họp
 Cập nhật KQ + bỏ TẠM → chạy lại audit → chuyển dòng đã chốt sang DECISIONS.md.

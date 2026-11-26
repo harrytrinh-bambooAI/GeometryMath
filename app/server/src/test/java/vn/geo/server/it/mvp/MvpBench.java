@@ -31,6 +31,7 @@ import vn.geo.server.common.error.AppException;
 import vn.geo.server.common.id.Uuid7;
 import vn.geo.server.content.internal.repo.ContentRepository;
 import vn.geo.server.content.internal.service.AnswerExpr;
+import vn.geo.server.content.internal.service.ContentPackLoader;
 import vn.geo.server.content.internal.service.SceneChecker;
 import vn.geo.server.geometry.api.Figure;
 import vn.geo.server.geometry.api.GeometryEngine;
@@ -76,9 +77,13 @@ class MvpBench extends AbstractE1IT {
   @Autowired GeometryEngine engine;
   @Autowired ContentRepository content;
   @Autowired ProbeRunner probes;
+  @Autowired ContentPackLoader contentPack;
 
   @Value("${geo.ai.provider:mock}")
   String provider;
+
+  /** Phạm vi đề đã đo (ghi vào báo cáo). */
+  String scope = "";
 
   /** Một đề trong kho đã nạp. */
   record Problem(String code, UUID versionId, String statement, String finalAnswer) {}
@@ -86,6 +91,8 @@ class MvpBench extends AbstractE1IT {
   @Test
   void bench() throws Exception {
     reseed();
+    // Kho đề MVP (content/catalog-mvp.json): profile test tắt nạp lúc khởi động -> nạp tường minh.
+    contentPack.load();
     mock.reset();
     settings.reset();
     TreeSet<String> codes = new TreeSet<>();
@@ -100,6 +107,25 @@ class MvpBench extends AbstractE1IT {
           }
         }
       }
+    }
+    // AI giả lập chỉ có câu trả lời mẫu cho các đề trong mock-ai/benchmark.json: đo bằng mock chỉ
+    // là
+    // kiểm hồi quy đường đo (CI) trên các đề đó; đo đủ kho đề (gồm gói HKN) bằng AI thật.
+    if ("mock".equals(provider)) {
+      TreeSet<String> mockCodes = new TreeSet<>();
+      resource("/mock-ai/benchmark.json")
+          .properties()
+          .forEach(e -> {
+            if (!e.getKey().startsWith("_")) {
+              mockCodes.add(e.getKey());
+            }
+          });
+      int all = codes.size();
+      codes.retainAll(mockCodes);
+      scope =
+          "mock: " + codes.size() + "/" + all + " đề có câu trả lời mẫu; đủ kho chỉ đo với AI thật";
+    } else {
+      scope = "đủ kho: " + codes.size() + " đề";
     }
     String an = an();
     List<Map<String, Object>> rows = new ArrayList<>();
@@ -402,7 +428,9 @@ class MvpBench extends AbstractE1IT {
         .append(n)
         .append(" đề (hợp mã của ")
         .append(String.join(", ", SOURCES))
-        .append("; đề + tham chiếu từ kho đã nạp)\n");
+        .append("; đề + tham chiếu từ kho đã nạp) · phạm vi ")
+        .append(scope)
+        .append("\n");
     b.append("- Giá: ").append(PRICING_SOURCE).append("\n");
     b.append("- Kết luận chỉ số bắt buộc: ")
         .append(mandatory ? "**ĐẠT**" : "**TRƯỢT**")
