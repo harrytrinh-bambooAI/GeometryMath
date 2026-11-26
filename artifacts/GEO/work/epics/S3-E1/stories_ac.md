@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # S3-E1 — Lớp, mã lớp, duyệt vào lớp, đặt lại mật khẩu, quyền theo quan hệ: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA. Nguồn: `work/s23/story-map-s23.md` (R2 khóa, 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Ch3 (22/11/2026), `Design/s23/DQ.md` và ảnh `c3-*.png` (26/11/2026), `PO-DECISIONS.md` PO-53, PO-61…65. Khi nguồn mâu thuẫn thì PO-61 thắng STAGES.
@@ -50,11 +50,11 @@ Phiên bản: v0.1 · 2026-11-26
 | `F-S3-010` | Lớp 11A1 · Lớp 11 · năm học 2026–2027 · mã lớp `HK-4P7Q` · Đang dạy · 8 em Đang học, 3 em Chờ duyệt, 1 em Đã rời |
 | `F-S3-011` | Lớp 11A2 của cô Lan · mã lớp `HK-8M3C` · 3 em Đang học |
 | `F-S3-012` | Lớp 10B của thầy Khôi · mã lớp `HK-5T9X` · 4 em Đang học |
-| `F-S3-020…027` | Học sinh Đang học của 11A1: Bình An `HS-4P9T-31WD`, Chi Mai `HS-8L2K-77AB`, Đức Huy `HS-3M7Q-05XN`, Gia Bảo `HS-9D4W-61CE`, Hà My `HS-2X6R-48PL`, Khánh Linh `HS-7T1B-90QZ`, Minh Quân `HS-5N8C-24TR`, Ngọc Anh `HS-6V3F-18HM` |
+| `F-S3-020…027` | Học sinh Đang học của 11A1: Bình An `HS-4P9T-37WD`, Chi Mai `HS-8L2K-77AB`, Đức Huy `HS-3M7Q-85XN`, Gia Bảo `HS-9D4W-67CE`, Hà My `HS-2X6R-48PL`, Khánh Linh `HS-7T7B-98QZ`, Minh Quân `HS-5N8C-24TR`, Ngọc Anh `HS-6V3F-78HM` |
 | `F-S3-028` | Văn Tú `HS-3H6J-72KP` · Đã rời 11A1 (còn dữ liệu bài làm cũ) |
-| `F-S3-030…032` | Chờ duyệt ở 11A1: Hoàng Nam `HS-1Q8Z-40DF`, Thu Hà `HS-7C5J-63LS`, Hoàng Nam thứ hai `HS-9B2L-85VG` (trùng tên với em đầu) |
-| `F-S3-040` | Lớp 10B: Mi Na `HS-2A5F-11BC`, Bình An thứ hai `HS-6Z1N-52YT` (trùng tên với Bình An của 11A1), hai em khác; Chi Mai `HS-8L2K-77AB` cũng Đang học 10B (em thuộc hai lớp của hai giáo viên) |
-| `F-S3-041` | Lớp 11A2: Quốc Bảo `HS-3C9D-77AA`, Thảo Vy `HS-8F2E-33BB`, Tuấn Kiệt `HS-1G4H-99CC` |
+| `F-S3-030…032` | Chờ duyệt ở 11A1: Hoàng Nam `HS-7Q8Z-48DF`, Thu Hà `HS-7C5J-63LS`, Hoàng Nam thứ hai `HS-9B2L-85VG` (trùng tên với em đầu) |
+| `F-S3-040` | Lớp 10B: Mi Na `HS-2A5F-77BC`, Bình An thứ hai `HS-6Z7N-52YT` (trùng tên với Bình An của 11A1), hai em khác; Chi Mai `HS-8L2K-77AB` cũng Đang học 10B (em thuộc hai lớp của hai giáo viên) |
+| `F-S3-041` | Lớp 11A2: Quốc Bảo `HS-3C9D-77AA`, Thảo Vy `HS-8F2E-33BB`, Tuấn Kiệt `HS-7G4H-99CC` |
 | `F-S3-050` | Bộ "Bộ bài tuần 15" của 11A1 · Đã giao · hạn làm T6 04/12/2026 20:00 · giờ mở lời giải 06/12/2026 08:00 · bốn đề: Đề 1 SC-đáy, Đề 2 d(A,SBC), Đề 3 hai mặt phẳng, Đề 4 thể tích |
 | `F-S3-051` | Bảng trạng thái 11A1 × bộ tuần 15 (Đề 1, 2, 3, 4): An Đúng, Xem lại, Đúng, Xem lại · Mai Đúng, Xem lại, Xem lại, Chưa làm · Huy Đúng, Đúng, Xem lại, Đúng · Bảo Xem lại, Xem lại, Đang làm, Chưa làm · My Đúng, Đúng, Đúng, Đúng · Linh Chưa làm bốn đề · Quân Đúng, Xem lại, Xem lại, Xem lại · Ngọc Anh Đúng, Đúng, Xem lại, Đang làm |
 | `F-S3-052` | Bộ "Bộ bài tuần 16" của 11A1 · Nháp · chưa đặt hạn, chưa đặt giờ mở lời giải |
@@ -90,6 +90,7 @@ Phiên bản: v0.1 · 2026-11-26
 | BR-S3E1-04 | Một giáo viên có tối đa 20 lớp Đang dạy; lớp đã lưu trữ không tính. | QA-S3E1-05 |
 | BR-S3E1-05 | Đặt lại mã lớp làm mã cũ hết hiệu lực ngay; thành viên hiện có không bị ảnh hưởng. | DQ-23 |
 | BR-S3E1-06 | Công tắc "Cho vào lớp bằng mã" tắt thì mã bị từ chối như mã đã khóa; công tắc "Giáo viên duyệt từng em" bật mặc định. | DQ-23 |
+| BR-S3E1-16 | Lớp MVP đã chuyển ở US-S2E1-04 (lớp 11A1 và học sinh có mã `HS-`) thành lớp theo mô hình chặng 3: chủ lớp là tài khoản `GV-` của "Giáo viên mẫu", sinh mã lớp `HK-`, mỗi học sinh một `ClassMembership` Đang học; lệnh chạy lại được và không chạy trên prod (TẠM, RV_s23 M-02) | PO-61; BR-S2E1-13 |
 
 - **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E1-03, QA-S3E1-05.
 
@@ -165,6 +166,11 @@ Phiên bản: v0.1 · 2026-11-26
 - Then: lớp mới nhận `HK-9R2D`; không có hai lớp cùng mã; ràng buộc duy nhất của cơ sở dữ liệu từ chối bản ghi trùng nếu chèn thẳng
 
 
+**US-S3E1-01-SC6 — Lớp MVP đã chuyển thành lớp thật có chủ lớp và mã lớp** · Nguồn: BR-S3E1-16; US-S2E1-04
+- Given: lệnh chuyển dữ liệu MVP của US-S2E1-04 đã chạy: lớp 11A1 của "Giáo viên mẫu" có 5 học sinh mang mã `HS-`
+- When: chạy lệnh chuyển hồ sơ lớp; mở màn Lớp học bằng tài khoản "Giáo viên mẫu"; chạy lệnh lần thứ hai
+- Then: lớp 11A1 có mã lớp dạng `HK-xxxx`, chủ lớp là "Giáo viên mẫu"; 5 học sinh có `ClassMembership` Đang học; tiến độ và bài làm cũ giữ nguyên; lần hai không tạo thêm lớp, mã lớp hay thành viên
+
 ## US-S3E1-02 — Học sinh nhập mã lớp, trạng thái chờ duyệt; mã sai hoặc đã khóa
 - **Story:** Là học sinh, tôi muốn nhập mã lớp thầy cô đọc và chờ thầy cô duyệt, để vào đúng lớp mà không phải khai báo gì thêm. · Loại UI · P0 · Độ khó 3
 - **Nguồn:** story map US-S3E1-02; STAGES Ch3 §5 luồng A bước 3; DQ-23, DQ-27; PO-53 (khóa theo tài khoản); ảnh `c3-07-vao-lop.png`
@@ -201,7 +207,7 @@ Phiên bản: v0.1 · 2026-11-26
 **US-S3E1-02-SC3 — Bấm gửi hai lần không tạo hai yêu cầu** · Nguồn: BR-S3E1-15
 - Given: Hoàng Nam đã gửi mã `HK-4P7Q` và đang Chờ duyệt (F-S3-030)
 - When: gửi lại cùng yêu cầu vào lớp hai lần liên tiếp
-- Then: ở màn của cô Lan vẫn đúng một dòng chờ duyệt của Hoàng Nam `HS-1Q8Z-40DF`; học sinh thấy lại MSG-S3-02, không báo lỗi
+- Then: ở màn của cô Lan vẫn đúng một dòng chờ duyệt của Hoàng Nam `HS-7Q8Z-48DF`; học sinh thấy lại MSG-S3-02, không báo lỗi
 
 
 **US-S3E1-02-SC4 — Lớp tắt "Giáo viên duyệt từng em" thì vào thẳng Đang học** · Nguồn: DQ-23; BR-S3E1-11 · PROVISIONAL QA-S3E1-08
@@ -290,13 +296,13 @@ Phiên bản: v0.1 · 2026-11-26
 
 
 **US-S3E1-03-SC2 — Hai em trùng tên được phân biệt bằng mã người dùng** · Nguồn: DQ-25; BR-S3E1-21
-- Given: hai em tên "Hoàng Nam" Chờ duyệt ở 11A1: `HS-1Q8Z-40DF` gửi lúc 15:10 và `HS-9B2L-85VG` gửi lúc 16:10 (F-S3-030, F-S3-032)
+- Given: hai em tên "Hoàng Nam" Chờ duyệt ở 11A1: `HS-7Q8Z-48DF` gửi lúc 15:10 và `HS-9B2L-85VG` gửi lúc 16:10 (F-S3-030, F-S3-032)
 - When: mở danh sách Chờ duyệt, rồi duyệt dòng có mã `HS-9B2L-85VG`
-- Then: mỗi dòng hiện tên và mã người dùng của em; chỉ em `HS-9B2L-85VG` thành Đang học, em `HS-1Q8Z-40DF` vẫn Chờ duyệt; không có hộp hỏi ký hiệu phân biệt
+- Then: mỗi dòng hiện tên và mã người dùng của em; chỉ em `HS-9B2L-85VG` thành Đang học, em `HS-7Q8Z-48DF` vẫn Chờ duyệt; không có hộp hỏi ký hiệu phân biệt
 
 
 **US-S3E1-03-SC3 — Từ chối một em** · Nguồn: Ch3 §5; DQ-27 · PROVISIONAL QA-S3E1-02
-- Given: Hoàng Nam `HS-1Q8Z-40DF` Chờ duyệt ở 11A1 (F-S3-030)
+- Given: Hoàng Nam `HS-7Q8Z-48DF` Chờ duyệt ở 11A1 (F-S3-030)
 - When: bấm "Từ chối" cạnh em đó
 - Then: dòng biến khỏi Chờ duyệt, trạng thái của em ở 11A1 là Bị từ chối; em không thấy bài của lớp và màn của em hiện câu cho biết chưa vào được lớp, gợi ý hỏi lại giáo viên
 
@@ -338,7 +344,7 @@ Phiên bản: v0.1 · 2026-11-26
 
 
 **US-S3E1-03-FC5 — Duyệt em đã xóa tài khoản** · Nguồn: CL-FN-10
-- Given: Hoàng Nam `HS-1Q8Z-40DF` đã xóa tài khoản trong lúc đang Chờ duyệt (F-S3-030)
+- Given: Hoàng Nam `HS-7Q8Z-48DF` đã xóa tài khoản trong lúc đang Chờ duyệt (F-S3-030)
 - When: cô Lan bấm "Duyệt" ở dòng cũ chưa tải lại
 - Then: máy chủ trả NOT_FOUND; danh sách tải lại không còn dòng đó; không có bản ghi mồ côi
 
@@ -389,7 +395,7 @@ Phiên bản: v0.1 · 2026-11-26
 
 
 **US-S3E1-04-FC1 — Giáo viên không đặt lại được cho em ngoài lớp mình** · Nguồn: BR-S3E1-30; PO-61
-- Given: Bình An `HS-4P9T-31WD` Đang học 11A1 của cô Lan, không thuộc lớp nào của thầy Khôi (F-S3-020)
+- Given: Bình An `HS-4P9T-37WD` Đang học 11A1 của cô Lan, không thuộc lớp nào của thầy Khôi (F-S3-020)
 - When: thầy Khôi gọi thẳng yêu cầu đặt lại mật khẩu cho Bình An
 - Then: máy chủ trả NOT_FOUND; mật khẩu của Bình An không đổi; không sinh mật khẩu tạm; AuditEvent ghi một lần bị từ chối (QA-S3E5-02), không ghi PASSWORD_RESET thành công
 
@@ -457,7 +463,7 @@ Phiên bản: v0.1 · 2026-11-26
 **US-S3E1-05-SC1 — Giáo viên chỉ thấy lớp của mình** · Nguồn: BR-S3E1-50
 - Given: cô Lan có 11A1 và 11A2, thầy Khôi có 10B (F-S3-010, F-S3-011, F-S3-012)
 - When: cô Lan gọi danh sách lớp, rồi danh sách học sinh của từng lớp mình
-- Then: danh sách lớp chỉ có 11A1 và 11A2; học sinh chỉ gồm em của hai lớp đó; không có em nào chỉ thuộc 10B (Mi Na `HS-2A5F-11BC`)
+- Then: danh sách lớp chỉ có 11A1 và 11A2; học sinh chỉ gồm em của hai lớp đó; không có em nào chỉ thuộc 10B (Mi Na `HS-2A5F-77BC`)
 
 
 **US-S3E1-05-SC2 — Học sinh Đang học chỉ thấy bài của lớp mình** · Nguồn: BR-S3E1-52
@@ -473,7 +479,7 @@ Phiên bản: v0.1 · 2026-11-26
 
 
 **US-S3E1-05-FC2 — Đổi mã học sinh trên đường dẫn** · Nguồn: BR-S3E1-50
-- Given: cô Lan đã đăng nhập; Mi Na `HS-2A5F-11BC` chỉ thuộc 10B (F-S3-040)
+- Given: cô Lan đã đăng nhập; Mi Na `HS-2A5F-77BC` chỉ thuộc 10B (F-S3-040)
 - When: gọi chi tiết học sinh, bằng chứng một ô và đặt lại mật khẩu với mã của Mi Na
 - Then: mọi API trả NOT_FOUND; không có dữ liệu của Mi Na trong thân phản hồi
 
@@ -506,3 +512,4 @@ Phiên bản: v0.1 · 2026-11-26
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: story và AC của S3-E1, ready for R3 | runner-T-261126-14 (BA) |
+| v0.2 | 2026-11-26 | thêm BR-S3E1-16 và US-S3E1-01-SC6 (lớp MVP đã chuyển), RV_s23 M-02; đổi mã mẫu sai bảng ký tự (RV_s23 m-01) | runner-T-261126-15 (QC soát phản biện, RV_s23) |

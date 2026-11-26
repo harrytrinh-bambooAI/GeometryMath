@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # S3-E1 — câu hỏi và đề xuất đổi story map
 
 > Chủ sở hữu: BA và QC. Mọi câu đều có mặc định đang dùng (TẠM) để việc không dừng; chủ sản phẩm chỉ cần sửa chỗ không đồng ý ở gate 16 (T-261126-16). Sau khi chốt, ghi vào `PO-DECISIONS.md` (ngoài phạm vi của task này) và cập nhật AC theo mã QA.
@@ -7,7 +7,7 @@ Phiên bản: v0.1 · 2026-11-26
 
 | Mã | Câu hỏi | Mặc định đang dùng (TẠM · tin cậy · nguồn) | Ảnh hưởng | Hỏi ai |
 |---|---|---|---|---|
-| QA-S3E1-01 | Mã người dùng và mã lớp: bản mẫu hiện hai độ dài (thẻ `HS-4P9T`, hộp thoại `HS-4P9T-31WD`). Dùng độ dài nào? | `GV-XXXX-XXXX` và `HS-XXXX-XXXX` (4+4 ký tự), mã lớp `HK-XXXX`; sửa bản mẫu cho khớp. TẠM · vừa · DQ-16, ảnh `c3-07-duyet-dat-lai-mk.png` | Mọi AC có mã; F-S3-020… | Designer, PO |
+| QA-S3E1-01 | Mã người dùng và mã lớp: bản mẫu hiện hai độ dài (thẻ `HS-4P9T`, hộp thoại `HS-4P9T-37WD`). Dùng độ dài nào? | `GV-XXXX-XXXX` và `HS-XXXX-XXXX` (4+4 ký tự), mã lớp `HK-XXXX`; sửa bản mẫu cho khớp. TẠM · vừa · DQ-16, ảnh `c3-07-duyet-dat-lai-mk.png` | Mọi AC có mã; F-S3-020… | Designer, PO |
 | QA-S3E1-02 | `ClassMembership` cần trạng thái "Bị từ chối" (bản mẫu có nút Từ chối và màn "bị từ chối"; story map chỉ có chờ, đang học, đã rời)? | Thêm trạng thái Bị từ chối; em đã rời hoặc bị từ chối xin lại thì tạo Chờ duyệt mới. TẠM · vừa · DQ-27, STAGES Ch3 §6 C3-07 | US-S3E1-02 SC5; US-S3E1-03 SC3 | PO |
 | QA-S3E1-03 | Định dạng năm học và mã lớp: ràng buộc `YYYY–YYYY` năm sau bằng năm trước cộng 1; mã lớp bỏ ký tự 0, O, 1, I? | Có, như BR-S3E1-02, 03. TẠM · vừa · DQ-23 | US-S3E1-01 FC3 | BA, ARCH |
 | QA-S3E1-04 | Đối tượng ngoài quan hệ trả NOT_FOUND hay FORBIDDEN? | NOT_FOUND để không lộ đối tượng tồn tại; sai vai FORBIDDEN. TẠM · cao · an toàn dữ liệu trẻ em | Mọi AC phân quyền của S3 | PO, ARCH |
@@ -34,3 +34,4 @@ Phiên bản: v0.1 · 2026-11-26
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 14 câu hỏi và 2 đề xuất của S3-E1 | runner-T-261126-14 |
+| v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |

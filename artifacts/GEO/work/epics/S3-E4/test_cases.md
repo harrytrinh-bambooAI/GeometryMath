@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # S3-E4 — test case (Tổng quan giáo viên, theo dõi nhanh trên điện thoại, thông báo trong ứng dụng)
 
 > Chủ sở hữu: QC. Lập từ `stories_ac.md` cùng thư mục (mỗi tiêu chí có ít nhất một case) và `test_design.md`. **Trạng thái: ready for R3**; mức epic **P0**. Id ổn định; tiêu chí bị gạch bỏ thì case giữ id với N/A. AI là giả lập (D-GEO-047). Kỳ vọng bám Given / When / Then của AC, giá trị cụ thể lấy từ dữ liệu mẫu chung.
@@ -43,11 +43,11 @@ Phiên bản: v0.1 · 2026-11-26
 | `F-S3-010` | Lớp 11A1 · Lớp 11 · năm học 2026–2027 · mã lớp `HK-4P7Q` · Đang dạy · 8 em Đang học, 3 em Chờ duyệt, 1 em Đã rời |
 | `F-S3-011` | Lớp 11A2 của cô Lan · mã lớp `HK-8M3C` · 3 em Đang học |
 | `F-S3-012` | Lớp 10B của thầy Khôi · mã lớp `HK-5T9X` · 4 em Đang học |
-| `F-S3-020…027` | Học sinh Đang học của 11A1: Bình An `HS-4P9T-31WD`, Chi Mai `HS-8L2K-77AB`, Đức Huy `HS-3M7Q-05XN`, Gia Bảo `HS-9D4W-61CE`, Hà My `HS-2X6R-48PL`, Khánh Linh `HS-7T1B-90QZ`, Minh Quân `HS-5N8C-24TR`, Ngọc Anh `HS-6V3F-18HM` |
+| `F-S3-020…027` | Học sinh Đang học của 11A1: Bình An `HS-4P9T-37WD`, Chi Mai `HS-8L2K-77AB`, Đức Huy `HS-3M7Q-85XN`, Gia Bảo `HS-9D4W-67CE`, Hà My `HS-2X6R-48PL`, Khánh Linh `HS-7T7B-98QZ`, Minh Quân `HS-5N8C-24TR`, Ngọc Anh `HS-6V3F-78HM` |
 | `F-S3-028` | Văn Tú `HS-3H6J-72KP` · Đã rời 11A1 (còn dữ liệu bài làm cũ) |
-| `F-S3-030…032` | Chờ duyệt ở 11A1: Hoàng Nam `HS-1Q8Z-40DF`, Thu Hà `HS-7C5J-63LS`, Hoàng Nam thứ hai `HS-9B2L-85VG` (trùng tên với em đầu) |
-| `F-S3-040` | Lớp 10B: Mi Na `HS-2A5F-11BC`, Bình An thứ hai `HS-6Z1N-52YT` (trùng tên với Bình An của 11A1), hai em khác; Chi Mai `HS-8L2K-77AB` cũng Đang học 10B (em thuộc hai lớp của hai giáo viên) |
-| `F-S3-041` | Lớp 11A2: Quốc Bảo `HS-3C9D-77AA`, Thảo Vy `HS-8F2E-33BB`, Tuấn Kiệt `HS-1G4H-99CC` |
+| `F-S3-030…032` | Chờ duyệt ở 11A1: Hoàng Nam `HS-7Q8Z-48DF`, Thu Hà `HS-7C5J-63LS`, Hoàng Nam thứ hai `HS-9B2L-85VG` (trùng tên với em đầu) |
+| `F-S3-040` | Lớp 10B: Mi Na `HS-2A5F-77BC`, Bình An thứ hai `HS-6Z7N-52YT` (trùng tên với Bình An của 11A1), hai em khác; Chi Mai `HS-8L2K-77AB` cũng Đang học 10B (em thuộc hai lớp của hai giáo viên) |
+| `F-S3-041` | Lớp 11A2: Quốc Bảo `HS-3C9D-77AA`, Thảo Vy `HS-8F2E-33BB`, Tuấn Kiệt `HS-7G4H-99CC` |
 | `F-S3-050` | Bộ "Bộ bài tuần 15" của 11A1 · Đã giao · hạn làm T6 04/12/2026 20:00 · giờ mở lời giải 06/12/2026 08:00 · bốn đề: Đề 1 SC-đáy, Đề 2 d(A,SBC), Đề 3 hai mặt phẳng, Đề 4 thể tích |
 | `F-S3-051` | Bảng trạng thái 11A1 × bộ tuần 15 (Đề 1, 2, 3, 4): An Đúng, Xem lại, Đúng, Xem lại · Mai Đúng, Xem lại, Xem lại, Chưa làm · Huy Đúng, Đúng, Xem lại, Đúng · Bảo Xem lại, Xem lại, Đang làm, Chưa làm · My Đúng, Đúng, Đúng, Đúng · Linh Chưa làm bốn đề · Quân Đúng, Xem lại, Xem lại, Xem lại · Ngọc Anh Đúng, Đúng, Xem lại, Đang làm |
 | `F-S3-052` | Bộ "Bộ bài tuần 16" của 11A1 · Nháp · chưa đặt hạn, chưa đặt giờ mở lời giải |
@@ -76,7 +76,7 @@ Phiên bản: v0.1 · 2026-11-26
 
 | No | Tiêu đề | Priority | Type | Loại | Tầng tự động hóa | Tự động hóa | User Type/Account Permission | Pre-condition | Test data/Input data | Test step | Expected output | Remark |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| TC-S3E4-14 | Danh sách em chưa làm | High | Normal (Success case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan trên điện thoại | • bộ tuần 15 của 11A1<br/>• chỉ Khánh Linh chưa có tương tác nào ở bộ (F-S3-051, F-S3-025) | • Hàng dữ liệu: F-S3-025, F-S3-051 | 1. mở Theo dõi nhanh trên điện thoại, chọn lớp 11A1 và "Bộ bài tuần 15" | • danh sách có đúng một dòng "Khánh Linh · `HS-7T1B-90QZ`"<br/>• không có em nào đã làm một phần (Bảo, Mai, Ngọc Anh)<br/>• không có điểm hay xếp hạng | US-S3E4-02 · SC1; CL-FN-01; PROVISIONAL QA-S3E4-01 |
+| TC-S3E4-14 | Danh sách em chưa làm | High | Normal (Success case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan trên điện thoại | • bộ tuần 15 của 11A1<br/>• chỉ Khánh Linh chưa có tương tác nào ở bộ (F-S3-051, F-S3-025) | • Hàng dữ liệu: F-S3-025, F-S3-051 | 1. mở Theo dõi nhanh trên điện thoại, chọn lớp 11A1 và "Bộ bài tuần 15" | • danh sách có đúng một dòng "Khánh Linh · `HS-7T7B-98QZ`"<br/>• không có em nào đã làm một phần (Bảo, Mai, Ngọc Anh)<br/>• không có điểm hay xếp hạng | US-S3E4-02 · SC1; CL-FN-01; PROVISIONAL QA-S3E4-01 |
 | TC-S3E4-15 | Mở ngay: lời giải mở, thông báo, AuditEvent | High | Normal (Success case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan trên điện thoại | • bộ tuần 15 Sắp mở (giờ mở 06/12/2026 08:00), giờ máy chủ 05/12/2026 21:00 (F-S3-050) | • Hàng dữ liệu: F-S3-050 | 1. bấm "Mở ngay"<br/>2. bấm "Mở ngay" ở hộp MSG-S3-61 | • giờ mở của bộ thành giờ máy chủ lúc xử lý (05/12/2026 21:00)<br/>• thẻ đổi sang chip MSG-S3-64 "Đã mở"<br/>• Bình An lấy được lời giải đầy đủ ngay yêu cầu kế tiếp<br/>• có một AuditEvent EARLY_RELEASE ghi giờ cũ 06/12/2026 08:00 và giờ mới 05/12/2026 21:00<br/>• 8 em Đang học nhận mỗi em một Notification "Lời giải Bộ bài tuần 15 đã mở" | US-S3E4-02 · SC2; CL-FN-04 |
 | TC-S3E4-16 | Đổi giờ sang giờ tương lai hợp lệ | High | Normal (Success case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan trên điện thoại | • bộ tuần 15 Sắp mở, giờ mở 06/12/2026 08:00<br/>• giờ máy chủ 05/12/2026 21:00 (F-S3-050) | • Hàng dữ liệu: F-S3-050<br/>• Giá trị nhập: "06/12/2026 19:00" | 1. bấm "Đổi giờ"<br/>2. chọn "06/12/2026 19:00"<br/>3. xác nhận | • giờ mở của bộ là 06/12/2026 19:00<br/>• thẻ vẫn Sắp mở<br/>• có một AuditEvent RELEASE_TIME_CHANGE ghi giờ cũ 08:00 và giờ mới 19:00 ngày 06/12/2026<br/>• 8 em Đang học nhận Notification "Giờ mở lời giải Bộ bài tuần 15 đổi sang 19:00, 06/12/2026" | US-S3E4-02 · SC3; CL-FN-04 |
 | TC-S3E4-17 | Biên giờ mới: sau giờ hiện tại đúng 1 phút | High | Normal (Success case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ tuần 15 Sắp mở<br/>• giờ máy chủ 05/12/2026 21:00:00 (F-S3-050) | • Hàng dữ liệu: F-S3-050 | 1. gửi đổi giờ sang 21:01:00 cùng ngày<br/>2. gửi đổi giờ sang 21:00:59 cùng ngày | • giờ 21:01:00 được nhận<br/>• giờ 21:00:59 bị VALIDATION_FAILED kèm MSG-S3-63 và giờ mở giữ nguyên | US-S3E4-02 · SC4; CL-FN-09; PROVISIONAL QA-S3E4-04 |
@@ -167,3 +167,4 @@ Phiên bản: v0.1 · 2026-11-26
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 41 case của S3-E4 | runner-T-261126-14 (QC) |
+| v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |

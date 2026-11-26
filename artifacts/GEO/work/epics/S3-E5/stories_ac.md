@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # S3-E5 — Nhật ký thao tác nhạy cảm (AuditEvent), thông báo riêng tư, danh sách trường dữ liệu được phép, công tắc AI theo lớp: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA. Nguồn: `work/s23/story-map-s23.md` (R2 khóa, 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Ch3 (22/11/2026), `Design/s23/DQ.md` và ảnh `c3-*.png` (26/11/2026), `PO-DECISIONS.md` PO-53, PO-61…65. Khi nguồn mâu thuẫn thì PO-61 thắng STAGES.
@@ -51,11 +51,11 @@ Phiên bản: v0.1 · 2026-11-26
 | `F-S3-010` | Lớp 11A1 · Lớp 11 · năm học 2026–2027 · mã lớp `HK-4P7Q` · Đang dạy · 8 em Đang học, 3 em Chờ duyệt, 1 em Đã rời |
 | `F-S3-011` | Lớp 11A2 của cô Lan · mã lớp `HK-8M3C` · 3 em Đang học |
 | `F-S3-012` | Lớp 10B của thầy Khôi · mã lớp `HK-5T9X` · 4 em Đang học |
-| `F-S3-020…027` | Học sinh Đang học của 11A1: Bình An `HS-4P9T-31WD`, Chi Mai `HS-8L2K-77AB`, Đức Huy `HS-3M7Q-05XN`, Gia Bảo `HS-9D4W-61CE`, Hà My `HS-2X6R-48PL`, Khánh Linh `HS-7T1B-90QZ`, Minh Quân `HS-5N8C-24TR`, Ngọc Anh `HS-6V3F-18HM` |
+| `F-S3-020…027` | Học sinh Đang học của 11A1: Bình An `HS-4P9T-37WD`, Chi Mai `HS-8L2K-77AB`, Đức Huy `HS-3M7Q-85XN`, Gia Bảo `HS-9D4W-67CE`, Hà My `HS-2X6R-48PL`, Khánh Linh `HS-7T7B-98QZ`, Minh Quân `HS-5N8C-24TR`, Ngọc Anh `HS-6V3F-78HM` |
 | `F-S3-028` | Văn Tú `HS-3H6J-72KP` · Đã rời 11A1 (còn dữ liệu bài làm cũ) |
-| `F-S3-030…032` | Chờ duyệt ở 11A1: Hoàng Nam `HS-1Q8Z-40DF`, Thu Hà `HS-7C5J-63LS`, Hoàng Nam thứ hai `HS-9B2L-85VG` (trùng tên với em đầu) |
-| `F-S3-040` | Lớp 10B: Mi Na `HS-2A5F-11BC`, Bình An thứ hai `HS-6Z1N-52YT` (trùng tên với Bình An của 11A1), hai em khác; Chi Mai `HS-8L2K-77AB` cũng Đang học 10B (em thuộc hai lớp của hai giáo viên) |
-| `F-S3-041` | Lớp 11A2: Quốc Bảo `HS-3C9D-77AA`, Thảo Vy `HS-8F2E-33BB`, Tuấn Kiệt `HS-1G4H-99CC` |
+| `F-S3-030…032` | Chờ duyệt ở 11A1: Hoàng Nam `HS-7Q8Z-48DF`, Thu Hà `HS-7C5J-63LS`, Hoàng Nam thứ hai `HS-9B2L-85VG` (trùng tên với em đầu) |
+| `F-S3-040` | Lớp 10B: Mi Na `HS-2A5F-77BC`, Bình An thứ hai `HS-6Z7N-52YT` (trùng tên với Bình An của 11A1), hai em khác; Chi Mai `HS-8L2K-77AB` cũng Đang học 10B (em thuộc hai lớp của hai giáo viên) |
+| `F-S3-041` | Lớp 11A2: Quốc Bảo `HS-3C9D-77AA`, Thảo Vy `HS-8F2E-33BB`, Tuấn Kiệt `HS-7G4H-99CC` |
 | `F-S3-050` | Bộ "Bộ bài tuần 15" của 11A1 · Đã giao · hạn làm T6 04/12/2026 20:00 · giờ mở lời giải 06/12/2026 08:00 · bốn đề: Đề 1 SC-đáy, Đề 2 d(A,SBC), Đề 3 hai mặt phẳng, Đề 4 thể tích |
 | `F-S3-051` | Bảng trạng thái 11A1 × bộ tuần 15 (Đề 1, 2, 3, 4): An Đúng, Xem lại, Đúng, Xem lại · Mai Đúng, Xem lại, Xem lại, Chưa làm · Huy Đúng, Đúng, Xem lại, Đúng · Bảo Xem lại, Xem lại, Đang làm, Chưa làm · My Đúng, Đúng, Đúng, Đúng · Linh Chưa làm bốn đề · Quân Đúng, Xem lại, Xem lại, Xem lại · Ngọc Anh Đúng, Đúng, Xem lại, Đang làm |
 | `F-S3-052` | Bộ "Bộ bài tuần 16" của 11A1 · Nháp · chưa đặt hạn, chưa đặt giờ mở lời giải |
@@ -281,14 +281,14 @@ Phiên bản: v0.1 · 2026-11-26
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S3E5-30 | Danh sách được phép nằm trong một tệp máy đọc được của mã nguồn (`allowed_fields`), mỗi dòng: thực thể, trường, lý do, mã quyết định. Nội dung ban đầu: người dùng (tên hiển thị, mã người dùng, vai, băm mật khẩu, băm mã khôi phục của giáo viên, cờ và phiên bản thông báo riêng tư, giờ tạo), thành viên lớp (lớp, người dùng, trạng thái, giờ), lớp (tên, cấp, năm học, mã lớp, trạng thái, công tắc), bộ bài và đề trong bộ, bài làm và tương tác, thông báo, AuditEvent. | Ch3 §10; PO-61 |
+| BR-S3E5-30 | Danh sách được phép nằm trong một tệp máy đọc được của mã nguồn (`allowed_fields`), mỗi dòng: thực thể, trường, lý do, mã quyết định. Nội dung ban đầu: người dùng (tên hiển thị, mã người dùng, vai, băm mật khẩu, băm mã khôi phục của giáo viên, cờ và phiên bản thông báo riêng tư, giờ tạo), thành viên lớp (lớp, người dùng, trạng thái, giờ), lớp (tên, cấp, năm học, mã lớp, trạng thái, công tắc), bộ bài và đề trong bộ, bài làm và tương tác, thông báo, AuditEvent; và thực thể chặng 2 (S2-E1…E9): đề và lời giải cùng phiên bản lời giải, `StepCheck`, nhãn hai trục, bài luyện và lượt thử, báo "Em nghĩ đáp số này đúng" (ghi chú), yêu cầu soát Kho chung (kèm lý do từ chối), cờ vai người soát, cờ "phải đặt mật khẩu mới", bộ đếm khóa đăng nhập và đếm tần suất. Thiếu một thực thể của chặng 2 trong danh sách thì bản dựng đỏ ngay ở lần đầu (RV_s23 M-04). | Ch3 §10; PO-61; PO-65 |
 | BR-S3E5-31 | Bản dựng đỏ khi một cột cơ sở dữ liệu, một khóa phản hồi API, một khóa thân yêu cầu hoặc một khóa sự kiện đo không có trong danh sách. | Ch3 §10 |
 | BR-S3E5-32 | Bản dựng đỏ khi một dòng của danh sách thiếu mã quyết định (PO-nn) hoặc thiếu lý do. | duyệt trước khi làm |
-| BR-S3E5-33 | Tên trường cấm được chặn theo mẫu không phân biệt hoa thường và dấu gạch: email, mail, phone, sdt, mobile, dob, birth, ngay_sinh, address, diachi, school, truong, avatar, photo, image, anh, cmnd, cccd, ip, device. | PO-61 |
+| BR-S3E5-33 | Tên trường cấm được chặn theo mẫu không phân biệt hoa thường và dấu gạch: email, mail, phone, sdt, mobile, dob, birth, ngay_sinh, address, diachi, school, truong, avatar, photo, image, anh, cmnd, cccd, ip, device. Ngoại lệ có tên và có dòng riêng trong `allowed_fields` (mã quyết định PO-65 Q4): khóa tải ảnh đề của giáo viên ở US-S2E3-02 (`problem_image`); đó là ảnh đề bài, không phải ảnh người dùng, và không lưu sau khi chữ được xác nhận (BR-S2E3-09). | PO-61; PO-65 |
 | BR-S3E5-34 | Thân yêu cầu có trường ngoài danh sách bị từ chối VALIDATION_FAILED, không lưu phần nào. | PO-61 |
 | BR-S3E5-35 | Tên hiển thị không được trông như email (có `@` và dấu chấm sau) hoặc số điện thoại (từ 9 chữ số trở lên, bỏ khoảng trắng và dấu chấm hay gạch); "Minh 10A" và tên có số ngắn vẫn được nhận. | PO-61; QA-S3E5-05 |
 | BR-S3E5-36 | Mã trường kỹ thuật của MVP (`org_id`) chỉ là định danh nội bộ không do người dùng nhập, không hiển thị và không có trong phản hồi API. | QA-S3E5-07 |
-| BR-S3E5-37 | Nhật ký truy cập của máy chủ web không lưu địa chỉ IP quá 7 ngày; không bảng ứng dụng nào lưu IP hay thiết bị của người dùng. | QA-S3E5-06 |
+| BR-S3E5-37 | Nhật ký truy cập của máy chủ web không lưu địa chỉ IP quá 7 ngày; không bảng ứng dụng nào lưu IP hay thiết bị của người dùng. Ngoại lệ duy nhất: bộ đếm tần suất theo địa chỉ mạng của BR-S2E1-06 giữ ở bộ nhớ tạm hoặc khóa đã băm có hạn tối đa 1 giờ, không thành cột hay bảng bền vững, không có trong `allowed_fields` (TẠM · vừa · RV_s23 M-03). | QA-S3E5-06; PO-63 |
 
 - **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E5-05, QA-S3E5-06, QA-S3E5-07.
 
@@ -480,3 +480,4 @@ Phiên bản: v0.1 · 2026-11-26
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: story và AC của S3-E5, ready for R3 | runner-T-261126-14 (BA) |
+| v0.2 | 2026-11-26 | Sửa theo RV_s23: BR-S3E5-30 thêm thực thể chặng 2, BR-S3E5-33 ngoại lệ ảnh đề, BR-S3E5-37 ngoại lệ bộ đếm tần suất; đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
