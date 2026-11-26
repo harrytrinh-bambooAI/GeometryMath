@@ -1,0 +1,81 @@
+/* s23b.js · Phiên bản: v0.1 · 2026-11-26 · màn C3 (C3-01 rút gọn theo PO-61, C3-03, C3-04, C3-07). Dữ liệu mẫu, không AI thật. */
+const authWrap=(inner,side)=>bare(`<div class="row" style="flex:1;min-height:0;align-items:stretch"><div class="col" style="width:46%;background:linear-gradient(135deg,#3B5BDB,#7C4DFF);color:#fff;padding:56px 52px;gap:18px;justify-content:center"><div class="logo" style="background:rgba(255,255,255,.18)">${I('cube')}</div><div style="font-size:30px;font-weight:800;line-height:1.25">Hình học không gian cùng AI</div><div style="font-size:16px;line-height:1.6;opacity:.92">${side}</div></div><div class="col grow" style="align-items:center;justify-content:center;padding:32px;min-width:0">${inner}</div></div>`);
+const noPII=`<div class="ban pri" style="max-width:100%">${I('shield')}<div>Chúng tôi chỉ hỏi tên hiển thị. Không hỏi email, số điện thoại, ngày sinh, trường, ảnh; không xác minh phụ huynh.</div></div>`;
+
+reg('c3-01-dang-ky','web','C3','C3-01 · Đăng ký bằng tên + vai',()=>authWrap(`<div class="card pad col" style="width:460px;gap:14px;padding:28px"><h2 style="font-size:22px;margin:0">Tạo tài khoản</h2>
+ <div><div class="lbl">Tên hiển thị</div><div class="field">${I('edit')}Cô Lan Anh<span class="cur1" style="height:18px"></span></div><div class="tiny muted" style="margin-top:4px">Tên thầy cô và các em thấy. Có thể trùng với người khác, mã người dùng sẽ phân biệt.</div></div>
+ <div><div class="lbl">Bạn là</div><div class="row" style="gap:8px"><div class="opt2 on grow"><span class="rd"></span>${I('school')}Giáo viên</div><div class="opt2 grow"><span class="rd"></span>${I('users')}Học sinh</div></div></div>
+ <div><div class="lbl">Mật khẩu (tự đặt)</div><div class="field">${I('lock')}••••••••••<span class="grow"></span><span class="tiny muted">Hiện</span></div></div>
+ <div class="row small"><span class="cbx on">${I('check')}</span><span>Tôi đã đọc <u>thông báo riêng tư</u> (bản 1.0)</span></div>
+ ${btn('Tạo tài khoản','','arrow')}<div class="small muted" style="text-align:center">Đã có tài khoản? <b style="color:var(--pri)">Đăng nhập bằng mã</b></div>${noPII}</div>`,'Sản phẩm cộng đồng, miễn phí, hỗ trợ thầy cô và các em. Đăng ký chỉ mất nửa phút.'));
+
+reg('c3-01-ma-nguoi-dung','web','C3','C3-01 · Hiện mã người dùng + mã khôi phục',()=>authWrap(`<div class="card pad col" style="width:520px;gap:14px;padding:28px"><div class="row"><div class="icb grn">${I('check')}</div><h2 style="font-size:21px;margin:0">Tài khoản đã tạo, chào cô Lan Anh</h2></div>
+ <div><div class="lbl">Mã người dùng · dùng để đăng nhập, đưa cho học sinh khi cần</div><div class="row"><div class="code grow">GV-7K3M-92QX</div>${btn('Sao chép','ghost sm','file')}</div></div>
+ <div><div class="lbl">Mã khôi phục · chỉ hiện MỘT lần, dùng khi quên mật khẩu</div><div class="row"><div class="code lt grow" style="font-size:18px">RC-8F2D-KQ47-W9TN</div>${btn('Sao chép','ghost sm','file')}</div></div>
+ ${ban('yel','flag','Hãy chép hoặc in mã khôi phục ngay.','Rời trang này là không xem lại được. Mất cả mật khẩu lẫn mã khôi phục thì phải tạo tài khoản mới.')}
+ <div class="row" style="gap:8px">${btn('In / lưu ảnh mã','ghost sm','camera')}</div>
+ <div class="row small"><span class="cbx on">${I('check')}</span><span>Tôi đã lưu mã khôi phục</span></div>${btn('Vào trang giáo viên','','arrow')}
+ <div class="tiny muted">Học sinh không có mã khôi phục: quên mật khẩu thì nhờ giáo viên của lớp đặt lại.</div></div>`,'Mã người dùng là "tên đăng nhập" duy nhất của bạn. Chúng tôi không giữ email hay số điện thoại để gửi lại giúp.'));
+
+reg('c3-01-dang-nhap','ipad','C3','C3-01 · Đăng nhập mã + mật khẩu (HS, iPad)',()=>bare(`<div class="col" style="flex:1;align-items:center;justify-content:center;gap:16px;background:linear-gradient(160deg,#EEF1FF,#F6F1FF)"><div class="logo" style="margin:0">${I('cube')}</div><div style="font-size:26px;font-weight:800">Đăng nhập</div>
+ <div class="card pad col" style="width:480px;gap:14px;padding:26px"><div><div class="lbl">Mã người dùng</div><div class="field" style="padding:14px 14px;font-size:17px">${I('users')}<span class="mono">HS-4P9T-31WD</span></div></div>
+ <div><div class="lbl">Mật khẩu</div><div class="field" style="padding:14px 14px;font-size:17px">${I('lock')}••••••••<span class="grow"></span><span class="tiny muted">Hiện</span></div></div>
+ ${btn('Đăng nhập','','arrow').replace('padding','padding')}
+ <div class="col" style="gap:6px;font-size:13px"><div>${I('bulb','width:14px;height:14px')} <b>Học sinh quên mật khẩu?</b> Nhờ giáo viên của lớp đặt lại.</div><div>${I('shield','width:14px;height:14px')} <b>Giáo viên quên mật khẩu?</b> Dùng mã khôi phục.</div></div></div>
+ <div class="small muted">Chưa có tài khoản? <b style="color:var(--pri)">Tạo tài khoản bằng tên</b></div></div>`));
+
+/* ---- C3-03 Soạn bộ bài ---- */
+reg('c3-03-bo-bai','web','C3','C3-03 · Soạn bộ bài',()=>screen('x','gv',1,'Soạn bộ bài','Lớp học › 11A1 › Bộ bài mới',`
+<div class="card pad col grow" style="gap:8px;min-width:0"><div class="row"><h2 style="margin:0">Đề trong bộ (4)</h2><span class="grow"></span><span class="chip pri">${I('users')}Giao cho: 11A1 · 32 em</span><span class="chip">11A2</span>${btn('Thêm đề','ghost sm','plus')}</div>
+ ${[['chop','Góc giữa SC và mặt đáy','Máy kiểm chứng · GV đã duyệt',0],['chop','Khoảng cách từ A đến (SBC)','Máy kiểm chứng · GV đã duyệt',0],['lang','Góc giữa hai mặt phẳng','Cần xem lại · AI soạn',1],['hop','Thể tích khối hộp chữ nhật','Máy kiểm chứng · GV đã duyệt',0]].map((r,i)=>`<div class="hint" style="align-items:center;${r[3]?'border-color:#F3D894;background:#FFFBEF':''}"><span class="num">${i+1}</span><div class="thumb" style="width:70px;height:56px">${sh[r[0]]('#3B5BDB')}</div><div class="grow"><b>${r[1]}</b><div class="small muted">${r[2]}</div></div>${r[3]?`<span class="chip yel">${I('flag')}Cần xem lại trước khi giao</span>`:`<span class="chip grn">${I('check')}Sẵn sàng</span>`}<span class="muted">⋮⋮</span></div>`).join('')}
+ <div class="uncn">${I('flag')}Đề 3 chưa qua máy kiểm. Xem lại ở "Soát lời giải" hoặc bỏ khỏi bộ trước khi giao.</div></div>
+<div class="card pad col" style="width:370px;flex-shrink:0;gap:12px"><h2 style="margin:0">Hạn và lời giải</h2>
+ <div><div class="lbl">Hạn làm</div><div class="field">${I('cal')}Thứ Sáu 18/12 · 20:00</div></div>
+ <div><div class="lbl">Mức trợ giúp</div><div class="col" style="gap:6px"><div class="opt2"><span class="rd"></span>Không gợi ý</div><div class="opt2 on"><span class="rd"></span>Gợi ý từng bước (khuyên dùng)</div><div class="opt2"><span class="rd"></span>Gợi ý + hỏi đáp với trợ lý</div></div></div>
+ <div><div class="lbl">Lịch mở lời giải</div><div class="col" style="gap:6px"><div class="opt2"><span class="rd"></span>Sau hạn làm</div><div class="opt2 on"><span class="rd"></span>Đúng giờ tôi đặt: 18/12 · 16:00</div><div class="opt2"><span class="rd"></span>Tôi tự mở bằng tay</div></div></div>
+ ${ban('red','cal','Xung đột giờ: lời giải mở 16:00, sớm hơn hạn làm 20:00.','Em chưa nộp sẽ thấy lời giải. Dời giờ mở sang sau 20:00 hoặc dời hạn.')}</div>
+<div class="card pad col" style="width:260px;flex-shrink:0;gap:10px;background:var(--soft)"><b>Xem trước như học sinh</b><div style="border:6px solid #141B2D;border-radius:26px;background:#fff;padding:12px;display:flex;flex-direction:column;gap:8px;flex:1"><b style="font-size:13px">Bộ bài tuần 15</b><div class="tiny muted">Hạn: T6 18/12 · 20:00</div>${[1,2,3,4].map(i=>`<div class="hint" style="padding:7px 9px;align-items:center"><span class="num" style="width:22px;height:22px;font-size:11px">${i}</span><span class="tiny">Đề ${i}</span><span class="grow"></span>${I('lock','width:13px;height:13px;color:var(--faint)')}</div>`).join('')}<div class="tiny muted">Lời giải mở: T6 · 16:00</div></div>${btn('Giao bộ bài','','send')}</div>`,{concept:1}));
+
+/* ---- C3-04 Kết quả lớp ---- */
+reg('c3-04-ket-qua-lop','web','C3','C3-04 · Kết quả lớp (bảng lớp × bài)',()=>{
+ const names=[['Bình An','HS-4P9T'],['Chi Mai','HS-8L2K'],['Đức Huy','HS-3M7Q'],['Gia Bảo','HS-9D4W'],['Hà My','HS-2X6R'],['Khánh Linh','HS-7T1B'],['Minh Quân','HS-5N8C'],['Ngọc Anh','HS-6V3F']];
+ const C={g:['g','check','Đúng'],y:['y','eye','Xem lại'],n:['n','clock','Chưa làm'],r:['r','edit','Đang làm']};
+ const rows=['gygy','gyyn','ggyg','yyrn','gggg','nnnn','gyyy','ggyr'];
+ return screen('x','gv',4,'Kết quả lớp 11A1','Theo dõi › Bộ bài tuần 15 · hạn T6 20:00',`
+ <div class="card pad col grow" style="gap:10px;min-width:0"><div class="row"><h2 style="margin:0">Bảng lớp × bài</h2><span class="chip">${I('users')}8 trên 32 em (xem thử)</span><span class="grow"></span><span class="tiny muted">Xếp theo tên. Không có cột tổng, không xếp hạng.</span></div>
+ <table><tr><th style="width:190px">Học sinh</th>${['Đề 1 · SC–đáy','Đề 2 · d(A,SBC)','Đề 3 · hai mặt phẳng','Đề 4 · thể tích'].map(h=>`<th>${h}</th>`).join('')}</tr>
+ ${names.map((n,i)=>`<tr><td><div class="row"><div class="ava" style="width:30px;height:30px;font-size:11px;background:${['#3B5BDB','#F0522B','#0F8A5F','#7C4DFF'][i%4]}">${n[0].split(' ').pop()[0]}</div><div><b>${n[0]}</b><div class="tiny muted mono" style="font-weight:600">${n[1]}</div></div></div></td>${rows[i].split('').map((c,j)=>{const x=C[c];return `<td><div class="cell ${x[0]} ${i===1&&j===2?'hl':''}">${I(x[1],'width:14px;height:14px')}${x[2]}</div></td>`;}).join('')}</tr>`).join('')}</table>
+ <div class="row small muted"><span class="chip grn">${I('check')}Đúng</span><span class="chip yel">Xem lại</span><span class="chip" style="background:#EEF1F7">Chưa làm</span><span class="grow"></span>Bấm ô để xem bài làm làm bằng chứng</div></div>
+ <div class="col" style="width:400px;flex-shrink:0;gap:12px"><div class="card pad col" style="gap:10px;border-color:#D9CCFF;background:#FBF9FF"><div class="row"><h2 style="margin:0">Cả lớp vướng ở đâu</h2><span class="grow"></span><span class="chip pur">${I('spark')}AI gộp</span></div>
+ ${[['Đề 3 · hai mặt phẳng','Nhiều em xác định sai giao tuyến của (SAB) và (SCD).','6 bài làm'],['Đề 2 · khoảng cách','Một nhóm em dựng đường cao nhưng không chứng minh vuông góc với mặt phẳng.','4 bài làm']].map(r=>`<div class="hint" style="background:#fff;flex-direction:column;gap:6px"><b>${r[0]}</b><div class="small" style="line-height:1.5">${r[1]}</div><div class="row"><span class="chip">${I('eye')}Xem ${r[2]}</span><span class="chip yel">Cần thầy cô xác nhận</span></div></div>`).join('')}
+ <div class="tiny muted">Chỉ gộp khi đủ 5 bài làm cho một đề (TẠM theo Q6). Mỗi nhận định bấm vào được bài làm căn cứ.</div></div>
+ <div class="card pad col" style="gap:8px"><div class="pt">BẰNG CHỨNG · Chi Mai · Đề 3</div><div class="small">Em chọn giao tuyến là SB. Hình chụp thao tác và 1 câu hỏi gợi ý lúc 15:12.</div><div class="row">${btn('Mở bài làm','soft sm','eye')}${btn('Nhắn em','ghost sm','chat')}</div></div></div>`,{concept:1});});
+
+/* ---- C3-07 Vào lớp ---- */
+reg('c3-07-ma-lop','web','C3','C3-07 · Mã lớp + trang in',()=>screen('x','gv',3,'Lớp 11A1','Lớp học › 11A1 › Mã lớp',`
+<div class="card pad col" style="width:480px;flex-shrink:0;gap:14px"><h2 style="margin:0">Mã lớp</h2><div class="row"><div class="code grow" style="font-size:34px;padding:22px">HK-4P7Q</div></div>
+ <div class="row">${btn('Sao chép','ghost sm','file')}${btn('Đặt lại mã lớp','ghost sm','reset')}</div>
+ <div class="row"><div class="toggle"></div><div class="small"><b>Cho học sinh vào lớp bằng mã</b><div class="tiny muted">Tắt khi lớp đã đủ</div></div></div>
+ <div class="row"><div class="toggle"></div><div class="small"><b>Giáo viên duyệt từng em</b><div class="tiny muted">Khuyên bật. Em nhập mã sẽ ở trạng thái chờ duyệt.</div></div></div>
+ <div class="flow">${I('shield','width:15px;height:15px;color:var(--pri)')}<span>Mã lớp không chứa thông tin cá nhân. Đặt lại mã thì mã cũ hết hiệu lực.</span></div></div>
+<div class="card pad col grow" style="gap:12px;background:var(--soft);align-items:center"><div class="row" style="width:100%"><b>Trang in cho lớp</b><span class="grow"></span>${btn('In (A4)','sm','file')}</div>
+ <div class="print" style="width:430px;flex:1;max-height:640px;justify-content:center;gap:16px"><div class="logo" style="margin:0">${I('cube')}</div><div style="font-size:20px;font-weight:800">Vào lớp 11A1</div><div class="small muted">Cô Lan Anh · Hình học không gian</div>
+ <div style="width:150px;height:150px;border:3px solid #141B2D;display:grid;grid-template-columns:repeat(9,1fr);padding:6px;gap:2px">${Array.from({length:81},(_,i)=>`<i style="background:${[0,1,2,3,7,8,9,17,18,26,27,35,36,44,45,52,53,54,60,61,62,70,72,73,74,75,80,12,22,31,40,49,66,14,23,41,57,68,69].includes(i)?'#141B2D':'transparent'}"></i>`).join('')}</div>
+ <div class="code" style="font-size:30px">HK-4P7Q</div><div class="small" style="line-height:1.7;text-align:left">1. Mở trang Hình học không gian.<br>2. Tạo tài khoản bằng tên của em (không cần email).<br>3. Chọn "Vào lớp", nhập mã trên.<br>4. Chờ cô duyệt.</div></div></div>`,{concept:1}));
+
+reg('c3-07-duyet-dat-lai-mk','web','C3','C3-07 · Duyệt vào lớp + đặt lại mật khẩu HS',()=>screen('x','gv',3,'Lớp 11A1','Lớp học › 11A1 › Học sinh',`
+<div class="col grow" style="gap:14px;min-width:0"><div class="card pad col" style="gap:8px"><div class="row"><h2 style="margin:0">Chờ duyệt (3)</h2><span class="chip yel">${I('clock')}Mới</span></div>
+ ${[['Hoàng Nam','HS-1Q8Z','2 phút trước'],['Thu Hà','HS-7C5J','10 phút trước'],['Hoàng Nam','HS-9B2L','1 giờ trước']].map((r,i)=>`<div class="hint" style="align-items:center"><div class="ava" style="width:34px;height:34px;font-size:12px;background:#7C4DFF">${r[0].split(' ').pop()[0]}</div><div class="grow"><b>${r[0]}</b> <span class="mono small muted">${r[1]}</span><div class="small muted">${r[2]}${i===2?' · trùng tên với em trên, phân biệt bằng mã':''}</div></div>${btn('Duyệt','grn sm','check')}${btn('Từ chối','ghost sm','x')}</div>`).join('')}</div>
+ <div class="card pad col grow" style="gap:6px;min-height:0"><div class="row"><h2 style="margin:0">Học sinh trong lớp (32)</h2><span class="grow"></span><div class="field" style="padding:6px 10px">${I('search')}<span class="muted" style="font-weight:500">Tìm theo tên hoặc mã</span></div></div>
+ <table><tr><th>Học sinh</th><th>Mã người dùng</th><th>Tham gia</th><th></th></tr>${[['Bình An','HS-4P9T-31WD','1/9'],['Chi Mai','HS-8L2K-77AB','1/9'],['Đức Huy','HS-3M7Q-05XN','2/9'],['Gia Bảo','HS-9D4W-61CE','3/9'],['Hà My','HS-2X6R-48PL','3/9']].map((r,i)=>`<tr><td><b>${r[0]}</b></td><td class="mono small">${r[1]}</td><td class="small muted">${r[2]}</td><td style="text-align:right">${btn('Đặt lại mật khẩu',i===1?'soft sm':'ghost sm','reset')}</td></tr>`).join('')}</table></div></div>
+ <div class="ov" style="position:absolute"><div class="modal" style="width:480px"><div class="row"><div class="icb org">${I('lock')}</div><h2 style="margin:0">Đặt lại mật khẩu cho Chi Mai?</h2></div>
+ <div class="small muted">Mật khẩu cũ bị hủy. Em đăng nhập bằng mã <b class="mono">HS-8L2K-77AB</b> và mật khẩu tạm dưới đây, rồi tự đặt mật khẩu mới.</div>
+ <div class="code">kx7-m3p-q9</div><div class="ban yel">${I('flag')}<div>Chỉ hiện một lần. Đưa trực tiếp cho em hoặc phụ huynh, đừng gửi qua nhóm chung.</div></div>
+ <div class="row"><span class="grow"></span>${btn('Hủy','ghost')}${btn('Đặt lại và hiện mật khẩu tạm','org','reset')}</div></div></div>`,{concept:1}));
+
+reg('c3-07-vao-lop','ipad','C3','C3-07 · HS nhập mã lớp, chờ duyệt (iPad)',()=>screen('x','hs',0,'Vào lớp','Bài của em › Vào lớp',`
+<div class="col grow" style="align-items:center;justify-content:center;gap:16px;min-width:0"><div class="card pad col" style="width:520px;gap:14px;padding:26px"><h2 style="margin:0">Nhập mã lớp của thầy cô</h2>
+ <div class="field" style="padding:16px;font-size:24px;justify-content:center;letter-spacing:.12em" ><span class="mono">HK-4P7Q</span></div>
+ ${btn('Gửi xin vào lớp','','send')}
+ ${ban('pri','clock','Đã gửi cho cô Lan Anh · lớp 11A1.','Em sẽ thấy bài của lớp khi cô duyệt. Trong lúc chờ, em vẫn dùng Tự học được.')}
+ <div class="row small muted" style="gap:6px">${I('flag','width:14px;height:14px')}Mã sai? Hỏi lại thầy cô. Bị từ chối thì em nhắn thầy cô để biết lý do.</div></div></div>`,{noSeg:1,concept:1}));
