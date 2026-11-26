@@ -37,13 +37,13 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Kiểm: `grep -l 'Nhà cung cấp AI: .anthropic.' artifacts/GEO/evidence/MVP-METRICS-*/report.md | xargs grep -l 'Kết luận chỉ số bắt buộc: [*][*]ĐẠT' | grep -q .`
 - Ngoài phạm vi: sửa code MVP
 - Chờ: NEEDS §A1 (key) + owner chạy `make bench-mvp` với `GEO_AI_PROVIDER=anthropic`
-## T-261126-08 · S23 · L1+L3 PO · po-ba-qc roles/po.md · wt s23-spec · ‖10 · 2h/3M · Brief + BRD delta + story map chặng 2–3 [todo]
+## T-261126-08 · S23 · L1+L3 PO · po-ba-qc roles/po.md · wt s23-spec · ‖10 · 2h/3M · Brief + BRD delta + story map chặng 2–3 [running]
 - Mục tiêu: `brief-s23.md` 4 dòng (áp PO-61); BRD delta + story map S2-E1…E9, S3-E1…E6, R2 lock; ghi PO-62+ cho phần PO-05/18/21 bị PO-61 thay (TẠM)
 - Nguồn: §1 plan này; STAGES Ch2, Ch3 (22/11); PO-DECISIONS PO-61 (26/11); DOMAIN-PROFILE.md
 - Xong khi: brief đủ 4 dòng; story map có ≥ 1 story mỗi epic; epic_board có 15 dòng S2/S3
 - Kiểm: `test "$(grep -cE '^[|] (Mục tiêu|Nguồn|Xong khi|Ngoài phạm vi) [|] [^<]' artifacts/GEO/work/s23/brief-s23.md)" -eq 4 && test "$(grep -cE '^[|] S[23]-E[0-9]' artifacts/GEO/work/epic_board.md)" -ge 15`
 - Ngoài phạm vi: AC/TC (task 12–14), code, Design/
-## T-261126-10 · S23 · L2 thiết kế UI · artifact-design + Design/prototype · wt s23-design · ‖08 · 4h/5M · Bản mẫu màn chặng 2–3 [todo]
+## T-261126-10 · S23 · L2 thiết kế UI · artifact-design + Design/prototype · wt s23-design · ‖08 · 4h/5M · Bản mẫu màn chặng 2–3 [running]
 - Mục tiêu: mở rộng `Design/prototype/` cho màn chưa có concept (C2-02/03/04/06/07/08, C3-01 rút gọn, C3-03/04/07) + chụp 16 màn C2/C3 + màn đăng nhập mã; danh sách câu hỏi design (DQ) có mặc định
 - Nguồn: STAGES Ch2 §6, Ch3 §6 (22/11); §0.2 bảng thiết bị; Design/prototype/index.html; PO-61
 - Xong khi: ≥ 17 ảnh trong `Design/s23/`, `Design/s23/DQ.md` có mặc định

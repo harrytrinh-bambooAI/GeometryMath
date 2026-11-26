@@ -1,19 +1,16 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 26/11/2026 (sau 13:40)
-Mục tiêu hiện tại: đóng MVP (chặng 1) rồi chạy plan chặng 2 → hết chặng 3 (owner đã duyệt). Phiên chính = delivery-lead (skill delivery-lead v0.2): chỉ điều phối, mọi task code → agent con, mỗi task 1 worktree + nhánh riêng (DECISIONS 26/11, memory delegate-worktree-per-task).
-Model theo vai (DECISIONS 26/11): Dev code = Opus; PO/BA/QC/thiết kế UI/Tester/soát = Sonnet. Skill: po-ba-qc (spec L1–L3), tester (L6, cần domain profile), delivery-lead brief + .claude/briefs/epic-common.md (Dev), queue.py. Song song: Opus ≤ 2, tổng quy đổi ≤ 4.
+# PROGRESS · GeometryMath (GEO) · cập nhật 26/11/2026 14:45
+Mục tiêu hiện tại: chặng 2 → hết chặng 3 theo `.claude/plans/STAGE-2-3-PLAN.md` v0.2 (owner duyệt). Phiên chính = delivery-lead v0.2: chỉ điều phối; mọi task → agent con, 1 worktree + nhánh / task. Model: Dev code = Opus; PO/BA/QC/UI/Tester/soát = Sonnet; Opus ≤ 2, tổng quy đổi ≤ 4.
 Đã xong:
-- T-01 mvp-ai + T-02 mvp-content nghiệm thu đạt → T-03 gộp (afda3dd, 77850f4) + bench nạp kho đề, mock chỉ đo 6 đề (6b62557). Bản gộp: verify 197+136 IT, web-build, e2e hai lượt 859/860, truy vết 0 thiếu, bench mock 4/4.
-- T-04 soát (Sonnet): 0 blocker/0 major/3 minor → T-261126-07 FIX5 (428a6a8).
-- Profile small_task=delegate, PO-61 định danh tối giản (tên → mã người dùng, mã + mật khẩu, không thu thập dữ liệu; giáo viên đặt lại mật khẩu học sinh; giáo viên mã khôi phục TẠM) (7890c68, e1e74ba).
-Đang dở:
-- T-261126-07 FIX5 · agent con BÁO XONG, phiên chính CHƯA nghiệm thu · worktree `.claude/worktrees/fix5` nhánh `mvp-fix5` (cổng 54499/6549/8105/5189) · brief `.claude/briefs/T-261126-07-fix5.md` · tiến độ `.claude/progress/fix5.md`.
-- Plan chặng 2–3 · agent `plan-s23` BÁO XONG (chưa rà) · `.claude/plans/STAGE-2-3-PLAN.md` (tiến độ `.claude/progress/plan-s23.md`); đã nhận PO-61 + chính sách model; plan phải có khối queue chạy được.
-- T-261126-05 đo thật: Blocked — owner chạy `! cd <worktree>/app && eval "$(grep '^export GEO_AI_API_KEY=' ~/.zshrc)" && GEO_AI_PROVIDER=anthropic make bench-mvp > /tmp/geo-bench-real.log 2>&1; echo rc=$?` (~$3).
+- MVP: T-01..T-04 gộp (afda3dd, 77850f4, 6b62557); FIX5 (T-07) nghiệm thu + gộp (merge sau 6f096fc; verify 201 + 137 IT, bench-mvp mock exit 0).
+- Plan chặng 2–3 rà xong → v0.2 (sửa lệnh kiểm T-05: báo cáo in "Kết luận chỉ số bắt buộc: **ĐẠT**" + provider), nạp `.claude/queue.md` + TASKS (T-08…T-34; queue validate 28 task) (48f7483).
+Đang dở (W1, 2 Sonnet, nền):
+- T-261126-08 PO brief + BRD delta + story map · worktree `.claude/worktrees/s23-spec` nhánh `s23-spec` · tiến độ `.claude/progress/runner-T-261126-08.md`.
+- T-261126-10 thiết kế UI chặng 2–3 · worktree `.claude/worktrees/s23-design` nhánh `s23-design` · tiến độ `.claude/progress/runner-T-261126-10.md`.
 Bước tiếp theo:
-1. Nghiệm thu FIX5: `cd .claude/worktrees/fix5/app && make verify && make bench-mvp` (exit 0), `git -C` log/diff --stat nhánh mvp-fix5, rà phạm vi tệp theo brief → gộp `git merge --no-ff mvp-fix5` vào worktree-mvp-wave0 (chờ lần đo thật của owner xong nếu đang chạy).
-2. Đọc `tail -5 .claude/progress/plan-s23.md`; nếu plan xong: rà (vai/skill/≤2 Opus), nạp khối vào `.claude/queue.md` + TASKS.md (ID từ T-261126-08), mở đợt 1 (PO/BA/QC spec chặng 2, Sonnet, skill po-ba-qc).
-3. Khi có số đo thật: đọc artifacts/GEO/evidence/MVP-METRICS-* mới nhất → B7 → T-06 kiểm cuối + push nhánh + cập nhật PR #1.
-Inbox còn: lô FIX5 (đang đóng) (.claude/inbox.md)
-Quyết định đã chốt: DECISIONS.md (mới nhất: duyệt plan chặng 2–3, Opus code/Sonnet design-spec-test); PO-DECISIONS.md (mới nhất PO-61).
-Việc owner: .claude/NEEDS.md (A2; C1; C2 nạp gói đề ở prod; C3 engine thiết diện); chạy lệnh đo thật T-05.
-Rủi ro / chặn: không commit/log key (`grep -r sk-ant app` = 0). Chặng 2 chỉ phát hành khi đạt B7 (đo thật); chặng 3 có điều kiện "giáo viên thật dùng lặp lại" → làm code trước, cổng sản phẩm owner chốt. Cổng worktree chính 54359/6419/8092/5176.
+1. Khi agent báo xong: chạy lại lệnh Kiểm trong khối queue ở gốc worktree, `git diff --stat`, rà phạm vi → commit trên nhánh → merge `--no-ff` vào worktree-mvp-wave0 → `queue.py set <ID> done`.
+2. W2: T-12 ‖ T-14 (spec S2/S3, po-ba-qc goal-run, wt s23-spec, sau 08) → T-15 → gate T-16 (owner họp: Q1–Q9 plan §5 + NEEDS §C).
+3. W3: T-17 (Opus, PLAN_code) sau gate 16. Code W4+ chỉ khi T-05 ĐẠT.
+Inbox còn: không mục mở (FIX5 đóng).
+Quyết định: DECISIONS.md (mới nhất: duyệt plan chặng 2–3, model theo vai); PO-DECISIONS.md (PO-61).
+Việc owner: T-05 đo thật — `! cd <worktree>/app && eval "$(grep '^export GEO_AI_API_KEY=' ~/.zshrc)" && GEO_AI_PROVIDER=anthropic make bench-mvp > /tmp/geo-bench-real.log 2>&1; echo rc=$?` (~$3); NEEDS A2, C1–C3.
+Rủi ro / chặn: code chặng 2 chờ B7 (T-05). Không commit/log key. Ước tính toàn plan ≈ 190M token / 89 agent·giờ → nguy cơ chạm hạn mức; chạy theo đợt, dừng ở đợt đã gộp xanh.
