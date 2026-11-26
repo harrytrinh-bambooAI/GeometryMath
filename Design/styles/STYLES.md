@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26 · T-261126-39 · Designer Dom
+Phiên bản: v0.2 · 2026-11-26 · Designer Dom
 
 # 4 hướng style cho GEO (app học hình học không gian lớp 11)
 
@@ -16,21 +16,21 @@ Sinh lại: `node Design/styles/build.js` rồi `PW_CORE=<playwright-core> node 
 
 ## B · Bảng đen tối
 - Chuẩn: **IBM Carbon**, theme g100. Bo 0 px (chip 24 px). Nút khối vuông, ô nhập nền đặc có gạch chân.
-- Theme tối #161616, lớp #262626, nhấn xanh #0F62FE, nét phấn vàng #FFD966. Font IBM Plex Sans/Mono, nhãn hình Patrick Hand. Icon nét 1,5 px đầu vuông.
+- Theme tối #161616, lớp #262626, nhấn xanh #0F62FE, nét phấn vàng #FFD966. Font IBM Plex Sans/Mono, nhãn hình Patrick Hand. Icon: dùng chung bộ của A (Material Symbols Rounded đặc), màu theo token B.
 - Bố cục: thanh trên (UI shell 48 px), bảng dữ liệu, bước dạng thanh. Hình vẽ nét phấn có nhiễu.
 - Cao chạm: nút 48, phím 52, hàng bảng 38–48. Chữ/nền 16,5:1.
 - Hợp: trình chiếu trên lớp, GV đọc bảng. Hạn chế: tối trong lớp sáng dễ mỏi, vuông ít thân thiện với HS.
 
 ## C · Giấy kẻ ô
 - Chuẩn: **Apple HIG**. Bo: nút/ô nhập 10 px, thẻ 14 px, phím 8 px, segmented 9 px.
-- Theme giấy #FBF8EE, ô li xanh nhạt, lề đỏ. Xanh hệ thống đậm #0A62C9. Font Be Vietnam Pro, ghi chú Caveat. Icon nét mảnh 1,25 px (kiểu SF Symbols).
+- Theme giấy #FBF8EE, ô li xanh nhạt, lề đỏ. Xanh hệ thống đậm #0A62C9. Font Be Vietnam Pro, ghi chú Caveat. Icon: dùng chung bộ của A (Material Symbols Rounded đặc), màu theo token C.
 - Bố cục: thanh tab nổi phía trên, “tờ giấy” là thẻ trắng. Biểu đồ cột kẻ tay, khoanh đỏ “câu 3”. Hình nét chì rung nhẹ, mặt gạch chéo.
 - Cao chạm: nút 44, phím 50, tab 40–44. Nút chính 5,8:1.
 - Hợp: cảm giác vở toán cho HS. Hạn chế: nền ô li nhiễu khi bảng dày; Caveat dấu tiếng Việt cần kiểm trên iPad thật.
 
 ## D · Bảng điều khiển gọn
 - Chuẩn: **shadcn/Radix** (token) + **Fluent 2** (mật độ, vòng tiêu điểm). Bo 6 px (chip 4 px).
-- Theme sáng slate, nhấn #1D4ED8. Font Inter, số JetBrains Mono. Icon **Lucide** nét 2 px.
+- Theme sáng slate, nhấn #1D4ED8. Font Inter, số JetBrains Mono. Icon: dùng chung bộ của A (Material Symbols Rounded đặc), màu theo token D.
 - Bố cục: sidebar trái 224 px có nhãn, thanh lọc, KPI, bảng có xu hướng, khung chi tiết phải. Mật độ cao nhất.
 - Cao chạm: nút 36 (web), 44–48 (iPad), phím 48. Nút chính 6,7:1.
 - Hợp: GV quét 36 em nhanh. Hạn chế: ít cảm xúc cho HS; 36 px phải nâng lên 44 khi cảm ứng.
@@ -44,9 +44,10 @@ Quy tắc chung: chữ ≥ 14 px; vùng chạm của nút/phím ≥ 44 px (D web
 2. **B** làm chế độ “Trình chiếu” (bản mẫu đã có màn trình chiếu tối).
 3. **C** giữ làm phương án bản sắc “vở toán”; nếu chọn thì dùng cho hình và màn tự học, không toàn app.
 4. Cần owner trả lời: giữ một phong cách hay hai tầng (HS/GV)? Có tự lưu font icon cho offline (PWA)? Có cần theme tối cho HS không?
-Rủi ro chung: ảnh chụp mô phỏng tĩnh, chưa thử trên iPad/iPhone thật; icon của B, C là hình Lucide đổi nét để mô phỏng Carbon/SF Symbols, bản thật cần bộ icon chính thức.
+Rủi ro chung: ảnh chụp mô phỏng tĩnh, chưa thử trên iPad/iPhone thật; từ 26/11 (lệnh owner) cả 4 theme dùng một bộ icon Material Symbols Rounded đặc, màu theo token từng theme; là font Google nên app phải tự lưu (self-host) để chạy offline.
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Bản đầu: 4 hướng, 16 ảnh, index so sánh, kiểm tương phản | Designer Dom (runner-T-261126-39) |
+| v0.2 | 2026-11-26 | Cả 4 hướng dùng bộ icon của A (Material Symbols Rounded đặc), màu theo token từng theme; dựng lại 16 HTML + 16 ảnh | phiên điều phối (lệnh owner) |

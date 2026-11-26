@@ -190,3 +190,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent T-44, T-45 (26/11/2026).
 - **Xong khi:** contrast.js đạt AA cho `--org-t` ở 4 theme; quyết định G17 ghi PO-DECISIONS; traceability hiện đủ S2-E1 sau khối kiểm.
 - **Ngoài phạm vi:** tính năng nghiệp vụ.
+
+## Việc: icon chung cho app theo theme (lệnh owner 26/11/2026 tối)
+- **Mục tiêu:** app dùng bộ icon của style A (Material Symbols Rounded đặc) ở cả 4 theme; màu icon theo token của theme đang chọn trong Cài đặt (`currentColor` + token, không màu cứng); font icon tự lưu trong `app/web` (không gọi Google, chạy offline).
+- **Nguồn:** `Design/styles/` v0.2 (26/11/2026; `lib.js` bảng tên icon, luật `.ic` trong `<a|b|c|d>/style.css`); DECISIONS 26/11.
+- **Xong khi:** `make verify && make web-build && make e2e-affected` xanh; ảnh 4 theme mới trong `artifacts/GEO/evidence/theme/`; grep `fonts.googleapis` trong `app/web/dist` = 0.
+- **Ngoài phạm vi:** tính năng nghiệp vụ; tệp của T-20/T-21 đang chạy (làm sau khi hai task gộp).

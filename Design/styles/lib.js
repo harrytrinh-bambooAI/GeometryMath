@@ -1,4 +1,5 @@
-// lib.js · Phiên bản: v0.1 · 2026-11-26 · T-261126-39 · dữ liệu mẫu + icon + hình chóp dùng chung cho 4 hướng style
+// lib.js · Phiên bản: v0.2 · 2026-11-26 · dữ liệu mẫu + icon + hình chóp dùng chung cho 4 hướng style
+// Lịch sử: v0.1 T-261126-39 tạo · v0.2 (lệnh owner 26/11) cả 4 hướng dùng bộ icon của A (Material Symbols Rounded, đặc); màu icon theo token từng theme (luật .ic trong <hướng>/style.css)
 const L = {
   I: { // [Lucide path (ISC), Material Symbols name]
     home: ['<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>', 'home'],
@@ -25,18 +26,14 @@ const L = {
     bolt: ['<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>', 'bolt'],
     search: ['<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>', 'search'],
   },
-  SW: { b: [1.5, 'butt', 'miter'], c: [1.25, 'round', 'round'], d: [2, 'round', 'round'] },
-  ic(s, n, cls = '') {
-    const [p, m] = this.I[n];
-    if (s === 'a') return `<span class="ms ${cls}">${m}</span>`;
-    const [w, cap, join] = this.SW[s];
-    return `<svg class="ic ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="${cap}" stroke-linejoin="${join}" aria-hidden="true">${p}</svg>`;
+  ic(s, n, cls = '') { // v0.2: một bộ icon cho cả 4 hướng; lớp .ic để style.css từng hướng đặt cỡ + màu theo token
+    return `<span class="ms ic ${cls}" aria-hidden="true">${this.I[n][1]}</span>`;
   },
   FONTS: {
     a: 'family=Nunito:wght@400;600;700;800&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0',
-    b: 'family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Patrick+Hand&display=swap',
-    c: 'family=Be+Vietnam+Pro:wght@400;500;600;700&family=Caveat:wght@500;700',
-    d: 'family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500',
+    b: 'family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Patrick+Hand&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0',
+    c: 'family=Be+Vietnam+Pro:wght@400;500;600;700&family=Caveat:wght@500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0',
+    d: 'family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0',
   },
   head(s, title, dev) {
     return `<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title>

@@ -22,6 +22,7 @@ Phiên bản: v0.1 · 2026-11-26 · quyết định đã chốt — 1 dòng / qu
 | 2026-11-26 | Số migration phải TĂNG theo thứ tự gộp (Flyway tắt out-of-order): migration của task mới phải lớn hơn mọi migration đã gộp; task nền/FIX chen ngang dùng khoảng còn trống thấp hơn task kế tiếp. Theme V440 → V109 (b9c1269). CSDL dev cục bộ đã chạy V440 cần reset. Agent phải kiểm `ls db/migration | sort -V | tail` trước khi đặt số | V440 gộp trước V110/V130 làm CSDL đã ở V440 bỏ qua migration S2-E1/S2-E2 (T-19 phát hiện) | báo cáo T-19 | delivery-lead chốt |
 | 2026-11-26 | Agent con Dev chuyển Opus → Fable (claude-fable-5-2), luôn 2 agent song song; phạm vi phiên này: T-45 ‖ T-44, rồi T-20 ‖ T-21, xong thì dừng báo cáo owner (thay giả định "Dev giữ Opus" ở dòng trên) | lệnh owner 26/11 tối ("2 agent model Fable coding"; chọn "2 Fable tới hết 20‖21") |
 | 2026-11-26 | Gộp T-45 (b5f15e5) không chạy lại trọn bộ L2: lượt L2 396/422, 26 test trượt đều đạt khi chạy lại 11 tệp spec (139/139, evidence 20261126-212637) | nguyên nhân là máy ngủ giữa lượt (pmset: Clamshell Sleep 20:18, ngủ 16,8 và 5,3 phút trùng thời lượng test treo); e2e.sh thêm caffeinate + cảnh báo. Lượt e2e dài: cắm sạc, không gập máy |
+| 2026-11-26 | Icon: cả 4 theme A/B/C/D dùng MỘT bộ icon của style A (Material Symbols Rounded đặc, FILL 1); màu icon lấy theo token của theme đang chọn trong Cài đặt. Thiết kế `Design/styles` v0.2 đã đổi; app làm ở task riêng sau T-20/T-21 (font tự lưu, không gọi Google) | lệnh owner 26/11 tối |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
