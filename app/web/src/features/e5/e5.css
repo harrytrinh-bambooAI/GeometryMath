@@ -48,7 +48,8 @@
 .e5-part-assign .btn { min-height: 44px; display: inline-flex; align-items: center; }
 
 @media (max-width: 760px) {
-  .e5-detail { display: flex; flex-direction: column; }
+  /* stretch: align-items: start của lưới máy tính làm khung hình co về bề rộng nội dung (≈ 0) trên điện thoại (T-261126-02) */
+  .e5-detail { display: flex; flex-direction: column; align-items: stretch; }
   .e5-viewer { height: 320px; }
   .e5-filter-title { min-width: 0; width: 100%; }
 }

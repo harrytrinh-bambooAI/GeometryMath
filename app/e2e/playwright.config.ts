@@ -14,6 +14,7 @@ import type { Project } from '@playwright/test';
  * - `ui-chromium` tests/**\/*.ui.spec.ts trên Chromium máy tính (giáo viên, F-GEO-102); ảnh chụp + trace + video.
  * - `ui-webkit`  cùng test trên WebKit iPad màn ngang (học sinh, F-GEO-100; iPad Safari = WebKit theo PO-01).
  * - `ui-iphone`  tests/**\/*.iphone.spec.ts trên WebKit iPhone màn dọc (F-GEO-101; E3 US-GEO-306).
+ * - `mobile-iphone` (WebKit iPhone 13) và `mobile-pixel` (Chromium Pixel 7): các spec UI P0 trong MOBILE_P0 (T-261126-02).
  * Mọi kiểm tra giờ chạy với múi giờ Asia/Ho_Chi_Minh (BR-GEO-233).
  */
 function vnStamp(): string {
@@ -42,6 +43,12 @@ const webkitInstalled = (() => {
 const withWebkit = process.env.GEO_E2E_WEBKIT !== '0' && webkitInstalled;
 
 const uiEvidence = { screenshot: 'on', video: 'on', trace: 'on' } as const;
+/**
+ * Spec UI P0 chạy thêm trên điện thoại (T-261126-02): học sinh vào lớp, làm bài (nhãn, hình), gợi ý, lời giải đã mở,
+ * hỏi đáp; giáo viên Kho đề, chi tiết đề, giao bài, giờ mở, theo dõi lớp.
+ */
+const MOBILE_P0 =
+  /(e1\/student-join|e2\/labels|e4\/(hints|solution|qa)|e5\/(catalog|detail)|e6\/(assign|release)|e7\/monitor)\.ui\.spec\.ts$/;
 const projects: Project[] = [
   { name: 'api', testMatch: /.*\.api\.spec\.ts/, use: { baseURL: apiURL } },
   { name: 'ui-chromium', testMatch: /.*\.ui\.spec\.ts/, use: { ...devices['Desktop Chrome'], baseURL: webURL, ...uiEvidence } },
@@ -58,7 +65,11 @@ if (withWebkit) {
     testMatch: /.*\.iphone\.spec\.ts/,
     use: { ...devices['iPhone 13'], baseURL: webURL, ...uiEvidence },
   });
+  // T-261126-02 (PO-60, MVP.md §3 "Điện thoại · Làm bài", §9 "toàn bộ P0 chạy trên điện thoại"): spec UI P0 trên iPhone
+  projects.push({ name: 'mobile-iphone', testMatch: MOBILE_P0, use: { ...devices['iPhone 13'], baseURL: webURL, ...uiEvidence } });
 }
+// Cùng các spec P0 trên điện thoại Android (Chromium, Pixel 7): chạy cả khi máy không cài WebKit.
+projects.push({ name: 'mobile-pixel', testMatch: MOBILE_P0, use: { ...devices['Pixel 7'], baseURL: webURL, ...uiEvidence } });
 
 export default defineConfig({
   testDir: './tests',
