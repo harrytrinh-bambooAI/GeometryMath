@@ -149,13 +149,17 @@ public class ReleaseRepository {
         .optional();
   }
 
-  /** Q15 nhật ký đặt/đổi/mở ngay giờ mở của một bài, mới nhất trước (BR-GEO-240). */
+  /**
+   * Q15 nhật ký đặt/đổi/mở ngay giờ mở của một bài, mới nhất trước (BR-GEO-240). LEFT JOIN
+   * (Dev-S3E5-16): người làm đã xóa tài khoản vẫn có dòng, tên hiện "đã xóa".
+   */
   public List<LogRow> releaseLog(UUID assignmentId) {
     return jdbc.sql(
             """
-            SELECT l.id, l.occurred_at, u.display_name, l.action::text, l.before_release_at, l.after_release_at
+            SELECT l.id, l.occurred_at, CASE WHEN u.id IS NULL THEN :deleted ELSE u.display_name END,
+                   l.action::text, l.before_release_at, l.after_release_at
             FROM audit_log l
-            JOIN app_user u ON u.org_id = :orgId AND u.id = l.actor_user_id
+            LEFT JOIN app_user u ON u.org_id = :orgId AND u.id = l.actor_user_id
             WHERE l.org_id = :orgId AND l.target_id = :id
               AND l.action IN ('release_set', 'release_change', 'release_now')
             ORDER BY l.id DESC
@@ -163,6 +167,7 @@ public class ReleaseRepository {
             -- sqllint:allow=ownership nhật ký thao tác (audit) + tên người làm
             """)
         .param("id", assignmentId)
+        .param("deleted", AuditEventRepository.DELETED_USER)
         .query((rs, i) ->
             new LogRow(
                 rs.getLong(1),

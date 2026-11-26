@@ -100,7 +100,8 @@ class AccountDeletionS3E5IT extends AbstractE1IT {
   }
 
   @Test
-  @DisplayName("TC-S3E5-56 Dữ liệu của tài khoản đã xóa bị xóa vật lý trong 30 ngày")
+  @DisplayName(
+      "TC-S3E5-56 Dữ liệu của tài khoản đã xóa bị xóa vật lý trong 30 ngày; AuditEvent cũ vẫn hiện với mã \"đã xóa\" (Dev-S3E5-16)")
   void deletedAccountIsPurgedAfter30Days() throws Exception {
     World w = world();
     Person an = w.people().get("Bình An");
@@ -156,6 +157,27 @@ class AccountDeletionS3E5IT extends AbstractE1IT {
                     + lan.id()
                     + "'"))
         .isEqualTo(1);
+    // Dev-S3E5-16: danh sách AuditEvent của lớp (S3-E4) vẫn hiện dòng của người đã xóa, mã "đã xóa"
+    // (đối tượng là em đã xóa; người làm đã xóa giả lập bằng hàng có actor UUID 0)
+    UUID c11a1 = w.classes().get("11A1").id();
+    jdbc.sql(
+            """
+            INSERT INTO audit_log (org_id, actor_user_id, action, target_id, actor_role, target_type, class_id, outcome)
+            VALUES (:org, :nil, 'password_reset', :lan, 'teacher', 'user', :c, 'success')
+            """)
+        .param("org", org)
+        .param("nil", NIL)
+        .param("lan", lan.id())
+        .param("c", c11a1)
+        .update();
+    var log = json(get("/api/v1/teacher/classes/" + c11a1 + "/audit-events", lan.token()));
+    assertThat(log.get("items").size()).as("cả hai dòng hiện").isEqualTo(2);
+    var deletedActor = log.get("items").get(0);
+    assertThat(deletedActor.get("actorCode").asString()).isEqualTo("đã xóa");
+    assertThat(deletedActor.get("targetId").asString()).isEqualTo(lan.userCode());
+    var deletedTarget = log.get("items").get(1);
+    assertThat(deletedTarget.get("actorCode").asString()).isEqualTo(lan.userCode());
+    assertThat(deletedTarget.get("targetId").asString()).isEqualTo("đã xóa");
   }
 
   @Test
