@@ -1,20 +1,21 @@
-Phiên bản: v0.1 · 2026-11-26
-# S2-E3 — câu hỏi mở và đề xuất (mỗi câu có mặc định TẠM)
+Phiên bản: v0.2 · 2026-11-26
+# S2-E3 — câu hỏi mở và đề xuất (mỗi câu có mặc định (đã chốt PO-66))
 
-> Chủ sở hữu: BA + QC. Không sửa story map (R2 khóa 26/11/2026); đề xuất đổi story map ghi ở đây, PO xử lý bằng CR. Mọi mặc định: `TẠM · tin cậy · nguồn`.
+> Chủ sở hữu: BA + QC. Không sửa story map (R2 khóa 26/11/2026); đề xuất đổi story map ghi ở đây, PO xử lý bằng CR. Mọi mặc định: `quyết định · tin cậy · nguồn`.
 
-| QA id | Loại | Hỏi ai | Câu hỏi hoặc đề xuất | Mặc định đang dùng (TẠM · tin cậy · nguồn) | Trạng thái |
+| QA id | Loại | Hỏi ai | Câu hỏi hoặc đề xuất | Mặc định đang dùng (quyết định · tin cậy · nguồn) | Trạng thái |
 |---|---|---|---|---|---|
-| QA-S2E3-01 | Câu hỏi | Owner | Giới hạn độ dài đề dán (tối thiểu 10, tối đa 2000 ký tự)? | 10 đến 2000 · TẠM · thấp · không có nguồn, cần số thực tế | Open |
-| QA-S2E3-02 | Câu hỏi | Owner | Giới hạn thêm đề theo giờ cho mỗi tài khoản (PO-63)? | 20 đề mỗi giờ · TẠM · thấp · PO-63 | Open |
-| QA-S2E3-03 | Câu hỏi | PO | Giới hạn ảnh: định dạng, kích thước, một hay nhiều ảnh mỗi lần (PO-27 nhắc "chọn nhiều ảnh")? | JPG hoặc PNG, 5 MB, một ảnh mỗi lần; nhiều ảnh để S2-E4 · TẠM · vừa · PO-27, PO-65 | Open |
-| QA-S2E3-04 | Câu hỏi | Owner | Có giữ ảnh gốc sau khi chữ được xác nhận không (PO-61 hạn chế thu dữ liệu)? | Không giữ ảnh gốc, xóa siêu dữ liệu ngay · TẠM · vừa · PO-61 | Open |
-| QA-S2E3-05 | Câu hỏi | Dev | Hạn thời gian mỗi bước dựng? | 30 giây mỗi bước · TẠM · thấp · không có nguồn, chờ đo B7 | Open |
-| QA-S2E3-06 | Câu hỏi | PO | Ba cách xử lý lệch đáp số là gì (DQ-04 nói "3 cách" nhưng không liệt kê) và có cho giữ đáp số lệch máy không? | Dùng đáp số máy, sửa đáp số đề, sửa bước giải; không cho giữ đáp số lệch máy; dung sai 0,01 · TẠM · vừa · DQ-04, STAGES mục 0.2 nguyên tắc 2 | Open |
-| QA-S2E3-07 | Đề xuất đổi story map | PO | US-S2E3-04 gộp hai việc thuộc hai khung (C2-02 và C2-03). Đề xuất tách thành US-S2E3-04a (không dựng được) và US-S2E3-04b (lệch đáp số) để theo dõi độc lập | Giữ một story, AC đã phân nhóm theo hai việc · TẠM · vừa · story-map-s23 | Open |
+| QA-S2E3-01 | Câu hỏi | Owner | Giới hạn độ dài đề dán (tối thiểu 10, tối đa 2000 ký tự)? | 10 đến 2000 · Đã chốt PO-66 · thấp · không có nguồn, cần số thực tế | Đã chốt PO-66 |
+| QA-S2E3-02 | Câu hỏi | Owner | Giới hạn thêm đề theo giờ cho mỗi tài khoản (PO-63)? | 20 đề mỗi giờ · Đã chốt PO-66 · thấp · PO-63 | Đã chốt PO-66 |
+| QA-S2E3-03 | Câu hỏi | PO | Giới hạn ảnh: định dạng, kích thước, một hay nhiều ảnh mỗi lần (PO-27 nhắc "chọn nhiều ảnh")? | JPG hoặc PNG, 5 MB, một ảnh mỗi lần; nhiều ảnh để S2-E4 · Đã chốt PO-66 · vừa · PO-27, PO-65 | Đã chốt PO-66 |
+| QA-S2E3-04 | Câu hỏi | Owner | Có giữ ảnh gốc sau khi chữ được xác nhận không (PO-61 hạn chế thu dữ liệu)? | Không giữ ảnh gốc, xóa siêu dữ liệu ngay · Đã chốt PO-66 · vừa · PO-61 | Đã chốt PO-66 |
+| QA-S2E3-05 | Câu hỏi | Dev | Hạn thời gian mỗi bước dựng? | 30 giây mỗi bước · Đã chốt PO-66 · thấp · không có nguồn, chờ đo B7 | Đã chốt PO-66 |
+| QA-S2E3-06 | Câu hỏi | PO | Ba cách xử lý lệch đáp số là gì (DQ-04 nói "3 cách" nhưng không liệt kê) và có cho giữ đáp số lệch máy không? | Dùng đáp số máy, sửa đáp số đề, sửa bước giải; không cho giữ đáp số lệch máy; dung sai 0,01 · Đã chốt PO-66 · vừa · DQ-04, STAGES mục 0.2 nguyên tắc 2 | Đã chốt PO-66 |
+| QA-S2E3-07 | Đề xuất đổi story map | PO | US-S2E3-04 gộp hai việc thuộc hai khung (C2-02 và C2-03). Đề xuất tách thành US-S2E3-04a (không dựng được) và US-S2E3-04b (lệch đáp số) để theo dõi độc lập | Giữ một story, AC đã phân nhóm theo hai việc · Đã chốt PO-66 · vừa · story-map-s23 | Open |
 
 ## Lịch sử
 
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 7 câu | runner-T-261126-12 |
+| v0.2 | 2026-11-26 | Áp PO-66: đóng các QA đã chốt ("Đã chốt PO-66"), giữ Open cho đề xuất ngoài gate | runner-T-261126-37 (BA/QC) |

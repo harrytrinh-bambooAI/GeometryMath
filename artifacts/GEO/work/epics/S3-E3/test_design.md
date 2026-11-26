@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # S3-E3 — thiết kế kiểm thử (Kết quả lớp (bảng lớp × bài) và "Cả lớp vướng ở đâu" — màn ưu tiên C3-04)
 
 > Chủ sở hữu: QC. Lập từ `stories_ac.md` cùng thư mục và `work/s23/story-map-s23.md`; phần chung dưới đây dùng cho cả S3-E1…E6. **Trạng thái: ready for R3**. Mỗi dòng thiết kế dẫn tới ít nhất một case ở `test_cases.md`; quyền theo quan hệ, chặn trường dữ liệu cá nhân (PO-61, PO-64) và AuditEvent là bắt buộc của chặng 3.
@@ -79,7 +79,7 @@ Phiên bản: v0.1 · 2026-11-26
 | CL-X-01 | 03 | làm mới hai lần không đổi dữ liệu | nhà cung cấp giả lập chỉ bị gọi một lần | soát | tích hợp CSDL |
 
 ## Bảng biên ngưỡng gộp (BV-n) cho US-S3E3-03
-`MIN_AGGREGATE` = 5 (TẠM, PO-65 Q6). n là số bài làm của một đề: học sinh Đang học khác nhau có ít nhất một tương tác (gửi đáp số, xin gợi ý, hỏi). Mỗi đề xét riêng.
+`MIN_AGGREGATE` = 5 (đã chốt PO-66, PO-65 Q6). n là số bài làm của một đề: học sinh Đang học khác nhau có ít nhất một tương tác (gửi đáp số, xin gợi ý, hỏi). Mỗi đề xét riêng.
 
 | BV | Tình huống (bộ tuần 15, 11A1) | n của đề | Kết quả mong đợi |
 |---|---|---|---|
@@ -121,3 +121,4 @@ total, sum, score, point, grade, percent, pct, rank, ranking, order_by_result, a
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: thiết kế kiểm thử S3-E3 | runner-T-261126-14 (QC) |
+| v0.2 | 2026-11-26 | Áp PO-66: bỏ nhãn giả định chưa chốt | runner-T-261126-37 (BA/QC) |

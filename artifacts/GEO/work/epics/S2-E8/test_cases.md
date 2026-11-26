@@ -1,4 +1,4 @@
-Phiên bản: v0.2 · 2026-11-26
+Phiên bản: v0.3 · 2026-11-26
 # S2-E8 — test case (Bài luyện điền đáp số: bàn phím toán, chấm tương đương, làm bài, kết quả, soạn bài luyện)
 
 > Chủ sở hữu: QC (goal run T-261126-12). **Trạng thái: ready for R3** · Mức epic: **P0**. Case bám tiêu chí của `stories_ac.md` cùng thư mục; thiết kế ở `test_design.md`. Mọi case ở trạng thái Not run: đây là bản viết, chưa thực thi (code chặng 2 chờ B7, PO-65).
@@ -16,13 +16,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `DQ-nn` | câu hỏi design và mặc định đang dùng | `Design/s23/DQ.md` |
 | `C2-nn` | mã khung màn hình chặng 2 (C2-01…C2-08) | `STAGES-AFTER-MVP.md` Chặng 2 mục 6 |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (mã lỗi ổn định D-GEO-143, mock AI D-GEO-047, tiêu đề no-store D-GEO-145) | `artifacts/GEO/work/03_decisions.md` (MVP) |
-| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định TẠM | `questions.md` cùng thư mục |
+| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `TC-S2En-nnn` | test case của epic | `test_cases.md` cùng thư mục |
 | `FX-nn` | dữ liệu mẫu chặng 2 (bảng dưới) | tệp này |
 | `BG-n` | bài giao mẫu của MVP (BG-1…BG-5) | `artifacts/GEO/work/fixture.md` (MVP) |
 | `BR-GEO-nnn` | quy tắc nghiệp vụ của MVP còn hiệu lực | `artifacts/GEO/work/02_gate2_brd.md` (MVP) |
 | `MSG-GEO-nn` | thông điệp hiện cho người dùng của MVP (câu chữ nguyên văn) | `artifacts/GEO/work/05_dictionary.md` (MVP) |
-| TẠM | giả định đang dùng, chờ owner xác nhận; ghi theo mẫu `TẠM · tin cậy · nguồn` | PO-65 |
+| Đã chốt PO-66 | mặc định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); ghi theo mẫu `quyết định · tin cậy · nguồn`; ngưỡng chỉnh sau L6 (G12) | PO-65, PO-66 |
 | Nhãn hai trục | trục máy: "Đã kiểm chứng" / "Cần xem lại" (chỉ engine gắn) · trục người: "AI soạn" / "Giáo viên đã duyệt" | PO-02 |
 | `release_at` | giờ mở lời giải; máy chủ so giờ máy chủ, không tin giờ thiết bị | MVP, M-GEO-13 |
 | bài luyện `PracticeSet` | tập câu hỏi điền đáp số do giáo viên soạn và giao; trạng thái Nháp, Đã giao, Đã đóng | STAGES Ch2 mục 8 |
@@ -30,7 +30,7 @@ Phiên bản: v0.2 · 2026-11-26
 | lượt thử `Attempt` | một lần học sinh bấm Kiểm tra; kết quả Đúng, Sai, Sai cú pháp; chỉ Sai mới trừ lượt | STAGES Ch2 mục 8 |
 | `grade` | thao tác chấm đáp số của khung môn học: so đáp số nộp với đáp số mẫu theo kiểu và sai số | US-S2E2-01 |
 | dạng chuẩn | cách viết đáp số mẫu do giáo viên nhập, hiện cho học sinh khi đáp số của em đúng nhưng viết khác | STAGES Ch2 mục 5 luồng C |
-| kiểu đáp số | "chính xác" (so bằng giá trị biểu thức) hoặc "xấp xỉ" (so trong sai số ±tol) (TẠM, QA-S2E8-01) | DQ-12 |
+| kiểu đáp số | "chính xác" (so bằng giá trị biểu thức) hoặc "xấp xỉ" (so trong sai số ±tol) (đã chốt PO-66, QA-S2E8-01) | DQ-12 |
 
 ### Dữ liệu mẫu chặng 2 (`FX-nn`)
 
@@ -39,7 +39,7 @@ Phiên bản: v0.2 · 2026-11-26
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
 | FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
-| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
+| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (đã chốt PO-66, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
 | FX-12 | Đề phẳng PL-03 | Hình chữ nhật ABCD có AB = 6, AD = 8; tính AC. Đáp số 10 |
@@ -55,12 +55,12 @@ Phiên bản: v0.2 · 2026-11-26
 | US-S2E8-02 Chấm đáp số dạng tương đương bằng `grade`; sai cú pháp không trừ lượt | 41 | 42 | 42 / 0 |
 | US-S2E8-03 Làm bài luyện: lượt thử, gợi ý mức 1, "xem lại cùng thầy cô" khi hết lượt | 19 | 21 | 20 / 1 |
 | US-S2E8-04 Kết quả bài luyện; không hiện số tổng; đáp số khóa tới giờ mở | 13 | 13 | 12 / 1 |
-| US-S2E8-05 Soạn bài luyện; nút "Em nghĩ đáp số này đúng" gửi về giáo viên | 23 | 23 | 23 / 0 |
-| **Tổng** | **110** | **113** | **108 / 5** |
+| US-S2E8-05 Soạn bài luyện; nút "Em nghĩ đáp số này đúng" gửi về giáo viên | 25 | 25 | 25 / 0 |
+| **Tổng** | **112** | **115** | **110 / 5** |
 
 | Theo ưu tiên | Số case |
 |---|---|
-| High | 84 |
+| High | 86 |
 | Medium | 26 |
 | Low | 3 |
 
@@ -130,7 +130,7 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S2E8-053 | Gọi chấm không đăng nhập | Medium | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Học sinh An (FX-02) | • Chưa đăng nhập | — | 1. Gọi chấm câu D | • UNAUTHENTICATED; không Attempt | US-S2E8-02-FC17; D-GEO-143 |
 | TC-S2E8-054 | Sai cú pháp báo đúng vị trí ký tự | High | Normal (Success case) | chức năng | đơn vị (hàm thuần) | UT | Not run | Học sinh An (FX-02) | • Câu C | • Nộp 2+*3 | 1. Gửi "2+*3" | • Báo "Thừa dấu * (ký tự 3)"; vị trí ký tự tính từ 1 | US-S2E8-02-SC10; BR-S2E8-07; STAGES Ch2 mục 5 |
 | TC-S2E8-055 | Thử đáp số bằng cách thay đổi sai số hoặc kiểu từ thiết bị | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Học sinh An (FX-02) | • Câu D | — | 1. Gọi chấm với thân yêu cầu có thêm trường `tol` = 100 và `type` = "approx" | • Máy chủ bỏ qua các trường đó (chỉ dùng đáp số nộp và mã chống lặp); kết quả theo cấu hình của câu | US-S2E8-02-FC18; BR-S2E8-12 |
-| TC-S2E8-111 | Bảng dữ liệu tương đương: 20 dòng đúng và 20 dòng sai trên cùng bộ đáp số mẫu | High | Normal (Success case) | chức năng | đơn vị (hàm thuần) | UT | Not run | Kiểm thử đơn vị (hàm chấm) | • Bộ đáp số mẫu: 4√3, 1/2, 6, 45 (±0,5), a√2, -3<br>• chưa chạy bảng | • Bảng 40 dòng: mỗi dòng gồm đáp số mẫu, đáp số nộp, kết quả mong đợi | 1. Chạy hàm chấm lần lượt trên 40 dòng | • 40/40 dòng cho đúng kết quả mong đợi (Đúng kèm dạng chuẩn, Sai, Sai cú pháp); không dòng nào ném lỗi; thời gian chấm mỗi dòng dưới 50 ms (TẠM) | US-S2E8-02 (case viết tay); AC US-S2E8-02 theo bảng (bổ sung case hồi quy cho bộ câu thử dạng viết) |
+| TC-S2E8-111 | Bảng dữ liệu tương đương: 20 dòng đúng và 20 dòng sai trên cùng bộ đáp số mẫu | High | Normal (Success case) | chức năng | đơn vị (hàm thuần) | UT | Not run | Kiểm thử đơn vị (hàm chấm) | • Bộ đáp số mẫu: 4√3, 1/2, 6, 45 (±0,5), a√2, -3<br>• chưa chạy bảng | • Bảng 40 dòng: mỗi dòng gồm đáp số mẫu, đáp số nộp, kết quả mong đợi | 1. Chạy hàm chấm lần lượt trên 40 dòng | • 40/40 dòng cho đúng kết quả mong đợi (Đúng kèm dạng chuẩn, Sai, Sai cú pháp); không dòng nào ném lỗi; thời gian chấm mỗi dòng dưới 50 ms (đã chốt PO-66) | US-S2E8-02 (case viết tay); AC US-S2E8-02 theo bảng (bổ sung case hồi quy cho bộ câu thử dạng viết) |
 
 ### US-S2E8-03 — Làm bài luyện: lượt thử, gợi ý mức 1, "xem lại cùng thầy cô" khi hết lượt
 
@@ -172,7 +172,7 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S2E8-082 | Học sinh khác không xem kết quả bạn | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Học sinh An (FX-02) trên iPad | • Kết quả của An; Bình cùng lớp | — | 1. Bình gọi kết quả của An | • NOT_FOUND; không dữ liệu của An | US-S2E8-04-FC1; BR-S2E8-25 |
 | TC-S2E8-083 | Chưa làm câu nào | Medium | Failure (Error case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Học sinh An (FX-02) trên iPad | • An mở bài rồi thoát, chưa làm câu nào | — | 1. Mở màn kết quả | • Hiện "Chưa làm xong: còn 5 câu"; "0 câu đúng · 0 câu cần xem lại" hoặc dòng "Em chưa làm câu nào" | US-S2E8-04-FC2; BR-S2E8-22 |
 | TC-S2E8-084 | Làm đúng cả 5 câu | Medium | Boundary (Edge case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Học sinh An (FX-02) trên iPad | • An làm đúng cả 5 câu | — | 1. Mở màn kết quả | • Hiện "5 câu đúng · 0 câu cần xem lại"; không câu chúc điểm số, không xếp hạng | US-S2E8-04-BV2; BR-S2E8-21 |
-| TC-S2E8-085 | Không câu nào đúng | Medium | Boundary (Edge case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Học sinh An (FX-02) trên iPad | • An hết lượt cả 5 câu | — | 1. Mở màn kết quả | • Hiện "0 câu đúng · 5 câu cần xem lại"; giọng nhẹ, không chữ chê; có dòng "Em hỏi thầy cô nhé" (TẠM, DQ-13) | US-S2E8-04-BV3; BR-S2E8-21 |
+| TC-S2E8-085 | Không câu nào đúng | Medium | Boundary (Edge case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Học sinh An (FX-02) trên iPad | • An hết lượt cả 5 câu | — | 1. Mở màn kết quả | • Hiện "0 câu đúng · 5 câu cần xem lại"; giọng nhẹ, không chữ chê; có dòng "Em hỏi thầy cô nhé" (đã chốt PO-66, DQ-13) | US-S2E8-04-BV3; BR-S2E8-21 |
 | TC-S2E8-086 | Lời giải không nằm trong bộ nhớ trình duyệt trước giờ mở | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Học sinh An (FX-02) trên iPad | • Trước `release_at`; An đã mở kết quả | — | 1. Kiểm bộ nhớ trình duyệt (cache, lưu trữ cục bộ) | • Không có nội dung lời giải hay đáp số của BL-1 | US-S2E8-04-FC3; BR-S2E8-24 |
 | TC-S2E8-087 | Bố cục iPad của kết quả | Low | Normal (Success case) | chức năng | thủ công, có lý do | Manual — cần mắt người so với ảnh mẫu | Not run | Học sinh An (FX-02) trên iPad | • An mở kết quả trên iPad (ảnh `c2-07-ket-qua.png`) | — | 1. Xem màn | • Danh sách câu bố cục như ảnh mẫu; nhãn trạng thái đọc rõ; không cuộn ngang | US-S2E8-04-SC7; DQ-13; BR-S2E8-23 |
 
@@ -203,6 +203,8 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S2E8-108 | Giáo viên khác không thấy báo của lớp mình | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01); học sinh An (FX-02) | • Báo của An cho bài của Cô Trang; Cô Lan đăng nhập | — | 1. Cô Lan gọi danh sách báo; gọi xác nhận một báo | • Danh sách không có báo của An; xác nhận nhận NOT_FOUND | US-S2E8-05-FC7; BR-S2E8-31; BR-S2-06 |
 | TC-S2E8-109 | Học sinh không gửi báo cho bài không thuộc mình | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01); học sinh An (FX-02) | • Bình (11A2) không được giao BL-1 | — | 1. Bình gọi gửi báo cho câu 2 của BL-1 | • NOT_FOUND; không báo nào được tạo | US-S2E8-05-FC8; BR-S2E8-30 |
 | TC-S2E8-110 | Báo không làm lộ đáp số cho học sinh | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01); học sinh An (FX-02) | • An vừa gửi báo | — | 1. Xem phản hồi và màn sau khi gửi | • Chỉ "Đã gửi cho thầy cô"; không đáp số, không dạng chuẩn, không đúng sai của đáp số em | US-S2E8-05-FC9; BR-S2E8-30; STAGES mục 0.2 nguyên tắc 1 |
+| TC-S2E8-114 | Bài luyện được lưu thành bộ bài dùng chung mô hình với S3-E2 | High | Normal (Success case) | chức năng | tích hợp (máy chủ + cơ sở dữ liệu) | IT | Not run | Giáo viên chủ lớp 11A1 (lớp mẫu từ MVP) | • Bài nháp 5 câu (FX-20); lớp 11A1 chuyển từ MVP | — | 1. Bấm "Giao"; xác nhận | • Có đúng một `AssignmentSet` Đã giao với 5 `AssignmentItem` kèm cấu hình luyện<br>• không có bảng bài luyện riêng<br>• bộ gắn lớp 11A1 | US-S2E8-05-SC10; BR-S2E8-32; PO-66 |
+| TC-S2E8-115 | Giáo viên không phải chủ lớp mẫu không giao được cho lớp đó | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01) | • Cô Trang không phải chủ lớp mẫu 11A1; bài nháp đầy đủ | — | 1. Gọi giao bài cho lớp 11A1 | • NOT_FOUND<br>• không tạo `AssignmentSet`<br>• học sinh 11A1 không thấy bài | US-S2E8-05-FC10; BR-S2E8-32; PO-66 |
 
 ## 3. Truy vết tiêu chí sang case
 
@@ -318,6 +320,8 @@ Phiên bản: v0.2 · 2026-11-26
 | US-S2E8-05-FC7 | TC-S2E8-108 |
 | US-S2E8-05-FC8 | TC-S2E8-109 |
 | US-S2E8-05-FC9 | TC-S2E8-110 |
+| US-S2E8-05-SC10 | TC-S2E8-114 |
+| US-S2E8-05-FC10 | TC-S2E8-115 |
 | US-S2E8-02 | TC-S2E8-111 |
 | US-S2E8-03 | TC-S2E8-112 |
 | US-S2E8-03 | TC-S2E8-113 |
@@ -338,3 +342,4 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 113 case cho 110 tiêu chí, có cột Tự động hóa | runner-T-261126-12 (QC) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
+| v0.3 | 2026-11-26 | G1: BR-S2E8-32 một mô hình bộ bài, giao cho lớp mẫu 11A1; thêm SC10, FC10; bỏ nhãn giả định chưa chốt (PO-66) | runner-T-261126-37 (BA/QC) |

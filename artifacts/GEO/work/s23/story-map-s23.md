@@ -1,14 +1,14 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # Story map S23 · GEO · S2-E1…E9 và S3-E1…E6
 
-R2 status: **khóa (PO, 26/11/2026); chờ owner R3 ở gate 16 (T-261126-16)**. Sau khi khóa, đổi là CR (`cr_register.md`). Story sơ bộ, chi tiết AC do BA ở task 12 và 14. Quy tắc cắt: một khung = một story; story dữ liệu tách riêng; một story xuyên suốt cho quyền. ID story: `US-S2E<n>-<nn>` và `US-S3E<n>-<nn>`. Nguồn khung: STAGES-AFTER-MVP.md Ch2 §6 (C2-xx), Ch3 §6 (C3-xx); LOGIN = màn đăng ký/đăng nhập mã (task 10 thiết kế). Mức: P0 trừ khi ghi P1. Quyết định: PO-61…65.
+R2 status: **khóa (PO, 26/11/2026); owner đã duyệt R3 ngày 26/11/2026 (PO-66, "OK hết" cho GATE-T16 G1–G19)**; PO-66 G5 nhận thêm 2 story mới và US-S3E1-05 vào chặng 3 (CR đã duyệt, xem Lịch sử). Sau khi khóa, đổi là CR (`cr_register.md`). Story sơ bộ, chi tiết AC do BA ở task 12 và 14. Quy tắc cắt: một khung = một story; story dữ liệu tách riêng; một story xuyên suốt cho quyền. ID story: `US-S2E<n>-<nn>` và `US-S3E<n>-<nn>`. Nguồn khung: STAGES-AFTER-MVP.md Ch2 §6 (C2-xx), Ch3 §6 (C3-xx); LOGIN = màn đăng ký/đăng nhập mã (task 10 thiết kế). Mức: P0 trừ khi ghi P1. Quyết định: PO-61…65.
 
 ## Chặng 2
 | Epic | Story | Loại | Khung | Mức | Nguồn · quyết định |
 |---|---|---|---|---|---|
 | S2-E1 | US-S2E1-01 Đăng ký bằng tên hiển thị và vai, nhận mã người dùng và mã khôi phục | UI | LOGIN | P0 | PO-61, PO-62 |
 | S2-E1 | US-S2E1-02 Đăng nhập bằng mã + mật khẩu; khóa 10 lần sai / 15 phút theo tài khoản | UI | LOGIN | P0 | PO-61, PO-53 |
-| S2-E1 | US-S2E1-03 Giáo viên tự khôi phục mật khẩu bằng mã khôi phục (TẠM) | UI | LOGIN | P0 | PO-61 |
+| S2-E1 | US-S2E1-03 Giáo viên và học sinh tự khôi phục mật khẩu bằng mã khôi phục | UI | LOGIN | P0 | PO-61; PO-66 (G3) |
 | S2-E1 | US-S2E1-04 Dữ liệu: chuyển tài khoản mẫu MVP sang mô hình mã người dùng | Data | (dữ liệu) | P0 | PO-61 |
 | S2-E2 | US-S2E2-01 Khung môn học: `parse/solve/verify/render/hint` + `grade`, `concepts` | Tech | (không có khung) | P0 | Ch2 §8–9; 0.3 ý 1 |
 | S2-E2 | US-S2E2-02 Dựng hình phẳng từ ràng buộc; `Problem.kind`; `SceneSpec` 2D | Logic | C2-05 | P0 | Ch2 §3 ý 1, §8 |
@@ -47,11 +47,13 @@ R2 status: **khóa (PO, 26/11/2026); chờ owner R3 ở gate 16 (T-261126-16)**.
 |---|---|---|---|---|---|
 | S3-E1 | US-S3E1-01 Giáo viên tạo lớp (tên, cấp, năm học), sinh mã lớp và trang in | UI | C3-02 | P0 | Ch3 §5 luồng A |
 | S3-E1 | US-S3E1-02 Học sinh nhập mã lớp, trạng thái chờ duyệt; mã sai hoặc đã khóa | UI | C3-07 | P0 | Ch3 §5 luồng A |
-| S3-E1 | US-S3E1-03 Giáo viên duyệt danh sách chờ; nhiều lớp; `ClassMembership` (chờ, đang học, đã rời) | UI | C3-02 | P0 | Ch3 §8 |
+| S3-E1 | US-S3E1-03 Giáo viên duyệt danh sách chờ; nhiều lớp; `ClassMembership` (chờ, đang học, đã rời, bị từ chối) | UI | C3-02 | P0 | Ch3 §8; PO-66 (G5) |
 | S3-E1 | US-S3E1-04 Giáo viên đặt lại mật khẩu cho học sinh lớp mình | UI | C3-02 | P0 | PO-61 |
+| S3-E1 | US-S3E1-05 Quyền theo quan hệ giáo viên, lớp, học sinh (xuyên suốt) | Xuyên suốt | (không có khung) | P0 | PO-61; PO-66 (G5; CR M-10) |
 | S3-E2 | US-S3E2-01 Soạn bộ bài: chọn đề, thứ tự, hạn làm (chỉ là nhãn), xem trước như học sinh | UI | C3-03 | P0 | Ch3 §5 luồng B |
 | S3-E2 | US-S3E2-02 Lịch mở lời giải theo bộ hoặc từng bài; cảnh báo giờ mở sớm hơn hạn | Logic | C3-03 | P0 | Ch3 §5 ngoại lệ; PO-25 |
 | S3-E2 | US-S3E2-03 Bài của em theo bộ; liệt kê đề "Cần xem lại" trước khi giao | UI | C3-08, C3-03 | P0 | Ch3 §5 ngoại lệ |
+| S3-E2 | US-S3E2-04 Đóng bộ và lưu trữ bộ (vòng đời Đã đóng, Lưu trữ) | UI | C3-03 | P0 | Ch3 §8; PO-66 (G5; CR QA-S3E2-07) |
 | S3-E3 | US-S3E3-01 Bảng lớp × bài, ô là trạng thái, không cột tổng, không sắp "tốt nhất" | UI | C3-04 | P0 | Ch3 §3 ý 5; K3 |
 | S3-E3 | US-S3E3-02 Bấm một ô xem gợi ý, câu hỏi và bằng chứng; học sinh đã rời đánh dấu | UI | C3-04 | P0 | 0.3 ý 6 |
 | S3-E3 | US-S3E3-03 "Cả lớp vướng ở đâu": bước nhiều em dừng nhất; dưới ngưỡng 5 bài chỉ hiện dữ liệu thô | Logic | C3-04 | P0 | PO-65 (Q6) |
@@ -62,17 +64,20 @@ R2 status: **khóa (PO, 26/11/2026); chờ owner R3 ở gate 16 (T-261126-16)**.
 | S3-E5 | US-S3E5-02 Thông báo riêng tư, cờ "đã đọc" + phiên bản văn bản | UI | LOGIN | P0 | PO-64 |
 | S3-E5 | US-S3E5-03 Danh sách trường dữ liệu được phép thu; test chặn trường mới | Xuyên suốt | (không có khung) | P0 | Ch3 §10; PO-61 |
 | S3-E5 | US-S3E5-04 Công tắc AI phía học sinh theo lớp; tắt thì luồng học cơ bản vẫn chạy | Logic | C3-02 | P0 | 0.3 ý 7 |
+| S3-E5 | US-S3E5-05 Xóa tài khoản và chính sách lưu/xóa dữ liệu bài làm | UI | (Cài đặt) | P0 | PO-64; PO-66 (G5; CR QA-S3E5-10, QA-S2E1-09) |
 | S3-E6 | US-S3E6-01 Chữa bài từ kết quả sang Trình chiếu | UI | C3-04, C2-04 | P1 | Ch3 §4 P1 |
 | S3-E6 | US-S3E6-02 Xuất kết quả lớp; lưu trữ lớp cuối năm | UI | C3-02, C3-04 | P1 | Ch3 §4 P1 |
 | S3-E6 | US-S3E6-03 Nhắc việc trong ứng dụng: bài mới, sắp hết hạn, lời giải đã mở | Logic | C3-08 | P1 | Ch3 §3 ý 8 |
 
 ## Kiểm phủ (V14)
 - Khung → story: C2-01 (S2E6-01, 02), C2-02 (S2E3-01…04), C2-03 (S2E5-01…05, S2E3-04), C2-04 (S2E7-01…03), C2-05 (S2E2-02, 03), C2-06 (S2E8-01…03, S2E9-03), C2-07 (S2E8-04), C2-08 (S2E8-05), C3-02 (S3E1-01, 03, 04), C3-03 (S3E2-01…03), C3-04 (S3E3-01…03), C3-05 (S3E4-01), C3-06 (S3E4-02), C3-07 (S3E1-02), C3-08 (S3E2-03, S3E4-03), C3-01 thay bằng LOGIN (S2E1-01…03, S3E5-02): đủ 16 khung và LOGIN.
+- Tick "đã đọc thông báo riêng tư" ở S2-E1 trỏ văn bản của US-S3E5-02; nút "Xóa tài khoản" ở US-S3E5-05 (PO-66 G5, đóng QA-S2E1-07, QA-S2E1-09). Bài luyện S2-E8 là bộ bài S3-E2, chặng 2 giao cho lớp mẫu 11A1 (PO-66 G1).
 - Mục STAGES đã bỏ theo PO-61 (không có story): `TeacherInvite`, `TeacherVerification`, "chờ xác nhận", luật chặn giáo viên chưa xác nhận.
-- Số story: chặng 2 = 35 (P0 29, P1 6: E4 ×3, E9 ×3); chặng 3 = 20 (P0 17, P1 3). Đã đối chiếu `epic_board.md`.
+- Số story: chặng 2 = 35 (P0 29, P1 6: E4 ×3, E9 ×3); chặng 3 = 23 (P0 20, P1 3; gồm 3 story nhận vào theo PO-66 G5: US-S3E1-05, US-S3E2-04, US-S3E5-05). Đã đối chiếu `epic_board.md`.
 - Ưu tiên dồn công cho BA/QC (K3): C2-03, C2-06 (chặng 2); C3-04 (chặng 3).
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo story map chặng 2–3; R2 khóa (PO), chờ R3 | runner-T-261126-08 (PO) |
+| v0.2 | 2026-11-26 | Áp PO-66: thêm US-S3E1-05, US-S3E2-04, US-S3E5-05 (chặng 3 thành 23 story); đổi tên US-S2E1-03 (khôi phục cho học sinh, G3); trạng thái bị từ chối ở US-S3E1-03; ghi tick và xóa tài khoản trỏ S3-E5; R3 đã duyệt | runner-T-261126-37 (BA/QC) |

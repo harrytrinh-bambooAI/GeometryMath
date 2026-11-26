@@ -1,4 +1,4 @@
-Phiên bản: v0.2 · 2026-11-26
+Phiên bản: v0.3 · 2026-11-26
 # S2-E5 — Soát và duyệt lời giải có phiên bản, StepCheck, nhãn hai trục, hộp duyệt, lời giải đã giao bất biến: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run T-261126-12, BA + QC liền). Nguồn: `artifacts/GEO/work/s23/story-map-s23.md` (R2 khóa 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Chặng 2 mục 5–8 (22/11/2026), `Design/s23/DQ.md` và ảnh `Design/s23/c2-*.png` (26/11/2026), `PO-DECISIONS.md` PO-61…65 (PO-61 mới nhất, thắng mọi nguồn cũ).
@@ -12,9 +12,9 @@ Phiên bản: v0.2 · 2026-11-26
 - "T0" là giờ máy chủ lúc bắt đầu ca kiểm; mọi mốc giờ tương đối so với T0. Giờ hiển thị `HH:mm, dd/MM/yyyy` giờ Việt Nam; số thập phân hiển thị dấu phẩy.
 - Lỗi máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định theo D-GEO-143 (VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN, NOT_FOUND, CONFLICT, RATE_LIMITED kèm `Retry-After`).
 - Phản hồi chứa lời giải, gợi ý hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145). "Dữ liệu trả về" là toàn bộ nội dung máy chủ gửi xuống thiết bị, không chỉ phần giao diện vẽ ra.
-- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, TẠM, PO-65).
+- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, PO-65; chốt PO-66).
 - AI trong kiểm thử là giả lập (D-GEO-047): không có kỳ vọng về chất lượng AI thật. Giá trị trong Given / Then lấy từ bảng `FX-nn` hoặc ghi ngay trong tiêu chí.
-- AC mang chữ TẠM dựng trên giả định chưa được owner xác nhận; mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết giả định nào.
+- AC mang chữ "đã chốt PO-66" dựa trên giả định đã được owner chốt ở PO-66 (26/11/2026); mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết câu hỏi gốc.
 
 | Id / abbreviation | Meaning | Where it comes from (pointer only) |
 |---|---|---|
@@ -25,13 +25,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `DQ-nn` | câu hỏi design và mặc định đang dùng | `Design/s23/DQ.md` |
 | `C2-nn` | mã khung màn hình chặng 2 (C2-01…C2-08) | `STAGES-AFTER-MVP.md` Chặng 2 mục 6 |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (mã lỗi ổn định D-GEO-143, mock AI D-GEO-047, tiêu đề no-store D-GEO-145) | `artifacts/GEO/work/03_decisions.md` (MVP) |
-| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định TẠM | `questions.md` cùng thư mục |
+| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `TC-S2En-nnn` | test case của epic | `test_cases.md` cùng thư mục |
 | `FX-nn` | dữ liệu mẫu chặng 2 (bảng dưới) | tệp này |
 | `BG-n` | bài giao mẫu của MVP (BG-1…BG-5) | `artifacts/GEO/work/fixture.md` (MVP) |
 | `BR-GEO-nnn` | quy tắc nghiệp vụ của MVP còn hiệu lực | `artifacts/GEO/work/02_gate2_brd.md` (MVP) |
 | `MSG-GEO-nn` | thông điệp hiện cho người dùng của MVP (câu chữ nguyên văn) | `artifacts/GEO/work/05_dictionary.md` (MVP) |
-| TẠM | giả định đang dùng, chờ owner xác nhận; ghi theo mẫu `TẠM · tin cậy · nguồn` | PO-65 |
+| Đã chốt PO-66 | mặc định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); ghi theo mẫu `quyết định · tin cậy · nguồn`; ngưỡng chỉnh sau L6 (G12) | PO-65, PO-66 |
 | Nhãn hai trục | trục máy: "Đã kiểm chứng" / "Cần xem lại" (chỉ engine gắn) · trục người: "AI soạn" / "Giáo viên đã duyệt" | PO-02 |
 | `release_at` | giờ mở lời giải; máy chủ so giờ máy chủ, không tin giờ thiết bị | MVP, M-GEO-13 |
 | `StepCheck` | kết quả kiểm số của từng bước lời giải: Đạt / Không đạt / Không kiểm được | STAGES Ch2 mục 8 |
@@ -46,7 +46,7 @@ Phiên bản: v0.2 · 2026-11-26
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
 | FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
-| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
+| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (đã chốt PO-66, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
 | FX-12 | Đề phẳng PL-03 | Hình chữ nhật ABCD có AB = 6, AD = 8; tính AC. Đáp số 10 |
@@ -63,7 +63,7 @@ Phiên bản: v0.2 · 2026-11-26
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E5-01 | Lời giải là danh sách bước đánh số liên tục từ 1; có từ 1 đến 30 bước; mỗi bước từ 1 đến 2000 ký tự sau khi cắt khoảng trắng đầu cuối (TẠM, QA-S2E5-01) | BR-S2-05 |
+| BR-S2E5-01 | Lời giải là danh sách bước đánh số liên tục từ 1; có từ 1 đến 30 bước; mỗi bước từ 1 đến 2000 ký tự sau khi cắt khoảng trắng đầu cuối (đã chốt PO-66, QA-S2E5-01) | BR-S2-05 |
 | BR-S2E5-02 | Mỗi lần bấm Lưu có thay đổi tạo phiên bản mới vN+1; phiên bản cũ giữ nguyên, không ghi đè; không có thay đổi thì không tạo phiên bản | STAGES Ch2 mục 3 ý 3 |
 | BR-S2E5-03 | Lịch sử phiên bản liệt kê mới nhất ở trên: số phiên bản, người sửa (tên và mã), giờ, mô tả ngắn | DQ-06 |
 | BR-S2E5-04 | "Dùng bản này" với phiên bản cũ tạo phiên bản mới là bản sao nội dung của bản cũ; lịch sử không bị xóa hay đổi thứ tự | BR-S2-05 |
@@ -151,16 +151,16 @@ Phiên bản: v0.2 · 2026-11-26
 
 - **Story:** Là giáo viên, tôi muốn máy kiểm số từng bước và chỉ ra bước sai kèm lý do, để duyệt có căn cứ · Loại Logic · Mức P0 · Khung C2-03
 - **Nguồn:** STAGES Ch2 mục 3 ý 4; BR-S2-05; DQ-04
-- **Góc nhìn người vận hành:** giáo viên bấm "Kiểm tra lại" sau khi sửa. Bước nào có phép tính thì máy kiểm; bước chỉ chữ thì không kiểm được và không bị coi là sai. Lỗi chỉ báo tại bước phát sinh, không lan sang bước sau (TẠM, QA-S2E5-02).
+- **Góc nhìn người vận hành:** giáo viên bấm "Kiểm tra lại" sau khi sửa. Bước nào có phép tính thì máy kiểm; bước chỉ chữ thì không kiểm được và không bị coi là sai. Lỗi chỉ báo tại bước phát sinh, không lan sang bước sau (đã chốt PO-66, QA-S2E5-02).
 - **Phụ thuộc:** US-S2E5-01, S2-E2
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S2E5-07 | "Kiểm tra lại" chạy engine cho từng bước; mỗi bước có kết quả Đạt, Không đạt hoặc Không kiểm được (bước không có phép tính số) | STAGES Ch2 mục 8 |
-| BR-S2E5-08 | Bước kiểm theo giá trị của bước trước trong chính lời giải: bước đạt khi đúng với đầu vào của nó trong dung sai tuyệt đối 0,01 (lỗi báo ở bước phát sinh, không lan); đáp số cuối so với engine là một kiểm tra riêng ở US-S2E3-04 (TẠM, QA-S2E5-02) | DQ-04 |
+| BR-S2E5-08 | Bước kiểm theo giá trị của bước trước trong chính lời giải: bước đạt khi đúng với đầu vào của nó trong dung sai tuyệt đối 0,01 (lỗi báo ở bước phát sinh, không lan); đáp số cuối so với engine là một kiểm tra riêng ở US-S2E3-04 (đã chốt PO-66, QA-S2E5-02) | DQ-04 |
 | BR-S2E5-09 | Bước Không đạt tô đỏ, nhãn "Lệch", dòng lý do nêu giá trị bước ghi và giá trị máy tính | DQ-04, STAGES Ch2 mục 5 luồng A |
 | BR-S2E5-10 | `StepCheck` gắn với phiên bản; sửa bước nào thì bước đó và các bước sau của phiên bản mới về "Chưa kiểm", các bước trước giữ kết quả | BR-S2-05 |
-| BR-S2E5-11 | Kiểm lời giải tối đa 10 giây; quá thì TIMEOUT, mọi bước "Chưa kiểm" (TẠM, QA-S2E5-04); học sinh không đọc được `StepCheck` | D-GEO-143 |
+| BR-S2E5-11 | Kiểm lời giải tối đa 10 giây; quá thì TIMEOUT, mọi bước "Chưa kiểm" (đã chốt PO-66, QA-S2E5-04); học sinh không đọc được `StepCheck` | D-GEO-143 |
 
 - **Dữ liệu:** dung sai kiểm tuyệt đối 0,01; ví dụ bước ghi 6,93 và máy tính 6,9282
 
@@ -243,7 +243,7 @@ Phiên bản: v0.2 · 2026-11-26
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E5-12 | Trục máy "Đã kiểm chứng" khi: không bước nào Không đạt, đáp số cuối khớp engine, và có ít nhất một bước Đạt; ngược lại "Cần xem lại" (TẠM, QA-S2E5-05) | PO-02, M-S2-03 |
+| BR-S2E5-12 | Trục máy "Đã kiểm chứng" khi: không bước nào Không đạt, đáp số cuối khớp engine, và có ít nhất một bước Đạt; ngược lại "Cần xem lại" (đã chốt PO-66, QA-S2E5-05) | PO-02, M-S2-03 |
 | BR-S2E5-13 | Trục người: "AI soạn" lúc AI sinh; "Đang sửa" khi giáo viên sửa; "Giáo viên đã duyệt" sau khi duyệt; "Bị thay thế" khi có bản duyệt mới hơn | STAGES Ch2 mục 8 |
 | BR-S2E5-14 | Hai nhãn luôn hiện cùng nhau ở đầu thẻ hình và trong hộp duyệt; cạnh "Đã kiểm chứng" luôn có dòng "Máy đã kiểm tra phần tính toán" | DQ-07, STAGES Ch2 mục 10 |
 | BR-S2E5-15 | Chỉ engine gắn nhãn máy; không thao tác nào của người dùng đổi được, kể cả sau khi duyệt; duyệt chỉ đổi trục người | STAGES Ch2 mục 7, PO-38 |
@@ -319,7 +319,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S2E5-17 | Duyệt bị chặn khi còn ít nhất một bước Không đạt hoặc khi đáp số lệch engine (US-S2E3-04); bị chặn thì nút khóa và hiện "Chặn duyệt: còn n bước lệch" | DQ-04, STAGES Ch2 mục 5 |
-| BR-S2E5-18 | Duyệt được khi nhãn máy "Cần xem lại" mà không có bước Không đạt (chưa kiểm hoặc Không kiểm được), nhưng phải xác nhận ở hộp cảnh báo "Nhãn máy vẫn Cần xem lại. Vẫn duyệt?" (TẠM, QA-S2E5-03) | DQ-05, PO-38 |
+| BR-S2E5-18 | Duyệt được khi nhãn máy "Cần xem lại" mà không có bước Không đạt (chưa kiểm hoặc Không kiểm được), nhưng phải xác nhận ở hộp cảnh báo "Nhãn máy vẫn Cần xem lại. Vẫn duyệt?" (đã chốt PO-66, QA-S2E5-03) | DQ-05, PO-38 |
 | BR-S2E5-19 | Duyệt ghi người duyệt (mã người dùng), giờ, phiên bản; đề vào ngăn "Của tôi" với trục người "Giáo viên đã duyệt"; bản duyệt trước (nếu có) thành "Bị thay thế" | STAGES Ch2 mục 5 luồng A, mục 8 |
 | BR-S2E5-20 | Mỗi đề xuất của AI có ba nút: Nhận (vào nháp thành phiên bản mới), Sửa (mở soạn với nội dung đề xuất), Bỏ (loại, ghi "đã bỏ" trong lịch sử, không xóa) | 0.3 ý 4, PO-46 |
 | BR-S2E5-21 | Duyệt chỉ áp dụng cho phiên bản đang hiện hành; duyệt phiên bản đã bị thay thế nhận CONFLICT; bấm Duyệt hai lần chỉ ghi một lần duyệt | D-GEO-143 |
@@ -410,9 +410,9 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|
 | BR-S2E5-22 | Bài giao gắn với một phiên bản lời giải cố định; phiên bản đó bất biến: không sửa, không xóa; sửa chỉ có thể tạo phiên bản mới | STAGES Ch2 mục 7 |
 | BR-S2E5-23 | Sau khi lưu phiên bản mới của đề đã giao, giáo viên chọn cho từng bài giao: "Áp dụng cho lớp" hoặc "Giữ v cũ"; mặc định "Giữ v cũ" | STAGES Ch2 mục 7, DQ-06 |
-| BR-S2E5-24 | Chỉ phiên bản "Giáo viên đã duyệt" mới áp dụng được cho bài giao (nút "Áp dụng cho lớp" khóa trước đó) (TẠM, QA-S2E5-06) | STAGES mục 0.2 nguyên tắc 3 |
+| BR-S2E5-24 | Chỉ phiên bản "Giáo viên đã duyệt" mới áp dụng được cho bài giao (nút "Áp dụng cho lớp" khóa trước đó) (đã chốt PO-66, QA-S2E5-06) | STAGES mục 0.2 nguyên tắc 3 |
 | BR-S2E5-25 | Áp dụng cho bài đã có học sinh xem lời giải cũ: hiện cảnh báo nêu số học sinh đã xem và đòi xác nhận; áp dụng không mở lời giải sớm hơn `release_at` | STAGES mục 0.2 nguyên tắc 1 |
-| BR-S2E5-26 | Phiên bản mới đổi đáp số so với bản đang giao: cảnh báo "Đáp số đổi từ X thành Y; kết quả đã chấm không tính lại" (TẠM, QA-S2E5-07) | BR-S2-08 |
+| BR-S2E5-26 | Phiên bản mới đổi đáp số so với bản đang giao: cảnh báo "Đáp số đổi từ X thành Y; kết quả đã chấm không tính lại" (đã chốt PO-66, QA-S2E5-07) | BR-S2-08 |
 
 - **Dữ liệu:** đề FX-14 đã giao: BG-1 lớp 11A1 và BG-2 lớp 11A2, cùng dùng lời giải v2; An thuộc 11A1; đã có 2 học sinh xem lời giải v2 ở BG-1
 
@@ -492,3 +492,4 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 5 story, 64 tiêu chí, ready for R3 | runner-T-261126-12 (BA) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
+| v0.3 | 2026-11-26 | Áp PO-66 (gate R3, T-261126-37): bỏ nhãn giả định chưa chốt, ghi "đã chốt PO-66" | runner-T-261126-37 (BA/QC) |

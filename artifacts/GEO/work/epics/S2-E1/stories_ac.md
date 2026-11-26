@@ -1,4 +1,4 @@
-Phiên bản: v0.2 · 2026-11-26
+Phiên bản: v0.3 · 2026-11-26
 # S2-E1 — Đăng ký, đăng nhập bằng mã và khôi phục (định danh tối giản PO-61): story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run T-261126-12, BA + QC liền). Nguồn: `artifacts/GEO/work/s23/story-map-s23.md` (R2 khóa 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Chặng 2 mục 5–8 (22/11/2026), `Design/s23/DQ.md` và ảnh `Design/s23/c2-*.png` (26/11/2026), `PO-DECISIONS.md` PO-61…65 (PO-61 mới nhất, thắng mọi nguồn cũ).
@@ -12,9 +12,9 @@ Phiên bản: v0.2 · 2026-11-26
 - "T0" là giờ máy chủ lúc bắt đầu ca kiểm; mọi mốc giờ tương đối so với T0. Giờ hiển thị `HH:mm, dd/MM/yyyy` giờ Việt Nam; số thập phân hiển thị dấu phẩy.
 - Lỗi máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định theo D-GEO-143 (VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN, NOT_FOUND, CONFLICT, RATE_LIMITED kèm `Retry-After`).
 - Phản hồi chứa lời giải, gợi ý hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145). "Dữ liệu trả về" là toàn bộ nội dung máy chủ gửi xuống thiết bị, không chỉ phần giao diện vẽ ra.
-- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, TẠM, PO-65).
+- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, PO-65; chốt PO-66).
 - AI trong kiểm thử là giả lập (D-GEO-047): không có kỳ vọng về chất lượng AI thật. Giá trị trong Given / Then lấy từ bảng `FX-nn` hoặc ghi ngay trong tiêu chí.
-- AC mang chữ TẠM dựng trên giả định chưa được owner xác nhận; mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết giả định nào.
+- AC mang chữ "đã chốt PO-66" dựa trên giả định đã được owner chốt ở PO-66 (26/11/2026); mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết câu hỏi gốc.
 
 | Id / abbreviation | Meaning | Where it comes from (pointer only) |
 |---|---|---|
@@ -25,17 +25,17 @@ Phiên bản: v0.2 · 2026-11-26
 | `DQ-nn` | câu hỏi design và mặc định đang dùng | `Design/s23/DQ.md` |
 | `C2-nn` | mã khung màn hình chặng 2 (C2-01…C2-08) | `STAGES-AFTER-MVP.md` Chặng 2 mục 6 |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (mã lỗi ổn định D-GEO-143, mock AI D-GEO-047, tiêu đề no-store D-GEO-145) | `artifacts/GEO/work/03_decisions.md` (MVP) |
-| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định TẠM | `questions.md` cùng thư mục |
+| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `TC-S2En-nnn` | test case của epic | `test_cases.md` cùng thư mục |
 | `FX-nn` | dữ liệu mẫu chặng 2 (bảng dưới) | tệp này |
 | `BG-n` | bài giao mẫu của MVP (BG-1…BG-5) | `artifacts/GEO/work/fixture.md` (MVP) |
 | `BR-GEO-nnn` | quy tắc nghiệp vụ của MVP còn hiệu lực | `artifacts/GEO/work/02_gate2_brd.md` (MVP) |
 | `MSG-GEO-nn` | thông điệp hiện cho người dùng của MVP (câu chữ nguyên văn) | `artifacts/GEO/work/05_dictionary.md` (MVP) |
-| TẠM | giả định đang dùng, chờ owner xác nhận; ghi theo mẫu `TẠM · tin cậy · nguồn` | PO-65 |
+| Đã chốt PO-66 | mặc định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); ghi theo mẫu `quyết định · tin cậy · nguồn`; ngưỡng chỉnh sau L6 (G12) | PO-65, PO-66 |
 | Nhãn hai trục | trục máy: "Đã kiểm chứng" / "Cần xem lại" (chỉ engine gắn) · trục người: "AI soạn" / "Giáo viên đã duyệt" | PO-02 |
 | `release_at` | giờ mở lời giải; máy chủ so giờ máy chủ, không tin giờ thiết bị | MVP, M-GEO-13 |
-| `RC-xxxx-xxxx-xxxx` | mã khôi phục của giáo viên, hiện một lần lúc đăng ký (TẠM) | PO-61, DQ-16 |
-| `GV-xxxx-xxxx` · `HS-xxxx-xxxx` | mã người dùng sinh tự động, tám ký tự sau tiền tố vai (TẠM) | PO-61, DQ-16 |
+| `RC-xxxx-xxxx-xxxx` | mã khôi phục của giáo viên, hiện một lần lúc đăng ký (đã chốt PO-66) | PO-61, DQ-16 |
+| `GV-xxxx-xxxx` · `HS-xxxx-xxxx` | mã người dùng sinh tự động, tám ký tự sau tiền tố vai (đã chốt PO-66) | PO-61, DQ-16 |
 
 ### Dữ liệu mẫu chặng 2 (`FX-nn`)
 
@@ -44,7 +44,7 @@ Phiên bản: v0.2 · 2026-11-26
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
 | FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
-| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
+| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (đã chốt PO-66, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
 | FX-12 | Đề phẳng PL-03 | Hình chữ nhật ABCD có AB = 6, AD = 8; tính AC. Đáp số 10 |
@@ -56,18 +56,18 @@ Phiên bản: v0.2 · 2026-11-26
 
 - **Story:** Là giáo viên hoặc học sinh, tôi muốn tự đăng ký chỉ bằng tên hiển thị và vai, để dùng ứng dụng mà không phải đưa email, số điện thoại hay ngày sinh · Loại UI · Mức P0 · Khung LOGIN
 - **Nguồn:** PO-61, PO-62; DQ-15, DQ-16; BR-S2-01
-- **Góc nhìn người vận hành:** học sinh ngồi trước iPad ở đầu buổi, giáo viên ngồi máy tính ở nhà. Ca đáng kể: quên chép mã sau khi đăng ký; hai bạn cùng tên "An"; gõ tên có khoảng trắng thừa; bấm Đăng ký liên tiếp. Mã khôi phục chỉ có giáo viên (DQ-17).
-- **Phụ thuộc:** PO-63 (giới hạn tần suất tạo tài khoản); nội dung thông báo riêng tư bản 1.0 thuộc S3-E5 (xem QA-S2E1-07)
+- **Góc nhìn người vận hành:** học sinh ngồi trước iPad ở đầu buổi, giáo viên ngồi máy tính ở nhà. Ca đáng kể: quên chép mã sau khi đăng ký; hai bạn cùng tên "An"; gõ tên có khoảng trắng thừa; bấm Đăng ký liên tiếp. Mã khôi phục có cho cả giáo viên và học sinh, kể cả học sinh Tự học hoặc Chờ duyệt (PO-66 G3).
+- **Phụ thuộc:** PO-63 (giới hạn tần suất tạo tài khoản); văn bản thông báo riêng tư bản 1.0 lấy từ US-S3E5-02 (S3-E5): tick "đã đọc" ở S2-E1 hiện đúng văn bản đó và lưu cờ (PO-66 G5, QA-S2E1-07); nút "Xóa tài khoản" và chính sách lưu/xóa ở US-S3E5-05 (QA-S2E1-09)
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S2E1-01 | Đăng ký chỉ thu ba trường: tên hiển thị, vai (Giáo viên / Học sinh), mật khẩu; cộng cờ "đã đọc thông báo riêng tư" kèm số phiên bản văn bản. Không thu email, số điện thoại, ngày sinh, trường, ảnh | PO-61, PO-64, DQ-15 |
 | BR-S2E1-02 | Tên hiển thị từ 1 đến 60 ký tự sau khi bỏ khoảng trắng đầu và cuối; trùng tên được phép, mã người dùng phân biệt | MVP (BR-GEO-102), DQ-25 |
-| BR-S2E1-03 | Mật khẩu từ 8 đến 64 ký tự, người dùng tự đặt (TẠM, QA-S2E1-02) | PO-61 |
-| BR-S2E1-04 | Mã người dùng duy nhất toàn hệ thống, dạng `GV-` hoặc `HS-` cộng 8 ký tự chữ hoa và số, bỏ ký tự dễ nhầm O, 0, I, 1 (TẠM, DQ-16) | PO-61, DQ-16 |
-| BR-S2E1-05 | Mã khôi phục `RC-xxxx-xxxx-xxxx` chỉ sinh cho giáo viên, hiện đúng một lần, buộc tick "đã lưu" mới đi tiếp; học sinh không có mã khôi phục | PO-61, DQ-16, DQ-17 |
-| BR-S2E1-06 | Tối đa 5 lần đăng ký mỗi giờ mỗi địa chỉ mạng, quá thì RATE_LIMITED; bộ đếm theo địa chỉ mạng chỉ giữ tạm tối đa 1 giờ, không lưu thành bảng (BR-S3E5-37) (TẠM, QA-S2E1-03) | PO-63 |
-| BR-S2E1-16 | Tên hiển thị không được trông như email hoặc số điện thoại; luật chi tiết ở BR-S3E5-35 (US-S3E5-03) và phải chạy cùng đợt với đăng ký của chặng 2 (TẠM, RV_s23 M-06) | PO-61; BR-S3E5-35 |
+| BR-S2E1-03 | Mật khẩu từ 8 đến 64 ký tự, người dùng tự đặt (đã chốt PO-66, QA-S2E1-02) | PO-61 |
+| BR-S2E1-04 | Mã người dùng duy nhất toàn hệ thống, dạng `GV-` hoặc `HS-` cộng 8 ký tự chữ hoa và số, bỏ ký tự dễ nhầm O, 0, I, 1 (đã chốt PO-66, DQ-16) | PO-61, DQ-16 |
+| BR-S2E1-05 | Mã khôi phục `RC-xxxx-xxxx-xxxx` sinh cho mọi tài khoản mới (giáo viên và học sinh), hiện đúng một lần, buộc tick "đã lưu" mới đi tiếp | PO-61, DQ-16, DQ-17; PO-66 (G3) |
+| BR-S2E1-06 | Tối đa 5 lần đăng ký mỗi giờ mỗi địa chỉ mạng, quá thì RATE_LIMITED; bộ đếm theo địa chỉ mạng chỉ giữ tạm tối đa 1 giờ, không lưu thành bảng (BR-S3E5-37) (đã chốt PO-66, QA-S2E1-03) | PO-63 |
+| BR-S2E1-16 | Tên hiển thị không được trông như email hoặc số điện thoại; luật chi tiết ở BR-S3E5-35 (US-S3E5-03) và phải chạy cùng đợt với đăng ký của chặng 2 (đã chốt PO-66, RV_s23 M-06) | PO-61; BR-S3E5-35 |
 
 ### Tiêu chí chấp nhận
 
@@ -76,10 +76,10 @@ Phiên bản: v0.2 · 2026-11-26
 - When: Chọn vai "Giáo viên"; gõ tên "Cô Trang", mật khẩu `Trang@2026x`; tick "đã đọc thông báo riêng tư (bản 1.0)"; bấm "Đăng ký"
 - Then: Màn mã hiện mã người dùng dạng `GV-xxxx-xxxx` (8 ký tự hợp lệ); hiện mã khôi phục dạng `RC-xxxx-xxxx-xxxx`; có nút "Sao chép" và "In / lưu ảnh"; có dòng cảnh báo mất cả mật khẩu lẫn mã khôi phục thì không lấy lại được
 
-**US-S2E1-01-SC2 — Học sinh đăng ký chỉ nhận mã người dùng** · Nguồn: PO-61; DQ-17
+**US-S2E1-01-SC2 — Học sinh đăng ký nhận mã người dùng và mã khôi phục** · Nguồn: PO-61; PO-66 (G3)
 - Given: Màn "Đăng ký" ở iPad; chưa có tài khoản tên "An"
 - When: Chọn vai "Học sinh"; gõ tên "An", mật khẩu `AnHoc#2026`; tick đã đọc thông báo; bấm "Đăng ký"
-- Then: Màn mã hiện mã dạng `HS-xxxx-xxxx`; không hiện mã khôi phục; có dòng "Quên mật khẩu thì nhờ giáo viên của lớp đặt lại"
+- Then: Màn mã hiện mã dạng `HS-xxxx-xxxx` và mã khôi phục dạng `RC-xxxx-xxxx-xxxx`; có dòng "Quên mật khẩu thì dùng mã khôi phục này; nếu đã vào lớp, thầy cô cũng đặt lại được"
 
 **US-S2E1-01-SC3 — Nút Tiếp tục chỉ mở khi đã tick "Tôi đã lưu mã"** · Nguồn: DQ-16
 - Given: Màn mã đang hiện (giáo viên)
@@ -161,7 +161,7 @@ Phiên bản: v0.2 · 2026-11-26
 - When: Bấm "Đăng ký" hai lần trong 1 giây
 - Then: Chỉ một tài khoản được tạo; màn mã hiện một lần
 
-- **Mở và quyết định đang dùng:** QA-S2E1-02, QA-S2E1-03, QA-S2E1-07 (mặc định TẠM đang dùng)
+- **Mở và quyết định đang dùng:** QA-S2E1-02, QA-S2E1-03, QA-S2E1-07 (mặc định đang dùng, đã chốt PO-66)
 - **DoR:** ready for R3, mức P0.
 
 ## US-S2E1-02 — Đăng nhập bằng mã và mật khẩu; khóa 10 lần sai trong 15 phút theo tài khoản
@@ -172,7 +172,7 @@ Phiên bản: v0.2 · 2026-11-26
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E1-07 | Đăng nhập chỉ có hai ô: mã người dùng và mật khẩu; mã không phân biệt hoa thường và được cắt khoảng trắng đầu cuối, mật khẩu có phân biệt hoa thường (TẠM, QA-S2E1-08) | PO-61, DQ-18 |
+| BR-S2E1-07 | Đăng nhập chỉ có hai ô: mã người dùng và mật khẩu; mã không phân biệt hoa thường và được cắt khoảng trắng đầu cuối, mật khẩu có phân biệt hoa thường (đã chốt PO-66, QA-S2E1-08) | PO-61, DQ-18 |
 | BR-S2E1-08 | Mọi lỗi đăng nhập hiện cùng một câu "Mã hoặc mật khẩu chưa đúng", không nói sai ô nào và không lộ mã có tồn tại | DQ-18 |
 | BR-S2E1-09 | Khóa theo tài khoản: 10 lần sai liên tiếp thì khóa 15 phút tính từ lần sai thứ 10; đăng nhập đúng trước đó đưa bộ đếm về 0; khóa của tài khoản này không ảnh hưởng tài khoản khác cùng địa chỉ mạng | PO-53, BR-S2-01 |
 
@@ -241,17 +241,17 @@ Phiên bản: v0.2 · 2026-11-26
 - **Mở và quyết định đang dùng:** QA-S2E1-08 (mã không phân biệt hoa thường)
 - **DoR:** ready for R3, mức P0.
 
-## US-S2E1-03 — Giáo viên tự khôi phục mật khẩu bằng mã khôi phục (TẠM)
+## US-S2E1-03 — Giáo viên và học sinh tự khôi phục mật khẩu bằng mã khôi phục
 
-- **Story:** Là giáo viên quên mật khẩu, tôi muốn tự đặt lại bằng mã khôi phục đã lưu, để không phải nhờ ai · Loại UI · Mức P0 · Khung LOGIN
-- **Nguồn:** PO-61 (TẠM · vừa); DQ-17
-- **Góc nhìn người vận hành:** giáo viên quên mật khẩu sau kỳ nghỉ hè nhưng vẫn giữ tờ in mã khôi phục. Ca đáng kể: mất cả hai thì không có đường lấy lại, đã nói rõ lúc đăng ký (BRD delta mục 2 dòng 6); học sinh dùng nhầm đường này.
+- **Story:** Là giáo viên hoặc học sinh quên mật khẩu, tôi muốn tự đặt lại bằng mã khôi phục đã lưu, để không phải nhờ ai (học sinh Tự học hoặc Chờ duyệt không có giáo viên nào để nhờ) · Loại UI · Mức P0 · Khung LOGIN
+- **Nguồn:** PO-61; DQ-17; PO-66 (G3: mã khôi phục cho cả học sinh)
+- **Góc nhìn người vận hành:** giáo viên quên mật khẩu sau kỳ nghỉ hè nhưng vẫn giữ tờ in mã khôi phục. Ca đáng kể: mất cả hai thì không có đường lấy lại, đã nói rõ lúc đăng ký (BRD delta mục 2 dòng 6); học sinh Tự học quên mật khẩu (trước đây chỉ có đường tạo tài khoản mới và mất bài làm).
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E1-10 | Khôi phục cần mã người dùng giáo viên, mã khôi phục và mật khẩu mới (8 đến 64 ký tự); thành công thì mã khôi phục cũ hết hiệu lực và hiện mã khôi phục mới một lần (TẠM, QA-S2E1-01) | PO-61 |
+| BR-S2E1-10 | Khôi phục cần mã người dùng (`GV-` hoặc `HS-`), mã khôi phục và mật khẩu mới (8 đến 64 ký tự); thành công thì mã khôi phục cũ hết hiệu lực và hiện mã khôi phục mới một lần (đã chốt PO-66, QA-S2E1-01) | PO-61 |
 | BR-S2E1-11 | Sai mã khôi phục tính vào một bộ đếm riêng: 10 lần sai trong 15 phút khóa đường khôi phục của tài khoản đó 15 phút | PO-53, BR-S2-01 |
-| BR-S2E1-12 | Học sinh không có đường khôi phục này; mã `HS-` dùng ở đây nhận cùng câu lỗi chung, không lộ vai | PO-61, DQ-17 |
+| BR-S2E1-12 | Học sinh ở mọi trạng thái lớp (Tự học, Chờ duyệt, Đang học) khôi phục như giáo viên; mã khôi phục của học sinh chỉ dùng được với đúng mã `HS-` của em; đặt lại bởi giáo viên của lớp (US-S3E1-04) vẫn là đường thứ hai cho em đã vào lớp | PO-61, DQ-17; PO-66 (G3) |
 
 ### Tiêu chí chấp nhận
 
@@ -275,10 +275,20 @@ Phiên bản: v0.2 · 2026-11-26
 - When: Nhập sai mã khôi phục 9 lần; nhập đúng ở lần 10 (nhánh A); nhánh B: sai 10 lần rồi nhập mã đúng ở lần 11
 - Then: Nhánh A: lần 10 thành công; nhánh B: sau lần sai thứ 10 bị khóa 15 phút, lần 11 đúng vẫn bị từ chối (RATE_LIMITED); đường đăng nhập bằng mật khẩu cũ vẫn dùng được
 
-**US-S2E1-03-FC2 — Mã học sinh dùng đường khôi phục nhận câu chung** · Nguồn: BR-S2E1-12; DQ-17
-- Given: Học sinh An (FX-02)
-- When: Nhập mã `HS-3F8A-2L6P` và một chuỗi bất kỳ làm mã khôi phục
-- Then: Hiện cùng câu "Mã người dùng hoặc mã khôi phục chưa đúng"; không nói "học sinh không có mã khôi phục"
+**US-S2E1-03-FC2 — Học sinh Tự học khôi phục được bằng mã khôi phục của mình** · Nguồn: BR-S2E1-12; PO-66 (G3)
+- Given: Học sinh An (FX-02) chưa vào lớp nào (Tự học), đã lưu mã khôi phục `RC-4F7H-2K9M-6Q3V`
+- When: Nhập mã `HS-3F8A-2L6P`, mã khôi phục đúng và mật khẩu mới `AnMoi#2027`; bấm "Đặt lại"; đăng nhập bằng mật khẩu mới
+- Then: Đặt lại thành công, hiện mã khôi phục mới một lần; đăng nhập được và thấy lịch sử Tự học cũ nguyên vẹn (không mất bài làm)
+
+**US-S2E1-03-SC4 — Học sinh Chờ duyệt khôi phục được mật khẩu** · Nguồn: BR-S2E1-12; PO-66 (G3)
+- Given: Học sinh Bình (FX-03) đang Chờ duyệt vào lớp 11A1, giáo viên chưa duyệt, có mã khôi phục hợp lệ
+- When: Bình khôi phục bằng mã `HS-5B7C-8R2T` và mã khôi phục đúng
+- Then: Khôi phục thành công; trạng thái Chờ duyệt giữ nguyên; Bình không cần nhờ giáo viên và không phải tạo tài khoản mới
+
+**US-S2E1-03-FC4 — Mã khôi phục của người khác không dùng được cho mã HS khác** · Nguồn: BR-S2E1-11; BR-S2E1-12; PO-66 (G3)
+- Given: Học sinh An và Bình mỗi em có mã khôi phục riêng
+- When: Nhập mã `HS-3F8A-2L6P` kèm mã khôi phục của Bình
+- Then: Hiện "Mã người dùng hoặc mã khôi phục chưa đúng"; mật khẩu của An không đổi; lần sai tính vào bộ đếm khôi phục của An (BR-S2E1-11)
 
 **US-S2E1-03-BV2 — Mật khẩu mới 7 ký tự bị chặn, 8 ký tự nhận** · Nguồn: BR-S2E1-10
 - Given: Cô Trang, mã khôi phục hợp lệ
@@ -308,7 +318,7 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|
 | BR-S2E1-13 | Mỗi học sinh của lớp MVP (cặp tên và lớp) thành một tài khoản có mã `HS-`; "Giáo viên mẫu" thành một tài khoản có mã `GV-`; lớp, tiến độ và bài làm giữ nguyên | PO-61 |
 | BR-S2E1-14 | Lệnh chuyển chạy lại được: chạy lần hai không tạo thêm tài khoản (cùng cặp tên và lớp đã chuyển thì bỏ qua) | PO-61 |
-| BR-S2E1-15 | Tài khoản chuyển mang mật khẩu tạm và cờ "phải đặt mật khẩu mới ở lần đăng nhập đầu" (TẠM, QA-S2E1-05) | PO-61 |
+| BR-S2E1-15 | Tài khoản chuyển mang mật khẩu tạm và cờ "phải đặt mật khẩu mới ở lần đăng nhập đầu" (đã chốt PO-66, QA-S2E1-05) | PO-61 |
 
 - **Dữ liệu:** dữ liệu mẫu MVP: lớp 11A1 có 5 học sinh trong đó An có tiến độ 2/3 trên BG-1; một học sinh có tên rỗng cố ý (dòng lỗi) trong bộ thử
 
@@ -349,7 +359,7 @@ Phiên bản: v0.2 · 2026-11-26
 
 ## Kiểm phủ
 
-- Story trong epic: 4; tiêu chí: 44. Mọi story của epic trong `story-map-s23.md` đều có mặt, không story thừa.
+- Story trong epic: 4; tiêu chí: 46. Mọi story của epic trong `story-map-s23.md` đều có mặt, không story thừa.
 - Câu hỏi mở và đề xuất đổi story map: `questions.md` cùng thư mục (không sửa story map, R2 đã khóa).
 
 ## Lịch sử
@@ -358,3 +368,4 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 4 story, 44 tiêu chí, ready for R3 | runner-T-261126-12 (BA) |
 | v0.2 | 2026-11-26 | Sửa theo RV_s23: BR-S2E1-06 nêu cách giữ bộ đếm IP; thêm BR-S2E1-16 trỏ luật tên giống email hoặc số điện thoại; đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
+| v0.3 | 2026-11-26 | G3: mã khôi phục cho học sinh (BR-S2E1-05, -10, -12; SC2, FC2 đổi; thêm SC4, FC4); tick trỏ văn bản S3-E5 và xóa tài khoản trỏ US-S3E5-05 (G5); bỏ nhãn giả định chưa chốt (PO-66) | runner-T-261126-37 (BA/QC) |

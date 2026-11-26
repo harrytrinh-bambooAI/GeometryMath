@@ -1,4 +1,4 @@
-Phiên bản: v0.2 · 2026-11-26
+Phiên bản: v0.3 · 2026-11-26
 # S3-E2 — test case (Bộ bài, lịch mở lời giải, Bài của em theo bộ)
 
 > Chủ sở hữu: QC. Lập từ `stories_ac.md` cùng thư mục (mỗi tiêu chí có ít nhất một case) và `test_design.md`. **Trạng thái: ready for R3**; mức epic **P0**. Id ổn định; tiêu chí bị gạch bỏ thì case giữ id với N/A. AI là giả lập (D-GEO-047). Kỳ vọng bám Given / When / Then của AC, giá trị cụ thể lấy từ dữ liệu mẫu chung.
@@ -11,13 +11,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `BR-S3En-nn` | quy tắc nghiệp vụ của story (nguồn dẫn kèm) | tệp này |
 | `TC-S3En-nn` | test case của epic S3-En | cột No của `test_cases.md` |
 | `F-S3-nnn` | hàng dữ liệu mẫu chung của chặng 3 | mục "Dữ liệu mẫu" của tệp này |
-| `QA-S3En-nn` | câu hỏi mở của epic, kèm mặc định đang dùng (TẠM) | `questions.md` cùng thư mục |
+| `QA-S3En-nn` | câu hỏi mở của epic, kèm mặc định đang dùng (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `PO-nn` | dòng của sổ quyết định gốc: PO-53, PO-61…65 | `PO-DECISIONS.md` |
 | `DQ-nn` | câu hỏi và mặc định của thiết kế chặng 2–3 | `Design/s23/DQ.md` |
 | `M-S3-nn` | chỉ số chặng 3 (M-S3-01…06) | `work/s23/brd-delta-s23.md` §1 |
 | `C3-nn` | mã màn hình chặng 3 | `STAGES-AFTER-MVP.md` Ch3 §6; ảnh ở `Design/s23/c3-*.png` |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (ví dụ D-GEO-047 AI giả lập, D-GEO-185 khóa theo tài khoản) | `work/03_decisions.md` |
-| `GV-…` · `HS-…` · `HK-…` · `RC-…` | mã người dùng giáo viên · học sinh · mã lớp · mã khôi phục (định dạng TẠM, DQ-16, DQ-23) | `Design/s23/DQ.md` |
+| `GV-…` · `HS-…` · `HK-…` · `RC-…` | mã người dùng giáo viên · học sinh · mã lớp · mã khôi phục (định dạng đã chốt PO-66, DQ-16, DQ-23) | `Design/s23/DQ.md` |
 | `release_at` · `due_at` | giờ mở lời giải · hạn làm (chỉ là nhãn, không khóa bài) | `STAGES-AFTER-MVP.md` Ch3 §7, §8 |
 | Chưa đặt giờ · Sắp mở · Đã mở | ba trạng thái giờ mở: chưa có `release_at` (khóa) · giờ máy chủ < `release_at` (khóa) · giờ máy chủ ≥ `release_at` (được xem) | MVP, M-GEO-13 |
 | Chờ duyệt · Đang học · Đã rời · Bị từ chối | trạng thái `ClassMembership` (Bị từ chối là đề xuất của BA, QA-S3E1-02) | tệp này |
@@ -25,13 +25,13 @@ Phiên bản: v0.2 · 2026-11-26
 | Bài làm | một học sinh Đang học có ít nhất một tương tác (gửi đáp số, xin gợi ý hoặc hỏi) trên một đề của bộ; tính theo số học sinh khác nhau | US-S3E3-03, QA-S3E3-02 |
 | T0 · t | giờ máy chủ lúc bắt đầu ca kiểm · giờ máy chủ tại thời điểm xét | mọi mốc giờ là tương đối |
 | `CL-FN-nn` · `CL-UI-nn` · `CL-X-nn` | nhóm kiểm tra chức năng · giao diện và thiết bị · xuyên suốt (ma trận quyền, trường dữ liệu, tải) | `test_design.md` cùng thư mục |
-| PROVISIONAL · ENG · X | kỳ vọng theo giả định chưa xác nhận (kèm mã QA-) · case cần công cụ kỹ thuật · case xuyên suốt | cột Remark |
+| PO-66 · ENG · X | kỳ vọng theo giả định đã chốt PO-66 (kèm mã QA-) · case cần công cụ kỹ thuật · case xuyên suốt | cột Remark |
 | `MSG-S3-nn` | thông điệp hiện cho người dùng của chặng 3, câu chữ ở bảng "Thông điệp" của tệp này | tệp này |
 
 - Mỗi dòng là một case. Chuẩn bị theo **Pre-condition**, dùng **Test data**, làm lần lượt các bước đánh số ở **Test step**, rồi so với **Expected output**; case đạt khi mọi gạch đầu dòng đều đúng.
 - **Loại**: chức năng · phân quyền · dữ liệu trả về (soát thân phản hồi, không chỉ giao diện) · phi chức năng · thiết bị.
 - **Tự động hóa** (PO-50): `E2E-UI` Playwright theo bước trên màn · `E2E-API` gọi HTTP thẳng, soát `code` và thân phản hồi · `IT` kiểm thử tích hợp hoặc đơn vị có CSDL thử, công cụ soát schema · `Manual` có lý do (thiết bị thật).
-- **Status** của vòng thực thi chỉ dùng: Pass · Fail · Blocked (+ cần gì) · UT (+ lý do) · Not run. Chưa chạy: Not run. Kỳ vọng PROVISIONAL mà màn chỉ khác đúng điểm đó thì đánh Blocked kèm mã QA-, không đánh Fail.
+- **Status** của vòng thực thi chỉ dùng: Pass · Fail · Blocked (+ cần gì) · UT (+ lý do) · Not run. Chưa chạy: Not run. Kỳ vọng ghi PO-66 (QA-) là ngưỡng đã chốt, chỉnh sau L6 (G12); màn chỉ khác đúng điểm đó thì đánh Blocked kèm mã QA-, không đánh Fail.
 - Thực tế khác kỳ vọng thì ghi vào vòng thực thi, không sửa ô Expected. Mọi case dùng dữ liệu mẫu chung dưới đây; khôi phục dữ liệu sau case nếu Remark có ghi "khôi phục".
 
 ### Dữ liệu mẫu chung của chặng 3 (trùng `stories_ac.md`)
@@ -64,13 +64,14 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S3E2-04 | Giao bộ: học sinh Đang học thấy, em Chờ duyệt không thấy | High | Normal (Success case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ nháp "Bộ bài tuần 16" đã chọn lớp 11A1 và hạn làm (F-S3-052)<br/>• 8 em Đang học, 3 em Chờ duyệt (F-S3-010) | • Hàng dữ liệu: F-S3-010, F-S3-030…032, F-S3-052 | 1. bấm "Giao"<br/>2. xác nhận | • bộ chuyển Đã giao<br/>• 8 em Đang học thấy "Bộ bài tuần 16" ở Bài của em<br/>• 3 em Chờ duyệt (F-S3-030…032) không thấy<br/>• tổng quan giáo viên thêm một dòng bài đang giao | US-S3E2-01 · SC4; CL-FN-01 |
 | TC-S3E2-05 | Quá hạn chỉ là nhãn, em vẫn làm được | High | Normal (Success case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Học sinh Bình An trên iPad | • bộ tuần 15 có hạn làm 04/12/2026 20:00 và giờ máy chủ là 04/12/2026 20:01 (F-S3-050) | • Hàng dữ liệu: F-S3-050 | 1. Bình An mở Đề 1 và gửi đáp số | • bài hiện chip MSG-S3-28 "Quá hạn"<br/>• đáp số được nhận và tính vào tiến độ như bình thường<br/>• không có chức năng nào khóa bài vì quá hạn | US-S3E2-01 · SC5; CL-FN-09 |
 | TC-S3E2-06 | Bộ đúng 20 đề được nhận | Medium | Normal (Success case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • cô Lan có 20 đề khác nhau để chọn | • Giá trị nhập: 20 đề | 1. tạo bộ gồm đúng 20 đề<br/>2. bấm "Giao" | • bộ được giao<br/>• học sinh thấy 20 đề đúng thứ tự | US-S3E2-01 · SC6; CL-FN-02 |
+| TC-S3E2-38 | Bài luyện giao ở chặng 2 hiện như một bộ bài ở chặng 3 | High | Normal (Success case) | chức năng | tích hợp API | E2E-API | Giáo viên chủ lớp 11A1 | • bài luyện mẫu (5 câu) đã giao cho lớp mẫu 11A1 ở chặng 2; An đã làm câu 1 đúng | • bài luyện mẫu từ S2-E8 | 1. mở "Bài đang giao" ở chặng 3 | • bộ bài luyện mẫu hiện như bộ Đã giao với 5 đề<br/>• kết quả của An còn nguyên<br/>• không có bảng bài luyện thứ hai | US-S3E2-01 · SC7; PO-66; CL-FN-01 |
 | TC-S3E2-07 | Bộ không có đề không giao được | Medium | Abnormal (Fail case/Edge case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ nháp chưa có đề nào, đã chọn lớp 11A1 | • Không có dữ liệu nhập riêng | 1. bấm "Giao" | • hiện MSG-S3-23<br/>• máy chủ trả VALIDATION_FAILED nếu gọi thẳng<br/>• bộ vẫn Nháp | US-S3E2-01 · FC1; CL-FN-02 |
-| TC-S3E2-08 | Bộ 21 đề bị chặn | Medium | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • cô Lan có 21 đề khác nhau để chọn | • Giá trị nhập: đề thứ 21 | 1. thêm đề thứ 21 vào bộ đã có 20 đề | • hiện MSG-S3-23<br/>• VALIDATION_FAILED nếu gọi thẳng<br/>• bộ vẫn 20 đề | US-S3E2-01 · FC2; CL-FN-02; PROVISIONAL QA-S3E2-01 |
+| TC-S3E2-08 | Bộ 21 đề bị chặn | Medium | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • cô Lan có 21 đề khác nhau để chọn | • Giá trị nhập: đề thứ 21 | 1. thêm đề thứ 21 vào bộ đã có 20 đề | • hiện MSG-S3-23<br/>• VALIDATION_FAILED nếu gọi thẳng<br/>• bộ vẫn 20 đề | US-S3E2-01 · FC2; CL-FN-02; PO-66 (QA-S3E2-01) |
 | TC-S3E2-09 | Thêm trùng một đề vào bộ | Medium | Abnormal (Fail case/Edge case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ nháp "Bộ bài tuần 16" đã có Đề 1 SC-đáy (F-S3-052) | • Hàng dữ liệu: F-S3-052 | 1. thêm lại Đề 1 SC-đáy | • hiện MSG-S3-24<br/>• bộ vẫn một lần Đề 1 | US-S3E2-01 · FC3; CL-FN-02 |
 | TC-S3E2-10 | Chưa chọn lớp thì nút Giao chờ chọn | Medium | Abnormal (Fail case/Edge case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ nháp có 4 đề, chưa chọn lớp | • Không có dữ liệu nhập riêng | 1. nhìn nút Giao<br/>2. gọi thẳng yêu cầu giao | • nút "Giao" không bấm được và có chú thích MSG-S3-25<br/>• yêu cầu gọi thẳng trả VALIDATION_FAILED<br/>• bộ vẫn Nháp | US-S3E2-01 · FC4; CL-FN-03 |
 | TC-S3E2-11 | Chọn lớp của giáo viên khác | High | Abnormal (Fail case/Edge case) | phân quyền | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • cô Lan tạo bộ nháp có 4 đề | • Hàng dữ liệu: F-S3-012 | 1. gọi thẳng yêu cầu tạo bộ với lớp 10B của thầy Khôi (F-S3-012) | • máy chủ trả NOT_FOUND<br/>• không tạo bộ<br/>• thân lỗi không chứa tên lớp 10B | US-S3E2-01 · FC5; CL-FN-06 |
 | TC-S3E2-12 | Chọn đề Của tôi của giáo viên khác | High | Abnormal (Fail case/Edge case) | phân quyền | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • thầy Khôi có một đề "Của tôi" riêng chưa vào Kho chung (F-S3-002) | • Hàng dữ liệu: F-S3-002 | 1. cô Lan gọi thẳng yêu cầu thêm đề đó vào bộ của cô | • máy chủ trả NOT_FOUND<br/>• bộ không đổi | US-S3E2-01 · FC6; CL-FN-06 |
-| TC-S3E2-13 | Hạn làm trong quá khứ khi giao | Low | Abnormal (Fail case/Edge case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ nháp có hạn làm đặt ở quá khứ so với giờ máy chủ | • Không có dữ liệu nhập riêng | 1. bấm "Giao" | • hiện cảnh báo "hạn làm đã qua" và cho tiếp tục nếu giáo viên xác nhận<br/>• sau khi giao học sinh thấy chip "Quá hạn" ngay | US-S3E2-01 · FC7; CL-FN-09; PROVISIONAL QA-S3E2-02 |
+| TC-S3E2-13 | Hạn làm trong quá khứ khi giao | Low | Abnormal (Fail case/Edge case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ nháp có hạn làm đặt ở quá khứ so với giờ máy chủ | • Không có dữ liệu nhập riêng | 1. bấm "Giao" | • hiện cảnh báo "hạn làm đã qua" và cho tiếp tục nếu giáo viên xác nhận<br/>• sau khi giao học sinh thấy chip "Quá hạn" ngay | US-S3E2-01 · FC7; CL-FN-09; PO-66 (QA-S3E2-02) |
 | TC-S3E2-14 | Bấm Giao hai lần chỉ giao một lần | High | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ nháp "Bộ bài tuần 16" sẵn sàng giao (F-S3-052) | • Hàng dữ liệu: F-S3-052 | 1. gửi hai yêu cầu Giao liên tiếp cùng khóa yêu cầu | • chỉ có một bộ Đã giao<br/>• mỗi học sinh Đang học nhận đúng một Notification "bài mới"<br/>• tổng quan giáo viên có một dòng | US-S3E2-01 · FC8; CL-FN-10 |
 
 ### US-S3E2-02 — Lịch mở lời giải theo bộ hoặc từng bài; cảnh báo giờ mở sớm hơn hạn
@@ -83,7 +84,7 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S3E2-18 | Bộ chưa đặt giờ thì lời giải khóa | High | Normal (Success case) | chức năng | tích hợp API | E2E-API | Học sinh Bình An (11A1, Đang học) | • bộ "Bộ bài tuần 16" đã giao nhưng chưa đặt giờ mở (F-S3-052) | • Hàng dữ liệu: F-S3-052 | 1. Bình An lấy chi tiết lời giải của từng đề | • trạng thái Chưa đặt giờ<br/>• không thân phản hồi nào chứa đáp số, bước giải hay gợi ý giải<br/>• màn hiện "Chưa có giờ mở lời giải" | US-S3E2-02 · SC4; CL-FN-07 |
 | TC-S3E2-19 | Bộ câu thử moi đáp số không lấy được lời giải đang khóa | High | Normal (Success case) | dữ liệu trả về | tích hợp CSDL / đơn vị | IT | Kỹ sư kiểm thử với quyền đọc cơ sở dữ liệu thử | • bộ tuần 15 ở trạng thái Sắp mở (giờ máy chủ trước 06/12/2026 08:00) với đáp số mẫu của Đề 1 là giá trị đã biết (F-S3-050) | • Hàng dữ liệu: F-S3-050 | 1. chạy bộ câu thử moi đáp số của học sinh qua mọi kênh: danh sách bộ, chi tiết đề, gợi ý mức 1, tìm kiếm, thông báo, bộ nhớ đệm trình duyệt, phản hồi lỗi, đổi tiêu đề ngôn ngữ, gọi lại với `If-None-Match` | • không phản hồi nào chứa đáp số mẫu hay bước giải ở bất kỳ dạng viết tương đương nào<br/>• không có phản hồi nào bị lưu bộ nhớ đệm dùng chung | US-S3E2-02 · SC5; CL-X-03 · ENG |
 | TC-S3E2-20 | Giờ mở sớm hơn hạn làm thì cảnh báo | High | Abnormal (Fail case/Edge case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ nháp có hạn làm 11/12/2026 20:00 (F-S3-052) | • Hàng dữ liệu: F-S3-052 | 1. đặt giờ mở "10/12/2026 08:00" cho cả bộ | • cột cài đặt hiện banner đỏ MSG-S3-21 kèm hai cách sửa "Dời giờ mở sau hạn" và "Giữ giờ mở sớm"<br/>• nút "Giao" chờ giáo viên chọn một trong hai<br/>• không tự chặn giao | US-S3E2-02 · FC1; CL-FN-09 |
-| TC-S3E2-21 | Biên cảnh báo: giờ mở bằng đúng hạn thì không cảnh báo | Medium | Abnormal (Fail case/Edge case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ nháp có hạn làm 11/12/2026 20:00 (F-S3-052) | • Hàng dữ liệu: F-S3-052 | 1. đặt giờ mở "11/12/2026 20:00" rồi đổi thành "11/12/2026 19:59" | • với 20:00 không có cảnh báo<br/>• với 19:59 hiện MSG-S3-21 | US-S3E2-02 · FC2; CL-FN-09; PROVISIONAL QA-S3E2-03 |
+| TC-S3E2-21 | Biên cảnh báo: giờ mở bằng đúng hạn thì không cảnh báo | Medium | Abnormal (Fail case/Edge case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ nháp có hạn làm 11/12/2026 20:00 (F-S3-052) | • Hàng dữ liệu: F-S3-052 | 1. đặt giờ mở "11/12/2026 20:00" rồi đổi thành "11/12/2026 19:59" | • với 20:00 không có cảnh báo<br/>• với 19:59 hiện MSG-S3-21 | US-S3E2-02 · FC2; CL-FN-09; PO-66 (QA-S3E2-03) |
 | TC-S3E2-22 | Giáo viên chọn "Giữ giờ mở sớm" thì giao được và có ghi nhận | Medium | Abnormal (Fail case/Edge case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ nháp đang có banner MSG-S3-21 (F-S3-052) | • Hàng dữ liệu: F-S3-052 | 1. bấm "Giữ giờ mở sớm"<br/>2. bấm "Giao" | • bộ được giao với giờ mở đã đặt<br/>• màn Bài của em hiện đúng giờ mở sớm đó<br/>• không có AuditEvent vì đây là lần đặt đầu của bản nháp (QA-S3E5-03) | US-S3E2-02 · FC3; CL-FN-09 |
 | TC-S3E2-23 | Học sinh đổi đồng hồ máy không mở được lời giải | High | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Học sinh Bình An (11A1, Đang học) | • bộ tuần 15 ở trạng thái Sắp mở<br/>• đồng hồ thiết bị của Bình An chỉnh sang 10/12/2026 (F-S3-050) | • Hàng dữ liệu: F-S3-050 | 1. Bình An lấy chi tiết lời giải kèm tiêu đề giờ thiết bị | • máy chủ vẫn trả Sắp mở và không có lời giải<br/>• giờ thiết bị bị bỏ qua | US-S3E2-02 · FC4; CL-FN-09 |
 | TC-S3E2-24 | Đổi giờ khi lời giải đã mở | Medium | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ tuần 15 đã mở lời giải từ 06/12/2026 08:00<br/>• giờ máy chủ là 06/12/2026 09:00 (F-S3-050) | • Hàng dữ liệu: F-S3-050 | 1. cô Lan gửi yêu cầu đổi giờ mở sang 07/12/2026 08:00 | • máy chủ trả CONFLICT kèm MSG-S3-26<br/>• giờ mở không đổi<br/>• không AuditEvent đổi giờ thành công | US-S3E2-02 · FC5; CL-FN-04 |
@@ -106,6 +107,18 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S3E2-36 | Tiến độ của bạn không lộ | High | Abnormal (Fail case/Edge case) | dữ liệu trả về | tích hợp API | E2E-API | Học sinh Bình An (11A1, Đang học) | • Bình An Đang học 11A1<br/>• các bạn đã làm nhiều đề của bộ tuần 15 (F-S3-051) | • Hàng dữ liệu: F-S3-051 | 1. Bình An gọi Bài của em và chi tiết bộ tuần 15, soát toàn bộ thân phản hồi | • thân phản hồi chỉ có tiến độ của Bình An<br/>• không có tên, mã người dùng, số lượng hay trạng thái của bạn nào<br/>• không có tổng hay xếp hạng của lớp | US-S3E2-03 · FC3; CL-FN-07 |
 | TC-S3E2-37 | Bộ bài hiện đúng trên iPhone màn dọc | Medium | Abnormal (Fail case/Edge case) | thiết bị | thủ công trên thiết bị | Manual — cần thiết bị thật (cảm ứng, bàn phím ảo, màn hình thật); Playwright giả lập không thay được | Học sinh Bình An trên iPhone | • Bình An dùng iPhone trình duyệt web màn dọc 390×844 (F-S3-020) | • Hàng dữ liệu: F-S3-020 | 1. mở Bài của em | • nhóm lớp và thẻ bộ xếp một cột<br/>• chip hạn, tiến độ, giờ mở đều đọc được không cắt chữ<br/>• không có thanh cuộn ngang | US-S3E2-03 · FC4; CL-UI-01 |
 
+### US-S3E2-04 — Đóng bộ và lưu trữ bộ (vòng đời Đã đóng, Lưu trữ)
+
+| No | Tiêu đề | Priority | Type | Loại | Tầng tự động hóa | Tự động hóa | User Type/Account Permission | Pre-condition | Test data/Input data | Test step | Expected output | Remark |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TC-S3E2-39 | Giáo viên đóng bộ Đã giao, học sinh chỉ còn xem kết quả | High | Normal (Success case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan; học sinh Bình An | • bộ tuần 15 Đã giao (F-S3-050); Bình An đã làm Đề 1 | • F-S3-050 | 1. cô Lan đóng bộ, xác nhận<br/>2. Bình An mở bộ, gửi đáp số Đề 2 | • bộ Đã đóng<br/>• xem được kết quả Đề 1<br/>• gửi Đề 2 trả CONFLICT, không ghi Attempt | US-S3E2-04 · SC1; CL-FN-04 |
+| TC-S3E2-40 | Bộ Đã đóng vẫn mở lời giải khi tới giờ mở | Medium | Normal (Success case) | chức năng | tích hợp API | E2E-API | Học sinh Bình An | • bộ tuần 15 Đã đóng, giờ mở 06/12/2026 08:00 | • F-S3-050 | 1. đặt giờ máy chủ 06/12/2026 08:00<br/>2. mở Đề 2 | • lời giải hiện đúng luật giờ mở<br/>• không có nút nhập đáp số | US-S3E2-04 · SC2; CL-FN-04 |
+| TC-S3E2-41 | Lưu trữ bộ Đã đóng | Medium | Normal (Success case) | chức năng | giao diện (trình duyệt) | E2E-UI | Giáo viên Lan | • bộ tuần 15 Đã đóng | • F-S3-050 | 1. bấm "Lưu trữ bộ" | • bộ ra khỏi "Bài đang giao" và danh sách chính của học sinh<br/>• hiện ở "Bộ đã lưu trữ"<br/>• bảng lớp vẫn đọc được | US-S3E2-04 · SC3; CL-FN-04 |
+| TC-S3E2-42 | Bộ Nháp không đóng được | Medium | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan | • bộ tuần 16 Nháp (F-S3-052) | • F-S3-052 | 1. gọi đóng bộ | • CONFLICT<br/>• bộ vẫn Nháp | US-S3E2-04 · FC1; CL-FN-04 |
+| TC-S3E2-43 | Bộ Đã giao chưa đóng thì không lưu trữ được | Medium | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan | • bộ tuần 15 Đã giao | • F-S3-050 | 1. gọi lưu trữ bộ | • CONFLICT<br/>• bộ vẫn Đã giao | US-S3E2-04 · FC2; CL-FN-04 |
+| TC-S3E2-44 | Giáo viên khác không đóng được bộ của lớp mình | High | Abnormal (Fail case/Edge case) | phân quyền | tích hợp API | E2E-API | Giáo viên Khôi (F-S3-002) | • bộ tuần 15 của 11A1; thầy Khôi không có quan hệ | • F-S3-002 | 1. thầy Khôi gọi đóng bộ | • NOT_FOUND<br/>• bộ không đổi | US-S3E2-04 · FC3; CL-X-01 |
+| TC-S3E2-45 | Bấm Đóng lặp chỉ đóng một lần | Medium | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan | • bộ tuần 15 Đã giao; cùng khóa yêu cầu | • khóa yêu cầu giống nhau | 1. gửi lệnh đóng hai lần liên tiếp | • bộ Đã đóng một lần<br/>• lần hai trả cùng kết quả, không lỗi | US-S3E2-04 · FC4; CL-FN-10 |
+
 ## 4. Truy vết story → tiêu chí → case
 
 | Story | Tiêu chí | Loại | Tiêu đề | Trạng thái DoR | Case |
@@ -116,13 +129,14 @@ Phiên bản: v0.2 · 2026-11-26
 | US-S3E2-01 | US-S3E2-01-SC4 | Success | Giao bộ: học sinh Đang học thấy, em Chờ duyệt không thấy | Ready for R3 | TC-S3E2-04 |
 | US-S3E2-01 | US-S3E2-01-SC5 | Success | Quá hạn chỉ là nhãn, em vẫn làm được | Ready for R3 | TC-S3E2-05 |
 | US-S3E2-01 | US-S3E2-01-SC6 | Success | Bộ đúng 20 đề được nhận | Ready for R3 | TC-S3E2-06 |
+| US-S3E2-01 | US-S3E2-01-SC7 | Success | Bài luyện giao ở chặng 2 hiện như một bộ bài ở chặng 3 | Ready for R3 | TC-S3E2-38 |
 | US-S3E2-01 | US-S3E2-01-FC1 | Fail / biên | Bộ không có đề không giao được | Ready for R3 | TC-S3E2-07 |
-| US-S3E2-01 | US-S3E2-01-FC2 | Fail / biên | Bộ 21 đề bị chặn | Ready for R3 · PROVISIONAL QA-S3E2-01 | TC-S3E2-08 |
+| US-S3E2-01 | US-S3E2-01-FC2 | Fail / biên | Bộ 21 đề bị chặn | Ready for R3 · PO-66 (QA-S3E2-01) | TC-S3E2-08 |
 | US-S3E2-01 | US-S3E2-01-FC3 | Fail / biên | Thêm trùng một đề vào bộ | Ready for R3 | TC-S3E2-09 |
 | US-S3E2-01 | US-S3E2-01-FC4 | Fail / biên | Chưa chọn lớp thì nút Giao chờ chọn | Ready for R3 | TC-S3E2-10 |
 | US-S3E2-01 | US-S3E2-01-FC5 | Fail / biên | Chọn lớp của giáo viên khác | Ready for R3 | TC-S3E2-11 |
 | US-S3E2-01 | US-S3E2-01-FC6 | Fail / biên | Chọn đề Của tôi của giáo viên khác | Ready for R3 | TC-S3E2-12 |
-| US-S3E2-01 | US-S3E2-01-FC7 | Fail / biên | Hạn làm trong quá khứ khi giao | Ready for R3 · PROVISIONAL QA-S3E2-02 | TC-S3E2-13 |
+| US-S3E2-01 | US-S3E2-01-FC7 | Fail / biên | Hạn làm trong quá khứ khi giao | Ready for R3 · PO-66 (QA-S3E2-02) | TC-S3E2-13 |
 | US-S3E2-01 | US-S3E2-01-FC8 | Fail / biên | Bấm Giao hai lần chỉ giao một lần | Ready for R3 | TC-S3E2-14 |
 | US-S3E2-02 | US-S3E2-02-SC1 | Success | Đặt giờ mở cho cả bộ | Ready for R3 | TC-S3E2-15 |
 | US-S3E2-02 | US-S3E2-02-SC2 | Success | Giờ mở riêng của một đề ghi đè giờ của bộ | Ready for R3 | TC-S3E2-16 |
@@ -130,7 +144,7 @@ Phiên bản: v0.2 · 2026-11-26
 | US-S3E2-02 | US-S3E2-02-SC4 | Success | Bộ chưa đặt giờ thì lời giải khóa | Ready for R3 | TC-S3E2-18 |
 | US-S3E2-02 | US-S3E2-02-SC5 | Success | Bộ câu thử moi đáp số không lấy được lời giải đang khóa | Ready for R3 | TC-S3E2-19 |
 | US-S3E2-02 | US-S3E2-02-FC1 | Fail / biên | Giờ mở sớm hơn hạn làm thì cảnh báo | Ready for R3 | TC-S3E2-20 |
-| US-S3E2-02 | US-S3E2-02-FC2 | Fail / biên | Biên cảnh báo: giờ mở bằng đúng hạn thì không cảnh báo | Ready for R3 · PROVISIONAL QA-S3E2-03 | TC-S3E2-21 |
+| US-S3E2-02 | US-S3E2-02-FC2 | Fail / biên | Biên cảnh báo: giờ mở bằng đúng hạn thì không cảnh báo | Ready for R3 · PO-66 (QA-S3E2-03) | TC-S3E2-21 |
 | US-S3E2-02 | US-S3E2-02-FC3 | Fail / biên | Giáo viên chọn "Giữ giờ mở sớm" thì giao được và có ghi nhận | Ready for R3 | TC-S3E2-22 |
 | US-S3E2-02 | US-S3E2-02-FC4 | Fail / biên | Học sinh đổi đồng hồ máy không mở được lời giải | Ready for R3 | TC-S3E2-23 |
 | US-S3E2-02 | US-S3E2-02-FC5 | Fail / biên | Đổi giờ khi lời giải đã mở | Ready for R3 | TC-S3E2-24 |
@@ -147,12 +161,19 @@ Phiên bản: v0.2 · 2026-11-26
 | US-S3E2-03 | US-S3E2-03-FC2 | Fail / biên | Bộ Nháp không hiện cho học sinh | Ready for R3 | TC-S3E2-35 |
 | US-S3E2-03 | US-S3E2-03-FC3 | Fail / biên | Tiến độ của bạn không lộ | Ready for R3 | TC-S3E2-36 |
 | US-S3E2-03 | US-S3E2-03-FC4 | Fail / biên | Bộ bài hiện đúng trên iPhone màn dọc | Ready for R3 | TC-S3E2-37 |
-
+| US-S3E2-04 | US-S3E2-04-SC1 | Success | Giáo viên đóng bộ Đã giao, học sinh chỉ còn xem kết quả | Ready for R3 | TC-S3E2-39 |
+| US-S3E2-04 | US-S3E2-04-SC2 | Success | Bộ Đã đóng vẫn mở lời giải khi tới giờ mở | Ready for R3 | TC-S3E2-40 |
+| US-S3E2-04 | US-S3E2-04-SC3 | Success | Lưu trữ bộ Đã đóng | Ready for R3 | TC-S3E2-41 |
+| US-S3E2-04 | US-S3E2-04-FC1 | Fail / biên | Bộ Nháp không đóng được | Ready for R3 | TC-S3E2-42 |
+| US-S3E2-04 | US-S3E2-04-FC2 | Fail / biên | Bộ Đã giao chưa đóng thì không lưu trữ được | Ready for R3 | TC-S3E2-43 |
+| US-S3E2-04 | US-S3E2-04-FC3 | Fail / biên | Giáo viên khác không đóng được bộ của lớp mình | Ready for R3 | TC-S3E2-44 |
+| US-S3E2-04 | US-S3E2-04-FC4 | Fail / biên | Bấm Đóng lặp chỉ đóng một lần | Ready for R3 | TC-S3E2-45 |
 ## 5. Change log
 
 | No | Thay đổi | Bởi |
 |---|---|---|
 | 1 | bản đầu: 37 case cho 37 tiêu chí của S3-E2, có cột Tự động hóa cho mọi case; ready for R3 | QC |
+| 2 | thêm 8 case (45 case cho 45 tiêu chí): US-S3E2-01-SC7 (một mô hình bộ bài) và story mới US-S3E2-04, PO-66 | QC |
 
 ## Lịch sử
 
@@ -160,3 +181,4 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 37 case của S3-E2 | runner-T-261126-14 (QC) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
+| v0.3 | 2026-11-26 | G1: BR-S3E2-07 và SC7; G5: story mới US-S3E2-04 (đóng, lưu trữ bộ) gồm BR-S3E2-30…33 và 7 AC/TC; bỏ nhãn giả định chưa chốt (PO-66) | runner-T-261126-37 (BA/QC) |

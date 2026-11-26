@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # S2-E1 — thiết kế kiểm thử (Đăng ký, đăng nhập bằng mã và khôi phục (định danh tối giản PO-61))
 
 > Chủ sở hữu: QC. **Trạng thái: ready for R3** · Mức epic: **P0**. Lập từ `story-map-s23.md` và `stories_ac.md` cùng thư mục.
@@ -63,12 +63,13 @@ Manual chỉ khi cần mắt người (bố cục thiết bị, cảm giác thao
 
 ## 6. Độ phủ
 
-- Tiêu chí: 44 · Case: 44 · Tiêu chí chưa có case: 0.
+- Tiêu chí: 46 · Case: 46 · Tiêu chí chưa có case: 0.
 - Dữ liệu mẫu dùng chung `FX-nn` ở `test_cases.md`; không dùng dữ liệu thật của người dùng (PO-61: không thu dữ liệu cá nhân).
-- Quyết định và giả định đang dùng: xem `questions.md` (cột mặc định TẠM).
+- Quyết định và giả định đang dùng: xem `questions.md` (cột quyết định).
 
 ## 7. Lịch sử
 
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới | runner-T-261126-12 (QC) |
+| v0.2 | 2026-11-26 | Áp PO-66: bỏ nhãn giả định chưa chốt | runner-T-261126-37 (BA/QC) |

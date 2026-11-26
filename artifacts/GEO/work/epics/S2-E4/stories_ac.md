@@ -1,4 +1,4 @@
-Phiên bản: v0.2 · 2026-11-26
+Phiên bản: v0.3 · 2026-11-26
 # S2-E4 — Chat chỉnh nháp đề, import docx/pdf, đối chiếu trùng với kho: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run T-261126-12, BA + QC liền). Nguồn: `artifacts/GEO/work/s23/story-map-s23.md` (R2 khóa 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Chặng 2 mục 5–8 (22/11/2026), `Design/s23/DQ.md` và ảnh `Design/s23/c2-*.png` (26/11/2026), `PO-DECISIONS.md` PO-61…65 (PO-61 mới nhất, thắng mọi nguồn cũ).
@@ -12,9 +12,9 @@ Phiên bản: v0.2 · 2026-11-26
 - "T0" là giờ máy chủ lúc bắt đầu ca kiểm; mọi mốc giờ tương đối so với T0. Giờ hiển thị `HH:mm, dd/MM/yyyy` giờ Việt Nam; số thập phân hiển thị dấu phẩy.
 - Lỗi máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định theo D-GEO-143 (VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN, NOT_FOUND, CONFLICT, RATE_LIMITED kèm `Retry-After`).
 - Phản hồi chứa lời giải, gợi ý hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145). "Dữ liệu trả về" là toàn bộ nội dung máy chủ gửi xuống thiết bị, không chỉ phần giao diện vẽ ra.
-- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, TẠM, PO-65).
+- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, PO-65; chốt PO-66).
 - AI trong kiểm thử là giả lập (D-GEO-047): không có kỳ vọng về chất lượng AI thật. Giá trị trong Given / Then lấy từ bảng `FX-nn` hoặc ghi ngay trong tiêu chí.
-- AC mang chữ TẠM dựng trên giả định chưa được owner xác nhận; mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết giả định nào.
+- AC mang chữ "đã chốt PO-66" dựa trên giả định đã được owner chốt ở PO-66 (26/11/2026); mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết câu hỏi gốc.
 
 | Id / abbreviation | Meaning | Where it comes from (pointer only) |
 |---|---|---|
@@ -25,13 +25,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `DQ-nn` | câu hỏi design và mặc định đang dùng | `Design/s23/DQ.md` |
 | `C2-nn` | mã khung màn hình chặng 2 (C2-01…C2-08) | `STAGES-AFTER-MVP.md` Chặng 2 mục 6 |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (mã lỗi ổn định D-GEO-143, mock AI D-GEO-047, tiêu đề no-store D-GEO-145) | `artifacts/GEO/work/03_decisions.md` (MVP) |
-| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định TẠM | `questions.md` cùng thư mục |
+| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `TC-S2En-nnn` | test case của epic | `test_cases.md` cùng thư mục |
 | `FX-nn` | dữ liệu mẫu chặng 2 (bảng dưới) | tệp này |
 | `BG-n` | bài giao mẫu của MVP (BG-1…BG-5) | `artifacts/GEO/work/fixture.md` (MVP) |
 | `BR-GEO-nnn` | quy tắc nghiệp vụ của MVP còn hiệu lực | `artifacts/GEO/work/02_gate2_brd.md` (MVP) |
 | `MSG-GEO-nn` | thông điệp hiện cho người dùng của MVP (câu chữ nguyên văn) | `artifacts/GEO/work/05_dictionary.md` (MVP) |
-| TẠM | giả định đang dùng, chờ owner xác nhận; ghi theo mẫu `TẠM · tin cậy · nguồn` | PO-65 |
+| Đã chốt PO-66 | mặc định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); ghi theo mẫu `quyết định · tin cậy · nguồn`; ngưỡng chỉnh sau L6 (G12) | PO-65, PO-66 |
 | Nhãn hai trục | trục máy: "Đã kiểm chứng" / "Cần xem lại" (chỉ engine gắn) · trục người: "AI soạn" / "Giáo viên đã duyệt" | PO-02 |
 | `release_at` | giờ mở lời giải; máy chủ so giờ máy chủ, không tin giờ thiết bị | MVP, M-GEO-13 |
 | nháp | bản đề hoặc lời giải do AI soạn hoặc giáo viên đang sửa, chưa vào giáo trình; chỉ giáo viên bấm duyệt mới vào | PO-30, PO-46 |
@@ -44,7 +44,7 @@ Phiên bản: v0.2 · 2026-11-26
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
 | FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
-| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
+| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (đã chốt PO-66, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
 | FX-12 | Đề phẳng PL-03 | Hình chữ nhật ABCD có AB = 6, AD = 8; tính AC. Đáp số 10 |
@@ -63,10 +63,10 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|
 | BR-S2E4-01 | Giáo viên nêu định hướng bằng câu chữ; nếu định hướng chưa rõ, AI hỏi lại một câu cụ thể thay vì tự đoán | PO-46 |
 | BR-S2E4-02 | Mỗi đề xuất của AI ghi: đã đổi gì (trước và sau), dựa trên tài liệu nào, chỗ nào AI chưa chắc | PO-46 |
-| BR-S2E4-03 | Giáo viên nhận, sửa tay hoặc bác từng đề xuất; hoàn tác được tối đa 10 bước gần nhất (TẠM, QA-S2E4-02) | PO-46 |
+| BR-S2E4-03 | Giáo viên nhận, sửa tay hoặc bác từng đề xuất; hoàn tác được tối đa 10 bước gần nhất (đã chốt PO-66, QA-S2E4-02) | PO-46 |
 | BR-S2E4-04 | AI không tự lưu; chỉ khi giáo viên bấm Duyệt thì nháp vào giáo trình | PO-30, PO-46 |
 | BR-S2E4-05 | Đổi dữ kiện đề (số liệu, điều kiện) làm nhãn máy chuyển "Cần xem lại" tới khi máy kiểm lại đạt | PO-48 |
-| BR-S2E4-06 | Mỗi tin của giáo viên từ 1 đến 1000 ký tự; mỗi nháp tối đa 30 lượt chat (TẠM, QA-S2E4-02) | BR-S2-04 |
+| BR-S2E4-06 | Mỗi tin của giáo viên từ 1 đến 1000 ký tự; mỗi nháp tối đa 30 lượt chat (đã chốt PO-66, QA-S2E4-02) | BR-S2-04 |
 
 ### Tiêu chí chấp nhận
 
@@ -137,7 +137,7 @@ Phiên bản: v0.2 · 2026-11-26
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E4-07 | Nhận docx và pdf có lớp chữ, tối đa 10 MB, tối đa 50 bài mỗi tệp (TẠM, QA-S2E4-03); xlsx của PO-27 chưa nhận | PO-27, PO-47 |
+| BR-S2E4-07 | Nhận docx và pdf có lớp chữ, tối đa 10 MB, tối đa 50 bài mỗi tệp (đã chốt PO-66, QA-S2E4-03); xlsx của PO-27 chưa nhận | PO-27, PO-47 |
 | BR-S2E4-08 | Máy tách từng bài tập thành mục riêng, có ô chọn từng bài; giáo viên xem trước từng mục, chỉ bài được tick mới thành nháp; mỗi bài mang nhãn "AI soạn" và "Cần xem lại" | PO-47, PO-48 |
 | BR-S2E4-09 | Phần lý thuyết trong tệp được bỏ qua kèm dòng "Phần lý thuyết chưa hỗ trợ ở chặng này" | PO-65 Q5 |
 | BR-S2E4-10 | Tệp pdf không có lớp chữ (ảnh quét) bị từ chối kèm hướng dẫn dùng "Tải ảnh"; tệp hỏng hoặc đặt mật khẩu bị từ chối; lệnh gộp macro trong docx không chạy | BR-S2-04 |
@@ -201,7 +201,7 @@ Phiên bản: v0.2 · 2026-11-26
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E4-11 | Chuẩn hóa chữ (cắt khoảng trắng thừa, chữ thường, bỏ dấu câu cuối) rồi so; bằng nhau là "đã có trong kho"; độ giống từ 0,90 đến dưới 1,00 là "gần giống", chỉ báo và không chặn (TẠM, QA-S2E4-05) | PO-47 |
+| BR-S2E4-11 | Chuẩn hóa chữ (cắt khoảng trắng thừa, chữ thường, bỏ dấu câu cuối) rồi so; bằng nhau là "đã có trong kho"; độ giống từ 0,90 đến dưới 1,00 là "gần giống", chỉ báo và không chặn (đã chốt PO-66, QA-S2E4-05) | PO-47 |
 | BR-S2E4-12 | Phạm vi đối chiếu: ngăn "Của tôi" của chính giáo viên và "Kho chung"; không đối chiếu với "Của tôi" của người khác | BR-S2-06, PO-47 |
 | BR-S2E4-13 | Mục đã có trong kho ghi "đã có trong kho" và mặc định không tick; mục đã sửa ghi "cập nhật khi lưu"; không tạo bản trùng | PO-47 |
 
@@ -256,3 +256,4 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 3 story, 27 tiêu chí, ready for R3 | runner-T-261126-12 (BA) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
+| v0.3 | 2026-11-26 | Áp PO-66 (gate R3, T-261126-37): bỏ nhãn giả định chưa chốt, ghi "đã chốt PO-66" | runner-T-261126-37 (BA/QC) |

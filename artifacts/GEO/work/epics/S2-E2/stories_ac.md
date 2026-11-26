@@ -1,4 +1,4 @@
-Phiên bản: v0.2 · 2026-11-26
+Phiên bản: v0.3 · 2026-11-26
 # S2-E2 — Khung môn học và hình học phẳng (dựng từ ràng buộc, bộ đề chuẩn, đo bench): story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run T-261126-12, BA + QC liền). Nguồn: `artifacts/GEO/work/s23/story-map-s23.md` (R2 khóa 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Chặng 2 mục 5–8 (22/11/2026), `Design/s23/DQ.md` và ảnh `Design/s23/c2-*.png` (26/11/2026), `PO-DECISIONS.md` PO-61…65 (PO-61 mới nhất, thắng mọi nguồn cũ).
@@ -12,9 +12,9 @@ Phiên bản: v0.2 · 2026-11-26
 - "T0" là giờ máy chủ lúc bắt đầu ca kiểm; mọi mốc giờ tương đối so với T0. Giờ hiển thị `HH:mm, dd/MM/yyyy` giờ Việt Nam; số thập phân hiển thị dấu phẩy.
 - Lỗi máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định theo D-GEO-143 (VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN, NOT_FOUND, CONFLICT, RATE_LIMITED kèm `Retry-After`).
 - Phản hồi chứa lời giải, gợi ý hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145). "Dữ liệu trả về" là toàn bộ nội dung máy chủ gửi xuống thiết bị, không chỉ phần giao diện vẽ ra.
-- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, TẠM, PO-65).
+- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, PO-65; chốt PO-66).
 - AI trong kiểm thử là giả lập (D-GEO-047): không có kỳ vọng về chất lượng AI thật. Giá trị trong Given / Then lấy từ bảng `FX-nn` hoặc ghi ngay trong tiêu chí.
-- AC mang chữ TẠM dựng trên giả định chưa được owner xác nhận; mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết giả định nào.
+- AC mang chữ "đã chốt PO-66" dựa trên giả định đã được owner chốt ở PO-66 (26/11/2026); mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết câu hỏi gốc.
 
 | Id / abbreviation | Meaning | Where it comes from (pointer only) |
 |---|---|---|
@@ -25,13 +25,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `DQ-nn` | câu hỏi design và mặc định đang dùng | `Design/s23/DQ.md` |
 | `C2-nn` | mã khung màn hình chặng 2 (C2-01…C2-08) | `STAGES-AFTER-MVP.md` Chặng 2 mục 6 |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (mã lỗi ổn định D-GEO-143, mock AI D-GEO-047, tiêu đề no-store D-GEO-145) | `artifacts/GEO/work/03_decisions.md` (MVP) |
-| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định TẠM | `questions.md` cùng thư mục |
+| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `TC-S2En-nnn` | test case của epic | `test_cases.md` cùng thư mục |
 | `FX-nn` | dữ liệu mẫu chặng 2 (bảng dưới) | tệp này |
 | `BG-n` | bài giao mẫu của MVP (BG-1…BG-5) | `artifacts/GEO/work/fixture.md` (MVP) |
 | `BR-GEO-nnn` | quy tắc nghiệp vụ của MVP còn hiệu lực | `artifacts/GEO/work/02_gate2_brd.md` (MVP) |
 | `MSG-GEO-nn` | thông điệp hiện cho người dùng của MVP (câu chữ nguyên văn) | `artifacts/GEO/work/05_dictionary.md` (MVP) |
-| TẠM | giả định đang dùng, chờ owner xác nhận; ghi theo mẫu `TẠM · tin cậy · nguồn` | PO-65 |
+| Đã chốt PO-66 | mặc định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); ghi theo mẫu `quyết định · tin cậy · nguồn`; ngưỡng chỉnh sau L6 (G12) | PO-65, PO-66 |
 | Nhãn hai trục | trục máy: "Đã kiểm chứng" / "Cần xem lại" (chỉ engine gắn) · trục người: "AI soạn" / "Giáo viên đã duyệt" | PO-02 |
 | `release_at` | giờ mở lời giải; máy chủ so giờ máy chủ, không tin giờ thiết bị | MVP, M-GEO-13 |
 | `PLS-nn` | mã đề trong bộ đề chuẩn hình phẳng của chặng 2 | US-S2E2-04 |
@@ -45,7 +45,7 @@ Phiên bản: v0.2 · 2026-11-26
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
 | FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
-| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
+| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (đã chốt PO-66, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
 | FX-12 | Đề phẳng PL-03 | Hình chữ nhật ABCD có AB = 6, AD = 8; tính AC. Đáp số 10 |
@@ -115,8 +115,8 @@ Phiên bản: v0.2 · 2026-11-26
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S2E2-04 | `Problem.kind` là `plane` khi mọi điểm của đề nằm trong một mặt phẳng, là `space` khi có điểm ngoài mặt phẳng đáy | STAGES Ch2 mục 8 |
-| BR-S2E2-05 | Dạng hỗ trợ ở chặng 2 (TẠM, QA-S2E2-01): tam giác (thường, cân, đều, vuông), tứ giác (chữ nhật, vuông, hình thang, bình hành), đường tròn với dây và tiếp tuyến. Dạng ngoài danh sách đi nhánh "Cần xem lại", không dựng bừa | STAGES Ch2 mục 10 |
-| BR-S2E2-06 | Hình "thỏa ràng buộc" khi mọi ràng buộc đề cho đúng với sai số tương đối không quá 1e-6 trên tọa độ dựng (TẠM, QA-S2E2-04) | M-S2-01 |
+| BR-S2E2-05 | Dạng hỗ trợ ở chặng 2 (đã chốt PO-66, QA-S2E2-01): tam giác (thường, cân, đều, vuông), tứ giác (chữ nhật, vuông, hình thang, bình hành), đường tròn với dây và tiếp tuyến. Dạng ngoài danh sách đi nhánh "Cần xem lại", không dựng bừa | STAGES Ch2 mục 10 |
+| BR-S2E2-06 | Hình "thỏa ràng buộc" khi mọi ràng buộc đề cho đúng với sai số tương đối không quá 1e-6 trên tọa độ dựng (đã chốt PO-66, QA-S2E2-04) | M-S2-01 |
 | BR-S2E2-07 | `SceneSpec` chỉ chứa điểm, nhãn, ràng buộc, tọa độ; không chứa đáp số, bước giải hay gợi ý | STAGES Ch2 mục 0.2 nguyên tắc 1 |
 | BR-S2E2-08 | Dựng hai lần cùng đề cho `SceneSpec` giống hệt từng ký tự | BR-S2-02 |
 
@@ -204,9 +204,9 @@ Phiên bản: v0.2 · 2026-11-26
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E2-09 | Công cụ đo cho phép đo độ dài và góc trên hình; riêng đại lượng chính là đáp số của đề thì bị khóa tới `release_at` (TẠM, QA-S2E2-03) | STAGES mục 0.2 nguyên tắc 1 |
+| BR-S2E2-09 | Công cụ đo cho phép đo độ dài và góc trên hình; riêng đại lượng chính là đáp số của đề thì bị khóa tới `release_at` (đã chốt PO-66, QA-S2E2-03) | STAGES mục 0.2 nguyên tắc 1 |
 | BR-S2E2-10 | Nhãn hai trục luôn hiện ở đầu thẻ hình; đề có nhãn máy "Cần xem lại" hiện nhãn cho học sinh | PO-02, DQ-07 |
-| BR-S2E2-11 | Chạm tối thiểu 44 điểm cho nút và đỉnh; không cuộn ngang trên iPhone 390 điểm | STAGES mục 0.2 nguyên tắc 6 (TẠM, DQ-28) |
+| BR-S2E2-11 | Chạm tối thiểu 44 điểm cho nút và đỉnh; không cuộn ngang trên iPhone 390 điểm | STAGES mục 0.2 nguyên tắc 6 (đã chốt PO-66, DQ-28) |
 
 ### Tiêu chí chấp nhận
 
@@ -267,8 +267,8 @@ Phiên bản: v0.2 · 2026-11-26
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E2-12 | Mỗi đề có mã `PLS-nn`, văn bản đề, danh sách ràng buộc, dạng hình, đáp số tham chiếu và kiểu đáp số; nguồn đáp số ghi người soát (TẠM, QA-S2E2-02) | STAGES Ch2 mục 9 |
-| BR-S2E2-13 | Bộ có ít nhất 30 đề; mỗi dạng hỗ trợ có ít nhất 5 đề (TẠM, QA-S2E2-02) | M-S2-01, M-S2-02 |
+| BR-S2E2-12 | Mỗi đề có mã `PLS-nn`, văn bản đề, danh sách ràng buộc, dạng hình, đáp số tham chiếu và kiểu đáp số; nguồn đáp số ghi người soát (đã chốt PO-66, QA-S2E2-02) | STAGES Ch2 mục 9 |
+| BR-S2E2-13 | Bộ có ít nhất 30 đề; mỗi dạng hỗ trợ có ít nhất 5 đề (đã chốt PO-66, QA-S2E2-02) | M-S2-01, M-S2-02 |
 | BR-S2E2-14 | Lệnh nạp kiểm đáp số tham chiếu với `solve` của engine; lệch thì ghi lỗi dữ liệu (bắt chép sai) | M-S2-02 |
 
 ### Tiêu chí chấp nhận
@@ -380,3 +380,4 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 5 story, 45 tiêu chí, ready for R3 | runner-T-261126-12 (BA) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
+| v0.3 | 2026-11-26 | Áp PO-66 (gate R3, T-261126-37): bỏ nhãn giả định chưa chốt, ghi "đã chốt PO-66" | runner-T-261126-37 (BA/QC) |
