@@ -1,0 +1,6 @@
+{
+  "_doc": "S3-E3 (T-261126-30): mã cố định của app/db/seed/e2e/930_s3e3_core.sql. Tổ chức thử F-S3E3-001 cho /test-hooks/s3e3/sandbox (lớp, học sinh, bộ bài, bảng trạng thái dựng theo từng ca kiểm trên bộ đề 's3e2_kho' của seed 920).",
+  "orgs": {
+    "F-S3E3-001": { "id": "00000000-0000-7000-8003-000000930001", "name": "Nhóm thử S3-E3" }
+  }
+}

@@ -105,6 +105,7 @@ geo:
   # --- T-261126-28 (S3-E1, S3-E5) ---
   # --- T-261126-29 (S3-E2) ---
   # --- T-261126-30 (S3-E3) ---
+  tracking.min-aggregate: ${GEO_MIN_AGGREGATE:5}   # MIN_AGGREGATE: số bài làm tối thiểu của một đề để gộp "Cả lớp vướng ở đâu" (PO-65 Q6, PO-66 QA-S3E3-02)
   # --- T-261126-31 (S3-E4, S3-E5) ---
   # --- T-261126-32 (S3-E6, S3-E5) ---
   # --- FIX (task FIX T-261126-35, 43+) ---
