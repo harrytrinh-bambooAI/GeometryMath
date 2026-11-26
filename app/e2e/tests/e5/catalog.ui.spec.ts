@@ -7,7 +7,7 @@ import { ALL_CODES, F031, MSG, cards, codesOn, filterBy, loadMore, noHorizontalS
 
 const SUMMARY = '48 đề · 44 đã kiểm chứng · tài liệu của Giáo viên mẫu';
 
-test('Mở Kho đề: dòng đếm, 20 thẻ, Tải thêm, lọc ở Tất cả @TC-GEO-0500', async ({ page, request }) => {
+test('Mở Kho đề: dòng đếm, 20 thẻ, Tải thêm, lọc ở Tất cả @TC-GEO-0500 @smoke', async ({ page, request }) => {
   await signInLane(page, request);
   await openBank(page);
   await expect(page.getByTestId('e5-summary')).toHaveText(SUMMARY);
@@ -19,7 +19,7 @@ test('Mở Kho đề: dòng đếm, 20 thẻ, Tải thêm, lọc ở Tất cả 
   }
 });
 
-test('Lọc Cấp THPT và Dạng bài Góc: 8 đề có HKG-01 @TC-GEO-0501', async ({ page, request }) => {
+test('Lọc Cấp THPT và Dạng bài Góc: 8 đề có HKG-01 @TC-GEO-0501 @smoke', async ({ page, request }) => {
   await signInLane(page, request);
   await openBank(page);
   await filterBy(page, 'level', 'thpt');

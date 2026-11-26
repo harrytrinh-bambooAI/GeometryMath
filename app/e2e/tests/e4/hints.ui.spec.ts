@@ -4,7 +4,7 @@ import { API, F060, HINT1_HKG01, HINT2_HKG01, MSG, call, hints12, openWorkspace,
 
 /** E4 · E2E-UI: Gợi ý 1, 2 (US-GEO-404) và lời giải tự học (US-GEO-405) trên trang Làm bài (E3 /hs/lam-bai/:id). */
 
-test('Xem Gợi ý 1 @TC-GEO-0419', async ({ page, request }) => {
+test('Xem Gợi ý 1 @TC-GEO-0419 @smoke', async ({ page, request }) => {
   const sb = await sandbox(request, [{ students: ['Hà'], assignments: [{ key: 'BG-1', code: 'HKG-01' }] }]);
   await openWorkspace(page, sb.classes[0]!.students['Hà']!, sb.classes[0]!.assignments['BG-1']!, 'Hà');
   await tab(page, 'hint');

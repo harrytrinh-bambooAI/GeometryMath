@@ -13,7 +13,7 @@ async function openMonitor(page: Page, b: Box, key = 'BG-1') {
 }
 const names = (page: Page) => page.locator('[data-testid^="e7-name-"]').allTextContents();
 
-test('Bốn thẻ tổng @TC-GEO-0700', async ({ page, request }) => {
+test('Bốn thẻ tổng @TC-GEO-0700 @smoke', async ({ page, request }) => {
   const b = await box(request, golden());
   await openMonitor(page, b);
   await expect(page.getByTestId('e7-title')).toHaveText('Theo dõi lớp 11A1');
@@ -24,7 +24,7 @@ test('Bốn thẻ tổng @TC-GEO-0700', async ({ page, request }) => {
   await expect(page.getByTestId('e7-card-figure')).toHaveText('12′ thao tác hình');
 });
 
-test('Bảng học sinh @TC-GEO-0701', async ({ page, request }) => {
+test('Bảng học sinh @TC-GEO-0701 @smoke', async ({ page, request }) => {
   const b = await box(request, golden());
   await openMonitor(page, b);
   expect(await names(page)).toEqual(NAMES);

@@ -3,7 +3,7 @@ import { API, MSG, PV, api, asg, bearer, cls, msg42, sandbox, stu, twoClasses } 
 
 /** E6 — giao bài, công tắc, giờ mở, đổi giờ qua API (US-GEO-602, 603, 604, 605). Lớp riêng mỗi ca (móc e6/sandbox). */
 
-test('Học sinh vào lớp sau vẫn thấy bài @TC-GEO-0608', async ({ request }) => {
+test('Học sinh vào lớp sau vẫn thấy bài @TC-GEO-0608 @smoke', async ({ request }) => {
   const sb = await sandbox(request, [{ name: '11A1', students: ['An'], assignments: [{ key: 'BG-1', code: 'HKG-01' }] }]);
   const c = cls(sb, '11A1');
   const r = await request.post(`${API}/api/v1/auth/student`, { data: { joinCode: c.joinCode, displayName: 'Yến' } });
@@ -43,7 +43,7 @@ test('Cùng đề nhưng lời giải đã có phiên bản mới vẫn là cùn
   expect(list.items.filter((x) => x.problemCode === 'HKG-01').map((x) => x.id)).toEqual([asg(sb, 'BG-1')]);
 });
 
-test('Giờ mở độc lập với công tắc @TC-GEO-0616', async ({ request }) => {
+test('Giờ mở độc lập với công tắc @TC-GEO-0616 @smoke', async ({ request }) => {
   const sb = await twoClasses(request, [], [{ key: 'BG-5', code: 'HKG-05', release: 'unset', allowHint: false, allowQa: false }]);
   const bg5 = asg(sb, 'BG-5');
   const khanh = stu(sb, 'Khánh');

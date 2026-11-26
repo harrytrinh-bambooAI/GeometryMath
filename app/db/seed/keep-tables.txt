@@ -6,3 +6,5 @@ health_probe
 subject
 problem_topic
 solid_template
+# S2-E1: văn bản thông báo riêng tư do V110 nạp (seed 800 vẫn nạp lại, ON CONFLICT DO NOTHING) (T-261126-45)
+privacy_notice

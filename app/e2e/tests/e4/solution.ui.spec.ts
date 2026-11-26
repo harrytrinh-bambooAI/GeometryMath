@@ -50,7 +50,7 @@ test('Đổi bước thì đổi phần tô @TC-GEO-0442', async ({ page, reques
   await expect(page.getByTestId('viewer-line-SD')).toHaveClass(/gv-hl/);
 });
 
-test('"Bước sau", "Bước trước" @TC-GEO-0443', async ({ page, request }) => {
+test('"Bước sau", "Bước trước" @TC-GEO-0443 @smoke', async ({ page, request }) => {
   await openSolution(page, request);
   const cur = page.getByTestId('e4-solution');
   await expect(cur).toHaveAttribute('data-step', '1');

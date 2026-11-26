@@ -52,7 +52,7 @@ test('Học sinh gọi trang chi tiết và lời giải giáo viên: FORBIDDEN,
   }
 });
 
-test('Mã đề không tồn tại: NOT_FOUND @TC-GEO-0523', async ({ request }) => {
+test('Mã đề không tồn tại: NOT_FOUND @TC-GEO-0523 @smoke', async ({ request }) => {
   const t = await laneToken(request);
   const r = await request.get(`${API}/api/v1/teacher/catalog/problems/${NO_SUCH}`, { headers: bearer(t) });
   expect(r.status()).toBe(404);
@@ -134,7 +134,7 @@ test('Dữ liệu đổi giữa chừng: không lặp, 28 đề còn lại đủ
   expect(new Set(rest).size).toBe(rest.length);
 });
 
-test('Phân trang cùng bộ lọc THPT: 20 và 4 đề @TC-GEO-0534', async ({ request }) => {
+test('Phân trang cùng bộ lọc THPT: 20 và 4 đề @TC-GEO-0534 @smoke', async ({ request }) => {
   const pages = await allPages(request, await laneToken(request), 'level=thpt');
   expect(pages.map((p) => p.items.length)).toEqual([20, 4]);
   const items = pages.flatMap((p) => p.items);

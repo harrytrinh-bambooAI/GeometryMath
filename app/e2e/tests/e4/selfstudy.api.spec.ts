@@ -25,7 +25,7 @@ const selfCount = async (rq: import('@playwright/test').APIRequestContext, userI
   ((await (await rq.get(`${API}/test-hooks/e2/self-study-count?userId=${userId}`)).json()) as { count: number }).count;
 const F060_LEAK = ['60/√769', '2,1637', '769/3600', 'tứ diện vuông tại A.'];
 
-test('Bài tự học mới bắt đầu ở mức 0 @TC-GEO-0402', async ({ request }) => {
+test('Bài tự học mới bắt đầu ở mức 0 @TC-GEO-0402 @smoke', async ({ request }) => {
   const sb = await sandbox(request, [{ students: ['An'] }]);
   const an = sb.classes[0]!.students['An']!;
   const id = await selfStudy(request, an.token, F060);

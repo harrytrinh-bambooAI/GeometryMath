@@ -21,7 +21,7 @@ test('Tên dài đúng 60 ký tự được nhận @TC-GEO-0105', async ({ reque
   }
 });
 
-test('Học sinh không làm được việc của giáo viên @TC-GEO-0114', async ({ request, t0 }) => {
+test('Học sinh không làm được việc của giáo viên @TC-GEO-0114 @smoke', async ({ request, t0 }) => {
   const an = await devToken(request, 'F-GEO-020');
   const r = await request.post(`/api/v1/teacher/assignments/${BG('BG-2')}/release`, {
     headers: bearer(an),

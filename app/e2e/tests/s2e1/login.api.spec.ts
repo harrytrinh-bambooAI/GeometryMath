@@ -18,7 +18,7 @@ async function wrong(request: Parameters<typeof login>[0], code: string, times: 
   }
 }
 
-test('Mã gõ chữ thường và có dấu cách vẫn vào được @TC-S2E1-021', async ({ request }) => {
+test('Mã gõ chữ thường và có dấu cách vẫn vào được @TC-S2E1-021 @smoke', async ({ request }) => {
   const an = FX('F-S2-002');
   const r = await login(request, ` ${an.userCode.toLowerCase()} `, an.password);
   expect(r.status()).toBe(200);
