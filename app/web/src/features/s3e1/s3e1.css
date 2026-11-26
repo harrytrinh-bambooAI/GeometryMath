@@ -1,0 +1,171 @@
+/* S3-E1 · C3-02 Lớp học, C3-07 mã lớp + duyệt + đặt lại mật khẩu, trang in (Design/prototype/s23b.js, s23c.js, s23d.js).
+   Màu, bo góc, font CHỈ qua token theme; chữ phụ ≥ 14 px (PO-66 G17); vùng chạm ≥ 44 px. */
+.s3e1-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  max-width: 1000px;
+  min-width: 0;
+}
+.s3e1-title {
+  font-size: 22px;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.s3e1-h {
+  font-size: 17px;
+  margin: 0;
+}
+.s3e1-card {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.s3e1-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+.s3e1-class-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  color: inherit;
+  text-decoration: none;
+  min-height: 44px;
+}
+.s3e1-class-name {
+  font-weight: 600;
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+.s3e1-code,
+.s3e1-mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+}
+.s3e1-code-big {
+  font-size: 34px;
+  padding: 14px;
+  border: 1px dashed var(--line);
+  border-radius: var(--r);
+  text-align: center;
+}
+.s3e1-form,
+.s3e1-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.s3e1-field input,
+.s3e1-field select {
+  min-height: 44px;
+  font-size: 16px;
+}
+.s3e1-err {
+  color: var(--red);
+  font-size: 14px;
+}
+.s3e1-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.s3e1-lock {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.s3e1-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+}
+.s3e1-toggle input {
+  width: 22px;
+  height: 22px;
+}
+.s3e1-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.s3e1-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+.s3e1-who {
+  flex: 1 1 200px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.s3e1-line .btn {
+  min-height: 44px;
+}
+.s3e1-dialog {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--text) 35%, transparent);
+  padding: 16px;
+  z-index: 50;
+}
+.s3e1-dialog > .card {
+  max-width: 440px;
+  width: 100%;
+  background: var(--panel);
+}
+.s3e1-print {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 16px;
+}
+.s3e1-print-title {
+  font-size: 32px;
+  margin: 0;
+}
+.s3e1-qr {
+  width: 220px;
+  height: 220px;
+  color: var(--text);
+  fill: currentColor;
+}
+.s3e1-qr .s3e1-qr-bg {
+  fill: var(--bg);
+}
+.s3e1-print-code {
+  font-family: var(--font-mono);
+  font-size: 64px;
+  letter-spacing: 0.08em;
+}
+.s3e1-print-steps {
+  font-size: 18px;
+  line-height: 1.6;
+}
+@media print {
+  .s3e1-noprint {
+    display: none;
+  }
+}

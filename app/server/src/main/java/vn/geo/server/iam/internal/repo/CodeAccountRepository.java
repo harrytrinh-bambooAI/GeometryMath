@@ -32,7 +32,8 @@ public class CodeAccountRepository {
       Instant recoveryWindowStart,
       Instant recoveryLockedUntil,
       boolean deactivated,
-      Instant sessionsValidAfter) {}
+      Instant sessionsValidAfter,
+      Instant tempPasswordExpiresAt) {}
 
   public record NewAccount(
       UUID id,
@@ -85,7 +86,7 @@ public class CodeAccountRepository {
             """
             SELECT id, org_id, role::text, display_name, user_code, password_hash, recovery_hmac, must_change_password,
                    login_fail_count, login_locked_until, recovery_fail_count, recovery_window_start,
-                   recovery_locked_until, deactivated_at IS NOT NULL, sessions_valid_after
+                   recovery_locked_until, deactivated_at IS NOT NULL, sessions_valid_after, temp_password_expires_at
             FROM app_user WHERE user_code = :code LIMIT 1 FOR UPDATE
             -- sqllint:allow=tenant đăng nhập bằng mã: chưa biết trường, mã người dùng là khóa toàn cục (PO-61)
             """)
@@ -106,7 +107,8 @@ public class CodeAccountRepository {
                 instant(rs.getObject(12, OffsetDateTime.class)),
                 instant(rs.getObject(13, OffsetDateTime.class)),
                 rs.getBoolean(14),
-                instant(rs.getObject(15, OffsetDateTime.class))))
+                instant(rs.getObject(15, OffsetDateTime.class)),
+                instant(rs.getObject(16, OffsetDateTime.class))))
         .optional();
   }
 
@@ -147,7 +149,7 @@ public class CodeAccountRepository {
     jdbc.sql(
             """
             UPDATE app_user SET password_hash = :hash, recovery_hmac = COALESCE(:rc, recovery_hmac),
-                   must_change_password = false, login_fail_count = 0, login_locked_until = NULL,
+                   must_change_password = false, temp_password_expires_at = NULL, login_fail_count = 0, login_locked_until = NULL,
                    recovery_fail_count = 0, recovery_window_start = NULL, recovery_locked_until = NULL,
                    sessions_valid_after = COALESCE(:revoke, sessions_valid_after)
             WHERE org_id = :orgId AND id = :id
