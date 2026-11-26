@@ -1,0 +1,87 @@
+/* Màn Cài đặt (T-261126-50): chỉ dùng token theme. Mỗi .theme-opt mang data-theme riêng nên token là của theme đó. */
+.settings h3 {
+  margin-bottom: 4px;
+}
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.theme-opt {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  border-radius: var(--r);
+  border: 2px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  font-family: var(--font);
+  cursor: pointer;
+}
+.theme-opt:has(input:checked) {
+  border-color: var(--pri);
+}
+.theme-opt:has(input:focus-visible) {
+  box-shadow: var(--focus);
+}
+.theme-opt input {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--pri);
+}
+.theme-preview {
+  display: flex;
+  gap: 6px;
+  height: 72px;
+  padding: 8px;
+  border-radius: var(--r-sm);
+  background-color: var(--bg);
+  background-image: var(--bg-img);
+  background-size: 12px 12px;
+  border: 1px solid var(--line);
+}
+.tp-bar {
+  width: 18px;
+  border-radius: var(--r-sm);
+  background: var(--rail-bg);
+  border: 1px solid var(--line);
+}
+.tp-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  box-shadow: var(--sh);
+}
+.tp-line {
+  height: 6px;
+  width: 70%;
+  border-radius: 3px;
+  background: var(--line-strong);
+}
+.tp-btn {
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: var(--r-btn);
+  background: var(--pri);
+  color: var(--on-pri);
+  font-weight: 700;
+  font-size: 12px;
+}
+.theme-name {
+  font-weight: 700;
+}
+.theme-sum {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}

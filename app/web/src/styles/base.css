@@ -1,4 +1,7 @@
-/* Lớp dùng chung, rút gọn từ Design/assets/ds.css (.card, .btn, .chip, .rail, .top, .body). */
+/*
+ * Lớp dùng chung (.card, .btn, .chip, .rail, .top, .body), rút gọn từ Design/assets/ds.css.
+ * T-261126-50: mọi màu, bo góc, font, mật độ lấy từ token theme (tokens.css); không đặt mã màu rời ở đây.
+ */
 *,
 *::before,
 *::after {
@@ -11,7 +14,9 @@ body,
 }
 body {
   margin: 0;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: var(--bg-img);
+  background-size: 24px 24px;
   font-family: var(--font);
   color: var(--text);
   font-size: var(--fs);
@@ -27,6 +32,10 @@ h3 {
   margin: 0;
   letter-spacing: -0.01em;
 }
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+}
 
 /* Khung: thanh dọc bên trái + vùng nội dung (như .screen của prototype, nhưng co giãn theo màn) */
 .shell {
@@ -35,7 +44,7 @@ h3 {
   grid-template-columns: var(--rail-w) 1fr;
 }
 .rail {
-  background: #fff;
+  background: var(--rail-bg);
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
@@ -46,9 +55,9 @@ h3 {
 .rail .logo {
   width: 44px;
   height: 44px;
-  border-radius: 14px;
+  border-radius: var(--r-sm);
   background: var(--pri);
-  color: #fff;
+  color: var(--on-pri);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,22 +67,26 @@ h3 {
 .rail a {
   width: 76px;
   padding: 9px 0 7px;
-  border-radius: 14px;
+  border-radius: var(--r-sm);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  font-size: 11px;
+  font-size: var(--fs-rail);
   font-weight: 600;
   color: var(--muted);
   text-align: center;
 }
 .rail a:hover {
-  background: #f1f4fa;
+  background: var(--hover);
 }
 .rail a.active {
   background: var(--pri-s);
-  color: var(--pri);
+  color: var(--pri-t);
+}
+/* Cài đặt nằm cuối thanh dọc (T-261126-50) */
+.rail .rail-end {
+  margin-top: auto;
 }
 .main {
   display: flex;
@@ -118,7 +131,7 @@ h3 {
   color: var(--muted);
 }
 .small {
-  font-size: 12.5px;
+  font-size: var(--fs-sm);
 }
 .mono {
   font-family: var(--font-mono);
@@ -129,12 +142,13 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 7px;
+  min-height: var(--ctl-h);
   padding: 10px 16px;
-  border-radius: 12px;
+  border-radius: var(--r-btn);
   font-weight: 700;
   font-size: 13.5px;
   background: var(--pri);
-  color: #fff;
+  color: var(--on-pri);
   border: none;
   cursor: pointer;
   font-family: inherit;
@@ -142,10 +156,15 @@ h3 {
 .btn:hover {
   filter: brightness(1.07);
 }
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: none;
+}
 .btn.ghost {
-  background: #fff;
-  color: var(--pri);
-  border: 1.5px solid #c9d3f5;
+  background: var(--panel);
+  color: var(--pri-t);
+  border: 1.5px solid var(--pri-line);
 }
 
 .chip {
@@ -153,8 +172,8 @@ h3 {
   align-items: center;
   gap: 5px;
   padding: 4px 10px;
-  border-radius: 99px;
-  font-size: 11.5px;
+  border-radius: var(--r-chip);
+  font-size: var(--fs-chip);
   font-weight: 700;
   background: var(--soft);
   color: var(--muted);
@@ -173,7 +192,7 @@ h3 {
 }
 .chip.yel {
   background: var(--yel-s);
-  color: #9a6b00;
+  color: var(--yel-t);
   border-color: transparent;
 }
 
@@ -193,6 +212,19 @@ h3 {
   font-weight: 600;
 }
 
+/*
+ * Cảm ứng (iPad/iPhone): vùng chạm ≥ 44 px cho mọi theme (STYLES.md: D web 36 px chỉ cho chuột).
+ * Áp cho nút, mục thanh dọc, ô nhập và ô chọn của khung chung.
+ */
+@media (pointer: coarse) {
+  .btn,
+  .rail a,
+  input:not([type='checkbox']):not([type='radio']),
+  select {
+    min-height: max(var(--touch), var(--ctl-h));
+  }
+}
+
 /* Điện thoại: thanh dọc thành thanh ngang dưới cùng (khung Design/mvp-08-dien-thoai) */
 @media (max-width: 720px) {
   .shell {
@@ -209,12 +241,31 @@ h3 {
     position: sticky;
     bottom: 0;
   }
+  .rail a {
+    width: auto;
+    flex: 0 1 76px;
+    min-width: 0;
+  }
   .rail .logo {
     display: none;
+  }
+  .rail .rail-end {
+    margin-top: 0;
   }
   .top,
   .body {
     padding-left: 16px;
     padding-right: 16px;
   }
+}
+
+/* Nội dung toán (đề, đáp số, ô nhập, bảng số liệu, nhãn hình) dùng --font-math: font chữ tay của theme C khó đọc số/dấu chấm. */
+input,
+textarea,
+select,
+table,
+svg text,
+[data-math],
+.katex {
+  font-family: var(--font-math);
 }

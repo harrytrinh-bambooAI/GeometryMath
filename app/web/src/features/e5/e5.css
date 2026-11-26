@@ -54,5 +54,10 @@
   .e5-detail { display: flex; flex-direction: column; align-items: stretch; }
   .e5-viewer { height: 320px; }
   .e5-summary { min-height: 3em; } /* dòng đếm xuống hai dòng trên điện thoại */
-  .e5-filter-title { min-width: 0; width: 100%; }
+  /* Mỗi nhóm lọc một hàng, cuộn ngang trong nhóm (không cuộn cả trang): chip 44 px của theme C (mặc định) làm 3 nhóm
+     xuống 7 hàng và đẩy đề đầu tiên khỏi màn điện thoại (TC-GEO-0112). */
+  .e5-filter { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .e5-filter::-webkit-scrollbar { display: none; }
+  .e5-filter-title { min-width: 0; width: auto; flex: none; }
+  .e5-opt { flex: none; white-space: nowrap; }
 }
