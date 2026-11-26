@@ -49,13 +49,16 @@ public class ClassBoardRepository {
     this.jdbc = jdbc;
   }
 
-  /** Các lớp đang dạy của giáo viên (chọn lớp ở Kết quả lớp). */
+  /**
+   * Các lớp của giáo viên (chọn lớp ở Kết quả lớp): Đang dạy trước, rồi lớp Đã lưu trữ — Kết quả
+   * lớp và xuất vẫn dùng được sau khi lưu trữ (US-S3E6-02, BR-S3E6-14).
+   */
   public List<ClassRow> classes(UUID teacherId) {
     return jdbc.sql(
             """
             SELECT c.id, c.name FROM class c
-            WHERE c.org_id = :orgId AND c.teacher_id = :teacherId AND c.archived_at IS NULL
-            ORDER BY c.name, c.id
+            WHERE c.org_id = :orgId AND c.teacher_id = :teacherId
+            ORDER BY c.archived_at IS NOT NULL, c.name, c.id
             LIMIT 100
             -- sqllint:allow=ownership lớp của chính giáo viên (iam), chỉ đọc tên
             """)

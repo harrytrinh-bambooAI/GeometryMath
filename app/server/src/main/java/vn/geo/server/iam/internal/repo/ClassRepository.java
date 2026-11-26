@@ -39,7 +39,8 @@ public class ClassRepository {
       Instant joinedAt,
       Instant leftAt) {}
 
-  public record MyClass(UUID classId, String name, String status, boolean aiEnabled) {}
+  public record MyClass(
+      UUID classId, String name, String status, boolean aiEnabled, boolean archived) {}
 
   private final JdbcClient jdbc;
 
@@ -168,6 +169,31 @@ public class ClassRepository {
         .update();
   }
 
+  /** US-S3E6-02 (BR-S3E6-14): lưu trữ lớp thì em Chờ duyệt tự thành Bị từ chối. */
+  public int rejectPending(UUID orgId, UUID classId) {
+    return jdbc.sql(
+            """
+            UPDATE class_member SET status = 'rejected'
+            WHERE org_id = :orgId AND class_id = :id AND status = 'pending'
+            """)
+        .param("orgId", orgId)
+        .param("id", classId)
+        .update();
+  }
+
+  /** US-S3E6-02 (BR-S3E6-16): bỏ lưu trữ, lớp về Đang dạy với mã lớp mới. */
+  public int unarchive(UUID orgId, UUID classId, String joinCode) {
+    return jdbc.sql(
+            """
+            UPDATE class SET archived_at = NULL, join_code = :code
+            WHERE org_id = :orgId AND id = :id AND archived_at IS NOT NULL
+            """)
+        .param("code", joinCode)
+        .param("orgId", orgId)
+        .param("id", classId)
+        .update();
+  }
+
   /** Lớp chặng 3 theo mã (khóa toàn cục): còn nhận người mới khi Đang dạy và công tắc bật. */
   public record JoinTarget(UUID orgId, UUID classId, String name, boolean open) {}
 
@@ -206,7 +232,7 @@ public class ClassRepository {
   public List<MyClass> myClasses(UUID orgId, UUID userId) {
     return jdbc.sql(
             """
-            SELECT c.id, c.name, m.status::text, c.ai_enabled
+            SELECT c.id, c.name, m.status::text, c.ai_enabled, c.archived_at IS NOT NULL
             FROM class_member m JOIN class c ON c.org_id = :orgId AND c.id = m.class_id
             WHERE m.org_id = :orgId AND m.user_id = :userId AND c.join_mode = 'code'
             ORDER BY m.joined_at DESC, c.id LIMIT 50
@@ -215,7 +241,11 @@ public class ClassRepository {
         .param("userId", userId)
         .query((rs, i) ->
             new MyClass(
-                rs.getObject(1, UUID.class), rs.getString(2), rs.getString(3), rs.getBoolean(4)))
+                rs.getObject(1, UUID.class),
+                rs.getString(2),
+                rs.getString(3),
+                rs.getBoolean(4),
+                rs.getBoolean(5)))
         .list();
   }
 

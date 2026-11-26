@@ -35,7 +35,8 @@ public class CodeAuthService {
   public static final String MSG_RECOVERY = "Mã người dùng hoặc mã khôi phục chưa đúng";
   public static final String MSG_NAME_EMPTY = "Hãy nhập tên hiển thị.";
   public static final String MSG_NAME_LONG = "Tên hiển thị tối đa 60 ký tự.";
-  public static final String MSG_NAME_PII = "Tên hiển thị không được là email hay số điện thoại.";
+  public static final String MSG_NAME_PII =
+      "Tên hiển thị không nên là email hay số điện thoại."; // MSG-S3-82
   public static final String MSG_PASSWORD = "Mật khẩu từ 8 đến 64 ký tự.";
   public static final String MSG_ROLE = "Hãy chọn vai Giáo viên hoặc Học sinh.";
   public static final String MSG_PRIVACY = "Em cần đọc thông báo riêng tư để tiếp tục.";

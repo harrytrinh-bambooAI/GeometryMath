@@ -1,0 +1,1035 @@
+# Phiên bản: v1.0 · 2026-11-27 · US-S3E5-03 danh sách trường dữ liệu được phép thu (BR-S3E5-30).
+# Mỗi dòng: loại<TAB>thực thể<TAB>trường<TAB>lý do<TAB>mã quyết định. loại db = bảng.cột; api = khóa JSON.
+# Tên khớp mẫu cấm chỉ được có khi lý do bắt đầu bằng "NGOẠI LỆ". Thêm trường mới: thêm dòng ở đây, có lý do và mã PO-nn.
+# Test: quality/AllowedFieldsTest (quét tĩnh API), it/s3e5/AllowedFieldsS3E5IT (cột CSDL, gọi API thật).
+db	ai_call_log	id	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	ai_call_log	occurred_at	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	ai_call_log	org_id	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	ai_call_log	user_id	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	ai_call_log	purpose	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	ai_call_log	model	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	ai_call_log	prompt_version	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	ai_call_log	tokens_in	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	ai_call_log	tokens_out	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	ai_call_log	cost_micro_usd	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	ai_call_log	latency_ms	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	ai_call_log	status	Nhật ký gọi AI (chi phí, độ trễ, mã người gọi); không lưu nội dung	PO-60
+db	answer_guard_log	id	Nhật ký chặn lộ đáp án; không mã người dùng, không nội dung	PO-60
+db	answer_guard_log	occurred_at	Nhật ký chặn lộ đáp án; không mã người dùng, không nội dung	PO-60
+db	answer_guard_log	org_id	Nhật ký chặn lộ đáp án; không mã người dùng, không nội dung	PO-60
+db	answer_guard_log	assignment_id	Nhật ký chặn lộ đáp án; không mã người dùng, không nội dung	PO-60
+db	answer_guard_log	channel	Nhật ký chặn lộ đáp án; không mã người dùng, không nội dung	PO-60
+db	answer_guard_log	outcome	Nhật ký chặn lộ đáp án; không mã người dùng, không nội dung	PO-60
+db	answer_guard_log	rule_code	Nhật ký chặn lộ đáp án; không mã người dùng, không nội dung	PO-60
+db	answer_guard_log	guard_version	Nhật ký chặn lộ đáp án; không mã người dùng, không nội dung	PO-60
+db	answer_guard_log	latency_ms	Nhật ký chặn lộ đáp án; không mã người dùng, không nội dung	PO-60
+db	answer_guard_log	probe_run_id	Nhật ký chặn lộ đáp án; không mã người dùng, không nội dung	PO-60
+db	app_user	id	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	org_id	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	role	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	account_kind	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	display_name	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	created_at	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	deactivated_at	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	user_code	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	password_hash	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	recovery_hmac	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	must_change_password	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	privacy_ack_version	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	privacy_ack_at	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	login_fail_count	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	login_locked_until	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	recovery_fail_count	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	recovery_window_start	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	recovery_locked_until	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	sessions_valid_after	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	temp_password_expires_at	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	app_user	deleted_at	Người dùng: tên hiển thị, mã người dùng, vai, băm mật khẩu/mã khôi phục, cờ thông báo riêng tư, bộ đếm khóa	PO-60
+db	assignment	id	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	org_id	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	kind	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	class_id	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	owner_user_id	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	content_org_id	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	problem_id	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	problem_version_id	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	assigned_by	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	release_at	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	release_rev	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	allow_hint	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	allow_qa	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	lock_source_assignment_id	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	created_at	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment	archived_at	Bài giao cho lớp (đề, giờ mở lời giải, quyền gợi ý/hỏi)	PO-60
+db	assignment_item	id	Đề trong bộ bài	PO-65
+db	assignment_item	org_id	Đề trong bộ bài	PO-65
+db	assignment_item	set_id	Đề trong bộ bài	PO-65
+db	assignment_item	position	Đề trong bộ bài	PO-65
+db	assignment_item	content_org_id	Đề trong bộ bài	PO-65
+db	assignment_item	problem_id	Đề trong bộ bài	PO-65
+db	assignment_item	problem_version_id	Đề trong bộ bài	PO-65
+db	assignment_item	answer_kind	Đề trong bộ bài	PO-65
+db	assignment_item	tolerance	Đề trong bộ bài	PO-65
+db	assignment_item	max_attempts	Đề trong bộ bài	PO-65
+db	assignment_item	release_at	Đề trong bộ bài	PO-65
+db	assignment_item	assignment_id	Đề trong bộ bài	PO-65
+db	assignment_item	answer_snapshot	Đề trong bộ bài	PO-65
+db	assignment_item	accepted_forms	Đề trong bộ bài	PO-65
+db	assignment_item	created_at	Đề trong bộ bài	PO-65
+db	assignment_item_choice	org_id	Phương án trắc nghiệm của đề trong bộ	PO-65
+db	assignment_item_choice	set_id	Phương án trắc nghiệm của đề trong bộ	PO-65
+db	assignment_item_choice	problem_id	Phương án trắc nghiệm của đề trong bộ	PO-65
+db	assignment_item_choice	options	Phương án trắc nghiệm của đề trong bộ	PO-65
+db	assignment_item_choice	correct_id	Phương án trắc nghiệm của đề trong bộ	PO-65
+db	assignment_item_choice	created_at	Phương án trắc nghiệm của đề trong bộ	PO-65
+db	assignment_progress	org_id	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_progress	assignment_id	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_progress	user_id	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_progress	first_opened_at	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_progress	last_active_at	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_progress	hint_level_max	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_progress	hint_view_count	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_progress	ask_count	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_progress	tool_count	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_progress	active_seconds	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_progress	solution_viewed_at	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_progress	updated_at	Bài làm: tiến độ của học sinh trên một bài giao	PO-60
+db	assignment_set	id	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	org_id	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	owner_user_id	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	class_id	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	title	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	status	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	due_at	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	release_at	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	assigned_at	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	closed_at	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	archived_at	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	created_at	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	assignment_set	updated_at	Bộ bài của lớp (tên, trạng thái, hạn, giờ mở)	PO-65
+db	audit_log	id	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	occurred_at	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	org_id	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	actor_user_id	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	action	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	target_id	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	before_release_at	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	after_release_at	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	ref_id	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	request_id	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	actor_role	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	target_type	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	class_id	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	outcome	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	audit_log	request_key	AuditEvent: thao tác nhạy cảm kèm người thực hiện (chỉ thêm)	PO-60
+db	auth_failure	id	Bộ đếm đăng nhập sai (khóa theo tài khoản và theo mạng)	PO-60
+db	auth_failure	at	Bộ đếm đăng nhập sai (khóa theo tài khoản và theo mạng)	PO-60
+db	auth_failure	ip_key	NGOẠI LỆ BR-S3E5-37: HMAC của địa chỉ mạng (không lưu IP rõ) cho bộ đếm đăng nhập sai, dọn sau 1 ngày (D-GEO-152)	PO-53
+db	auth_failure	user_id	Bộ đếm đăng nhập sai (khóa theo tài khoản và theo mạng)	PO-60
+db	benchmark_item	set_version	Bộ đo chất lượng (dữ liệu kỹ thuật, không dữ liệu người dùng)	PO-60
+db	benchmark_item	code	Bộ đo chất lượng (dữ liệu kỹ thuật, không dữ liệu người dùng)	PO-60
+db	benchmark_item	org_id	Bộ đo chất lượng (dữ liệu kỹ thuật, không dữ liệu người dùng)	PO-60
+db	benchmark_item	problem_id	Bộ đo chất lượng (dữ liệu kỹ thuật, không dữ liệu người dùng)	PO-60
+db	benchmark_item	problem_version_id	Bộ đo chất lượng (dữ liệu kỹ thuật, không dữ liệu người dùng)	PO-60
+db	benchmark_item	missing_reference	Bộ đo chất lượng (dữ liệu kỹ thuật, không dữ liệu người dùng)	PO-60
+db	benchmark_run	id	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	set_version	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	created_at	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	model	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	prompt_version	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	simulated	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	n	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	scene_ok	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	answer_ok	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	wrong_verified	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	verified	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	items	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_run	report	Kết quả chạy bộ đo (kỹ thuật)	PO-60
+db	benchmark_set	version	Phiên bản bộ đo (kỹ thuật)	PO-60
+db	benchmark_set	content_hash	Phiên bản bộ đo (kỹ thuật)	PO-60
+db	benchmark_set	source	Phiên bản bộ đo (kỹ thuật)	PO-60
+db	benchmark_set	created_at	Phiên bản bộ đo (kỹ thuật)	PO-60
+db	catalog_bank_access	org_id	Quyền trường dùng một bộ đề Kho	PO-60
+db	catalog_bank_access	bank	Quyền trường dùng một bộ đề Kho	PO-60
+db	catalog_bank_access	granted_at	Quyền trường dùng một bộ đề Kho	PO-60
+db	class	id	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	org_id	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	name	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	level	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	grade	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	join_code	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	teacher_id	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	created_at	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	archived_at	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	academic_year	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	join_mode	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	code_join_enabled	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class	ai_enabled	Lớp: tên, cấp, năm học, mã lớp, trạng thái, công tắc	PO-60
+db	class_join_attempt	id	Đếm nhập mã lớp sai để chống dò mã (theo tài khoản)	PO-66
+db	class_join_attempt	org_id	Đếm nhập mã lớp sai để chống dò mã (theo tài khoản)	PO-66
+db	class_join_attempt	user_id	Đếm nhập mã lớp sai để chống dò mã (theo tài khoản)	PO-66
+db	class_join_attempt	attempted_at	Đếm nhập mã lớp sai để chống dò mã (theo tài khoản)	PO-66
+db	class_member	org_id	Thành viên lớp: lớp, người dùng, trạng thái, giờ	PO-60
+db	class_member	class_id	Thành viên lớp: lớp, người dùng, trạng thái, giờ	PO-60
+db	class_member	user_id	Thành viên lớp: lớp, người dùng, trạng thái, giờ	PO-60
+db	class_member	name_key	Thành viên lớp: lớp, người dùng, trạng thái, giờ	PO-60
+db	class_member	joined_at	Thành viên lớp: lớp, người dùng, trạng thái, giờ	PO-60
+db	class_member	left_at	Thành viên lớp: lớp, người dùng, trạng thái, giờ	PO-60
+db	class_member	status	Thành viên lớp: lớp, người dùng, trạng thái, giờ	PO-60
+db	durable_request	org_id	Khóa yêu cầu chống gửi trùng	PO-60
+db	durable_request	request_id	Khóa yêu cầu chống gửi trùng	PO-60
+db	durable_request	kind	Khóa yêu cầu chống gửi trùng	PO-60
+db	durable_request	created_at	Khóa yêu cầu chống gửi trùng	PO-60
+db	event_log	id	Sự kiện đo việc học (loại, số đếm); không nội dung câu hỏi	PO-60
+db	event_log	occurred_at	Sự kiện đo việc học (loại, số đếm); không nội dung câu hỏi	PO-60
+db	event_log	org_id	Sự kiện đo việc học (loại, số đếm); không nội dung câu hỏi	PO-60
+db	event_log	assignment_id	Sự kiện đo việc học (loại, số đếm); không nội dung câu hỏi	PO-60
+db	event_log	user_id	Sự kiện đo việc học (loại, số đếm); không nội dung câu hỏi	PO-60
+db	event_log	kind	Sự kiện đo việc học (loại, số đếm); không nội dung câu hỏi	PO-60
+db	event_log	arg	Sự kiện đo việc học (loại, số đếm); không nội dung câu hỏi	PO-60
+db	export_confirm_log	id	Xác nhận xuất đề của giáo viên	PO-65
+db	export_confirm_log	org_id	Xác nhận xuất đề của giáo viên	PO-65
+db	export_confirm_log	user_id	Xác nhận xuất đề của giáo viên	PO-65
+db	export_confirm_log	doc_ids	Xác nhận xuất đề của giáo viên	PO-65
+db	export_confirm_log	created_at	Xác nhận xuất đề của giáo viên	PO-65
+db	flyway_schema_history	installed_rank	Hạ tầng: lịch sử migration, không dữ liệu người dùng	PO-60
+db	flyway_schema_history	version	Hạ tầng: lịch sử migration, không dữ liệu người dùng	PO-60
+db	flyway_schema_history	description	Hạ tầng: lịch sử migration, không dữ liệu người dùng	PO-60
+db	flyway_schema_history	type	Hạ tầng: lịch sử migration, không dữ liệu người dùng	PO-60
+db	flyway_schema_history	script	Hạ tầng: lịch sử migration, không dữ liệu người dùng	PO-60
+db	flyway_schema_history	checksum	Hạ tầng: lịch sử migration, không dữ liệu người dùng	PO-60
+db	flyway_schema_history	installed_by	Hạ tầng: lịch sử migration, không dữ liệu người dùng	PO-60
+db	flyway_schema_history	installed_on	Hạ tầng: lịch sử migration, không dữ liệu người dùng	PO-60
+db	flyway_schema_history	execution_time	Hạ tầng: lịch sử migration, không dữ liệu người dùng	PO-60
+db	flyway_schema_history	success	Hạ tầng: lịch sử migration, không dữ liệu người dùng	PO-60
+db	health_probe	id	Hạ tầng: kiểm tra sống	PO-60
+db	health_probe	status	Hạ tầng: kiểm tra sống	PO-60
+db	hint	org_id	Gợi ý theo mức của đề	PO-60
+db	hint	problem_version_id	Gợi ý theo mức của đề	PO-60
+db	hint	level	Gợi ý theo mức của đề	PO-60
+db	hint	body	Gợi ý theo mức của đề	PO-60
+db	import_item	org_id	Đề tách từ tệp nhập của giáo viên	PO-65
+db	import_item	job_id	Đề tách từ tệp nhập của giáo viên	PO-65
+db	import_item	idx	Đề tách từ tệp nhập của giáo viên	PO-65
+db	import_item	owner_user_id	Đề tách từ tệp nhập của giáo viên	PO-65
+db	import_item	title	Đề tách từ tệp nhập của giáo viên	PO-65
+db	import_item	body	Đề tách từ tệp nhập của giáo viên	PO-65
+db	import_item	norm_key	Đề tách từ tệp nhập của giáo viên	PO-65
+db	import_item	draft_id	Đề tách từ tệp nhập của giáo viên	PO-65
+db	import_item	created_at	Đề tách từ tệp nhập của giáo viên	PO-65
+db	import_job	id	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	org_id	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	owner_user_id	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	file_name	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	file_type	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	size_bytes	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	file_tmp	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	status	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	error	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	notes	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	found	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	created_at	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	import_job	updated_at	Lượt nhập tệp đề của giáo viên (tên tệp, loại, cỡ)	PO-65
+db	keyword	org_id	Từ khóa bài giảng	PO-60
+db	keyword	term_key	Từ khóa bài giảng	PO-60
+db	keyword	term	Từ khóa bài giảng	PO-60
+db	keyword	lecture_id	Từ khóa bài giảng	PO-60
+db	lecture	id	Bài giảng (nội dung học)	PO-60
+db	lecture	org_id	Bài giảng (nội dung học)	PO-60
+db	lecture	subject_id	Bài giảng (nội dung học)	PO-60
+db	lecture	slug	Bài giảng (nội dung học)	PO-60
+db	lecture	title	Bài giảng (nội dung học)	PO-60
+db	lecture	body	Bài giảng (nội dung học)	PO-60
+db	lecture	source_kind	Bài giảng (nội dung học)	PO-60
+db	lecture	approval_status	Bài giảng (nội dung học)	PO-60
+db	lecture	source_ref	Bài giảng (nội dung học)	PO-60
+db	lecture	human_reviewed	Bài giảng (nội dung học)	PO-60
+db	lecture	created_at	Bài giảng (nội dung học)	PO-60
+db	lecture	search_tsv	Bài giảng (nội dung học)	PO-60
+db	library_problem	id	Đề trong Kho chung	PO-65
+db	library_problem	org_id	Đề trong Kho chung	PO-65
+db	library_problem	submission_id	Đề trong Kho chung	PO-65
+db	library_problem	source_doc_id	Đề trong Kho chung	PO-65
+db	library_problem	owner_user_id	Đề trong Kho chung	PO-65
+db	library_problem	title	Đề trong Kho chung	PO-65
+db	library_problem	statement	Đề trong Kho chung	PO-65
+db	library_problem	figure	Đề trong Kho chung	PO-65
+db	library_problem	kind	Đề trong Kho chung	PO-65
+db	library_problem	steps	Đề trong Kho chung	PO-65
+db	library_problem	hint	Đề trong Kho chung	PO-65
+db	library_problem	machine_status	Đề trong Kho chung	PO-65
+db	library_problem	human_status	Đề trong Kho chung	PO-65
+db	library_problem	approved_code	Đề trong Kho chung	PO-65
+db	library_problem	accepted_by	Đề trong Kho chung	PO-65
+db	library_problem	accepted_at	Đề trong Kho chung	PO-65
+db	library_submission	id	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	library_submission	org_id	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	library_submission	doc_id	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	library_submission	version_id	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	library_submission	owner_user_id	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	library_submission	status	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	library_submission	reason	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	library_submission	submitted_at	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	library_submission	decided_by	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	library_submission	decided_at	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	library_submission	library_id	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	library_submission	hint	Yêu cầu soát Kho chung kèm lý do từ chối	PO-65
+db	notification	id	Thông báo trong ứng dụng: người nhận, loại, bộ bài, nội dung ngắn, giờ đọc	PO-66
+db	notification	org_id	Thông báo trong ứng dụng: người nhận, loại, bộ bài, nội dung ngắn, giờ đọc	PO-66
+db	notification	user_id	Thông báo trong ứng dụng: người nhận, loại, bộ bài, nội dung ngắn, giờ đọc	PO-66
+db	notification	kind	Thông báo trong ứng dụng: người nhận, loại, bộ bài, nội dung ngắn, giờ đọc	PO-66
+db	notification	event_id	Thông báo trong ứng dụng: người nhận, loại, bộ bài, nội dung ngắn, giờ đọc	PO-66
+db	notification	set_id	Thông báo trong ứng dụng: người nhận, loại, bộ bài, nội dung ngắn, giờ đọc	PO-66
+db	notification	body	Thông báo trong ứng dụng: người nhận, loại, bộ bài, nội dung ngắn, giờ đọc	PO-66
+db	notification	created_at	Thông báo trong ứng dụng: người nhận, loại, bộ bài, nội dung ngắn, giờ đọc	PO-66
+db	notification	read_at	Thông báo trong ứng dụng: người nhận, loại, bộ bài, nội dung ngắn, giờ đọc	PO-66
+db	org	id	Trường/nhóm: định danh nội bộ, tên nhóm	PO-60
+db	org	parent_id	Trường/nhóm: định danh nội bộ, tên nhóm	PO-60
+db	org	kind	Trường/nhóm: định danh nội bộ, tên nhóm	PO-60
+db	org	name	Trường/nhóm: định danh nội bộ, tên nhóm	PO-60
+db	org	created_at	Trường/nhóm: định danh nội bộ, tên nhóm	PO-60
+db	plane_benchmark_problem	code	Bộ đo hình phẳng (kỹ thuật)	PO-65
+db	plane_benchmark_problem	alias	Bộ đo hình phẳng (kỹ thuật)	PO-65
+db	plane_benchmark_problem	statement	Bộ đo hình phẳng (kỹ thuật)	PO-65
+db	plane_benchmark_problem	shape	Bộ đo hình phẳng (kỹ thuật)	PO-65
+db	plane_benchmark_problem	form	Bộ đo hình phẳng (kỹ thuật)	PO-65
+db	plane_benchmark_problem	spec	Bộ đo hình phẳng (kỹ thuật)	PO-65
+db	plane_benchmark_problem	answer	Bộ đo hình phẳng (kỹ thuật)	PO-65
+db	plane_benchmark_problem	answer_type	Bộ đo hình phẳng (kỹ thuật)	PO-65
+db	plane_benchmark_problem	reviewer	Bộ đo hình phẳng (kỹ thuật)	PO-65
+db	plane_benchmark_problem	loaded_at	Bộ đo hình phẳng (kỹ thuật)	PO-65
+db	plane_problem_spec	org_id	Đặc tả hình phẳng của đề	PO-65
+db	plane_problem_spec	problem_version_id	Đặc tả hình phẳng của đề	PO-65
+db	plane_problem_spec	spec	Đặc tả hình phẳng của đề	PO-65
+db	plane_problem_spec	created_at	Đặc tả hình phẳng của đề	PO-65
+db	practice_attempt	id	Bài luyện: lượt thử của học sinh	PO-65
+db	practice_attempt	org_id	Bài luyện: lượt thử của học sinh	PO-65
+db	practice_attempt	assignment_id	Bài luyện: lượt thử của học sinh	PO-65
+db	practice_attempt	user_id	Bài luyện: lượt thử của học sinh	PO-65
+db	practice_attempt	request_key	Bài luyện: lượt thử của học sinh	PO-65
+db	practice_attempt	submitted	Bài luyện: lượt thử của học sinh	PO-65
+db	practice_attempt	outcome	Bài luyện: lượt thử của học sinh	PO-65
+db	practice_attempt	detail	Bài luyện: lượt thử của học sinh	PO-65
+db	practice_attempt	wrong_after	Bài luyện: lượt thử của học sinh	PO-65
+db	practice_attempt	source	Bài luyện: lượt thử của học sinh	PO-65
+db	practice_attempt	created_at	Bài luyện: lượt thử của học sinh	PO-65
+db	practice_report	id	Báo "Em nghĩ đáp số này đúng" kèm ghi chú	PO-65
+db	practice_report	org_id	Báo "Em nghĩ đáp số này đúng" kèm ghi chú	PO-65
+db	practice_report	assignment_id	Báo "Em nghĩ đáp số này đúng" kèm ghi chú	PO-65
+db	practice_report	user_id	Báo "Em nghĩ đáp số này đúng" kèm ghi chú	PO-65
+db	practice_report	submitted	Báo "Em nghĩ đáp số này đúng" kèm ghi chú	PO-65
+db	practice_report	note	Báo "Em nghĩ đáp số này đúng" kèm ghi chú	PO-65
+db	practice_report	status	Báo "Em nghĩ đáp số này đúng" kèm ghi chú	PO-65
+db	practice_report	created_at	Báo "Em nghĩ đáp số này đúng" kèm ghi chú	PO-65
+db	practice_report	decided_at	Báo "Em nghĩ đáp số này đúng" kèm ghi chú	PO-65
+db	practice_report	decided_by	Báo "Em nghĩ đáp số này đúng" kèm ghi chú	PO-65
+db	privacy_notice	version	Văn bản thông báo riêng tư theo phiên bản	PO-64
+db	privacy_notice	title	Văn bản thông báo riêng tư theo phiên bản	PO-64
+db	privacy_notice	body	Văn bản thông báo riêng tư theo phiên bản	PO-64
+db	privacy_notice	published_at	Văn bản thông báo riêng tư theo phiên bản	PO-64
+db	privacy_notice	is_current	Văn bản thông báo riêng tư theo phiên bản	PO-64
+db	probe_prompt	code	Bộ câu dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_prompt	technique_group	Bộ câu dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_prompt	prompt	Bộ câu dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_prompt	target_org_id	Bộ câu dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_prompt	target_problem_version_id	Bộ câu dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_prompt	active	Bộ câu dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_prompt	prompt_key	Bộ câu dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_prompt	channel	Bộ câu dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_prompt	blocking	Bộ câu dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_prompt	added_version	Bộ câu dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	id	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	run_label	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	created_at	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	model	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	prompt_version	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	guard_version	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	set_version	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	prompt_count	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	group_count	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	leak_count	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	verdict	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_report	report	Báo cáo dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_run	id	Lượt dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_run	run_label	Lượt dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_run	prompt_code	Lượt dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_run	executed_at	Lượt dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_run	model	Lượt dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_run	prompt_version	Lượt dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_run	guard_version	Lượt dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_run	outcome	Lượt dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_run	rule_code	Lượt dò lộ đáp án (kỹ thuật)	PO-60
+db	probe_set_version	version	Phiên bản bộ dò (kỹ thuật)	PO-60
+db	probe_set_version	prompt_count	Phiên bản bộ dò (kỹ thuật)	PO-60
+db	probe_set_version	loaded_at	Phiên bản bộ dò (kỹ thuật)	PO-60
+db	problem	id	Đề bài	PO-60
+db	problem	org_id	Đề bài	PO-60
+db	problem	subject_id	Đề bài	PO-60
+db	problem	source	Đề bài	PO-60
+db	problem	owner_user_id	Đề bài	PO-60
+db	problem	author_user_id	Đề bài	PO-60
+db	problem	level	Đề bài	PO-60
+db	problem	solid_kind	Đề bài	PO-60
+db	problem	topic_id	Đề bài	PO-60
+db	problem	title	Đề bài	PO-60
+db	problem	current_version_id	Đề bài	PO-60
+db	problem	created_at	Đề bài	PO-60
+db	problem	archived_at	Đề bài	PO-60
+db	problem	code	Đề bài	PO-60
+db	problem	bank	Đề bài	PO-60
+db	problem	kind	Đề bài	PO-60
+db	problem_create_event	id	Sự kiện đo tạo đề (mã giáo viên, kênh)	PO-65
+db	problem_create_event	org_id	Sự kiện đo tạo đề (mã giáo viên, kênh)	PO-65
+db	problem_create_event	user_id	Sự kiện đo tạo đề (mã giáo viên, kênh)	PO-65
+db	problem_create_event	channel	Sự kiện đo tạo đề (mã giáo viên, kênh)	PO-65
+db	problem_create_event	ref_id	Sự kiện đo tạo đề (mã giáo viên, kênh)	PO-65
+db	problem_create_event	created_at	Sự kiện đo tạo đề (mã giáo viên, kênh)	PO-65
+db	problem_draft	id	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft	org_id	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft	owner_user_id	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft	source	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft	statement	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft	cells	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft	text_confirmed	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft	image_tmp	NGOẠI LỆ BR-S3E5-33 problem_image: ảnh đề bài tạm của giáo viên, không phải ảnh người dùng, xóa sau khi xác nhận chữ (BR-S2E3-09)	PO-65
+db	problem_draft	image_total	NGOẠI LỆ BR-S3E5-33 problem_image: cỡ ảnh đề bài tạm	PO-65
+db	problem_draft	image_type	NGOẠI LỆ BR-S3E5-33 problem_image: loại tệp ảnh đề bài tạm	PO-65
+db	problem_draft	status	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft	doc_id	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft	assign_confirmed_at	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft	created_at	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft	updated_at	Đề nháp của giáo viên (chữ đề, ảnh đề tạm)	PO-65
+db	problem_draft_chat	id	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_chat	org_id	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_chat	draft_id	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_chat	owner_user_id	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_chat	seq	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_chat	role	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_chat	kind	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_chat	content	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_chat	proposal	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_chat	proposal_state	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_chat	decided_note	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_chat	created_at	Trao đổi soạn đề với trợ lý	PO-65
+db	problem_draft_edit	id	Lịch sử sửa đề nháp	PO-65
+db	problem_draft_edit	org_id	Lịch sử sửa đề nháp	PO-65
+db	problem_draft_edit	draft_id	Lịch sử sửa đề nháp	PO-65
+db	problem_draft_edit	seq	Lịch sử sửa đề nháp	PO-65
+db	problem_draft_edit	chat_id	Lịch sử sửa đề nháp	PO-65
+db	problem_draft_edit	snapshot	Lịch sử sửa đề nháp	PO-65
+db	problem_draft_edit	created_at	Lịch sử sửa đề nháp	PO-65
+db	problem_draft_job	id	Lượt xử lý đề nháp	PO-65
+db	problem_draft_job	org_id	Lượt xử lý đề nháp	PO-65
+db	problem_draft_job	draft_id	Lượt xử lý đề nháp	PO-65
+db	problem_draft_job	owner_user_id	Lượt xử lý đề nháp	PO-65
+db	problem_draft_job	state	Lượt xử lý đề nháp	PO-65
+db	problem_draft_job	stages	Lượt xử lý đề nháp	PO-65
+db	problem_draft_job	outcome	Lượt xử lý đề nháp	PO-65
+db	problem_draft_job	created_at	Lượt xử lý đề nháp	PO-65
+db	problem_draft_job	updated_at	Lượt xử lý đề nháp	PO-65
+db	problem_share_link	id	Liên kết chia sẻ đề (băm mã)	PO-65
+db	problem_share_link	org_id	Liên kết chia sẻ đề (băm mã)	PO-65
+db	problem_share_link	doc_id	Liên kết chia sẻ đề (băm mã)	PO-65
+db	problem_share_link	created_by	Liên kết chia sẻ đề (băm mã)	PO-65
+db	problem_share_link	token_hash	Liên kết chia sẻ đề (băm mã)	PO-65
+db	problem_share_link	token_hint	Liên kết chia sẻ đề (băm mã)	PO-65
+db	problem_share_link	days	Liên kết chia sẻ đề (băm mã)	PO-65
+db	problem_share_link	created_at	Liên kết chia sẻ đề (băm mã)	PO-65
+db	problem_share_link	expires_at	Liên kết chia sẻ đề (băm mã)	PO-65
+db	problem_share_link	revoked_at	Liên kết chia sẻ đề (băm mã)	PO-65
+db	problem_signature	org_id	Chữ ký đề để chống trùng	PO-60
+db	problem_signature	problem_version_id	Chữ ký đề để chống trùng	PO-60
+db	problem_signature	sig_version	Chữ ký đề để chống trùng	PO-60
+db	problem_signature	template_id	Chữ ký đề để chống trùng	PO-60
+db	problem_signature	params_norm	Chữ ký đề để chống trùng	PO-60
+db	problem_signature	asked_quantity	Chữ ký đề để chống trùng	PO-60
+db	problem_signature	signature	Chữ ký đề để chống trùng	PO-60
+db	problem_signature	schema_version	Chữ ký đề để chống trùng	PO-60
+db	problem_signature	computed_at	Chữ ký đề để chống trùng	PO-60
+db	problem_topic	id	Chủ đề đề bài	PO-60
+db	problem_topic	subject_id	Chủ đề đề bài	PO-60
+db	problem_topic	slug	Chủ đề đề bài	PO-60
+db	problem_topic	name	Chủ đề đề bài	PO-60
+db	problem_variant	id	Biến thể đề sinh theo tham số	PO-65
+db	problem_variant	org_id	Biến thể đề sinh theo tham số	PO-65
+db	problem_variant	source_doc_id	Biến thể đề sinh theo tham số	PO-65
+db	problem_variant	doc_id	Biến thể đề sinh theo tham số	PO-65
+db	problem_variant	owner_user_id	Biến thể đề sinh theo tham số	PO-65
+db	problem_variant	seed	Biến thể đề sinh theo tham số	PO-65
+db	problem_variant	ordinal	Biến thể đề sinh theo tham số	PO-65
+db	problem_variant	params	Biến thể đề sinh theo tham số	PO-65
+db	problem_variant	answer	Biến thể đề sinh theo tham số	PO-65
+db	problem_variant	answer_value	Biến thể đề sinh theo tham số	PO-65
+db	problem_variant	answer_source	Biến thể đề sinh theo tham số	PO-65
+db	problem_variant	created_at	Biến thể đề sinh theo tham số	PO-65
+db	problem_version	id	Phiên bản đề	PO-60
+db	problem_version	org_id	Phiên bản đề	PO-60
+db	problem_version	problem_id	Phiên bản đề	PO-60
+db	problem_version	version	Phiên bản đề	PO-60
+db	problem_version	statement	Phiên bản đề	PO-60
+db	problem_version	statement_hash	Phiên bản đề	PO-60
+db	problem_version	verify_status	Phiên bản đề	PO-60
+db	problem_version	verification_report_id	Phiên bản đề	PO-60
+db	problem_version	approval_status	Phiên bản đề	PO-60
+db	problem_version	ai_authored	Phiên bản đề	PO-60
+db	problem_version	created_by	Phiên bản đề	PO-60
+db	problem_version	created_at	Phiên bản đề	PO-60
+db	qa_turn	id	Lượt hỏi trợ lý của học sinh (câu hỏi, trả lời)	PO-60
+db	qa_turn	org_id	Lượt hỏi trợ lý của học sinh (câu hỏi, trả lời)	PO-60
+db	qa_turn	assignment_id	Lượt hỏi trợ lý của học sinh (câu hỏi, trả lời)	PO-60
+db	qa_turn	user_id	Lượt hỏi trợ lý của học sinh (câu hỏi, trả lời)	PO-60
+db	qa_turn	request_id	Lượt hỏi trợ lý của học sinh (câu hỏi, trả lời)	PO-60
+db	qa_turn	asked_at	Lượt hỏi trợ lý của học sinh (câu hỏi, trả lời)	PO-60
+db	qa_turn	question	Lượt hỏi trợ lý của học sinh (câu hỏi, trả lời)	PO-60
+db	qa_turn	reply_kind	Lượt hỏi trợ lý của học sinh (câu hỏi, trả lời)	PO-60
+db	qa_turn	reply_text	Lượt hỏi trợ lý của học sinh (câu hỏi, trả lời)	PO-60
+db	qa_turn	guard_version	Lượt hỏi trợ lý của học sinh (câu hỏi, trả lời)	PO-60
+db	qa_turn	source_lecture_ids	Lượt hỏi trợ lý của học sinh (câu hỏi, trả lời)	PO-60
+db	relation_denial	id	Đếm truy cập ngoài quan hệ (chống dò)	PO-66
+db	relation_denial	org_id	Đếm truy cập ngoài quan hệ (chống dò)	PO-66
+db	relation_denial	actor_id	Đếm truy cập ngoài quan hệ (chống dò)	PO-66
+db	relation_denial	kind	Đếm truy cập ngoài quan hệ (chống dò)	PO-66
+db	relation_denial	object_type	Đếm truy cập ngoài quan hệ (chống dò)	PO-66
+db	relation_denial	at	Đếm truy cập ngoài quan hệ (chống dò)	PO-66
+db	retired_user_code	code_sha256	Băm mã người dùng đã xóa để không cấp lại	PO-64
+db	retired_user_code	retired_at	Băm mã người dùng đã xóa để không cấp lại	PO-64
+db	review_inbox_item	id	Hộp soát lời giải	PO-65
+db	review_inbox_item	org_id	Hộp soát lời giải	PO-65
+db	review_inbox_item	doc_id	Hộp soát lời giải	PO-65
+db	review_inbox_item	after_step	Hộp soát lời giải	PO-65
+db	review_inbox_item	content	Hộp soát lời giải	PO-65
+db	review_inbox_item	status	Hộp soát lời giải	PO-65
+db	review_inbox_item	decided_by	Hộp soát lời giải	PO-65
+db	review_inbox_item	decided_at	Hộp soát lời giải	PO-65
+db	review_inbox_item	result_version	Hộp soát lời giải	PO-65
+db	review_inbox_item	created_at	Hộp soát lời giải	PO-65
+db	sample_item	id	Dữ liệu mẫu khung (kỹ thuật)	PO-60
+db	sample_item	org_id	Dữ liệu mẫu khung (kỹ thuật)	PO-60
+db	sample_item	title	Dữ liệu mẫu khung (kỹ thuật)	PO-60
+db	sample_item	created_at	Dữ liệu mẫu khung (kỹ thuật)	PO-60
+db	scene_build	id	Dựng hình 3D của đề	PO-60
+db	scene_build	org_id	Dựng hình 3D của đề	PO-60
+db	scene_build	problem_version_id	Dựng hình 3D của đề	PO-60
+db	scene_build	build_no	Dựng hình 3D của đề	PO-60
+db	scene_build	coord_source	Dựng hình 3D của đề	PO-60
+db	scene_build	schema_version	Dựng hình 3D của đề	PO-60
+db	scene_build	spec	Dựng hình 3D của đề	PO-60
+db	scene_build	coords	Dựng hình 3D của đề	PO-60
+db	scene_build	hidden_measures	Dựng hình 3D của đề	PO-60
+db	scene_build	created_at	Dựng hình 3D của đề	PO-60
+db	share_grant	id	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	org_id	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	grantee_org_id	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	resource_kind	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	resource_id	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	purpose	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	status	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	requested_by	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	requested_at	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	grantor_approved_at	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	grantee_approved_at	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	valid_from	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	valid_until	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	revoked_at	Cấp quyền dùng chung giữa các trường	PO-60
+db	share_grant	revoked_by	Cấp quyền dùng chung giữa các trường	PO-60
+db	solid_template	id	Mẫu khối hình	PO-60
+db	solid_template	code	Mẫu khối hình	PO-60
+db	solid_template	solid_kind	Mẫu khối hình	PO-60
+db	solid_template	name	Mẫu khối hình	PO-60
+db	solid_template	schema_version	Mẫu khối hình	PO-60
+db	solid_template	param_spec	Mẫu khối hình	PO-60
+db	solution	org_id	Lời giải của đề	PO-60
+db	solution	problem_version_id	Lời giải của đề	PO-60
+db	solution	final_answer	Lời giải của đề	PO-60
+db	solution	steps	Lời giải của đề	PO-60
+db	solution	schema_version	Lời giải của đề	PO-60
+db	solution	answer_forms	Lời giải của đề	PO-60
+db	solution	answer_forms_version	Lời giải của đề	PO-60
+db	solution	model	Lời giải của đề	PO-60
+db	solution	prompt_version	Lời giải của đề	PO-60
+db	solution	author_user_id	Lời giải của đề	PO-60
+db	solution	ai_authored	Lời giải của đề	PO-60
+db	solution	created_at	Lời giải của đề	PO-60
+db	solution_assignment_pin	org_id	Ghim phiên bản lời giải cho bài giao	PO-65
+db	solution_assignment_pin	assignment_id	Ghim phiên bản lời giải cho bài giao	PO-65
+db	solution_assignment_pin	doc_id	Ghim phiên bản lời giải cho bài giao	PO-65
+db	solution_assignment_pin	version_id	Ghim phiên bản lời giải cho bài giao	PO-65
+db	solution_assignment_pin	pinned_at	Ghim phiên bản lời giải cho bài giao	PO-65
+db	solution_doc	id	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	org_id	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	owner_user_id	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	code	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	title	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	statement	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	figure	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	content_org_id	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	problem_version_id	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	in_my_shelf	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	latest_version	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	created_at	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	stated_answer	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	figure_source	Tài liệu lời giải của giáo viên	PO-65
+db	solution_doc	draft_id	Tài liệu lời giải của giáo viên	PO-65
+db	solution_version	id	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	org_id	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	doc_id	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	version	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	steps	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	ai_authored	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	author_user_id	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	note	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	human_status	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	machine_status	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	final_state	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	final_note	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	checked_at	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	approved_by	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	approved_code	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	approved_at	Phiên bản lời giải và trạng thái soát	PO-65
+db	solution_version	created_at	Phiên bản lời giải và trạng thái soát	PO-65
+db	step_check_result	org_id	StepCheck: kết quả kiểm từng bước lời giải	PO-65
+db	step_check_result	version_id	StepCheck: kết quả kiểm từng bước lời giải	PO-65
+db	step_check_result	step_no	StepCheck: kết quả kiểm từng bước lời giải	PO-65
+db	step_check_result	status	StepCheck: kết quả kiểm từng bước lời giải	PO-65
+db	step_check_result	reason	StepCheck: kết quả kiểm từng bước lời giải	PO-65
+db	step_check_result	written	StepCheck: kết quả kiểm từng bước lời giải	PO-65
+db	step_check_result	computed	StepCheck: kết quả kiểm từng bước lời giải	PO-65
+db	step_check_result	checked_at	StepCheck: kết quả kiểm từng bước lời giải	PO-65
+db	student_password_reset	id	Giáo viên đặt lại mật khẩu học sinh (đếm, giới hạn)	PO-66
+db	student_password_reset	org_id	Giáo viên đặt lại mật khẩu học sinh (đếm, giới hạn)	PO-66
+db	student_password_reset	teacher_id	Giáo viên đặt lại mật khẩu học sinh (đếm, giới hạn)	PO-66
+db	student_password_reset	student_id	Giáo viên đặt lại mật khẩu học sinh (đếm, giới hạn)	PO-66
+db	student_password_reset	class_id	Giáo viên đặt lại mật khẩu học sinh (đếm, giới hạn)	PO-66
+db	student_password_reset	created_at	Giáo viên đặt lại mật khẩu học sinh (đếm, giới hạn)	PO-66
+db	subject	id	Môn học	PO-60
+db	subject	code	Môn học	PO-60
+db	subject	name	Môn học	PO-60
+db	teacher_access_code	id	Mã truy cập giáo viên MVP (băm)	PO-60
+db	teacher_access_code	org_id	Mã truy cập giáo viên MVP (băm)	PO-60
+db	teacher_access_code	user_id	Mã truy cập giáo viên MVP (băm)	PO-60
+db	teacher_access_code	selector	Mã truy cập giáo viên MVP (băm)	PO-60
+db	teacher_access_code	verifier_hmac	Mã truy cập giáo viên MVP (băm)	PO-60
+db	teacher_access_code	pepper_kid	Mã truy cập giáo viên MVP (băm)	PO-60
+db	teacher_access_code	issued_at	Mã truy cập giáo viên MVP (băm)	PO-60
+db	teacher_access_code	expires_at	Mã truy cập giáo viên MVP (băm)	PO-60
+db	teacher_access_code	revoked_at	Mã truy cập giáo viên MVP (băm)	PO-60
+db	teacher_access_code	last_used_at	Mã truy cập giáo viên MVP (băm)	PO-60
+db	user_preference	org_id	Giao diện chọn theo tài khoản	PO-65
+db	user_preference	user_id	Giao diện chọn theo tài khoản	PO-65
+db	user_preference	theme	Giao diện chọn theo tài khoản	PO-65
+db	user_preference	updated_at	Giao diện chọn theo tài khoản	PO-65
+db	user_role_grant	org_id	Cờ vai người soát Kho chung	PO-61
+db	user_role_grant	user_id	Cờ vai người soát Kho chung	PO-61
+db	user_role_grant	role	Cờ vai người soát Kho chung	PO-61
+db	user_role_grant	granted_by	Cờ vai người soát Kho chung	PO-61
+db	user_role_grant	granted_at	Cờ vai người soát Kho chung	PO-61
+db	verification_report	id	Báo cáo kiểm chứng đề	PO-60
+db	verification_report	org_id	Báo cáo kiểm chứng đề	PO-60
+db	verification_report	problem_version_id	Báo cáo kiểm chứng đề	PO-60
+db	verification_report	checked_at	Báo cáo kiểm chứng đề	PO-60
+db	verification_report	scene_ok	Báo cáo kiểm chứng đề	PO-60
+db	verification_report	answer_ok	Báo cáo kiểm chứng đề	PO-60
+db	verification_report	result	Báo cáo kiểm chứng đề	PO-60
+db	verification_report	schema_version	Báo cáo kiểm chứng đề	PO-60
+db	verification_report	checks	Báo cáo kiểm chứng đề	PO-60
+api	api	academicYear	Khóa JSON của API (gặp đầu ở ClassController#detail)	PO-65
+api	api	acceptedAt	Khóa JSON của API (gặp đầu ở LibraryController#shared)	PO-65
+api	api	ackedVersion	Khóa JSON của API (gặp đầu ở PrivacyController#mine)	PO-64
+api	api	action	Khóa JSON của API (gặp đầu ở ReleaseController#log)	PO-65
+api	api	activeCount	Khóa JSON của API (gặp đầu ở ClassController#detail)	PO-65
+api	api	activeMinutes	Khóa JSON của API (gặp đầu ở TrackingController#progress)	PO-65
+api	api	actorCode	Khóa JSON của API (gặp đầu ở SetReleaseController#auditEvents)	PO-65
+api	api	actorName	Khóa JSON của API (gặp đầu ở ReleaseController#log)	PO-65
+api	api	actorRole	Khóa JSON của API (gặp đầu ở SetReleaseController#auditEvents)	PO-65
+api	api	after	Khóa JSON của API (gặp đầu ở ReleaseController#log)	PO-65
+api	api	afterStep	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	ai	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-64
+api	api	aiAuthored	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	aiCalls	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	aiEnabled	Khóa JSON của API (gặp đầu ở ClassController#detail)	PO-64
+api	api	aiLabel	Khóa JSON của API (gặp đầu ở LectureController#byTerm)	PO-65
+api	api	allowHint	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	allowQa	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	allowed	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	answer	Khóa JSON của API (gặp đầu ở PracticeSetController#previewCheck)	PO-65
+api	api	answerKind	Khóa JSON của API (gặp đầu ở PracticeSetController#one)	PO-65
+api	api	answerMatch	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	answerSource	Khóa JSON của API (gặp đầu ở VariantController#ofDoc)	PO-65
+api	api	answers	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	apex	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	approvalRequired	Khóa JSON của API (gặp đầu ở ClassController#detail)	PO-65
+api	api	approve	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	approveBlocked	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	approved	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	approvedAt	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	approvedCode	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	approx	Khóa JSON của API (gặp đầu ở VariantController#ofDoc)	PO-65
+api	api	archivedAt	Khóa JSON của API (gặp đầu ở AssignmentSetController#one)	PO-65
+api	api	arg	Khóa JSON của API (gặp đầu ở ClassMonitorController#events)	PO-65
+api	api	ask	Khóa JSON của API (gặp đầu ở PresentController#preflight)	PO-65
+api	api	askCount	Khóa JSON của API (gặp đầu ở TrackingController#progress)	PO-65
+api	api	askedAt	Khóa JSON của API (gặp đầu ở TrackingController#questions)	PO-65
+api	api	askedQuestions	Khóa JSON của API (gặp đầu ở TrackingController#monitor)	PO-65
+api	api	askerName	Khóa JSON của API (gặp đầu ở TrackingController#questions)	PO-65
+api	api	assignConfirmed	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	assignNote	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	assignable	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	assigned	Khóa JSON của API (gặp đầu ở SetReleaseController#overview)	PO-65
+api	api	assignedAt	Khóa JSON của API (gặp đầu ở AssignmentSetController#one)	PO-65
+api	api	assignedPins	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	assignment	Khóa JSON của API (gặp đầu ở ReleaseController#options)	PO-65
+api	api	assignmentId	Khóa JSON của API (gặp đầu ở AssignmentController#create)	PO-65
+api	api	assignments	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	at	Khóa JSON của API (gặp đầu ở ReleaseController#log)	PO-65
+api	api	attempts	Khóa JSON của API (gặp đầu ở ClassBoardController#evidence)	PO-65
+api	api	attemptsLeft	Khóa JSON của API (gặp đầu ở ChoiceController#attempt)	PO-65
+api	api	author	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	authorCode	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	available	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	axes	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	axis	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	baseVersion	Khóa JSON của API (gặp đầu ở SolutionController#save)	PO-65
+api	api	batchId	Khóa JSON của API (gặp đầu ở FigureEventController#events)	PO-65
+api	api	before	Khóa JSON của API (gặp đầu ở ReleaseController#log)	PO-65
+api	api	blockedReason	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	body	Khóa JSON của API (gặp đầu ở CodeAuthController#notice)	PO-65
+api	api	built	Khóa JSON của API (gặp đầu ở PlaneController#view)	PO-65
+api	api	byClass	Khóa JSON của API (gặp đầu ở SetReleaseController#overview)	PO-65
+api	api	canAttachSolution	Khóa JSON của API (gặp đầu ở ExportController#options)	PO-65
+api	api	canConfirmText	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	canReport	Khóa JSON của API (gặp đầu ở ChoiceController#attempt)	PO-65
+api	api	canSend	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	canSubmit	Khóa JSON của API (gặp đầu ở LibraryController#doc)	PO-65
+api	api	canUndo	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	canonical	Khóa JSON của API (gặp đầu ở PracticeSetController#previewCheck)	PO-65
+api	api	card	Khóa JSON của API (gặp đầu ở GeometryController#templates)	PO-65
+api	api	cells	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	center	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	check	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	checkLabel	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	checked	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	chips	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	choiceId	Khóa JSON của API (gặp đầu ở ChoiceController#attempt)	PO-65
+api	api	chosen	Khóa JSON của API (gặp đầu ở ChoiceController#forStudent)	PO-65
+api	api	classId	Khóa JSON của API (gặp đầu ở AssignmentController#create)	PO-61
+api	api	className	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-61
+api	api	classTooSmall	Khóa JSON của API (gặp đầu ở ClassBoardController#stuck)	PO-65
+api	api	classes	Khóa JSON của API (gặp đầu ở AssignmentSetController#options)	PO-61
+api	api	clientTime	Khóa JSON của API (gặp đầu ở SetReleaseController#openNow)	PO-65
+api	api	closedAt	Khóa JSON của API (gặp đầu ở AssignmentSetController#one)	PO-65
+api	api	code	Khóa JSON của API (gặp đầu ở AssignmentSetController#one)	PO-65
+api	api	codeJoinEnabled	Khóa JSON của API (gặp đầu ở ClassController#detail)	PO-65
+api	api	columns	Khóa JSON của API (gặp đầu ở ClassBoardController#board)	PO-65
+api	api	computed	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	concepts	Khóa JSON của API (gặp đầu ở SubjectController#catalog)	PO-65
+api	api	condition	Khóa JSON của API (gặp đầu ở DraftController#supplement)	PO-65
+api	api	confidence	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	confirm	Khóa JSON của API (gặp đầu ở SolutionController#apply)	PO-64
+api	api	confirmAiFigure	Khóa JSON của API (gặp đầu ở DraftController#assign)	PO-65
+api	api	confirmLocked	Khóa JSON của API (gặp đầu ở ExportController#export)	PO-65
+api	api	confirmNeedsReview	Khóa JSON của API (gặp đầu ở SolutionController#approve)	PO-65
+api	api	confirmPastRelease	Khóa JSON của API (gặp đầu ở AssignmentSetController#assign)	PO-65
+api	api	confirmed	Khóa JSON của API (gặp đầu ở ExportController#export)	PO-65
+api	api	content	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	coordSource	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	correct	Khóa JSON của API (gặp đầu ở ChoiceController#ofSet)	PO-65
+api	api	count	Khóa JSON của API (gặp đầu ở ReleaseController#todo)	PO-65
+api	api	created	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	createdAt	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	current	Khóa JSON của API (gặp đầu ở PracticeController#open)	PO-65
+api	api	data	Khóa JSON của API (gặp đầu ở SubjectController#solve)	PO-65
+api	api	days	Khóa JSON của API (gặp đầu ở ExportController#list)	PO-65
+api	api	daysLabel	Khóa JSON của API (gặp đầu ở ExportController#list)	PO-65
+api	api	decision	Khóa JSON của API (gặp đầu ở PracticeController#decide)	PO-65
+api	api	default	Khóa JSON của API (gặp đầu ở GeometryController#templates)	PO-65
+api	api	deleted	Khóa JSON của API (gặp đầu ở AccountController#delete)	PO-64
+api	api	description	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	details	Khóa JSON của API (gặp đầu ở ApiError)	PO-65
+api	api	dimmed	Khóa JSON của API (gặp đầu ở ChoiceController#forStudent)	PO-65
+api	api	dismissible	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	displayName	Khóa JSON của API (gặp đầu ở SetReleaseController#openNow)	PO-61
+api	api	docId	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	docIds	Khóa JSON của API (gặp đầu ở ExportController#export)	PO-65
+api	api	done	Khóa JSON của API (gặp đầu ở AssignmentSetController#mine)	PO-65
+api	api	draft	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	draftId	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	dueAt	Khóa JSON của API (gặp đầu ở AssignmentSetController#mine)	PO-65
+api	api	durationMs	Khóa JSON của API (gặp đầu ở HelpController#sceneShown)	PO-65
+api	api	edges	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	error	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	events	Khóa JSON của API (gặp đầu ở FigureEventController#events)	PO-65
+api	api	evidence	Khóa JSON của API (gặp đầu ở ClassBoardController#stuck)	PO-65
+api	api	expectedRev	Khóa JSON của API (gặp đầu ở AssignmentController#release)	PO-65
+api	api	expiresAt	Khóa JSON của API (gặp đầu ở ExportController#list)	PO-65
+api	api	faces	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	failCount	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	field	Khóa JSON của API (gặp đầu ở ApiError)	PO-65
+api	api	figureMinutes	Khóa JSON của API (gặp đầu ở TrackingController#monitor)	PO-65
+api	api	figureSource	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	figureType	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	fileName	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	fileType	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	finalAnswer	Khóa JSON của API (gặp đầu ở AssignmentController#solution)	PO-65
+api	api	finalNote	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	finalState	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	firstView	Khóa JSON của API (gặp đầu ở HelpController#openSolution)	PO-65
+api	api	found	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	fromVersion	Khóa JSON của API (gặp đầu ở SolutionController#applyPreview)	PO-65
+api	api	gradable	Khóa JSON của API (gặp đầu ở AssignmentSetController#options)	PO-65
+api	api	grade	Khóa JSON của API (gặp đầu ở ClassController#detail)	PO-65
+api	api	groups	Khóa JSON của API (gặp đầu ở AssignmentSetController#mine)	PO-65
+api	api	hasActiveStudents	Khóa JSON của API (gặp đầu ở ClassBoardController#sets)	PO-65
+api	api	hasClasses	Khóa JSON của API (gặp đầu ở SetReleaseController#overview)	PO-65
+api	api	hasImage	NGOẠI LỆ BR-S3E5-33 problem_image: cờ đề nháp có ảnh đề bài	PO-65
+api	api	hasMore	Khóa JSON của API (gặp đầu ở CatalogController#list)	PO-65
+api	api	hasRecoveryCode	Khóa JSON của API (gặp đầu ở CodeAuthController#me)	PO-61
+api	api	hasSolution	Khóa JSON của API (gặp đầu ở PresentController#load)	PO-65
+api	api	height	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	hiddenMeasures	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	highestHint	Khóa JSON của API (gặp đầu ở ReleaseController#ask)	PO-65
+api	api	hint	Khóa JSON của API (gặp đầu ở AssignmentSetController#preview)	PO-65
+api	api	hintLevel	Khóa JSON của API (gặp đầu ở TrackingController#progress)	PO-65
+api	api	hintMessage	Khóa JSON của API (gặp đầu ở HelpController#help)	PO-65
+api	api	hintUsers	Khóa JSON của API (gặp đầu ở TrackingController#monitor)	PO-65
+api	api	hints	Khóa JSON của API (gặp đầu ở PlaneController#view)	PO-65
+api	api	history	Khóa JSON của API (gặp đầu ở LibraryController#doc)	PO-65
+api	api	humanLabel	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	id	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	image	NGOẠI LỆ BR-S3E5-33 problem_image: ảnh đề bài của giáo viên khi soạn đề (không phải ảnh người dùng)	PO-65
+api	api	inMyShelf	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	index	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	indexes	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	inserted	Khóa JSON của API (gặp đầu ở FigureEventController#events)	PO-65
+api	api	insights	Khóa JSON của API (gặp đầu ở ClassBoardController#stuck)	PO-65
+api	api	item	Khóa JSON của API (gặp đầu ở ClassBoardController#evidence)	PO-65
+api	api	itemCount	Khóa JSON của API (gặp đầu ở AssignmentSetController#list)	PO-65
+api	api	items	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	job	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	joinCode	Khóa JSON của API (gặp đầu ở AuthController#student)	PO-61
+api	api	joinedAt	Khóa JSON của API (gặp đầu ở ClassController#student)	PO-61
+api	api	k	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	key	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	kind	Khóa JSON của API (gặp đầu ở LockStateController#lock)	PO-65
+api	api	kindLabel	Khóa JSON của API (gặp đầu ở LibraryController#similar)	PO-65
+api	api	kinds	Khóa JSON của API (gặp đầu ở SubjectController#catalog)	PO-65
+api	api	label	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	labels	Khóa JSON của API (gặp đầu ở ClassBoardController#stuck)	PO-65
+api	api	lastAnswer	Khóa JSON của API (gặp đầu ở PracticeController#open)	PO-65
+api	api	lastAskedAt	Khóa JSON của API (gặp đầu ở TrackingController#monitor)	PO-65
+api	api	latest	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	latestVersion	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	left	Khóa JSON của API (gặp đầu ở ClassBoardController#board)	PO-65
+api	api	level	Khóa JSON của API (gặp đầu ở ReleaseController#options)	PO-65
+api	api	libraryId	Khóa JSON của API (gặp đầu ở LibraryController#accept)	PO-65
+api	api	lock	Khóa JSON của API (gặp đầu ở ReleaseController#page)	PO-65
+api	api	locked	Khóa JSON của API (gặp đầu ở LockStateController#lock)	PO-65
+api	api	lockedAssigned	Khóa JSON của API (gặp đầu ở ExportController#options)	PO-65
+api	api	lockedClasses	Khóa JSON của API (gặp đầu ở PresentController#preflight)	PO-65
+api	api	machineLabel	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	machineNote	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	machineStatus	Khóa JSON của API (gặp đầu ở SolutionController#approve)	PO-65
+api	api	matched	Khóa JSON của API (gặp đầu ở ClassBoardController#evidence)	PO-65
+api	api	maxAttempts	Khóa JSON của API (gặp đầu ở ChoiceController#ofSet)	PO-65
+api	api	maxTurns	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	message	Khóa JSON của API (gặp đầu ở ChoiceController#attempt)	PO-65
+api	api	messages	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	minAggregate	Khóa JSON của API (gặp đầu ở ClassBoardController#stuck)	PO-65
+api	api	mine	Khóa JSON của API (gặp đầu ở LibraryController#queueItem)	PO-65
+api	api	mode	Khóa JSON của API (gặp đầu ở ClassBoardController#stuck)	PO-65
+api	api	mustChangePassword	Khóa JSON của API (gặp đầu ở CodeAuthController#login)	PO-61
+api	api	mvp	Khóa JSON của API (gặp đầu ở CatalogController#summary)	PO-65
+api	api	mvpMet	Khóa JSON của API (gặp đầu ở CatalogController#summary)	PO-65
+api	api	n	Khóa JSON của API (gặp đầu ở ClassBoardController#stuck)	PO-65
+api	api	name	Khóa JSON của API (gặp đầu ở AssignmentSetController#options)	PO-61
+api	api	names	Khóa JSON của API (gặp đầu ở TrackingController#monitor)	PO-61
+api	api	needsAssignConfirm	Khóa JSON của API (gặp đầu ở DraftController#mine)	PO-65
+api	api	needsConfirm	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	needsReview	Khóa JSON của API (gặp đầu ở AssignmentSetController#one)	PO-65
+api	api	needsReviewCount	Khóa JSON của API (gặp đầu ở AssignmentSetController#one)	PO-65
+api	api	newPassword	Khóa JSON của API (gặp đầu ở CodeAuthController#firstPassword)	PO-61
+api	api	nextCursor	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	no	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	notOpened	Khóa JSON của API (gặp đầu ở SetReleaseController#openNow)	PO-65
+api	api	notOpenedCount	Khóa JSON của API (gặp đầu ở SetReleaseController#overview)	PO-65
+api	api	note	Khóa JSON của API (gặp đầu ở PracticeSetController#previewCheck)	PO-65
+api	api	notes	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	notice	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-64
+api	api	occurredAt	Khóa JSON của API (gặp đầu ở ClassMonitorController#events)	PO-65
+api	api	of	Khóa JSON của API (gặp đầu ở PlaneController#view)	PO-65
+api	api	openNow	Khóa JSON của API (gặp đầu ở AssignmentController#release)	PO-65
+api	api	opened	Khóa JSON của API (gặp đầu ở TrackingController#progress)	PO-65
+api	api	openedAt	Khóa JSON của API (gặp đầu ở ClassBoardController#evidence)	PO-65
+api	api	openedCount	Khóa JSON của API (gặp đầu ở TrackingController#monitor)	PO-65
+api	api	operations	Khóa JSON của API (gặp đầu ở SubjectController#catalog)	PO-65
+api	api	options	Khóa JSON của API (gặp đầu ở ChoiceController#ofSet)	PO-65
+api	api	order	Khóa JSON của API (gặp đầu ở GeometryController#templates)	PO-65
+api	api	ordinal	Khóa JSON của API (gặp đầu ở VariantController#ofDoc)	PO-65
+api	api	origin	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	outcome	Khóa JSON của API (gặp đầu ở ChoiceController#attempt)	PO-65
+api	api	overdue	Khóa JSON của API (gặp đầu ở AssignmentSetController#mine)	PO-65
+api	api	ownReleaseAt	Khóa JSON của API (gặp đầu ở AssignmentSetController#one)	PO-65
+api	api	owner	Khóa JSON của API (gặp đầu ở LibraryController#doc)	PO-65
+api	api	ownerName	Khóa JSON của API (gặp đầu ở LibraryController#queue)	PO-65
+api	api	params	Khóa JSON của API (gặp đầu ở VariantController#ofDoc)	PO-65
+api	api	password	Khóa JSON của API (gặp đầu ở AccountController#delete)	PO-61
+api	api	pending	Khóa JSON của API (gặp đầu ở SetReleaseController#overview)	PO-65
+api	api	pendingCount	Khóa JSON của API (gặp đầu ở ClassController#detail)	PO-65
+api	api	points	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	position	Khóa JSON của API (gặp đầu ở AssignmentSetController#one)	PO-65
+api	api	privacyAck	Khóa JSON của API (gặp đầu ở CodeAuthController#register)	PO-61
+api	api	privacyVersion	Khóa JSON của API (gặp đầu ở CodeAuthController#register)	PO-61
+api	api	problem	Khóa JSON của API (gặp đầu ở ReleaseController#page)	PO-65
+api	api	problemCode	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	problemId	Khóa JSON của API (gặp đầu ở AssignmentSetController#one)	PO-65
+api	api	problemKind	Khóa JSON của API (gặp đầu ở PracticeSetController#one)	PO-65
+api	api	problemTitle	Khóa JSON của API (gặp đầu ở ClassMonitorController#assigned)	PO-65
+api	api	problemVersionId	Khóa JSON của API (gặp đầu ở AssignmentController#create)	PO-65
+api	api	problems	Khóa JSON của API (gặp đầu ở AssignmentSetController#options)	PO-65
+api	api	progress	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	proposal	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	proposalId	Khóa JSON của API (gặp đầu ở SolutionController#save)	PO-65
+api	api	proposals	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	qaMessage	Khóa JSON của API (gặp đầu ở HelpController#help)	PO-65
+api	api	question	Khóa JSON của API (gặp đầu ở ReleaseController#ask)	PO-65
+api	api	questionCount	Khóa JSON của API (gặp đầu ở TrackingController#monitor)	PO-65
+api	api	questionGroups	Khóa JSON của API (gặp đầu ở TrackingController#monitor)	PO-65
+api	api	questions	Khóa JSON của API (gặp đầu ở ClassBoardController#evidence)	PO-65
+api	api	questionsTruncated	Khóa JSON của API (gặp đầu ở TrackingController#monitor)	PO-65
+api	api	radius	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	raw	Khóa JSON của API (gặp đầu ở ClassBoardController#stuck)	PO-65
+api	api	read	Khóa JSON của API (gặp đầu ở NotificationController#one)	PO-65
+api	api	reason	Khóa JSON của API (gặp đầu ở PracticeSetController#previewCheck)	PO-65
+api	api	received	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	reconnectSeconds	Khóa JSON của API (gặp đầu ở PresentController#load)	PO-65
+api	api	recoveryCode	Khóa JSON của API (gặp đầu ở CodeAuthController#recover)	PO-61
+api	api	refId	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	refKind	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	releaseAt	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	releaseBeforeDue	Khóa JSON của API (gặp đầu ở AssignmentSetController#one)	PO-65
+api	api	releaseRev	Khóa JSON của API (gặp đầu ở AssignmentController#ofClass)	PO-65
+api	api	releaseState	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	released	Khóa JSON của API (gặp đầu ở PlaneController#view)	PO-65
+api	api	remaining	Khóa JSON của API (gặp đầu ở PracticeController#result)	PO-65
+api	api	rendering	Khóa JSON của API (gặp đầu ở SubjectController#render)	PO-65
+api	api	reply	Khóa JSON của API (gặp đầu ở ReleaseController#ask)	PO-65
+api	api	replyKind	Khóa JSON của API (gặp đầu ở ReleaseController#ask)	PO-65
+api	api	reported	Khóa JSON của API (gặp đầu ở PracticeController#open)	PO-65
+api	api	requestId	Khóa JSON của API (gặp đầu ở AccountController#delete)	PO-65
+api	api	requestKey	Khóa JSON của API (gặp đầu ở AssignmentSetController#assign)	PO-65
+api	api	requested	Khóa JSON của API (gặp đầu ở VariantController#create)	PO-65
+api	api	requestedAt	Khóa JSON của API (gặp đầu ở ClassController#pending)	PO-65
+api	api	required	Khóa JSON của API (gặp đầu ở PrivacyController#mine)	PO-64
+api	api	result	Khóa JSON của API (gặp đầu ở SetReleaseController#auditEvents)	PO-65
+api	api	retryable	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	review	Khóa JSON của API (gặp đầu ở PracticeController#result)	PO-65
+api	api	reviewNote	Khóa JSON của API (gặp đầu ở LectureController#byTerm)	PO-65
+api	api	reviewer	Khóa JSON của API (gặp đầu ở LibraryController#list)	PO-65
+api	api	role	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-61
+api	api	rows	Khóa JSON của API (gặp đầu ở ClassBoardController#board)	PO-65
+api	api	saved	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	scene	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	sceneId	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	sceneKind	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	scheduleVersion	Khóa JSON của API (gặp đầu ở AssignmentSetController#one)	PO-65
+api	api	schemaVersion	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	seed	Khóa JSON của API (gặp đầu ở VariantController#ofDoc)	PO-65
+api	api	selectable	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	sendNote	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	seq	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	serverNow	Khóa JSON của API (gặp đầu ở AssignmentSetController#mine)	PO-65
+api	api	set	Khóa JSON của API (gặp đầu ở AssignmentSetController#schedule)	PO-65
+api	api	setId	Khóa JSON của API (gặp đầu ở SetReleaseController#openNow)	PO-65
+api	api	setTitle	Khóa JSON của API (gặp đầu ở PracticeController#decide)	PO-65
+api	api	sets	Khóa JSON của API (gặp đầu ở AssignmentSetController#mine)	PO-65
+api	api	shelf	Khóa JSON của API (gặp đầu ở LibraryController#similar)	PO-65
+api	api	sizeBytes	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	skipped	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	slug	Khóa JSON của API (gặp đầu ở LectureController#keywords)	PO-65
+api	api	solidKind	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	solution	Khóa JSON của API (gặp đầu ở ExportController#export)	PO-65
+api	api	solutionLabel	Khóa JSON của API (gặp đầu ở PracticeController#result)	PO-65
+api	api	solutionState	Khóa JSON của API (gặp đầu ở PracticeController#result)	PO-65
+api	api	solved	Khóa JSON của API (gặp đầu ở SubjectController#solve)	PO-65
+api	api	source	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	sourceDocId	Khóa JSON của API (gặp đầu ở VariantController#ofDoc)	PO-65
+api	api	sourceLabel	Khóa JSON của API (gặp đầu ở LectureController#byTerm)	PO-65
+api	api	sourceRef	Khóa JSON của API (gặp đầu ở LectureController#byTerm)	PO-65
+api	api	stages	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	state	Khóa JSON của API (gặp đầu ở AssignmentSetController#mineOne)	PO-65
+api	api	stated	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	statedAnswer	Khóa JSON của API (gặp đầu ở SolutionController#statedAnswer)	PO-65
+api	api	statement	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	status	Khóa JSON của API (gặp đầu ở AssignmentSetController#mine)	PO-65
+api	api	statusLabel	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	step	Khóa JSON của API (gặp đầu ở ClassBoardController#stuck)	PO-65
+api	api	stepCount	Khóa JSON của API (gặp đầu ở CatalogController#list)	PO-65
+api	api	steps	Khóa JSON của API (gặp đầu ở AssignmentController#solution)	PO-65
+api	api	stoppedStep	Khóa JSON của API (gặp đầu ở ClassBoardController#evidence)	PO-65
+api	api	studentCode	Khóa JSON của API (gặp đầu ở PracticeController#decide)	PO-61
+api	api	studentCount	Khóa JSON của API (gặp đầu ở ReleaseController#options)	PO-61
+api	api	studentName	Khóa JSON của API (gặp đầu ở PracticeController#decide)	PO-61
+api	api	students	Khóa JSON của API (gặp đầu ở TrackingController#monitor)	PO-61
+api	api	studentsTruncated	Khóa JSON của API (gặp đầu ở TrackingController#monitor)	PO-65
+api	api	submissionId	Khóa JSON của API (gặp đầu ở LibraryController#queueItem)	PO-65
+api	api	submitBlockedReason	Khóa JSON của API (gặp đầu ở LibraryController#doc)	PO-65
+api	api	submitted	Khóa JSON của API (gặp đầu ở PracticeController#decide)	PO-65
+api	api	submittedAt	Khóa JSON của API (gặp đầu ở LibraryController#queue)	PO-65
+api	api	summary	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	surfaces	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	target	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	targetId	Khóa JSON của API (gặp đầu ở SetReleaseController#auditEvents)	PO-65
+api	api	targetType	Khóa JSON của API (gặp đầu ở SetReleaseController#auditEvents)	PO-65
+api	api	tempPassword	Khóa JSON của API (gặp đầu ở ClassController#resetPassword)	PO-61
+api	api	template	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	term	Khóa JSON của API (gặp đầu ở LectureController#keywords)	PO-65
+api	api	text	Khóa JSON của API (gặp đầu ở ChoiceController#ofSet)	PO-65
+api	api	textConfirmed	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	theme	Khóa JSON của API (gặp đầu ở SettingsController#put)	PO-65
+api	api	title	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	toVersion	Khóa JSON của API (gặp đầu ở SolutionController#applyPreview)	PO-65
+api	api	token	Khóa JSON của API (gặp đầu ở ExportController#list)	PO-61
+api	api	tolerance	Khóa JSON của API (gặp đầu ở PracticeSetController#one)	PO-65
+api	api	tool	Khóa JSON của API (gặp đầu ở FigureEventController#events)	PO-65
+api	api	toolCount	Khóa JSON của API (gặp đầu ở TrackingController#progress)	PO-65
+api	api	topic	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	topicSlug	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	total	Khóa JSON của API (gặp đầu ở AssignmentSetController#mine)	PO-65
+api	api	turns	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	type	Khóa JSON của API (gặp đầu ở SetReleaseController#auditEvents)	PO-65
+api	api	undoNote	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	undoSteps	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	unit	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	unsure	Khóa JSON của API (gặp đầu ở DraftChatController#send)	PO-65
+api	api	up	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	updated	Khóa JSON của API (gặp đầu ở ImportController#drafts)	PO-65
+api	api	updatedAt	Khóa JSON của API (gặp đầu ở ClassBoardController#board)	PO-65
+api	api	userCode	Khóa JSON của API (gặp đầu ở SetReleaseController#openNow)	PO-61
+api	api	userId	Khóa JSON của API (gặp đầu ở AuthController#teacher)	PO-61
+api	api	value	Khóa JSON của API (gặp đầu ở VariantController#ofDoc)	PO-65
+api	api	variant	Khóa JSON của API (gặp đầu ở ExportController#options)	PO-65
+api	api	verification	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	verified	Khóa JSON của API (gặp đầu ở CatalogController#summary)	PO-65
+api	api	verifyStatus	Khóa JSON của API (gặp đầu ở AssignmentController#mine)	PO-65
+api	api	version	Khóa JSON của API (gặp đầu ở AssignmentSetController#schedule)	PO-65
+api	api	versionId	Khóa JSON của API (gặp đầu ở ReleaseController#page)	PO-65
+api	api	viewers	Khóa JSON của API (gặp đầu ở ReviewInboxController#dismiss)	PO-65
+api	api	warning	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	warnings	Khóa JSON của API (gặp đầu ở SolutionController#applyPreview)	PO-65
+api	api	withSolution	Khóa JSON của API (gặp đầu ở ExportController#export)	PO-65
+api	api	works	Khóa JSON của API (gặp đầu ở ClassBoardController#stuck)	PO-65
+api	api	x	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	y	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+api	api	z	Khóa JSON của API (gặp đầu ở CatalogController#detail)	PO-65
+db	class_export_log	id	US-S3E6-02 nhật ký xuất kết quả lớp (giới hạn 10 lần/giờ), không nội dung tệp	PO-66
+db	class_export_log	org_id	US-S3E6-02 nhật ký xuất kết quả lớp (giới hạn 10 lần/giờ), không nội dung tệp	PO-66
+db	class_export_log	teacher_id	US-S3E6-02 nhật ký xuất kết quả lớp (giới hạn 10 lần/giờ), không nội dung tệp	PO-66
+db	class_export_log	class_id	US-S3E6-02 nhật ký xuất kết quả lớp (giới hạn 10 lần/giờ), không nội dung tệp	PO-66
+db	class_export_log	created_at	US-S3E6-02 nhật ký xuất kết quả lớp (giới hạn 10 lần/giờ), không nội dung tệp	PO-66
+db	present_from_results_event	id	Sự kiện đo M-S3-04 chữa bài từ kết quả: mã giáo viên, mã đề, giờ	PO-66
+db	present_from_results_event	org_id	Sự kiện đo M-S3-04 chữa bài từ kết quả: mã giáo viên, mã đề, giờ	PO-66
+db	present_from_results_event	teacher_id	Sự kiện đo M-S3-04 chữa bài từ kết quả: mã giáo viên, mã đề, giờ	PO-66
+db	present_from_results_event	problem_version_id	Sự kiện đo M-S3-04 chữa bài từ kết quả: mã giáo viên, mã đề, giờ	PO-66
+db	present_from_results_event	created_at	Sự kiện đo M-S3-04 chữa bài từ kết quả: mã giáo viên, mã đề, giờ	PO-66
+api	api	archived	Cờ lớp Đã lưu trữ của học sinh (US-S3E6-02, BR-S3E6-15)	PO-66
+api	api	sessionId	Mã phiên Trình chiếu mở từ Kết quả lớp (US-S3E6-01)	PO-66
+api	api	startStep	Bước bắt đầu của Trình chiếu mở từ Kết quả lớp (US-S3E6-01)	PO-66
