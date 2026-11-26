@@ -1,19 +1,18 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 26/11/2026 19:12
-Mục tiêu hiện tại: CODE tới hết chặng 3 (lệnh owner 26/11 "start coding", goal "hoàn thành chặng 3"). Owner chỉ kiểm sản phẩm lúc cuối; delivery-lead TỰ QUYẾT + ghi DECISIONS, không hỏi, không chờ owner (memory delivery-lead-decides). UI theo HTML bản mẫu `Design/prototype/s23*` + theme D mặc định (đổi A/B/C/D trong Cài đặt). AI mock; T-05 (đo thật) chỉ chặn gate cuối T-34; T-27 delivery-lead chốt theo S2-L6/REPORT.md. Phiên chính chỉ điều phối; mỗi task = 1 agent con + 1 worktree/nhánh; Opus ≤ 2 cùng lúc.
-Đã xong (nhánh worktree-mvp-wave0):
-- Spec S2/S3 R3 OK + PO-66 (ebec17a: 58 story / 746 AC / 751 TC). PLAN_code-s23 v1.0 (30df78c). epic-common v1.3 (fface0d).
-- Thiết kế: kịch bản 7 KB / 61 bước + 15 màn mới (d1d5b87), PDF `Design/s23/GEO-kich-ban-S23.pdf`; 4 style + PDF `Design/styles/GEO-4-huong-style.pdf`; DQ-50 chốt (9b192b8).
-- T-41 khung chung S2/S3: traceability --strict, 15 feature rỗng (gộp b350990).
-- T-43 FIX e2e (gộp 4645aa3: 859/859 ×2, 8 phút/lượt). T-50 theme (gộp 82e37cb): mặc định C "Giấy kẻ ô" + Bad Script, nội dung toán --font-math (lệnh owner 26/11, DECISIONS). Khóa e2e toàn máy trong app/scripts/e2e.sh (1f25493): chỉ 1 bộ e2e chạy cùng lúc.
-Đang dở (nền, 2 Opus):
-- T-261126-18 S2-E1 định danh (wt `.claude/worktrees/s2-e1`, runner-T-261126-18.md): e2e lượt 1 909/913, S2-E1 53/53; 3 trượt do tải.
-- T-261126-19 S2-E2 khung môn + hình phẳng (wt `.claude/worktrees/s2-e2`, runner-T-261126-19.md): đã gộp wave0 (theme C), đang kiểm lại.
-- Cả hai đã được nhắn: gộp worktree-mvp-wave0 trước kiểm cuối (lấy T-43, T-50, khóa e2e).
-Bước tiếp theo:
-1. Agent 18/19 báo xong: chạy lại Kiểm (gốc repo) — e2e giờ tuần tự nhờ khóa; trượt rải rác do tải → so với lượt khác, ghi rõ khi chấp nhận. `cd <wt>` commit → merge --no-ff từ mvp-wave0 → header queue [done] (sed) → `make down` trong wt.
-2. Kế: FIX T-44 (theme hoàn thiện: màu cứng → token, font toán ở màn MVP, chữ D ≥ 14 px, sql-lint user_preference) chạy khi có slot Opus; rồi 20‖21 → 22‖23 → 24‖25 → 26‖42 → 27 (delivery-lead) → 28‖29 → 30‖31 → 32 → 33 → 34 (owner + T-05).
-3. Lệnh: `git -C <mvp-wave0> worktree add <tuyệt đối .claude/worktrees/<wt>> -b <nhánh> HEAD` → `queue.py brief <ID> > $CLAUDE_JOB_DIR/tmp/briefNN.txt` → Agent Opus đọc tệp brief + "Bổ sung" (worktree tuyệt đối, đọc epic-common v1.4, gộp wave0 trước kiểm cuối, không commit).
-Inbox còn: 3 mục (.claude/inbox.md): FIX sau T-41 (một phần do T-43; còn ẩn feature rỗng /gv sau T-50), Dom vẽ bổ sung (đã xong T-40 — đóng), PO soát sau T-37 (story = 58, đóng).
-Quyết định đã chốt: DECISIONS.md (mới nhất: sau T-41 — strict "chưa chạy" chỉ trượt ở gate T-26/T-33); PO-DECISIONS PO-66.
-Rủi ro / chặn: phiên chính bị auto mode chặn chạy `make bench-mvp` bằng key → T-05 cần owner chạy (chỉ trước T-34). Máy tải cao làm e2e chập chờn. Ước tính còn ~15 task Opus × 3–5 giờ (~150M token) → có thể chạm hạn mức; dừng ở trạng thái đã gộp xanh. Lệnh git trong worktree lồng: phải `cd` vào worktree rồi chạy git trơn (guard chặn `git -C` phức tạp).
-Việc owner: T-05 đo thật — `! cd /Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0/app && eval "$(grep '^export GEO_AI_API_KEY=' ~/.zshrc)" && GEO_AI_PROVIDER=anthropic make bench-mvp > /tmp/geo-bench-real.log 2>&1; echo rc=$?` (~$3).
+# PROGRESS · GeometryMath (GEO) · cập nhật 26/11/2026 20:10 · BÀN GIAO PHIÊN FABLE
+Mục tiêu hiện tại: CODE tới hết chặng 3 (goal owner "hoàn thành chặng 3"). Phiên điều phối mới chạy Fable (DECISIONS 26/11); agent con Dev = Opus (≤ 2 Opus/Fable cùng lúc). Owner chỉ kiểm sản phẩm lúc cuối; delivery-lead TỰ QUYẾT + ghi DECISIONS, không chờ owner, chủ động gỡ chặn (memory delivery-lead-decides). Nhánh làm việc: `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`).
+Tiến độ epic (code đã gộp): 1/15 — S2-E1 (T-18, 4c059c1). S2-E2 (T-19) đang chốt (xem Đang dở).
+Đã xong:
+- Spec S2/S3: 58 story / 746 AC / 751 TC, R3 OK, PO-66 (ebec17a). PLAN_code-s23 v1.0 (30df78c). Thiết kế: kịch bản 7 KB / 61 bước, PDF `Design/s23/GEO-kich-ban-S23.pdf`, `Design/styles/GEO-4-huong-style.pdf`.
+- Nền: T-41 truy vết strict (b350990) · T-43 ổn định e2e (4645aa3) · T-50 theme A/B/C/D, MẶC ĐỊNH C "Giấy kẻ ô" + Bad Script, nội dung toán `--font-math` (82e37cb) · khóa e2e toàn máy trong `app/scripts/e2e.sh` (1f25493).
+- Chiến lược regression theo mức ảnh hưởng (owner OK, 431fdac, DECISIONS 26/11): L5 Dev chạy `make e2e-affected` MỘT lượt (L0 cục bộ: spec epic + smoke · L1 đụng mã chung: + spec epic phụ thuộc · L2 xuyên suốt/tệp lạ: trọn bộ chromium+api). Trọn bộ 6 project CHỈ khi xong feature (A sau T-28/T-32, B sau T-25, C sau T-23, D sau T-29, E sau T-32) và gate L6 T-26/T-33, một lượt. Phiên chính KHÔNG chạy lại e2e: đọc `summary.json` + kiểm không có tệp mã sửa sau lượt. (CLAUDE.md §5; memory affected-tests-not-full-regression.)
+Đang dở:
+- T-261126-19 S2-E2 (Opus, wt `.claude/worktrees/s2-e2`, runner-T-261126-19.md, /tmp/s2e2-final.txt): verify xanh (UT 223, IT 153), e2e trọn bộ 2 lượt 883/884 (trượt TC-GEO-0693, TC-GEO-0415 — ngoài S2-E2, do tải), bench-mvp OK; bench-s2 lỗi do khóa giả của profile test → agent đang sửa PlaneBenchRunner và chạy lại chỉ bench-s2 + 2 spec trượt + traceability (đã nhắn chính sách mới). → XEM DÒNG "T-19" Ở CUỐI TỆP (phiên cũ cập nhật khi gộp).
+Bước tiếp theo (phiên Fable):
+1. Nếu T-19 chưa gộp: đọc báo cáo/`/tmp/s2e2-final.txt` + runner-T-261126-19.md; agent cũ có thể đã mất sau đổi phiên → kiểm bằng chứng (summary.json mới nhất trong `.claude/worktrees/s2-e2/app/e2e/evidence/`, bench-s2, traceability) — thiếu thì chạy RIÊNG phần thiếu, không chạy trọn bộ. Đạt → `cd` worktree, commit (gỡ thay đổi ảnh `artifacts/GEO/evidence/theme/*.png` do e2e chụp lại) → `git merge --no-ff s2-e2` từ mvp-wave0 → header queue `[done]` bằng sed → `make down` trong wt.
+2. FIX T-261126-45 (Opus, wt fix-45): `make e2e-affected` + smoke + reporter TC-S2/S3 + keep-tables. BẮT BUỘC trước T-20/T-21 (queue đã đặt phụ thuộc).
+3. Rồi theo queue: 20‖21 → (xong 23: regression C) 22‖23 → 24‖25 (regression B) → 26 gate L6 ‖ 42 → 27 (delivery-lead chốt theo S2-L6/REPORT.md) → 28‖29 (regression A, D) → 30‖31 → 32 (regression E) → 33 gate L6 → 34 (owner + T-05). FIX T-44 (theme hoàn thiện) chen khi có slot.
+4. Mỗi task: `git -C <mvp-wave0> worktree add <đường dẫn tuyệt đối .claude/worktrees/<wt>> -b <nhánh> HEAD` → `queue.py brief <ID> > $CLAUDE_JOB_DIR/tmp/briefNN.txt` → Agent Opus đọc tệp brief + Bổ sung (worktree tuyệt đối; đọc epic-common v1.5; gộp wave0 trước kiểm cuối; không commit; báo cáo ≤ 10 dòng kèm mức ảnh hưởng L0/L1/L2). Lệnh git trong worktree lồng: `cd` vào rồi git trơn (guard chặn `git -C` phức tạp; script dài → ghi tệp .py rồi chạy).
+Inbox còn: FIX sau T-18 (một phần trong T-45), FIX sau T-41 (ẩn feature rỗng /gv; test nhạy tải), mục cũ đã đóng.
+Quyết định đã chốt: DECISIONS.md (mới nhất: chiến lược regression; phiên Fable; theme C + Bad Script). PO-DECISIONS PO-66.
+Rủi ro / chặn: T-05 đo thật cần owner chạy (chỉ trước T-34; auto mode chặn phiên chính dùng key). Hạn mức tài khoản (~40 giờ Opus còn lại). Máy tải cao khi nhiều e2e → đã có khóa + affected.
+Việc owner: T-05 — `! cd /Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0/app && eval "$(grep '^export GEO_AI_API_KEY=' ~/.zshrc)" && GEO_AI_PROVIDER=anthropic make bench-mvp > /tmp/geo-bench-real.log 2>&1; echo rc=$?` (~$3).
