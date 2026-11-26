@@ -17,7 +17,7 @@ import vn.geo.server.it.AbstractIT;
 
 /**
  * T-261126-50: theme giao diện theo tài khoản (GET/PUT /api/v1/me/settings, bảng user_preference
- * V440). Mặc định 'd'; chỉ nhận a|b|c|d; mỗi người chỉ thấy tùy chọn của chính mình.
+ * V109). Mặc định 'c'; chỉ nhận a|b|c|d; mỗi người chỉ thấy tùy chọn của chính mình.
  */
 class SettingsIT extends AbstractIT {
 

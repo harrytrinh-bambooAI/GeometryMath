@@ -6,7 +6,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Repository;
 import vn.geo.server.common.db.TenantJdbc;
 
-/** Bảng user_preference (V440): một hàng mỗi tài khoản, lọc theo trường của thẻ. */
+/** Bảng user_preference (V109): một hàng mỗi tài khoản, lọc theo trường của thẻ. */
 @Repository
 public class PreferenceRepository {
 
