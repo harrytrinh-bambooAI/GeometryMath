@@ -5,25 +5,25 @@
 /* Giữ chỗ cho dòng đếm và chip lớp tải sau: không đẩy bộ lọc xuống ngay lúc người dùng chạm (điện thoại, T-261126-02) */
 .e5-bank .e1-chips { min-height: 24px; }
 .e5-bank .chip.pri,
-.e5-detail .chip.pri { background: var(--pri-s); color: var(--pri); }
+.e5-detail .chip.pri { background: var(--pri-s); color: var(--pri-t); }
 .e5-bank .tiny,
-.e5-detail .tiny { font-size: 12px; }
+.e5-detail .tiny { font-size: var(--fs-sm); }
 
 .e5-filters { display: flex; flex-direction: column; gap: 8px; }
 .e5-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-.e5-filter-title { min-width: 72px; font-weight: 600; font-size: 13px; color: var(--muted); }
+.e5-filter-title { min-width: 72px; font-weight: 600; font-size: var(--fs-sm); color: var(--muted); }
 .e5-opt {
   min-height: 36px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line);
-  background: var(--panel, #fff); color: inherit; font: inherit; font-size: 13px; cursor: pointer;
+  background: var(--panel); color: inherit; font: inherit; font-size: var(--fs-sm); cursor: pointer;
 }
-.e5-opt.on { background: var(--pri); border-color: var(--pri); color: #fff; }
+.e5-opt.on { background: var(--pri); border-color: var(--pri); color: var(--on-pri); }
 
 .e5-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; min-width: 0; }
 .e5-card { display: flex; flex-direction: column; gap: 10px; padding: 14px; min-width: 0; }
-.e5-thumb-link { display: flex; justify-content: center; color: var(--pri); }
+.e5-thumb-link { display: flex; justify-content: center; color: var(--pri-t); }
 .e5-thumb { width: 96px; height: 84px; }
 .e5-card-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; }
-.e5-statement { color: inherit; text-decoration: none; font-weight: 600; font-size: 13.5px; overflow-wrap: anywhere; }
+.e5-statement { color: inherit; text-decoration: none; font-weight: 600; font-size: var(--fs-sm); overflow-wrap: anywhere; font-family: var(--font-math); }
 .e5-card-foot { display: flex; align-items: center; gap: 8px; margin-top: auto; }
 .e5-card-foot .btn { margin-left: auto; min-height: 44px; display: inline-flex; align-items: center; }
 .e5-empty { margin: 8px 0; }
@@ -44,6 +44,8 @@
 .e5-viewer { height: 380px; display: flex; min-width: 0; }
 .e5-viewer-inner { flex: 1; min-width: 0; }
 .e5-answer { margin: 0 0 8px; }
+/* Nội dung toán (đáp số, bước giải, vì sao) dùng font toán: chữ tay theme C khó đọc số và dấu chấm (T-261126-44) */
+.e5-answer b, .e5-step-body, .e5-step-why { font-family: var(--font-math); }
 .e5-steps { margin: 8px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
 .e5-steps p { margin: 2px 0; }
 .e5-hint p { margin: 2px 0 8px; }

@@ -52,33 +52,33 @@
 .gv-point circle { fill: var(--text); stroke: var(--panel); stroke-width: 1.5; }
 .gv-point.gv-user circle { fill: var(--pur); }
 .gv-point.gv-selected circle, .gv-point.gv-hl circle { fill: var(--org); }
-.gv-point text { font: 700 17px var(--font); fill: var(--text); paint-order: stroke; stroke: var(--panel); stroke-width: 4px; }
+.gv-point text { font: 700 17px var(--font-math); fill: var(--text); paint-order: stroke; stroke: var(--panel); stroke-width: 4px; }
 .gv-point.gv-user text { fill: var(--pur); }
 .gv-axis line { stroke: var(--sky); stroke-width: 1.6; }
-.gv-axis text { font: 700 15px var(--font); fill: var(--sky); }
+.gv-axis text { font: 700 15px var(--font-math); fill: var(--sky); }
 
 /* lớp chữ trên khung */
 .gv-views { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 6px; }
 .gv-view {
   min-height: 36px; padding: 6px 12px; border: 1px solid var(--line); border-radius: var(--r-sm);
-  background: var(--panel); color: var(--muted); font: 600 13px var(--font); box-shadow: var(--sh); cursor: pointer;
+  background: var(--panel); color: var(--muted); font: 600 var(--fs-sm) var(--font); box-shadow: var(--sh); cursor: pointer;
 }
-.gv-view[aria-pressed='true'] { color: var(--pri); border-color: var(--pri); }
-.gv-selection { position: absolute; top: 10px; left: 10px; background: var(--org-s); color: var(--org); font-weight: 700; }
+.gv-view[aria-pressed='true'] { color: var(--pri-t); border-color: var(--pri); }
+.gv-selection { position: absolute; top: 10px; left: 10px; background: var(--org-s); color: var(--text); font-weight: 700; }
 .gv-banner {
   position: absolute; left: 10px; right: 160px; top: 52px; padding: 8px 12px; border-radius: var(--r-sm);
-  background: var(--yel-s); color: var(--text); font-size: 13px; border: 1px solid var(--yel);
+  background: var(--yel-s); color: var(--text); font-size: var(--fs-sm); border: 1px solid var(--yel);
 }
 .gv-chips { position: absolute; left: 10px; bottom: 10px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; max-width: 60%; }
 .gv-chip {
   padding: 4px 10px; border: 1.5px solid var(--org); border-radius: 8px; background: var(--panel);
-  color: var(--org); font: 600 13px var(--font-mono);
+  color: var(--org); font: 600 var(--fs-sm) var(--font-mono);
 }
 .gv-measure { border-color: var(--grn); color: var(--grn); }
 .gv-measure.gv-hidden { border-color: var(--faint); color: var(--muted); }
 .gv-toast {
   position: absolute; top: 54px; left: 50%; transform: translateX(-50%); max-width: 90%;
-  padding: 10px 14px; border-radius: var(--r-sm); background: var(--text); color: #fff; font-size: 14px; box-shadow: var(--sh); z-index: 3;
+  padding: 10px 14px; border-radius: var(--r-sm); background: var(--text); color: var(--bg); font-size: 14px; box-shadow: var(--sh); z-index: 3;
   pointer-events: none; /* thông báo không chặn chạm vào hình bên dưới */
 }
 .gv-menu { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); z-index: 4; padding: 12px; max-width: 96%; }
@@ -96,16 +96,16 @@
 .gv-tool {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
   min-width: 64px; min-height: 52px; padding: 4px 8px; border: 0; border-radius: var(--r-sm);
-  background: transparent; color: var(--muted); font: 600 12px var(--font); cursor: pointer;
+  background: transparent; color: var(--muted); font: 600 var(--fs-sm) var(--font); cursor: pointer;
 }
 .gv-tool svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.gv-tool[aria-pressed='true'] { background: var(--pri); color: #fff; }
+.gv-tool[aria-pressed='true'] { background: var(--pri); color: var(--on-pri); }
 .gv-tool-more { display: none; }
 
 @media (max-width: 600px) {
   .gv-stage { min-height: 0; }
   .gv-views { top: 8px; right: 8px; }
-  .gv-view { min-height: 44px; font-size: 12px; padding: 4px 8px; }
+  .gv-view { min-height: 44px; padding: 4px 8px; }
   .gv-toolbar { gap: 2px; padding: 4px; justify-content: space-between; }
   .gv-tool { min-width: 44px; min-height: 44px; width: 44px; height: 48px; padding: 0; }
   .gv-tool span { display: none; }
@@ -121,4 +121,4 @@
 .gv-sol-angle path { fill: var(--org); fill-opacity: 0.25; stroke-width: 2.5; }
 .gv-sol-segment path { stroke-width: 5; stroke-opacity: 0.85; }
 .gv-sol-right path { stroke-width: 2; }
-.gv-sol text { fill: var(--org); font-weight: 800; font-size: 14px; pointer-events: none; }
+.gv-sol text { fill: var(--org); font-family: var(--font-math); font-weight: 800; font-size: 14px; pointer-events: none; }

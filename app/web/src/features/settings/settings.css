@@ -76,7 +76,7 @@
   background: var(--pri);
   color: var(--on-pri);
   font-weight: 700;
-  font-size: 12px;
+  font-size: var(--fs-sm);
 }
 .theme-name {
   font-weight: 700;

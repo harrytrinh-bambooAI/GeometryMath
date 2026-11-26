@@ -11,8 +11,8 @@
  *   màu nhấn  --pri --pri-d --pri-s --pri-t (chữ màu chính trên nền sáng/tối) --pri-line --on-pri
  *             --org --grn --yel --pur --sky --red (+ -s nền nhạt), --yel-t (chữ vàng đủ tương phản)
  *   hình khối --r (thẻ) --r-sm (ô nhỏ) --r-btn (nút) --r-chip --sh (bóng thẻ) --focus (vòng tiêu điểm)
- *   chữ       --font --font-mono --fs --fs-sm --fs-chip --fs-rail (A/B/C: chữ phụ ≥ 14 px theo STYLES.md;
- *             D giữ cỡ chữ phụ của màn MVP 12,5 / 11,5 / 11 px để không đổi bố cục — xem câu hỏi mở T-50)
+ *   chữ       --font --font-mono --font-math (nội dung toán) --fs --fs-sm --fs-chip --fs-rail
+ *             (cả 4 theme: chữ phụ --fs-sm/--fs-chip ≥ 14 px theo PO-66 G17, T-261126-44; nhãn thanh dọc --fs-rail 12 px)
  *   mật độ    --ctl-h (cao nút/ô nhập với chuột) --gap --pad-card --rail-w --rail-bg
  * Cảm ứng (iPad/iPhone, pointer: coarse): base.css nâng vùng chạm lên tối thiểu --touch (44 px) cho mọi theme.
  */
@@ -59,9 +59,9 @@
   --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
   --font-math: var(--font);
   --fs: 14px;
-  --fs-sm: 12.5px;
-  --fs-chip: 11.5px;
-  --fs-rail: 11px;
+  --fs-sm: 14px;
+  --fs-chip: 14px;
+  --fs-rail: 12px;
   --ctl-h: 36px;
   --gap: 14px;
   --pad-card: 14px 16px;

@@ -101,7 +101,7 @@ h3 {
 }
 .top .crumb {
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--fs-sm);
   font-weight: 500;
 }
 .top .spacer {
@@ -146,7 +146,7 @@ h3 {
   padding: 10px 16px;
   border-radius: var(--r-btn);
   font-weight: 700;
-  font-size: 13.5px;
+  font-size: var(--fs-sm);
   background: var(--pri);
   color: var(--on-pri);
   border: none;
@@ -257,6 +257,14 @@ h3 {
     padding-left: 16px;
     padding-right: 16px;
   }
+}
+
+/* Ô nhập, ô chọn, nút không có lớp riêng: theo cỡ chữ của khối chứa (mặc định trình duyệt 13,3 px < 14 px, PO-66 G17; T-261126-44). */
+input,
+textarea,
+select,
+button {
+  font-size: inherit;
 }
 
 /* Nội dung toán (đề, đáp số, ô nhập, bảng số liệu, nhãn hình) dùng --font-math: font chữ tay của theme C khó đọc số/dấu chấm. */

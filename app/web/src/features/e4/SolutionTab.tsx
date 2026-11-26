@@ -171,7 +171,7 @@ export function SolutionTab({ id, model }: { id: string; model: HelpModel }) {
         </button>
       </div>
       <p data-testid={tid('e4', 'solution', 'answer')}>
-        Đáp số: <strong>{solution.finalAnswer}</strong>
+        Đáp số: <strong data-math>{solution.finalAnswer}</strong>
       </p>
     </div>
   );

@@ -9,6 +9,7 @@ import { API, devToken, signInPage } from '../e1/e1.ts';
  * lưu theo tài khoản (GET/PUT /api/v1/me/settings) + localStorage dự phòng; tải lại vẫn giữ.
  * Không phụ thuộc mạng: chặn Google Fonts, chữ rơi về font hệ thống trong token --font.
  * Mỗi (test × dự án) dùng một học sinh riêng chưa test nào khác dùng, để chạy song song không giẫm nhau.
+ * T-261126-44: test ảnh soát thêm chữ ≥ 14 px (PO-66 G17), không tràn ngang, theme C nội dung toán dùng --font-math.
  */
 const EVIDENCE = path.resolve(import.meta.dirname, '../../../../artifacts/GEO/evidence/theme');
 const THEME_BG: Record<string, string> = {
@@ -105,22 +106,91 @@ test('Chưa đăng nhập: lưu trên thiết bị (localStorage), tải lại v
   expect(await bodyBg(page)).toBe(THEME_BG.a);
 });
 
-test('Ảnh một màn MVP (Kho đề) ở 4 theme', async ({ page, request }, testInfo) => {
+/**
+ * T-261126-44 · soát một màn sau khi dựng: chữ có nội dung < 14 px (PO-66 G17; trừ nhãn thanh dọc --fs-rail, chữ trong
+ * svg tính theo viewBox, ô xem trước theme, chỉ số trên/dưới) và phần tử tràn ngang (trang, nút, chip, ô lọc, nút bộ xem).
+ */
+async function auditScreen(page: Page): Promise<{ small: string[]; overflow: string[] }> {
+  return page.evaluate(() => {
+    const small: string[] = [];
+    const overflow: string[] = [];
+    const root = document.documentElement;
+    if (root.scrollWidth > root.clientWidth + 1) overflow.push(`trang ${root.scrollWidth} > ${root.clientWidth}`);
+    const name = (el: Element) => `${el.tagName.toLowerCase()}.${el.getAttribute('class') ?? ''}[${el.getAttribute('data-testid') ?? ''}]`;
+    for (const el of Array.from(document.querySelectorAll<HTMLElement>('#root *'))) {
+      if (el.closest('svg, .rail, .theme-preview, sub, sup')) continue;
+      const box = el.getBoundingClientRect();
+      if (box.width < 2 || box.height < 2) continue;
+      const cs = getComputedStyle(el);
+      if (cs.visibility === 'hidden' || cs.display === 'none') continue;
+      if (el.matches('.btn, .chip, .e5-opt, .gv-tool, .gv-view') && el.scrollWidth > el.clientWidth + 1) {
+        overflow.push(`${name(el)} ${el.scrollWidth} > ${el.clientWidth}`);
+      }
+      const ownText = Array.from(el.childNodes).some((n) => n.nodeType === Node.TEXT_NODE && (n.textContent ?? '').trim() !== '');
+      const field = el.matches('input:not([type="checkbox"]):not([type="radio"]), textarea, select');
+      if ((ownText || field) && Number.parseFloat(cs.fontSize) < 14) small.push(`${name(el)} ${cs.fontSize}`);
+    }
+    return { small: small.slice(0, 20), overflow: overflow.slice(0, 20) };
+  });
+}
+
+const fontFamilyOf = (page: Page, selector: string) =>
+  page.locator(selector).first().evaluate((el) => getComputedStyle(el).fontFamily);
+
+test('Ảnh màn MVP (Kho đề, Chi tiết đề) ở 4 theme; chữ ≥ 14 px, không tràn; theme C: nội dung toán dùng --font-math', async ({ page, request }, testInfo) => {
   test.skip(testInfo.project.name !== 'ui-chromium', 'ảnh bằng chứng chụp một lần trên Chromium máy tính');
-  await offlineFonts(page);
+  test.slow();
+  // Không chặn Google Fonts ở test này: có mạng thì ảnh và phép đo bố cục dùng đúng chữ tay Bad Script của theme C;
+  // mất mạng thì chữ rơi về font hệ thống (ghi vào annotation `bad-script`), các kiểm tra còn lại vẫn chạy.
   await page.setViewportSize({ width: 1440, height: 900 });
   await signInPage(page, request, 'F-GEO-003');
   let theme = 'd';
   // theme của tài khoản giả lập ở trình duyệt: không ghi tùy chọn của Giáo viên mẫu dùng chung trên máy chủ
   await page.route('**/api/v1/me/settings', (r) => r.fulfill({ json: { theme } }));
   mkdirSync(EVIDENCE, { recursive: true });
+  const shoot = async (name: string) => {
+    await page.evaluate(() => Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 5000))]));
+    const audit = await auditScreen(page);
+    expect(audit.small, `${name}: chữ < 14 px`).toEqual([]);
+    expect(audit.overflow, `${name}: tràn ngang`).toEqual([]);
+    await page.screenshot({ path: path.join(EVIDENCE, `${name}.png`), fullPage: false });
+    await testInfo.attach(name, { path: path.join(EVIDENCE, `${name}.png`), contentType: 'image/png' });
+  };
   for (const t of ['a', 'b', 'c', 'd']) {
     theme = t;
     await page.goto('/gv/kho-de');
     await expect(htmlTheme(page)).toHaveAttribute('data-theme', t);
     await expect(page.getByTestId('e1-catalog')).toBeVisible();
+    await expect(page.locator('.e5-statement').first()).toBeVisible();
     expect(await bodyBg(page)).toBe(THEME_BG[t]);
-    await page.screenshot({ path: path.join(EVIDENCE, `kho-de-${t}.png`), fullPage: false });
-    await testInfo.attach(`kho-de-${t}`, { path: path.join(EVIDENCE, `kho-de-${t}.png`), contentType: 'image/png' });
+    const fsSm = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--fs-sm').trim());
+    expect(fsSm, `theme ${t}: --fs-sm`).toBe('14px');
+    if (t === 'c') {
+      const loaded = await page.evaluate(() =>
+        Promise.race([
+          document.fonts.load("16px 'Bad Script'", 'Đề bài').then((f) => f.length > 0, () => false),
+          new Promise<boolean>((r) => setTimeout(() => r(false), 5000)),
+        ]),
+      );
+      testInfo.annotations.push({ type: 'bad-script', description: loaded ? 'đã tải font Bad Script' : 'không tải được (mất mạng), dùng font dự phòng' });
+      expect(await fontFamilyOf(page, 'body')).toMatch(/^"?Bad Script/);
+      expect(await fontFamilyOf(page, '.e5-statement')).toMatch(/^"?Be Vietnam Pro/);
+    }
+    await shoot(`kho-de-${t}`);
+
+    await page.locator('.e5-statement').first().click();
+    await expect(page.getByTestId('e5-part-statement')).toBeVisible();
+    await expect(page.getByTestId('e2-problem-statement')).toBeVisible();
+    await expect(htmlTheme(page)).toHaveAttribute('data-theme', t);
+    await expect(page.getByTestId('viewer')).toBeVisible();
+    if (t === 'c') {
+      expect(await fontFamilyOf(page, '[data-testid="e2-problem-statement"]')).toMatch(/^"?Be Vietnam Pro/);
+      // nhãn đỉnh của hình 3D và đáp số: có trên đề nào thì kiểm trên đề đó
+      for (const sel of ['.gv-point text', '[data-testid="e5-answer"]', '.e5-step-body']) {
+        if ((await page.locator(sel).count()) > 0) expect(await fontFamilyOf(page, sel), `font toán: ${sel}`).toMatch(/^"?Be Vietnam Pro/);
+      }
+      expect(await fontFamilyOf(page, '.e5-detail-head h2')).toMatch(/^"?Bad Script/);
+    }
+    await shoot(`chi-tiet-de-${t}`);
   }
 });

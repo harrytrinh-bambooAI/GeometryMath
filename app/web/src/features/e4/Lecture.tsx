@@ -67,7 +67,7 @@ export function KwText({ text, testId }: { text: string; testId?: string }) {
   const ctx = useContext(LectureCtx);
   const parts = useMemo(() => splitKeywords(text, ctx?.keywords ?? []), [text, ctx?.keywords]);
   return (
-    <span data-testid={testId}>
+    <span data-testid={testId} data-math>
       {parts.map((p, i) =>
         p.kw && ctx ? (
           <button

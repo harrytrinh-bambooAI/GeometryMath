@@ -3,7 +3,7 @@
 .e6-switch { display: flex; align-items: center; gap: 8px; padding: 6px 0; }
 .e6-time { flex-wrap: wrap; gap: 12px; align-items: center; }
 .e6-time input, .e6-dialog input { font: inherit; padding: 6px 8px; max-width: 100%; }
-.e6-yellow { background: #fff7dc; border-color: #f0d68a; }
+.e6-yellow { background: var(--yel-s); border-color: var(--yel); }
 .e6-dialog {
   position: fixed; inset: auto 0 0 0; margin: 0 auto; max-width: min(420px, 100vw); box-sizing: border-box;
   background: var(--panel); border: 1px solid var(--line); border-radius: var(--r) var(--r) 0 0; box-shadow: var(--sh);
@@ -13,7 +13,7 @@
   .e6-dialog { inset: 20vh 0 auto 0; border-radius: var(--r); }
 }
 .toast { display: inline-block; margin: 8px 0; }
-.e6-lock { background: #fff7dc; }
+.e6-lock { background: var(--yel-s); }
 .e6-lock[data-state='open'] { background: var(--panel); }
 .e6-todo { margin: 4px 0 12px; }
 .e6-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
@@ -21,13 +21,15 @@
 .e6-card-main { display: flex; gap: 10px; color: inherit; text-decoration: none; }
 .e6-card-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .e6-thumb {
-  flex: 0 0 56px; height: 56px; border-radius: 10px; background: var(--pri-s); color: var(--pri);
-  display: grid; place-items: center; font-size: 11px; text-align: center;
+  flex: 0 0 64px; min-height: 56px; border-radius: 10px; background: var(--pri-s); color: var(--pri-t);
+  display: grid; place-items: center; font-size: var(--fs-sm); line-height: 1.15; text-align: center;
 }
 .e6-bar { display: flex; gap: 4px; }
 .e6-bar i { flex: 1; height: 6px; border-radius: 3px; background: var(--line); min-width: 24px; }
 .e6-bar i.on { background: var(--pri); }
-.e6-banner { background: var(--pri-s); color: var(--pri); padding: 8px 12px; border-radius: var(--r); justify-content: space-between; gap: 8px; }
+.e6-banner { background: var(--pri-s); color: var(--pri-t); padding: 8px 12px; border-radius: var(--r); justify-content: space-between; gap: 8px; }
+/* Nội dung toán trong câu trả lời xem trước (T-261126-44) */
+.e6-ask .card p:not(.muted) { font-family: var(--font-math); }
 .e6-ask input { flex: 1; min-width: 0; font: inherit; padding: 6px 8px; }
 @media (max-width: 520px) {
   .e6-cards { grid-template-columns: 1fr; }
