@@ -1,0 +1,479 @@
+/* S2-E8 · C2-06 làm bài luyện + bàn phím toán, C2-07 kết quả, C2-08 soạn bài luyện (Design/prototype/s23.js, s23c.js).
+   Màu, bo góc, font CHỈ qua token theme (styles/tokens.css); chữ màu dùng --pri-t; chữ phụ ≥ 14 px (PO-66 G17);
+   vùng chạm ≥ 44 px (BR-S2E8-04); nội dung toán dùng --font-math. */
+.s2e8-page,
+.s2e8-run,
+.s2e8-compose,
+.s2e8-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  max-width: 1100px;
+  min-width: 0;
+}
+.s2e8-play {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  min-width: 0;
+}
+@media (min-width: 820px) {
+  .s2e8-play {
+    grid-template-columns: minmax(0, 3fr) minmax(340px, 2fr);
+    align-items: start;
+  }
+  .s2e8-compose {
+    grid-template-columns: minmax(0, 3fr) minmax(320px, 2fr);
+    align-items: start;
+  }
+}
+.s2e8-stage,
+.s2e8-side,
+.s2e8-pick,
+.s2e8-settings,
+.s2e8-summary,
+.s2e8-rows {
+  padding: 14px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.s2e8-title {
+  font-size: 20px;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.s2e8-h {
+  font-size: 16px;
+  margin: 0;
+}
+.s2e8-statement {
+  font-family: var(--font-math, var(--font));
+  font-size: var(--fs);
+  line-height: 1.6;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.s2e8-figure {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+@media (max-width: 819px) {
+  .s2e8-figure {
+    max-width: 230px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .s2e8-stage,
+  .s2e8-side {
+    padding: 10px;
+    gap: 8px;
+  }
+}
+.s2e8-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.s2e8-play .chip,
+.s2e8-page .chip,
+.s2e8-compose .chip,
+.s2e8-head .chip,
+.s2e8-row .chip,
+.s2e8-report-row .chip,
+.s2e8-problem .chip {
+  font-size: 14px;
+}
+.s2e8-progress {
+  display: flex;
+  gap: 3px;
+  flex: 1 1 120px;
+  min-width: 0;
+}
+.s2e8-progress i {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 8px;
+  border-radius: var(--r-sm);
+  background: var(--line);
+}
+.s2e8-progress i[data-state='correct'] {
+  background: var(--grn);
+}
+.s2e8-progress i[data-state='current'] {
+  background: var(--yel);
+}
+.s2e8-progress i[data-state='review'] {
+  background: var(--red);
+}
+.s2e8-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.s2e8-answer-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.s2e8-answer {
+  font-family: var(--font-math, var(--font-mono));
+  font-size: 24px;
+  min-height: max(var(--touch), 52px);
+  padding: 8px 12px;
+  border: 2px solid var(--pri-line, var(--line-strong));
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: text;
+  overflow-wrap: anywhere;
+  min-width: 0;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.s2e8-answer:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.s2e8-answer.bad {
+  border-color: var(--red);
+}
+.s2e8-answer.off {
+  background: var(--soft);
+  cursor: default;
+}
+.s2e8-ch {
+  display: inline-block;
+  min-width: 0.55em;
+  text-align: center;
+  border-left: 2px solid transparent;
+}
+.s2e8-ch.cur {
+  border-left-color: var(--pri);
+}
+.s2e8-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--pri);
+}
+.s2e8-max,
+.s2e8-err {
+  margin: 0;
+  color: var(--red);
+  font-weight: 600;
+  font-size: 14px;
+}
+.s2e8-help {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.s2e8-fb {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: var(--r-sm);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+.s2e8-fb.ok {
+  background: var(--grn-s);
+}
+.s2e8-fb.bad {
+  background: var(--red-s);
+}
+.s2e8-fb.warn {
+  background: var(--yel-s);
+}
+.s2e8-fb-note {
+  font-weight: 400;
+  flex-basis: 100%;
+}
+.s2e8-hint {
+  padding: 8px 10px;
+  border-radius: var(--r-sm);
+  background: var(--yel-s);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+  max-height: 30vh;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+}
+.s2e8-review {
+  align-self: flex-start;
+  margin: 0;
+  font-size: 14px;
+}
+.s2e8-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.s2e8-page .btn,
+.s2e8-play .btn,
+.s2e8-compose .btn,
+.s2e8-preview .btn {
+  font-size: 15px;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bàn phím toán: 6 cột, cùng thứ tự trên iPad và iPhone; iPhone nén chiều cao hàng (BR-S2E8-01). */
+.s2e8-kbd {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 6px;
+  padding: 8px;
+  border-radius: var(--r);
+  background: var(--soft);
+  min-width: 0;
+}
+.s2e8-key {
+  font-family: var(--font-math, var(--font-mono));
+  font-size: 20px;
+  min-height: 56px;
+  min-width: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r-btn, var(--r-sm));
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.s2e8-key:hover:not(:disabled) {
+  background: var(--hover);
+}
+.s2e8-key:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+.s2e8-key.fn {
+  background: var(--pri-s);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+}
+.s2e8-key.ok {
+  background: var(--pri);
+  color: var(--on-pri);
+  border-color: var(--pri);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+}
+.s2e8-key:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.s2e8-key.w2 {
+  grid-column: span 2;
+}
+@media (max-width: 819px) {
+  .s2e8-key {
+    min-height: 44px;
+    font-size: 18px;
+  }
+  .s2e8-kbd {
+    gap: 4px;
+    padding: 6px;
+  }
+  .s2e8-answer {
+    font-size: 20px;
+    min-height: 44px;
+  }
+}
+
+/* Khung giữ chỗ khi đang tải (BR-S2E8-20) */
+.s2e8-skel {
+  border-radius: var(--r-sm);
+  background: var(--soft);
+}
+.s2e8-skel-line {
+  height: 22px;
+  width: 80%;
+}
+.s2e8-skel-figure {
+  height: 180px;
+}
+.s2e8-skel-kbd {
+  height: 240px;
+}
+
+/* Báo "Em nghĩ đáp số này đúng" và ô nhập chung */
+.s2e8-report,
+.s2e8-confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+}
+.s2e8-confirm p {
+  margin: 0;
+}
+.s2e8-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  min-width: 0;
+}
+.s2e8-field input,
+.s2e8-field select,
+.s2e8-field textarea {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  min-height: max(var(--touch), var(--ctl-h, 44px));
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  color: var(--text);
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+.s2e8-field input[data-math] {
+  font-family: var(--font-math, var(--font-mono));
+}
+.s2e8-field input:disabled,
+.s2e8-field select:disabled {
+  background: var(--soft);
+  color: var(--muted);
+}
+
+/* Danh sách, kết quả, soạn bài */
+.s2e8-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.s2e8-row,
+.s2e8-report-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  min-width: 0;
+}
+.s2e8-rows .s2e8-row {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+}
+.s2e8-grow {
+  flex: 1 1 200px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.s2e8-num {
+  font-weight: 700;
+  min-width: 64px;
+}
+.s2e8-big {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+.s2e8-summary .chip {
+  align-self: flex-start;
+  font-size: 14px;
+  margin: 0;
+}
+.s2e8-solution {
+  flex-basis: 100%;
+  padding: 10px;
+  border-radius: var(--r-sm);
+  background: var(--soft);
+  font-family: var(--font-math, var(--font));
+  line-height: 1.6;
+}
+.s2e8-solution ol {
+  margin: 8px 0;
+  padding-left: 22px;
+}
+.s2e8-problem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  min-width: 0;
+}
+.s2e8-problem.off {
+  border-style: dashed;
+  background: var(--soft);
+}
+.s2e8-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 260px;
+  min-width: 0;
+  min-height: 44px;
+  cursor: pointer;
+}
+.s2e8-problem.off .s2e8-check {
+  cursor: not-allowed;
+}
+.s2e8-check input {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.s2e8-problem-text {
+  font-family: var(--font-math, var(--font));
+  font-size: 15px;
+}
+.s2e8-nograde {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+.s2e8-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+}
+.s2e8-item-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
