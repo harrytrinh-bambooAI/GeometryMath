@@ -313,7 +313,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Model: opus · Ngân sách: 1.5 giờ · Cổng: FIX W4 54649 · 6699 · 8124 · 5204 (sau khi T-43 gộp)
 - Phụ thuộc: T-261126-50, T-261126-43
 
-## T-261126-45 · FIX · L5 Dev regression theo mức ảnh hưởng · epic-common v1.5 · wt fix-45 · 1.5h/3M · make e2e-affected + smoke + reporter TC-S2/S3 [todo]
+## T-261126-45 · FIX · L5 Dev regression theo mức ảnh hưởng · epic-common v1.5 · wt fix-45 · 1.5h/3M · make e2e-affected + smoke + reporter TC-S2/S3 [running]
 - Mục tiêu: (1) `make e2e-affected` (script `app/scripts/e2e-affected.*`): diff so với `worktree-mvp-wave0` (BASE đổi được) → mức L0/L1/L2 theo bản đồ sở hữu PLAN_code-s23 §5 (tệp → module/epic → spec phụ thuộc; tệp không có trong bản đồ = L2) → chạy `scripts/e2e.sh` một lượt với đúng spec + project (L0/L1: chromium + api + spec `p0m` của màn bị đụng trên mobile; L2: trọn bộ chromium + api); `--dry-run` in mức, lý do, danh sách spec; ghi `impact.json` vào evidence của lượt; (2) bộ smoke ~30 test đường chính (đăng nhập, kho đề, giao bài, làm bài, kết quả) gắn tag `@smoke`, luôn chạy; (3) `e2e/reporters/evidence-reporter.ts` nhận tag `TC-S[23]E\d+-\d+`; (4) `privacy_notice` vào keep-tables.txt
 - Nguồn: DECISIONS 26/11 (chiến lược regression), PLAN_code-s23 §5, inbox "FIX sau T-18"
 - Xong khi: dry-run đúng 4 diff mẫu (chỉ features/s2e3 → L0; iam → L1 gồm E1 + S2-E1; styles/tokens.css → L2; tệp lạ → L2); smoke < 4 phút; traceability --strict S2-E1 hiện đạt (không "chưa chạy")
