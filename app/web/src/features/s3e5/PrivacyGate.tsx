@@ -5,6 +5,7 @@ import { buildUrl } from '../../shared/api/url.ts';
 import { getToken } from '../../shared/auth/session.ts';
 import { tid } from '../../shared/testid.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { DeleteAccountLink } from './PrivacyNoticePage.tsx';
 
 interface Notice {
   version: string;
@@ -63,6 +64,7 @@ export function PrivacyGate({ children }: { children: ReactNode }) {
           <p key={i}>{p}</p>
         ))}
       </div>
+      <DeleteAccountLink />
       {error ? <div className="alert" role="alert">{error}</div> : null}
       <button type="button" className="btn primary s3e5-ack" onClick={() => void ack()} data-testid={tid('s3e5', 'privacy', 'ack')}>
         <Icon name="check" /> Đã đọc

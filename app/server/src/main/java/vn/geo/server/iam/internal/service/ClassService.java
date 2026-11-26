@@ -98,7 +98,8 @@ public class ClassService {
 
   public record Joined(String status, String className, String message) {}
 
-  public record MyClass(String className, String status) {}
+  /** Lớp của học sinh; {@code archived} = lớp Đã lưu trữ, chỉ xem (US-S3E6-02, BR-S3E6-15). */
+  public record MyClass(String className, String status, boolean archived) {}
 
   public record TempPassword(String tempPassword, Instant expiresAt) {}
 
@@ -218,7 +219,31 @@ public class ClassService {
   public ClassDetail archive(UUID classId) {
     AuthPrincipal p = denials.require(Role.TEACHER, "class");
     owned(p, classId);
-    repo.archive(p.orgId(), classId, clock.instant());
+    // US-S3E6-02 (BR-S3E6-14): mã lớp ngừng dùng (byJoinCode chỉ mở lớp Đang dạy), em Chờ duyệt
+    // tự thành Bị từ chối — cùng một giao dịch.
+    tx.executeWithoutResult(s -> {
+      if (repo.archive(p.orgId(), classId, clock.instant()) == 1) {
+        repo.rejectPending(p.orgId(), classId);
+      }
+    });
+    return toDetail(owned(p, classId));
+  }
+
+  /**
+   * US-S3E6-02 (BR-S3E6-16, 17): bỏ lưu trữ, lớp về Đang dạy với mã lớp mới; vẫn giữ giới hạn 20
+   * lớp Đang dạy. Lớp đang Đang dạy: không đổi gì.
+   */
+  public ClassDetail unarchive(UUID classId) {
+    AuthPrincipal p = denials.require(Role.TEACHER, "class");
+    ClassRow c = owned(p, classId);
+    if (c.archived()) {
+      tx.executeWithoutResult(s -> {
+        if (repo.activeClassCount(p.orgId(), p.userId()) >= MAX_ACTIVE_CLASSES) {
+          throw AppException.invalidField("limit", MSG_LIMIT);
+        }
+        repo.unarchive(p.orgId(), classId, uniqueCode(ClassService::randomCode));
+      });
+    }
     return toDetail(owned(p, classId));
   }
 
@@ -433,7 +458,10 @@ public class ClassService {
 
   public TempPassword resetPassword(UUID classId, UUID userId) {
     AuthPrincipal p = denials.require(Role.TEACHER, "student_password");
-    owned(p, classId);
+    if (owned(p, classId).archived()) {
+      // US-S3E6-02-FC7 (BR-S3E6-14): lớp Đã lưu trữ không đặt lại mật khẩu
+      throw denials.notFound(p, "student_password");
+    }
     Instant now = clock.instant();
     String temp = newTemp();
     String hash = hasher.hash(temp);
@@ -538,7 +566,7 @@ public class ClassService {
   public List<MyClass> studentClasses() {
     AuthPrincipal p = denials.require(Role.STUDENT, "class_join");
     return repo.myClasses(p.orgId(), p.userId()).stream()
-        .map(c -> new MyClass(c.name(), c.status()))
+        .map(c -> new MyClass(c.name(), c.status(), c.archived()))
         .toList();
   }
 }

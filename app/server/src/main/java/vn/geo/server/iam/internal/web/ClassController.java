@@ -74,6 +74,13 @@ public class ClassController {
     return classes.archive(id);
   }
 
+  /** US-S3E6-02 SC7: bỏ lưu trữ, lớp về Đang dạy với mã lớp mới. */
+  @NoStore
+  @PostMapping("/api/v1/teacher/my-classes/{id}/unarchive")
+  public ClassService.ClassDetail unarchive(@PathVariable UUID id) {
+    return classes.unarchive(id);
+  }
+
   @NoStore
   @GetMapping("/api/v1/teacher/my-classes/{id}/pending")
   public Map<String, List<ClassService.Pending>> pending(@PathVariable UUID id) {

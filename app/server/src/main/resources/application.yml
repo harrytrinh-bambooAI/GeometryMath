@@ -110,6 +110,10 @@ geo:
   s3e6-reminders:
     cron: ${GEO_S3E6_REMINDER_CRON:0 * * * * *}   # US-S3E6-03: tác vụ nhắc việc mỗi phút (giờ VN); "-" để tắt
   # --- T-261126-32 (S3-E6, S3-E5) ---
+  s3e5:
+    access-log-max-days: 7          # BR-S3E5-37: nhật ký truy cập của máy chủ web (có IP) giữ tối đa 7 ngày; Tomcat
+                                    # access log mặc định tắt, proxy phía trước phải xoay vòng theo số ngày này
+    account-purge-interval: PT24H   # US-S3E5-05: chu kỳ dọn tài khoản đã xóa quá 30 ngày (0 = tắt)
   # --- FIX (task FIX T-261126-35, 43+) ---
 
 management:
