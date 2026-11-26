@@ -1,0 +1,10 @@
+{
+  "_doc": "S2-E9 (T-261126-25): mã cố định của app/db/seed/e2e/870_s2e9_core.sql. Mỗi (TC, làn) một tổ chức riêng: gốc B = 870000000 + TC × 100000 + làn × 10000 (TC 1…28; làn 0…5 = api, ui-chromium, ui-webkit, ui-iphone, mobile-iphone, mobile-pixel); F-S2-(B + k) → 00000000-0000-7000-8002-<12 chữ số>. k: 1 tổ chức, 2 Cô Trang (chủ đề), 4 Cô Lan, 5 An (học sinh), 6 lớp 11A1; đề B+k (100 FX-10, 101 FX-11, 102 FX-12, 103 FX-13, 104 FX-14, 105 đề thuần chữ, 106 thiết diện động, 107 FX-11 AI soạn, 108 hình vuông cạnh 1, 109 hình vuông cạnh 100, 110 miền hẹp, 200…224 Đề số 1…25 của TC 19), phiên bản 1 B+k+5000, bài giao BG-1 B+9001 (TC 18), liên kết B+7001…7004 (TC 25). Tiện ích tính mã: app/e2e/tests/s2e9/s2e9.ts. Dưới đây là ví dụ làn 0 của TC-S2E9-001.",
+  "orgs": {
+    "F-S2-870100001": { "id": "00000000-0000-7000-8002-000870100001", "name": "S2-E9 TC 1 làn 0" }
+  },
+  "users": {
+    "F-S2-870100002": { "id": "00000000-0000-7000-8002-000870100002", "org": "F-S2-870100001", "role": "TEACHER", "displayName": "Cô Trang" },
+    "F-S2-870100004": { "id": "00000000-0000-7000-8002-000870100004", "org": "F-S2-870100001", "role": "TEACHER", "displayName": "Cô Lan" }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "report" : {
+    "runAt" : "02:12, 27/11/2026",
+    "total" : 30,
+    "sceneOk" : 30,
+    "answerOk" : 30,
+    "wrongLabeled" : 0,
+    "m1" : "100,0 %",
+    "m2" : "100,0 %",
+    "m3" : "0",
+    "m1Pass" : true,
+    "m2Pass" : true,
+    "m3Pass" : true,
+    "failed" : [ ],
+    "exitCode" : 0
+  },
+  "load" : {
+    "loaded" : [ "PLS-01", "PLS-02", "PLS-03", "PLS-04", "PLS-05", "PLS-06", "PLS-07", "PLS-08", "PLS-09", "PLS-10", "PLS-11", "PLS-12", "PLS-13", "PLS-14", "PLS-15", "PLS-16", "PLS-17", "PLS-18", "PLS-19", "PLS-20", "PLS-21", "PLS-22", "PLS-23", "PLS-24", "PLS-25", "PLS-26", "PLS-27", "PLS-28", "PLS-29", "PLS-30" ],
+    "errors" : [ ],
+    "warnings" : [ ],
+    "byForm" : {
+      "tam giác" : 13,
+      "tứ giác" : 10,
+      "đường tròn" : 7
+    },
+    "exitCode" : 0
+  }
+}

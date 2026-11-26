@@ -4,6 +4,7 @@ import { Scene2DView } from '../../shared/scene2d/Scene2DView.tsx';
 import type { Scene2D } from '../../shared/scene2d/geometry2d.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { practiceApi, type AttemptView, type PlayItem, type PlayView } from './api.ts';
+import type { ChoiceAttemptView, RunnerChoice } from './choice.ts';
 import { emptyField, newRequestKey, type Field } from './keypad.ts';
 import { AnswerBox, MathKeypad } from './MathKeypad.tsx';
 
@@ -15,6 +16,8 @@ export const MSG_REVIEW = 'Xem lại cùng thầy cô';
 export interface RunnerDriver {
   check: (item: PlayItem, answer: string, requestKey: string) => Promise<AttemptView>;
   report?: (item: PlayItem, note: string) => Promise<{ message: string }>;
+  /** Chấm câu trắc nghiệm (S2-E9): gửi mã lựa chọn, không gửi chữ. */
+  checkChoice?: (item: PlayItem, choiceId: string, requestKey: string) => Promise<ChoiceAttemptView>;
   /** Có vẽ hình của câu không (xem trước bài nháp chưa có hàng bài giao nên không có hình). */
   figures: boolean;
 }
@@ -56,6 +59,8 @@ function segmentState(item: PlayItem, current: boolean): string {
  * C2-06 · Làm bài luyện (US-S2E8-03): "Câu k/n", chip lượt, thanh tiến độ n đoạn, hình, ô đáp số, bàn phím toán.
  * Đúng: xác nhận + "Câu kế". Sai: "Chưa đúng. Còn m lượt." + gợi ý mức 1. Hết lượt: "xem lại cùng thầy cô", khóa nhập,
  * vẫn xem gợi ý. Mất mạng: giữ đáp số, "Thử lại" gửi CÙNG mã chống lặp nên không trừ lượt hai lần (BR-S2E8-14, 20).
+ * Câu trắc nghiệm (S2-E9, `choices` theo assignmentId): chọn một lựa chọn rồi "Kiểm tra"; bàn phím toán ẩn; lựa chọn sai
+ * bị làm mờ, không chọn lại; không có nút "Em nghĩ đáp số này đúng" (BR-S2E9-12…14).
  */
 export function PracticeRunner({
   view,
@@ -63,9 +68,11 @@ export function PracticeRunner({
   onFinish,
   finishLabel = 'Xem kết quả',
   preview = false,
+  choices,
 }: {
   view: PlayView;
   driver: RunnerDriver;
+  choices?: Record<string, RunnerChoice>;
   onFinish: () => void;
   finishLabel?: string;
   preview?: boolean;
@@ -83,6 +90,7 @@ export function PracticeRunner({
         index={index}
         driver={driver}
         preview={preview}
+        choice={choices?.[item.assignmentId]}
         onUpdate={(next) => setItems((all) => all.map((x) => (x.position === next.position ? next : x)))}
         onPrev={index > 1 ? () => setIndex(index - 1) : undefined}
         onNext={index < total ? () => setIndex(index + 1) : undefined}
@@ -99,6 +107,7 @@ function QuestionCard({
   index,
   driver,
   preview,
+  choice,
   onUpdate,
   onPrev,
   onNext,
@@ -110,6 +119,7 @@ function QuestionCard({
   index: number;
   driver: RunnerDriver;
   preview: boolean;
+  choice?: RunnerChoice;
   onUpdate: (item: PlayItem) => void;
   onPrev?: () => void;
   onNext?: () => void;
@@ -127,6 +137,8 @@ function QuestionCard({
   const [note, setNote] = useState('');
   const [reportMsg, setReportMsg] = useState<string | null>(null);
   const [reportErr, setReportErr] = useState<string | null>(null);
+  const [picked, setPicked] = useState<string | null>(choice?.chosen ?? null);
+  const [dimmed, setDimmed] = useState<string[]>(choice?.dimmed ?? []);
 
   const done = item.state === 'correct' || item.state === 'review';
 
@@ -157,6 +169,32 @@ function QuestionCard({
     } finally {
       setBusy(false);
     }
+  };
+  const sendChoice = async (choiceId: string, key: string) => {
+    if (!driver.checkChoice) return;
+    setBusy(true);
+    try {
+      const r = await driver.checkChoice(item, choiceId, key);
+      setPending(null);
+      setFeedback({ kind: r.outcome, message: r.message, note: null });
+      setDimmed(r.dimmed);
+      if (r.outcome === 'wrong') setPicked(null);
+      onUpdate({ ...item, attemptsLeft: r.attemptsLeft, state: r.state, canReport: false });
+    } catch (e) {
+      if (e instanceof ApiError && e.code === 'NETWORK') {
+        setPending({ answer: choiceId, key }); // giữ mã: "Thử lại" không trừ lượt hai lần
+        setFeedback({ kind: 'net', message: 'Chưa gửi được, lựa chọn của em vẫn còn', note: null });
+      } else {
+        setPending(null);
+        setFeedback({ kind: 'syntax', message: e instanceof ApiError ? e.message : 'Chưa gửi được. Em thử lại nhé.', note: null });
+      }
+    } finally {
+      setBusy(false);
+    }
+  };
+  const checkChoice = () => {
+    if (done || busy || !picked) return;
+    void sendChoice(picked, pending && pending.answer === picked ? pending.key : newRequestKey());
   };
   const check = () => {
     if (done || busy || field.value.length === 0) return;
@@ -201,17 +239,53 @@ function QuestionCard({
             ))}
           </div>
         </div>
-        <div className="s2e8-label">ĐÁP SỐ CỦA EM</div>
-        <AnswerBox
-          field={field}
-          onChange={(f) => {
-            setField(f);
-            if (feedback?.kind === 'net' && f.value !== pending?.answer) setFeedback(null);
-          }}
-          onSubmit={check}
-          disabled={done}
-          invalid={feedback?.kind === 'wrong'}
-        />
+        {choice ? (
+          <>
+            <div className="s2e8-label">CHỌN MỘT ĐÁP ÁN</div>
+            <div className="s2e9-options" role="radiogroup" aria-label="Các lựa chọn" data-testid="s2e9-options">
+              {choice.options.map((o, k) => {
+                const off = dimmed.includes(o.id);
+                return (
+                  <button
+                    key={o.id}
+                    type="button"
+                    role="radio"
+                    aria-checked={picked === o.id}
+                    className={`s2e9-option${picked === o.id ? ' on' : ''}${off ? ' dim' : ''}`}
+                    disabled={done || busy || off}
+                    onClick={() => setPicked(o.id)}
+                    data-math
+                    data-dimmed={off}
+                    data-picked={picked === o.id}
+                    data-testid={`s2e9-option-${k + 1}`}
+                  >
+                    {o.text}
+                  </button>
+                );
+              })}
+            </div>
+            {done ? null : (
+              <button type="button" className="btn s2e9-check" onClick={checkChoice} disabled={busy || !picked} data-testid="s2e9-choice-check">
+                <Icon name="check" />
+                {busy ? 'Đang gửi…' : 'Kiểm tra'}
+              </button>
+            )}
+          </>
+        ) : (
+          <>
+            <div className="s2e8-label">ĐÁP SỐ CỦA EM</div>
+            <AnswerBox
+              field={field}
+              onChange={(f) => {
+                setField(f);
+                if (feedback?.kind === 'net' && f.value !== pending?.answer) setFeedback(null);
+              }}
+              onSubmit={check}
+              disabled={done}
+              invalid={feedback?.kind === 'wrong'}
+            />
+          </>
+        )}
         {item.state === 'correct' && !feedback ? (
           <p className="s2e8-fb ok" role="status" data-testid="s2e8-feedback">
             Câu này em đã làm đúng.{item.canonical ? ` Dạng chuẩn: ${item.canonical}` : ''}
@@ -231,7 +305,7 @@ function QuestionCard({
               </span>
             ) : null}
             {feedback.kind === 'net' && pending ? (
-              <button type="button" className="btn" onClick={() => void send(pending.answer, pending.key)} disabled={busy} data-testid="s2e8-retry"><Icon name="redo" />
+              <button type="button" className="btn" onClick={() => void (choice ? sendChoice(pending.answer, pending.key) : send(pending.answer, pending.key))} disabled={busy} data-testid="s2e8-retry"><Icon name="redo" />
                 Thử lại
               </button>
             ) : null}
@@ -252,7 +326,7 @@ function QuestionCard({
             Xem gợi ý
           </button>
         ) : null}
-        {!preview && item.canReport && !reportOpen ? (
+        {!preview && !choice && item.canReport && !reportOpen ? (
           <button type="button" className="btn ghost" onClick={() => setReportOpen(true)} data-testid="s2e8-report-open">
             Em nghĩ đáp số này đúng
           </button>
@@ -279,7 +353,7 @@ function QuestionCard({
             </div>
           </div>
         ) : null}
-        {reportMsg || item.reported ? (
+        {!choice && (reportMsg || item.reported) ? (
           <p className="s2e8-fb ok" role="status" data-testid="s2e8-report-sent">
             {reportMsg ?? MSG_SENT}
           </p>
@@ -300,7 +374,7 @@ function QuestionCard({
             </button>
           )}
         </div>
-        {done ? null : <MathKeypad field={field} onChange={setField} onSubmit={check} busy={busy} />}
+        {done || choice ? null : <MathKeypad field={field} onChange={setField} onSubmit={check} busy={busy} />}
       </section>
     </div>
   );

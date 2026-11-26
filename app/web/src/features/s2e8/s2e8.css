@@ -477,3 +477,73 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
+
+/* S2-E9 · câu trắc nghiệm (US-S2E9-03): soạn lựa chọn ở C2-08, chọn đáp án ở C2-06. Vùng chạm ≥ 44 px. */
+.s2e9-choices {
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 10px;
+  margin: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.s2e9-choice-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.s2e9-choice-correct {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--touch);
+  min-height: var(--touch);
+}
+.s2e9-choice-text {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--touch);
+  font-family: var(--font-math, var(--font));
+}
+.s2e9-choice-del {
+  min-width: var(--touch);
+  min-height: var(--touch);
+}
+.s2e9-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+.s2e9-option {
+  min-height: max(var(--touch), 52px);
+  padding: 8px 12px;
+  border: 2px solid var(--line-strong, var(--line));
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  color: var(--text);
+  font-family: var(--font-math, var(--font));
+  font-size: var(--fs);
+  text-align: center;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.s2e9-option.on {
+  border-color: var(--pri);
+  background: var(--pri-s);
+  color: var(--pri-t);
+}
+.s2e9-option.dim {
+  opacity: 0.45;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+.s2e9-option:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.s2e9-check {
+  min-height: var(--touch);
+}
