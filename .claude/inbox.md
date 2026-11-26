@@ -218,3 +218,15 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent T-21 và agent sửa IT; `artifacts/GEO/work/epics/S2-E8/qc_findings.md` (26/11/2026).
 - **Xong khi:** mục 1–2 có quyết định ghi DECISIONS/PO-DECISIONS trước gate T-26; mục 4 chạy ở lượt regression trọn bộ 6 project.
 - **Ngoài phạm vi:** tính năng mới ngoài S2-E8.
+
+## Việc: sau khi gộp icon chung cho app · ghi 26/11/2026 đêm
+- **Trạng thái:** việc "icon chung cho app theo theme" ở trên ĐÃ ĐÓNG (gộp 26/11 đêm, nhánh fix-icon).
+- **Mục tiêu còn lại:**
+  1. [Dev] font CHỮ (Inter, Nunito, IBM Plex, Be Vietnam Pro, Bad Script…) vẫn gọi fonts.googleapis.com trong `app/web/dist/index.html` (có từ trước); icon đã tự lưu. Muốn chạy offline phải tự lưu cả font chữ.
+  2. [Design] glyph của màn S2-E8 do Dev tự chọn (rail = pencil, Báo chấm sai = warn, Giữ nguyên = x…); chưa ai xem bằng mắt các màn S2-E8 sau khi gắn icon.
+  3. [Dev] sau bản sửa cuối của icon chỉ chạy lượt affected (199/199), chưa chạy lại trọn bộ L2; lượt regression trọn bộ kế tiếp sẽ phủ.
+  4. [Design] `Design/styles/GEO-4-huong-style.pdf` (bản gộp) còn icon cũ vì thiếu `pdf-lib`; hai tệp rời `-1-so-sanh.pdf`, `-2-anh.pdf` là bản mới.
+  5. [FIX Dev] TC-GEO-0804 `e1/isolation.api.spec.ts` chập chờn (khóa đệm `:mon:` chưa kịp có; chạy lại 39/39).
+- **Nguồn:** báo cáo agent icon (26/11/2026), `artifacts/GEO/evidence/theme/icon-*.png`.
+- **Xong khi:** grep `fonts.(googleapis|gstatic)` trong `app/web/dist` = 0; Design duyệt ảnh S2-E8 ở 4 theme.
+- **Ngoài phạm vi:** tính năng nghiệp vụ.
