@@ -15,6 +15,9 @@ fmt:     ; $(MVN) spotless:apply
 run:     up ; $(ENV) $(MVN) spring-boot:run -Dspring-boot.run.profiles=dev   # profile dev tường minh (không còn mặc định)
 ports:   ; @$(ENV) echo "PG $$GEO_PG_PORT · Redis $$GEO_REDIS_PORT · máy chủ $$GEO_PORT · web $$GEO_WEB_PORT"
 
+.PHONY: bench-mvp
+bench-mvp: ; scripts/bench-mvp.sh   # bộ đo MVP.md §9 (mock mặc định; GEO_AI_PROVIDER=anthropic GEO_AI_API_KEY=… đo AI thật) -> artifacts/GEO/evidence/MVP-METRICS-*/
+
 .PHONY: loadtest-smoke e2e-smoke bench-seed
 bench-seed:     ; scripts/bench-seed.sh $(or $(DB),geo_bench)   # dữ liệu thử tải US-GEO-108 vào CSDL riêng geo_bench
 loadtest-smoke: ; cd loadtest && ../server/mvnw -B -ntp -f pom.xml gatling:test   # cần máy chủ chạy ở 8080 (-Dgeo.baseUrl=...)

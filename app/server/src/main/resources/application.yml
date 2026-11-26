@@ -59,12 +59,28 @@ geo:
     code-pepper: ${GEO_AUTH_CODE_PEPPER:dev-only-code-pepper-0123456789abcdef}
   redis.key-prefix: ${GEO_REDIS_PREFIX:geo:}
   ai:
-    provider: mock
-    timeout: 10s              # TẠM: chưa có nguồn (D-GEO-072, owner TechLead)
-    model: ${GEO_AI_MODEL:gia-lap-1}        # F-GEO-096; đổi model bằng cấu hình (US-GEO-103-SC2)
-    prompt-version: p1
-    cost-per-call: 0.12       # chi phí mô phỏng mỗi lượt (đơn vị chưa xác định, KG-07)
-    api-key: ${GEO_AI_API_KEY:}             # chỉ ở máy chủ, không bao giờ xuống trình duyệt (BR-GEO-106)
+    provider: ${GEO_AI_PROVIDER:mock}       # mock (dev/test/CI) | anthropic; prod cấm mock (ProfileGuard, PO-60)
+    timeout: ${GEO_AI_TIMEOUT:10s}          # trần một lượt gọi ở cổng. TẠM: chưa có nguồn (D-GEO-072, owner TechLead)
+    model: ${GEO_AI_MODEL:gia-lap-1}        # F-GEO-096; provider anthropic + giá trị giả lập này = "claude-sonnet-5-5" (AiProperties)
+    prompt-version: ${GEO_AI_PROMPT_VERSION:p1}   # provider anthropic + "p1" = "a1" (AnthropicPrompts.VERSION)
+    cost-per-call: 0.12       # chi phí mô phỏng mỗi lượt của mock (đơn vị chưa xác định, KG-07)
+    api-key: ${GEO_AI_API_KEY:}             # chỉ ở máy chủ, không bao giờ xuống trình duyệt/nhật ký (BR-GEO-106)
+    anthropic:
+      base-url: ${GEO_AI_BASE_URL:https://api.anthropic.com}
+      api-version: "2023-06-01"
+      max-tokens: 16000
+      attempt-timeout: ${GEO_AI_ATTEMPT_TIMEOUT:45s}   # một lần gọi HTTP; tổng (kể cả thử lại) vẫn chịu geo.ai.timeout
+      max-retries: 2            # chỉ thử lại 429/5xx/lỗi mạng, có giãn cách; lỗi khác trả ngay
+      retry-backoff: 1s
+      fallbacks: default        # chuyển model khi bị từ chối an toàn (beta server-side-fallback-2026-07-01); rỗng = tắt
+      effort: ${GEO_AI_EFFORT:}  # output_config.effort; rỗng = mặc định của model (Sonnet 5.5: high)
+    # Bảng giá (USD / 1 triệu token) để tính chi phí mỗi lượt từ usage thật.
+    # Nguồn: bảng giá Anthropic theo skill claude-api "Current Models" (cached 2026-11-03), chép ngày 2026-11-26.
+    # cache-read/cache-write bỏ trống = 0,1× / 1,25× giá input (quy tắc bộ nhớ đệm 5 phút).
+    pricing:
+      claude-sonnet-5-5: { input: 2.00, output: 10.00, cache-read: 0.10 }
+      claude-opus-5-5:   { input: 4.00, output: 20.00, cache-read: 0.20 }
+      claude-haiku-5-5:  { input: 0.10, output: 0.50 }
 
 management:
   endpoints.web.exposure.include: health,info,metrics,prometheus

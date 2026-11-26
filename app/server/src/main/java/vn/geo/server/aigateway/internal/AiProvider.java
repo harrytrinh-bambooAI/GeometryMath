@@ -11,6 +11,25 @@ public interface AiProvider {
   String complete(ProviderCall call) throws Exception;
 
   /**
+   * Gọi và trả kèm số token thật (nếu nhà cung cấp có). Mặc định: {@link #complete} không có usage
+   * (cổng ước lượng token, chi phí mô phỏng).
+   */
+  default Result call(ProviderCall call) throws Exception {
+    return new Result(complete(call), null);
+  }
+
+  /**
+   * Kết quả một lượt gọi.
+   *
+   * @param content nội dung trả về (đã đúng định dạng của task)
+   * @param usage token thật; null = nhà cung cấp không báo
+   */
+  record Result(String content, Usage usage) {}
+
+  /** Token của một lượt theo nhà cung cấp (để tính chi phí/bài). */
+  record Usage(int inputTokens, int outputTokens, int cacheReadTokens, int cacheWriteTokens) {}
+
+  /**
    * Nội dung gửi nhà cung cấp.
    *
    * @param task mục đích (qa, solution, scene, hint, lecture)
