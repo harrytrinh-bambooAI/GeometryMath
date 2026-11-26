@@ -1,4 +1,5 @@
 import { expect, test } from '../../support/fixtures.ts';
+import { untilApi } from '../../support/wait.ts';
 import { API, BG, MSG, bearer, devToken, studentJoinUI } from './e1.ts';
 
 /** US-GEO-101 — Học sinh vào lớp bằng tên hiển thị và mã lớp (màn "Vào lớp", "Bài của em"). */
@@ -42,8 +43,9 @@ test('Tên chưa có trong lớp thì thành học sinh mới của lớp đó @
 });
 
 test('Vào lại với cùng tên thì giữ đúng dữ liệu của mình @TC-GEO-0102', async ({ page, request }) => {
-  // thiết bị khác = ngữ cảnh trình duyệt mới của test này (không có phiên cũ)
-  await studentJoinUI(page, 'an', 'HK7M2A');
+  // thiết bị khác = ngữ cảnh trình duyệt mới của test này (không có phiên cũ).
+  // Lời chào hiện ngay, thẻ bài chờ GET danh sách bài: chờ phản hồi đó thay vì 5 s của expect (T-261126-43)
+  await untilApi(page, [{ method: 'GET', path: /^\/api\/v1\/student\/assignments$/ }], () => studentJoinUI(page, 'an', 'HK7M2A'));
   await expect(page.getByTestId('e1-greeting')).toHaveText('Chào An');
   await expect(page.getByTestId('e1-assignment-HKG-01-progress')).toHaveText('2/3 · Đã xem gợi ý 2');
   const teacher = await devToken(request, 'F-GEO-003');

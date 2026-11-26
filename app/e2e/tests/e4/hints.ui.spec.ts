@@ -1,4 +1,5 @@
 import { expect, test } from '../../support/fixtures.ts';
+import { clickHintNext, studentApi, untilApi } from '../../support/wait.ts';
 import { API, F060, HINT1_HKG01, HINT2_HKG01, MSG, call, hints12, openWorkspace, sandbox, selfStudy, signIn, tab } from './e4.ts';
 
 /** E4 · E2E-UI: Gợi ý 1, 2 (US-GEO-404) và lời giải tự học (US-GEO-405) trên trang Làm bài (E3 /hs/lam-bai/:id). */
@@ -9,7 +10,7 @@ test('Xem Gợi ý 1 @TC-GEO-0419', async ({ page, request }) => {
   await tab(page, 'hint');
   await expect(page.getByTestId('e4-progress')).toHaveText('Tiến độ của em 0/3');
   await expect(page.getByTestId('e4-hint-next')).toHaveText('Xem gợi ý 1');
-  await page.getByTestId('e4-hint-next').click();
+  await clickHintNext(page, sb.classes[0]!.assignments['BG-1']!, 1);
   await expect(page.getByTestId('e4-hint-1-title')).toHaveText('Gợi ý 1 · Hướng nghĩ');
   await expect(page.getByTestId('e4-hint-1-body')).toHaveText(HINT1_HKG01);
   await expect(page.getByTestId('e4-progress')).toHaveText('Tiến độ của em 1/3');
@@ -23,7 +24,7 @@ test('Xem Gợi ý 2 @TC-GEO-0420', async ({ page, request }) => {
   expect((await call.hint(request, ha.token, bg1, 1)).status()).toBe(200);
   await openWorkspace(page, ha, bg1, 'Hà');
   await tab(page, 'hint');
-  await page.getByTestId('e4-hint-next').click();
+  await clickHintNext(page, bg1, 2);
   await expect(page.getByTestId('e4-hint-2-title')).toHaveText('Gợi ý 2 · Bước kế tiếp');
   await expect(page.getByTestId('e4-hint-2-body')).toHaveText(HINT2_HKG01);
   await expect(page.getByTestId('e4-progress')).toHaveText('Tiến độ của em 2/3');
@@ -64,9 +65,9 @@ test('Gợi ý trên bài tự học (gợi ý do AI sinh) @TC-GEO-0423', async 
   await tab(page, 'solution');
   await expect(page.getByTestId('e4-solution-locked')).toHaveText(MSG['30']);
   await tab(page, 'hint');
-  await page.getByTestId('e4-hint-next').click();
+  await clickHintNext(page, id, 1);
   await expect(page.getByTestId('e4-hint-1')).toBeVisible();
-  await page.getByTestId('e4-hint-next').click();
+  await clickHintNext(page, id, 2);
   await expect(page.getByTestId('e4-hint-2')).toBeVisible();
   await expect(page.getByTestId('e4-progress')).toHaveText('Tiến độ của em 2/3');
   await tab(page, 'solution');
@@ -133,7 +134,10 @@ test('Đủ hai gợi ý thì mở được lời giải tự học @TC-GEO-0428
   await hints12(request, an.token, id);
   await openWorkspace(page, an, id);
   await tab(page, 'solution');
-  await page.getByTestId('e4-solution-view').click();
+  // chờ POST mở lời giải trả về rồi mới kiểm DOM (T-261126-43: máy tải cao thì quá 5 s của expect)
+  await untilApi(page, [{ method: 'POST', path: studentApi(id, '/solution/open') }], () =>
+    page.getByTestId('e4-solution-view').click(),
+  );
   await expect(page.getByTestId('e4-solution-answer')).toContainText('60/√769');
   await expect(page.getByTestId('e4-step-1')).toBeVisible();
   await tab(page, 'hint');

@@ -1,4 +1,5 @@
 import { existsSync } from 'node:fs';
+import { availableParallelism } from 'node:os';
 import { defineConfig, devices, webkit } from '@playwright/test';
 import type { Project } from '@playwright/test';
 
@@ -9,6 +10,9 @@ import type { Project } from '@playwright/test';
  * - GEO_E2E_RUN: mã lượt chạy = tên thư mục bằng chứng evidence/<run>/ (mặc định giờ VN yyyyMMdd-HHmmss).
  * - GEO_E2E_RESET=0: bỏ bước reset seed vàng ở globalSetup (khi chạy vào máy chủ không dùng geo_e2e).
  * - GEO_E2E_WEBKIT=0: tắt dự án WebKit (mặc định bật nếu trình duyệt WebKit đã cài).
+ * - GEO_E2E_EVIDENCE=full|fail: bằng chứng video + trace cho mọi test (full) hay chỉ test trượt (fail, mặc định).
+ * - GEO_E2E_WORKERS: số worker Playwright (mặc định nửa số lõi, tối thiểu 2; T-261126-43). Máy dùng chung đang tải cao
+ *   thì hạ xuống (ví dụ 2) thay vì nới thời gian chờ. Không bật retries để che lỗi (retries chỉ 1 khi CI).
  * Dự án:
  * - `api`        tests/**\/*.api.spec.ts, chỉ HTTP; bằng chứng: trace + ảnh chụp bảng yêu cầu/phản hồi + http.json.
  * - `ui-chromium` tests/**\/*.ui.spec.ts trên Chromium máy tính (giáo viên, F-GEO-102); ảnh chụp + trace + video.
@@ -40,9 +44,22 @@ const webkitInstalled = (() => {
     return false;
   }
 })();
+function e2eWorkers(): number {
+  const v = Number.parseInt(process.env.GEO_E2E_WORKERS ?? '', 10);
+  if (Number.isFinite(v) && v > 0) return v;
+  return Math.max(2, Math.floor(availableParallelism() / 2));
+}
+
 const withWebkit = process.env.GEO_E2E_WEBKIT !== '0' && webkitInstalled;
 
-const uiEvidence = { screenshot: 'on', video: 'on', trace: 'on' } as const;
+/**
+ * GEO_E2E_EVIDENCE (T-261126-43): `fail` (mặc định, lượt chạy của task Dev) = ảnh chụp mọi test, video + trace chỉ giữ
+ * khi trượt; `full` = như trước (video + trace mọi test), dùng ở gate tester và khi cần báo cáo bằng chứng đủ.
+ * Lý do: video (ffmpeg) + trace cho MỌI test UI là phần tải lớn nhất khi máy dùng chung đang tải cao.
+ */
+const evidenceFull = process.env.GEO_E2E_EVIDENCE === 'full';
+const keep = evidenceFull ? 'on' : 'retain-on-failure';
+const uiEvidence = { screenshot: 'on', video: keep, trace: keep } as const;
 /**
  * Spec UI P0 chạy thêm trên điện thoại (T-261126-02): học sinh vào lớp, làm bài (nhãn, hình), gợi ý, lời giải đã mở,
  * hỏi đáp; giáo viên Kho đề, chi tiết đề, giao bài, giờ mở, theo dõi lớp.
@@ -78,6 +95,7 @@ export default defineConfig({
   testDir: './tests',
   outputDir: `test-results/${run}`,
   fullyParallel: true,
+  workers: e2eWorkers(),
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   globalSetup: './support/global-setup.ts',
@@ -86,7 +104,7 @@ export default defineConfig({
     baseURL: apiURL,
     locale: 'vi-VN',
     timezoneId: 'Asia/Ho_Chi_Minh',
-    trace: 'on',
+    trace: keep,
     extraHTTPHeaders: { 'X-E2E-Run': run },
   },
   projects,

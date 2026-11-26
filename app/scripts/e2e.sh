@@ -45,18 +45,30 @@ wait_http() { # url, tên, số giây
   echo "LỖI: $2 không lên sau $3 giây ($1). Xem $LOGDIR/*.log" >&2; return 1
 }
 
+# Trần CSDL cho máy chủ E2E (T-261126-43). Giá trị sản phẩm (statement_timeout 2 s, chờ kết nối 2 s; ADR-GEO-04/12,
+# application.yml) được kiểm ở tầng tích hợp máy chủ; E2E kiểm HÀNH VI. Máy dùng chung tải cao (load 36–43 trên 10 lõi,
+# 26/11) làm SELECT một dòng mất 1–2,5 s (pg.log s23-base) -> 504 TIMEOUT / 503 giả ở TC-GEO-0428, 0617.
+# Không e2e nào kiểm 504/503 do trần này. Đặt GEO_E2E_DB_STATEMENT_MS=2000 GEO_E2E_DB_CONN_MS=2000 để chạy đúng trần thật.
+E2E_STMT_MS="${GEO_E2E_DB_STATEMENT_MS:-10000}"
+E2E_CONN_MS="${GEO_E2E_DB_CONN_MS:-10000}"
+# Lệnh Redis: sản phẩm 100 ms (ADR-GEO-05). Khi tải cao, lệnh Redis quá 100 ms -> 504 "Redis command timed out" ở
+# /test-hooks/e7/restart và cả POST gợi ý (TC-GEO-0722, 26/11 17:48). E2E dùng 1000 ms; GEO_E2E_REDIS_MS=100 = trần thật.
+E2E_REDIS_MS="${GEO_E2E_REDIS_MS:-1000}"
 echo "== bật máy chủ $API_URL (geo_e2e@$GEO_PG_PORT, Redis $GEO_REDIS_PORT '$GEO_E2E_REDIS_PREFIX')"
 GEO_DB_URL="jdbc:postgresql://127.0.0.1:$GEO_PG_PORT/geo_e2e?ApplicationName=geo-e2e&connectTimeout=3&socketTimeout=30" \
 GEO_REDIS_PREFIX="$GEO_E2E_REDIS_PREFIX" \
 GEO_CONTENT_PACK_ON_START=false \
-  java -jar server/target/geo-server-0.1.0-SNAPSHOT.jar --spring.profiles.active=dev >"$LOGDIR/server.log" 2>&1 &
+  java -jar server/target/geo-server-0.1.0-SNAPSHOT.jar --spring.profiles.active=dev \
+    "--spring.datasource.hikari.connection-init-sql=SET statement_timeout = $E2E_STMT_MS; SET idle_in_transaction_session_timeout = 10000" \
+    "--spring.datasource.hikari.connection-timeout=$E2E_CONN_MS" \
+    "--spring.data.redis.timeout=${E2E_REDIS_MS}ms" >"$LOGDIR/server.log" 2>&1 &
 PIDS+=($!)
-wait_http "$API_URL/health" "máy chủ" 90
+wait_http "$API_URL/health" "máy chủ" "${GEO_E2E_SERVER_WAIT:-180}"
 
 echo "== bật web $WEB_URL (vite preview, proxy -> $API_URL)"
 (cd web && exec node node_modules/vite/bin/vite.js preview --strictPort --outDir dist-e2e >"$LOGDIR/web.log" 2>&1) &
 PIDS+=($!)
-wait_http "$WEB_URL/" "web" 30
+wait_http "$WEB_URL/" "web" "${GEO_E2E_WEB_WAIT:-60}"
 
 echo "== Playwright (run $GEO_E2E_RUN)"
 set +e
