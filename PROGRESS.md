@@ -1,11 +1,12 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 26/11/2026 11:40
-Mục tiêu hiện tại: hoàn thành MVP theo MVP.md §9 phần làm được bằng máy (PO-60). Khung điều phối delivery-lead v0.2 (L0 đạt `check_project.py --strict`, commit 1ff48bf).
-Đã xong: MVP E1–E7 + FIX1–FIX4b (1ce17bd, đã push; PR draft #1 vào main). Setup L0 (1ff48bf).
-Đang dở (2 agent Opus song song, bắt đầu 11:39):
-- T-261126-01 `mvp-ai` · worktree `.claude/worktrees/mvp-ai` · AI thật (Claude sonnet-5-5) + ProfileGuard cấm mock prod + `make bench-mvp`
-- T-261126-02 `mvp-content` · worktree `.claude/worktrees/mvp-content` · kho ≥ 40 đề verified + Playwright mobile P0
-Tiến độ agent: `.claude/progress/mvp-ai.md`, `.claude/progress/mvp-content.md`.
-Bước tiếp theo: khi 2 agent xong → nghiệm thu (chạy lại verify/web-build/e2e trong từng worktree) → T-03 gộp vào worktree-mvp-wave0 + bench-mvp mock → T-04 soát độc lập → T-05 đo thật (cần key) → T-06 kiểm cuối + cập nhật PR #1.
-Sổ task: `.claude/TASKS.md`, `.claude/queue.md`. Việc của owner: `.claude/NEEDS.md` (A1 key `GEO_AI_API_KEY`).
-Quyết định: PO-DECISIONS.md (mới nhất PO-60); điều phối: DECISIONS.md.
-Rủi ro / chặn: đo thật chờ key (A1). Cổng 54329/6389/8080 của checkout chính; mvp-ai 54479/6529/8103/5187; mvp-content 54489/6539/8104/5188.
+# PROGRESS · GeometryMath (GEO) · cập nhật 26/11/2026 12:14
+Mục tiêu hiện tại: hoàn thành MVP theo MVP.md §9 phần làm được bằng máy (PO-60). Khung delivery-lead v0.2 (L0 đạt, 1ff48bf). Sổ task `.claude/TASKS.md` + `.claude/queue.md`.
+Đã xong: MVP E1–E7 + FIX1–FIX4b (1ce17bd, đã push; PR draft #1). Setup L0 (1ff48bf, fb82717). Key `GEO_AI_API_KEY` trong ~/.zshrc, kiểm HTTP 200, 0 tệp/commit chứa key (NEEDS A1 xong).
+Đang dở (agent tự ghi, phiên chính CHƯA nghiệm thu):
+- T-261126-01 `mvp-ai` · worktree `.claude/worktrees/mvp-ai` · nhánh mvp-ai @ 46fbcde · agent DỪNG 12:1x vì "Login expired" (lỗi xác thực, không phải lỗi code). Đã: ProfileGuard cấm mock prod + AnthropicAiProvider (5746f0a), make bench-mvp mock 6/6 đạt (3c2331c), CONFIG.md (863c331), verify 150+134 + web 41/41 (46fbcde). CÒN: make e2e hai lượt + báo cáo.
+- T-261126-02 `mvp-content` · worktree `.claude/worktrees/mvp-content` · nhánh mvp-content @ 3004153 · có thể cũng dừng (cùng phiên đăng nhập). Đã: 46 đề HKN engine kiểm chứng 46/46 (6ea1298), Playwright mobile-iphone/pixel 244 ca (a688886), sửa bộ lọc Kho đề mobile (3004153). CÒN: make verify + web-build + e2e hai lượt + báo cáo.
+Bước tiếp theo:
+1. `/login`, rồi phiên mới: "đọc PROGRESS.md và làm tiếp".
+2. Giao lại 2 agent MỚI (brief cũ `.claude/briefs/T-261126-0{1,2}-*.md` + dòng "tiếp tục từ commit trên, chỉ còn: …") — hoặc phiên chính tự chạy lệnh kiểm trong từng worktree.
+3. Nghiệm thu: chạy lại verify / web-build / e2e 2 lượt trong mỗi worktree → T-03 gộp vào worktree-mvp-wave0 + bench-mvp mock trên 46+6 đề → T-04 soát độc lập (Sonnet) → T-05 đo thật: `eval "$(grep '^export GEO_AI_API_KEY=' ~/.zshrc)"` trong cùng lệnh (shell không tự nạp .zshrc) → T-06 kiểm cuối + cập nhật PR #1.
+Việc owner: `.claude/NEEDS.md` (A2 DB rỗng geo_e2e; C1 câu chờ PO/BA). Quyết định: PO-DECISIONS.md (PO-60); DECISIONS.md.
+Rủi ro: KHÔNG commit/log key (kiểm `grep -r sk-ant app` = 0 và `git log --all -G 'sk-ant-'` = 0 trước mỗi gộp). Cổng: chính 54329/6389/8080; mvp-ai 54479/6529/8103/5187; mvp-content 54489/6539/8104/5188 (docker của 2 worktree có thể còn chạy).
