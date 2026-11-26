@@ -1,4 +1,4 @@
-Phiên bản: v0.2 · 2026-11-26
+Phiên bản: v0.3 · 2026-11-26
 # S3-E5 — test case (Nhật ký thao tác nhạy cảm (AuditEvent), thông báo riêng tư, danh sách trường dữ liệu được phép, công tắc AI theo lớp)
 
 > Chủ sở hữu: QC. Lập từ `stories_ac.md` cùng thư mục (mỗi tiêu chí có ít nhất một case) và `test_design.md`. **Trạng thái: ready for R3**; mức epic **P0**. Id ổn định; tiêu chí bị gạch bỏ thì case giữ id với N/A. AI là giả lập (D-GEO-047). Kỳ vọng bám Given / When / Then của AC, giá trị cụ thể lấy từ dữ liệu mẫu chung.
@@ -217,3 +217,4 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 52 case của S3-E5 | runner-T-261126-14 (QC) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
+| v0.3 | 2026-11-26 | G5: story mới US-S3E5-05 (xóa tài khoản, chính sách lưu/xóa) gồm BR-S3E5-50…55 và 8 AC/TC; G3: văn bản nêu mã khôi phục của học sinh; bỏ nhãn PROVISIONAL (PO-66) | runner-T-261126-37 (BA/QC) |

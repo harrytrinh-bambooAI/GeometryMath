@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # S2-E1 — thiết kế kiểm thử (Đăng ký, đăng nhập bằng mã và khôi phục (định danh tối giản PO-61))
 
 > Chủ sở hữu: QC. **Trạng thái: ready for R3** · Mức epic: **P0**. Lập từ `story-map-s23.md` và `stories_ac.md` cùng thư mục.
@@ -72,3 +72,4 @@ Manual chỉ khi cần mắt người (bố cục thiết bị, cảm giác thao
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới | runner-T-261126-12 (QC) |
+| v0.2 | 2026-11-26 | Áp PO-66: bỏ nhãn TẠM | runner-T-261126-37 (BA/QC) |

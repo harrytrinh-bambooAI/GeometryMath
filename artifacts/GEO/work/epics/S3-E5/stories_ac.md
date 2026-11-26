@@ -1,4 +1,4 @@
-Phiên bản: v0.2 · 2026-11-26
+Phiên bản: v0.3 · 2026-11-26
 # S3-E5 — Nhật ký thao tác nhạy cảm (AuditEvent), thông báo riêng tư, danh sách trường dữ liệu được phép, công tắc AI theo lớp: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA. Nguồn: `work/s23/story-map-s23.md` (R2 khóa, 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Ch3 (22/11/2026), `Design/s23/DQ.md` và ảnh `c3-*.png` (26/11/2026), `PO-DECISIONS.md` PO-53, PO-61…65. Khi nguồn mâu thuẫn thì PO-61 thắng STAGES.
@@ -538,3 +538,4 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: story và AC của S3-E5, ready for R3 | runner-T-261126-14 (BA) |
 | v0.2 | 2026-11-26 | Sửa theo RV_s23: BR-S3E5-30 thêm thực thể chặng 2, BR-S3E5-33 ngoại lệ ảnh đề, BR-S3E5-37 ngoại lệ bộ đếm tần suất; đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
+| v0.3 | 2026-11-26 | G5: story mới US-S3E5-05 (xóa tài khoản, chính sách lưu/xóa) gồm BR-S3E5-50…55 và 8 AC/TC; G3: văn bản nêu mã khôi phục của học sinh; bỏ nhãn PROVISIONAL (PO-66) | runner-T-261126-37 (BA/QC) |

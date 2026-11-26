@@ -1,4 +1,4 @@
-Phiên bản: v0.2 · 2026-11-26
+Phiên bản: v0.3 · 2026-11-26
 # S2-E6 — test case (Kho đề: ngăn Của tôi / Kho chung, người soát nội dung, riêng tư và giới hạn tần suất)
 
 > Chủ sở hữu: QC (goal run T-261126-12). **Trạng thái: ready for R3** · Mức epic: **P0**. Case bám tiêu chí của `stories_ac.md` cùng thư mục; thiết kế ở `test_design.md`. Mọi case ở trạng thái Not run: đây là bản viết, chưa thực thi (code chặng 2 chờ B7, PO-65).
@@ -171,3 +171,4 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 36 case cho 36 tiêu chí, có cột Tự động hóa | runner-T-261126-12 (QC) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
+| v0.3 | 2026-11-26 | G2: BR-S2E6-14 chốt giáo viên xem ngay, học sinh tự học khóa lời giải; thêm FC9; bỏ nhãn TẠM (PO-66) | runner-T-261126-37 (BA/QC) |
