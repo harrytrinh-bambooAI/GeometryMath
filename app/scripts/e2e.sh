@@ -14,6 +14,24 @@ LOGDIR="$APP/.data/e2e"; mkdir -p "$LOGDIR"
 export GEO_E2E_RUN="${GEO_E2E_RUN:-$(TZ=Asia/Ho_Chi_Minh date +%Y%m%d-%H%M%S)}"
 export GEO_E2E_REDIS_PREFIX="${GEO_E2E_REDIS_PREFIX:-geoe2e:}"
 API_URL="http://127.0.0.1:$GEO_PORT"
+
+# Khóa toàn máy: chỉ MỘT bộ E2E chạy cùng lúc trên máy (nhiều worktree chạy song song làm tải ~48, mỗi lượt 30 phút
+# và trượt rải rác do quá thời gian; chạy lần lượt ~8 phút/lượt, xanh). GEO_E2E_NO_LOCK=1 để bỏ khóa.
+LOCK_DIR="${GEO_E2E_LOCK_DIR:-$HOME/.cache/geo-e2e.lock}"
+release_lock() { [ "${HAVE_LOCK:-0}" = "1" ] && rm -rf "$LOCK_DIR" 2>/dev/null; HAVE_LOCK=0; }
+if [ "${GEO_E2E_NO_LOCK:-0}" != "1" ]; then
+  mkdir -p "$(dirname "$LOCK_DIR")"
+  waited=0
+  until mkdir "$LOCK_DIR" 2>/dev/null; do
+    holder=$(cat "$LOCK_DIR/pid" 2>/dev/null || true)
+    if [ -n "$holder" ] && ! kill -0 "$holder" 2>/dev/null; then rm -rf "$LOCK_DIR"; continue; fi  # khóa mồ côi
+    [ $((waited % 60)) -eq 0 ] && echo "e2e: chờ khóa toàn máy (đang chạy: $(cat "$LOCK_DIR/where" 2>/dev/null || echo '?')) ${waited}s" >&2
+    sleep 10; waited=$((waited + 10))
+    [ "$waited" -ge 5400 ] && { echo "LỖI: chờ khóa e2e quá 90 phút ($LOCK_DIR)" >&2; exit 1; }
+  done
+  HAVE_LOCK=1; echo $$ > "$LOCK_DIR/pid"; echo "$APP" > "$LOCK_DIR/where"
+  trap release_lock EXIT
+fi
 WEB_URL="http://127.0.0.1:$GEO_WEB_PORT"
 
 port_busy() { lsof -nP -iTCP:"$1" -sTCP:LISTEN >/dev/null 2>&1; }
@@ -37,6 +55,7 @@ PIDS=()
 cleanup() {
   for pid in "${PIDS[@]:-}"; do [ -n "$pid" ] && kill "$pid" 2>/dev/null || true; done
   wait 2>/dev/null || true
+  release_lock
 }
 trap cleanup EXIT
 
