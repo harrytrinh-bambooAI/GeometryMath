@@ -32,6 +32,7 @@ Phiên bản: v0.1 · 2026-11-26 · quyết định đã chốt — 1 dòng / qu
 | 2026-11-27 | Mỗi worktree task phải tắt cụm (`make down`) khi xong: agent con trước khi báo cáo (epic-common v1.6); agent chính sau khi gộp, rồi xoá worktree đã gộp (`git worktree remove`, giữ nhánh) | owner hỏi vì sao gộp rồi Postgres vẫn chạy; 27/11 dọn 11 worktree + 11 cụm, lấy lại ~22 GB |
 | 2026-11-27 | Xoá CSDL `geo_arch` (12 GB, bản đo tải lược đồ cũ; số liệu đã ghi trong architecture/07_verification.md) và 5 lượt e2e evidence cũ + test-results của wave0; giữ `geo_arch2` và lượt evidence 20261126-235648 | lệnh owner 27/11 "xoá geo_arch và dọn kết quả e2e cũ" |
 | 2026-11-27 | Gộp T-25 (S2-E9) trên bản kết hợp T-24: e2e-affected L1 802/802, traceability MVP..S2-E9 đạt → code chặng 2 đủ 9 epic | bằng chứng `app/e2e/evidence/20261127-020725` (worktree s2-e9, đã xoá sau gộp) |
+| 2026-11-27 | T-28 (S3-E1+E5) chạy trước khi T-26 (Tester chặng 2) xong; T-26 chạy sau regression B, dùng regression B làm lượt e2e 1. Gate T-27 (owner L7 chặng 2) không chặn chặng 3 trong queue | giữ 2 agent song song; T-26 chỉ đọc code và cần cụm wave0 đang bận regression B; T-28 làm trong worktree riêng, mã S3 tách khỏi S2. Bug T-26 tìm ra sẽ vào FIX riêng |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |

@@ -200,7 +200,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-24, T-261126-25
 - Phạm vi tệp: ^(app/db/seed/(e2e/910_|fixture-ids\.d/s3)|app/server/src/main/resources/db/migration/V31[0-4]__|app/README\.md)
 - Kế hoạch: PLAN_code-s23 §3 W8
-## T-261126-28 · S3-E1+E5 · L5 Dev · epic-common v1.3 · wt s3-e1 · ‖29 · 4h/10M · Lớp, mã lớp, duyệt vào lớp, đặt lại mật khẩu, riêng tư, công tắc AI [todo]
+## T-261126-28 · S3-E1+E5 · L5 Dev · epic-common v1.3 · wt s3-e1 · ‖29 · 4h/10M · Lớp, mã lớp, duyệt vào lớp, đặt lại mật khẩu, riêng tư, công tắc AI [running]
 - Mục tiêu: US-S3E1-01…05: C3-02/07, nhiều lớp + năm học, mã lớp + trang in, vào lớp chờ duyệt (Bị từ chối), chống dò mã lớp 30 lần/24 giờ + duyệt từng em (G4), GV đặt lại mật khẩu HS lớp mình (mã dùng một lần, phát DomainEvent cho audit ở 31), quyền theo quan hệ xuyên suốt; US-S3E5-02 thông báo riêng tư theo phiên bản; US-S3E5-04 công tắc AI phía HS theo lớp
 - Nguồn: epics/S3-E1, S3-E5 (ebec17a 26/11); PLAN_code-s23 v1.0 §3 (tách S3-E5), §5; PO-61, PO-66 G4–G5; STAGES Ch3 §7
 - Xong khi: như 18 (S3-E1 đủ; S3-E5 trừ 01, 03, 05)
