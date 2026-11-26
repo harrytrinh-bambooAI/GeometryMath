@@ -28,7 +28,7 @@ test('Danh sách lớp ở bước 1 @TC-GEO-0605', async ({ page, request }) =>
   await expect(step.locator('label')).toHaveText(['11A1 · THPT (5 HS)', '9B · THCS (5 HS)']);
 });
 
-test('Giao cho một lớp @TC-GEO-0606', async ({ page, request }) => {
+test('Giao cho một lớp @TC-GEO-0606 @smoke', async ({ page, request }) => {
   const sb = await twoClasses(request);
   await openAssign(page, sb, 'HKG-06');
   await classRadio(page, '9B').click();

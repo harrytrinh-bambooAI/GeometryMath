@@ -89,6 +89,19 @@ echo "== bật web $WEB_URL (vite preview, proxy -> $API_URL)"
 PIDS+=($!)
 wait_http "$WEB_URL/" "web" "${GEO_E2E_WEB_WAIT:-60}"
 
+# Máy ngủ giữa lượt (T-261126-45): lượt L2 26/11 20:17 gập máy khi dùng pin -> máy ngủ 5 lần (pmset -g log), 26 test
+# "treo" 5–22 phút rồi trượt do quá giờ. caffeinate chặn ngủ do rảnh (không chặn được gập máy khi dùng pin); vòng canh
+# ghi lại mọi quãng đồng hồ nhảy > 30 s để lượt bị ngủ được báo rõ là KHÔNG TIN CẬY thay vì bị đọc nhầm thành lỗi sản phẩm.
+GAPS="$LOGDIR/sleep-gaps.$GEO_E2E_RUN.log"; : > "$GAPS"
+if command -v caffeinate >/dev/null 2>&1; then caffeinate -ims -w $$ & PIDS+=($!); fi
+( prev=$(date +%s)
+  while :; do
+    sleep 5; now=$(date +%s)
+    [ $((now - prev)) -gt 30 ] && echo "$(date '+%H:%M:%S') máy ngủ/đứng khoảng $((now - prev - 5)) giây" >> "$GAPS"
+    prev=$now
+  done ) &
+PIDS+=($!)
+
 echo "== Playwright (run $GEO_E2E_RUN)"
 set +e
 (cd e2e && GEO_E2E_BASE_URL="$API_URL" GEO_E2E_WEB_URL="$WEB_URL" node node_modules/@playwright/test/cli.js test "$@")
@@ -97,4 +110,10 @@ set -e
 
 (cd e2e && node scripts/traceability.ts --run "$GEO_E2E_RUN" | tee "evidence/$GEO_E2E_RUN/traceability.txt" | head -40) || true
 echo "Báo cáo bằng chứng: $APP/e2e/evidence/$GEO_E2E_RUN/index.html"
+if [ -s "$GAPS" ]; then
+  cp "$GAPS" "e2e/evidence/$GEO_E2E_RUN/host-sleep.txt" 2>/dev/null || true
+  echo "CẢNH BÁO: máy ngủ/đứng $(wc -l < "$GAPS" | tr -d ' ') lần trong lượt này; test quá giờ KHÔNG TIN CẬY, hãy chạy lại (cắm sạc, không gập máy):" >&2
+  cat "$GAPS" >&2
+fi
+rm -f "$GAPS"
 exit $rc

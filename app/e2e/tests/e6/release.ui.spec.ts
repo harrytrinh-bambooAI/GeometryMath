@@ -58,7 +58,7 @@ test('Đặt giờ lần đầu cho bài Chưa đặt giờ @TC-GEO-0628', async
   await expect(p2.getByTestId('e6-lock-title')).toHaveText(`Lời giải mở lúc ${vn(at)}`);
 });
 
-test('Mở ngay có hộp xác nhận @TC-GEO-0629', async ({ page, request }) => {
+test('Mở ngay có hộp xác nhận @TC-GEO-0629 @smoke', async ({ page, request }) => {
   const sb = await twoClasses(request, [{ key: 'BG-1', code: 'HKG-01' }]);
   await monitor(page, sb, 'BG-1');
   await page.getByTestId('e6-open-now').click();

@@ -4,7 +4,7 @@ import { API, asg, bearer, box, freshMonitor, golden, monitor, row, st } from '.
 
 /** E7 — Theo dõi lớp qua API: quyền, dữ liệu trả về, không lẫn câu hỏi bài khác/lớp khác (US-GEO-701, 702). */
 
-test('Học sinh gọi Theo dõi lớp @TC-GEO-0710', async ({ request }) => {
+test('Học sinh gọi Theo dõi lớp @TC-GEO-0710 @smoke', async ({ request }) => {
   const b = await box(request, golden());
   const r = await request.get(`${API}/api/v1/teacher/assignments/${asg(b, 'BG-1')}/monitor`, { headers: bearer(st(b, 'An').token) });
   expect(r.status()).toBe(403);
@@ -13,7 +13,7 @@ test('Học sinh gọi Theo dõi lớp @TC-GEO-0710', async ({ request }) => {
   for (const s of ['Bình', 'Chi', 'Dũng', 'Hà', 'Vì sao A', 'phút']) expect(text).not.toContain(s);
 });
 
-test('Trang không mang lời giải @TC-GEO-0711', async ({ request }) => {
+test('Trang không mang lời giải @TC-GEO-0711 @smoke', async ({ request }) => {
   const b = await box(request, golden());
   const r = await request.get(`${API}/api/v1/teacher/assignments/${asg(b, 'BG-1')}/monitor`, { headers: bearer(b.teacher.token) });
   expect(r.status()).toBe(200);
