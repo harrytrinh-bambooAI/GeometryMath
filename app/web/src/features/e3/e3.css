@@ -11,6 +11,8 @@
 .e3-head { grid-area: head; }
 .e3-head h2 { margin: 0 0 4px; }
 .e3-statement { margin: 0; max-width: 900px; }
+/* Nội dung toán (đề, gợi ý) dùng font toán: chữ tay theme C khó đọc số và dấu chấm (T-261126-44) */
+.e3-statement, .e3-hint p { font-family: var(--font-math); }
 .e3-main { grid-area: main; display: flex; min-height: 420px; min-width: 0; }
 .e3-viewer { flex: 1; min-width: 0; }
 .e3-panel {
@@ -23,7 +25,7 @@
   flex: 1; min-height: 48px; min-width: 44px; border: 0; background: transparent; color: var(--muted);
   font: 600 14px var(--font); cursor: pointer; border-bottom: 3px solid transparent;
 }
-.e3-tab[aria-selected='true'] { color: var(--pri); border-bottom-color: var(--pri); }
+.e3-tab[aria-selected='true'] { color: var(--pri-t); border-bottom-color: var(--pri); }
 .e3-panel-body { padding: 14px; overflow: auto; flex: 1; }
 .e3-hints { display: flex; flex-direction: column; gap: 10px; }
 .e3-hint p { margin: 6px 0 0; }
@@ -41,7 +43,7 @@
     min-height: 0;
   }
   .e3-head h2 { font-size: 17px; }
-  .e3-statement { font-size: 13px; max-height: 3.2em; overflow: hidden; }
+  .e3-statement { font-size: var(--fs-sm); max-height: 3.2em; overflow: hidden; }
   .e3-main { height: 62vh; min-height: 0; }
   .e3-panel { border-radius: var(--r) var(--r) 0 0; }
   .e3-grip {

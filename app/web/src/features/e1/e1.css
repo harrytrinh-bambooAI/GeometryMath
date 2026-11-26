@@ -40,7 +40,7 @@
   justify-content: center;
 }
 .e1-link {
-  color: var(--pri);
+  color: var(--pri-t);
   text-align: center;
 }
 .e1-list {
@@ -70,6 +70,12 @@
 .e1-statement {
   margin: 0;
   overflow-wrap: anywhere;
+}
+/* Nội dung toán (đề, câu hỏi, câu trả lời) dùng font toán: chữ tay theme C khó đọc số và dấu chấm (T-261126-44) */
+.e1-statement,
+.e1-q,
+.e1-a {
+  font-family: var(--font-math);
 }
 .e1-qa-log {
   display: flex;
