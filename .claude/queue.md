@@ -77,7 +77,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Kiểm: `grep -q "S23 R3 OK" DECISIONS.md`
 - Ngoài phạm vi: code
 - Phụ thuộc: T-261126-15
-## T-261126-17 · S23 · L4 Dev kiến trúc · delivery-lead lifecycle L4 · wt s23-plan · 2.5h/5M · PLAN_code chặng 2–3 + epic-common v1.2 [todo]
+## T-261126-17 · S23 · L4 Dev kiến trúc · delivery-lead lifecycle L4 · wt s23-plan · 2.5h/5M · PLAN_code chặng 2–3 + epic-common v1.2 [done]
 - Mục tiêu: `PLAN_code-s23.md` (khung môn học, module ↔ story, khoảng số migration + cổng mỗi worktree, tệp sở hữu từng task để 2 agent không đụng nhau); epic-common v1.2 (nguồn S2/S3, lệnh kiểm); cập nhật khối queue 18–33 nếu đổi
 - Nguồn: epics S2/S3 (sau R3); architecture/ (22/11); app/README.md; epic-common v1.1
 - Xong khi: mỗi story có ≥ 1 task; queue hợp lệ
