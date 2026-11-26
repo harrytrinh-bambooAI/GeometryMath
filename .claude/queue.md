@@ -56,7 +56,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Kiểm: `L=~/.claude/skills/synced/0891cb95-9cc4-4f0d-9b03-4f74eb7fe957_32199e3b-7799-4318-8c09-109bf13815a9/po-ba-qc/tools/lint; for e in S2-E1 S2-E2 S2-E3 S2-E4 S2-E5 S2-E6 S2-E7 S2-E8 S2-E9; do python3 $L/lint_stories.py artifacts/GEO/work/epics/$e/stories_ac.md && python3 $L/lint_tests.py artifacts/GEO/work/epics/$e/test_cases.md || exit 1; done`
 - Ngoài phạm vi: chặng 3, story map (chỉ đề xuất đổi qua questions.md)
 - Phụ thuộc: T-261126-08, T-261126-10
-## T-261126-14 · S3 · L3 BA+QC goal run · po-ba-qc roles/goal-run.md · wt s23-spec · ‖12 · 3h/4M · Spec S3 (E1–E6) [running]
+## T-261126-14 · S3 · L3 BA+QC goal run · po-ba-qc roles/goal-run.md · wt s23-spec · ‖12 · 3h/4M · Spec S3 (E1–E6) [done]
 - Mục tiêu: như task 12 cho S3-E1…E6; màn ưu tiên C3-04; ngưỡng gộp, quyền theo quan hệ, test chặn trường dữ liệu ngoài danh sách
 - Nguồn: story map task 08; STAGES Ch3 (22/11); PO-61; Design/s23
 - Xong khi: lint stories + tests 0 lỗi mỗi epic

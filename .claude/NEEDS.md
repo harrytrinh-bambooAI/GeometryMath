@@ -31,6 +31,7 @@ Phiên bản: v0.2 · 2026-11-26 · GEO — agenda họp SỐNG duy nhất với
 | C5 | PO-62…65 (PO-61 thay một phần PO-05/18/21; gom Q1–Q9) — `PO-DECISIONS.md` | OK → bỏ TẠM; sửa → spec S2/S3 đổi | TẠM |
 | C6 | DQ-17: học sinh tự học (không lớp) quên mật khẩu → không có đường khôi phục, phải tạo tài khoản mới | chấp nhận / cấp mã khôi phục cho cả học sinh tự học. Claude nghiêng: cấp mã khôi phục khi tự học (rẻ, giữ PO-61) | chấp nhận tạo mới |
 | C7 | DQ-05: GV được duyệt lời giải chưa máy kiểm chứng (giữ nhãn "Cần xem lại") · DQ-22: "Cả lớp vướng ở đâu" chỉ hiện khi ≥ 5 bài · 25 DQ còn lại ở `Design/s23/DQ.md` | OK / sửa từng câu | mặc định trong DQ.md |
+| C8 | Spec chặng 3 (T-14) — câu cần owner: (a) QA-S3E3-01/02 "bài làm" có tính em Đang làm không (ảnh hưởng ngưỡng 5 của "Cả lớp vướng"); (b) QA-S3E1-14, QA-S3E2-07 story map thiếu story quyền xuyên suốt S3 và vòng đời bộ bài Đã đóng/Lưu trữ; (c) QA-S3E5-07/10 thiếu story xóa tài khoản + chính sách lưu/xóa (PO-64), `org_id` kỹ thuật MVP có trái PO-61 không | OK mặc định / sửa → T-08 bổ sung story map | (a) tính; (b) thêm story; (c) thêm story xóa tài khoản, `org_id` giữ (kỹ thuật, không phải dữ liệu cá nhân) |
 
 ## Sau họp
 Cập nhật KQ + bỏ TẠM → chạy lại audit → chuyển dòng đã chốt sang DECISIONS.md.
