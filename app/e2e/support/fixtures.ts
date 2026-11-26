@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { test as base, expect } from '@playwright/test';
 import type { APIRequestContext, APIResponse, Browser, TestInfo } from '@playwright/test';
@@ -8,7 +8,7 @@ import { redact, redactText } from './redact.ts';
  * Fixture dùng chung cho mọi test E2E. Luôn import `test`, `expect` từ đây (không từ @playwright/test).
  * - `request` (bọc lại): ghi mọi cặp yêu cầu/phản hồi; cuối test đính kèm `http.json` và một ẢNH CHỤP
  *   bảng yêu cầu/phản hồi (để test API cũng có ảnh làm bằng chứng, đạt hay trượt).
- * - `fixture`: mã cố định của dữ liệu vàng (app/db/seed/fixture-ids.json).
+ * - `fixture`: mã cố định của dữ liệu vàng (app/db/seed/fixture-ids.json + fixture-ids.d/*.json, xem loadFixtureIds).
  * - `tokenFor('F-GEO-003')`: thẻ JWT qua /dev/token (chỉ profile dev) cho tài khoản fixture.
  * - `t0`: mốc T0 của lượt chạy (giờ máy chủ lúc reset seed), Date.
  * Quy ước tiêu đề: gắn mã TC bằng tag, ví dụ test('... @TC-GEO-0100', ...) hoặc { tag: '@TC-GEO-0100' }.
@@ -19,9 +19,31 @@ export type FixtureIds = {
   users: Record<string, Entity>;
   classes: Record<string, Entity>;
 };
-export const fixtureIds: FixtureIds = JSON.parse(
-  readFileSync(path.resolve(import.meta.dirname, '../../db/seed/fixture-ids.json'), 'utf8'),
-);
+/**
+ * Đọc gộp `app/db/seed/fixture-ids.json` (MVP) + `app/db/seed/fixture-ids.d/*.json` (chặng 2–3, mỗi feature một tệp,
+ * theo thứ tự tên tệp; T-261126-41). Tệp con cùng dạng `{ "<nhóm>": { "<mã F>": { "id": … } } }` (được thêm nhóm mới,
+ * ví dụ "sets"); khóa bắt đầu bằng "_" (ghi chú) bỏ qua. Một mã khai báo ở hai nơi là lỗi (không ghi đè âm thầm).
+ */
+export function loadFixtureIds(seedDir = path.resolve(import.meta.dirname, '../../db/seed')): FixtureIds {
+  const merged = JSON.parse(readFileSync(path.join(seedDir, 'fixture-ids.json'), 'utf8')) as Record<string, unknown>;
+  const dDir = path.join(seedDir, 'fixture-ids.d');
+  const parts = existsSync(dDir) ? readdirSync(dDir).filter((n) => n.endsWith('.json')).sort() : [];
+  for (const name of parts) {
+    const part = JSON.parse(readFileSync(path.join(dDir, name), 'utf8')) as Record<string, unknown>;
+    for (const [group, entries] of Object.entries(part)) {
+      if (group.startsWith('_')) continue;
+      if (!entries || typeof entries !== 'object' || Array.isArray(entries))
+        throw new Error(`fixture-ids.d/${name}: nhóm "${group}" phải là đối tượng { "<mã F>": … }`);
+      const target = (merged[group] ??= {}) as Record<string, unknown>;
+      for (const [key, value] of Object.entries(entries as Record<string, unknown>)) {
+        if (key in target) throw new Error(`fixture-ids.d/${name}: mã ${group}.${key} đã khai báo ở tệp khác`);
+        target[key] = value;
+      }
+    }
+  }
+  return merged as FixtureIds;
+}
+export const fixtureIds: FixtureIds = loadFixtureIds();
 
 type Exchange = {
   method: string;

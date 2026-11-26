@@ -46,9 +46,12 @@ const uiEvidence = { screenshot: 'on', video: 'on', trace: 'on' } as const;
 /**
  * Spec UI P0 chạy thêm trên điện thoại (T-261126-02): học sinh vào lớp, làm bài (nhãn, hình), gợi ý, lời giải đã mở,
  * hỏi đáp; giáo viên Kho đề, chi tiết đề, giao bài, giờ mở, theo dõi lớp.
+ * Chặng 2–3 (T-261126-41): spec P0 cần chạy trên điện thoại đặt tên `*.p0m.ui.spec.ts` (vẫn chạy cả ui-chromium,
+ * ui-webkit vì khớp `.ui.spec.ts`); task không sửa tệp cấu hình này.
  */
-const MOBILE_P0 =
+const MOBILE_P0_MVP =
   /(e1\/student-join|e2\/labels|e4\/(hints|solution|qa)|e5\/(catalog|detail)|e6\/(assign|release)|e7\/monitor)\.ui\.spec\.ts$/;
+const MOBILE_P0 = [MOBILE_P0_MVP, /\.p0m\.ui\.spec\.ts$/];
 const projects: Project[] = [
   { name: 'api', testMatch: /.*\.api\.spec\.ts/, use: { baseURL: apiURL } },
   { name: 'ui-chromium', testMatch: /.*\.ui\.spec\.ts/, use: { ...devices['Desktop Chrome'], baseURL: webURL, ...uiEvidence } },

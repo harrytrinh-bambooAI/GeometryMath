@@ -179,6 +179,19 @@ class SqlLintTest {
         .containsExactlyInAnyOrder("solution", "verification_report");
     assertThat(cfg.owners()).containsEntry("a", "iam");
 
+    // Khóa có hậu tố theo task (T-261126-41) gộp vào danh sách gốc
+    ok.setProperty("large.tables.t18", "practice_attempt, Notification");
+    ok.setProperty("tenant.tables.t31", "notification");
+    var merged = SqlLint.Config.from(ok);
+    assertThat(merged.largeTables())
+        .containsExactlyInAnyOrder("a", "b", "practice_attempt", "notification");
+    assertThat(merged.tenantTables()).containsExactlyInAnyOrder("a", "notification");
+
+    Properties dangling = new Properties();
+    dangling.setProperty("large.tables.", "a");
+    assertThatThrownBy(() -> SqlLint.Config.from(dangling))
+        .isInstanceOf(IllegalArgumentException.class);
+
     Properties bad = new Properties();
     bad.setProperty("huge.tables", "a");
     assertThatThrownBy(() -> SqlLint.Config.from(bad))
