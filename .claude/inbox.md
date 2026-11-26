@@ -241,3 +241,14 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent T-23; `artifacts/GEO/work/epics/S2-E6/qc_findings.md`, `S2-E7/qc_findings.md` (26/11/2026).
 - **Xong khi:** mục 1 có IT "vượt hạn mức thêm đề → bị chặn" qua luồng tạo đề thật; mục 3 ghi PO-DECISIONS trước gate T-26.
 - **Ngoài phạm vi:** thêm đề (T-22), bài luyện.
+
+## Việc: câu mở sau T-22 (S2-E3 + US-S2E5-05) · ghi 27/11/2026 00:05
+- **Mục tiêu:** đóng các điểm T-22 để mở.
+  1. [FIX Dev] bộ lọc chung giới hạn thân yêu cầu 1 MB → ảnh đề tới 5 MB đang gửi thành nhiều đoạn ≤ 1 MB; quyết có nới bộ lọc cho đường tải ảnh đề không.
+  2. [L4/Dev] "Chọn để giao" mới ghi nhận xác nhận, chưa tạo bài giao thật; "Dựng tay" mới là ghi chú; nối đề nháp với bài giao thật.
+  3. [Design/Dev] rail giáo viên có cả "Đề của tôi" (T-22) lẫn "Kho của tôi" (T-23), chưa gộp; mục rail thêm đề đặt tên "Đề mới" để không vi phạm TC-GEO-0508 (E5 cấm link "Thêm đề" trên màn Kho đề).
+  4. [Dev] màn làm bài E3/E4 chưa hiện nhãn và nội dung theo phiên bản ghim; `LibraryQuota.consume` (T-23) chưa được gọi ở luồng tạo đề.
+  5. [PO/BA] "Đáp số đề ghi" = phần sau "Đáp số:" ở cuối chữ đề (giả định); dữ liệu AI giả lập để trong mã Java thay vì `resources/ai/` (để e2e-affected không nhảy L2) → xem lại bản đồ ảnh hưởng.
+- **Nguồn:** báo cáo agent T-22; `artifacts/GEO/work/epics/S2-E3/qc_findings.md`, `S2-E5/qc_findings.md` mục 15–19 (26/11/2026).
+- **Xong khi:** mục 1–3 có quyết định ghi DECISIONS/PO-DECISIONS trước gate T-26; mục 4 có TC e2e.
+- **Ngoài phạm vi:** import file, chat chỉnh nháp (S2-E4).

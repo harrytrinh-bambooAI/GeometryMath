@@ -135,7 +135,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-18, T-261126-19, T-261126-45
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(assignment|tracking|subject/internal/grade)/|app/server/src/main/resources/db/migration/V1[89][0-9]__|app/server/src/test/java/vn/geo/server/(it/s2e8|assignment|tracking|subject)/|app/web/src/features/s2e8/|app/web/package(-lock)?\.json|app/server/pom\.xml|app/e2e/tests/s2e8/|app/db/seed/(e2e/83[0-9]_|fixture-ids\.d/s2e8)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E8/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W5
-## T-261126-22 · S2-E3 · L5 Dev · epic-common v1.3 · wt s2-e3 · ‖23 · 4.5h/11M · Thêm đề có AI soạn nháp (chữ + ảnh) + US-S2E5-05 [running]
+## T-261126-22 · S2-E3 · L5 Dev · epic-common v1.3 · wt s2-e3 · ‖23 · 4.5h/11M · Thêm đề có AI soạn nháp (chữ + ảnh) + US-S2E5-05 [done]
 - Mục tiêu: US-S2E3-01…04: C2-02, pipeline đọc–dựng–giải–kiểm qua aigateway (mock + đáp mẫu), ngoại lệ ảnh mờ / không dựng / lệch đáp số, vào ngăn "Của tôi"; US-S2E5-05: lời giải đã giao bất biến, sửa tạo phiên bản mới, chọn áp cho bài đang giao
 - Nguồn: epics/S2-E3, S2-E5 (ebec17a 26/11); PLAN_code-s23 v1.0 §3, §5; STAGES Ch2 §5 luồng A; PO-27, PO-30, PO-38
 - Xong khi: như 18 (S2-E3 + S2-E5 đủ) + bench-s2, bench-mvp không lùi
