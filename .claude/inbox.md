@@ -306,3 +306,15 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent A; `epics/S3-E4/qc_findings.md`, `S3-E5/qc_findings.md` v0.2 (Dev-S3E5-08…10).
 - **Xong khi:** mục 1 FIX trước gate T-34; mục 2–3 ghi PO-DECISIONS.
 - **Ngoài phạm vi:** —
+
+## Việc: câu mở sau F3 (S3-E5-03/05 + S3-E6-01/02) và FIX tích hợp · ghi 27/11/2026
+- **Mục tiêu:** đóng các điểm còn mở sau khi code chặng 3 đủ.
+  1. [FIX Dev] danh sách AuditEvent (S3-E4) JOIN `app_user` → dòng của người đã xoá không hiện (Dev-S3E5-16) → LEFT JOIN.
+  2. [FIX Dev] giao qua `practice-sets/{id}/assign` tới lớp đã lưu trữ vẫn NOT_FOUND (fn_assign_practice_set); đường tạo bộ đã trả CONFLICT.
+  3. [BA] câu CONFLICT "Lớp này đã lưu trữ, không giao bộ mới được." tự đặt (spec chưa có MSG riêng); ghi chú US-GEO-701-FC7 là "chỉ MVP" (thanh bên chặng 3 có Tổng quan, Lớp học).
+  4. [PO] `auth_failure.ip_key` lưu HMAC IP trong CSDL 1 ngày, lệch BR-S3E5-37 (bộ nhớ tạm ≤ 1 giờ) — đang ghi ngoại lệ PO-53; văn bản riêng tư 1.0 sửa tại chỗ hay phát hành 1.1; màn chiếu từ kết quả bản rút gọn, chưa có hình.
+  5. [QC] thay đổi hợp đồng: thân có trường thừa nay nhận 400 (BR-S3E5-34) — đã sửa test E1/E7/S2-E1/S2-E8 + test_cases.md; các ca mobile của FIX F3 chưa chạy (regression cuối phase phủ).
+  6. [Vận hành] job dọn bia mộ tài khoản xoá chạy hằng ngày; xuất CSV giới hạn 10 lần/giờ.
+- **Nguồn:** báo cáo agent F3 + runner-fix-s3int + runner-fix-s3f3; `epics/S3-E5/qc_findings.md` (Dev-S3E5-11…21), `S3-E6/qc_findings.md` (Dev-S3E6-01…08), `E7/qc_findings.md` (Dev-E7-12).
+- **Xong khi:** mục 1–2 FIX trước gate T-34; mục 3–4 ghi PO-DECISIONS.
+- **Ngoài phạm vi:** chặng 4.
