@@ -475,6 +475,63 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: cả ba bị VALIDATION_FAILED; công tắc không đổi
 - Dữ liệu nhập: "có" ; rỗng ; 2
 
+## US-S3E5-05 — Xóa tài khoản và chính sách lưu/xóa dữ liệu bài làm
+- **Story:** Là học sinh hoặc giáo viên, tôi muốn tự xóa tài khoản và biết dữ liệu bài làm được giữ bao lâu, để dữ liệu của mình (hoặc của con) không nằm lại ngoài ý muốn. · Loại UI · P0 · Độ khó 3
+- **Nguồn:** PO-66 (G5; QA-S3E5-10, QA-S2E1-09); PO-64 (Q8: chính sách lưu và xóa làm trước L7 chặng 3); PO-61 (không thu dữ liệu cá nhân)
+- **Góc nhìn người vận hành (M18):** phụ huynh nhắn thầy cô muốn xóa tài khoản của con; học sinh tự vào Cài đặt, bấm "Xóa tài khoản". Ca đáng kể: giáo viên còn lớp Đang dạy, gõ sai mật khẩu, bấm xóa hai lần, em đã xóa thử đăng nhập lại hoặc khôi phục, người khác thử xóa tài khoản của em.
+- **Phụ thuộc:** US-S3E5-02 (văn bản thông báo riêng tư nêu chính sách này), US-S3E5-03 (nhật ký IP 7 ngày), US-S3E1-05 (quyền theo quan hệ), S2-E1 (đăng nhập, khôi phục). Tick "đã đọc" ở S2-E1 trỏ tới văn bản của US-S3E5-02.
+
+| BR | Quy tắc | Nguồn |
+|---|---|---|
+| BR-S3E5-50 | Mọi tài khoản (giáo viên, học sinh, mọi trạng thái lớp) có nút "Xóa tài khoản" ở Cài đặt; xóa cần nhập lại mật khẩu và gõ chữ "XÓA" xác nhận. | PO-64; PO-66 (G5) |
+| BR-S3E5-51 | Xóa có hiệu lực ngay phía người dùng: tài khoản không đăng nhập, không khôi phục được, mã người dùng và mã khôi phục hết hiệu lực và không cấp lại; dữ liệu của tài khoản (tên hiển thị, cờ đã đọc, bài làm, lượt hỏi AI, thành viên lớp) bị xóa vật lý trong tối đa 30 ngày. | PO-64; PO-66 (G5, G12: ngưỡng 30 ngày chỉnh sau L6) |
+| BR-S3E5-52 | Giáo viên còn lớp Đang dạy không xóa được cho tới khi lưu trữ hết lớp (US-S3E6-02); học sinh xóa được ở mọi lúc. | PO-66 (G5) |
+| BR-S3E5-53 | Sau khi xóa học sinh, bài làm của em biến mất khỏi bảng lớp và mọi số liệu; AuditEvent cũ giữ loại, giờ, đối tượng nhưng mã người dùng thay bằng "đã xóa" (nhật ký không chứa dữ liệu cá nhân, BR-S3E5-03). | PO-66 (G5); BR-S3E5-05 |
+| BR-S3E5-54 | Chính sách lưu và xóa hiện trong văn bản thông báo riêng tư: bài làm giữ tới khi tài khoản bị xóa; nhật ký IP của máy chủ web không quá 7 ngày; xóa tài khoản thì xóa trong tối đa 30 ngày. | PO-64; BR-S3E5-37 |
+| BR-S3E5-55 | Xóa tài khoản idempotent theo khóa yêu cầu; chỉ chủ tài khoản xóa được tài khoản của mình, người khác trả NOT_FOUND; sai mật khẩu khi xác nhận tính vào bộ đếm khóa 10 lần/15 phút (BR-S2E1-09). | BR-S3E2-06; QA-S3E1-04 |
+
+### Tiêu chí chấp nhận
+
+**US-S3E5-05-SC1 — Học sinh xóa tài khoản của mình** · Nguồn: BR-S3E5-50, BR-S3E5-51, BR-S3E5-53
+- Given: Bình An `HS-4P9T-37WD` Đang học 11A1, đã có bài làm ở bộ tuần 15 (F-S3-020, F-S3-050)
+- When: Bình An vào Cài đặt, bấm "Xóa tài khoản", nhập đúng mật khẩu, gõ "XÓA", xác nhận
+- Then: tài khoản bị xóa; đăng nhập lại bị từ chối với câu chung; bảng lớp 11A1 không còn dòng Bình An và số liệu bộ tuần 15 tính lại không có em
+
+**US-S3E5-05-SC2 — Giáo viên không còn lớp Đang dạy xóa được tài khoản** · Nguồn: BR-S3E5-50, BR-S3E5-52
+- Given: thầy Khôi (F-S3-002) đã lưu trữ lớp 10B, không còn lớp Đang dạy
+- When: xóa tài khoản đúng quy trình
+- Then: tài khoản bị xóa; mã `GV-4D8R-2WNX` không đăng nhập, không khôi phục, không cấp lại cho người khác
+
+**US-S3E5-05-SC3 — Văn bản thông báo riêng tư nêu chính sách lưu và xóa** · Nguồn: BR-S3E5-54
+- Given: màn thông báo riêng tư bản hiện hành (MSG-S3-81)
+- When: mở màn
+- Then: có ba ý: bài làm giữ tới khi xóa tài khoản; nhật ký IP của máy chủ web không quá 7 ngày; xóa tài khoản thì xóa trong tối đa 30 ngày; có liên kết tới Cài đặt "Xóa tài khoản"
+
+**US-S3E5-05-SC4 — Dữ liệu của tài khoản đã xóa bị xóa vật lý trong 30 ngày** · Nguồn: BR-S3E5-51; BR-S3E5-53
+- Given: tài khoản Bình An đã xóa ở ngày T
+- When: chạy công việc dọn dữ liệu ở ngày T + 30
+- Then: không còn bản ghi nào trong cơ sở dữ liệu mang mã người dùng, tên hiển thị, bài làm, lượt hỏi AI của em; AuditEvent cũ còn nhưng mã người dùng là "đã xóa"
+
+**US-S3E5-05-FC1 — Giáo viên còn lớp Đang dạy bị chặn xóa** · Nguồn: BR-S3E5-52
+- Given: cô Lan còn lớp 11A1 và 11A2 Đang dạy (F-S3-001)
+- When: cô Lan xóa tài khoản đúng quy trình
+- Then: CONFLICT kèm danh sách lớp còn Đang dạy; tài khoản không đổi
+
+**US-S3E5-05-FC2 — Sai mật khẩu không xóa được** · Nguồn: BR-S3E5-55
+- Given: Bình An ở hộp xác nhận xóa
+- When: nhập sai mật khẩu, gõ "XÓA"
+- Then: từ chối, tài khoản không đổi; lần sai tính vào bộ đếm khóa đăng nhập của em
+
+**US-S3E5-05-FC3 — Chưa gõ XÓA thì nút xác nhận bị khóa** · Nguồn: BR-S3E5-50
+- Given: Bình An ở hộp xác nhận xóa, đã nhập đúng mật khẩu
+- When: để trống ô xác nhận hoặc gõ "xoa"; rồi gọi API xóa thẳng không có chữ xác nhận
+- Then: nút xác nhận bị khóa; API trả VALIDATION_FAILED; tài khoản không đổi
+
+**US-S3E5-05-FC4 — Người khác không xóa được tài khoản của em** · Nguồn: BR-S3E5-55; QA-S3E1-04
+- Given: cô Lan là chủ lớp 11A1 của Bình An
+- When: cô Lan gọi xóa tài khoản của Bình An
+- Then: NOT_FOUND; tài khoản Bình An không đổi
+
 ## Lịch sử
 
 | Phiên bản | Ngày | Thay đổi | Ai |

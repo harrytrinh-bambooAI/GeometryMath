@@ -127,6 +127,19 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S3E5-51 | "AI gộp" của giáo viên không bị tắt theo | Medium | Abnormal (Fail case/Edge case) | chức năng | tích hợp CSDL / đơn vị | IT | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • 11A1 tắt trợ lý AI cho học sinh<br/>• Đề 3 đủ 5 bài làm (F-S3-051) | • Hàng dữ liệu: F-S3-051 | 1. mở Kết quả lớp | • "Cả lớp vướng ở đâu" vẫn gộp Đề 3 như bình thường<br/>• bộ gộp giả lập được gọi đúng một lần | US-S3E5-04 · FC6; CL-FN-14 · ENG; PROVISIONAL QA-S3E5-08 |
 | TC-S3E5-52 | Giá trị công tắc không phải đúng/sai | Low | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • cô Lan gọi API đổi công tắc của 11A1 | • Giá trị nhập: "có"<br/>• Giá trị nhập: rỗng<br/>• Giá trị nhập: 2 | 1. gửi giá trị "có"<br/>2. gửi giá trị rỗng<br/>3. gửi giá trị 2 | • cả ba bị VALIDATION_FAILED<br/>• công tắc không đổi | US-S3E5-04 · FC7; CL-FN-02 |
 
+### US-S3E5-05 — Xóa tài khoản và chính sách lưu/xóa dữ liệu bài làm
+
+| No | Tiêu đề | Priority | Type | Loại | Tầng tự động hóa | Tự động hóa | User Type/Account Permission | Pre-condition | Test data/Input data | Test step | Expected output | Remark |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TC-S3E5-53 | Học sinh xóa tài khoản của mình | High | Normal (Success case) | chức năng | giao diện (trình duyệt) | E2E-UI | Học sinh Bình An (F-S3-020) | • Bình An Đang học 11A1, đã có bài làm ở bộ tuần 15 | • mật khẩu đúng; chữ "XÓA" | 1. Cài đặt > "Xóa tài khoản"<br/>2. nhập mật khẩu, gõ "XÓA", xác nhận<br/>3. đăng nhập lại | • tài khoản bị xóa; đăng nhập lại bị từ chối với câu chung<br/>• bảng lớp 11A1 không còn dòng Bình An, số liệu tính lại | US-S3E5-05 · SC1; PO-66; CL-FN-01 |
+| TC-S3E5-54 | Giáo viên không còn lớp Đang dạy xóa được tài khoản | High | Normal (Success case) | chức năng | tích hợp API | E2E-API | Giáo viên Khôi (F-S3-002) | • thầy Khôi đã lưu trữ lớp 10B | • F-S3-002 | 1. xóa tài khoản đúng quy trình<br/>2. thử đăng nhập và khôi phục bằng mã `GV-4D8R-2WNX` | • tài khoản bị xóa<br/>• mã không đăng nhập, không khôi phục, không cấp lại | US-S3E5-05 · SC2; PO-66; CL-FN-01 |
+| TC-S3E5-55 | Văn bản thông báo riêng tư nêu chính sách lưu và xóa | Medium | Normal (Success case) | chức năng | giao diện (trình duyệt) | E2E-UI | Học sinh Bình An | • màn thông báo riêng tư bản hiện hành | — | 1. mở màn thông báo riêng tư | • có ba ý: bài làm giữ tới khi xóa tài khoản; IP không quá 7 ngày; xóa trong tối đa 30 ngày<br/>• có liên kết tới Cài đặt "Xóa tài khoản" | US-S3E5-05 · SC3; CL-FN-03 |
+| TC-S3E5-56 | Dữ liệu của tài khoản đã xóa bị xóa vật lý trong 30 ngày | High | Normal (Success case) | chức năng | tích hợp CSDL / đơn vị | IT | Kỹ sư kiểm thử với quyền đọc cơ sở dữ liệu thử | • tài khoản Bình An đã xóa ở ngày T | • T + 30 ngày | 1. chạy công việc dọn dữ liệu ở ngày T + 30<br/>2. truy vấn theo mã người dùng, tên hiển thị | • không còn bản ghi mang mã, tên, bài làm, lượt hỏi AI của em<br/>• AuditEvent cũ còn, mã người dùng là "đã xóa" | US-S3E5-05 · SC4; CL-FN-05 |
+| TC-S3E5-57 | Giáo viên còn lớp Đang dạy bị chặn xóa | High | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Giáo viên Lan (F-S3-001) | • cô Lan còn lớp 11A1, 11A2 Đang dạy | • F-S3-001 | 1. xóa tài khoản đúng quy trình | • CONFLICT kèm danh sách lớp còn Đang dạy<br/>• tài khoản không đổi | US-S3E5-05 · FC1; CL-FN-04 |
+| TC-S3E5-58 | Sai mật khẩu không xóa được | High | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Học sinh Bình An | • ở hộp xác nhận xóa | • mật khẩu sai; chữ "XÓA" | 1. xác nhận xóa với mật khẩu sai | • từ chối, tài khoản không đổi<br/>• tính vào bộ đếm khóa đăng nhập | US-S3E5-05 · FC2; CL-FN-02 |
+| TC-S3E5-59 | Chưa gõ XÓA thì nút xác nhận bị khóa | Medium | Abnormal (Fail case/Edge case) | chức năng | giao diện (trình duyệt) | E2E-UI | Học sinh Bình An | • đã nhập đúng mật khẩu | • ô trống; "xoa" | 1. để trống ô hoặc gõ "xoa"<br/>2. gọi API xóa không có chữ xác nhận | • nút bị khóa<br/>• API trả VALIDATION_FAILED<br/>• tài khoản không đổi | US-S3E5-05 · FC3; CL-FN-02 |
+| TC-S3E5-60 | Người khác không xóa được tài khoản của em | High | Abnormal (Fail case/Edge case) | phân quyền | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1) | • Bình An thuộc 11A1 | • F-S3-001, F-S3-020 | 1. cô Lan gọi xóa tài khoản Bình An | • NOT_FOUND<br/>• tài khoản Bình An không đổi | US-S3E5-05 · FC4; CL-X-01 |
+
 ## 4. Truy vết story → tiêu chí → case
 
 | Story | Tiêu chí | Loại | Tiêu đề | Trạng thái DoR | Case |
@@ -183,12 +196,20 @@ Phiên bản: v0.2 · 2026-11-26
 | US-S3E5-04 | US-S3E5-04-FC5 | Fail / biên | Tự học không lớp vẫn có trợ lý | Ready for R3 · PROVISIONAL QA-S3E5-08 | TC-S3E5-50 |
 | US-S3E5-04 | US-S3E5-04-FC6 | Fail / biên | "AI gộp" của giáo viên không bị tắt theo | Ready for R3 · PROVISIONAL QA-S3E5-08 | TC-S3E5-51 |
 | US-S3E5-04 | US-S3E5-04-FC7 | Fail / biên | Giá trị công tắc không phải đúng/sai | Ready for R3 | TC-S3E5-52 |
-
+| US-S3E5-05 | US-S3E5-05-SC1 | Success | Học sinh xóa tài khoản của mình | Ready for R3 | TC-S3E5-53 |
+| US-S3E5-05 | US-S3E5-05-SC2 | Success | Giáo viên không còn lớp Đang dạy xóa được tài khoản | Ready for R3 | TC-S3E5-54 |
+| US-S3E5-05 | US-S3E5-05-SC3 | Success | Văn bản thông báo riêng tư nêu chính sách lưu và xóa | Ready for R3 | TC-S3E5-55 |
+| US-S3E5-05 | US-S3E5-05-SC4 | Success | Dữ liệu của tài khoản đã xóa bị xóa vật lý trong 30 ngày | Ready for R3 | TC-S3E5-56 |
+| US-S3E5-05 | US-S3E5-05-FC1 | Fail / biên | Giáo viên còn lớp Đang dạy bị chặn xóa | Ready for R3 | TC-S3E5-57 |
+| US-S3E5-05 | US-S3E5-05-FC2 | Fail / biên | Sai mật khẩu không xóa được | Ready for R3 | TC-S3E5-58 |
+| US-S3E5-05 | US-S3E5-05-FC3 | Fail / biên | Chưa gõ XÓA thì nút xác nhận bị khóa | Ready for R3 | TC-S3E5-59 |
+| US-S3E5-05 | US-S3E5-05-FC4 | Fail / biên | Người khác không xóa được tài khoản của em | Ready for R3 | TC-S3E5-60 |
 ## 5. Change log
 
 | No | Thay đổi | Bởi |
 |---|---|---|
 | 1 | bản đầu: 52 case cho 52 tiêu chí của S3-E5, có cột Tự động hóa cho mọi case; ready for R3 | QC |
+| 2 | thêm story US-S3E5-05 (xóa tài khoản, chính sách lưu/xóa): 8 case, tổng 60 case cho 60 tiêu chí, PO-66 | QC |
 
 ## Lịch sử
 
