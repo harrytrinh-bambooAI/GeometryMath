@@ -85,13 +85,14 @@ Phiên bản: v0.2 · 2026-11-26
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S3E2-01 | Bộ bài (`AssignmentSet`) gồm 1 đến 20 đề (`AssignmentItem`) có thứ tự, thuộc đúng một lớp của giáo viên tạo; giao cho lớp khác là tạo bộ mới. | Ch3 §8; QA-S3E2-01 |
-| BR-S3E2-02 | Vòng đời bộ: Nháp, Đã giao, Đã đóng, Lưu trữ (Đã đóng và Lưu trữ thuộc S3-E6). Học sinh chỉ thấy bộ Đã giao. | Ch3 §8 |
+| BR-S3E2-07 | **Một mô hình "bộ bài":** bài luyện của S2-E8 (BR-S2E8-32) chính là một `AssignmentSet`; chặng 2 giao cho lớp mẫu 11A1 chuyển từ MVP (BR-S3E1-16). Chặng 3 thêm lớp thật, lịch mở, bảng lớp trên cùng mô hình, giữ nguyên bộ và kết quả đã có từ chặng 2 | PO-66 (G1); RV_s23 B-1 |
+| BR-S3E2-02 | Vòng đời bộ: Nháp, Đã giao, Đã đóng, Lưu trữ (Đã đóng và Lưu trữ ở US-S3E2-04, PO-66 G5). Học sinh chỉ thấy bộ Đã giao. | Ch3 §8 |
 | BR-S3E2-03 | Hạn làm `due_at` chỉ là nhãn; quá hạn vẫn làm được; không có chức năng khóa theo hạn. | Ch3 §7 ý 4 |
 | BR-S3E2-04 | Một đề chỉ xuất hiện một lần trong một bộ; giáo viên chỉ chọn đề Kho chung hoặc đề Của tôi của chính mình. | PO-63; S2-E6 |
 | BR-S3E2-05 | Xem trước dựng đúng màn học sinh nhưng không ghi tiến độ, không tạo Notification và không tính "bài làm". | Ch3 §5 luồng B bước 2 |
 | BR-S3E2-06 | Giao là idempotent theo khóa yêu cầu: bấm lặp chỉ tạo một lần giao và một đợt Notification. | CL-FN-10 |
 
-- **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E2-01, QA-S3E2-02.
+- **DoR:** Ready for R3; giả định QA-S3E2-01, QA-S3E2-02 đã chốt PO-66 (G12).
 
 ### Tiêu chí chấp nhận
 
@@ -132,6 +133,11 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: bộ được giao; học sinh thấy 20 đề đúng thứ tự
 - Dữ liệu nhập: 20 đề
 
+
+**US-S3E2-01-SC7 — Bài luyện giao ở chặng 2 hiện như một bộ bài ở chặng 3** · Nguồn: BR-S3E2-07; BR-S2E8-32; PO-66 (G1)
+- Given: Bài luyện BL-1 (5 câu) đã giao cho lớp mẫu 11A1 ở chặng 2, An đã làm câu 1 đúng
+- When: Giáo viên chủ lớp 11A1 mở "Bài đang giao" ở chặng 3
+- Then: Bộ BL-1 hiện như một bộ Đã giao của 11A1 với 5 đề; kết quả và số lượt đã làm của An còn nguyên; bảng lớp (US-S3E3-01) đọc được ô của An; không có bản sao hay bảng bài luyện thứ hai
 
 **US-S3E2-01-FC1 — Bộ không có đề không giao được** · Nguồn: BR-S3E2-01
 - Given: bộ nháp chưa có đề nào, đã chọn lớp 11A1
@@ -356,6 +362,56 @@ Phiên bản: v0.2 · 2026-11-26
 - Given: Bình An dùng iPhone trình duyệt web màn dọc 390×844 (F-S3-020)
 - When: mở Bài của em
 - Then: nhóm lớp và thẻ bộ xếp một cột; chip hạn, tiến độ, giờ mở đều đọc được không cắt chữ; không có thanh cuộn ngang
+
+## US-S3E2-04 — Đóng bộ và lưu trữ bộ (vòng đời Đã đóng, Lưu trữ)
+- **Story:** Là giáo viên, tôi muốn đóng bộ khi hết đợt làm và lưu trữ bộ cũ, để học sinh chỉ xem kết quả của bộ đã đóng và màn "Bài đang giao" không dài mãi. · Loại UI · P0 · Độ khó 2
+- **Nguồn:** PO-66 (G5; QA-S3E2-07); STAGES Ch3 §8 (`AssignmentSet.status`); BR-S3E2-02
+- **Góc nhìn người vận hành (M18):** cuối tuần 15 cô Lan đóng bộ tuần 15 để các em không gửi thêm đáp số, rồi lưu trữ bộ tuần 12 để dọn màn. Ca đáng kể: đóng bộ Nháp, bấm Đóng hai lần, giáo viên khác thử đóng, bộ Đã đóng mà giờ mở lời giải mới tới.
+- **Phụ thuộc:** US-S3E2-01, US-S3E2-02; US-S3E4-01 ("Bài đang giao" chỉ liệt kê bộ chưa Đã đóng).
+
+| BR | Quy tắc | Nguồn |
+|---|---|---|
+| BR-S3E2-30 | Chỉ chủ lớp đóng được bộ Đã giao; Đóng là một chiều, không mở lại (muốn làm tiếp thì tạo bộ mới). Bộ Nháp không đóng được. | PO-66 (G5); QA-S3E2-07 |
+| BR-S3E2-31 | Bộ Đã đóng: học sinh vẫn xem kết quả của mình; không gửi, không xin gợi ý thêm (CONFLICT); lịch mở lời giải vẫn chạy; bảng lớp vẫn đọc được. | PO-66 (G5); BR-S2E8-19 |
+| BR-S3E2-32 | Chỉ bộ Đã đóng mới lưu trữ được; bộ Lưu trữ rời "Bài đang giao" và danh sách chính của học sinh, nằm ở mục "Bộ đã lưu trữ" của giáo viên, vẫn xem được kết quả. | PO-66 (G5) |
+| BR-S3E2-33 | Đóng và lưu trữ idempotent theo khóa yêu cầu; sai chủ lớp hoặc ngoài quan hệ trả NOT_FOUND (QA-S3E1-04). | BR-S3E2-06; PO-66 |
+
+### Tiêu chí chấp nhận
+
+**US-S3E2-04-SC1 — Giáo viên đóng bộ Đã giao, học sinh chỉ còn xem kết quả** · Nguồn: BR-S3E2-30, BR-S3E2-31
+- Given: bộ tuần 15 của 11A1 Đã giao (F-S3-050); Bình An đã làm Đề 1
+- When: cô Lan bấm "Đóng bộ", xác nhận; Bình An mở bộ rồi thử gửi đáp số Đề 2
+- Then: bộ chuyển Đã đóng; Bình An xem được kết quả Đề 1; gửi đáp số Đề 2 trả CONFLICT, không ghi `Attempt`
+
+**US-S3E2-04-SC2 — Bộ Đã đóng vẫn mở lời giải khi tới giờ mở** · Nguồn: BR-S3E2-31
+- Given: bộ tuần 15 Đã đóng, giờ mở lời giải 06/12/2026 08:00 (F-S3-050)
+- When: giờ máy chủ tới 06/12/2026 08:00; Bình An mở Đề 2
+- Then: lời giải hiện đúng luật giờ mở; không có nút nhập đáp số
+
+**US-S3E2-04-SC3 — Lưu trữ bộ Đã đóng** · Nguồn: BR-S3E2-32
+- Given: bộ tuần 15 Đã đóng
+- When: cô Lan bấm "Lưu trữ bộ"
+- Then: bộ ra khỏi "Bài đang giao" của cô Lan và danh sách chính của học sinh; hiện ở "Bộ đã lưu trữ" của cô Lan; bảng lớp vẫn đọc được số liệu của bộ
+
+**US-S3E2-04-FC1 — Bộ Nháp không đóng được** · Nguồn: BR-S3E2-30
+- Given: bộ tuần 16 Nháp (F-S3-052)
+- When: cô Lan gọi đóng bộ
+- Then: CONFLICT; bộ vẫn Nháp
+
+**US-S3E2-04-FC2 — Bộ Đã giao chưa đóng thì không lưu trữ được** · Nguồn: BR-S3E2-32
+- Given: bộ tuần 15 Đã giao
+- When: cô Lan gọi lưu trữ bộ
+- Then: CONFLICT; bộ vẫn Đã giao
+
+**US-S3E2-04-FC3 — Giáo viên khác không đóng được bộ của lớp mình** · Nguồn: BR-S3E2-33; QA-S3E1-04
+- Given: bộ tuần 15 của 11A1; thầy Khôi (F-S3-002) không có quan hệ với 11A1
+- When: thầy Khôi gọi đóng bộ
+- Then: NOT_FOUND; bộ không đổi
+
+**US-S3E2-04-FC4 — Bấm Đóng lặp chỉ đóng một lần** · Nguồn: BR-S3E2-33
+- Given: bộ tuần 15 Đã giao; cùng khóa yêu cầu
+- When: cô Lan gửi lệnh đóng hai lần liên tiếp
+- Then: bộ Đã đóng một lần; lần hai trả cùng kết quả, không sinh lỗi
 
 ## Lịch sử
 

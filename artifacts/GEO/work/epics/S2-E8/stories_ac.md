@@ -390,7 +390,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S2E8-16 | Đúng: hiện xác nhận và nút "Câu kế"; Sai: hiện "Chưa đúng. Còn m lượt." kèm gợi ý mức 1; chip "Còn m/N lượt" cập nhật | STAGES Ch2 mục 5 luồng C, DQ-12 |
 | BR-S2E8-17 | Hết lượt: câu đánh dấu "xem lại cùng thầy cô", khóa nhập, vẫn xem được gợi ý mức 1; lời giải và đáp số vẫn khóa tới `release_at`; được sang câu kế | STAGES Ch2 mục 5, mục 7; DQ-12 |
 | BR-S2E8-18 | Tiến độ lưu ở máy chủ: thoát rồi vào lại thì quay đúng câu và đúng số lượt còn lại; câu đã Đúng hoặc hết lượt không làm lại | STAGES Ch2 mục 5 |
-| BR-S2E8-19 | Chỉ học sinh thuộc lớp được giao mới mở bài; bài đã đóng thì chỉ xem kết quả | STAGES mục 0.2 nguyên tắc 5 |
+| BR-S2E8-19 | Chỉ học sinh có `ClassMembership` Đang học ở lớp được giao mới mở bài; bài đã đóng thì chỉ xem kết quả | STAGES mục 0.2 nguyên tắc 5; PO-66 (G1) |
 | BR-S2E8-20 | Mất mạng khi gửi: hiện "Chưa gửi được, đáp số của em vẫn còn" và nút "Thử lại", không trừ lượt, giữ nội dung ô; đang tải: khung giữ chỗ (TẠM, DQ.md "Chưa vẽ") | STAGES Ch2 mục 6 trạng thái cần thiết kế |
 
 - **Dữ liệu:** BL-1 gồm 5 câu (FX-20), An thuộc lớp 11A1 được giao BL-1; câu 2 là FX-14 kiểu xấp xỉ 45 ±0,5°, 3 lượt; gợi ý mức 1 của câu 2: "Góc giữa SC và mặt đáy là góc giữa SC và hình chiếu của nó lên đáy. Hình chiếu của SC là đoạn nào?"
@@ -585,7 +585,7 @@ Phiên bản: v0.2 · 2026-11-26
 - **Story:** Là giáo viên, tôi muốn soạn bài luyện từ đề của mình và nhận báo "chấm sai" từ học sinh, để máy chấm có chỗ sửa khi nó hiểu sai dạng viết · Loại UI · Mức P0 · Khung C2-08
 - **Nguồn:** STAGES Ch2 mục 10; DQ-14
 - **Góc nhìn người vận hành:** giáo viên chọn 5 đề, đặt số lượt, sai số, giờ mở. Đề chưa có đáp số máy chấm được thì không chọn được. Học sinh nghĩ máy chấm sai bấm "Em nghĩ đáp số này đúng" và giáo viên quyết định. Bài đã giao thì không sửa dưới chân học sinh.
-- **Phụ thuộc:** S2-E5 (đề đã duyệt), US-S2E8-02, lớp mẫu có sẵn (QA-S2E8-08)
+- **Phụ thuộc:** S2-E5 (đề đã duyệt), US-S2E8-02, lớp mẫu 11A1 chuyển từ MVP (US-S2E1-04, BR-S3E1-16); mô hình bộ bài dùng chung với S3-E2 (PO-66 G1, đã đóng QA-S2E8-08)
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
@@ -595,6 +595,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S2E8-29 | Giao bài: Nháp thành Đã giao, chụp lại (snapshot) đáp số, sai số, lượt cho từng câu; sau đó không sửa được, trừ hai ngoại lệ có chủ đích: (a) giáo viên chọn "Áp dụng cho lớp" phiên bản lời giải mới ở US-S2E5-05 (snapshot lấy theo phiên bản mới, kết quả đã chấm không tính lại, BR-S2E5-26); (b) giáo viên "Xác nhận đúng" báo của học sinh ở BR-S2E8-31 (thêm một dạng chấp nhận vào câu); đóng bài thành Đã đóng | STAGES Ch2 mục 8; BR-S2E5-23 |
 | BR-S2E8-30 | Học sinh bấm "Em nghĩ đáp số này đúng" chỉ khi câu đã bị chấm Sai hoặc hết lượt; mỗi em một báo mỗi câu; có thể kèm ghi chú 0 đến 200 ký tự; báo không đổi lượt hay kết quả | STAGES Ch2 mục 10, M-S2-07 |
 | BR-S2E8-31 | Giáo viên thấy báo của học sinh lớp mình kèm đáp số em nhập và dạng chuẩn; chọn "Xác nhận đúng" (câu của em thành Đúng, dạng viết đó thêm vào dạng chấp nhận của câu, đếm vào M-S2-07) hoặc "Giữ nguyên" (TẠM, QA-S2E8-09) | M-S2-07 |
+| BR-S2E8-32 | **Một mô hình "bộ bài":** bài luyện là một bộ bài (`AssignmentSet`) của S3-E2; mỗi câu là một `AssignmentItem` kèm cấu hình luyện (kiểu đáp số, sai số, lượt, giờ mở lời giải). "Giao" ở S2-E8 chính là giao bộ (BR-S3E2-01), không có bảng bài luyện riêng. Chặng 2 giao cho lớp mẫu 11A1 chuyển từ MVP (có `ClassMembership` Đang học, BR-S3E1-16); chặng 3 thêm lớp thật, nhiều lớp, lịch mở và bảng lớp, không đổi mô hình | PO-66 (G1); RV_s23 B-1 |
 
 ### Tiêu chí chấp nhận
 
@@ -622,6 +623,16 @@ Phiên bản: v0.2 · 2026-11-26
 - Given: Bài nháp đầy đủ; lớp 11A1
 - When: Bấm "Giao"; xác nhận
 - Then: Bài thành Đã giao; mỗi câu lưu snapshot đáp số, kiểu, sai số, lượt; học sinh 11A1 thấy bài
+
+**US-S2E8-05-SC10 — Bài luyện được lưu thành bộ bài dùng chung mô hình với S3-E2** · Nguồn: BR-S2E8-32; PO-66 (G1)
+- Given: Bài nháp 5 câu (FX-20) của giáo viên chủ lớp 11A1 (lớp mẫu chuyển từ MVP)
+- When: Bấm "Giao"; xác nhận
+- Then: Hệ thống tạo đúng một `AssignmentSet` Đã giao có 5 `AssignmentItem` kèm cấu hình luyện từng câu; không có bảng bài luyện riêng; bộ gắn với lớp 11A1
+
+**US-S2E8-05-FC10 — Giáo viên không phải chủ lớp mẫu không giao được cho lớp đó** · Nguồn: BR-S2E8-32; BR-S3E1-16; PO-66 (G1)
+- Given: Cô Trang (FX-01) không phải chủ lớp mẫu 11A1; bài nháp đầy đủ
+- When: Cô Trang gọi giao bài cho lớp 11A1
+- Then: NOT_FOUND; không có `AssignmentSet` nào được tạo; học sinh 11A1 không thấy bài
 
 **US-S2E8-05-FC1 — Bài đã giao không sửa được** · Nguồn: BR-S2E8-29
 - Given: Bài đã giao
@@ -713,12 +724,12 @@ Phiên bản: v0.2 · 2026-11-26
 - When: Xem phản hồi và màn sau khi gửi
 - Then: Chỉ "Đã gửi cho thầy cô"; không đáp số, không dạng chuẩn, không đúng sai của đáp số em
 
-- **Mở và quyết định đang dùng:** QA-S2E8-05, QA-S2E8-08, QA-S2E8-09
+- **Mở và quyết định đang dùng:** QA-S2E8-05, QA-S2E8-09 (QA-S2E8-08 đã chốt PO-66 G1)
 - **DoR:** ready for R3, mức P0.
 
 ## Kiểm phủ
 
-- Story trong epic: 5; tiêu chí: 110. Mọi story của epic trong `story-map-s23.md` đều có mặt, không story thừa.
+- Story trong epic: 5; tiêu chí: 112. Mọi story của epic trong `story-map-s23.md` đều có mặt, không story thừa.
 - Câu hỏi mở và đề xuất đổi story map: `questions.md` cùng thư mục (không sửa story map, R2 đã khóa).
 
 ## Lịch sử

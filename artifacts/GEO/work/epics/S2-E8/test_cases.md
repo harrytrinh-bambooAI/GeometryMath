@@ -55,12 +55,12 @@ Phiên bản: v0.2 · 2026-11-26
 | US-S2E8-02 Chấm đáp số dạng tương đương bằng `grade`; sai cú pháp không trừ lượt | 41 | 42 | 42 / 0 |
 | US-S2E8-03 Làm bài luyện: lượt thử, gợi ý mức 1, "xem lại cùng thầy cô" khi hết lượt | 19 | 21 | 20 / 1 |
 | US-S2E8-04 Kết quả bài luyện; không hiện số tổng; đáp số khóa tới giờ mở | 13 | 13 | 12 / 1 |
-| US-S2E8-05 Soạn bài luyện; nút "Em nghĩ đáp số này đúng" gửi về giáo viên | 23 | 23 | 23 / 0 |
-| **Tổng** | **110** | **113** | **108 / 5** |
+| US-S2E8-05 Soạn bài luyện; nút "Em nghĩ đáp số này đúng" gửi về giáo viên | 25 | 25 | 25 / 0 |
+| **Tổng** | **112** | **115** | **110 / 5** |
 
 | Theo ưu tiên | Số case |
 |---|---|
-| High | 84 |
+| High | 86 |
 | Medium | 26 |
 | Low | 3 |
 
@@ -203,6 +203,8 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S2E8-108 | Giáo viên khác không thấy báo của lớp mình | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01); học sinh An (FX-02) | • Báo của An cho bài của Cô Trang; Cô Lan đăng nhập | — | 1. Cô Lan gọi danh sách báo; gọi xác nhận một báo | • Danh sách không có báo của An; xác nhận nhận NOT_FOUND | US-S2E8-05-FC7; BR-S2E8-31; BR-S2-06 |
 | TC-S2E8-109 | Học sinh không gửi báo cho bài không thuộc mình | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01); học sinh An (FX-02) | • Bình (11A2) không được giao BL-1 | — | 1. Bình gọi gửi báo cho câu 2 của BL-1 | • NOT_FOUND; không báo nào được tạo | US-S2E8-05-FC8; BR-S2E8-30 |
 | TC-S2E8-110 | Báo không làm lộ đáp số cho học sinh | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01); học sinh An (FX-02) | • An vừa gửi báo | — | 1. Xem phản hồi và màn sau khi gửi | • Chỉ "Đã gửi cho thầy cô"; không đáp số, không dạng chuẩn, không đúng sai của đáp số em | US-S2E8-05-FC9; BR-S2E8-30; STAGES mục 0.2 nguyên tắc 1 |
+| TC-S2E8-114 | Bài luyện được lưu thành bộ bài dùng chung mô hình với S3-E2 | High | Normal (Success case) | chức năng | tích hợp (máy chủ + cơ sở dữ liệu) | IT | Not run | Giáo viên chủ lớp 11A1 (lớp mẫu từ MVP) | • Bài nháp 5 câu (FX-20); lớp 11A1 chuyển từ MVP | — | 1. Bấm "Giao"; xác nhận | • Có đúng một `AssignmentSet` Đã giao với 5 `AssignmentItem` kèm cấu hình luyện<br>• không có bảng bài luyện riêng<br>• bộ gắn lớp 11A1 | US-S2E8-05-SC10; BR-S2E8-32; PO-66 |
+| TC-S2E8-115 | Giáo viên không phải chủ lớp mẫu không giao được cho lớp đó | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01) | • Cô Trang không phải chủ lớp mẫu 11A1; bài nháp đầy đủ | — | 1. Gọi giao bài cho lớp 11A1 | • NOT_FOUND<br>• không tạo `AssignmentSet`<br>• học sinh 11A1 không thấy bài | US-S2E8-05-FC10; BR-S2E8-32; PO-66 |
 
 ## 3. Truy vết tiêu chí sang case
 
@@ -318,6 +320,8 @@ Phiên bản: v0.2 · 2026-11-26
 | US-S2E8-05-FC7 | TC-S2E8-108 |
 | US-S2E8-05-FC8 | TC-S2E8-109 |
 | US-S2E8-05-FC9 | TC-S2E8-110 |
+| US-S2E8-05-SC10 | TC-S2E8-114 |
+| US-S2E8-05-FC10 | TC-S2E8-115 |
 | US-S2E8-02 | TC-S2E8-111 |
 | US-S2E8-03 | TC-S2E8-112 |
 | US-S2E8-03 | TC-S2E8-113 |
