@@ -111,6 +111,17 @@ const tokenColor = (page: Page, token: string) =>
     return c;
   }, token);
 
+/** Mỗi liên kết trên thanh điều hướng có ĐÚNG một icon (không mục nào thiếu, không mục nào thừa). */
+async function expectEveryRailLinkHasOneIcon(page: Page, railTestId: string): Promise<void> {
+  const rail = page.getByTestId(railTestId);
+  await expect(rail.locator('a').first()).toBeVisible();
+  const perLink = await rail.locator('a').evaluateAll((links) =>
+    links.map((a) => ({ id: a.getAttribute('data-testid') ?? a.textContent ?? '', icons: a.querySelectorAll('.ms').length })));
+  expect(perLink.length, `${railTestId}: có mục điều hướng`).toBeGreaterThanOrEqual(4);
+  expect(perLink.filter((l) => l.icons !== 1), `${railTestId}: mục không có đúng một icon`).toEqual([]);
+  await expect(rail.locator('.ms')).toHaveCount(perLink.length);
+}
+
 test('Icon ở 4 theme: một bộ Material Symbols Rounded tự lưu, màu theo token theme, đủ tương phản; ảnh bằng chứng', async ({ page, request }, testInfo) => {
   test.skip(testInfo.project.name !== 'ui-chromium', 'ảnh bằng chứng chụp một lần trên Chromium máy tính');
   test.slow();
@@ -139,9 +150,15 @@ test('Icon ở 4 theme: một bộ Material Symbols Rounded tự lưu, màu theo
     expect(font.urls.length, `theme ${t}: tệp font icon`).toBeGreaterThan(0);
     for (const u of font.urls) expect(new URL(u).origin, 'font icon phục vụ từ chính app').toBe(new URL(page.url()).origin);
 
-    // Thanh dọc: logo + Kho đề + Theo dõi + Cài đặt đều có icon; chữ của mục không đổi
+    // Thanh dọc: MỌI mục (logo + mục của từng epic + Cài đặt) có đúng một icon; chữ của mục không đổi.
+    // Không đếm cứng số mục: epic mới cắm thêm mục rail (ví dụ S2-E8 "Bài luyện") mà không sửa test này.
     const rail = page.getByTestId('gv-rail');
-    await expect(rail.locator('.ms')).toHaveCount(4);
+    await expectEveryRailLinkHasOneIcon(page, 'gv-rail');
+    for (const id of ['shell-home', 'e1-nav-kho-de', 's2e8-nav-bai-luyen', 'gv-nav-settings']) {
+      await expect(rail.getByTestId(id).locator('.ms'), `mục ${id} có icon`).toHaveCount(1);
+    }
+    await expect(page.getByTestId('s2e8-nav-bai-luyen')).toHaveText('Bài luyện');
+    await expect(page.getByTestId('s2e8-nav-bai-luyen').locator('.ms')).toHaveAttribute('data-icon', 'edit');
     await expect(page.getByTestId('gv-nav-settings')).toHaveText('Cài đặt');
     await expect(page.getByTestId('e1-nav-kho-de')).toHaveText('Kho đề');
     await expect(page.getByTestId('e1-nav-kho-de').locator('.ms')).toHaveAttribute('data-icon', 'description');
@@ -201,11 +218,14 @@ test('Icon trên thanh điều hướng học sinh (mọi thiết bị): font t�
   await page.goto('/hs/cai-dat');
   await expect(page.getByTestId('hs-settings')).toBeVisible();
   const rail = page.getByTestId('hs-rail');
-  // Tổng quan, Bài của em, Tự học, Lịch sử, Cài đặt (+ logo, ẩn trên điện thoại)
-  await expect(rail.locator('a:not(.logo) .ms')).toHaveCount(5);
+  // Tổng quan, Bài của em, Tự học, Lịch sử, Bài luyện, Cài đặt (+ logo, ẩn trên điện thoại): mọi mục đúng một icon.
+  // Không đếm cứng số mục (epic mới cắm thêm mục rail); các mục đã biết được kiểm đích danh ở vòng lặp dưới.
+  await expectEveryRailLinkHasOneIcon(page, 'hs-rail');
+  await expect(rail.locator('a:not(.logo) .ms').first()).toBeVisible();
   await expect(page.getByTestId('hs-nav-settings')).toHaveText('Cài đặt');
+  await expect(page.getByTestId('s2e8-nav-bai-luyen-hs')).toHaveText('Bài luyện');
   expect((await iconFontLoaded(page)).loaded).toBe(true);
-  for (const id of ['hs-nav-overview', 'e1-nav-bai-cua-em', 'e2-nav-tu-hoc', 'e4-nav-lich-su', 'hs-nav-settings']) {
+  for (const id of ['hs-nav-overview', 'e1-nav-bai-cua-em', 'e2-nav-tu-hoc', 'e4-nav-lich-su', 's2e8-nav-bai-luyen-hs', 'hs-nav-settings']) {
     const f = await facts(page, `[data-testid="${id}"] .ms`);
     expect(f.hidden, `${id}: aria-hidden`).toBe(true);
     expect(f.fits, `${id}: glyph vừa ô`).toBe(true);

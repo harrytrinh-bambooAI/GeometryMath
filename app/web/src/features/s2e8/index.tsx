@@ -25,6 +25,6 @@ export const feature: FeatureModule = {
     { path: 'bai-luyen/:id', element: <PlayPage /> },
     { path: 'bai-luyen/:id/ket-qua', element: <ResultPage /> },
   ],
-  teacherNav: [{ to: 'bai-luyen', label: 'Bài luyện', testId: 's2e8-nav-bai-luyen' }],
-  studentNav: [{ to: 'bai-luyen', label: 'Bài luyện', testId: 's2e8-nav-bai-luyen-hs' }],
+  teacherNav: [{ to: 'bai-luyen', label: 'Bài luyện', testId: 's2e8-nav-bai-luyen', icon: 'pencil' }],
+  studentNav: [{ to: 'bai-luyen', label: 'Bài luyện', testId: 's2e8-nav-bai-luyen-hs', icon: 'pencil' }],
 };

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ApiError } from '../../shared/api/errors.ts';
 import { Scene2DView } from '../../shared/scene2d/Scene2DView.tsx';
 import type { Scene2D } from '../../shared/scene2d/geometry2d.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 import { practiceApi, type AttemptView, type PlayItem, type PlayView } from './api.ts';
 import { emptyField, newRequestKey, type Field } from './keypad.ts';
 import { AnswerBox, MathKeypad } from './MathKeypad.tsx';
@@ -230,14 +231,14 @@ function QuestionCard({
               </span>
             ) : null}
             {feedback.kind === 'net' && pending ? (
-              <button type="button" className="btn" onClick={() => void send(pending.answer, pending.key)} disabled={busy} data-testid="s2e8-retry">
+              <button type="button" className="btn" onClick={() => void send(pending.answer, pending.key)} disabled={busy} data-testid="s2e8-retry"><Icon name="redo" />
                 Thử lại
               </button>
             ) : null}
           </div>
         ) : null}
         {item.state === 'review' ? (
-          <p className="chip red s2e8-review" data-testid="s2e8-review">
+          <p className="chip red s2e8-review" data-testid="s2e8-review"><Icon name="warn" />
             {MSG_REVIEW}
           </p>
         ) : null}
@@ -247,7 +248,7 @@ function QuestionCard({
           </div>
         ) : null}
         {item.hint && !hintOpen ? (
-          <button type="button" className="btn ghost" onClick={() => setHintOpen(true)} data-testid="s2e8-hint-open">
+          <button type="button" className="btn ghost" onClick={() => setHintOpen(true)} data-testid="s2e8-hint-open"><Icon name="hint" />
             Xem gợi ý
           </button>
         ) : null}
@@ -269,7 +270,7 @@ function QuestionCard({
               </span>
             ) : null}
             <div className="s2e8-actions">
-              <button type="button" className="btn" onClick={() => void sendReport()} data-testid="s2e8-report-send">
+              <button type="button" className="btn" onClick={() => void sendReport()} data-testid="s2e8-report-send"><Icon name="send" />
                 Gửi cho thầy cô
               </button>
               <button type="button" className="btn ghost" onClick={() => setReportOpen(false)}>
@@ -285,7 +286,7 @@ function QuestionCard({
         ) : null}
         <div className="s2e8-actions s2e8-nav">
           {onPrev ? (
-            <button type="button" className="btn ghost" onClick={onPrev} data-testid="s2e8-prev">
+            <button type="button" className="btn ghost" onClick={onPrev} data-testid="s2e8-prev"><Icon name="prev" />
               Câu trước
             </button>
           ) : null}

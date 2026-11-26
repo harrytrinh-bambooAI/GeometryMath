@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { ApiError } from '../../shared/api/errors.ts';
 import { formatVnDateTime } from '../../shared/time/vnTime.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
 import { practiceApi, type AttemptView, type Candidate, type PlayView, type SetDetail, type SetInput } from './api.ts';
 import { STATUS_LABEL, useLoad } from './load.ts';
 import { LoadError } from './LoadError.tsx';
@@ -102,8 +103,8 @@ function Preview({ set, onClose }: { set: SetDetail; onClose: () => void }) {
   return (
     <section className="s2e8-preview" data-testid="s2e8-preview">
       <div className="s2e8-head">
-        <span className="chip yel">Xem trước như học sinh · không ghi lượt thử</span>
-        <button type="button" className="btn ghost" onClick={onClose} data-testid="s2e8-preview-close">
+        <span className="chip yel"><Icon name="eye" />Xem trước như học sinh · không ghi lượt thử</span>
+        <button type="button" className="btn ghost" onClick={onClose} data-testid="s2e8-preview-close"><Icon name="x" />
           Thoát xem trước
         </button>
       </div>
@@ -286,10 +287,10 @@ function ComposeForm({ refs }: { refs: Refs }) {
                 </span>
               </label>
               {p.gradable ? (
-                <span className="chip grn">Máy chấm được</span>
+                <span className="chip grn"><Icon name="check" />Máy chấm được</span>
               ) : (
                 <span className="s2e8-nograde">
-                  <span className="chip yel">Chưa có đáp số máy chấm được</span>
+                  <span className="chip yel"><Icon name="warn" />Chưa có đáp số máy chấm được</span>
                   <span className="s2e8-help">{MSG_NO_ANSWER}</span>
                 </span>
               )}
@@ -391,15 +392,15 @@ function ComposeForm({ refs }: { refs: Refs }) {
         ) : null}
         <div className="s2e8-actions">
           {locked ? null : (
-            <button type="button" className="btn ghost" onClick={() => void save()} disabled={busy} data-testid="s2e8-compose-save">
+            <button type="button" className="btn ghost" onClick={() => void save()} disabled={busy} data-testid="s2e8-compose-save"><Icon name="save" />
               Lưu nháp
             </button>
           )}
-          <button type="button" className="btn ghost" onClick={() => void openPreview()} disabled={busy || rows.length === 0} data-testid="s2e8-compose-preview">
+          <button type="button" className="btn ghost" onClick={() => void openPreview()} disabled={busy || rows.length === 0} data-testid="s2e8-compose-preview"><Icon name="eye" />
             Xem trước như học sinh
           </button>
           {locked ? null : (
-            <button type="button" className="btn" onClick={() => setConfirm({ past: isPast() })} disabled={busy || !classId} data-testid="s2e8-compose-assign">
+            <button type="button" className="btn" onClick={() => setConfirm({ past: isPast() })} disabled={busy || !classId} data-testid="s2e8-compose-assign"><Icon name="assign" />
               Giao
             </button>
           )}
@@ -415,7 +416,7 @@ function ComposeForm({ refs }: { refs: Refs }) {
               </p>
             ) : null}
             <div className="s2e8-actions">
-              <button type="button" className="btn" onClick={() => void assign(confirm.past)} disabled={busy} data-testid="s2e8-assign-yes">
+              <button type="button" className="btn" onClick={() => void assign(confirm.past)} disabled={busy} data-testid="s2e8-assign-yes"><Icon name="check" />
                 Xác nhận giao
               </button>
               <button type="button" className="btn ghost" onClick={() => setConfirm(null)} data-testid="s2e8-assign-no">

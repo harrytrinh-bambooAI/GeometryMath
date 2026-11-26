@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router';
 import { ApiError } from '../../shared/api/errors.ts';
+import { Icon } from '../../shared/ui/Icon.tsx';
+import { verifyIcon } from '../../shared/ui/icons.ts';
 import { practiceApi, type PlayView, type ResultItem, type ResultView, type SetLine, type SolutionView } from './api.ts';
 import { STATUS_LABEL, useLoad } from './load.ts';
 import { LoadError } from './LoadError.tsx';
@@ -89,7 +91,7 @@ function SolutionPanel({ item }: { item: ResultItem }) {
   };
   if (state.s === 'idle' || state.s === 'loading') {
     return (
-      <button type="button" className="btn ghost" onClick={() => void open()} disabled={state.s === 'loading'} data-testid={`s2e8-solution-open-${item.position}`}>
+      <button type="button" className="btn ghost" onClick={() => void open()} disabled={state.s === 'loading'} data-testid={`s2e8-solution-open-${item.position}`}><Icon name="eye" />
         Xem lời giải
       </button>
     );
@@ -104,7 +106,7 @@ function SolutionPanel({ item }: { item: ResultItem }) {
   return (
     <div className="s2e8-solution" data-testid={`s2e8-solution-${item.position}`}>
       <div className="s2e8-head">
-        <span className={`chip ${state.machine === VERIFIED ? 'grn' : 'yel'}`} data-testid="s2e8-label-machine">
+        <span className={`chip ${state.machine === VERIFIED ? 'grn' : 'yel'}`} data-testid="s2e8-label-machine"><Icon name={verifyIcon(state.machine === VERIFIED)} />
           {state.machine}
         </span>
         <span className="chip" data-testid="s2e8-label-human">
@@ -177,7 +179,7 @@ export function ResultPage() {
           Bài đã đóng nên em chỉ xem được kết quả.
         </p>
       ) : r.remaining > 0 ? (
-        <Link className="btn" to=".." relative="path" data-testid="s2e8-result-continue">
+        <Link className="btn" to=".." relative="path" data-testid="s2e8-result-continue"><Icon name="next" />
           Làm tiếp
         </Link>
       ) : null}
