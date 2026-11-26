@@ -115,7 +115,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-41 (gộp sau T-50; trước khi kiểm cuối: git merge worktree-mvp-wave0)
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(subject|geometry|content)/|app/server/src/main/resources/(content/plane/|db/migration/V1[34][0-9]__)|app/server/src/test/java/vn/geo/server/(it/s2e2|subject|geometry|content)/|app/docs/SCENE-CONTRACT-2D\.md|app/web/src/(features/s2e2|shared/scene2d)/|app/web/package(-lock)?\.json|app/server/pom\.xml|app/e2e/tests/s2e2/|app/db/seed/(e2e/81[0-9]_|fixture-ids\.d/s2e2)|app/scripts/bench-s2\.sh|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E2/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W4
-## T-261126-20 · S2-E5 · L5 Dev · epic-common v1.3 · wt s2-e5 · ‖21 · 4h/10M · Duyệt lời giải có phiên bản + StepCheck [running]
+## T-261126-20 · S2-E5 · L5 Dev · epic-common v1.3 · wt s2-e5 · ‖21 · 4h/10M · Duyệt lời giải có phiên bản + StepCheck [done]
 - Mục tiêu: US-S2E5-01…04: C2-03, sửa từng bước thành phiên bản mới, StepCheck (geometry/internal/stepcheck), nhãn hai trục + dòng "Máy đã kiểm tra phần tính toán", hộp duyệt chung (nhận/sửa/bỏ), chặn duyệt khi lệch đáp số. US-S2E5-05 dời sang 22 (PLAN §3)
 - Nguồn: epics/S2-E5 (ebec17a 26/11); PLAN_code-s23 v1.0 §2, §5; STAGES Ch2 §7; §0.3 ý 2, 4
 - Xong khi: như 18 (S2-E5 trừ US-S2E5-05) + bench-s2, bench-mvp không lùi

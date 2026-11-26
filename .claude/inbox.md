@@ -196,3 +196,14 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** `Design/styles/` v0.2 (26/11/2026; `lib.js` bảng tên icon, luật `.ic` trong `<a|b|c|d>/style.css`); DECISIONS 26/11.
 - **Xong khi:** `make verify && make web-build && make e2e-affected` xanh; ảnh 4 theme mới trong `artifacts/GEO/evidence/theme/`; grep `fonts.googleapis` trong `app/web/dist` = 0.
 - **Ngoài phạm vi:** tính năng nghiệp vụ; tệp của T-20/T-21 đang chạy (làm sau khi hai task gộp).
+
+## Việc: câu mở sau T-20 (S2-E5) · ghi 26/11/2026 đêm
+- **Mục tiêu:** đóng các điểm T-20 để mở.
+  1. [FIX Dev] TC-GEO-0209 `e2/templates.ui.spec.ts` chập chờn (ô tham số h giữ 3 thay vì 4; T-18 và T-20 đều gặp) → tìm gốc, sửa test hoặc mã.
+  2. [L4/Dev] thay trigger AFTER INSERT trên `assignment` bằng lời gọi từ module assignment; thêm `geometry/api/StepCheck` có kiểu thay bean JDK.
+  3. [PO/BA] xác nhận quy tắc làm tròn StepCheck (lệch ≤ 0,01 hoặc làm tròn đúng số chữ số); sửa US-S2E5-02-SC2 ("cả bốn bước Đạt" mâu thuẫn SC3).
+  4. [Dev, T-22] nối `fn_get_solution` theo phiên bản ghim + "Áp dụng cho lớp"; gắn nhãn vào màn làm bài E3/E4 (hiện ở màn riêng `/hs/nhan-loi-giai/:id`); thêm mục rail `/gv/soat-loi-giai`.
+  5. [Dev] traceability: IT/UT hiện "chưa chạy" vì báo cáo JUnit bị xoá khi e2e build lại (cùng gốc với mục 5 của việc sau T-45).
+- **Nguồn:** báo cáo agent T-20; `artifacts/GEO/work/epics/S2-E5/qc_findings.md` (26/11/2026).
+- **Xong khi:** TC-GEO-0209 đạt 20 lượt lặp liên tiếp; mục 2–3 có quyết định ghi DECISIONS/PO-DECISIONS trước gate T-26.
+- **Ngoài phạm vi:** US-S2E5-05 (thuộc T-22).

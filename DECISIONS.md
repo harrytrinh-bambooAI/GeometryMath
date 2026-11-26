@@ -23,6 +23,7 @@ Phiên bản: v0.1 · 2026-11-26 · quyết định đã chốt — 1 dòng / qu
 | 2026-11-26 | Agent con Dev chuyển Opus → Fable (claude-fable-5-2), luôn 2 agent song song; phạm vi phiên này: T-45 ‖ T-44, rồi T-20 ‖ T-21, xong thì dừng báo cáo owner (thay giả định "Dev giữ Opus" ở dòng trên) | lệnh owner 26/11 tối ("2 agent model Fable coding"; chọn "2 Fable tới hết 20‖21") |
 | 2026-11-26 | Gộp T-45 (b5f15e5) không chạy lại trọn bộ L2: lượt L2 396/422, 26 test trượt đều đạt khi chạy lại 11 tệp spec (139/139, evidence 20261126-212637) | nguyên nhân là máy ngủ giữa lượt (pmset: Clamshell Sleep 20:18, ngủ 16,8 và 5,3 phút trùng thời lượng test treo); e2e.sh thêm caffeinate + cảnh báo. Lượt e2e dài: cắm sạc, không gập máy |
 | 2026-11-26 | Icon: cả 4 theme A/B/C/D dùng MỘT bộ icon của style A (Material Symbols Rounded đặc, FILL 1); màu icon lấy theo token của theme đang chọn trong Cài đặt. Thiết kế `Design/styles` v0.2 đã đổi; app làm ở task riêng sau T-20/T-21 (font tự lưu, không gọi Google) | lệnh owner 26/11 tối |
+| 2026-11-26 | Gộp T-20 (S2-E5) với e2e-affected L1 409/410: TC-GEO-0209 (e2/templates, ngoài epic) chập chờn, chạy lại 18/18 → không chặn, mở FIX riêng. Chấp nhận TẠM tới gate L6 T-26: trigger ghim phiên bản trên bảng `assignment`, bean `stepCheckEngine` kiểu JDK (chưa có `geometry/api/StepCheck`), quy tắc làm tròn bước ≤ 0,01 | delivery-lead tự quyết theo báo cáo T-20; chi tiết 14 giả định ở epics/S2-E5/qc_findings.md |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
