@@ -155,7 +155,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-20, T-261126-21
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(content/.*(library|shelf|Library|Shelf)|iam/.*Role)|app/server/src/main/resources/db/migration/V2[34][0-9]__|app/server/src/test/java/vn/geo/server/(it/s2e6|it/s2e7|content)/|app/web/src/features/(s2e6|s2e7)/|app/web/vite\.config\.ts|app/web/package(-lock)?\.json|app/e2e/tests/(s2e6|s2e7)/|app/db/seed/(e2e/85[0-9]_|fixture-ids\.d/s2e6)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/(S2-E6|S2-E7)/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W6
-## T-261126-24 · S2-E4 · L5 Dev (P1) · epic-common v1.3 · wt s2-e4 · ‖25 · 4h/10M · Chat chỉnh nháp + import file [running]
+## T-261126-24 · S2-E4 · L5 Dev (P1) · epic-common v1.3 · wt s2-e4 · ‖25 · 4h/10M · Chat chỉnh nháp + import file [done]
 - Mục tiêu: US-S2E4-01…03: chat chỉnh bản nháp đề (AI hỏi lại, nói rõ trước/sau), import docx/pdf tách bài tập, đối chiếu trùng kho
 - Nguồn: epics/S2-E4 (ebec17a 26/11); PLAN_code-s23 v1.0 §5 (chủ pom.xml đợt W7); PO-45–47
 - Xong khi: như 18 + bench-mvp không lùi
@@ -190,7 +190,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Ngoài phạm vi: deploy do owner làm
 - Chờ: owner duyệt + deploy
 - Phụ thuộc: T-261126-26
-## T-261126-42 · S3 · L5 Dev dữ liệu mẫu chung · epic-common v1.3 · wt s3-base · ‖26 · 1h/3M · Seed F-S3-001…053 [todo]
+## T-261126-42 · S3 · L5 Dev dữ liệu mẫu chung · epic-common v1.3 · wt s3-base · ‖26 · 1h/3M · Seed F-S3-001…053 [running]
 - Mục tiêu: nạp dữ liệu mẫu chung chặng 3 (F-S3-001…053: 2 giáo viên, 3 lớp, học sinh đủ trạng thái Đang học/Chờ duyệt/Đã rời, bộ tuần 15/16, bảng trạng thái 11A1) vào 910_s3_core.sql + fixture-ids.d/s3.json, chỉ dùng schema MVP + S2 (class_member.status từ 18, assignment_set/item từ 21)
 - Nguồn: epics/S3-E1/stories_ac.md mục "Dữ liệu mẫu chung" (ebec17a 26/11); PLAN_code-s23 v1.0 §4; app/db/seed/README.md
 - Xong khi: seed-reset nạp sạch trên geo_e2e; e2e MVP + S2 vẫn xanh; mỗi mã F-S3 trong bảng có UUID trong fixture-ids.d/s3.json

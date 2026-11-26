@@ -252,3 +252,14 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent T-22; `artifacts/GEO/work/epics/S2-E3/qc_findings.md`, `S2-E5/qc_findings.md` mục 15–19 (26/11/2026).
 - **Xong khi:** mục 1–3 có quyết định ghi DECISIONS/PO-DECISIONS trước gate T-26; mục 4 có TC e2e.
 - **Ngoài phạm vi:** import file, chat chỉnh nháp (S2-E4).
+
+## Việc: câu mở sau T-24 (S2-E4) · ghi 27/11/2026 00:45
+- **Mục tiêu:** đóng các điểm T-24 để mở.
+  1. [FIX Dev] `DraftService.create` (dán chữ / ảnh, S2-E3) chưa gọi `LibraryQuota.consume` (import đã gọi); ngăn "Của tôi" (S2-E6) liệt kê cả sổ nháp chưa duyệt với nhãn "AI soạn".
+  2. [Dev] `impact-map.json` thiếu luật cho `app/server/pom.xml` → task nào đụng pom cũng lên L2.
+  3. [PO/BA] nhận đề xuất đổi dữ kiện chỉ vá mô tả hình khi là độ dài cạnh; "Cập nhật khi lưu" = ghi đè nháp cũ; tách bài bằng quy tắc "Bài n." / "Câu n:" (không AI); độ giống = Levenshtein chuẩn hóa.
+  4. [Design/Dev] chưa làm phần bản mẫu ngoài AC: màn so sánh C2-04c 3 lựa chọn, "Chỉ áp dụng ý 1", tách/gộp tay.
+  5. [Dev] prompt `authoring_chat` chưa đo với AI thật; traceability IT/UT vẫn "chưa chạy" (cùng gốc việc sau T-45).
+- **Nguồn:** báo cáo agent T-24; `artifacts/GEO/work/epics/S2-E4/qc_findings.md` (27/11/2026).
+- **Xong khi:** mục 1 có IT "vượt hạn mức dán chữ → bị chặn"; mục 3 ghi PO-DECISIONS trước gate T-26.
+- **Ngoài phạm vi:** bài giảng với AI (chặng 5).
