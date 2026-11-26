@@ -11,6 +11,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import tools.jackson.databind.JsonNode;
+import vn.geo.server.content.internal.service.CatalogImporter;
 import vn.geo.server.content.internal.service.ContentPackLoader;
 import vn.geo.server.it.e1.AbstractE1IT;
 
@@ -22,6 +23,7 @@ import vn.geo.server.it.e1.AbstractE1IT;
 class ContentPackMvpIT extends AbstractE1IT {
 
   @Autowired ContentPackLoader loader;
+  @Autowired vn.geo.server.content.internal.repo.ContentRepository contentRepo;
 
   @AfterEach
   void restoreGolden() throws IOException {
@@ -96,9 +98,53 @@ class ContentPackMvpIT extends AbstractE1IT {
     ContentPackLoader.Result again = loader.load();
     assertThat(first.written()).isEqualTo(first.codes().size());
     assertThat(again.written()).isZero();
+    assertThat(again.skipped()).isEqualTo(first.codes().size());
     assertThat(currentVersion("HKN-05")).isEqualTo(v);
     assertThat(count("SELECT count(*) FROM problem WHERE org_id = platform_org_id()"))
         .isEqualTo(problems);
     assertThat(again.verified()).isGreaterThanOrEqualTo(40);
+  }
+
+  @Test
+  @DisplayName(
+      "Gói nội dung: đề đã lưu trữ vẫn lưu trữ, đề sửa tay không bị ghi đè sau khi nạp lại")
+  void reloadKeepsArchivedAndHandEditedProblems() throws Exception {
+    reseed();
+    ContentPackLoader.Result first = loader.load();
+    jdbc.sql(
+            "UPDATE problem SET archived_at = now() WHERE org_id = platform_org_id() AND code = 'HKN-03'")
+        .update();
+    // quản trị sửa tay = version mới (statement bất biến, BR-11/BR-22)
+    UUID problem04 =
+        jdbc.sql("SELECT id FROM problem WHERE org_id = platform_org_id() AND code = 'HKN-04'")
+            .query(UUID.class)
+            .single();
+    contentRepo.insertVersion(
+        UUID.randomUUID(),
+        problem04,
+        2,
+        "Đề đã được quản trị sửa tay",
+        CatalogImporter.statementHash("Đề đã được quản trị sửa tay"),
+        contentRepo.platformAuthor());
+    UUID v04 = currentVersion("HKN-04");
+    long versions = count("SELECT count(*) FROM problem_version WHERE org_id = platform_org_id()");
+
+    ContentPackLoader.Result again = loader.load();
+
+    assertThat(again.written()).isZero();
+    assertThat(again.skipped()).isEqualTo(first.codes().size());
+    assertThat(
+            count(
+                "SELECT count(*) FROM problem WHERE org_id = platform_org_id() AND code = 'HKN-03'"
+                    + " AND archived_at IS NOT NULL"))
+        .isEqualTo(1L);
+    assertThat(currentVersion("HKN-04")).isEqualTo(v04);
+    assertThat(
+            count(
+                "SELECT count(*) FROM problem_version WHERE org_id = platform_org_id()"
+                    + " AND statement = 'Đề đã được quản trị sửa tay'"))
+        .isEqualTo(1L);
+    assertThat(count("SELECT count(*) FROM problem_version WHERE org_id = platform_org_id()"))
+        .isEqualTo(versions);
   }
 }

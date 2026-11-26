@@ -114,6 +114,16 @@ public class ProfileGuard implements EnvironmentPostProcessor {
         problems.add(
             "GEO_AI_API_KEY (geo.ai.api-key) chưa đặt hoặc rỗng; bắt buộc khi geo.ai.provider=anthropic.");
       }
+      String model = safe(env, "geo.ai.model");
+      // giá trị giả lập mặc định được đổi thành claude-sonnet-5-5 (AiProperties)
+      boolean placeholder = model == null || model.isBlank() || "gia-lap-1".equals(model.strip());
+      String effective = placeholder ? "claude-sonnet-5-5" : model.strip();
+      if (safe(env, "geo.ai.pricing." + effective + ".input") == null) {
+        problems.add(
+            "geo.ai.model="
+                + effective
+                + " không có giá trong geo.ai.pricing (chi phí sẽ ghi 0); thêm bảng giá của model.");
+      }
     }
   }
 

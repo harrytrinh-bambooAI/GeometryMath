@@ -10,6 +10,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class AiSettings {
 
+  private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AiSettings.class);
+
+  private final java.util.Set<String> warnedModels =
+      java.util.concurrent.ConcurrentHashMap.newKeySet();
   private final AiProperties props;
   private volatile String model;
   private volatile String promptVersion;
@@ -52,7 +56,15 @@ public class AiSettings {
       return costMicro();
     }
     AiProperties.Price p = props.priceOf(model);
-    return p == null ? 0L : p.costMicro(usage);
+    if (p == null) {
+      if (warnedModels.add(model)) {
+        log.warn(
+            "model '{}' không có trong geo.ai.pricing: chi phí ghi 0 (thêm giá vào cấu hình)",
+            model);
+      }
+      return 0L;
+    }
+    return p.costMicro(usage);
   }
 
   public void model(String model) {

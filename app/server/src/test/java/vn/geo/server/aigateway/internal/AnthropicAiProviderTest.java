@@ -58,7 +58,9 @@ class AnthropicAiProviderTest {
             fake.baseUrl(), null, 4000, attempt, retries, Duration.ofMillis(10), "default", null),
         Map.of(
             "claude-sonnet-5-5",
-            new AiProperties.Price(new BigDecimal("2.00"), new BigDecimal("10.00"), null, null)));
+            new AiProperties.Price(new BigDecimal("2.00"), new BigDecimal("10.00"), null, null),
+            "claude-haiku-5-5",
+            new AiProperties.Price(new BigDecimal("0.10"), new BigDecimal("0.50"), null, null)));
   }
 
   private InstrumentedAiGateway gateway(AiProperties p) {
@@ -247,6 +249,51 @@ class AnthropicAiProviderTest {
     all.append(new AnthropicAiProvider(props(Duration.ofSeconds(1), Duration.ofSeconds(1), 0)));
     assertThat(all.toString()).contains("thử lại").doesNotContain(KEY);
     assertThat(logged).allSatisfy(e -> assertThat(e.toString()).doesNotContain(KEY));
+  }
+
+  /** FIX5-2: fallback sang model khác thì chi phí và ai_call_log theo model thực trả. */
+  @Test
+  void costAndLogFollowServedModelWhenFallbackSwitchesModel() {
+    fake.enqueue(
+        Reply.ok(
+            FakeAnthropic.message("{\"hints\":[\"a\",\"b\"]}", 1200, 300)
+                .replace("\"model\":\"claude-sonnet-5-5\"", "\"model\":\"claude-haiku-5-5\"")));
+    gateway().complete(new AiRequest("hint", "Đề bài: x"));
+    assertThat(logged)
+        .singleElement()
+        .satisfies(e -> {
+          assertThat(e.model()).isEqualTo("claude-haiku-5-5");
+          // 1200 × 0,1 + 300 × 0,5 = 270 micro-USD
+          assertThat(e.costMicro()).isEqualTo(270);
+        });
+  }
+
+  @Test
+  void missingModelFieldFallsBackToRequestedModel() {
+    fake.enqueue(
+        Reply.ok(
+            FakeAnthropic.message("{\"hints\":[\"a\",\"b\"]}", 1200, 300)
+                .replace("\"model\":\"claude-sonnet-5-5\",", "")));
+    gateway().complete(new AiRequest("hint", "Đề bài: x"));
+    assertThat(logged)
+        .singleElement()
+        .satisfies(e -> {
+          assertThat(e.model()).isEqualTo("claude-sonnet-5-5");
+          assertThat(e.costMicro()).isEqualTo(5400);
+        });
+  }
+
+  /** FIX5-1: model không có giá cảnh báo đúng một lần mỗi model. */
+  @Test
+  void unknownModelPriceWarnsOncePerModel(CapturedOutput output) {
+    var settings = new AiSettings(props(Duration.ofSeconds(5), Duration.ofSeconds(2), 0));
+    var usage = new AiProvider.Usage(10, 10, 0, 0);
+    settings.costMicro("model-la-1", usage);
+    settings.costMicro("model-la-1", usage);
+    settings.costMicro("model-la-2", usage);
+    String all = output.getAll();
+    assertThat(all.split("model-la-1' không có trong geo.ai.pricing", -1)).hasSize(2);
+    assertThat(all).contains("model-la-2' không có trong geo.ai.pricing");
   }
 
   @Test

@@ -90,10 +90,12 @@ public class InstrumentedAiGateway implements AiGateway {
     Future<AiProvider.Result> future = executor.submit(() -> provider.call(call));
     String content = "";
     AiProvider.Usage usage = null;
+    String servedModel = null;
     try {
       AiProvider.Result res = future.get(settings.timeout().toMillis(), TimeUnit.MILLISECONDS);
       content = res.content() == null ? "" : res.content();
       usage = res.usage();
+      servedModel = res.model();
       return new AiResponse(content, provider.name(), elapsedMillis(start));
     } catch (TimeoutException e) {
       future.cancel(true);
@@ -118,7 +120,15 @@ public class InstrumentedAiGateway implements AiGateway {
       throw new AppException(ErrorCode.INTERNAL, ErrorCode.INTERNAL.defaultMessage(), e);
     } finally {
       long ms = elapsedMillis(start);
-      record(who, request, model, promptVersion, content, usage, ms, outcome);
+      record(
+          who,
+          request,
+          servedModel == null || servedModel.isBlank() ? model : servedModel,
+          promptVersion,
+          content,
+          usage,
+          ms,
+          outcome);
       meters
           .counter(
               "geo.ai.calls",
