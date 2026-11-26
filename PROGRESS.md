@@ -1,21 +1,15 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 02:05
-Mục tiêu hiện tại: CODE tới hết chặng 3 (goal "xong chặng 3"). Phiên điều phối + agent con Dev chạy Fable (DECISIONS 27/11). Luôn 2 agent song song. Delivery-lead tự quyết + ghi DECISIONS. Nhánh: `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`).
-Tiến độ epic (code đã gộp): 8/15 — S2-E1, S2-E2, S2-E3, S2-E4 (T-24, ca680d3), S2-E5, S2-E6, S2-E7, S2-E8.
-Đã xong 27/11:
-- Regression C trên wave0 sau T-22 + T-23: ĐẠT 1379/1383 (4 bỏ qua có chủ đích ui-webkit, 0 trượt, 630/630 TC) — be30127.
-- T-24 S2-E4 (Fable): 282 UT + 199 IT, e2e-affected L2 665/665, traceability S2-E4 27/27, bench-mvp OK — gộp ca680d3.
-Đang dở (02:05, cả hai bị ngắt 00:40 vì đăng nhập hết hạn, đã gửi tin cho chạy tiếp):
-- T-25 S2-E9 (wt `s2-e9`, cổng PG 54719): mã + test viết xong; đang gộp lại wave0 (có T-24) rồi chạy lại chuỗi kiểm. Tiến độ: .claude/progress/runner-T-261126-25.md
-- T-42 seed chặng 3 (wt `s3-base`, cổng PG 54729): chạy lại từ đầu. Tiến độ: .claude/progress/runner-T-261126-42.md
+# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 03:15
+Mục tiêu hiện tại: xong CODE chặng 3, nhanh nhất. e2e vẫn viết + chạy (e2e-affected), báo cáo vẫn giữ, BỎ bằng chứng (GEO_E2E_EVIDENCE mặc định off). Agent con Fable, 2 song song. Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`), đã push tới 3bde6a7 (sau đó còn commit cục bộ).
+Đã gộp: S2-E1…S2-E9 (chặng 2 đủ code) + T-42 seed chặng 3 (F-S3). Regression C đạt 1379/1383. Regression B dừng giữa chừng theo lệnh owner (verify bản kết hợp BUILD SUCCESS).
+Đang dở (hạn mức tài khoản ~95% lúc 03:15):
+- T-28 S3-E1+E5 · wt `.claude/worktrees/s3-e1` (cổng PG 54739) · tiến độ .claude/progress/runner-T-261126-28.md
+- T-29 S3-E2 · wt `.claude/worktrees/s3-e2` (cổng PG 54749) · đang chạy lệnh kiểm cuối · .claude/progress/runner-T-261126-29.md
+- Brief: /Users/harry/.claude/jobs/74cc88b7/tmp/brief28.txt, brief29.txt (mất khi xoá job → sinh lại: `python3 ~/.claude/skills/epic-runner/queue.py --queue .claude/queue.md brief T-261126-28`).
 Bước tiếp theo:
-1. Nghiệm thu T-25: `git status --porcelain -uall` trong wt (đối chiếu regex brief25), đọc summary.json e2e + báo cáo JUnit; commit trên nhánh s2-e9; `git merge --no-ff s2-e9` vào wave0. Tương tự T-42 (nhánh s3-base).
-2. Regression B trọn bộ trên wave0 (dropdb geo_e2e cụm wave0 cổng 54359 rồi `make e2e`).
-3. Queue: 26 gate L6 (Tester, sonnet) → 27 → 28 ‖ 29 → 30 ‖ 31 → 32 → 33 gate L6 → 34.
-4. Mỗi task: `git worktree add .claude/worktrees/<wt> -b <nhánh> HEAD` (lệnh git đơn, không ghép) → ghi `app/.env.ports` cổng riêng (đã dùng tới PG 54729/Redis 6779/server 8136/web 5216) → `queue.py brief <ID> > $CLAUDE_JOB_DIR/tmp/briefNN.txt` → Agent Fable với mục Bổ sung (xem tin gửi T-24/T-25: worktree tuyệt đối, epic-common v1.5, Icon, không source env.sh, git đơn, merge wave0 trước khi báo xong, không commit, báo cáo ≤ 10 dòng).
-Inbox còn: 8 việc mở (thêm câu mở sau T-24) + BA AC góc 174,87° + FIX sau T-41 (.claude/inbox.md).
-Quyết định đã chốt: DECISIONS.md (mới nhất 27/11: Fable tới hết chặng 3; regression C đạt).
-Rủi ro / chặn:
-- CHƯA push 150+ commit (push bị lớp kiểm quyền từ chối). Owner: `! git push origin worktree-mvp-wave0`.
-- T-20…T-24 chưa qua soát độc lập (§7). Test chập chờn mở: 0209, 0804, 0539.
-- `DraftService.create` (S2-E3) chưa gọi LibraryQuota; impact-map thiếu luật pom.xml (→ L2). Font chữ vẫn gọi Google.
-- T-05 đo AI thật cần owner chạy trước T-34.
+1. Đọc đuôi tiến độ T-28/T-29. Agent bị cắt → mở agent Fable mới, brief = briefNN + "Bổ sung" (worktree tuyệt đối; epic-common v1.6; git đơn mỗi lệnh; không source env.sh; GEO_E2E_EVIDENCE=off; merge wave0 trước khi báo xong; make down; không commit; báo cáo ≤ 10 dòng) + "tiếp tục từ trạng thái hiện có trong worktree".
+2. Nghiệm thu: `git status --porcelain -uall` trong wt (đối chiếu regex brief), đọc summary.json e2e + JUnit target/*-reports; commit nhánh; `make down`; `git merge --no-ff` vào wave0; `git worktree remove`.
+3. Queue: T-30 ‖ T-31 → T-32 → T-33 (Tester chặng 3). T-26 (Tester chặng 2) khi có chỗ trống. Gate owner: T-27, T-34.
+4. Cổng đã dùng tới PG 54749 / Redis 6799 / server 8138 / web 5218.
+Inbox: câu mở sau T-24, T-25, T-42 + cũ (.claude/inbox.md).
+Quyết định: DECISIONS.md (mới nhất 27/11: bỏ bằng chứng e2e giữ báo cáo; make down + xoá worktree sau gộp; T-28/T-29 không chờ T-26).
+Rủi ro: hạn mức tài khoản; T-20…T-29 chưa soát độc lập; test chập chờn 0209/0804/0539/0618; DraftService chưa gọi LibraryQuota.
