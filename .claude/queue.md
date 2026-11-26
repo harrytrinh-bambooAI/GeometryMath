@@ -85,7 +85,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Ngoài phạm vi: code, spec
 - Model: opus · Ngân sách: 2.5 giờ
 - Phụ thuộc: T-261126-37
-## T-261126-41 · S23 · L5 Dev khung chung · epic-common v1.2 · wt s23-base · 1.5h/4M · Truy vết S2/S3 --strict + chỗ cắm feature + mốc tệp chung [todo]
+## T-261126-41 · S23 · L5 Dev khung chung · epic-common v1.2 · wt s23-base · 1.5h/4M · Truy vết S2/S3 --strict + chỗ cắm feature + mốc tệp chung [done]
 - Mục tiêu: theo PLAN_code-s23 §5 hàng 41: traceability đọc S2-*/S3-*, mã TC-S2En-/TC-S3En- (Playwright, JUnit, vitest, cả UT), cờ --strict (exit 1 khi thiếu/trượt), --epic danh sách + bí danh MVP, --defer US-…; fixtures.ts đọc thêm fixture-ids.d/*.json; MOBILE_P0 theo tên *.p0m.ui.spec.ts; 15 feature rỗng s2e1…s3e6; package-info cho subject, notify; mốc theo task trong 5 tệp chung; đích make bench-s2 gọi scripts/bench-s2.sh
 - Nguồn: artifacts/GEO/work/s23/PLAN_code-s23.md v1.0 §4–§5 (26/11); app/e2e/scripts/traceability.ts, app/web/src/features (HEAD 3d154ab); epic-common v1.2
 - Xong khi: verify + web-build + e2e 2 lượt xanh; traceability --strict --epic MVP exit 0 (nếu MVP đang thiếu thì ghi danh sách, MVP chỉ báo — PLAN R4); --strict --epic S2-E1 exit 1 (chưa có test) chứng minh cờ chạy
@@ -292,6 +292,16 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phạm vi tệp: ^(app/web/src/(styles|shared/ui|shared/theme|app)/|app/web/src/features/settings/|app/web/index\.html|app/web/package\.json|app/server/src/main/java/vn/geo/server/settings/|app/server/src/main/resources/db/migration/V44[0-4]__|app/\.env\.ports|app/server/src/test/|app/e2e/tests/theme/|artifacts/GEO/evidence/theme/)
 - Model: opus · Ngân sách: 2.5 giờ
 - Phụ thuộc: T-261126-17
+
+## T-261126-43 · FIX · L5 Dev ổn định môi trường + e2e chập chờn · epic-common v1.3 · wt fix-43 · ‖50 · 1.5h/4M · Redis dev-up, test chờ theo trạng thái, giới hạn worker [todo]
+- Mục tiêu: (a) `app/scripts/dev-up.sh` chờ Redis/PG nhận kết nối (ping lặp có hạn giờ) trước khi kiểm thư mục cổng; (b) làm chắc các test trượt khi máy tải cao: TC-GEO-0428 (`e4/hints.ui.spec.ts`), TC-GEO-0485 (`e4/inherit.ui.spec.ts`), TC-GEO-0102 (`e1/student-join.ui.spec.ts`), TC-GEO-0218 (`e2/labels.ui.spec.ts`), TC-GEO-0617 (`e6/assign.ui.spec.ts`) — chờ theo trạng thái/phản hồi API thay vì thời gian, không nới assertion; (c) `GEO_E2E_WORKERS` (mặc định = nửa số lõi, tối thiểu 2) trong playwright.config, ghi README; không bật retries để che lỗi
+- Nguồn: inbox "FIX sau T-41" (26/11); log kiểm lại T-41 (tải máy 36–43, mỗi lượt trượt test khác nhau)
+- Xong khi: verify + web-build xanh; `make up` từ sạch 3 lần đạt; e2e 2 lượt 0 trượt
+- Kiểm: `cd .claude/worktrees/fix-43/app && make verify && make web-build && make down && make up && make down && make up && make e2e && make e2e`
+- Ngoài phạm vi: tính năng; app/web/src/app/ (T-50 đang sửa); ẩn feature rỗng (để FIX sau T-50)
+- Phạm vi tệp: ^(app/scripts/(dev-up|dev-down|env|e2e)\.sh|app/e2e/tests/(e1|e2|e4|e6)/|app/e2e/playwright\.config\.ts|app/e2e/support/|app/README\.md|app/\.env\.ports)
+- Model: opus · Ngân sách: 1.5 giờ · Cổng: FIX W4 54649 · 6699 · 8124 · 5204
+- Phụ thuộc: T-261126-41
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
