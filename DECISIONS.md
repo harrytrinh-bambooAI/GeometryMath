@@ -16,6 +16,7 @@ Phiên bản: v0.1 · 2026-11-26 · quyết định đã chốt — 1 dòng / qu
 | 2026-11-26 | Giao diện app: dựng theo HTML bản mẫu (`Design/prototype/s23*` bố cục/nội dung) + token style D "Bảng điều khiển gọn" (`Design/styles/d/style.css`) làm mặc định; hệ theme A/B/C/D đổi trong Cài đặt (task T-261126-50, trước mọi task tính năng) | lệnh owner 26/11 ("tạm chọn design 04, sau support đổi qua setting") | lệnh Harry 26/11 | Harry |
 | 2026-11-26 | Sau T-41: traceability `--strict` chỉ báo TC "chưa chạy" ở task code; tại gate kiểm thử T-26 / T-33 thì "chưa chạy" = trượt; Redis dev-up chậm + ẩn feature rỗng ở /gv vào FIX T-43 | task chạy e2e một phần không nên bị chặn; gate thì phải đủ | báo cáo T-41 | delivery-lead chốt |
 | 2026-11-26 | Theme mặc định đổi sang C "Giấy kẻ ô" (thay D); chữ giao diện C = Bad Script (Google Fonts, đã thử hiển thị đủ dấu tiếng Việt); nội dung toán (đề, đáp số, ô nhập, bảng, nhãn hình) dùng token `--font-math` = Be Vietnam Pro vì chữ tay khó đọc số và dấu chấm (S.ABCD) | lệnh owner 26/11 "chuyển style design số 3, sử dụng font Bad Script" | lệnh Harry 26/11 | Harry |
+| 2026-11-26 | Sau khi T-18, T-19 gộp: mở phiên điều phối MỚI chạy model Fable (claude-fable-5-2), đọc PROGRESS.md làm tiếp; agent con Dev giữ Opus (giả định, owner chưa nói đổi) — giới hạn Opus/Fable ≤ 2 cùng lúc vẫn áp dụng | lệnh owner 26/11 "sau khi kết thúc task của agent con, mở session mới chạy với model Fable"; phiên hiện tại ngữ cảnh lớn | lệnh Harry 26/11 | Harry |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
