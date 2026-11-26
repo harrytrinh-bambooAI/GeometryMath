@@ -70,13 +70,12 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Kiểm: `python3 artifacts/GEO/work/tools/check_ac_tc.py S2-E1 S2-E2 S2-E3 S2-E4 S2-E5 S2-E6 S2-E7 S2-E8 S2-E9 S3-E1 S3-E2 S3-E3 S3-E4 S3-E5 S3-E6 && python3 artifacts/GEO/work/tools/check_ac_tc.py && grep -q localhost ~/.claude/skills/synced/24fb9ac6-fc76-408c-8209-fb31ed5866d5_c730a5c3-d83a-42d5-b500-bea3cf03a2a1/tester/domains/geo/scope.json`
 - Ngoài phạm vi: code, quyết định sản phẩm (đưa vào NEEDS §C), staging/prod
 - Phụ thuộc: T-261126-12, T-261126-14
-## T-261126-16 · GATE · Owner họp R3 + quyết định §5 + duyệt scope tester [wait-user]
+## T-261126-16 · GATE · Owner họp R3 + quyết định §5 + duyệt scope tester [done]
 - Mục tiêu: owner OK spec chặng 2–3 (R3), chốt Q1–Q9, `scope.json` confirmed (họp một lần)
 - Nguồn: bản xem nhanh R3 (task 15); NEEDS §C; §5 plan này
 - Xong khi: DECISIONS có dòng "S23 R3 OK"
 - Kiểm: `grep -q "S23 R3 OK" DECISIONS.md`
 - Ngoài phạm vi: code
-- Chờ: owner họp một lần (NEEDS §C)
 - Phụ thuộc: T-261126-15
 ## T-261126-17 · S23 · L4 Dev kiến trúc · delivery-lead lifecycle L4 · wt s23-plan · 2.5h/5M · PLAN_code chặng 2–3 + epic-common v1.2 [todo]
 - Mục tiêu: `PLAN_code-s23.md` (khung môn học, module ↔ story, khoảng số migration + cổng mỗi worktree, tệp sở hữu từng task để 2 agent không đụng nhau); epic-common v1.2 (nguồn S2/S3, lệnh kiểm); cập nhật khối queue 18–33 nếu đổi
@@ -85,7 +84,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Kiểm: `python3 ~/.claude/skills/delivery-lead/scripts/queue.py validate && test -s artifacts/GEO/work/s23/PLAN_code-s23.md`
 - Ngoài phạm vi: code, spec
 - Model: opus · Ngân sách: 2.5 giờ
-- Phụ thuộc: T-261126-16
+- Phụ thuộc: T-261126-37
 ## T-261126-18 · S2-E1 · L5 Dev · epic-common v1.2 · wt s2-e1 · ‖19 · 3h/8M · Định danh tối giản PO-61 [todo]
 - Mục tiêu: đăng ký bằng tên → mã người dùng, đăng nhập mã + mật khẩu, mã khôi phục giáo viên, khóa 10 lần/15', chuyển tài khoản mẫu; không trường dữ liệu cá nhân
 - Nguồn: epics/S2-E1 (sau R3); PO-61, PO-53; module `iam`
@@ -228,6 +227,15 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Kiểm: `test "$(ls Design/s23/*.png | wc -l)" -ge 38 && test -s Design/s23/REVIEW-Dom.md && grep -q "Trả lời Dom" Design/Q_Dom.md && grep -q "DQ-29" Design/s23/DQ.md`
 - Ngoài phạm vi: app/, spec artifacts/, PO-DECISIONS, ảnh MVP + Design/stages*, vẽ chặng 4–9
 - Model: sonnet · Ngân sách: 90 bước
+
+## T-261126-37 · S23 · L3 BA/QC áp quyết định gate R3 · po-ba-qc · wt s23-apply · 1.5h/2M · spec S2/S3 theo PO-66 [todo]
+- Mục tiêu: sửa epic S2-*/S3-* + story map theo PO-66 (G1 một mô hình bộ bài; G2 quyền lời giải Kho chung; G3 mã khôi phục học sinh tự học; G4 chống dò mã lớp; G5 thêm story: xóa tài khoản + lưu/xóa, Bị từ chối, quyền xuyên suốt S3, vòng đời bộ bài); bỏ TẠM các dòng đã chốt; đóng QA tương ứng; RV_s23 → v0.3 (CẦN OWNER → Đã chốt PO-66)
+- Nguồn: `.claude/GATE-T16.md` v0.1, PO-DECISIONS PO-66 (26/11); RV_s23 v0.2, R3_s23_quickview (26/11); epics S2-*, S3-* (gộp 1816344)
+- Xong khi: AC→TC đủ 0 lỗi; mỗi G1–G5 có ≥ 1 AC trỏ PO-66; không còn "CẦN OWNER" trong RV_s23
+- Kiểm: `python3 artifacts/GEO/work/tools/check_ac_tc.py S2-E1 S2-E2 S2-E3 S2-E4 S2-E5 S2-E6 S2-E7 S2-E8 S2-E9 S3-E1 S3-E2 S3-E3 S3-E4 S3-E5 S3-E6 && python3 artifacts/GEO/work/tools/check_ac_tc.py && test "$(grep -rl 'PO-66' artifacts/GEO/work/epics | wc -l)" -ge 5 && ! grep -q 'CẦN OWNER' artifacts/GEO/work/review/RV_s23.md`
+- Ngoài phạm vi: code app/, Design/, PO-DECISIONS (đã ghi), D1–D6 chặng 4–9, minor m-* không liên quan
+- Model: sonnet · Ngân sách: 60 bước
+- Phụ thuộc: T-261126-16
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
