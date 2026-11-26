@@ -1,4 +1,4 @@
-/* s23.js · Phiên bản: v0.2 (Dom: chữ HS lớn hơn; thêm nút "Xem lại cùng thầy cô" + "Em nghĩ đáp số này đúng" ở trạng thái hết lượt) · v0.1 · 2026-11-26 · khung + màn C2 (C2-02, 03, 04, 06, 07, 08). Dữ liệu mẫu, không AI thật. */
+/* s23.js · Phiên bản: v0.3 (T-261126-38: nav gọn + kịch bản, xem s23k.js) · v0.2 (Dom: chữ HS lớn hơn; thêm nút "Xem lại cùng thầy cô" + "Em nghĩ đáp số này đúng" ở trạng thái hết lượt) · v0.1 · 2026-11-26 · khung + màn C2 (C2-02, 03, 04, 06, 07, 08). Dữ liệu mẫu, không AI thật. */
 NAV.gv=[['home','Tổng quan'],['book','Kho đề'],['layers','Giáo trình'],['users','Lớp học'],['chart','Theo dõi'],['edit','Chấm bài'],['spark','Trợ lý']];
 NAV.hs=[['home','Bài của em'],['cube','Tự học'],['users','Nhóm học'],['layers','Môn khác'],['clock','Lịch sử']];
 const DEVS={web:[1440,900],ipad:[1180,820],phone:[390,844]};
@@ -138,19 +138,22 @@ reg('c2-08-soan-bai-luyen','web','C2','C2-08 · Soạn bài luyện',()=>screen(
 
 /* ================= khung hiển thị ================= */
 const MORE=[];  // s23b.js đẩy thêm
-function show(){
- const q=new URLSearchParams(location.search),id=location.hash.slice(1)||Object.keys(V)[0],cap=q.get('cap');
- const v=V[id]||V[Object.keys(V)[0]];
+function show(){ // v0.3: nav gọn + kịch bản (s23k.js, hash #kb=<mã>&b=<n>)
+ const q=new URLSearchParams(location.search),h=location.hash.slice(1),cap=q.get('cap');
+ const K=window.S23K?S23K.route(h):null;   // null | {intro} | {kb,b,step,id}
+ const id=K?K.id:(h||Object.keys(V)[0]);
+ const v=id?(V[id]||V[Object.keys(V)[0]]):null;
  const app=document.getElementById('app'),nav=document.getElementById('s23nav');
  const grps={};Object.keys(V).forEach(k=>{(grps[V[k].grp]=grps[V[k].grp]||[]).push(k);});
- nav.style.display=cap?'none':'flex';
- nav.innerHTML='<b>Bản mẫu chặng 2–3 (S23)</b><a href="index.html" style="background:rgba(255,255,255,.18)">← Bản mẫu chính</a>'+Object.keys(grps).map(g=>`<span class="g">${g}</span>`+grps[g].map(k=>`<a href="#${k}" class="${k===id?'on':''}">${V[k].label}</a>`).join('')).join('');
+ nav.style.display=cap?'none':'block';
+ if(window.S23K)S23K.nav(nav,id,v,grps,K);
+ if(!v){app.className='';app.innerHTML=K.html;document.title=K.title+' · S23';document.body.dataset.ready=K.ready;S23K.after(K,null);return;}
  app.className='dev-'+v.dev;
  app.innerHTML=v.fn();
  const s=app.querySelector('.screen'),[W,H]=DEVS[v.dev];
  s.style.cssText=`width:${W}px;height:${H}px;margin:${cap?0:'18px auto'};border-radius:${cap?0:v.dev==='ipad'?26:v.dev==='phone'?40:0}px;${cap?'':v.dev==='web'?'':'box-shadow:0 0 0 10px #000,0 0 0 12px #3a3f4d;'}position:relative;overflow:hidden`+(s.classList.contains('nofr')?'':'');
- if(v.dev!=='web'&&s.classList.contains('nofr')){/* màn không có thanh bên */}
  document.title=v.label+' · S23';
  document.body.dataset.ready=id;
+ if(window.S23K)S23K.after(K,v);
 }
 document.addEventListener('click',e=>{const t=e.target.closest('[data-act="key"]');if(!t)return;const el=document.querySelector('.mathin .v');if(!el)return;const k=t.dataset.arg;el.textContent=k==='⌫'?el.textContent.slice(0,-1):el.textContent+k;});
