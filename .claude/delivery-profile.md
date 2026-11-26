@@ -24,7 +24,7 @@ Profile do agent đọc; máy chỉ đọc: §4 (`queue.py brief` chèn vùng c�
 |---|---|
 | stack | BE Java Spring Boot (Maven) + PostgreSQL + Redis · FE React/Vite/TS · E2E Playwright |
 | check.build | `cd app && make verify && make web-build` |
-| check.test | `cd app && make e2e` (hai lượt liên tiếp) |
+| check.test | L5 Dev: `cd app && make e2e-affected` (mức L0/L1/L2 theo diff, một lượt) · L6 gate / xong feature: `cd app && make e2e` trọn bộ một lượt (DECISIONS 26/11; không chạy hai lượt) |
 | check.lint | `cd app/web && npm run typecheck && npm run lint` |
 | check.audit | `cd app && make traceability ARGS=--all` (0 TC tự động thiếu test) |
 

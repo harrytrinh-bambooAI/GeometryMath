@@ -89,17 +89,17 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: theo PLAN_code-s23 §5 hàng 41: traceability đọc S2-*/S3-*, mã TC-S2En-/TC-S3En- (Playwright, JUnit, vitest, cả UT), cờ --strict (exit 1 khi thiếu/trượt), --epic danh sách + bí danh MVP, --defer US-…; fixtures.ts đọc thêm fixture-ids.d/*.json; MOBILE_P0 theo tên *.p0m.ui.spec.ts; 15 feature rỗng s2e1…s3e6; package-info cho subject, notify; mốc theo task trong 5 tệp chung; đích make bench-s2 gọi scripts/bench-s2.sh
 - Nguồn: artifacts/GEO/work/s23/PLAN_code-s23.md v1.0 §4–§5 (26/11); app/e2e/scripts/traceability.ts, app/web/src/features (HEAD 3d154ab); epic-common v1.2
 - Xong khi: verify + web-build + e2e 2 lượt xanh; traceability --strict --epic MVP exit 0 (nếu MVP đang thiếu thì ghi danh sách, MVP chỉ báo — PLAN R4); --strict --epic S2-E1 exit 1 (chưa có test) chứng minh cờ chạy
-- Kiểm: `cd .claude/worktrees/s23-base/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP" && ! make traceability ARGS="--strict --epic S2-E1"`
+- Kiểm: `cd .claude/worktrees/s23-base/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP" && ! make traceability ARGS="--strict --epic S2-E1"`
 - Ngoài phạm vi: code tính năng S2/S3, migration bảng nghiệp vụ, spec, Design/
 - Model: opus · Ngân sách: 1.5 giờ
 - Phụ thuộc: T-261126-17
 - Phạm vi tệp: ^(app/e2e/(scripts|support)/|app/e2e/playwright\.config\.ts|app/web/src/features/|app/db/seed/fixture-ids\.d/|app/server/src/main/java/vn/geo/server/(subject|notify)/package-info\.java|app/server/src/main/resources/db/migration/V10[0-9]__|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|app/scripts/bench-s2\.sh)
 - Kế hoạch: PLAN_code-s23 §3 W3b
-## T-261126-18 · S2-E1 · L5 Dev · epic-common v1.3 · wt s2-e1 · ‖19 · 3h/8M · Định danh tối giản PO-61 [todo]
+## T-261126-18 · S2-E1 · L5 Dev · epic-common v1.3 · wt s2-e1 · ‖19 · 3h/8M · Định danh tối giản PO-61 [done]
 - Mục tiêu: US-S2E1-01…04: đăng ký tên + vai → mã người dùng + mã khôi phục (GV và HS, G3), đăng nhập mã + mật khẩu, khóa 10 lần/15', tự khôi phục; văn bản riêng tư v1.0 + cờ đã đọc; chuyển tài khoản mẫu MVP; class_member.status (PLAN A6); giữ luồng đăng nhập MVP (A7); không trường dữ liệu cá nhân
 - Nguồn: epics/S2-E1 (sau R3, ebec17a 26/11); PLAN_code-s23 v1.0 §1 A6–A7, §4–§6; PO-61, PO-53, PO-66 G3; module iam
 - Xong khi: lệnh kiểm epic-common v1.2 xanh, e2e 2 lượt, truy vết --strict S2-E1 0 thiếu
-- Kiểm: `cd .claude/worktrees/s2-e1/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E1`
+- Kiểm: `cd .claude/worktrees/s2-e1/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E1`
 - Ngoài phạm vi: lớp/mã lớp/duyệt (S3-E1), engine, tắt luồng đăng nhập MVP
 - Model: opus · Ngân sách: 3.5 giờ
 - Phụ thuộc: T-261126-41 (gộp sau T-50; trước khi kiểm cuối: git merge worktree-mvp-wave0)
@@ -109,7 +109,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: US-S2E2-01…05: module subject (SubjectEngine parse/solve/verify/render/hint/grade/concepts + registry, PLAN A1), Problem.kind (A2), SceneSpec 2D + SCENE-CONTRACT-2D.md + shared/scene2d (A3), màn làm bài 2D (C2-05) iPad/iPhone, bộ đề chuẩn phẳng có đáp mẫu, scripts/bench-s2.sh (≥ 95 % thỏa ràng buộc, ≥ 90 % đáp số, 0 sai mang nhãn)
 - Nguồn: epics/S2-E2 (ebec17a 26/11); PLAN_code-s23 v1.0 §1 A1–A3; STAGES §0.3 ý 1, Ch2 §8–10; module geometry
 - Xong khi: như 18 + make bench-s2 (mock) đạt ngưỡng + bench-mvp không lùi
-- Kiểm: `cd .claude/worktrees/s2-e2/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E2" && make bench-s2 && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E2`
+- Kiểm: `cd .claude/worktrees/s2-e2/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E2" && make bench-s2 && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E2`
 - Ngoài phạm vi: iam, kho đề, bài luyện, grade dạng tương đương (21)
 - Model: opus · Ngân sách: 5 giờ
 - Phụ thuộc: T-261126-41 (gộp sau T-50; trước khi kiểm cuối: git merge worktree-mvp-wave0)
@@ -119,27 +119,27 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: US-S2E5-01…04: C2-03, sửa từng bước thành phiên bản mới, StepCheck (geometry/internal/stepcheck), nhãn hai trục + dòng "Máy đã kiểm tra phần tính toán", hộp duyệt chung (nhận/sửa/bỏ), chặn duyệt khi lệch đáp số. US-S2E5-05 dời sang 22 (PLAN §3)
 - Nguồn: epics/S2-E5 (ebec17a 26/11); PLAN_code-s23 v1.0 §2, §5; STAGES Ch2 §7; §0.3 ý 2, 4
 - Xong khi: như 18 (S2-E5 trừ US-S2E5-05) + bench-s2, bench-mvp không lùi
-- Kiểm: `cd .claude/worktrees/s2-e5/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E5 --defer US-S2E5-05" && make bench-s2 && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E5`
+- Kiểm: `cd .claude/worktrees/s2-e5/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E5 --defer US-S2E5-05" && make bench-s2 && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E5`
 - Ngoài phạm vi: thêm đề (S2-E3), bài luyện, áp lời giải cho bài đang giao (22)
 - Model: opus · Ngân sách: 4 giờ
-- Phụ thuộc: T-261126-18, T-261126-19
+- Phụ thuộc: T-261126-18, T-261126-19, T-261126-45
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(geometry/internal/stepcheck|content)/|app/server/src/main/resources/db/migration/V1[67][0-9]__|app/server/src/test/java/vn/geo/server/(it/s2e5|geometry|content)/|app/web/src/features/s2e5/|app/e2e/tests/s2e5/|app/db/seed/(e2e/82[0-9]_|fixture-ids\.d/s2e5)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E5/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W5
 ## T-261126-21 · S2-E8 · L5 Dev · epic-common v1.3 · wt s2-e8 · ‖20 · 5h/12M · Bài luyện điền đáp số + mô hình bộ bài chung [todo]
 - Mục tiêu: US-S2E8-01…05: C2-06/07/08, bàn phím toán, grade dạng tương đương (subject/internal/grade), assignment_set/item đủ cột cho S3 + item giao sinh hàng assignment MVP (PLAN A4, PO-66 G1), practice_attempt (A5), khóa đáp số tới giờ mở, nút "Em nghĩ đáp số này đúng"; giao cho lớp mẫu 11A1
 - Nguồn: epics/S2-E8 (ebec17a 26/11); PLAN_code-s23 v1.0 §1 A4–A5; STAGES Ch2 §5 luồng C, §7; PO-66 G1
 - Xong khi: như 18 (gồm spec *.p0m.ui.spec.ts điện thoại) + bench-mvp không lùi
-- Kiểm: `cd .claude/worktrees/s2-e8/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E8" && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E8`
+- Kiểm: `cd .claude/worktrees/s2-e8/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E8" && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E8`
 - Ngoài phạm vi: duyệt lời giải, vòng đời đóng/lưu trữ bộ (S3-E2), trắc nghiệm (25)
 - Model: opus · Ngân sách: 5 giờ (quá thì tách US-S2E8-02 thành FIX, PLAN R2)
-- Phụ thuộc: T-261126-18, T-261126-19
+- Phụ thuộc: T-261126-18, T-261126-19, T-261126-45
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(assignment|tracking|subject/internal/grade)/|app/server/src/main/resources/db/migration/V1[89][0-9]__|app/server/src/test/java/vn/geo/server/(it/s2e8|assignment|tracking|subject)/|app/web/src/features/s2e8/|app/web/package(-lock)?\.json|app/server/pom\.xml|app/e2e/tests/s2e8/|app/db/seed/(e2e/83[0-9]_|fixture-ids\.d/s2e8)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E8/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W5
 ## T-261126-22 · S2-E3 · L5 Dev · epic-common v1.3 · wt s2-e3 · ‖23 · 4.5h/11M · Thêm đề có AI soạn nháp (chữ + ảnh) + US-S2E5-05 [todo]
 - Mục tiêu: US-S2E3-01…04: C2-02, pipeline đọc–dựng–giải–kiểm qua aigateway (mock + đáp mẫu), ngoại lệ ảnh mờ / không dựng / lệch đáp số, vào ngăn "Của tôi"; US-S2E5-05: lời giải đã giao bất biến, sửa tạo phiên bản mới, chọn áp cho bài đang giao
 - Nguồn: epics/S2-E3, S2-E5 (ebec17a 26/11); PLAN_code-s23 v1.0 §3, §5; STAGES Ch2 §5 luồng A; PO-27, PO-30, PO-38
 - Xong khi: như 18 (S2-E3 + S2-E5 đủ) + bench-s2, bench-mvp không lùi
-- Kiểm: `cd .claude/worktrees/s2-e3/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E5,S2-E8,S2-E3" && make bench-s2 && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E3 S2-E5`
+- Kiểm: `cd .claude/worktrees/s2-e3/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E5,S2-E8,S2-E3" && make bench-s2 && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E3 S2-E5`
 - Ngoài phạm vi: import file, chat chỉnh nháp (S2-E4), kho đề (23), gọi AI thật
 - Model: opus · Ngân sách: 4.5 giờ
 - Phụ thuộc: T-261126-20, T-261126-21
@@ -149,7 +149,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: US-S2E6-01…03: C2-01 (Của tôi / Kho chung, vai người soát, lọc loại hình; lời giải Kho chung: GV xem ngay, HS tự học chỉ gợi ý — PO-66 G2; giới hạn tần suất thêm đề); US-S2E7-01…03: C2-04 (toàn màn hình, từng bước, che, chạy khi mất mạng, hỏi lại khi lời giải còn khóa)
 - Nguồn: epics/S2-E6, S2-E7 (ebec17a 26/11); PLAN_code-s23 v1.0 §1 A10, §5; STAGES Ch2 §5 luồng B, §7; PO-66 G2
 - Xong khi: như 18 + bench-mvp không lùi
-- Kiểm: `cd .claude/worktrees/s2-e67/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E5,S2-E8,S2-E6,S2-E7 --defer US-S2E5-05" && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E6 S2-E7`
+- Kiểm: `cd .claude/worktrees/s2-e67/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E5,S2-E8,S2-E6,S2-E7 --defer US-S2E5-05" && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E6 S2-E7`
 - Ngoài phạm vi: thêm đề, bài luyện, content intake/draft/solution (22)
 - Model: opus · Ngân sách: 3.5 giờ
 - Phụ thuộc: T-261126-20, T-261126-21
@@ -159,7 +159,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: US-S2E4-01…03: chat chỉnh bản nháp đề (AI hỏi lại, nói rõ trước/sau), import docx/pdf tách bài tập, đối chiếu trùng kho
 - Nguồn: epics/S2-E4 (ebec17a 26/11); PLAN_code-s23 v1.0 §5 (chủ pom.xml đợt W7); PO-45–47
 - Xong khi: như 18 + bench-mvp không lùi
-- Kiểm: `cd .claude/worktrees/s2-e4/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E5,S2-E6,S2-E7,S2-E8,S2-E4" && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E4`
+- Kiểm: `cd .claude/worktrees/s2-e4/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E5,S2-E6,S2-E7,S2-E8,S2-E4" && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E4`
 - Ngoài phạm vi: bài giảng với AI (chặng 5), biến thể/xuất (25), gọi AI thật
 - Model: opus · Ngân sách: 4 giờ
 - Phụ thuộc: T-261126-22, T-261126-23
@@ -169,7 +169,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: US-S2E9-01…03: ProblemVariant (sinh số liệu + tính lại đáp số qua SubjectEngine), xuất ảnh/PDF (phía web, chủ package.json đợt W7), liên kết chỉ xem (share_grant), trắc nghiệm trong bài luyện
 - Nguồn: epics/S2-E9 (ebec17a 26/11); PLAN_code-s23 v1.0 §5; STAGES Ch2 §3 ý 7, §4 P1
 - Xong khi: như 18 + bench-s2, bench-mvp không lùi
-- Kiểm: `cd .claude/worktrees/s2-e9/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9" && make bench-s2 && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E9`
+- Kiểm: `cd .claude/worktrees/s2-e9/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9" && make bench-s2 && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E9`
 - Ngoài phạm vi: thiết diện động (Q7 để sau), import (24)
 - Model: opus · Ngân sách: 4 giờ
 - Phụ thuộc: T-261126-22, T-261126-23
@@ -194,7 +194,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: nạp dữ liệu mẫu chung chặng 3 (F-S3-001…053: 2 giáo viên, 3 lớp, học sinh đủ trạng thái Đang học/Chờ duyệt/Đã rời, bộ tuần 15/16, bảng trạng thái 11A1) vào 910_s3_core.sql + fixture-ids.d/s3.json, chỉ dùng schema MVP + S2 (class_member.status từ 18, assignment_set/item từ 21)
 - Nguồn: epics/S3-E1/stories_ac.md mục "Dữ liệu mẫu chung" (ebec17a 26/11); PLAN_code-s23 v1.0 §4; app/db/seed/README.md
 - Xong khi: seed-reset nạp sạch trên geo_e2e; e2e MVP + S2 vẫn xanh; mỗi mã F-S3 trong bảng có UUID trong fixture-ids.d/s3.json
-- Kiểm: `cd .claude/worktrees/s3-base/app && make verify && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9" && test "$(grep -c F-S3- db/seed/fixture-ids.d/s3.json)" -ge 14`
+- Kiểm: `cd .claude/worktrees/s3-base/app && make verify && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9" && test "$(grep -c F-S3- db/seed/fixture-ids.d/s3.json)" -ge 14`
 - Ngoài phạm vi: code tính năng S3, migration nghiệp vụ (chỉ V310–V314 nếu thiếu cột, ghi lý do)
 - Model: opus · Ngân sách: 1 giờ
 - Phụ thuộc: T-261126-24, T-261126-25
@@ -204,7 +204,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: US-S3E1-01…05: C3-02/07, nhiều lớp + năm học, mã lớp + trang in, vào lớp chờ duyệt (Bị từ chối), chống dò mã lớp 30 lần/24 giờ + duyệt từng em (G4), GV đặt lại mật khẩu HS lớp mình (mã dùng một lần, phát DomainEvent cho audit ở 31), quyền theo quan hệ xuyên suốt; US-S3E5-02 thông báo riêng tư theo phiên bản; US-S3E5-04 công tắc AI phía HS theo lớp
 - Nguồn: epics/S3-E1, S3-E5 (ebec17a 26/11); PLAN_code-s23 v1.0 §3 (tách S3-E5), §5; PO-61, PO-66 G4–G5; STAGES Ch3 §7
 - Xong khi: như 18 (S3-E1 đủ; S3-E5 trừ 01, 03, 05)
-- Kiểm: `cd .claude/worktrees/s3-e1/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E1,S3-E5 --defer US-S3E5-01,US-S3E5-03,US-S3E5-05" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S3-E1 S3-E5`
+- Kiểm: `cd .claude/worktrees/s3-e1/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E1,S3-E5 --defer US-S3E5-01,US-S3E5-03,US-S3E5-05" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S3-E1 S3-E5`
 - Ngoài phạm vi: bộ bài, kết quả lớp, AuditEvent (31), xóa tài khoản và test danh sách trường (32)
 - Model: opus · Ngân sách: 4 giờ
 - Phụ thuộc: T-261126-26, T-261126-42
@@ -214,7 +214,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: US-S3E2-01…04: C3-03/08 trên mô hình bộ bài của 21 (PLAN A4, không đổi schema nếu không buộc), due_at là nhãn, release_at theo bộ hoặc từng bài, xem trước, cảnh báo đề "Cần xem lại", vòng đời Đã đóng/Lưu trữ; câu thử moi đáp án theo bộ
 - Nguồn: epics/S3-E2 (ebec17a 26/11); PLAN_code-s23 v1.0 §1 A4; STAGES Ch3 §5 luồng B; PO-66 G1, G5
 - Xong khi: như 18
-- Kiểm: `cd .claude/worktrees/s3-e2/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E2" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S3-E2`
+- Kiểm: `cd .claude/worktrees/s3-e2/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E2" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S3-E2`
 - Ngoài phạm vi: ClassMembership (28), kết quả lớp, Mở ngay/Đổi giờ từ tổng quan (31)
 - Model: opus · Ngân sách: 4 giờ
 - Phụ thuộc: T-261126-26, T-261126-42
@@ -224,7 +224,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: US-S3E3-01…03: C3-04, bảng lớp × bài (không cột tổng, không sắp hạng), ô bấm ra bằng chứng, học sinh đã rời đánh dấu, nhận định gộp chỉ khi đủ ngưỡng 5 bài (Q6)
 - Nguồn: epics/S3-E3 (ebec17a 26/11); PLAN_code-s23 v1.0 §2 (module tracking); STAGES Ch3 §5 luồng C; §0.3 ý 6
 - Xong khi: như 18
-- Kiểm: `cd .claude/worktrees/s3-e3/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E1,S3-E2,S3-E3 --defer US-S3E5-03" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S3-E3`
+- Kiểm: `cd .claude/worktrees/s3-e3/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E1,S3-E2,S3-E3 --defer US-S3E5-03" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S3-E3`
 - Ngoài phạm vi: tổng quan giáo viên, notify (31)
 - Model: opus · Ngân sách: 4 giờ
 - Phụ thuộc: T-261126-28, T-261126-29
@@ -234,7 +234,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: US-S3E4-01…03: C3-05/06 web + điện thoại, Mở ngay / Đổi giờ, Notification trong ứng dụng (module notify, PLAN A9); US-S3E5-01: AuditEvent trên audit_log (A8) cho mở sớm, đổi giờ, đặt lại mật khẩu (nghe DomainEvent của 28)
 - Nguồn: epics/S3-E4, S3-E5 (ebec17a 26/11); PLAN_code-s23 v1.0 §1 A8–A9, §3; STAGES Ch3 §5 luồng C, §7
 - Xong khi: như 18 (gồm spec *.p0m.ui.spec.ts điện thoại; S3-E5 trừ 03, 05)
-- Kiểm: `cd .claude/worktrees/s3-e4/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E1,S3-E2,S3-E4,S3-E5 --defer US-S3E5-03,US-S3E5-05" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S3-E4 S3-E5`
+- Kiểm: `cd .claude/worktrees/s3-e4/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E1,S3-E2,S3-E4,S3-E5 --defer US-S3E5-03,US-S3E5-05" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S3-E4 S3-E5`
 - Ngoài phạm vi: thông báo đẩy ngoài ứng dụng, kết quả lớp (30)
 - Model: opus · Ngân sách: 3.5 giờ
 - Phụ thuộc: T-261126-28, T-261126-29
@@ -244,7 +244,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: TRƯỚC: US-S3E5-03 (danh sách trường được phép, test chặn trường mới quét mọi bảng/API S2–S3), US-S3E5-05 (xóa tài khoản + chính sách lưu/xóa); SAU: US-S3E6-01…03 (chữa bài sang Trình chiếu, xuất kết quả lớp, lưu trữ lớp cuối năm, nhắc việc trong ứng dụng)
 - Nguồn: epics/S3-E5, S3-E6 (ebec17a 26/11); PLAN_code-s23 v1.0 §3; STAGES Ch3 §4 P1; PO-64, PO-66 G5
 - Xong khi: như 18 (S3-E5 và S3-E6 đủ, không --defer)
-- Kiểm: `cd .claude/worktrees/s3-e6/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E1,S3-E2,S3-E3,S3-E4,S3-E5,S3-E6" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S3-E5 S3-E6`
+- Kiểm: `cd .claude/worktrees/s3-e6/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E1,S3-E2,S3-E3,S3-E4,S3-E5,S3-E6" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S3-E5 S3-E6`
 - Ngoài phạm vi: phụ huynh, điểm chính thức
 - Model: opus · Ngân sách: 4 giờ
 - Phụ thuộc: T-261126-30, T-261126-31
@@ -287,7 +287,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: hệ token theme cho app/web (CSS custom properties theo `data-theme`), 4 theme từ `Design/styles/{a,b,c,d}/style.css` (màu, bo góc, font, mật độ, cao chạm, icon set nếu khác), D mặc định; màn/ô Cài đặt (giáo viên + học sinh) chọn theme, lưu theo tài khoản phía máy chủ (cột/khóa user preference, migration trong khoảng V440–V444; module máy chủ `settings/` riêng, không sửa `iam/` (thuộc task 18); cổng 54669 · 6719 · 8126 · 5206) và localStorage làm dự phòng; các component dùng chung (`app/web/src/shared/ui`) dùng token, không mã màu cứng; MVP E1–E7 không vỡ
 - Nguồn: Design/styles/ (T-39, 26/11) + STYLES.md; Design/prototype/s23*.html (T-38/T-40, 26/11); app/web/src/styles/{tokens,base}.css; DECISIONS 26/11 (theme D)
 - Xong khi: verify + web-build + e2e 2 lượt xanh; e2e mới: đổi theme trong Cài đặt → `html[data-theme]` đổi, tải lại vẫn giữ; ảnh chụp 1 màn MVP ở 4 theme lưu `artifacts/GEO/evidence/theme/`
-- Kiểm: `cd .claude/worktrees/s23-theme/app && make verify && make web-build && make e2e && make e2e && ls ../artifacts/GEO/evidence/theme/*.png | wc -l | grep -qE '^ *[4-9]'`
+- Kiểm: `cd .claude/worktrees/s23-theme/app && make verify && make web-build && make e2e-affected && ls ../artifacts/GEO/evidence/theme/*.png | wc -l | grep -qE '^ *[4-9]'`
 - Ngoài phạm vi: tính năng S2/S3, đổi bố cục màn MVP ngoài token, Design/
 - Phạm vi tệp: ^(app/web/src/(styles|shared/ui|shared/theme|app)/|app/web/src/features/settings/|app/web/index\.html|app/web/package\.json|app/server/src/main/java/vn/geo/server/settings/|app/server/src/main/resources/db/migration/V44[0-4]__|app/\.env\.ports|app/server/src/test/|app/e2e/tests/theme/|artifacts/GEO/evidence/theme/)
 - Model: opus · Ngân sách: 2.5 giờ
@@ -307,11 +307,21 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: (1) đăng ký `user_preference` trong `app/server/quality/sql-lint.properties` (tenant.tables / owner.user_preference=settings, dùng khóa hậu tố dưới mốc task); (2) thay 26 màu cứng ở `app/web/src/features/{e2,e4,e5,e6}/*.css` + `shared/viewer/viewer.css` bằng token; chữ dùng `--pri-t` (không dùng `--pri` làm màu chữ) để đạt AA ở cả 4 theme; (3) theme D: chữ phụ ≥ 14 px (PO-66 G17); (4) theme C mặc định (Bad Script): mọi nội dung toán ở màn MVP E1–E7 (đề, đáp số, bàn phím toán, bảng số, nhãn hình 3D) dùng `--font-math`/`data-math`, kiểm bố cục không tràn với chữ tay; ảnh 4 theme chụp lại
 - Nguồn: báo cáo T-50 (26/11) câu mở 1–3; `Design/styles/` (STYLES.md, contrast.js)
 - Xong khi: verify + web-build + e2e 2 lượt xanh; `grep -rEc '#[0-9A-Fa-f]{3,8}' app/web/src/features/e{2,4,5,6} app/web/src/shared/viewer` = 0 (trừ comment); ảnh 4 theme mới trong `artifacts/GEO/evidence/theme/`
-- Kiểm: `cd .claude/worktrees/fix-44/app && make verify && make web-build && make e2e && make e2e && ! grep -rEn '#[0-9A-Fa-f]{3,8}\b' web/src/features/e2 web/src/features/e4 web/src/features/e5 web/src/features/e6 web/src/shared/viewer --include=*.css`
+- Kiểm: `cd .claude/worktrees/fix-44/app && make verify && make web-build && make e2e-affected && ! grep -rEn '#[0-9A-Fa-f]{3,8}\b' web/src/features/e2 web/src/features/e4 web/src/features/e5 web/src/features/e6 web/src/shared/viewer --include=*.css`
 - Ngoài phạm vi: tính năng; tệp của task 18/19 (iam/, features/s2e1, s2e2, geometry/)
 - Phạm vi tệp: ^(app/web/src/(features/(e[1-7]|settings)|shared/(viewer|ui|theme)|styles)/|app/server/quality/sql-lint\.properties|app/e2e/tests/(theme|e[1-7])/|artifacts/GEO/evidence/theme/|app/\.env\.ports)
 - Model: opus · Ngân sách: 1.5 giờ · Cổng: FIX W4 54649 · 6699 · 8124 · 5204 (sau khi T-43 gộp)
 - Phụ thuộc: T-261126-50, T-261126-43
+
+## T-261126-45 · FIX · L5 Dev regression theo mức ảnh hưởng · epic-common v1.5 · wt fix-45 · 1.5h/3M · make e2e-affected + smoke + reporter TC-S2/S3 [todo]
+- Mục tiêu: (1) `make e2e-affected` (script `app/scripts/e2e-affected.*`): diff so với `worktree-mvp-wave0` (BASE đổi được) → mức L0/L1/L2 theo bản đồ sở hữu PLAN_code-s23 §5 (tệp → module/epic → spec phụ thuộc; tệp không có trong bản đồ = L2) → chạy `scripts/e2e.sh` một lượt với đúng spec + project (L0/L1: chromium + api + spec `p0m` của màn bị đụng trên mobile; L2: trọn bộ chromium + api); `--dry-run` in mức, lý do, danh sách spec; ghi `impact.json` vào evidence của lượt; (2) bộ smoke ~30 test đường chính (đăng nhập, kho đề, giao bài, làm bài, kết quả) gắn tag `@smoke`, luôn chạy; (3) `e2e/reporters/evidence-reporter.ts` nhận tag `TC-S[23]E\d+-\d+`; (4) `privacy_notice` vào keep-tables.txt
+- Nguồn: DECISIONS 26/11 (chiến lược regression), PLAN_code-s23 §5, inbox "FIX sau T-18"
+- Xong khi: dry-run đúng 4 diff mẫu (chỉ features/s2e3 → L0; iam → L1 gồm E1 + S2-E1; styles/tokens.css → L2; tệp lạ → L2); smoke < 4 phút; traceability --strict S2-E1 hiện đạt (không "chưa chạy")
+- Kiểm: `cd .claude/worktrees/fix-45/app && make verify && make web-build && make e2e-affected-selftest && make e2e ARGS="-g @smoke" && make traceability ARGS="--strict --epic MVP,S2-E1"`
+- Ngoài phạm vi: tính năng; nội dung assertion test
+- Phạm vi tệp: ^(app/scripts/(e2e-affected|e2e)[^/]*|app/e2e/(reporters|support|scripts)/|app/e2e/tests/|app/e2e/playwright\.config\.ts|app/Makefile|app/README\.md|app/db/keep-tables\.txt|app/\.env\.ports|artifacts/GEO/work/s23/impact-map\.json)
+- Model: opus · Ngân sách: 1.5 giờ · Cổng: FIX W4 54649 · 6699 · 8124 · 5204
+- Phụ thuộc: T-261126-41
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |

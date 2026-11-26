@@ -27,7 +27,7 @@
 ## Xong khi (lệnh kiểm được bằng máy, chạy trong `app/` của worktree)
 - `make verify` xanh (đơn vị + IT + ArchUnit + quét SQL).
 - `make web-build` xanh (typecheck, lint, test, build).
-- `make e2e` đạt toàn bộ (cả test MVP E1…E7 và epic đã gộp) **hai lượt liên tiếp**.
+- E2E theo mức ảnh hưởng (v1.5, DECISIONS 26/11, CLAUDE.md §5): KHÔNG chạy trọn bộ. Trong lúc làm chỉ chạy spec của epic mình. Cuối task: `git merge worktree-mvp-wave0` → đóng băng mã → `make e2e-affected` MỘT lượt (in mức L0/L1/L2 + danh sách spec; dán vào báo cáo). Trượt chập chờn ngoài epic: chạy lại RIÊNG spec đó, không chạy lại cả lệnh. Sau lượt cuối không sửa tệp mã (phiên chính kiểm summary.json + mtime). Trọn bộ chỉ khi xong feature (phiên chính chạy) và ở gate L6. Khóa e2e toàn máy: chờ khóa là bình thường.
 - `make traceability ARGS="--strict --epic MVP,<các epic S2/S3 đã gộp>,<epic của task>"` exit 0: 0 TC tự động hóa (E2E-UI / E2E-API / IT / UT) thiếu test, 0 trượt. (`--strict`, bí danh `MVP` và đọc thư mục `S2-E*`/`S3-E*` do T-41 thêm; trước khi có T-41 lệnh cũ không kiểm gì.)
 - `python3 ../artifacts/GEO/work/tools/check_ac_tc.py <epic>` 0 lỗi (chứng minh spec không bị sửa).
 - Task đụng `geometry`/`content`/`aigateway`/`assignment` (19–25): thêm `make bench-mvp` (mock) exit 0; 19, 20, 22, 25 thêm `make bench-s2` đạt ngưỡng (≥ 95 % thỏa ràng buộc, ≥ 90 % đáp số, 0 sai mang nhãn).
@@ -47,6 +47,7 @@ AC đạt/tổng; TC tự động đạt/tổng theo loại; kết quả make ve
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
+| v1.5 | 2026-11-26 | E2E theo mức ảnh hưởng (make e2e-affected), bỏ trọn bộ hai lượt mỗi task | delivery-lead |
 | v1.4 | 2026-11-26 | Theme mặc định C + Bad Script; nội dung toán dùng --font-math | delivery-lead |
 | v1.3 | 2026-11-26 | Giao diện theo HTML bản mẫu + token theme (style D mặc định, T-50) | delivery-lead |
 | v1.2 | 2026-11-26 | Thêm chặng 2–3: nguồn S2/S3 sau R3 + PLAN_code-s23; tệp sở hữu, mốc tệp chung, chủ pom/package; mã TC `TC-S2En-nnn`, `*.p0m.ui.spec.ts`; seed/fixture-ids.d; lệnh kiểm `traceability --strict`, `check_ac_tc`, bench-s2/bench-mvp; đường dẫn tiến độ về repo điều phối mvp-wave0 | runner-T-261126-17 |
