@@ -60,7 +60,7 @@ Chưa có code: ghi lệnh dự kiến kèm `(giả định)`, ví dụ `npm run
 ## 6. Điều phối
 | Khoá | Giá trị |
 |---|---|
-| small_task | direct |
+| small_task | delegate (Harry 26/11: mọi việc code → agent con trong worktree riêng; phiên chính chỉ điều phối) |
 | max_agents | (Sonnet 4 · Opus 2) |
 | default_model | opus cho code (PO-59: 2 agent song song), sonnet cho soát |
 | task_id_source | (internal `T-YYMMDD-NN`) · PMS: tên + cách lấy ID |

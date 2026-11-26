@@ -6,12 +6,13 @@ Task giao agent con có khối `.claude/queue.md` CÙNG ID; map trạng thái �
 ## Đang mở — Claude tự làm
 | ID | Việc | Nguồn (raw) | Xong khi (lệnh kiểm) | Ước tính | Trạng thái | Output |
 |---|---|---|---|---|---|---|
-| T-261126-01 | AI thật: AnthropicAiProvider (Claude, mặc định claude-sonnet-5-5) + ProfileGuard cấm mock ở prod + bộ đo MVP (`make bench-mvp`: 4 chỉ số bắt buộc + thời gian tới hình + chi phí AI/bài) | PO-60 | verify + web-build + e2e 2 lượt xanh; `make bench-mvp` (mock) in báo cáo | 3–4h, Opus | Doing | nhánh mvp-ai |
-| T-261126-02 | Kho ≥ 40 đề máy kiểm chứng (nhãn AI soạn) + kiểm P0 khổ điện thoại (Playwright mobile) | PO-60 | verify + web-build + e2e 2 lượt xanh (gồm dự án mobile); đếm đề verified ≥ 40 | 3–4h, Opus | Doing | nhánh mvp-content |
-| T-261126-03 | Gộp 01+02 vào worktree-mvp-wave0, chạy bench-mvp trên 40 đề (mock) | PO-60 | lệnh kiểm profile §2 xanh sau gộp | 1h | Todo | |
-| T-261126-04 | Soát độc lập diff 01+02 (Sonnet) + sửa gom | §7b | 0 blocker/major mở | 1–2h | Todo | |
-| T-261126-05 | Đo thật 4 chỉ số với Claude API, báo cáo `artifacts/GEO/evidence/MVP-METRICS-<ngày>/` | PO-60 | báo cáo có đủ chỉ số §9 | 30' | Todo | |
+| T-261126-01 | AI thật: AnthropicAiProvider (Claude, mặc định claude-sonnet-5-5) + ProfileGuard cấm mock ở prod + bộ đo MVP (`make bench-mvp`: 4 chỉ số bắt buộc + thời gian tới hình + chi phí AI/bài) | PO-60 | verify + web-build + e2e 2 lượt xanh; `make bench-mvp` (mock) in báo cáo | 3–4h, Opus | Done | nhánh mvp-ai → afda3dd |
+| T-261126-02 | Kho ≥ 40 đề máy kiểm chứng (nhãn AI soạn) + kiểm P0 khổ điện thoại (Playwright mobile) | PO-60 | verify + web-build + e2e 2 lượt xanh (gồm dự án mobile); đếm đề verified ≥ 40 | 3–4h, Opus | Done | nhánh mvp-content → 77850f4 |
+| T-261126-03 | Gộp 01+02 vào worktree-mvp-wave0, chạy bench-mvp trên 40 đề (mock) | PO-60 | lệnh kiểm profile §2 xanh sau gộp | 1h | Done | 6b62557 |
+| T-261126-04 | Soát độc lập diff 01+02 (Sonnet) + sửa gom | §7b | 0 blocker/major mở | 1–2h | Done | 0/0/3 minor → T-261126-07 |
+| T-261126-05 | Đo thật 4 chỉ số với Claude API, báo cáo `artifacts/GEO/evidence/MVP-METRICS-<ngày>/` | PO-60 | báo cáo có đủ chỉ số §9 | 30' | Blocked (owner chạy lệnh đo: quyền đọc khóa bị chặn) | |
 | T-261126-06 | Kiểm cuối MVP + cập nhật PR #1 + PROGRESS | §9 | profile §2 + traceability xanh | 1h | Todo | |
+| T-261126-07 | FIX5: 3 minor soát T-04 (chi phí model thiếu giá, chi phí theo model thực trả, gói đề không ghi đè đề đã có) | inbox FIX5 | `make verify` + `make bench-mvp` (mock) exit 0; test mới từng mục | 45', Sonnet | Doing | nhánh mvp-fix5 |
 
 ## Chờ owner (chi tiết ở NEEDS.md)
 | ID | Việc | Cần gì | Mở khoá |
