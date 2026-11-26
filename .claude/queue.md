@@ -49,7 +49,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Xong khi: ≥ 17 ảnh trong `Design/s23/`, `Design/s23/DQ.md` có mặc định
 - Kiểm: `test "$(ls Design/s23/*.png | wc -l)" -ge 17 && test -s Design/s23/DQ.md`
 - Ngoài phạm vi: ảnh/màn MVP cũ, code app
-## T-261126-12 · S2 · L3 BA+QC goal run · po-ba-qc roles/goal-run.md · wt s23-spec · ‖14 · 5h/7M · Spec S2 (E1–E9) [running]
+## T-261126-12 · S2 · L3 BA+QC goal run · po-ba-qc roles/goal-run.md · wt s23-spec · ‖14 · 5h/7M · Spec S2 (E1–E9) [done]
 - Mục tiêu: stories_ac + test_design + test_cases (cột Tự động hóa) cho S2-E1…E9 (E4, E9 đánh dấu P1); "ready for R3"; dồn công 2 màn ưu tiên C2-03, C2-06 (K3)
 - Nguồn: story map task 08; STAGES Ch2 §5–8 (22/11); Design/s23 (task 10); PO-27, PO-30, PO-45–48, PO-61
 - Xong khi: lint stories + tests 0 lỗi mỗi epic
