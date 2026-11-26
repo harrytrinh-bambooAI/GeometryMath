@@ -68,8 +68,8 @@ Phiên bản: v0.1 · 2026-11-26
 | CL-FN-04 | 03 | duyệt, từ chối, cho rời, duyệt lặp, quyết định trái nhau từ hai tab | chuyển đúng bảng trạng thái; lặp cùng quyết định thành công; trái nhau CONFLICT | bảng chuyển trạng thái | tích hợp API |
 | CL-FN-10 | 03 | hai em "Hoàng Nam" Chờ duyệt | phân biệt bằng mã người dùng, không hỏi ký hiệu (DQ-25) | đoán lỗi | E2E trình duyệt |
 | CL-FN-07 | 04 | mật khẩu tạm sau khi đóng hộp | mọi API không trả lại, không vào nhật ký hay AuditEvent | soát | tích hợp API |
-| CL-FN-09 | 04 | mật khẩu tạm ở 23 giờ 59 phút và 24 giờ 01 phút | dùng được rồi hết hạn (TẠM 24 giờ) | BVA | tích hợp API |
-| CL-FN-10 | 04 | đặt lại lần 10 và 11 trong 1 giờ | lần 11 RATE_LIMITED (TẠM) | BVA | tích hợp API |
+| CL-FN-09 | 04 | mật khẩu tạm ở 23 giờ 59 phút và 24 giờ 01 phút | dùng được rồi hết hạn (24 giờ, đã chốt PO-66) | BVA | tích hợp API |
+| CL-FN-10 | 04 | đặt lại lần 10 và 11 trong 1 giờ | lần 11 RATE_LIMITED (đã chốt PO-66) | BVA | tích hợp API |
 | CL-FN-05 | 04 | đặt lại cho em Đã rời, Chờ duyệt, tài khoản giáo viên, em lớp khác | NOT_FOUND ở mọi trường hợp; mật khẩu không đổi | bảng quyết định | tích hợp API |
 | CL-FN-06 | 05 | giáo viên A gọi API lớp B; học sinh gọi API giáo viên; đổi mã lớp/mã em; con trỏ lạ | ma trận quyền bên dưới | bảng quyết định | tích hợp API |
 | CL-X-03 | 05 | 5 yêu cầu ngoài quan hệ | bộ đếm sự kiện bảo mật tăng đúng 5, bản ghi không chứa nội dung | soát | tích hợp CSDL |

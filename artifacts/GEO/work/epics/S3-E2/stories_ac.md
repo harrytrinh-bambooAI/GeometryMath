@@ -2,7 +2,7 @@ Phiên bản: v0.2 · 2026-11-26
 # S3-E2 — Bộ bài, lịch mở lời giải, Bài của em theo bộ: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA. Nguồn: `work/s23/story-map-s23.md` (R2 khóa, 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Ch3 (22/11/2026), `Design/s23/DQ.md` và ảnh `c3-*.png` (26/11/2026), `PO-DECISIONS.md` PO-53, PO-61…65. Khi nguồn mâu thuẫn thì PO-61 thắng STAGES.
-> **Trạng thái: ready for R3** (chờ owner ở gate 16, T-261126-16). Mức epic: **P0**. Câu hỏi mở và đề xuất đổi story map ở `questions.md` cùng thư mục.
+> **Trạng thái: ready for R3** (owner đã duyệt R3 theo PO-66, 26/11/2026; ngưỡng số liệu giữ, chỉnh sau L6 (G12)). Mức epic: **P0**. Câu hỏi mở và đề xuất đổi story map ở `questions.md` cùng thư mục.
 
 ## 0. Reader guide and glossary (hướng dẫn đọc và bảng mã)
 
@@ -10,13 +10,13 @@ Phiên bản: v0.2 · 2026-11-26
 
 **Quy ước chung cho mọi AC chặng 3** (kế thừa MVP, nguồn: `epics/E1/stories_ac.md` mục 0; PO-61…65):
 - Mọi mốc giờ lấy từ giờ máy chủ (T0); giờ của thiết bị không được tin. API dùng ISO-8601 UTC; màn hình hiện `HH:mm, dd/MM/yyyy` giờ Việt Nam.
-- Lỗi của máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định: VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN (sai vai), NOT_FOUND (đối tượng không thuộc quan hệ của người gọi; không tiết lộ đối tượng có tồn tại), CONFLICT (xung đột trạng thái), RATE_LIMITED (kèm `Retry-After`), INVALID_CURSOR. Chọn NOT_FOUND thay cho FORBIDDEN với đối tượng ngoài quan hệ là TẠM, QA-S3E1-04.
+- Lỗi của máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định: VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN (sai vai), NOT_FOUND (đối tượng không thuộc quan hệ của người gọi; không tiết lộ đối tượng có tồn tại), CONFLICT (xung đột trạng thái), RATE_LIMITED (kèm `Retry-After`), INVALID_CURSOR. Chọn NOT_FOUND thay cho FORBIDDEN với đối tượng ngoài quan hệ là mặc định đã chốt PO-66, QA-S3E1-04.
 - Quyền theo quan hệ, không theo vai đơn thuần: giáo viên chỉ thấy và tác động lên lớp mình tạo cùng học sinh Đang học của lớp đó; học sinh chỉ thấy bài và dữ liệu của chính mình ở lớp mình Đang học, không thấy kết quả của bạn; hết quan hệ (Đã rời, lớp rời) thì hết quyền. Mã lớp và mã người dùng lấy từ thẻ xác thực hoặc đường dẫn nhưng luôn kiểm quan hệ ở máy chủ (BR-S3E1-50).
 - Chỉ thu và trả về các trường trong danh sách được phép (US-S3E5-03): tên hiển thị, mã người dùng, vai, lớp, bài làm, cờ đã đọc thông báo riêng tư cùng phiên bản văn bản. Không email, điện thoại, ngày sinh, trường, ảnh (PO-61, PO-64). "Dữ liệu trả về" nghĩa là toàn bộ nội dung máy chủ gửi xuống thiết bị, không chỉ phần giao diện vẽ ra.
 - Phản hồi chứa dữ liệu học sinh, lời giải hoặc trạng thái khóa mang tiêu đề `Cache-Control: no-store` (kế thừa D-GEO-145).
 - Thiết bị: giáo viên dùng web trên máy tính, điện thoại chỉ để liếc và quyết nhanh; học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA), PO-65.
 - AI giữ giả lập trong CI (D-GEO-047): không có kỳ vọng nào về chất lượng câu chữ AI thật; không gọi AI thật.
-- AC mang chữ PROVISIONAL dựng trên một giả định chưa được chủ đầu tư xác nhận; mã `QA-S3En-nn` cạnh đó cho biết giả định nào, câu trả lời mặc định ở `questions.md`. Ngưỡng và định dạng mã là đề xuất.
+- AC mang chữ PO-66 (QA-S3En-nn) dựa trên giả định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); mã `QA-S3En-nn` cho biết câu hỏi gốc, câu trả lời ở `questions.md`. Ngưỡng và định dạng mã giữ, chỉnh sau L6 (G12).
 
 | Id / abbreviation | Meaning | Where it comes from (pointer only) |
 |---|---|---|
@@ -24,13 +24,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `BR-S3En-nn` | quy tắc nghiệp vụ của story (nguồn dẫn kèm) | tệp này |
 | `TC-S3En-nn` | test case của epic S3-En | cột No của `test_cases.md` |
 | `F-S3-nnn` | hàng dữ liệu mẫu chung của chặng 3 | mục "Dữ liệu mẫu" của tệp này |
-| `QA-S3En-nn` | câu hỏi mở của epic, kèm mặc định đang dùng (TẠM) | `questions.md` cùng thư mục |
+| `QA-S3En-nn` | câu hỏi mở của epic, kèm mặc định đang dùng (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `PO-nn` | dòng của sổ quyết định gốc: PO-53, PO-61…65 | `PO-DECISIONS.md` |
 | `DQ-nn` | câu hỏi và mặc định của thiết kế chặng 2–3 | `Design/s23/DQ.md` |
 | `M-S3-nn` | chỉ số chặng 3 (M-S3-01…06) | `work/s23/brd-delta-s23.md` §1 |
 | `C3-nn` | mã màn hình chặng 3 | `STAGES-AFTER-MVP.md` Ch3 §6; ảnh ở `Design/s23/c3-*.png` |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (ví dụ D-GEO-047 AI giả lập, D-GEO-185 khóa theo tài khoản) | `work/03_decisions.md` |
-| `GV-…` · `HS-…` · `HK-…` · `RC-…` | mã người dùng giáo viên · học sinh · mã lớp · mã khôi phục (định dạng TẠM, DQ-16, DQ-23) | `Design/s23/DQ.md` |
+| `GV-…` · `HS-…` · `HK-…` · `RC-…` | mã người dùng giáo viên · học sinh · mã lớp · mã khôi phục (định dạng đã chốt PO-66, DQ-16, DQ-23) | `Design/s23/DQ.md` |
 | `release_at` · `due_at` | giờ mở lời giải · hạn làm (chỉ là nhãn, không khóa bài) | `STAGES-AFTER-MVP.md` Ch3 §7, §8 |
 | Chưa đặt giờ · Sắp mở · Đã mở | ba trạng thái giờ mở: chưa có `release_at` (khóa) · giờ máy chủ < `release_at` (khóa) · giờ máy chủ ≥ `release_at` (được xem) | MVP, M-GEO-13 |
 | Chờ duyệt · Đang học · Đã rời · Bị từ chối | trạng thái `ClassMembership` (Bị từ chối là đề xuất của BA, QA-S3E1-02) | tệp này |
@@ -38,7 +38,7 @@ Phiên bản: v0.2 · 2026-11-26
 | Bài làm | một học sinh Đang học có ít nhất một tương tác (gửi đáp số, xin gợi ý hoặc hỏi) trên một đề của bộ; tính theo số học sinh khác nhau | US-S3E3-03, QA-S3E3-02 |
 | T0 · t | giờ máy chủ lúc bắt đầu ca kiểm · giờ máy chủ tại thời điểm xét | mọi mốc giờ là tương đối |
 | `CL-FN-nn` · `CL-UI-nn` · `CL-X-nn` | nhóm kiểm tra chức năng · giao diện và thiết bị · xuyên suốt (ma trận quyền, trường dữ liệu, tải) | `test_design.md` cùng thư mục |
-| PROVISIONAL · ENG · X | kỳ vọng theo giả định chưa xác nhận (kèm mã QA-) · case cần công cụ kỹ thuật · case xuyên suốt | cột Remark |
+| PO-66 · ENG · X | kỳ vọng theo giả định đã chốt PO-66 (kèm mã QA-) · case cần công cụ kỹ thuật · case xuyên suốt | cột Remark |
 | `MSG-S3-nn` | thông điệp hiện cho người dùng của chặng 3, câu chữ ở bảng "Thông điệp" của tệp này | tệp này |
 
 ### Dữ liệu mẫu chung của chặng 3
@@ -145,7 +145,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: hiện MSG-S3-23; máy chủ trả VALIDATION_FAILED nếu gọi thẳng; bộ vẫn Nháp
 
 
-**US-S3E2-01-FC2 — Bộ 21 đề bị chặn** · Nguồn: BR-S3E2-01 · PROVISIONAL QA-S3E2-01
+**US-S3E2-01-FC2 — Bộ 21 đề bị chặn** · Nguồn: BR-S3E2-01 · PO-66 (QA-S3E2-01)
 - Given: cô Lan có 21 đề khác nhau để chọn
 - When: thêm đề thứ 21 vào bộ đã có 20 đề
 - Then: hiện MSG-S3-23; VALIDATION_FAILED nếu gọi thẳng; bộ vẫn 20 đề
@@ -176,7 +176,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: máy chủ trả NOT_FOUND; bộ không đổi
 
 
-**US-S3E2-01-FC7 — Hạn làm trong quá khứ khi giao** · Nguồn: BR-S3E2-03 · PROVISIONAL QA-S3E2-02
+**US-S3E2-01-FC7 — Hạn làm trong quá khứ khi giao** · Nguồn: BR-S3E2-03 · PO-66 (QA-S3E2-02)
 - Given: bộ nháp có hạn làm đặt ở quá khứ so với giờ máy chủ
 - When: bấm "Giao"
 - Then: hiện cảnh báo "hạn làm đã qua" và cho tiếp tục nếu giáo viên xác nhận; sau khi giao học sinh thấy chip "Quá hạn" ngay
@@ -203,7 +203,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S3E2-14 | Đổi giờ khi lời giải đã mở là CONFLICT; hai lần đổi chồng nhau là CONFLICT cho lần đến sau. | MVP E1 glossary |
 | BR-S3E2-15 | Chỉ chủ lớp đặt hoặc đổi lịch; học sinh không bao giờ đặt được. | PO-61 |
 
-- **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E2-03.
+- **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E2-03.
 
 ### Tiêu chí chấp nhận
 
@@ -243,7 +243,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: cột cài đặt hiện banner đỏ MSG-S3-21 kèm hai cách sửa "Dời giờ mở sau hạn" và "Giữ giờ mở sớm"; nút "Giao" chờ giáo viên chọn một trong hai; không tự chặn giao
 
 
-**US-S3E2-02-FC2 — Biên cảnh báo: giờ mở bằng đúng hạn thì không cảnh báo** · Nguồn: BR-S3E2-13 · PROVISIONAL QA-S3E2-03
+**US-S3E2-02-FC2 — Biên cảnh báo: giờ mở bằng đúng hạn thì không cảnh báo** · Nguồn: BR-S3E2-13 · PO-66 (QA-S3E2-03)
 - Given: bộ nháp có hạn làm 11/12/2026 20:00 (F-S3-052)
 - When: đặt giờ mở "11/12/2026 20:00" rồi đổi thành "11/12/2026 19:59"
 - Then: với 20:00 không có cảnh báo; với 19:59 hiện MSG-S3-21

@@ -2,7 +2,7 @@ Phiên bản: v0.2 · 2026-11-26
 # S3-E3 — Kết quả lớp (bảng lớp × bài) và "Cả lớp vướng ở đâu" — màn ưu tiên C3-04: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA. Nguồn: `work/s23/story-map-s23.md` (R2 khóa, 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Ch3 (22/11/2026), `Design/s23/DQ.md` và ảnh `c3-*.png` (26/11/2026), `PO-DECISIONS.md` PO-53, PO-61…65. Khi nguồn mâu thuẫn thì PO-61 thắng STAGES.
-> **Trạng thái: ready for R3** (chờ owner ở gate 16, T-261126-16). Mức epic: **P0**. Câu hỏi mở và đề xuất đổi story map ở `questions.md` cùng thư mục.
+> **Trạng thái: ready for R3** (owner đã duyệt R3 theo PO-66, 26/11/2026; ngưỡng số liệu giữ, chỉnh sau L6 (G12)). Mức epic: **P0**. Câu hỏi mở và đề xuất đổi story map ở `questions.md` cùng thư mục.
 
 ## 0. Reader guide and glossary (hướng dẫn đọc và bảng mã)
 
@@ -10,13 +10,13 @@ Phiên bản: v0.2 · 2026-11-26
 
 **Quy ước chung cho mọi AC chặng 3** (kế thừa MVP, nguồn: `epics/E1/stories_ac.md` mục 0; PO-61…65):
 - Mọi mốc giờ lấy từ giờ máy chủ (T0); giờ của thiết bị không được tin. API dùng ISO-8601 UTC; màn hình hiện `HH:mm, dd/MM/yyyy` giờ Việt Nam.
-- Lỗi của máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định: VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN (sai vai), NOT_FOUND (đối tượng không thuộc quan hệ của người gọi; không tiết lộ đối tượng có tồn tại), CONFLICT (xung đột trạng thái), RATE_LIMITED (kèm `Retry-After`), INVALID_CURSOR. Chọn NOT_FOUND thay cho FORBIDDEN với đối tượng ngoài quan hệ là TẠM, QA-S3E1-04.
+- Lỗi của máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định: VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN (sai vai), NOT_FOUND (đối tượng không thuộc quan hệ của người gọi; không tiết lộ đối tượng có tồn tại), CONFLICT (xung đột trạng thái), RATE_LIMITED (kèm `Retry-After`), INVALID_CURSOR. Chọn NOT_FOUND thay cho FORBIDDEN với đối tượng ngoài quan hệ là mặc định đã chốt PO-66, QA-S3E1-04.
 - Quyền theo quan hệ, không theo vai đơn thuần: giáo viên chỉ thấy và tác động lên lớp mình tạo cùng học sinh Đang học của lớp đó; học sinh chỉ thấy bài và dữ liệu của chính mình ở lớp mình Đang học, không thấy kết quả của bạn; hết quan hệ (Đã rời, lớp rời) thì hết quyền. Mã lớp và mã người dùng lấy từ thẻ xác thực hoặc đường dẫn nhưng luôn kiểm quan hệ ở máy chủ (BR-S3E1-50).
 - Chỉ thu và trả về các trường trong danh sách được phép (US-S3E5-03): tên hiển thị, mã người dùng, vai, lớp, bài làm, cờ đã đọc thông báo riêng tư cùng phiên bản văn bản. Không email, điện thoại, ngày sinh, trường, ảnh (PO-61, PO-64). "Dữ liệu trả về" nghĩa là toàn bộ nội dung máy chủ gửi xuống thiết bị, không chỉ phần giao diện vẽ ra.
 - Phản hồi chứa dữ liệu học sinh, lời giải hoặc trạng thái khóa mang tiêu đề `Cache-Control: no-store` (kế thừa D-GEO-145).
 - Thiết bị: giáo viên dùng web trên máy tính, điện thoại chỉ để liếc và quyết nhanh; học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA), PO-65.
 - AI giữ giả lập trong CI (D-GEO-047): không có kỳ vọng nào về chất lượng câu chữ AI thật; không gọi AI thật.
-- AC mang chữ PROVISIONAL dựng trên một giả định chưa được chủ đầu tư xác nhận; mã `QA-S3En-nn` cạnh đó cho biết giả định nào, câu trả lời mặc định ở `questions.md`. Ngưỡng và định dạng mã là đề xuất.
+- AC mang chữ PO-66 (QA-S3En-nn) dựa trên giả định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); mã `QA-S3En-nn` cho biết câu hỏi gốc, câu trả lời ở `questions.md`. Ngưỡng và định dạng mã giữ, chỉnh sau L6 (G12).
 
 | Id / abbreviation | Meaning | Where it comes from (pointer only) |
 |---|---|---|
@@ -24,13 +24,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `BR-S3En-nn` | quy tắc nghiệp vụ của story (nguồn dẫn kèm) | tệp này |
 | `TC-S3En-nn` | test case của epic S3-En | cột No của `test_cases.md` |
 | `F-S3-nnn` | hàng dữ liệu mẫu chung của chặng 3 | mục "Dữ liệu mẫu" của tệp này |
-| `QA-S3En-nn` | câu hỏi mở của epic, kèm mặc định đang dùng (TẠM) | `questions.md` cùng thư mục |
+| `QA-S3En-nn` | câu hỏi mở của epic, kèm mặc định đang dùng (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `PO-nn` | dòng của sổ quyết định gốc: PO-53, PO-61…65 | `PO-DECISIONS.md` |
 | `DQ-nn` | câu hỏi và mặc định của thiết kế chặng 2–3 | `Design/s23/DQ.md` |
 | `M-S3-nn` | chỉ số chặng 3 (M-S3-01…06) | `work/s23/brd-delta-s23.md` §1 |
 | `C3-nn` | mã màn hình chặng 3 | `STAGES-AFTER-MVP.md` Ch3 §6; ảnh ở `Design/s23/c3-*.png` |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (ví dụ D-GEO-047 AI giả lập, D-GEO-185 khóa theo tài khoản) | `work/03_decisions.md` |
-| `GV-…` · `HS-…` · `HK-…` · `RC-…` | mã người dùng giáo viên · học sinh · mã lớp · mã khôi phục (định dạng TẠM, DQ-16, DQ-23) | `Design/s23/DQ.md` |
+| `GV-…` · `HS-…` · `HK-…` · `RC-…` | mã người dùng giáo viên · học sinh · mã lớp · mã khôi phục (định dạng đã chốt PO-66, DQ-16, DQ-23) | `Design/s23/DQ.md` |
 | `release_at` · `due_at` | giờ mở lời giải · hạn làm (chỉ là nhãn, không khóa bài) | `STAGES-AFTER-MVP.md` Ch3 §7, §8 |
 | Chưa đặt giờ · Sắp mở · Đã mở | ba trạng thái giờ mở: chưa có `release_at` (khóa) · giờ máy chủ < `release_at` (khóa) · giờ máy chủ ≥ `release_at` (được xem) | MVP, M-GEO-13 |
 | Chờ duyệt · Đang học · Đã rời · Bị từ chối | trạng thái `ClassMembership` (Bị từ chối là đề xuất của BA, QA-S3E1-02) | tệp này |
@@ -38,9 +38,9 @@ Phiên bản: v0.2 · 2026-11-26
 | Bài làm | một học sinh Đang học có ít nhất một tương tác (gửi đáp số, xin gợi ý hoặc hỏi) trên một đề của bộ; tính theo số học sinh khác nhau | US-S3E3-03, QA-S3E3-02 |
 | T0 · t | giờ máy chủ lúc bắt đầu ca kiểm · giờ máy chủ tại thời điểm xét | mọi mốc giờ là tương đối |
 | `CL-FN-nn` · `CL-UI-nn` · `CL-X-nn` | nhóm kiểm tra chức năng · giao diện và thiết bị · xuyên suốt (ma trận quyền, trường dữ liệu, tải) | `test_design.md` cùng thư mục |
-| PROVISIONAL · ENG · X | kỳ vọng theo giả định chưa xác nhận (kèm mã QA-) · case cần công cụ kỹ thuật · case xuyên suốt | cột Remark |
+| PO-66 · ENG · X | kỳ vọng theo giả định đã chốt PO-66 (kèm mã QA-) · case cần công cụ kỹ thuật · case xuyên suốt | cột Remark |
 | `MSG-S3-nn` | thông điệp hiện cho người dùng của chặng 3, câu chữ ở bảng "Thông điệp" của tệp này | tệp này |
-| `MIN_AGGREGATE` | hằng cấu hình ngưỡng bài làm tối thiểu để gộp nhận định; mặc định 5 (TẠM, PO-65 Q6, QA-S3E3-02) | tệp này |
+| `MIN_AGGREGATE` | hằng cấu hình ngưỡng bài làm tối thiểu để gộp nhận định; mặc định 5 (đã chốt PO-66, PO-65 Q6, QA-S3E3-02) | tệp này |
 
 ### Dữ liệu mẫu chung của chặng 3
 
@@ -95,7 +95,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S3E3-08 | Bộ mặc định là bộ Đã giao mới nhất của lớp; chọn bộ khác đổi cột; bộ Nháp không có bảng. | Ch3 §5 luồng C |
 | BR-S3E3-09 | Bảng hiển thị tối đa 100 hàng mỗi trang, phân trang theo con trỏ; không trả tổng số bản ghi. | D-GEO-142; QA-S3E3-09 |
 
-- **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E3-09.
+- **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E3-09.
 
 ### Tiêu chí chấp nhận
 
@@ -153,7 +153,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: bộ 1 đề có 1 cột; bộ 20 đề có 20 cột, cột "Học sinh" cố định bên trái và các cột đề cuộn ngang được; mọi ô vẫn đọc được trạng thái
 
 
-**US-S3E3-01-SC10 — Lớp 100 học sinh vẫn nằm trong một trang và trong ngưỡng thời gian** · Nguồn: BR-S3E3-09 · PROVISIONAL QA-S3E3-09
+**US-S3E3-01-SC10 — Lớp 100 học sinh vẫn nằm trong một trang và trong ngưỡng thời gian** · Nguồn: BR-S3E3-09 · PO-66 (QA-S3E3-09)
 - Given: dữ liệu thử có một lớp 100 học sinh Đang học và một bộ 20 đề với ô ngẫu nhiên (dữ liệu thử tải, không phải dữ liệu thật)
 - When: gọi API Kết quả lớp 30 lần liên tiếp và đếm câu lệnh truy vấn của mỗi lần
 - Then: mỗi lần trả đủ 100 hàng trong một trang; số câu truy vấn không đổi theo số hàng (không truy vấn lặp theo từng hàng); thời gian xử lý p95 không quá 2 giây (đề xuất)
@@ -213,7 +213,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: hàng Chi Mai chỉ có bốn ô của 11A1; không có tên đề, trạng thái hay tương tác nào của bộ 10B trong thân phản hồi
 
 
-**US-S3E3-01-FC10 — Phân trang theo con trỏ ở lớp trên 100 em** · Nguồn: BR-S3E3-09 · PROVISIONAL QA-S3E3-09
+**US-S3E3-01-FC10 — Phân trang theo con trỏ ở lớp trên 100 em** · Nguồn: BR-S3E3-09 · PO-66 (QA-S3E3-09)
 - Given: một lớp có 101 học sinh Đang học
 - When: gọi trang đầu, rồi gọi trang kế bằng con trỏ nhận được, rồi gọi trang kế với con trỏ đã bị sửa một ký tự
 - Then: trang đầu 100 hàng, trang hai 1 hàng, không trùng hàng; con trỏ bị sửa trả INVALID_CURSOR; không có tổng số bản ghi
@@ -240,7 +240,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S3E3-24 | "Mở bài làm" mở bài của em ở chế độ chỉ đọc, không ghi tương tác. Nút "Nhắn em" của bản mẫu không làm ở chặng 3. | QA-S3E3-03 |
 | BR-S3E3-25 | Câu hỏi tự do của em có thể chứa dữ liệu cá nhân em tự gõ: không lọc ở giao diện giáo viên, không tách thành trường, không ghi nội dung vào nhật ký hệ thống. | PO-61; QA-S3E3-04 |
 
-- **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E3-04.
+- **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E3-04.
 
 ### Tiêu chí chấp nhận
 
@@ -281,7 +281,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Dữ liệu nhập: `<script>alert(1)</script><b>đậm</b>`
 
 
-**US-S3E3-02-FC2 — Câu hỏi rất dài gập gọn nhưng đủ nội dung** · Nguồn: BR-S3E3-20 · PROVISIONAL QA-S3E3-04
+**US-S3E3-02-FC2 — Câu hỏi rất dài gập gọn nhưng đủ nội dung** · Nguồn: BR-S3E3-20 · PO-66 (QA-S3E3-04)
 - Given: Chi Mai hỏi một câu 1000 ký tự ở Đề 3
 - When: bấm ô Chi Mai × Đề 3, rồi bấm "Xem thêm"
 - Then: ban đầu hiện 300 ký tự đầu kèm "Xem thêm"; sau khi bấm hiện đủ 1000 ký tự không bị cắt; khung không vỡ bố cục
@@ -306,7 +306,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: mọi khóa thuộc danh sách được phép của US-S3E5-03 (tên hiển thị, mã người dùng, trạng thái, tương tác, giờ máy chủ); không có email, điện thoại, ngày sinh, trường, ảnh, địa chỉ IP hay mã thiết bị
 
 
-**US-S3E3-02-FC6 — Số điện thoại do em tự gõ trong câu hỏi** · Nguồn: BR-S3E3-25 · PROVISIONAL QA-S3E3-04
+**US-S3E3-02-FC6 — Số điện thoại do em tự gõ trong câu hỏi** · Nguồn: BR-S3E3-25 · PO-66 (QA-S3E3-04)
 - Given: Chi Mai hỏi "Em là Mai, số em 0912345678, cô giải giúp em" ở Đề 3 (F-S3-021)
 - When: bấm ô Chi Mai × Đề 3, rồi kiểm tra nhật ký hệ thống và dữ liệu cơ sở dữ liệu
 - Then: khung hiện đúng nguyên văn câu hỏi; không có trường nào của cơ sở dữ liệu tách số điện thoại ra riêng; nhật ký hệ thống không ghi nội dung câu hỏi
@@ -338,7 +338,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S3E3-38 | Gộp tính lại khi mở màn hoặc bấm "Làm mới"; nếu dữ liệu đầu vào không đổi thì dùng kết quả đã có, không gọi lại bộ gộp. | chi phí AI |
 | BR-S3E3-39 | Chỉ chủ lớp xem; học sinh không có API này. | PO-61 |
 
-- **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E3-02, QA-S3E3-05, QA-S3E3-06, QA-S3E3-10, QA-S3E3-11.
+- **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E3-02, QA-S3E3-05, QA-S3E3-06, QA-S3E3-10, QA-S3E3-11.
 
 ### Tiêu chí chấp nhận
 
@@ -348,19 +348,19 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: có thẻ "Đề 3 · hai mặt phẳng" với đúng câu nhận định trên; nhãn "AI gộp" và "Cần thầy cô xác nhận"; nút "Xem 6 bài làm"; dòng "Cập nhật lúc" có giờ; dòng chú "Chỉ gộp khi đủ 5 bài làm cho một đề"
 
 
-**US-S3E3-03-SC2 — Biên 5: đúng 5 bài làm thì gộp** · Nguồn: BR-S3E3-30; PO-65 (Q6) · PROVISIONAL QA-S3E3-02
+**US-S3E3-03-SC2 — Biên 5: đúng 5 bài làm thì gộp** · Nguồn: BR-S3E3-30; PO-65 (Q6) · PO-66 (QA-S3E3-02)
 - Given: Đề 4 có đúng 5 bài làm: An Xem lại, Huy Đúng, My Đúng, Quân Xem lại, Ngọc Anh Đang làm; bộ gộp giả lập trả một nhận định "Nhiều em quên điều kiện đáy là hình vuông" với 3 bài làm căn cứ (F-S3-051)
 - When: mở Kết quả lớp, rồi xem khung của Đề 4
 - Then: Đề 4 có thẻ nhận định với đúng câu trên và nút "Xem 3 bài làm"; không hiện MSG-S3-43; bộ gộp giả lập được gọi đúng một lần cho Đề 4
 
 
-**US-S3E3-03-SC3 — Biên 4: 4 bài làm thì chỉ dữ liệu thô** · Nguồn: BR-S3E3-30, 34; PO-65 (Q6) · PROVISIONAL QA-S3E3-02
+**US-S3E3-03-SC3 — Biên 4: 4 bài làm thì chỉ dữ liệu thô** · Nguồn: BR-S3E3-30, 34; PO-65 (Q6) · PO-66 (QA-S3E3-02)
 - Given: như AC SC2 nhưng Ngọc Anh chưa mở Đề 4 (chuyển Chưa làm), nên Đề 4 có đúng 4 bài làm (F-S3-051)
 - When: mở Kết quả lớp, rồi xem khung của Đề 4
 - Then: không có thẻ nhận định nào cho Đề 4; hiện MSG-S3-43 với m = 4 ("Mới có 4 trên 5 bài làm…"); hiện danh sách gợi ý và câu hỏi thô gom theo bước, không nhãn "AI gộp"; bộ gộp giả lập không bị gọi cho Đề 4
 
 
-**US-S3E3-03-SC4 — Biên 6: 6 bài làm thì gộp** · Nguồn: BR-S3E3-30 · PROVISIONAL QA-S3E3-02
+**US-S3E3-03-SC4 — Biên 6: 6 bài làm thì gộp** · Nguồn: BR-S3E3-30 · PO-66 (QA-S3E3-02)
 - Given: như AC SC2 nhưng Khánh Linh cũng đã xin một gợi ý ở Đề 4, nên Đề 4 có 6 bài làm (F-S3-051)
 - When: mở Kết quả lớp, rồi xem khung của Đề 4
 - Then: Đề 4 được gộp; không hiện MSG-S3-43; số bài làm là 6
@@ -420,13 +420,13 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: MSG-S3-43 biến mất; Đề 4 hiện nhận định với "Cập nhật lúc 15:31"; ô Ngọc Anh × Đề 4 chuyển Đang làm trên bảng
 
 
-**US-S3E3-03-FC1 — Học sinh Đã rời không tính vào ngưỡng** · Nguồn: BR-S3E3-35 · PROVISIONAL QA-S3E3-06
+**US-S3E3-03-FC1 — Học sinh Đã rời không tính vào ngưỡng** · Nguồn: BR-S3E3-35 · PO-66 (QA-S3E3-06)
 - Given: Đề 4 có 5 bài làm gồm 4 em Đang học và Văn Tú Đã rời (F-S3-028)
 - When: mở Kết quả lớp, rồi xem khung của Đề 4
 - Then: Đề 4 tính 4 bài làm: hiện MSG-S3-43 và dữ liệu thô; bài làm của Văn Tú vẫn có mặt trong bảng với chip "đã rời" nhưng không có trong n của bất kỳ thẻ nào
 
 
-**US-S3E3-03-FC2 — Bộ gộp quá thời gian thì lùi về dữ liệu thô** · Nguồn: BR-S3E3-37 · PROVISIONAL QA-S3E3-11
+**US-S3E3-03-FC2 — Bộ gộp quá thời gian thì lùi về dữ liệu thô** · Nguồn: BR-S3E3-37 · PO-66 (QA-S3E3-11)
 - Given: nhà cung cấp AI giả lập không trả lời trong 10 giây; Đề 3 đủ bài làm (F-S3-051)
 - When: mở Kết quả lớp, rồi chờ, rồi bấm "Thử lại" khi nhà cung cấp trả lời bình thường
 - Then: sau 10 giây khung Đề 3 hiện dữ liệu thô kèm MSG-S3-45 "Chưa gộp được. Thử lại."; bảng lớp × bài vẫn dùng được trong lúc chờ; "Thử lại" hiện thẻ nhận định và xóa MSG-S3-45
@@ -438,7 +438,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: chỉ nhận định có căn cứ hiện thành thẻ; nhận định dẫn bài làm không tồn tại bị loại, không có thẻ rỗng; n của thẻ giữ đúng 3
 
 
-**US-S3E3-03-FC4 — Quá 5 thẻ thì gập phần còn lại** · Nguồn: BR-S3E3-32 · PROVISIONAL QA-S3E3-10
+**US-S3E3-03-FC4 — Quá 5 thẻ thì gập phần còn lại** · Nguồn: BR-S3E3-32 · PO-66 (QA-S3E3-10)
 - Given: bộ gộp giả lập trả 7 nhận định hợp lệ cho một bộ 20 đề
 - When: mở Kết quả lớp, rồi bấm "Còn 2 nhận định khác"
 - Then: lúc đầu hiện đúng 5 thẻ có n lớn nhất; dòng "Còn 2 nhận định khác" mở thêm 2 thẻ còn lại, vẫn theo thứ tự n giảm dần
@@ -456,13 +456,13 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: máy chủ trả FORBIDDEN; bộ gộp giả lập không bị gọi
 
 
-**US-S3E3-03-FC7 — Ngưỡng là cấu hình, không viết cứng** · Nguồn: BR-S3E3-30; PO-65 (Q6) · PROVISIONAL QA-S3E3-02
+**US-S3E3-03-FC7 — Ngưỡng là cấu hình, không viết cứng** · Nguồn: BR-S3E3-30; PO-65 (Q6) · PO-66 (QA-S3E3-02)
 - Given: `MIN_AGGREGATE` đặt bằng 3 trong môi trường thử; Đề 4 có 3 bài làm
 - When: mở Kết quả lớp, rồi đặt lại `MIN_AGGREGATE` bằng 5, rồi mở lại
 - Then: với ngưỡng 3, Đề 4 được gộp; với ngưỡng 5, Đề 4 chỉ dữ liệu thô với MSG-S3-43 ghi "5"; chữ "5" trong câu chú và banner lấy từ cấu hình
 
 
-**US-S3E3-03-FC8 — Chuỗi giống email trong câu hỏi bị che** · Nguồn: BR-S3E3-36 · PROVISIONAL QA-S3E3-05
+**US-S3E3-03-FC8 — Chuỗi giống email trong câu hỏi bị che** · Nguồn: BR-S3E3-36 · PO-66 (QA-S3E3-05)
 - Given: câu hỏi của một em ghi "gửi lời giải vào mai@example.org nhé"; nhà cung cấp AI giả lập ghi lại yêu cầu (F-S3-051)
 - When: kích hoạt gộp Đề 3
 - Then: yêu cầu gửi nhà cung cấp chứa `[đã ẩn]` thay cho địa chỉ email; không chứa `mai@example.org`

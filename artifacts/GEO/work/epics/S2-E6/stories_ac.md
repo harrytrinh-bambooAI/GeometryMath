@@ -12,9 +12,9 @@ Phiên bản: v0.2 · 2026-11-26
 - "T0" là giờ máy chủ lúc bắt đầu ca kiểm; mọi mốc giờ tương đối so với T0. Giờ hiển thị `HH:mm, dd/MM/yyyy` giờ Việt Nam; số thập phân hiển thị dấu phẩy.
 - Lỗi máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định theo D-GEO-143 (VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN, NOT_FOUND, CONFLICT, RATE_LIMITED kèm `Retry-After`).
 - Phản hồi chứa lời giải, gợi ý hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145). "Dữ liệu trả về" là toàn bộ nội dung máy chủ gửi xuống thiết bị, không chỉ phần giao diện vẽ ra.
-- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, TẠM, PO-65).
+- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, PO-65; chốt PO-66).
 - AI trong kiểm thử là giả lập (D-GEO-047): không có kỳ vọng về chất lượng AI thật. Giá trị trong Given / Then lấy từ bảng `FX-nn` hoặc ghi ngay trong tiêu chí.
-- AC mang chữ TẠM dựng trên giả định chưa được owner xác nhận; mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết giả định nào.
+- AC mang chữ "đã chốt PO-66" dựa trên giả định đã được owner chốt ở PO-66 (26/11/2026); mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết câu hỏi gốc.
 
 | Id / abbreviation | Meaning | Where it comes from (pointer only) |
 |---|---|---|
@@ -25,13 +25,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `DQ-nn` | câu hỏi design và mặc định đang dùng | `Design/s23/DQ.md` |
 | `C2-nn` | mã khung màn hình chặng 2 (C2-01…C2-08) | `STAGES-AFTER-MVP.md` Chặng 2 mục 6 |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (mã lỗi ổn định D-GEO-143, mock AI D-GEO-047, tiêu đề no-store D-GEO-145) | `artifacts/GEO/work/03_decisions.md` (MVP) |
-| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định TẠM | `questions.md` cùng thư mục |
+| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `TC-S2En-nnn` | test case của epic | `test_cases.md` cùng thư mục |
 | `FX-nn` | dữ liệu mẫu chặng 2 (bảng dưới) | tệp này |
 | `BG-n` | bài giao mẫu của MVP (BG-1…BG-5) | `artifacts/GEO/work/fixture.md` (MVP) |
 | `BR-GEO-nnn` | quy tắc nghiệp vụ của MVP còn hiệu lực | `artifacts/GEO/work/02_gate2_brd.md` (MVP) |
 | `MSG-GEO-nn` | thông điệp hiện cho người dùng của MVP (câu chữ nguyên văn) | `artifacts/GEO/work/05_dictionary.md` (MVP) |
-| TẠM | giả định đang dùng, chờ owner xác nhận; ghi theo mẫu `TẠM · tin cậy · nguồn` | PO-65 |
+| Đã chốt PO-66 | mặc định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); ghi theo mẫu `quyết định · tin cậy · nguồn`; ngưỡng chỉnh sau L6 (G12) | PO-65, PO-66 |
 | Nhãn hai trục | trục máy: "Đã kiểm chứng" / "Cần xem lại" (chỉ engine gắn) · trục người: "AI soạn" / "Giáo viên đã duyệt" | PO-02 |
 | `release_at` | giờ mở lời giải; máy chủ so giờ máy chủ, không tin giờ thiết bị | MVP, M-GEO-13 |
 | Của tôi | ngăn chứa đề do chính giáo viên tạo hoặc sao chép; chỉ chủ sở hữu thấy | STAGES Ch2 mục 7 |
@@ -45,7 +45,7 @@ Phiên bản: v0.2 · 2026-11-26
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
 | FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
-| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
+| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (đã chốt PO-66, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
 | FX-12 | Đề phẳng PL-03 | Hình chữ nhật ABCD có AB = 6, AD = 8; tính AC. Đáp số 10 |
@@ -63,7 +63,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S2E6-01 | Kho đề có hai ngăn: "Của tôi" (mặc định) và "Kho chung"; mỗi thẻ đề hiện tên, loại hình (Không gian / Phẳng), hai nhãn (PO-02) | STAGES Ch2 mục 6 |
-| BR-S2E6-02 | Lọc theo loại hình: Tất cả, Không gian, Phẳng (dựa trên `Problem.kind`); đổi ngăn thì bộ lọc về "Tất cả" (TẠM, QA-S2E6-02) | STAGES Ch2 mục 6 |
+| BR-S2E6-02 | Lọc theo loại hình: Tất cả, Không gian, Phẳng (dựa trên `Problem.kind`); đổi ngăn thì bộ lọc về "Tất cả" (đã chốt PO-66, QA-S2E6-02) | STAGES Ch2 mục 6 |
 | BR-S2E6-03 | Sắp xếp mới nhất lên đầu; phân trang theo con trỏ: trang 20 đề, tối đa 50 đề một yêu cầu, không trả tổng số bản ghi (kế thừa MVP) | MVP, E1 quy ước phân trang |
 | BR-S2E6-04 | Ba trạng thái: trống (chưa có đề riêng), đang tải, không có kết quả lọc | STAGES Ch2 mục 6 |
 
@@ -135,7 +135,7 @@ Phiên bản: v0.2 · 2026-11-26
 ## US-S2E6-02 — Người soát nội dung duyệt đề vào Kho chung
 
 - **Story:** Là người soát nội dung, tôi muốn xem hàng đợi đề chờ soát và duyệt hoặc từ chối, để Kho chung chỉ có đề đáng tin · Loại UI · Mức P0 · Khung C2-01
-- **Nguồn:** PO-65 (Q9, TẠM · vừa); STAGES Ch2 mục 7
+- **Nguồn:** PO-65 (Q9, Đã chốt PO-66 · vừa); STAGES Ch2 mục 7
 - **Góc nhìn người vận hành:** chặng 2 owner tạm soát (PO-65 Q9) nên số đề ít. Ca đáng kể: gửi đề chưa duyệt; gửi hai lần; người soát tự duyệt đề của mình; từ chối không có lý do.
 - **Phụ thuộc:** US-S2E6-01, S2-E5
 
@@ -143,10 +143,10 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|
 | BR-S2E6-05 | Giáo viên bấm "Đề xuất vào Kho chung" cho đề có trục người "Giáo viên đã duyệt"; đề chưa duyệt không gửi được | STAGES Ch2 mục 7 |
 | BR-S2E6-06 | Trạng thái đề kho: Của tôi, Chờ soát, Đã vào Kho chung, Bị từ chối (kèm lý do); gửi lại khi đang Chờ soát chỉ giữ một yêu cầu | STAGES Ch2 mục 7 |
-| BR-S2E6-07 | Chỉ tài khoản có vai người soát thấy hàng đợi và duyệt hoặc từ chối; vai này do chủ sản phẩm gán (TẠM, QA-S2E6-01); người soát không soát đề của chính mình | PO-65 Q9 |
-| BR-S2E6-08 | Từ chối cần lý do từ 5 đến 500 ký tự (TẠM, QA-S2E6-03) | BR-S2-06 |
-| BR-S2E6-09 | Mỗi giáo viên có tối đa 10 đề đang Chờ soát (TẠM, QA-S2E6-04) | PO-63 |
-| BR-S2E6-10 | Sau khi vào Kho chung, đề trong Kho chung là bản độc lập; giáo viên sửa bản Của tôi không đổi bản Kho chung (TẠM, QA-S2E6-05) | STAGES Ch2 mục 7 |
+| BR-S2E6-07 | Chỉ tài khoản có vai người soát thấy hàng đợi và duyệt hoặc từ chối; vai này do chủ sản phẩm gán (đã chốt PO-66, QA-S2E6-01); người soát không soát đề của chính mình | PO-65 Q9 |
+| BR-S2E6-08 | Từ chối cần lý do từ 5 đến 500 ký tự (đã chốt PO-66, QA-S2E6-03) | BR-S2-06 |
+| BR-S2E6-09 | Mỗi giáo viên có tối đa 10 đề đang Chờ soát (đã chốt PO-66, QA-S2E6-04) | PO-63 |
+| BR-S2E6-10 | Sau khi vào Kho chung, đề trong Kho chung là bản độc lập; giáo viên sửa bản Của tôi không đổi bản Kho chung (đã chốt PO-66, QA-S2E6-05) | STAGES Ch2 mục 7 |
 
 ### Tiêu chí chấp nhận
 
@@ -224,7 +224,7 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|
 | BR-S2E6-11 | Đề Của tôi chỉ chủ sở hữu thấy trên mọi đường: danh sách, chi tiết, tìm, đối chiếu trùng, xuất, hộp duyệt; người soát chỉ thấy đề đang Chờ soát | STAGES Ch2 mục 7 |
 | BR-S2E6-12 | Học sinh của giáo viên chỉ thấy đề qua bài giao, không thấy ngăn Của tôi của giáo viên | STAGES mục 0.2 nguyên tắc 5 |
-| BR-S2E6-13 | Giới hạn thêm đề: tối đa 20 đề trong 60 phút trượt mỗi tài khoản, tính chung mọi đường tạo đề (dán chữ, ảnh, import, sao chép từ Kho chung) (TẠM, QA-S2E3-02) | PO-63 |
+| BR-S2E6-13 | Giới hạn thêm đề: tối đa 20 đề trong 60 phút trượt mỗi tài khoản, tính chung mọi đường tạo đề (dán chữ, ảnh, import, sao chép từ Kho chung) (đã chốt PO-66, QA-S2E3-02) | PO-63 |
 | BR-S2E6-14 | Lời giải đề Kho chung: tài khoản vai Giáo viên xem ngay (không theo giờ mở; chấp nhận rủi ro "giả làm giáo viên", PO-63 đã ghi); tài khoản vai Học sinh không xem lời giải đề Kho chung ngoài bài giao đã mở; học sinh tự học (không lớp) khóa lời giải, chỉ thấy gợi ý. Mở lời giải cho học sinh chỉ qua bài giao (giờ mở của bộ) | PO-63, STAGES mục 0.2 nguyên tắc 1; PO-66 (G2; RV_s23 M-01) |
 
 ### Tiêu chí chấp nhận

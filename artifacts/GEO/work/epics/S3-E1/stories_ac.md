@@ -2,7 +2,7 @@ Phiên bản: v0.2 · 2026-11-26
 # S3-E1 — Lớp, mã lớp, duyệt vào lớp, đặt lại mật khẩu, quyền theo quan hệ: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA. Nguồn: `work/s23/story-map-s23.md` (R2 khóa, 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Ch3 (22/11/2026), `Design/s23/DQ.md` và ảnh `c3-*.png` (26/11/2026), `PO-DECISIONS.md` PO-53, PO-61…65. Khi nguồn mâu thuẫn thì PO-61 thắng STAGES.
-> **Trạng thái: ready for R3** (chờ owner ở gate 16, T-261126-16). Mức epic: **P0**. Câu hỏi mở và đề xuất đổi story map ở `questions.md` cùng thư mục.
+> **Trạng thái: ready for R3** (owner đã duyệt R3 theo PO-66, 26/11/2026; ngưỡng số liệu giữ, chỉnh sau L6 (G12)). Mức epic: **P0**. Câu hỏi mở và đề xuất đổi story map ở `questions.md` cùng thư mục.
 
 ## 0. Reader guide and glossary (hướng dẫn đọc và bảng mã)
 
@@ -10,13 +10,13 @@ Phiên bản: v0.2 · 2026-11-26
 
 **Quy ước chung cho mọi AC chặng 3** (kế thừa MVP, nguồn: `epics/E1/stories_ac.md` mục 0; PO-61…65):
 - Mọi mốc giờ lấy từ giờ máy chủ (T0); giờ của thiết bị không được tin. API dùng ISO-8601 UTC; màn hình hiện `HH:mm, dd/MM/yyyy` giờ Việt Nam.
-- Lỗi của máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định: VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN (sai vai), NOT_FOUND (đối tượng không thuộc quan hệ của người gọi; không tiết lộ đối tượng có tồn tại), CONFLICT (xung đột trạng thái), RATE_LIMITED (kèm `Retry-After`), INVALID_CURSOR. Chọn NOT_FOUND thay cho FORBIDDEN với đối tượng ngoài quan hệ là TẠM, QA-S3E1-04.
+- Lỗi của máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định: VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN (sai vai), NOT_FOUND (đối tượng không thuộc quan hệ của người gọi; không tiết lộ đối tượng có tồn tại), CONFLICT (xung đột trạng thái), RATE_LIMITED (kèm `Retry-After`), INVALID_CURSOR. Chọn NOT_FOUND thay cho FORBIDDEN với đối tượng ngoài quan hệ là mặc định đã chốt PO-66, QA-S3E1-04.
 - Quyền theo quan hệ, không theo vai đơn thuần: giáo viên chỉ thấy và tác động lên lớp mình tạo cùng học sinh Đang học của lớp đó; học sinh chỉ thấy bài và dữ liệu của chính mình ở lớp mình Đang học, không thấy kết quả của bạn; hết quan hệ (Đã rời, lớp rời) thì hết quyền. Mã lớp và mã người dùng lấy từ thẻ xác thực hoặc đường dẫn nhưng luôn kiểm quan hệ ở máy chủ (BR-S3E1-50).
 - Chỉ thu và trả về các trường trong danh sách được phép (US-S3E5-03): tên hiển thị, mã người dùng, vai, lớp, bài làm, cờ đã đọc thông báo riêng tư cùng phiên bản văn bản. Không email, điện thoại, ngày sinh, trường, ảnh (PO-61, PO-64). "Dữ liệu trả về" nghĩa là toàn bộ nội dung máy chủ gửi xuống thiết bị, không chỉ phần giao diện vẽ ra.
 - Phản hồi chứa dữ liệu học sinh, lời giải hoặc trạng thái khóa mang tiêu đề `Cache-Control: no-store` (kế thừa D-GEO-145).
 - Thiết bị: giáo viên dùng web trên máy tính, điện thoại chỉ để liếc và quyết nhanh; học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA), PO-65.
 - AI giữ giả lập trong CI (D-GEO-047): không có kỳ vọng nào về chất lượng câu chữ AI thật; không gọi AI thật.
-- AC mang chữ PROVISIONAL dựng trên một giả định chưa được chủ đầu tư xác nhận; mã `QA-S3En-nn` cạnh đó cho biết giả định nào, câu trả lời mặc định ở `questions.md`. Ngưỡng và định dạng mã là đề xuất.
+- AC mang chữ PO-66 (QA-S3En-nn) dựa trên giả định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); mã `QA-S3En-nn` cho biết câu hỏi gốc, câu trả lời ở `questions.md`. Ngưỡng và định dạng mã giữ, chỉnh sau L6 (G12).
 
 | Id / abbreviation | Meaning | Where it comes from (pointer only) |
 |---|---|---|
@@ -24,13 +24,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `BR-S3En-nn` | quy tắc nghiệp vụ của story (nguồn dẫn kèm) | tệp này |
 | `TC-S3En-nn` | test case của epic S3-En | cột No của `test_cases.md` |
 | `F-S3-nnn` | hàng dữ liệu mẫu chung của chặng 3 | mục "Dữ liệu mẫu" của tệp này |
-| `QA-S3En-nn` | câu hỏi mở của epic, kèm mặc định đang dùng (TẠM) | `questions.md` cùng thư mục |
+| `QA-S3En-nn` | câu hỏi mở của epic, kèm mặc định đang dùng (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `PO-nn` | dòng của sổ quyết định gốc: PO-53, PO-61…65 | `PO-DECISIONS.md` |
 | `DQ-nn` | câu hỏi và mặc định của thiết kế chặng 2–3 | `Design/s23/DQ.md` |
 | `M-S3-nn` | chỉ số chặng 3 (M-S3-01…06) | `work/s23/brd-delta-s23.md` §1 |
 | `C3-nn` | mã màn hình chặng 3 | `STAGES-AFTER-MVP.md` Ch3 §6; ảnh ở `Design/s23/c3-*.png` |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (ví dụ D-GEO-047 AI giả lập, D-GEO-185 khóa theo tài khoản) | `work/03_decisions.md` |
-| `GV-…` · `HS-…` · `HK-…` · `RC-…` | mã người dùng giáo viên · học sinh · mã lớp · mã khôi phục (định dạng TẠM, DQ-16, DQ-23) | `Design/s23/DQ.md` |
+| `GV-…` · `HS-…` · `HK-…` · `RC-…` | mã người dùng giáo viên · học sinh · mã lớp · mã khôi phục (định dạng đã chốt PO-66, DQ-16, DQ-23) | `Design/s23/DQ.md` |
 | `release_at` · `due_at` | giờ mở lời giải · hạn làm (chỉ là nhãn, không khóa bài) | `STAGES-AFTER-MVP.md` Ch3 §7, §8 |
 | Chưa đặt giờ · Sắp mở · Đã mở | ba trạng thái giờ mở: chưa có `release_at` (khóa) · giờ máy chủ < `release_at` (khóa) · giờ máy chủ ≥ `release_at` (được xem) | MVP, M-GEO-13 |
 | Chờ duyệt · Đang học · Đã rời · Bị từ chối | trạng thái `ClassMembership` (Bị từ chối được nhận vào mô hình theo PO-66 G5, đã đóng QA-S3E1-02) | tệp này |
@@ -38,7 +38,7 @@ Phiên bản: v0.2 · 2026-11-26
 | Bài làm | một học sinh Đang học có ít nhất một tương tác (gửi đáp số, xin gợi ý hoặc hỏi) trên một đề của bộ; tính theo số học sinh khác nhau | US-S3E3-03, QA-S3E3-02 |
 | T0 · t | giờ máy chủ lúc bắt đầu ca kiểm · giờ máy chủ tại thời điểm xét | mọi mốc giờ là tương đối |
 | `CL-FN-nn` · `CL-UI-nn` · `CL-X-nn` | nhóm kiểm tra chức năng · giao diện và thiết bị · xuyên suốt (ma trận quyền, trường dữ liệu, tải) | `test_design.md` cùng thư mục |
-| PROVISIONAL · ENG · X | kỳ vọng theo giả định chưa xác nhận (kèm mã QA-) · case cần công cụ kỹ thuật · case xuyên suốt | cột Remark |
+| PO-66 · ENG · X | kỳ vọng theo giả định đã chốt PO-66 (kèm mã QA-) · case cần công cụ kỹ thuật · case xuyên suốt | cột Remark |
 | `MSG-S3-nn` | thông điệp hiện cho người dùng của chặng 3, câu chữ ở bảng "Thông điệp" của tệp này | tệp này |
 
 ### Dữ liệu mẫu chung của chặng 3
@@ -90,9 +90,9 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S3E1-04 | Một giáo viên có tối đa 20 lớp Đang dạy; lớp đã lưu trữ không tính. | QA-S3E1-05 |
 | BR-S3E1-05 | Đặt lại mã lớp làm mã cũ hết hiệu lực ngay; thành viên hiện có không bị ảnh hưởng. | DQ-23 |
 | BR-S3E1-06 | Công tắc "Cho vào lớp bằng mã" tắt thì mã bị từ chối như mã đã khóa; bước "Giáo viên duyệt từng em" là bắt buộc, không có công tắc tắt (chống dò mã lớp). | DQ-23; PO-66 (G4) |
-| BR-S3E1-16 | Lớp MVP đã chuyển ở US-S2E1-04 (lớp 11A1 và học sinh có mã `HS-`) thành lớp theo mô hình chặng 3: chủ lớp là tài khoản `GV-` của "Giáo viên mẫu", sinh mã lớp `HK-`, mỗi học sinh một `ClassMembership` Đang học; lệnh chạy lại được và không chạy trên prod (TẠM, RV_s23 M-02) | PO-61; BR-S2E1-13 |
+| BR-S3E1-16 | Lớp MVP đã chuyển ở US-S2E1-04 (lớp 11A1 và học sinh có mã `HS-`) thành lớp theo mô hình chặng 3: chủ lớp là tài khoản `GV-` của "Giáo viên mẫu", sinh mã lớp `HK-`, mỗi học sinh một `ClassMembership` Đang học; lệnh chạy lại được và không chạy trên prod (đã chốt PO-66, RV_s23 M-02) | PO-61; BR-S2E1-13 |
 
-- **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E1-03, QA-S3E1-05.
+- **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E1-03, QA-S3E1-05.
 
 ### Tiêu chí chấp nhận
 
@@ -141,7 +141,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Dữ liệu nhập: 61 ký tự "A"
 
 
-**US-S3E1-01-FC3 — Năm học sai quy tắc** · Nguồn: BR-S3E1-02; QA-S3E1-03 · PROVISIONAL QA-S3E1-03
+**US-S3E1-01-FC3 — Năm học sai quy tắc** · Nguồn: BR-S3E1-02; QA-S3E1-03 · PO-66 (QA-S3E1-03)
 - Given: cô Lan đang tạo lớp
 - When: nhập Tên lớp "11B4", Năm học "2026–2028", rồi bấm "Tạo lớp"
 - Then: máy chủ trả VALIDATION_FAILED với `details` chỉ ra trường năm học; không tạo lớp
@@ -154,7 +154,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: máy chủ trả FORBIDDEN; không có lớp nào được tạo; trên giao diện học sinh không có nút tạo lớp
 
 
-**US-S3E1-01-FC5 — Chặn quá 20 lớp Đang dạy** · Nguồn: BR-S3E1-04; QA-S3E1-05 · PROVISIONAL QA-S3E1-05
+**US-S3E1-01-FC5 — Chặn quá 20 lớp Đang dạy** · Nguồn: BR-S3E1-04; QA-S3E1-05 · PO-66 (QA-S3E1-05)
 - Given: một giáo viên đã có đúng 20 lớp Đang dạy
 - When: tạo lớp thứ 21
 - Then: máy chủ trả VALIDATION_FAILED với `details` nêu giới hạn 20 lớp; sau khi lưu trữ một lớp, tạo lớp thứ 21 thành công
@@ -187,7 +187,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S3E1-15 | Một học sinh có tối đa một bản ghi Chờ duyệt hoặc Đang học cho mỗi lớp; gửi lặp không tạo thêm. | CL-FN-10 |
 | BR-S3E1-17 | Ngoài giới hạn 10 lần sai/15 phút (BR-S3E1-14), mỗi tài khoản học sinh có giới hạn tổng lượt nhập mã lớp sai: 30 lần trong 24 giờ; chạm ngưỡng thì RATE_LIMITED tới khi lần sai cũ nhất rời cửa sổ 24 giờ. Hai giới hạn cùng hiệu lực, cùng thông điệp MSG-S3-08; đếm theo tài khoản (ngưỡng chỉnh sau L6, PO-66 G12). | PO-66 (G4); RV_s23 M-08 |
 
-- **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E1-02, QA-S3E1-07, QA-S3E1-08.
+- **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E1-02, QA-S3E1-07, QA-S3E1-08.
 
 ### Tiêu chí chấp nhận
 
@@ -218,7 +218,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Dữ liệu nhập: `HK-8M3C`
 
 
-**US-S3E1-02-SC5 — Em đã rời xin vào lại lớp** · Nguồn: Ch3 §8 `ClassMembership` · PROVISIONAL QA-S3E1-02
+**US-S3E1-02-SC5 — Em đã rời xin vào lại lớp** · Nguồn: Ch3 §8 `ClassMembership` · PO-66 (QA-S3E1-02)
 - Given: Văn Tú Đã rời 11A1 (F-S3-028)
 - When: gõ mã `HK-4P7Q`, rồi bấm "Vào lớp"
 - Then: Văn Tú ở trạng thái Chờ duyệt mới; dữ liệu bài làm cũ vẫn nằm ở Kết quả lớp với dấu "đã rời" cho tới khi cô duyệt
@@ -252,7 +252,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Dữ liệu nhập: `HK-4P7Q`
 
 
-**US-S3E1-02-FC5 — Chín lần sai vẫn chưa bị khóa (biên dưới)** · Nguồn: BR-S3E1-14 · PROVISIONAL QA-S3E1-07
+**US-S3E1-02-FC5 — Chín lần sai vẫn chưa bị khóa (biên dưới)** · Nguồn: BR-S3E1-14 · PO-66 (QA-S3E1-07)
 - Given: Thu Hà đã nhập sai mã đúng 9 lần trong 15 phút (F-S3-031)
 - When: nhập lần thứ 10 với mã đúng `HK-4P7Q`
 - Then: yêu cầu được xử lý bình thường, tạo Chờ duyệt, không RATE_LIMITED
@@ -296,7 +296,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S3E1-23 | Cho em rời lớp: trạng thái Đã rời; bài làm cũ giữ nguyên cho giáo viên (dấu "đã rời"); em hết quyền xem bài mới của lớp. | Ch3 §5 ngoại lệ luồng C |
 | BR-S3E1-24 | Một học sinh có thể thuộc nhiều lớp của nhiều giáo viên; mỗi giáo viên chỉ thấy phần thuộc lớp mình. | Ch3 §7 |
 
-- **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E1-02.
+- **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E1-02.
 
 ### Tiêu chí chấp nhận
 
@@ -312,7 +312,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: mỗi dòng hiện tên và mã người dùng của em; chỉ em `HS-9B2L-85VG` thành Đang học, em `HS-7Q8Z-48DF` vẫn Chờ duyệt; không có hộp hỏi ký hiệu phân biệt
 
 
-**US-S3E1-03-SC3 — Từ chối một em** · Nguồn: Ch3 §5; DQ-27 · PROVISIONAL QA-S3E1-02
+**US-S3E1-03-SC3 — Từ chối một em** · Nguồn: Ch3 §5; DQ-27 · PO-66 (QA-S3E1-02)
 - Given: Hoàng Nam `HS-7Q8Z-48DF` Chờ duyệt ở 11A1 (F-S3-030)
 - When: bấm "Từ chối" cạnh em đó
 - Then: dòng biến khỏi Chờ duyệt, trạng thái của em ở 11A1 là Bị từ chối; em không thấy bài của lớp và màn của em hiện câu cho biết chưa vào được lớp, gợi ý hỏi lại giáo viên
@@ -377,7 +377,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S3E1-36 | Không đặt lại được mật khẩu của tài khoản giáo viên; giáo viên tự khôi phục bằng mã khôi phục. | DQ-17; PO-61 |
 | BR-S3E1-37 | Mỗi lần đặt lại thành công ghi một AuditEvent PASSWORD_RESET kèm người thực hiện (chi tiết ở US-S3E5-01). | Ch3 §7 |
 
-- **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E1-11, QA-S3E1-12, QA-S3E1-13.
+- **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E1-11, QA-S3E1-12, QA-S3E1-13.
 
 ### Tiêu chí chấp nhận
 
@@ -399,7 +399,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: không thân phản hồi nào chứa mật khẩu tạm hay giá trị băm của mật khẩu; hộp không thể mở lại; muốn có mật khẩu mới phải đặt lại lần nữa (mật khẩu tạm cũ hết hiệu lực)
 
 
-**US-S3E1-04-SC4 — Em thuộc hai lớp: cả hai giáo viên đều đặt lại được** · Nguồn: Ch3 §7 · PROVISIONAL QA-S3E1-13
+**US-S3E1-04-SC4 — Em thuộc hai lớp: cả hai giáo viên đều đặt lại được** · Nguồn: Ch3 §7 · PO-66 (QA-S3E1-13)
 - Given: Chi Mai Đang học cả 11A1 và 10B (F-S3-041, F-S3-040)
 - When: thầy Khôi đặt lại mật khẩu của Chi Mai ở lớp 10B
 - Then: thành công vì có quan hệ; AuditEvent ghi thầy Khôi là người thực hiện; ở 11A1 cô Lan thấy Chi Mai vẫn Đang học và không có thông tin nào về mật khẩu tạm của thầy Khôi
@@ -435,13 +435,13 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: máy chủ trả NOT_FOUND; mật khẩu của cô Lan không đổi
 
 
-**US-S3E1-04-FC6 — Mật khẩu tạm hết hạn đúng 24 giờ** · Nguồn: BR-S3E1-34 · PROVISIONAL QA-S3E1-11
+**US-S3E1-04-FC6 — Mật khẩu tạm hết hạn đúng 24 giờ** · Nguồn: BR-S3E1-34 · PO-66 (QA-S3E1-11)
 - Given: mật khẩu tạm của Chi Mai sinh lúc T0 (F-S3-021)
 - When: đăng nhập với mật khẩu tạm ở T0 cộng 23 giờ 59 phút, rồi đăng nhập lại với một mật khẩu tạm khác sinh lúc T0 ở T0 cộng 24 giờ 01 phút
 - Then: lần đăng nhập đầu được nhận (rồi buộc đặt mật khẩu mới); lần sau bị từ chối với MSG-S3-05 và không có phiên
 
 
-**US-S3E1-04-FC7 — Đặt lại quá 10 lần trong 1 giờ** · Nguồn: BR-S3E1-35 · PROVISIONAL QA-S3E1-12
+**US-S3E1-04-FC7 — Đặt lại quá 10 lần trong 1 giờ** · Nguồn: BR-S3E1-35 · PO-66 (QA-S3E1-12)
 - Given: cô Lan đã đặt lại thành công 10 lần trong 1 giờ cho các em của 11A1 (F-S3-010)
 - When: đặt lại lần thứ 11 trong cùng giờ
 - Then: máy chủ trả RATE_LIMITED kèm `Retry-After` và MSG-S3-08; không sinh mật khẩu tạm; không có AuditEvent thành công thứ 11
@@ -467,7 +467,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S3E1-53 | Hết quan hệ thì hết quyền ngay ở yêu cầu kế tiếp (Đã rời, Bị từ chối, lớp bị bỏ). | brd-delta §4 |
 | BR-S3E1-54 | Mỗi lần bị từ chối vì quan hệ ghi một sự kiện bảo mật để đếm M-S3-06 (không ghi nội dung). | M-S3-06; QA-S3E5-02 |
 
-- **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E5-02.
+- **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E5-02.
 
 ### Tiêu chí chấp nhận
 
@@ -513,7 +513,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: máy chủ trả INVALID_CURSOR; thân phản hồi không chứa dữ liệu của 10B
 
 
-**US-S3E1-05-FC6 — Mỗi lần từ chối vì quan hệ được ghi để đếm** · Nguồn: BR-S3E1-54; M-S3-06 · PROVISIONAL QA-S3E5-02
+**US-S3E1-05-FC6 — Mỗi lần từ chối vì quan hệ được ghi để đếm** · Nguồn: BR-S3E1-54; M-S3-06 · PO-66 (QA-S3E5-02)
 - Given: bộ đếm sự kiện bảo mật của dữ liệu thử đang bằng 0
 - When: chạy 5 yêu cầu ngoài quan hệ (thầy Khôi gọi 11A1, Bình An gọi API giáo viên, hai yêu cầu đổi mã lớp, một con trỏ lạ)
 - Then: bộ đếm tăng đúng 5; mỗi bản ghi chỉ có loại, mã người gọi, loại đối tượng và giờ máy chủ, không có nội dung yêu cầu

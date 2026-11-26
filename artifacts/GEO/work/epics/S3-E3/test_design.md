@@ -79,7 +79,7 @@ Phiên bản: v0.1 · 2026-11-26
 | CL-X-01 | 03 | làm mới hai lần không đổi dữ liệu | nhà cung cấp giả lập chỉ bị gọi một lần | soát | tích hợp CSDL |
 
 ## Bảng biên ngưỡng gộp (BV-n) cho US-S3E3-03
-`MIN_AGGREGATE` = 5 (TẠM, PO-65 Q6). n là số bài làm của một đề: học sinh Đang học khác nhau có ít nhất một tương tác (gửi đáp số, xin gợi ý, hỏi). Mỗi đề xét riêng.
+`MIN_AGGREGATE` = 5 (đã chốt PO-66, PO-65 Q6). n là số bài làm của một đề: học sinh Đang học khác nhau có ít nhất một tương tác (gửi đáp số, xin gợi ý, hỏi). Mỗi đề xét riêng.
 
 | BV | Tình huống (bộ tuần 15, 11A1) | n của đề | Kết quả mong đợi |
 |---|---|---|---|

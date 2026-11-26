@@ -76,7 +76,7 @@ Phiên bản: v0.1 · 2026-11-26
 | CL-FN-12 | 03 | chấm số 99 và 100 | "99" và "99+" | BVA | tích hợp API |
 | CL-FN-08 | 03 | 45 thông báo | trang 20, 20, 5; con trỏ sửa thì INVALID_CURSOR | BVA | tích hợp API |
 | CL-FN-10 | 03 | sự kiện xử lý hai lần | mỗi em một thông báo, ràng buộc duy nhất chặn bản ghi trùng | đoán lỗi | tích hợp CSDL |
-| CL-FN-09 | 03 | thông báo 89 và 91 ngày tuổi | 91 ngày xóa, 89 còn (TẠM) | BVA | tích hợp CSDL |
+| CL-FN-09 | 03 | thông báo 89 và 91 ngày tuổi | 91 ngày xóa, 89 còn (đã chốt PO-66) | BVA | tích hợp CSDL |
 | CL-X-04 | 03 | gửi tin ngoài (push, email, SMS) | 0 lượt gọi | soát | tích hợp CSDL |
 
 ## Bảng biên cho US-S3E4-02 và US-S3E4-03

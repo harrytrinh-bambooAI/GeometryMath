@@ -67,7 +67,7 @@ Phiên bản: v0.1 · 2026-11-26
 | CL-FN-12 | 02 | xuất bảng tuần 15; tên tệp | đúng hàng, cột, không tổng; tên không tên em | EP | tích hợp API |
 | CL-X-03 | 02 | tên em bắt đầu bằng `=`, `+` | thêm dấu nháy đơn, bảng tính không chạy công thức | đoán lỗi | tích hợp API |
 | CL-X-04 | 02 | mọi ô của tệp xuất | chỉ tên, mã, cờ đã rời, trạng thái | soát | tích hợp API |
-| CL-FN-10 | 02 | xuất lần 10 và 11 trong 1 giờ | lần 11 RATE_LIMITED (TẠM) | BVA | tích hợp API |
+| CL-FN-10 | 02 | xuất lần 10 và 11 trong 1 giờ | lần 11 RATE_LIMITED (đã chốt PO-66) | BVA | tích hợp API |
 | CL-FN-04 | 02 | lưu trữ lớp: mã, em chờ duyệt, học sinh thấy gì, bỏ lưu trữ, giao bộ mới, đặt lại mật khẩu, lịch mở | theo BR-S3E6-14…17 | bảng chuyển trạng thái | E2E trình duyệt, tích hợp API |
 | CL-FN-09 | 03 | giờ nhắc 20:59:59, 21:00:00, 06:00:00 | gửi ngay; hoãn tới 06:00; gửi ngay (bảng biên bên dưới) | BVA | tích hợp CSDL |
 | CL-FN-13 | 03 | nhắc trước 24 giờ cho 4 em chưa xong; 4 em đã xong | đúng 4 em nhận, 4 em không | EP | tích hợp CSDL |

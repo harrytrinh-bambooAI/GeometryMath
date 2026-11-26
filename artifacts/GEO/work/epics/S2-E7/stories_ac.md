@@ -12,9 +12,9 @@ Phiên bản: v0.2 · 2026-11-26
 - "T0" là giờ máy chủ lúc bắt đầu ca kiểm; mọi mốc giờ tương đối so với T0. Giờ hiển thị `HH:mm, dd/MM/yyyy` giờ Việt Nam; số thập phân hiển thị dấu phẩy.
 - Lỗi máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định theo D-GEO-143 (VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN, NOT_FOUND, CONFLICT, RATE_LIMITED kèm `Retry-After`).
 - Phản hồi chứa lời giải, gợi ý hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145). "Dữ liệu trả về" là toàn bộ nội dung máy chủ gửi xuống thiết bị, không chỉ phần giao diện vẽ ra.
-- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, TẠM, PO-65).
+- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, PO-65; chốt PO-66).
 - AI trong kiểm thử là giả lập (D-GEO-047): không có kỳ vọng về chất lượng AI thật. Giá trị trong Given / Then lấy từ bảng `FX-nn` hoặc ghi ngay trong tiêu chí.
-- AC mang chữ TẠM dựng trên giả định chưa được owner xác nhận; mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết giả định nào.
+- AC mang chữ "đã chốt PO-66" dựa trên giả định đã được owner chốt ở PO-66 (26/11/2026); mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết câu hỏi gốc.
 
 | Id / abbreviation | Meaning | Where it comes from (pointer only) |
 |---|---|---|
@@ -25,13 +25,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `DQ-nn` | câu hỏi design và mặc định đang dùng | `Design/s23/DQ.md` |
 | `C2-nn` | mã khung màn hình chặng 2 (C2-01…C2-08) | `STAGES-AFTER-MVP.md` Chặng 2 mục 6 |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (mã lỗi ổn định D-GEO-143, mock AI D-GEO-047, tiêu đề no-store D-GEO-145) | `artifacts/GEO/work/03_decisions.md` (MVP) |
-| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định TẠM | `questions.md` cùng thư mục |
+| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `TC-S2En-nnn` | test case của epic | `test_cases.md` cùng thư mục |
 | `FX-nn` | dữ liệu mẫu chặng 2 (bảng dưới) | tệp này |
 | `BG-n` | bài giao mẫu của MVP (BG-1…BG-5) | `artifacts/GEO/work/fixture.md` (MVP) |
 | `BR-GEO-nnn` | quy tắc nghiệp vụ của MVP còn hiệu lực | `artifacts/GEO/work/02_gate2_brd.md` (MVP) |
 | `MSG-GEO-nn` | thông điệp hiện cho người dùng của MVP (câu chữ nguyên văn) | `artifacts/GEO/work/05_dictionary.md` (MVP) |
-| TẠM | giả định đang dùng, chờ owner xác nhận; ghi theo mẫu `TẠM · tin cậy · nguồn` | PO-65 |
+| Đã chốt PO-66 | mặc định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); ghi theo mẫu `quyết định · tin cậy · nguồn`; ngưỡng chỉnh sau L6 (G12) | PO-65, PO-66 |
 | Nhãn hai trục | trục máy: "Đã kiểm chứng" / "Cần xem lại" (chỉ engine gắn) · trục người: "AI soạn" / "Giáo viên đã duyệt" | PO-02 |
 | `release_at` | giờ mở lời giải; máy chủ so giờ máy chủ, không tin giờ thiết bị | MVP, M-GEO-13 |
 | Trình chiếu | chế độ toàn màn hình của giáo viên để giảng; lời giải che sẵn, hiện từng bước | STAGES Ch2 mục 5 luồng B |
@@ -44,7 +44,7 @@ Phiên bản: v0.2 · 2026-11-26
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
 | FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
-| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
+| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (đã chốt PO-66, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
 | FX-12 | Đề phẳng PL-03 | Hình chữ nhật ABCD có AB = 6, AD = 8; tính AC. Đáp số 10 |
@@ -62,9 +62,9 @@ Phiên bản: v0.2 · 2026-11-26
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S2E7-01 | Vào Trình chiếu từ một đề: toàn màn hình, lời giải che sẵn (0 bước hiện) | STAGES Ch2 mục 5 luồng B |
-| BR-S2E7-02 | "Hiện bước kế" hiện thêm đúng một bước và tô màu phần hình của bước đó; "Bước trước" ẩn một bước; phím mũi tên phải và Space là bước kế, mũi tên trái là bước trước (TẠM, DQ-08) | DQ-08 |
-| BR-S2E7-03 | "Che lời giải" ẩn mọi bước, nhớ vị trí; bấm lần nữa hiện lại tới bước đã hiện (TẠM, DQ-08) | DQ-08 |
-| BR-S2E7-04 | Giáo viên xoay hình, đo, thêm đường phụ và hình đổi ngay; chữ và nét đủ lớn: chữ lời giải không nhỏ hơn 28 điểm ở màn hình 1920 × 1080 (TẠM, QA-S2E7-01) | STAGES Ch2 mục 5 luồng B |
+| BR-S2E7-02 | "Hiện bước kế" hiện thêm đúng một bước và tô màu phần hình của bước đó; "Bước trước" ẩn một bước; phím mũi tên phải và Space là bước kế, mũi tên trái là bước trước (đã chốt PO-66, DQ-08) | DQ-08 |
+| BR-S2E7-03 | "Che lời giải" ẩn mọi bước, nhớ vị trí; bấm lần nữa hiện lại tới bước đã hiện (đã chốt PO-66, DQ-08) | DQ-08 |
+| BR-S2E7-04 | Giáo viên xoay hình, đo, thêm đường phụ và hình đổi ngay; chữ và nét đủ lớn: chữ lời giải không nhỏ hơn 28 điểm ở màn hình 1920 × 1080 (đã chốt PO-66, QA-S2E7-01) | STAGES Ch2 mục 5 luồng B |
 | BR-S2E7-05 | Phím Esc thoát Trình chiếu về C2-03 và che lại lời giải; học sinh không vào được Trình chiếu | STAGES mục 0.2 nguyên tắc 6 |
 | BR-S2E7-06 | Góc màn hình luôn có hai nhãn nhỏ (PO-02) | DQ-07 |
 
@@ -108,7 +108,7 @@ Phiên bản: v0.2 · 2026-11-26
 **US-S2E7-01-BV3 — Lời giải 30 bước chiếu được đủ 30 bước** · Nguồn: BR-S2E7-02
 - Given: Đề có lời giải 30 bước (giới hạn của S2-E5)
 - When: Bấm "Hiện bước kế" 30 lần
-- Then: Cả 30 bước hiện lần lượt; ở lần thứ 31 nút khóa; hiệu năng không giật (chuyển bước dưới 200 ms, TẠM)
+- Then: Cả 30 bước hiện lần lượt; ở lần thứ 31 nút khóa; hiệu năng không giật (chuyển bước dưới 200 ms, đã chốt PO-66)
 
 **US-S2E7-01-FC1 — Esc thoát về C2-03 và che lại lời giải** · Nguồn: BR-S2E7-05
 - Given: Đang chiếu, hiện 2 bước
@@ -153,9 +153,9 @@ Phiên bản: v0.2 · 2026-11-26
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S2E7-07 | Khi vào Trình chiếu tải sẵn đề, hình, mọi bước lời giải; xong thì hiện chip "Đã tải sẵn · mất mạng vẫn chiếu" | DQ-10 |
-| BR-S2E7-08 | Mất mạng giữa giờ: hiện bước, che, xoay, đo vẫn dùng được; nút hỏi đáp AI tạm tắt kèm "Hỏi đáp AI tạm tắt vì mất mạng"; có mạng lại thì tự bật trong 5 giây (TẠM, QA-S2E7-02) | STAGES Ch2 mục 5 ngoại lệ |
+| BR-S2E7-08 | Mất mạng giữa giờ: hiện bước, che, xoay, đo vẫn dùng được; nút hỏi đáp AI tạm tắt kèm "Hỏi đáp AI tạm tắt vì mất mạng"; có mạng lại thì tự bật trong 5 giây (đã chốt PO-66, QA-S2E7-02) | STAGES Ch2 mục 5 ngoại lệ |
 | BR-S2E7-09 | Chưa tải sẵn xong mà mất mạng: không vào chế độ chiếu nửa vời, hiện "Cần mạng để mở lần đầu" và nút "Thử lại" | DQ-10 |
-| BR-S2E7-10 | Thoát Trình chiếu thì xóa dữ liệu lời giải đã tải sẵn khỏi bộ nhớ trình duyệt | STAGES mục 0.2 nguyên tắc 1 (TẠM, QA-S2E7-03) |
+| BR-S2E7-10 | Thoát Trình chiếu thì xóa dữ liệu lời giải đã tải sẵn khỏi bộ nhớ trình duyệt | STAGES mục 0.2 nguyên tắc 1 (đã chốt PO-66, QA-S2E7-03) |
 
 ### Tiêu chí chấp nhận
 

@@ -12,9 +12,9 @@ Phiên bản: v0.2 · 2026-11-26
 - "T0" là giờ máy chủ lúc bắt đầu ca kiểm; mọi mốc giờ tương đối so với T0. Giờ hiển thị `HH:mm, dd/MM/yyyy` giờ Việt Nam; số thập phân hiển thị dấu phẩy.
 - Lỗi máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định theo D-GEO-143 (VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN, NOT_FOUND, CONFLICT, RATE_LIMITED kèm `Retry-After`).
 - Phản hồi chứa lời giải, gợi ý hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145). "Dữ liệu trả về" là toàn bộ nội dung máy chủ gửi xuống thiết bị, không chỉ phần giao diện vẽ ra.
-- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, TẠM, PO-65).
+- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, PO-65; chốt PO-66).
 - AI trong kiểm thử là giả lập (D-GEO-047): không có kỳ vọng về chất lượng AI thật. Giá trị trong Given / Then lấy từ bảng `FX-nn` hoặc ghi ngay trong tiêu chí.
-- AC mang chữ TẠM dựng trên giả định chưa được owner xác nhận; mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết giả định nào.
+- AC mang chữ "đã chốt PO-66" dựa trên giả định đã được owner chốt ở PO-66 (26/11/2026); mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết câu hỏi gốc.
 
 | Id / abbreviation | Meaning | Where it comes from (pointer only) |
 |---|---|---|
@@ -25,17 +25,17 @@ Phiên bản: v0.2 · 2026-11-26
 | `DQ-nn` | câu hỏi design và mặc định đang dùng | `Design/s23/DQ.md` |
 | `C2-nn` | mã khung màn hình chặng 2 (C2-01…C2-08) | `STAGES-AFTER-MVP.md` Chặng 2 mục 6 |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (mã lỗi ổn định D-GEO-143, mock AI D-GEO-047, tiêu đề no-store D-GEO-145) | `artifacts/GEO/work/03_decisions.md` (MVP) |
-| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định TẠM | `questions.md` cùng thư mục |
+| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `TC-S2En-nnn` | test case của epic | `test_cases.md` cùng thư mục |
 | `FX-nn` | dữ liệu mẫu chặng 2 (bảng dưới) | tệp này |
 | `BG-n` | bài giao mẫu của MVP (BG-1…BG-5) | `artifacts/GEO/work/fixture.md` (MVP) |
 | `BR-GEO-nnn` | quy tắc nghiệp vụ của MVP còn hiệu lực | `artifacts/GEO/work/02_gate2_brd.md` (MVP) |
 | `MSG-GEO-nn` | thông điệp hiện cho người dùng của MVP (câu chữ nguyên văn) | `artifacts/GEO/work/05_dictionary.md` (MVP) |
-| TẠM | giả định đang dùng, chờ owner xác nhận; ghi theo mẫu `TẠM · tin cậy · nguồn` | PO-65 |
+| Đã chốt PO-66 | mặc định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); ghi theo mẫu `quyết định · tin cậy · nguồn`; ngưỡng chỉnh sau L6 (G12) | PO-65, PO-66 |
 | Nhãn hai trục | trục máy: "Đã kiểm chứng" / "Cần xem lại" (chỉ engine gắn) · trục người: "AI soạn" / "Giáo viên đã duyệt" | PO-02 |
 | `release_at` | giờ mở lời giải; máy chủ so giờ máy chủ, không tin giờ thiết bị | MVP, M-GEO-13 |
 | `ProblemVariant` | biến thể của một đề gốc: bộ số liệu mới sinh từ đề gốc và đáp số do engine tính lại | STAGES Ch2 mục 8 |
-| liên kết chỉ xem | địa chỉ ngẫu nhiên không đoán được cho phép xem đề và hình, không đăng nhập, không ghi, có hạn dùng và thu hồi được (TẠM) | STAGES Ch2 mục 4 P1 |
+| liên kết chỉ xem | địa chỉ ngẫu nhiên không đoán được cho phép xem đề và hình, không đăng nhập, không ghi, có hạn dùng và thu hồi được (đã chốt PO-66) | STAGES Ch2 mục 4 P1 |
 
 ### Dữ liệu mẫu chặng 2 (`FX-nn`)
 
@@ -44,7 +44,7 @@ Phiên bản: v0.2 · 2026-11-26
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
 | FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
-| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
+| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (đã chốt PO-66, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
 | FX-12 | Đề phẳng PL-03 | Hình chữ nhật ABCD có AB = 6, AD = 8; tính AC. Đáp số 10 |
@@ -62,8 +62,8 @@ Phiên bản: v0.2 · 2026-11-26
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S2E9-01 | Biến thể giữ cấu trúc đề gốc; chỉ đổi số liệu trong ràng buộc; đáp số tính lại bằng engine (không gọi AI); hình dựng lại | STAGES Ch2 mục 3 ý 7 |
-| BR-S2E9-02 | Mỗi lần tạo 1 đến 10 biến thể (TẠM, QA-S2E9-02); bộ số liệu mới khác đề gốc và khác nhau đôi một; không đủ bộ khả dĩ thì trả ít hơn kèm thông báo | BR-S2-09 |
-| BR-S2E9-03 | Số mới nằm từ 1 đến 100, tối đa 1 chữ số thập phân, số nguyên nếu gốc là số nguyên; mọi bộ sinh ra phải dựng được hình thỏa ràng buộc | BR-S2E2-06 (TẠM, QA-S2E9-02) |
+| BR-S2E9-02 | Mỗi lần tạo 1 đến 10 biến thể (đã chốt PO-66, QA-S2E9-02); bộ số liệu mới khác đề gốc và khác nhau đôi một; không đủ bộ khả dĩ thì trả ít hơn kèm thông báo | BR-S2-09 |
+| BR-S2E9-03 | Số mới nằm từ 1 đến 100, tối đa 1 chữ số thập phân, số nguyên nếu gốc là số nguyên; mọi bộ sinh ra phải dựng được hình thỏa ràng buộc | BR-S2E2-06 (đã chốt PO-66, QA-S2E9-02) |
 | BR-S2E9-04 | Sinh theo hạt giống lưu kèm biến thể: cùng đề gốc và cùng hạt giống cho cùng bộ số | BR-S2-09 |
 | BR-S2E9-05 | Đề không có tham số số (thuần chữ) hoặc thuộc dạng thiết diện động bị từ chối "chưa hỗ trợ" | PO-65 Q7 |
 | BR-S2E9-06 | Biến thể nằm ngăn "Của tôi", nhãn máy "Cần xem lại" và nhãn người "AI soạn" tới khi duyệt; mỗi biến thể tính một đề vào giới hạn thêm đề (US-S2E6-03) | PO-02, PO-63 |
@@ -149,7 +149,7 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|
 | BR-S2E9-07 | Xuất PNG (một đề) hoặc PDF (1 đến 20 đề) gồm đề và hình; "Kèm lời giải" mặc định tắt và chỉ bật được khi lời giải là "Giáo viên đã duyệt"; bản có lời giải in cả hai nhãn | STAGES Ch2 mục 4 P1, PO-02 |
 | BR-S2E9-08 | Xuất kèm lời giải cho đề đang giao mà lời giải còn khóa phải xác nhận "File xuất có lời giải, lớp có thể thấy nếu giáo viên chia sẻ. Vẫn xuất?" | STAGES mục 0.2 nguyên tắc 1 |
-| BR-S2E9-09 | Liên kết chỉ xem: mã ngẫu nhiên không đoán được (tối thiểu 128 bit); hạn 1, 7 hoặc 30 ngày (mặc định 7); thu hồi được; tối đa 5 liên kết đang hoạt động mỗi đề (TẠM, QA-S2E9-03) | STAGES Ch2 mục 4 P1 |
+| BR-S2E9-09 | Liên kết chỉ xem: mã ngẫu nhiên không đoán được (tối thiểu 128 bit); hạn 1, 7 hoặc 30 ngày (mặc định 7); thu hồi được; tối đa 5 liên kết đang hoạt động mỗi đề (đã chốt PO-66, QA-S2E9-03) | STAGES Ch2 mục 4 P1 |
 | BR-S2E9-10 | Người mở liên kết chỉ thấy chữ đề và hình; không lời giải, không tên hay mã người dùng của giáo viên, không thao tác ghi; mã sai, hết hạn hay đã thu hồi cùng một thông báo | PO-61, STAGES mục 0.2 nguyên tắc 5 |
 
 ### Tiêu chí chấp nhận
@@ -241,8 +241,8 @@ Phiên bản: v0.2 · 2026-11-26
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E9-11 | Câu trắc nghiệm có từ 2 đến 5 lựa chọn; đúng 1 lựa chọn đúng; mỗi lựa chọn 1 đến 100 ký tự và không trùng nhau sau khi chuẩn hóa chữ | STAGES Ch2 mục 4 P1 (TẠM, QA-S2E9-04) |
-| BR-S2E9-12 | Câu trắc nghiệm mặc định 1 lượt thử (giáo viên đặt từ 1 đến số lựa chọn trừ 1); chọn sai trừ một lượt và lựa chọn đó bị làm mờ, không chọn lại | BR-S2E8-07 (TẠM, QA-S2E9-04) |
+| BR-S2E9-11 | Câu trắc nghiệm có từ 2 đến 5 lựa chọn; đúng 1 lựa chọn đúng; mỗi lựa chọn 1 đến 100 ký tự và không trùng nhau sau khi chuẩn hóa chữ | STAGES Ch2 mục 4 P1 (đã chốt PO-66, QA-S2E9-04) |
+| BR-S2E9-12 | Câu trắc nghiệm mặc định 1 lượt thử (giáo viên đặt từ 1 đến số lựa chọn trừ 1); chọn sai trừ một lượt và lựa chọn đó bị làm mờ, không chọn lại | BR-S2E8-07 (đã chốt PO-66, QA-S2E9-04) |
 | BR-S2E9-13 | Học sinh chọn một lựa chọn rồi bấm "Kiểm tra"; chưa chọn thì nút khóa; bàn phím toán ẩn ở câu trắc nghiệm và hiện ở câu điền | DQ-11 |
 | BR-S2E9-14 | Dữ liệu trả về cho học sinh chứa lựa chọn nhưng không có cờ lựa chọn đúng; phản hồi Sai không nói lựa chọn nào đúng; không có nút "Em nghĩ đáp số này đúng" ở câu trắc nghiệm | STAGES mục 0.2 nguyên tắc 1, BR-S2E8-30 |
 

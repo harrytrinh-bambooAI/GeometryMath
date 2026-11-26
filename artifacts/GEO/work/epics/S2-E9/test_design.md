@@ -67,7 +67,7 @@ Manual chỉ khi cần mắt người (bố cục thiết bị, cảm giác thao
 
 - Tiêu chí: 44 · Case: 44 · Tiêu chí chưa có case: 0.
 - Dữ liệu mẫu dùng chung `FX-nn` ở `test_cases.md`; không dùng dữ liệu thật của người dùng (PO-61: không thu dữ liệu cá nhân).
-- Quyết định và giả định đang dùng: xem `questions.md` (cột mặc định TẠM).
+- Quyết định và giả định đang dùng: xem `questions.md` (cột quyết định).
 
 ## 7. Lịch sử
 

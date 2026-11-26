@@ -12,9 +12,9 @@ Phiên bản: v0.2 · 2026-11-26
 - "T0" là giờ máy chủ lúc bắt đầu ca kiểm; mọi mốc giờ tương đối so với T0. Giờ hiển thị `HH:mm, dd/MM/yyyy` giờ Việt Nam; số thập phân hiển thị dấu phẩy.
 - Lỗi máy chủ có dạng `{code, message, requestId, details[]}`; `code` ổn định theo D-GEO-143 (VALIDATION_FAILED, UNAUTHENTICATED, FORBIDDEN, NOT_FOUND, CONFLICT, RATE_LIMITED kèm `Retry-After`).
 - Phản hồi chứa lời giải, gợi ý hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145). "Dữ liệu trả về" là toàn bộ nội dung máy chủ gửi xuống thiết bị, không chỉ phần giao diện vẽ ra.
-- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, TẠM, PO-65).
+- Thiết bị theo PO-61 và STAGES mục 0.2: giáo viên dùng web (điện thoại chỉ để liếc); học sinh dùng iPad (chính) và iPhone (phụ) qua trình duyệt (PWA, PO-65; chốt PO-66).
 - AI trong kiểm thử là giả lập (D-GEO-047): không có kỳ vọng về chất lượng AI thật. Giá trị trong Given / Then lấy từ bảng `FX-nn` hoặc ghi ngay trong tiêu chí.
-- AC mang chữ TẠM dựng trên giả định chưa được owner xác nhận; mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết giả định nào.
+- AC mang chữ "đã chốt PO-66" dựa trên giả định đã được owner chốt ở PO-66 (26/11/2026); mã `QA-S2En-nn` hoặc `DQ-nn` đứng cạnh cho biết câu hỏi gốc.
 
 | Id / abbreviation | Meaning | Where it comes from (pointer only) |
 |---|---|---|
@@ -25,13 +25,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `DQ-nn` | câu hỏi design và mặc định đang dùng | `Design/s23/DQ.md` |
 | `C2-nn` | mã khung màn hình chặng 2 (C2-01…C2-08) | `STAGES-AFTER-MVP.md` Chặng 2 mục 6 |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (mã lỗi ổn định D-GEO-143, mock AI D-GEO-047, tiêu đề no-store D-GEO-145) | `artifacts/GEO/work/03_decisions.md` (MVP) |
-| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định TẠM | `questions.md` cùng thư mục |
+| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `TC-S2En-nnn` | test case của epic | `test_cases.md` cùng thư mục |
 | `FX-nn` | dữ liệu mẫu chặng 2 (bảng dưới) | tệp này |
 | `BG-n` | bài giao mẫu của MVP (BG-1…BG-5) | `artifacts/GEO/work/fixture.md` (MVP) |
 | `BR-GEO-nnn` | quy tắc nghiệp vụ của MVP còn hiệu lực | `artifacts/GEO/work/02_gate2_brd.md` (MVP) |
 | `MSG-GEO-nn` | thông điệp hiện cho người dùng của MVP (câu chữ nguyên văn) | `artifacts/GEO/work/05_dictionary.md` (MVP) |
-| TẠM | giả định đang dùng, chờ owner xác nhận; ghi theo mẫu `TẠM · tin cậy · nguồn` | PO-65 |
+| Đã chốt PO-66 | mặc định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); ghi theo mẫu `quyết định · tin cậy · nguồn`; ngưỡng chỉnh sau L6 (G12) | PO-65, PO-66 |
 | Nhãn hai trục | trục máy: "Đã kiểm chứng" / "Cần xem lại" (chỉ engine gắn) · trục người: "AI soạn" / "Giáo viên đã duyệt" | PO-02 |
 | `release_at` | giờ mở lời giải; máy chủ so giờ máy chủ, không tin giờ thiết bị | MVP, M-GEO-13 |
 | bốn bước | đọc đề, dựng hình, giải, kiểm chứng; mỗi bước có trạng thái chờ / đang chạy / xong / lỗi | STAGES Ch2 mục 5 luồng A |
@@ -44,7 +44,7 @@ Phiên bản: v0.2 · 2026-11-26
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
 | FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
-| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
+| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (đã chốt PO-66, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
 | FX-12 | Đề phẳng PL-03 | Hình chữ nhật ABCD có AB = 6, AD = 8; tính AC. Đáp số 10 |
@@ -61,11 +61,11 @@ Phiên bản: v0.2 · 2026-11-26
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E3-01 | Thêm đề là một màn có hai tab "Dán chữ" và "Tải ảnh" (TẠM, DQ-01) | DQ-01 |
-| BR-S2E3-02 | Đề dán từ 10 đến 2000 ký tự sau khi cắt khoảng trắng đầu cuối (TẠM, QA-S2E3-01); ngoài khoảng đó không cho bấm "Dựng hình" | BR-S2-03 |
+| BR-S2E3-01 | Thêm đề là một màn có hai tab "Dán chữ" và "Tải ảnh" (đã chốt PO-66, DQ-01) | DQ-01 |
+| BR-S2E3-02 | Đề dán từ 10 đến 2000 ký tự sau khi cắt khoảng trắng đầu cuối (đã chốt PO-66, QA-S2E3-01); ngoài khoảng đó không cho bấm "Dựng hình" | BR-S2-03 |
 | BR-S2E3-03 | Chữ hiển thị luôn là văn bản thuần: thẻ HTML và lệnh script được hiện nguyên chữ, không thực thi | D-GEO-143 |
 | BR-S2E3-04 | Đề đang gõ được lưu thành nháp chữ trên máy chủ; rời màn rồi quay lại vẫn thấy | DQ-03 |
-| BR-S2E3-05 | Mỗi tài khoản thêm tối đa 20 đề mỗi giờ; quá thì RATE_LIMITED (TẠM, QA-S2E3-02; luật chung ở US-S2E6-03) | PO-63 |
+| BR-S2E3-05 | Mỗi tài khoản thêm tối đa 20 đề mỗi giờ; quá thì RATE_LIMITED (đã chốt PO-66, QA-S2E3-02; luật chung ở US-S2E6-03) | PO-63 |
 
 ### Tiêu chí chấp nhận
 
@@ -120,16 +120,16 @@ Phiên bản: v0.2 · 2026-11-26
 ## US-S2E3-02 — Thêm đề bằng ảnh; ô chưa chắc tô để giáo viên sửa
 
 - **Story:** Là giáo viên, tôi muốn chụp hoặc tải ảnh đề và sửa chỗ máy đọc chưa chắc, để không phải gõ lại cả đề · Loại UI · Mức P0 · Khung C2-02
-- **Nguồn:** PO-65 (Q4, TẠM · vừa); PO-27; PO-38; DQ-02
+- **Nguồn:** PO-65 (Q4, Đã chốt PO-66 · vừa); PO-27; PO-38; DQ-02
 - **Góc nhìn người vận hành:** ảnh chụp bằng điện thoại, hay mờ, nghiêng, có chữ viết tay. Ca đáng kể: ảnh quá lớn; sai định dạng; máy đọc được 80 % rồi chắc chắn thiếu 20 %; ảnh trắng không có chữ.
 - **Phụ thuộc:** S2-E1
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S2E3-06 | Tải một ảnh mỗi lần, định dạng JPG hoặc PNG, tối đa 5 MB (5 242 880 byte) (TẠM, QA-S2E3-03) | PO-27, BR-S2-03 |
+| BR-S2E3-06 | Tải một ảnh mỗi lần, định dạng JPG hoặc PNG, tối đa 5 MB (5 242 880 byte) (đã chốt PO-66, QA-S2E3-03) | PO-27, BR-S2-03 |
 | BR-S2E3-07 | Máy đọc ảnh bằng Claude vision (giả lập trong kiểm thử); ô có độ tin cậy dưới 0,80 tô vàng; từ 0,80 trở lên không tô | PO-65 Q4, DQ-02 |
 | BR-S2E3-08 | Nút "Xác nhận chữ và dựng tiếp" mở khi mọi ô vàng đã được sửa hoặc bấm "đúng"; nhãn máy giữ "Cần xem lại" (PO-38); chưa xác nhận thì vẫn lưu được nháp | DQ-02, PO-38 |
-| BR-S2E3-09 | Không giữ ảnh gốc sau khi chữ được xác nhận; ảnh lưu tạm bị xóa siêu dữ liệu (vị trí, thiết bị) ngay lúc tải (TẠM, QA-S2E3-04) | PO-61 |
+| BR-S2E3-09 | Không giữ ảnh gốc sau khi chữ được xác nhận; ảnh lưu tạm bị xóa siêu dữ liệu (vị trí, thiết bị) ngay lúc tải (đã chốt PO-66, QA-S2E3-04) | PO-61 |
 | BR-S2E3-10 | Ảnh không đọc được chữ nào thì yêu cầu giáo viên gõ lại phần thiếu, máy không tự đoán | STAGES Ch2 mục 5 ngoại lệ |
 
 ### Tiêu chí chấp nhận
@@ -202,7 +202,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S2E3-11 | Bốn bước chạy tuần tự: Đọc đề, Dựng hình, Giải, Kiểm chứng; mỗi bước có trạng thái chờ, đang chạy, xong, lỗi; bước lỗi dừng các bước sau | STAGES Ch2 mục 5 |
-| BR-S2E3-12 | Mỗi bước có hạn 30 giây (TẠM, QA-S2E3-05); quá hạn thì bước lỗi TIMEOUT, có nút "Thử lại bước này", kết quả các bước đã xong được giữ | D-GEO-143 |
+| BR-S2E3-12 | Mỗi bước có hạn 30 giây (đã chốt PO-66, QA-S2E3-05); quá hạn thì bước lỗi TIMEOUT, có nút "Thử lại bước này", kết quả các bước đã xong được giữ | D-GEO-143 |
 | BR-S2E3-13 | Tác vụ dựng chạy ở máy chủ; đóng tab rồi mở lại thấy đúng tiến trình; bấm "Dựng hình" hai lần chỉ tạo một tác vụ | BR-S2-03 |
 | BR-S2E3-14 | Kết quả cuối: hình, lời giải nháp, nhãn hai trục. Trục người "AI soạn". Trục máy "Đã kiểm chứng" chỉ khi bước Kiểm chứng đạt, ngược lại "Cần xem lại" | PO-02, PO-30 |
 
@@ -267,8 +267,8 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|
 | BR-S2E3-15 | Engine không dựng được: đề lưu với nhãn máy "Cần xem lại · hình do AI dựng"; ba lối đi: bổ sung điều kiện, dựng tay, lưu nháp chữ (nháp chữ chưa giao được) | DQ-03, STAGES Ch2 mục 5 |
 | BR-S2E3-16 | Đề "Cần xem lại · hình do AI dựng" muốn giao bài phải bấm xác nhận riêng ở lúc giao | STAGES Ch2 mục 5 ngoại lệ |
-| BR-S2E3-17 | Ba đáp số: do đề ghi, do AI giải, do máy tính lại. Khớp khi hai đáp số bằng nhau về giá trị (dạng viết tương đương tính là bằng) với dung sai tuyệt đối 0,01 (TẠM, QA-S2E3-06) | DQ-04 |
-| BR-S2E3-18 | Còn lệch thì nút Duyệt khóa; ba cách xử lý: dùng đáp số máy, sửa đáp số đề ghi, sửa bước giải rồi kiểm lại; mọi cách đều kiểm lại và chỉ mở Duyệt khi ba đáp số khớp (TẠM, QA-S2E3-06) | DQ-04, STAGES mục 0.2 nguyên tắc 2 |
+| BR-S2E3-17 | Ba đáp số: do đề ghi, do AI giải, do máy tính lại. Khớp khi hai đáp số bằng nhau về giá trị (dạng viết tương đương tính là bằng) với dung sai tuyệt đối 0,01 (đã chốt PO-66, QA-S2E3-06) | DQ-04 |
+| BR-S2E3-18 | Còn lệch thì nút Duyệt khóa; ba cách xử lý: dùng đáp số máy, sửa đáp số đề ghi, sửa bước giải rồi kiểm lại; mọi cách đều kiểm lại và chỉ mở Duyệt khi ba đáp số khớp (đã chốt PO-66, QA-S2E3-06) | DQ-04, STAGES mục 0.2 nguyên tắc 2 |
 
 ### Tiêu chí chấp nhận
 

@@ -16,13 +16,13 @@ Phiên bản: v0.2 · 2026-11-26
 | `DQ-nn` | câu hỏi design và mặc định đang dùng | `Design/s23/DQ.md` |
 | `C2-nn` | mã khung màn hình chặng 2 (C2-01…C2-08) | `STAGES-AFTER-MVP.md` Chặng 2 mục 6 |
 | `D-GEO-nnn` | quyết định của MVP còn hiệu lực (mã lỗi ổn định D-GEO-143, mock AI D-GEO-047, tiêu đề no-store D-GEO-145) | `artifacts/GEO/work/03_decisions.md` (MVP) |
-| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định TẠM | `questions.md` cùng thư mục |
+| `QA-S2En-nn` | câu hỏi mở của epic, luôn kèm mặc định (đã chốt PO-66) | `questions.md` cùng thư mục |
 | `TC-S2En-nnn` | test case của epic | `test_cases.md` cùng thư mục |
 | `FX-nn` | dữ liệu mẫu chặng 2 (bảng dưới) | tệp này |
 | `BG-n` | bài giao mẫu của MVP (BG-1…BG-5) | `artifacts/GEO/work/fixture.md` (MVP) |
 | `BR-GEO-nnn` | quy tắc nghiệp vụ của MVP còn hiệu lực | `artifacts/GEO/work/02_gate2_brd.md` (MVP) |
 | `MSG-GEO-nn` | thông điệp hiện cho người dùng của MVP (câu chữ nguyên văn) | `artifacts/GEO/work/05_dictionary.md` (MVP) |
-| TẠM | giả định đang dùng, chờ owner xác nhận; ghi theo mẫu `TẠM · tin cậy · nguồn` | PO-65 |
+| Đã chốt PO-66 | mặc định đã được chủ đầu tư chốt ở PO-66 (26/11/2026); ghi theo mẫu `quyết định · tin cậy · nguồn`; ngưỡng chỉnh sau L6 (G12) | PO-65, PO-66 |
 | Nhãn hai trục | trục máy: "Đã kiểm chứng" / "Cần xem lại" (chỉ engine gắn) · trục người: "AI soạn" / "Giáo viên đã duyệt" | PO-02 |
 | `release_at` | giờ mở lời giải; máy chủ so giờ máy chủ, không tin giờ thiết bị | MVP, M-GEO-13 |
 | Trình chiếu | chế độ toàn màn hình của giáo viên để giảng; lời giải che sẵn, hiện từng bước | STAGES Ch2 mục 5 luồng B |
@@ -35,7 +35,7 @@ Phiên bản: v0.2 · 2026-11-26
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
 | FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
-| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
+| FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (đã chốt PO-66, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
 | FX-12 | Đề phẳng PL-03 | Hình chữ nhật ABCD có AB = 6, AD = 8; tính AC. Đáp số 10 |
@@ -71,7 +71,7 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S2E7-005 | Xoay hình, đo, thêm đường phụ thì hình đổi ngay | Medium | Normal (Success case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Giáo viên Cô Trang (FX-01) | • Đang trình chiếu đề FX-14 | — | 1. Kéo xoay hình; đo đoạn AC; thêm đường phụ nối A với trung điểm BC | • Hình xoay theo tay kéo; đo hiện giá trị của AC; đường phụ vẽ ngay; các thao tác không đổi dữ liệu đề đã lưu | US-S2E7-01-SC5; STAGES Ch2 mục 5 luồng B |
 | TC-S2E7-006 | Ở bước cuối nút Hiện bước kế khóa | High | Boundary (Edge case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Giáo viên Cô Trang (FX-01) | • Lời giải 4 bước, đang hiện cả 4 | — | 1. Bấm "Hiện bước kế" thêm một lần; nhấn → | • Nút khóa kèm "Hết bước"; phím → không đổi gì; vẫn 4 bước hiện | US-S2E7-01-BV1; BR-S2E7-02 |
 | TC-S2E7-007 | Ở bước 0 nút Bước trước khóa | High | Boundary (Edge case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Giáo viên Cô Trang (FX-01) | • Mới vào Trình chiếu (0 bước hiện) | — | 1. Bấm "Bước trước"; nhấn ← | • Nút khóa; không đổi gì | US-S2E7-01-BV2; BR-S2E7-02 |
-| TC-S2E7-008 | Lời giải 30 bước chiếu được đủ 30 bước | Medium | Boundary (Edge case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Giáo viên Cô Trang (FX-01) | • Đề có lời giải 30 bước (giới hạn của S2-E5) | — | 1. Bấm "Hiện bước kế" 30 lần | • Cả 30 bước hiện lần lượt; ở lần thứ 31 nút khóa; hiệu năng không giật (chuyển bước dưới 200 ms, TẠM) | US-S2E7-01-BV3; BR-S2E7-02 |
+| TC-S2E7-008 | Lời giải 30 bước chiếu được đủ 30 bước | Medium | Boundary (Edge case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Giáo viên Cô Trang (FX-01) | • Đề có lời giải 30 bước (giới hạn của S2-E5) | — | 1. Bấm "Hiện bước kế" 30 lần | • Cả 30 bước hiện lần lượt; ở lần thứ 31 nút khóa; hiệu năng không giật (chuyển bước dưới 200 ms, đã chốt PO-66) | US-S2E7-01-BV3; BR-S2E7-02 |
 | TC-S2E7-009 | Esc thoát về C2-03 và che lại lời giải | High | Failure (Error case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Giáo viên Cô Trang (FX-01) | • Đang chiếu, hiện 2 bước | — | 1. Nhấn Esc; bấm "Trình chiếu" lại | • Về C2-03; vào lại thấy 0 bước hiện (che sẵn) | US-S2E7-01-FC1; BR-S2E7-05 |
 | TC-S2E7-010 | Trình duyệt từ chối toàn màn hình vẫn chiếu được | Medium | Failure (Error case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Giáo viên Cô Trang (FX-01) | • Trình duyệt chặn toàn màn hình | — | 1. Bấm "Trình chiếu" | • Hiện bố cục cửa sổ lớn lấp đầy trang kèm dòng "Trình duyệt không cho toàn màn hình, nhấn F11"; mọi nút hoạt động | US-S2E7-01-FC2; BR-S2E7-01 |
 | TC-S2E7-011 | Học sinh không vào được Trình chiếu | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01) | • Học sinh An | — | 1. An gọi trang và dữ liệu của Trình chiếu | • FORBIDDEN; không bước lời giải nào trả về | US-S2E7-01-FC3; BR-S2E7-05; STAGES mục 0.2 nguyên tắc 6 |
