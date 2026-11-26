@@ -33,7 +33,7 @@ Phiên bản: v0.2 · 2026-11-26
 | `GV-…` · `HS-…` · `HK-…` · `RC-…` | mã người dùng giáo viên · học sinh · mã lớp · mã khôi phục (định dạng TẠM, DQ-16, DQ-23) | `Design/s23/DQ.md` |
 | `release_at` · `due_at` | giờ mở lời giải · hạn làm (chỉ là nhãn, không khóa bài) | `STAGES-AFTER-MVP.md` Ch3 §7, §8 |
 | Chưa đặt giờ · Sắp mở · Đã mở | ba trạng thái giờ mở: chưa có `release_at` (khóa) · giờ máy chủ < `release_at` (khóa) · giờ máy chủ ≥ `release_at` (được xem) | MVP, M-GEO-13 |
-| Chờ duyệt · Đang học · Đã rời · Bị từ chối | trạng thái `ClassMembership` (Bị từ chối là đề xuất của BA, QA-S3E1-02) | tệp này |
+| Chờ duyệt · Đang học · Đã rời · Bị từ chối | trạng thái `ClassMembership` (Bị từ chối được nhận vào mô hình theo PO-66 G5, đã đóng QA-S3E1-02) | tệp này |
 | Đúng · Xem lại · Đang làm · Chưa làm | bốn trạng thái ô của bảng lớp × bài (nghĩa ở US-S3E3-01) | `Design/s23/c3-04-ket-qua-lop.png`, DQ-21 |
 | Bài làm | một học sinh Đang học có ít nhất một tương tác (gửi đáp số, xin gợi ý hoặc hỏi) trên một đề của bộ; tính theo số học sinh khác nhau | US-S3E3-03, QA-S3E3-02 |
 | T0 · t | giờ máy chủ lúc bắt đầu ca kiểm · giờ máy chủ tại thời điểm xét | mọi mốc giờ là tương đối |
@@ -89,7 +89,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S3E1-03 | Mã lớp dạng `HK-` cộng 4 ký tự chữ hoa hoặc số, bỏ ký tự dễ nhầm (0, O, 1, I); duy nhất toàn hệ thống; sinh ở máy chủ. | DQ-23; QA-S3E1-03 |
 | BR-S3E1-04 | Một giáo viên có tối đa 20 lớp Đang dạy; lớp đã lưu trữ không tính. | QA-S3E1-05 |
 | BR-S3E1-05 | Đặt lại mã lớp làm mã cũ hết hiệu lực ngay; thành viên hiện có không bị ảnh hưởng. | DQ-23 |
-| BR-S3E1-06 | Công tắc "Cho vào lớp bằng mã" tắt thì mã bị từ chối như mã đã khóa; công tắc "Giáo viên duyệt từng em" bật mặc định. | DQ-23 |
+| BR-S3E1-06 | Công tắc "Cho vào lớp bằng mã" tắt thì mã bị từ chối như mã đã khóa; bước "Giáo viên duyệt từng em" là bắt buộc, không có công tắc tắt (chống dò mã lớp). | DQ-23; PO-66 (G4) |
 | BR-S3E1-16 | Lớp MVP đã chuyển ở US-S2E1-04 (lớp 11A1 và học sinh có mã `HS-`) thành lớp theo mô hình chặng 3: chủ lớp là tài khoản `GV-` của "Giáo viên mẫu", sinh mã lớp `HK-`, mỗi học sinh một `ClassMembership` Đang học; lệnh chạy lại được và không chạy trên prod (TẠM, RV_s23 M-02) | PO-61; BR-S2E1-13 |
 
 - **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E1-03, QA-S3E1-05.
@@ -180,18 +180,19 @@ Phiên bản: v0.2 · 2026-11-26
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S3E1-10 | Chỉ tài khoản vai Học sinh nhập mã lớp; mã chuẩn hóa: bỏ khoảng trắng, chữ hoa; máy chủ suy ra lớp từ mã. | DQ-27 |
-| BR-S3E1-11 | Mã đúng và lớp nhận người mới: tạo `ClassMembership` Chờ duyệt (khi "Giáo viên duyệt từng em" bật) hoặc Đang học (khi tắt). | DQ-23 |
+| BR-S3E1-11 | Mã đúng và lớp nhận người mới: tạo `ClassMembership` Chờ duyệt; không có đường vào thẳng Đang học, mọi em phải được chủ lớp duyệt. | DQ-23; PO-66 (G4) |
 | BR-S3E1-12 | Trong lúc Chờ duyệt, học sinh không thấy bài của lớp nhưng vẫn dùng Tự học. | DQ-27; PO-65 (Q9) |
 | BR-S3E1-13 | Mã sai, mã cũ sau khi đặt lại và mã bị khóa cùng một thông điệp, không nói lớp có tồn tại hay không. | PO-61; chống dò mã |
 | BR-S3E1-14 | Nhập sai 10 lần trong 15 phút theo tài khoản học sinh thì RATE_LIMITED; đếm theo tài khoản, không theo mã lớp. | PO-53; D-GEO-185; QA-S3E1-07 |
 | BR-S3E1-15 | Một học sinh có tối đa một bản ghi Chờ duyệt hoặc Đang học cho mỗi lớp; gửi lặp không tạo thêm. | CL-FN-10 |
+| BR-S3E1-17 | Ngoài giới hạn 10 lần sai/15 phút (BR-S3E1-14), mỗi tài khoản học sinh có giới hạn tổng lượt nhập mã lớp sai: 30 lần trong 24 giờ; chạm ngưỡng thì RATE_LIMITED tới khi lần sai cũ nhất rời cửa sổ 24 giờ. Hai giới hạn cùng hiệu lực, cùng thông điệp MSG-S3-08; đếm theo tài khoản (ngưỡng chỉnh sau L6, PO-66 G12). | PO-66 (G4); RV_s23 M-08 |
 
 - **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E1-02, QA-S3E1-07, QA-S3E1-08.
 
 ### Tiêu chí chấp nhận
 
 **US-S3E1-02-SC1 — Nhập mã đúng, vào trạng thái Chờ duyệt** · Nguồn: Ch3 §5 luồng A; DQ-27
-- Given: Hoàng Nam đã đăng nhập vai Học sinh và chưa thuộc lớp nào (F-S3-030); lớp 11A1 bật "Cho vào lớp bằng mã" và "Giáo viên duyệt từng em" (F-S3-010)
+- Given: Hoàng Nam đã đăng nhập vai Học sinh và chưa thuộc lớp nào (F-S3-030); lớp 11A1 bật "Cho vào lớp bằng mã" (F-S3-010)
 - When: mở Vào lớp, rồi gõ mã `HK-4P7Q`, rồi bấm "Vào lớp"
 - Then: hiện màn chờ với MSG-S3-02; lớp 11A1 hiện 3 em Chờ duyệt (F-S3-030…032) ở màn của cô Lan; Hoàng Nam không thấy bộ bài nào của 11A1 và vẫn mở được Tự học
 - Dữ liệu nhập: `HK-4P7Q`
@@ -210,10 +211,10 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: ở màn của cô Lan vẫn đúng một dòng chờ duyệt của Hoàng Nam `HS-7Q8Z-48DF`; học sinh thấy lại MSG-S3-02, không báo lỗi
 
 
-**US-S3E1-02-SC4 — Lớp tắt "Giáo viên duyệt từng em" thì vào thẳng Đang học** · Nguồn: DQ-23; BR-S3E1-11 · PROVISIONAL QA-S3E1-08
-- Given: lớp 11A2 tắt "Giáo viên duyệt từng em" (F-S3-011); Thu Hà chưa thuộc lớp nào (F-S3-031)
-- When: gõ mã `HK-8M3C`, rồi bấm "Vào lớp"
-- Then: Thu Hà ở trạng thái Đang học ngay và thấy bài của 11A2; lớp 11A2 có 4 em Đang học, không có dòng chờ duyệt
+**US-S3E1-02-SC4 — Mọi lớp bắt buộc giáo viên duyệt: mã đúng luôn vào Chờ duyệt** · Nguồn: DQ-23; BR-S3E1-11; PO-66 (G4)
+- Given: lớp 11A2 (F-S3-011) có 3 em Đang học; Thu Hà chưa thuộc lớp nào (F-S3-031)
+- When: gõ mã `HK-8M3C`, rồi bấm "Vào lớp"; rồi gọi API cập nhật lớp 11A2 với tham số tắt bước duyệt
+- Then: Thu Hà ở trạng thái Chờ duyệt, chưa thấy bài của 11A2; lớp 11A2 vẫn 3 em Đang học và có một dòng chờ duyệt; API không nhận tham số tắt duyệt (VALIDATION_FAILED)
 - Dữ liệu nhập: `HK-8M3C`
 
 
@@ -244,7 +245,7 @@ Phiên bản: v0.2 · 2026-11-26
 - Dữ liệu nhập: `HK-4P7Q`
 
 
-**US-S3E1-02-FC4 — Dò mã: quá 10 lần sai trong 15 phút theo tài khoản** · Nguồn: BR-S3E1-14; PO-53 · PROVISIONAL QA-S3E1-07
+**US-S3E1-02-FC4 — Dò mã: quá 10 lần sai trong 15 phút theo tài khoản** · Nguồn: BR-S3E1-14; PO-53; PO-66
 - Given: Thu Hà đã nhập sai mã 10 lần trong 15 phút (F-S3-031); đồng hồ máy chủ ở T0
 - When: nhập lần thứ 11 với mã đúng `HK-4P7Q` ở T0 cộng 14 phút, rồi nhập lại ở T0 cộng 16 phút
 - Then: lần 11 bị RATE_LIMITED kèm `Retry-After` và MSG-S3-08, không tạo bản ghi dù mã đúng; lần sau 16 phút vào được bình thường; đếm theo tài khoản, đổi mã lớp đích không reset bộ đếm
@@ -257,6 +258,16 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: yêu cầu được xử lý bình thường, tạo Chờ duyệt, không RATE_LIMITED
 - Dữ liệu nhập: `HK-4P7Q`
 
+
+**US-S3E1-02-FC8 — Dò mã chậm: đủ 30 lần sai trong 24 giờ thì khóa theo tổng lượt** · Nguồn: BR-S3E1-17; PO-66 (G4)
+- Given: Thu Hà đã nhập sai 30 lần trong 24 giờ, mỗi 15 phút dưới 10 lần nên chưa chạm giới hạn ngắn (F-S3-031)
+- When: nhập lần thứ 31 với mã đúng `HK-4P7Q`; nhập lại sau khi lần sai cũ nhất đã quá 24 giờ
+- Then: Lần 31 bị RATE_LIMITED với MSG-S3-08, không tạo bản ghi dù mã đúng; lần sau vào được bình thường; đổi mã lớp đích không reset bộ đếm
+
+**US-S3E1-02-BV1 — 29 lần sai trong 24 giờ chưa bị khóa theo tổng lượt (biên dưới)** · Nguồn: BR-S3E1-17; PO-66 (G4)
+- Given: Thu Hà đã nhập sai 29 lần trong 24 giờ, không lúc nào quá 9 lần trong 15 phút (F-S3-031)
+- When: nhập lần thứ 30 với mã đúng `HK-4P7Q`
+- Then: Yêu cầu được xử lý bình thường, tạo Chờ duyệt, không RATE_LIMITED
 
 **US-S3E1-02-FC6 — Em đã Đang học lớp này nhập lại mã** · Nguồn: BR-S3E1-15
 - Given: Bình An đang Đang học 11A1 (F-S3-020)
@@ -442,9 +453,9 @@ Phiên bản: v0.2 · 2026-11-26
 - Then: hộp đóng; mật khẩu của Chi Mai không đổi; không có AuditEvent mới; phiên của Chi Mai không bị đăng xuất
 
 
-## US-S3E1-05 — Quyền theo quan hệ giáo viên, lớp, học sinh (xuyên suốt, đề xuất thêm)
+## US-S3E1-05 — Quyền theo quan hệ giáo viên, lớp, học sinh (xuyên suốt; nhận vào chặng 3 theo PO-66 G5)
 - **Story:** Là chủ sản phẩm, tôi muốn mọi API và màn của chặng 3 chỉ cho người dùng thấy dữ liệu thuộc quan hệ của họ, để giáo viên không thấy học sinh lớp khác và học sinh không thấy bài hay kết quả của bạn. · Loại Xuyên suốt · P0 · Độ khó 4
-- **Nguồn:** story map (story đề xuất thêm theo quy tắc cắt "một story xuyên suốt cho quyền", QA-S3E1-14); STAGES Ch3 §7 ý 1; brd-delta §4 "Quyền theo quan hệ"; PO-61; chỉ số M-S3-06 (ngưỡng 0)
+- **Nguồn:** story map (story thêm theo quy tắc cắt "một story xuyên suốt cho quyền", chủ đầu tư nhận vào chặng 3 ở PO-66 G5, đã đóng QA-S3E1-14); STAGES Ch3 §7 ý 1; brd-delta §4 "Quyền theo quan hệ"; PO-61; chỉ số M-S3-06 (ngưỡng 0)
 - **Góc nhìn người vận hành (M18):** rủi ro lớn nhất của chặng 3 là lộ dữ liệu trẻ em giữa các lớp. Ca đáng kể: đổi mã lớp hoặc mã học sinh trên đường dẫn, dùng con trỏ phân trang của lớp khác, học sinh thử gọi API của giáo viên, em thuộc hai lớp.
 - **Phụ thuộc:** US-S3E1-01…04; áp lên mọi story S3-E2…E6.
 

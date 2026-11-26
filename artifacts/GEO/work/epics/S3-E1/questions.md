@@ -13,8 +13,8 @@ Phiên bản: v0.2 · 2026-11-26
 | QA-S3E1-04 | Đối tượng ngoài quan hệ trả NOT_FOUND hay FORBIDDEN? | NOT_FOUND để không lộ đối tượng tồn tại; sai vai FORBIDDEN. TẠM · cao · an toàn dữ liệu trẻ em | Mọi AC phân quyền của S3 | PO, ARCH |
 | QA-S3E1-05 | Giới hạn số lớp Đang dạy mỗi giáo viên? | 20 lớp; lớp lưu trữ không tính. TẠM · thấp · chống lạm dụng, PO-63 | US-S3E1-01 FC5; US-S3E6-02 FC6 | PO |
 | QA-S3E1-06 | Câu chữ MSG-S3-01…08 do ai duyệt? | BA đề xuất, Designer duyệt ở vòng sau. TẠM · cao | Mọi AC dẫn MSG-S3- | Designer |
-| QA-S3E1-07 | Ngưỡng dò mã lớp: 10 lần sai/15 phút theo tài khoản học sinh (theo mẫu PO-53)? | Giữ 10/15; đếm theo tài khoản. TẠM · vừa · PO-53, D-GEO-185 | US-S3E1-02 FC4, FC5 | PO, ARCH |
-| QA-S3E1-08 | Khi tắt "Giáo viên duyệt từng em", học sinh vào thẳng Đang học (DQ-23)? | Có. TẠM · vừa · DQ-23 | US-S3E1-02 SC4 | PO |
+| QA-S3E1-07 | Ngưỡng dò mã lớp: 10 lần sai/15 phút theo tài khoản học sinh (theo mẫu PO-53)? | Giữ 10/15 và thêm tổng 30 lần/24 giờ; đếm theo tài khoản. Đã chốt PO-66 (G4), ngưỡng chỉnh sau L6 (G12) · PO-53, D-GEO-185 | US-S3E1-02 FC4, FC5 | PO, ARCH |
+| QA-S3E1-08 | Khi tắt "Giáo viên duyệt từng em", học sinh vào thẳng Đang học (DQ-23)? | Không còn công tắc tắt: duyệt bắt buộc (chống dò mã). Đã chốt PO-66 (G4) · DQ-23 | US-S3E1-02 SC4 | PO |
 | QA-S3E1-09 | Duyệt, từ chối, cho rời có cần AuditEvent không (STAGES chỉ nêu mở sớm, đổi giờ, đặt lại mật khẩu)? | Không ở chặng 3; đề xuất owner cân nhắc cho "cho rời lớp". TẠM · vừa · Ch3 §7 | US-S3E1-03 | PO |
 | QA-S3E1-10 | Định dạng mật khẩu tạm? | 8 ký tự chữ thường và số, bỏ ký tự dễ nhầm, hiện nhóm 3-3-2. TẠM · vừa · DQ-26 | US-S3E1-04 SC1 | Designer, ARCH |
 | QA-S3E1-11 | Mật khẩu tạm hết hạn sau bao lâu? | 24 giờ. TẠM · thấp · chưa có nguồn | US-S3E1-04 FC6 | PO |
