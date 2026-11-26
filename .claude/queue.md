@@ -293,7 +293,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Model: opus · Ngân sách: 2.5 giờ
 - Phụ thuộc: T-261126-17
 
-## T-261126-43 · FIX · L5 Dev ổn định môi trường + e2e chập chờn · epic-common v1.3 · wt fix-43 · ‖50 · 1.5h/4M · Redis dev-up, test chờ theo trạng thái, giới hạn worker [todo]
+## T-261126-43 · FIX · L5 Dev ổn định môi trường + e2e chập chờn · epic-common v1.3 · wt fix-43 · ‖50 · 1.5h/4M · Redis dev-up, test chờ theo trạng thái, giới hạn worker [done]
 - Mục tiêu: (a) `app/scripts/dev-up.sh` chờ Redis/PG nhận kết nối (ping lặp có hạn giờ) trước khi kiểm thư mục cổng; (b) làm chắc các test trượt khi máy tải cao: TC-GEO-0428 (`e4/hints.ui.spec.ts`), TC-GEO-0485 (`e4/inherit.ui.spec.ts`), TC-GEO-0102 (`e1/student-join.ui.spec.ts`), TC-GEO-0218 (`e2/labels.ui.spec.ts`), TC-GEO-0617 (`e6/assign.ui.spec.ts`) — chờ theo trạng thái/phản hồi API thay vì thời gian, không nới assertion; (c) `GEO_E2E_WORKERS` (mặc định = nửa số lõi, tối thiểu 2) trong playwright.config, ghi README; không bật retries để che lỗi
 - Nguồn: inbox "FIX sau T-41" (26/11); log kiểm lại T-41 (tải máy 36–43, mỗi lượt trượt test khác nhau)
 - Xong khi: verify + web-build xanh; `make up` từ sạch 3 lần đạt; e2e 2 lượt 0 trượt
