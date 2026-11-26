@@ -102,7 +102,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Kiểm: `cd .claude/worktrees/s2-e1/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E1`
 - Ngoài phạm vi: lớp/mã lớp/duyệt (S3-E1), engine, tắt luồng đăng nhập MVP
 - Model: opus · Ngân sách: 3.5 giờ
-- Phụ thuộc: T-261126-41, T-261126-50
+- Phụ thuộc: T-261126-41 (gộp sau T-50; trước khi kiểm cuối: git merge worktree-mvp-wave0)
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/iam/|app/server/src/test/java/vn/geo/server/(it/s2e1|iam)/|app/server/src/main/resources/db/migration/V1[12][0-9]__|app/web/src/(features/s2e1|shared/auth)/|app/e2e/tests/s2e1/|app/db/seed/(e2e/80[0-9]_|fixture-ids\.d/s2e1)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E1/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W4
 ## T-261126-19 · S2-E2 · L5 Dev · epic-common v1.3 · wt s2-e2 · ‖18 · 5h/14M · Khung môn học + hình phẳng + bench-s2 [todo]
@@ -112,7 +112,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Kiểm: `cd .claude/worktrees/s2-e2/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E2" && make bench-s2 && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E2`
 - Ngoài phạm vi: iam, kho đề, bài luyện, grade dạng tương đương (21)
 - Model: opus · Ngân sách: 5 giờ
-- Phụ thuộc: T-261126-41, T-261126-50
+- Phụ thuộc: T-261126-41 (gộp sau T-50; trước khi kiểm cuối: git merge worktree-mvp-wave0)
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(subject|geometry|content)/|app/server/src/main/resources/(content/plane/|db/migration/V1[34][0-9]__)|app/server/src/test/java/vn/geo/server/(it/s2e2|subject|geometry|content)/|app/docs/SCENE-CONTRACT-2D\.md|app/web/src/(features/s2e2|shared/scene2d)/|app/web/package(-lock)?\.json|app/server/pom\.xml|app/e2e/tests/s2e2/|app/db/seed/(e2e/81[0-9]_|fixture-ids\.d/s2e2)|app/scripts/bench-s2\.sh|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E2/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W4
 ## T-261126-20 · S2-E5 · L5 Dev · epic-common v1.3 · wt s2-e5 · ‖21 · 4h/10M · Duyệt lời giải có phiên bản + StepCheck [todo]
@@ -302,6 +302,16 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phạm vi tệp: ^(app/scripts/(dev-up|dev-down|env|e2e)\.sh|app/e2e/tests/(e1|e2|e4|e6)/|app/e2e/playwright\.config\.ts|app/e2e/support/|app/README\.md|app/\.env\.ports)
 - Model: opus · Ngân sách: 1.5 giờ · Cổng: FIX W4 54649 · 6699 · 8124 · 5204
 - Phụ thuộc: T-261126-41
+
+## T-261126-44 · FIX · L5 Dev theme hoàn thiện · epic-common v1.3 · wt fix-44 · 1.5h/3M · Màu cứng → token, chữ D ≥ 14 px, sql-lint user_preference [todo]
+- Mục tiêu: (1) đăng ký `user_preference` trong `app/server/quality/sql-lint.properties` (tenant.tables / owner.user_preference=settings, dùng khóa hậu tố dưới mốc task); (2) thay 26 màu cứng ở `app/web/src/features/{e2,e4,e5,e6}/*.css` + `shared/viewer/viewer.css` bằng token; chữ dùng `--pri-t` (không dùng `--pri` làm màu chữ) để đạt AA ở cả 4 theme; (3) theme D: chữ phụ ≥ 14 px (PO-66 G17), chỉnh bố cục MVP nếu tràn; ảnh 4 theme chụp lại
+- Nguồn: báo cáo T-50 (26/11) câu mở 1–3; `Design/styles/` (STYLES.md, contrast.js)
+- Xong khi: verify + web-build + e2e 2 lượt xanh; `grep -rEc '#[0-9A-Fa-f]{3,8}' app/web/src/features/e{2,4,5,6} app/web/src/shared/viewer` = 0 (trừ comment); ảnh 4 theme mới trong `artifacts/GEO/evidence/theme/`
+- Kiểm: `cd .claude/worktrees/fix-44/app && make verify && make web-build && make e2e && make e2e && ! grep -rEn '#[0-9A-Fa-f]{3,8}\b' web/src/features/e2 web/src/features/e4 web/src/features/e5 web/src/features/e6 web/src/shared/viewer --include=*.css`
+- Ngoài phạm vi: tính năng; tệp của task 18/19 (iam/, features/s2e1, s2e2, geometry/)
+- Phạm vi tệp: ^(app/web/src/(features/(e[1-7]|settings)|shared/(viewer|ui|theme)|styles)/|app/server/quality/sql-lint\.properties|app/e2e/tests/(theme|e[1-7])/|artifacts/GEO/evidence/theme/|app/\.env\.ports)
+- Model: opus · Ngân sách: 1.5 giờ · Cổng: FIX W4 54649 · 6699 · 8124 · 5204 (sau khi T-43 gộp)
+- Phụ thuộc: T-261126-50, T-261126-43
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
