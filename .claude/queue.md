@@ -125,7 +125,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-18, T-261126-19, T-261126-45
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(geometry/internal/stepcheck|content)/|app/server/src/main/resources/db/migration/V1[67][0-9]__|app/server/src/test/java/vn/geo/server/(it/s2e5|geometry|content)/|app/web/src/features/s2e5/|app/e2e/tests/s2e5/|app/db/seed/(e2e/82[0-9]_|fixture-ids\.d/s2e5)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E5/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W5
-## T-261126-21 · S2-E8 · L5 Dev · epic-common v1.3 · wt s2-e8 · ‖20 · 5h/12M · Bài luyện điền đáp số + mô hình bộ bài chung [todo]
+## T-261126-21 · S2-E8 · L5 Dev · epic-common v1.3 · wt s2-e8 · ‖20 · 5h/12M · Bài luyện điền đáp số + mô hình bộ bài chung [running]
 - Mục tiêu: US-S2E8-01…05: C2-06/07/08, bàn phím toán, grade dạng tương đương (subject/internal/grade), assignment_set/item đủ cột cho S3 + item giao sinh hàng assignment MVP (PLAN A4, PO-66 G1), practice_attempt (A5), khóa đáp số tới giờ mở, nút "Em nghĩ đáp số này đúng"; giao cho lớp mẫu 11A1
 - Nguồn: epics/S2-E8 (ebec17a 26/11); PLAN_code-s23 v1.0 §1 A4–A5; STAGES Ch2 §5 luồng C, §7; PO-66 G1
 - Xong khi: như 18 (gồm spec *.p0m.ui.spec.ts điện thoại) + bench-mvp không lùi
@@ -303,7 +303,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Model: opus · Ngân sách: 1.5 giờ · Cổng: FIX W4 54649 · 6699 · 8124 · 5204
 - Phụ thuộc: T-261126-41
 
-## T-261126-44 · FIX · L5 Dev theme hoàn thiện · epic-common v1.3 · wt fix-44 · 1.5h/3M · Màu cứng → token, chữ D ≥ 14 px, font toán ở theme C, sql-lint user_preference [running]
+## T-261126-44 · FIX · L5 Dev theme hoàn thiện · epic-common v1.3 · wt fix-44 · 1.5h/3M · Màu cứng → token, chữ D ≥ 14 px, font toán ở theme C, sql-lint user_preference [done]
 - Mục tiêu: (1) đăng ký `user_preference` trong `app/server/quality/sql-lint.properties` (tenant.tables / owner.user_preference=settings, dùng khóa hậu tố dưới mốc task); (2) thay 26 màu cứng ở `app/web/src/features/{e2,e4,e5,e6}/*.css` + `shared/viewer/viewer.css` bằng token; chữ dùng `--pri-t` (không dùng `--pri` làm màu chữ) để đạt AA ở cả 4 theme; (3) theme D: chữ phụ ≥ 14 px (PO-66 G17); (4) theme C mặc định (Bad Script): mọi nội dung toán ở màn MVP E1–E7 (đề, đáp số, bàn phím toán, bảng số, nhãn hình 3D) dùng `--font-math`/`data-math`, kiểm bố cục không tràn với chữ tay; ảnh 4 theme chụp lại
 - Nguồn: báo cáo T-50 (26/11) câu mở 1–3; `Design/styles/` (STYLES.md, contrast.js)
 - Xong khi: verify + web-build + e2e 2 lượt xanh; `grep -rEc '#[0-9A-Fa-f]{3,8}' app/web/src/features/e{2,4,5,6} app/web/src/shared/viewer` = 0 (trừ comment); ảnh 4 theme mới trong `artifacts/GEO/evidence/theme/`

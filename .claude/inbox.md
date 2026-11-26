@@ -178,3 +178,15 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo T-41 (26/11).
 - **Xong khi:** `make up` từ trạng thái sạch đạt 3 lần liên tiếp; e2e tổng quan /gv không có dòng feature rỗng.
 - **Ngoài phạm vi:** tính năng.
+
+## Việc: câu mở sau T-44 (theme) và T-45 (regression) · ghi 26/11/2026 tối
+- **Mục tiêu:** đóng các điểm còn mở hai agent báo.
+  1. [Design] `--org` làm màu chữ chỉ 3,7:1 ở theme A (`.gv-chip`, `.gv-sol text`) → cấp token `--org-t`.
+  2. [PO/Design] `--fs-rail` 12 px (nhãn thanh dọc) < 14 px ở cả 4 theme: G17 có áp cho nhãn này không.
+  3. [Design] theme C: chip "Đáp số khớp tính toán", mã đề HKG-01, tiêu đề bước giải vẫn chữ tay.
+  4. [Dev/QC] kiểm font toán + tràn bằng máy mới phủ Kho đề + Chi tiết đề (giáo viên 1440×900); màn học sinh và điện thoại chưa đo.
+  5. [Dev] `make traceability` chỉ đọc lượt e2e mới nhất: chạy sau smoke thì S2-E1 hiện 34 "chưa chạy" dù `--strict` exit 0 → gộp kết quả nhiều lượt hoặc đổi thứ tự lệnh kiểm.
+  6. [Dev] nhánh cảnh báo máy ngủ trong `app/scripts/e2e.sh` chưa được kích hoạt thử.
+- **Nguồn:** báo cáo agent T-44, T-45 (26/11/2026).
+- **Xong khi:** contrast.js đạt AA cho `--org-t` ở 4 theme; quyết định G17 ghi PO-DECISIONS; traceability hiện đủ S2-E1 sau khối kiểm.
+- **Ngoài phạm vi:** tính năng nghiệp vụ.
