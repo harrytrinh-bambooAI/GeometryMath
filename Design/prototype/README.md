@@ -98,3 +98,6 @@ Bấm **▶ Trình chiếu** trên thanh trên cùng rồi chọn một trong ba
 - Bài giảng là nội dung mẫu viết sẵn; tệp tài liệu không được đọc thật, số mục chỉ để minh họa.
 - Trong trình chiếu, thao tác trên hình được gọi qua API của hình (không mô phỏng ngón tay), nên không có hiệu ứng "bấm" tại điểm chạm.
 - Bố cục thiết kế cho màn hình rộng từ 1280px.
+
+## Chặng 2–3 (S23, v0.1 · 26/11/2026)
+Mở `s23-screens.html` (hoặc nút "Chặng 2–3 (S23)" góc phải dưới của `index.html`). Hàng trên cùng chuyển giữa 24 màn C2/C3 (Web, iPad, iPhone theo STAGES §0.2). Ảnh chụp và danh sách câu hỏi design: `../s23/` (`DQ.md`). Chụp lại: `node Design/s23/shoot.js`.
