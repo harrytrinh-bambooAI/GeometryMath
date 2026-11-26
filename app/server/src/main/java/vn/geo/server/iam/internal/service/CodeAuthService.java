@@ -38,9 +38,11 @@ public class CodeAuthService {
   public static final String MSG_NAME_PII = "Tên hiển thị không được là email hay số điện thoại.";
   public static final String MSG_PASSWORD = "Mật khẩu từ 8 đến 64 ký tự.";
   public static final String MSG_ROLE = "Hãy chọn vai Giáo viên hoặc Học sinh.";
-  public static final String MSG_PRIVACY = "Hãy đọc và tick thông báo riêng tư.";
+  public static final String MSG_PRIVACY = "Em cần đọc thông báo riêng tư để tiếp tục.";
   public static final String MSG_REG_LIMIT =
       "Mạng này đã tạo quá nhiều tài khoản trong một giờ. Vui lòng thử lại sau.";
+
+  public static final String MSG_TEMP_EXPIRED = "Mật khẩu tạm đã hết hạn. Nhờ thầy cô đặt lại.";
 
   public static final int MAX_FAILS = 10;
   public static final Duration LOCK = Duration.ofMinutes(15);
@@ -244,7 +246,16 @@ public class CodeAuthService {
             Duration left = Duration.between(now, a.loginLockedUntil());
             return new Fail(AppException.rateLimited(left, lockedMessage(left)));
           }
-          if (!hasher.verify(password, a.passwordHash())) {
+          boolean temp = a.tempPasswordExpiresAt() != null;
+          boolean ok =
+              hasher.verify(password, a.passwordHash())
+                  || (temp
+                      && hasher.verify(ClassService.normalizeTemp(password), a.passwordHash()));
+          if (ok && temp && !now.isBefore(a.tempPasswordExpiresAt())) {
+            // mật khẩu tạm do giáo viên đặt lại quá 24 giờ (BR-S3E1-34): không phiên, không đếm sai
+            return new Fail(new AppException(ErrorCode.VALIDATION_FAILED, MSG_TEMP_EXPIRED));
+          }
+          if (!ok) {
             int n = a.loginFailCount() + 1;
             if (n >= MAX_FAILS) {
               repo.setLoginFailures(a.orgId(), a.id(), 0, now.plus(LOCK));
