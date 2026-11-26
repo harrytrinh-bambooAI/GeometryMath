@@ -230,3 +230,14 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent icon (26/11/2026), `artifacts/GEO/evidence/theme/icon-*.png`.
 - **Xong khi:** grep `fonts.(googleapis|gstatic)` trong `app/web/dist` = 0; Design duyệt ảnh S2-E8 ở 4 theme.
 - **Ngoài phạm vi:** tính năng nghiệp vụ.
+
+## Việc: câu mở sau T-23 (S2-E6 + S2-E7) · ghi 26/11/2026 khuya
+- **Mục tiêu:** đóng các điểm T-23 để mở.
+  1. [Dev, T-22/T-24] gọi `content.api.LibraryQuota.consume` khi tạo đề (giới hạn tần suất thêm đề chưa được nối vào luồng tạo đề).
+  2. [FIX Dev] thêm nút "Trình chiếu" vào màn C2-03 (s2e5); hiện nút nằm ở `/gv/kho-de-cua-toi/de/:id`.
+  3. [PO/ARCH] Kho chung dùng chung toàn nền tảng hay theo tổ chức (hiện là bản chép `library_problem` theo tổ chức); vai người soát hiện chỉ gán bằng SQL/seed.
+  4. [Dev] hỏi đáp AI trong Trình chiếu mới là khung giả lập, chưa nối đường AI.
+  5. [FIX Dev] TC-GEO-0539 `e5/catalog.ui` quá giờ trên mobile-iphone (chập chờn, chạy lại đạt).
+- **Nguồn:** báo cáo agent T-23; `artifacts/GEO/work/epics/S2-E6/qc_findings.md`, `S2-E7/qc_findings.md` (26/11/2026).
+- **Xong khi:** mục 1 có IT "vượt hạn mức thêm đề → bị chặn" qua luồng tạo đề thật; mục 3 ghi PO-DECISIONS trước gate T-26.
+- **Ngoài phạm vi:** thêm đề (T-22), bài luyện.
