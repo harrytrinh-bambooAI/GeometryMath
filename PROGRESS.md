@@ -7,7 +7,7 @@ Model theo vai (DECISIONS 26/11): Dev code = Opus; PO/BA/QC/thiết kế UI/Test
 - Profile small_task=delegate, PO-61 định danh tối giản (tên → mã người dùng, mã + mật khẩu, không thu thập dữ liệu; giáo viên đặt lại mật khẩu học sinh; giáo viên mã khôi phục TẠM) (7890c68, e1e74ba).
 Đang dở:
 - T-261126-07 FIX5 · agent con BÁO XONG, phiên chính CHƯA nghiệm thu · worktree `.claude/worktrees/fix5` nhánh `mvp-fix5` (cổng 54499/6549/8105/5189) · brief `.claude/briefs/T-261126-07-fix5.md` · tiến độ `.claude/progress/fix5.md`.
-- Plan chặng 2–3 · agent Opus `plan-s23` đang/đã viết `.claude/plans/STAGE-2-3-PLAN.md` (tiến độ `.claude/progress/plan-s23.md`); đã nhận PO-61 + chính sách model; plan phải có khối queue chạy được.
+- Plan chặng 2–3 · agent `plan-s23` BÁO XONG (chưa rà) · `.claude/plans/STAGE-2-3-PLAN.md` (tiến độ `.claude/progress/plan-s23.md`); đã nhận PO-61 + chính sách model; plan phải có khối queue chạy được.
 - T-261126-05 đo thật: Blocked — owner chạy `! cd <worktree>/app && eval "$(grep '^export GEO_AI_API_KEY=' ~/.zshrc)" && GEO_AI_PROVIDER=anthropic make bench-mvp > /tmp/geo-bench-real.log 2>&1; echo rc=$?` (~$3).
 Bước tiếp theo:
 1. Nghiệm thu FIX5: `cd .claude/worktrees/fix5/app && make verify && make bench-mvp` (exit 0), `git -C` log/diff --stat nhánh mvp-fix5, rà phạm vi tệp theo brief → gộp `git merge --no-ff mvp-fix5` vào worktree-mvp-wave0 (chờ lần đo thật của owner xong nếu đang chạy).
