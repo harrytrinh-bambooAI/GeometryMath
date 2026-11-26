@@ -179,7 +179,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: e2e 2 lượt + TC Manual/khám phá qua API theo scope; bộ câu thử moi đáp án mở rộng (bài luyện, trình chiếu, giả làm giáo viên); bench-s2; báo cáo + bug draft
 - Nguồn: epics/S2-*/test_cases.md (ebec17a 26/11); domains/geo/scope.json (confirmed); PLAN_code-s23 v1.0 §7
 - Xong khi: mọi TC có status; lệch audit = 0
-- Kiểm: `cd app && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9" && make bench-s2 && test -s ../artifacts/GEO/evidence/S2-L6/REPORT.md`
+- Kiểm: `cd app && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9" && make bench-s2 && test -s ../artifacts/GEO/evidence/S2-L6/REPORT.md`
 - Ngoài phạm vi: sửa code (bug → inbox), staging/prod
 - Phụ thuộc: T-261126-24, T-261126-25
 ## T-261126-27 · GATE · Owner L7 chặng 2 [wait-user]
@@ -254,7 +254,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Mục tiêu: như 26 cho chặng 3; ca quyền theo quan hệ (học sinh lớp khác, giáo viên khác), không lộ trường dữ liệu cá nhân
 - Nguồn: epics/S3-*/test_cases.md (ebec17a 26/11); scope.json; PLAN_code-s23 v1.0 §7
 - Xong khi: mọi TC có status; lệch audit = 0
-- Kiểm: `cd app && make e2e && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E1,S3-E2,S3-E3,S3-E4,S3-E5,S3-E6" && test -s ../artifacts/GEO/evidence/S3-L6/REPORT.md`
+- Kiểm: `cd app && make e2e && make traceability ARGS="--strict --epic MVP,S2-E1,S2-E2,S2-E3,S2-E4,S2-E5,S2-E6,S2-E7,S2-E8,S2-E9,S3-E1,S3-E2,S3-E3,S3-E4,S3-E5,S3-E6" && test -s ../artifacts/GEO/evidence/S3-L6/REPORT.md`
 - Ngoài phạm vi: sửa code
 - Phụ thuộc: T-261126-32
 ## T-261126-34 · GATE · Owner L7 chặng 3 + cổng "giáo viên thật dùng lặp lại" [wait-user]
