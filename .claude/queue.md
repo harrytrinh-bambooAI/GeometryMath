@@ -283,7 +283,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Model: sonnet · Ngân sách: 60 bước
 - Phụ thuộc: T-261126-16
 
-## T-261126-50 · S23 · L5 Dev hệ theme · epic-common v1.3 · wt s23-theme · ‖41 · 2h/5M · Theme D mặc định + đổi A/B/C/D trong Cài đặt [todo]
+## T-261126-50 · S23 · L5 Dev hệ theme · epic-common v1.3 · wt s23-theme · ‖41 · 2h/5M · Theme D mặc định + đổi A/B/C/D trong Cài đặt [done]
 - Mục tiêu: hệ token theme cho app/web (CSS custom properties theo `data-theme`), 4 theme từ `Design/styles/{a,b,c,d}/style.css` (màu, bo góc, font, mật độ, cao chạm, icon set nếu khác), D mặc định; màn/ô Cài đặt (giáo viên + học sinh) chọn theme, lưu theo tài khoản phía máy chủ (cột/khóa user preference, migration trong khoảng V440–V444; module máy chủ `settings/` riêng, không sửa `iam/` (thuộc task 18); cổng 54669 · 6719 · 8126 · 5206) và localStorage làm dự phòng; các component dùng chung (`app/web/src/shared/ui`) dùng token, không mã màu cứng; MVP E1–E7 không vỡ
 - Nguồn: Design/styles/ (T-39, 26/11) + STYLES.md; Design/prototype/s23*.html (T-38/T-40, 26/11); app/web/src/styles/{tokens,base}.css; DECISIONS 26/11 (theme D)
 - Xong khi: verify + web-build + e2e 2 lượt xanh; e2e mới: đổi theme trong Cài đặt → `html[data-theme]` đổi, tải lại vẫn giữ; ảnh chụp 1 màn MVP ở 4 theme lưu `artifacts/GEO/evidence/theme/`
