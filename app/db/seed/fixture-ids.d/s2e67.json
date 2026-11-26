@@ -1,0 +1,15 @@
+{
+  "_doc": "S2-E6 + S2-E7 (T-261126-23): mã cố định của app/db/seed/e2e/850_s2e67_core.sql. Mỗi (epic, TC, làn) một tổ chức riêng: gốc B = 850000000 + (epic − 6) × 5000000 + TC × 100000 + làn × 10000 (làn 0…5 = api, ui-chromium, ui-webkit, ui-iphone, mobile-iphone, mobile-pixel); F-S2-(B + k) → 00000000-0000-7000-8002-<12 chữ số>. k: 1 tổ chức, 2 Cô Trang (chủ đề), 3 Mai (người soát, vai content_reviewer), 4 Cô Lan, 5 An (học sinh), 6/11/12 lớp 11A1/11A2/11A3, 7 Cô Hà (giáo viên mới); đề B+k (k 100…1099), phiên bản 1 B+k+5000, đề xuất soát B+k+3000, bản Kho chung B+k+7000, bài giao B+9001…9003. Tiện ích tính mã: app/e2e/tests/s2e6/s2e6.ts. Dưới đây là ví dụ làn 0 của TC-S2E6-001 và TC-S2E7-001.",
+  "orgs": {
+    "F-S2-850100001": { "id": "00000000-0000-7000-8002-000850100001", "name": "S2-E6 TC 1 làn 0" },
+    "F-S2-855100001": { "id": "00000000-0000-7000-8002-000855100001", "name": "S2-E7 TC 1 làn 0" }
+  },
+  "users": {
+    "F-S2-850100002": { "id": "00000000-0000-7000-8002-000850100002", "org": "F-S2-850100001", "role": "TEACHER", "displayName": "Cô Trang" },
+    "F-S2-850100003": { "id": "00000000-0000-7000-8002-000850100003", "org": "F-S2-850100001", "role": "TEACHER", "displayName": "Mai" },
+    "F-S2-855100002": { "id": "00000000-0000-7000-8002-000855100002", "org": "F-S2-855100001", "role": "TEACHER", "displayName": "Cô Trang" }
+  },
+  "problems": {
+    "F-S2-859999990": { "id": "00000000-0000-7000-8002-000859999990", "versionId": "00000000-0000-7000-8002-000859999991", "code": "SP-01", "note": "đề kho dùng chung cho bài giao S2-E7 (bộ s2e67_present)" }
+  }
+}

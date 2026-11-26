@@ -1,0 +1,144 @@
+/* S2-E7 · Trình chiếu (C2-04). Màu, bo góc, font CHỈ qua token theme (styles/tokens.css); chữ màu dùng --pri-t;
+   chữ phụ ≥ 14 px (PO-66 G17); nội dung toán dùng --font-math. Chữ lời giải ≥ 28 điểm ở 1920 × 1080 (QA-S2E7-01):
+   2vw = 38,4 px ≈ 28,8 pt. Bị từ chối toàn màn hình: lớp phủ cố định lấp đầy trang (US-S2E7-01-FC2). */
+.s2e7-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 18px;
+  background: var(--bg);
+  color: var(--text);
+  overflow: auto;
+}
+.s2e7-gate {
+  display: grid;
+  place-items: center;
+  min-height: 60vh;
+  padding: 16px;
+}
+.s2e7-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 560px;
+  padding: 18px;
+}
+.s2e7-ask-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 18px;
+  color: var(--pri-t);
+}
+.s2e7-row,
+.s2e7-chips,
+.s2e7-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.s2e7-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.s2e7-title {
+  margin: 0;
+  font-size: max(20px, 1.4vw);
+  color: var(--pri-t);
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.s2e7-labels {
+  margin-left: auto;
+  font-size: var(--fs-sm);
+}
+.s2e7-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: max(14px, var(--fs-sm));
+  color: var(--muted);
+}
+.s2e7-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+@media (min-width: 900px) {
+  .s2e7-body {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+}
+.s2e7-figure {
+  min-height: 360px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--panel);
+  overflow: hidden;
+  position: relative;
+}
+.s2e7-viewer {
+  height: 100%;
+  min-height: 360px;
+}
+.s2e7-figure-plain {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  min-height: 360px;
+  color: var(--muted);
+  font-size: 18px;
+}
+.s2e7-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.s2e7-statement {
+  margin: 0;
+  font-family: var(--font-math);
+  font-size: max(20px, 1.5vw);
+  line-height: 1.4;
+}
+.s2e7-steps {
+  margin: 0;
+  padding-left: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.s2e7-step {
+  font-family: var(--font-math);
+  font-size: max(24px, 2vw);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  color: var(--pri-t);
+}
+.s2e7-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+}
+.s2e7-bar .btn {
+  min-height: var(--touch);
+}
+.s2e7-ai {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
