@@ -159,6 +159,12 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Xong khi:** story map = số story `check_ac_tc` đếm; ảnh 2 màn mới trong Design/s23/.
 - **Ngoài phạm vi:** code.
 
+## Việc: BA sửa spec sau T-19 (26/11/2026)
+- **Mục tiêu:** AC US-S2E2-02-BV2 ghi góc A ≈ 179,8°, đúng là 174,87° (Dev-S2E2-01) → sửa AC + TC; thống nhất `space` (spec) thay `solid` (PLAN A2); đáp số tham chiếu bộ đề phẳng 30 đề là TẠM chờ giáo viên Toán soát (QA-S2E2-02).
+- **Nguồn:** báo cáo T-19, `epics/S2-E2/qc_findings.md`.
+- **Xong khi:** `check_ac_tc.py S2-E2` 0 lỗi, AC/TC khớp test.
+- **Ngoài phạm vi:** code.
+
 ## Việc: FIX sau T-18 (26/11/2026) — gom vào FIX kế tiếp (cùng e2e-affected)
 - **Mục tiêu:** (1) [quan trọng] `app/e2e/reporters/evidence-reporter.ts` TC_TAG chỉ nhận TC-GEO/TC-KHUNG → kết quả e2e S2/S3 ghi "chưa chạy" trong truy vết; thêm `TC-S[23]E\d+-\d+`; (2) `privacy_notice` vào `keep-tables.txt`; (3) trang chủ: liên kết Đăng ký/Đăng nhập bằng mã; (4) TC-S2E1-020 kiểm ngăn "Của tôi" khi S2-E6 xong.
 - **Nguồn:** báo cáo T-18 + `epics/S2-E1/qc_findings.md` DEV-S2E1-01…13.

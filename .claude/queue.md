@@ -105,7 +105,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-41 (gộp sau T-50; trước khi kiểm cuối: git merge worktree-mvp-wave0)
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/iam/|app/server/src/test/java/vn/geo/server/(it/s2e1|iam)/|app/server/src/main/resources/db/migration/V1[12][0-9]__|app/web/src/(features/s2e1|shared/auth)/|app/e2e/tests/s2e1/|app/db/seed/(e2e/80[0-9]_|fixture-ids\.d/s2e1)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E1/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W4
-## T-261126-19 · S2-E2 · L5 Dev · epic-common v1.3 · wt s2-e2 · ‖18 · 5h/14M · Khung môn học + hình phẳng + bench-s2 [todo]
+## T-261126-19 · S2-E2 · L5 Dev · epic-common v1.3 · wt s2-e2 · ‖18 · 5h/14M · Khung môn học + hình phẳng + bench-s2 [done]
 - Mục tiêu: US-S2E2-01…05: module subject (SubjectEngine parse/solve/verify/render/hint/grade/concepts + registry, PLAN A1), Problem.kind (A2), SceneSpec 2D + SCENE-CONTRACT-2D.md + shared/scene2d (A3), màn làm bài 2D (C2-05) iPad/iPhone, bộ đề chuẩn phẳng có đáp mẫu, scripts/bench-s2.sh (≥ 95 % thỏa ràng buộc, ≥ 90 % đáp số, 0 sai mang nhãn)
 - Nguồn: epics/S2-E2 (ebec17a 26/11); PLAN_code-s23 v1.0 §1 A1–A3; STAGES §0.3 ý 1, Ch2 §8–10; module geometry
 - Xong khi: như 18 + make bench-s2 (mock) đạt ngưỡng + bench-mvp không lùi
@@ -284,7 +284,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-16
 
 ## T-261126-50 · S23 · L5 Dev hệ theme · epic-common v1.3 · wt s23-theme · ‖41 · 2h/5M · Theme D mặc định + đổi A/B/C/D trong Cài đặt [done]
-- Mục tiêu: hệ token theme cho app/web (CSS custom properties theo `data-theme`), 4 theme từ `Design/styles/{a,b,c,d}/style.css` (màu, bo góc, font, mật độ, cao chạm, icon set nếu khác), D mặc định; màn/ô Cài đặt (giáo viên + học sinh) chọn theme, lưu theo tài khoản phía máy chủ (cột/khóa user preference, migration trong khoảng V440–V444; module máy chủ `settings/` riêng, không sửa `iam/` (thuộc task 18); cổng 54669 · 6719 · 8126 · 5206) và localStorage làm dự phòng; các component dùng chung (`app/web/src/shared/ui`) dùng token, không mã màu cứng; MVP E1–E7 không vỡ
+- Mục tiêu: hệ token theme cho app/web (CSS custom properties theo `data-theme`), 4 theme từ `Design/styles/{a,b,c,d}/style.css` (màu, bo góc, font, mật độ, cao chạm, icon set nếu khác), D mặc định; màn/ô Cài đặt (giáo viên + học sinh) chọn theme, lưu theo tài khoản phía máy chủ (cột/khóa user preference, migration trong khoảng V109 (đã đổi từ V440); module máy chủ `settings/` riêng, không sửa `iam/` (thuộc task 18); cổng 54669 · 6719 · 8126 · 5206) và localStorage làm dự phòng; các component dùng chung (`app/web/src/shared/ui`) dùng token, không mã màu cứng; MVP E1–E7 không vỡ
 - Nguồn: Design/styles/ (T-39, 26/11) + STYLES.md; Design/prototype/s23*.html (T-38/T-40, 26/11); app/web/src/styles/{tokens,base}.css; DECISIONS 26/11 (theme D)
 - Xong khi: verify + web-build + e2e 2 lượt xanh; e2e mới: đổi theme trong Cài đặt → `html[data-theme]` đổi, tải lại vẫn giữ; ảnh chụp 1 màn MVP ở 4 theme lưu `artifacts/GEO/evidence/theme/`
 - Kiểm: `cd .claude/worktrees/s23-theme/app && make verify && make web-build && make e2e-affected && ls ../artifacts/GEO/evidence/theme/*.png | wc -l | grep -qE '^ *[4-9]'`
