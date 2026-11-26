@@ -17,7 +17,11 @@ import org.springframework.core.env.Environment;
  *   <li>không có profile nào được bật thì từ chối (không còn mặc định {@code dev});
  *   <li>{@code prod} bật cùng {@code dev}/{@code test} thì từ chối;
  *   <li>ngoài dev/test (prod hoặc profile khác): khóa thẻ, pepper mã giáo viên, khóa cursor phải
- *       được đặt qua biến môi trường, không rỗng và không phải giá trị dev.
+ *       được đặt qua biến môi trường, không rỗng và không phải giá trị dev;
+ *   <li>ngoài dev/test: nhà cung cấp AI giả lập ({@code geo.ai.provider=mock}) bị cấm (PO-60, MVP
+ *       M0) — môi trường thật phải nối AI thật;
+ *   <li>mọi profile: {@code geo.ai.provider} phải là nhà cung cấp đã biết; {@code anthropic} cần
+ *       khóa {@code GEO_AI_API_KEY} (không bao giờ in giá trị khóa ra thông báo).
  * </ul>
  *
  * Chạy ngay sau khi nạp tệp cấu hình, trước khi tạo bean nào (kể cả kết nối CSDL), nên thông báo
@@ -40,6 +44,9 @@ public class ProfileGuard implements EnvironmentPostProcessor {
           "dev-only-secret-change-me-0123456789abcdef",
           "dev-only-code-pepper-0123456789abcdef",
           "ZGV2LW9ubHktY3Vyc29yLWtleS0zMi1ieXRlcyEhISE=");
+
+  /** Nhà cung cấp AI máy chủ có cài (AiProvider): giá trị hợp lệ của geo.ai.provider. */
+  static final Set<String> AI_PROVIDERS = Set.of("mock", "anthropic");
 
   @Override
   public void postProcessEnvironment(ConfigurableEnvironment env, SpringApplication app) {
@@ -80,6 +87,41 @@ public class ProfileGuard implements EnvironmentPostProcessor {
         }
       });
     }
+    checkAi(env, !devLike || active.contains("prod"), problems);
     return problems;
+  }
+
+  private static void checkAi(Environment env, boolean prodLike, List<String> problems) {
+    String provider = safe(env, "geo.ai.provider");
+    provider = provider == null || provider.isBlank() ? "mock" : provider.strip();
+    if (!AI_PROVIDERS.contains(provider)) {
+      problems.add(
+          "geo.ai.provider="
+              + provider
+              + " không có; chọn một trong "
+              + AI_PROVIDERS.stream().sorted().toList()
+              + " (GEO_AI_PROVIDER).");
+      return;
+    }
+    if (prodLike && "mock".equals(provider)) {
+      problems.add(
+          "geo.ai.provider=mock (AI GIẢ LẬP) không được dùng ở prod; đặt GEO_AI_PROVIDER=anthropic"
+              + " và GEO_AI_API_KEY.");
+    }
+    if ("anthropic".equals(provider)) {
+      String key = safe(env, "geo.ai.api-key");
+      if (key == null || key.isBlank()) {
+        problems.add(
+            "GEO_AI_API_KEY (geo.ai.api-key) chưa đặt hoặc rỗng; bắt buộc khi geo.ai.provider=anthropic.");
+      }
+    }
+  }
+
+  private static String safe(Environment env, String prop) {
+    try {
+      return env.getProperty(prop);
+    } catch (IllegalArgumentException unresolved) {
+      return null;
+    }
   }
 }

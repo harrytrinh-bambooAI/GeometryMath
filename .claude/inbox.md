@@ -107,7 +107,7 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
   m7 ĐÓNG một phần · 92f1d05 — Dev-E6-08; không sửa: giới hạn tần suất `POST /solution/open` và AI xem trước (chờ NFR-GEO-056/D-GEO-125), nhiều nút, `highestHint` thuộc đề.
   tc0148 ĐÓNG · 92f1d05. Trace JWT ĐÓNG · 92f1d05 (che trong trace.zip; video không chứa chuỗi JWT; quét 563 trace lượt 20261125-071230: 0).
   Kiểm: make verify 123 đơn vị + 112 IT xanh; web 33/33 + build xanh; make e2e 558 đạt / 1 bỏ qua (TC-0302 WebKit, có từ trước) hai lượt 20261125-070629, 20261125-071230; truy vết E6 117/117.
-  MỞ mới (ngoài FIX4a): `geo.ai.provider: mock` mặc định, ProfileGuard không cấm mock ở prod (không thuộc E6).
+  ĐÓNG (T-261126-01, 26/11/2026): ~~`geo.ai.provider: mock` mặc định, ProfileGuard không cấm mock ở prod~~ — prod mặc định `anthropic`, ProfileGuard từ chối prod + mock và anthropic thiếu GEO_AI_API_KEY (ProfileGuardTest, ProdProfileIT).
 
 ## Việc: FIX4b — phát hiện soát E7 (25/11/2026) · nhánh mvp-fix4b
 - **Mục tiêu:** đóng 3 major + 8 minor trong `.claude/reviews/E7-review.md` (soát Sonnet, diff 78a7387..6b7117a).

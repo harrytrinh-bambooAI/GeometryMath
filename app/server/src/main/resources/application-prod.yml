@@ -1,4 +1,4 @@
-# Môi trường thật: bắt buộc đặt GEO_DB_URL, GEO_DB_PASSWORD, GEO_AUTH_SECRET, GEO_AUTH_CODE_PEPPER, GEO_CURSOR_KEY.
+# Môi trường thật: bắt buộc đặt GEO_DB_URL, GEO_DB_PASSWORD, GEO_AUTH_SECRET, GEO_AUTH_CODE_PEPPER, GEO_CURSOR_KEY, GEO_AI_API_KEY.
 # Không có giá trị mặc định; ProfileGuard từ chối khởi động nếu thiếu, rỗng, còn giá trị dev, hoặc bật cùng dev/test.
 spring:
   datasource:
@@ -10,3 +10,8 @@ geo:
     code-pepper: ${GEO_AUTH_CODE_PEPPER}
   # chỉ tin X-Forwarded-For khi có proxy tin cậy phía trước; bật tường minh bằng GEO_TRUST_FORWARDED_FOR=true
   http.trust-forwarded-for: ${GEO_TRUST_FORWARDED_FOR:false}
+  # AI thật (PO-60): prod cấm mock (ProfileGuard). Trần một lượt ở cổng rộng hơn dev vì AI thật chậm hơn
+  # (mục tiêu trung vị gửi đề -> có hình < 40 s, MVP.md §9). TẠM · trung bình · chưa đo AI thật.
+  ai:
+    provider: ${GEO_AI_PROVIDER:anthropic}
+    timeout: ${GEO_AI_TIMEOUT:90s}

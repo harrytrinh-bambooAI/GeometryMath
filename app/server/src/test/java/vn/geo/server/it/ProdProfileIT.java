@@ -29,6 +29,10 @@ import vn.geo.server.common.security.TokenService;
       "GEO_AUTH_CODE_PEPPER=pepper-that-cua-moi-truong-that-0123456789",
       "GEO_CURSOR_KEY=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8=",
       "GEO_REDIS_PREFIX=geoprodit:",
+      // prod cấm AI giả lập (PO-60): nhà cung cấp thật, khóa giả, không gọi mạng trong IT này
+      "GEO_AI_PROVIDER=anthropic",
+      "GEO_AI_API_KEY=khoa-ai-gia-cua-kiem-thu-khong-that",
+      "GEO_AI_BASE_URL=http://127.0.0.1:9",
       "spring.flyway.enabled=false"
     })
 @ActiveProfiles("prod")
