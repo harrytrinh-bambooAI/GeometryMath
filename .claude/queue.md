@@ -228,7 +228,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Ngoài phạm vi: app/, spec artifacts/, PO-DECISIONS, ảnh MVP + Design/stages*, vẽ chặng 4–9
 - Model: sonnet · Ngân sách: 90 bước
 
-## T-261126-37 · S23 · L3 BA/QC áp quyết định gate R3 · po-ba-qc · wt s23-apply · 1.5h/2M · spec S2/S3 theo PO-66 [todo]
+## T-261126-37 · S23 · L3 BA/QC áp quyết định gate R3 · po-ba-qc · wt s23-apply · 1.5h/2M · spec S2/S3 theo PO-66 [done]
 - Mục tiêu: sửa epic S2-*/S3-* + story map theo PO-66 (G1 một mô hình bộ bài; G2 quyền lời giải Kho chung; G3 mã khôi phục học sinh tự học; G4 chống dò mã lớp; G5 thêm story: xóa tài khoản + lưu/xóa, Bị từ chối, quyền xuyên suốt S3, vòng đời bộ bài); bỏ TẠM các dòng đã chốt; đóng QA tương ứng; RV_s23 → v0.3 (CẦN OWNER → Đã chốt PO-66)
 - Nguồn: `.claude/GATE-T16.md` v0.1, PO-DECISIONS PO-66 (26/11); RV_s23 v0.2, R3_s23_quickview (26/11); epics S2-*, S3-* (gộp 1816344)
 - Xong khi: AC→TC đủ 0 lỗi; mỗi G1–G5 có ≥ 1 AC trỏ PO-66; không còn "CẦN OWNER" trong RV_s23

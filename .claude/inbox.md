@@ -152,3 +152,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo T-38, `Design/s23/KICH-BAN.md` (26/11).
 - **Xong khi:** `Design/s23/kb-shoot.js` chạy 0 pageerror; không còn "chưa vẽ" trong s23k.js; ảnh mới trong Design/s23/.
 - **Ngoài phạm vi:** app/, spec. Chờ owner chọn style (T-39) để vẽ cùng lô.
+
+## Việc: PO soát sau T-37 (26/11/2026)
+- **Mục tiêu:** đối chiếu story map S3 (ghi 23) với thực tế 24 story; vẽ khung màn cho story mới US-S3E5-05 (xóa tài khoản) và US-S3E2-04 (đóng/lưu trữ bộ) — gộp vào lô Dom sau T-38.
+- **Nguồn:** báo cáo T-37, DECISIONS 26/11.
+- **Xong khi:** story map = số story `check_ac_tc` đếm; ảnh 2 màn mới trong Design/s23/.
+- **Ngoài phạm vi:** code.
