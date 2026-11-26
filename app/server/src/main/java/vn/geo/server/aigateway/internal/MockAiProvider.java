@@ -39,6 +39,7 @@ public class MockAiProvider implements AiProvider {
   private final Map<String, JsonNode> canned;
   private final JsonNode sceneRules;
   private final JsonNode e4;
+  private final MockDraftReplies drafts;
 
   public MockAiProvider(AiProperties props, MockAiControl control) {
     this.props = props;
@@ -46,6 +47,7 @@ public class MockAiProvider implements AiProvider {
     this.canned = loadCanned();
     this.sceneRules = loadScene();
     this.e4 = load("/mock-ai/e4.json");
+    this.drafts = new MockDraftReplies(mapper);
   }
 
   @Override
@@ -55,7 +57,11 @@ public class MockAiProvider implements AiProvider {
 
   @Override
   public String complete(ProviderCall call) throws Exception {
-    control.received(call.prompt());
+    // S2-E3: ảnh đề tới 5 MB (base64 ~7 MB) không giữ nguyên trong sổ prompt của móc kiểm thử
+    control.received(
+        MockDraftReplies.handles(call.task()) && call.prompt().length() > 4_000
+            ? call.prompt().substring(0, 4_000)
+            : call.prompt());
     if (!props.mockLatency().isZero()) {
       Thread.sleep(props.mockLatency());
     }
@@ -71,6 +77,9 @@ public class MockAiProvider implements AiProvider {
       default -> {
         // tiếp tục
       }
+    }
+    if (MockDraftReplies.handles(call.task())) {
+      return drafts.reply(call.task(), call.prompt(), call.scenario()); // S2-E3 (ai/s2e3-mock.json)
     }
     if ("scene".equals(call.task())) {
       return mapper.writeValueAsString(scene(call.prompt(), call.scenario()));

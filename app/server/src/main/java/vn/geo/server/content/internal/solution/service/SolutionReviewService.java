@@ -29,6 +29,7 @@ import vn.geo.server.content.internal.solution.repo.SolutionRepository;
 import vn.geo.server.content.internal.solution.repo.SolutionRepository.Content;
 import vn.geo.server.content.internal.solution.repo.SolutionRepository.DocRow;
 import vn.geo.server.content.internal.solution.repo.SolutionRepository.VersionRow;
+import vn.geo.server.content.internal.solution.service.SolutionViews.AnswersView;
 import vn.geo.server.content.internal.solution.service.SolutionViews.ApproveView;
 import vn.geo.server.content.internal.solution.service.SolutionViews.AssignedView;
 import vn.geo.server.content.internal.solution.service.SolutionViews.DocSummary;
@@ -183,7 +184,8 @@ public class SolutionReviewService {
     } else if (fails > 0) {
       blocked = "Chặn duyệt: còn " + fails + " bước lệch";
     } else if ("mismatch".equals(v.finalState())) {
-      blocked = "Chặn duyệt: đáp số lệch máy tính lại";
+      // S2-E3 (BR-S2E3-18): đề có đáp số ghi sẵn thì đối chiếu ba đáp số
+      blocked = doc.statedAnswer() != null ? BLOCK_ANSWERS : "Chặn duyệt: đáp số lệch máy tính lại";
     }
     ApproveView approve =
         new ApproveView(
@@ -241,10 +243,21 @@ public class SolutionReviewService {
     }
     history.sort(
         Comparator.comparing(HistoryItem::at, Comparator.nullsLast(Comparator.reverseOrder())));
+    java.time.Instant now = java.time.Instant.now();
+    List<SolutionRepository.AssignedPin> rows = repo.assignedPins(doc.id());
     List<AssignedView> assigned =
-        repo.pins(doc.id()).stream()
-            .map(p -> new AssignedView(p.className(), p.version()))
+        rows.stream().map(p -> new AssignedView(p.className(), p.version())).toList();
+    List<SolutionViews.AssignedPinView> pinViews =
+        rows.stream()
+            .map(p ->
+                new SolutionViews.AssignedPinView(
+                    p.className(),
+                    p.version(),
+                    p.assignmentId(),
+                    p.viewers(),
+                    p.releaseAt() != null && now.isBefore(p.releaseAt())))
             .toList();
+    AnswersView answers = answers(doc, texts);
     return new DocView(
         doc.id(),
         doc.code(),
@@ -259,7 +272,24 @@ public class SolutionReviewService {
         approve,
         history,
         pending,
-        assigned);
+        assigned,
+        pinViews,
+        answers,
+        doc.figureSource());
+  }
+
+  /** Chữ báo chặn duyệt khi ba đáp số chưa khớp (US-S2E3-04-SC4). */
+  public static final String BLOCK_ANSWERS = "Chặn duyệt: đáp số chưa khớp";
+
+  /** Bảng "Đề ghi / AI giải / Máy tính lại" của phiên bản đang xem (S2-E3, BR-S2E3-17). */
+  private AnswersView answers(DocRow doc, List<String> steps) {
+    Map<String, Object> ctx = facts.context(doc.statement(), doc.figure());
+    Double computed = ctx.get("askedValue") instanceof Number n ? n.doubleValue() : null;
+    boolean angle = Boolean.TRUE.equals(ctx.get("askedIsAngle"));
+    String ai = AnswerCompare.lastValue(steps);
+    AnswerCompare.Result r = AnswerCompare.compare(doc.statedAnswer(), ai, computed);
+    return new AnswersView(
+        doc.statedAnswer(), ai, AnswerCompare.format(computed, angle), r.state());
   }
 
   // ---------------------------------------------------------------- lưu phiên bản
@@ -485,6 +515,19 @@ public class SolutionReviewService {
       finalState = "unknown";
     }
     Object note = res.get("finalNote");
+    // S2-E3 (BR-S2E3-17): đáp số đề ghi cũng phải khớp máy tính lại
+    Double computed = ctx.get("askedValue") instanceof Number num ? num.doubleValue() : null;
+    AnswerCompare.Result triple =
+        AnswerCompare.compare(doc.statedAnswer(), AnswerCompare.lastValue(steps), computed);
+    if (doc.statedAnswer() != null && AnswerCompare.MISMATCH.equals(triple.state())) {
+      finalState = "mismatch";
+      note =
+          "Đáp số đề ghi ("
+              + doc.statedAnswer()
+              + ") hoặc AI giải chưa khớp máy tính lại ("
+              + AnswerCompare.format(computed, Boolean.TRUE.equals(ctx.get("askedIsAngle")))
+              + ")";
+    }
     // BR-S2E5-12: nhãn máy chỉ từ kết quả kiểm; không tham số nào của người dùng đi tới đây.
     boolean verified = fail == 0 && pass >= 1 && "match".equals(finalState);
     repo.replaceChecks(
@@ -528,5 +571,91 @@ public class SolutionReviewService {
       repo.afterApprove(doc.id(), v.id());
     }
     return render(reload(doc), version, me, true, null);
+  }
+
+  // ---------------------------------------------------------------- S2-E3 / US-S2E5-05
+  // (T-261126-22)
+
+  /** Bước giải của một phiên bản (chỉ chủ sổ, qua hàm cổng). */
+  public List<String> stepsOf(UUID docId, int version) {
+    AuthPrincipal me = Roles.require(Role.TEACHER);
+    return steps(content(me.userId(), docId, version).stepsJson());
+  }
+
+  /**
+   * "Sửa đáp số đề ghi" (US-S2E3-04-SC6): đổi đáp số đề ghi; kết quả kiểm cũ giữ tới khi "Kiểm tra
+   * lại".
+   */
+  @Transactional
+  public DocView setStatedAnswer(UUID docId, String statedAnswer) {
+    AuthPrincipal me = Roles.require(Role.TEACHER);
+    DocRow doc = owned(repo.lockDoc(docId), me);
+    String v = statedAnswer == null ? "" : statedAnswer.strip();
+    if (v.isEmpty()) {
+      throw AppException.invalidField("statedAnswer", "Hãy nhập đáp số đề ghi");
+    }
+    if (v.length() > 100) {
+      throw AppException.invalidField("statedAnswer", "Đáp số tối đa 100 ký tự");
+    }
+    if (doc.statedAnswer() != null
+        && AnswerCompare.value(doc.statedAnswer()) != null
+        && v.matches("[0-9]+([.,][0-9]+)?")
+        && doc.statedAnswer().endsWith("°")) {
+      v = v + "°"; // giữ đơn vị độ khi giáo viên chỉ gõ số (ví dụ 90 → 90°)
+    }
+    repo.updateStatedAnswer(doc.id(), v);
+    return render(reload(doc), doc.latestVersion(), me, true, null);
+  }
+
+  /**
+   * "Dùng đáp số máy" (US-S2E3-04-SC5, BR-S2E3-18): phiên bản mới có bước cuối mang đáp số máy tính
+   * lại, rồi kiểm lại ngay. Máy chưa có đáp số thì CONFLICT.
+   */
+  public DocView useMachineAnswer(UUID docId, Integer baseVersion) {
+    AuthPrincipal me = Roles.require(Role.TEACHER);
+    DocRow doc = owned(repo.doc(docId), me);
+    Map<String, Object> ctx = facts.context(doc.statement(), doc.figure());
+    if (!(ctx.get("askedValue") instanceof Number n)) {
+      throw new AppException(ErrorCode.CONFLICT, "Máy chưa có đáp số để đối chiếu");
+    }
+    int base = baseVersion == null ? doc.latestVersion() : baseVersion;
+    List<String> before = steps(content(me.userId(), doc.id(), base).stepsJson());
+    List<String> after = new ArrayList<>(before);
+    String computed =
+        AnswerCompare.format(n.doubleValue(), Boolean.TRUE.equals(ctx.get("askedIsAngle")));
+    after.set(
+        after.size() - 1, AnswerCompare.replaceLastValue(after.get(after.size() - 1), computed));
+    DocView saved = save(docId, base, after, null);
+    if (doc.statedAnswer() != null
+        && AnswerCompare.value(doc.statedAnswer()) != null
+        && !AnswerCompare.same(AnswerCompare.value(doc.statedAnswer()), n.doubleValue())) {
+      repo.updateStatedAnswer(doc.id(), computed);
+    }
+    return check(docId, saved.latestVersion());
+  }
+
+  /**
+   * Ghi đè nội dung một phiên bản đã lưu (US-S2E5-05-FC1, BR-S2E5-22): luôn CONFLICT, phiên bản
+   * không đổi; bản đang giao có thông báo riêng.
+   */
+  public DocView overwrite(UUID docId, int version) {
+    AuthPrincipal me = Roles.require(Role.TEACHER);
+    DocRow doc = owned(repo.doc(docId), me);
+    repo.version(doc.id(), version).orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
+    boolean assigned = repo.assignedPins(doc.id()).stream().anyMatch(p -> p.version() == version);
+    throw new AppException(
+        ErrorCode.CONFLICT,
+        assigned
+            ? "Bản đã giao không sửa được, hãy tạo phiên bản mới"
+            : "Phiên bản đã lưu không sửa được, hãy tạo phiên bản mới");
+  }
+
+  /**
+   * Dựng lại màn C2-03 của phiên bản mới nhất sau một thay đổi ngoài dịch vụ này (áp dụng cho lớp).
+   */
+  public DocView latestView(UUID docId) {
+    AuthPrincipal me = Roles.require(Role.TEACHER);
+    DocRow doc = owned(repo.doc(docId), me);
+    return render(doc, doc.latestVersion(), me, true, null);
   }
 }

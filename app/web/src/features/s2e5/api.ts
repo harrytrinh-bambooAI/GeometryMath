@@ -67,6 +67,39 @@ export interface DocView {
   history: HistoryItem[];
   proposals: ProposalView[];
   assignments: Array<{ className: string; version: number }>;
+  /** US-S2E5-05: chi tiết bài giao đang ghim (mã bài giao, số học sinh đã xem lời giải). */
+  assignedPins?: AssignedView[];
+  /** S2-E3: đối chiếu "Đề ghi / AI giải / Máy tính lại" (null = chưa có). */
+  answers?: AnswersView | null;
+  /** 'ai' = hình do AI dựng (S2-E3, BR-S2E3-15). */
+  figureSource?: 'engine' | 'ai';
+}
+
+/** Bài giao đang dùng phiên bản nào (US-S2E5-05). */
+export interface AssignedView {
+  className: string;
+  version: number;
+  assignmentId?: string;
+  viewers?: number;
+  locked?: boolean;
+}
+
+export interface AnswersView {
+  stated?: string | null;
+  ai?: string | null;
+  computed?: string | null;
+  state: 'match' | 'mismatch' | 'unknown';
+}
+
+/** Cảnh báo trước khi "Áp dụng cho lớp" (BR-S2E5-24…26). */
+export interface ApplyPreview {
+  assignmentId: string;
+  className: string;
+  fromVersion: number;
+  toVersion: number;
+  allowed: boolean;
+  blockedReason?: string | null;
+  warnings: string[];
 }
 
 export interface DocSummary {
@@ -118,4 +151,25 @@ export function decideProposal(id: string, itemId: string, action: 'accept' | 'd
 
 export function fetchPinnedLabels(assignmentId: string, signal?: AbortSignal): Promise<PinnedLabels> {
   return apiRequest(`/api/v1/student/assignments/${encodeURIComponent(assignmentId)}/solution-labels`, { signal });
+}
+
+// ---------------------------------------------------------------- T-261126-22 (S2-E3, US-S2E5-05)
+
+export function setStatedAnswer(id: string, statedAnswer: string): Promise<DocView> {
+  return apiRequest(`${base(id)}/stated-answer`, { method: 'POST', body: { statedAnswer } });
+}
+
+export function takeMachineAnswer(id: string, version?: number): Promise<DocView> {
+  return apiRequest(`${base(id)}/use-machine-answer`, { method: 'POST', body: { version } });
+}
+
+export function fetchApplyPreview(id: string, assignmentId: string, version: number): Promise<ApplyPreview> {
+  return apiRequest(`${base(id)}/assignments/${encodeURIComponent(assignmentId)}/apply`, { query: { version } });
+}
+
+export function applyRevision(id: string, assignmentId: string, version: number, confirm: boolean): Promise<DocView> {
+  return apiRequest(`${base(id)}/assignments/${encodeURIComponent(assignmentId)}/apply`, {
+    method: 'POST',
+    body: { version, confirm },
+  });
 }

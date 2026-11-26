@@ -27,7 +27,9 @@ public class SolutionRepository {
       String statement,
       String figure,
       int latestVersion,
-      boolean inMyShelf) {}
+      boolean inMyShelf,
+      String statedAnswer,
+      String figureSource) {}
 
   /** Siêu dữ liệu của một phiên bản (không có bước giải: đọc qua {@link #content}). */
   public record VersionRow(
@@ -83,13 +85,16 @@ public class SolutionRepository {
         rs.getString(5),
         rs.getString(6),
         rs.getInt(7),
-        rs.getBoolean(8));
+        rs.getBoolean(8),
+        rs.getString(9),
+        rs.getString(10));
   }
 
   public Optional<DocRow> doc(UUID id) {
     return jdbc.sql(
             """
-            SELECT id, owner_user_id, code, title, statement, figure::text, latest_version, in_my_shelf
+            SELECT id, owner_user_id, code, title, statement, figure::text, latest_version, in_my_shelf,
+                   stated_answer, figure_source
             FROM solution_doc WHERE org_id = :orgId AND id = :id
             """)
         .param("id", id)
@@ -101,7 +106,8 @@ public class SolutionRepository {
   public Optional<DocRow> lockDoc(UUID id) {
     return jdbc.sql(
             """
-            SELECT id, owner_user_id, code, title, statement, figure::text, latest_version, in_my_shelf
+            SELECT id, owner_user_id, code, title, statement, figure::text, latest_version, in_my_shelf,
+                   stated_answer, figure_source
             FROM solution_doc WHERE org_id = :orgId AND id = :id FOR UPDATE
             """)
         .param("id", id)
@@ -112,7 +118,8 @@ public class SolutionRepository {
   public List<DocRow> myDocs(UUID ownerId) {
     return jdbc.sql(
             """
-            SELECT id, owner_user_id, code, title, statement, figure::text, latest_version, in_my_shelf
+            SELECT id, owner_user_id, code, title, statement, figure::text, latest_version, in_my_shelf,
+                   stated_answer, figure_source
             FROM solution_doc WHERE org_id = :orgId AND owner_user_id = :owner
             ORDER BY created_at DESC, id DESC LIMIT 100
             """)
@@ -375,5 +382,117 @@ public class SolutionRepository {
         .param("userId", userId)
         .query((rs, i) -> new PinnedLabel(rs.getInt(1), rs.getString(2), rs.getString(3)))
         .optional();
+  }
+
+  // ---------------------------------------------------------------- S2-E3 (T-261126-22)
+
+  /** Sổ lời giải mới của một nháp đề (bốn bước soạn nháp, US-S2E3-03); chưa có phiên bản. */
+  public void insertDraftDoc(
+      UUID id,
+      UUID ownerId,
+      String title,
+      String statement,
+      String figureJson,
+      String figureSource,
+      String statedAnswer,
+      UUID draftId) {
+    jdbc.sql(
+            """
+            INSERT INTO solution_doc (id, org_id, owner_user_id, title, statement, figure, figure_source, stated_answer,
+                                      draft_id, latest_version)
+            VALUES (:id, :orgId, :owner, :title, :statement, CAST(:figure AS jsonb), :figureSource, :stated, :draft, 0)
+            """)
+        .param("id", id)
+        .param("owner", ownerId)
+        .param("title", title)
+        .param("statement", statement)
+        .param("figure", figureJson)
+        .param("figureSource", figureSource)
+        .param("stated", statedAnswer)
+        .param("draft", draftId)
+        .update();
+  }
+
+  /** Phiên bản do AI soạn (người: "AI soạn"; máy: "Cần xem lại" tới khi kiểm). */
+  public void insertAiVersion(UUID id, UUID docId, int version, String stepsJson) {
+    jdbc.sql(
+            """
+            INSERT INTO solution_version (id, org_id, doc_id, version, steps, ai_authored, author_user_id, note,
+                                          human_status)
+            VALUES (:id, :orgId, :doc, :version, CAST(:steps AS jsonb), true, NULL, 'AI soạn', 'ai_drafted')
+            """)
+        .param("id", id)
+        .param("doc", docId)
+        .param("version", version)
+        .param("steps", stepsJson)
+        .update();
+  }
+
+  /** Đáp số đề ghi (BR-S2E3-17, US-S2E3-04-SC6 "Sửa đáp số đề ghi"). */
+  public void updateStatedAnswer(UUID docId, String statedAnswer) {
+    jdbc.sql("UPDATE solution_doc SET stated_answer = :stated WHERE org_id = :orgId AND id = :doc")
+        .param("doc", docId)
+        .param("stated", statedAnswer)
+        .update();
+  }
+
+  // ---------------------------------------------------------------- US-S2E5-05 (T-261126-22)
+
+  /**
+   * Bài giao đang ghim một phiên bản của sổ, kèm số học sinh đã xem lời giải và giờ mở
+   * (BR-S2E5-25).
+   */
+  public record AssignedPin(
+      UUID assignmentId,
+      String className,
+      UUID versionId,
+      int version,
+      int viewers,
+      Instant releaseAt,
+      UUID assignedBy) {}
+
+  public List<AssignedPin> assignedPins(UUID docId) {
+    return jdbc.sql(
+            """
+            SELECT sp.assignment_id, c.name, v.id, v.version,
+                   (SELECT count(*) FROM assignment_progress ap
+                    WHERE ap.org_id = :orgId AND ap.assignment_id = sp.assignment_id
+                      AND ap.solution_viewed_at IS NOT NULL)::int,
+                   a.release_at, a.assigned_by
+            FROM solution_assignment_pin sp
+            JOIN solution_version v ON v.org_id = :orgId AND v.id = sp.version_id
+            JOIN assignment a ON a.org_id = :orgId AND a.id = sp.assignment_id AND a.archived_at IS NULL
+            JOIN class c ON c.org_id = :orgId AND c.id = a.class_id
+            WHERE sp.org_id = :orgId AND sp.doc_id = :doc
+            ORDER BY c.name, sp.assignment_id LIMIT 100
+            -- sqllint:allow=ownership read model: lớp, giờ mở, số học sinh đã xem lời giải (module assignment, tracking, iam)
+            """)
+        .param("doc", docId)
+        .query((rs, i) ->
+            new AssignedPin(
+                rs.getObject(1, UUID.class),
+                rs.getString(2),
+                rs.getObject(3, UUID.class),
+                rs.getInt(4),
+                rs.getInt(5),
+                instant(rs, 6),
+                rs.getObject(7, UUID.class)))
+        .list();
+  }
+
+  /**
+   * "Áp dụng cho lớp": đổi phiên bản ghim của MỘT bài giao (BR-S2E5-23). 0 khi bài giao không ghim
+   * sổ này.
+   */
+  public int repin(UUID assignmentId, UUID docId, UUID versionId) {
+    return jdbc.sql(
+            """
+            UPDATE solution_assignment_pin SET version_id = :version, pinned_at = now()
+            WHERE org_id = :orgId AND assignment_id = :assignment AND doc_id = :doc
+            """)
+        .param("assignment", assignmentId)
+        .param("doc", docId)
+        .param("version", versionId)
+        .update();
   }
 }

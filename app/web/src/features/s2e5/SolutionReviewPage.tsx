@@ -4,7 +4,8 @@ import { ApiError } from '../../shared/api/errors.ts';
 import { ErrorNotice } from '../../shared/ui/ErrorNotice.tsx';
 import { fromScene } from '../../shared/viewer/adapter.ts';
 import { Figure3DViewer } from '../../shared/viewer/Figure3DViewer.tsx';
-import { approveVersion, checkVersion, decideProposal, fetchDoc, reuseVersion, saveVersion, type DocView, type ProposalView } from './api.ts';
+import { approveVersion, checkVersion, decideProposal, fetchDoc, reuseVersion, saveVersion, setStatedAnswer, takeMachineAnswer, type DocView, type ProposalView } from './api.ts';
+import { AnswerTable } from './AnswerTable.tsx';
 import { firstChanged, insertAfter, isDirty, MAX_STEPS, move, MSG, validateDraft, type DraftIssue, type DraftStep } from './logic.ts';
 import { ReviewBox } from './ReviewBox.tsx';
 import { StepList } from './StepList.tsx';
@@ -219,6 +220,15 @@ function ReviewScreen({ id }: { id: string }) {
           {v.failCount > 0 ? '. Máy chặn duyệt: sửa bước lệch rồi bấm "Kiểm tra lại".' : ''}
         </p>
 
+        {doc.answers && (doc.answers.stated || doc.answers.state === 'mismatch') && (
+          <AnswerTable
+            answers={doc.answers}
+            busy={busy || dirty || readOnly}
+            onUseMachine={() => run(() => takeMachineAnswer(id, v.version))}
+            onSetStated={(value) => run(() => setStatedAnswer(id, value))}
+          />
+        )}
+
         {conflict && (
           <div className="s2e5-ban yel" role="alert" data-testid="s2e5-conflict">
             <p className="s2e5-ban-title">{conflict}</p>
@@ -298,6 +308,7 @@ function ReviewScreen({ id }: { id: string }) {
         onProposal={(action, p) => run(() => decideProposal(id, p.id, action))}
         onEditProposal={editProposal}
         onViewVersion={viewVersion}
+        onApplied={apply}
       />
     </div>
   );
