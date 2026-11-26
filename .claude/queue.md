@@ -240,7 +240,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-28, T-261126-29
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(assignment|notify)/|app/server/src/main/resources/db/migration/V(38[5-9]|41[0-9]|42[0-4])__|app/server/src/test/java/vn/geo/server/(it/s3e4|it/s3e5|assignment|notify)/|app/web/src/features/(s3e4|s3e5)/|app/web/package(-lock)?\.json|app/e2e/tests/(s3e4|s3e5)/|app/db/seed/(e2e/94[0-9]_|fixture-ids\.d/s3e4)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/(S3-E4|S3-E5)/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W10
-## T-261126-32 · S3-E6+E5 · L5 Dev (P0 trước, P1 sau) · epic-common v1.3 · wt s3-e6 · 4h/10M · Danh sách trường + xóa tài khoản (P0); chữa bài, xuất kết quả, lưu trữ lớp, nhắc việc (P1) [running]
+## T-261126-32 · S3-E6+E5 · L5 Dev (P0 trước, P1 sau) · epic-common v1.3 · wt s3-e6 · 4h/10M · Danh sách trường + xóa tài khoản (P0); chữa bài, xuất kết quả, lưu trữ lớp, nhắc việc (P1) [done]
 - Mục tiêu: TRƯỚC: US-S3E5-03 (danh sách trường được phép, test chặn trường mới quét mọi bảng/API S2–S3), US-S3E5-05 (xóa tài khoản + chính sách lưu/xóa); SAU: US-S3E6-01…03 (chữa bài sang Trình chiếu, xuất kết quả lớp, lưu trữ lớp cuối năm, nhắc việc trong ứng dụng)
 - Nguồn: epics/S3-E5, S3-E6 (ebec17a 26/11); PLAN_code-s23 v1.0 §3; STAGES Ch3 §4 P1; PO-64, PO-66 G5
 - Xong khi: như 18 (S3-E5 và S3-E6 đủ, không --defer)
