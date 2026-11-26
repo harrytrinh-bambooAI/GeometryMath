@@ -155,7 +155,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-20, T-261126-21
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(content/.*(library|shelf|Library|Shelf)|iam/.*Role)|app/server/src/main/resources/db/migration/V2[34][0-9]__|app/server/src/test/java/vn/geo/server/(it/s2e6|it/s2e7|content)/|app/web/src/features/(s2e6|s2e7)/|app/web/vite\.config\.ts|app/web/package(-lock)?\.json|app/e2e/tests/(s2e6|s2e7)/|app/db/seed/(e2e/85[0-9]_|fixture-ids\.d/s2e6)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/(S2-E6|S2-E7)/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W6
-## T-261126-24 · S2-E4 · L5 Dev (P1) · epic-common v1.3 · wt s2-e4 · ‖25 · 4h/10M · Chat chỉnh nháp + import file [todo]
+## T-261126-24 · S2-E4 · L5 Dev (P1) · epic-common v1.3 · wt s2-e4 · ‖25 · 4h/10M · Chat chỉnh nháp + import file [running]
 - Mục tiêu: US-S2E4-01…03: chat chỉnh bản nháp đề (AI hỏi lại, nói rõ trước/sau), import docx/pdf tách bài tập, đối chiếu trùng kho
 - Nguồn: epics/S2-E4 (ebec17a 26/11); PLAN_code-s23 v1.0 §5 (chủ pom.xml đợt W7); PO-45–47
 - Xong khi: như 18 + bench-mvp không lùi
@@ -165,7 +165,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-22, T-261126-23
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(content/.*(importer|authoring|dedup|Importer|Authoring|Dedup)|aigateway/internal)|app/server/src/main/resources/(db/migration/V2[67][0-9]__|ai/)|app/server/src/test/java/vn/geo/server/(it/s2e4|content|aigateway)/|app/web/src/features/s2e4/|app/server/pom\.xml|app/e2e/tests/s2e4/|app/db/seed/(e2e/86[0-9]_|fixture-ids\.d/s2e4)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E4/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W7
-## T-261126-25 · S2-E9 · L5 Dev (P1) · epic-common v1.3 · wt s2-e9 · ‖24 · 4h/10M · Biến thể đề + xuất PDF + liên kết chỉ xem [todo]
+## T-261126-25 · S2-E9 · L5 Dev (P1) · epic-common v1.3 · wt s2-e9 · ‖24 · 4h/10M · Biến thể đề + xuất PDF + liên kết chỉ xem [running]
 - Mục tiêu: US-S2E9-01…03: ProblemVariant (sinh số liệu + tính lại đáp số qua SubjectEngine), xuất ảnh/PDF (phía web, chủ package.json đợt W7), liên kết chỉ xem (share_grant), trắc nghiệm trong bài luyện
 - Nguồn: epics/S2-E9 (ebec17a 26/11); PLAN_code-s23 v1.0 §5; STAGES Ch2 §3 ý 7, §4 P1
 - Xong khi: như 18 + bench-s2, bench-mvp không lùi
