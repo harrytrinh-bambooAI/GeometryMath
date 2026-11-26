@@ -135,3 +135,4 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo soát T-04 26/11/2026; tiến độ `.claude/progress/review-t04.md`.
 - **Xong khi:** `make verify` xanh; `make bench-mvp` (mock) exit 0; test mới cho từng mục.
 - **Ngoài phạm vi:** dữ liệu đề; e2e spec.
+- **Trạng thái (26/11 14:36):** #1–#3 ĐÓNG 51ff36c, gộp vào worktree-mvp-wave0; phiên chính chạy lại verify 201 + 137 IT, bench-mvp mock exit 0.
