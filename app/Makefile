@@ -31,4 +31,25 @@ web-dev:      ; $(ENV) cd web && npm run dev       # Vite ở GEO_WEB_PORT, prox
 e2e:          ; scripts/e2e.sh $(ARGS)             # bật máy chủ + web riêng, reset seed, chạy api + ui, sinh e2e/evidence/<run>/
 e2e-report:   ; @scripts/e2e-report.sh             # in đường dẫn và mở báo cáo bằng chứng của lượt mới nhất
 e2e-reset:    ; scripts/seed-reset.sh $(or $(DB),geo_e2e)   # đưa geo_e2e (hoặc DB=geo_dev) về trạng thái vàng
-traceability: ; cd e2e && node scripts/traceability.ts $(ARGS)   # ARGS="--all" hoặc "--epic E1"
+traceability: ; cd e2e && node scripts/traceability.ts $(ARGS)   # ARGS="--all", "--epic E1", "--strict --epic MVP,S2-E1 --defer US-…" (exit 1 khi thiếu/trượt)
+
+# ===== Chặng 2–3: đích mới theo task (T-261126-41, PLAN_code-s23 §5 luật 2) =====
+# Mỗi task chỉ thêm đích NGAY DƯỚI mốc của mình (kèm .PHONY).
+# --- T-261126-41 (khung) ---
+.PHONY: bench-s2
+bench-s2: ; scripts/bench-s2.sh $(ARGS)   # bộ đề chuẩn hình phẳng S2-E2 (mock; ngưỡng ≥ 95 % ràng buộc, ≥ 90 % đáp số, 0 sai mang nhãn); kịch bản do T-261126-19 viết
+# --- T-261126-18 (S2-E1) ---
+# --- T-261126-19 (S2-E2) ---
+# --- T-261126-20 (S2-E5) ---
+# --- T-261126-21 (S2-E8) ---
+# --- T-261126-22 (S2-E3) ---
+# --- T-261126-23 (S2-E6, S2-E7) ---
+# --- T-261126-24 (S2-E4) ---
+# --- T-261126-25 (S2-E9) ---
+# --- T-261126-42 (S3 dữ liệu mẫu) ---
+# --- T-261126-28 (S3-E1, S3-E5) ---
+# --- T-261126-29 (S3-E2) ---
+# --- T-261126-30 (S3-E3) ---
+# --- T-261126-31 (S3-E4, S3-E5) ---
+# --- T-261126-32 (S3-E6, S3-E5) ---
+# --- FIX (task FIX T-261126-35, 43+) ---

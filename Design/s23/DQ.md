@@ -63,7 +63,7 @@ Tất cả TẠM, chờ owner/PO duyệt. Ảnh mới ở `Design/s23/`; nguồn
 | DQ-47 | Xóa tài khoản: mấy bước, chặn thế nào? (US-S3E5-05) | 2 bước: (1) đọc hậu quả + chính sách 30 ngày, (2) nhập mật khẩu + gõ XÓA. Giáo viên còn lớp Đang dạy bị chặn, kèm danh sách lớp và nút Lưu trữ lớp. Chính sách xóa vật lý 30 ngày: TẠM. | C3-08 `c3-08-*.png` |
 | DQ-48 | Đóng bộ bài: khác lưu trữ ở đâu? (US-S3E2-04) | Đóng là một chiều (cảnh báo màu vàng), em chỉ còn xem kết quả; lưu trữ chỉ cho bộ Đã đóng và nằm ở tab “Đã lưu trữ”. Bộ Nháp không đóng được. TẠM · trung | C3-03 `c3-03-dong-bo.png`, `c3-03-luu-tru-bo.png` |
 | DQ-49 | Bài của em: bộ Đã đóng / lưu trữ hiện thế nào cho em? | Tab “Đang giao” và “Đã đóng”; bộ Đã lưu trữ ẩn khỏi danh sách của em. Mỗi bộ có hạn, lượt còn, giờ mở lời giải; chữ phụ 14px (G17). TẠM · trung | C3-05 `c3-05-bai-cua-em-*.png` |
-| DQ-50 | Trình chiếu mất mạng: nếu chưa tải đủ bước thì sao? | Chỉ chiếu được phần đã tải; thanh báo nâu trên màn chiếu + nút Thử lại. Màn chỉ vẽ trường hợp đã tải đủ 4/4; trường hợp thiếu bước cần quy tắc tải trước từ BA. Mở. | C2-04 `c2-04-mat-mang.png` |
+| DQ-50 | Trình chiếu mất mạng: nếu chưa tải đủ bước thì sao? | Chỉ chiếu được phần đã tải; thanh báo nâu trên màn chiếu + nút Thử lại. Chốt (delivery-lead 26/11): khi mở Trình chiếu, tải trước TOÀN BỘ đề + mọi bước lời giải + hình (đã có chip "Đã tải sẵn"); chỉ cho bấm "Bắt đầu chiếu" khi tải đủ, hoặc giáo viên chọn "Chiếu phần đã tải" (hiện số bước x/y). Mất mạng giữa chừng: chiếu tiếp phần đã tải, bước chưa tải hiện ô xám "Chưa tải được — Thử lại". Dev S2-E7 làm theo. | C2-04 `c2-04-mat-mang.png` |
 
 Chưa vẽ (ngoài số lượng ảnh yêu cầu, ghi để vòng sau): trạng thái "đang tải" và "mất mạng khi gửi" của bài luyện; bàn phím biểu thức nâng cao; màn "mã sai / bị từ chối" của C3-07; C3-02, C3-05, C3-06, C3-08 đã có concept sẵn nên không vẽ lại.
 
@@ -121,4 +121,5 @@ Status "Pass" ở đây nghĩa là ảnh chụp ra và không lỗi JS; chưa c�
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 28 câu design, bảng màn ↔ 24 ảnh | agent runner-T-261126-10 |
 | v0.2 | 2026-11-26 | Thêm mục A2: DQ-29…DQ-43 (màn mới C2-04a–d, C2-06 tải/mất mạng, C2-08 nâng cao, C2-09a–d, C3-04 thông báo, C3-06a–c, C3-07 lỗi, C3-01 chưa tick, C8); đồng bộ REVIEW-Dom | runner-design-dom |
+| v0.4 | 2026-11-26 | DQ-50 chốt quy tắc tải trước Trình chiếu | delivery-lead |
 | v0.3 | 2026-11-26 | Thêm DQ-44…DQ-50 (tạo lớp, mã khôi phục HS, khôi phục, xóa tài khoản, đóng/lưu trữ bộ, Bài của em, trình chiếu mất mạng) + 15 màn mới vào bảng B | runner-T-261126-40 |

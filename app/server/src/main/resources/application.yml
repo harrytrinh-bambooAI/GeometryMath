@@ -86,6 +86,25 @@ geo:
       claude-opus-5-5:   { input: 4.00, output: 20.00, cache-read: 0.20 }
       claude-haiku-5-5:  { input: 0.10, output: 0.50 }
 
+  # ===== Chặng 2–3: khóa geo.<feature>.* theo task (T-261126-41, PLAN_code-s23 §5 luật 2) =====
+  # Mỗi task chỉ thêm khóa NGAY DƯỚI mốc của mình, thụt 2 dấu cách (con của geo:), ví dụ "  s2e8:".
+  # --- T-261126-41 (khung) ---
+  # --- T-261126-18 (S2-E1) ---
+  # --- T-261126-19 (S2-E2) ---
+  # --- T-261126-20 (S2-E5) ---
+  # --- T-261126-21 (S2-E8) ---
+  # --- T-261126-22 (S2-E3) ---
+  # --- T-261126-23 (S2-E6, S2-E7) ---
+  # --- T-261126-24 (S2-E4) ---
+  # --- T-261126-25 (S2-E9) ---
+  # --- T-261126-42 (S3 dữ liệu mẫu) ---
+  # --- T-261126-28 (S3-E1, S3-E5) ---
+  # --- T-261126-29 (S3-E2) ---
+  # --- T-261126-30 (S3-E3) ---
+  # --- T-261126-31 (S3-E4, S3-E5) ---
+  # --- T-261126-32 (S3-E6, S3-E5) ---
+  # --- FIX (task FIX T-261126-35, 43+) ---
+
 management:
   endpoints.web.exposure.include: health,info,metrics,prometheus
   endpoint.health.probes.enabled: true

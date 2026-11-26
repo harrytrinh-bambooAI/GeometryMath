@@ -158,7 +158,10 @@ test('Không đổi được công tắc sau khi giao @TC-GEO-0617', async ({ pa
   await page.goto(`/gv/de/${PV('HKG-01')}`);
   await expect(page.getByTestId('e5-part-assign')).toBeVisible();
   await expect(page.getByRole('switch')).toHaveCount(0);
-  const v = (await (await api.mine(request, stu(sb, 'An').token)).json()) as { items: Array<{ allowHint: boolean; allowQa: boolean }> };
+  // kiểm mã trước khi đọc thân: lỗi 5xx (máy tải cao) báo rõ thay vì "items undefined" (T-261126-43)
+  const mine = await api.mine(request, stu(sb, 'An').token);
+  expect(mine.status(), await mine.text()).toBe(200);
+  const v = (await mine.json()) as { items: Array<{ allowHint: boolean; allowQa: boolean }> };
   expect(v.items[0]).toMatchObject({ allowHint: true, allowQa: true });
   expect(cls(sb, '11A1').id).toBeTruthy();
 });

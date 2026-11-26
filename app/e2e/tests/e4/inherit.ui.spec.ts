@@ -1,5 +1,6 @@
 import type { APIRequestContext, Page } from '@playwright/test';
 import { expect, test } from '../../support/fixtures.ts';
+import { clickHintNext } from '../../support/wait.ts';
 import { PV } from '../e1/e1.ts';
 import {
   API,
@@ -40,10 +41,10 @@ async function viewable(page: Page) {
   await expect(page.getByTestId('e4-solution-locked')).toHaveCount(0);
   await expect(page.getByText(MSG['31'])).toHaveCount(0);
 }
-async function uiHints(page: Page) {
+async function uiHints(page: Page, id: string) {
   await tab(page, 'hint');
   for (const n of [1, 2]) {
-    await page.getByTestId('e4-hint-next').click();
+    await clickHintNext(page, id, n); // chờ POST gợi ý + GET /help làm mới, không chờ theo thời gian (T-261126-43)
     await expect(page.getByTestId(`e4-hint-${n}`)).toBeVisible();
   }
 }
@@ -52,7 +53,7 @@ test('Dán lại đề đang khóa thì bị khóa theo bài giao @TC-GEO-0434',
   const { an } = await classWith(request, [{ key: 'BG-1', code: 'HKG-01' }]);
   const id = await selfStudy(request, an.token, HKG['01']);
   await openWorkspace(page, an, id);
-  await uiHints(page);
+  await uiHints(page, id);
   await lockedInherited(page);
 });
 
@@ -75,7 +76,7 @@ test('Dán lại đề của bài giao Chưa đặt giờ thì lời giải tự
   const { sb, an } = await classWith(request, [{ key: 'BG-2', code: 'HKG-02', release: 'unset' }]);
   const id = await selfStudy(request, an.token, HKG['02']);
   await openWorkspace(page, an, id);
-  await uiHints(page);
+  await uiHints(page, id);
   await lockedInherited(page);
   // giáo viên đặt giờ: vẫn khóa cho tới khi giờ đó tới
   const at = new Date(Date.now() + 4000).toISOString();
@@ -91,7 +92,7 @@ async function inheritedVariant(page: Page, request: APIRequestContext, statemen
   const { an } = await classWith(request, [{ key: 'BG-1', code: 'HKG-01' }]);
   const id = await selfStudy(request, an.token, statement);
   await openWorkspace(page, an, id);
-  await uiHints(page);
+  await uiHints(page, id);
   await lockedInherited(page);
   const r = await call.solution(request, an.token, id);
   expect(r.status()).toBe(403);
@@ -111,7 +112,7 @@ test('Cùng hình nhưng hỏi đại lượng khác thì không kế thừa kh�
   const id = await selfStudy(request, an.token, F235);
   const responses = recordResponses(page); // chờ đủ thân phản hồi trước khi kiểm (soát E4 #14)
   await openWorkspace(page, an, id);
-  await uiHints(page);
+  await uiHints(page, id);
   await viewable(page);
   const all = await responses();
   expect(all, 'đã gom được phản hồi gợi ý').toContain('"level":2');
@@ -122,7 +123,7 @@ test('Cùng hình nhưng khác tham số thì không kế thừa @TC-GEO-0489', 
   const { an } = await classWith(request, [{ key: 'BG-1', code: 'HKG-01' }]);
   const id = await selfStudy(request, an.token, F078);
   await openWorkspace(page, an, id);
-  await uiHints(page);
+  await uiHints(page, id);
   await viewable(page);
 });
 
@@ -137,10 +138,10 @@ test('Dán đề trước, giáo viên giao sau: lần xin kế tiếp bị khó
   const id = await selfStudy(request, an.token, HKG['06']);
   await openWorkspace(page, an, id);
   await tab(page, 'hint');
-  await page.getByTestId('e4-hint-next').click();
+  await clickHintNext(page, id, 1);
   await expect(page.getByTestId('e4-hint-1')).toBeVisible();
   await assignLater(request, sb, 'HKG-06', null); // BG-6: Chưa đặt giờ (F-GEO-048)
-  await page.getByTestId('e4-hint-next').click();
+  await clickHintNext(page, id, 2);
   await expect(page.getByTestId('e4-hint-2-body')).toHaveText(HINT2_HKG06);
   await lockedInherited(page);
 });
@@ -173,7 +174,7 @@ test('Đề không dựng được bằng hình mẫu không có lời giải t�
   const { an } = await classWith(request);
   const id = await selfStudy(request, an.token, F061);
   await openWorkspace(page, an, id);
-  await uiHints(page);
+  await uiHints(page, id);
   await tab(page, 'solution');
   await expect(page.getByTestId('e4-solution-locked')).toHaveText(MSG['58']);
   await expect(page.getByTestId('e4-solution-view')).toHaveCount(0);

@@ -49,6 +49,18 @@ make e2e-report       # in truy vết và mở báo cáo lượt mới nhất
 make e2e-reset        # đưa geo_e2e về trạng thái vàng (DB=geo_dev cho dev)
 make traceability ARGS="--all"  # TC nào có test, đạt/trượt, TC E2E chưa có test
 ```
+Chạy trên máy dùng chung / tải cao (T-261126-43):
+- `GEO_E2E_WORKERS=<n>`: số worker Playwright (mặc định nửa số lõi, tối thiểu 2). Máy đang tải cao thì hạ, ví dụ
+  `GEO_E2E_WORKERS=2 make e2e`. Không bật retries để che lỗi.
+- `GEO_E2E_EVIDENCE=fail|full`: mặc định `fail` (lượt chạy của task Dev) — ảnh chụp mọi test, video + trace chỉ giữ
+  khi test trượt. `full` = video + trace cho mọi test như trước; dùng ở gate tester (T-26/T-33) và khi cần báo cáo bằng
+  chứng đủ cho `make e2e-report`: `GEO_E2E_EVIDENCE=full make e2e`. Video + trace mọi test là phần tải lớn nhất của E2E.
+- Máy chủ E2E dùng trần CSDL 10 s (`GEO_E2E_DB_STATEMENT_MS`, `GEO_E2E_DB_CONN_MS`) thay cho 2 s của sản phẩm: khi CPU
+  bị chiếm, SELECT một dòng có thể quá 2 s và trả 504/503 giả. Trần 2 s được kiểm ở tầng tích hợp máy chủ; đặt hai biến
+  về 2000 để chạy E2E với trần thật. Tương tự lệnh Redis: E2E 1000 ms (`GEO_E2E_REDIS_MS`) thay cho 100 ms. Chờ máy chủ/web lên: `GEO_E2E_SERVER_WAIT` (mặc định 180 s), `GEO_E2E_WEB_WAIT` (60 s).
+- `dev-up.sh` chờ PostgreSQL và Redis nhận kết nối (lặp có hạn giờ `GEO_DEV_UP_WAIT`, mặc định 60 s) rồi mới kiểm cụm/thư mục.
+- Test UI chờ theo phản hồi API (`e2e/support/wait.ts`: `untilApi`) thay vì chờ theo thời gian.
+
 Chi tiết: [web/README.md](web/README.md), [e2e/README.md](e2e/README.md), seed: [db/seed/README.md](db/seed/README.md).
 
 ## Build, chạy
@@ -122,3 +134,28 @@ Bảng thuộc trường: `org_id uuid NOT NULL`, khóa chính `uuid`, `created_
 
 ## Thử tải
 Chưa có; xem [loadtest/README.md](loadtest/README.md).
+
+## Chặng 2–3 (S2, S3)
+Kế hoạch: `artifacts/GEO/work/s23/PLAN_code-s23.md` (module, cổng, khoảng migration, tệp sở hữu). Khung do T-261126-41 dựng sẵn:
+- Giao diện: 15 chỗ cắm rỗng `web/src/features/s2e1…s2e9, s3e1…s3e6/index.tsx` (đã có trong `features/index.ts`); task chỉ sửa thư mục feature của mình.
+- Module máy chủ mới `subject` (A1) và `notify` (A9): chỉ có `package-info.java`.
+- E2E: spec P0 chạy cả trên điện thoại đặt tên `*.p0m.ui.spec.ts`; mã cố định fixture ở `db/seed/fixture-ids.d/<feature>.json` (`e2e/support/fixtures.ts` đọc gộp với `fixture-ids.json`).
+- Truy vết: `make traceability ARGS="--strict --epic MVP,S2-E1 [--defer US-…]"` exit 1 khi TC tự động hóa (E2E-UI / E2E-API / IT / UT) thiếu test hoặc trượt. Mã TC: Playwright `@TC-S2E1-001` trong tiêu đề; JUnit `@DisplayName("TC-S2E1-001 …")`; test đơn vị web `it("TC-S2E1-001 …")`. Bí danh `MVP` = E1…E7, `S2`, `S3`.
+- Tệp chung có mốc `--- T-261126-NN (…) ---` (sql-lint.properties, ArchitectureTest.java, application.yml, Makefile, tệp này): mỗi task chỉ thêm dòng ngay dưới mốc của mình. `make bench-s2` gọi `scripts/bench-s2.sh`.
+
+<!-- --- T-261126-41 (khung) --- -->
+<!-- --- T-261126-18 (S2-E1) --- -->
+<!-- --- T-261126-19 (S2-E2) --- -->
+<!-- --- T-261126-20 (S2-E5) --- -->
+<!-- --- T-261126-21 (S2-E8) --- -->
+<!-- --- T-261126-22 (S2-E3) --- -->
+<!-- --- T-261126-23 (S2-E6, S2-E7) --- -->
+<!-- --- T-261126-24 (S2-E4) --- -->
+<!-- --- T-261126-25 (S2-E9) --- -->
+<!-- --- T-261126-42 (S3 dữ liệu mẫu) --- -->
+<!-- --- T-261126-28 (S3-E1, S3-E5) --- -->
+<!-- --- T-261126-29 (S3-E2) --- -->
+<!-- --- T-261126-30 (S3-E3) --- -->
+<!-- --- T-261126-31 (S3-E4, S3-E5) --- -->
+<!-- --- T-261126-32 (S3-E6, S3-E5) --- -->
+<!-- --- FIX (task FIX T-261126-35, 43+) --- -->

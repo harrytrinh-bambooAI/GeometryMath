@@ -1,21 +1,18 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 26/11/2026 16:15
-Mục tiêu hiện tại: chặng 2 → hết chặng 3 theo `.claude/plans/STAGE-2-3-PLAN.md` v0.2 (owner duyệt). Phiên chính = delivery-lead v0.2: chỉ điều phối; mọi task → agent con, 1 worktree + nhánh / task. Model: Dev code = Opus; PO/BA/QC/UI/Tester/soát = Sonnet; Opus ≤ 2, tổng quy đổi ≤ 4.
-Đã xong:
-- MVP: T-01..T-04 gộp (afda3dd, 77850f4, 6b62557); FIX5 (T-07) nghiệm thu + gộp (merge sau 6f096fc; verify 201 + 137 IT, bench-mvp mock exit 0).
-- Plan chặng 2–3 rà xong → v0.2 (sửa lệnh kiểm T-05: báo cáo in "Kết luận chỉ số bắt buộc: **ĐẠT**" + provider), nạp `.claude/queue.md` + TASKS (T-08…T-34; queue validate 28 task) (48f7483).
-- W1 xong: T-08 PO brief/BRD delta/story map 55 story, PO-62…65 TẠM (0b9ee97); T-10 bản mẫu 24 màn + DQ.md 28 câu TẠM (887b97e). Cả hai đã gộp.
-- W2 xong: T-14 spec S3 21 story/280 AC/280 TC (1d16746); T-12 spec S2 35 story/442 AC/447 TC (9493739). Lint 0 lỗi, đã gộp. Câu mở → NEEDS C8, C9.
-- Designer: câu hỏi cho Designer Dom ở `Design/Q_Dom.md` v0.2 (owner đang tạo designer cho chặng sau; không tự làm design chặng 4+).
-- W3 (soát + thiết kế) xong: T-15 soát phản biện S2/S3 (gộp 1816344: 723 AC/728 TC 0 lỗi; RV_s23 v0.2 mở 0 blocker/0 major, 6 minor; tester domains/geo scope localhost confirmed:false, bản sao ở artifacts/GEO/work/tester/geo); T-36 Designer Dom (gộp 2be47fa: 45 ảnh, Q_Dom v0.3, DQ-29…43).
-- Gate T-16 xong 26/11: owner "OK hết" → PO-66 + DECISIONS "S23 R3 OK" (53c4782). Owner giao: delivery-lead tự quyết, owner kiểm sản phẩm cuối.
-- Sau gate: T-37 spec áp PO-66 (ebec17a, 58 story / 746 AC / 751 TC); T-38 bản mẫu kịch bản 7 KB (b4610fb, không tự chạy ebedee5); T-39 4 hướng style (3d8c00b, TẠM: A cho HS, D cho GV); PDF style (6fc2493) + PDF kịch bản 61 trang (2158e7a); T-17 PLAN_code-s23 v1.0 (30df78c: 15 task code, mã mới 41 khung chung / 42 seed S3).
-Đang dở (nền):
-- T-261126-40 Dom vẽ màn "chưa vẽ" trong kịch bản + màn 2 story mới (Sonnet, wt `.claude/worktrees/s23-draw`, tiến độ runner-T-261126-40.md).
-- T-261126-41 khung chung S2/S3: traceability --strict, 15 feature rỗng (Opus, wt `.claude/worktrees/s23-base`, tiến độ runner-T-261126-41.md).
+# PROGRESS · GeometryMath (GEO) · cập nhật 26/11/2026 18:00
+Mục tiêu hiện tại: CODE tới hết chặng 3 (lệnh owner 26/11 "start coding", goal "hoàn thành chặng 3"). Owner chỉ kiểm sản phẩm lúc cuối; delivery-lead TỰ QUYẾT + ghi DECISIONS, không hỏi, không chờ owner (memory delivery-lead-decides). UI theo HTML bản mẫu `Design/prototype/s23*` + theme D mặc định (đổi A/B/C/D trong Cài đặt). AI mock; T-05 (đo thật) chỉ chặn gate cuối T-34; T-27 delivery-lead chốt theo S2-L6/REPORT.md. Phiên chính chỉ điều phối; mỗi task = 1 agent con + 1 worktree/nhánh; Opus ≤ 2 cùng lúc.
+Đã xong (nhánh worktree-mvp-wave0):
+- Spec S2/S3 R3 OK + PO-66 (ebec17a: 58 story / 746 AC / 751 TC). PLAN_code-s23 v1.0 (30df78c). epic-common v1.3 (fface0d).
+- Thiết kế: kịch bản 7 KB / 61 bước + 15 màn mới (d1d5b87), PDF `Design/s23/GEO-kich-ban-S23.pdf`; 4 style + PDF `Design/styles/GEO-4-huong-style.pdf`; DQ-50 chốt (9b192b8).
+- T-41 khung chung S2/S3: traceability --strict, 15 feature rỗng (gộp b350990).
+Đang dở (nền, 2 Opus — agent con của phiên cũ; sau /clear có thể mất, xem mục Rủi ro):
+- T-261126-50 hệ theme — agent ĐÃ XONG, báo Fail (chưa commit): verify xanh (201 UT + 140 IT), web-build xanh, e2e theme 4/4 cả 2 lượt, 4 ảnh `artifacts/GEO/evidence/theme/`; e2e toàn bộ 862/868 rồi 856/868, mọi trượt = 504 TIMEOUT đường e4 gợi ý/AI mock, mỗi lượt khác nhau (tải máy). Việc: sau khi T-43 gộp (giảm tải + chờ theo trạng thái), rebase/merge T-43 vào s23-theme rồi chạy lại khối Kiểm T-50 khi máy rảnh → xanh thì commit + gộp. Câu mở: (1) đăng ký `user_preference` trong sql-lint.properties (ngoài phạm vi) → FIX; (2) 26 màu cứng ở features/e2,e4,e5,e6 + viewer.css, `--pri` dùng làm màu chữ yếu ở theme B → FIX dùng `--pri-t`; (3) D giữ chữ nhỏ MVP 12.5/11.5/11 px — PO-66 G17 yêu cầu ≥ 14 px → FIX nâng D lên 14 px; chưa có bộ icon.
+- T-261126-43 FIX môi trường + e2e chập chờn + `GEO_E2E_EVIDENCE=fail|full` + `GEO_E2E_WORKERS` (wt `.claude/worktrees/fix-43`, runner-T-261126-43.md; e2e lượt 1 đang chạy).
 Bước tiếp theo:
-1. Mỗi agent xong: chạy lại Kiểm (T-40 trong brief: kb-shoot + không còn "chưa vẽ"; T-41 khối queue) → commit nhánh (cd vào worktree) → merge --no-ff → queue header [done] (sửa tay).
-2. Sau T-41: 18‖19 chờ T-05 (G7). Owner chạy đo thật (Việc owner) — phiên chính bị auto mode chặn khi dùng key.
-Inbox còn: không mục mở (FIX5 đóng).
-Quyết định: DECISIONS.md (mới nhất: duyệt plan chặng 2–3, model theo vai); PO-DECISIONS.md (PO-61).
-Việc owner: T-05 đo thật — `! cd <worktree>/app && eval "$(grep '^export GEO_AI_API_KEY=' ~/.zshrc)" && GEO_AI_PROVIDER=anthropic make bench-mvp > /tmp/geo-bench-real.log 2>&1; echo rc=$?` (~$3); NEEDS A2, C1–C3.
-Rủi ro / chặn: code chặng 2 chờ B7 (T-05). Không commit/log key. Ước tính toàn plan ≈ 190M token / 89 agent·giờ → nguy cơ chạm hạn mức; chạy theo đợt, dừng ở đợt đã gộp xanh.
+1. Kiểm T-50 / T-43: tail tiến độ + mtime tệp trong worktree (find -newer). Nếu agent đã chết (im > 20 phút, không tiến trình playwright/geo-server ở worktree đó) → chạy lại khối "Kiểm" trong `.claude/queue.md` ở gốc repo; xanh → `cd <wt>` commit → `git merge --no-ff <nhánh>` từ mvp-wave0 → header queue `[done]` (sửa tay bằng sed; `queue.py set` không ghi). Đỏ → agent mới, brief = `queue.py brief <ID>` + "tiếp tục phần dở, giữ thay đổi chưa commit".
+2. Sau T-50: T-18 (S2-E1); sau T-43: T-19 (S2-E2). Mỗi task: `git -C <mvp-wave0> worktree add <đường dẫn tuyệt đối .claude/worktrees/<wt>> -b <nhánh> HEAD` → `queue.py brief <ID> > $CLAUDE_JOB_DIR/tmp/briefNN.txt` → Agent Opus đọc tệp brief.
+3. Thứ tự: 18‖19 → 20‖21 → 22‖23 → 24‖25 → 26‖42 → 27 (delivery-lead) → 28‖29 → 30‖31 → 32 → 33 → 34 (owner + T-05). Sau epic lớn: soát độc lập Sonnet (chỉ diff + Xong khi).
+4. Kiểm e2e khi máy tải cao (load 36–50): trượt rải rác do timeout → so với 2 lượt xanh của agent; ghi rõ khi chấp nhận. Dừng dev services worktree đã gộp (`make down`).
+Inbox còn: 3 mục (.claude/inbox.md): FIX sau T-41 (một phần do T-43; còn ẩn feature rỗng /gv sau T-50), Dom vẽ bổ sung (đã xong T-40 — đóng), PO soát sau T-37 (story = 58, đóng).
+Quyết định đã chốt: DECISIONS.md (mới nhất: sau T-41 — strict "chưa chạy" chỉ trượt ở gate T-26/T-33); PO-DECISIONS PO-66.
+Rủi ro / chặn: phiên chính bị auto mode chặn chạy `make bench-mvp` bằng key → T-05 cần owner chạy (chỉ trước T-34). Máy tải cao làm e2e chập chờn. Ước tính còn ~15 task Opus × 3–5 giờ (~150M token) → có thể chạm hạn mức; dừng ở trạng thái đã gộp xanh. Lệnh git trong worktree lồng: phải `cd` vào worktree rồi chạy git trơn (guard chặn `git -C` phức tạp).
+Việc owner: T-05 đo thật — `! cd /Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0/app && eval "$(grep '^export GEO_AI_API_KEY=' ~/.zshrc)" && GEO_AI_PROVIDER=anthropic make bench-mvp > /tmp/geo-bench-real.log 2>&1; echo rc=$?` (~$3).

@@ -38,6 +38,10 @@ async function noWrongLabel(page: Page) {
 }
 
 test('Một chuỗi nhãn trên mọi màn @TC-GEO-0218', async ({ page, request, browser }, testInfo) => {
+  // T-261126-43: test duy nhất đi 4 màn trên 2 thiết bị (2 ngữ cảnh trình duyệt, 3 trang có video + trace). Mỗi bước đã
+  // chờ theo DOM; riêng tổng thời gian (kể cả tháo ngữ cảnh = ghi video) vượt 30 s khi máy tải cao (43 s, load ~40,
+  // 26/11) nên nhân 3 hạn của RIÊNG test này (test.slow), không nới assertion.
+  test.slow();
   // Giáo viên mẫu: thẻ đề ở Kho đề và trang chi tiết đề
   await signInPage(page, request, 'F-GEO-003');
   await page.goto('/gv/kho-de');
@@ -56,6 +60,7 @@ test('Một chuỗi nhãn trên mọi màn @TC-GEO-0218', async ({ page, request
       await expect(p.getByTestId('e2-scene-label')).toHaveText('Đã kiểm chứng');
       await noWrongLabel(p);
       await testInfo.attach(`bg1-${p.context() === phone ? 'iphone' : 'project'}.png`, { body: await p.screenshot(), contentType: 'image/png' });
+      await p.close(); // trang phụ: ghi video trong thân test, không dồn vào lúc tháo ngữ cảnh
     }
   } finally {
     await phone.close();
