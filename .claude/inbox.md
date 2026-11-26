@@ -318,3 +318,15 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo agent F3 + runner-fix-s3int + runner-fix-s3f3; `epics/S3-E5/qc_findings.md` (Dev-S3E5-11…21), `S3-E6/qc_findings.md` (Dev-S3E6-01…08), `E7/qc_findings.md` (Dev-E7-12).
 - **Xong khi:** mục 1–2 FIX trước gate T-34; mục 3–4 ghi PO-DECISIONS.
 - **Ngoài phạm vi:** chặng 4.
+
+## Việc: FIX lô soát độc lập T-20…T-32 · ghi 27/11/2026
+- **Mục tiêu:** đóng 4 major + minor chọn lọc của bản soát; mỗi mục có test.
+  1. [major, cần ca thử xác nhận trước] `aigateway/internal/web/ClassAiSwitchFilter.java:41,54,63` khớp regex trên `getRequestURI()` thô → `…/questions;x=1` có thể né tắt AI theo lớp. Dùng đường đã chuẩn hoá (servletPath/PathPattern) hoặc kiểm trong service.
+  2. [major] `AuditEventService.java:82-85` (từ `SetReleaseService.java:219-226`) ghi audit "denied" không giới hạn → phình `audit_log` không xoá được. Giới hạn tần suất/gộp.
+  3. [major, phòng thủ chiều sâu] `V415:48`, `V416:32` `fn_account_purge_rows` SECURITY DEFINER không `REVOKE … FROM PUBLIC`; cùng `fn_audit_event`, `fn_class_join_request`. Migration mới REVOKE + GRANT đúng vai.
+  4. [major] `AccountPurgeJob.java:51` trễ đầu 24 giờ → máy chủ khởi động lại hằng ngày thì job dọn không bao giờ chạy.
+  5. [minor ×9] xem báo cáo (chỉ mục `audit_log.actor_user_id`, CSV chống công thức thiếu TAB/CR, `sourcemap: true` bản production, `userCode` trong query string…).
+  6. [PO] mục 8 báo cáo: phạm vi US-S3E5-05 có gồm học sinh vào lớp bằng tên không.
+- **Nguồn:** `artifacts/GEO/evidence/REVIEW-T20-T32-20261127.md` (Sonnet, 27/11/2026).
+- **Xong khi:** make verify xanh; e2e-affected 0 trượt; ca thử mục 1 tái hiện trước khi sửa (hoặc ghi "không tái hiện").
+- **Ngoài phạm vi:** tính năng mới; vùng chưa soát (liệt kê cuối báo cáo).
