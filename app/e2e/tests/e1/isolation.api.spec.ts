@@ -42,11 +42,19 @@ test('Nội dung hệ thống đọc được từ mọi trường @TC-GEO-0125'
 test('Bản ghi mới mang trường của người tạo @TC-GEO-0126', async ({ request }) => {
   const an = await devToken(request, 'F-GEO-020');
   const question = `Vì sao A là hình chiếu của S? (${Date.now()})`;
-  const r = await withLock(AN_AI_LOCK, () =>
+  // BR-S3E5-34 (PO-61, chặng 3) thay hợp đồng cũ "bỏ qua trường thừa": thân cố ý kèm định danh
+  // trường THCS Mẫu C bị từ chối VALIDATION_FAILED, không lưu gì
+  const bad = await withLock(AN_AI_LOCK, () =>
     request.post(`/api/v1/student/assignments/${BG('BG-1')}/questions`, {
       headers: bearer(an),
-      data: { question, orgId: ORG_C, schoolId: ORG_C }, // cố ý kèm định danh trường THCS Mẫu C
+      data: { question: `${question} [C]`, orgId: ORG_C, schoolId: ORG_C },
     }),
+  );
+  expect(bad.status()).toBe(400);
+  expect(((await bad.json()) as { code: string }).code).toBe('VALIDATION_FAILED');
+  // câu hỏi hợp lệ: trường lấy từ phiên của người tạo (THPT Mẫu A), không từ thân yêu cầu
+  const r = await withLock(AN_AI_LOCK, () =>
+    request.post(`/api/v1/student/assignments/${BG('BG-1')}/questions`, { headers: bearer(an), data: { question } }),
   );
   expect(r.status()).toBe(200);
   const a = await devToken(request, 'F-GEO-003');

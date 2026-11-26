@@ -7,7 +7,8 @@
  *     TC-S3En-nn; cột "Tự động hóa" (E2E-UI / E2E-API / IT / UT / Manual). Story của TC = tiêu đề `### US-…` gần nhất.
  *   - Test Playwright: tag @TC-… trong app/e2e/tests/**; kết quả evidence/<run>/summary.json (mặc định evidence/latest.txt).
  *   - Test JUnit (IT, UT): mã TC-GEO-0123 / TC_GEO_0123 / TC-S2E1-001 / TC_S2E1_001 trong app/server/src/test/java;
- *     kết quả server/target/{surefire,failsafe}-reports.
+ *     kết quả server/target/{surefire,failsafe}-reports: ca JUnit (lớp + phương thức) nối với mã TC ở @DisplayName /
+ *     chú thích ngay trên phương thức hoặc javadoc lớp (đọc từ mã nguồn, vì báo cáo không ghi @DisplayName).
  *   - Test đơn vị web (UT): mã TC trong tên test của app/web/src/**\/*.test.ts(x) (chưa đọc kết quả: "chưa chạy").
  * "Bắt buộc" = TC có Tự động hóa E2E-UI | E2E-API | IT | UT.
  * --epic: danh sách phân tách dấu phẩy; bí danh MVP = mọi E<n>, S2 = mọi S2-E<n>, S3 = mọi S3-E<n>. Không có = tất cả.
@@ -117,6 +118,85 @@ for (const [dir, fileRe, autoRe] of codeTags)
   for (const file of walk(dir, (n) => fileRe.test(n)))
     for (const id of idsIn(readFileSync(file, 'utf8'))) if (autoRe.test(tcs.get(id)?.auto ?? '')) addTag(id, file);
 
+/**
+ * Mã TC của từng phương thức test JUnit, đọc từ mã nguồn: báo cáo surefire/failsafe chỉ ghi lớp + tên phương thức
+ * (không ghi @DisplayName), còn mã TC nằm ở @DisplayName / chú thích / javadoc ngay trên phương thức. Mã TC ở phần
+ * đầu lớp (javadoc lớp) áp cho mọi test của lớp đó; lớp lồng (Outer$Inner) thừa kế mã của lớp ngoài.
+ */
+const TEST_ANNOT = /@(Test|ParameterizedTest|RepeatedTest|TestFactory|TestTemplate)\b/;
+/** Bỏ chú thích và chuỗi khỏi phần đầu khai báo để nhận dạng cú pháp (mã TC vẫn đọc từ bản đầy đủ). */
+const codeOnly = (s: string) =>
+  s.replace(/\/\/[^\n]*|\/\*[\s\S]*?\*\/|"""[\s\S]*?"""|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/g, ' ').trim();
+function javaTestIds(src: string): { methods: Map<string, string[]>; classes: Map<string, string[]> } {
+  const methods = new Map<string, string[]>();
+  const classes = new Map<string, string[]>();
+  const pkg = /^\s*package\s+([\w.]+)\s*;/m.exec(src)?.[1];
+  type Frame = { cls?: string; ids: string[]; acc: string; paren: number; arr: number };
+  const stack: Frame[] = [{ ids: [], acc: '', paren: 0, arr: 0 }];
+  const top = () => stack[stack.length - 1]!;
+  const end = (k: number) => (k < 0 ? src.length : k);
+  let i = 0;
+  while (i < src.length) {
+    const f = top();
+    const c = src[i]!;
+    let j = i + 1;
+    if (src.startsWith('//', i)) j = end(src.indexOf('\n', i));
+    else if (src.startsWith('/*', i)) j = src.indexOf('*/', i + 2) < 0 ? src.length : src.indexOf('*/', i + 2) + 2;
+    else if (src.startsWith('"""', i)) j = src.indexOf('"""', i + 3) < 0 ? src.length : src.indexOf('"""', i + 3) + 3;
+    else if (c === '"' || c === "'") {
+      while (j < src.length && src[j] !== c) j += src[j] === '\\' ? 2 : 1;
+      j += 1;
+    } else if (c === '(') f.paren += 1;
+    else if (c === ')') f.paren = Math.max(0, f.paren - 1);
+    else if (c === '{' && (f.paren > 0 || f.arr > 0)) f.arr += 1; // mảng trong chú thích: @ValueSource(ints = {1, 2})
+    else if (c === '}' && f.arr > 0) f.arr -= 1;
+    else if (c === '{') {
+      const head = f.acc;
+      const code = codeOnly(head);
+      const decl = [...code.matchAll(/\b(?:class|interface|enum|record)\s+(\w+)/g)].pop();
+      const frame: Frame = { ids: [], acc: '', paren: 0, arr: 0 };
+      if (decl && !/\)\s*(?:throws[\w.,\s]*)?$/.test(code)) {
+        frame.cls = f.cls ? `${f.cls}$${decl[1]}` : pkg ? `${pkg}.${decl[1]}` : decl[1];
+        frame.ids = [...new Set([...f.ids, ...idsIn(head)])];
+        classes.set(frame.cls, frame.ids);
+      } else if (f.cls && TEST_ANNOT.test(code)) {
+        const name = /(\w+)\s*\((?:[^()]|\([^()]*\))*\)\s*(?:throws[\w.,\s]*)?$/.exec(code)?.[1];
+        if (name) methods.set(`${f.cls}#${name}`, [...new Set([...idsIn(head, true), ...idsIn(name, true)])]);
+      }
+      stack.push(frame);
+      i = j;
+      continue;
+    } else if (c === '}') {
+      if (stack.length > 1) stack.pop();
+      top().acc = '';
+      i = j;
+      continue;
+    } else if (c === ';' && f.paren === 0 && f.arr === 0) {
+      f.acc = '';
+      i = j;
+      continue;
+    }
+    f.acc += src.slice(i, j);
+    i = j;
+  }
+  return { methods, classes };
+}
+const javaMethods = new Map<string, string[]>();
+const javaClasses = new Map<string, string[]>();
+for (const file of walk(path.join(appDir, 'server/src/test/java'), (n) => n.endsWith('.java'))) {
+  const { methods, classes } = javaTestIds(readFileSync(file, 'utf8'));
+  methods.forEach((v, k) => javaMethods.set(k, v));
+  classes.forEach((v, k) => javaClasses.set(k, v));
+}
+/** Mã TC của một ca trong báo cáo JUnit: mã của phương thức (nguồn) + mã đầu lớp + mã trong tên (kiểu tc0123_…). */
+const junitIds = (attrs: string): string[] => {
+  const cls = /\bclassname="([^"]*)"/.exec(attrs)?.[1] ?? '';
+  const method = (/\bname="([^"]*)"/.exec(attrs)?.[1] ?? '').split(/[([]/)[0]!.trim();
+  return [
+    ...new Set([...(javaMethods.get(`${cls}#${method}`) ?? []), ...(javaClasses.get(cls) ?? []), ...idsIn(attrs, true)]),
+  ];
+};
+
 // ---- Kết quả
 const junit = new Map<string, string>();
 for (const dir of ['surefire-reports', 'failsafe-reports']) {
@@ -127,7 +207,7 @@ for (const dir of ['surefire-reports', 'failsafe-reports']) {
     for (const m of xml.matchAll(/<testcase\b([^>]*?)(\/>|>([\s\S]*?)<\/testcase>)/g)) {
       const body = m[3] ?? '';
       const st = /<(failure|error)\b/.test(body) ? 'failed' : /<skipped\b/.test(body) ? 'skipped' : 'passed';
-      for (const id of idsIn(m[1] ?? '', true)) {
+      for (const id of junitIds(m[1] ?? '')) {
         const prev = junit.get(id);
         junit.set(id, prev === 'failed' || st === 'failed' ? 'failed' : prev === 'skipped' ? prev : st);
       }
