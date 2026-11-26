@@ -158,3 +158,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo T-37, DECISIONS 26/11.
 - **Xong khi:** story map = số story `check_ac_tc` đếm; ảnh 2 màn mới trong Design/s23/.
 - **Ngoài phạm vi:** code.
+
+## Việc: FIX sau T-41 (26/11/2026) — gom vào FIX T-261126-43
+- **Mục tiêu:** (a) `scripts/dev-up.sh` chờ Redis nhận kết nối (ping lặp có hạn giờ) trước khi kiểm thư mục cổng — hết lỗi "cổng thuộc thư mục khác ()" lần đầu; (b) `router.tsx`: ẩn feature 0 màn ở trang tổng quan /gv, /hs; (c) test chập chờn khi 2 worktree chạy e2e cùng lúc: TC-GEO-0428 (`e4/hints.ui.spec.ts:129`, chromium, toBeVisible 4,3 s) và TC-GEO-0485 (`e4/inherit.ui.spec.ts:135`, webkit) — trượt ở lượt kiểm lại T-41 16:37, đạt ở 2 lượt của agent; chờ theo trạng thái thay vì thời gian.
+- **Nguồn:** báo cáo T-41 (26/11).
+- **Xong khi:** `make up` từ trạng thái sạch đạt 3 lần liên tiếp; e2e tổng quan /gv không có dòng feature rỗng.
+- **Ngoài phạm vi:** tính năng.
