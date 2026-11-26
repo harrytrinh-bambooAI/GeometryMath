@@ -62,7 +62,7 @@ const L = {
     const ln = (a, b2, d) => `<line x1="${a[0]}" y1="${a[1]}" x2="${b2[0]}" y2="${b2[1]}" ${d ? `stroke-dasharray="${cfg.dash}" opacity=".75"` : ''}/>`;
     const shadow = s === 'a' ? '<ellipse cx="240" cy="410" rx="190" ry="16" fill="rgba(0,121,107,.12)"/>' : '';
     const extra = s === 'd' ? `<text x="${(S[0] + C[0]) / 2 + 12}" y="${(S[1] + C[1]) / 2}" font-family="Inter" font-size="14" fill="#475569">SC</text><text x="${(A[0] + D[0]) / 2 - 4}" y="${(A[1] + D[1]) / 2 + 22}" font-family="Inter" font-size="14" fill="#475569">a</text><text x="${(S[0] + A[0]) / 2 - 36}" y="${(S[1] + A[1]) / 2}" font-family="Inter" font-size="14" fill="#475569">a√2</text>` : '';
-    return `<svg class="pyr" viewBox="0 0 460 440" role="img" aria-label="Hình chóp S.ABCD">${defs}${shadow}
+    return `<svg class="pyr" viewBox="0 -26 460 466" role="img" aria-label="Hình chóp S.ABCD">${defs}${shadow}
 <g${filt} stroke="${cfg.st}" stroke-width="${cfg.sw}" stroke-linecap="round" stroke-linejoin="round" fill="none">
 <polygon points="${pt(A)} ${pt(B)} ${pt(C)} ${pt(D)}" fill="${cfg.f2}" stroke="none"/>
 <polygon points="${pt(S)} ${pt(B)} ${pt(C)}" fill="${cfg.f1}" stroke="none"/><polygon points="${pt(S)} ${pt(C)} ${pt(D)}" fill="${cfg.f1}" stroke="none"/>
