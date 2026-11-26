@@ -1,39 +1,227 @@
 /*
- * Token thiết kế, chép nguyên giá trị từ Design/assets/ds.css (bộ CSS mà Design/prototype/index.html nạp),
- * phiên bản Design ngày 22/11/2026. Đổi màu/bo góc ở Design trước rồi chép lại đây; không đặt màu rời trong component.
+ * Token theme (T-261126-50). Nguồn: Design/styles/{a,b,c,d}/style.css + STYLES.md v0.1 (T-261126-39, 26/11/2026).
+ * Chọn theme bằng thuộc tính `data-theme` trên <html> (a | b | c | d); không có thuộc tính = token gốc khối D; mặc định ứng dụng = C (index.html + DEFAULT_THEME, lệnh owner 26/11).
+ *
+ * Tên token là hợp đồng chung cho mọi CSS của app: component chỉ dùng var(--…), không đặt mã màu rời.
+ * Thêm theme mới: chép một khối [data-theme='x'] bên dưới, đổi giá trị; thêm mục vào src/shared/theme/themes.ts;
+ * thêm 'x' vào CHECK của bảng user_preference (migration mới) và PreferenceService.THEMES phía máy chủ.
+ *
+ * Nhóm token:
+ *   nền/chữ   --bg --bg-img --panel --soft --hover --line --line-strong --text --muted --faint
+ *   màu nhấn  --pri --pri-d --pri-s --pri-t (chữ màu chính trên nền sáng/tối) --pri-line --on-pri
+ *             --org --grn --yel --pur --sky --red (+ -s nền nhạt), --yel-t (chữ vàng đủ tương phản)
+ *   hình khối --r (thẻ) --r-sm (ô nhỏ) --r-btn (nút) --r-chip --sh (bóng thẻ) --focus (vòng tiêu điểm)
+ *   chữ       --font --font-mono --fs --fs-sm --fs-chip --fs-rail (A/B/C: chữ phụ ≥ 14 px theo STYLES.md;
+ *             D giữ cỡ chữ phụ của màn MVP 12,5 / 11,5 / 11 px để không đổi bố cục — xem câu hỏi mở T-50)
+ *   mật độ    --ctl-h (cao nút/ô nhập với chuột) --gap --pad-card --rail-w --rail-bg
+ * Cảm ứng (iPad/iPhone, pointer: coarse): base.css nâng vùng chạm lên tối thiểu --touch (44 px) cho mọi theme.
  */
-:root {
-  /* nền và chữ */
-  --bg: #f3f5fb;
+:root,
+[data-theme='d'] {
+  /* D · Bảng điều khiển gọn (shadcn/Radix + Fluent 2): slate, nhấn #1D4ED8, Inter, bo 6 px, nút 36 px */
+  color-scheme: light;
+  --bg: #f8fafc;
+  --bg-img: none;
   --panel: #fff;
-  --soft: #f7f9fd;
-  --line: #e3e8f2;
-  --text: #141b2d;
-  --muted: #5f6b85;
-  --faint: #98a2b8;
-  /* màu nhấn: chính, cam, xanh lá, vàng, tím, xanh trời, đỏ (kèm nền nhạt -s) */
-  --pri: #3b5bdb;
-  --pri-d: #2f49b5;
-  --pri-s: #e9eeff;
-  --org: #f0522b;
-  --org-s: #ffede7;
-  --grn: #0f8a5f;
-  --grn-s: #dff5ec;
-  --yel: #e8a200;
-  --yel-s: #fff4d6;
-  --pur: #7c4dff;
-  --pur-s: #efe9ff;
-  --sky: #0ea5e9;
-  --sky-s: #e0f4fe;
-  --red: #d92d20;
-  --red-s: #fde7e5;
-  /* hình khối */
-  --r: 16px;
-  --r-sm: 11px;
-  --sh: 0 1px 2px rgba(20, 27, 45, 0.05), 0 6px 20px rgba(20, 27, 45, 0.06);
-  /* chữ */
-  --font: 'Be Vietnam Pro', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --soft: #f1f5f9;
+  --hover: #f1f5f9;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --text: #0f172a;
+  --muted: #475569;
+  --faint: #64748b;
+  --pri: #1d4ed8;
+  --pri-d: #1e40af;
+  --pri-s: #dbeafe;
+  --pri-t: #1d4ed8;
+  --pri-line: #93c5fd;
+  --on-pri: #fff;
+  --org: #c2410c;
+  --org-s: #ffedd5;
+  --grn: #15803d;
+  --grn-s: #dcfce7;
+  --yel: #d97706;
+  --yel-s: #fef3c7;
+  --yel-t: #92400e;
+  --pur: #6d28d9;
+  --pur-s: #ede9fe;
+  --sky: #0369a1;
+  --sky-s: #e0f2fe;
+  --red: #b91c1c;
+  --red-s: #fee2e2;
+  --r: 6px;
+  --r-sm: 6px;
+  --r-btn: 6px;
+  --r-chip: 4px;
+  --sh: 0 1px 1px rgba(15, 23, 42, 0.04);
+  --focus: 0 0 0 2px #fff, 0 0 0 4px #2563eb;
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --font-math: var(--font);
   --fs: 14px;
+  --fs-sm: 12.5px;
+  --fs-chip: 11.5px;
+  --fs-rail: 11px;
+  --ctl-h: 36px;
+  --gap: 14px;
+  --pad-card: 14px 16px;
   --rail-w: 92px;
+  --rail-bg: #fff;
+  --touch: 44px;
+}
+
+[data-theme='a'] {
+  /* A · Lớp học sáng (Material Design 3): xanh ngọc #00796B, vàng, san hô; Nunito; nút pill 52 px */
+  color-scheme: light;
+  --bg: #f4faf7;
+  --bg-img: none;
+  --panel: #fff;
+  --soft: #eaf4f0;
+  --hover: #e2f0eb;
+  --line: #d5e5df;
+  --line-strong: #bfd3cc;
+  --text: #17302b;
+  --muted: #4a635c;
+  --faint: #5f7770;
+  --pri: #00796b;
+  --pri-d: #004d40;
+  --pri-s: #b2dfdb;
+  --pri-t: #004d40;
+  --pri-line: #00796b;
+  --on-pri: #fff;
+  --org: #e8503f;
+  --org-s: #ffdad4;
+  --grn: #1b6e3a;
+  --grn-s: #cdefd6;
+  --yel: #ffc83d;
+  --yel-s: #fff1c2;
+  --yel-t: #7a4f00;
+  --pur: #6750a4;
+  --pur-s: #eaddff;
+  --sky: #00639b;
+  --sky-s: #cde5ff;
+  --red: #b3261e;
+  --red-s: #ffdad6;
+  --r: 24px;
+  --r-sm: 16px;
+  --r-btn: 999px;
+  --r-chip: 999px;
+  --sh: 0 1px 3px rgba(0, 60, 50, 0.14);
+  --focus: 0 0 0 3px #1a73e8;
+  --font: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --fs: 16px;
+  --fs-sm: 14px;
+  --fs-chip: 14px;
+  --fs-rail: 12px;
+  --ctl-h: 52px;
+  --gap: 20px;
+  --pad-card: 20px;
+  --rail-w: 92px;
+  --rail-bg: #f4faf7;
+}
+
+[data-theme='b'] {
+  /* B · Bảng đen tối (IBM Carbon g100): nền #161616, nhấn #0F62FE, nét phấn vàng; IBM Plex; bo 0 */
+  color-scheme: dark;
+  --bg: #161616;
+  --bg-img: none;
+  --panel: #262626;
+  --soft: #333;
+  --hover: #393939;
+  --line: #393939;
+  --line-strong: #525252;
+  --text: #f4f4f4;
+  --muted: #c6c6c6;
+  --faint: #a8a8a8;
+  --pri: #0f62fe;
+  --pri-d: #0050e6;
+  --pri-s: #002d9c;
+  --pri-t: #78a9ff;
+  --pri-line: #78a9ff;
+  --on-pri: #fff;
+  --org: #ff832b;
+  --org-s: #3e1a00;
+  --grn: #42be65;
+  --grn-s: #0e3b1b;
+  --yel: #ffd966;
+  --yel-s: #3d3000;
+  --yel-t: #f1c21b;
+  --pur: #be95ff;
+  --pur-s: #31135e;
+  --sky: #33b1ff;
+  --sky-s: #012749;
+  --red: #ff8389;
+  --red-s: #4d1a1c;
+  --r: 0;
+  --r-sm: 0;
+  --r-btn: 0;
+  --r-chip: 24px;
+  --sh: none;
+  --focus: inset 0 0 0 2px #fff;
+  --font: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --fs: 16px;
+  --fs-sm: 14px;
+  --fs-chip: 14px;
+  --fs-rail: 12px;
+  --ctl-h: 48px;
+  --gap: 16px;
+  --pad-card: 20px;
+  --rail-w: 92px;
+  --rail-bg: #000;
+}
+
+[data-theme='c'] {
+  /* C · Giấy kẻ ô (Apple HIG): giấy #FBF8EE kẻ ô xanh nhạt, xanh hệ thống #0A62C9; chữ giao diện Bad Script (lệnh owner 26/11), nội dung toán Be Vietnam Pro; nút 44 px. MẶC ĐỊNH. */
+  color-scheme: light;
+  --bg: #fbf8ee;
+  --bg-img:
+    linear-gradient(to right, rgba(207, 224, 238, 0.55) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(207, 224, 238, 0.55) 1px, transparent 1px);
+  --panel: #fff;
+  --soft: #efeff4;
+  --hover: #e8f0fb;
+  --line: #e0ddd2;
+  --line-strong: #c7c7cc;
+  --text: #1c1c1e;
+  --muted: #4f4f54;
+  --faint: #6c6c70;
+  --pri: #0a62c9;
+  --pri-d: #084c9e;
+  --pri-s: #e8f0fb;
+  --pri-t: #0a62c9;
+  --pri-line: #0a62c9;
+  --on-pri: #fff;
+  --org: #c93400;
+  --org-s: #ffe5d6;
+  --grn: #1e7a34;
+  --grn-s: #ddf3e1;
+  --yel: #ffe066;
+  --yel-s: #ffefc2;
+  --yel-t: #8a5300;
+  --pur: #7a3db8;
+  --pur-s: #f1e6fb;
+  --sky: #0071a4;
+  --sky-s: #ddf1fb;
+  --red: #c4271c;
+  --red-s: #ffe1de;
+  --r: 14px;
+  --r-sm: 10px;
+  --r-btn: 10px;
+  --r-chip: 8px;
+  --sh: 0 1px 2px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --focus: 0 0 0 4px rgba(10, 98, 201, 0.45);
+  --font: 'Bad Script', 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, cursive;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --font-math: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fs: 16px;
+  --fs-sm: 14px;
+  --fs-chip: 14px;
+  --fs-rail: 12px;
+  --ctl-h: 44px;
+  --gap: 18px;
+  --pad-card: 18px;
+  --rail-w: 92px;
+  --rail-bg: rgba(239, 239, 244, 0.94);
 }

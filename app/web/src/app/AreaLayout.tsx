@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import { NavLink, Outlet, useNavigate } from 'react-router';
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router';
 import type { NavItem } from '../features/index.ts';
 import { UNAUTHENTICATED_EVENT } from '../shared/auth/session.ts';
 import { tid } from '../shared/testid.ts';
+import { syncAccountTheme } from '../shared/theme/theme.ts';
 
 /**
  * Khung một vùng (Giáo viên `gv` / Học sinh `hs`): rail bên trái + vùng nội dung.
@@ -17,6 +18,12 @@ export function AreaLayout({ area, title, nav }: { area: 'gv' | 'hs'; title: str
     window.addEventListener(UNAUTHENTICATED_EVENT, onUnauth);
     return () => window.removeEventListener(UNAUTHENTICATED_EVENT, onUnauth);
   }, [navigate, area]);
+
+  // T-261126-50: theme theo tài khoản (một lần mỗi thẻ; chạy lại theo điều hướng để bắt kịp lúc vừa đăng nhập)
+  const { pathname } = useLocation();
+  useEffect(() => {
+    void syncAccountTheme();
+  }, [pathname]);
 
   return (
     <div className="shell" data-testid={tid(area, 'shell')}>
@@ -35,6 +42,9 @@ export function AreaLayout({ area, title, nav }: { area: 'gv' | 'hs'; title: str
             {n.label}
           </NavLink>
         ))}
+        <NavLink to={`/${area}/cai-dat`} className="rail-end" data-testid={tid(area, 'nav', 'settings')}>
+          Cài đặt
+        </NavLink>
       </nav>
       <div className="main">
         <header className="top">

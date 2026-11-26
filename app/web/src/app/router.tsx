@@ -1,6 +1,7 @@
 import { createBrowserRouter, isRouteErrorResponse, Link, useRouteError } from 'react-router';
 import type { RouteObject } from 'react-router';
 import { features } from '../features/index.ts';
+import { SettingsPage } from '../features/settings/SettingsPage.tsx';
 import { HomePage } from '../pages/HomePage.tsx';
 import { tid } from '../shared/testid.ts';
 import { AreaLayout, AreaOverview } from './AreaLayout.tsx';
@@ -11,6 +12,7 @@ import { liveCounts, mergeRoutes } from './routeMerge.ts';
  *   /            trang chủ
  *   /gv/...      vùng Giáo viên (route con do epic khai báo ở FeatureModule.teacherRoutes)
  *   /hs/...      vùng Học sinh  (FeatureModule.studentRoutes)
+ *   /gv/cai-dat, /hs/cai-dat  Cài đặt (chọn giao diện, T-261126-50)
  */
 function NotFound() {
   return (
@@ -60,6 +62,7 @@ export const routes: RouteObject[] = [
     children: [
       { index: true, element: <AreaOverview area="gv" items={overview('teacherRoutes')} /> },
       ...childRoutes('teacherRoutes'),
+      { path: 'cai-dat', element: <SettingsPage area="gv" /> }, // T-261126-50: chọn giao diện
     ],
   },
   {
@@ -69,6 +72,7 @@ export const routes: RouteObject[] = [
     children: [
       { index: true, element: <AreaOverview area="hs" items={overview('studentRoutes')} /> },
       ...childRoutes('studentRoutes'),
+      { path: 'cai-dat', element: <SettingsPage area="hs" /> }, // T-261126-50: chọn giao diện
     ],
   },
   { path: '*', element: <NotFound /> },
