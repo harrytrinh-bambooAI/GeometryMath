@@ -28,6 +28,16 @@ class MigrationS2E1IT extends AbstractE1IT {
   static final UUID BLANK = UUID.fromString("00000000-0000-7000-8002-000000000999");
   static final List<String> PROFILES = List.of("test");
 
+  /** Dạng đầy đủ của mã khôi phục; mã người dùng (hai nhóm) không bao giờ khớp. */
+  static final String RECOVERY_CODE =
+      "RC-["
+          + UserCodes.ALPHABET
+          + "]{4}-["
+          + UserCodes.ALPHABET
+          + "]{4}-["
+          + UserCodes.ALPHABET
+          + "]{4}";
+
   @Autowired MvpMigration migration;
 
   @BeforeEach
@@ -147,7 +157,11 @@ class MigrationS2E1IT extends AbstractE1IT {
     List<Row> ok = second.rows().stream().filter(x -> x.status() != Status.ERROR).toList();
     assertThat(ok).isNotEmpty().allMatch(x -> x.status() == Status.ALREADY);
     assertThat(ok).allMatch(x -> MvpMigration.ALREADY.equals(x.reason()));
-    assertThat(second.toCsv()).doesNotContain("RC-"); // mã khôi phục chỉ in một lần
+    // Mã khôi phục chỉ in một lần. Không dò chuỗi "RC-" trơn: mã người dùng sinh ngẫu nhiên có thể
+    // chứa "RC-" (ví dụ HS-5NRC-7RPZ), nên kiểm đúng cột và đúng dạng RC-xxxx-xxxx-xxxx.
+    assertThat(second.rows()).allMatch(x -> x.recoveryCode() == null || x.recoveryCode().isBlank());
+    assertThat(second.rows()).allMatch(x -> x.tempPassword() == null || x.tempPassword().isBlank());
+    assertThat(second.toCsv()).doesNotContainPattern(RECOVERY_CODE);
   }
 
   @Test
