@@ -122,3 +122,28 @@ Bảng thuộc trường: `org_id uuid NOT NULL`, khóa chính `uuid`, `created_
 
 ## Thử tải
 Chưa có; xem [loadtest/README.md](loadtest/README.md).
+
+## Chặng 2–3 (S2, S3)
+Kế hoạch: `artifacts/GEO/work/s23/PLAN_code-s23.md` (module, cổng, khoảng migration, tệp sở hữu). Khung do T-261126-41 dựng sẵn:
+- Giao diện: 15 chỗ cắm rỗng `web/src/features/s2e1…s2e9, s3e1…s3e6/index.tsx` (đã có trong `features/index.ts`); task chỉ sửa thư mục feature của mình.
+- Module máy chủ mới `subject` (A1) và `notify` (A9): chỉ có `package-info.java`.
+- E2E: spec P0 chạy cả trên điện thoại đặt tên `*.p0m.ui.spec.ts`; mã cố định fixture ở `db/seed/fixture-ids.d/<feature>.json` (`e2e/support/fixtures.ts` đọc gộp với `fixture-ids.json`).
+- Truy vết: `make traceability ARGS="--strict --epic MVP,S2-E1 [--defer US-…]"` exit 1 khi TC tự động hóa (E2E-UI / E2E-API / IT / UT) thiếu test hoặc trượt. Mã TC: Playwright `@TC-S2E1-001` trong tiêu đề; JUnit `@DisplayName("TC-S2E1-001 …")`; test đơn vị web `it("TC-S2E1-001 …")`. Bí danh `MVP` = E1…E7, `S2`, `S3`.
+- Tệp chung có mốc `--- T-261126-NN (…) ---` (sql-lint.properties, ArchitectureTest.java, application.yml, Makefile, tệp này): mỗi task chỉ thêm dòng ngay dưới mốc của mình. `make bench-s2` gọi `scripts/bench-s2.sh`.
+
+<!-- --- T-261126-41 (khung) --- -->
+<!-- --- T-261126-18 (S2-E1) --- -->
+<!-- --- T-261126-19 (S2-E2) --- -->
+<!-- --- T-261126-20 (S2-E5) --- -->
+<!-- --- T-261126-21 (S2-E8) --- -->
+<!-- --- T-261126-22 (S2-E3) --- -->
+<!-- --- T-261126-23 (S2-E6, S2-E7) --- -->
+<!-- --- T-261126-24 (S2-E4) --- -->
+<!-- --- T-261126-25 (S2-E9) --- -->
+<!-- --- T-261126-42 (S3 dữ liệu mẫu) --- -->
+<!-- --- T-261126-28 (S3-E1, S3-E5) --- -->
+<!-- --- T-261126-29 (S3-E2) --- -->
+<!-- --- T-261126-30 (S3-E3) --- -->
+<!-- --- T-261126-31 (S3-E4, S3-E5) --- -->
+<!-- --- T-261126-32 (S3-E6, S3-E5) --- -->
+<!-- --- FIX (task FIX T-261126-35, 43+) --- -->

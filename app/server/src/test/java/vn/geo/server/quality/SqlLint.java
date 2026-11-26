@@ -51,25 +51,37 @@ public final class SqlLint {
       return from(p);
     }
 
+    /**
+     * Ngoài khóa gốc, mỗi danh sách nhận thêm khóa có hậu tố {@code <khóa>.<mã>} (ví dụ {@code
+     * large.tables.t18=practice_attempt}), gộp vào danh sách gốc: task chặng 2–3 thêm dòng dưới mốc
+     * của mình thay vì sửa chung một dòng (T-261126-41, PLAN_code-s23 §5 luật 2).
+     */
     public static Config from(Properties p) {
       Map<String, String> owners = new HashMap<>();
+      Map<String, StringBuilder> lists = new HashMap<>();
       for (String k : p.stringPropertyNames()) {
         if (k.startsWith("owner.")) {
           owners.put(k.substring(6).toLowerCase(), p.getProperty(k).trim());
-        } else if (!SUPPORTED_KEYS.contains(k)) {
-          throw new IllegalArgumentException(
-              "Khóa sql-lint chưa được SqlLint hỗ trợ: '"
-                  + k
-                  + "' (hỗ trợ: "
-                  + SUPPORTED_KEYS
-                  + ", owner.<bảng>)");
+          continue;
         }
+        String base =
+            SUPPORTED_KEYS.stream()
+                .filter(s -> k.equals(s) || (k.startsWith(s + ".") && k.length() > s.length() + 1))
+                .findFirst()
+                .orElseThrow(() ->
+                    new IllegalArgumentException(
+                        "Khóa sql-lint chưa được SqlLint hỗ trợ: '"
+                            + k
+                            + "' (hỗ trợ: "
+                            + SUPPORTED_KEYS
+                            + ", <khóa>.<mã task>, owner.<bảng>)"));
+        lists.computeIfAbsent(base, x -> new StringBuilder()).append(',').append(p.getProperty(k));
       }
       return new Config(
-          list(p.getProperty("large.tables")),
-          list(p.getProperty("tenant.tables")),
+          list(String.valueOf(lists.getOrDefault("large.tables", new StringBuilder()))),
+          list(String.valueOf(lists.getOrDefault("tenant.tables", new StringBuilder()))),
           owners,
-          list(p.getProperty("forbidden.app.tables")));
+          list(String.valueOf(lists.getOrDefault("forbidden.app.tables", new StringBuilder()))));
     }
 
     private static Set<String> list(String v) {
