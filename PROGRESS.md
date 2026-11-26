@@ -1,4 +1,4 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 26/11/2026 16:00
+# PROGRESS · GeometryMath (GEO) · cập nhật 26/11/2026 16:15
 Mục tiêu hiện tại: chặng 2 → hết chặng 3 theo `.claude/plans/STAGE-2-3-PLAN.md` v0.2 (owner duyệt). Phiên chính = delivery-lead v0.2: chỉ điều phối; mọi task → agent con, 1 worktree + nhánh / task. Model: Dev code = Opus; PO/BA/QC/UI/Tester/soát = Sonnet; Opus ≤ 2, tổng quy đổi ≤ 4.
 Đã xong:
 - MVP: T-01..T-04 gộp (afda3dd, 77850f4, 6b62557); FIX5 (T-07) nghiệm thu + gộp (merge sau 6f096fc; verify 201 + 137 IT, bench-mvp mock exit 0).
@@ -8,12 +8,13 @@ Mục tiêu hiện tại: chặng 2 → hết chặng 3 theo `.claude/plans/STAG
 - Designer: câu hỏi cho Designer Dom ở `Design/Q_Dom.md` v0.2 (owner đang tạo designer cho chặng sau; không tự làm design chặng 4+).
 - W3 (soát + thiết kế) xong: T-15 soát phản biện S2/S3 (gộp 1816344: 723 AC/728 TC 0 lỗi; RV_s23 v0.2 mở 0 blocker/0 major, 6 minor; tester domains/geo scope localhost confirmed:false, bản sao ở artifacts/GEO/work/tester/geo); T-36 Designer Dom (gộp 2be47fa: 45 ảnh, Q_Dom v0.3, DQ-29…43).
 - Gate T-16 xong 26/11: owner "OK hết" → PO-66 + DECISIONS "S23 R3 OK" (53c4782). Owner giao: delivery-lead tự quyết, owner kiểm sản phẩm cuối.
-Đang dở: T-261126-37 BA/QC áp PO-66 vào spec S2/S3 (Sonnet, wt `.claude/worktrees/s23-apply`, nhánh s23-apply, tiến độ `.claude/progress/runner-T-261126-37.md`).
+- Sau gate: T-37 spec áp PO-66 (ebec17a, 58 story / 746 AC / 751 TC); T-38 bản mẫu kịch bản 7 KB (b4610fb, không tự chạy ebedee5); T-39 4 hướng style (3d8c00b, TẠM: A cho HS, D cho GV); PDF style (6fc2493) + PDF kịch bản 61 trang (2158e7a); T-17 PLAN_code-s23 v1.0 (30df78c: 15 task code, mã mới 41 khung chung / 42 seed S3).
+Đang dở (nền):
+- T-261126-40 Dom vẽ màn "chưa vẽ" trong kịch bản + màn 2 story mới (Sonnet, wt `.claude/worktrees/s23-draw`, tiến độ runner-T-261126-40.md).
+- T-261126-41 khung chung S2/S3: traceability --strict, 15 feature rỗng (Opus, wt `.claude/worktrees/s23-base`, tiến độ runner-T-261126-41.md).
 Bước tiếp theo:
-1. T-37 xong: chạy lại khối Kiểm T-37 ở gốc worktree s23-apply → merge --no-ff → queue [done] (sửa tay header, `queue.py set` không ghi nếu thiếu --write) + TASKS.
-2. T-17 PLAN_code chặng 2–3 (Opus, wt s23-plan), phụ thuộc T-37.
-3. Code W4+ chờ T-05: phiên chính chạy `make bench-mvp` với key bị bộ phân loại auto mode chặn → owner chạy lệnh ở "Việc owner".
-Thiết kế chặng 2–3: `Design/s23/` (45 ảnh, DQ.md, REVIEW-Dom.md), `Design/prototype/s23*`, `Design/Q_Dom.md` — trên nhánh worktree-mvp-wave0.
+1. Mỗi agent xong: chạy lại Kiểm (T-40 trong brief: kb-shoot + không còn "chưa vẽ"; T-41 khối queue) → commit nhánh (cd vào worktree) → merge --no-ff → queue header [done] (sửa tay).
+2. Sau T-41: 18‖19 chờ T-05 (G7). Owner chạy đo thật (Việc owner) — phiên chính bị auto mode chặn khi dùng key.
 Inbox còn: không mục mở (FIX5 đóng).
 Quyết định: DECISIONS.md (mới nhất: duyệt plan chặng 2–3, model theo vai); PO-DECISIONS.md (PO-61).
 Việc owner: T-05 đo thật — `! cd <worktree>/app && eval "$(grep '^export GEO_AI_API_KEY=' ~/.zshrc)" && GEO_AI_PROVIDER=anthropic make bench-mvp > /tmp/geo-bench-real.log 2>&1; echo rc=$?` (~$3); NEEDS A2, C1–C3.
