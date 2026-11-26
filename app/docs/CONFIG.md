@@ -38,7 +38,7 @@ Chưa có trong khung (sẽ thêm khi có tác vụ nền thật): nhóm riêng 
 | Khóa | Giá trị | Ở đâu | Nguồn |
 |---|---|---|---|
 | Kích thước mặc định | 20 | `geo.paging.default-limit` | ADR-GEO-12 |
-| Gói nội dung Kho đề MVP | nạp `content/catalog-mvp.json` (đề HKN-xx, mô tả dựng ở `geometry/problem-specs.json`) vào bộ `main` khi khởi động, engine tính nhãn; mặc định **bật**, profile `test` và `make e2e` tắt (`GEO_CONTENT_PACK_ON_START=false`) | `geo.content.pack.load-on-start`; `ContentPackRunner` | T-261126-02; PO-60 |
+| Gói nội dung Kho đề MVP | nạp `content/catalog-mvp.json` (đề HKN-xx, mô tả dựng ở `geometry/problem-specs.json`) vào bộ `main` khi khởi động, chỉ THÊM đề chưa có theo mã (đề đã có, đã lưu trữ hay sửa tay: giữ nguyên, log số đề bỏ qua), engine tính nhãn; mặc định **bật**, profile `test` và `make e2e` tắt (`GEO_CONTENT_PACK_ON_START=false`) | `geo.content.pack.load-on-start`; `ContentPackRunner` | T-261126-02; PO-60 |
 | Trần chung | **100** | `geo.paging.max-limit` | M-004 (2); D-GEO-168 |
 | Trần Kho đề | **50** (mặc định 20) | `geo.paging.max-limit-by-list."[content.problem-bank]"` | D-GEO-142 |
 | Trần riêng khác | thêm khóa `max-limit-by-list."[<mã danh sách>]"`; chỉ được thấp hơn trần chung | `PagingProperties.maxLimitFor` | ADR-GEO-12, `04_query_catalogue.md` |
@@ -118,7 +118,7 @@ Tạo lỗi có `Retry-After` trong mã: `AppException.rateLimited(Duration)`, `
 | `geo.ai.anthropic.max-retries` / `retry-backoff` | 2 / 1 s (nhân đôi; theo `retry-after` nếu có, tối đa 30 s) | chỉ 429, 5xx, lỗi mạng; 4xx khác, JSON hỏng, `refusal` trả ngay `DEPENDENCY_UNAVAILABLE` |
 | `geo.ai.anthropic.fallbacks` | `default` (+ beta `server-side-fallback-2026-07-01`) | chuyển model khi bị từ chối an toàn; rỗng = tắt |
 | `geo.ai.anthropic.effort` (`GEO_AI_EFFORT`) | rỗng = mặc định của model | `output_config.effort` |
-| `geo.ai.pricing.<model>` | Sonnet 5.5: 2 / 10 USD (cache đọc 0,10); Opus 5.5: 4 / 20 (0,20); Haiku 5.5: 0,10 / 0,50 — USD / 1 triệu token | nguồn: bảng giá Anthropic theo skill claude-api (cached 2026-11-03), chép 2026-11-26; chi phí = usage thật × giá → `ai_call_log.cost_micro_usd` |
+| `geo.ai.pricing.<model>` | Sonnet 5.5: 2 / 10 USD (cache đọc 0,10); Opus 5.5: 4 / 20 (0,20); Haiku 5.5: 0,10 / 0,50 — USD / 1 triệu token | bắt buộc có giá của `geo.ai.model` khi provider=anthropic (ProfileGuard từ chối khởi động nếu thiếu; model khác ghi 0 + cảnh báo một lần); nguồn: bảng giá Anthropic theo skill claude-api (cached 2026-11-03), chép 2026-11-26; chi phí = usage thật × giá → `ai_call_log.cost_micro_usd` |
 | `geo.ai.cost-per-call` | 0,12 | chi phí mô phỏng của mock (KG-07) |
 
 Đầu ra AI thật được đưa về đúng định dạng của mock (JSON theo task: scene, solution, hint, ocr, qa) rồi đi qua đường kiểm sẵn có (engine.check, AnswerExpr, Kiểm soát đáp án) — không nới kiểm. Bộ đo: `make bench-mvp` (mục 7).

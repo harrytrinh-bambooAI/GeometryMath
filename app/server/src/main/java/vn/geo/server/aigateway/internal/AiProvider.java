@@ -23,8 +23,13 @@ public interface AiProvider {
    *
    * @param content nội dung trả về (đã đúng định dạng của task)
    * @param usage token thật; null = nhà cung cấp không báo
+   * @param model model thực trả lời (phản hồi API); null = dùng model đã yêu cầu
    */
-  record Result(String content, Usage usage) {}
+  record Result(String content, Usage usage, String model) {
+    public Result(String content, Usage usage) {
+      this(content, usage, null);
+    }
+  }
 
   /** Token của một lượt theo nhà cung cấp (để tính chi phí/bài). */
   record Usage(int inputTokens, int outputTokens, int cacheReadTokens, int cacheWriteTokens) {}

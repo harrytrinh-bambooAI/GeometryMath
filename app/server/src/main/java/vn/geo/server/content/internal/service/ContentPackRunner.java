@@ -29,9 +29,10 @@ class ContentPackRunner implements ApplicationRunner {
     try {
       ContentPackLoader.Result r = loader.load();
       LOG.info(
-          "gói nội dung Kho đề: {} đề, {} ghi mới, {} đã kiểm chứng",
+          "gói nội dung Kho đề: {} đề, {} ghi mới, {} bỏ qua (đã có), {} đã kiểm chứng",
           r.codes().size(),
           r.written(),
+          r.skipped(),
           r.verified());
     } catch (RuntimeException e) {
       LOG.warn("không nạp được gói nội dung Kho đề: {}", e.toString());

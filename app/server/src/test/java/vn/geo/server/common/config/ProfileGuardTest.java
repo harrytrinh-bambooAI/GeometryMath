@@ -25,6 +25,7 @@ class ProfileGuardTest {
     env.setProperty("geo.paging.cursor-key", CURSOR);
     env.setProperty("geo.ai.provider", "anthropic");
     env.setProperty("geo.ai.api-key", AI_KEY);
+    env.setProperty("geo.ai.pricing.claude-sonnet-5-5.input", "2.00");
     return env;
   }
 
@@ -114,7 +115,26 @@ class ProfileGuardTest {
     MockEnvironment dev = new MockEnvironment();
     dev.setActiveProfiles("dev");
     dev.setProperty("geo.ai.provider", "anthropic");
+    dev.setProperty("geo.ai.pricing.claude-sonnet-5-5.input", "2.00");
     assertThat(ProfileGuard.check(dev)).singleElement().asString().contains("GEO_AI_API_KEY");
+  }
+
+  /** FIX5-1: provider anthropic mà model không có giá thì từ chối khởi động. */
+  @Test
+  void anthropicModelWithoutPricingIsRejected() {
+    MockEnvironment prod = prodWithAllKeys();
+    prod.setProperty("geo.ai.model", "claude-chua-co-gia");
+    assertThat(ProfileGuard.check(prod))
+        .singleElement()
+        .asString()
+        .contains("claude-chua-co-gia")
+        .contains("geo.ai.pricing");
+    prod.setProperty("geo.ai.pricing.claude-chua-co-gia.input", "1.00");
+    assertThat(ProfileGuard.check(prod)).isEmpty();
+    // model giả lập mặc định = claude-sonnet-5-5 (đã có giá)
+    MockEnvironment dflt = prodWithAllKeys();
+    dflt.setProperty("geo.ai.model", "gia-lap-1");
+    assertThat(ProfileGuard.check(dflt)).isEmpty();
   }
 
   @Test

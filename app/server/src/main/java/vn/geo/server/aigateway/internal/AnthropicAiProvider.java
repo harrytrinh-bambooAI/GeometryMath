@@ -225,7 +225,8 @@ public class AnthropicAiProvider implements AiProvider {
         text.append(c.path("text").asString(""));
       }
     }
-    return new Result(normalize(task, text.toString()), usage);
+    String served = root.path("model").asString("");
+    return new Result(normalize(task, text.toString()), usage, served.isBlank() ? null : served);
   }
 
   private static Usage usage(JsonNode u) {
