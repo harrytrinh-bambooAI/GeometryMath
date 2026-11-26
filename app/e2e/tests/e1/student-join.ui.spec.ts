@@ -6,7 +6,7 @@ import { API, BG, MSG, bearer, devToken, studentJoinUI } from './e1.ts';
 
 const cards = (page: import('@playwright/test').Page) => page.locator('[data-assignment-id]');
 
-test('Vào lớp bằng tên và mã lớp đúng @TC-GEO-0100', async ({ page }) => {
+test('Vào lớp bằng tên và mã lớp đúng @TC-GEO-0100 @smoke', async ({ page }) => {
   await studentJoinUI(page, 'An', 'HK7M2A');
   await expect(page).toHaveURL(/\/hs\/bai-cua-em$/);
   await expect(page.getByTestId('e1-greeting')).toHaveText('Chào An');

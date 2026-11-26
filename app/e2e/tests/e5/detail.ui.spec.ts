@@ -18,7 +18,7 @@ async function expectFullSolution(page: Page) {
   await expect(page.getByTestId('e5-step-4')).toHaveCount(0);
 }
 
-test('Bốn phần của trang chi tiết HKG-01 @TC-GEO-0515', async ({ page, request }) => {
+test('Bốn phần của trang chi tiết HKG-01 @TC-GEO-0515 @smoke', async ({ page, request }) => {
   await signInLane(page, request);
   await openBank(page);
   await page.getByTestId('e5-open-HKG-01').click();

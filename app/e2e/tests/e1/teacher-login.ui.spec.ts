@@ -24,7 +24,7 @@ async function loginAsSampleTeacher(page: import('@playwright/test').Page) {
   });
 }
 
-test('Mã giáo viên đúng @TC-GEO-0111', async ({ page, request }, testInfo) => {
+test('Mã giáo viên đúng @TC-GEO-0111 @smoke', async ({ page, request }, testInfo) => {
   await resetAuthFailures(request, { ips: [ipFor(testInfo)] });
   await loginAsSampleTeacher(page);
   await expect(page.getByTestId('e1-catalog')).toBeVisible();
@@ -44,7 +44,7 @@ test('Vào được từ điện thoại @TC-GEO-0112', async ({ page, request }
   expect(overflow, 'không phải cuộn ngang').toBeLessThanOrEqual(0);
 });
 
-test('Mã giáo viên sai @TC-GEO-0113', async ({ page }) => {
+test('Mã giáo viên sai @TC-GEO-0113 @smoke', async ({ page }) => {
   await teacherLogin(page, CODE['F-GEO-004']!);
   await expect(page.getByTestId('e1-teacher-login-error')).toHaveText(MSG['12']);
   await expect(page).toHaveURL(/\/gv\/dang-nhap$/);

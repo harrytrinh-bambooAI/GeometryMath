@@ -46,7 +46,7 @@ test('Lăn chuột để thu phóng trên máy tính @TC-GEO-0302', async ({ pag
   expect(await page.evaluate(() => window.scrollY)).toBe(y0); // trang không cuộn
 });
 
-test('"Nhìn từ trên" @TC-GEO-0303', async ({ page, request }) => {
+test('"Nhìn từ trên" @TC-GEO-0303 @smoke', async ({ page, request }) => {
   await openWorkspace(page, request);
   await drag(page, -150, 40);
   await page.getByTestId('viewer-view-top').click();

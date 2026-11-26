@@ -7,7 +7,7 @@ import { expect, test } from '../support/fixtures.ts';
  */
 type Items = { items: Array<{ id: string; title: string }>; nextCursor?: string };
 
-test('seed vàng: mỗi trường chỉ thấy dữ liệu của mình @TC-KHUNG-02', async ({ request, tokenFor }) => {
+test('seed vàng: mỗi trường chỉ thấy dữ liệu của mình @TC-KHUNG-02 @smoke', async ({ request, tokenFor }) => {
   const teacherA = await tokenFor('F-GEO-003');
   const teacherC = await tokenFor('F-GEO-005');
 

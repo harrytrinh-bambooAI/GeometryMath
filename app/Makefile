@@ -55,3 +55,7 @@ s2e1-migrate: ; $(ENV) $(MVN) spring-boot:run -Dspring-boot.run.profiles=$(or $(
 # --- T-261126-31 (S3-E4, S3-E5) ---
 # --- T-261126-32 (S3-E6, S3-E5) ---
 # --- FIX (task FIX T-261126-35, 43+) ---
+# T-261126-45: E2E theo mức ảnh hưởng (DECISIONS 26/11). BASE=<ref> (mặc định worktree-mvp-wave0); ARGS="--dry-run" chỉ in mức + spec.
+.PHONY: e2e-affected e2e-affected-selftest
+e2e-affected:          ; node scripts/e2e-affected.mjs $(if $(BASE),--base $(BASE)) $(ARGS)   # L0/L1/L2 từ diff + artifacts/GEO/work/s23/impact-map.json -> scripts/e2e.sh một lượt; ghi evidence/<run>/impact.json
+e2e-affected-selftest: ; node scripts/e2e-affected.mjs --selftest   # 4 diff mẫu (dry-run): mức + spec mong đợi; exit 1 nếu lệch

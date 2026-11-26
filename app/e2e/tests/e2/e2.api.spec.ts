@@ -93,7 +93,7 @@ test('Tọa độ AI hỏng @TC-GEO-0228', async ({ request }, testInfo) => {
   expect(after).toBe(before); // không vẽ, không lưu
 });
 
-test('Trường nào cũng đọc được danh mục @TC-GEO-0232', async ({ request }) => {
+test('Trường nào cũng đọc được danh mục @TC-GEO-0232 @smoke', async ({ request }) => {
   const names = async (ref: string) => {
     const r = await request.get('/api/v1/geometry/templates', { headers: bearer(await devToken(request, ref)) });
     expect(r.status()).toBe(200);

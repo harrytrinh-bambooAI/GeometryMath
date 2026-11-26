@@ -10,14 +10,14 @@ test.beforeEach(async ({ page }, testInfo) => {
   await useIp(page, ipOf(testInfo));
 });
 
-test('Học sinh đăng nhập đúng @TC-S2E1-019', async ({ page }) => {
+test('Học sinh đăng nhập đúng @TC-S2E1-019 @smoke', async ({ page }) => {
   const an = FX('F-S2-002');
   await loginUI(page, 'hs', an.userCode, an.password);
   await expect(page).toHaveURL(/\/hs\/bai-cua-em$/);
   await expect(page.getByTestId('e1-greeting')).toHaveText('Chào An');
 });
 
-test('Giáo viên đăng nhập đúng @TC-S2E1-020', async ({ page }) => {
+test('Giáo viên đăng nhập đúng @TC-S2E1-020 @smoke', async ({ page }) => {
   const trang = FX('F-S2-001');
   await loginUI(page, 'gv', trang.userCode, trang.password);
   await expect(page).toHaveURL(/\/gv\/kho-de$/);
