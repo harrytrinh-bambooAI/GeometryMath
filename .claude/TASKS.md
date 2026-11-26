@@ -37,6 +37,7 @@ Task giao agent con có khối `.claude/queue.md` CÙNG ID; map trạng thái �
 | T-261126-32 | S3-E6 · Chữa bài, xuất kết quả, lưu trữ lớp, nhắc việc | STAGE-2-3-PLAN v0.2 | `cd .claude/worktrees/s3-e6/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS=--all` | 3h/8M, Opus | Todo | |
 | T-261126-33 | S3 · Kiểm thử chặng 3 | STAGE-2-3-PLAN v0.2 | `cd app && make e2e && make e2e && make traceability ARGS=--all && test -s ../artifacts/GEO/evidence/S3-L6/REPORT.md` | 2.5h/3M, Sonnet | Todo | |
 | T-261126-34 | GATE · Owner L7 chặng 3 + cổng "giáo viên thật dùng lặp lại" | STAGE-2-3-PLAN v0.2 | `grep -q "S3 L7 OK" DECISIONS.md` | , Sonnet | Wait-User | |
+| T-261126-36 | DESIGN · Designer Dom: rà + hoàn thiện màn chặng 2–3 (8 màn thiếu, trả lời Q_Dom) | lệnh owner 26/11 | ≥ 38 ảnh + REVIEW-Dom + Q_Dom trả lời + DQ-29 | ~300–500k token, Sonnet | Doing | nhánh s23-dom |
 
 ## Chờ owner (chi tiết ở NEEDS.md)
 | ID | Việc | Cần gì | Mở khoá |

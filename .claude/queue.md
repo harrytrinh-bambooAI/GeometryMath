@@ -221,6 +221,14 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Chờ: owner quyết dựa trên số đo
 - Phụ thuộc: T-261126-33
 
+## T-261126-36 · DESIGN · L2 Designer Dom · designer skill (persona Dom, giữ token GEO) · wt s23-dom · rà + hoàn thiện màn chặng 2–3 [running]
+- Mục tiêu: REVIEW-Dom.md nhận xét cải thiện (sửa mức cao); trả lời Q_Dom.md (v0.3); vẽ 8 màn thiếu Q_Dom §C, DQ.md v0.2 (DQ-29+)
+- Nguồn: MVP.md, PRODUCT-MASTER.md (22/11); brief/story-map s23, plan §1 §5, PO-61…65 (26/11); Design/s23 + Q_Dom v0.2 (26/11); lệnh owner 26/11
+- Xong khi: ≥ 38 ảnh Design/s23, REVIEW-Dom.md, Q_Dom có "Trả lời Dom", DQ-29 có
+- Kiểm: `test "$(ls Design/s23/*.png | wc -l)" -ge 38 && test -s Design/s23/REVIEW-Dom.md && grep -q "Trả lời Dom" Design/Q_Dom.md && grep -q "DQ-29" Design/s23/DQ.md`
+- Ngoài phạm vi: app/, spec artifacts/, PO-DECISIONS, ảnh MVP + Design/stages*, vẽ chặng 4–9
+- Model: sonnet · Ngân sách: 90 bước
+
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
