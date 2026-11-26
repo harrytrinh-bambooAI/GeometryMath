@@ -15,6 +15,7 @@ Phiên bản: v0.1 · 2026-11-26 · quyết định đã chốt — 1 dòng / qu
 | 2026-11-26 | Owner lệnh "start coding", mục tiêu xong chặng 3: G7 nới — code chặng 2–3 chạy với AI mock ngay; T-05 (đo thật B7) chỉ còn là điều kiện của gate cuối T-34; gate T-27 (L7 chặng 2) do delivery-lead chốt theo S2-L6/REPORT.md (owner kiểm sản phẩm lúc cuối) | lệnh owner 26/11 + "t sẽ check sản phẩm lúc cuối" | lệnh Harry 26/11 | Harry |
 | 2026-11-26 | Giao diện app: dựng theo HTML bản mẫu (`Design/prototype/s23*` bố cục/nội dung) + token style D "Bảng điều khiển gọn" (`Design/styles/d/style.css`) làm mặc định; hệ theme A/B/C/D đổi trong Cài đặt (task T-261126-50, trước mọi task tính năng) | lệnh owner 26/11 ("tạm chọn design 04, sau support đổi qua setting") | lệnh Harry 26/11 | Harry |
 | 2026-11-26 | Sau T-41: traceability `--strict` chỉ báo TC "chưa chạy" ở task code; tại gate kiểm thử T-26 / T-33 thì "chưa chạy" = trượt; Redis dev-up chậm + ẩn feature rỗng ở /gv vào FIX T-43 | task chạy e2e một phần không nên bị chặn; gate thì phải đủ | báo cáo T-41 | delivery-lead chốt |
+| 2026-11-26 | Theme mặc định đổi sang C "Giấy kẻ ô" (thay D); chữ giao diện C = Bad Script (Google Fonts, đã thử hiển thị đủ dấu tiếng Việt); nội dung toán (đề, đáp số, ô nhập, bảng, nhãn hình) dùng token `--font-math` = Be Vietnam Pro vì chữ tay khó đọc số và dấu chấm (S.ABCD) | lệnh owner 26/11 "chuyển style design số 3, sử dụng font Bad Script" | lệnh Harry 26/11 | Harry |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
