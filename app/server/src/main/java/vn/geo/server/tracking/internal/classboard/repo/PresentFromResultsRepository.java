@@ -5,6 +5,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.Optional;
 import java.util.UUID;
+import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import vn.geo.server.common.db.TenantJdbc;
 
@@ -21,8 +22,12 @@ public class PresentFromResultsRepository {
 
   private final TenantJdbc jdbc;
 
-  public PresentFromResultsRepository(TenantJdbc jdbc) {
+  /** Chỉ cho móc kiểm thử: gọi không kèm phiên nên không có ngữ cảnh trường. */
+  private final JdbcClient raw;
+
+  public PresentFromResultsRepository(TenantJdbc jdbc, JdbcClient raw) {
     this.jdbc = jdbc;
+    this.raw = raw;
   }
 
   public Optional<Source> source(UUID teacherId, UUID contentOrgId, UUID pinnedVersionId) {
@@ -121,11 +126,25 @@ public class PresentFromResultsRepository {
 
   /** Móc kiểm thử (dev/test): đặt giờ mở lời giải của bộ (null = Chưa đặt giờ). */
   public int setReleaseForTest(UUID setId, Instant at) {
-    return jdbc.sql(
+    // giờ mở thật của học sinh nằm ở hàng assignment (fn_solution_gate): câu theo giờ của bộ đi
+    // theo giờ mới
+    raw.sql(
+            """
+            UPDATE assignment a SET release_at = CAST(:at AS timestamptz),
+              -- ràng buộc release_at >= created_at: lùi created_at theo (như SandboxRepository)
+              created_at = LEAST(a.created_at, COALESCE(CAST(:at AS timestamptz), a.created_at))
+            FROM assignment_item i
+            WHERE i.set_id = :setId AND i.assignment_id = a.id AND i.release_at IS NULL
+            -- sqllint:allow=tenant,ownership móc kiểm thử S3-E6 dev/test, gọi không kèm phiên
+            """)
+        .param("at", at == null ? null : at.atOffset(ZoneOffset.UTC))
+        .param("setId", setId)
+        .update();
+    return raw.sql(
             """
             UPDATE assignment_set SET release_at = :at
-            WHERE org_id = :orgId AND id = :setId
-            -- sqllint:allow=ownership móc kiểm thử S3-E6 dev/test
+            WHERE id = :setId
+            -- sqllint:allow=tenant,ownership móc kiểm thử S3-E6 dev/test, gọi không kèm phiên
             """)
         .param("at", at == null ? null : at.atOffset(ZoneOffset.UTC))
         .param("setId", setId)

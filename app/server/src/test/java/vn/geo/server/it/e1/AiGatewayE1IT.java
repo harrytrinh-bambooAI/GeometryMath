@@ -77,12 +77,22 @@ class AiGatewayE1IT extends AbstractE1IT {
   @Test
   @DisplayName("TC-GEO-0119 Không gửi định danh học sinh cho nhà cung cấp (US-GEO-103-SC4)")
   void tc0119_noIdentityToProvider() throws Exception {
-    // thân yêu cầu cố kèm mã trường: phải bị bỏ qua và không đi tới nhà cung cấp
-    var r =
+    // BR-S3E5-34 (PO-61) thay hợp đồng MVP "bỏ qua": thân cố kèm mã trường bị từ chối
+    // VALIDATION_FAILED và không đi tới nhà cung cấp
+    int before = mock.receivedPrompts().size();
+    var bad =
         postJson(
             "/api/v1/student/assignments/" + BG1 + "/questions",
             an(),
             "{\"question\":\"Vì sao A là hình chiếu của S?\",\"orgId\":\"" + ORG_C + "\"}");
+    assertThat(bad.statusCode()).isEqualTo(400);
+    assertThat(bad.body()).contains("VALIDATION_FAILED").contains("orgId");
+    assertThat(mock.receivedPrompts()).hasSize(before);
+    var r =
+        postJson(
+            "/api/v1/student/assignments/" + BG1 + "/questions",
+            an(),
+            "{\"question\":\"Vì sao A là hình chiếu của S?\"}");
     assertThat(r.statusCode()).isEqualTo(200);
     List<String> prompts = mock.receivedPrompts();
     String last = prompts.get(prompts.size() - 1);

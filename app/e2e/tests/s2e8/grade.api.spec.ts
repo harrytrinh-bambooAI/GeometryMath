@@ -208,7 +208,12 @@ test('@TC-S2E8-055 đổi sai số hoặc kiểu từ thiết bị bị bỏ qua
   const set = await assigned(request, sb);
   const an = student(sb, 'An').token;
   const q2 = set.items[1]!.assignmentId;
-  const r = await attemptRaw(request, an, q2, '60', randomUUID(), { tol: 100, tolerance: 100, type: 'approx', answerKind: 'approx', maxAttempts: 99 });
+  // BR-S3E5-34 (PO-61, chặng 3) thay hợp đồng cũ "bỏ qua": thân có trường thừa bị từ chối, không tốn lượt
+  const bad = await attemptRaw(request, an, q2, '60', randomUUID(), { tol: 100, tolerance: 100, type: 'approx', answerKind: 'approx', maxAttempts: 99 });
+  expect(bad.status()).toBe(400);
+  expect(((await bad.json()) as { code: string }).code).toBe('VALIDATION_FAILED');
+  expect((await play(request, an, set.id)).items[1]!.attemptsLeft).toBe(3);
+  const r = await attemptRaw(request, an, q2, '60', randomUUID());
   expect(r.status()).toBe(200);
   const body = (await r.json()) as { outcome: string; attemptsLeft: number; maxAttempts: number };
   expect(body.outcome).toBe('wrong'); // sai số vẫn là ±0,5 của câu

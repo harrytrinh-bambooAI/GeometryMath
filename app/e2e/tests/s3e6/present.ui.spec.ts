@@ -46,7 +46,12 @@ test('Lời giải còn khóa thì hỏi lại trước khi chiếu @TC-S3E6-02'
   // Bình An vẫn không lấy được lời giải
   const an = student(sb, 'Bình An');
   const sol = await request.get(`${API}/api/v1/student/assignment-sets/${set.id}/items/3/solution`, { headers: bearer(an.token) });
-  expect(sol.status()).not.toBe(200);
+  // khóa: máy chủ trả 200 với trạng thái Sắp mở, không có đáp số hay bước (US-S3E2 SolutionView)
+  expect(sol.status()).toBe(200);
+  const lockedBody = (await sol.json()) as { releaseState: string; finalAnswer?: string; steps?: unknown };
+  expect(lockedBody.releaseState).toBe('upcoming');
+  expect(lockedBody.finalAnswer ?? null).toBeNull();
+  expect(lockedBody.steps ?? null).toBeNull();
 });
 
 test('Thẻ dữ liệu thô không có nút @TC-S3E6-05', async ({ page, request }) => {

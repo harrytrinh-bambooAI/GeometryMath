@@ -5,6 +5,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.List;
 import java.util.UUID;
+import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import vn.geo.server.common.db.TenantJdbc;
 
@@ -14,8 +15,12 @@ public class ClassExportRepository {
 
   private final TenantJdbc jdbc;
 
-  public ClassExportRepository(TenantJdbc jdbc) {
+  /** Chỉ cho móc kiểm thử: gọi không kèm phiên nên không có ngữ cảnh trường. */
+  private final JdbcClient raw;
+
+  public ClassExportRepository(TenantJdbc jdbc, JdbcClient raw) {
     this.jdbc = jdbc;
+    this.raw = raw;
   }
 
   /** Giờ các lần xuất của giáo viên từ {@code since}, cũ nhất trước (tối đa 50). */
@@ -34,10 +39,11 @@ public class ClassExportRepository {
 
   /** Móc kiểm thử (dev/test): giả lập các lần xuất đã xảy ra sớm hơn {@code seconds} giây. */
   public int age(UUID teacherId, long seconds) {
-    return jdbc.sql(
+    return raw.sql(
             """
             UPDATE class_export_log SET created_at = created_at - make_interval(secs => :s)
-            WHERE org_id = :orgId AND teacher_id = :teacherId
+            WHERE teacher_id = :teacherId
+            -- sqllint:allow=tenant móc kiểm thử S3-E6 dev/test, gọi không kèm phiên
             """)
         .param("s", seconds)
         .param("teacherId", teacherId)

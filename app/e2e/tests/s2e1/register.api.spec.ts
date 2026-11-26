@@ -58,7 +58,8 @@ test('Yêu cầu đăng ký chỉ chứa các trường cho phép @TC-S2E1-006',
   expect(Object.keys(allowed).sort()).toEqual(['displayName', 'password', 'privacyAck', 'privacyVersion', 'role']);
   const ok = await registerRaw(request, ip, allowed);
   expect(ok.status()).toBe(200);
-  // trường thừa (email, điện thoại, ngày sinh, trường, ảnh) không được lưu hay trả lại
+  // trường thừa (email, điện thoại, ngày sinh, trường, ảnh): BR-S3E5-34 (PO-61, US-S3E5-03-SC3) thay hợp đồng cũ
+  // "bỏ qua" — bị từ chối VALIDATION_FAILED, không tạo tài khoản
   const extra = await registerRaw(request, ip, {
     ...body({ displayName: 'Bình 2' }),
     email: 'binh@example.com',
@@ -67,8 +68,11 @@ test('Yêu cầu đăng ký chỉ chứa các trường cho phép @TC-S2E1-006',
     school: 'THPT A',
     photo: 'data:image/png;base64,AAAA',
   });
-  expect(extra.status()).toBe(200);
-  const reg = (await extra.json()) as Registered;
+  expect(extra.status()).toBe(400);
+  const rejected = (await extra.json()) as { code: string; details: { field: string }[] };
+  expect(rejected.code).toBe('VALIDATION_FAILED');
+  expect(['email', 'phone', 'birthDate', 'school', 'photo']).toContain(rejected.details[0]!.field);
+  const reg = (await ok.json()) as Registered;
   const me = await request.get(`${API}/api/v1/account/me`, { headers: bearer(reg.token) });
   const text = await me.text();
   for (const leaked of ['binh@example.com', '0912345678', '2010-01-01', 'THPT A', 'base64']) expect(text).not.toContain(leaked);
