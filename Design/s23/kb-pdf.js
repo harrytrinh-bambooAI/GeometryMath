@@ -1,5 +1,5 @@
 // Xuất Design/s23/GEO-kich-ban-S23.pdf: trang mở đầu "Cách hệ thống vận hành" + mỗi bước kịch bản một trang
-// (ảnh màn kèm hộp chú thích, dưới là chữ: Đang làm gì / Vì sao / Phía sau / Chưa vẽ).
+// (ảnh màn kèm hộp chú thích, dưới là chữ: Đang làm gì / Vì sao / Phía sau).
 // Chạy: PW_CORE=<playwright-core> node Design/s23/kb-pdf.js   (mặc định như kb-shoot.js)
 const path = require('path'), fs = require('fs');
 const PW = process.env.PW_CORE || path.resolve(__dirname, '../../app/e2e/node_modules/playwright-core');
@@ -21,7 +21,7 @@ const ROLE = { gv: 'Giáo viên', hs: 'Học sinh', ht: 'Hệ thống', ai: 'AI'
   // mục lục
   parts.push(`<section class="toc"><h1>Mục lục</h1><ol>${KBS.map(k => `<li><b>${esc(k.name)}</b> — ${k.steps.length} bước<br><span>${esc(k.sum)}</span></li>`).join('')}</ol></section>`);
   for (const k of KBS) {
-    parts.push(`<section class="kb"><h1>${esc(k.name)}</h1><p>${esc(k.sum)}</p><ol>${k.steps.map(s => `<li><b>${esc(ROLE[s.w] || s.w)}:</b> ${esc(s.t)}${s.m ? ' <i>(chưa vẽ)</i>' : ''}</li>`).join('')}</ol></section>`);
+    parts.push(`<section class="kb"><h1>${esc(k.name)}</h1><p>${esc(k.sum)}</p><ol>${k.steps.map(s => `<li><b>${esc(ROLE[s.w] || s.w)}:</b> ${esc(s.t)}</li>`).join('')}</ol></section>`);
     for (let i = 1; i <= k.steps.length; i++) {
       await p.goto(page + `#kb=${k.id}&b=${i}`, { waitUntil: 'load' }); await p.waitForTimeout(350);
       const img = await shot(), s = k.steps[i - 1];

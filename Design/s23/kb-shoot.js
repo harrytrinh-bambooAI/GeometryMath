@@ -26,7 +26,7 @@ const URLS={c:'file://'+path.join(proto,'s23-screens-c.html'),a:'file://'+path.j
     if(r.hl==='1')hl++;if(r.miss)miss++;
     if(!r.miss){const ok=await p.evaluate(i=>!!V[document.body.dataset.ready],i);if(!ok){log.push(`  LỖI ${id} b${i}: màn không có trong V`);bad++;}}
    }
-   log.push(`[${key}] ${id}: ${n} bước đi hết · tô sáng ${hl}/${n} · chưa vẽ ${miss}`);
+   log.push(`[${key}] ${id}: ${n} bước đi hết · tô sáng ${hl}/${n} · thiếu màn ${miss}`);
   }
   // nút Trình chiếu bấm được
   await open(p,URLS[key],'#c3-06a-chua-bai-trinh-chieu');
