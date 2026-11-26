@@ -1,5 +1,5 @@
 # DQ · Câu hỏi design chặng 2–3 (S23) · bản mẫu màn C2/C3
-Phiên bản: v0.2 · 2026-11-26
+Phiên bản: v0.3 · 2026-11-26
 
 Nguồn: `STAGES-AFTER-MVP.md` §0.2 và §6 chặng 2, 3 (22/11); `.claude/plans/STAGE-2-3-PLAN.md` §1, §5 (Q3–Q9); `PO-DECISIONS.md` PO-61, PO-02, PO-38 (26/11/2026).
 Bản mẫu: `Design/prototype/s23-screens.html` (+ `s23.js`, `s23b.js`, `s23.css`, `s23-base.css`). Chụp lại: `node Design/s23/shoot.js`.
@@ -57,6 +57,13 @@ Tất cả TẠM, chờ owner/PO duyệt. Ảnh mới ở `Design/s23/`; nguồn
 | DQ-41 | Chữa bài từ kết quả, xuất kết quả lớp, lưu trữ lớp cuối năm? | Từ bảng lớp mở thẳng Trình chiếu bài ít em làm được; xuất bảng không chứa dữ liệu cá nhân ngoài tên hiển thị + mã; lưu trữ lớp: chỉ đọc, xác nhận hai bước. TẠM · vừa | C3-06 `c3-06a-chua-bai-trinh-chieu.png`, `c3-06b-xuat-ket-qua.png`, `c3-06c-luu-tru-lop.png` |
 | DQ-42 | Trạng thái rỗng/lỗi chung (lớp chưa có học sinh, kho trống, AI lỗi, hết phiên)? | Một bộ mẫu chung: biểu tượng + một câu nêu tình huống + một hành động; hết phiên giữ bản nháp. TẠM · cao | C8 `c8-trang-thai-gv.png`, `c8-trang-thai-hs.png` |
 | DQ-43 | Màn hiện mã chưa tick "đã lưu" thì khóa gì? (R-05, DQ-16) | Nút "Tiếp tục" xám + dòng nêu lý do khóa; tick xong mới sáng. TẠM · cao | C3-01 `c3-01-ma-chua-tick.png` |
+| DQ-44 | Công tắc “Giáo viên duyệt từng em” có tắt được không? (PO-66 G4) | Không: luôn bật, hiện công tắc mờ + nhãn “Luôn bật” ở form tạo lớp và màn mã lớp. TẠM · trung | C3-02 `c3-02-tao-lop.png` |
+| DQ-45 | Học sinh tự học nhận mã khôi phục ở đâu, nói gì? (PO-66 G3) | Cùng màn mã người dùng như giáo viên, văn bản nói rõ “em tự học chưa có thầy cô để nhờ đặt lại”. TẠM · cao | C3-01 `c3-01-ma-nguoi-dung-hs.png` |
+| DQ-46 | Nhập mã khôi phục sai / hết lượt: báo thế nào? | Sai: nói còn bao nhiêu lần (7/10 trong 15 phút), không lộ gần đúng. Hết lượt: khóa 14 phút theo tài khoản; em đã vào lớp được chỉ đường nhờ cô đặt lại. Xong thì cấp ngay mã khôi phục mới. TẠM · cao | C3-01 `c3-01-khoi-phuc*.png` |
+| DQ-47 | Xóa tài khoản: mấy bước, chặn thế nào? (US-S3E5-05) | 2 bước: (1) đọc hậu quả + chính sách 30 ngày, (2) nhập mật khẩu + gõ XÓA. Giáo viên còn lớp Đang dạy bị chặn, kèm danh sách lớp và nút Lưu trữ lớp. Chính sách xóa vật lý 30 ngày: TẠM. | C3-08 `c3-08-*.png` |
+| DQ-48 | Đóng bộ bài: khác lưu trữ ở đâu? (US-S3E2-04) | Đóng là một chiều (cảnh báo màu vàng), em chỉ còn xem kết quả; lưu trữ chỉ cho bộ Đã đóng và nằm ở tab “Đã lưu trữ”. Bộ Nháp không đóng được. TẠM · trung | C3-03 `c3-03-dong-bo.png`, `c3-03-luu-tru-bo.png` |
+| DQ-49 | Bài của em: bộ Đã đóng / lưu trữ hiện thế nào cho em? | Tab “Đang giao” và “Đã đóng”; bộ Đã lưu trữ ẩn khỏi danh sách của em. Mỗi bộ có hạn, lượt còn, giờ mở lời giải; chữ phụ 14px (G17). TẠM · trung | C3-05 `c3-05-bai-cua-em-*.png` |
+| DQ-50 | Trình chiếu mất mạng: nếu chưa tải đủ bước thì sao? | Chỉ chiếu được phần đã tải; thanh báo nâu trên màn chiếu + nút Thử lại. Màn chỉ vẽ trường hợp đã tải đủ 4/4; trường hợp thiếu bước cần quy tắc tải trước từ BA. Mở. | C2-04 `c2-04-mat-mang.png` |
 
 Chưa vẽ (ngoài số lượng ảnh yêu cầu, ghi để vòng sau): trạng thái "đang tải" và "mất mạng khi gửi" của bài luyện; bàn phím biểu thức nâng cao; màn "mã sai / bị từ chối" của C3-07; C3-02, C3-05, C3-06, C3-08 đã có concept sẵn nên không vẽ lại.
 
@@ -89,6 +96,23 @@ Khổ ảnh: Web 1440×900 · iPad 1180×820 · iPhone 390×844. Mở bản mẫ
 | C3-07 | Mã lớp + trang in | Web | `c3-07-ma-lop.png` | Pass |
 | C3-07 | Duyệt vào lớp + đặt lại mật khẩu HS | Web | `c3-07-duyet-dat-lai-mk.png` | Pass |
 | C3-07 | HS nhập mã lớp, chờ duyệt | iPad | `c3-07-vao-lop.png` | Pass |
+| C3-02 | Tạo lớp (duyệt từng em luôn bật) | Web | `c3-02-tao-lop.png` | Pass |
+| C2-05 | Đã duyệt, đã vào Kho | Web | `c2-05-da-vao-kho.png` | Pass |
+| C3-05 | Bài của em · bộ bài | iPad | `c3-05-bai-cua-em-ipad.png` | Pass |
+| C3-05 | Bài của em · bộ bài | iPhone | `c3-05-bai-cua-em-iphone.png` | Pass |
+| C3-01 | Mã người dùng + mã khôi phục · học sinh tự học | Web | `c3-01-ma-nguoi-dung-hs.png` | Pass |
+| C3-01 | Khôi phục: nhập mã, mật khẩu mới | iPad | `c3-01-khoi-phuc.png` | Pass |
+| C3-01 | Khôi phục: mã sai | iPad | `c3-01-khoi-phuc-sai.png` | Pass |
+| C3-01 | Khôi phục: hết lượt | iPad | `c3-01-khoi-phuc-het-luot.png` | Pass |
+| C3-01 | Khôi phục: xong, mã mới | iPad | `c3-01-khoi-phuc-xong.png` | Pass |
+| C2-04 | Trình chiếu mất mạng | Web | `c2-04-mat-mang.png` | Pass |
+| C3-08 | Xóa tài khoản bước 1/2 | iPad | `c3-08-xoa-tai-khoan-1.png` | Pass |
+| C3-08 | Xóa tài khoản bước 2/2 | iPad | `c3-08-xoa-tai-khoan-2.png` | Pass |
+| C3-08 | Xóa tài khoản: GV còn lớp bị chặn | Web | `c3-08-xoa-gv-bi-chan.png` | Pass |
+| C3-03 | Đóng bộ bài | Web | `c3-03-dong-bo.png` | Pass |
+| C3-03 | Lưu trữ bộ bài | Web | `c3-03-luu-tru-bo.png` | Pass |
+
+Màn sửa ở v0.3 (chụp lại): c3-01-ma-nguoi-dung, c3-01-ma-chua-tick, c3-01-dang-nhap, c3-07-ma-lop, c2-03-chua-kiem, c2-03-lech-chan-duyet, c2-03-da-giao, c2-08-soan-bai-luyen.
 
 Status "Pass" ở đây nghĩa là ảnh chụp ra và không lỗi JS; chưa có người dùng duyệt thiết kế (UT: chờ PO/chủ đầu tư xem).
 
@@ -97,3 +121,4 @@ Status "Pass" ở đây nghĩa là ảnh chụp ra và không lỗi JS; chưa c�
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 28 câu design, bảng màn ↔ 24 ảnh | agent runner-T-261126-10 |
 | v0.2 | 2026-11-26 | Thêm mục A2: DQ-29…DQ-43 (màn mới C2-04a–d, C2-06 tải/mất mạng, C2-08 nâng cao, C2-09a–d, C3-04 thông báo, C3-06a–c, C3-07 lỗi, C3-01 chưa tick, C8); đồng bộ REVIEW-Dom | runner-design-dom |
+| v0.3 | 2026-11-26 | Thêm DQ-44…DQ-50 (tạo lớp, mã khôi phục HS, khôi phục, xóa tài khoản, đóng/lưu trữ bộ, Bài của em, trình chiếu mất mạng) + 15 màn mới vào bảng B | runner-T-261126-40 |

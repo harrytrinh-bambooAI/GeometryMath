@@ -15,13 +15,13 @@ reg('c3-01-ma-nguoi-dung','web','C3','C3-01 · Hiện mã người dùng + mã k
  ${ban('yel','flag','Hãy chép hoặc in mã khôi phục ngay.','Rời trang này là không xem lại được. Mất cả mật khẩu lẫn mã khôi phục thì phải tạo tài khoản mới.')}
  <div class="row" style="gap:8px">${btn('In / lưu ảnh mã','ghost sm','camera')}</div>
  <div class="row small"><span class="cbx on">${I('check')}</span><span>Tôi đã lưu mã khôi phục</span></div>${btn('Vào trang giáo viên','','arrow')}
- <div class="tiny muted">Học sinh không có mã khôi phục: quên mật khẩu thì nhờ giáo viên của lớp đặt lại.</div></div>`,'Mã người dùng là "tên đăng nhập" duy nhất của bạn. Chúng tôi không giữ email hay số điện thoại để gửi lại giúp.'));
+ <div class="tiny muted">Học sinh, kể cả em tự học, cũng nhận mã khôi phục ở màn này. Em đã vào lớp quên mật khẩu còn nhờ được giáo viên đặt lại.</div></div>`,'Mã người dùng là "tên đăng nhập" duy nhất của bạn. Chúng tôi không giữ email hay số điện thoại để gửi lại giúp.'));
 
 reg('c3-01-dang-nhap','ipad','C3','C3-01 · Đăng nhập mã + mật khẩu (HS, iPad)',()=>bare(`<div class="col" style="flex:1;align-items:center;justify-content:center;gap:16px;background:linear-gradient(160deg,#EEF1FF,#F6F1FF)"><div class="logo" style="margin:0">${I('cube')}</div><div style="font-size:26px;font-weight:800">Đăng nhập</div>
  <div class="card pad col" style="width:480px;gap:14px;padding:26px"><div><div class="lbl">Mã người dùng</div><div class="field" style="padding:14px 14px;font-size:17px">${I('users')}<span class="mono">HS-4P9T-31WD</span></div></div>
  <div><div class="lbl">Mật khẩu</div><div class="field" style="padding:14px 14px;font-size:17px">${I('lock')}••••••••<span class="grow"></span><span class="tiny muted">Hiện</span></div></div>
  ${btn('Đăng nhập','','arrow').replace('padding','padding')}
- <div class="col" style="gap:6px;font-size:13px"><div>${I('bulb','width:14px;height:14px')} <b>Học sinh quên mật khẩu?</b> Nhờ giáo viên của lớp đặt lại.</div><div>${I('shield','width:14px;height:14px')} <b>Giáo viên quên mật khẩu?</b> Dùng mã khôi phục.</div></div></div>
+ <div class="col" style="gap:6px;font-size:14px"><div>${I('bulb','width:14px;height:14px')} <b>Quên mật khẩu?</b> <u data-go="c3-01-khoi-phuc" style="color:var(--pri);font-weight:700">Dùng mã khôi phục</u>, hoặc nhờ giáo viên của lớp đặt lại (nếu em đã vào lớp).</div></div></div>
  <div class="small muted">Chưa có tài khoản? <b style="color:var(--pri)">Tạo tài khoản bằng tên</b></div></div>`));
 
 /* ---- C3-03 Soạn bộ bài ---- */
@@ -56,7 +56,7 @@ reg('c3-07-ma-lop','web','C3','C3-07 · Mã lớp + trang in',()=>screen('x','gv
 <div class="card pad col" style="width:480px;flex-shrink:0;gap:14px"><h2 style="margin:0">Mã lớp</h2><div class="row"><div class="code grow" style="font-size:34px;padding:22px">HK-4P7Q</div></div>
  <div class="row">${btn('Sao chép','ghost sm','file')}${btn('Đặt lại mã lớp','ghost sm','reset')}</div>
  <div class="row"><div class="toggle"></div><div class="small"><b>Cho học sinh vào lớp bằng mã</b><div class="tiny muted">Tắt khi lớp đã đủ</div></div></div>
- <div class="row"><div class="toggle"></div><div class="small"><b>Giáo viên duyệt từng em</b><div class="tiny muted">Khuyên bật. Em nhập mã sẽ ở trạng thái chờ duyệt.</div></div></div>
+ <div class="row"><div class="toggle" style="opacity:.55"></div><div class="small"><b>Giáo viên duyệt từng em</b> <span class="chip">${I('lock')}Luôn bật</span><div class="tiny muted">Không tắt được, chống dò mã lớp (PO-66 G4). Em nhập mã sẽ chờ duyệt.</div></div></div>
  <div class="flow">${I('shield','width:15px;height:15px;color:var(--pri)')}<span>Mã lớp không chứa thông tin cá nhân. Đặt lại mã thì mã cũ hết hiệu lực.</span></div></div>
 <div class="card pad col grow" style="gap:12px;background:var(--soft);align-items:center"><div class="row" style="width:100%"><b>Trang in cho lớp</b><span class="grow"></span>${btn('In (A4)','sm','file')}</div>
  <div class="print" style="width:430px;flex:1;max-height:640px;justify-content:center;gap:16px"><div class="logo" style="margin:0">${I('cube')}</div><div style="font-size:20px;font-weight:800">Vào lớp 11A1</div><div class="small muted">Cô Lan Anh · Hình học không gian</div>

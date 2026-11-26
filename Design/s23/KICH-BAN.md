@@ -1,5 +1,5 @@
 # KỊCH BẢN S23 · cách xem bản mẫu chặng 2–3
-Phiên bản: v0.1 · 2026-11-26 · T-261126-38 (Designer Dom)
+Phiên bản: v0.2 · 2026-11-26 · T-261126-40 (Designer Dom) · v0.1 T-261126-38
 
 Nguồn: Design/prototype/s23*.{html,js,css} (màn đăng ký trong V), PO-DECISIONS.md PO-61…66 (26/11/2026), DQ.md v0.2.
 
@@ -21,8 +21,8 @@ Nguồn: Design/prototype/s23*.{html,js,css} (màn đăng ký trong V), PO-DECIS
 | 1 | GV | Đăng ký chỉ bằng tên | `c3-01-dang-ky` |
 | 2 | GV | Nhận mã người dùng và mã khôi phục | `c3-01-ma-nguoi-dung` |
 | 3 | GV | Chưa lưu mã thì chưa được đi tiếp | `c3-01-ma-chua-tick` |
-| 4 | GV | Tạo lớp | **chưa vẽ** · Form tạo lớp (tên lớp, năm học) chưa vẽ riêng; bước sau là kết quả sau khi tạo. |
-| 5 | GV | Mã lớp và bật duyệt từng em | `c3-07-ma-lop` |
+| 4 | GV | Tạo lớp | `c3-02-tao-lop` **(mới v0.2)** |
+| 5 | GV | Mã lớp và duyệt từng em luôn bật | `c3-07-ma-lop` |
 | 6 | HS | Học sinh nhập mã lớp | `c3-07-vao-lop` |
 | 7 | GV | Giáo viên duyệt từng em | `c3-07-duyet-dat-lai-mk` |
 | 8 | HS | Nếu cô từ chối | `c3-07-bi-tu-choi` |
@@ -40,11 +40,11 @@ Dán chữ hoặc ảnh, AI dựng hình và lời giải, kiểm và sửa, l�
 | 6 | GV | Soát: chưa kiểm chứng | `c2-03-chua-kiem` |
 | 7 | GV | Lệch đáp số thì chặn duyệt | `c2-03-lech-chan-duyet` |
 | 8 | AI | Chat để chỉnh nháp | `c2-04a-chat-chinh-nhap` |
-| 9 | GV | Duyệt và vào Kho | **chưa vẽ** · Màn xác nhận “đã vào Kho” chưa vẽ riêng. |
+| 9 | GV | Duyệt và vào Kho | `c2-05-da-vao-kho` **(mới v0.2)** |
 | 10 | GV | Sửa sau khi đã giao | `c2-03-da-giao` |
 
-### KB3 · Giáo viên soạn bộ bài (`#kb=kb3&b=1`, 6 bước)
-Soạn bộ bài, đặt lịch mở lời giải, giao lớp, học sinh nhận thông báo.
+### KB3 · Giáo viên soạn bộ bài (`#kb=kb3&b=1`, 9 bước)
+Soạn bộ bài, đặt lịch mở lời giải, giao lớp, học sinh nhận thông báo và thấy Bài của em, đóng rồi lưu trữ bộ.
 
 | Bước | Vai | Nội dung | Màn (V) |
 |---|---|---|---|
@@ -52,8 +52,11 @@ Soạn bộ bài, đặt lịch mở lời giải, giao lớp, học sinh nhận
 | 2 | GV | Cài đặt luyện và giờ mở lời giải | `c2-08-soan-bai-luyen` |
 | 3 | GV | Câu cần biểu thức | `c2-08-ban-phim-nang-cao` |
 | 4 | GV | Câu trắc nghiệm | `c2-09c-trac-nghiem-gv` |
-| 5 | HS | Học sinh nhận thông báo (iPad) | `c3-04-thong-bao-ipad` ·  Danh sách “Bài của em” chưa vẽ riêng; thông báo mở thẳng bộ bài. |
-| 6 | HS | Cùng thông báo trên iPhone | `c3-04-thong-bao-iphone` |
+| 5 | HS | Học sinh nhận thông báo (iPad) | `c3-04-thong-bao-ipad` |
+| 6 | HS | Bài của em (iPad) | `c3-05-bai-cua-em-ipad` **(mới v0.2)** |
+| 7 | HS | Bài của em (iPhone) | `c3-05-bai-cua-em-iphone` **(mới v0.2)** |
+| 8 | GV | Đóng bộ bài | `c3-03-dong-bo` **(mới v0.2)** |
+| 9 | GV | Lưu trữ bộ bài | `c3-03-luu-tru-bo` **(mới v0.2)** |
 
 ### KB4 · Học sinh làm bài (`#kb=kb4&b=1`, 9 bước)
 Vào lớp bằng mã, Bài của em, làm bài trên iPad hoặc iPhone với bàn phím toán, sai nhận gợi ý, hết lượt, xem kết quả, mất mạng.
@@ -61,7 +64,7 @@ Vào lớp bằng mã, Bài của em, làm bài trên iPad hoặc iPhone với b
 | Bước | Vai | Nội dung | Màn (V) |
 |---|---|---|---|
 | 1 | HS | Vào lớp bằng mã | `c3-07-vao-lop` |
-| 2 | HS | Bài của em | `c3-04-thong-bao-ipad` · Danh sách “Bài của em” chưa vẽ riêng; đang dùng màn thông báo thay. |
+| 2 | HS | Bài của em | `c3-05-bai-cua-em-ipad` **(mới v0.2)** |
 | 3 | HS | Đang tải câu hỏi | `c2-06-dang-tai` |
 | 4 | HS | Làm bài trên iPad | `c2-06-luyen-ipad` |
 | 5 | HS | Làm bài trên iPhone | `c2-06-luyen-iphone` |
@@ -70,7 +73,7 @@ Vào lớp bằng mã, Bài của em, làm bài trên iPad hoặc iPhone với b
 | 8 | HS | Xem kết quả | `c2-07-ket-qua` |
 | 9 | HS | Trường hợp mất mạng | `c2-06-mat-mang` |
 
-### KB5 · Giáo viên chữa bài (`#kb=kb5&b=1`, 8 bước)
+### KB5 · Giáo viên chữa bài (`#kb=kb5&b=1`, 9 bước)
 Bảng lớp × bài, “Cả lớp vướng ở đâu”, chữa bài sang Trình chiếu (lời giải vẫn khóa trên máy học sinh), xuất kết quả, lưu trữ lớp.
 
 | Bước | Vai | Nội dung | Màn (V) |
@@ -83,65 +86,73 @@ Bảng lớp × bài, “Cả lớp vướng ở đâu”, chữa bài sang Trì
 | 6 | GV | Che lời giải | `c2-04-che-loi-giai` |
 | 7 | GV | Xuất kết quả | `c3-06b-xuat-ket-qua` |
 | 8 | GV | Lưu trữ lớp cuối năm | `c3-06c-luu-tru-lop` |
+| 9 | GV | Xóa tài khoản: còn lớp thì bị chặn | `c3-08-xoa-gv-bi-chan` **(mới v0.2)** |
 
-### KB6 · Học sinh tự học (không lớp) (`#kb=kb6&b=1`, 6 bước)
-Luyện một mình, chỉ có gợi ý, mã khôi phục khi quên mật khẩu.
+### KB6 · Học sinh tự học (không lớp) (`#kb=kb6&b=1`, 11 bước)
+Luyện một mình, chỉ có gợi ý, mã khôi phục khi quên mật khẩu, nhập mã để đặt mật khẩu mới, xóa tài khoản.
 
 | Bước | Vai | Nội dung | Màn (V) |
 |---|---|---|---|
 | 1 | HS | Tự đăng ký bằng tên | `c3-01-dang-ky` |
-| 2 | HS | Mã người dùng và mã khôi phục | `c3-01-ma-nguoi-dung` · Màn này hiện vẽ cho giáo viên; bản dành cho học sinh tự học chưa vẽ lại. |
+| 2 | HS | Mã người dùng và mã khôi phục | `c3-01-ma-nguoi-dung-hs` **(mới v0.2)** |
 | 3 | HS | Luyện một mình | `c2-06-luyen-ipad` |
 | 4 | HS | Chỉ có gợi ý | `c2-06-sai-goi-y` |
 | 5 | HS | Quên mật khẩu | `c3-01-dang-nhap` |
-| 6 | HS | Đặt mật khẩu mới | **chưa vẽ** · Màn nhập mã khôi phục / đặt mật khẩu mới chưa vẽ. |
+| 6 | HS | Đặt mật khẩu mới | `c3-01-khoi-phuc` **(mới v0.2)** |
+| 7 | HS | Mã khôi phục sai | `c3-01-khoi-phuc-sai` **(mới v0.2)** |
+| 8 | HS | Hết lượt thử | `c3-01-khoi-phuc-het-luot` **(mới v0.2)** |
+| 9 | HS | Đặt xong, nhận mã mới | `c3-01-khoi-phuc-xong` **(mới v0.2)** |
+| 10 | HS | Xóa tài khoản: bước 1 | `c3-08-xoa-tai-khoan-1` **(mới v0.2)** |
+| 11 | HS | Xóa tài khoản: bước 2 | `c3-08-xoa-tai-khoan-2` **(mới v0.2)** |
 
 ### KB7 · Trình chiếu trên lớp (`#kb=kb7&b=1`, 5 bước)
 Giáo viên mở Trình chiếu, che lời giải, hiện từng bước, học sinh hỏi khi lời giải còn khóa, mất mạng khi đang chiếu.
 
 | Bước | Vai | Nội dung | Màn (V) |
 |---|---|---|---|
-| 1 | GV | Mở Trình chiếu | `c3-06a-chua-bai-trinh-chieu` · Nút “Trình chiếu” mở từ màn Soát đề và Soạn bộ bài chưa vẽ; tạm mở từ kết quả lớp. |
+| 1 | GV | Mở Trình chiếu từ Soạn bộ bài | `c2-08-soan-bai-luyen` |
 | 2 | GV | Che lời giải | `c2-04-che-loi-giai` |
 | 3 | GV | Hiện từng bước | `c2-04-trinh-chieu` |
 | 4 | HS | Học sinh hỏi lại khi lời giải còn khóa | `c2-06-het-luot` |
-| 5 | GV | Mất mạng khi đang chiếu | `c2-04-trinh-chieu` · Màn thông báo mất mạng riêng cho Trình chiếu chưa vẽ; dùng chip “Đã tải sẵn” trên màn chiếu. |
+| 5 | GV | Mất mạng khi đang chiếu | `c2-04-mat-mang` **(mới v0.2)** |
 
-## Bước "chưa vẽ" (không vẽ màn mới, theo phạm vi)
-- KB1 b4: form tạo lớp.
-- KB2 b9: màn xác nhận "đã vào Kho".
-- KB3 b5 và KB4 b2: danh sách "Bài của em" (đang dùng màn thông báo thay).
-- KB6 b2: màn mã khôi phục cho HS tự học (PO-66 G3; màn hiện có vẽ cho GV và còn ghi "học sinh không có mã khôi phục", lệch PO-66 G3, cần Dom vẽ lại); KB6 b6: nhập mã khôi phục / đặt mật khẩu mới.
-- KB7 b1: nút Trình chiếu từ màn Soát đề / Soạn bộ bài; b5: màn mất mạng riêng cho Trình chiếu (dùng chip "Đã tải sẵn").
+Tổng: 7 kịch bản · 61 bước · 0 bước thiếu màn (đã bỏ thuộc tính chú thích “chưa vẽ”).
+
+## Màn mới và màn sửa ở v0.2 (T-261126-40)
+- Màn mới (15, trong `Design/prototype/s23d.js`, nhóm C2c và C3c): `c3-02-tao-lop`, `c2-05-da-vao-kho`, `c3-05-bai-cua-em-ipad`, `c3-05-bai-cua-em-iphone`, `c3-01-ma-nguoi-dung-hs`, `c3-01-khoi-phuc`, `c3-01-khoi-phuc-sai`, `c3-01-khoi-phuc-het-luot`, `c3-01-khoi-phuc-xong`, `c2-04-mat-mang`, `c3-08-xoa-tai-khoan-1`, `c3-08-xoa-tai-khoan-2`, `c3-08-xoa-gv-bi-chan`, `c3-03-dong-bo`, `c3-03-luu-tru-bo`.
+- Màn sửa: `c3-01-ma-nguoi-dung` (bỏ câu “học sinh không có mã khôi phục”, theo PO-66 G3; `c3-01-ma-chua-tick` kế thừa), `c3-01-dang-nhap` (liên kết “Dùng mã khôi phục”), `c3-07-ma-lop` (duyệt từng em luôn bật, không tắt được; PO-66 G4), `c2-03-*` (nút “Trình chiếu”, bấm được), `c2-08-soan-bai-luyen` (nút “Trình chiếu bộ bài”, bấm được).
+- Story mới có màn: US-S3E5-05 Xóa tài khoản (KB6 b10–b11, KB5 b9) và US-S3E2-04 Đóng / Lưu trữ bộ bài (KB3 b8–b9). Chính sách xóa vật lý sau 30 ngày: TẠM (PO-66 G12).
+- Sửa nhỏ: tô sáng mọi bước (trước đó kb3 chỉ 2/6); hộp chú thích không che tiêu đề màn (scroll-padding theo chiều cao thanh nav, cuộn tới giữa vùng tô sáng).
 
 ## Kết quả kiểm (Playwright, Design/s23/kb-shoot.js, cả hai trang)
 ```
 [c] mở đầu OK · cao thanh nav 40px
-[c] kb1: 8 bước đi hết · tô sáng 6/8 · chưa vẽ 1
-[c] kb2: 10 bước đi hết · tô sáng 7/10 · chưa vẽ 1
-[c] kb3: 6 bước đi hết · tô sáng 2/6 · chưa vẽ 0
-[c] kb4: 9 bước đi hết · tô sáng 7/9 · chưa vẽ 0
-[c] kb5: 8 bước đi hết · tô sáng 8/8 · chưa vẽ 0
-[c] kb6: 6 bước đi hết · tô sáng 6/6 · chưa vẽ 1
-[c] kb7: 5 bước đi hết · tô sáng 5/5 · chưa vẽ 0
+[c] kb1: 8 bước đi hết · tô sáng 8/8 · thiếu màn 0
+[c] kb2: 10 bước đi hết · tô sáng 10/10 · thiếu màn 0
+[c] kb3: 9 bước đi hết · tô sáng 9/9 · thiếu màn 0
+[c] kb4: 9 bước đi hết · tô sáng 9/9 · thiếu màn 0
+[c] kb5: 9 bước đi hết · tô sáng 9/9 · thiếu màn 0
+[c] kb6: 11 bước đi hết · tô sáng 11/11 · thiếu màn 0
+[c] kb7: 5 bước đi hết · tô sáng 5/5 · thiếu màn 0
 [c] nút Trình chiếu/Chữa bài gắn liên kết: 2 · sau bấm hash=#c2-04-trinh-chieu
 [c] trình chiếu: vào, ←→, Space, Esc thoát OK
 [a] mở đầu OK · cao thanh nav 40px
-[a] kb1: 8 bước đi hết · tô sáng 6/8 · chưa vẽ 1
-[a] kb2: 10 bước đi hết · tô sáng 7/10 · chưa vẽ 1
-[a] kb3: 6 bước đi hết · tô sáng 2/6 · chưa vẽ 0
-[a] kb4: 9 bước đi hết · tô sáng 7/9 · chưa vẽ 0
-[a] kb5: 8 bước đi hết · tô sáng 8/8 · chưa vẽ 0
-[a] kb6: 6 bước đi hết · tô sáng 6/6 · chưa vẽ 1
-[a] kb7: 5 bước đi hết · tô sáng 5/5 · chưa vẽ 0
+[a] kb1: 8 bước đi hết · tô sáng 8/8 · thiếu màn 0
+[a] kb2: 10 bước đi hết · tô sáng 10/10 · thiếu màn 0
+[a] kb3: 9 bước đi hết · tô sáng 9/9 · thiếu màn 0
+[a] kb4: 9 bước đi hết · tô sáng 9/9 · thiếu màn 0
+[a] kb5: 9 bước đi hết · tô sáng 9/9 · thiếu màn 0
+[a] kb6: 11 bước đi hết · tô sáng 11/11 · thiếu màn 0
+[a] kb7: 5 bước đi hết · tô sáng 5/5 · thiếu màn 0
 [a] nút Trình chiếu/Chữa bài gắn liên kết: 2 · sau bấm hash=#c2-04-trinh-chieu
 [a] trình chiếu: vào, ←→, Space, Esc thoát OK
 iPhone nav cao 40px
 Không có pageerror/console error ở mọi trang đã mở
 ```
-Ảnh: Design/s23/kb/*.png (01 nav gọn, 02 menu mở, 03 mở đầu, 04-kb1…kb7 bước 1, 05 trình chiếu, 06 KB4 iPhone).
+Ảnh: Design/s23/kb/*.png (01 nav gọn, 02 menu mở, 03 mở đầu, 04-kb1…kb7 bước 1, 05 trình chiếu, 06 KB4 iPhone). Ảnh màn mới/sửa: Design/s23/<mã-màn>.png. PDF: Design/s23/GEO-kich-ban-S23.pdf (61 bước).
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: nav gọn, 7 kịch bản, trang mở đầu, chế độ trình chiếu | runner-T-261126-38 (Designer Dom) |
+| v0.2 | 2026-11-26 | Vẽ 15 màn còn thiếu, gắn vào kịch bản, bỏ hết chú thích “chưa vẽ”; thêm bước Đóng/Lưu trữ bộ, Khôi phục, Xóa tài khoản; 61 bước; tô sáng đủ; chừa khoảng dưới thanh nav | runner-T-261126-40 (Designer Dom) |
