@@ -1,0 +1,496 @@
+{
+ "_doc": "T-261126-42: dữ liệu mẫu chung chặng 3 F-S3-001…053 (epics/S3-E1/stories_ac.md \"Dữ liệu mẫu chung\"), nạp ở app/db/seed/e2e/910_s3_core.sql (sinh bằng script; mật khẩu/mã khôi phục là dữ liệu thử). Mã con: học sinh nhóm F-S3-040/041 là F-S3-040001…/041001…; đề kho F-S3-910001…006 (phiên bản +100); item bộ F-S3-<bộ>00k, hàng assignment của item F-S3-<bộ>10k. Mã lớp hiển thị HK-XXXX, lưu join_code HKXXXX. Trường: F-S2-100 Cộng đồng.",
+ "users": {
+  "F-S3-001": {
+   "id": "00000000-0000-7000-8003-000000000001",
+   "org": "F-S2-100",
+   "role": "TEACHER",
+   "displayName": "Cô Lan",
+   "userCode": "GV-7K2M-9QPA",
+   "password": "Lan@2026x",
+   "recoveryCode": "RC-7K2M-9QPA-S3ZY"
+  },
+  "F-S3-002": {
+   "id": "00000000-0000-7000-8003-000000000002",
+   "org": "F-S2-100",
+   "role": "TEACHER",
+   "displayName": "Thầy Khôi",
+   "userCode": "GV-4D8R-2WNX",
+   "password": "Khoi@2026x",
+   "recoveryCode": "RC-4D8R-2WNX-S3Z2"
+  },
+  "F-S3-020": {
+   "id": "00000000-0000-7000-8003-000000000020",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Bình An",
+   "userCode": "HS-4P9T-37WD",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-4P9T-37WD-S32Z"
+  },
+  "F-S3-021": {
+   "id": "00000000-0000-7000-8003-000000000021",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Chi Mai",
+   "userCode": "HS-8L2K-77AB",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-8L2K-77AB-S32Y"
+  },
+  "F-S3-022": {
+   "id": "00000000-0000-7000-8003-000000000022",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Đức Huy",
+   "userCode": "HS-3M7Q-85XN",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-3M7Q-85XN-S322"
+  },
+  "F-S3-023": {
+   "id": "00000000-0000-7000-8003-000000000023",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Gia Bảo",
+   "userCode": "HS-9D4W-67CE",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-9D4W-67CE-S323"
+  },
+  "F-S3-024": {
+   "id": "00000000-0000-7000-8003-000000000024",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Hà My",
+   "userCode": "HS-2X6R-48PL",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-2X6R-48PL-S324"
+  },
+  "F-S3-025": {
+   "id": "00000000-0000-7000-8003-000000000025",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Khánh Linh",
+   "userCode": "HS-7T7B-98QZ",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-7T7B-98QZ-S325"
+  },
+  "F-S3-026": {
+   "id": "00000000-0000-7000-8003-000000000026",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Minh Quân",
+   "userCode": "HS-5N8C-24TR",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-5N8C-24TR-S326"
+  },
+  "F-S3-027": {
+   "id": "00000000-0000-7000-8003-000000000027",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Ngọc Anh",
+   "userCode": "HS-6V3F-78HM",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-6V3F-78HM-S327"
+  },
+  "F-S3-028": {
+   "id": "00000000-0000-7000-8003-000000000028",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Văn Tú",
+   "userCode": "HS-3H6J-72KP",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-3H6J-72KP-S328"
+  },
+  "F-S3-030": {
+   "id": "00000000-0000-7000-8003-000000000030",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Hoàng Nam",
+   "userCode": "HS-7Q8Z-48DF",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-7Q8Z-48DF-S33Z"
+  },
+  "F-S3-031": {
+   "id": "00000000-0000-7000-8003-000000000031",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Thu Hà",
+   "userCode": "HS-7C5J-63LS",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-7C5J-63LS-S33Y"
+  },
+  "F-S3-032": {
+   "id": "00000000-0000-7000-8003-000000000032",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Hoàng Nam",
+   "userCode": "HS-9B2L-85VG",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-9B2L-85VG-S332"
+  },
+  "F-S3-40001": {
+   "id": "00000000-0000-7000-8003-000000040001",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Mi Na",
+   "userCode": "HS-2A5F-77BC",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-2A5F-77BC-S337"
+  },
+  "F-S3-40002": {
+   "id": "00000000-0000-7000-8003-000000040002",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Bình An",
+   "userCode": "HS-6Z7N-52YT",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-6Z7N-52YT-S338"
+  },
+  "F-S3-40003": {
+   "id": "00000000-0000-7000-8003-000000040003",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Phương Thảo",
+   "userCode": "HS-4K8M-26RS",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-4K8M-26RS-S339"
+  },
+  "F-S3-41001": {
+   "id": "00000000-0000-7000-8003-000000041001",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Quốc Bảo",
+   "userCode": "HS-3C9D-77AA",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-3C9D-77AA-S367"
+  },
+  "F-S3-41002": {
+   "id": "00000000-0000-7000-8003-000000041002",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Thảo Vy",
+   "userCode": "HS-8F2E-33BB",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-8F2E-33BB-S368"
+  },
+  "F-S3-41003": {
+   "id": "00000000-0000-7000-8003-000000041003",
+   "org": "F-S2-100",
+   "role": "STUDENT",
+   "displayName": "Tuấn Kiệt",
+   "userCode": "HS-7G4H-99CC",
+   "password": "HocSinh#2026",
+   "recoveryCode": "RC-7G4H-99CC-S369"
+  }
+ },
+ "classes": {
+  "F-S3-010": {
+   "id": "00000000-0000-7000-8003-000000000010",
+   "org": "F-S2-100",
+   "name": "11A1",
+   "grade": 11,
+   "academicYear": "2026–2027",
+   "status": "Đang dạy",
+   "code": "HK-4P7Q",
+   "joinCode": "HK4P7Q",
+   "teacher": "F-S3-001",
+   "active": [
+    "F-S3-020",
+    "F-S3-021",
+    "F-S3-022",
+    "F-S3-023",
+    "F-S3-024",
+    "F-S3-025",
+    "F-S3-026",
+    "F-S3-027"
+   ],
+   "pending": [
+    "F-S3-030",
+    "F-S3-031",
+    "F-S3-032"
+   ],
+   "left": [
+    "F-S3-028"
+   ]
+  },
+  "F-S3-011": {
+   "id": "00000000-0000-7000-8003-000000000011",
+   "org": "F-S2-100",
+   "name": "11A2",
+   "grade": 11,
+   "academicYear": "2026–2027",
+   "status": "Đang dạy",
+   "code": "HK-8M3C",
+   "joinCode": "HK8M3C",
+   "teacher": "F-S3-001",
+   "active": [
+    "F-S3-41001",
+    "F-S3-41002",
+    "F-S3-41003"
+   ],
+   "pending": [],
+   "left": []
+  },
+  "F-S3-012": {
+   "id": "00000000-0000-7000-8003-000000000012",
+   "org": "F-S2-100",
+   "name": "10B",
+   "grade": 10,
+   "academicYear": "2026–2027",
+   "status": "Đang dạy",
+   "code": "HK-5T9X",
+   "joinCode": "HK5T9X",
+   "teacher": "F-S3-002",
+   "active": [
+    "F-S3-40001",
+    "F-S3-40002",
+    "F-S3-40003",
+    "F-S3-021"
+   ],
+   "pending": [],
+   "left": []
+  }
+ },
+ "memberGroups": {
+  "F-S3-040": {
+   "class": "F-S3-012",
+   "members": [
+    "F-S3-040001",
+    "F-S3-040002",
+    "F-S3-040003",
+    "F-S3-021"
+   ],
+   "note": "4 em Đang học 10B: Mi Na, Bình An thứ hai, Phương Thảo, Chi Mai (cũng ở 11A1)"
+  },
+  "F-S3-041": {
+   "class": "F-S3-011",
+   "members": [
+    "F-S3-041001",
+    "F-S3-041002",
+    "F-S3-041003"
+   ]
+  }
+ },
+ "problems": {
+  "F-S3-910001": {
+   "id": "00000000-0000-7000-8003-000000910001",
+   "versionId": "00000000-0000-7000-8003-000000910101",
+   "code": "TUAN-11",
+   "title": "Đề 1 SC-đáy",
+   "answer": "45",
+   "bank": "s3_tuan"
+  },
+  "F-S3-910002": {
+   "id": "00000000-0000-7000-8003-000000910002",
+   "versionId": "00000000-0000-7000-8003-000000910102",
+   "code": "TUAN-12",
+   "title": "Đề 2 d(A,SBC)",
+   "answer": "12/5",
+   "bank": "s3_tuan"
+  },
+  "F-S3-910003": {
+   "id": "00000000-0000-7000-8003-000000910003",
+   "versionId": "00000000-0000-7000-8003-000000910103",
+   "code": "TUAN-13",
+   "title": "Đề 3 hai mặt phẳng",
+   "answer": "60",
+   "bank": "s3_tuan"
+  },
+  "F-S3-910004": {
+   "id": "00000000-0000-7000-8003-000000910004",
+   "versionId": "00000000-0000-7000-8003-000000910104",
+   "code": "TUAN-14",
+   "title": "Đề 4 thể tích",
+   "answer": "12",
+   "bank": "s3_tuan"
+  },
+  "F-S3-910005": {
+   "id": "00000000-0000-7000-8003-000000910005",
+   "versionId": "00000000-0000-7000-8003-000000910105",
+   "code": "TUAN-21",
+   "title": "Đề 5 lăng trụ",
+   "answer": "24",
+   "bank": "s3_tuan"
+  },
+  "F-S3-910006": {
+   "id": "00000000-0000-7000-8003-000000910006",
+   "versionId": "00000000-0000-7000-8003-000000910106",
+   "code": "TUAN-22",
+   "title": "Đề 6 khoảng cách",
+   "answer": "5",
+   "bank": "s3_tuan"
+  }
+ },
+ "assignmentSets": {
+  "F-S3-050": {
+   "id": "00000000-0000-7000-8003-000000000050",
+   "org": "F-S2-100",
+   "class": "F-S3-010",
+   "owner": "F-S3-001",
+   "title": "Bộ bài tuần 15",
+   "status": "assigned",
+   "dueAt": "2026-12-04T20:00:00+07:00",
+   "releaseAt": "2026-12-06T08:00:00+07:00",
+   "items": [
+    {
+     "id": "00000000-0000-7000-8003-000000050001",
+     "position": 1,
+     "problem": "F-S3-910001",
+     "assignmentId": "00000000-0000-7000-8003-000000050101"
+    },
+    {
+     "id": "00000000-0000-7000-8003-000000050002",
+     "position": 2,
+     "problem": "F-S3-910002",
+     "assignmentId": "00000000-0000-7000-8003-000000050102"
+    },
+    {
+     "id": "00000000-0000-7000-8003-000000050003",
+     "position": 3,
+     "problem": "F-S3-910003",
+     "assignmentId": "00000000-0000-7000-8003-000000050103"
+    },
+    {
+     "id": "00000000-0000-7000-8003-000000050004",
+     "position": 4,
+     "problem": "F-S3-910004",
+     "assignmentId": "00000000-0000-7000-8003-000000050104"
+    }
+   ]
+  },
+  "F-S3-052": {
+   "id": "00000000-0000-7000-8003-000000000052",
+   "org": "F-S2-100",
+   "class": "F-S3-010",
+   "owner": "F-S3-001",
+   "title": "Bộ bài tuần 16",
+   "status": "draft",
+   "dueAt": null,
+   "releaseAt": null,
+   "items": [
+    {
+     "id": "00000000-0000-7000-8003-000000052001",
+     "position": 1,
+     "problem": "F-S3-910005",
+     "assignmentId": null
+    },
+    {
+     "id": "00000000-0000-7000-8003-000000052002",
+     "position": 2,
+     "problem": "F-S3-910006",
+     "assignmentId": null
+    }
+   ]
+  },
+  "F-S3-053": {
+   "id": "00000000-0000-7000-8003-000000000053",
+   "org": "F-S2-100",
+   "class": "F-S3-011",
+   "owner": "F-S3-001",
+   "title": "Bộ bài tuần 15",
+   "status": "assigned",
+   "dueAt": "2026-12-04T20:00:00+07:00",
+   "releaseAt": "2026-12-06T08:00:00+07:00",
+   "items": [
+    {
+     "id": "00000000-0000-7000-8003-000000053001",
+     "position": 1,
+     "problem": "F-S3-910001",
+     "assignmentId": "00000000-0000-7000-8003-000000053101"
+    },
+    {
+     "id": "00000000-0000-7000-8003-000000053002",
+     "position": 2,
+     "problem": "F-S3-910002",
+     "assignmentId": "00000000-0000-7000-8003-000000053102"
+    },
+    {
+     "id": "00000000-0000-7000-8003-000000053003",
+     "position": 3,
+     "problem": "F-S3-910003",
+     "assignmentId": "00000000-0000-7000-8003-000000053103"
+    },
+    {
+     "id": "00000000-0000-7000-8003-000000053004",
+     "position": 4,
+     "problem": "F-S3-910004",
+     "assignmentId": "00000000-0000-7000-8003-000000053104"
+    }
+   ]
+  }
+ },
+ "boards": {
+  "F-S3-051": {
+   "set": "F-S3-050",
+   "class": "F-S3-010",
+   "columns": [
+    "Đề 1",
+    "Đề 2",
+    "Đề 3",
+    "Đề 4"
+   ],
+   "rows": {
+    "F-S3-020": [
+     "Đúng",
+     "Xem lại",
+     "Đúng",
+     "Xem lại"
+    ],
+    "F-S3-021": [
+     "Đúng",
+     "Xem lại",
+     "Xem lại",
+     "Chưa làm"
+    ],
+    "F-S3-022": [
+     "Đúng",
+     "Đúng",
+     "Xem lại",
+     "Đúng"
+    ],
+    "F-S3-023": [
+     "Xem lại",
+     "Xem lại",
+     "Đang làm",
+     "Chưa làm"
+    ],
+    "F-S3-024": [
+     "Đúng",
+     "Đúng",
+     "Đúng",
+     "Đúng"
+    ],
+    "F-S3-025": [
+     "Chưa làm",
+     "Chưa làm",
+     "Chưa làm",
+     "Chưa làm"
+    ],
+    "F-S3-026": [
+     "Đúng",
+     "Xem lại",
+     "Xem lại",
+     "Xem lại"
+    ],
+    "F-S3-027": [
+     "Đúng",
+     "Đúng",
+     "Xem lại",
+     "Đang làm"
+    ]
+   },
+   "leftWithWork": {
+    "F-S3-028": [
+     "Đúng",
+     "Chưa làm",
+     "Chưa làm",
+     "Chưa làm"
+    ]
+   },
+   "set053De3": {
+    "F-S3-41001": "Đúng",
+    "F-S3-41002": "Xem lại",
+    "F-S3-41003": "Đúng"
+   }
+  }
+ }
+}
