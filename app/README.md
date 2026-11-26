@@ -145,6 +145,7 @@ Kế hoạch: `artifacts/GEO/work/s23/PLAN_code-s23.md` (module, cổng, khoản
 
 <!-- --- T-261126-41 (khung) --- -->
 <!-- --- T-261126-18 (S2-E1) --- -->
+- **S2-E1 định danh PO-61 (T-261126-18):** module `iam` thêm đăng ký `POST /api/v1/auth/register` (tên + vai + mật khẩu + cờ đã đọc thông báo riêng tư), đăng nhập `POST /api/v1/auth/code-login` (mã `GV-`/`HS-` + mật khẩu, khóa 10 lần sai/15 phút theo tài khoản), khôi phục `POST /api/v1/auth/recover`, đặt mật khẩu lần đầu `POST /api/v1/auth/first-password`, `GET /api/v1/auth/privacy-notice`, `GET /api/v1/account/me`. Migration V110 (cột `app_user`, bảng `privacy_notice`, `class_member.status`). Luồng đăng nhập MVP giữ nguyên (A7). Màn web: `/hs/dang-ky`, `/gv/dang-ky`, `/hs/dang-nhap-ma`, `/gv/dang-nhap-ma`, `/hs/khoi-phuc`, `/hs/dat-mat-khau`. Chuyển tài khoản mẫu MVP: `make s2e1-migrate` (dev; `PROFILE=prod` bị từ chối).
 <!-- --- T-261126-19 (S2-E2) --- -->
 <!-- --- T-261126-20 (S2-E5) --- -->
 <!-- --- T-261126-21 (S2-E8) --- -->

@@ -90,6 +90,10 @@ geo:
   # Mỗi task chỉ thêm khóa NGAY DƯỚI mốc của mình, thụt 2 dấu cách (con của geo:), ví dụ "  s2e8:".
   # --- T-261126-41 (khung) ---
   # --- T-261126-18 (S2-E1) ---
+  s2e1:
+    pbkdf2-iterations: ${GEO_S2E1_PBKDF2_ITER:60000}   # vòng PBKDF2-SHA256 băm mật khẩu (số vòng lưu trong chuỗi băm)
+    community-org-id: 00000000-0000-7000-8002-000000000100  # trường "Cộng đồng" của tài khoản tự đăng ký (PO-61)
+    migrate: false            # true: chạy lệnh chuyển tài khoản MVP rồi thoát (make s2e1-migrate, US-S2E1-04)
   # --- T-261126-19 (S2-E2) ---
   # --- T-261126-20 (S2-E5) ---
   # --- T-261126-21 (S2-E8) ---

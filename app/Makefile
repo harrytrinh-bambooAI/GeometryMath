@@ -39,6 +39,8 @@ traceability: ; cd e2e && node scripts/traceability.ts $(ARGS)   # ARGS="--all",
 .PHONY: bench-s2
 bench-s2: ; scripts/bench-s2.sh $(ARGS)   # bộ đề chuẩn hình phẳng S2-E2 (mock; ngưỡng ≥ 95 % ràng buộc, ≥ 90 % đáp số, 0 sai mang nhãn); kịch bản do T-261126-19 viết
 # --- T-261126-18 (S2-E1) ---
+.PHONY: s2e1-migrate
+s2e1-migrate: ; $(ENV) $(MVN) spring-boot:run -Dspring-boot.run.profiles=$(or $(PROFILE),dev) -Dspring-boot.run.arguments="--geo.s2e1.migrate=true --server.port=0 --geo.s2e1.migrate-report=$(or $(REPORT),../.data/s2e1-migration.csv)"   # US-S2E1-04: chuyển tài khoản mẫu MVP sang mã người dùng (từ chối prod)
 # --- T-261126-19 (S2-E2) ---
 # --- T-261126-20 (S2-E5) ---
 # --- T-261126-21 (S2-E8) ---
