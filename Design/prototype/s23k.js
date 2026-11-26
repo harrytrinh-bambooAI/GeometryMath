@@ -65,7 +65,7 @@ const KBS=[
  S('c2-04-trinh-chieu','gv','Mất mạng khi đang chiếu','Đang chiếu mà mất mạng vẫn chiếu tiếp được.','Lớp học không thể dừng vì wifi.','Đề và các bước đã tải sẵn trước khi chiếu.','text:Đã tải sẵn','Màn thông báo mất mạng riêng cho Trình chiếu chưa vẽ; dùng chip “Đã tải sẵn” trên màn chiếu.')]}
 ];
 const BYID={};KBS.forEach(k=>BYID[k.id]=k);
-let fs=false,playing=true,timer=null,cur=null;
+let fs=false,playing=false,timer=null,cur=null;
 const esc=s=>String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const roleL={gv:'Giáo viên',hs:'Học sinh',ai:'AI'};
 
@@ -112,7 +112,7 @@ function setFs(on){
  if(on===fs)return;fs=on;
  document.body.classList.toggle('kbfs',fs);
  clearInterval(timer);
- if(fs){playing=true;timer=setInterval(()=>{if(playing){if(cur&&cur.kbo&&cur.b<cur.kbo.steps.length)step(1);else playing=false;paintFs();}},6000);
+ if(fs){playing=false;timer=setInterval(()=>{if(playing){if(cur&&cur.kbo&&cur.b<cur.kbo.steps.length)step(1);else playing=false;paintFs();}},6000);
   try{const r=document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();if(r&&r.catch)r.catch(()=>{});}catch(e){}}
  else{try{if(document.fullscreenElement)document.exitFullscreen();}catch(e){}if(cur&&cur.fs){cur.fs=false;try{history.replaceState(null,'','#kb='+cur.kb+'&b='+cur.b);}catch(e){}}}
  after(cur,cur&&cur.id?V[cur.id]:null);
