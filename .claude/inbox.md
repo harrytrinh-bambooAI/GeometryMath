@@ -143,3 +143,12 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Xong khi:** quy ước bước cuối riêng (ví dụ `· HOÀN TẤT ·` hoặc `DONE`) trong brief + agent_watch; chạy thử trên tệp tiến độ mẫu không báo DONE ở bước trung gian.
 - **Ngoài phạm vi:** code dự án GEO.
 - **Trạng thái (26/11):** ĐÓNG — queue.py v0.4 dòng 235: brief ghi "bước giữa `ok`, CHỈ bước cuối `xong`"; BRIEF.md đã có luật; agent_watch giữ nguyên. Kiểm: `queue.py brief T-261126-15` có dòng mới, ast parse OK.
+
+## Việc: Dom vẽ bổ sung sau T-38 (kịch bản bản mẫu, 26/11/2026)
+- **Mục tiêu:** vẽ các bước "chưa vẽ" trong kịch bản + sửa màn lệch PO-66.
+  1. [lệch] `c3-01-ma-nguoi-dung` còn ghi "học sinh không có mã khôi phục" — trái PO-66 G3 → vẽ lại.
+  2. [thiếu] form tạo lớp (KB1 b4); màn "đã vào Kho" (KB2 b9); danh sách "Bài của em" (KB3 b5, KB4 b2); nhập mã khôi phục / đặt mật khẩu mới (KB6 b6); nút Trình chiếu từ Soát đề / Soạn bộ bài + màn mất mạng riêng khi Trình chiếu (KB7).
+  3. [nhỏ] KB3 chỉ 2/6 bước tô sáng được (selector không khớp); hộp chú thích che tiêu đề màn.
+- **Nguồn:** báo cáo T-38, `Design/s23/KICH-BAN.md` (26/11).
+- **Xong khi:** `Design/s23/kb-shoot.js` chạy 0 pageerror; không còn "chưa vẽ" trong s23k.js; ảnh mới trong Design/s23/.
+- **Ngoài phạm vi:** app/, spec. Chờ owner chọn style (T-39) để vẽ cùng lô.
