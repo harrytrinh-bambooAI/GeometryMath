@@ -1,0 +1,31 @@
+{
+  "_comment": "GEO (Hình Học Không Gian Cùng AI), chỉ môi trường dev local. Cổng theo app/README.md + app/Makefile (2026-11-26): web 5173, máy chủ 8080, PG 54329, Redis 6389; worktree có thể đổi qua app/.env.ports (ví dụ 5174/8090).",
+  "_status": "UNCONFIRMED: người dùng xác nhận scope trước lần chạy đầu.",
+  "confirmed": false,
+  "confirmed_by": "<ĐIỀN>",
+  "confirmed_on": "<ĐIỀN>",
+  "envs": {
+    "allowed": [
+      {"name": "dev local", "hosts": ["localhost", "127.0.0.1"]}
+    ],
+    "forbidden": [
+      {"name": "staging / prod", "hosts": [], "_open": "OPEN: chưa có host; mọi host ngoài localhost bị cấm"}
+    ]
+  },
+  "allowed_hosts": ["localhost:5173", "localhost:8080", "localhost:5174", "localhost:8090", "127.0.0.1:5173", "127.0.0.1:8080"],
+  "forbidden_hosts": [],
+  "forbidden_patterns": [],
+  "allowed_methods": ["GET"],
+  "confirm_methods": ["POST", "PUT", "PATCH", "DELETE"],
+  "id_rules": [],
+  "require_params": [],
+  "forbidden_ops": [
+    {"method": "*", "path_regex": ":(5432|6379)\\b", "reason": "cổng 5432/6379 là của người dùng, không phải cụm dự án"}
+  ],
+  "confirm_required": [
+    {"method": "*", "path_regex": "seed-reset|e2e-reset", "reason": "reset dữ liệu DB geo_e2e/geo_dev; chỉ trên DB dev"}
+  ],
+  "_history": [
+    {"date": "2026-11-26", "change": "tạo mới, chưa xác nhận", "by": "runner-T-261126-15"}
+  ]
+}

@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # S2-E1 — Đăng ký, đăng nhập bằng mã và khôi phục (định danh tối giản PO-61): story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run T-261126-12, BA + QC liền). Nguồn: `artifacts/GEO/work/s23/story-map-s23.md` (R2 khóa 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Chặng 2 mục 5–8 (22/11/2026), `Design/s23/DQ.md` và ảnh `Design/s23/c2-*.png` (26/11/2026), `PO-DECISIONS.md` PO-61…65 (PO-61 mới nhất, thắng mọi nguồn cũ).
@@ -43,7 +43,7 @@ Phiên bản: v0.1 · 2026-11-26
 |---|---|---|
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
-| FX-03 | Học sinh "Bình" | mã `HS-5B1C-8R2T`, cùng lớp 11A1 với An |
+| FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
 | FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
@@ -66,7 +66,8 @@ Phiên bản: v0.1 · 2026-11-26
 | BR-S2E1-03 | Mật khẩu từ 8 đến 64 ký tự, người dùng tự đặt (TẠM, QA-S2E1-02) | PO-61 |
 | BR-S2E1-04 | Mã người dùng duy nhất toàn hệ thống, dạng `GV-` hoặc `HS-` cộng 8 ký tự chữ hoa và số, bỏ ký tự dễ nhầm O, 0, I, 1 (TẠM, DQ-16) | PO-61, DQ-16 |
 | BR-S2E1-05 | Mã khôi phục `RC-xxxx-xxxx-xxxx` chỉ sinh cho giáo viên, hiện đúng một lần, buộc tick "đã lưu" mới đi tiếp; học sinh không có mã khôi phục | PO-61, DQ-16, DQ-17 |
-| BR-S2E1-06 | Tối đa 5 lần đăng ký mỗi giờ mỗi địa chỉ mạng, quá thì RATE_LIMITED (TẠM, QA-S2E1-03) | PO-63 |
+| BR-S2E1-06 | Tối đa 5 lần đăng ký mỗi giờ mỗi địa chỉ mạng, quá thì RATE_LIMITED; bộ đếm theo địa chỉ mạng chỉ giữ tạm tối đa 1 giờ, không lưu thành bảng (BR-S3E5-37) (TẠM, QA-S2E1-03) | PO-63 |
+| BR-S2E1-16 | Tên hiển thị không được trông như email hoặc số điện thoại; luật chi tiết ở BR-S3E5-35 (US-S3E5-03) và phải chạy cùng đợt với đăng ký của chặng 2 (TẠM, RV_s23 M-06) | PO-61; BR-S3E5-35 |
 
 ### Tiêu chí chấp nhận
 
@@ -356,3 +357,4 @@ Phiên bản: v0.1 · 2026-11-26
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 4 story, 44 tiêu chí, ready for R3 | runner-T-261126-12 (BA) |
+| v0.2 | 2026-11-26 | Sửa theo RV_s23: BR-S2E1-06 nêu cách giữ bộ đếm IP; thêm BR-S2E1-16 trỏ luật tên giống email hoặc số điện thoại; đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |

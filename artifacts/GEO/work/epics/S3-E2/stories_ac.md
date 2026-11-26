@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # S3-E2 — Bộ bài, lịch mở lời giải, Bài của em theo bộ: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA. Nguồn: `work/s23/story-map-s23.md` (R2 khóa, 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Ch3 (22/11/2026), `Design/s23/DQ.md` và ảnh `c3-*.png` (26/11/2026), `PO-DECISIONS.md` PO-53, PO-61…65. Khi nguồn mâu thuẫn thì PO-61 thắng STAGES.
@@ -50,11 +50,11 @@ Phiên bản: v0.1 · 2026-11-26
 | `F-S3-010` | Lớp 11A1 · Lớp 11 · năm học 2026–2027 · mã lớp `HK-4P7Q` · Đang dạy · 8 em Đang học, 3 em Chờ duyệt, 1 em Đã rời |
 | `F-S3-011` | Lớp 11A2 của cô Lan · mã lớp `HK-8M3C` · 3 em Đang học |
 | `F-S3-012` | Lớp 10B của thầy Khôi · mã lớp `HK-5T9X` · 4 em Đang học |
-| `F-S3-020…027` | Học sinh Đang học của 11A1: Bình An `HS-4P9T-31WD`, Chi Mai `HS-8L2K-77AB`, Đức Huy `HS-3M7Q-05XN`, Gia Bảo `HS-9D4W-61CE`, Hà My `HS-2X6R-48PL`, Khánh Linh `HS-7T1B-90QZ`, Minh Quân `HS-5N8C-24TR`, Ngọc Anh `HS-6V3F-18HM` |
+| `F-S3-020…027` | Học sinh Đang học của 11A1: Bình An `HS-4P9T-37WD`, Chi Mai `HS-8L2K-77AB`, Đức Huy `HS-3M7Q-85XN`, Gia Bảo `HS-9D4W-67CE`, Hà My `HS-2X6R-48PL`, Khánh Linh `HS-7T7B-98QZ`, Minh Quân `HS-5N8C-24TR`, Ngọc Anh `HS-6V3F-78HM` |
 | `F-S3-028` | Văn Tú `HS-3H6J-72KP` · Đã rời 11A1 (còn dữ liệu bài làm cũ) |
-| `F-S3-030…032` | Chờ duyệt ở 11A1: Hoàng Nam `HS-1Q8Z-40DF`, Thu Hà `HS-7C5J-63LS`, Hoàng Nam thứ hai `HS-9B2L-85VG` (trùng tên với em đầu) |
-| `F-S3-040` | Lớp 10B: Mi Na `HS-2A5F-11BC`, Bình An thứ hai `HS-6Z1N-52YT` (trùng tên với Bình An của 11A1), hai em khác; Chi Mai `HS-8L2K-77AB` cũng Đang học 10B (em thuộc hai lớp của hai giáo viên) |
-| `F-S3-041` | Lớp 11A2: Quốc Bảo `HS-3C9D-77AA`, Thảo Vy `HS-8F2E-33BB`, Tuấn Kiệt `HS-1G4H-99CC` |
+| `F-S3-030…032` | Chờ duyệt ở 11A1: Hoàng Nam `HS-7Q8Z-48DF`, Thu Hà `HS-7C5J-63LS`, Hoàng Nam thứ hai `HS-9B2L-85VG` (trùng tên với em đầu) |
+| `F-S3-040` | Lớp 10B: Mi Na `HS-2A5F-77BC`, Bình An thứ hai `HS-6Z7N-52YT` (trùng tên với Bình An của 11A1), hai em khác; Chi Mai `HS-8L2K-77AB` cũng Đang học 10B (em thuộc hai lớp của hai giáo viên) |
+| `F-S3-041` | Lớp 11A2: Quốc Bảo `HS-3C9D-77AA`, Thảo Vy `HS-8F2E-33BB`, Tuấn Kiệt `HS-7G4H-99CC` |
 | `F-S3-050` | Bộ "Bộ bài tuần 15" của 11A1 · Đã giao · hạn làm T6 04/12/2026 20:00 · giờ mở lời giải 06/12/2026 08:00 · bốn đề: Đề 1 SC-đáy, Đề 2 d(A,SBC), Đề 3 hai mặt phẳng, Đề 4 thể tích |
 | `F-S3-051` | Bảng trạng thái 11A1 × bộ tuần 15 (Đề 1, 2, 3, 4): An Đúng, Xem lại, Đúng, Xem lại · Mai Đúng, Xem lại, Xem lại, Chưa làm · Huy Đúng, Đúng, Xem lại, Đúng · Bảo Xem lại, Xem lại, Đang làm, Chưa làm · My Đúng, Đúng, Đúng, Đúng · Linh Chưa làm bốn đề · Quân Đúng, Xem lại, Xem lại, Xem lại · Ngọc Anh Đúng, Đúng, Xem lại, Đang làm |
 | `F-S3-052` | Bộ "Bộ bài tuần 16" của 11A1 · Nháp · chưa đặt hạn, chưa đặt giờ mở lời giải |
@@ -192,7 +192,7 @@ Phiên bản: v0.1 · 2026-11-26
 |---|---|---|
 | BR-S3E2-10 | Mỗi bộ có một `release_at` chung; mỗi đề có thể có `release_at` riêng ghi đè; rỗng nghĩa là Chưa đặt giờ và lời giải khóa. | Ch3 §8 |
 | BR-S3E2-11 | Lời giải mở khi giờ máy chủ t ≥ `release_at` (bằng đúng giờ mở là đã mở); t < `release_at` là Sắp mở và khóa; chỉ giờ máy chủ có giá trị. | M-GEO-13 |
-| BR-S3E2-12 | Khi khóa, mọi kênh không chứa đáp số, bước giải hay gợi ý giải đang khóa: danh sách, chi tiết, gợi ý, trình chiếu, thông báo, tệp xuất, bộ nhớ đệm, phản hồi lỗi. | brd-delta §4; D-GEO-145 |
+| BR-S3E2-12 | Khi khóa, mọi kênh không chứa đáp số, bước giải hay gợi ý giải đang khóa: danh sách, chi tiết, gợi ý, trình chiếu, thông báo, tệp xuất, bộ nhớ đệm, phản hồi lỗi. Với người gọi là học sinh áp dụng cho mọi kênh; riêng Trình chiếu là màn của giáo viên (học sinh không vào được, BR-S2E7-05): giáo viên chỉ xem lời giải đang khóa sau khi xác nhận hộp hỏi ở US-S2E7-03 và máy học sinh vẫn khóa. | brd-delta §4; D-GEO-145; BR-S2E7-11 |
 | BR-S3E2-13 | Giờ mở sớm hơn `due_at` (chênh từ 1 phút trở lên) thì hiện cảnh báo MSG-S3-21 ngay trong màn soạn kèm hai cách sửa; giáo viên xác nhận mới giao được. | DQ-19; Ch3 §5 |
 | BR-S3E2-14 | Đổi giờ khi lời giải đã mở là CONFLICT; hai lần đổi chồng nhau là CONFLICT cho lần đến sau. | MVP E1 glossary |
 | BR-S3E2-15 | Chỉ chủ lớp đặt hoặc đổi lịch; học sinh không bao giờ đặt được. | PO-61 |
@@ -362,3 +362,4 @@ Phiên bản: v0.1 · 2026-11-26
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: story và AC của S3-E2, ready for R3 | runner-T-261126-14 (BA) |
+| v0.2 | 2026-11-26 | Sửa theo RV_s23: BR-S3E2-12 làm rõ kênh Trình chiếu của giáo viên (mâu thuẫn với US-S2E7-03); đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |

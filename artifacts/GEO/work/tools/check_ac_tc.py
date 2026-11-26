@@ -5,7 +5,8 @@ Kiểm:
   1. Mọi mã AC còn hiệu lực trong work/epics/E<n>/stories_ac.md xuất hiện ở ít nhất một TC (cột Remark của test_cases.md).
   2. Mọi TC có trường "Tự động hóa" với giá trị E2E-UI, E2E-API, IT hoặc Manual; Manual phải kèm lý do ("Manual — <lý do>").
   3. Mã TC không trùng trong toàn bộ các epic; mã AC mà TC trỏ tới phải có thật.
-Dùng:
+Dùng (epic S2-E1…E9, S3-E1…E6 cũng nhận được; thêm giá trị UT cho epic S*; chạy không tham số vẫn là 7 epic MVP):
+  python3 -I work/tools/check_ac_tc.py S2-E1 S3-E1      kiểm các epic chặng 2–3
   python3 -I work/tools/check_ac_tc.py                       kiểm cả 7 epic, in lỗi, thoát 1 nếu có lỗi
   python3 -I work/tools/check_ac_tc.py E1                    chỉ kiểm các epic nêu
   python3 -I work/tools/check_ac_tc.py --trace work/traceability.md   kiểm rồi ghi bảng AC → TC
@@ -16,8 +17,10 @@ import os, re, sys, collections, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(HERE, '..'))
 AUTO = ('E2E-UI', 'E2E-API', 'IT', 'Manual')
-AC_RE = re.compile(r'^(~~)?\*\*(US-GEO-\d{3}-(?:SC|FC)\d+) — (.+?)\*\*')
-REF_RE = re.compile(r'US-GEO-(\d{3})(?: · |-)((?:SC|FC)\d+)')
+AUTO_S = AUTO + ('UT',)   # epic S2-*, S3-*: thêm UT (kiểm thử đơn vị cho engine / logic thuần)
+AC_RE = re.compile(r'^(~~)?\*\*(US-(?:GEO-\d{3}|S[23]E\d+-\d{2})-(?:SC|FC|BV)\d+) — (.+?)\*\*')   # BV (giá trị biên) chỉ có ở epic S2-*, S3-*
+REF_RE = re.compile(r'(US-(?:GEO-\d{3}|S[23]E\d+-\d{2}))(?: · |-)((?:SC|FC|BV)\d+)')
+EPIC_RE = re.compile(r'E[1-7]|S[23]-E\d+')
 
 
 def split_row(line):
@@ -40,15 +43,15 @@ def read_tcs(epic):
         if line.startswith('| No |'):
             hdr = split_row(line)
             continue
-        if not line.startswith('| TC-GEO-') or hdr is None or 'Remark' not in hdr:
+        if not line.startswith('| TC-') or hdr is None or 'Remark' not in hdr:
             continue
         c = split_row(line)
         if len(c) != len(hdr):
             continue  # hàng của bảng khác (đối chiếu), không phải hàng case
         row = dict(zip(hdr, c))
-        refs = sorted({f'US-GEO-{s}-{k}' for s, k in REF_RE.findall(row['Remark'])})
+        refs = sorted({f'{s}-{k}' for s, k in REF_RE.findall(row['Remark'])})
         tcs.append(dict(id=row['No'], title=row.get('Tiêu đề', ''), auto=row.get('Tự động hóa'), refs=refs,
-                        other=sorted(set(re.findall(r'(?:NFR|BR|REQ|D)-GEO-\d+', row['Remark']))), line=ln, epic=epic))
+                        other=sorted(set(re.findall(r'(?:NFR|BR|REQ|D)-(?:GEO-\d+|S[23]E\d+-\d+)|DQ-\d+|PO-\d+|US-S[23]E\d+-\d{2}(?!-)', row['Remark']))), line=ln, epic=epic))
     return tcs
 
 
@@ -56,7 +59,9 @@ def main(argv):
     trace = None
     if '--trace' in argv:
         i = argv.index('--trace'); trace = argv[i + 1]; argv = argv[:i] + argv[i + 2:]
-    epics = [a for a in argv if re.fullmatch(r'E[1-7]', a)] or [f'E{n}' for n in range(1, 8)]
+    epics = [a for a in argv if EPIC_RE.fullmatch(a)] or [f'E{n}' for n in range(1, 8)]
+    full = len(epics) == len(set(epics) | set(f'E{n}' for n in range(1, 8)) ) and not [a for a in epics if a.startswith('S')]
+    partial = not full
     errs, data, seen = [], collections.OrderedDict(), {}
     for e in epics:
         acs, tcs = read_acs(e), read_tcs(e)
@@ -68,7 +73,7 @@ def main(argv):
             seen[t['id']] = e
             a = t['auto']
             if a is None: errs.append(f"{e}: {t['id']} (dòng {t['line']}) không có cột Tự động hóa")
-            elif a.split(' — ')[0] not in AUTO: errs.append(f"{e}: {t['id']} Tự động hóa = '{a[:30]}' không thuộc {', '.join(AUTO)}")
+            elif a.split(' — ')[0] not in (AUTO_S if e.startswith('S') else AUTO): errs.append(f"{e}: {t['id']} Tự động hóa = '{a[:30]}' không thuộc {', '.join(AUTO_S if e.startswith('S') else AUTO)}")
             elif a.startswith('Manual') and not a.startswith('Manual — ') or a.strip() in ('Manual', 'Manual —'):
                 errs.append(f"{e}: {t['id']} Manual chưa ghi lý do")
             if not t['refs'] and not t['other']:
@@ -83,14 +88,14 @@ def main(argv):
     for d in data.values():
         for t in d['tcs']:
             for r in t.get('xref', []):
-                if r not in all_ac and len(epics) == 7: errs.append(f"{t['epic']}: {t['id']} trỏ tới AC {r} không có")
-                elif len(epics) < 7: print(f"INFO {t['epic']}: {t['id']} trỏ AC {r} ngoài các epic đang kiểm (không kiểm được khi chạy một phần)")
+                if r not in all_ac and not partial: errs.append(f"{t['epic']}: {t['id']} trỏ tới AC {r} không có")
+                elif partial: print(f"INFO {t['epic']}: {t['id']} trỏ AC {r} ngoài các epic đang kiểm (không kiểm được khi chạy một phần)")
     n_ac = sum(sum(not a['removed'] for a in d['acs'].values()) for d in data.values())
     n_tc = sum(len(d['tcs']) for d in data.values())
     by_auto = collections.Counter(t['auto'].split(' — ')[0] for d in data.values() for t in d['tcs'] if t['auto'])
     if trace: write_trace(trace, data, n_ac, n_tc, by_auto)
     for x in errs: print('LỖI', x)
-    print(f"check_ac_tc: epic {', '.join(epics)} · AC còn hiệu lực {n_ac} · TC {n_tc} · " + ' / '.join(f'{k} {by_auto.get(k, 0)}' for k in AUTO) + f' · lỗi {len(errs)}')
+    print(f"check_ac_tc: epic {', '.join(epics)} · AC còn hiệu lực {n_ac} · TC {n_tc} · " + ' / '.join(f'{k} {by_auto.get(k, 0)}' for k in (AUTO_S if partial else AUTO)) + f' · lỗi {len(errs)}')
     return 1 if errs else 0
 
 

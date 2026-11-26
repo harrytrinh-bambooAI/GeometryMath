@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 # S2-E8 — Bài luyện điền đáp số: bàn phím toán, chấm tương đương, làm bài, kết quả, soạn bài luyện: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run T-261126-12, BA + QC liền). Nguồn: `artifacts/GEO/work/s23/story-map-s23.md` (R2 khóa 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Chặng 2 mục 5–8 (22/11/2026), `Design/s23/DQ.md` và ảnh `Design/s23/c2-*.png` (26/11/2026), `PO-DECISIONS.md` PO-61…65 (PO-61 mới nhất, thắng mọi nguồn cũ).
@@ -47,7 +47,7 @@ Phiên bản: v0.1 · 2026-11-26
 |---|---|---|
 | FX-01 | Giáo viên "Cô Trang" | mã `GV-7K2M-9Q4D`, mật khẩu `Trang@2026x` |
 | FX-02 | Học sinh "An" | mã `HS-3F8A-2L6P`, mật khẩu `AnHoc#2026` |
-| FX-03 | Học sinh "Bình" | mã `HS-5B1C-8R2T`, cùng lớp 11A1 với An |
+| FX-03 | Học sinh "Bình" | mã `HS-5B7C-8R2T`, cùng lớp 11A1 với An |
 | FX-04 | Người soát nội dung "Mai" | mã `GV-2N6P-4W8X`, vai soát nội dung do chủ sản phẩm gán (TẠM, QA-S2E6-01) |
 | FX-10 | Đề phẳng PL-01 | Tam giác ABC có AB = 5, AC = 12, BC = 13; tính góc A. Đáp số 90° |
 | FX-11 | Đề phẳng PL-02 | Tam giác ABC cân tại A, góc A = 40°; tính góc B. Đáp số 70° |
@@ -157,7 +157,7 @@ Phiên bản: v0.1 · 2026-11-26
 |---|---|---|
 | BR-S2E8-06 | `grade` có ba kết quả: Đúng (kèm dạng chuẩn nếu khác cách viết mẫu), Sai (đúng cú pháp nhưng sai giá trị), Sai cú pháp (không đọc được hoặc không có nghĩa) | STAGES Ch2 mục 5 luồng C |
 | BR-S2E8-07 | Chỉ kết quả Sai mới trừ một lượt; Đúng và Sai cú pháp không trừ; Sai cú pháp báo vị trí ký tự lỗi (tính từ 1) và lý do bằng tiếng Việt | STAGES Ch2 mục 5 luồng C |
-| BR-S2E8-08 | Kiểu chính xác: đúng khi giá trị của hai biểu thức bằng nhau (sai lệch tương đối không quá 1e-9) ở mọi dạng viết (phân số rút gọn hay không, căn rút gọn hay không, thập phân hữu hạn của số hữu tỉ); thập phân làm tròn của số vô tỉ là Sai (TẠM, QA-S2E8-02) | STAGES Ch2 mục 5, DQ-12 |
+| BR-S2E8-08 | Kiểu chính xác: đúng khi giá trị của hai biểu thức bằng nhau (sai lệch tương đối không quá 1e-9; khi đáp số mẫu bằng 0 thì sai lệch tuyệt đối không quá 1e-9) ở mọi dạng viết (phân số rút gọn hay không, căn rút gọn hay không, thập phân hữu hạn của số hữu tỉ); thập phân làm tròn của số vô tỉ là Sai (TẠM, QA-S2E8-02) | STAGES Ch2 mục 5, DQ-12 |
 | BR-S2E8-09 | Kiểu xấp xỉ: đúng khi |đáp số nộp − đáp số mẫu| ≤ tol, tính bằng số thập phân chính xác (biên bao gồm); đơn vị ° có hoặc không đều nhận | DQ-12 |
 | BR-S2E8-10 | Bảng ký hiệu nhận: số nguyên, thập phân (dấu phẩy hoặc dấu chấm đều là dấu thập phân, không có dấu phân cách hàng nghìn), phân số `/`, `÷`, `×`, `+`, `-` (cả dấu âm đứng đầu), `^`, `√` (kèm số hoặc ngoặc), `π`, ngoặc, chữ `a` và `x` (thử giá trị để so khớp), `°`; mỗi số tối đa 15 chữ số (TẠM, QA-S2E8-04) | DQ-11 |
 | BR-S2E8-11 | Chia cho 0, thiếu toán hạng, ngoặc không cân, chữ lạ, hai số liền nhau, hai dấu phẩy trong một số, quá 50 ký tự, số quá 15 chữ số đều là Sai cú pháp | STAGES Ch2 mục 5 luồng C |
@@ -592,7 +592,7 @@ Phiên bản: v0.1 · 2026-11-26
 | BR-S2E8-26 | Soạn bài: tên 1 đến 80 ký tự; từ 1 đến 20 câu; mỗi câu chọn đề, kiểu đáp số (chính xác hoặc xấp xỉ), sai số (chỉ cho kiểu xấp xỉ, từ 0 đến 10, tối đa 2 chữ số thập phân), số lượt thử từ 1 đến 5 (mặc định 3), giờ mở lời giải (mặc định chưa đặt, tức khóa) | STAGES Ch2 mục 6 (C2-08), DQ-12 |
 | BR-S2E8-27 | Đề chưa có đáp số máy chấm được hiện trong danh sách nhưng không chọn được: viền nét đứt, chip vàng, chỉ dẫn "Thêm đáp số ở Soát lời giải" | DQ-14 |
 | BR-S2E8-28 | "Xem trước như học sinh" mở màn làm bài thử; không ghi `Attempt` thật, không trừ lượt, không đổi kết quả | STAGES Ch2 mục 6 |
-| BR-S2E8-29 | Giao bài: Nháp thành Đã giao, chụp lại (snapshot) đáp số, sai số, lượt cho từng câu; sau đó không sửa được; đóng bài thành Đã đóng | STAGES Ch2 mục 8 |
+| BR-S2E8-29 | Giao bài: Nháp thành Đã giao, chụp lại (snapshot) đáp số, sai số, lượt cho từng câu; sau đó không sửa được, trừ hai ngoại lệ có chủ đích: (a) giáo viên chọn "Áp dụng cho lớp" phiên bản lời giải mới ở US-S2E5-05 (snapshot lấy theo phiên bản mới, kết quả đã chấm không tính lại, BR-S2E5-26); (b) giáo viên "Xác nhận đúng" báo của học sinh ở BR-S2E8-31 (thêm một dạng chấp nhận vào câu); đóng bài thành Đã đóng | STAGES Ch2 mục 8; BR-S2E5-23 |
 | BR-S2E8-30 | Học sinh bấm "Em nghĩ đáp số này đúng" chỉ khi câu đã bị chấm Sai hoặc hết lượt; mỗi em một báo mỗi câu; có thể kèm ghi chú 0 đến 200 ký tự; báo không đổi lượt hay kết quả | STAGES Ch2 mục 10, M-S2-07 |
 | BR-S2E8-31 | Giáo viên thấy báo của học sinh lớp mình kèm đáp số em nhập và dạng chuẩn; chọn "Xác nhận đúng" (câu của em thành Đúng, dạng viết đó thêm vào dạng chấp nhận của câu, đếm vào M-S2-07) hoặc "Giữ nguyên" (TẠM, QA-S2E8-09) | M-S2-07 |
 
@@ -726,3 +726,4 @@ Phiên bản: v0.1 · 2026-11-26
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 5 story, 110 tiêu chí, ready for R3 | runner-T-261126-12 (BA) |
+| v0.2 | 2026-11-26 | Sửa theo RV_s23: BR-S2E8-29 nêu hai ngoại lệ của snapshot (mâu thuẫn với US-S2E5-05, BR-S2E8-31); BR-S2E8-08 xử lý đáp số mẫu bằng 0; đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
