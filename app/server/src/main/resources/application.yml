@@ -61,8 +61,8 @@ geo:
   ai:
     provider: ${GEO_AI_PROVIDER:mock}       # mock (dev/test/CI) | anthropic; prod cấm mock (ProfileGuard, PO-60)
     timeout: ${GEO_AI_TIMEOUT:10s}          # trần một lượt gọi ở cổng. TẠM: chưa có nguồn (D-GEO-072, owner TechLead)
-    model: ${GEO_AI_MODEL:}                 # rỗng = mặc định theo provider: mock "gia-lap-1" (F-GEO-096), anthropic "claude-sonnet-5-5"
-    prompt-version: ${GEO_AI_PROMPT_VERSION:}   # rỗng = mặc định theo provider: mock "p1", anthropic "a1" (prompt trong AnthropicPrompts)
+    model: ${GEO_AI_MODEL:gia-lap-1}        # F-GEO-096; provider anthropic + giá trị giả lập này = "claude-sonnet-5-5" (AiProperties)
+    prompt-version: ${GEO_AI_PROMPT_VERSION:p1}   # provider anthropic + "p1" = "a1" (AnthropicPrompts.VERSION)
     cost-per-call: 0.12       # chi phí mô phỏng mỗi lượt của mock (đơn vị chưa xác định, KG-07)
     api-key: ${GEO_AI_API_KEY:}             # chỉ ở máy chủ, không bao giờ xuống trình duyệt/nhật ký (BR-GEO-106)
     anthropic:

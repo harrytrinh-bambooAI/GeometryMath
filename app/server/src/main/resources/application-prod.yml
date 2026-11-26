@@ -15,3 +15,5 @@ geo:
   ai:
     provider: ${GEO_AI_PROVIDER:anthropic}
     timeout: ${GEO_AI_TIMEOUT:90s}
+    model: ${GEO_AI_MODEL:claude-sonnet-5-5}
+    prompt-version: ${GEO_AI_PROMPT_VERSION:a1}

@@ -34,6 +34,8 @@ public record AiProperties(
     Map<String, Price> pricing) {
 
   public static final String ANTHROPIC_DEFAULT_MODEL = "claude-sonnet-5-5";
+  static final String MOCK_MODEL = "gia-lap-1";
+  static final String MOCK_PROMPT = "p1";
 
   @org.springframework.boot.context.properties.bind.ConstructorBinding
   public AiProperties {
@@ -48,11 +50,16 @@ public record AiProperties(
       mockLatency = Duration.ZERO;
     }
     boolean real = "anthropic".equals(provider);
-    if (model == null || model.isBlank()) {
-      model = real ? ANTHROPIC_DEFAULT_MODEL : "gia-lap-1";
+    // giá trị giả lập (F-GEO-096) của application.yml không phải model/prompt thật: AI thật dùng
+    // mặc
+    // định của nó (CatalogImporter đọc thẳng geo.ai.model nên yml luôn có giá trị)
+    if (model == null || model.isBlank() || (real && MOCK_MODEL.equals(model))) {
+      model = real ? ANTHROPIC_DEFAULT_MODEL : MOCK_MODEL;
     }
-    if (promptVersion == null || promptVersion.isBlank()) {
-      promptVersion = real ? AnthropicPrompts.VERSION : "p1";
+    if (promptVersion == null
+        || promptVersion.isBlank()
+        || (real && MOCK_PROMPT.equals(promptVersion))) {
+      promptVersion = real ? AnthropicPrompts.VERSION : MOCK_PROMPT;
     }
     if (costPerCall == null) {
       costPerCall = new BigDecimal("0.12");
