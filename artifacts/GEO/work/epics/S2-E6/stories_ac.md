@@ -225,7 +225,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S2E6-11 | Đề Của tôi chỉ chủ sở hữu thấy trên mọi đường: danh sách, chi tiết, tìm, đối chiếu trùng, xuất, hộp duyệt; người soát chỉ thấy đề đang Chờ soát | STAGES Ch2 mục 7 |
 | BR-S2E6-12 | Học sinh của giáo viên chỉ thấy đề qua bài giao, không thấy ngăn Của tôi của giáo viên | STAGES mục 0.2 nguyên tắc 5 |
 | BR-S2E6-13 | Giới hạn thêm đề: tối đa 20 đề trong 60 phút trượt mỗi tài khoản, tính chung mọi đường tạo đề (dán chữ, ảnh, import, sao chép từ Kho chung) (TẠM, QA-S2E3-02) | PO-63 |
-| BR-S2E6-14 | Lời giải đề Kho chung: tài khoản vai Giáo viên xem được; tài khoản vai Học sinh không xem lời giải đề Kho chung ngoài bài giao đã mở (TẠM, QA-S2E6-06) | PO-63, STAGES mục 0.2 nguyên tắc 1 |
+| BR-S2E6-14 | Lời giải đề Kho chung: tài khoản vai Giáo viên xem ngay (không theo giờ mở; chấp nhận rủi ro "giả làm giáo viên", PO-63 đã ghi); tài khoản vai Học sinh không xem lời giải đề Kho chung ngoài bài giao đã mở; học sinh tự học (không lớp) khóa lời giải, chỉ thấy gợi ý. Mở lời giải cho học sinh chỉ qua bài giao (giờ mở của bộ) | PO-63, STAGES mục 0.2 nguyên tắc 1; PO-66 (G2; RV_s23 M-01) |
 
 ### Tiêu chí chấp nhận
 
@@ -279,10 +279,15 @@ Phiên bản: v0.2 · 2026-11-26
 - When: Cô Lan mở lời giải
 - Then: Xem được kèm nhãn hai trục; không cần xác minh giáo viên
 
-**US-S2E6-03-FC7 — Học sinh không xem lời giải đề Kho chung ngoài bài giao** · Nguồn: BR-S2E6-14; QA-S2E6-06
+**US-S2E6-03-FC7 — Học sinh không xem lời giải đề Kho chung ngoài bài giao** · Nguồn: BR-S2E6-14; PO-66 (G2)
 - Given: Học sinh An; đề Kho chung không nằm trong bài giao nào của An
 - When: An gọi lời giải đề đó
 - Then: Khóa: không bước giải, không đáp số (kiểm dữ liệu trả về); thông báo "Lời giải mở theo bài giao của thầy cô"
+
+**US-S2E6-03-FC9 — Học sinh tự học (không lớp) xem đề Kho chung: khóa lời giải, chỉ có gợi ý** · Nguồn: BR-S2E6-14; PO-66 (G2)
+- Given: Học sinh An không thuộc lớp nào (Tự học); đề Kho chung có gợi ý và lời giải đã duyệt
+- When: An mở đề; xin gợi ý; gọi lời giải bằng nút và bằng API trực tiếp
+- Then: Gợi ý hiện bình thường; lời giải khóa với thông báo "Lời giải mở theo bài giao của thầy cô": nút bị khóa, API không trả bước giải hay đáp số; không có giờ mở nào mở khóa cho em khi không có lớp
 
 **US-S2E6-03-FC8 — Bộ câu thử "giả làm giáo viên" không lấy được gì ngoài quyền giáo viên** · Nguồn: PO-63
 - Given: Tài khoản vừa đăng ký vai Giáo viên (không lớp, không xác minh)
@@ -294,7 +299,7 @@ Phiên bản: v0.2 · 2026-11-26
 
 ## Kiểm phủ
 
-- Story trong epic: 3; tiêu chí: 36. Mọi story của epic trong `story-map-s23.md` đều có mặt, không story thừa.
+- Story trong epic: 3; tiêu chí: 37. Mọi story của epic trong `story-map-s23.md` đều có mặt, không story thừa.
 - Câu hỏi mở và đề xuất đổi story map: `questions.md` cùng thư mục (không sửa story map, R2 đã khóa).
 
 ## Lịch sử

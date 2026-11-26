@@ -198,7 +198,7 @@ Phiên bản: v0.2 · 2026-11-26
 | BR-S3E5-22 | Phiên bản do máy chủ quyết, không tin giá trị từ thiết bị. | an toàn |
 | BR-S3E5-23 | Tài khoản chưa có cờ (ví dụ tài khoản MVP chuyển sang) thấy thông báo ở lần vào ứng dụng đầu tiên; khi phiên bản hiện hành tăng, hiện lại một lần cho người đã đọc bản cũ. | PO-64 |
 | BR-S3E5-24 | Chưa bấm "Đã đọc" thì chưa dùng được phần còn lại của ứng dụng. | QA-S3E5-04 |
-| BR-S3E5-25 | Văn bản nêu đủ: chỉ thu tên hiển thị, mã người dùng, vai, lớp, bài làm; không thu email, điện thoại, ngày sinh, trường, ảnh; học sinh quên mật khẩu thì giáo viên đặt lại; giáo viên mất cả mật khẩu lẫn mã khôi phục thì không lấy lại được. | brd-delta §2 mục 6; PO-61 |
+| BR-S3E5-25 | Văn bản nêu đủ: chỉ thu tên hiển thị, mã người dùng, vai, lớp, bài làm; không thu email, điện thoại, ngày sinh, trường, ảnh; học sinh quên mật khẩu thì dùng mã khôi phục của mình hoặc nhờ giáo viên của lớp đặt lại (PO-66 G3); giáo viên mất cả mật khẩu lẫn mã khôi phục thì không lấy lại được. | brd-delta §2 mục 6; PO-61 |
 | BR-S3E5-26 | Cờ chỉ người đó đọc được; giáo viên và học sinh khác không thấy cờ của nhau. | BR-S3E1-52 |
 
 - **DoR:** Ready for R3; dựng trên giả định TẠM (PROVISIONAL): QA-S3E5-04.
@@ -233,7 +233,7 @@ Phiên bản: v0.2 · 2026-11-26
 **US-S3E5-02-SC5 — Văn bản nêu đủ các ý bắt buộc** · Nguồn: BR-S3E5-25
 - Given: màn thông báo riêng tư bản 1.0 đang mở
 - When: đọc nội dung
-- Then: có câu nói chỉ thu tên hiển thị, mã người dùng, vai, lớp, bài làm; có câu nói không thu email, điện thoại, ngày sinh, trường, ảnh; có câu nói học sinh quên mật khẩu thì giáo viên đặt lại; có câu nói giáo viên mất cả mật khẩu lẫn mã khôi phục thì không lấy lại được
+- Then: có câu nói chỉ thu tên hiển thị, mã người dùng, vai, lớp, bài làm; có câu nói không thu email, điện thoại, ngày sinh, trường, ảnh; có câu nói học sinh quên mật khẩu thì dùng mã khôi phục của mình hoặc nhờ giáo viên của lớp đặt lại (PO-66 G3); có câu nói giáo viên mất cả mật khẩu lẫn mã khôi phục thì không lấy lại được
 
 
 **US-S3E5-02-FC1 — Đã đọc bản hiện hành thì không hiện lại** · Nguồn: BR-S3E5-23

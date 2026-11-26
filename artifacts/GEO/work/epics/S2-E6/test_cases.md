@@ -50,12 +50,12 @@ Phiên bản: v0.2 · 2026-11-26
 |---|---|---|---|
 | US-S2E6-01 Kho đề có ngăn Của tôi / Kho chung và lọc loại hình | 12 | 12 | 12 / 0 |
 | US-S2E6-02 Người soát nội dung duyệt đề vào Kho chung | 12 | 12 | 12 / 0 |
-| US-S2E6-03 Đề Của tôi chỉ chủ sở hữu thấy; giới hạn tần suất thêm đề | 12 | 12 | 12 / 0 |
-| **Tổng** | **36** | **36** | **36 / 0** |
+| US-S2E6-03 Đề Của tôi chỉ chủ sở hữu thấy; giới hạn tần suất thêm đề | 13 | 13 | 13 / 0 |
+| **Tổng** | **37** | **37** | **37 / 0** |
 
 | Theo ưu tiên | Số case |
 |---|---|
-| High | 26 |
+| High | 27 |
 | Medium | 10 |
 | Low | 0 |
 
@@ -109,8 +109,9 @@ Phiên bản: v0.2 · 2026-11-26
 | TC-S2E6-032 | Bộ đếm tính chung mọi đường tạo đề | High | Failure (Error case) | chức năng | tích hợp (máy chủ + cơ sở dữ liệu) | IT | Not run | Giáo viên Cô Trang (FX-01); giáo viên "Cô Lan"; học sinh An (FX-02) | • Cô Trang đã thêm 10 đề bằng dán chữ, 5 bằng ảnh, 5 bằng import | — | 1. Thêm đề thứ 21 bằng sao chép từ Kho chung | • RATE_LIMITED; không đường nào lách được bộ đếm | US-S2E6-03-FC5; BR-S2E6-13 |
 | TC-S2E6-033 | Bộ đếm theo tài khoản, không theo địa chỉ mạng | Medium | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01); giáo viên "Cô Lan"; học sinh An (FX-02) | • Cô Trang đủ 20 đề; Cô Lan cùng địa chỉ mạng | — | 1. Cô Lan thêm một đề | • Cô Lan thêm được; bộ đếm của Cô Trang không bị ảnh hưởng | US-S2E6-03-FC6; BR-S2E6-13 |
 | TC-S2E6-034 | Giáo viên xem được lời giải đề Kho chung | High | Normal (Success case) | chức năng | giao diện (trình duyệt, iPad / iPhone / web) | E2E-UI | Not run | Giáo viên Cô Trang (FX-01); giáo viên "Cô Lan"; học sinh An (FX-02) | • Đề Kho chung có lời giải đã duyệt; Cô Lan vai Giáo viên | — | 1. Cô Lan mở lời giải | • Xem được kèm nhãn hai trục; không cần xác minh giáo viên | US-S2E6-03-SC2; BR-S2E6-14; PO-63 |
-| TC-S2E6-035 | Học sinh không xem lời giải đề Kho chung ngoài bài giao | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01); giáo viên "Cô Lan"; học sinh An (FX-02) | • Học sinh An; đề Kho chung không nằm trong bài giao nào của An | — | 1. An gọi lời giải đề đó | • Khóa: không bước giải, không đáp số (kiểm dữ liệu trả về); thông báo "Lời giải mở theo bài giao của thầy cô" | US-S2E6-03-FC7; BR-S2E6-14; QA-S2E6-06 |
+| TC-S2E6-035 | Học sinh không xem lời giải đề Kho chung ngoài bài giao | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01); giáo viên "Cô Lan"; học sinh An (FX-02) | • Học sinh An; đề Kho chung không nằm trong bài giao nào của An | — | 1. An gọi lời giải đề đó | • Khóa: không bước giải, không đáp số (kiểm dữ liệu trả về); thông báo "Lời giải mở theo bài giao của thầy cô" | US-S2E6-03-FC7; BR-S2E6-14; PO-66 |
 | TC-S2E6-036 | Bộ câu thử "giả làm giáo viên" không lấy được gì ngoài quyền giáo viên | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Giáo viên Cô Trang (FX-01); giáo viên "Cô Lan"; học sinh An (FX-02) | • Tài khoản vừa đăng ký vai Giáo viên (không lớp, không xác minh) | — | 1. Thử xem kết quả học sinh của lớp khác, đề Của tôi của người khác, đặt giờ mở bài giao của lớp khác | • Mọi thử đều FORBIDDEN hoặc NOT_FOUND; chỉ có quyền đọc Kho chung và tạo đề của chính mình | US-S2E6-03-FC8; PO-63 |
+| TC-S2E6-037 | Học sinh tự học (không lớp) xem đề Kho chung: khóa lời giải, chỉ có gợi ý | High | Failure (Error case) | chức năng | API (gọi trực tiếp máy chủ) | E2E-API | Not run | Học sinh An (FX-02), không lớp | • An không thuộc lớp nào; đề Kho chung có gợi ý và lời giải đã duyệt | — | 1. An mở đề, xin gợi ý<br>2. gọi lời giải bằng nút và bằng API trực tiếp | • gợi ý hiện bình thường<br>• lời giải khóa, API không trả bước giải hay đáp số<br>• thông báo "Lời giải mở theo bài giao của thầy cô" | US-S2E6-03-FC9; BR-S2E6-14; PO-66 |
 
 ## 3. Truy vết tiêu chí sang case
 
@@ -152,6 +153,7 @@ Phiên bản: v0.2 · 2026-11-26
 | US-S2E6-03-SC2 | TC-S2E6-034 |
 | US-S2E6-03-FC7 | TC-S2E6-035 |
 | US-S2E6-03-FC8 | TC-S2E6-036 |
+| US-S2E6-03-FC9 | TC-S2E6-037 |
 
 ### Khoảng trống
 
