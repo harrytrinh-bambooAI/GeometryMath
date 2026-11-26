@@ -1,6 +1,6 @@
 # Bài tập – Bài 24. Phép chiếu vuông góc. Góc giữa đường thẳng và mặt phẳng
 
-Phiên bản: v1.0 · 27/11/2026
+Phiên bản: v1.1 · 27/11/2026
 
 > Tài liệu tổng hợp/biên soạn lại cho mục đích học tập (không sao chép nguyên văn SGK/SBT). Bộ sách xương sống: Toán 11 Kết nối tri thức với cuộc sống.
 
@@ -23,4 +23,6 @@ Phiên bản: v1.0 · 27/11/2026
 | Nội dung trong bài | Nguồn | Link | Ghi chú |
 |---|---|---|---|
 | Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |
-| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1370.html | chỉ tham khảo dạng, không chép |
+| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |
+| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 24) | https://loigiaihay.com/bai-24-phep-chieu-vuong-goc-goc-giua-duong-thang-va-mat-phang-toan-11-ket-noi-tri-thuc-e31961.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |
+| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 24) | https://vietjack.com/toan-11-kn/bai-24-phep-chieu-vuong-goc.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |

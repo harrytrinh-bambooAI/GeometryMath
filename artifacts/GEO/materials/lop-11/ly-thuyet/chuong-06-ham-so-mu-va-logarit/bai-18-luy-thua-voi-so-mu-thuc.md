@@ -1,6 +1,6 @@
 # Bài 18. Lũy thừa với số mũ thực
 
-Phiên bản: v1.0 · 27/11/2026
+Phiên bản: v1.1 · 27/11/2026
 
 > Tài liệu tổng hợp/biên soạn lại cho mục đích học tập (không sao chép nguyên văn SGK/SBT). Bộ sách xương sống: Toán 11 Kết nối tri thức với cuộc sống.
 
@@ -22,3 +22,5 @@ So sánh: $a>1$: $a^\alpha<a^\beta\Leftrightarrow\alpha<\beta$; $0<a<1$: ngượ
 |---|---|---|---|
 | Vị trí bài, thứ tự mục | SGK Toán 11 KNTT (mục lục) | https://loigiaihay.com/sgk-toan-11-ket-noi-tri-thuc-c1370.html | tham chiếu mục lục |
 | Định nghĩa, định lí, công thức, ví dụ | Kiến thức chương trình GDPT 2018 | - | tự soạn/viết lại bằng lời riêng |
+| Đối chiếu tên bài, thứ tự mục lý thuyết | SGK Toán 11 KNTT – loigiaihay (Bài 18) | https://loigiaihay.com/bai-18-luy-thua-voi-so-mu-thuc-toan-11-ket-noi-tri-thuc-e31935.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép |
+| Đối chiếu lý thuyết trọng tâm | Lý thuyết Toán 11 KNTT – VietJack (Bài 18) | https://vietjack.com/toan-11-kn/ly-thuyet-bai-18-luy-thua-voi-so-mu-thuc.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép |

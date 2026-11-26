@@ -1,6 +1,6 @@
 # Bài 31. Định nghĩa và ý nghĩa của đạo hàm
 
-Phiên bản: v1.0 · 27/11/2026
+Phiên bản: v1.1 · 27/11/2026
 
 > Tài liệu tổng hợp/biên soạn lại cho mục đích học tập (không sao chép nguyên văn SGK/SBT). Bộ sách xương sống: Toán 11 Kết nối tri thức với cuộc sống.
 
@@ -27,3 +27,5 @@ Vận tốc tức thời $v(t_0)=s'(t_0)$; cường độ dòng điện tức th
 |---|---|---|---|
 | Vị trí bài, thứ tự mục | SGK Toán 11 KNTT (mục lục) | https://loigiaihay.com/sgk-toan-11-ket-noi-tri-thuc-c1370.html | tham chiếu mục lục |
 | Định nghĩa, định lí, công thức, ví dụ | Kiến thức chương trình GDPT 2018 | - | tự soạn/viết lại bằng lời riêng |
+| Đối chiếu tên bài, thứ tự mục lý thuyết | SGK Toán 11 KNTT – loigiaihay (Bài 31) | https://loigiaihay.com/bai-31-dinh-nghia-va-y-nghia-cua-dao-ham-toan-11-ket-noi-tri-thuc-e31972.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép |
+| Đối chiếu lý thuyết trọng tâm | Lý thuyết Toán 11 KNTT – VietJack (Bài 31) | https://vietjack.com/toan-11-kn/ly-thuyet-bai-31-dinh-nghia-va-y-nghia-cua-dao-ham.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép |

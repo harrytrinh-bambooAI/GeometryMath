@@ -1,6 +1,6 @@
 # Bài 4. Phương trình lượng giác cơ bản
 
-Phiên bản: v1.0 · 27/11/2026
+Phiên bản: v1.1 · 27/11/2026
 
 > Tài liệu tổng hợp/biên soạn lại cho mục đích học tập (không sao chép nguyên văn SGK/SBT). Bộ sách xương sống: Toán 11 Kết nối tri thức với cuộc sống.
 
@@ -29,3 +29,5 @@ $\sin f=\sin g\Leftrightarrow f=g+k2\pi$ hoặc $f=\pi-g+k2\pi$. $\cos f=\cos g\
 |---|---|---|---|
 | Vị trí bài, thứ tự mục | SGK Toán 11 KNTT (mục lục) | https://loigiaihay.com/sgk-toan-11-ket-noi-tri-thuc-c1370.html | tham chiếu mục lục |
 | Định nghĩa, định lí, công thức, ví dụ | Kiến thức chương trình GDPT 2018 | - | tự soạn/viết lại bằng lời riêng |
+| Đối chiếu tên bài, thứ tự mục lý thuyết | SGK Toán 11 KNTT – loigiaihay (Bài 4) | https://loigiaihay.com/bai-4-phuong-trinh-luong-giac-co-ban-toan-11-ket-noi-tri-thuc-e30803.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép |
+| Đối chiếu lý thuyết trọng tâm | Lý thuyết Toán 11 KNTT – VietJack (Bài 4) | https://vietjack.com/toan-11-kn/ly-thuyet-bai-4-phuong-trinh-luong-giac-co-ban.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép |

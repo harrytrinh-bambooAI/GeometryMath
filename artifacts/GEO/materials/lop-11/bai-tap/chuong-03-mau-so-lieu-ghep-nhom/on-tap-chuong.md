@@ -1,6 +1,6 @@
-# Ôn tập chương 3. Các số đặc trưng đo xu thế trung tâm cho mẫu số liệu ghép nhóm
+# Bài tập cuối chương 3. Các số đặc trưng đo xu thế trung tâm của mẫu số liệu ghép nhóm
 
-Phiên bản: v1.0 · 27/11/2026
+Phiên bản: v1.1 · 27/11/2026
 
 > Tài liệu tổng hợp/biên soạn lại cho mục đích học tập (không sao chép nguyên văn SGK/SBT). Bộ sách xương sống: Toán 11 Kết nối tri thức với cuộc sống.
 
@@ -16,3 +16,6 @@ Phiên bản: v1.0 · 27/11/2026
 | Nội dung trong bài | Nguồn | Link | Ghi chú |
 |---|---|---|---|
 | Đề và lời giải ôn tập | Tác giả tài liệu | - | tự soạn |
+| Đối chiếu tên mục "Bài tập cuối chương" | SGK Toán 11 KNTT – loigiaihay | https://loigiaihay.com/bai-tap-cuoi-chuong-3-toan-11-ket-noi-tri-thuc-e31521.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn tới lời giải, không chép |
+| Đối chiếu dạng bài cuối chương | Giải SGK Toán 11 KNTT – VietJack | https://vietjack.com/toan-11-kn/bai-tap-cuoi-chuong-3.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép |
+| Tổng hợp lý thuyết chương | Lý thuyết Toán 11 KNTT – VietJack | https://vietjack.com/toan-11-kn/ly-thuyet-bai-tap-cuoi-chuong-3.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép |
