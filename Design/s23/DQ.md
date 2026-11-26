@@ -1,5 +1,5 @@
 # DQ · Câu hỏi design chặng 2–3 (S23) · bản mẫu màn C2/C3
-Phiên bản: v0.1 · 2026-11-26
+Phiên bản: v0.2 · 2026-11-26
 
 Nguồn: `STAGES-AFTER-MVP.md` §0.2 và §6 chặng 2, 3 (22/11); `.claude/plans/STAGE-2-3-PLAN.md` §1, §5 (Q3–Q9); `PO-DECISIONS.md` PO-61, PO-02, PO-38 (26/11/2026).
 Bản mẫu: `Design/prototype/s23-screens.html` (+ `s23.js`, `s23b.js`, `s23.css`, `s23-base.css`). Chụp lại: `node Design/s23/shoot.js`.
@@ -37,6 +37,26 @@ Mọi câu dưới đây đều đã có mặc định đang dùng (TẠM) trong
 | DQ-26 | Đặt lại mật khẩu học sinh? | Giáo viên bấm "Đặt lại mật khẩu" → hộp xác nhận → mật khẩu tạm hiện một lần, em phải tự đặt mật khẩu mới ở lần đăng nhập đầu. Chốt chủ đề ở PO-61 (26/11); chi tiết mật khẩu tạm là TẠM · vừa | C3-07 |
 | DQ-27 | Học sinh nhập mã lớp, chờ duyệt? | Màn một thẻ giữa trang; sau khi gửi hiện "chờ duyệt", em vẫn dùng Tự học trong lúc chờ (khớp Q9 "cho tự học không lớp"). Trạng thái mã sai / bị từ chối: chưa vẽ ảnh riêng, mô tả bằng dòng chữ. TẠM · vừa | C3-07 |
 | DQ-28 | Thiết bị từng màn? | Theo STAGES §0.2: giáo viên Web; học sinh iPad (chính) và iPhone (phụ). Đăng nhập chụp ở iPad vì học sinh là người dùng chính. TẠM · cao | tất cả |
+
+## A2. Câu hỏi design phát sinh khi vẽ màn mới (Designer Dom, v0.2)
+Tất cả TẠM, chờ owner/PO duyệt. Ảnh mới ở `Design/s23/`; nguồn nhận xét `REVIEW-Dom.md` v0.1.
+| # | Câu | Mặc định đang dùng (TẠM) | Màn / ảnh |
+|---|---|---|---|
+| DQ-29 | Học sinh đang làm bài trên iPhone: có ẩn thanh điều hướng dưới? (R-08) | Chế độ tập trung: ẩn thanh dưới, nút "Thoát" có hộp xác nhận. TẠM · vừa | C2-06 `c2-06-luyen-iphone.png` |
+| DQ-30 | Sửa lời giải đã giao: so sánh v2↔v3 và nút "Áp dụng cho lớp" ở đâu? (R-07, DQ-06) | Nút trong hộp duyệt + màn so sánh hai phiên bản trước khi áp dụng. Chưa vẽ riêng màn so sánh. TẠM · vừa | C2-03 `c2-03-da-giao.png` |
+| DQ-31 | Chat chỉnh nháp đề với AI: AI hỏi lại khi nào, hiện trước/sau ra sao? | AI chỉ hỏi khi thiếu dữ liệu để dựng hình; mỗi lượt sửa hiện trước/sau cạnh nhau, giáo viên chấp nhận hoặc hoàn tác từng lượt. TẠM · vừa | C2-04a `c2-04a-chat-chinh-nhap.png` |
+| DQ-32 | Import docx/pdf tách bài: tách sai thì sửa thế nào? Trùng kho xử lý ra sao? | Danh sách bài đã tách, giáo viên gộp/tách/bỏ từng bài; đối chiếu trùng hiện bài cũ cạnh bài mới, 3 lựa chọn: giữ cả hai / dùng bài cũ / thay bằng bài mới. TẠM · vừa | C2-04b `c2-04b-import-tach-bai.png`, C2-04c `c2-04c-doi-chieu-trung.png` |
+| DQ-33 | Tệp import lỗi (sai định dạng, quá nặng, có mật khẩu)? | Một thông báo nêu đúng lý do + cách xử lý, không mất phần đã tách được. TẠM · cao | C2-04d `c2-04d-import-loi-tep.png` |
+| DQ-34 | Bàn phím biểu thức nâng cao (phân số, căn lồng, mũ) mở bằng gì? | Phím "Nâng cao" trên bàn phím 6 cột mở bảng phụ; xem trước biểu thức dạng toán phía trên ô nhập; chấm theo dạng tương đương. TẠM · vừa | C2-08 `c2-08-ban-phim-nang-cao.png` |
+| DQ-35 | Bài luyện đang tải và mất mạng khi gửi đáp số? | Đang tải: khung xương, không chặn. Mất mạng: đáp số giữ trên máy, hiện "Chưa gửi", tự gửi lại khi có mạng, không trừ lượt khi chưa gửi được. TẠM · vừa | C2-06 `c2-06-dang-tai.png`, `c2-06-mat-mang.png` |
+| DQ-36 | Học sinh nhập mã lớp sai / bị từ chối? | Mã sai: báo tại chỗ, không nói mã có tồn tại hay không, cho thử lại; bị từ chối: lời trung tính, em vẫn dùng Tự học. TẠM · cao | C3-07 `c3-07-ma-sai.png`, `c3-07-bi-tu-choi.png` |
+| DQ-37 | Nhãn nội bộ (TẠM, Q6, DQ) có hiện trong app? (R-11) | Không; chỉ ở khung flow của bản mẫu để owner thấy giả định, tách thành chú thích handoff. TẠM · cao | tất cả |
+| DQ-38 | Biến thể đề, xuất ảnh/PDF, liên kết chỉ xem: ai xem được liên kết? | Liên kết chỉ xem không cần đăng nhập, không hiện lời giải nếu chưa mở, giáo viên thu hồi được. TẠM · thấp (CẦN OWNER: có thu dữ liệu người xem không, PO-61) | C2-09a `c2-09a-bien-the.png`, `c2-09b-xuat-lien-ket.png` |
+| DQ-39 | Trắc nghiệm: giáo viên soạn và học sinh làm ra sao? | Giáo viên chọn đáp án đúng + giải thích; học sinh chọn một đáp án, thấy đúng/sai và gợi ý, không điểm, không xếp hạng. TẠM · vừa | C2-09c `c2-09c-trac-nghiem-gv.png`, `c2-09d-trac-nghiem-hs.png` |
+| DQ-40 | Thông báo trong ứng dụng: gom, đọc/chưa đọc, không đẩy? | Danh sách theo ngày, chấm chưa đọc, chạm đi tới màn liên quan; chỉ trong ứng dụng (khớp Q_Dom D3). TẠM · vừa | C3-04 `c3-04-thong-bao-ipad.png`, `c3-04-thong-bao-iphone.png` |
+| DQ-41 | Chữa bài từ kết quả, xuất kết quả lớp, lưu trữ lớp cuối năm? | Từ bảng lớp mở thẳng Trình chiếu bài ít em làm được; xuất bảng không chứa dữ liệu cá nhân ngoài tên hiển thị + mã; lưu trữ lớp: chỉ đọc, xác nhận hai bước. TẠM · vừa | C3-06 `c3-06a-chua-bai-trinh-chieu.png`, `c3-06b-xuat-ket-qua.png`, `c3-06c-luu-tru-lop.png` |
+| DQ-42 | Trạng thái rỗng/lỗi chung (lớp chưa có học sinh, kho trống, AI lỗi, hết phiên)? | Một bộ mẫu chung: biểu tượng + một câu nêu tình huống + một hành động; hết phiên giữ bản nháp. TẠM · cao | C8 `c8-trang-thai-gv.png`, `c8-trang-thai-hs.png` |
+| DQ-43 | Màn hiện mã chưa tick "đã lưu" thì khóa gì? (R-05, DQ-16) | Nút "Tiếp tục" xám + dòng nêu lý do khóa; tick xong mới sáng. TẠM · cao | C3-01 `c3-01-ma-chua-tick.png` |
 
 Chưa vẽ (ngoài số lượng ảnh yêu cầu, ghi để vòng sau): trạng thái "đang tải" và "mất mạng khi gửi" của bài luyện; bàn phím biểu thức nâng cao; màn "mã sai / bị từ chối" của C3-07; C3-02, C3-05, C3-06, C3-08 đã có concept sẵn nên không vẽ lại.
 
@@ -76,3 +96,4 @@ Status "Pass" ở đây nghĩa là ảnh chụp ra và không lỗi JS; chưa c�
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo mới: 28 câu design, bảng màn ↔ 24 ảnh | agent runner-T-261126-10 |
+| v0.2 | 2026-11-26 | Thêm mục A2: DQ-29…DQ-43 (màn mới C2-04a–d, C2-06 tải/mất mạng, C2-08 nâng cao, C2-09a–d, C3-04 thông báo, C3-06a–c, C3-07 lỗi, C3-01 chưa tick, C8); đồng bộ REVIEW-Dom | runner-design-dom |
