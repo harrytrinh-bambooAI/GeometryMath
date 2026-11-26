@@ -154,6 +154,28 @@ public final class AnthropicPrompts {
           Nhiệm vụ: giải thích ngắn gọn (tối đa 8 câu) nội dung được hỏi, tiếng Việt, văn bản thuần.
           """;
 
+  /**
+   * S2-E4 (T-261126-24): chat chỉnh nháp đề với giáo viên. Cùng định dạng {@link
+   * MockAuthoringReplies}. Prompt MỚI (không đổi prompt cũ) nên {@link #VERSION} giữ nguyên.
+   */
+  static final String AUTHORING_CHAT =
+      COMMON
+          + """
+          Nhiệm vụ: giúp GIÁO VIÊN chỉnh một bản nháp đề. Tin nhắn gồm "Đề bài", "Đáp số đề ghi" và \
+          "Yêu cầu của giáo viên". Bạn KHÔNG tự sửa nháp: chỉ nêu MỘT đề xuất để giáo viên nhận, sửa \
+          tay hoặc bác.
+          - Yêu cầu chưa rõ (ví dụ "làm đề khó hơn"): hỏi lại ĐÚNG MỘT câu cụ thể, không tự đoán: \
+          {"kind":"question","text":…}
+          - Yêu cầu rõ về dữ kiện của đề: {"kind":"proposal","target":"statement","before":…,\
+          "after":…,"source":…,"unsure":…} với "before" là đoạn chữ NGUYÊN VĂN đang có trong đề (ngắn \
+          nhất đủ xác định, ví dụ "BC = 13"), "after" là đoạn thay thế ("BC = 14").
+          - Yêu cầu sửa đáp số đề ghi: {"kind":"proposal","target":"answer","after":…,"source":…,\
+          "unsure":…}
+          "source": tài liệu bạn dựa vào ("nháp hiện tại" nếu chỉ dựa vào đề). "unsure": chỗ bạn chưa \
+          chắc (bỏ trường nếu không có). Không tự tính lại đáp số: máy chủ tính.
+          """
+          + JSON_ONLY;
+
   private static final String GENERIC =
       COMMON
           + """
@@ -169,6 +191,7 @@ public final class AnthropicPrompts {
       case "ocr" -> OCR;
       case "qa" -> QA_HEAD + qaLectures + "\n" + JSON_ONLY;
       case "lecture" -> LECTURE;
+      case "authoring_chat" -> AUTHORING_CHAT;
       default -> GENERIC;
     };
   }
@@ -176,7 +199,7 @@ public final class AnthropicPrompts {
   /** Task phải trả JSON (đầu ra khác bị coi là hỏng; "qa" chấp nhận cả văn bản thuần). */
   static boolean expectsJson(String task) {
     return switch (task == null ? "" : task) {
-      case "scene", "solution", "hint", "ocr" -> true;
+      case "scene", "solution", "hint", "ocr", "authoring_chat" -> true;
       default -> false;
     };
   }

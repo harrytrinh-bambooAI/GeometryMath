@@ -1,0 +1,18 @@
+{
+  "_doc": "S2-E4 (T-261126-24): mã cố định của app/db/seed/e2e/860_s2e4_core.sql. F-S2-86nnnn → 00000000-0000-7000-8002-00000086nnnn. Giáo viên theo (TC, làn): tổ chức kho rỗng F-S2-(861000000 + TC × 100 + làn), tổ chức có kho F-S2-(862000000 + TC × 100 + làn); làn 0…5 = api, ui-chromium, ui-webkit, ui-iphone, mobile-iphone, mobile-pixel (tests/s2e4/s2e4.ts tự tính).",
+  "orgs": {
+    "F-S2-860001": { "id": "00000000-0000-7000-8002-000000860001", "name": "Nhóm thử S2-E4" },
+    "F-S2-860002": { "id": "00000000-0000-7000-8002-000000860002", "name": "Nhóm thử S2-E4 có kho" }
+  },
+  "users": {
+    "F-S2-860003": { "id": "00000000-0000-7000-8002-000000860003", "org": "F-S2-860002", "role": "TEACHER", "displayName": "Cô Lan" },
+    "F-S2-860004": { "id": "00000000-0000-7000-8002-000000860004", "org": "F-S2-860002", "role": "TEACHER", "displayName": "Mai" },
+    "F-S2-860005": { "id": "00000000-0000-7000-8002-000000860005", "org": "F-S2-860002", "role": "TEACHER", "displayName": "Cô Hà" },
+    "F-S2-860006": { "id": "00000000-0000-7000-8002-000000860006", "org": "F-S2-860001", "role": "STUDENT", "displayName": "An" }
+  },
+  "problems": {
+    "F-S2-860110": { "id": "00000000-0000-7000-8002-000000860110", "note": "sổ đề FX-10 của Cô Hà (đã duyệt, đã vào Kho chung)" },
+    "F-S2-860111": { "id": "00000000-0000-7000-8002-000000860111", "note": "sổ đề FX-12 trong Của tôi của Cô Lan (không ở Kho chung)" },
+    "F-S2-860120": { "id": "00000000-0000-7000-8002-000000860120", "note": "bản Kho chung của FX-10" }
+  }
+}
