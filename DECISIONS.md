@@ -10,6 +10,7 @@ Phiên bản: v0.1 · 2026-11-26 · quyết định đã chốt — 1 dòng / qu
 | 2026-11-26 | Plan chặng 2–3 (`.claude/plans/STAGE-2-3-PLAN.md`) duyệt; chạy tới hết chặng 3. Model: code (Dev) = Opus; design/spec (PO, BA, QC, thiết kế UI) = Sonnet; Tester (skill tester + Playwright) và soát độc lập = Sonnet; delivery-lead (phiên chính) điều phối, nghiệm thu, gộp | owner duyệt | lệnh Harry 26/11 | Harry |
 | 2026-11-26 | S23 R3 OK: spec chặng 2–3 duyệt theo `.claude/GATE-T16.md` (OK hết, G1–G19 = PO-66); trước T-17 chạy T-261126-37 áp quyết định vào spec (Sonnet) | owner trả lời gate một lần | GATE-T16 v0.1, NEEDS §C | Harry |
 | 2026-11-26 | Sau T-37: giữ ngưỡng BA đặt (mã lớp 30 lần/24 giờ; xóa vật lý sau 30 ngày) là TẠM, chỉnh sau L6; 8 đề xuất đổi story map ngoài gate (QA-S2E1-06, S2E2-05, S2E3-07, S2E5-08, S2E6-07, S2E7-04, S2E8-10, S2E9-05) + QA-S3E2-06 để Open, không chặn code; lệch số story S3 (map 23 / thực 24) vào inbox | owner giao delivery-lead tự quyết; không chặn T-17 | báo cáo T-37 | delivery-lead chốt |
+| 2026-11-26 | Style TẠM theo khuyến nghị Dom (T-39): học sinh = A "Lớp học sáng" (Material 3, pill), giáo viên = D "Bảng điều khiển gọn" (shadcn/Fluent 2, bo 6 px), chung token; B "Bảng đen tối" cho chế độ Trình chiếu; C giữ dự phòng. Owner đổi bất kỳ lúc nào | không chặn lô vẽ tiếp; owner xem `Design/styles/index.html` | T-39 gộp 3d8c00b | delivery-lead chốt (TẠM, chờ owner) |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
