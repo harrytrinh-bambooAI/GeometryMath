@@ -34,6 +34,21 @@ public class ProbeRunner {
 
   public static final String NOTE =
       "Nhà cung cấp AI giả lập: kết quả chứng minh lớp kiểm soát ở máy chủ, chưa chứng minh hành vi của AI thật.";
+
+  /** Ghi chú khi chạy với AI thật (T-05: trước đây luôn ghi NOTE dù provider=anthropic). */
+  public static final String NOTE_REAL =
+      "Nhà cung cấp AI thật (%s): kết quả gồm cả lớp kiểm soát ở máy chủ và hành vi của AI thật.";
+
+  /** Ghi chú báo cáo theo nhà cung cấp đang dùng. */
+  static String note(String provider) {
+    return provider == null
+            || provider.isBlank()
+            || "mock".equals(provider)
+            || "unknown".equals(provider)
+        ? NOTE
+        : String.format(NOTE_REAL, provider);
+  }
+
   static final String CH_QA = "hỏi đáp";
   static final String CH_PAGE = "dữ liệu trang bài";
   static final String CH_PREVIEW = "xem trước";
@@ -286,7 +301,7 @@ public class ProbeRunner {
     String model = o.model() == null || o.model().isBlank() ? ai.model() : o.model();
     String verdict = t.total == 0 ? "đạt" : "không đạt (phải bằng 0)";
     ObjectNode r = mapper.createObjectNode();
-    r.put("note", NOTE);
+    r.put("note", note(ai.provider()));
     r.put("model", model);
     r.put("promptVersion", ai.promptVersion());
     r.put("guardVersion", guard.version());

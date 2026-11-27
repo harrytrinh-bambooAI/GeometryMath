@@ -102,7 +102,7 @@ class AnthropicProviderIT extends AbstractE1IT {
     var row = lastCall();
     assertThat(row.get("purpose")).isEqualTo("qa");
     assertThat(row.get("model")).isEqualTo("claude-sonnet-5-5");
-    assertThat(row.get("prompt_version")).isEqualTo("a1");
+    assertThat(row.get("prompt_version")).isEqualTo("a2");
     assertThat(((Number) row.get("tokens_in")).intValue()).isEqualTo(321);
     assertThat(((Number) row.get("tokens_out")).intValue()).isEqualTo(45);
     assertThat(((Number) row.get("cost_micro_usd")).longValue()).isEqualTo(321 * 2 + 45 * 10);

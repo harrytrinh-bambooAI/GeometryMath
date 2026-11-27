@@ -11,6 +11,11 @@ public interface AiGateway {
     return "unknown";
   }
 
+  /** Tên nhà cung cấp AI đang dùng ("mock" | "anthropic"; ghi vào báo cáo bộ câu thử). */
+  default String provider() {
+    return "unknown";
+  }
+
   /** Phiên bản prompt đang hiệu lực. */
   default String promptVersion() {
     return "unknown";

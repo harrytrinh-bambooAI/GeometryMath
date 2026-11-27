@@ -75,6 +75,11 @@ public class InstrumentedAiGateway implements AiGateway {
   }
 
   @Override
+  public String provider() {
+    return provider.name();
+  }
+
+  @Override
   public AiResponse complete(AiRequest request) {
     long start = System.nanoTime();
     String outcome = "success";

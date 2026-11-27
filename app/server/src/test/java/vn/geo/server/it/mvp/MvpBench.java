@@ -33,7 +33,6 @@ import vn.geo.server.content.internal.repo.ContentRepository;
 import vn.geo.server.content.internal.service.AnswerExpr;
 import vn.geo.server.content.internal.service.ContentPackLoader;
 import vn.geo.server.content.internal.service.SceneChecker;
-import vn.geo.server.geometry.api.Figure;
 import vn.geo.server.geometry.api.GeometryEngine;
 import vn.geo.server.it.e1.AbstractE1IT;
 
@@ -223,31 +222,7 @@ class MvpBench extends AbstractE1IT {
   }
 
   private boolean sceneOk(String code, boolean hasSceneSpec, JsonNode points) {
-    if (points == null || !points.isObject()) {
-      return false;
-    }
-    if (hasSceneSpec) {
-      return scenes.check(code, points);
-    }
-    var spec = engine.catalogSpec(code);
-    if (spec.isEmpty()) {
-      return false; // không có ràng buộc để kiểm: không tính là đạt
-    }
-    try {
-      Figure f = engine.build(spec.get().template(), spec.get().paramsAt(1));
-      Map<String, double[]> pts = new LinkedHashMap<>();
-      for (var e : points.properties()) {
-        JsonNode c = e.getValue();
-        if (c.isArray() && c.size() == 3) {
-          pts.put(
-              e.getKey(),
-              new double[] {c.get(0).asDouble(), c.get(1).asDouble(), c.get(2).asDouble()});
-        }
-      }
-      return engine.check(pts, f.constraints()).satisfied();
-    } catch (RuntimeException e) {
-      return false;
-    }
+    return new BenchSceneCheck(scenes, engine).ok(code, hasSceneSpec, points);
   }
 
   private boolean answerOk(String code, Problem p, String aiAnswer) {

@@ -110,7 +110,7 @@ Tạo lỗi có `Retry-After` trong mã: `AppException.rateLimited(Duration)`, `
 |---|---|---|
 | `geo.ai.provider` (`GEO_AI_PROVIDER`) | `mock` (dev/test/CI), `anthropic` (prod) | `MockAiProvider` (D-GEO-047) / `AnthropicAiProvider` (Claude Messages API qua HttpClient của JDK) |
 | `geo.ai.model` (`GEO_AI_MODEL`) | `gia-lap-1` (mock); provider `anthropic` thì giá trị giả lập này thành `claude-sonnet-5-5` (prod yml đặt sẵn) | đổi model bằng cấu hình (US-GEO-103-SC2) |
-| `geo.ai.prompt-version` (`GEO_AI_PROMPT_VERSION`) | `p1` (mock); `anthropic` + `p1` thành `a1` (`AnthropicPrompts.VERSION`) | ghi vào ai_call_log và báo cáo bộ đề chuẩn |
+| `geo.ai.prompt-version` (`GEO_AI_PROMPT_VERSION`) | `p1` (mock); `anthropic` + `p1` thành `a2` (`AnthropicPrompts.VERSION`) | ghi vào ai_call_log và báo cáo bộ đề chuẩn |
 | `geo.ai.anthropic.base-url` (`GEO_AI_BASE_URL`) | `https://api.anthropic.com` | test trỏ vào máy chủ HTTP giả |
 | `geo.ai.anthropic.api-version` | `2023-06-01` | tiêu đề `anthropic-version` |
 | `geo.ai.anthropic.max-tokens` | 16000 | trần token ra mỗi lượt; bị cắt (`max_tokens`) = lỗi |
