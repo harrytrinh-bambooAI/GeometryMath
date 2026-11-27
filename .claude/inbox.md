@@ -427,3 +427,7 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Xong khi:** bảng tần suất chủ đề × năm có nguồn; schema + check.py exit 0; bộ lắp sinh ≥ 3 mã đề khớp ma trận 100%, đáp số khớp engine.
 - **Ngoài phạm vi:** app/** (nối app ở epic sau); chép nguyên văn đề có bản quyền ngoài đề chính thức của Bộ/Sở.
 - [28/11] BUG-S23-001 (Minor): app/e2e/reporters/evidence-reporter.ts dòng 227–229 khóa đếm thiếu title → đếm thiếu test vòng lặp (283 vs 285). Sửa cùng lô task chặng 5 đầu tiên đụng e2e. Nguồn: artifacts/GEO/evidence/E2E-S23-20261128/BUG-LIST.md
+- [28/11] FIX từ T-53: thêm bảng lp_* vào app/db/seed/keep-tables.txt (seed đang gọi lp_catalog_load() nạp lại).
+- [28/11] FIX từ T-53: AnthropicAiProvider đặt max_tokens 16000 / effort medium riêng cho purpose lesson_plan (prompt-lab V8).
+- [28/11] Câu mở T-53: đường dẫn API /api/v1/teacher/lesson-plans (đặc tả ghi /api/lesson-plans); bài 25 Tiết 1-2/3 (AC) vs 1-2/2 (cases.json); câu moi chưa nối engine.
+- [28/11] Câu mở T-52: mã PO-65 gán TẠM cho dòng exam_* trong allowed_fields; prod nạp exam cần vai có quyền ghi; seed Java ≠ Python.
