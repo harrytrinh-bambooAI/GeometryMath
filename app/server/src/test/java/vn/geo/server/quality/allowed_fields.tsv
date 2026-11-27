@@ -1076,7 +1076,7 @@ api	api	phatBieu	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-0
 api	api	chuaSoat	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
 api	api	tongPhut	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
 api	api	cau	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
-api	api	so	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	so	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03); cũng dùng ở form ra đề: số thứ tự câu khi thay câu (US-S5E2-04)	PO-27
 api	api	nguon	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
 api	api	mucDo	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
 api	api	de	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
@@ -1090,7 +1090,7 @@ api	api	viTri	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01�
 api	api	vanDe	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
 api	api	goiY	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
 api	api	lyDo	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
-api	api	chapters	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	chapters	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03); cũng dùng ở form ra đề: chương được chọn (US-S5E2-02)	PO-27
 api	api	lessons	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
 api	api	periods	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
 api	api	knowledge	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
@@ -1201,9 +1201,7 @@ db	exam_variant	difficulty	Mã đề của bộ đề: danh sách câu đã lắ
 db	exam_variant	body	Mã đề của bộ đề: danh sách câu đã lắp, độ khó dự kiến (US-S5E2-03, 04)	PO-65
 db	exam_variant	updated_at	Mã đề của bộ đề: danh sách câu đã lắp, độ khó dự kiến (US-S5E2-03, 04)	PO-65
 api	api	matrixCode	Mã ma trận chuẩn (loại đề) của form ra đề (US-S5E2-02)	PO-65
-api	api	chapters	Chương được chọn trên form ra đề (US-S5E2-02)	PO-65
 api	api	minutes	Thời gian làm bài (phút) của form ra đề (US-S5E2-02)	PO-65
 api	api	parts	Số câu và điểm mỗi phần của form ra đề (US-S5E2-02)	PO-65
 api	api	levels	Tỉ lệ mức độ NB/TH/VD/VDC của form ra đề (US-S5E2-02)	PO-65
 api	api	variantCount	Số mã đề 1–8 của form ra đề (US-S5E2-02, QS5-07)	PO-65
-api	api	so	Số thứ tự câu trong mã đề khi thay câu (US-S5E2-04)	PO-65
