@@ -402,3 +402,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 1. Agent đầu tiên xong → soát độc lập nhánh đó (Sonnet, chỉ diff + "Xong khi", chỉ báo lỗi) + soát chéo toán 305 bài Toán 11 `artifacts/GEO/materials/lop-11/bai-tap` (Sonnet, chỉ báo lỗi, ghi `artifacts/GEO/evidence/REVIEW-L11-MATH-20261127.md`).
 2. Agent thứ hai xong → soát độc lập nhánh đó (Sonnet); E2E tách UI/API đợt 2 (Opus, worktree e2e-split2, cổng 54409) ngay khi đủ suất.
 3. Nhánh soát đạt → gộp worktree-mvp-wave0 → push.
+
+## Việc: prompt AI biết 7 loại đại lượng mới · ghi 27/11/2026 (sau content-bal)
+- **Mục tiêu:** `AnthropicPrompts` (scene/self-study) mô tả được các loại đại lượng mới của engine (sphere_area, cyl_lateral, cyl_volume, cone_total_area, pyramid_volume, pyramid_lateral, prism_lateral, cầu ngoại tiếp 4 điểm) để Tự học với đề dạng Diện tích/Mặt cầu dựng + kiểm được.
+- **Nguồn:** commit 83d3052 nhánh content-bal; DECISIONS 27/11 "Kho đề 84 đề".
+- **Xong khi:** test prompt/mock đạt; `make bench-mvp` mock xanh; (đo AI thật chỉ khi owner cho phép chi phí).
+- **Ngoài phạm vi:** đổi model AI; nới ngưỡng.
