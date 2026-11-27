@@ -1,10 +1,15 @@
 package vn.geo.server.assignment.internal.service;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.event.EventListener;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
@@ -16,6 +21,7 @@ import vn.geo.server.common.error.AppException;
 import vn.geo.server.common.error.ErrorCode;
 import vn.geo.server.common.event.DomainEvents;
 import vn.geo.server.common.id.Uuid7;
+import vn.geo.server.common.redis.RedisKeys;
 import vn.geo.server.common.security.AuthPrincipal;
 import vn.geo.server.common.security.RequestContext;
 import vn.geo.server.common.security.Role;
@@ -30,6 +36,8 @@ import vn.geo.server.iam.api.StudentPasswordResetEvent;
  */
 @Service
 public class AuditEventService {
+
+  private static final Logger log = LoggerFactory.getLogger(AuditEventService.class);
 
   public static final String EARLY_RELEASE = "early_release";
   public static final String RELEASE_TIME_CHANGE = "release_time_change";
@@ -55,15 +63,24 @@ public class AuditEventService {
   private final SetReleaseRepository sets;
   private final DomainEvents events;
   private final TransactionTemplate separateTx;
+  private final StringRedisTemplate redis;
+  private final RedisKeys keys;
+  private final Duration deniedWindow;
 
   public AuditEventService(
       AuditEventRepository repo,
       SetReleaseRepository sets,
       DomainEvents events,
-      PlatformTransactionManager tm) {
+      PlatformTransactionManager tm,
+      StringRedisTemplate redis,
+      RedisKeys keys,
+      @Value("${geo.audit.denied-window:PT1H}") Duration deniedWindow) {
     this.repo = repo;
     this.sets = sets;
     this.events = events;
+    this.redis = redis;
+    this.keys = keys;
+    this.deniedWindow = deniedWindow;
     this.separateTx = new TransactionTemplate(tm);
     this.separateTx.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRES_NEW);
   }
@@ -78,10 +95,28 @@ public class AuditEventService {
     return p;
   }
 
-  /** Bản ghi Từ chối: chỉ loại, người gọi, loại đối tượng, giờ (BR-S3E5-07, M-S3-06). */
+  /**
+   * Bản ghi Từ chối: chỉ loại, người gọi, loại đối tượng, giờ (BR-S3E5-07, M-S3-06). Dev-REV-A2:
+   * tối đa một hàng mỗi (người gọi, loại, loại đối tượng) trong cửa sổ {@code
+   * geo.audit.denied-window} (mặc định 1 giờ) — audit_log chỉ thêm, không xóa được, nên lặp yêu cầu
+   * sai vai/NOT_FOUND không được làm phình bảng. Redis lỗi thì vẫn ghi (không mất dấu vết).
+   */
   public void denied(AuthPrincipal p, String action, String targetType) {
+    if (!firstInWindow(p, action, targetType)) {
+      return;
+    }
     separateTx.executeWithoutResult(
         s -> repo.recordDenied(p.userId(), roleOf(p), action, targetType));
+  }
+
+  private boolean firstInWindow(AuthPrincipal p, String action, String targetType) {
+    String key = keys.key("audit-denied", String.valueOf(p.userId()), action, targetType);
+    try {
+      return !Boolean.FALSE.equals(redis.opsForValue().setIfAbsent(key, "1", deniedWindow));
+    } catch (RuntimeException e) {
+      log.warn("audit denied: Redis lỗi, ghi không giới hạn ({})", e.getClass().getSimpleName());
+      return true;
+    }
   }
 
   /** Mở ngay thành công: một AuditEvent + một đợt thông báo "lời giải đã mở" (BR-S3E4-14). */

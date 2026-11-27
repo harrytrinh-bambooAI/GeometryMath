@@ -161,4 +161,51 @@ class AuditEventS3E5IT extends AbstractS3E4IT {
         .contains("audit_log_class")
         .doesNotContain("Seq Scan");
   }
+
+  @Test
+  @DisplayName(
+      "Dev-REV-A2 Lặp yêu cầu bị từ chối N lần trong cửa sổ 1 giờ chỉ ghi 1 hàng denied cho mỗi (người, loại, đối tượng)")
+  void deniedIsRateLimitedPerActorAndType() throws Exception {
+    World w = world();
+    String set =
+        assigned(
+            w.people().get("Cô Lan").token(),
+            w.classes().get("11A1").id(),
+            "Bộ bài tuần 15",
+            172_800L,
+            1);
+    String khoi = w.people().get("Thầy Khôi").token();
+    UUID khoiId = w.people().get("Thầy Khôi").id();
+    for (int i = 0; i < 5; i++) {
+      assertThat(
+              send("POST", "/api/v1/teacher/assignment-sets/" + set + "/open-now", khoi, "{}")
+                  .statusCode())
+          .isEqualTo(404);
+      assertThat(
+              send(
+                      "POST",
+                      "/api/v1/teacher/assignment-sets/" + UUID.randomUUID() + "/open-now",
+                      khoi,
+                      "{}")
+                  .statusCode())
+          .isEqualTo(404);
+    }
+    String sql =
+        "SELECT count(*) FROM audit_log WHERE actor_user_id = ? AND outcome = 'denied'"
+            + " AND action = 'early_release'";
+    assertThat(count(sql, khoiId)).as("10 lần NOT_FOUND, 1 hàng").isEqualTo(1);
+    // loại khác của cùng người: khóa riêng, vẫn ghi đúng 1 hàng
+    for (int i = 0; i < 3; i++) {
+      send(
+          "POST",
+          "/api/v1/teacher/assignment-sets/" + set + "/release-time",
+          khoi,
+          "{\"releaseAt\":\"2030-01-01T08:00:00+07:00\"}");
+    }
+    assertThat(
+            count(
+                "SELECT count(*) FROM audit_log WHERE actor_user_id = ? AND outcome = 'denied'",
+                khoiId))
+        .isEqualTo(2);
+  }
 }
