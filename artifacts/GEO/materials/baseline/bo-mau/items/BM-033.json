@@ -1,0 +1,98 @@
+{
+ "id": "BM-033",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-22-hai-duong-thang-vuong-goc.md — bài 7 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa hai đường thẳng",
+ "muc_do": "VDC",
+ "de_bai": "Tứ diện $ABCD$ có $AB=CD=a$; $M,N$ lần lượt là trung điểm $BC,AD$ và $MN=\\dfrac{a\\sqrt3}2$. Tính góc giữa $AB$ và $CD$.",
+ "dap_so": {
+  "gia_tri": "$60^\\circ$",
+  "so": 60.0
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Đường trung bình",
+  "Định lí côsin",
+  "Góc giữa hai đường thẳng thuộc $[0^\\circ;90^\\circ]$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; $PN\\parallel CD$, $PN=\\dfrac a2$.",
+   "ket_qua_trung_gian": "$PM=PN=\\dfrac a2$",
+   "kien_thuc": "Đường trung bình",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $PM=PN=\\dfrac a2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.5
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Góc $(AB,CD)$ bằng $\\widehat{MPN}$ hoặc bù với nó.",
+   "ket_qua_trung_gian": "$(AB,CD)=\\widehat{MPN}$ hoặc $180^\\circ-\\widehat{MPN}$",
+   "kien_thuc": "Góc giữa hai đường thẳng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $(AB,CD)=\\widehat{MPN}$ hoặc $180^\\circ-\\widehat{MPN}$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\cos\\widehat{MPN}=\\dfrac{a^2/4+a^2/4-3a^2/4}{a^2/2}=-\\dfrac12\\Rightarrow\\widehat{MPN}=120^\\circ$.",
+   "ket_qua_trung_gian": "$\\widehat{MPN}=120^\\circ$",
+   "kien_thuc": "Định lí côsin",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\widehat{MPN}=120^\\circ$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Tính sai tử số: $\\dfrac{a^2}4+\\dfrac{a^2}4-\\dfrac{3a^2}4=\\dfrac{a^2}4$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 120.0
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "Góc giữa hai đường thẳng thuộc $[0^\\circ;90^\\circ]$ nên bằng $60^\\circ$.",
+   "ket_qua_trung_gian": "$60^\\circ$",
+   "kien_thuc": "Điều kiện góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $60^\\circ$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Kết luận góc giữa hai đường thẳng là $120^\\circ$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 60.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B4",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Kết luận góc giữa hai đường thẳng là $120^\\circ$",
+   "loi_giai": "B1: $P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; $PN\\parallel CD$, $PN=\\dfrac a2$.\nB2: Góc $(AB,CD)$ bằng $\\widehat{MPN}$ hoặc bù với nó.\nB3: $\\cos\\widehat{MPN}=\\dfrac{a^2/4+a^2/4-3a^2/4}{a^2/2}=-\\dfrac12\\Rightarrow\\widehat{MPN}=120^\\circ$.\nB4: Vậy góc giữa $AB$ và $CD$ bằng $120^\\circ$.",
+   "diem_dung": 0.75
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Tính sai tử số: $\\dfrac{a^2}4+\\dfrac{a^2}4-\\dfrac{3a^2}4=\\dfrac{a^2}4$",
+   "loi_giai": "B1: $P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; $PN\\parallel CD$, $PN=\\dfrac a2$.\nB2: Góc $(AB,CD)$ bằng $\\widehat{MPN}$ hoặc bù với nó.\nB3: $\\cos\\widehat{MPN}=\\dfrac{a^2/4}{a^2/2}=\\dfrac12\\Rightarrow\\widehat{MPN}=60^\\circ$.\nB4: Góc cần tìm là $60^\\circ$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "S2: lỗi tính ở B3 nhưng đáp số cuối trùng đáp số đúng — dùng để kiểm AI có bắt bước sai khi đáp số đúng; B4 không được điểm vì suy từ B3 sai."
+}

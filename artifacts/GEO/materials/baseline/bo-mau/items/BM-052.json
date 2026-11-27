@@ -1,0 +1,84 @@
+{
+ "id": "BM-052",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-04-quan-he-song-song/bai-12-duong-thang-va-mat-phang-song-song.md — bài 5 (v1.3 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Đường thẳng song song mặt phẳng",
+ "muc_do": "VD",
+ "de_bai": "Chóp $S.ABCD$ đáy hình bình hành, $M$ là trung điểm $SA$. Chứng minh $SC\\parallel(MBD)$.",
+ "dap_so": {
+  "gia_tri": "$SC\\parallel(MBD)$ (chứng minh)",
+  "so": null
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Đường trung bình",
+  "Dấu hiệu đường thẳng song song mặt phẳng"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$O=AC\\cap BD$ là trung điểm $AC$.",
+   "ket_qua_trung_gian": "$O$ trung điểm $AC$",
+   "kien_thuc": "Hình bình hành",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $O$ trung điểm $AC$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$OM$ là đường trung bình $\\triangle SAC$ nên $OM\\parallel SC$, $OM\\subset(MBD)$.",
+   "ket_qua_trung_gian": "$OM\\parallel SC$",
+   "kien_thuc": "Đường trung bình",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $OM\\parallel SC$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng $MB$ làm đường trung bình song song $SC$",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$SC\\not\\subset(MBD)$ nên $SC\\parallel(MBD)$.",
+   "ket_qua_trung_gian": "$SC\\parallel(MBD)$",
+   "kien_thuc": "Dấu hiệu",
+   "diem": 0.25,
+   "tieu_chi_dat": "Phải nêu $SC\\not\\subset(MBD)$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Không nêu $SC\\not\\subset(MBD)$",
+     "tru": 0.25
+    }
+   ]
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "thieu-chung-minh",
+   "mo_ta": "Không nêu $SC\\not\\subset(MBD)$",
+   "loi_giai": "B1: $O=AC\\cap BD$ là trung điểm $AC$.\nB2: $OM$ là đường trung bình $\\triangle SAC$ nên $OM\\parallel SC$, $OM\\subset(MBD)$.\nB3: Vậy $SC\\parallel(MBD)$.",
+   "diem_dung": 0.75
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Dùng $MB$ làm đường trung bình song song $SC$",
+   "loi_giai": "B1: $O=AC\\cap BD$ là trung điểm $AC$.\nB2: $MB$ là đường trung bình nên $MB\\parallel SC$.\nB3: $SC\\not\\subset(MBD)$ nên $SC\\parallel(MBD)$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "chứng minh (không có đáp số số). S1: chỉ mất 0,25 của B3."
+}

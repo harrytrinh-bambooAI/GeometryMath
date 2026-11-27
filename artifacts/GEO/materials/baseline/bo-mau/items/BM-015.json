@@ -1,0 +1,76 @@
+{
+ "id": "BM-015",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-31 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-31 (v1.1)"
+ },
+ "cap": "thcs",
+ "chu_de": "Thể tích lăng trụ",
+ "muc_do": "NB",
+ "de_bai": "Một lăng trụ đứng tam giác $ABC.A'B'C'$ có đáy là tam giác đều cạnh $6$ cm và chiều cao $10$ cm. Tính thể tích lăng trụ.",
+ "dap_so": {
+  "gia_tri": "$90\\sqrt3$ cm$^3$",
+  "so": 155.88457268119896
+ },
+ "dap_so_engine": 155.88457268119896,
+ "kien_thuc": [
+  "Diện tích tam giác đều $\\dfrac{a^2\\sqrt3}4$",
+  "$V=S_{đáy}\\cdot h$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$S_{đáy}=\\dfrac{6^2\\sqrt3}4=9\\sqrt3$ cm$^2$.",
+   "ket_qua_trung_gian": "$9\\sqrt3$",
+   "kien_thuc": "Diện tích tam giác đều",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $9\\sqrt3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Chia sai: $\\dfrac{36\\sqrt3}4=12\\sqrt3$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 15.588457268119894
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$V=S\\cdot h=9\\sqrt3\\cdot10=90\\sqrt3$ cm$^3$.",
+   "ket_qua_trung_gian": "$90\\sqrt3$",
+   "kien_thuc": "Thể tích lăng trụ",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $90\\sqrt3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng công thức khối chóp $V=\\dfrac13Sh$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 155.88457268119896
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Chia sai: $\\dfrac{36\\sqrt3}4=12\\sqrt3$",
+   "loi_giai": "B1: $S=\\dfrac{36\\sqrt3}4=12\\sqrt3$.\nB2: $V=120\\sqrt3$ cm$^3$.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng công thức khối chóp $V=\\dfrac13Sh$",
+   "loi_giai": "B1: $S_{đáy}=\\dfrac{6^2\\sqrt3}4=9\\sqrt3$ cm$^2$.\nB2: $V=\\dfrac13\\cdot9\\sqrt3\\cdot10=30\\sqrt3$ cm$^3$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

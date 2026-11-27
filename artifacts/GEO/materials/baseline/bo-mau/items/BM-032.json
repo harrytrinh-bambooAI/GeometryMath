@@ -1,0 +1,90 @@
+{
+ "id": "BM-032",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-22-hai-duong-thang-vuong-goc.md — bài 6 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa hai đường thẳng",
+ "muc_do": "VD",
+ "de_bai": "Cho tứ diện đều $ABCD$ cạnh $a$, $M$ là trung điểm $BC$. Tính côsin của góc giữa hai đường thẳng $AB$ và $DM$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{\\sqrt3}{6}$",
+  "so": 0.28867513459481287
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Đường trung bình",
+  "Định lí côsin",
+  "Trung tuyến tam giác đều"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Gọi $P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; góc $(AB,DM)$ bằng góc giữa $MP$ và $MD$.",
+   "ket_qua_trung_gian": "$(AB,DM)=(MP,MD)$",
+   "kien_thuc": "Đường trung bình",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $(AB,DM)=(MP,MD)$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.5
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$DM=DP=\\dfrac{a\\sqrt3}2$ (trung tuyến tam giác đều).",
+   "ket_qua_trung_gian": "$DM=DP=\\dfrac{a\\sqrt3}2$",
+   "kien_thuc": "Trung tuyến tam giác đều",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $DM=DP=\\dfrac{a\\sqrt3}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $DP=a$ (nhầm với cạnh)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.8660254037844386
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\cos\\widehat{PMD}=\\dfrac{MP^2+MD^2-PD^2}{2MP\\cdot MD}=\\dfrac{a^2/4}{2\\cdot\\frac a2\\cdot\\frac{a\\sqrt3}2}=\\dfrac{\\sqrt3}6$.",
+   "ket_qua_trung_gian": "$\\dfrac{\\sqrt3}6$",
+   "kien_thuc": "Định lí côsin",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{\\sqrt3}6$",
+   "cach_khac": [
+    "Vectơ: $\\vec{AB}\\cdot\\vec{DM}=\\dfrac{a^2}4$, $\\cos=\\dfrac{a^2/4}{a\\cdot a\\sqrt3/2}$"
+   ],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Viết sai định lí côsin (đổi dấu cạnh đối diện)",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.28867513459481287
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Viết sai định lí côsin (đổi dấu cạnh đối diện)",
+   "loi_giai": "B1: Gọi $P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; góc $(AB,DM)$ bằng góc giữa $MP$ và $MD$.\nB2: $DM=DP=\\dfrac{a\\sqrt3}2$ (trung tuyến tam giác đều).\nB3: $\\cos\\widehat{PMD}=\\dfrac{MP^2+MD^2+PD^2}{2MP\\cdot MD}=\\dfrac{7a^2/4}{a^2\\sqrt3/2}=\\dfrac{7\\sqrt3}{6}$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $DP=a$ (nhầm với cạnh)",
+   "loi_giai": "B1: Gọi $P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; góc $(AB,DM)$ bằng góc giữa $MP$ và $MD$.\nB2: $DM=\\dfrac{a\\sqrt3}2$, $DP=a$.\nB3: $\\cos\\widehat{PMD}=\\dfrac{\\frac{a^2}4+\\frac{3a^2}4-a^2}{\\dots}=0$, góc $90^\\circ$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

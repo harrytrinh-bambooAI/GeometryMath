@@ -1,0 +1,74 @@
+{
+ "id": "BM-070",
+ "nguon": {
+  "loai": "de-chinh-thuc",
+  "ref": "LG-004 Phòng GD&ĐT Quốc Oai — đề thi thử vào 10 lần 1 (2024-2025) + HDC, Câu 2.2, đề trang 1, HDC trang 3/6 — https://cdn.thuvienphapluat.vn/uploads/Hoidapphapluat/2024/TTTT/240502/Toan/HN/de-thi-thu-toan-vao-lop-10-lan-1-nam-2024-2025-phong-gddt-quoc-oai-ha-noi.pdf (tải 27/11/2026)"
+ },
+ "cap": "thcs",
+ "chu_de": "Thể tích hình nón (thực tế)",
+ "muc_do": "TH",
+ "de_bai": "Một đồng hồ cát gồm hai hình nón bằng nhau; theo hình vẽ trong đề, đáy hình nón có đường kính $12$ cm và chiều cao mỗi hình nón $12$ cm. Đổ đầy cát vào một nửa rồi úp ngược cho cát chảy, mỗi phút chảy $15$ cm$^3$. Hỏi sau bao lâu cát chảy hết? (Lấy $\\pi\\approx3{,}14$, làm tròn đến phút.)",
+ "dap_so": {
+  "gia_tri": "$\\approx30$ phút",
+  "so": 30.0
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "$V_{nón}=\\dfrac13\\pi r^2h$"
+ ],
+ "tong_diem": 0.5,
+ "bieu_diem": "chinh-thuc",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$r=6$ cm, $V=\\dfrac13\\cdot3{,}14\\cdot6^2\\cdot12\\approx452{,}16$ cm$^3$.",
+   "ket_qua_trung_gian": "$452{,}16$",
+   "kien_thuc": "Thể tích nón",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $452{,}16$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng công thức trụ $V=\\pi r^2h$",
+     "tru": 0.25
+    },
+    {
+     "mo_ta": "Lấy đường kính $12$ làm bán kính",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 452.16
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Thời gian $452{,}16:15\\approx30$ phút.",
+   "ket_qua_trung_gian": "$\\approx30$",
+   "kien_thuc": "Chia",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\approx30$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 30.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng công thức trụ $V=\\pi r^2h$",
+   "loi_giai": "B1: $V=3{,}14\\cdot36\\cdot12=1356{,}48$ cm$^3$.\nB2: Thời gian $\\approx90$ phút.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Lấy đường kính $12$ làm bán kính",
+   "loi_giai": "B1: $r=12$, $V=\\dfrac13\\cdot3{,}14\\cdot144\\cdot12=1808{,}64$ cm$^3$.\nB2: Thời gian $\\approx121$ phút.",
+   "diem_dung": 0
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Kích thước lấy theo hình vẽ của đề và đúng như HDC dùng ($r=6$, $h=12$). Đáp số làm tròn $30{,}144\\to30$."
+}

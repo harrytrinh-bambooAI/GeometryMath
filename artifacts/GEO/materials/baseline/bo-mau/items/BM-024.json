@@ -1,0 +1,87 @@
+{
+ "id": "BM-024",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-66 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-66 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Diện tích xung quanh hình chóp đều",
+ "muc_do": "TH",
+ "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy $a$, $O$ là tâm đáy và $SO=\\dfrac{a\\sqrt3}2$. Tính diện tích xung quanh của hình chóp theo $a$.",
+ "dap_so": {
+  "gia_tri": "$2a^2$",
+  "so": 2.0
+ },
+ "dap_so_engine": 1.9999999999999998,
+ "kien_thuc": [
+  "Trung đoạn",
+  "Diện tích tam giác"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$H$ trung điểm $BC$, $OH=\\dfrac a2$, $SH=\\sqrt{\\dfrac{3a^2}4+\\dfrac{a^2}4}=a$.",
+   "ket_qua_trung_gian": "$SH=a$",
+   "kien_thuc": "Pythagore",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $SH=a$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Trừ thay cộng trong Pythagore",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 1.0
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$S_{SBC}=\\dfrac12\\cdot BC\\cdot SH=\\dfrac{a^2}2$.",
+   "ket_qua_trung_gian": "$\\dfrac{a^2}2$",
+   "kien_thuc": "Diện tích tam giác",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a^2}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Quên hệ số $\\dfrac12$ trong diện tích tam giác",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.5
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$S_{xq}=4\\cdot\\dfrac{a^2}2=2a^2$.",
+   "ket_qua_trung_gian": "$2a^2$",
+   "kien_thuc": "Tổng bốn mặt bên",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $2a^2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 2.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Trừ thay cộng trong Pythagore",
+   "loi_giai": "B1: $SH=\\sqrt{\\dfrac{3a^2}4-\\dfrac{a^2}4}=\\dfrac{a\\sqrt2}2$.\nB2: $S_{SBC}=\\dfrac{a^2\\sqrt2}4$.\nB3: $S_{xq}=a^2\\sqrt2$.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Quên hệ số $\\dfrac12$ trong diện tích tam giác",
+   "loi_giai": "B1: $H$ trung điểm $BC$, $OH=\\dfrac a2$, $SH=\\sqrt{\\dfrac{3a^2}4+\\dfrac{a^2}4}=a$.\nB2: $S_{SBC}=BC\\cdot SH=a^2$.\nB3: $S_{xq}=4a^2$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

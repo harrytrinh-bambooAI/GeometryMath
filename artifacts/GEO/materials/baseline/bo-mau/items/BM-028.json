@@ -1,0 +1,98 @@
+{
+ "id": "BM-028",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-80 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-80 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Mặt cầu",
+ "muc_do": "VD",
+ "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có tất cả các cạnh bằng $a$, $O$ là tâm đáy. Tính bán kính và thể tích khối cầu ngoại tiếp hình chóp theo $a$.",
+ "dap_so": {
+  "gia_tri": "$R=\\dfrac{a\\sqrt2}{2}$; $V=\\dfrac{\\sqrt2\\pi a^3}{3}$",
+  "so": 1.480960979386122
+ },
+ "dap_so_engine": 1.4809609793861218,
+ "kien_thuc": [
+  "Tâm mặt cầu cách đều các đỉnh",
+  "$V=\\dfrac43\\pi R^3$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$OA=\\dfrac{AC}2=\\dfrac{a\\sqrt2}2$.",
+   "ket_qua_trung_gian": "$OA=\\dfrac{a\\sqrt2}2$",
+   "kien_thuc": "Đường chéo hình vuông",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $OA=\\dfrac{a\\sqrt2}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.7071067811865476
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$SO=\\sqrt{SA^2-OA^2}=\\sqrt{a^2-\\dfrac{a^2}2}=\\dfrac{a\\sqrt2}2$.",
+   "ket_qua_trung_gian": "$SO=\\dfrac{a\\sqrt2}2$",
+   "kien_thuc": "Pythagore",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $SO=\\dfrac{a\\sqrt2}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.7071067811865476
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$OS=OA=OB=OC=OD=\\dfrac{a\\sqrt2}2$ nên $O$ là tâm, $R=\\dfrac{a\\sqrt2}2$.",
+   "ket_qua_trung_gian": "$R=\\dfrac{a\\sqrt2}2$",
+   "kien_thuc": "Điểm cách đều năm đỉnh",
+   "diem": 0.25,
+   "tieu_chi_dat": "Phải chỉ ra $OS=OA$ (cách đều cả đỉnh $S$)",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Khẳng định tâm là $O$ mà không chỉ ra $OS=OA$ (đáp số vẫn đúng)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.7071067811865476
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "$V=\\dfrac43\\pi\\left(\\dfrac{a\\sqrt2}2\\right)^3=\\dfrac43\\pi\\cdot\\dfrac{a^3\\sqrt2}4=\\dfrac{\\sqrt2\\pi a^3}3$.",
+   "ket_qua_trung_gian": "$\\dfrac{\\sqrt2\\pi a^3}3$",
+   "kien_thuc": "Thể tích khối cầu",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{\\sqrt2\\pi a^3}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lũy thừa sai $\\left(\\dfrac{\\sqrt2}2\\right)^3=\\dfrac{\\sqrt2}8$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 1.480960979386122
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "thieu-chung-minh",
+   "mo_ta": "Khẳng định tâm là $O$ mà không chỉ ra $OS=OA$ (đáp số vẫn đúng)",
+   "loi_giai": "B1: $OA=\\dfrac{AC}2=\\dfrac{a\\sqrt2}2$.\nB2: $SO=\\sqrt{SA^2-OA^2}=\\sqrt{a^2-\\dfrac{a^2}2}=\\dfrac{a\\sqrt2}2$.\nB3: Tâm mặt cầu là tâm $O$ của đáy, $R=OA=\\dfrac{a\\sqrt2}2$.\nB4: $V=\\dfrac43\\pi\\left(\\dfrac{a\\sqrt2}2\\right)^3=\\dfrac43\\pi\\cdot\\dfrac{a^3\\sqrt2}4=\\dfrac{\\sqrt2\\pi a^3}3$.",
+   "diem_dung": 0.75
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B4",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lũy thừa sai $\\left(\\dfrac{\\sqrt2}2\\right)^3=\\dfrac{\\sqrt2}8$",
+   "loi_giai": "B1: $OA=\\dfrac{AC}2=\\dfrac{a\\sqrt2}2$.\nB2: $SO=\\sqrt{SA^2-OA^2}=\\sqrt{a^2-\\dfrac{a^2}2}=\\dfrac{a\\sqrt2}2$.\nB3: $OS=OA=OB=OC=OD=\\dfrac{a\\sqrt2}2$ nên $O$ là tâm, $R=\\dfrac{a\\sqrt2}2$.\nB4: $V=\\dfrac43\\pi\\cdot\\dfrac{a^3\\sqrt2}8=\\dfrac{\\sqrt2\\pi a^3}6$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "S1: lỗi thiếu lập luận chỉ mất điểm B3; B4 tính đúng nên vẫn được 0,25 (tổng 0,75)."
+}

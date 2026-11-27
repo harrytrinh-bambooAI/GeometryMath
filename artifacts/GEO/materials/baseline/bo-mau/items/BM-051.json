@@ -1,0 +1,85 @@
+{
+ "id": "BM-051",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-04-quan-he-song-song/bai-11-hai-duong-thang-song-song.md — bài 7 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Hai đường thẳng song song",
+ "muc_do": "VDC",
+ "de_bai": "Tứ diện $ABCD$, $G_1,G_2$ là trọng tâm $\\triangle ABC$, $\\triangle ABD$. Chứng minh $G_1G_2\\parallel CD$ và tính $\\dfrac{G_1G_2}{CD}$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac13$",
+  "so": 0.3333333333333333
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Trọng tâm",
+  "Định lí Thalès đảo"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$E$ trung điểm $AB$: $G_1\\in EC$, $\\dfrac{EG_1}{EC}=\\dfrac13$; $G_2\\in ED$, $\\dfrac{EG_2}{ED}=\\dfrac13$.",
+   "ket_qua_trung_gian": "$\\dfrac{EG_1}{EC}=\\dfrac{EG_2}{ED}=\\dfrac13$",
+   "kien_thuc": "Trọng tâm",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{EG_1}{EC}=\\dfrac{EG_2}{ED}=\\dfrac13$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $\\dfrac{EG_1}{EC}=\\dfrac23$ (nhầm tỉ số từ đỉnh)",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Trong $\\triangle ECD$, theo Thalès đảo $G_1G_2\\parallel CD$.",
+   "ket_qua_trung_gian": "$G_1G_2\\parallel CD$",
+   "kien_thuc": "Thalès đảo",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $G_1G_2\\parallel CD$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Khẳng định $G_1G_2\\parallel CD$ không nêu tỉ số bằng nhau / Thalès",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\triangle EG_1G_2\\sim\\triangle ECD$ tỉ số $\\dfrac13$: $\\dfrac{G_1G_2}{CD}=\\dfrac13$.",
+   "ket_qua_trung_gian": "$\\dfrac13$",
+   "kien_thuc": "Đồng dạng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac13$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.3333333333333333
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lấy $\\dfrac{EG_1}{EC}=\\dfrac23$ (nhầm tỉ số từ đỉnh)",
+   "loi_giai": "B1: $\\dfrac{EG_1}{EC}=\\dfrac{EG_2}{ED}=\\dfrac23$.\nB2: Trong $\\triangle ECD$, theo Thalès đảo $G_1G_2\\parallel CD$.\nB3: $\\dfrac{G_1G_2}{CD}=\\dfrac23$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "thieu-chung-minh",
+   "mo_ta": "Khẳng định $G_1G_2\\parallel CD$ không nêu tỉ số bằng nhau / Thalès",
+   "loi_giai": "B1: $E$ trung điểm $AB$: $G_1\\in EC$, $\\dfrac{EG_1}{EC}=\\dfrac13$; $G_2\\in ED$, $\\dfrac{EG_2}{ED}=\\dfrac13$.\nB2: Dễ thấy $G_1G_2\\parallel CD$.\nB3: $\\triangle EG_1G_2\\sim\\triangle ECD$ tỉ số $\\dfrac13$: $\\dfrac{G_1G_2}{CD}=\\dfrac13$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "S1: kết luận song song (B2) vẫn đúng do hai tỉ số bằng nhau → được 0,25."
+}

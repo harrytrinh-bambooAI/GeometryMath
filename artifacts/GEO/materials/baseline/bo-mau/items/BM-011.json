@@ -1,0 +1,86 @@
+{
+ "id": "BM-011",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-16 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-16 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách từ điểm đến mặt phẳng",
+ "muc_do": "TH",
+ "de_bai": "Hình chóp tứ giác đều $S.ABCD$ có cạnh đáy $6$ cm, chiều cao $SO=4$ cm. Tính khoảng cách từ tâm đáy $O$ đến mặt bên $(SBC)$.",
+ "dap_so": {
+  "gia_tri": "$2{,}4$ cm",
+  "so": 2.4
+ },
+ "dap_so_engine": 2.4,
+ "kien_thuc": [
+  "Dựng khoảng cách qua trung điểm cạnh đáy",
+  "Hệ thức lượng tam giác vuông"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Gọi $M$ trung điểm $BC$ thì $BC\\perp OM$, $BC\\perp SO$ nên $BC\\perp(SOM)$; kẻ $OH\\perp SM$ thì $OH\\perp(SBC)$.",
+   "ket_qua_trung_gian": "$d=OH$",
+   "kien_thuc": "Dựng đường vuông góc",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $d=OH$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $OM$ làm khoảng cách từ $O$ đến $(SBC)$",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$OM=3$ cm, $SM=\\sqrt{4^2+3^2}=5$ cm.",
+   "ket_qua_trung_gian": "$OM=3$, $SM=5$",
+   "kien_thuc": "Pythagore",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $OM=3$, $SM=5$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $OM=3\\sqrt2$ (nhầm với $OB$)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 5.0
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$OH=\\dfrac{SO\\cdot OM}{SM}=\\dfrac{12}5=2{,}4$ cm.",
+   "ket_qua_trung_gian": "$OH=2{,}4$",
+   "kien_thuc": "Hệ thức lượng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $OH=2{,}4$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 2.4
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Lấy $OM$ làm khoảng cách từ $O$ đến $(SBC)$",
+   "loi_giai": "B1: $OM\\perp BC$ nên $d(O,(SBC))=OM$.\nB2: $OM=3$ cm, $SM=\\sqrt{4^2+3^2}=5$ cm.\nB3: $d=OM=3$ cm.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $OM=3\\sqrt2$ (nhầm với $OB$)",
+   "loi_giai": "B1: Gọi $M$ trung điểm $BC$ thì $BC\\perp OM$, $BC\\perp SO$ nên $BC\\perp(SOM)$; kẻ $OH\\perp SM$ thì $OH\\perp(SBC)$.\nB2: $OM=3\\sqrt2$, $SM=\\sqrt{16+18}=\\sqrt{34}$.\nB3: $OH=\\dfrac{4\\cdot3\\sqrt2}{\\sqrt{34}}\\approx2{,}91$ cm.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "S1: B2 ($SM=5$) vẫn đúng nên được 0,25."
+}

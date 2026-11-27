@@ -1,0 +1,98 @@
+{
+ "id": "BM-010",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-13 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-13 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách giữa hai đường thẳng chéo nhau",
+ "muc_do": "VDC",
+ "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có tất cả các cạnh bằng $a$. Tính khoảng cách giữa hai đường thẳng $AB$ và $SC$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a\\sqrt6}{3}$",
+  "so": 0.8164965809277259
+ },
+ "dap_so_engine": 0.816496580927726,
+ "kien_thuc": [
+  "Đưa khoảng cách hai đường chéo nhau về điểm – mặt",
+  "Tỉ số khoảng cách",
+  "Hệ thức lượng"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$AB\\parallel(SCD)$ nên $d(AB,SC)=d(A,(SCD))$; $AO\\cap(SCD)=C$, $AC=2OC$ nên $d(A,(SCD))=2d(O,(SCD))$.",
+   "ket_qua_trung_gian": "$d=2d(O,(SCD))$",
+   "kien_thuc": "Tỉ số khoảng cách",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $d=2d(O,(SCD))$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Bỏ tỉ số: coi $d(A,(SCD))=d(O,(SCD))$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$SO=\\sqrt{SA^2-OA^2}=\\sqrt{a^2-\\dfrac{a^2}2}=\\dfrac{a\\sqrt2}2$.",
+   "ket_qua_trung_gian": "$SO=\\dfrac{a\\sqrt2}2$",
+   "kien_thuc": "Pythagore",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $SO=\\dfrac{a\\sqrt2}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $SO=\\dfrac{a\\sqrt3}2$ (nhầm với trung đoạn)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.7071067811865476
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Gọi $M$ trung điểm $CD$, $OM=\\dfrac a2$; $\\dfrac1{d_O^2}=\\dfrac1{SO^2}+\\dfrac1{OM^2}=\\dfrac2{a^2}+\\dfrac4{a^2}=\\dfrac6{a^2}$, $d_O=\\dfrac{a\\sqrt6}6$.",
+   "ket_qua_trung_gian": "$d(O,(SCD))=\\dfrac{a\\sqrt6}6$",
+   "kien_thuc": "Hệ thức lượng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $d(O,(SCD))=\\dfrac{a\\sqrt6}6$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.40824829046386296
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "$d(AB,SC)=2\\cdot\\dfrac{a\\sqrt6}6=\\dfrac{a\\sqrt6}3$.",
+   "ket_qua_trung_gian": "$\\dfrac{a\\sqrt6}3$",
+   "kien_thuc": "Kết luận",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a\\sqrt6}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.8164965809277259
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Bỏ tỉ số: coi $d(A,(SCD))=d(O,(SCD))$",
+   "loi_giai": "B1: $AB\\parallel(SCD)$ nên $d(AB,SC)=d(A,(SCD))=d(O,(SCD))$.\nB2: $SO=\\sqrt{SA^2-OA^2}=\\sqrt{a^2-\\dfrac{a^2}2}=\\dfrac{a\\sqrt2}2$.\nB3: Gọi $M$ trung điểm $CD$, $OM=\\dfrac a2$; $\\dfrac1{d_O^2}=\\dfrac1{SO^2}+\\dfrac1{OM^2}=\\dfrac2{a^2}+\\dfrac4{a^2}=\\dfrac6{a^2}$, $d_O=\\dfrac{a\\sqrt6}6$.\nB4: $d(AB,SC)=\\dfrac{a\\sqrt6}6$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $SO=\\dfrac{a\\sqrt3}2$ (nhầm với trung đoạn)",
+   "loi_giai": "B1: $AB\\parallel(SCD)$ nên $d(AB,SC)=d(A,(SCD))$; $AO\\cap(SCD)=C$, $AC=2OC$ nên $d(A,(SCD))=2d(O,(SCD))$.\nB2: $SO=\\dfrac{a\\sqrt3}2$.\nB3: $\\dfrac1{d_O^2}=\\dfrac4{3a^2}+\\dfrac4{a^2}=\\dfrac{16}{3a^2}$, $d_O=\\dfrac{a\\sqrt3}4$.\nB4: $d(AB,SC)=\\dfrac{a\\sqrt3}2$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "S1: B2, B3 đúng và độc lập với tỉ số nên được 0,5."
+}

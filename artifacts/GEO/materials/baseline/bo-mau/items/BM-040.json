@@ -1,0 +1,84 @@
+{
+ "id": "BM-040",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-26-khoang-cach.md — bài 5 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách giữa hai đường thẳng chéo nhau",
+ "muc_do": "VD",
+ "de_bai": "Hình lập phương $ABCD.A'B'C'D'$ cạnh $a$. Tính khoảng cách giữa hai đường thẳng chéo nhau $AB$ và $A'D'$.",
+ "dap_so": {
+  "gia_tri": "$a$",
+  "so": 1.0
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Đoạn vuông góc chung"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$AA'\\perp AB$ và $AA'\\perp A'D'$.",
+   "ket_qua_trung_gian": "$AA'$ vuông góc cả hai",
+   "kien_thuc": "Cạnh bên hình lập phương",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AA'$ vuông góc cả hai",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $AD'$ làm đoạn vuông góc chung",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$AA'$ cắt $AB$ tại $A$, cắt $A'D'$ tại $A'$ nên là đoạn vuông góc chung.",
+   "ket_qua_trung_gian": "Đoạn vuông góc chung $AA'$",
+   "kien_thuc": "Định nghĩa",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Đoạn vuông góc chung $AA'$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Không chỉ ra $AA'$ cắt cả hai đường",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$d(AB,A'D')=AA'=a$.",
+   "ket_qua_trung_gian": "$a$",
+   "kien_thuc": "Kết luận",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $a$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 1.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Lấy $AD'$ làm đoạn vuông góc chung",
+   "loi_giai": "B1: $AD'$ nối $A\\in AB$ với $D'\\in A'D'$.\nB2: Coi $AD'$ là đoạn vuông góc chung.\nB3: $d=AD'=a\\sqrt2$.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "thieu-chung-minh",
+   "mo_ta": "Không chỉ ra $AA'$ cắt cả hai đường",
+   "loi_giai": "B1: $AA'\\perp AB$ và $AA'\\perp A'D'$.\nB2: (không nêu)\nB3: $d(AB,A'D')=AA'=a$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

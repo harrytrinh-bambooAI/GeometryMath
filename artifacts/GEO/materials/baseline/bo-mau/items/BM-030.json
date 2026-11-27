@@ -1,0 +1,88 @@
+{
+ "id": "BM-030",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-83 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Mặt cầu",
+ "muc_do": "VDC",
+ "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy vuông tại $A$, $AB=a$, $AC=a\\sqrt3$, $AA'=2a$. Tính bán kính và thể tích khối cầu ngoại tiếp lăng trụ theo $a$.",
+ "dap_so": {
+  "gia_tri": "$R=a\\sqrt2$; $V=\\dfrac{8\\sqrt2\\pi a^3}{3}$",
+  "so": 11.847687835088976
+ },
+ "dap_so_engine": 11.847687835088978,
+ "kien_thuc": [
+  "Tâm ngoại tiếp tam giác vuông là trung điểm cạnh huyền",
+  "$R^2=r^2+(h/2)^2$",
+  "$V=\\dfrac43\\pi R^3$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$BC=\\sqrt{a^2+3a^2}=2a$, tâm ngoại tiếp đáy là trung điểm $BC$, $r=a$.",
+   "ket_qua_trung_gian": "$r=a$",
+   "kien_thuc": "Tam giác vuông",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $r=a$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy trọng tâm làm tâm đường tròn ngoại tiếp đáy: $r=\\dfrac23AM=\\dfrac{2a}3$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 1.0
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$R^2=r^2+\\left(\\dfrac{AA'}2\\right)^2=a^2+a^2=2a^2$, $R=a\\sqrt2$.",
+   "ket_qua_trung_gian": "$R=a\\sqrt2$",
+   "kien_thuc": "Mặt cầu ngoại tiếp lăng trụ đứng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $R=a\\sqrt2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 1.4142135623730951
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$V=\\dfrac43\\pi(a\\sqrt2)^3=\\dfrac43\\pi\\cdot2\\sqrt2a^3=\\dfrac{8\\sqrt2\\pi a^3}3$.",
+   "ket_qua_trung_gian": "$\\dfrac{8\\sqrt2\\pi a^3}3$",
+   "kien_thuc": "Thể tích khối cầu",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{8\\sqrt2\\pi a^3}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lũy thừa sai $(a\\sqrt2)^3=2a^3$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 11.847687835088976
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lấy trọng tâm làm tâm đường tròn ngoại tiếp đáy: $r=\\dfrac23AM=\\dfrac{2a}3$",
+   "loi_giai": "B1: Tâm ngoại tiếp đáy là trọng tâm, $r=\\dfrac23\\cdot AM=\\dfrac{2a}3$.\nB2: $R^2=\\dfrac{4a^2}9+a^2=\\dfrac{13a^2}9$, $R=\\dfrac{a\\sqrt{13}}3$.\nB3: $V=\\dfrac43\\pi\\left(\\dfrac{a\\sqrt{13}}3\\right)^3=\\dfrac{52\\sqrt{13}\\pi a^3}{81}$.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lũy thừa sai $(a\\sqrt2)^3=2a^3$",
+   "loi_giai": "B1: $BC=\\sqrt{a^2+3a^2}=2a$, tâm ngoại tiếp đáy là trung điểm $BC$, $r=a$.\nB2: $R^2=r^2+\\left(\\dfrac{AA'}2\\right)^2=a^2+a^2=2a^2$, $R=a\\sqrt2$.\nB3: $V=\\dfrac43\\pi\\cdot2a^3=\\dfrac{8\\pi a^3}3$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Engine đo R = 1,4142136 và V; dap_so.so là V."
+}

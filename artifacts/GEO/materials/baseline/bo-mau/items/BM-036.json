@@ -1,0 +1,97 @@
+{
+ "id": "BM-036",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-24-phep-chieu-vuong-goc-goc-giua-duong-thang-va-mat-phang.md — bài 7 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa đường thẳng và mặt phẳng",
+ "muc_do": "VD",
+ "de_bai": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. Tính $\\sin$ của góc giữa $SC$ và $(SAB)$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{\\sqrt3}{3}$",
+  "so": 0.5773502691896257
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Dấu hiệu vuông góc",
+  "Hình chiếu",
+  "sin"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$; hình chiếu của $C$ là $B$.",
+   "ket_qua_trung_gian": "$BC\\perp(SAB)$",
+   "kien_thuc": "Dấu hiệu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $BC\\perp(SAB)$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Góc giữa $SC$ và $(SAB)$ là $\\widehat{CSB}$.",
+   "ket_qua_trung_gian": "$\\widehat{CSB}$",
+   "kien_thuc": "Hình chiếu",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\widehat{CSB}$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$SC=\\sqrt{a^2+2a^2}=a\\sqrt3$, $BC=a$.",
+   "ket_qua_trung_gian": "$SC=a\\sqrt3$",
+   "kien_thuc": "Pythagore",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $SC=a\\sqrt3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Tính $SC=a\\sqrt2$ (dùng $AB$ thay $AC$)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 1.7320508075688772
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "$\\sin\\widehat{CSB}=\\dfrac{BC}{SC}=\\dfrac{\\sqrt3}3$.",
+   "ket_qua_trung_gian": "$\\dfrac{\\sqrt3}3$",
+   "kien_thuc": "sin",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{\\sqrt3}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng $\\sin=\\dfrac{SB}{SC}$ (cạnh kề)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.5773502691896257
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B4",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng $\\sin=\\dfrac{SB}{SC}$ (cạnh kề)",
+   "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$; hình chiếu của $C$ là $B$.\nB2: Góc giữa $SC$ và $(SAB)$ là $\\widehat{CSB}$.\nB3: $SC=\\sqrt{a^2+2a^2}=a\\sqrt3$, $BC=a$.\nB4: $\\sin\\widehat{CSB}=\\dfrac{SB}{SC}=\\dfrac{a\\sqrt2}{a\\sqrt3}=\\dfrac{\\sqrt6}3$.",
+   "diem_dung": 0.75
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Tính $SC=a\\sqrt2$ (dùng $AB$ thay $AC$)",
+   "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$; hình chiếu của $C$ là $B$.\nB2: Góc giữa $SC$ và $(SAB)$ là $\\widehat{CSB}$.\nB3: $SC=\\sqrt{a^2+a^2}=a\\sqrt2$.\nB4: $\\sin\\widehat{CSB}=\\dfrac{a}{a\\sqrt2}=\\dfrac{\\sqrt2}2$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

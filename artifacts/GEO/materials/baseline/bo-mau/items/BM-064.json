@@ -1,0 +1,114 @@
+{
+ "id": "BM-064",
+ "nguon": {
+  "loai": "de-chinh-thuc",
+  "ref": "Sở GD&ĐT Quảng Nam — HDC chính thức Toán TS10 2025-2026, Bài 3a, trang 2/4 — https://storage-vnportal.vnpt.vn/qnm-ubnd/6141/ẢNH/2. HDC_Toan (chung)_TS10_2526.pdf (tải 27/11/2026)"
+ },
+ "cap": "thcs",
+ "chu_de": "Giải bài toán bằng cách lập hệ phương trình",
+ "muc_do": "TH",
+ "de_bai": "Một cửa hàng bán bút bi giá $5\\,000$ đồng/cây và bút máy giá $15\\,000$ đồng/cây. Một ngày chủ nhật cửa hàng bán tổng cộng $50$ cây hai loại, thu $520\\,000$ đồng. Hỏi bán được bao nhiêu cây mỗi loại?",
+ "dap_so": {
+  "gia_tri": "$23$ bút bi, $27$ bút máy",
+  "so": null
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Lập hệ phương trình bậc nhất hai ẩn"
+ ],
+ "tong_diem": 0.75,
+ "bieu_diem": "chinh-thuc",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Gọi $x,y$ là số bút bi, bút máy ($x,y\\in\\mathbb N$, $x,y\\le50$).",
+   "ket_qua_trung_gian": "Ẩn và điều kiện",
+   "kien_thuc": "Đặt ẩn",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Ẩn và điều kiện",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$x+y=50$ (1).",
+   "ket_qua_trung_gian": "$x+y=50$",
+   "kien_thuc": "Lập phương trình",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $x+y=50$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Tiền bút bi $5\\,000x$, tiền bút máy $15\\,000y$.",
+   "ket_qua_trung_gian": "$5000x$; $15000y$",
+   "kien_thuc": "Biểu thị đại lượng",
+   "diem": 0.125,
+   "tieu_chi_dat": "Đúng một trong hai ý được 0,125",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "$5\\,000x+15\\,000y=520\\,000$ (2).",
+   "ket_qua_trung_gian": "PT (2)",
+   "kien_thuc": "Lập phương trình",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: PT (2)",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Gán nhầm giá: $15\\,000x+5\\,000y=520\\,000$",
+     "tru": 0.125
+    }
+   ]
+  },
+  {
+   "ma": "B5",
+   "noi_dung": "Từ (1), (2) có hệ phương trình.",
+   "ket_qua_trung_gian": "Hệ (*)",
+   "kien_thuc": "Lập hệ",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Hệ (*)",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B6",
+   "noi_dung": "Giải hệ được $x=23$, $y=27$ (thỏa mãn); kết luận.",
+   "ket_qua_trung_gian": "$x=23,y=27$",
+   "kien_thuc": "Giải hệ",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $x=23,y=27$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Giải hệ sai ra $x=24$, $y=26$",
+     "tru": 0.125
+    }
+   ],
+   "ket_qua_so": 23.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B6",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Giải hệ sai ra $x=24$, $y=26$",
+   "loi_giai": "B1: Gọi $x,y$ là số bút bi, bút máy ($x,y\\in\\mathbb N$, $x,y\\le50$).\nB2: $x+y=50$ (1).\nB3: Tiền bút bi $5\\,000x$, tiền bút máy $15\\,000y$.\nB4: $5\\,000x+15\\,000y=520\\,000$ (2).\nB5: Từ (1), (2) có hệ phương trình.\nB6: Giải hệ được $x=24$, $y=26$; vậy bán $24$ bút bi, $26$ bút máy.",
+   "diem_dung": 0.625
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B4",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Gán nhầm giá: $15\\,000x+5\\,000y=520\\,000$",
+   "loi_giai": "B1: Gọi $x,y$ là số bút bi, bút máy ($x,y\\in\\mathbb N$, $x,y\\le50$).\nB2: $x+y=50$ (1).\nB3: Tiền bút bi $5\\,000x$, tiền bút máy $15\\,000y$.\nB4: $15\\,000x+5\\,000y=520\\,000$ (2).\nB5: Từ (1), (2) có hệ phương trình.\nB6: Giải được $x=27$, $y=23$; vậy bán $27$ bút bi, $23$ bút máy.",
+   "diem_dung": 0.375
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Thang HDC 0,75 chia 6 ý × 0,125. S2: B5 (lập hệ từ (1),(2)) về hình thức vẫn đúng nhưng chứa PT sai nên không cho điểm; được B1–B3 = 0,375."
+}

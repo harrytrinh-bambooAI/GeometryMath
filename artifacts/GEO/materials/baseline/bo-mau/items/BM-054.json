@@ -1,0 +1,84 @@
+{
+ "id": "BM-054",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-04-quan-he-song-song/on-tap-chuong.md — bài 4 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Giao tuyến – định lí giao tuyến song song",
+ "muc_do": "VD",
+ "de_bai": "Chóp $S.ABCD$ đáy hình bình hành. $M$ là trung điểm $SC$. Mặt phẳng $(ABM)$ cắt $SD$ tại $N$. Chứng minh $N$ là trung điểm $SD$.",
+ "dap_so": {
+  "gia_tri": "$N$ là trung điểm $SD$ (chứng minh)",
+  "so": null
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Định lí giao tuyến",
+  "Đường trung bình"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$AB\\parallel CD\\subset(SCD)$ nên $AB\\parallel(SCD)$.",
+   "ket_qua_trung_gian": "$AB\\parallel(SCD)$",
+   "kien_thuc": "Dấu hiệu",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AB\\parallel(SCD)$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$(ABM)\\cap(SCD)=MN$ nên $MN\\parallel AB\\parallel CD$.",
+   "ket_qua_trung_gian": "$MN\\parallel CD$",
+   "kien_thuc": "Định lí giao tuyến",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $MN\\parallel CD$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Khẳng định $MN\\parallel CD$ không dựa vào định lí giao tuyến",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Trong $\\triangle SCD$, $M$ trung điểm $SC$, $MN\\parallel CD$ nên $N$ trung điểm $SD$.",
+   "ket_qua_trung_gian": "$N$ trung điểm $SD$",
+   "kien_thuc": "Đường trung bình",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $N$ trung điểm $SD$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng Thalès sai: kết luận $SN=2ND$",
+     "tru": 0.25
+    }
+   ]
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "thieu-chung-minh",
+   "mo_ta": "Khẳng định $MN\\parallel CD$ không dựa vào định lí giao tuyến",
+   "loi_giai": "B1: $AB\\parallel CD\\subset(SCD)$ nên $AB\\parallel(SCD)$.\nB2: $MN\\parallel CD$.\nB3: Trong $\\triangle SCD$, $M$ trung điểm $SC$, $MN\\parallel CD$ nên $N$ trung điểm $SD$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng Thalès sai: kết luận $SN=2ND$",
+   "loi_giai": "B1: $AB\\parallel CD\\subset(SCD)$ nên $AB\\parallel(SCD)$.\nB2: $(ABM)\\cap(SCD)=MN$ nên $MN\\parallel AB\\parallel CD$.\nB3: $MN\\parallel CD$ nên $\\dfrac{SN}{ND}=\\dfrac{SC}{SM}=2$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "chứng minh (không có đáp số số). S1: B3 vẫn đúng logic nên được 0,25."
+}

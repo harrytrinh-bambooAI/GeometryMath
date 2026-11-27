@@ -1,0 +1,87 @@
+{
+ "id": "BM-007",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-03 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-03 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách từ điểm đến mặt phẳng",
+ "muc_do": "TH",
+ "de_bai": "Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a$. Tính khoảng cách từ $A$ đến mặt phẳng $(SBC)$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a\\sqrt2}{2}$",
+  "so": 0.7071067811865476
+ },
+ "dap_so_engine": 0.7071067811865475,
+ "kien_thuc": [
+  "Dựng đường vuông góc từ điểm đến mặt phẳng",
+  "Hệ thức lượng trong tam giác vuông"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.",
+   "ket_qua_trung_gian": "$BC\\perp(SAB)$",
+   "kien_thuc": "Dấu hiệu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $BC\\perp(SAB)$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Kẻ $AH\\perp SB$; $AH\\subset(SAB)$ nên $AH\\perp BC$, do đó $AH\\perp(SBC)$, $d(A,(SBC))=AH$.",
+   "ket_qua_trung_gian": "$d=AH$",
+   "kien_thuc": "Đường vuông góc mặt phẳng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có dựng $AH\\perp SB$ VÀ nêu lí do $AH\\perp BC$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Coi $AB$ là khoảng cách vì $AB\\perp BC$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Tam giác $SAB$ vuông cân tại $A$: $AH=\\dfrac{SB}2=\\dfrac{a\\sqrt2}2$.",
+   "ket_qua_trung_gian": "$AH=\\dfrac{a\\sqrt2}2$",
+   "kien_thuc": "Hệ thức lượng $\\dfrac1{AH^2}=\\dfrac1{SA^2}+\\dfrac1{AB^2}$",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AH=\\dfrac{a\\sqrt2}2$",
+   "cach_khac": [
+    "$\\dfrac1{AH^2}=\\dfrac1{a^2}+\\dfrac1{a^2}$"
+   ],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Quên khai căn: từ $AH^2=\\dfrac{a^2}2$ suy ra $AH=\\dfrac a2$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.7071067811865476
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Coi $AB$ là khoảng cách vì $AB\\perp BC$",
+   "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: $AB\\perp BC$ nên $d(A,(SBC))=AB$.\nB3: $d(A,(SBC))=a$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Quên khai căn: từ $AH^2=\\dfrac{a^2}2$ suy ra $AH=\\dfrac a2$",
+   "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Kẻ $AH\\perp SB$; $AH\\subset(SAB)$ nên $AH\\perp BC$, do đó $AH\\perp(SBC)$, $d(A,(SBC))=AH$.\nB3: $\\dfrac1{AH^2}=\\dfrac2{a^2}\\Rightarrow AH=\\dfrac a2$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

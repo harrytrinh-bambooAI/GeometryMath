@@ -1,0 +1,84 @@
+{
+ "id": "BM-071",
+ "nguon": {
+  "loai": "de-chinh-thuc",
+  "ref": "LG-004 Phòng GD&ĐT Quốc Oai — đề thi thử vào 10 lần 1 (2024-2025) + HDC, Câu 3.2b, đề trang 1, HDC trang 4/6 — https://cdn.thuvienphapluat.vn/uploads/Hoidapphapluat/2024/TTTT/240502/Toan/HN/de-thi-thu-toan-vao-lop-10-lan-1-nam-2024-2025-phong-gddt-quoc-oai-ha-noi.pdf (tải 27/11/2026)"
+ },
+ "cap": "thcs",
+ "chu_de": "Hệ thức nghiệm phương trình bậc hai",
+ "muc_do": "VD",
+ "de_bai": "Cho phương trình $x^2-2(m-1)x+2m-3=0$. Tìm $m$ để phương trình có hai nghiệm phân biệt $x_1,x_2$ thỏa mãn $x_1=3x_2$.",
+ "dap_so": {
+  "gia_tri": "$m\\in\\left\\{3;\\dfrac53\\right\\}$",
+  "so": null
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Điều kiện hai nghiệm phân biệt",
+  "Nhẩm nghiệm $a+b+c=0$"
+ ],
+ "tong_diem": 0.75,
+ "bieu_diem": "chinh-thuc",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$\\Delta'=(m-2)^2>0\\Leftrightarrow m\\ne2$.",
+   "ket_qua_trung_gian": "$m\\ne2$",
+   "kien_thuc": "Điều kiện nghiệm phân biệt",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $m\\ne2$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$a+b+c=0$ nên hai nghiệm $1$ và $2m-3$. TH1: $x_1=1,x_2=2m-3$: $1=3(2m-3)\\Rightarrow m=\\dfrac53$ (TM).",
+   "ket_qua_trung_gian": "$m=\\frac53$",
+   "kien_thuc": "Nhẩm nghiệm",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $m=\\frac53$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Giải sai $1=3(2m-3)\\Rightarrow m=\\dfrac43$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "TH2: $x_1=2m-3,x_2=1$: $2m-3=3\\Rightarrow m=3$ (TM). Kết luận $m\\in\\{3;\\frac53\\}$.",
+   "ket_qua_trung_gian": "$m\\in\\{3;\\frac53\\}$",
+   "kien_thuc": "Xét đủ trường hợp",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $m\\in\\{3;\\frac53\\}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Chỉ xét một cách gán nghiệm (bỏ TH2)",
+     "tru": 0.25
+    }
+   ]
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Chỉ xét một cách gán nghiệm (bỏ TH2)",
+   "loi_giai": "B1: $\\Delta'=(m-2)^2>0\\Leftrightarrow m\\ne2$.\nB2: $a+b+c=0$ nên hai nghiệm $1$ và $2m-3$. TH1: $x_1=1,x_2=2m-3$: $1=3(2m-3)\\Rightarrow m=\\dfrac53$ (TM).\nB3: Vậy $m=\\dfrac53$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Giải sai $1=3(2m-3)\\Rightarrow m=\\dfrac43$",
+   "loi_giai": "B1: $\\Delta'=(m-2)^2>0\\Leftrightarrow m\\ne2$.\nB2: TH1: $1=3(2m-3)\\Rightarrow 6m=8\\Rightarrow m=\\dfrac43$.\nB3: TH2: $m=3$. Kết luận $m\\in\\{3;\\frac43\\}$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Thang HDC 0,75 = 3 × 0,25. S2: TH2 đúng nhưng nằm chung ý với kết luận sai nên B3 không được điểm (0,25)."
+}

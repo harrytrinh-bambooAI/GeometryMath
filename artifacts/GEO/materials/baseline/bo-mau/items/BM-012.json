@@ -1,0 +1,86 @@
+{
+ "id": "BM-012",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-27 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-27 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách từ điểm đến mặt phẳng",
+ "muc_do": "VD",
+ "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=a$, $AD=2a$, $AA'=2a$. Tính khoảng cách từ $A$ đến mặt phẳng $(A'BD)$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a\\sqrt6}{3}$",
+  "so": 0.8164965809277259
+ },
+ "dap_so_engine": 0.8164965809277261,
+ "kien_thuc": [
+  "Tứ diện vuông: $\\dfrac1{d^2}=\\dfrac1{x^2}+\\dfrac1{y^2}+\\dfrac1{z^2}$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$AB$, $AD$, $AA'$ đôi một vuông góc tại $A$ (tứ diện vuông $A.A'BD$).",
+   "ket_qua_trung_gian": "Tứ diện vuông tại $A$",
+   "kien_thuc": "Hình hộp chữ nhật",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Tứ diện vuông tại $A$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$\\dfrac1{d^2}=\\dfrac1{AB^2}+\\dfrac1{AD^2}+\\dfrac1{AA'^2}$.",
+   "ket_qua_trung_gian": "Công thức tứ diện vuông",
+   "kien_thuc": "Tứ diện vuông",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Công thức tứ diện vuông",
+   "cach_khac": [
+    "Dựng $AK\\perp BD$, $AH\\perp A'K$"
+   ],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng sai công thức $\\dfrac1d=\\dfrac1{AB}+\\dfrac1{AD}+\\dfrac1{AA'}$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\dfrac1{d^2}=\\dfrac1{a^2}+\\dfrac1{4a^2}+\\dfrac1{4a^2}=\\dfrac3{2a^2}\\Rightarrow d=\\dfrac{a\\sqrt6}3$.",
+   "ket_qua_trung_gian": "$d=\\dfrac{a\\sqrt6}3$",
+   "kien_thuc": "Tính toán",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $d=\\dfrac{a\\sqrt6}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Bình phương sai: $\\dfrac1{(2a)^2}=\\dfrac1{2a^2}$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.8164965809277259
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Bình phương sai: $\\dfrac1{(2a)^2}=\\dfrac1{2a^2}$",
+   "loi_giai": "B1: $AB$, $AD$, $AA'$ đôi một vuông góc tại $A$ (tứ diện vuông $A.A'BD$).\nB2: $\\dfrac1{d^2}=\\dfrac1{AB^2}+\\dfrac1{AD^2}+\\dfrac1{AA'^2}$.\nB3: $\\dfrac1{d^2}=\\dfrac1{a^2}+\\dfrac1{2a^2}+\\dfrac1{2a^2}=\\dfrac2{a^2}\\Rightarrow d=\\dfrac{a\\sqrt2}2$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng sai công thức $\\dfrac1d=\\dfrac1{AB}+\\dfrac1{AD}+\\dfrac1{AA'}$",
+   "loi_giai": "B1: $AB$, $AD$, $AA'$ đôi một vuông góc tại $A$ (tứ diện vuông $A.A'BD$).\nB2: $\\dfrac1d=\\dfrac1{AB}+\\dfrac1{AD}+\\dfrac1{AA'}$.\nB3: $\\dfrac1d=\\dfrac1a+\\dfrac1{2a}+\\dfrac1{2a}=\\dfrac2a\\Rightarrow d=\\dfrac a2$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

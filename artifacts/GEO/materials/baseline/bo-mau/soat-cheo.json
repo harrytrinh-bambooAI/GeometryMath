@@ -1,0 +1,363 @@
+{
+ "ngay": "2026-11-27",
+ "cach": "gen/verify.py — tọa độ/vectơ/duyệt số độc lập với lời giải",
+ "tong": 71,
+ "dat": 71,
+ "bai": [
+  {
+   "id": "BM-001",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-002",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-003",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-004",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-005",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-006",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-007",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-008",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-009",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-010",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-011",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-012",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-013",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-014",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-015",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-016",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-017",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-018",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-019",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-020",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-021",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-022",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-023",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-024",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-025",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-026",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-027",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-028",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-029",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-030",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-031",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-032",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-033",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-034",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-035",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-036",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-037",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-038",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-039",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-040",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-041",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-042",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-043",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-044",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-045",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-046",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-047",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-048",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-049",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-050",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-051",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-052",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-053",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-054",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-055",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-056",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-057",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-058",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-059",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-060",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-061",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-062",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-063",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-064",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-065",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-066",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-067",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-068",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-069",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-070",
+   "ket_qua": "dat",
+   "loi": []
+  },
+  {
+   "id": "BM-071",
+   "ket_qua": "dat",
+   "loi": []
+  }
+ ]
+}

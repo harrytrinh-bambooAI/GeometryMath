@@ -1,0 +1,87 @@
+{
+ "id": "BM-026",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-45 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-45 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Mặt cầu",
+ "muc_do": "TH",
+ "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ cạnh $2$ cm. Tính bán kính mặt cầu ngoại tiếp hình lập phương và thể tích khối cầu tương ứng.",
+ "dap_so": {
+  "gia_tri": "$R=\\sqrt3$ cm; $V=4\\sqrt3\\pi$ cm$^3$",
+  "so": 21.765592370810612
+ },
+ "dap_so_engine": 21.76559237081061,
+ "kien_thuc": [
+  "Tâm mặt cầu ngoại tiếp hình lập phương là tâm hình lập phương",
+  "$V=\\dfrac43\\pi R^3$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Đường chéo $AC'=2\\sqrt3$ cm.",
+   "ket_qua_trung_gian": "$AC'=2\\sqrt3$",
+   "kien_thuc": "Đường chéo hình lập phương $a\\sqrt3$",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AC'=2\\sqrt3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 3.4641016151377544
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Tâm là trung điểm $AC'$, $R=\\dfrac{AC'}2=\\sqrt3$ cm.",
+   "ket_qua_trung_gian": "$R=\\sqrt3$",
+   "kien_thuc": "Mặt cầu ngoại tiếp",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $R=\\sqrt3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy đường chéo làm bán kính",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 1.7320508075688772
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$V=\\dfrac43\\pi(\\sqrt3)^3=\\dfrac43\\pi\\cdot3\\sqrt3=4\\sqrt3\\pi$ cm$^3$.",
+   "ket_qua_trung_gian": "$4\\sqrt3\\pi$",
+   "kien_thuc": "Thể tích khối cầu",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $4\\sqrt3\\pi$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lũy thừa sai $(\\sqrt3)^3=3$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 21.765592370810612
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lấy đường chéo làm bán kính",
+   "loi_giai": "B1: Đường chéo $AC'=2\\sqrt3$ cm.\nB2: $R=AC'=2\\sqrt3$ cm.\nB3: $V=\\dfrac43\\pi(2\\sqrt3)^3=32\\sqrt3\\pi$ cm$^3$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lũy thừa sai $(\\sqrt3)^3=3$",
+   "loi_giai": "B1: Đường chéo $AC'=2\\sqrt3$ cm.\nB2: Tâm là trung điểm $AC'$, $R=\\dfrac{AC'}2=\\sqrt3$ cm.\nB3: $V=\\dfrac43\\pi\\cdot3=4\\pi$ cm$^3$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Engine đo hai đại lượng (R = 1,7320508 và V); dap_so.so là V."
+}

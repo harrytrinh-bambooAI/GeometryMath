@@ -1,0 +1,85 @@
+{
+ "id": "BM-047",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/on-tap-chuong.md — bài 3 (v1.3 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách từ điểm đến mặt phẳng",
+ "muc_do": "VD",
+ "de_bai": "Chóp $S.ABCD$ đáy hình chữ nhật $AB=a$, $AD=2a$, $SA\\perp(ABCD)$, $SA=a$. Chứng minh $(SAB)\\perp(SBC)$ và tính $d(A,(SBC))$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a\\sqrt2}{2}$",
+  "so": 0.7071067811865476
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Hai mặt phẳng vuông góc",
+  "Dựng khoảng cách"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$BC\\perp AB$, $BC\\perp SA\\Rightarrow BC\\perp(SAB)$; $BC\\subset(SBC)$ nên $(SBC)\\perp(SAB)$.",
+   "ket_qua_trung_gian": "$(SBC)\\perp(SAB)$",
+   "kien_thuc": "Mặt phẳng chứa đường vuông góc",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $(SBC)\\perp(SAB)$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Kết luận $(SAB)\\perp(SBC)$ vì chúng có chung $SB$",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Kẻ $AH\\perp SB$; $AH\\perp BC$ nên $AH\\perp(SBC)$.",
+   "ket_qua_trung_gian": "$d=AH$",
+   "kien_thuc": "Dựng khoảng cách",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $d=AH$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$SB=a\\sqrt2$, $AH=\\dfrac{a^2}{a\\sqrt2}=\\dfrac{a\\sqrt2}2$.",
+   "ket_qua_trung_gian": "$\\dfrac{a\\sqrt2}2$",
+   "kien_thuc": "Hệ thức lượng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a\\sqrt2}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng $AD=2a$ thay $AB$ trong tam giác $SAB$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.7071067811865476
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Dùng $AD=2a$ thay $AB$ trong tam giác $SAB$",
+   "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA\\Rightarrow BC\\perp(SAB)$; $BC\\subset(SBC)$ nên $(SBC)\\perp(SAB)$.\nB2: Kẻ $AH\\perp SB$; $AH\\perp BC$ nên $AH\\perp(SBC)$.\nB3: $AH=\\dfrac{SA\\cdot AD}{\\sqrt{SA^2+AD^2}}=\\dfrac{2a}{\\sqrt5}$.",
+   "diem_dung": 0.75
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Kết luận $(SAB)\\perp(SBC)$ vì chúng có chung $SB$",
+   "loi_giai": "B1: $(SAB)$ và $(SBC)$ cắt nhau theo $SB$ nên vuông góc.\nB2: Kẻ $AH\\perp SB$; $AH\\perp BC$ nên $AH\\perp(SBC)$.\nB3: $SB=a\\sqrt2$, $AH=\\dfrac{a^2}{a\\sqrt2}=\\dfrac{a\\sqrt2}2$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

@@ -1,0 +1,97 @@
+{
+ "id": "BM-041",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-26-khoang-cach.md — bài 6 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách từ điểm đến mặt phẳng",
+ "muc_do": "VDC",
+ "de_bai": "Tứ diện $OABC$ có $OA,OB,OC$ đôi một vuông góc, $OA=OB=OC=a$. Tính $d(O,(ABC))$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a\\sqrt3}{3}$",
+  "so": 0.5773502691896257
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Dựng khoảng cách",
+  "Hệ thức lượng"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Kẻ $OK\\perp BC$, $K$ trung điểm $BC$; $\\dfrac1{OK^2}=\\dfrac2{a^2}$.",
+   "ket_qua_trung_gian": "$OK^2=\\dfrac{a^2}2$",
+   "kien_thuc": "Hệ thức lượng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $OK^2=\\dfrac{a^2}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.7071067811865476
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$BC\\perp(OAK)$; kẻ $OH\\perp AK$ thì $OH\\perp(ABC)$.",
+   "ket_qua_trung_gian": "$d=OH$",
+   "kien_thuc": "Dựng khoảng cách",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $d=OH$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Coi $OK$ là khoảng cách",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\dfrac1{OH^2}=\\dfrac1{a^2}+\\dfrac2{a^2}=\\dfrac3{a^2}$.",
+   "ket_qua_trung_gian": "$\\dfrac1{OH^2}=\\dfrac3{a^2}$",
+   "kien_thuc": "Hệ thức lượng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac1{OH^2}=\\dfrac3{a^2}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Cộng sai: $\\dfrac1{a^2}+\\dfrac2{a^2}=\\dfrac2{a^2}$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 3.0
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "$OH=\\dfrac{a\\sqrt3}3$.",
+   "ket_qua_trung_gian": "$\\dfrac{a\\sqrt3}3$",
+   "kien_thuc": "Tính toán",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a\\sqrt3}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.5773502691896257
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Cộng sai: $\\dfrac1{a^2}+\\dfrac2{a^2}=\\dfrac2{a^2}$",
+   "loi_giai": "B1: Kẻ $OK\\perp BC$, $K$ trung điểm $BC$; $\\dfrac1{OK^2}=\\dfrac2{a^2}$.\nB2: $BC\\perp(OAK)$; kẻ $OH\\perp AK$ thì $OH\\perp(ABC)$.\nB3: $\\dfrac1{OH^2}=\\dfrac2{a^2}$.\nB4: $OH=\\dfrac{a\\sqrt2}2$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Coi $OK$ là khoảng cách",
+   "loi_giai": "B1: Kẻ $OK\\perp BC$, $K$ trung điểm $BC$; $\\dfrac1{OK^2}=\\dfrac2{a^2}$.\nB2: $OK\\perp BC$ nên $d(O,(ABC))=OK$.\nB3: (bỏ)\nB4: $d=\\dfrac{a\\sqrt2}2$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

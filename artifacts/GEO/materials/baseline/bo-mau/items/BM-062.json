@@ -1,0 +1,82 @@
+{
+ "id": "BM-062",
+ "nguon": {
+  "loai": "de-chinh-thuc",
+  "ref": "Sở GD&ĐT Quảng Nam — HDC chính thức Toán TS10 2025-2026, Bài 2a, trang 1/4 — https://storage-vnportal.vnpt.vn/qnm-ubnd/6141/ẢNH/2. HDC_Toan (chung)_TS10_2526.pdf (tải 27/11/2026)"
+ },
+ "cap": "thcs",
+ "chu_de": "Phương trình bậc hai",
+ "muc_do": "NB",
+ "de_bai": "Dùng công thức nghiệm của phương trình bậc hai, giải phương trình $x^2-5x+6=0$.",
+ "dap_so": {
+  "gia_tri": "$x_1=2;\\ x_2=3$",
+  "so": null
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Công thức nghiệm $x=\\dfrac{-b\\pm\\sqrt\\Delta}{2a}$"
+ ],
+ "tong_diem": 0.5,
+ "bieu_diem": "chinh-thuc",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$\\Delta=(-5)^2-4\\cdot6=1$.",
+   "ket_qua_trung_gian": "$\\Delta=1$",
+   "kien_thuc": "Biệt thức",
+   "diem": 0.25,
+   "tieu_chi_dat": "Tính đúng $\\Delta=1$ (ghi đúng công thức $\\Delta$ được 0,125)",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Chỉ ghi đúng công thức $\\Delta$, tính sai giá trị",
+     "tru": 0.125
+    },
+    {
+     "mo_ta": "Tính $\\Delta=25+24=49$ (sai dấu $-4ac$)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 1.0
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$x_1=\\dfrac{5-1}2=2$; $x_2=\\dfrac{5+1}2=3$.",
+   "ket_qua_trung_gian": "$x_1=2;x_2=3$",
+   "kien_thuc": "Công thức nghiệm",
+   "diem": 0.25,
+   "tieu_chi_dat": "Đúng mỗi nghiệm được 0,125",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Đúng một nghiệm",
+     "tru": 0.125
+    },
+    {
+     "mo_ta": "Quên dấu trừ của $b$: $x=\\dfrac{b\\pm\\sqrt\\Delta}{2a}$ với $b=-5$",
+     "tru": 0.25
+    }
+   ]
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Tính $\\Delta=25+24=49$ (sai dấu $-4ac$)",
+   "loi_giai": "B1: $\\Delta=25+24=49$.\nB2: $x=\\dfrac{5\\pm7}2$: $x_1=6$, $x_2=-1$.",
+   "diem_dung": 0.125
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Quên dấu trừ của $b$: $x=\\dfrac{b\\pm\\sqrt\\Delta}{2a}$ với $b=-5$",
+   "loi_giai": "B1: $\\Delta=(-5)^2-4\\cdot6=1$.\nB2: $x=\\dfrac{-5\\pm1}2$: $x_1=-2$, $x_2=-3$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Thang gốc HDC: 0,5 = 0,25 + 0,25 với điểm thành phần 0,125. S1: công thức $\\Delta$ ghi đúng nên được 0,125 theo HDC."
+}

@@ -1,0 +1,74 @@
+{
+ "id": "BM-053",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-04-quan-he-song-song/bai-13-hai-mat-phang-song-song.md — bài 6 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Định lí Thalès trong không gian",
+ "muc_do": "VD",
+ "de_bai": "Ba mặt phẳng song song $(P),(Q),(R)$ cắt hai cát tuyến lần lượt tại $A,B,C$ và $A',B',C'$. Biết $\\dfrac{AB}{BC}=\\dfrac23$ và $A'C'=15$. Tính $A'B'$.",
+ "dap_so": {
+  "gia_tri": "$6$",
+  "so": 6.0
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Định lí Thalès trong không gian"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$\\dfrac{A'B'}{B'C'}=\\dfrac{AB}{BC}=\\dfrac23$.",
+   "ket_qua_trung_gian": "$\\dfrac{A'B'}{B'C'}=\\dfrac23$",
+   "kien_thuc": "Thalès",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{A'B'}{B'C'}=\\dfrac23$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Đảo tỉ số: $\\dfrac{A'B'}{B'C'}=\\dfrac32$",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$\\dfrac{A'B'}{A'C'}=\\dfrac25$ nên $A'B'=6$.",
+   "ket_qua_trung_gian": "$6$",
+   "kien_thuc": "Tỉ lệ",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $6$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $\\dfrac{A'B'}{A'C'}=\\dfrac23$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 6.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $\\dfrac{A'B'}{A'C'}=\\dfrac23$",
+   "loi_giai": "B1: $\\dfrac{A'B'}{B'C'}=\\dfrac{AB}{BC}=\\dfrac23$.\nB2: $A'B'=\\dfrac23\\cdot15=10$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Đảo tỉ số: $\\dfrac{A'B'}{B'C'}=\\dfrac32$",
+   "loi_giai": "B1: $\\dfrac{A'B'}{B'C'}=\\dfrac{BC}{AB}=\\dfrac32$.\nB2: $A'B'=\\dfrac35\\cdot15=9$.",
+   "diem_dung": 0
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

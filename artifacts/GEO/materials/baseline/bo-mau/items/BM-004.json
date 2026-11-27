@@ -1,0 +1,78 @@
+{
+ "id": "BM-004",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-19 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-19 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa hai đường thẳng",
+ "muc_do": "TH",
+ "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ cạnh $a$. Tính góc giữa hai đường thẳng $AB'$ và $AD'$.",
+ "dap_so": {
+  "gia_tri": "$60^\\circ$",
+  "so": 60.0
+ },
+ "dap_so_engine": 60.00000000000001,
+ "kien_thuc": [
+  "Đường chéo mặt hình lập phương",
+  "Góc giữa hai đường thẳng thuộc $[0^\\circ;90^\\circ]$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$AB'$, $AD'$, $B'D'$ là đường chéo của ba mặt hình vuông cạnh $a$ nên đều bằng $a\\sqrt2$.",
+   "ket_qua_trung_gian": "$AB'=AD'=B'D'=a\\sqrt2$",
+   "kien_thuc": "Đường chéo hình vuông",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AB'=AD'=B'D'=a\\sqrt2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Coi $B'D'$ là đường chéo của khối ($a\\sqrt3$)",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 1.4142135623730951
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Tam giác $AB'D'$ đều nên $\\widehat{B'AD'}=60^\\circ$; đó là góc giữa hai đường thẳng.",
+   "ket_qua_trung_gian": "$60^\\circ$",
+   "kien_thuc": "Tam giác đều",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $60^\\circ$",
+   "cach_khac": [
+    "Dùng tọa độ: $\\cos=\\dfrac{|\\vec{AB'}\\cdot\\vec{AD'}|}{|\\vec{AB'}||\\vec{AD'}|}=\\dfrac12$"
+   ],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy góc giữa hai vectơ $\\vec{B'A},\\vec{AD'}$ ($120^\\circ$) mà không đưa về $[0^\\circ;90^\\circ]$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 60.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Coi $B'D'$ là đường chéo của khối ($a\\sqrt3$)",
+   "loi_giai": "B1: $AB'=AD'=a\\sqrt2$, $B'D'=a\\sqrt3$.\nB2: $\\cos\\widehat{B'AD'}=\\dfrac{2a^2+2a^2-3a^2}{2\\cdot2a^2}=\\dfrac14\\Rightarrow\\approx75{,}52^\\circ$.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Lấy góc giữa hai vectơ $\\vec{B'A},\\vec{AD'}$ ($120^\\circ$) mà không đưa về $[0^\\circ;90^\\circ]$",
+   "loi_giai": "B1: $AB'$, $AD'$, $B'D'$ là đường chéo của ba mặt hình vuông cạnh $a$ nên đều bằng $a\\sqrt2$.\nB2: Góc giữa hai vectơ $\\vec{B'A}$ và $\\vec{AD'}$ là $180^\\circ-60^\\circ=120^\\circ$, vậy góc giữa hai đường thẳng là $120^\\circ$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

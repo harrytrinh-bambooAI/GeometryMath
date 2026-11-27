@@ -1,0 +1,86 @@
+{
+ "id": "BM-005",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-26 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-26 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa đường thẳng và mặt phẳng",
+ "muc_do": "TH",
+ "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=a$, $AD=a\\sqrt3$, $AA'=2a$. Tính góc giữa đường chéo $AC'$ và mặt phẳng $(ABCD)$.",
+ "dap_so": {
+  "gia_tri": "$45^\\circ$",
+  "so": 45.0
+ },
+ "dap_so_engine": 44.99999999999999,
+ "kien_thuc": [
+  "Góc giữa đường thẳng và mặt phẳng",
+  "Định lí Pythagore"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$CC'\\perp(ABCD)$ nên hình chiếu của $AC'$ là $AC$; góc cần tìm là $\\widehat{C'AC}$.",
+   "ket_qua_trung_gian": "$\\widehat{C'AC}$",
+   "kien_thuc": "Hình chiếu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\widehat{C'AC}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy góc $\\widehat{C'AB}$ (với một cạnh đáy) làm góc với mặt phẳng",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$AC=\\sqrt{AB^2+AD^2}=\\sqrt{a^2+3a^2}=2a$.",
+   "ket_qua_trung_gian": "$AC=2a$",
+   "kien_thuc": "Pythagore",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AC=2a$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $AC=AD=a\\sqrt3$ (nhầm đường chéo với cạnh)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 2.0
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$CC'=2a=AC$ nên tam giác $ACC'$ vuông cân tại $C$, $\\widehat{C'AC}=45^\\circ$.",
+   "ket_qua_trung_gian": "$45^\\circ$",
+   "kien_thuc": "Tam giác vuông cân / tan",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $45^\\circ$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 45.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $AC=AD=a\\sqrt3$ (nhầm đường chéo với cạnh)",
+   "loi_giai": "B1: $CC'\\perp(ABCD)$ nên hình chiếu của $AC'$ là $AC$; góc cần tìm là $\\widehat{C'AC}$.\nB2: $AC=a\\sqrt3$.\nB3: $\\tan\\widehat{C'AC}=\\dfrac{2a}{a\\sqrt3}\\Rightarrow\\approx49{,}11^\\circ$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lấy góc $\\widehat{C'AB}$ (với một cạnh đáy) làm góc với mặt phẳng",
+   "loi_giai": "B1: Góc cần tìm là $\\widehat{C'AB}$.\nB2: $AC=\\sqrt{AB^2+AD^2}=\\sqrt{a^2+3a^2}=2a$.\nB3: $AC'=2a\\sqrt2$, $\\cos\\widehat{C'AB}=\\dfrac{AB}{AC'}=\\dfrac1{2\\sqrt2}\\Rightarrow\\approx69{,}30^\\circ$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

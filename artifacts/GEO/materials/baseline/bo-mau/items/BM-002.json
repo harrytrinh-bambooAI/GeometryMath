@@ -1,0 +1,101 @@
+{
+ "id": "BM-002",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-07 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-07 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa đường thẳng và mặt phẳng",
+ "muc_do": "VD",
+ "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt2$. Tính góc giữa đường thẳng $SC$ và mặt phẳng $(SAB)$.",
+ "dap_so": {
+  "gia_tri": "$30^\\circ$",
+  "so": 30.0
+ },
+ "dap_so_engine": 30.000000000000004,
+ "kien_thuc": [
+  "Đường thẳng vuông góc mặt phẳng",
+  "Góc giữa đường thẳng và mặt phẳng",
+  "Định lí Pythagore"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.",
+   "ket_qua_trung_gian": "$BC\\perp(SAB)$",
+   "kien_thuc": "Dấu hiệu đường thẳng vuông góc mặt phẳng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $BC\\perp(SAB)$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Hình chiếu của $C$ lên $(SAB)$ là $B$, nên hình chiếu của $SC$ là $SB$; góc cần tìm là $\\widehat{CSB}$.",
+   "ket_qua_trung_gian": "$(SC,(SAB))=\\widehat{CSB}$",
+   "kien_thuc": "Hình chiếu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $(SC,(SAB))=\\widehat{CSB}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Chọn nhầm góc $\\widehat{CSA}$ (hình chiếu lên đáy thay vì lên $(SAB)$)",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$SC=\\sqrt{SA^2+AC^2}=\\sqrt{2a^2+2a^2}=2a$.",
+   "ket_qua_trung_gian": "$SC=2a$",
+   "kien_thuc": "Pythagore trong tam giác $SAC$",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $SC=2a$",
+   "cach_khac": [
+    "$SB=a\\sqrt3$, $SC=\\sqrt{SB^2+BC^2}=2a$"
+   ],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Tính $SC=\\sqrt{SA^2+AB^2}=a\\sqrt3$ (dùng nhầm $AB$ thay $AC$)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 2.0
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "$\\sin\\widehat{CSB}=\\dfrac{BC}{SC}=\\dfrac a{2a}=\\dfrac12\\Rightarrow\\widehat{CSB}=30^\\circ$.",
+   "ket_qua_trung_gian": "$30^\\circ$",
+   "kien_thuc": "sin trong tam giác vuông tại $B$",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $30^\\circ$",
+   "cach_khac": [
+    "$\\tan\\widehat{CSB}=\\dfrac{BC}{SB}=\\dfrac1{\\sqrt3}$"
+   ],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 30.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Chọn nhầm góc $\\widehat{CSA}$ (hình chiếu lên đáy thay vì lên $(SAB)$)",
+   "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Góc cần tìm là $\\widehat{CSA}$.\nB3: $SC=\\sqrt{SA^2+AC^2}=\\sqrt{2a^2+2a^2}=2a$.\nB4: $\\cos\\widehat{CSA}=\\dfrac{SA}{SC}=\\dfrac{\\sqrt2}{2}\\Rightarrow 45^\\circ$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Tính $SC=\\sqrt{SA^2+AB^2}=a\\sqrt3$ (dùng nhầm $AB$ thay $AC$)",
+   "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Hình chiếu của $C$ lên $(SAB)$ là $B$, nên hình chiếu của $SC$ là $SB$; góc cần tìm là $\\widehat{CSB}$.\nB3: $SC=\\sqrt{SA^2+AB^2}=a\\sqrt3$.\nB4: $\\sin\\widehat{CSB}=\\dfrac{a}{a\\sqrt3}\\Rightarrow\\widehat{CSB}\\approx35{,}26^\\circ$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "S1: B1 và B3 đúng, độc lập với góc chọn nhầm nên được 0,5."
+}

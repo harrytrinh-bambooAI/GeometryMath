@@ -1,0 +1,96 @@
+{
+ "id": "BM-027",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-79 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-79 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Mặt cầu",
+ "muc_do": "VD",
+ "de_bai": "Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt2$. Tính bán kính và diện tích mặt cầu ngoại tiếp hình chóp theo $a$.",
+ "dap_so": {
+  "gia_tri": "$R=a$; $S=4\\pi a^2$",
+  "so": 12.566370614359172
+ },
+ "dap_so_engine": 12.566370614359172,
+ "kien_thuc": [
+  "Điểm nhìn đoạn thẳng dưới góc vuông",
+  "$S=4\\pi R^2$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$SA\\perp AC$; $BC\\perp(SAB)\\Rightarrow BC\\perp SB$; $CD\\perp(SAD)\\Rightarrow CD\\perp SD$.",
+   "ket_qua_trung_gian": "$\\widehat{SAC}=\\widehat{SBC}=\\widehat{SDC}=90^\\circ$",
+   "kien_thuc": "Ba đường vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\widehat{SAC}=\\widehat{SBC}=\\widehat{SDC}=90^\\circ$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$A,B,D$ nhìn $SC$ dưới góc vuông nên $S,A,B,C,D$ nằm trên mặt cầu đường kính $SC$; tâm là trung điểm $SC$.",
+   "ket_qua_trung_gian": "Tâm là trung điểm $SC$",
+   "kien_thuc": "Mặt cầu đường kính",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Tâm là trung điểm $SC$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy tâm đáy $O$ làm tâm mặt cầu",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$SC=\\sqrt{SA^2+AC^2}=\\sqrt{2a^2+2a^2}=2a$, $R=a$.",
+   "ket_qua_trung_gian": "$R=a$",
+   "kien_thuc": "Pythagore",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $R=a$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 1.0
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "$S=4\\pi R^2=4\\pi a^2$.",
+   "ket_qua_trung_gian": "$4\\pi a^2$",
+   "kien_thuc": "Diện tích mặt cầu",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $4\\pi a^2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng công thức diện tích hình tròn $\\pi R^2$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 12.566370614359172
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Lấy tâm đáy $O$ làm tâm mặt cầu",
+   "loi_giai": "B1: $SA\\perp AC$; $BC\\perp(SAB)\\Rightarrow BC\\perp SB$; $CD\\perp(SAD)\\Rightarrow CD\\perp SD$.\nB2: Tâm mặt cầu là tâm $O$ của đáy.\nB3: $R=OA=\\dfrac{a\\sqrt2}2$.\nB4: $S=4\\pi\\cdot\\dfrac{a^2}2=2\\pi a^2$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B4",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng công thức diện tích hình tròn $\\pi R^2$",
+   "loi_giai": "B1: $SA\\perp AC$; $BC\\perp(SAB)\\Rightarrow BC\\perp SB$; $CD\\perp(SAD)\\Rightarrow CD\\perp SD$.\nB2: $A,B,D$ nhìn $SC$ dưới góc vuông nên $S,A,B,C,D$ nằm trên mặt cầu đường kính $SC$; tâm là trung điểm $SC$.\nB3: $SC=\\sqrt{SA^2+AC^2}=\\sqrt{2a^2+2a^2}=2a$, $R=a$.\nB4: $S=\\pi R^2=\\pi a^2$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

@@ -1,0 +1,85 @@
+{
+ "id": "BM-008",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-05 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-05 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách giữa hai đường thẳng chéo nhau",
+ "muc_do": "VD",
+ "de_bai": "Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt3$. Tính khoảng cách giữa hai đường thẳng $AB$ và $SD$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a\\sqrt3}{2}$",
+  "so": 0.8660254037844386
+ },
+ "dap_so_engine": 0.8660254037844387,
+ "kien_thuc": [
+  "Khoảng cách giữa đường thẳng và mặt phẳng song song",
+  "Hệ thức lượng tam giác vuông"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$AB\\parallel CD\\subset(SCD)$ nên $AB\\parallel(SCD)$ và $d(AB,SD)=d(A,(SCD))$.",
+   "ket_qua_trung_gian": "$d(AB,SD)=d(A,(SCD))$",
+   "kien_thuc": "Đường thẳng song song mặt phẳng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $d(AB,SD)=d(A,(SCD))$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $AD$ làm đoạn vuông góc chung ($AD$ không vuông góc với $SD$)",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$CD\\perp(SAD)$; kẻ $AK\\perp SD$ thì $AK\\perp CD$, nên $AK\\perp(SCD)$.",
+   "ket_qua_trung_gian": "$d=AK$",
+   "kien_thuc": "Dựng đường vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $d=AK$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\dfrac1{AK^2}=\\dfrac1{SA^2}+\\dfrac1{AD^2}=\\dfrac1{3a^2}+\\dfrac1{a^2}=\\dfrac4{3a^2}\\Rightarrow AK=\\dfrac{a\\sqrt3}2$.",
+   "ket_qua_trung_gian": "$AK=\\dfrac{a\\sqrt3}{2}$",
+   "kien_thuc": "Hệ thức lượng",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AK=\\dfrac{a\\sqrt3}{2}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Cộng phân số sai: $\\dfrac1{3a^2}+\\dfrac1{a^2}=\\dfrac2{4a^2}$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.8660254037844386
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lấy $AD$ làm đoạn vuông góc chung ($AD$ không vuông góc với $SD$)",
+   "loi_giai": "B1: $AD\\perp AB$ và $AD$ cắt $SD$ tại $D$ nên $AD$ là đoạn vuông góc chung.\nB2: Vậy $d(AB,SD)=AD$.\nB3: $d(AB,SD)=a$.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Cộng phân số sai: $\\dfrac1{3a^2}+\\dfrac1{a^2}=\\dfrac2{4a^2}$",
+   "loi_giai": "B1: $AB\\parallel CD\\subset(SCD)$ nên $AB\\parallel(SCD)$ và $d(AB,SD)=d(A,(SCD))$.\nB2: $CD\\perp(SAD)$; kẻ $AK\\perp SD$ thì $AK\\perp CD$, nên $AK\\perp(SCD)$.\nB3: $\\dfrac1{AK^2}=\\dfrac1{3a^2}+\\dfrac1{a^2}=\\dfrac2{4a^2}\\Rightarrow AK=a\\sqrt2$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

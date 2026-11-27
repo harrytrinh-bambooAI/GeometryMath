@@ -1,0 +1,76 @@
+{
+ "id": "BM-042",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-26-khoang-cach.md — bài 7 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách từ điểm đến mặt phẳng",
+ "muc_do": "VD",
+ "de_bai": "Chóp $S.ABCD$ đáy hình vuông cạnh $3$, $SA\\perp(ABCD)$, $SA=3$. Tính $d(A,(SBD))$.",
+ "dap_so": {
+  "gia_tri": "$\\sqrt3$",
+  "so": 1.7320508075688772
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Tứ diện vuông"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$AS,AB,AD$ đôi một vuông góc nên $\\dfrac1{d^2}=\\dfrac1{AS^2}+\\dfrac1{AB^2}+\\dfrac1{AD^2}$.",
+   "ket_qua_trung_gian": "Công thức tứ diện vuông",
+   "kien_thuc": "Tứ diện vuông",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Công thức tứ diện vuông",
+   "cach_khac": [
+    "Dựng $AO\\perp BD$, $AH\\perp SO$: $d=\\dfrac{SA\\cdot AO}{SO}$"
+   ],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng $d=\\dfrac{SA\\cdot AB}{SB}$ (khoảng cách tới $(SBC)$)",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$\\dfrac1{d^2}=\\dfrac13\\Rightarrow d=\\sqrt3$.",
+   "ket_qua_trung_gian": "$\\sqrt3$",
+   "kien_thuc": "Tính toán",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\sqrt3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Quên khai căn: $d=3$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 1.7320508075688772
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Quên khai căn: $d=3$",
+   "loi_giai": "B1: $AS,AB,AD$ đôi một vuông góc nên $\\dfrac1{d^2}=\\dfrac1{AS^2}+\\dfrac1{AB^2}+\\dfrac1{AD^2}$.\nB2: $\\dfrac1{d^2}=\\dfrac13\\Rightarrow d=3$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng $d=\\dfrac{SA\\cdot AB}{SB}$ (khoảng cách tới $(SBC)$)",
+   "loi_giai": "B1: $d=\\dfrac{SA\\cdot AB}{SB}$.\nB2: $d=\\dfrac{9}{3\\sqrt2}=\\dfrac{3\\sqrt2}2$.",
+   "diem_dung": 0
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

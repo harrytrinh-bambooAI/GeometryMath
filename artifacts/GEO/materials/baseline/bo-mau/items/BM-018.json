@@ -1,0 +1,87 @@
+{
+ "id": "BM-018",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-52 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-52 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Thể tích khối chóp",
+ "muc_do": "TH",
+ "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy $a$, $O$ là tâm đáy và cạnh bên tạo với mặt đáy góc $60^\\circ$. Tính thể tích khối chóp theo $a$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a^3\\sqrt6}{6}$",
+  "so": 0.40824829046386296
+ },
+ "dap_so_engine": 0.40824829046386296,
+ "kien_thuc": [
+  "Góc giữa cạnh bên và đáy",
+  "$V=\\dfrac13Bh$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$OA=\\dfrac{AC}2=\\dfrac{a\\sqrt2}2$.",
+   "ket_qua_trung_gian": "$OA=\\dfrac{a\\sqrt2}2$",
+   "kien_thuc": "Đường chéo hình vuông",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $OA=\\dfrac{a\\sqrt2}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $OA=a\\sqrt2$ (quên chia đôi)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.7071067811865476
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Góc giữa $SA$ và đáy là $\\widehat{SAO}=60^\\circ$, $SO=OA\\tan60^\\circ=\\dfrac{a\\sqrt6}2$.",
+   "ket_qua_trung_gian": "$SO=\\dfrac{a\\sqrt6}2$",
+   "kien_thuc": "tan",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $SO=\\dfrac{a\\sqrt6}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng sai tỉ số lượng giác: $SO=\\dfrac{OA}{\\tan60^\\circ}$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 1.224744871391589
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$V=\\dfrac13a^2\\cdot\\dfrac{a\\sqrt6}2=\\dfrac{a^3\\sqrt6}6$.",
+   "ket_qua_trung_gian": "$\\dfrac{a^3\\sqrt6}6$",
+   "kien_thuc": "Thể tích",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a^3\\sqrt6}6$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.40824829046386296
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng sai tỉ số lượng giác: $SO=\\dfrac{OA}{\\tan60^\\circ}$",
+   "loi_giai": "B1: $OA=\\dfrac{AC}2=\\dfrac{a\\sqrt2}2$.\nB2: $SO=\\dfrac{OA}{\\tan60^\\circ}=\\dfrac{a\\sqrt6}6$.\nB3: $V=\\dfrac13a^2\\cdot\\dfrac{a\\sqrt6}6=\\dfrac{a^3\\sqrt6}{18}$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $OA=a\\sqrt2$ (quên chia đôi)",
+   "loi_giai": "B1: $OA=a\\sqrt2$.\nB2: $SO=a\\sqrt2\\cdot\\sqrt3=a\\sqrt6$.\nB3: $V=\\dfrac{a^3\\sqrt6}3$.",
+   "diem_dung": 0
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

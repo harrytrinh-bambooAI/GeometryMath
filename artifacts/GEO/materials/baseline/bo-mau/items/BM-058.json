@@ -1,0 +1,84 @@
+{
+ "id": "BM-058",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-02-day-so-cap-so-cong-cap-so-nhan/on-tap-chuong.md — bài 4 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Cấp số cộng",
+ "muc_do": "VD",
+ "de_bai": "Tìm $n$ để $1+3+5+\\dots+(2n-1)=169$.",
+ "dap_so": {
+  "gia_tri": "$n=13$",
+  "so": 13.0
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Tổng $n$ số hạng đầu cấp số cộng"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Các số hạng lập cấp số cộng $u_1=1$, $d=2$, $u_n=2n-1$.",
+   "ket_qua_trung_gian": "$u_1=1,d=2$",
+   "kien_thuc": "Cấp số cộng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $u_1=1,d=2$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$S_n=\\dfrac{n(1+2n-1)}2=n^2$.",
+   "ket_qua_trung_gian": "$S_n=n^2$",
+   "kien_thuc": "Tổng cấp số cộng",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $S_n=n^2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng $S_n=n(u_1+u_n)$ (thiếu chia 2)",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$n^2=169\\Rightarrow n=13$ (loại $n=-13$).",
+   "ket_qua_trung_gian": "$n=13$",
+   "kien_thuc": "Điều kiện $n\\in\\mathbb N^*$",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $n=13$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Giữ cả nghiệm $n=-13$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 13.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng $S_n=n(u_1+u_n)$ (thiếu chia 2)",
+   "loi_giai": "B1: Các số hạng lập cấp số cộng $u_1=1$, $d=2$, $u_n=2n-1$.\nB2: $S_n=n(1+2n-1)=2n^2$.\nB3: $2n^2=169$ — không có $n$ nguyên; kết luận $n\\approx9{,}19$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Giữ cả nghiệm $n=-13$",
+   "loi_giai": "B1: Các số hạng lập cấp số cộng $u_1=1$, $d=2$, $u_n=2n-1$.\nB2: $S_n=\\dfrac{n(1+2n-1)}2=n^2$.\nB3: $n^2=169\\Rightarrow n=\\pm13$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

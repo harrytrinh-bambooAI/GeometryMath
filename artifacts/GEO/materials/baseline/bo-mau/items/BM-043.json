@@ -1,0 +1,86 @@
+{
+ "id": "BM-043",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-27-the-tich.md — bài 5 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Thể tích khối chóp",
+ "muc_do": "VD",
+ "de_bai": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SC$ tạo với đáy góc $45^\\circ$. Tính thể tích khối chóp.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a^3\\sqrt2}{3}$",
+  "so": 0.47140452079103173
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Góc giữa đường thẳng và mặt phẳng",
+  "$V=\\dfrac13Bh$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Góc giữa $SC$ và đáy là $\\widehat{SCA}=45^\\circ$.",
+   "ket_qua_trung_gian": "$\\widehat{SCA}=45^\\circ$",
+   "kien_thuc": "Góc với mặt phẳng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\widehat{SCA}=45^\\circ$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$AC=a\\sqrt2$, tam giác $SAC$ vuông cân nên $SA=a\\sqrt2$.",
+   "ket_qua_trung_gian": "$SA=a\\sqrt2$",
+   "kien_thuc": "Tam giác vuông cân",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $SA=a\\sqrt2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $SA=AC=a$ (nhầm $AC=a$)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 1.4142135623730951
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$V=\\dfrac13a^2\\cdot a\\sqrt2=\\dfrac{a^3\\sqrt2}3$.",
+   "ket_qua_trung_gian": "$\\dfrac{a^3\\sqrt2}3$",
+   "kien_thuc": "Thể tích",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a^3\\sqrt2}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Quên hệ số $\\dfrac13$ của khối chóp",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.47140452079103173
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Quên hệ số $\\dfrac13$ của khối chóp",
+   "loi_giai": "B1: Góc giữa $SC$ và đáy là $\\widehat{SCA}=45^\\circ$.\nB2: $AC=a\\sqrt2$, tam giác $SAC$ vuông cân nên $SA=a\\sqrt2$.\nB3: $V=a^2\\cdot a\\sqrt2=a^3\\sqrt2$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $SA=AC=a$ (nhầm $AC=a$)",
+   "loi_giai": "B1: Góc giữa $SC$ và đáy là $\\widehat{SCA}=45^\\circ$.\nB2: $AC=a$ nên $SA=a$.\nB3: $V=\\dfrac{a^3}3$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

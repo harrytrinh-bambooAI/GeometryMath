@@ -1,0 +1,97 @@
+{
+ "id": "BM-025",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-67 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-67 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Diện tích các mặt bên hình chóp",
+ "muc_do": "VD",
+ "de_bai": "Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a$. Tính tổng diện tích bốn mặt bên của hình chóp theo $a$.",
+ "dap_so": {
+  "gia_tri": "$(1+\\sqrt2)a^2$",
+  "so": 2.414213562373095
+ },
+ "dap_so_engine": 2.414213562373095,
+ "kien_thuc": [
+  "Định lí ba đường vuông góc",
+  "Diện tích tam giác vuông"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$\\triangle SAB$, $\\triangle SAD$ vuông tại $A$: mỗi tam giác có diện tích $\\dfrac{a^2}2$.",
+   "ket_qua_trung_gian": "$S_{SAB}=S_{SAD}=\\dfrac{a^2}2$",
+   "kien_thuc": "Tam giác vuông",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $S_{SAB}=S_{SAD}=\\dfrac{a^2}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.5
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$BC\\perp(SAB)\\Rightarrow BC\\perp SB$; tương tự $CD\\perp SD$: $\\triangle SBC$ vuông tại $B$, $\\triangle SCD$ vuông tại $D$.",
+   "ket_qua_trung_gian": "$\\triangle SBC$ vuông tại $B$, $\\triangle SCD$ vuông tại $D$",
+   "kien_thuc": "Ba đường vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\triangle SBC$ vuông tại $B$, $\\triangle SCD$ vuông tại $D$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Cho $\\triangle SBC$ vuông tại $C$ (sai đỉnh góc vuông)",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$SB=SD=a\\sqrt2$ nên $S_{SBC}=S_{SCD}=\\dfrac{a\\cdot a\\sqrt2}2$.",
+   "ket_qua_trung_gian": "$\\dfrac{a^2\\sqrt2}2$",
+   "kien_thuc": "Diện tích tam giác vuông",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a^2\\sqrt2}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.7071067811865476
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "$S=2\\cdot\\dfrac{a^2}2+2\\cdot\\dfrac{a^2\\sqrt2}2=(1+\\sqrt2)a^2$.",
+   "ket_qua_trung_gian": "$(1+\\sqrt2)a^2$",
+   "kien_thuc": "Cộng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $(1+\\sqrt2)a^2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Cộng sai: $2\\cdot\\dfrac{a^2\\sqrt2}2=2a^2\\sqrt2$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 2.414213562373095
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Cho $\\triangle SBC$ vuông tại $C$ (sai đỉnh góc vuông)",
+   "loi_giai": "B1: $\\triangle SAB$, $\\triangle SAD$ vuông tại $A$: mỗi tam giác có diện tích $\\dfrac{a^2}2$.\nB2: $\\triangle SBC$ vuông tại $C$, $\\triangle SCD$ vuông tại $C$.\nB3: $SC=a\\sqrt3$, $S_{SBC}=S_{SCD}=\\dfrac{a\\cdot a\\sqrt3}2$.\nB4: $S=a^2+a^2\\sqrt3$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B4",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Cộng sai: $2\\cdot\\dfrac{a^2\\sqrt2}2=2a^2\\sqrt2$",
+   "loi_giai": "B1: $\\triangle SAB$, $\\triangle SAD$ vuông tại $A$: mỗi tam giác có diện tích $\\dfrac{a^2}2$.\nB2: $BC\\perp(SAB)\\Rightarrow BC\\perp SB$; tương tự $CD\\perp SD$: $\\triangle SBC$ vuông tại $B$, $\\triangle SCD$ vuông tại $D$.\nB3: $SB=SD=a\\sqrt2$ nên $S_{SBC}=S_{SCD}=\\dfrac{a\\cdot a\\sqrt2}2$.\nB4: $S=a^2+2a^2\\sqrt2=(1+2\\sqrt2)a^2$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

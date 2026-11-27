@@ -1,0 +1,86 @@
+{
+ "id": "BM-056",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-04-quan-he-song-song/bai-11-hai-duong-thang-song-song.md — bài 6 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Đường trung bình trong tứ diện",
+ "muc_do": "TH",
+ "de_bai": "Tứ diện $ABCD$ có $M,N,P,Q$ lần lượt là trung điểm $AB,BC,CD,DA$; $AC=6$, $BD=8$. Tính chu vi tứ giác $MNPQ$.",
+ "dap_so": {
+  "gia_tri": "$14$",
+  "so": 14.0
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Đường trung bình tam giác"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$MN=PQ=\\dfrac{AC}2=3$.",
+   "ket_qua_trung_gian": "$3$",
+   "kien_thuc": "Đường trung bình",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $MN=AC=6$ (quên một nửa)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 3.0
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$NP=MQ=\\dfrac{BD}2=4$.",
+   "ket_qua_trung_gian": "$4$",
+   "kien_thuc": "Đường trung bình",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $4$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 4.0
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Chu vi $=2(3+4)=14$.",
+   "ket_qua_trung_gian": "$14$",
+   "kien_thuc": "Chu vi",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $14$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Chỉ cộng hai cạnh: $3+4=7$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 14.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Chỉ cộng hai cạnh: $3+4=7$",
+   "loi_giai": "B1: $MN=PQ=\\dfrac{AC}2=3$.\nB2: $NP=MQ=\\dfrac{BD}2=4$.\nB3: Chu vi $=3+4=7$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lấy $MN=AC=6$ (quên một nửa)",
+   "loi_giai": "B1: $MN=PQ=AC=6$.\nB2: $NP=MQ=\\dfrac{BD}2=4$.\nB3: Chu vi $=2(6+4)=20$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}
