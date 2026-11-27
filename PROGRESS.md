@@ -1,17 +1,21 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 07:10
-**CODE CHẶNG 3 XONG + FIX trước gate T-34 đã gộp.** Regression cuối phase 1855/1855 (DECISIONS 27/11). Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`), còn commit cục bộ chưa push.
-Đã xong phiên 27/11 sáng:
-- FIX T-34 (nhánh `fix-t34`, worktree lồng `.claude/worktrees/fix-t34`, đã gộp): Dev-S3E5-08 adc4a30, Dev-S3E5-16 77ccd29, assign lớp lưu trữ → CONFLICT 3f1d412 (V417). make verify 301 UT + 243 IT; e2e-affected 805/806 → ca 0605 chạy lại đạt.
-- Soát độc lập T-20…T-32 có trọng tâm (an ninh/dữ liệu): `artifacts/GEO/evidence/REVIEW-T20-T32-20261127.md` — 0 critical, 4 major, 9 minor; ghi lô FIX vào inbox.
-- App local cho owner thử: `make up` + `make run` (8092) + `make web-dev` (5176), geo_dev nạp seed e2e (F-S3). Đăng nhập: Cô Lan GV-7K2M-9QPA / Lan@2026x; Thầy Khôi GV-4D8R-2WNX / Khoi@2026x; học sinh HocSinh#2026 (mã trong `app/db/seed/fixture-ids.d/s3.json`).
-- FIX lô soát T-20…T-32 ĐÃ GỘP: nhánh fix-rv-a (4 major gồm ClassAiSwitchFilter, audit denied, AccountPurgeJob + 2 flaky) và fix-rv-b (V418 REVOKE, V419 chỉ mục, CSV, nhắc việc phân trang, sourcemap). Verify bản kết hợp 304 UT + 251 IT; e2e L2 từng nhánh 952/952 và 951/952 (ca trượt ECONNRESET chạy lại đạt). App local đã dừng (make down).
+# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 ~09:30
+Mục tiêu hiện tại: chặng 3 chờ owner duyệt gate T-27, T-34; dọn inbox (FIX theo PO-DECISIONS, E2E đợt 2); kho bài giảng Toán 11.
+Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`), nhiều commit cục bộ CHƯA push (lần push cuối 5db3799). Không agent nào đang chạy.
+Đã xong 27/11 (phiên sáng):
+- FIX trước gate T-34 (Dev-S3E5-08, -16, assign lớp lưu trữ → CONFLICT V417).
+- Soát độc lập T-20…T-32 (`artifacts/GEO/evidence/REVIEW-T20-T32-20261127.md`) + lô FIX A/B (V418 REVOKE, V419, ClassAiSwitchFilter, audit denied, AccountPurgeJob cron, CSV, nhắc việc, sourcemap).
+- T-05 đo AI thật ĐẠT sau FIX (prompt a2, chữ ký v2): `MVP-METRICS-20261127-0840` — hình 100 %, lộ 0/22, 0,0138 USD/bài.
+- T-33 kiểm thử chặng 3: `artifacts/GEO/evidence/S3-L6/REPORT.md` — S3 292/292 tự động, 7 manual, traceability lệch 0; kỹ thuật ĐẠT gate T-34.
+- PO chốt câu mở + TBD: PO-67…85 (`PO-DECISIONS.md`).
+- E2E tách UI/API đợt 1 (DECISIONS 27/11): 26/58 ca B → `*.flow.api.spec.ts` + ảnh cuối; affected chỉ server −41 %; `artifacts/GEO/evidence/E2E-SPLIT-20261127/REPORT.md`.
+- Toán 11 bài tập v1.2: 305 bài, lời giải từng bước (`artifacts/GEO/materials/lop-11/`).
+Kiểm gần nhất: make verify 313 UT + 253 IT (nhánh fix-t05); e2e trọn bộ split-full 1821/1825, 0 trượt.
 Bước tiếp theo:
-1. Ghi PO-DECISIONS các mục [PO]/[BA] trong inbox trước gate T-34 (mục 8/10/12/13 soát B; BR-S3E5-07; phạm vi US-S3E5-05 với HS vào lớp bằng tên).
-2. Lỗi nhỏ còn: e2e ghi đè ảnh theme; chiều cao tối thiểu dòng tóm tắt kho đề (WebKit).
-3. Owner: T-05 đo AI thật; gate T-27, T-34.
-4. Kho bài giảng Toán 11: phiên khác, `artifacts/GEO/materials/PLAN-kho-bai-giang.md`.
-Vùng chưa soát: xem cuối báo cáo REVIEW-T20-T32.
-Lưu ý vận hành: hook worktree chặn `source`/lệnh ghép — dùng đích make và `git -C <repo>`; worktree con tạo trong `.claude/worktrees/` của wave0; cổng fix-t34 54369/6429/8102/5186.
-Inbox: .claude/inbox.md (lô FIX soát + câu mở PO/BA).
-Quyết định: DECISIONS.md (mới nhất 27/11).
-Rủi ro: hạn mức 5 giờ; vùng code chưa soát; major #1 chưa có ca thử xác nhận.
+1. Owner: gate T-27 ("S2 L7 OK"), T-34 ("S3 L7 OK") + 7 ca manual thiết bị thật (S3E2-37, E3-07, E4-02, E4-21, E4-27, E5-26, E6-10).
+2. FIX theo PO-DECISIONS 27/11 (10 thay đổi code + TC-S3E5-61, TC-S3E1-55, TC-S3E3-58) — inbox.
+3. Câu mở sau FIX T-05 (tính lại chữ ký v1→v2; cầu tâm I) — inbox.
+4. E2E đợt 2: 32 ca B còn lại + rà tay bảng phân loại — inbox.
+5. Kho bài giảng Toán 11: phiên riêng, `đọc artifacts/GEO/materials/PLAN-kho-bai-giang.md và làm`. Bài tập 305 bài chưa có soát chéo toán bởi model khác.
+Lưu ý vận hành: hook worktree chặn `source`, lệnh ghép `cd …; git`, vòng lặp git → dùng `git -C <repo>` từng lệnh và đích make; worktree con tạo trong `.claude/worktrees/` của wave0, mỗi cái app/.env.ports riêng. Đo AI thật: `cd app && zsh -i -c 'GEO_AI_PROVIDER=anthropic make bench-mvp'` (khoá trong ~/.zshrc).
+Inbox: .claude/inbox.md. Quyết định: DECISIONS.md (mới nhất 27/11 "Chiến lược E2E", "E2E tách UI/API").
+Rủi ro: thư mục rác `artifacts/GEO/evidence/MVP-METRICS-20261127-0803` (lần đo hỏng, untracked) — owner xoá tay; chưa push.
