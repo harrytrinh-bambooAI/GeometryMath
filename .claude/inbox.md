@@ -376,3 +376,11 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** `app/e2e/playwright.config.ts`, 72 `*.ui.spec.ts`, 49 `*.api.spec.ts`, `app/scripts/e2e-affected.mjs` + impact-map (27/11/2026); DECISIONS 27/11 "Chiến lược E2E".
 - **Xong khi:** `make e2e-affected-selftest` đạt (thêm mẫu diff chỉ server → 0 ca UI loại B); `make traceability ARGS="--strict --all"` không giảm phủ TC; một lượt `make e2e` trọn bộ đạt; báo cáo trước/sau: thời gian, số ca UI, số ca chập chờn.
 - **Ngoài phạm vi:** xoá ca UI loại A; đổi lượt gate (vẫn chạy trọn UI); sửa code sản phẩm.
+
+## Việc: câu mở sau FIX T-05 · ghi 27/11/2026
+- **Mục tiêu:** đóng 2 điểm agent FIX T-05 để mở (nhánh fix-t05 đã gộp).
+  1. [Dev/Vận hành] chữ ký chuẩn đổi bản 1 → 2 (`SIG_VERSION`=2): hàng `problem_signature` bản 1 ở môi trường có dữ liệu thật không còn khớp → cần migration/job tính lại trước khi lên môi trường có dữ liệu (seed e2e đã cập nhật).
+  2. [Dev] bộ dựng mặt cầu bắt tâm tên O; đề tự đặt tâm I sẽ trượt kiểm hình (chưa gặp trong bộ đề chuẩn) → ánh xạ tên tâm.
+- **Nguồn:** báo cáo FIX T-05; commit 7d8e48d; `MVP-METRICS-20261127-0840`.
+- **Xong khi:** IT tính lại chữ ký v1→v2 đạt; test đề cầu tâm I dựng/kiểm đạt; make verify xanh.
+- **Ngoài phạm vi:** đổi model AI; nới ngưỡng.
