@@ -59,6 +59,8 @@ s2e4-fixtures: ; $(MVN) -q test -Dtest=ImportFilesTest -Dgeo.s2e4.fixtures=write
 # ===== Chặng 5: đích mới theo task (T-261128-51, PLAN_code-s5 §5 luật 2) =====
 # --- T-261128-51 (khung) ---
 # --- T-261128-52 (S5-E2) ---
+.PHONY: exam-import
+exam-import: ; $(ENV) $(MVN) spring-boot:run -Dspring-boot.run.profiles=$(or $(PROFILE),dev) -Dspring-boot.run.arguments="--geo.s5.exam.import=true --server.port=0 $(if $(VERSION),--geo.s5.exam.import-version=$(VERSION))"   # US-S5E2-01: nạp materials/de-thi (4 ma trận, 110 mẫu, 1 774 câu) có kiểm schema + đáp số engine; lũy đẳng; exit 1 khi có bản ghi bị loại
 # --- T-261128-53 (S5-E1) ---
 # --- T-261128-54 (S5-E1, S5-E2 xuất) ---
 # --- T-261128-55 (S5-E5) ---
