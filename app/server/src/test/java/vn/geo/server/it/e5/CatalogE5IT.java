@@ -201,7 +201,7 @@ class CatalogE5IT extends AbstractE1IT {
     assertThat(six.get("verified").asLong()).isEqualTo(6);
     assertThat(six.get("mvpMet").asBoolean()).isFalse();
     assertThat(six.get("mvp").asString())
-        .isEqualTo("chưa đạt (cần ≥ 40 đề đã kiểm chứng, kho 40 đến 60 đề)");
+        .isEqualTo("chưa đạt (cần ≥ 40 đề đã kiểm chứng, kho 40 đến 100 đề)");
     JsonNode lane = json(get("/api/v1/catalog/summary", laneTeacher()));
     assertThat(lane.get("total").asLong()).isEqualTo(48);
     assertThat(lane.get("verified").asLong()).isEqualTo(44);

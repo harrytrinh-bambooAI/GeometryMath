@@ -106,4 +106,17 @@ class ContentPackTest {
     assertThat(PACK.problems().stream().map(ContentPack.Problem::level).distinct())
         .containsExactlyInAnyOrder("thcs", "thpt");
   }
+
+  @Test
+  @DisplayName("Cân chuyên đề (27/11): mỗi dạng bài 16–20 đề, có cả THCS và THPT")
+  void topicsBalanced() {
+    for (String topic : List.of("Góc", "Khoảng cách", "Thể tích", "Diện tích", "Mặt cầu")) {
+      List<ContentPack.Problem> ps =
+          PACK.problems().stream().filter(p -> topic.equals(p.topic())).toList();
+      assertThat(ps).as("số đề dạng %s", topic).hasSizeBetween(16, 20);
+      assertThat(ps.stream().map(ContentPack.Problem::level).distinct())
+          .as("cấp của dạng %s", topic)
+          .containsExactlyInAnyOrder("thcs", "thpt");
+    }
+  }
 }
