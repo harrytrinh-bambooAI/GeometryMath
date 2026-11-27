@@ -21,7 +21,18 @@ test('Danh sách lớp ở bước 1 @TC-GEO-0605', async ({ page, request }) =>
   const sb = await twoClasses(request);
   await signIn(page, sb.teacher, 'Giáo viên mẫu', 'teacher');
   await page.goto('/gv/kho-de');
-  await page.getByTestId('e1-problem-HKG-06-assign').click();
+  // Dev-REV-A5: chờ kho đề ổn định bố cục trước khi bấm — dòng tóm tắt, chip lớp và danh sách tải
+  // không đồng thời; dòng tóm tắt về muộn xuống 2 dòng trên iPhone làm thẻ đề dịch xuống sau khi
+  // Playwright đã chọn điểm bấm, cú bấm rơi ra ngoài nút "Giao bài" (tái hiện bằng trễ /catalog/summary).
+  await expect(page.getByTestId('e5-summary')).toContainText('đề');
+  await expect(page.getByTestId('e1-class-9B')).toBeVisible();
+  await expect(page.getByTestId('e5-list')).toHaveAttribute('data-loading', 'false');
+  // Còn lại (chưa rõ gốc, ~1/150 khi không chờ): WebKit di động có lúc nhận cú chạm vào <html> (không phần tử)
+  // ở điểm của nút — điều kiện đúng là ĐÃ sang trang giao bài; chưa sang thì bấm lại (điều hướng lũy đẳng).
+  await expect(async () => {
+    if (!/\/gv\/giao-bai\//.test(page.url())) await page.getByTestId('e1-problem-HKG-06-assign').click();
+    await expect(page).toHaveURL(/\/gv\/giao-bai\//, { timeout: 1500 });
+  }).toPass({ timeout: 10_000 });
   await expect(page.getByRole('heading', { name: 'Chi tiết đề & giao bài' })).toBeVisible();
   const step = page.getByTestId('e1-assign-step-class');
   await expect(step.getByRole('heading')).toHaveText('1 · Chọn lớp');
