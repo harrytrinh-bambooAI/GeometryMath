@@ -334,4 +334,10 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 ## Trạng thái FIX trước gate T-34 (nhánh fix-t34, gộp wave0 27/11/2026)
 - Dev-S3E5-08 (iam event sau commit) **ĐÓNG** adc4a30 · Dev-S3E5-16 (LEFT JOIN app_user) **ĐÓNG** 77ccd29 · assign lớp lưu trữ → CONFLICT **ĐÓNG** 3f1d412 (V417).
 - Kiểm: make verify 301 UT (1 bỏ qua) + 243 IT đạt; e2e-affected L1 805/806 (run 20261127-064727), TC-GEO-0605 mobile-iphone chạy lại 1/1 (20261127-065117).
+- FIX soát B (fix-rv-b, gộp 27/11): mục 3 REVOKE **ĐÓNG** 1f0e612 (V418); mục 7 chỉ mục **ĐÓNG** db8af83 (V419); mục 5+6 CSV **ĐÓNG** 08c0ad2; mục 9 nhắc việc phân trang **ĐÓNG** a1568bb; mục 11 sourcemap **ĐÓNG** 27b0890. Kiểm: verify 302 UT + 248 IT; web xanh; e2e L2 952/952 (20261127-070819).
+- [PO] mục 8: HS vào lớp bằng tên không có mật khẩu → không xoá được tài khoản. Đề xuất: xác nhận bằng gõ "XÓA", không tăng bộ đếm sai.
+- [PO] mục 10: HS đọc đề Kho chung theo id — PO-66 G2 đã cho phép (gợi ý, lời giải khoá). Đề xuất: giữ, ghi DECISIONS.
+- [PO/BA] mục 12: `userCode` trong query string. Đề xuất: thêm userId (UUID) vào Row/Person, trang bài làm dùng `hs=<uuid>`, cập nhật TC S3-E3 (đổi hợp đồng API).
+- [PO] mục 13: gửi lại yêu cầu vào lớp sau Bị từ chối/Đã rời không giới hạn. Đề xuất: tính vào hạn mức 10 lần/15 phút, 30 lần/24 giờ (đổi BR-S3E1-14).
+- [Vận hành] lượt e2e ghi đè `artifacts/GEO/evidence/theme/*.png` → cho script e2e ghi ra thư mục khác.
 - Câu mở mới: [Test chập chờn] `AssignmentSetS3E2IT.probeLockedSolution` regex LEAK khớp "45" trong giờ "23:45:42" → trượt khi chạy ở phút 45; sửa regex. [Test chập chờn] TC-GEO-0605 mobile-iphone hết giờ chờ UI 1 lần.
