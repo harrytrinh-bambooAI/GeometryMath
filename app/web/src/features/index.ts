@@ -20,16 +20,23 @@ import { feature as s3e3 } from './s3e3/index.tsx';
 import { feature as s3e4 } from './s3e4/index.tsx';
 import { feature as s3e5 } from './s3e5/index.tsx';
 import { feature as s3e6 } from './s3e6/index.tsx';
+import { feature as s5e1 } from './s5e1/index.tsx';
+import { feature as s5e2 } from './s5e2/index.tsx';
+import { feature as s5e3 } from './s5e3/index.tsx';
+import { feature as s5e4 } from './s5e4/index.tsx';
+import { feature as s5e5 } from './s5e5/index.tsx';
+import { feature as s5e6 } from './s5e6/index.tsx';
 import type { FeatureModule } from './types.ts';
 
 /**
  * Danh sách epic cắm vào khung. Thứ tự = thứ tự mục trên rail; route cùng đường dẫn: epic sau thay epic trước.
- * Epic không cần sửa tệp này: chặng 2–3 đã cắm sẵn s2e1…s3e6 (T-261126-41), task chỉ sửa `<id>/index.tsx` của mình.
+ * Epic không cần sửa tệp này: chặng 2–3 đã cắm sẵn s2e1…s3e6 (T-261126-41), chặng 5 s5e1…s5e6 (T-261128-51), task chỉ sửa `<id>/index.tsx` của mình.
  */
 export const features: FeatureModule[] = [
   e1, e2, e3, e4, e5, e6, e7,
   s2e1, s2e2, s2e3, s2e4, s2e5, s2e6, s2e7, s2e8, s2e9,
   s3e1, s3e2, s3e3, s3e4, s3e5, s3e6,
+  s5e1, s5e2, s5e3, s5e4, s5e5, s5e6,
 ];
 
 export type { FeatureId, FeatureModule, NavItem } from './types.ts';

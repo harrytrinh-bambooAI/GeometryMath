@@ -1,17 +1,17 @@
 /**
  * Truy vết TC ↔ test ↔ kết quả chạy.
- * Chạy: `node scripts/traceability.ts [--run <mã>] [--all] [--epic E1,S2-E1|MVP|S2|S3] [--defer US-S2E5-05,…] [--strict]`
+ * Chạy: `node scripts/traceability.ts [--run <mã>] [--all] [--epic E1,S2-E1|MVP|S2|S3|S5] [--defer US-S2E5-05,…] [--strict]`
  * (Node ≥ 22.18 tự bỏ kiểu TypeScript; không cần cài gì thêm.)
  * Nguồn:
- *   - TC: artifacts/GEO/work/epics/{E*,S2-E*,S3-E*}/test_cases.md (hoặc GEO_TC_DIR), mã TC-GEO-nnnn / TC-S2En-nnn /
- *     TC-S3En-nn; cột "Tự động hóa" (E2E-UI / E2E-API / IT / UT / Manual). Story của TC = tiêu đề `### US-…` gần nhất.
+ *   - TC: artifacts/GEO/work/epics/{E*,S2-E*,S3-E*,S5-E*}/test_cases.md (hoặc GEO_TC_DIR), mã TC-GEO-nnnn / TC-S2En-nnn /
+ *     TC-S3En-nn / TC-S5En-nn; cột "Tự động hóa" (E2E-UI / E2E-API / IT / UT / Manual). Story của TC = tiêu đề `### US-…` gần nhất.
  *   - Test Playwright: tag @TC-… trong app/e2e/tests/**; kết quả evidence/<run>/summary.json (mặc định evidence/latest.txt).
  *   - Test JUnit (IT, UT): mã TC-GEO-0123 / TC_GEO_0123 / TC-S2E1-001 / TC_S2E1_001 trong app/server/src/test/java;
  *     kết quả server/target/{surefire,failsafe}-reports: ca JUnit (lớp + phương thức) nối với mã TC ở @DisplayName /
  *     chú thích ngay trên phương thức hoặc javadoc lớp (đọc từ mã nguồn, vì báo cáo không ghi @DisplayName).
  *   - Test đơn vị web (UT): mã TC trong tên test của app/web/src/**\/*.test.ts(x) (chưa đọc kết quả: "chưa chạy").
  * "Bắt buộc" = TC có Tự động hóa E2E-UI | E2E-API | IT | UT.
- * --epic: danh sách phân tách dấu phẩy; bí danh MVP = mọi E<n>, S2 = mọi S2-E<n>, S3 = mọi S3-E<n>. Không có = tất cả.
+ * --epic: danh sách phân tách dấu phẩy; bí danh MVP = mọi E<n>, S2 = mọi S2-E<n>, S3 = mọi S3-E<n>, S5 = mọi S5-E<n>. Không có = tất cả.
  * --defer US-…: TC của các story này không tính vào --strict (in riêng; dùng khi story giao cho task sau).
  * --strict: exit 1 khi có TC bắt buộc thiếu test, có TC trượt, hoặc --epic có tên không tồn tại. Không có --strict: exit 0.
  * Ghi thêm evidence/<run>/traceability.json khi có lượt chạy.
@@ -33,7 +33,7 @@ const showAll = args.includes('--all');
 const strict = args.includes('--strict');
 const deferred = new Set(listOf('--defer'));
 
-const EPIC_DIR = /^(E\d+|S[23]-E\d+)$/;
+const EPIC_DIR = /^(E\d+|S[235]-E\d+)$/;
 const allEpics = readdirSync(tcDir)
   .filter((d) => EPIC_DIR.test(d) && existsSync(path.join(tcDir, d, 'test_cases.md')))
   .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
@@ -41,6 +41,7 @@ const ALIASES: Record<string, (e: string) => boolean> = {
   MVP: (e) => /^E\d+$/.test(e),
   S2: (e) => e.startsWith('S2-'),
   S3: (e) => e.startsWith('S3-'),
+  S5: (e) => e.startsWith('S5-'),
 };
 const problems: string[] = [];
 const wanted = listOf('--epic');
@@ -56,7 +57,7 @@ const inScope = (epic: string) => wanted.length === 0 || selected.has(epic);
 // ---- TC từ test_cases.md
 type Tc = { id: string; epic: string; story: string; title: string; auto: string; required: boolean };
 const tcs = new Map<string, Tc>();
-const TC_ROW = /^\| (TC-(?:GEO-\d{4}|S[23]E\d+-\d+)) \|/;
+const TC_ROW = /^\| (TC-(?:GEO-\d{4}|S[235]E\d+-\d+)) \|/;
 const AUTO = /^(E2E-UI|E2E-API|IT|UT)$/;
 const splitRow = (line: string) => line.trim().slice(1, -1).split(/(?<!\\)\|/).map((c) => c.trim());
 for (const epic of allEpics) {
@@ -104,7 +105,7 @@ for (const file of walk(path.join(e2eDir, 'tests'), (n) => /\.(ts|tsx|js)$/.test
 const idsIn = (s: string, methodStyle = false): string[] => {
   const out = [
     ...[...s.matchAll(/TC[-_]GEO[-_](\d{4})/g)].map((m) => `TC-GEO-${m[1]}`),
-    ...[...s.matchAll(/TC[-_](S[23]E\d+)[-_](\d+)/gi)].map((m) => `TC-${m[1]!.toUpperCase()}-${m[2]}`),
+    ...[...s.matchAll(/TC[-_](S[235]E\d+)[-_](\d+)/gi)].map((m) => `TC-${m[1]!.toUpperCase()}-${m[2]}`),
   ];
   if (methodStyle) out.push(...[...s.matchAll(/\btc(\d{4})/g)].map((m) => `TC-GEO-${m[1]}`));
   return [...new Set(out)];

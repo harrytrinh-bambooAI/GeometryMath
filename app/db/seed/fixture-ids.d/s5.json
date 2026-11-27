@@ -1,0 +1,372 @@
+{
+ "_doc": "T-261128-51 (PLAN_code-s5 P7, P8): mã cố định của 27 mã dữ liệu mẫu chung chặng 5 F-S5-001…095 (epics/S5-E1/stories_ac.md \"Dữ liệu mẫu chung của chặng 5\", 80e9b6f 28/11). Quy tắc UUID: F-S5-nnn → 00000000-0000-7000-8005-<nnn 12 chữ số>; biến thể 093b, 094b → 00000000-0000-7000-8005-1000000000nn; phiên bản đề F-S5-050 → …-8005-200000000050. NGOẠI LỆ (TẠM, ghi báo cáo T-51): F-S5-001, 002, 010, 011 là CÙNG tài khoản/lớp của chặng 3 (mã GV-/HS-/HK- trùng, app_user.user_code và class.join_code duy nhất) nên giữ id của F-S3-001, 002, 010, 011 (trường sameAs), không tạo hàng mới. 's5_000_core.sql' nạp F-S5-050 (đề D-KC-01, bộ 's5_core'); các mục có 'seededBy' do task chủ bảng nạp bằng seed s5_<nnn>_<feature>_*.sql của mình với ĐÚNG id ở đây; mục 'aiMocks' là đáp mẫu MockAiProvider (id chỉ để truy vết).",
+ "users": {
+  "F-S5-001": {
+   "id": "00000000-0000-7000-8003-000000000001",
+   "org": "F-S2-100",
+   "role": "TEACHER",
+   "displayName": "Cô Lan",
+   "userCode": "GV-7K2M-9QPA",
+   "password": "Lan@2026x",
+   "recoveryCode": "RC-7K2M-9QPA-S3ZY",
+   "sameAs": "F-S3-001",
+   "classes": [
+    "F-S5-010",
+    "F-S5-011"
+   ]
+  },
+  "F-S5-002": {
+   "id": "00000000-0000-7000-8003-000000000002",
+   "org": "F-S2-100",
+   "role": "TEACHER",
+   "displayName": "Thầy Khôi",
+   "userCode": "GV-4D8R-2WNX",
+   "password": "Khoi@2026x",
+   "recoveryCode": "RC-4D8R-2WNX-S3Z2",
+   "sameAs": "F-S3-002",
+   "classes": [
+    "F-S3-012"
+   ],
+   "note": "không có quan hệ với 11A1"
+  }
+ },
+ "classes": {
+  "F-S5-010": {
+   "id": "00000000-0000-7000-8003-000000000010",
+   "org": "F-S2-100",
+   "name": "11A1",
+   "grade": 11,
+   "academicYear": "2026–2027",
+   "status": "Đang dạy",
+   "code": "HK-4P7Q",
+   "joinCode": "HK4P7Q",
+   "teacher": "F-S3-001",
+   "active": [
+    "F-S3-020",
+    "F-S3-021",
+    "F-S3-022",
+    "F-S3-023",
+    "F-S3-024",
+    "F-S3-025",
+    "F-S3-026",
+    "F-S3-027"
+   ],
+   "pending": [
+    "F-S3-030",
+    "F-S3-031",
+    "F-S3-032"
+   ],
+   "left": [
+    "F-S3-028"
+   ],
+   "sameAs": "F-S3-010"
+  },
+  "F-S5-011": {
+   "id": "00000000-0000-7000-8003-000000000011",
+   "org": "F-S2-100",
+   "name": "11A2",
+   "grade": 11,
+   "academicYear": "2026–2027",
+   "status": "Đang dạy",
+   "code": "HK-8M3C",
+   "joinCode": "HK8M3C",
+   "teacher": "F-S3-001",
+   "active": [
+    "F-S3-41001",
+    "F-S3-41002",
+    "F-S3-41003"
+   ],
+   "pending": [],
+   "left": [],
+   "sameAs": "F-S3-011",
+   "note": "Quốc Bảo HS-3C9D-77AA (F-S3-41001) Đang học"
+  }
+ },
+ "lessonPlans": {
+  "F-S5-020": {
+   "id": "00000000-0000-7000-8005-000000000020",
+   "kind": "request",
+   "teacher": "F-S5-001",
+   "seededBy": "T-261128-53",
+   "ppct": "Chương VII · Bài 26. Khoảng cách · Tiết 1/2",
+   "audience": "Khá",
+   "style": "Truyền thống",
+   "knowledge": [
+    "KT11-C07-DN-010",
+    "KT11-C07-CT-003"
+   ],
+   "periods": 1,
+   "worksheet": true
+  },
+  "F-S5-021": {
+   "id": "00000000-0000-7000-8005-000000000021",
+   "kind": "draft",
+   "code": "GA-0001",
+   "teacher": "F-S5-001",
+   "request": "F-S5-020",
+   "seededBy": "T-261128-53",
+   "activities": [
+    [
+     "HĐ1 Mở đầu",
+     5
+    ],
+    [
+     "HĐ2 Hình thành",
+     20
+    ],
+    [
+     "HĐ3 Luyện tập",
+     15
+    ],
+    [
+     "HĐ4 Vận dụng",
+     5
+    ]
+   ],
+   "worksheetSources": [
+    "BM-007",
+    "BM-008",
+    "BM-009"
+   ],
+   "locked": [
+    "Mục tiêu",
+    "Thiết bị"
+   ]
+  }
+ },
+ "examMatrices": {
+  "F-S5-030": {
+   "id": "00000000-0000-7000-8005-000000000030",
+   "code": "KT15-HHKG11",
+   "minutes": 15,
+   "seededBy": "T-261128-52",
+   "note": "6 TN4 × 1,0 + 2 trả lời ngắn × 2,0; 3 ô xoay vòng"
+  },
+  "F-S5-031": {
+   "id": "00000000-0000-7000-8005-000000000031",
+   "code": "TN-THPT-764",
+   "minutes": 90,
+   "seededBy": "T-261128-52",
+   "note": "12 TN4 × 0,25; 4 đúng/sai; 6 trả lời ngắn × 0,5"
+  }
+ },
+ "examBanks": {
+  "F-S5-032": {
+   "id": "00000000-0000-7000-8005-000000000032",
+   "source": "materials/de-thi/ngan-hang",
+   "items": 1774,
+   "templates": 110,
+   "seed": 2026,
+   "seededBy": "T-261128-52"
+  }
+ },
+ "kbDocuments": {
+  "F-S5-040": {
+   "id": "00000000-0000-7000-8005-000000000040",
+   "owner": "F-S5-001",
+   "seededBy": "T-261128-56",
+   "docs": [
+    {
+     "code": "TL-01",
+     "title": "Ghi chú Khoảng cách 11A1",
+     "version": 2,
+     "status": "Đang dùng",
+     "class": "F-S5-010",
+     "prev": "v1 Lưu trữ"
+    },
+    {
+     "code": "TL-02",
+     "title": "Phiếu ôn chương VII",
+     "version": 1,
+     "status": "Chờ duyệt"
+    },
+    {
+     "code": "TL-03",
+     "title": "Bài giảng AI · Góc giữa hai mặt phẳng",
+     "version": 1,
+     "status": "Nháp",
+     "label": "AI soạn"
+    }
+   ]
+  },
+  "F-S5-041": {
+   "id": "00000000-0000-7000-8005-000000000041",
+   "owner": "F-S5-002",
+   "seededBy": "T-261128-56",
+   "docs": [
+    {
+     "code": "TL-09",
+     "title": "Hệ thức lượng 10B",
+     "version": 1,
+     "status": "Đang dùng",
+     "class": "F-S3-012"
+    }
+   ]
+  }
+ },
+ "problems": {
+  "F-S5-050": {
+   "id": "00000000-0000-7000-8005-000000000050",
+   "versionId": "00000000-0000-7000-8005-200000000050",
+   "code": "DKC-01",
+   "displayCode": "D-KC-01",
+   "bank": "s5_core",
+   "title": "D-KC-01 · Khoảng cách từ A đến (SBC)",
+   "answer": "a√6/3",
+   "answerAt1": 0.8165,
+   "seededBy": "T-261128-51"
+  }
+ },
+ "rubrics": {
+  "F-S5-051": {
+   "id": "00000000-0000-7000-8005-000000000051",
+   "code": "RB-01",
+   "title": "Tính toán – khoảng cách",
+   "version": 1,
+   "seededBy": "T-261128-57",
+   "criteria": [
+    [
+     "Hướng",
+     2
+    ],
+    [
+     "Các bước",
+     4
+    ],
+    [
+     "Kết quả",
+     2
+    ],
+    [
+     "Hình",
+     1
+    ],
+    [
+     "Trình bày",
+     1
+    ]
+   ]
+  }
+ },
+ "gradedAssignments": {
+  "F-S5-052": {
+   "id": "00000000-0000-7000-8005-000000000052",
+   "code": "BC-01",
+   "title": "Kiểm tra 15 phút – Khoảng cách",
+   "class": "F-S5-010",
+   "problem": "F-S5-050",
+   "rubric": "F-S5-051",
+   "dueAt": "2026-12-11T20:00:00+07:00",
+   "late": "cho phép có nhãn",
+   "release": "khi giáo viên bấm Trả bài",
+   "seededBy": "T-261128-57"
+  }
+ },
+ "submissions": {
+  "F-S5-053": {
+   "id": "00000000-0000-7000-8005-000000000053",
+   "code": "BN-01",
+   "student": "F-S3-020",
+   "pages": 2,
+   "answer": "a√6/3",
+   "seededBy": "T-261128-59"
+  },
+  "F-S5-054": {
+   "id": "00000000-0000-7000-8005-000000000054",
+   "code": "BN-02",
+   "student": "F-S3-021",
+   "pages": 3,
+   "answer": "a√3/3",
+   "error": "sai-tinh-toan",
+   "seededBy": "T-261128-59"
+  },
+  "F-S5-055": {
+   "id": "00000000-0000-7000-8005-000000000055",
+   "code": "BN-03",
+   "student": "F-S3-022",
+   "blurryPage": 2,
+   "clarity": 0.31,
+   "seededBy": "T-261128-59"
+  },
+  "F-S5-056": {
+   "id": "00000000-0000-7000-8005-000000000056",
+   "code": "BN-05",
+   "student": "F-S3-024",
+   "submittedAt": "2026-12-11T20:07:00+07:00",
+   "lateMinutes": 7,
+   "notSubmitted": [
+    "F-S3-023"
+   ],
+   "seededBy": "T-261128-59"
+  },
+  "F-S5-057": {
+   "id": "00000000-0000-7000-8005-000000000057",
+   "code": "BN-07",
+   "student": "F-S3-026",
+   "pages": 2,
+   "answer": "a√6/3",
+   "missingStep": "dựng AH ⊥ SB",
+   "seededBy": "T-261128-59"
+  }
+ },
+ "aiMocks": {
+  "F-S5-090": {
+   "id": "00000000-0000-7000-8005-000000000090",
+   "task": "grade",
+   "submission": "F-S5-053",
+   "total": 10,
+   "confidence": 0.86,
+   "owner": "T-261128-61"
+  },
+  "F-S5-091": {
+   "id": "00000000-0000-7000-8005-000000000091",
+   "task": "grade",
+   "submission": "F-S5-054",
+   "total": 7,
+   "confidence": 0.74,
+   "owner": "T-261128-61"
+  },
+  "F-S5-092": {
+   "id": "00000000-0000-7000-8005-000000000092",
+   "task": "grade",
+   "submission": "F-S5-055",
+   "kind": "refuse",
+   "owner": "T-261128-61"
+  },
+  "F-S5-093": {
+   "id": "00000000-0000-7000-8005-000000000093",
+   "task": "lesson_plan",
+   "request": "F-S5-020",
+   "returns": "F-S5-021",
+   "owner": "T-261128-53"
+  },
+  "F-S5-093b": {
+   "id": "00000000-0000-7000-8005-100000000093",
+   "task": "lesson_plan",
+   "request": "F-S5-020",
+   "totalMinutes": 50,
+   "note": "phạm luật A5",
+   "owner": "T-261128-53"
+  },
+  "F-S5-094": {
+   "id": "00000000-0000-7000-8005-000000000094",
+   "task": "kb_qa",
+   "cites": "TL-01 v2 · Hệ thức 1/AH²",
+   "owner": "T-261128-58"
+  },
+  "F-S5-094b": {
+   "id": "00000000-0000-7000-8005-100000000094",
+   "task": "kb_qa",
+   "contains": "a√6/3",
+   "owner": "T-261128-58"
+  },
+  "F-S5-095": {
+   "id": "00000000-0000-7000-8005-000000000095",
+   "task": "grade_ocr",
+   "submission": "F-S5-053",
+   "pages": 2,
+   "unsureSpans": 2,
+   "owner": "T-261128-59"
+  }
+ }
+}

@@ -4,3 +4,6 @@ geo:
   http.trust-forwarded-for: true
   # Khóa thử của nhà cung cấp AI (US-GEO-103-SC3): kiểm rằng chuỗi này không bao giờ xuống trình duyệt.
   ai.api-key: ${GEO_AI_API_KEY:KHOA-THU-KHONG-LO}
+  # T-261128-51 (PLAN_code-s5 P5): bật cả hai cờ chặng 5 ở hồ sơ dev (make run, make e2e: scripts/e2e.sh chạy --spring.profiles.active=dev); mặc định false ở application.yml.
+  s5.grading.enabled: true
+  s5.ai-grading.enabled: true

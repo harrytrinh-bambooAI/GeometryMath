@@ -71,13 +71,13 @@ function changedFiles(base) {
 }
 
 const epicOf = (raw) => {
-  const m = /^(?:(s[23])e(\d+)|e(\d+))$/i.exec(raw);
+  const m = /^(?:(s[235])e(\d+)|e(\d+))$/i.exec(raw);
   if (!m) return raw.toUpperCase();
   return m[1] ? `${m[1].toUpperCase()}-E${m[2]}` : `E${m[3]}`;
 };
 function specDirOf(epic, map) {
   if (map.specDirs && epic in map.specDirs) return map.specDirs[epic];
-  const m = /^(?:(S[23])-)?E(\d+)$/.exec(epic);
+  const m = /^(?:(S[235])-)?E(\d+)$/.exec(epic);
   return m ? `${m[1] ? m[1].toLowerCase() : ''}e${m[2]}` : epic.toLowerCase();
 }
 

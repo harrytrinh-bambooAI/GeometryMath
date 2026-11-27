@@ -175,5 +175,23 @@ Kế hoạch: `artifacts/GEO/work/s23/PLAN_code-s23.md` (module, cổng, khoản
 - **Web `features/s3e3`:** `/gv/ket-qua-lop?lop=&bo=` (bảng, khung bằng chứng, thẻ nhận định / dữ liệu thô) và `/gv/ket-qua-lop/bai-lam?lop=&bo=&de=&ma=` (chỉ đọc). E2E `e2e/tests/s3e3/` (api 13 ca, ui 38 ca), IT `it/s3e3/ClassBoardS3E3IT` (5 ca).
 <!-- --- T-261126-31 (S3-E4, S3-E5) --- -->
 <!-- --- T-261126-32 (S3-E6, S3-E5) --- -->
+<!-- ===== Chặng 5 (T-261128-51, PLAN_code-s5 §5 luật 2): mỗi task chỉ thêm dòng ngay dưới mốc của mình ===== -->
+<!-- --- T-261128-51 (khung) --- -->
+- **Khung chặng 5 (T-261128-51; PLAN_code-s5 §1 P4–P8, §4, §5):** chỗ cắm web rỗng `features/s5e1…s5e6` (đã cắm vào `features/index.ts`, `types.ts`; task không sửa hai tệp này), thư mục spec `e2e/tests/s5e1…s5e6`, gói máy chủ mới `lessonplan`, `exam`, `assessment`, `aigrade` (chỉ `package-info.java`). `make traceability ARGS="--epic S5"` (bí danh `S5` = mọi `S5-E<n>`, mã `TC-S5En-nn`; reporter nhận tag `@TC-S5En-nn`). Migration V500–V504 thêm 8 giá trị `ai_purpose` (`lesson_plan`, `lesson_patch`, `class_notice`, `kb_qa`, `grade_ocr`, `grade`, `exam_draft`, `class_errors`; `ADD VALUE IF NOT EXISTS`, task không sửa enum). Cờ `geo.s5.grading.enabled` (S5-E4, US-S5E5-02/03) và `geo.s5.ai-grading.enabled` (S5-E6) mặc định `false` (cờ tắt = API 404, menu ẩn, job không chạy); hồ sơ `test` (IT) và `dev` (`make run`, `make e2e`) bật cả hai. Khóa cấu hình chặng 5 viết dạng chấm (`s5.<khóa>: …`) dưới mốc của task để không trùng khóa `s5:`. Dữ liệu mẫu chung `db/seed/e2e/s5_000_core.sql` (F-S5-001, 002, 010, 011, 050: cô Lan, thầy Khôi, lớp 11A1, 11A2, đề `D-KC-01`) + `db/seed/fixture-ids.d/s5.json` (27 mã F-S5, UUID `00000000-0000-7000-8005-<nnn>`); phần cần bảng mới do task chủ bảng nạp bằng `s5_<nnn>_<feature>_*.sql` của mình với UUID trong `s5.json`. `seed-reset.sh` chạy `e2e/*.sql` theo thứ tự glob của bash (chữ số trước chữ cái): `s5_*` chạy sau mọi tiền tố số (`930_*`); đề `D-KC-01` thuộc bộ `s5_core` chưa cấp cho trường nào (task cần thì tự thêm `catalog_bank_access`). Mốc `T-261128-NN` có trong sql-lint.properties, ArchitectureTest.java, application.yml, Makefile, tệp này, `aigateway/internal/AnthropicPrompts.java` và `MockAiProvider.java`.
+<!-- --- T-261128-52 (S5-E2) --- -->
+<!-- --- T-261128-53 (S5-E1) --- -->
+<!-- --- T-261128-54 (S5-E1, S5-E2 xuất) --- -->
+<!-- --- T-261128-55 (S5-E5) --- -->
+<!-- --- T-261128-56 (S5-E3) --- -->
+<!-- --- T-261128-57 (S5-E4) --- -->
+<!-- --- T-261128-58 (S5-E3) --- -->
+<!-- --- T-261128-59 (S5-E4) --- -->
+<!-- --- T-261128-60 (S5-E4) --- -->
+<!-- --- T-261128-61 (S5-E6) --- -->
+<!-- --- T-261128-62 (S5-E6) --- -->
+<!-- --- T-261128-63 (S5-E2, S5-E3) --- -->
+<!-- --- T-261128-64 (S5-E5) --- -->
+<!-- --- T-261128-65 (S5-E6) --- -->
+<!-- --- FIX chặng 5 (task FIX T-261128-*) --- -->
 <!-- --- FIX (task FIX T-261126-35, 43+) --- -->
 - **E2E theo mức ảnh hưởng (T-261126-45, DECISIONS 26/11):** `make e2e-affected` lấy diff so với `worktree-mvp-wave0` (đổi bằng `BASE=<ref>`), xếp mức theo bản đồ dữ liệu `artifacts/GEO/work/s23/impact-map.json` (luật regex: tệp -> epic sở hữu -> epic phụ thuộc; tệp không khớp luật nào = L2), rồi chạy `scripts/e2e.sh` MỘT lượt: L0 = spec của epic bị đụng + smoke; L1 = L0 + spec các epic phụ thuộc; L2 = trọn bộ; luôn trên `api` + `ui-chromium`, L0/L1 thêm spec P0 điện thoại (`MOBILE_P0`, `*.p0m.ui.spec.ts`) của màn bị đụng trên `mobile-pixel`/`mobile-iphone`. `make e2e-affected ARGS="--dry-run"` chỉ in mức, lý do, danh sách spec và biểu thức `-g`; lượt thật ghi `e2e/evidence/<run>/impact.json`. Thêm module / thư mục dùng chung / epic: sửa bản đồ rồi `make e2e-affected-selftest` (4 diff mẫu, exit 1 nếu lệch). Bộ smoke (~30 test đường chính: đăng nhập, Kho đề, giao bài, làm bài, theo dõi) gắn tag `@smoke`: `make e2e ARGS="-g @smoke"`.

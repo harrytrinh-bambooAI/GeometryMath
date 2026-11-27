@@ -1,13 +1,14 @@
 {
   "_doc": [
     "Bản đồ ảnh hưởng cho make e2e-affected (T-261126-45; DECISIONS 26/11 chiến lược regression; PLAN_code-s23 §2 module↔epic, §4 khoảng migration/seed, §5 tệp sở hữu).",
-    "Phiên bản: v1.0 · 2026-11-26. Sửa tệp này khi thêm module / thư mục dùng chung / epic mới; chạy lại make e2e-affected-selftest.",
+    "Phiên bản: v1.1 · 2026-11-28. Sửa tệp này khi thêm module / thư mục dùng chung / epic mới; chạy lại make e2e-affected-selftest.",
     "rules: duyệt theo thứ tự, luật ĐẦU TIÊN khớp thắng. match = biểu thức chính quy trên đường dẫn tính từ gốc repo.",
     "level: none (tài liệu, test đơn vị, công cụ: chỉ smoke) · L0 (spec của epic sở hữu + smoke) · L1 (L0 + spec các epic phụ thuộc trong deps) · L2 (trọn bộ chromium + api).",
-    "epic: mã epic sở hữu (E1…E7, S2-E1…, S3-E…, CORE = spec ở gốc tests/, THEME = tests/theme); '$1' = nhóm bắt thứ nhất của match (e1 -> E1, s2e1 -> S2-E1).",
+    "epic: mã epic sở hữu (E1…E7, S2-E1…, S3-E…, S5-E…, CORE = spec ở gốc tests/, THEME = tests/theme); '$1' = nhóm bắt thứ nhất của match (e1 -> E1, s2e1 -> S2-E1, s5e1 -> S5-E1).",
     "deps: epic phụ thuộc (L1). '@imports:<thư mục>' = mọi feature web đang import thư mục đó (tính lúc chạy, luôn đủ).",
     "ranges: với migration, nhóm bắt $1 là số phiên bản; số ngoài mọi khoảng = L2.",
-    "Tệp không khớp luật nào = L2. Epic chưa có thư mục spec thì bỏ qua (in 'chưa có spec')."
+    "Tệp không khớp luật nào = L2. Epic chưa có thư mục spec thì bỏ qua (in 'chưa có spec').",
+    "Lịch sử: v1.0 2026-11-26 T-261126-45 tạo · v1.1 2026-11-28 T-261128-51 thêm chặng 5 (s5e*, module lessonplan/exam/assessment/aigrade, khoảng migration V505–V844 theo PLAN_code-s5 §4, seed s5_<nnn>_<feature>_*)."
   ],
   "specDirs": {
     "CORE": "",
@@ -20,7 +21,7 @@
       "note": "cổng cục bộ, không commit"
     },
     {
-      "match": "^app/e2e/tests/(e[1-7]|s[23]e\\d+)/",
+      "match": "^app/e2e/tests/(e[1-7]|s[235]e\\d+)/",
       "level": "L0",
       "epic": "$1",
       "note": "spec + helper của epic"
@@ -66,7 +67,7 @@
       "note": "test đơn vị, quét SQL, kiến trúc: make verify phủ"
     },
     {
-      "match": "^app/server/src/test/java/vn/geo/server/it/(e[1-7]|s[23]e\\d+)/",
+      "match": "^app/server/src/test/java/vn/geo/server/it/(e[1-7]|s[235]e\\d+)/",
       "level": "L0",
       "epic": "$1"
     },
@@ -86,7 +87,7 @@
       "note": "test đơn vị web: make web-build phủ"
     },
     {
-      "match": "^app/web/src/features/(e[1-7]|s[23]e\\d+)/",
+      "match": "^app/web/src/features/(e[1-7]|s[235]e\\d+)/",
       "level": "L0",
       "epic": "$1"
     },
@@ -157,9 +158,11 @@
         "S3-E2",
         "S3-E3",
         "S3-E4",
-        "S3-E5"
+        "S3-E5",
+        "S5-E3",
+        "S5-E4"
       ],
-      "note": "PLAN §2 assignment; luồng học sinh mở bài được giao"
+      "note": "PLAN §2 assignment; luồng học sinh mở bài được giao; PLAN_code-s5 §2 HelpLevel, bài có chấm"
     },
     {
       "match": "^app/server/src/main/java/vn/geo/server/content/",
@@ -212,9 +215,10 @@
         "E4",
         "S2-E8",
         "S3-E3",
-        "S3-E6"
+        "S3-E6",
+        "S5-E5"
       ],
-      "note": "PLAN §2 tracking"
+      "note": "PLAN §2 tracking; PLAN_code-s5 §2 tracking/errors"
     },
     {
       "match": "^app/server/src/main/java/vn/geo/server/learning/",
@@ -227,8 +231,12 @@
     },
     {
       "match": "^app/server/src/main/java/vn/geo/server/(knowledge|answers)/",
-      "level": "L0",
-      "epic": "E4"
+      "level": "L1",
+      "epic": "E4",
+      "deps": [
+        "S5-E3"
+      ],
+      "note": "PLAN_code-s5 §2 knowledge (kho tri thức S5-E3)"
     },
     {
       "match": "^app/server/src/main/java/vn/geo/server/aigateway/",
@@ -239,9 +247,55 @@
         "E2",
         "S2-E3",
         "S2-E4",
-        "S3-E5"
+        "S3-E5",
+        "S5-E1",
+        "S5-E2",
+        "S5-E3",
+        "S5-E5",
+        "S5-E6"
       ],
-      "note": "PLAN §2 aigateway (e1/ai-gateway.ui)"
+      "note": "PLAN §2 aigateway (e1/ai-gateway.ui); PLAN_code-s5 §2 aigateway (8 task AI chặng 5, hạn mức S5-E5)"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/lessonplan/",
+      "level": "L1",
+      "epic": "S5-E1",
+      "deps": [
+        "S5-E3"
+      ],
+      "note": "PLAN_code-s5 §2 lessonplan (giáo án đã duyệt vào kho S5-E3)"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/exam/",
+      "level": "L1",
+      "epic": "S5-E2",
+      "deps": [
+        "S5-E1",
+        "S5-E4",
+        "S5-E5"
+      ],
+      "note": "PLAN_code-s5 §2 exam (xuất DOCX chung với S5-E1; đề dùng cho bài có chấm S5-E4)"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/assessment/",
+      "level": "L1",
+      "epic": "S5-E4",
+      "deps": [
+        "S5-E3",
+        "S5-E5",
+        "S5-E6"
+      ],
+      "note": "PLAN_code-s5 §2 assessment (HelpLevel S5-E3, điểm đã duyệt S5-E5, đề xuất AI S5-E6)"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/aigrade/",
+      "level": "L1",
+      "epic": "S5-E6",
+      "deps": [
+        "S5-E4",
+        "S5-E5"
+      ],
+      "note": "PLAN_code-s5 §2 aigrade"
     },
     {
       "match": "^app/server/src/main/java/vn/geo/server/events/",
@@ -256,9 +310,10 @@
       "level": "L1",
       "epic": "S3-E4",
       "deps": [
-        "S3-E6"
+        "S3-E6",
+        "S5-E5"
       ],
-      "note": "PLAN §2 notify"
+      "note": "PLAN §2 notify; PLAN_code-s5 §2 notify/draft"
     },
     {
       "match": "^app/server/src/main/java/vn/geo/server/settings/",
@@ -315,7 +370,7 @@
     {
       "match": "^app/server/src/main/resources/db/migration/V(\\d+)__",
       "level": "L1",
-      "note": "PLAN §4: khoảng migration theo task; ngoài khoảng (MVP ≤ V99, V100–V109 khung, FIX) = L2",
+      "note": "PLAN §4: khoảng migration theo task; ngoài khoảng (MVP ≤ V99, V100–V109 khung, FIX) = L2; chặng 5 (PLAN_code-s5 §4): V500–V504 khung, khoảng FIX = L2",
       "ranges": [
         {
           "from": 110,
@@ -434,6 +489,127 @@
             "S3-E5",
             "E7"
           ]
+        },
+        {
+          "from": 505,
+          "to": 524,
+          "epic": "S5-E2",
+          "deps": [
+            "S5-E1",
+            "S5-E4"
+          ]
+        },
+        {
+          "from": 525,
+          "to": 544,
+          "epic": "S5-E1",
+          "deps": [
+            "S5-E3"
+          ]
+        },
+        {
+          "from": 555,
+          "to": 574,
+          "epic": "S5-E1",
+          "deps": [
+            "S5-E2"
+          ]
+        },
+        {
+          "from": 575,
+          "to": 594,
+          "epic": "S5-E5",
+          "deps": [
+            "S5-E1",
+            "S5-E2",
+            "S5-E4",
+            "S5-E6"
+          ]
+        },
+        {
+          "from": 605,
+          "to": 624,
+          "epic": "S5-E3",
+          "deps": [
+            "S5-E1"
+          ]
+        },
+        {
+          "from": 625,
+          "to": 644,
+          "epic": "S5-E4",
+          "deps": [
+            "S5-E3",
+            "S5-E6"
+          ]
+        },
+        {
+          "from": 655,
+          "to": 674,
+          "epic": "S5-E3",
+          "deps": [
+            "S5-E4",
+            "E4"
+          ]
+        },
+        {
+          "from": 675,
+          "to": 694,
+          "epic": "S5-E4",
+          "deps": [
+            "S5-E6"
+          ]
+        },
+        {
+          "from": 705,
+          "to": 724,
+          "epic": "S5-E4",
+          "deps": [
+            "S5-E5",
+            "S5-E6"
+          ]
+        },
+        {
+          "from": 725,
+          "to": 744,
+          "epic": "S5-E6",
+          "deps": [
+            "S5-E4"
+          ]
+        },
+        {
+          "from": 755,
+          "to": 774,
+          "epic": "S5-E6",
+          "deps": [
+            "S5-E4",
+            "S5-E5"
+          ]
+        },
+        {
+          "from": 775,
+          "to": 794,
+          "epic": "S5-E2",
+          "deps": [
+            "S5-E3"
+          ]
+        },
+        {
+          "from": 805,
+          "to": 824,
+          "epic": "S5-E5",
+          "deps": [
+            "S5-E4",
+            "S5-E6"
+          ]
+        },
+        {
+          "from": 825,
+          "to": 844,
+          "epic": "S5-E6",
+          "deps": [
+            "S5-E4"
+          ]
         }
       ]
     },
@@ -446,13 +622,19 @@
       ]
     },
     {
-      "match": "^app/db/seed/e2e/\\d+_(e[1-7]|s[23]e\\d+)_",
+      "match": "^app/db/seed/e2e/s5_\\d+_(s5e\\d)[a-z0-9]*_",
+      "level": "L0",
+      "epic": "$1",
+      "note": "seed riêng của task chặng 5 (PLAN_code-s5 P7: s5_<nnn>_<feature>_*); s5_000_core, s5_9xx_fix = L2 (luật app/db/)"
+    },
+    {
+      "match": "^app/db/seed/e2e/\\d+_(e[1-7]|s[235]e\\d+)_",
       "level": "L0",
       "epic": "$1",
       "note": "seed riêng của epic (PLAN §4)"
     },
     {
-      "match": "^app/db/seed/fixture-ids\\.d/(s[23]e\\d+)\\.json$",
+      "match": "^app/db/seed/fixture-ids\\.d/(s[235]e\\d+)\\.json$",
       "level": "L0",
       "epic": "$1"
     },
@@ -559,6 +741,40 @@
       ],
       "level": "L1",
       "serverOnly": true
+    },
+    {
+      "name": "chỉ features/s5e1 -> L0 S5-E1",
+      "files": [
+        "app/web/src/features/s5e1/index.tsx"
+      ],
+      "level": "L0",
+      "epicsExact": [
+        "S5-E1"
+      ]
+    },
+    {
+      "name": "module exam -> L1 gồm S5-E2 + S5-E1",
+      "files": [
+        "app/server/src/main/java/vn/geo/server/exam/internal/X.java"
+      ],
+      "level": "L1",
+      "serverOnly": true,
+      "epicsInclude": [
+        "S5-E2",
+        "S5-E1"
+      ]
+    },
+    {
+      "name": "migration S5-E4 -> L1",
+      "files": [
+        "app/server/src/main/resources/db/migration/V630__s5e4_x.sql"
+      ],
+      "level": "L1",
+      "serverOnly": true,
+      "epicsInclude": [
+        "S5-E4",
+        "S5-E6"
+      ]
     }
   ]
 }
