@@ -392,7 +392,7 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Ngoài phạm vi:** code sản phẩm; xoá ca loại A.
 
 ## Việc: cân chuyên đề Kho đề MVP · ghi 27/11/2026 (owner yêu cầu) · nhánh content-bal
-- **Mục tiêu:** `catalog-mvp.json` mỗi dạng bài ≥ 12 đề, có cả THCS + THPT: thêm HKN-47…70 (Thể tích +4 THPT, Diện tích +9, Mặt cầu +9, Góc +2 THCS); 46 → 70 đề, mỗi đề có `problem-specs.json` cùng mã, engine kiểm hình đạt.
+- **Mục tiêu:** `catalog-mvp.json` mỗi dạng bài 16–20 đề, có cả THCS + THPT: thêm HKN-47…84 (Góc +4, Thể tích +8, Diện tích +13, Mặt cầu +13); 46 → 84 đề, có lời giải từng bước, mỗi đề có `problem-specs.json` cùng mã, engine kiểm hình đạt.
 - **Nguồn:** `app/server/src/main/resources/content/catalog-mvp.json` v1.0 (26/11/2026), `geometry/problem-specs.json`; phân bố hiện tại: Khoảng cách 20, Góc 12, Thể tích 8 (0 THPT), Diện tích 3, Mặt cầu 3.
-- **Xong khi:** IT nạp gói nội dung: 70 đề, 0 đề nhãn "Cần xem lại"; `make bench-mvp` (mock) xanh; `make verify` xanh; bảng phân bố mới ≥ 12/dạng.
+- **Xong khi:** IT nạp gói nội dung: 84 đề, 0 đề nhãn "Cần xem lại"; `make bench-mvp` (mock) xanh; `make verify` xanh; bảng phân bố mới 16–20/dạng.
 - **Ngoài phạm vi:** seed e2e (giữ 6 đề, TC-GEO-0125); đổi engine trừ khi đề hợp lệ bị kiểm sai (ghi rõ); kho Toán 11 trong artifacts/GEO/materials.
