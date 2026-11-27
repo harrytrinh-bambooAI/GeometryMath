@@ -147,6 +147,9 @@ class AccountDeletionS3E5IT extends AbstractE1IT {
     assertThat(deletion.purge(t.plus(Duration.ofDays(30)).plusSeconds(5)))
         .isGreaterThanOrEqualTo(1);
     assertThat(rowsMentioning(an.id())).isEmpty();
+    // Dev-REV-A3: lũy đẳng — chạy lại cùng mốc (nhiều máy chủ, cron lặp) không còn gì để dọn
+    assertThat(deletion.purge(t.plus(Duration.ofDays(30)).plusSeconds(5))).isZero();
+    assertThat(rowsMentioning(an.id())).isEmpty();
     assertThat(
             count(
                 "SELECT count(*) FROM audit_log WHERE org_id = '"
