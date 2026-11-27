@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-28
+Phiên bản: v0.2 · 2026-11-28
 # S5-E5 — Thông báo do trợ lý soạn, tổng hợp lỗi sai của lớp (COP-02), công tắc và hạn mức AI của lớp: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run, PO quyết cao nhất). Nguồn: `PRODUCT-MASTER.md` (22/11/2026) D1 dòng 5 ("trợ lý soạn … thông báo"), C4 "Trợ lý giáo viên: soạn bài, tạo đề, tổng hợp lỗi sai, soạn thông báo", C5 "Trợ lý giáo viên … Không gửi, không công bố, không đổi điểm nếu giáo viên chưa bấm duyệt"; `STAGES-AFTER-MVP.md` Chặng 5 §4 (P0 thông báo; P1 "tổng hợp lỗi phổ biến của lớp theo tiêu chí"), §7, §8 `CopilotDraft`, `FeatureSwitch`; COP-02 (`work/03_decisions.md` D-GEO-078: thẻ "Nên nhắc lại trên lớp" là tổng hợp lỗi sai COP-02 chặng 5); PO-04, PO-65 Q6 (ngưỡng nhận định gộp 5 bài), PO-83, PO-85; task `class_stuck` hiện có trong `AnthropicPrompts.java`; S3-E4-03 (thông báo trong ứng dụng), US-S3E5-04 (công tắc AI phía học sinh).
@@ -8,7 +8,7 @@ Phiên bản: v0.1 · 2026-11-28
 
 **Điều chỉnh khung so với brief.** Thêm US-S5E5-04 (công tắc AI chấm và trợ lý theo lớp, hạn mức lượt AI) vì STAGES §4 P0 có "công tắc tắt AI theo trường, môn" mà multi-tenant ngoài phạm vi: PO thu về mức lớp và giáo viên. Mức epic P1 vì tổng hợp lỗi là P1 ở STAGES §4 và cần dữ liệu điểm đã duyệt của S5-E4/S5-E6; riêng US-S5E5-01 (thông báo) và US-S5E5-04 (công tắc) là P0.
 
-**Ước lượng epic:** dev 9 ngày · test 2,7 ngày · tổng 11,7 ngày công (4 story; bảng chung ở `work/s5/estimate-s5.md`).
+**Ước lượng epic:** dev 10 ngày · test 3 ngày · tổng 13 ngày công (4 story; bảng chung ở `work/s5/estimate-s5.md`).
 
 ## 0. Hướng dẫn đọc, quy ước và dữ liệu mẫu chung (giống nhau ở mọi epic S5)
 
@@ -21,6 +21,7 @@ Phiên bản: v0.1 · 2026-11-28
 - **AI chỉ đề xuất, giáo viên quyết định** (PO-03, C2 nguyên tắc 4): không có đường nào chuyển nội dung AI thành điểm chính thức, tài liệu Đang dùng, đề trong kho, giáo án đã duyệt hay thông báo đã gửi mà thiếu thao tác của giáo viên chủ lớp. Mọi bản nháp AI mang nhãn người "AI soạn" cho tới khi giáo viên duyệt (PO-02, PO-30).
 - **Đáp số do engine** (C2 nguyên tắc 13): AI không bao giờ là nguồn đáp số. Đáp số của câu thuộc kho lấy từ kho (`bo-mau`, `bai-tap`, ngân hàng `de-thi`); câu mới đưa sang engine; không tính được thì nhãn máy "Cần xem lại".
 - Mọi lời gọi AI đi qua module `aigateway` với một task có tên (`lesson_plan`, `lesson_patch`, `exam_draft`, `kb_qa`, `grade`, `grade_ocr`, `notice_draft`, `class_errors`); mỗi lượt ghi `AiCallLog` gồm task, model, phiên bản prompt, token vào/ra, kết quả kiểm máy chủ. Nội dung gửi nhà cung cấp không chứa tên hiển thị, mã người dùng, mã lớp (NFR-GEO-071).
+- **Lượt AI** (BR-S5E5-12): một yêu cầu của người dùng hoặc một việc nền tới một task; gọi lại tự động trong lượt không tính thêm; `grade_ocr`, `grade` tính mỗi trang một lượt. Hạn mức: giáo viên 30 lượt soạn/ngày; lớp 300 hỏi đáp, 200 chấm, 2 000 000 token/ngày; học sinh 30 hỏi đáp/ngày; người vận hành có công tắc tắt khẩn toàn hệ thống theo task.
 - AI giữ giả lập trong CI (D-GEO-047): `MockAiProvider` trả câu trả lời cố định theo dữ liệu mẫu `F-S5-090…099`; không AC nào kỳ vọng chất lượng câu chữ AI thật. Chất lượng AI thật đo bằng bench ngoài CI theo `materials/baseline/KPI.md` v1.0.
 - Phản hồi chứa bài nộp, điểm, lời giải hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145).
 - Thiết bị: giáo viên dùng web trên máy tính; học sinh iPhone để chụp bài, iPad để làm và xem (PWA, PO-65 Q9).
@@ -94,7 +95,9 @@ Phiên bản: v0.1 · 2026-11-28
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S5E5-01 | Loại thông báo: Nhắc hạn nộp · Lịch kiểm tra · Đã trả bài · Tự do; máy chủ điền dữ kiện (tên bài, hạn, giờ) từ dữ liệu lớp, AI chỉ viết câu chữ (task `notice_draft`); nội dung gửi AI không có tên hay mã học sinh. | C5; NFR-GEO-071 |
-| BR-S5E5-02 | Nháp `CopilotDraft` loại `notice` nhãn "AI soạn"; chỉ gửi khi giáo viên bấm Gửi; nội dung ≤ 1 000 ký tự; gửi tới học sinh Đang học của lớp tại thời điểm gửi; nhãn trên thông báo đã gửi là tên giáo viên, không có chữ "AI". | STAGES §7; PO-03 (tinh thần); QS5-25 |
+| BR-S5E5-02 | Nháp `CopilotDraft` loại `notice` nhãn "AI soạn"; chỉ gửi khi giáo viên bấm Gửi; nội dung ≤ 1 000 ký tự; gửi tới học sinh Đang học của lớp tại thời điểm gửi; người gửi là giáo viên (nhãn ở BR-S5E5-15). | STAGES §7; PO-03 (tinh thần); QS5-25 |
+| BR-S5E5-14 | Trước khi gửi AI (task `notice_draft`, `class_errors`), máy chủ thay mọi tên hiển thị và mã người dùng của học sinh lớp có trong văn bản (đối chiếu danh sách lớp, so cả bản bỏ dấu) bằng "[HS]"; đầu ra AI có tên học sinh của lớp thì bị loại khỏi nháp và gắn "AI chưa chắc". | soát độc lập #4; PO-04 |
+| BR-S5E5-15 | Chi tiết thông báo đã gửi có dòng nhỏ "Soạn với trợ lý AI, thầy cô đã duyệt" khi nháp gốc do trợ lý soạn (PO-02); người gửi là giáo viên. | PO-02; soát độc lập #24; QS5-25 |
 | BR-S5E5-03 | Dữ kiện trong nháp (hạn, giờ) phải khớp dữ liệu lớp; AI viết sai dữ kiện thì máy chủ thay bằng giá trị đúng và gắn "AI chưa chắc" ở chỗ đó. | C2 nguyên tắc 13 (tinh thần: dữ kiện do máy) |
 
 - **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
@@ -110,6 +113,24 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: nháp ở SC1 chưa bấm Gửi
 - When: Bình An gọi `GET /api/notifications`
 - Then: không có thông báo nào từ nháp đó
+
+**US-S5E5-01-FC4 — AI chèn tên học sinh vào thông báo thì bị loại khỏi nháp** · Nguồn: BR-S5E5-14
+- Given: giả lập `notice_draft` trả "Nhắc Chi Mai và cả lớp nộp bài trước 20:00"
+- When: gửi tạo nháp nhắc hạn BC-01
+- Then: nháp không chứa "Chi Mai"; câu đó gắn "AI chưa chắc"; yêu cầu gửi AI không chứa tên hay mã học sinh nào của 11A1
+- Dữ liệu nhập: F-S5-010, F-S5-052
+
+**US-S5E5-01-SC3 — Thông báo đã gửi có dòng "Soạn với trợ lý AI, thầy cô đã duyệt"** · Nguồn: BR-S5E5-15
+- Given: nháp ở SC1 đã gửi
+- When: Bình An gọi `GET /api/notifications/{id}`
+- Then: người gửi "Cô Lan"; có dòng "Soạn với trợ lý AI, thầy cô đã duyệt"
+- Dữ liệu nhập: F-S5-001, F-S5-010
+
+**US-S5E5-01-FC5 — Lượt soạn thứ 31 trong ngày bị chặn ở trợ lý thông báo** · Nguồn: BR-S5E5-12
+- Given: cô Lan đã dùng 30 lượt soạn hôm nay (giáo án và đề)
+- When: gửi tạo nháp thông báo
+- Then: RATE_LIMITED, MSG-S5-06; không gọi AI
+- Dữ liệu nhập: F-S5-001; bộ đếm 30/30
 
 **US-S5E5-01-FC1 — AI viết sai giờ hạn thì máy chủ thay bằng giờ đúng** · Nguồn: BR-S5E5-03
 - Given: giả lập trả "hạn nộp 21:00 thứ Sáu"
@@ -155,6 +176,12 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: kết quả ở SC1
 - When: mở thẻ "Cả lớp hay sai ở đâu"; bấm "Bài 2" ở nhận định 1
 - Then: mở màn xem bài nộp tương ứng (ảnh, điểm đã duyệt); thẻ không có cột xếp hạng hay phần trăm
+
+**US-S5E5-02-SC3 — Nhận xét của giáo viên có tên học sinh được gỡ trước khi gửi AI** · Nguồn: BR-S5E5-14
+- Given: BC-01 có 6 bài đã duyệt; nhận xét BN-02 "Chi Mai nhầm SB, xem lại"; nhận xét BN-07 "minh quan thieu buoc dung AH"
+- When: gọi error-summary
+- Then: yêu cầu gửi `class_errors` có "[HS] nhầm SB" và "[HS] thieu buoc dung AH"; không có "Chi Mai", "minh quan", mã `HS-` nào
+- Dữ liệu nhập: F-S5-054, F-S5-057; nhận xét có dấu và không dấu
 
 **US-S5E5-02-FC1 — Dưới 5 bài thì không tổng hợp** · Nguồn: BR-S5E5-04
 - Given: BC-01 có 4 bài đã duyệt
@@ -208,12 +235,13 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: đề của bài thuộc dạng chưa có trong ngân hàng
 - When: gọi suggestions
 - Then: danh sách câu rỗng kèm câu "Kho chưa có bài cùng dạng"; mục tài liệu vẫn hiện nếu có
+- Dữ liệu nhập: F-S5-032, F-S5-040; đề dạng không có trong ngân hàng
 
 ---
 
-## US-S5E5-04 — Công tắc AI chấm và trợ lý theo lớp, tắt khẩn, hạn mức lượt AI mỗi lớp và nhật ký dùng AI cho giáo viên
+## US-S5E5-04 — Công tắc AI theo lớp, tắt khẩn toàn hệ thống, định nghĩa lượt, hạn mức theo lớp, học sinh và token, báo cáo dùng AI
 - **Story:** Là giáo viên, tôi muốn tắt ngay AI chấm hoặc trợ lý của một lớp và biết lớp đã dùng bao nhiêu lượt AI, để giữ quyền quyết định và chi phí trong tay. · Loại Logic · P0
-- **Ước lượng: dev 2 ngày · test 0,6 ngày**
+- **Ước lượng: dev 3 ngày · test 0,9 ngày**
 - **Nguồn:** STAGES §4 P0 "công tắc tắt AI theo trường, môn", §6 C5-09 ("đang tắt khẩn cấp"), §8 `FeatureSwitch`; US-S3E5-04 (công tắc AI phía học sinh); PO-85; C2 nguyên tắc 10
 - **Góc nhìn người vận hành:** cô Lan tắt AI chấm khi thấy chấm lệch bất thường; ca đáng kể: tắt giữa lúc có bài đang chấm nền, lớp hết lượt AI giữa buổi tối.
 - **Phụ thuộc:** US-S3E5-04; `aigateway` (`AiCallLog`)
@@ -222,7 +250,9 @@ Phiên bản: v0.1 · 2026-11-28
 |---|---|---|
 | BR-S5E5-10 | `FeatureSwitch` theo lớp có ba công tắc độc lập: AI phía học sinh (đã có ở US-S3E5-04), AI chấm, Trợ lý (giáo án, đề, thông báo, tổng hợp lỗi); mặc định AI chấm tắt, Trợ lý bật (QS5-26); mỗi lần đổi ghi `AuditEvent`. | STAGES §8; QS5-26 |
 | BR-S5E5-11 | Tắt AI chấm có hiệu lực ngay: việc chấm nền đang chờ bị huỷ, đề xuất về sau không được lưu; bài đã có đề xuất vẫn giữ đề xuất. | STAGES §6 C5-09 |
-| BR-S5E5-12 | Hạn mức lượt AI mỗi lớp mỗi ngày (giờ Việt Nam): 300 lượt cho hỏi đáp học sinh, 200 lượt chấm (đọc chữ + đề xuất); vượt thì RATE_LIMITED (MSG-S5-60), học sinh vẫn làm bài, bài vẫn chấm tay. Hạn mức soạn của giáo viên ở BR-S5E1-08. | QS5-04 |
+| BR-S5E5-12 | **Lượt** = một yêu cầu của người dùng hoặc một việc nền tới một task AI; lần gọi lại tự động trong cùng lượt không tính thêm; với `grade_ocr` và `grade` mỗi trang ảnh tính 1 lượt. Hạn mức mỗi ngày (giờ Việt Nam): mỗi giáo viên 30 lượt soạn (giáo án, vá, đề, thông báo, tổng hợp lỗi); mỗi lớp 300 lượt hỏi đáp và 200 lượt chấm; mỗi học sinh 30 lượt hỏi đáp; mỗi lớp trần 2 000 000 token (vào + ra) cho mọi task. Đạt 80 % hạn mức hoặc trần token thì giáo viên nhận cảnh báo một lần trong ngày. Vượt thì RATE_LIMITED (MSG-S5-60) hoặc "AI không chấm"; học sinh vẫn làm bài, bài vẫn chấm tay. "Đọc lại" bản đọc chữ tối đa 3 lần mỗi bài. | QS5-04; soát độc lập #6 |
+| BR-S5E5-16 | Người vận hành có công tắc tắt khẩn toàn hệ thống theo từng task AI (`geo.ai.kill.<task>`, qua API quản trị có vai Vận hành), hiệu lực ≤ 10 giây, ghi `AuditEvent`; khi tắt, mọi lớp xử lý như công tắc lớp đang tắt. | STAGES §6 C5-09 "tắt khẩn cấp"; soát độc lập #14 |
+| BR-S5E5-17 | Báo cáo dùng trợ lý của giáo viên: số nháp theo loại (giáo án, bộ đề, đề nháp, thông báo), tỉ lệ được duyệt hoặc gửi, trong đó tỉ lệ duyệt sau khi sửa (có ít nhất một bản vá nhận hoặc sửa tay). | brief mục tiêu; soát độc lập #18 |
 | BR-S5E5-13 | Màn "Dùng AI" của lớp: số lượt theo task trong 30 ngày và số lượt bị chặn; không có tên học sinh. | C2 nguyên tắc 10 |
 
 - **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
@@ -249,8 +279,51 @@ Phiên bản: v0.1 · 2026-11-28
 - When: Bình An gửi `PUT /api/classes/11A1/switches`; thầy Khôi gửi cùng yêu cầu
 - Then: Bình An FORBIDDEN; thầy Khôi NOT_FOUND; công tắc không đổi
 
+**US-S5E5-04-FC3 — Lượt chấm thứ 201 của lớp: bài thành "AI không chấm", vẫn chấm tay** · Nguồn: BR-S5E5-12
+- Given: 11A1 đã dùng 200 lượt chấm hôm nay; BC-01 chế độ AI đề xuất
+- When: Ngọc Anh nộp bài 2 trang
+- Then: không có dòng `AiCallLog` task `grade` hay `grade_ocr` mới; bài cờ "AI không chấm", lý do "lớp đã hết lượt AI hôm nay"; cô Lan chấm tay được
+- Dữ liệu nhập: F-S5-010 (Ngọc Anh); bộ đếm chấm 200/200 (biên: 199 còn chấm 1 trang)
+
+**US-S5E5-04-FC4 — Một học sinh hết 30 lượt hỏi, bạn cùng lớp vẫn hỏi được** · Nguồn: BR-S5E5-12
+- Given: Bình An đã hỏi 30 lượt hôm nay; lớp mới dùng 45/300
+- When: Bình An hỏi lượt 31; Chi Mai hỏi
+- Then: Bình An RATE_LIMITED kèm `Retry-After`; Chi Mai nhận câu trả lời
+- Dữ liệu nhập: F-S5-010; bộ đếm Bình An 30/30, lớp 45/300
+
+**US-S5E5-04-SC3 — Gọi lại tự động không tính thêm lượt; mỗi trang chấm tính một lượt** · Nguồn: BR-S5E5-12
+- Given: giả lập `grade` lỗi lần 1, đạt lần 2; BN-01 có 2 trang
+- When: chờ chấm nền BN-01
+- Then: bộ đếm chấm của lớp tăng 2 (2 trang `grade_ocr`) + 2 (2 trang `grade`) = 4, không tính lần gọi lại; `AiCallLog` vẫn ghi đủ mọi lần gọi
+- Dữ liệu nhập: F-S5-053, F-S5-090
+
+**US-S5E5-04-SC4 — Đạt 80 % trần token thì giáo viên được cảnh báo một lần** · Nguồn: BR-S5E5-12
+- Given: 11A1 đã dùng 1 590 000 token hôm nay
+- When: một lượt hỏi đáp dùng thêm 20 000 token; một lượt nữa dùng thêm 20 000 token
+- Then: sau lượt đầu (1 610 000 ≥ 80 %) cô Lan có một thông báo cảnh báo; sau lượt thứ hai không có cảnh báo mới
+- Dữ liệu nhập: bộ đếm token 1 590 000 / 2 000 000 (biên 1 600 000)
+
+**US-S5E5-04-FC5 — "Đọc lại" lần thứ 4 bị chặn** · Nguồn: BR-S5E5-12
+- Given: BN-01 đã bấm "Đọc lại" 3 lần
+- When: cô Lan gửi `POST /api/submissions/BN-01/ocr/retry`
+- Then: RATE_LIMITED; không gọi `grade_ocr`
+- Dữ liệu nhập: F-S5-053; bộ đếm đọc lại 3/3
+
+**US-S5E5-04-SC5 — Người vận hành tắt khẩn task `kb_qa` toàn hệ thống** · Nguồn: BR-S5E5-16
+- Given: người vận hành có vai Vận hành; 11A1 và 10B đang bật AI phía học sinh
+- When: gửi `PUT /api/admin/ai/kill` `{"task":"kb_qa","off":true}`; sau 10 giây Bình An và Mi Na hỏi
+- Then: cả hai nhận thông báo AI đang tắt, không gọi AI; `AuditEvent` ghi người vận hành; giáo viên không đổi được công tắc này (FORBIDDEN)
+- Dữ liệu nhập: F-S5-010, F-S5-002 (10B)
+
+**US-S5E5-04-SC6 — Báo cáo tỉ lệ nháp trợ lý được duyệt sau khi sửa** · Nguồn: BR-S5E5-17
+- Given: cô Lan trong 30 ngày có 10 giáo án nháp: 6 duyệt (4 có sửa), 4 bỏ; 3 thông báo nháp: 3 gửi (1 có sửa)
+- When: gọi `GET /api/copilot/usage?days=30`
+- Then: giáo án: duyệt 60 %, duyệt sau sửa 40 % (n = 10); thông báo: gửi 100 %, gửi sau sửa 33 % (n = 3)
+- Dữ liệu nhập: F-S5-001, F-S5-021; số nháp như Given
+
 ## Lịch sử
 
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-28 | Tạo story, BR, AC và ước lượng chặng 5 (goal run) | agent spec-s5 (PO → BA → QC) |
+| v0.2 | 2026-11-28 | Sửa theo `work/s5/review-independent.md` (27 lỗi) | agent spec-s5 |

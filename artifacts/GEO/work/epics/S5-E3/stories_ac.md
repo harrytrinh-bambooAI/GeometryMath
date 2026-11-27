@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-28
+Phiên bản: v0.2 · 2026-11-28
 # S5-E3 — Kho tri thức của giáo viên, hỏi đáp của học sinh theo kho, kiểm soát đáp án đầy đủ: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run, PO quyết cao nhất). Nguồn: `PRODUCT-MASTER.md` (22/11/2026) D1 dòng 5, D2 D-08 ("bản đầy đủ ở chặng 5"), C4 "Tri thức do giáo viên kiểm soát", C5 "Tri thức…", "Kiểm soát đáp án", "Hỏi đáp theo giáo trình"; `STAGES-AFTER-MVP.md` Chặng 5 §5 luồng C, §6 C5-07, §7, §8 (`KnowledgeItem`, `KnowledgeVersion`, `KnowledgeGrant`, `AIInteraction`, `AIPolicyDecision`); PO-33, PO-34 (Final), PO-37, PO-43, PO-44, PO-49; ADR-GEO-14 (KS-1…KS-5, PO-79); NFR-GEO-020…022, 071; mã hiện có: `knowledge` (LectureCatalog), task `qa` trong `AnthropicPrompts.java`; `materials/PLAN-kho-bai-giang.md` (kho 3 tầng, mã kiến thức cố định).
@@ -10,7 +10,7 @@ Phiên bản: v0.1 · 2026-11-28
 
 **Phạm vi PO-43.** Ngoại lệ "bài giảng khái niệm AI viết chưa duyệt vẫn dùng làm nguồn" chỉ áp cho bài giảng mẫu của hệ thống (MVP). Kho tri thức do giáo viên tự quản lý theo STAGES §7: AI học sinh chỉ dùng tài liệu "Đang dùng" (QS5-10).
 
-**Ước lượng epic:** dev 15 ngày · test 4,5 ngày · tổng 19,5 ngày công (6 story; bảng chung ở `work/s5/estimate-s5.md`).
+**Ước lượng epic:** dev 16 ngày · test 4,8 ngày · tổng 20,8 ngày công (7 story; bảng chung ở `work/s5/estimate-s5.md`).
 
 ## 0. Hướng dẫn đọc, quy ước và dữ liệu mẫu chung (giống nhau ở mọi epic S5)
 
@@ -23,6 +23,7 @@ Phiên bản: v0.1 · 2026-11-28
 - **AI chỉ đề xuất, giáo viên quyết định** (PO-03, C2 nguyên tắc 4): không có đường nào chuyển nội dung AI thành điểm chính thức, tài liệu Đang dùng, đề trong kho, giáo án đã duyệt hay thông báo đã gửi mà thiếu thao tác của giáo viên chủ lớp. Mọi bản nháp AI mang nhãn người "AI soạn" cho tới khi giáo viên duyệt (PO-02, PO-30).
 - **Đáp số do engine** (C2 nguyên tắc 13): AI không bao giờ là nguồn đáp số. Đáp số của câu thuộc kho lấy từ kho (`bo-mau`, `bai-tap`, ngân hàng `de-thi`); câu mới đưa sang engine; không tính được thì nhãn máy "Cần xem lại".
 - Mọi lời gọi AI đi qua module `aigateway` với một task có tên (`lesson_plan`, `lesson_patch`, `exam_draft`, `kb_qa`, `grade`, `grade_ocr`, `notice_draft`, `class_errors`); mỗi lượt ghi `AiCallLog` gồm task, model, phiên bản prompt, token vào/ra, kết quả kiểm máy chủ. Nội dung gửi nhà cung cấp không chứa tên hiển thị, mã người dùng, mã lớp (NFR-GEO-071).
+- **Lượt AI** (BR-S5E5-12): một yêu cầu của người dùng hoặc một việc nền tới một task; gọi lại tự động trong lượt không tính thêm; `grade_ocr`, `grade` tính mỗi trang một lượt. Hạn mức: giáo viên 30 lượt soạn/ngày; lớp 300 hỏi đáp, 200 chấm, 2 000 000 token/ngày; học sinh 30 hỏi đáp/ngày; người vận hành có công tắc tắt khẩn toàn hệ thống theo task.
 - AI giữ giả lập trong CI (D-GEO-047): `MockAiProvider` trả câu trả lời cố định theo dữ liệu mẫu `F-S5-090…099`; không AC nào kỳ vọng chất lượng câu chữ AI thật. Chất lượng AI thật đo bằng bench ngoài CI theo `materials/baseline/KPI.md` v1.0.
 - Phản hồi chứa bài nộp, điểm, lời giải hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145).
 - Thiết bị: giáo viên dùng web trên máy tính; học sinh iPhone để chụp bài, iPad để làm và xem (PWA, PO-65 Q9).
@@ -83,6 +84,7 @@ Phiên bản: v0.1 · 2026-11-28
 | MSG-S5-23 | Toast | "Phiên bản này đã được dùng, sửa sẽ tạo phiên bản mới." | — |
 | MSG-S5-24 | Page state | "Câu trả lời chưa an toàn để hiện. Em thử hỏi cách khác hoặc xem gợi ý." | — |
 | MSG-S5-25 | Toast | "Đã ghi báo cáo. Cảm ơn thầy cô." | — |
+| MSG-S5-26 | Page state | "Câu em hỏi AI và câu trả lời được lưu tới hết năm học; thầy cô lớp em đọc được để giúp em." | — |
 
 ---
 
@@ -134,6 +136,7 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: tệp ở SC1 đã có trong kho
 - When: tải lại đúng tệp đó
 - Then: trả 200 kèm id tài liệu đã có và cờ `duplicate = true`; số phiên bản không đổi
+- Dữ liệu nhập: F-S5-001; tệp "Phieu-on-chuong-VII.docx" 240 KB tải lần hai
 
 **US-S5E3-01-FC4 — Giáo viên khác và học sinh không đọc được kho của cô Lan** · Nguồn: quy ước chung
 - Given: kho F-S5-040
@@ -180,19 +183,20 @@ Phiên bản: v0.1 · 2026-11-28
 
 ---
 
-## US-S5E3-03 — Hỏi đáp của học sinh dựa trên kho đã gắn, luôn kèm nguồn; không có tài liệu thì nói rõ
+## US-S5E3-03 — Hỏi đáp của học sinh dựa trên kho đã gắn, luôn kèm nguồn, thông báo riêng tư trước lần hỏi đầu
 - **Story:** Là học sinh, tôi muốn hỏi AI khi làm bài và nhận câu trả lời lấy từ tài liệu thầy cô đã duyệt, có ghi rõ lấy từ đâu, để tin được và mở lại tài liệu đó. · Loại Logic · P0
-- **Ước lượng: dev 3 ngày · test 0,9 ngày** — task `kb_qa` mới (mở rộng `qa`), bộ truy xuất mục tài liệu bằng tìm kiếm toàn văn PostgreSQL (QS5-09), kiểm nguồn hợp lệ.
+- **Ước lượng: dev 2 ngày · test 0,6 ngày** — đã tách theo soát độc lập #15: bộ truy xuất sang US-S5E3-07; story này còn task `kb_qa` (mở rộng `qa`), kiểm nguồn hợp lệ, thông báo riêng tư.
 - **Nguồn:** PO-33, PO-34 (Final); PO-37, PO-44; STAGES Ch5 §5 luồng C; C5 "Hỏi đáp theo giáo trình"; task `qa` hiện có (QA_HEAD: `kind`, `reply`, `source`)
 - **Góc nhìn người vận hành:** 8 em 11A1 hỏi rải rác trong buổi tối trước hạn; ca đáng kể: lớp chưa có tài liệu nào, câu hỏi ngoài môn, AI dẫn nguồn không có trong danh sách.
 - **Phụ thuộc:** US-S5E3-01, 02; US-S5E3-04 (kiểm trước khi gọi); US-S5E3-05 (kiểm đầu ra)
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S5E3-08 | Máy chủ chọn tối đa 5 mục từ các tài liệu được gắn cho lớp hoặc bài đang làm (phiên bản Đang dùng) cộng bài giảng mẫu của hệ thống theo PO-43; chỉ các mục này được gửi cho AI. | STAGES §7; QS5-09 |
+| BR-S5E3-08 | Máy chủ chọn tối đa 5 mục từ các tài liệu được gắn cho lớp hoặc bài đang làm (phiên bản Đang dùng) cộng bài giảng mẫu của hệ thống **đã mang nhãn "Giáo viên đã duyệt"** (Giáo viên mẫu); bài giảng AI viết chưa duyệt (ngoại lệ PO-43) **không** làm nguồn ở chặng 5. Chỉ các mục này được gửi cho AI. Nguồn hiện kèm loại: "Tài liệu của thầy cô" hoặc "Bài giảng mẫu". | STAGES §7; QS5-09 |
 | BR-S5E3-09 | Câu trả lời `concept`, `hint`, `explain_step` phải có `source` là một mục trong danh sách đã gửi; nguồn không thuộc danh sách thì bỏ câu trả lời và trả MSG-S5-20. Màn hiện nguồn dạng "Theo: Ghi chú Khoảng cách 11A1 · v2 · mục Hệ thức 1/AH²" bấm mở được mục đó. | PO-33; PO-34 |
 | BR-S5E3-10 | Không có mục nào khớp (điểm truy xuất dưới ngưỡng) thì không gọi AI, trả MSG-S5-20. | STAGES §5 luồng C ngoại lệ |
 | BR-S5E3-11 | Nội dung gửi AI không có tên hiển thị, mã người dùng, mã lớp; câu hỏi của học sinh nằm trong thẻ dữ liệu. | NFR-GEO-071 |
+| BR-S5E3-22 | Trước lần hỏi AI đầu tiên ở chặng 5, học sinh xem MSG-S5-26 và bấm "Em đã hiểu"; ghi cờ đã đọc cùng phiên bản văn bản; chưa bấm thì không gửi được câu hỏi. | soát độc lập #5; US-S3E5-02 |
 
 - **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
 
@@ -227,6 +231,59 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: như SC1
 - When: Bình An hỏi như SC1
 - Then: yêu cầu ở nhà cung cấp giả lập không chứa "Bình An", `HS-4P9T-37WD`, `HK-4P7Q`
+
+**US-S5E3-03-SC3 — Lần hỏi đầu phải xác nhận thông báo riêng tư** · Nguồn: BR-S5E3-22
+- Given: Bình An chưa đọc MSG-S5-26
+- When: mở tab Hỏi đáp của BC-01; gõ câu hỏi; bấm "Em đã hiểu" rồi Gửi
+- Then: trước khi bấm, nút Gửi mờ và hiện MSG-S5-26; sau khi bấm, cờ đã đọc lưu phiên bản `privacy-qa-s5-1.0` và câu hỏi được gửi
+- Dữ liệu nhập: F-S5-010 (Bình An); câu "Khoảng cách từ điểm đến mặt phẳng là gì?"
+
+**US-S5E3-03-SC4 — Nguồn là bài giảng mẫu đã duyệt thì ghi loại "Bài giảng mẫu"; bài giảng AI chưa duyệt không được gửi** · Nguồn: BR-S5E3-08
+- Given: lớp 11A2 không có tài liệu gắn; hệ thống có bài giảng mẫu "Mặt phẳng trung trực" nhãn "Giáo viên đã duyệt" và `TL-03` nhãn "AI soạn" cùng chủ đề
+- When: Quốc Bảo hỏi "Mặt phẳng trung trực là gì?"
+- Then: danh sách mục gửi AI có bài giảng mẫu, không có `TL-03`; câu trả lời ghi nguồn loại "Bài giảng mẫu"
+- Dữ liệu nhập: F-S5-011, F-S5-040 (`TL-03`)
+
+---
+
+## US-S5E3-07 — Bộ truy xuất mục tài liệu: tìm kiếm toàn văn tiếng Việt, ưu tiên mã kiến thức, ngưỡng điểm
+- **Story:** Là học sinh, tôi muốn AI tìm đúng mục trong tài liệu thầy cô cho câu tôi hỏi, kể cả khi tôi gõ không dấu, để câu trả lời sát bài. · Loại Logic · P0
+- **Ước lượng: dev 2 ngày · test 0,6 ngày** — tách khỏi US-S5E3-03 theo soát độc lập: cấu hình tìm kiếm toàn văn tiếng Việt bỏ dấu (gồm spike 0,5 ngày), xếp hạng, ngưỡng.
+- **Nguồn:** QS5-09; PLAN-kho-bai-giang §3 ("mục ngắn rõ cho RAG", mã kiến thức cố định); soát độc lập #15
+- **Góc nhìn người vận hành:** chạy trên mọi lượt hỏi; ca đáng kể: gõ không dấu, câu hỏi rất ngắn, tài liệu dài 200 mục.
+- **Phụ thuộc:** US-S5E3-01, 02
+
+| BR | Quy tắc | Nguồn |
+|---|---|---|
+| BR-S5E3-24 | Truy xuất bằng tìm kiếm toàn văn PostgreSQL trên tiêu đề và thân mục, chuẩn hoá bỏ dấu và chữ thường; mục có mã kiến thức `KT11-…` trùng mã của đề đang làm được cộng điểm; lấy tối đa 5 mục điểm ≥ ngưỡng `geo.kb.minScore` (mặc định 0,1 theo `ts_rank_cd` chuẩn hoá); dưới ngưỡng thì coi là không có mục (BR-S5E3-10). Thời gian truy xuất p95 ≤ 150 ms với kho 2 000 mục. | QS5-09 |
+
+- **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
+
+### Tiêu chí chấp nhận
+
+**US-S5E3-07-SC1 — Gõ không dấu vẫn tìm đúng mục** · Nguồn: BR-S5E3-24
+- Given: `TL-01` v2 có mục "Hệ thức 1/AH²" gắn mã `KT11-C07-CT-003`, gắn 11A1
+- When: gọi API truy xuất thử (móc e2e) với "he thuc 1/AH2 khoang cach" cho bài BC-01
+- Then: mục "Hệ thức 1/AH²" đứng đầu; không quá 5 mục
+- Dữ liệu nhập: F-S5-040, F-S5-050; câu "he thuc 1/AH2 khoang cach"
+
+**US-S5E3-07-SC2 — Mục trùng mã kiến thức của đề được xếp trước** · Nguồn: BR-S5E3-24
+- Given: hai mục cùng có chữ "khoảng cách": một gắn `KT11-C07-CT-003`, một không gắn mã
+- When: truy xuất "cách tính khoảng cách" cho BC-01
+- Then: mục gắn `KT11-C07-CT-003` đứng trước
+- Dữ liệu nhập: F-S5-040; câu "cách tính khoảng cách"
+
+**US-S5E3-07-FC1 — Điểm dưới ngưỡng thì không trả mục nào** · Nguồn: BR-S5E3-24
+- Given: kho 11A1 chỉ có tài liệu chương VII
+- When: truy xuất "đạo hàm của hàm hợp"
+- Then: danh sách rỗng; lượt hỏi tương ứng trả MSG-S5-20 và không gọi AI
+- Dữ liệu nhập: F-S5-040; câu "đạo hàm của hàm hợp"
+
+**US-S5E3-07-FC2 — Truy xuất p95 ≤ 150 ms với kho 2 000 mục** · Nguồn: BR-S5E3-24
+- Given: kho thử 2 000 mục gắn 11A1
+- When: gửi 200 truy vấn mẫu
+- Then: p95 ≤ 150 ms
+- Dữ liệu nhập: kho thử 2 000 mục; 200 truy vấn từ bộ câu thử
 
 ---
 
@@ -283,10 +340,10 @@ Phiên bản: v0.1 · 2026-11-28
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S5E3-15 | Mọi câu trả lời được đệm trọn và qua KS-1…KS-5 trước khi tới thiết bị; bài có chấm dùng `answer_forms` do engine tính khi tạo bài. Lỗi hoặc quá 200 ms thì đóng (KS-5). | ADR-GEO-14 |
+| BR-S5E3-15 | Mọi câu trả lời được đệm trọn và qua KS-1…KS-5 trước khi tới thiết bị; bài có chấm dùng `answer_forms` do engine tính khi tạo bài. Bộ kiểm lỗi hoặc tự nó chạy quá 200 ms (đo riêng bước kiểm, từ lúc nhận trọn câu trả lời AI tới lúc có quyết định; không gồm thời gian AI) thì đóng (KS-5). | ADR-GEO-14 |
 | BR-S5E3-16 | Mục tài liệu chứa đáp số của bài đang khoá (khớp KS-1/KS-2) không được gửi cho AI khi bài còn khoá. | C5; QS5-13 |
 | BR-S5E3-17 | Không gửi cho AI và không trả cho học sinh: ghi chú riêng của giáo viên (trường `ghi_chu_rieng`), hướng dẫn chấm, rubric chi tiết, bài nộp và câu hỏi của học sinh khác. | C5 "không lộ … ghi chú riêng của giáo viên, hay bài của học sinh khác"; STAGES Ý 10 "lộ rubric" |
-| BR-S5E3-18 | Mỗi lượt ghi một `AIPolicyDecision`: `allowed` · `blocked` (mã luật KS-n hoặc bước kiểm trước) · `error_closed`, kèm id `AIInteraction`; giữ 1 năm học (QS5-14). | STAGES §8; ADR-GEO-14 |
+| BR-S5E3-18 | Mỗi lượt ghi một `AIPolicyDecision`: `allowed` · `blocked` (mã luật KS-n hoặc bước kiểm trước) · `error_closed`, kèm id `AIInteraction`; giữ tới hết năm học (QS5-14); xoá tài khoản học sinh thì trong 24 giờ xoá `AIInteraction` và `AIPolicyDecision` của em, chỉ giữ bộ đếm theo luật không gắn người. | STAGES §8; ADR-GEO-14; soát độc lập #5 |
 
 - **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
 
@@ -322,6 +379,24 @@ Phiên bản: v0.1 · 2026-11-28
 - When: Bình An hỏi như SC1
 - Then: phản hồi MSG-S5-24 và nút Thử lại; không có chữ nào của câu trả lời AI; `AIPolicyDecision` = `error_closed`
 
+**US-S5E3-05-SC4 — Bộ câu thử lộ đáp án chạy trọn: số lần lộ = 0** · Nguồn: BR-S5E3-15, 16, 17; NFR-GEO-020
+- Given: bộ câu thử cố định `artifacts/GEO/work/s5/fixtures/firewall-s5.json` (tạo trong story này, ≥ 60 câu: 20 moi đáp số trực tiếp, 15 qua tài liệu giáo viên có đáp số, 10 đổi vai hoặc tiêm lệnh, 10 xác nhận/phủ nhận giá trị (KS-4), 5 hỏi bài của bạn, rubric, ghi chú riêng); BC-01 còn khoá; giả lập trả câu chứa đáp số cho mọi câu
+- When: chạy lần lượt 60 câu qua `POST /api/qa` bằng tài khoản Bình An; đếm phản hồi chứa một dạng của `a√6/3` (KS-1/KS-2), ghi chú riêng, nội dung BN-02 hay rubric
+- Then: số lần lộ = 0/60; mỗi câu có một `AIPolicyDecision`; báo cáo theo nhóm câu kèm luật đã chặn
+- Dữ liệu nhập: `fixtures/firewall-s5.json` (60 câu); F-S5-050, F-S5-052, F-S5-094b
+
+**US-S5E3-05-FC4 — Bộ kiểm chạy quá 200 ms thì đóng** · Nguồn: BR-S5E3-15
+- Given: móc e2e làm bộ kiểm chậm 250 ms; giả lập AI trả sau 3 giây
+- When: Bình An hỏi câu khái niệm
+- Then: phản hồi MSG-S5-24, `AIPolicyDecision` = `error_closed`, `rule_code` = `ERR_TIMEOUT`; với móc chậm 150 ms thì câu trả lời được hiện (3 giây của AI không tính vào 200 ms)
+- Dữ liệu nhập: độ trễ bộ kiểm 250 ms và 150 ms (biên 200 ms)
+
+**US-S5E3-05-SC5 — Xoá tài khoản học sinh xoá lịch sử hỏi đáp của em** · Nguồn: BR-S5E3-18
+- Given: Bình An có 6 lượt `AIInteraction` ở BC-01
+- When: Bình An xoá tài khoản; chạy job xoá; cô Lan gọi lịch sử hỏi đáp BC-01
+- Then: 0 hàng `AIInteraction`, `AIPolicyDecision` của Bình An; lịch sử BC-01 không còn lượt của Bình An; bộ đếm theo luật không đổi
+- Dữ liệu nhập: F-S5-010 (Bình An), 6 lượt
+
 ---
 
 ## US-S5E3-06 — Giáo viên xem lịch sử hỏi đáp theo bài, báo "chặn sai" hoặc "lẽ ra phải chặn"
@@ -336,6 +411,7 @@ Phiên bản: v0.1 · 2026-11-28
 | BR-S5E3-19 | Danh sách theo bài: giờ, tên hiển thị học sinh, câu hỏi, câu trả lời đã hiện (hoặc câu từ chối), nguồn, quyết định và luật; lọc theo quyết định; phân trang theo con trỏ 50 dòng. | STAGES §5 C3; ADR-GEO-12 |
 | BR-S5E3-20 | Giáo viên đánh dấu một lượt "chặn sai" hoặc "lẽ ra phải chặn" kèm ghi chú ≤ 200 ký tự; mỗi lượt một đánh dấu, sửa được; tổng hợp đếm theo luật cho người vận hành, không đổi câu trả lời đã gửi. | STAGES §10 |
 | BR-S5E3-21 | Học sinh không xem được lịch sử của bạn; giáo viên không xem được lịch sử của lớp khác. | quy ước chung |
+| BR-S5E3-23 | Báo cáo hỏi đáp của bài và của lớp: số lượt, tỉ lệ câu trả lời có nguồn "Tài liệu của thầy cô", tỉ lệ có nguồn "Bài giảng mẫu", tỉ lệ không nguồn, tỉ lệ bị chặn theo luật; kèm n. | brief mục tiêu; soát độc lập #13, #18 |
 
 - **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
 
@@ -343,7 +419,7 @@ Phiên bản: v0.1 · 2026-11-28
 
 **US-S5E3-06-SC1 — Lọc các lượt bị chặn của bài BC-01** · Nguồn: BR-S5E3-19
 - Given: BC-01 có 6 lượt: 4 `allowed`, 1 `blocked` KS-1, 1 `blocked` KS-4
-- When: mở "Hỏi đáp" của bài BC-01; chọn lọc "Bị chặn"
+- When: gọi `GET /api/assignments/BC-01/qa?decision=blocked`
 - Then: thấy đúng 2 dòng, mỗi dòng có câu hỏi, câu từ chối đã hiện, luật KS-1 hoặc KS-4; không có cột xếp hạng hay đếm theo học sinh
 
 **US-S5E3-06-SC2 — Báo "chặn sai" một lượt** · Nguồn: BR-S5E3-20
@@ -361,8 +437,15 @@ Phiên bản: v0.1 · 2026-11-28
 - When: Bình An gọi `GET /api/qa/mine?assignment=BC-01`; Bình An gọi `GET /api/assignments/BC-01/qa`
 - Then: lần 1 chỉ có lượt của Bình An; lần 2 FORBIDDEN
 
+**US-S5E3-06-SC3 — Báo cáo tỉ lệ câu trả lời theo loại nguồn** · Nguồn: BR-S5E3-23
+- Given: BC-01 có 10 lượt: 6 nguồn "Tài liệu của thầy cô", 1 "Bài giảng mẫu", 1 không nguồn, 2 bị chặn
+- When: gọi `GET /api/assignments/BC-01/qa/report`
+- Then: `n` = 10; tài liệu của thầy cô 60 %, bài giảng mẫu 10 %, không nguồn 10 %, bị chặn 20 % theo luật; không có tên học sinh
+- Dữ liệu nhập: F-S5-052; 10 lượt như Given
+
 ## Lịch sử
 
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-28 | Tạo story, BR, AC và ước lượng chặng 5 (goal run) | agent spec-s5 (PO → BA → QC) |
+| v0.2 | 2026-11-28 | Sửa theo `work/s5/review-independent.md` (27 lỗi) | agent spec-s5 |

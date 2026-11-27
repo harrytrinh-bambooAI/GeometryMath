@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-28
+Phiên bản: v0.2 · 2026-11-28
 # S5-E2 — Ra đề theo ma trận và trợ lý soạn bộ đề (chọn loại đề và phạm vi, lắp đề, nhiều mã đề, xuất): story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run, PO quyết cao nhất). Nguồn: `PRODUCT-MASTER.md` (22/11/2026) D1 dòng 5 ("trợ lý soạn … bộ đề"), C1b "Trợ lý giáo viên"; `STAGES-AFTER-MVP.md` Chặng 5 §5 luồng D, §6 C5-08; DECISIONS 27/11 "Dữ liệu ĐỀ là miền riêng"; tài sản dùng lại nguyên trạng: `materials/de-thi/README.md` v1.0 (bảng trường form), `lap_de.py`, `ma-tran/` (4 ma trận + `yccd.json`), `mau-cau/` (110 mẫu, `engine-values.json`), `ngan-hang/` (1 774 câu), `schema/`, `check.py`.
@@ -21,6 +21,7 @@ Phiên bản: v0.1 · 2026-11-28
 - **AI chỉ đề xuất, giáo viên quyết định** (PO-03, C2 nguyên tắc 4): không có đường nào chuyển nội dung AI thành điểm chính thức, tài liệu Đang dùng, đề trong kho, giáo án đã duyệt hay thông báo đã gửi mà thiếu thao tác của giáo viên chủ lớp. Mọi bản nháp AI mang nhãn người "AI soạn" cho tới khi giáo viên duyệt (PO-02, PO-30).
 - **Đáp số do engine** (C2 nguyên tắc 13): AI không bao giờ là nguồn đáp số. Đáp số của câu thuộc kho lấy từ kho (`bo-mau`, `bai-tap`, ngân hàng `de-thi`); câu mới đưa sang engine; không tính được thì nhãn máy "Cần xem lại".
 - Mọi lời gọi AI đi qua module `aigateway` với một task có tên (`lesson_plan`, `lesson_patch`, `exam_draft`, `kb_qa`, `grade`, `grade_ocr`, `notice_draft`, `class_errors`); mỗi lượt ghi `AiCallLog` gồm task, model, phiên bản prompt, token vào/ra, kết quả kiểm máy chủ. Nội dung gửi nhà cung cấp không chứa tên hiển thị, mã người dùng, mã lớp (NFR-GEO-071).
+- **Lượt AI** (BR-S5E5-12): một yêu cầu của người dùng hoặc một việc nền tới một task; gọi lại tự động trong lượt không tính thêm; `grade_ocr`, `grade` tính mỗi trang một lượt. Hạn mức: giáo viên 30 lượt soạn/ngày; lớp 300 hỏi đáp, 200 chấm, 2 000 000 token/ngày; học sinh 30 hỏi đáp/ngày; người vận hành có công tắc tắt khẩn toàn hệ thống theo task.
 - AI giữ giả lập trong CI (D-GEO-047): `MockAiProvider` trả câu trả lời cố định theo dữ liệu mẫu `F-S5-090…099`; không AC nào kỳ vọng chất lượng câu chữ AI thật. Chất lượng AI thật đo bằng bench ngoài CI theo `materials/baseline/KPI.md` v1.0.
 - Phản hồi chứa bài nộp, điểm, lời giải hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145).
 - Thiết bị: giáo viên dùng web trên máy tính; học sinh iPhone để chụp bài, iPad để làm và xem (PWA, PO-65 Q9).
@@ -115,6 +116,7 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: bản sao ngân hàng có 1 câu HHKG sửa đáp số thành 0,8200 (engine 0,8165)
 - When: chạy lệnh nạp
 - Then: báo cáo 1 lỗi nêu id câu và hai giá trị; 1 773 câu được nạp; câu lỗi không có trong ngân hàng máy chủ
+- Dữ liệu nhập: F-S5-032; 1 câu HHKG sửa đáp số 0,8200 (engine 0,8165, sai số > 1e-6)
 
 **US-S5E2-01-FC2 — Ma trận tổng điểm khác 10 bị từ chối** · Nguồn: BR-S5E2-03
 - Given: bản sao `KT15-HHKG11` có tổng điểm 9
@@ -175,7 +177,7 @@ Phiên bản: v0.1 · 2026-11-28
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S5E2-06 | Ràng buộc mỗi mã: phủ đặc tả 100 %; khớp ô (chủ đề, dạng, YCCĐ, loại, mức độ, điểm); không trùng dạng; A/B/C/D lệch ≤ 1; không hai câu chung bối cảnh, chuỗi đáp số không xuất hiện trong đề câu khác; độ khó các mã lệch ≤ 5 %. Bốc lại tối đa 600 lần/mã rồi báo không đủ. | README ràng buộc; Kiểm 6 |
+| BR-S5E2-06 | Ràng buộc mỗi mã: phủ đặc tả 100 %; khớp ô (chủ đề, dạng, YCCĐ, loại, mức độ, điểm); không trùng dạng; A/B/C/D lệch ≤ 1; không hai câu chung bối cảnh, chuỗi đáp số không xuất hiện trong đề câu khác; độ khó các mã lệch ≤ 5 %, với độ khó dự kiến của mã = Σ(điểm câu × `do_kho` câu) / tổng điểm (`do_kho` = tỉ lệ làm sai dự kiến trong ngân hàng) và độ lệch = (lớn nhất − nhỏ nhất) / trung bình các mã, đúng `lap_de.py` (`do_kho_de`, `lech_do_kho`). Bốc lại tối đa 600 lần/mã rồi báo không đủ. Lắp 8 mã ≤ 5 giây. | README ràng buộc; Kiểm 6 |
 | BR-S5E2-07 | Cùng ma trận, cùng tham số form và cùng seed cho ra đúng các mã đề như lần trước (tái lập); đảo thứ tự câu trong phần và đảo phương án luôn bật. | README "seed giữ để in lại" |
 | BR-S5E2-08 | Đáp số và đáp án chữ của mỗi câu lấy từ ngân hàng (engine hoặc sympy có phép kiểm), không gọi AI ở bước lắp. | C2 nguyên tắc 13; README |
 
@@ -192,11 +194,18 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: đã lắp bộ đề ở SC1
 - When: gửi lại cùng yêu cầu với seed 2026
 - Then: danh sách id câu và thứ tự phương án của 4 mã trùng khớp lần trước
+- Dữ liệu nhập: F-S5-030, F-S5-032; 4 mã, seed 2026 (chạy hai lần)
 
 **US-S5E2-03-SC3 — Đề TN THPT đúng cấu trúc QĐ 764** · Nguồn: BR-S5E2-06
 - Given: dữ liệu F-S5-032
 - When: lắp ma trận F-S5-031, 2 mã, seed 2026
 - Then: mỗi mã có 12 TN4, 4 đúng/sai, 6 trả lời ngắn (đáp án ≤ 4 ký tự); A/B/C/D lệch ≤ 1; độ khó hai mã lệch ≤ 5 %
+
+**US-S5E2-03-SC4 — Lắp đủ 8 mã trong ≤ 5 giây, độ khó lệch ≤ 5 %** · Nguồn: BR-S5E2-06; QS5-07
+- Given: dữ liệu F-S5-032; ma trận F-S5-030
+- When: gửi `POST /api/exams` 8 mã, seed 2026; đo thời gian phản hồi
+- Then: trả 8 mã (101–108), mỗi mã đạt bộ kiểm đối chứng; `lech_do_kho` = (max − min) / trung bình ≤ 0,05; thời gian ≤ 5 giây trên máy CI chuẩn
+- Dữ liệu nhập: F-S5-030, F-S5-032; 8 mã, seed 2026 (biên trên QS5-07)
 
 **US-S5E2-03-FC1 — Ngân hàng không đủ câu thì báo ô thiếu, không trả đề thiếu** · Nguồn: BR-S5E2-06
 - Given: ma trận CK2-L11 chỉ giữ chương lượng giác (1 mẫu)
@@ -241,11 +250,13 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: ô của câu 3 chỉ có 1 câu trong ngân hàng
 - When: gửi thay câu 3
 - Then: CONFLICT, MSG-S5-12 nêu ô; câu 3 giữ nguyên
+- Dữ liệu nhập: F-S5-030, F-S5-032; ô câu 3 còn 1 câu; 600 lần bốc
 
 **US-S5E2-04-FC2 — Bộ đề chưa duyệt không giao được** · Nguồn: BR-S5E2-11
 - Given: bộ đề nháp chưa duyệt
 - When: gửi tạo bài có chấm (US-S5E4-02) với bộ đề này
 - Then: CONFLICT; không có bài nào được tạo
+- Dữ liệu nhập: F-S5-030, F-S5-051, F-S5-010; bộ đề trạng thái Nháp
 
 ---
 
@@ -324,6 +335,12 @@ Phiên bản: v0.1 · 2026-11-28
 - When: cô Lan gửi soạn đề với `TL-09`
 - Then: NOT_FOUND; không gọi AI
 
+**US-S5E2-06-FC4 — Hết 30 lượt soạn trong ngày thì không soạn đề nháp** · Nguồn: BR-S5E1-08; BR-S5E5-12
+- Given: cô Lan đã dùng 30 lượt soạn hôm nay
+- When: gửi soạn đề với `TL-01`
+- Then: RATE_LIMITED, MSG-S5-06; không gọi AI
+- Dữ liệu nhập: F-S5-001, F-S5-040; bộ đếm 30/30
+
 **US-S5E2-06-FC3 — AI ghi đáp số khác engine thì đáp số engine thắng, đề "Cần xem lại"** · Nguồn: BR-S5E2-15
 - Given: giả lập trả 1 đề ghi đáp số "a√3/3" trong khi engine tính `a√6/3`
 - When: gửi soạn đề
@@ -334,3 +351,4 @@ Phiên bản: v0.1 · 2026-11-28
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-28 | Tạo story, BR, AC và ước lượng chặng 5 (goal run) | agent spec-s5 (PO → BA → QC) |
+| v0.2 | 2026-11-28 | Sửa theo `work/s5/review-independent.md` (27 lỗi) | agent spec-s5 |

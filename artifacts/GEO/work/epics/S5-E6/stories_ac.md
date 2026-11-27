@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-28
+Phiên bản: v0.2 · 2026-11-28
 # S5-E6 — AI đề xuất điểm theo rubric và KPI, engine làm tín hiệu thứ hai, chạy song song, giáo viên duyệt (đợt bật 2–3): story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run, PO quyết cao nhất). Nguồn: `PRODUCT-MASTER.md` (22/11/2026) D1 dòng 5, D2 D-05 ("AI chấm bài lùi về chặng 5"), C1b "Đánh giá và AI chấm bài", C5; `STAGES-AFTER-MVP.md` Chặng 5 §1 (chạy song song trước khi bật), §3 ý 3, 4, 5, 9 (bỏ tự duyệt), 10 (bỏ "AI chấm thử"), §5 B1–B4 và ngoại lệ, §6 C5-05, C5-09, §7, §8 (`GradingProposal`, `CriterionAssessment`), §10; PO-03; DECISIONS 27/11 "KPI chấm AI" (owner "KPI OK"); `materials/baseline/KPI.md` v1.0 §1–§4; `materials/baseline/bo-mau/` (71 bài, bước, `diem_dung`, `tieu_chi_dat`, lời giải sai) làm bộ đánh giá ngoài CI; số liệu prompt-lab "bắt bước sai 135/142, báo nhầm 0/71".
@@ -10,7 +10,7 @@ Phiên bản: v0.1 · 2026-11-28
 
 **Không bao giờ:** tự duyệt khi AI tin cậy cao (STAGES ý 9, PO-03); học sinh xem "AI chấm thử" (ý 10); học sinh, phụ huynh thấy đề xuất AI (§7).
 
-**Ước lượng epic:** dev 14 ngày · test 4,2 ngày · tổng 18,2 ngày công (6 story; bảng chung ở `work/s5/estimate-s5.md`).
+**Ước lượng epic:** dev 15 ngày · test 4,5 ngày · tổng 19,5 ngày công (6 story; bảng chung ở `work/s5/estimate-s5.md`).
 
 ## 0. Hướng dẫn đọc, quy ước và dữ liệu mẫu chung (giống nhau ở mọi epic S5)
 
@@ -23,6 +23,7 @@ Phiên bản: v0.1 · 2026-11-28
 - **AI chỉ đề xuất, giáo viên quyết định** (PO-03, C2 nguyên tắc 4): không có đường nào chuyển nội dung AI thành điểm chính thức, tài liệu Đang dùng, đề trong kho, giáo án đã duyệt hay thông báo đã gửi mà thiếu thao tác của giáo viên chủ lớp. Mọi bản nháp AI mang nhãn người "AI soạn" cho tới khi giáo viên duyệt (PO-02, PO-30).
 - **Đáp số do engine** (C2 nguyên tắc 13): AI không bao giờ là nguồn đáp số. Đáp số của câu thuộc kho lấy từ kho (`bo-mau`, `bai-tap`, ngân hàng `de-thi`); câu mới đưa sang engine; không tính được thì nhãn máy "Cần xem lại".
 - Mọi lời gọi AI đi qua module `aigateway` với một task có tên (`lesson_plan`, `lesson_patch`, `exam_draft`, `kb_qa`, `grade`, `grade_ocr`, `notice_draft`, `class_errors`); mỗi lượt ghi `AiCallLog` gồm task, model, phiên bản prompt, token vào/ra, kết quả kiểm máy chủ. Nội dung gửi nhà cung cấp không chứa tên hiển thị, mã người dùng, mã lớp (NFR-GEO-071).
+- **Lượt AI** (BR-S5E5-12): một yêu cầu của người dùng hoặc một việc nền tới một task; gọi lại tự động trong lượt không tính thêm; `grade_ocr`, `grade` tính mỗi trang một lượt. Hạn mức: giáo viên 30 lượt soạn/ngày; lớp 300 hỏi đáp, 200 chấm, 2 000 000 token/ngày; học sinh 30 hỏi đáp/ngày; người vận hành có công tắc tắt khẩn toàn hệ thống theo task.
 - AI giữ giả lập trong CI (D-GEO-047): `MockAiProvider` trả câu trả lời cố định theo dữ liệu mẫu `F-S5-090…099`; không AC nào kỳ vọng chất lượng câu chữ AI thật. Chất lượng AI thật đo bằng bench ngoài CI theo `materials/baseline/KPI.md` v1.0.
 - Phản hồi chứa bài nộp, điểm, lời giải hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145).
 - Thiết bị: giáo viên dùng web trên máy tính; học sinh iPhone để chụp bài, iPad để làm và xem (PWA, PO-65 Q9).
@@ -96,7 +97,7 @@ Phiên bản: v0.1 · 2026-11-28
 |---|---|---|
 | BR-S5E6-01 | Đầu vào task `grade`: đề, đáp số engine, rubric phiên bản, bản đọc chữ phiên bản mới nhất và ảnh trang; không gửi tên, mã người dùng, mã lớp. Đầu ra mỗi tiêu chí: điểm, lý do ≤ 300 ký tự, vùng ảnh `{trang,x,y,w,h}`, độ tin cậy 0–1, loại lỗi theo bộ nhãn baseline (`sai-dinh-li`, `sai-tinh-toan`, `sai-hinh-dung`, `nham-dieu-kien`). | STAGES §3 ý 3; KPI §1; NFR-GEO-071 |
 | BR-S5E6-02 | Máy chủ kiểm cứng: mỗi điểm trong [0, tối đa] và bội 0,25; tổng = tổng tiêu chí; đủ mọi tiêu chí của rubric. Sai thì gọi lại một lần; vẫn sai thì "AI không chấm" (US-S5E6-02). | STAGES §5 B1 |
-| BR-S5E6-03 | Máy chủ áp luật chặn KPI §2 lên đề xuất: (1) Hướng = 0 thì tiêu chí có cờ phụ thuộc hướng = 0; (2) Kết quả đạt nhưng Bước < 50 % thì Kết quả tối đa 50 %; (5) bước dùng kiến thức ngoài kho thì gắn cờ "bịa kiến thức" và độ tin cậy ≤ 0,5. Mỗi lần điều chỉnh ghi lý do "luật KPI §2.n". | KPI §2 |
+| BR-S5E6-03 | Máy chủ áp đủ 5 luật chặn KPI §2 lên đề xuất: (1) Hướng = 0 thì tiêu chí có cờ phụ thuộc hướng = 0; (2) Kết quả đạt nhưng Bước < 50 % thì Kết quả tối đa 50 %; (3) AI đánh dấu bước k sai thì các bước sau mà AI ghi `phu_thuoc` vào k = 0, bước độc lập giữ; (4) AI ghi "không có hình" hoặc "hình sai" thì tiêu chí Hình = 0 và bước ghi `dua_tren_hinh` = 0; (5) bước dùng kiến thức ngoài kho thì gắn cờ "bịa kiến thức" và độ tin cậy tiêu chí ≤ 0,5. Đầu ra `grade` có thêm danh sách bước `{ma, dung, phu_thuoc[], dua_tren_hinh}` để máy chủ áp (3), (4). Mỗi lần điều chỉnh ghi lý do "luật KPI §2.n". | KPI §2 |
 | BR-S5E6-04 | `GradingProposal` ghi: phiên bản đề, rubric, bài nộp, bản đọc chữ, model, phiên bản prompt, token; bất biến. Đề xuất chỉ giáo viên chủ lớp đọc được. | STAGES §7, §8 |
 
 - **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
@@ -117,11 +118,25 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: giả lập trả Hướng 0, Bước 3
 - When: chờ xử lý nền
 - Then: đề xuất lưu Bước = 0 với lý do "luật KPI §2.1"
+- Dữ liệu nhập: F-S5-091 biến thể Hướng 0
+
+**US-S5E6-01-SC4 — Luật chặn 3: bước sai kéo bước phụ thuộc về 0, bước độc lập giữ** · Nguồn: BR-S5E6-03
+- Given: giả lập trả cho BN-02 bước B2 sai, B3 `phu_thuoc` [B2], B4 độc lập, Bước 3/4
+- When: chờ xử lý nền
+- Then: điểm phần B3 = 0 với lý do "luật KPI §2.3"; phần B4 giữ nguyên; tổng Bước giảm đúng phần B3
+- Dữ liệu nhập: F-S5-054, F-S5-091 (bước B2 sai)
+
+**US-S5E6-01-SC5 — Luật chặn 4: hình sai thì mất phần hình và bước dựa trên hình** · Nguồn: BR-S5E6-03
+- Given: giả lập trả `hinh` = "hình sai", B1 `dua_tren_hinh` = true, Hình 1
+- When: chờ xử lý nền
+- Then: Hình = 0 và phần B1 = 0 với lý do "luật KPI §2.4"
+- Dữ liệu nhập: F-S5-053 biến thể hình sai
 
 **US-S5E6-01-FC1 — Điểm vượt tối đa: gọi lại một lần rồi AI không chấm** · Nguồn: BR-S5E6-02
 - Given: giả lập trả Bước = 5 (tối đa 4) cả hai lần
 - When: chờ xử lý nền
 - Then: `AiCallLog` có 2 dòng task `grade`; bài có cờ "AI không chấm" lý do "điểm ngoài thang"; không có `GradingProposal` hợp lệ
+- Dữ liệu nhập: F-S5-051, F-S5-053; Bước = 5 (tối đa 4; biên 4 hợp lệ)
 
 **US-S5E6-01-FC2 — Học sinh không đọc được đề xuất** · Nguồn: BR-S5E6-04
 - Given: BN-01 có đề xuất
@@ -144,7 +159,7 @@ Phiên bản: v0.1 · 2026-11-28
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S5E6-05 | "AI không chấm" khi: AI trả `refuse` kèm lý do; độ tin cậy tổng < 0,6 (QS5-22); kiểm cứng sai hai lần; cổng AI lỗi hoặc hết giờ sau một lần gọi lại. Lý do lưu và hiện cho giáo viên. | STAGES §3 ý 4; PO-78; QS5-22 |
+| BR-S5E6-05 | "AI không chấm" khi: AI trả `refuse` kèm lý do; độ tin cậy tổng < 0,6, với độ tin cậy tổng = Σ(tin cậy tiêu chí × điểm tối đa tiêu chí) / thang, sau khi đã áp trần 0,5 của cờ "bịa kiến thức" (QS5-22); kiểm cứng sai hai lần; cổng AI lỗi hoặc hết giờ sau một lần gọi lại. Lý do lưu và hiện cho giáo viên. | STAGES §3 ý 4; PO-78; QS5-22 |
 | BR-S5E6-06 | Bài "AI không chấm" vẫn Chờ chấm, có cờ, xếp đầu hàng chờ; không có đề xuất điểm nào hiện cho giáo viên; giáo viên chấm tay như US-S5E4-06. | STAGES §5 B1 |
 | BR-S5E6-07 | Công tắc AI chấm của lớp tắt (US-S5E5-04) thì bài mới nộp không gọi `grade`; hàng chờ hiện trạng thái "AI đang tắt". | STAGES §6 C5-04 |
 
@@ -161,11 +176,19 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: giả lập trả đề xuất hợp lệ với độ tin cậy tổng 0,55
 - When: chờ xử lý nền
 - Then: cờ "AI không chấm", lý do "độ tin cậy thấp (0,55)"; giáo viên không thấy điểm của đề xuất đó
+- Dữ liệu nhập: F-S5-051, F-S5-053; tin cậy tổng 0,55
+
+**US-S5E6-02-FC3 — Biên độ tin cậy tổng: 0,60 được chấm, 0,59 thì không** · Nguồn: BR-S5E6-05
+- Given: giả lập trả hai đề xuất hợp lệ: (A) tin cậy từng tiêu chí cho tổng có trọng số đúng 0,60; (B) cho tổng 0,59
+- When: chờ xử lý nền cho hai bài
+- Then: bài A có đề xuất hiện cho giáo viên; bài B cờ "AI không chấm", lý do "độ tin cậy thấp (0,59)"
+- Dữ liệu nhập: RB-01 (F-S5-051) trọng số 2/4/2/1/1; A: 0,6 ở mọi tiêu chí; B: 0,59 ở mọi tiêu chí
 
 **US-S5E6-02-FC1 — Cổng AI hết giờ hai lần** · Nguồn: BR-S5E6-05
 - Given: giả lập hết giờ cả hai lần
 - When: chờ xử lý nền
 - Then: cờ "AI không chấm", lý do "AI tạm thời không phản hồi"; nút "Thử chấm lại"; bài vẫn chấm tay được
+- Dữ liệu nhập: F-S5-053; `geo.ai.timeout` 10 giây (dev/test, PO-78), hết giờ 2 lần
 
 **US-S5E6-02-FC2 — Lớp tắt AI chấm thì không gọi AI** · Nguồn: BR-S5E6-07
 - Given: lớp 11A1 tắt AI chấm (US-S5E5-04); BC-01 chế độ AI đề xuất
@@ -209,6 +232,7 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: bản đọc chữ không có dòng kết luận
 - When: chờ xử lý nền
 - Then: tín hiệu "Không tìm thấy"; không có cờ lệch; giáo viên thấy ghi chú "Không thấy đáp số cuối trong bản đọc chữ"
+- Dữ liệu nhập: F-S5-050, F-S5-053; bản đọc chữ không có dòng kết luận
 
 ---
 
@@ -265,7 +289,7 @@ Phiên bản: v0.1 · 2026-11-28
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S5E6-13 | Chế độ Chạy song song: AI vẫn chấm nền; mọi phản hồi cho giáo viên trước khi bài Đã duyệt không chứa điểm, lý do, độ tin cậy của AI hay cờ suy từ AI ("AI và engine lệch", "bịa kiến thức"); chỉ có "AI đã chấm xong" và tín hiệu engine riêng. | STAGES §5 B ngoại lệ; C5-05 |
+| BR-S5E6-13 | Chế độ Chạy song song: AI vẫn chấm nền; mọi phản hồi cho giáo viên trước khi bài Đã duyệt không chứa điểm, lý do, độ tin cậy của AI hay cờ suy từ AI ("AI và engine lệch", "bịa kiến thức"); chỉ có "AI đã chấm xong" và tín hiệu engine riêng. Hàng chờ của bài ở chế độ này không có cờ hay thứ tự ưu tiên có nguồn AI ("AI không chấm", "AI và engine lệch", độ tin cậy): chỉ sắp theo giờ nộp, cờ "Nộp muộn" và "Chưa đọc được". | STAGES §5 B ngoại lệ; C5-05 |
 | BR-S5E6-14 | Sau khi duyệt: hiện so sánh từng tiêu chí AI và giáo viên; lưu cặp (điểm AI, điểm giáo viên lần duyệt đầu) để tính khớp; sửa điểm sau đó không đổi cặp đã lưu. | STAGES §10 chỉ số; KPI §3 |
 
 - **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
@@ -282,6 +306,12 @@ Phiên bản: v0.1 · 2026-11-28
 - When: cô Lan duyệt BN-02 tổng 6,5 (Bước 2,5, Trình bày 0,5); gọi `GET /api/submissions/BN-02/comparison`
 - Then: so sánh 5 tiêu chí: lệch ở Bước (AI 3 · GV 2,5) và Trình bày (AI 1 · GV 0,5); bảng cặp có 5 dòng của BN-02
 
+**US-S5E6-05-SC3 — Hàng chờ ở chế độ song song không lộ trạng thái AI** · Nguồn: BR-S5E6-13
+- Given: BC-01 Chạy song song; BN-02 AI chấm lệch engine, BN-03 AI không chấm, BN-01 bình thường; giờ nộp BN-01 < BN-02 < BN-03
+- When: cô Lan gọi `GET /api/grading/queue?assignment=BC-01`
+- Then: thứ tự BN-01, BN-02, BN-03 theo giờ nộp; không phần tử nào có trường `aiFlags`, `confidence`, `aiStatus` ngoài `aiDone`
+- Dữ liệu nhập: F-S5-053, F-S5-054, F-S5-055, F-S5-091, F-S5-092
+
 **US-S5E6-05-FC1 — Sửa điểm sau khi thấy đề xuất không đổi cặp đã lưu** · Nguồn: BR-S5E6-14
 - Given: BN-02 đã duyệt và đã xem so sánh
 - When: cô Lan sửa Bước thành 3
@@ -294,50 +324,86 @@ Phiên bản: v0.1 · 2026-11-28
 
 ---
 
-## US-S5E6-06 — Báo cáo khớp AI–giáo viên theo tiêu chí và cổng bật "AI đề xuất" cho lớp theo ngưỡng KPI
-- **Story:** Là giáo viên, tôi muốn thấy AI khớp với tôi đến đâu trên bài lớp mình và chỉ bật "AI đề xuất" khi đã đạt ngưỡng, để quyết định dựa trên số liệu chứ không dựa vào cảm giác. · Loại Logic · P0
-- **Ước lượng: dev 2 ngày · test 0,6 ngày**
-- **Nguồn:** STAGES §1, §6 C5-09 ("bảng so sánh AI và giáo viên"), §10 chỉ số (mức khớp theo tiêu chí và chủ đề, tỉ lệ sửa, tỉ lệ từ chối, thời gian duyệt); KPI §3, §4 (ngưỡng phát hành khởi điểm); PO-24 (không so sánh theo từng giáo viên ở cấp trường)
-- **Góc nhìn người vận hành:** cô Lan xem sau khi chấm song song 20 bài; ca đáng kể: chưa đủ bài, đạt tổng nhưng một tiêu chí thấp, sau khi bật vẫn lấy mẫu song song định kỳ.
+## US-S5E6-06 — Báo cáo khớp AI–giáo viên theo đủ KPI §2–§4 (có KTC) và cổng bật, đóng, mở lại "AI đề xuất" cho lớp
+- **Story:** Là giáo viên, tôi muốn thấy AI khớp với tôi đến đâu trên bài lớp mình theo đúng bộ KPI đã duyệt và chỉ bật "AI đề xuất" khi đạt, để quyết định dựa trên số liệu. · Loại Logic · P0
+- **Ước lượng: dev 3 ngày · test 0,9 ngày** — tăng từ 2 lên 3 ngày sau soát độc lập: đủ 5 dòng KPI §4, khoảng tin cậy Wilson, cấu hình ngưỡng, cửa sổ đóng/mở lại, thêm chỉ số thời gian duyệt và tỉ lệ sửa.
+- **Nguồn:** STAGES §1, §6 C5-09, §10 chỉ số; KPI §2, §3, §4 (owner "KPI OK" 27/11); PO-24; soát độc lập #7, #11, #18, #21
+- **Góc nhìn người vận hành:** cô Lan xem sau khi chấm song song 20 bài; ca đáng kể: chưa đủ bài, đạt tổng nhưng một dạng thấp, một lần bịa kiến thức, sau khi bật vẫn lấy mẫu song song định kỳ.
 - **Phụ thuộc:** US-S5E6-05
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S5E6-15 | Chỉ số theo lớp, từ các cặp chạy song song: tỉ lệ tiêu chí lệch trong ±0,25; độ lệch tuyệt đối trung bình; tỉ lệ đáp số đúng của AI so engine; bắt đúng bước sai và báo nhầm; tỉ lệ "AI không chấm"; luôn kèm n. | KPI §3; STAGES §10 |
-| BR-S5E6-16 | Cổng bật "AI đề xuất" cho một lớp: n ≥ 20 bài song song (QS5-21) và đạt KPI §4: lệch trong ±0,25 ≥ 85 %, kết quả đúng ≥ 95 %, bắt bước sai ≥ 80 % với báo nhầm ≤ 10 %, 0 lần bịa kiến thức; không đạt thì không chọn được chế độ AI đề xuất (US-S5E4-02 BR-S5E4-05). | KPI §4; STAGES §1 |
-| BR-S5E6-17 | Sau khi bật, 10 % bài nộp ngẫu nhiên mỗi bài có chấm vẫn chạy song song để theo dõi trôi; hai đợt liên tiếp dưới ngưỡng thì cổng tự đóng và báo giáo viên. | STAGES §10 "chạy song song định kỳ trên mẫu ngẫu nhiên"; QS5-24 |
+| BR-S5E6-15 | Chỉ số theo lớp, tính trên cặp chạy song song (điểm AI, điểm giáo viên lần duyệt đầu): (a) điểm khớp một bài = 1 − (độ lệch tuyệt đối giữa tổng AI và tổng GV) / thang, gộp macro theo dạng bài (chủ đề đề); (b) tỉ lệ cặp tiêu chí lệch trong ±0,25; (c) tỉ lệ bài có tiêu chí Kết quả của AI đúng chiều với tín hiệu engine (US-S5E6-03); (d) bắt bước sai: "bước sai thật" = tiêu chí giáo viên chấm < tối đa; AI bắt đúng khi cũng chấm < tối đa; báo nhầm = AI chấm < tối đa khi giáo viên chấm tối đa; (e) số lần cờ "bịa kiến thức" và số đề xuất cuối còn vi phạm luật chặn KPI §2; (f) tỉ lệ tiêu chí bị sửa (US-S5E6-04); (g) trung vị thời gian duyệt một bài (từ mở màn chấm tới Duyệt); (h) tỉ lệ "AI không chấm". Mỗi tỉ lệ ghi n và KTC 95 % Wilson; với (b) đơn vị là cặp tiêu chí và giả định độc lập ghi là gần đúng (QS5-32). | KPI §3; STAGES §10 |
+| BR-S5E6-16 | Cổng bật "AI đề xuất" cho một lớp mở khi n ≥ 20 bài song song (QS5-21) và đạt đủ KPI §4, so (a) và (b) bằng **cận dưới KTC 95 %** (đủ n vì tính trên mọi bài, mọi cặp tiêu chí); (c), (d) so bằng ước lượng điểm vì với 20–40 bài cận dưới không thể đạt 95 % (cần ≥ 73 bài toàn đúng), báo cáo vẫn hiện KTC và cờ "chưa chắc" khi cận dưới < ngưỡng (QS5-32); (e) so bằng số đếm. Điều kiện: macro (a) ≥ 85 % và không dạng nào < 70 %; (b) ≥ 85 %; (c) ≥ 95 %; (d) bắt ≥ 80 % và báo nhầm ≤ 10 %; (e) = 0. Ngưỡng là cấu hình `geo.grading.gate.*`, mặc định bằng KPI §4 "khởi điểm", đổi được không cần phát hành. | KPI §2–§4; soát độc lập #7 |
+| BR-S5E6-17 | Sau khi bật: 10 % bài nộp mỗi bài có chấm (tối thiểu 2 bài) vẫn chạy song song. "Đợt" = cửa sổ 10 bài song song gần nhất (≥ 40 cặp tiêu chí). Cổng tự đóng khi hai đợt liên tiếp không đạt bất kỳ điều kiện nào của BR-S5E6-16 (tính trên đợt), hoặc ngay khi có 1 lần bịa kiến thức; giáo viên được báo. Mở lại khi đạt lại BR-S5E6-16 trên 20 bài song song mới. | STAGES §10; QS5-24; soát độc lập #11 |
 
 - **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
 
 ### Tiêu chí chấp nhận
 
-**US-S5E6-06-SC1 — Báo cáo khớp của 11A1 sau 20 bài** · Nguồn: BR-S5E6-15
-- Given: 11A1 có 20 bài song song với 100 cặp tiêu chí, 88 cặp lệch trong ±0,25
+**US-S5E6-06-SC1 — Báo cáo khớp của 11A1 có n và KTC Wilson** · Nguồn: BR-S5E6-15
+- Given: 11A1 có 20 bài song song, 100 cặp tiêu chí, 88 cặp lệch trong ±0,25
 - When: gọi `GET /api/classes/11A1/ai-grading/report`
-- Then: trả `n = 20`, tỉ lệ trong ±0,25 = 88 % kèm KTC 95 %; số liệu theo từng tiêu chí; không có tên học sinh hay xếp hạng
+- Then: `n_bai` = 20, `n_cap` = 100; (b) = 88 % với KTC 95 % Wilson 80,2 %–93,0 %; có đủ chỉ số (a)–(h) kèm n; không có tên học sinh hay xếp hạng; `gateOpen = false` vì cận dưới 80,2 % < 85 %
+- Dữ liệu nhập: 11A1 (F-S5-010); 20 bài, 100 cặp, 88 trong ±0,25
 
-**US-S5E6-06-SC2 — Đạt ngưỡng thì mở được chế độ AI đề xuất** · Nguồn: BR-S5E6-16
-- Given: như SC1, mọi chỉ số đạt KPI §4
-- When: cô Lan giao bài mới với chế độ `ai_proposal`
-- Then: trả 201; bài chế độ AI đề xuất
+**US-S5E6-06-SC2 — Đạt đủ 5 điều kiện bằng cận dưới KTC thì mở được chế độ AI đề xuất** · Nguồn: BR-S5E6-16
+- Given: 40 bài song song, 200 cặp: (b) 190/200; (a) macro 92 %, dạng thấp nhất 81 %; (c) 40/40; (d) bắt 45/50, báo nhầm 3/150; (e) 0
+- When: gọi báo cáo; cô Lan giao bài mới chế độ `ai_proposal`
+- Then: `gateOpen = true` (cận dưới (b) 91,0 %); giao bài trả 201
+- Dữ liệu nhập: 40 bài, 200 cặp, số đếm như Given
 
 **US-S5E6-06-FC1 — Chưa đủ 20 bài thì cổng đóng** · Nguồn: BR-S5E6-16
 - Given: 11A1 có 12 bài song song
 - When: gọi báo cáo; giao bài chế độ `ai_proposal`
-- Then: báo cáo `gateOpen = false` kèm MSG-S5-48 "12/20"; giao bài trả CONFLICT
+- Then: `gateOpen = false`, MSG-S5-48 "12/20"; giao bài trả CONFLICT
+- Dữ liệu nhập: 12 bài (biên: 19 đóng, 20 xét tiếp)
 
-**US-S5E6-06-FC2 — Đủ bài nhưng một chỉ số dưới ngưỡng thì cổng đóng** · Nguồn: BR-S5E6-16
-- Given: 20 bài; lệch trong ±0,25 = 80 %
+**US-S5E6-06-FC2 — Một dạng bài dưới 70 % thì cổng đóng dù macro đạt** · Nguồn: BR-S5E6-16
+- Given: như SC2 nhưng dạng "góc" có điểm khớp 66 %
 - When: gọi báo cáo
-- Then: `gateOpen = false`, nêu chỉ số "±0,25: 80 % < 85 %"
+- Then: `gateOpen = false`, lý do nêu "dạng góc 66 % < 70 %"
+- Dữ liệu nhập: như SC2; dạng góc 66 %
 
-**US-S5E6-06-FC3 — Hai đợt lấy mẫu dưới ngưỡng thì cổng tự đóng** · Nguồn: BR-S5E6-17
-- Given: 11A1 đã bật AI đề xuất; hai bài có chấm liên tiếp có mẫu song song lệch trong ±0,25 = 70 %
-- When: hệ thống tính lại sau bài thứ hai
-- Then: `gateOpen = false`; cô Lan có thông báo trong ứng dụng "AI đề xuất đã tạm tắt cho 11A1"; bài kế tiếp mặc định Chạy song song
+**US-S5E6-06-FC3 — Báo nhầm vượt 10 % thì cổng đóng** · Nguồn: BR-S5E6-16
+- Given: như SC2 nhưng báo nhầm 25/150
+- When: gọi báo cáo
+- Then: `gateOpen = false`, lý do nêu chỉ số báo nhầm
+- Dữ liệu nhập: báo nhầm 25/150
+
+**US-S5E6-06-FC4 — Một lần bịa kiến thức thì cổng đóng** · Nguồn: BR-S5E6-16, 17
+- Given: như SC2 nhưng 1 đề xuất có cờ "bịa kiến thức"
+- When: gọi báo cáo
+- Then: `gateOpen = false`, lý do "bịa kiến thức: 1"
+- Dữ liệu nhập: 1 cờ bịa kiến thức
+
+**US-S5E6-06-FC5 — Kết quả AI đúng chiều engine dưới 95 % thì cổng đóng** · Nguồn: BR-S5E6-16
+- Given: như SC2 nhưng (c) 36/40
+- When: gọi báo cáo
+- Then: `gateOpen = false`, lý do nêu chỉ số kết quả
+- Dữ liệu nhập: (c) 36/40
+
+**US-S5E6-06-FC6 — Hai đợt liên tiếp không đạt thì cổng tự đóng và báo giáo viên** · Nguồn: BR-S5E6-17
+- Given: 11A1 đã bật AI đề xuất; hai đợt 10 bài liên tiếp, mỗi đợt 50 cặp, (b) 35/50
+- When: hệ thống tính lại sau bài cuối của đợt thứ hai
+- Then: `gateOpen = false`; cô Lan có thông báo "AI đề xuất đã tạm tắt cho 11A1"; bài kế tiếp mặc định Chạy song song; sau một đợt đầu không đạt, cổng vẫn mở
+- Dữ liệu nhập: 2 đợt × 10 bài × 50 cặp; (b) 35/50
+
+**US-S5E6-06-SC3 — Mở lại cổng khi đạt lại trên 20 bài song song mới** · Nguồn: BR-S5E6-17
+- Given: cổng 11A1 đã tự đóng ở FC6; sau đó 20 bài song song mới với số liệu như SC2 (tỉ lệ)
+- When: gọi báo cáo
+- Then: `gateOpen = true`; báo cáo chỉ tính 20 bài sau thời điểm đóng
+- Dữ liệu nhập: 20 bài mới, (b) 95/100
+
+**US-S5E6-06-SC4 — Báo cáo có tỉ lệ sửa và thời gian duyệt** · Nguồn: BR-S5E6-15
+- Given: 20 bài đã duyệt ở chế độ AI đề xuất; 14/100 tiêu chí bị sửa; thời gian duyệt từng bài đã ghi
+- When: gọi báo cáo
+- Then: (f) = 14 % kèm n = 100; (g) trung vị thời gian duyệt tính bằng giây; (h) tỉ lệ AI không chấm kèm n
+- Dữ liệu nhập: 20 bài, 14/100 tiêu chí sửa
 
 ## Lịch sử
 
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-28 | Tạo story, BR, AC và ước lượng chặng 5 (goal run) | agent spec-s5 (PO → BA → QC) |
+| v0.2 | 2026-11-28 | Sửa theo `work/s5/review-independent.md` (27 lỗi) | agent spec-s5 |

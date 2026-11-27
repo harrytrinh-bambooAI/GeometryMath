@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-28
+Phiên bản: v0.2 · 2026-11-28
 # Brief S5 · GEO · Chặng 5 — Đánh giá và trợ lý giáo viên
 
 Trạng thái: **ready for R3 (goal run, PO quyết cao nhất)**. Mọi điểm mở là giả định của PO, ghi ở `questions-s5.md` để owner xác nhận; đổi sau là CR qua `PO-DECISIONS.md`.
@@ -12,7 +12,7 @@ Trạng thái: **ready for R3 (goal run, PO quyết cao nhất)**. Mọi điểm
 
 ## 1. Đánh giá lại workload
 
-- **Kết quả:** 6 epic · 34 story · 172 AC · 172 TC · **80 ngày dev + 23,8 ngày test = 103,8 người-ngày** (1 dev, ≈ 21 tuần), chưa gồm dự phòng +20 % và các khoản ngoài bảng (bench AI chấm 5 ngày, thiết kế màn 6–8 ngày) ở `estimate-s5.md` §4.
+- **Kết quả (v0.2, sau soát độc lập):** 6 epic · 37 story · 219 AC · 219 TC · **88 ngày dev + 26,2 ngày test = 114,2 người-ngày** (1 dev, ≈ 23 tuần), chưa gồm dự phòng +20 % và các khoản ngoài bảng (bench AI chấm 5 ngày, thiết kế màn 6–8 ngày) ở `estimate-s5.md` §4.
 - **So với khung dự kiến (5 epic):** khung gộp nộp bài, AI chấm và duyệt vào một epic S5-E4 ≈ 30 ngày dev, 13 story: quá lớn để giao và soát một lượt. PO tách thành **S5-E4** (đợt bật 1: rubric, nộp bài, OCR, chấm tay, trả bài) và **S5-E6** (đợt bật 2–3: AI đề xuất, engine tín hiệu hai, chạy song song, cổng bật theo KPI), đúng "tách ba đợt bật" của STAGES §10 và điều kiện "chạy song song trước khi bật" của §1. Các điều chỉnh khác ghi ở đầu từng `stories_ac.md`:
   - S5-E1 thêm story máy chủ dựng tin nhắn và kiểm luật A (phần nặng nhất, §4 của `prompt-final.md`); mức P0 thay "giáo án P1" của STAGES vì PO-27, PO-45 là Final.
   - S5-E2 thêm story nạp dữ liệu đề có kiểm và story trợ lý soạn đề nháp từ tài liệu (luồng D).
@@ -26,11 +26,11 @@ Trạng thái: **ready for R3 (goal run, PO quyết cao nhất)**. Mọi điểm
 |---|---|---|---|---|---|---|---|
 | S5-E1 | Trợ lý soạn giáo án | P0 | 5 | 12 | 3,5 | 15,5 | PO-27, 45, 46; prompt-lab giáo án |
 | S5-E2 | Ra đề theo ma trận, trợ lý soạn bộ đề | P0 | 6 | 14 | 4,1 | 18,1 | D1 dòng 5; `de-thi/` |
-| S5-E3 | Kho tri thức, hỏi đáp theo kho, kiểm soát đáp án đầy đủ | P0 | 6 | 15 | 4,5 | 19,5 | PO-33, 34, 49; D-08; ADR-GEO-14 |
-| S5-E4 | Rubric, nộp bài viết tay, OCR, chấm tay, trả bài (đợt 1) | P0 | 7 | 16 | 4,8 | 20,8 | C1b; STAGES §5 A, B |
-| S5-E5 | Thông báo trợ lý, tổng hợp lỗi (COP-02), công tắc và hạn mức AI | P1 (01, 04 là P0) | 4 | 9 | 2,7 | 11,7 | C4; D-GEO-078 |
-| S5-E6 | AI đề xuất điểm, engine tín hiệu hai, chạy song song (đợt 2–3) | P0 | 6 | 14 | 4,2 | 18,2 | PO-03; KPI v1.0; STAGES §1, §3 |
-| **Cộng** | | | **34** | **80** | **23,8** | **103,8** | |
+| S5-E3 | Kho tri thức, hỏi đáp theo kho, kiểm soát đáp án đầy đủ | P0 | 7 | 16 | 4,8 | 20,8 | PO-33, 34, 49; D-08; ADR-GEO-14 |
+| S5-E4 | Rubric, nộp bài viết tay, lưu ảnh an toàn, OCR, chấm tay, trả bài (đợt 1) | P0 | 9 | 21 | 6,3 | 27,3 | C1b; STAGES §5 A, B |
+| S5-E5 | Thông báo trợ lý, tổng hợp lỗi (COP-02), công tắc và hạn mức AI | P1 (01, 04 là P0) | 4 | 10 | 3 | 13 | C4; D-GEO-078 |
+| S5-E6 | AI đề xuất điểm, engine tín hiệu hai, chạy song song (đợt 2–3) | P0 | 6 | 15 | 4,5 | 19,5 | PO-03; KPI v1.0; STAGES §1, §3 |
+| **Cộng** | | | **37** | **88** | **26,2** | **114,2** | |
 
 ## 3. Giả định chính đang dùng (chi tiết và câu hỏi ở `questions-s5.md`)
 
@@ -56,23 +56,24 @@ Trạng thái: **ready for R3 (goal run, PO quyết cao nhất)**. Mọi điểm
 | Bước | Việc | Người-ngày | Lũy kế | Lý do thứ tự |
 |---|---|---|---|---|
 | 1 | S5-E1 trọn | 15,5 | 15,5 | tài sản sẵn nhất (prompt 300 lượt), không cần ảnh hay trường pilot; ra giá trị sớm |
-| 2 | US-S5E5-04 công tắc và hạn mức | 2,6 | 18,1 | điều kiện của chế độ chấm và chi phí AI mọi epic sau |
-| 3 | S5-E4 trọn (đợt bật 1) | 20,8 | 38,9 | nền dữ liệu cho S5-E6; phát hành chờ QS5-01 |
-| 4 | S5-E3 trọn | 19,5 | 58,4 | kho cần cho S5-E2-06; mức trợ giúp gắn vào màn tạo bài của S5-E4 |
-| 5 | S5-E2 trọn | 18,1 | 76,5 | cần kho (US-S5E3-01) và bộ dựng tệp xuất của S5-E1 |
-| 6 | S5-E6 trọn (đợt bật 2–3) | 18,2 | 94,7 | cần dữ liệu chấm tay thật của lớp pilot và kết quả bench (QS5-27) |
-| 7 | US-S5E5-01, 02, 03 | 9,1 | 103,8 | tổng hợp lỗi cần điểm đã duyệt và loại lỗi |
+| 2 | US-S5E5-04 công tắc, hạn mức, tắt khẩn | 3,9 | 19,4 | điều kiện của chế độ chấm và chi phí AI mọi epic sau |
+| 3 | S5-E4 trọn (đợt bật 1) | 27,3 | 46,7 | nền dữ liệu cho S5-E6; phát hành chờ QS5-01 |
+| 4 | S5-E3 trọn | 20,8 | 67,5 | kho cần cho S5-E2-06; mức trợ giúp gắn vào màn tạo bài của S5-E4 |
+| 5 | S5-E2 trọn | 18,1 | 85,6 | cần kho (US-S5E3-01) và bộ dựng tệp xuất của S5-E1 |
+| 6 | S5-E6 trọn (đợt bật 2–3) | 19,5 | 105,1 | cần dữ liệu chấm tay thật của lớp pilot và kết quả bench (QS5-27) |
+| 7 | US-S5E5-01, 02, 03 | 9,1 | 114,2 | tổng hợp lỗi cần điểm đã duyệt và loại lỗi |
 
-Nếu có 2 dev: nhánh A = bước 1 → 4 → 5; nhánh B = bước 2 → 3 → 6 → 7; điểm gặp: US-S5E3-04 nối vào màn tạo bài của US-S5E4-02, US-S5E2-04 nối vào giao bài có chấm. Ước tính lịch ≈ 11–12 tuần thay vì 21.
+Nếu có 2 dev: nhánh A = bước 1 → 4 → 5; nhánh B = bước 2 → 3 → 6 → 7; điểm gặp: US-S5E3-04 nối vào màn tạo bài của US-S5E4-02, US-S5E2-04 nối vào giao bài có chấm. Ước tính lịch ≈ 12–13 tuần thay vì 23.
 
 ## 5. Cổng phát hành đề xuất (theo STAGES §10 "ba đợt bật")
 | Cổng | Gồm | Điều kiện |
 |---|---|---|
-| L5a | S5-E1, S5-E3, S5-E2, US-S5E5-01, 04 | check của từng epic đạt; bộ câu thử lộ đáp án (NFR-GEO-020) = 0 với kho tri thức |
-| L5b | S5-E4 (nộp bài, chấm tay) | QS5-01 được owner chốt; có lớp pilot |
+| L5a | S5-E1, S5-E3, S5-E2, US-S5E5-01, 04 | check của từng epic đạt; bộ câu thử `fixtures/firewall-s5.json` (≥ 60 câu) cho số lần lộ = 0 (US-S5E3-05-SC4, TC tương ứng) |
+| L5b | S5-E4 (nộp bài, chấm tay) | QS5-01 và QS5-30 được owner chốt; US-S5E4-08 đạt (mã hoá, URL ký 5 phút, gỡ EXIF, job xoá); có lớp pilot |
 | L5c | S5-E6, US-S5E5-02, 03 | bench AI chấm đạt KPI §4 trên bộ mẫu; lớp đạt cổng US-S5E6-06 |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-28 | Tạo brief chặng 5, đánh giá lại workload, thứ tự làm (goal run) | agent spec-s5 (PO) |
+| v0.2 | 2026-11-28 | Cập nhật số liệu và cổng sau soát độc lập (`review-independent.md`) | agent spec-s5 (PO) |

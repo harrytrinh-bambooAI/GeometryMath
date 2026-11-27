@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-28
+Phiên bản: v0.2 · 2026-11-28
 # S5-E1 — Trợ lý soạn giáo án (form B/C, chat vá bản nháp, máy chủ kiểm luật A, xuất file): story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run, PO quyết cao nhất). Nguồn: `PRODUCT-MASTER.md` (22/11/2026) D1 dòng 5, C1c "Soạn bài giảng với AI", "Chat với AI để chỉnh bản nháp"; `STAGES-AFTER-MVP.md` Chặng 5 §3 ý 7, §4; PO-27, PO-28, PO-45, PO-46 (Final), PO-30, PO-32; DECISIONS 27/11 "Prompt soạn giáo án = 3 lớp"; tài sản dùng lại nguyên trạng: `prompt-lab/giao-an/prompt-final.md` v1.1 (V8, 91,5 ± 2,0 sau 300 lượt), `truong.md` v1.1, `giao-dien.md` v1.0, `schema-so-sua.json`, `score.py:auto()`; `materials/lop-11/` (kho kiến thức `KT11-…`, bài tập), `materials/baseline/bo-mau/`.
@@ -23,6 +23,7 @@ Phiên bản: v0.1 · 2026-11-28
 - **AI chỉ đề xuất, giáo viên quyết định** (PO-03, C2 nguyên tắc 4): không có đường nào chuyển nội dung AI thành điểm chính thức, tài liệu Đang dùng, đề trong kho, giáo án đã duyệt hay thông báo đã gửi mà thiếu thao tác của giáo viên chủ lớp. Mọi bản nháp AI mang nhãn người "AI soạn" cho tới khi giáo viên duyệt (PO-02, PO-30).
 - **Đáp số do engine** (C2 nguyên tắc 13): AI không bao giờ là nguồn đáp số. Đáp số của câu thuộc kho lấy từ kho (`bo-mau`, `bai-tap`, ngân hàng `de-thi`); câu mới đưa sang engine; không tính được thì nhãn máy "Cần xem lại".
 - Mọi lời gọi AI đi qua module `aigateway` với một task có tên (`lesson_plan`, `lesson_patch`, `exam_draft`, `kb_qa`, `grade`, `grade_ocr`, `notice_draft`, `class_errors`); mỗi lượt ghi `AiCallLog` gồm task, model, phiên bản prompt, token vào/ra, kết quả kiểm máy chủ. Nội dung gửi nhà cung cấp không chứa tên hiển thị, mã người dùng, mã lớp (NFR-GEO-071).
+- **Lượt AI** (BR-S5E5-12): một yêu cầu của người dùng hoặc một việc nền tới một task; gọi lại tự động trong lượt không tính thêm; `grade_ocr`, `grade` tính mỗi trang một lượt. Hạn mức: giáo viên 30 lượt soạn/ngày; lớp 300 hỏi đáp, 200 chấm, 2 000 000 token/ngày; học sinh 30 hỏi đáp/ngày; người vận hành có công tắc tắt khẩn toàn hệ thống theo task.
 - AI giữ giả lập trong CI (D-GEO-047): `MockAiProvider` trả câu trả lời cố định theo dữ liệu mẫu `F-S5-090…099`; không AC nào kỳ vọng chất lượng câu chữ AI thật. Chất lượng AI thật đo bằng bench ngoài CI theo `materials/baseline/KPI.md` v1.0.
 - Phản hồi chứa bài nộp, điểm, lời giải hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145).
 - Thiết bị: giáo viên dùng web trên máy tính; học sinh iPhone để chụp bài, iPad để làm và xem (PWA, PO-65 Q9).
@@ -147,7 +148,7 @@ Phiên bản: v0.1 · 2026-11-28
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S5E1-04 | Task `lesson_plan` dùng nguyên system prompt V8 (Lớp A1–A10 + `<dinh_dang>` + `<huong_dan_su_pham>` + `<tu_kiem_truoc_khi_tra>`) với phiên bản ghi trong `AiCallLog`; Ghi chú và câu chat luôn nằm trong thẻ dữ liệu, không ghép vào system. | `prompt-final.md` §2, §4.5 |
-| BR-S5E1-05 | Máy chủ cấp `<kien_thuc_duoc_cap>` và `<kho_bai_tap>` theo Tiết PPCT; chỉ đơn vị kiến thức trạng thái `da-kiem` hoặc `nhap-tam` được cấp (QS5-03). | `truong.md` A; PLAN-kho-bai-giang §3 |
+| BR-S5E1-05 | Máy chủ cấp `<kien_thuc_duoc_cap>` và `<kho_bai_tap>` theo Tiết PPCT; chỉ đơn vị kiến thức trạng thái `da-kiem` hoặc `nhap-tam` được cấp (QS5-03); mục giáo án dùng mã `nhap-tam` mang nhãn "Kiến thức chưa soát" cho giáo viên tới khi mã đó lên `da-kiem`. | `truong.md` A; PLAN-kho-bai-giang §3 |
 | BR-S5E1-06 | Kiểm tất định sau khi chuẩn hoá khoá: đủ 4 HĐ đúng thứ tự; `to_chuc` đủ 4 bước; Σ phút HĐ trên lớp = số tiết × 45; mã KT thuộc danh sách cấp; `nguon` bài tập thuộc kho hoặc `moi`; `dap_so` = null. Sai thì gọi lại đúng một lần kèm danh sách lỗi; vẫn sai thì không hiện bản hỏng. | `prompt-final.md` §4.1–4.3 |
 | BR-S5E1-07 | Đáp số bài tập: nguồn kho lấy từ kho; `moi` đưa sang engine, engine không tính được thì nhãn máy "Cần xem lại" và ô đáp số để trống. | §4.4; C2 nguyên tắc 13 |
 | BR-S5E1-08 | Mỗi giáo viên tối đa 30 lượt gọi AI soạn (soạn mới + vá) mỗi ngày theo giờ Việt Nam (QS5-04). | QS5-04 |
@@ -186,6 +187,12 @@ Phiên bản: v0.1 · 2026-11-28
 - When: gửi yêu cầu F-S5-020
 - Then: lần đầu bị loại, gọi lại 1 lần với hai lỗi; nếu lần 2 vẫn sai thì MSG-S5-03; không bản lưu nào có `dap_so` khác null do AI ghi
 
+**US-S5E1-02-FC6 — Kiến thức `nhap-tam` dùng trong giáo án mang nhãn "Kiến thức chưa soát"** · Nguồn: BR-S5E1-05
+- Given: `KT11-C07-CT-003` trạng thái `nhap-tam`; giả lập F-S5-093 dùng mã đó ở HĐ2
+- When: gửi yêu cầu F-S5-020; mở bản nháp
+- Then: HĐ2 có nhãn "Kiến thức chưa soát: KT11-C07-CT-003" cho giáo viên; bản xuất DOCX giữ nhãn này ở chân mục
+- Dữ liệu nhập: F-S5-020, F-S5-093; mã `KT11-C07-CT-003` (`nhap-tam`)
+
 **US-S5E1-02-FC4 — Lượt thứ 31 trong ngày bị chặn trước khi gọi AI** · Nguồn: BR-S5E1-08
 - Given: cô Lan đã dùng 30 lượt hôm nay
 - When: gửi yêu cầu F-S5-020
@@ -213,10 +220,10 @@ Phiên bản: v0.1 · 2026-11-28
 
 ### Tiêu chí chấp nhận
 
-**US-S5E1-03-SC1 — Giáo án hợp lệ hiện đủ khung và Σ 45'** · Nguồn: BR-S5E1-09
+**US-S5E1-03-SC1 — Giáo án hợp lệ trả đủ khung và Σ 45'** · Nguồn: BR-S5E1-09
 - Given: bản nháp F-S5-021 "Sẵn sàng"
-- When: mở bản nháp `GA-0001`
-- Then: thấy I Mục tiêu, II Thiết bị, III Tiến trình (4 HĐ 5'/20'/15'/5', "Σ 45' ✓"), IV PHT1 (3 câu, "đáp số: máy tính ✓"); tiêu đề "Bài 26. Khoảng cách · Tiết 1/2 · Khá · Truyền thống · 45'"; nhãn "AI soạn"
+- When: gọi `GET /api/lesson-plans/GA-0001`
+- Then: `kind` = `lesson` có 4 mục Mục tiêu, Thiết bị, Tiến trình (4 HĐ 5/20/15/5, `tongPhut` = 45), PHT1 (3 câu, `dapSoNguon` = `kho`); tiêu đề "Bài 26. Khoảng cách · Tiết 1/2 · Khá · Truyền thống · 45'"; nhãn "AI soạn"
 
 **US-S5E1-03-SC2 — Mục có `unsure` mang nhãn "AI chưa chắc"; đề xuất gom vào khung ⚠** · Nguồn: BR-S5E1-09
 - Given: bản nháp có `unsure` ở HĐ4 và 1 `de_xuat` "Tổng 50' > 45'"
@@ -228,7 +235,7 @@ Phiên bản: v0.1 · 2026-11-28
 - When: gửi form; mở màn kết quả
 - Then: bong bóng chat có đúng một câu hỏi; ô trả lời có tiêu điểm; có nút "Mở trường Số tiết"; bản nháp chưa có nội dung giáo án
 
-**US-S5E1-03-FC1 — Bị từ chối an toàn hiện thông điệp chung** · Nguồn: `giao-dien.md` §2
+**US-S5E1-03-FC1 — Bị từ chối an toàn trả thông điệp chung** · Nguồn: `giao-dien.md` §2
 - Given: giả lập trả `stop_reason = refusal`
 - When: gửi yêu cầu F-S5-020
 - Then: màn hiện MSG-S5-04; không hiện JSON hoặc chữ thô của mô hình
@@ -261,6 +268,7 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: bản vá 2 dòng cho HĐ1
 - When: bấm Nhận ở dòng 1, Bỏ ở dòng 2; bấm Hoàn tác
 - Then: sau bước 1 chỉ dòng 1 được áp; sau Hoàn tác HĐ1 về đúng phiên bản trước
+- Dữ liệu nhập: F-S5-021; bản vá 2 dòng HĐ1 (phiên bản 2 → 3 → hoàn tác 2)
 
 **US-S5E1-04-SC3 — Yêu cầu mơ hồ nhận câu hỏi lại, không vá** · Nguồn: A8; E02, E09
 - Given: giả lập trả `{"kind":"question"}`
@@ -325,6 +333,7 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: giáo án đã duyệt phiên bản 2
 - When: nhận một bản vá mới cho HĐ3
 - Then: phiên bản 3 nhãn "AI soạn"; `approvedVersion` vẫn 2; xuất mặc định lấy phiên bản 3 kèm chân trang nháp
+- Dữ liệu nhập: F-S5-021; `approvedVersion` = 2, bản vá HĐ3
 
 **US-S5E1-05-FC2 — Câu chưa kiểm chứng không in đáp số** · Nguồn: BR-S5E1-14
 - Given: PHT1 có câu `moi` mà engine không tính được (nhãn máy "Cần xem lại")
@@ -336,3 +345,4 @@ Phiên bản: v0.1 · 2026-11-28
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-28 | Tạo story, BR, AC và ước lượng chặng 5 (goal run) | agent spec-s5 (PO → BA → QC) |
+| v0.2 | 2026-11-28 | Sửa theo `work/s5/review-independent.md` (27 lỗi) | agent spec-s5 |

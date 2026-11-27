@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-28
+Phiên bản: v0.2 · 2026-11-28
 # S5-E4 — Rubric, giao bài có chấm, nộp bài viết tay (ảnh, OCR), chấm tay và trả bài (đợt bật 1): story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA (goal run, PO quyết cao nhất). Nguồn: `PRODUCT-MASTER.md` (22/11/2026) D1 dòng 5, C1b "Đánh giá và AI chấm bài", C5 "Dạy và học", "Đánh giá và AI chấm bài"; `STAGES-AFTER-MVP.md` Chặng 5 §4 P0, §5 luồng A, B (bước 2–5), §6 C5-01…C5-06, §7, §8 (`Rubric*`, `Submission*`, `OCRArtifact`, `ApprovedGrade`, `ReleasePolicy`), §10 "tách ba đợt bật"; PO-03, PO-22, PO-25 ("chỉ giáo viên dạy lớp đó duyệt điểm"), PO-64 (ảnh bài làm cần quyết định riêng: QS5-01); `materials/baseline/KPI.md` v1.0 §1 (trọng số làm mẫu rubric); `materials/baseline/bo-mau/` (71 bài có bước, `diem_dung`, `tieu_chi_dat`, lời giải sai).
@@ -10,7 +10,7 @@ Phiên bản: v0.1 · 2026-11-28
 
 **Điều kiện phát hành.** PO-64 vẫn hiệu lực: không thu ảnh bài làm trước khi có quyết định riêng. Spec chạy trước theo giả định QS5-01 (thông báo riêng tư phiên bản mới, nhắc không ghi họ tên lên giấy, ảnh lưu trong nước, giữ tới hết năm học rồi xoá, xoá theo tài khoản); code được làm, **phát hành chờ owner chốt QS5-01**.
 
-**Ước lượng epic:** dev 16 ngày · test 4,8 ngày · tổng 20,8 ngày công (7 story; bảng chung ở `work/s5/estimate-s5.md`).
+**Ước lượng epic:** dev 21 ngày · test 6,3 ngày · tổng 27,3 ngày công (9 story; bảng chung ở `work/s5/estimate-s5.md`).
 
 ## 0. Hướng dẫn đọc, quy ước và dữ liệu mẫu chung (giống nhau ở mọi epic S5)
 
@@ -23,6 +23,7 @@ Phiên bản: v0.1 · 2026-11-28
 - **AI chỉ đề xuất, giáo viên quyết định** (PO-03, C2 nguyên tắc 4): không có đường nào chuyển nội dung AI thành điểm chính thức, tài liệu Đang dùng, đề trong kho, giáo án đã duyệt hay thông báo đã gửi mà thiếu thao tác của giáo viên chủ lớp. Mọi bản nháp AI mang nhãn người "AI soạn" cho tới khi giáo viên duyệt (PO-02, PO-30).
 - **Đáp số do engine** (C2 nguyên tắc 13): AI không bao giờ là nguồn đáp số. Đáp số của câu thuộc kho lấy từ kho (`bo-mau`, `bai-tap`, ngân hàng `de-thi`); câu mới đưa sang engine; không tính được thì nhãn máy "Cần xem lại".
 - Mọi lời gọi AI đi qua module `aigateway` với một task có tên (`lesson_plan`, `lesson_patch`, `exam_draft`, `kb_qa`, `grade`, `grade_ocr`, `notice_draft`, `class_errors`); mỗi lượt ghi `AiCallLog` gồm task, model, phiên bản prompt, token vào/ra, kết quả kiểm máy chủ. Nội dung gửi nhà cung cấp không chứa tên hiển thị, mã người dùng, mã lớp (NFR-GEO-071).
+- **Lượt AI** (BR-S5E5-12): một yêu cầu của người dùng hoặc một việc nền tới một task; gọi lại tự động trong lượt không tính thêm; `grade_ocr`, `grade` tính mỗi trang một lượt. Hạn mức: giáo viên 30 lượt soạn/ngày; lớp 300 hỏi đáp, 200 chấm, 2 000 000 token/ngày; học sinh 30 hỏi đáp/ngày; người vận hành có công tắc tắt khẩn toàn hệ thống theo task.
 - AI giữ giả lập trong CI (D-GEO-047): `MockAiProvider` trả câu trả lời cố định theo dữ liệu mẫu `F-S5-090…099`; không AC nào kỳ vọng chất lượng câu chữ AI thật. Chất lượng AI thật đo bằng bench ngoài CI theo `materials/baseline/KPI.md` v1.0.
 - Phản hồi chứa bài nộp, điểm, lời giải hoặc trạng thái khóa mang `Cache-Control: no-store` (D-GEO-145).
 - Thiết bị: giáo viên dùng web trên máy tính; học sinh iPhone để chụp bài, iPad để làm và xem (PWA, PO-65 Q9).
@@ -83,7 +84,7 @@ Phiên bản: v0.1 · 2026-11-28
 | MSG-S5-33 | Page state | "Đã nộp lúc {HH:mm, dd/MM/yyyy}. Đang chờ thầy cô chấm." | — |
 | MSG-S5-34 | Inline | "Đã quá hạn nộp. Thầy cô không nhận bài muộn cho bài này." | CONFLICT |
 | MSG-S5-35 | Page state | "Mất kết nối. Bài của em đã lưu trên máy và sẽ gửi lại khi có mạng." | — |
-| MSG-S5-36 | Page state | "Nhớ: không ghi họ tên, số điện thoại lên bài. Ảnh chỉ thầy cô lớp em xem." | — |
+| MSG-S5-36 | Page state | "Nhớ: không ghi họ tên, số điện thoại lên bài. Ảnh chỉ thầy cô lớp em xem, được xử lý bằng AI để đọc chữ và đề xuất điểm, và bị xoá cuối năm học." | — |
 | MSG-S5-37 | Inline | "Điểm tiêu chí {tên} phải từ 0 đến {tối đa}, bước 0,25." | VALIDATION_FAILED |
 | MSG-S5-38 | Toast | "Đã duyệt điểm. Học sinh sẽ thấy khi thầy cô bấm Trả bài." | — |
 | MSG-S5-39 | Page state | "Em có bài mới được trả: {tên bài}." | — |
@@ -183,20 +184,18 @@ Phiên bản: v0.1 · 2026-11-28
 
 ---
 
-## US-S5E4-03 — Học sinh chụp và nộp nhiều trang: kiểm độ rõ, xếp trang, giữ ảnh gốc, gửi lại không trùng, nộp muộn
-- **Story:** Là học sinh, tôi muốn chụp từng trang bài làm bằng iPhone, xếp lại và nộp, kể cả khi mạng chập chờn, để thầy cô nhận đủ bài của em. · Loại UI · P0
-- **Ước lượng: dev 3 ngày · test 0,9 ngày** — camera trên PWA iOS, nén và cắt mép phía máy, hàng đợi gửi lại có khóa lũy đẳng, tải lên theo từng trang.
-- **Nguồn:** STAGES §5 luồng A, §6 C5-03; C5 "nộp bài chữ hoặc nhiều ảnh viết tay; ảnh gốc được giữ nguyên"; PO-12 (web trên iPhone), PO-64, QS5-01
-- **Góc nhìn người vận hành:** 8 em nộp dồn trong 30 phút trước hạn tối thứ Sáu; ca đáng kể: ảnh mờ, mất mạng giữa chừng, bấm Nộp hai lần, nộp muộn 7 phút, máy hết bộ nhớ.
-- **Phụ thuộc:** US-S5E4-02; kho lưu đối tượng cho ảnh (QS5-18)
+## US-S5E4-03 — Học sinh chụp và nộp nhiều trang trên iPhone: kiểm độ rõ, xếp trang, HEIC, thông báo riêng tư
+- **Story:** Là học sinh, tôi muốn chụp từng trang bài làm bằng iPhone, xếp lại và nộp, để thầy cô nhận đủ và đọc rõ bài của em. · Loại UI · P0
+- **Ước lượng: dev 3 ngày · test 0,9 ngày** — đã tách theo soát độc lập #15; phần còn lại là camera PWA iOS (gồm spike 0,5 ngày), nén, chấm độ rõ, xếp trang.
+- **Nguồn:** STAGES §5 luồng A, §6 C5-03; C5 "nộp bài chữ hoặc nhiều ảnh viết tay; ảnh gốc được giữ nguyên"; PO-12 (web trên iPhone), PO-64, QS5-01, QS5-30
+- **Góc nhìn người vận hành:** 8 em nộp dồn trong 30 phút trước hạn tối thứ Sáu; ca đáng kể: ảnh mờ, ảnh HEIC từ thư viện, máy hết bộ nhớ. Gửi lại khi mất mạng, nộp lại và nộp muộn tách sang US-S5E4-09; lưu ảnh an toàn sang US-S5E4-08.
+- **Phụ thuộc:** US-S5E4-02, US-S5E4-08 (kho ảnh)
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S5E4-07 | Mỗi bài nộp 1–10 trang ảnh JPEG/HEIC; máy chỉ nén chất lượng để mỗi trang ≤ 8 MB trước khi tải, tệp tải lên là ảnh gốc của hệ thống; điểm độ rõ < 0,5 thì yêu cầu chụp lại ngay trang đó. | STAGES §5 A1 và ngoại lệ; QS5-19 |
-| BR-S5E4-08 | Ảnh gốc (tệp tải lên) lưu nguyên, không bao giờ bị sửa hay thay thế (lưu theo băm); bản xoay, cắt mép do máy chủ tạo là bản phái sinh. Nộp lại trước hạn tạo `SubmissionVersion` mới, bản cũ giữ. | STAGES §7; C5 |
-| BR-S5E4-09 | Gửi kèm khóa lũy đẳng sinh trên máy; gửi lại cùng khóa không tạo bài trùng; mất mạng thì giữ bản nháp trên máy và tự gửi lại. | STAGES §5 A ngoại lệ |
-| BR-S5E4-10 | Sau hạn: cho nộp muộn thì nhận và gắn nhãn "Nộp muộn" (giờ máy chủ); không cho thì CONFLICT. | STAGES §5 A ngoại lệ |
-| BR-S5E4-11 | Trước lần nộp đầu tiên, học sinh xem MSG-S5-36 (thông báo riêng tư phiên bản S5) và bấm "Em đã hiểu"; ghi cờ đã đọc cùng phiên bản văn bản. | US-S3E5-02; PO-64; QS5-01 |
+| BR-S5E4-07 | Mỗi bài nộp 1–10 trang ảnh JPEG/HEIC. "Ảnh gốc của hệ thống" = tệp sau khi máy nén chất lượng để ≤ 8 MB/trang, ngay trước khi tải; từ lúc tải lên tệp này không bao giờ đổi. Điểm độ rõ < 0,5 thì yêu cầu chụp lại ngay trang đó. | STAGES §5 A1; C5; QS5-19 |
+| BR-S5E4-08 | Máy chủ tạo bản phái sinh: HEIC chuyển JPEG cho đọc chữ và hiển thị, bản xoay, cắt mép; ảnh gốc lưu theo băm, không bị sửa hay thay thế. | STAGES §7; C5 |
+| BR-S5E4-11 | Trước lần nộp đầu tiên, học sinh xem MSG-S5-36 (thông báo riêng tư S5: ảnh chỉ thầy cô lớp em xem, được xử lý bằng AI để đọc chữ và đề xuất điểm, xoá cuối năm học) và bấm "Em đã hiểu"; ghi cờ đã đọc cùng phiên bản văn bản. Chưa bấm thì không nộp được. | US-S3E5-02; PO-64; QS5-01, QS5-30 |
 
 - **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
 
@@ -206,46 +205,43 @@ Phiên bản: v0.1 · 2026-11-28
 - Given: Bình An mở BC-01 trên iPhone, đã đọc thông báo riêng tư
 - When: bấm "Nộp bài" rồi chụp 2 trang; kéo trang 2 lên trước rồi kéo lại; bấm "Nộp"
 - Then: màn hiện MSG-S5-33 với giờ máy chủ; bài nộp BN-01 có 2 trang đúng thứ tự cuối cùng; băm ảnh gốc trên máy chủ trùng băm tệp đã tải lên
+- Dữ liệu nhập: F-S5-052, F-S5-053; ảnh mẫu `bn01-p1.jpg` 2,1 MB, `bn01-p2.jpg` 1,8 MB
 
-**US-S5E4-03-SC2 — Gửi lại cùng khóa lũy đẳng không tạo bài trùng** · Nguồn: BR-S5E4-09
-- Given: BN-01 vừa nộp với khóa `k-01`
-- When: gửi lại `POST /api/submissions` cùng khóa `k-01`
-- Then: trả 200 với id BN-01; BC-01 có đúng 1 bài nộp của Bình An
+**US-S5E4-03-SC2 — Ảnh HEIC được nhận, bản phái sinh JPEG dùng cho đọc chữ** · Nguồn: BR-S5E4-08
+- Given: Bình An đã đọc thông báo riêng tư
+- When: gửi `POST /api/submissions` 1 trang `bn01-p1.heic` (1,4 MB)
+- Then: trả 201; ảnh gốc lưu đúng tệp HEIC (so băm); có bản phái sinh `image/jpeg`; task `grade_ocr` nhận bản JPEG
+- Dữ liệu nhập: F-S5-052; tệp `bn01-p1.heic` 1,4 MB
 
-**US-S5E4-03-SC3 — Nộp muộn có nhãn khi bài cho nộp muộn** · Nguồn: BR-S5E4-10
-- Given: BC-01 cho nộp muộn; giờ máy chủ 11/12/2026 20:07
-- When: Hà My nộp BN-05
-- Then: BN-05 trạng thái Đã nộp, nhãn "Nộp muộn 7 phút"
-
-**US-S5E4-03-SC4 — Nộp lại trước hạn tạo phiên bản mới, bản cũ giữ** · Nguồn: BR-S5E4-08
-- Given: BN-01 phiên bản 1
-- When: Bình An nộp lại 3 trang trước hạn
-- Then: BN-01 phiên bản 2 là bản chấm; phiên bản 1 vẫn đọc được bởi giáo viên; ảnh của phiên bản 1 không bị xoá
+**US-S5E4-03-SC3 — Lần nộp đầu phải xác nhận thông báo riêng tư có nói xử lý bằng AI** · Nguồn: BR-S5E4-11
+- Given: Chi Mai chưa đọc thông báo riêng tư S5
+- When: bấm "Nộp bài" lần đầu; bấm "Em đã hiểu"
+- Then: hiện MSG-S5-36 có cụm "được xử lý bằng AI" và "xoá cuối năm học"; trước khi bấm, nút Chụp mờ; sau khi bấm, cờ đã đọc lưu phiên bản `privacy-s5-1.0`
+- Dữ liệu nhập: F-S5-010 (Chi Mai `HS-8L2K-77AB`)
 
 **US-S5E4-03-FC1 — Ảnh mờ bị yêu cầu chụp lại ngay** · Nguồn: BR-S5E4-07
 - Given: Đức Huy chụp trang 2 điểm độ rõ 0,31 (F-S5-055)
 - When: chụp trang 2; bấm "Dùng ảnh này"
 - Then: hiện MSG-S5-32 cho trang 2; nút Nộp mờ cho tới khi trang 2 được chụp lại đạt
+- Dữ liệu nhập: F-S5-055; ảnh `bn03-p2-mo.jpg` độ rõ 0,31 (biên: 0,50 đạt, 0,49 không đạt)
 
-**US-S5E4-03-FC2 — Mất mạng khi nộp: giữ nháp, tự gửi lại** · Nguồn: BR-S5E4-09
-- Given: Bình An đã chụp 2 trang; mạng tắt (giả lập offline của trình duyệt)
-- When: bấm Nộp; bật lại mạng
-- Then: sau bước 1 hiện MSG-S5-35, bài lưu trên máy; sau bước 2 bài tự gửi, đúng 1 bài nộp trên máy chủ
-
-**US-S5E4-03-FC3 — Quá hạn khi bài không cho nộp muộn** · Nguồn: BR-S5E4-10
-- Given: BC-01 không cho nộp muộn; giờ máy chủ sau hạn 1 giây
-- When: Gia Bảo nộp
-- Then: CONFLICT, MSG-S5-34; không có bài nộp
-
-**US-S5E4-03-FC4 — Trang 9 MB hoặc 11 trang bị từ chối** · Nguồn: BR-S5E4-07
+**US-S5E4-03-FC2 — Trang đúng 8 MB được nhận; 8 MB + 1 byte hoặc 11 trang bị từ chối** · Nguồn: BR-S5E4-07
 - Given: Bình An đã đăng nhập
-- When: gửi trang 9 MB; gửi bài 11 trang
-- Then: cả hai VALIDATION_FAILED
+- When: gửi trang đúng 8 388 608 byte; gửi trang 8 388 609 byte; gửi bài 11 trang
+- Then: lần 1 trả 201; lần 2 và lần 3 VALIDATION_FAILED
+- Dữ liệu nhập: tệp 8 388 608 B; tệp 8 388 609 B; 11 tệp 500 KB
 
-**US-S5E4-03-FC5 — Học sinh không đọc được bài nộp của bạn** · Nguồn: quy ước chung
+**US-S5E4-03-FC3 — Máy không đủ chỗ lưu nháp thì báo, trang đã tải không mất** · Nguồn: BR-S5E4-07
+- Given: Bình An đã tải trang 1; trình duyệt báo hết hạn mức lưu trữ (giả lập `QuotaExceededError`)
+- When: chụp trang 2
+- Then: hiện "Máy em hết chỗ lưu, hãy nộp các trang đã chụp hoặc xoá bớt ảnh"; trang 1 vẫn còn trên máy chủ
+- Dữ liệu nhập: F-S5-053
+
+**US-S5E4-03-FC4 — Học sinh không đọc được bài nộp của bạn** · Nguồn: quy ước chung
 - Given: BN-02 của Chi Mai
 - When: Bình An gọi `GET /api/submissions/BN-02`
 - Then: NOT_FOUND; không có URL ảnh nào trong thân phản hồi
+- Dữ liệu nhập: F-S5-054
 
 ---
 
@@ -260,7 +256,7 @@ Phiên bản: v0.1 · 2026-11-28
 |---|---|---|
 | BR-S5E4-12 | Task `grade_ocr` đọc từng trang thành văn bản có ký hiệu toán, mỗi đoạn kèm độ tin cậy 0–1 và vùng ảnh; đoạn < 0,6 tô vàng "chưa chắc". Không giải bài, không chấm. | PO-65 Q4; PO-30; QS5-20 |
 | BR-S5E4-13 | `OCRArtifact` là bản phái sinh có phiên bản; sửa của giáo viên tạo phiên bản mới, ghi người sửa và giờ; ảnh gốc không đổi. | STAGES §7 |
-| BR-S5E4-14 | AI lỗi sau một lần gọi lại thì bài vẫn ở trạng thái Chờ chấm, ô bản đọc chữ hiện "Chưa đọc được" và nút "Đọc lại"; chấm tay không phụ thuộc bản đọc chữ. | PO-78 |
+| BR-S5E4-14 | AI lỗi sau một lần gọi lại thì bài vẫn ở trạng thái Chờ chấm, ô bản đọc chữ hiện "Chưa đọc được" và nút "Đọc lại" (tối đa 3 lần mỗi bài; mỗi trang tính 1 lượt chấm theo BR-S5E5-12); chấm tay không phụ thuộc bản đọc chữ. | PO-78 |
 
 - **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
 
@@ -321,8 +317,8 @@ Phiên bản: v0.1 · 2026-11-28
 
 **US-S5E4-05-FC2 — Trống khi chưa có bài nộp** · Nguồn: BR-S5E4-15
 - Given: bài mới giao, chưa em nào nộp
-- When: mở hàng chờ của bài đó
-- Then: trạng thái trống "Chưa có bài nộp" kèm hạn nộp
+- When: gọi `GET /api/grading/queue?assignment=<bài>`
+- Then: danh sách rỗng, `state` = `empty` kèm hạn nộp
 
 ---
 
@@ -381,6 +377,8 @@ Phiên bản: v0.1 · 2026-11-28
 |---|---|---|
 | BR-S5E4-20 | Trả bài chỉ gồm bài Đã duyệt; bài chưa duyệt vẫn ở hàng chờ. Với `ReleasePolicy` giờ cố định, máy chủ mở theo đồng hồ CSDL như NFR-GEO-023. | STAGES §5 B5; NFR-GEO-023 |
 | BR-S5E4-21 | Trước khi trả: học sinh chỉ thấy "Đã nộp · Đang chờ thầy cô chấm"; không có điểm, rubric chi tiết, đề xuất AI, độ tin cậy hay bản đọc chữ trong bất kỳ phản hồi nào. | STAGES §5 A3, §7; PO-03 |
+| BR-S5E4-23 | Lời giải và đáp án của bài chỉ hiện cho học sinh có bài Đã trả; em chưa nộp, có bài Chờ chấm hoặc Đã duyệt chưa trả thì vẫn khoá. Trả bài cho cả lớp đóng nhận bài nộp mới, kể cả khi bài cho nộp muộn. | PO-22; soát độc lập #12 |
+| BR-S5E4-24 | Thu hồi Trả bài được trong 15 phút sau khi trả: bài về Đã duyệt, lời giải khoá lại, thông báo bị gỡ. Sửa điểm của bài Đã trả thì học sinh nhận thông báo "Điểm bài {tên bài} đã được thầy cô cập nhật". | soát độc lập #27; QS5-31 |
 | BR-S5E4-22 | Sau khi trả: thấy điểm từng tiêu chí, tổng, nhận xét, ảnh bài của mình và lời giải; nhận thông báo trong ứng dụng MSG-S5-39. Không thấy điểm của bạn, không có thứ hạng. | PO-04; PO-22 |
 
 - **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
@@ -407,8 +405,145 @@ Phiên bản: v0.1 · 2026-11-28
 - When: Bình An gọi `GET /api/submissions/BN-02/result`
 - Then: NOT_FOUND
 
+**US-S5E4-07-FC3 — Em chưa nộp hoặc bài Chờ chấm không thấy lời giải sau khi lớp được trả bài** · Nguồn: BR-S5E4-23
+- Given: BC-01 đã trả cho lớp; Gia Bảo chưa nộp; BN-03 của Đức Huy Chờ chấm
+- When: Gia Bảo gọi `GET /api/graded-assignments/BC-01/solution`; Đức Huy gọi cùng đường dẫn
+- Then: cả hai nhận trạng thái LOCKED, không có nội dung lời giải hay chuỗi `a√6/3`
+- Dữ liệu nhập: F-S5-052, F-S5-055, F-S5-056
+
+**US-S5E4-07-FC4 — Sau khi trả bài, nộp mới bị từ chối dù bài cho nộp muộn** · Nguồn: BR-S5E4-23
+- Given: BC-01 cho nộp muộn, đã trả cho lớp
+- When: Gia Bảo gửi `POST /api/submissions` cho BC-01
+- Then: CONFLICT; không có bài nộp
+- Dữ liệu nhập: F-S5-052, F-S5-056
+
+**US-S5E4-07-SC3 — Thu hồi Trả bài trong 15 phút** · Nguồn: BR-S5E4-24
+- Given: BC-01 vừa trả lúc T0; BN-01 Đã trả
+- When: cô Lan gửi `POST /api/graded-assignments/BC-01/return/undo` tại T0 + 10 phút; Bình An gọi kết quả; cô Lan gửi undo lần nữa tại T0 + 16 phút (sau khi trả lại)
+- Then: BN-01 về Đã duyệt; Bình An chỉ thấy "Đang chờ thầy cô trả bài", lời giải khoá; thông báo MSG-S5-39 bị gỡ; undo tại T0 + 16 phút trả CONFLICT
+- Dữ liệu nhập: F-S5-052, F-S5-053; mốc T0 + 10 phút, T0 + 16 phút (biên 15 phút)
+
+**US-S5E4-07-SC4 — Sửa điểm bài đã trả thì học sinh được báo** · Nguồn: BR-S5E4-24
+- Given: BN-02 Đã trả tổng 7
+- When: cô Lan sửa "Bước" thành 3,5
+- Then: Chi Mai có thông báo "Điểm bài Kiểm tra 15 phút – Khoảng cách đã được thầy cô cập nhật"; kết quả hiện tổng 7,5
+- Dữ liệu nhập: F-S5-054; Bước 3 → 3,5
+
+---
+
+## US-S5E4-08 — Lưu ảnh bài làm an toàn: mã hoá khi lưu, URL ký 5 phút, gỡ EXIF/GPS, xoá theo năm học và theo tài khoản, ảnh gửi AI
+- **Story:** Là học sinh, tôi muốn ảnh bài làm của em được lưu kín, chỉ thầy cô lớp em xem trong thời gian ngắn và bị xoá đúng hạn, để em yên tâm nộp bài. · Loại Logic · P0
+- **Ước lượng: dev 3 ngày · test 0,9 ngày** — gồm hạ tầng kho ảnh (bucket, khoá mã hoá, URL ký), gỡ metadata, job xoá theo năm học và theo tài khoản; là điều kiện cổng L5b.
+- **Nguồn:** PO-64, PO-61; QS5-01, QS5-14, QS5-18, QS5-30; STAGES Ch5 §9 ("chốt nơi lưu ảnh"); NFR-GEO-070, 071; US-S3E5-05 (xoá tài khoản); soát độc lập #1, #3
+- **Góc nhìn người vận hành:** chạy cho mọi ảnh; job xoá chạy hằng đêm; ca đáng kể: ảnh có GPS của nhà em, URL ảnh bị chép gửi ra ngoài, học sinh xoá tài khoản giữa năm, hết năm học.
+- **Phụ thuộc:** kho lưu đối tượng (QS5-18); US-S3E5-05; US-S5E4-03
+
+| BR | Quy tắc | Nguồn |
+|---|---|---|
+| BR-S5E4-25 | Ảnh gốc và mọi phái sinh lưu ở kho đối tượng đặt tại Việt Nam, mã hoá khi lưu (AES-256, khoá do máy chủ quản lý, tách theo môi trường); không có đường dẫn công khai. | QS5-01, QS5-18 |
+| BR-S5E4-26 | Ảnh chỉ trả qua URL ký hạn 5 phút, cấp cho giáo viên chủ lớp hoặc chính học sinh nộp; mỗi lần cấp kiểm lại quan hệ; URL hết hạn bị kho trả 403. | QS5-18 |
+| BR-S5E4-27 | Khi nhận ảnh, máy chủ gỡ toàn bộ EXIF/XMP (GPS, thiết bị, giờ chụp) trước khi lưu ảnh gốc của hệ thống; băm tính sau khi gỡ. | soát độc lập #1 |
+| BR-S5E4-28 | Xoá: (a) xoá tài khoản học sinh → trong 24 giờ xoá ảnh gốc, phái sinh, bản đọc chữ, `GradingProposal`, `CriterionAssessment` của bài em; `ApprovedGrade` giữ dạng ẩn danh cho số liệu lớp; (b) ngày 31/07 hằng năm job xoá mọi ảnh và bản đọc chữ của năm học vừa kết thúc. Mỗi lần xoá ghi `AuditEvent` số lượng, không ghi nội dung. | QS5-01, QS5-14; US-S3E5-05 |
+| BR-S5E4-29 | Ảnh gửi nhà cung cấp AI (task `grade_ocr`, `grade`) chỉ là bản phái sinh đã gỡ EXIF, không kèm tên, mã người dùng, mã lớp; xử lý ở hạ tầng của nhà cung cấp (có thể ngoài Việt Nam) theo chế độ không lưu dữ liệu; MSG-S5-36 nói rõ việc này. "Lưu trong nước" áp cho lưu trữ, không áp cho xử lý AI (QS5-30). Họ tên viết tay trên giấy không tự che được, chỉ nhắc học sinh. | QS5-30; NFR-GEO-071; soát độc lập #3 |
+
+- **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
+
+### Tiêu chí chấp nhận
+
+**US-S5E4-08-SC1 — Ảnh lưu đã mã hoá và không còn EXIF/GPS** · Nguồn: BR-S5E4-25, 27
+- Given: ảnh mẫu `exif-gps.jpg` có GPS 21.0285,105.8542 và model iPhone
+- When: Bình An nộp ảnh đó; đọc đối tượng thô trong kho (móc e2e); tải ảnh qua URL ký
+- Then: đối tượng thô trong kho không giải được thành JPEG (đã mã hoá); ảnh tải qua URL ký không có thẻ EXIF/GPS; băm lưu bằng băm ảnh đã gỡ metadata
+- Dữ liệu nhập: F-S5-053; tệp `exif-gps.jpg` (GPS 21.0285,105.8542)
+
+**US-S5E4-08-SC2 — URL ký hết hạn sau 5 phút** · Nguồn: BR-S5E4-26
+- Given: cô Lan nhận URL ký của BN-01 trang 1 lúc T0
+- When: tải URL lúc T0 + 299 giây; tải lại lúc T0 + 301 giây
+- Then: lần 1 trả 200 kèm ảnh; lần 2 trả 403
+- Dữ liệu nhập: F-S5-053; mốc T0 + 299 s, T0 + 301 s
+
+**US-S5E4-08-FC1 — Không lấy được URL ký ảnh của bài ngoài quan hệ (IDOR)** · Nguồn: BR-S5E4-26
+- Given: BN-01 của 11A1
+- When: thầy Khôi gọi `GET /api/submissions/BN-01/pages/1/url`; Chi Mai gọi cùng đường dẫn
+- Then: cả hai NOT_FOUND, không có URL trong thân phản hồi
+- Dữ liệu nhập: F-S5-002, F-S5-053, F-S5-054
+
+**US-S5E4-08-SC3 — Xoá tài khoản học sinh xoá ảnh, bản đọc chữ, đề xuất AI** · Nguồn: BR-S5E4-28
+- Given: BN-01 có 2 ảnh, bản đọc chữ 2 phiên bản, 1 `GradingProposal`, `ApprovedGrade` 10
+- When: Bình An xoá tài khoản (US-S3E5-05); chạy job xoá; kiểm kho và CSDL (móc e2e)
+- Then: 0 đối tượng ảnh của BN-01 trong kho; 0 hàng `ocr_artifact`, `grading_proposal`, `criterion_assessment` của BN-01; `ApprovedGrade` còn nhưng không gắn `user_id`; `AuditEvent` ghi số đối tượng đã xoá
+- Dữ liệu nhập: F-S5-053, F-S5-090
+
+**US-S5E4-08-SC4 — Hết năm học job xoá ảnh và bản đọc chữ** · Nguồn: BR-S5E4-28
+- Given: năm học 2026–2027 có 37 ảnh; đồng hồ CSDL đặt 31/07/2027 00:05
+- When: chạy job xoá theo năm học
+- Then: 0 ảnh và 0 bản đọc chữ của năm 2026–2027 còn lại; dữ liệu năm 2027–2028 không bị đụng; một `AuditEvent` với số lượng 37
+- Dữ liệu nhập: năm học 2026–2027, 37 ảnh; mốc 31/07/2027 00:05
+
+**US-S5E4-08-FC2 — Yêu cầu gửi AI không có EXIF và danh tính** · Nguồn: BR-S5E4-29
+- Given: ảnh `exif-gps.jpg` của Bình An đã nộp; giả lập F-S5-095 ghi lại yêu cầu
+- When: chờ task `grade_ocr` chạy
+- Then: ảnh trong yêu cầu ở giả lập không có EXIF/GPS; yêu cầu không chứa "Bình An", `HS-4P9T-37WD`, `HK-4P7Q`
+- Dữ liệu nhập: F-S5-053, F-S5-095
+
+---
+
+## US-S5E4-09 — Gửi lại khi mất mạng (lũy đẳng), nộp lại trước hạn, nộp muộn, tải dồn trước hạn
+- **Story:** Là học sinh, tôi muốn bài đã chụp không mất khi mạng chập chờn và được nộp lại trước hạn, để không bị tính thiếu bài. · Loại Logic · P0
+- **Ước lượng: dev 2 ngày · test 0,6 ngày**
+- **Nguồn:** STAGES §5 luồng A ngoại lệ; soát độc lập #15 (tách từ US-S5E4-03), #16 (tải)
+- **Góc nhìn người vận hành:** 8–45 em nộp dồn 30 phút trước hạn; ca đáng kể: bấm Nộp hai lần, mất mạng giữa chừng, nộp muộn 7 phút.
+- **Phụ thuộc:** US-S5E4-03, 08
+
+| BR | Quy tắc | Nguồn |
+|---|---|---|
+| BR-S5E4-09 | Gửi kèm khóa lũy đẳng sinh trên máy; gửi lại cùng khóa không tạo bài trùng; mất mạng thì giữ bản nháp trên máy và tự gửi lại khi có mạng. | STAGES §5 A ngoại lệ |
+| BR-S5E4-10 | Sau hạn: cho nộp muộn thì nhận và gắn nhãn "Nộp muộn" (giờ máy chủ); không cho thì CONFLICT. Nộp lại trước hạn tạo `SubmissionVersion` mới, bản cũ giữ. | STAGES §5 A ngoại lệ |
+| BR-S5E4-30 | Tải: 45 học sinh, mỗi em 3 trang 2 MB, nộp trong 5 phút → p95 thời gian nhận một trang ≤ 3 giây, 0 lỗi 5xx. | soát độc lập #16 |
+
+- **DoR:** Ready for R3 (goal run, PO quyết); giả định ghi ở `work/s5/questions-s5.md`.
+
+### Tiêu chí chấp nhận
+
+**US-S5E4-09-SC1 — Gửi lại cùng khóa lũy đẳng không tạo bài trùng** · Nguồn: BR-S5E4-09
+- Given: BN-01 vừa nộp với khóa `k-01`
+- When: gửi lại `POST /api/submissions` cùng khóa `k-01`
+- Then: trả 200 với id BN-01; BC-01 có đúng 1 bài nộp của Bình An
+- Dữ liệu nhập: F-S5-053; khoá lũy đẳng `k-01`
+
+**US-S5E4-09-SC2 — Nộp muộn có nhãn khi bài cho nộp muộn** · Nguồn: BR-S5E4-10
+- Given: BC-01 cho nộp muộn; giờ máy chủ 11/12/2026 20:07
+- When: Hà My nộp BN-05
+- Then: BN-05 trạng thái Đã nộp, nhãn "Nộp muộn 7 phút"
+- Dữ liệu nhập: F-S5-056; mốc 11/12/2026 20:07 (biên: 20:00:00 đúng hạn, 20:00:01 muộn)
+
+**US-S5E4-09-SC3 — Nộp lại trước hạn tạo phiên bản mới, bản cũ giữ** · Nguồn: BR-S5E4-10
+- Given: BN-01 phiên bản 1
+- When: Bình An nộp lại 3 trang trước hạn
+- Then: BN-01 phiên bản 2 là bản chấm; phiên bản 1 vẫn đọc được bởi giáo viên; ảnh của phiên bản 1 không bị xoá
+- Dữ liệu nhập: F-S5-053; 3 tệp 1,5 MB
+
+**US-S5E4-09-FC1 — Mất mạng khi nộp: giữ nháp, tự gửi lại** · Nguồn: BR-S5E4-09
+- Given: Bình An đã chụp 2 trang; mạng tắt (giả lập offline của trình duyệt)
+- When: bấm Nộp; bật lại mạng
+- Then: sau bước 1 hiện MSG-S5-35, bài lưu trên máy; sau bước 2 bài tự gửi, đúng 1 bài nộp trên máy chủ
+- Dữ liệu nhập: F-S5-053
+
+**US-S5E4-09-FC2 — Quá hạn khi bài không cho nộp muộn** · Nguồn: BR-S5E4-10
+- Given: BC-01 không cho nộp muộn; giờ máy chủ sau hạn 1 giây
+- When: Gia Bảo nộp
+- Then: CONFLICT, MSG-S5-34; không có bài nộp
+- Dữ liệu nhập: F-S5-056; mốc 11/12/2026 20:00:01
+
+**US-S5E4-09-FC3 — 45 em nộp dồn trong 5 phút** · Nguồn: BR-S5E4-30
+- Given: lớp thử 45 học sinh Đang học, BC-01 đã giao
+- When: chạy kịch bản tải: 45 em × 3 trang 2 MB trong 5 phút
+- Then: p95 nhận một trang ≤ 3 giây; 0 phản hồi 5xx; đúng 45 bài nộp, 135 trang
+- Dữ liệu nhập: 45 tài khoản HS thử; 135 tệp 2 MB
+
 ## Lịch sử
 
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-28 | Tạo story, BR, AC và ước lượng chặng 5 (goal run) | agent spec-s5 (PO → BA → QC) |
+| v0.2 | 2026-11-28 | Sửa theo `work/s5/review-independent.md` (27 lỗi) | agent spec-s5 |
