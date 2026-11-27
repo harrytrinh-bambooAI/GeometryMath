@@ -254,4 +254,46 @@ class AuditEventS3E5IT extends AbstractS3E4IT {
         .as("PO-76: tối đa 1 hàng mỗi giờ cho (người gọi, loại đối tượng)")
         .isEqualTo(1);
   }
+
+  @Test
+  @DisplayName(
+      "PO-76 Hai luồng song song từ chối cùng (người gọi, loại đối tượng) và Redis mất khóa: đúng 1 hàng denied")
+  void parallelDeniedWritesOneRow() throws Exception {
+    World w = world();
+    String set =
+        assigned(
+            w.people().get("Cô Lan").token(),
+            w.classes().get("11A1").id(),
+            "Bộ bài song song",
+            172_800L,
+            1);
+    String khoi = w.people().get("Thầy Khôi").token();
+    UUID khoiId = w.people().get("Thầy Khôi").id();
+    redis.delete(redis.keys("*audit-denied*"));
+    var pool = java.util.concurrent.Executors.newFixedThreadPool(2);
+    var go = new java.util.concurrent.CountDownLatch(1);
+    try {
+      var fs = new java.util.ArrayList<java.util.concurrent.Future<Integer>>();
+      for (int i = 0; i < 2; i++) {
+        fs.add(
+            pool.submit(() -> {
+              go.await();
+              return send(
+                      "POST", "/api/v1/teacher/assignment-sets/" + set + "/open-now", khoi, "{}")
+                  .statusCode();
+            }));
+      }
+      go.countDown();
+      for (var f : fs) {
+        assertThat(f.get()).isEqualTo(404);
+      }
+    } finally {
+      pool.shutdown();
+    }
+    assertThat(
+            count(
+                "SELECT count(*) FROM audit_log WHERE actor_user_id = ? AND outcome = 'denied'",
+                khoiId))
+        .isEqualTo(1);
+  }
 }

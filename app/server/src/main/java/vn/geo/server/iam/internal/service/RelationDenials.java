@@ -1,5 +1,6 @@
 package vn.geo.server.iam.internal.service;
 
+import java.time.Duration;
 import java.util.UUID;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -16,12 +17,16 @@ import vn.geo.server.iam.internal.repo.ClassRepository;
 /**
  * Sự kiện bảo mật khi bị từ chối vì quan hệ (BR-S3E1-51, 54; M-S3-06): ghi trong giao dịch riêng
  * (lỗi ném ra sau không làm mất bản ghi) rồi trả ngoại lệ để ném. Bản ghi chỉ có loại, người gọi,
- * loại đối tượng, giờ máy chủ.
+ * loại đối tượng, giờ máy chủ. PO-76: tối đa một hàng mỗi giờ cho mỗi (người gọi, loại đối tượng),
+ * kiểm nguyên tử trong CSDL (khóa tư vấn); lượt từ chối vẫn trả lỗi bình thường.
  */
 @Component
 public class RelationDenials {
 
   public static final String MSG_NOT_FOUND = "Không tìm thấy nội dung này.";
+
+  /** PO-76: cửa sổ giới hạn một hàng mỗi (người gọi, loại đối tượng). */
+  public static final Duration WINDOW = Duration.ofHours(1);
 
   private final ClassRepository repo;
   private final TransactionTemplate tx;
@@ -58,6 +63,7 @@ public class RelationDenials {
 
   private void record(AuthPrincipal p, String kind, String objectType) {
     UUID id = Uuid7.next();
-    tx.executeWithoutResult(s -> repo.recordDenial(p.orgId(), id, p.userId(), kind, objectType));
+    tx.executeWithoutResult(
+        s -> repo.recordDenial(p.orgId(), id, p.userId(), kind, objectType, WINDOW));
   }
 }

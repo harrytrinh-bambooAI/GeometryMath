@@ -40,13 +40,6 @@ public class StuckService {
 
   static final String TASK = "class_stuck";
 
-  /**
-   * Trần chờ mặc định của cả màn (BR-S3E3-37, -42; PO-83). Giá trị đang dùng ở {@link
-   * StuckSettings#deadline()}; mỗi lượt gọi chỉ được chờ phần còn lại của trần, không cộng dồn và
-   * không phụ thuộc geo.ai.timeout.
-   */
-  static final Duration DEADLINE = Duration.ofSeconds(10);
-
   static final int CACHE_MAX = 5_000;
 
   /** userId (UUID) để mở bằng chứng; mã người dùng chỉ để hiện (BR-S3E3-40, PO-74). */

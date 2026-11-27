@@ -1,7 +1,14 @@
 package vn.geo.server.content.internal.repo;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
+import java.util.function.Supplier;
+import javax.sql.DataSource;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 
@@ -16,10 +23,42 @@ public class SignatureUpgradeRepository {
   /** Một version đề cần tính lại; {@code spec} là scene_build.spec mới nhất (null = chưa dựng). */
   public record Stale(UUID orgId, UUID problemVersionId, String spec) {}
 
-  private final JdbcClient jdbc;
+  /** Khóa tư vấn phiên: chỉ một nút chạy tính lại tại một thời điểm. */
+  private static final long LOCK_KEY = 0x5349475550475244L;
 
-  public SignatureUpgradeRepository(JdbcClient jdbc) {
+  private final JdbcClient jdbc;
+  private final DataSource dataSource;
+
+  public SignatureUpgradeRepository(JdbcClient jdbc, DataSource dataSource) {
     this.jdbc = jdbc;
+    this.dataSource = dataSource;
+  }
+
+  /**
+   * Chạy {@code work} khi giành được khóa tư vấn phiên (pg_try_advisory_lock) giữ trên một kết nối
+   * riêng suốt lượt; rỗng nếu nút khác đang giữ khóa. Khóa tự nhả khi kết nối đóng.
+   */
+  public <T> Optional<T> exclusive(Supplier<T> work) {
+    try (Connection c = dataSource.getConnection()) {
+      try (PreparedStatement ps = c.prepareStatement("SELECT pg_try_advisory_lock(?)")) {
+        ps.setLong(1, LOCK_KEY);
+        try (ResultSet rs = ps.executeQuery()) {
+          if (!rs.next() || !rs.getBoolean(1)) {
+            return Optional.empty();
+          }
+        }
+      }
+      try {
+        return Optional.ofNullable(work.get());
+      } finally {
+        try (PreparedStatement ps = c.prepareStatement("SELECT pg_advisory_unlock(?)")) {
+          ps.setLong(1, LOCK_KEY);
+          ps.execute();
+        }
+      }
+    } catch (SQLException e) {
+      throw new IllegalStateException("khóa tư vấn tính lại chữ ký", e);
+    }
   }
 
   public List<Stale> stale(int version, Stale after, int limit) {

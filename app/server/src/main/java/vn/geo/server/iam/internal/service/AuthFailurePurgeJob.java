@@ -9,16 +9,16 @@ import org.springframework.stereotype.Component;
 import vn.geo.server.iam.internal.repo.AuthRepository;
 
 /**
- * PO-71 (BR-S3E5-37): công việc dọn xóa {@code auth_failure} (HMAC của IP) theo giờ — hạn lưu tối
- * đa 1 giờ thay cho 1 ngày. Cửa sổ đếm thử sai chỉ 15 phút nên dọn hàng cũ hơn 1 giờ không đổi kết
- * quả giới hạn. Lịch cron {@code geo.auth.failure-purge-cron} (mặc định phút 5 mỗi giờ; "-" = tắt).
- * Lũy đẳng: chạy lặp hay nhiều máy chủ cùng lúc chỉ xóa hàng đã quá hạn.
+ * PO-71 (BR-S3E5-37): công việc dọn xóa {@code auth_failure} (HMAC của IP) mỗi 10 phút — hạn lưu
+ * tối đa 1 giờ thay cho 1 ngày. Cửa sổ đếm thử sai chỉ 15 phút nên dọn hàng cũ hơn 1 giờ không đổi
+ * kết quả giới hạn. Lịch cron {@code geo.auth.failure-purge-cron} (mặc định mỗi 10 phút; "-" =
+ * tắt). Lũy đẳng: chạy lặp hay nhiều máy chủ cùng lúc chỉ xóa hàng đã quá hạn.
  */
 @Component
 public class AuthFailurePurgeJob {
 
   public static final String CRON_PROPERTY = "geo.auth.failure-purge-cron";
-  public static final String DEFAULT_CRON = "0 5 * * * *";
+  public static final String DEFAULT_CRON = "0 */10 * * * *";
   public static final Duration RETENTION = Duration.ofHours(1);
 
   private static final Logger log = LoggerFactory.getLogger(AuthFailurePurgeJob.class);

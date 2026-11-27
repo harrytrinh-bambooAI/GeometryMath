@@ -184,7 +184,15 @@ class ClassS3E1IT extends AbstractE1IT {
       assertThat(r.body()).doesNotContain("10B").doesNotContain("Mi Na").doesNotContain("Thu Hà");
     }
     assertThat(count("SELECT count(*) FROM relation_denial WHERE actor_id IN (" + in + ")"))
-        .isEqualTo(5);
+        .as("PO-76: 5 lượt từ chối, tối đa 1 hàng mỗi (người gọi, loại đối tượng) mỗi giờ")
+        .isEqualTo(4);
+    assertThat(
+            count(
+                "SELECT count(*) FROM (SELECT DISTINCT actor_id, object_type FROM relation_denial"
+                    + " WHERE actor_id IN ("
+                    + in
+                    + ")) d"))
+        .isEqualTo(4);
     Set<String> cols =
         new TreeSet<>(
             jdbc.sql(

@@ -1,5 +1,6 @@
 package vn.geo.server.iam.internal.repo;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
@@ -511,18 +512,35 @@ public class ClassRepository {
 
   // ------------------------------------------------------------------ sự kiện bảo mật
 
-  public void recordDenial(UUID orgId, UUID id, UUID actorId, String kind, String objectType) {
-    jdbc.sql(
-            """
-            INSERT INTO relation_denial (id, org_id, actor_id, kind, object_type)
-            VALUES (:id, :orgId, :actorId, :kind, :objectType)
-            """)
-        .param("id", id)
-        .param("orgId", orgId)
-        .param("actorId", actorId)
-        .param("kind", kind)
-        .param("objectType", objectType)
-        .update();
+  /**
+   * PO-76 / BR-S3E5-07: tối đa một hàng mỗi (người gọi, loại đối tượng) trong {@code window}.
+   * Nguyên tử nhờ khóa tư vấn mức giao dịch theo (người gọi, loại đối tượng): lượt song song chờ
+   * lượt trước xong rồi mới kiểm (READ COMMITTED thấy hàng đã commit). Gọi trong giao dịch. Trả
+   * true nếu đã ghi.
+   */
+  public boolean recordDenial(
+      UUID orgId, UUID id, UUID actorId, String kind, String objectType, Duration window) {
+    jdbc.sql("SELECT pg_advisory_xact_lock(hashtextextended(:k, 0))")
+        .param("k", "relation_denial:" + orgId + ":" + actorId + ":" + objectType)
+        .query((rs, i) -> 0)
+        .list();
+    return jdbc.sql(
+                """
+                INSERT INTO relation_denial (id, org_id, actor_id, kind, object_type)
+                SELECT :id, :orgId, :actorId, :kind, :objectType
+                WHERE NOT EXISTS (SELECT 1 FROM relation_denial d
+                                  WHERE d.org_id = :orgId AND d.actor_id = :actorId
+                                    AND d.object_type = :objectType
+                                    AND d.at > now() - make_interval(secs => :secs))
+                """)
+            .param("id", id)
+            .param("orgId", orgId)
+            .param("actorId", actorId)
+            .param("kind", kind)
+            .param("objectType", objectType)
+            .param("secs", (double) window.toSeconds())
+            .update()
+        > 0;
   }
 
   static OffsetDateTime ts(Instant i) {

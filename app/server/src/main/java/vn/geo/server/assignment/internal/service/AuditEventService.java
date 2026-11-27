@@ -109,6 +109,7 @@ public class AuditEventService {
     }
     Instant since = Instant.now().minus(deniedWindow);
     separateTx.executeWithoutResult(s -> {
+      repo.lockDenied(p.userId(), targetType);
       if (!repo.deniedSince(p.userId(), targetType, since)) {
         repo.recordDenied(p.userId(), roleOf(p), action, targetType);
       }

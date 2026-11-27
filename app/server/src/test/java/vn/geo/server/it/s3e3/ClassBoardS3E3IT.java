@@ -304,7 +304,9 @@ class ClassBoardS3E3IT extends AbstractE1IT {
       long t0 = System.nanoTime();
       JsonNode stuck = json(get(base(sb) + "/stuck", sb.teacher().token()));
       long ms = Duration.ofNanos(System.nanoTime() - t0).toMillis();
-      assertThat(ms).as("chờ cả màn (ms)").isLessThan(2_700);
+      // Trần cấu hình 1,5 giây + dư rộng 2 giây cho máy chậm; vẫn nhỏ hơn 4 giây nếu cộng dồn 4 đề.
+      // Kiểm chính xác nằm ở số lượt gọi (stuckPrompts) bên dưới, không phụ thuộc đồng hồ.
+      assertThat(ms).as("chờ cả màn (ms)").isLessThan(3_500);
       assertThat(item(stuck, 1).get("mode").asString()).isEqualTo("insight");
       for (int pos = 2; pos <= 4; pos++) {
         assertThat(item(stuck, pos).get("mode").asString()).as("đề " + pos).isEqualTo("failed");

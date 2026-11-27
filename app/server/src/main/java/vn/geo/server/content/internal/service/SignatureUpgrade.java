@@ -46,14 +46,23 @@ public class SignatureUpgrade {
     this.onStart = onStart;
   }
 
+  /** Không chặn khởi động: chạy nền sau ApplicationReadyEvent. */
   @EventListener(ApplicationReadyEvent.class)
   public void onReady() {
     if (!onStart) {
       return;
     }
+    Thread t = new Thread(this::runInBackground, "signature-upgrade");
+    t.setDaemon(true);
+    t.start();
+  }
+
+  void runInBackground() {
     try {
-      Report r = run();
-      if (r.upgraded() + r.failed() > 0) {
+      Report r = repo.exclusive(this::run).orElse(null);
+      if (r == null) {
+        log.info("tính lại chữ ký chuẩn: nút khác đang chạy, bỏ qua");
+      } else if (r.upgraded() + r.failed() > 0) {
         log.info(
             "tính lại chữ ký chuẩn bản {}: {} version, bỏ qua {}, không dựng lại được {}",
             GeometryEngine.SIG_VERSION,

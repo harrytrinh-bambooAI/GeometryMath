@@ -509,6 +509,9 @@ public class DefaultGeometryEngine implements GeometryEngine {
    * ngoại tiếp).
    */
   static double sphereRadius(Figure f, List<String> n) {
+    if (n.size() >= 4) {
+      return circumsphereRadius(f, n);
+    }
     double[] c = f.points().get(n.get(0));
     double[] p = f.points().get(n.get(1));
     if (c != null && p != null) {
@@ -561,13 +564,10 @@ public class DefaultGeometryEngine implements GeometryEngine {
           Map.entry("prism_lateral", 4));
 
   /**
-   * Bán kính mặt cầu: [tâm, điểm trên cầu] là khoảng cách; bốn điểm không đồng phẳng là bán kính
-   * mặt cầu đi qua bốn điểm đó (ngoại tiếp tứ diện — dùng cho cầu ngoại tiếp chóp, lăng trụ, hộp).
+   * Bốn điểm không đồng phẳng: bán kính mặt cầu đi qua bốn điểm đó (ngoại tiếp tứ diện — dùng cho
+   * cầu ngoại tiếp chóp, lăng trụ, hộp). Hai điểm [tâm, điểm trên cầu]: xem {@link #sphereRadius}.
    */
-  private static double sphereRadius(Figure f, List<String> n) {
-    if (n.size() == 2) {
-      return V.dist(f.point(n.get(0)), f.point(n.get(1)));
-    }
+  private static double circumsphereRadius(Figure f, List<String> n) {
     double[] p0 = f.point(n.get(0));
     double[] a = V.sub(f.point(n.get(1)), p0);
     double[] b = V.sub(f.point(n.get(2)), p0);
