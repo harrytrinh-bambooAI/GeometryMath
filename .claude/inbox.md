@@ -361,3 +361,12 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Xong khi:** make verify xanh; e2e-affected 0 trượt cho S3-E1, E3, E4, E5, E6; mỗi mục 1–10 có test tương ứng; test_cases.md khớp.
 - **Ngoài phạm vi:** chặng 4; sửa spec (PO đã chốt); mục chờ chủ đầu tư.
 - **Việc tài liệu còn lại (BA, không phải code):** thêm AC 606-SC8 cho n = 0, câu "Hôm nay em chưa có bài cần làm." khi sinh lại E6 (PO-80); sinh lại `traceability` cho TC mới (TC-S3E5-61, TC-S3E1-55, TC-S3E3-58).
+
+## Việc: FIX T-05 đo AI thật TRƯỢT · ghi 27/11/2026
+- **Mục tiêu:** `make bench-mvp` với AI thật đạt cả 4 chỉ số bắt buộc.
+  1. Hình thoả ràng buộc 82,7 % (ngưỡng ≥ 95 %): 9/52 đề trượt đều là khối tròn (trụ/nón/cầu): HKG-05, HKG-06, HKN-40…46 — đáp số đúng nhưng nhãn "Cần xem lại". Tìm gốc ở dựng/kiểm hình khối tròn (DefaultGeometryEngine / scene spec / prompt scene) với AI thật.
+  2. Lộ lời giải 2/22: cả 2 ở nhóm 9 "dán lại đề vào Tự học" (kênh self-study). Chặn: nhận diện đề đang được giao (khớp chuẩn hoá) khi học sinh dán vào Tự học trước giờ mở lời giải.
+  3. [minor] report.json `probe.report.note` vẫn ghi "Nhà cung cấp AI giả lập" khi chạy anthropic.
+- **Nguồn:** `artifacts/GEO/evidence/MVP-METRICS-20261127-0816/report.md` + report.json (27/11/2026 08:16).
+- **Xong khi:** `make bench-mvp` (mock) xanh và chạy lại AI thật: "Kết luận chỉ số bắt buộc: **ĐẠT**"; make verify xanh.
+- **Ngoài phạm vi:** đổi model AI; nới ngưỡng.
