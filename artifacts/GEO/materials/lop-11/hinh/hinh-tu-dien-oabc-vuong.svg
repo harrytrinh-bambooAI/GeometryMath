@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 235" width="320" height="235" font-family="sans-serif" font-size="13"><rect width="100%" height="100%" fill="white"/>
+<line x1="130" y1="150" x2="130" y2="25" stroke="black"/><line x1="130" y1="150" x2="285" y2="185" stroke="black"/><line x1="130" y1="150" x2="35" y2="205" stroke="black"/>
+<line x1="130" y1="25" x2="285" y2="185" stroke="black"/><line x1="130" y1="25" x2="35" y2="205" stroke="black"/><line x1="35" y1="205" x2="285" y2="185" stroke="black"/>
+<polyline points="130,135 145,138 145,153" stroke="#c0392b" fill="none"/><polyline points="130,135 115,143 115,157" stroke="#c0392b" fill="none"/>
+<text x="136" y="20">A</text><text x="289" y="190">B</text><text x="18" y="212">C</text><text x="114" y="166">O</text>
+<text x="8" y="228" font-size="11">OA, OB, OC đôi một vuông góc</text>
+</svg>
