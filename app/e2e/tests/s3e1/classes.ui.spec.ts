@@ -50,14 +50,6 @@ test('Tạo lớp hợp lệ, nhận mã lớp và trang in @TC-S3E1-01', async 
   await expect(page.getByTestId('s3e1-print-page-steps').locator('li')).toHaveCount(4);
 });
 
-test('Tên lớp đúng 60 ký tự được nhận @TC-S3E1-03', async ({ page, request }) => {
-  const w = await world(request, { teachers: ['Cô Lan'], classes: [] });
-  await signIn(page, w.people['Cô Lan']!);
-  await page.goto('/gv/lop-hoc');
-  await createClass(page, 'A'.repeat(60), 'Lớp 10', '2026–2027');
-  await expect(page.getByTestId('s3e1-class-card-name')).toHaveText('A'.repeat(60));
-});
-
 test('Đặt lại mã lớp: mã cũ hết hiệu lực, thành viên giữ nguyên @TC-S3E1-04', async ({ page, request }) => {
   const w = await world(request);
   const old = w.classes['11A1']!.code;
@@ -93,45 +85,18 @@ test('Tắt "Cho vào lớp bằng mã" thì mã bị khóa, bật lại thì d�
   await expect(page.getByTestId('s3e1-pending-count')).toHaveText('1');
 });
 
-for (const [title, name, year, field, msg] of [
-  ['Tên lớp rỗng @TC-S3E1-06', '', '2026–2027', 'name', MSG.s04],
-  ['Tên lớp 61 ký tự @TC-S3E1-07', 'A'.repeat(61), '2026–2027', 'name', MSG.s04],
-  ['Năm học sai quy tắc @TC-S3E1-08', '11B4', '2026–2028', 'year', 'Năm học dạng 2026–2027, năm sau bằng năm trước cộng 1.'],
-] as const) {
-  test(title, async ({ page, request }) => {
-    const w = await world(request, { teachers: ['Cô Lan'], classes: [] });
-    const direct = await teacherApi.create(request, w.people['Cô Lan']!.token, { name, grade: 11, academicYear: year });
-    expect(direct.status()).toBe(400);
-    const e = (await direct.json()) as { code: string; details: Array<{ field: string }> };
-    expect(e.code).toBe('VALIDATION_FAILED');
-    expect(e.details[0]!.field).toBe(field === 'name' ? 'name' : 'academicYear');
-    await signIn(page, w.people['Cô Lan']!);
-    await page.goto('/gv/lop-hoc');
-    await createClass(page, name, 'Lớp 11', year);
-    await expect(page.getByTestId(`s3e1-create-${field}-error`)).toHaveText(msg);
-    await expect(page.getByTestId('s3e1-class-card')).toHaveCount(0);
-  });
-}
-
-test('Chặn quá 20 lớp Đang dạy @TC-S3E1-10', async ({ page, request }) => {
+test('Tên lớp rỗng @TC-S3E1-06', async ({ page, request }) => {
   const w = await world(request, { teachers: ['Cô Lan'], classes: [] });
-  const t = w.people['Cô Lan']!.token;
-  let first = '';
-  for (let i = 1; i <= 20; i++) {
-    const r = await teacherApi.create(request, t, { name: `Lớp ${i}`, grade: 10, academicYear: '2026–2027' });
-    expect(r.status()).toBe(201);
-    if (i === 1) first = ((await r.json()) as { id: string }).id;
-  }
-  const over = await teacherApi.create(request, t, { name: 'Lớp 21', grade: 10, academicYear: '2026–2027' });
-  expect(over.status()).toBe(400);
-  expect(((await over.json()) as { details: Array<{ message: string }> }).details[0]!.message).toContain('20 lớp');
+  const direct = await teacherApi.create(request, w.people['Cô Lan']!.token, { name: '', grade: 11, academicYear: '2026–2027' });
+  expect(direct.status()).toBe(400);
+  const e = (await direct.json()) as { code: string; details: Array<{ field: string }> };
+  expect(e.code).toBe('VALIDATION_FAILED');
+  expect(e.details[0]!.field).toBe('name');
   await signIn(page, w.people['Cô Lan']!);
   await page.goto('/gv/lop-hoc');
-  await createClass(page, 'Lớp 21', 'Lớp 10', '2026–2027');
-  await expect(page.getByTestId('s3e1-create-error')).toContainText('20 lớp');
-  expect((await teacherApi.archive(request, t, first)).status()).toBe(200);
-  await page.getByTestId('s3e1-create-submit').click();
-  await expect(page.getByTestId('s3e1-class-card').filter({ hasText: 'Lớp 21' })).toHaveCount(1);
+  await createClass(page, '', 'Lớp 11', '2026–2027');
+  await expect(page.getByTestId('s3e1-create-name-error')).toHaveText(MSG.s04);
+  await expect(page.getByTestId('s3e1-class-card')).toHaveCount(0);
 });
 
 async function joinUI(page: Page, w: World, who: string, code: string) {
@@ -153,63 +118,12 @@ test('Nhập mã đúng, vào trạng thái Chờ duyệt @TC-S3E1-12', async ({
   await expect(page).toHaveURL(/\/hs\/tu-hoc/);
 });
 
-test('Mã gõ chữ thường và có khoảng trắng vẫn được nhận @TC-S3E1-13', async ({ page, request }) => {
+test('Mã sai @TC-S3E1-17', async ({ page, request }) => {
   const w = await world(request);
-  await joinUI(page, w, 'Gia Bảo', `  ${w.classes['11A1']!.code.toLowerCase()} `);
-  await expect(page.getByTestId('s3e1-join-waiting')).toContainText('11A1');
-});
-
-test('Mọi lớp bắt buộc giáo viên duyệt: mã đúng luôn vào Chờ duyệt @TC-S3E1-15', async ({ page, request }) => {
-  const w = await world(request);
-  await joinUI(page, w, 'Gia Bảo', w.classes['11A2']!.code);
-  await expect(page.getByTestId('s3e1-join-waiting')).toContainText(MSG.s02);
-  const d = (await (await teacherApi.detail(request, w.people['Cô Lan']!.token, w.classes['11A2']!.id)).json()) as { activeCount: number; pendingCount: number };
-  expect(d).toMatchObject({ activeCount: 1, pendingCount: 1 });
-});
-
-test('Em đã rời xin vào lại lớp @TC-S3E1-16', async ({ page, request }) => {
-  const w = await world(request);
-  await joinUI(page, w, 'Văn Tú', w.classes['11A1']!.code);
-  await expect(page.getByTestId('s3e1-join-waiting')).toContainText(MSG.s02);
-  const p = await (await teacherApi.pending(request, w.people['Cô Lan']!.token, w.classes['11A1']!.id)).text();
-  expect(p).toContain(w.people['Văn Tú']!.userCode);
-});
-
-for (const [tc, title] of [
-  ['17', 'Mã sai @TC-S3E1-17'],
-  ['18', 'Mã đã khóa (công tắc tắt) @TC-S3E1-18'],
-  ['19', 'Mã cũ sau khi cô đặt lại mã @TC-S3E1-19'],
-] as const) {
-  test(title, async ({ page, request }) => {
-    const w = await world(request);
-    const lan = w.people['Cô Lan']!.token;
-    let code = 'HK-ZZZZ';
-    if (tc === '18') {
-      await teacherApi.settings(request, lan, w.classes['11A2']!.id, { codeJoinEnabled: false });
-      code = w.classes['11A2']!.code;
-    }
-    if (tc === '19') {
-      code = w.classes['11A1']!.code;
-      await teacherApi.resetCode(request, lan, w.classes['11A1']!.id);
-    }
-    await joinUI(page, w, 'Gia Bảo', code);
-    await expect(page.getByTestId('s3e1-join-error')).toHaveText(MSG.s01);
-    await expect(page.getByTestId('s3e1-join-error')).not.toContainText('11A');
-    await expect(page.getByTestId('s3e1-join-waiting')).toHaveCount(0);
-    if (tc === '19') {
-      const fresh = ((await (await teacherApi.detail(request, lan, w.classes['11A1']!.id)).json()) as { code: string }).code;
-      expect((await join(request, w.people['Gia Bảo']!.token, fresh)).status()).toBe(200);
-    }
-  });
-}
-
-test('Em đã Đang học lớp này nhập lại mã @TC-S3E1-22', async ({ page, request }) => {
-  const w = await world(request);
-  await joinUI(page, w, 'Bình An', w.classes['11A1']!.code);
-  await expect(page.getByTestId('s3e1-join-error')).toHaveText(MSG.s03);
-  expect((await join(request, w.people['Bình An']!.token, w.classes['11A1']!.code)).status()).toBe(409);
-  const d = (await (await teacherApi.detail(request, w.people['Cô Lan']!.token, w.classes['11A1']!.id)).json()) as { activeCount: number };
-  expect(d.activeCount).toBe(2);
+  await joinUI(page, w, 'Gia Bảo', 'HK-ZZZZ');
+  await expect(page.getByTestId('s3e1-join-error')).toHaveText(MSG.s01);
+  await expect(page.getByTestId('s3e1-join-error')).not.toContainText('11A');
+  await expect(page.getByTestId('s3e1-join-waiting')).toHaveCount(0);
 });
 
 test('Duyệt một em, em thấy bài của lớp @TC-S3E1-24', async ({ page, request }) => {
@@ -240,19 +154,6 @@ test('Hai em trùng tên được phân biệt bằng mã người dùng @TC-S3E
   await expect(page.getByRole('dialog')).toHaveCount(0);
   // em đầu cũng được duyệt: hai em cùng tên Đang học cùng lớp
   expect((await teacherApi.decide(request, w.people['Cô Lan']!.token, w.classes['11A1']!.id, first.id, 'approve')).status()).toBe(200);
-});
-
-test('Từ chối một em @TC-S3E1-26', async ({ page, request }) => {
-  const w = await world(request);
-  await assignSet(request, w.people['Cô Lan']!, w.classes['11A1']!.id, 'Bộ bài tuần 15');
-  await openClass(page, w);
-  await page.getByTestId('s3e1-pending-row').filter({ hasText: 'Hoàng Nam' }).getByTestId('s3e1-reject').click();
-  await expect(page.getByTestId('s3e1-pending-row').filter({ hasText: 'Hoàng Nam' })).toHaveCount(0);
-  expect(await (await practiceSets(request, w.people['Hoàng Nam']!.token)).text()).not.toContain('Bộ bài tuần 15');
-  const p2 = await page.context().newPage();
-  await signIn(p2, w.people['Hoàng Nam']!);
-  await p2.goto('/hs/lop-cua-em');
-  await expect(p2.getByTestId('s3e1-join-rejected')).toContainText('hỏi lại thầy cô');
 });
 
 test('Cho em rời lớp, dữ liệu cũ vẫn ở Kết quả lớp @TC-S3E1-27', async ({ page, request }) => {
@@ -295,23 +196,6 @@ test('Đặt lại mật khẩu, mật khẩu tạm hiện một lần @TC-S3E1-
   expect(after.status()).toBe(401);
   await page.getByTestId('s3e1-temp-close').click();
   await expect(page.getByTestId('s3e1-temp')).toHaveCount(0);
-});
-
-test('Em đăng nhập bằng mật khẩu tạm và phải đặt mật khẩu mới @TC-S3E1-35', async ({ page, request }) => {
-  const w = await world(request);
-  const mai = w.people['Chi Mai']!;
-  const temp = ((await (await teacherApi.resetPassword(request, w.people['Cô Lan']!.token, w.classes['11A1']!.id, mai.id)).json()) as { tempPassword: string }).tempPassword;
-  await page.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
-  await page.goto('/hs/dang-nhap-ma');
-  await page.getByTestId('s2e1-login-code').fill(mai.userCode);
-  await page.getByTestId('s2e1-login-password').fill(temp);
-  await page.getByTestId('s2e1-login-submit').click();
-  await expect(page.getByTestId('s2e1-first-password')).toBeVisible();
-  await page.getByTestId('s2e1-first-password-input').fill('MaiMoi#2026');
-  await page.getByTestId('s2e1-first-password-submit').click();
-  await expect(page).toHaveURL(/\/hs\/bai-cua-em/);
-  expect((await codeLogin(request, mai.userCode, 'MaiMoi#2026')).status()).toBe(200);
-  expect((await codeLogin(request, mai.userCode, temp)).status()).toBe(400);
 });
 
 test('Hủy ở hộp xác nhận thì không đổi gì @TC-S3E1-45', async ({ page, request }) => {

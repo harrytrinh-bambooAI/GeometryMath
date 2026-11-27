@@ -9,82 +9,556 @@
     "ranges: với migration, nhóm bắt $1 là số phiên bản; số ngoài mọi khoảng = L2.",
     "Tệp không khớp luật nào = L2. Epic chưa có thư mục spec thì bỏ qua (in 'chưa có spec')."
   ],
-  "specDirs": { "CORE": "", "THEME": "theme" },
+  "specDirs": {
+    "CORE": "",
+    "THEME": "theme"
+  },
   "rules": [
-    { "match": "^app/\\.env\\.ports$", "level": "none", "note": "cổng cục bộ, không commit" },
-    { "match": "^app/e2e/tests/(e[1-7]|s[23]e\\d+)/", "level": "L0", "epic": "$1", "note": "spec + helper của epic" },
-    { "match": "^app/e2e/tests/theme/", "level": "L0", "epic": "THEME" },
-    { "match": "^app/e2e/tests/[^/]+\\.spec\\.ts$", "level": "L0", "epic": "CORE" },
-    { "match": "^app/e2e/(support|reporters)/|^app/e2e/(playwright\\.config\\.ts|package(-lock)?\\.json|tsconfig\\.json)$", "level": "L2", "note": "hạ tầng e2e dùng chung cho mọi spec" },
-    { "match": "^app/e2e/scripts/", "level": "none", "note": "traceability: không đổi hành vi test" },
-    { "match": "^app/scripts/(e2e|seed-reset|dev-up|dev-down|db-init|env)\\.sh$", "level": "L2", "note": "khởi động / reset dùng cho mọi spec" },
-    { "match": "^app/scripts/(e2e-affected[^/]*|e2e-report\\.sh|bench-[^/]+|verify\\.sh)$", "level": "none", "note": "công cụ; e2e-affected kiểm bằng make e2e-affected-selftest" },
-    { "match": "^app/Makefile$", "level": "none", "note": "đích theo task (PLAN §5 luật 2); đích e2e gọi scripts/e2e.sh" },
-    { "match": "^app/loadtest/|^app/server/quality/|^app/server/src/test/java/vn/geo/server/(?!it/)", "level": "none", "note": "test đơn vị, quét SQL, kiến trúc: make verify phủ" },
-    { "match": "^app/server/src/test/java/vn/geo/server/it/(e[1-7]|s[23]e\\d+)/", "level": "L0", "epic": "$1" },
-    { "match": "^app/server/src/test/java/vn/geo/server/it/settings/", "level": "L0", "epic": "THEME" },
-    { "match": "^app/server/src/test/", "level": "none", "note": "khung IT chung: make verify phủ" },
-    { "match": "^app/web/src/.*\\.test\\.tsx?$|^app/web/(eslint\\.config\\.js|scripts/)", "level": "none", "note": "test đơn vị web: make web-build phủ" },
-    { "match": "^app/web/src/features/(e[1-7]|s[23]e\\d+)/", "level": "L0", "epic": "$1" },
-    { "match": "^app/web/src/features/settings/", "level": "L0", "epic": "THEME" },
-    { "match": "^app/web/src/pages/", "level": "L0", "epic": "CORE" },
-    { "match": "^app/web/src/shared/auth/", "level": "L1", "epic": "E1", "deps": ["S2-E1", "S2-E6", "S3-E1", "S3-E5", "@imports:shared/auth"] },
-    { "match": "^app/web/src/shared/(ui|scene|scene2d|figure3d|viewer|theme|time|api)/", "level": "L1", "epic": "CORE", "deps": ["@imports:shared/$1"] },
-    { "match": "^app/web/src/shared/testid\\.ts$", "level": "L1", "epic": "CORE", "deps": ["@imports:shared/testid"] },
-    { "match": "^app/web/src/(features/(index|types)\\.ts|app/|styles/|main\\.tsx)|^app/web/(package(-lock)?\\.json|vite\\.config\\.ts|index\\.html|tsconfig[^/]*\\.json)$", "level": "L2", "note": "router, layout, token, cấu hình build: mọi màn" },
-
-    { "match": "^app/server/src/main/java/vn/geo/server/iam/", "level": "L1", "epic": "E1", "deps": ["S2-E1", "S2-E6", "S3-E1", "S3-E5"], "note": "PLAN §2 iam" },
-    { "match": "^app/server/src/main/java/vn/geo/server/assignment/", "level": "L1", "epic": "E6", "deps": ["E3", "E4", "E7", "S2-E8", "S3-E2", "S3-E3", "S3-E4", "S3-E5"], "note": "PLAN §2 assignment; luồng học sinh mở bài được giao" },
-    { "match": "^app/server/src/main/java/vn/geo/server/content/", "level": "L1", "epic": "E5", "deps": ["E2", "E4", "E6", "S2-E2", "S2-E3", "S2-E4", "S2-E5", "S2-E6", "S2-E7", "S2-E9"], "note": "PLAN §2 content" },
-    { "match": "^app/server/src/main/java/vn/geo/server/geometry/", "level": "L1", "epic": "E2", "deps": ["E3", "E4", "E5", "S2-E2", "S2-E5", "S2-E9"], "note": "PLAN §2 geometry" },
-    { "match": "^app/server/src/main/java/vn/geo/server/subject/", "level": "L1", "epic": "S2-E2", "deps": ["E2", "S2-E8", "S2-E9"], "note": "PLAN §2 subject (bọc engine MVP)" },
-    { "match": "^app/server/src/main/java/vn/geo/server/tracking/", "level": "L1", "epic": "E7", "deps": ["E4", "S2-E8", "S3-E3", "S3-E6"], "note": "PLAN §2 tracking" },
-    { "match": "^app/server/src/main/java/vn/geo/server/learning/", "level": "L1", "epic": "E4", "deps": ["E6", "E7"] },
-    { "match": "^app/server/src/main/java/vn/geo/server/(knowledge|answers)/", "level": "L0", "epic": "E4" },
-    { "match": "^app/server/src/main/java/vn/geo/server/aigateway/", "level": "L1", "epic": "E4", "deps": ["E1", "E2", "S2-E3", "S2-E4", "S3-E5"], "note": "PLAN §2 aigateway (e1/ai-gateway.ui)" },
-    { "match": "^app/server/src/main/java/vn/geo/server/events/", "level": "L1", "epic": "E3", "deps": ["E7"] },
-    { "match": "^app/server/src/main/java/vn/geo/server/notify/", "level": "L1", "epic": "S3-E4", "deps": ["S3-E6"], "note": "PLAN §2 notify" },
-    { "match": "^app/server/src/main/java/vn/geo/server/settings/", "level": "L0", "epic": "THEME" },
-    { "match": "^app/server/src/main/java/vn/geo/server/sample/", "level": "L0", "epic": "CORE" },
-    { "match": "^app/server/src/main/resources/content/plane/", "level": "L0", "epic": "S2-E2" },
-    { "match": "^app/server/src/main/resources/content/", "level": "L1", "epic": "E5", "deps": ["E2", "E4", "E6"] },
-    { "match": "^app/server/src/main/resources/knowledge/", "level": "L0", "epic": "E4" },
-    { "match": "^app/server/src/main/resources/geometry/", "level": "L1", "epic": "E2", "deps": ["E3", "E4", "E5", "S2-E2"] },
-    { "match": "^app/server/src/main/resources/mock-ai/", "level": "L1", "epic": "E4", "deps": ["E1", "E2", "S2-E3", "S2-E4"] },
+    {
+      "match": "^app/\\.env\\.ports$",
+      "level": "none",
+      "note": "cổng cục bộ, không commit"
+    },
+    {
+      "match": "^app/e2e/tests/(e[1-7]|s[23]e\\d+)/",
+      "level": "L0",
+      "epic": "$1",
+      "note": "spec + helper của epic"
+    },
+    {
+      "match": "^app/e2e/tests/theme/",
+      "level": "L0",
+      "epic": "THEME"
+    },
+    {
+      "match": "^app/e2e/tests/[^/]+\\.spec\\.ts$",
+      "level": "L0",
+      "epic": "CORE"
+    },
+    {
+      "match": "^app/e2e/(support|reporters)/|^app/e2e/(playwright\\.config\\.ts|package(-lock)?\\.json|tsconfig\\.json)$",
+      "level": "L2",
+      "note": "hạ tầng e2e dùng chung cho mọi spec"
+    },
+    {
+      "match": "^app/e2e/scripts/",
+      "level": "none",
+      "note": "traceability: không đổi hành vi test"
+    },
+    {
+      "match": "^app/scripts/(e2e|seed-reset|dev-up|dev-down|db-init|env)\\.sh$",
+      "level": "L2",
+      "note": "khởi động / reset dùng cho mọi spec"
+    },
+    {
+      "match": "^app/scripts/(e2e-affected[^/]*|e2e-report\\.sh|bench-[^/]+|verify\\.sh)$",
+      "level": "none",
+      "note": "công cụ; e2e-affected kiểm bằng make e2e-affected-selftest"
+    },
+    {
+      "match": "^app/Makefile$",
+      "level": "none",
+      "note": "đích theo task (PLAN §5 luật 2); đích e2e gọi scripts/e2e.sh"
+    },
+    {
+      "match": "^app/loadtest/|^app/server/quality/|^app/server/src/test/java/vn/geo/server/(?!it/)",
+      "level": "none",
+      "note": "test đơn vị, quét SQL, kiến trúc: make verify phủ"
+    },
+    {
+      "match": "^app/server/src/test/java/vn/geo/server/it/(e[1-7]|s[23]e\\d+)/",
+      "level": "L0",
+      "epic": "$1"
+    },
+    {
+      "match": "^app/server/src/test/java/vn/geo/server/it/settings/",
+      "level": "L0",
+      "epic": "THEME"
+    },
+    {
+      "match": "^app/server/src/test/",
+      "level": "none",
+      "note": "khung IT chung: make verify phủ"
+    },
+    {
+      "match": "^app/web/src/.*\\.test\\.tsx?$|^app/web/(eslint\\.config\\.js|scripts/)",
+      "level": "none",
+      "note": "test đơn vị web: make web-build phủ"
+    },
+    {
+      "match": "^app/web/src/features/(e[1-7]|s[23]e\\d+)/",
+      "level": "L0",
+      "epic": "$1"
+    },
+    {
+      "match": "^app/web/src/features/settings/",
+      "level": "L0",
+      "epic": "THEME"
+    },
+    {
+      "match": "^app/web/src/pages/",
+      "level": "L0",
+      "epic": "CORE"
+    },
+    {
+      "match": "^app/web/src/shared/auth/",
+      "level": "L1",
+      "epic": "E1",
+      "deps": [
+        "S2-E1",
+        "S2-E6",
+        "S3-E1",
+        "S3-E5",
+        "@imports:shared/auth"
+      ]
+    },
+    {
+      "match": "^app/web/src/shared/(ui|scene|scene2d|figure3d|viewer|theme|time|api)/",
+      "level": "L1",
+      "epic": "CORE",
+      "deps": [
+        "@imports:shared/$1"
+      ]
+    },
+    {
+      "match": "^app/web/src/shared/testid\\.ts$",
+      "level": "L1",
+      "epic": "CORE",
+      "deps": [
+        "@imports:shared/testid"
+      ]
+    },
+    {
+      "match": "^app/web/src/(features/(index|types)\\.ts|app/|styles/|main\\.tsx)|^app/web/(package(-lock)?\\.json|vite\\.config\\.ts|index\\.html|tsconfig[^/]*\\.json)$",
+      "level": "L2",
+      "note": "router, layout, token, cấu hình build: mọi màn"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/iam/",
+      "level": "L1",
+      "epic": "E1",
+      "deps": [
+        "S2-E1",
+        "S2-E6",
+        "S3-E1",
+        "S3-E5"
+      ],
+      "note": "PLAN §2 iam"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/assignment/",
+      "level": "L1",
+      "epic": "E6",
+      "deps": [
+        "E3",
+        "E4",
+        "E7",
+        "S2-E8",
+        "S3-E2",
+        "S3-E3",
+        "S3-E4",
+        "S3-E5"
+      ],
+      "note": "PLAN §2 assignment; luồng học sinh mở bài được giao"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/content/",
+      "level": "L1",
+      "epic": "E5",
+      "deps": [
+        "E2",
+        "E4",
+        "E6",
+        "S2-E2",
+        "S2-E3",
+        "S2-E4",
+        "S2-E5",
+        "S2-E6",
+        "S2-E7",
+        "S2-E9"
+      ],
+      "note": "PLAN §2 content"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/geometry/",
+      "level": "L1",
+      "epic": "E2",
+      "deps": [
+        "E3",
+        "E4",
+        "E5",
+        "S2-E2",
+        "S2-E5",
+        "S2-E9"
+      ],
+      "note": "PLAN §2 geometry"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/subject/",
+      "level": "L1",
+      "epic": "S2-E2",
+      "deps": [
+        "E2",
+        "S2-E8",
+        "S2-E9"
+      ],
+      "note": "PLAN §2 subject (bọc engine MVP)"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/tracking/",
+      "level": "L1",
+      "epic": "E7",
+      "deps": [
+        "E4",
+        "S2-E8",
+        "S3-E3",
+        "S3-E6"
+      ],
+      "note": "PLAN §2 tracking"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/learning/",
+      "level": "L1",
+      "epic": "E4",
+      "deps": [
+        "E6",
+        "E7"
+      ]
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/(knowledge|answers)/",
+      "level": "L0",
+      "epic": "E4"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/aigateway/",
+      "level": "L1",
+      "epic": "E4",
+      "deps": [
+        "E1",
+        "E2",
+        "S2-E3",
+        "S2-E4",
+        "S3-E5"
+      ],
+      "note": "PLAN §2 aigateway (e1/ai-gateway.ui)"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/events/",
+      "level": "L1",
+      "epic": "E3",
+      "deps": [
+        "E7"
+      ]
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/notify/",
+      "level": "L1",
+      "epic": "S3-E4",
+      "deps": [
+        "S3-E6"
+      ],
+      "note": "PLAN §2 notify"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/settings/",
+      "level": "L0",
+      "epic": "THEME"
+    },
+    {
+      "match": "^app/server/src/main/java/vn/geo/server/sample/",
+      "level": "L0",
+      "epic": "CORE"
+    },
+    {
+      "match": "^app/server/src/main/resources/content/plane/",
+      "level": "L0",
+      "epic": "S2-E2"
+    },
+    {
+      "match": "^app/server/src/main/resources/content/",
+      "level": "L1",
+      "epic": "E5",
+      "deps": [
+        "E2",
+        "E4",
+        "E6"
+      ]
+    },
+    {
+      "match": "^app/server/src/main/resources/knowledge/",
+      "level": "L0",
+      "epic": "E4"
+    },
+    {
+      "match": "^app/server/src/main/resources/geometry/",
+      "level": "L1",
+      "epic": "E2",
+      "deps": [
+        "E3",
+        "E4",
+        "E5",
+        "S2-E2"
+      ]
+    },
+    {
+      "match": "^app/server/src/main/resources/mock-ai/",
+      "level": "L1",
+      "epic": "E4",
+      "deps": [
+        "E1",
+        "E2",
+        "S2-E3",
+        "S2-E4"
+      ]
+    },
     {
       "match": "^app/server/src/main/resources/db/migration/V(\\d+)__",
       "level": "L1",
       "note": "PLAN §4: khoảng migration theo task; ngoài khoảng (MVP ≤ V99, V100–V109 khung, FIX) = L2",
       "ranges": [
-        { "from": 110, "to": 129, "epic": "S2-E1", "deps": ["E1", "S2-E6", "S3-E1", "S3-E5"] },
-        { "from": 130, "to": 149, "epic": "S2-E2", "deps": ["E2", "E5"] },
-        { "from": 160, "to": 179, "epic": "S2-E5", "deps": ["E5", "S2-E3"] },
-        { "from": 180, "to": 199, "epic": "S2-E8", "deps": ["E6", "E7"] },
-        { "from": 210, "to": 229, "epic": "S2-E3", "deps": ["S2-E5", "E5"] },
-        { "from": 230, "to": 249, "epic": "S2-E6", "deps": ["S2-E7", "E5", "E1"] },
-        { "from": 260, "to": 279, "epic": "S2-E4", "deps": ["E5"] },
-        { "from": 280, "to": 299, "epic": "S2-E9", "deps": ["S2-E8", "E5"] },
-        { "from": 315, "to": 334, "epic": "S3-E1", "deps": ["S3-E5", "E1", "S2-E1"] },
-        { "from": 335, "to": 354, "epic": "S3-E2", "deps": ["E6"] },
-        { "from": 365, "to": 384, "epic": "S3-E3", "deps": ["E7"] },
-        { "from": 385, "to": 404, "epic": "S3-E4", "deps": ["S3-E5", "E6"] },
-        { "from": 415, "to": 439, "epic": "S3-E6", "deps": ["S3-E5", "E7"] }
+        {
+          "from": 110,
+          "to": 129,
+          "epic": "S2-E1",
+          "deps": [
+            "E1",
+            "S2-E6",
+            "S3-E1",
+            "S3-E5"
+          ]
+        },
+        {
+          "from": 130,
+          "to": 149,
+          "epic": "S2-E2",
+          "deps": [
+            "E2",
+            "E5"
+          ]
+        },
+        {
+          "from": 160,
+          "to": 179,
+          "epic": "S2-E5",
+          "deps": [
+            "E5",
+            "S2-E3"
+          ]
+        },
+        {
+          "from": 180,
+          "to": 199,
+          "epic": "S2-E8",
+          "deps": [
+            "E6",
+            "E7"
+          ]
+        },
+        {
+          "from": 210,
+          "to": 229,
+          "epic": "S2-E3",
+          "deps": [
+            "S2-E5",
+            "E5"
+          ]
+        },
+        {
+          "from": 230,
+          "to": 249,
+          "epic": "S2-E6",
+          "deps": [
+            "S2-E7",
+            "E5",
+            "E1"
+          ]
+        },
+        {
+          "from": 260,
+          "to": 279,
+          "epic": "S2-E4",
+          "deps": [
+            "E5"
+          ]
+        },
+        {
+          "from": 280,
+          "to": 299,
+          "epic": "S2-E9",
+          "deps": [
+            "S2-E8",
+            "E5"
+          ]
+        },
+        {
+          "from": 315,
+          "to": 334,
+          "epic": "S3-E1",
+          "deps": [
+            "S3-E5",
+            "E1",
+            "S2-E1"
+          ]
+        },
+        {
+          "from": 335,
+          "to": 354,
+          "epic": "S3-E2",
+          "deps": [
+            "E6"
+          ]
+        },
+        {
+          "from": 365,
+          "to": 384,
+          "epic": "S3-E3",
+          "deps": [
+            "E7"
+          ]
+        },
+        {
+          "from": 385,
+          "to": 404,
+          "epic": "S3-E4",
+          "deps": [
+            "S3-E5",
+            "E6"
+          ]
+        },
+        {
+          "from": 415,
+          "to": 439,
+          "epic": "S3-E6",
+          "deps": [
+            "S3-E5",
+            "E7"
+          ]
+        }
       ]
     },
-    { "match": "^app/db/seed/e2e/\\d+_s2e67_", "level": "L1", "epic": "S2-E6", "deps": ["S2-E7"] },
-    { "match": "^app/db/seed/e2e/\\d+_(e[1-7]|s[23]e\\d+)_", "level": "L0", "epic": "$1", "note": "seed riêng của epic (PLAN §4)" },
-    { "match": "^app/db/seed/fixture-ids\\.d/(s[23]e\\d+)\\.json$", "level": "L0", "epic": "$1" },
-    { "match": "^app/db/seed/(README\\.md|fixture-ids\\.d/_README\\.json)$", "level": "none" },
-    { "match": "^app/db/", "level": "L2", "note": "keep-tables, seed chung (900 sample, 910 s3, 88x fix), script CSDL: mọi spec" },
-
-    { "match": "^app/docs/|^app/server/src/main/java/.*/package-info\\.java$", "level": "none", "note": "tài liệu" },
-    { "match": "^(artifacts|board|Design|input|materials|questions|references|review)/|^\\.claude/", "level": "none", "note": "tài liệu, điều phối" },
-    { "match": "\\.(md|pdf|png|jpe?g)$", "level": "none", "note": "tài liệu" }
+    {
+      "match": "^app/db/seed/e2e/\\d+_s2e67_",
+      "level": "L1",
+      "epic": "S2-E6",
+      "deps": [
+        "S2-E7"
+      ]
+    },
+    {
+      "match": "^app/db/seed/e2e/\\d+_(e[1-7]|s[23]e\\d+)_",
+      "level": "L0",
+      "epic": "$1",
+      "note": "seed riêng của epic (PLAN §4)"
+    },
+    {
+      "match": "^app/db/seed/fixture-ids\\.d/(s[23]e\\d+)\\.json$",
+      "level": "L0",
+      "epic": "$1"
+    },
+    {
+      "match": "^app/db/seed/(README\\.md|fixture-ids\\.d/_README\\.json)$",
+      "level": "none"
+    },
+    {
+      "match": "^app/db/",
+      "level": "L2",
+      "note": "keep-tables, seed chung (900 sample, 910 s3, 88x fix), script CSDL: mọi spec"
+    },
+    {
+      "match": "^app/docs/|^app/server/src/main/java/.*/package-info\\.java$",
+      "level": "none",
+      "note": "tài liệu"
+    },
+    {
+      "match": "^(artifacts|board|Design|input|materials|questions|references|review)/|^\\.claude/",
+      "level": "none",
+      "note": "tài liệu, điều phối"
+    },
+    {
+      "match": "\\.(md|pdf|png|jpe?g)$",
+      "level": "none",
+      "note": "tài liệu"
+    }
   ],
   "selftest": [
-    { "name": "chỉ features/s2e3 -> L0", "files": ["app/web/src/features/s2e3/index.tsx"], "level": "L0", "epicsExact": ["S2-E3"] },
-    { "name": "iam -> L1 gồm E1 + S2-E1", "files": ["app/server/src/main/java/vn/geo/server/iam/internal/X.java"], "level": "L1", "epicsInclude": ["E1", "S2-E1"], "specDirsInclude": ["e1", "s2e1"] },
-    { "name": "styles/tokens.css -> L2", "files": ["app/web/src/styles/tokens.css"], "level": "L2" },
-    { "name": "tệp lạ -> L2", "files": ["app/khong-ai-biet/la.bin"], "level": "L2" }
+    {
+      "name": "chỉ features/s2e3 -> L0",
+      "files": [
+        "app/web/src/features/s2e3/index.tsx"
+      ],
+      "level": "L0",
+      "epicsExact": [
+        "S2-E3"
+      ]
+    },
+    {
+      "name": "iam -> L1 gồm E1 + S2-E1",
+      "files": [
+        "app/server/src/main/java/vn/geo/server/iam/internal/X.java"
+      ],
+      "level": "L1",
+      "epicsInclude": [
+        "E1",
+        "S2-E1"
+      ],
+      "specDirsInclude": [
+        "e1",
+        "s2e1"
+      ]
+    },
+    {
+      "name": "styles/tokens.css -> L2",
+      "files": [
+        "app/web/src/styles/tokens.css"
+      ],
+      "level": "L2"
+    },
+    {
+      "name": "tệp lạ -> L2",
+      "files": [
+        "app/khong-ai-biet/la.bin"
+      ],
+      "level": "L2"
+    },
+    {
+      "name": "chỉ server (iam) -> api + ca UI loại A, 0 ca UI loại B, không mobile",
+      "files": [
+        "app/server/src/main/java/vn/geo/server/iam/internal/X.java"
+      ],
+      "level": "L1",
+      "serverOnly": true,
+      "epicsInclude": [
+        "E1",
+        "S3-E1"
+      ],
+      "specDirsInclude": [
+        "e1",
+        "s3e1"
+      ],
+      "apiSpecsInclude": [
+        "s3e1/classes.flow.api.spec.ts"
+      ]
+    },
+    {
+      "name": "server + web cùng diff -> UI như cũ (không serverOnly)",
+      "files": [
+        "app/server/src/main/java/vn/geo/server/iam/internal/X.java",
+        "app/web/src/features/s3e1/index.tsx"
+      ],
+      "level": "L1",
+      "serverOnly": false,
+      "epicsInclude": [
+        "S3-E1"
+      ]
+    },
+    {
+      "name": "migration chỉ server -> serverOnly",
+      "files": [
+        "app/server/src/main/resources/db/migration/V120__x.sql"
+      ],
+      "level": "L1",
+      "serverOnly": true
+    }
   ]
 }

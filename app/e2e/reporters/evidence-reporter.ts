@@ -62,6 +62,8 @@ type Entry = {
   status: TestResult['status'];
   outcome: ReturnType<TestCase['outcome']>;
   ok: boolean;
+  /** Đạt SAU khi thử lại (outcome 'flaky'): tính ĐẠT nhưng báo riêng, không lẫn với đạt ngay lần đầu. */
+  flaky: boolean;
   durationMs: number;
   retry: number;
   dir: string;
@@ -178,6 +180,7 @@ export default class EvidenceReporter implements Reporter {
         status: result.status,
         outcome: test.outcome(),
         ok: test.outcome() === 'expected' || test.outcome() === 'flaky',
+        flaky: test.outcome() === 'flaky',
         durationMs: result.duration,
         retry: result.retry,
         dir: rel,
@@ -207,6 +210,7 @@ export default class EvidenceReporter implements Reporter {
           status,
           outcome: t.outcome(),
           ok: false,
+          flaky: false,
           durationMs: 0,
           retry: 0,
           dir: '',
@@ -237,6 +241,8 @@ export default class EvidenceReporter implements Reporter {
     const totals = {
       tests: tests.length,
       passed: tests.filter((e) => e.ok && e.status !== 'skipped').length,
+      /** Trong số `passed`: bao nhiêu test chỉ đạt sau retry (chập chờn, T-33 / E2E-SPLIT). */
+      flaky: tests.filter((e) => e.flaky && e.ok).length,
       failed: tests.filter((e) => !e.ok && e.status !== 'skipped' && e.status !== 'interrupted').length,
       interrupted: tests.filter((e) => e.status === 'interrupted').length,
       skipped: tests.filter((e) => e.status === 'skipped').length,
@@ -244,6 +250,7 @@ export default class EvidenceReporter implements Reporter {
       tcsPassed: Object.values(tcs).filter((t) => t.status === 'passed').length,
       tcsFailed: Object.values(tcs).filter((t) => t.status === 'failed').length,
     };
+    const flakyTests = tests.filter((e) => e.flaky).map((e) => ({ tc: e.tc, title: e.title, file: e.file, line: e.line, project: e.project, attempts: e.retry + 1 }));
     const summary = {
       run: this.run,
       startedAt: this.startedAt.toISOString(),
@@ -252,13 +259,14 @@ export default class EvidenceReporter implements Reporter {
       t0: process.env.GEO_E2E_T0 ?? null,
       projects: this.projects,
       totals,
+      flakyTests,
       tcs,
     };
     writeFileSync(path.join(this.runDir, 'summary.json'), JSON.stringify(summary, null, 2));
     writeFileSync(path.join(this.runDir, 'index.html'), this.html(summary));
     writeFileSync(path.join(this.outRoot, 'latest.txt'), `${this.run}\n`);
     process.stdout.write(
-      `\n[bằng chứng] ${totals.passed}/${totals.tests} test đạt, ${totals.tcsPassed}/${totals.tcs} mã TC đạt -> ${path.join(this.runDir, 'index.html')}\n`,
+      `\n[bằng chứng] ${totals.passed}/${totals.tests} test đạt (trong đó ${totals.flaky} chập chờn: đạt sau retry), ${totals.tcsPassed}/${totals.tcs} mã TC đạt -> ${path.join(this.runDir, 'index.html')}\n`,
     );
   }
 
@@ -279,7 +287,7 @@ export default class EvidenceReporter implements Reporter {
           (e, i) => `<tr class="${e.ok ? 'ok' : e.status === 'skipped' ? 'skip' : 'bad'}">
         ${i === 0 ? `<td rowspan="${v.tests.length}"><b>${esc(tc)}</b><br><span class="st ${v.status}">${v.status === 'passed' ? 'ĐẠT' : v.status === 'failed' ? 'TRƯỢT' : 'BỎ QUA'}</span></td>` : ''}
         <td>${esc(e.title)}<br><small>${esc(e.file)}:${e.line}</small></td>
-        <td>${esc(e.project)}${e.retry ? ` (thử lại ${e.retry})` : ''}</td>
+        <td>${esc(e.project)}${e.retry ? ` (thử lại ${e.retry})` : ''}${e.flaky ? ' <span class="st flaky">FLAKY</span>' : ''}</td>
         <td>${esc(e.status)}<br><small>${(e.durationMs / 1000).toFixed(1)} s</small></td>
         <td>${e.evidence.screenshots.map((p) => `<a href="${esc(p)}"><img src="${esc(p)}" loading="lazy"></a>`).join('')}</td>
         <td>${[
@@ -306,8 +314,8 @@ table{border-collapse:collapse;width:100%;background:#fff} th,td{border:1px soli
 th{background:#F7F9FD;font-size:12px;color:#5F6B85} small{color:#5F6B85}
 img{max-width:260px;max-height:170px;border:1px solid #E3E8F2;border-radius:6px;margin:2px}
 .st{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:700}
-.st.passed{background:#DFF5EC;color:#0F8A5F} .st.failed{background:#FDE7E5;color:#D92D20} .st.skipped{background:#FFF4D6;color:#9A6B00}
-tr.bad td{background:#FFF8F7} a{color:#3B5BDB}
+.st.passed{background:#DFF5EC;color:#0F8A5F} .st.failed{background:#FDE7E5;color:#D92D20} .st.skipped,.st.flaky{background:#FFF4D6;color:#9A6B00}
+tr.bad td{background:#FFF8F7} tr.ok:has(.flaky) td{background:#FFFBEB} a{color:#3B5BDB}
 </style></head><body>
 <h1>Bằng chứng E2E · lượt ${esc(s.run)}</h1>
 <div class="meta">Kết quả chung: <b>${esc(s.status)}</b> · bắt đầu ${esc(s.startedAt)} (UTC) · T0 ${esc(s.t0 ?? '—')} · dự án: ${esc(s.projects.join(', '))}</div>
@@ -315,6 +323,7 @@ tr.bad td{background:#FFF8F7} a{color:#3B5BDB}
 <div class="card"><b>${t.passed}/${t.tests}</b>test đạt</div>
 <div class="card"><b>${t.failed}</b>test trượt</div>
 <div class="card"><b>${t.interrupted}</b>không chạy tới · <b style="display:inline;font-size:14px">${t.skipped}</b> bỏ qua</div>
+<div class="card"><b>${t.flaky ?? 0}</b>chập chờn (đạt sau retry)</div>
 <div class="card"><b>${t.tcsPassed}/${t.tcs}</b>mã TC đạt</div>
 <div class="card"><a href="summary.json">summary.json</a><br><a href="traceability.txt">traceability.txt</a></div>
 </div>
