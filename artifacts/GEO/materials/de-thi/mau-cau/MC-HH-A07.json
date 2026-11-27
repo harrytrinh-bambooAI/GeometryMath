@@ -1,0 +1,89 @@
+{
+ "id": "MC-HH-A07",
+ "ten": "Khoảng cách từ B đến (SAC)",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "kc-diem-mp.chop-sa.mat-cheo",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.2"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "A",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-08",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-08 + geometry/problem-specs.json#HKN-08"
+ },
+ "tham_so": {
+  "k": [
+   "1",
+   "2",
+   "sqrt(3)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SB": "sqrt(a**2+h**2)",
+  "SC": "sqrt(2*a**2+h**2)"
+ },
+ "boi_canh": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA={h}$.",
+ "hoi": "Khoảng cách từ $B$ đến mặt phẳng $(SAC)$ bằng",
+ "dap_so": "sqrt(2)*a/2",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "a",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $BA$ là khoảng cách"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(2)*a",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy cả đường chéo $BD$ thay vì $BO$"
+   }
+  },
+  {
+   "bieu_thuc": "a*h/sqrt(a**2+h**2)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Kẻ đường vuông góc từ $A$ xuống $SB$ (nhầm điểm và mặt phẳng)"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-08",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "sa": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "2"
+  },
+  {
+   "k": "sqrt(3)"
+  }
+ ],
+ "so_bien_the": 3,
+ "so_cau_sinh": 5,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

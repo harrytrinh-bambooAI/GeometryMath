@@ -1,0 +1,90 @@
+{
+ "id": "MC-XS-05",
+ "ten": "Đếm số có ba chữ số khác nhau",
+ "chu_de": "to-hop-xac-suat",
+ "dang": "tk.dem-so-chu-so",
+ "dang_tx": "tk.dem",
+ "yccd": [
+  "10.TH.1"
+ ],
+ "lop": 10,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-XS-05",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-XS-05",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "n": [
+   "5",
+   "6",
+   "7",
+   "8"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Từ các chữ số $0,1,2,\\dots,{n}$, lập các số tự nhiên có ba chữ số đôi một khác nhau.",
+ "hoi": "Số các số lập được là",
+ "dap_so": "n*n*(n-1)",
+ "nhieu": [
+  {
+   "bieu_thuc": "(n+1)*n*(n-1)",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Quên loại trường hợp chữ số 0 đứng đầu"
+   }
+  },
+  {
+   "bieu_thuc": "n*(n+1)**2",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Cho phép các chữ số lặp lại"
+   }
+  },
+  {
+   "bieu_thuc": "binomial(n+1,3)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng tổ hợp thay cho chỉnh hợp (bỏ thứ tự)"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-XS-05']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "n": "5"
+  },
+  {
+   "n": "6"
+  },
+  {
+   "n": "7"
+  },
+  {
+   "n": "8"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

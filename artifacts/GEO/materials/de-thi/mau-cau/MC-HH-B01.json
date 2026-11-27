@@ -1,0 +1,93 @@
+{
+ "id": "MC-HH-B01",
+ "ten": "Góc giữa cạnh bên và đáy (chóp đều)",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "goc-dt-mp.chop-deu.canh-ben",
+ "dang_tx": "qh.goc",
+ "yccd": [
+  "11.VG.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "B",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-10",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-10 + geometry/problem-specs.json#HKN-10"
+ },
+ "tham_so": {
+  "k": [
+   "sqrt(6)/2",
+   "sqrt(2)/2",
+   "sqrt(6)/6",
+   "1"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SM": "sqrt(h**2+a**2/4)",
+  "SA": "sqrt(h**2+a**2/2)"
+ },
+ "boi_canh": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO={h}$.",
+ "hoi": "Góc giữa cạnh bên $SA$ và mặt phẳng đáy bằng",
+ "dap_so": "atan(h/(sqrt(2)*a/2))*180/pi",
+ "don_vi": "do",
+ "nhieu": [
+  {
+   "bieu_thuc": "90-atan(h/(sqrt(2)*a/2))*180/pi",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy góc ở đỉnh $\\widehat{ASO}$"
+   }
+  },
+  {
+   "bieu_thuc": "atan(h/a)*180/pi",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $OA=a$ (bằng cạnh đáy)"
+   }
+  },
+  {
+   "bieu_thuc": "atan(h/(sqrt(2)*a))*180/pi",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $OA=a\\sqrt2$ (quên chia đôi đường chéo)"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-10",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "sqrt(6)/2"
+  },
+  {
+   "k": "sqrt(2)/2"
+  },
+  {
+   "k": "sqrt(6)/6"
+  },
+  {
+   "k": "1"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 6,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

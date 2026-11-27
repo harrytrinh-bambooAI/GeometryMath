@@ -1,0 +1,90 @@
+{
+ "id": "MC-HH-E05",
+ "ten": "Diện tích xung quanh lăng trụ đều",
+ "chu_de": "hinh-khong-gian-the-tich",
+ "dang": "dien-tich-xq.lang-tru-deu",
+ "dang_tx": "th.lang-tru",
+ "yccd": [
+  "11.TT.2"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "E",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "NB"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-70",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-70 + geometry/problem-specs.json#HKN-70"
+ },
+ "tham_so": {
+  "k": [
+   "2",
+   "1",
+   "3"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "AM": "sqrt(3)*a/2",
+  "AH": "h*sqrt(3)*a/2/sqrt(h**2+3*a**2/4)",
+  "AmM": "sqrt(h**2+3*a**2/4)"
+ },
+ "boi_canh": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'={h}$.",
+ "hoi": "Diện tích xung quanh của hình lăng trụ bằng",
+ "dap_so": "3*a*h",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "3*a*h+sqrt(3)/2*a**2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng cả hai đáy (diện tích toàn phần)"
+   }
+  },
+  {
+   "bieu_thuc": "a*h",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Chỉ tính một mặt bên"
+   }
+  },
+  {
+   "bieu_thuc": "2*a*h",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Đếm thiếu một mặt bên"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-70",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "2"
+  },
+  {
+   "k": "1"
+  },
+  {
+   "k": "3"
+  }
+ ],
+ "so_bien_the": 3,
+ "so_cau_sinh": 6,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

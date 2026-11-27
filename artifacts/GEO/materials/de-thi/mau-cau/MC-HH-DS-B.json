@@ -1,0 +1,77 @@
+{
+ "id": "MC-HH-DS-B",
+ "ten": "Đúng/sai: chóp tứ giác đều",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "ds.chop-deu",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.1",
+  "11.VG.2",
+  "11.TT.1",
+  "11.TT.2"
+ ],
+ "lop": 11,
+ "ho_hinh": "B",
+ "tham_so": {
+  "k": [
+   "1",
+   "sqrt(3)/2",
+   "sqrt(6)/2",
+   "sqrt(2)/2"
+  ]
+ },
+ "dan_xuat": {
+  "h": "k*a",
+  "SM": "sqrt(h**2+a**2/4)",
+  "SA": "sqrt(h**2+a**2/2)"
+ },
+ "boi_canh": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO={h}$.",
+ "y": [
+  {
+   "mau": "MC-HH-B06",
+   "menh_de": "Thể tích khối chóp $S.ABCD$ bằng ${v}$.",
+   "muc_do": "NB"
+  },
+  {
+   "mau": "MC-HH-B01",
+   "menh_de": "Góc giữa $SA$ và mặt phẳng đáy bằng ${v}$.",
+   "muc_do": "TH"
+  },
+  {
+   "mau": "MC-HH-B07",
+   "menh_de": "Diện tích xung quanh của hình chóp bằng ${v}$.",
+   "muc_do": "TH"
+  },
+  {
+   "mau": "MC-HH-B02",
+   "menh_de": "Khoảng cách từ $O$ đến mặt phẳng $(SBC)$ bằng ${v}$.",
+   "muc_do": "VD"
+  }
+ ],
+ "loai_mau": "dung-sai",
+ "loai_cau": [
+  "dung-sai"
+ ],
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(3)/2"
+  },
+  {
+   "k": "sqrt(6)/2"
+  },
+  {
+   "k": "sqrt(2)/2"
+  }
+ ],
+ "rang_buoc": [],
+ "so_bien_the": 4,
+ "so_cau_sinh": 4,
+ "nguon": {
+  "loai": "mvp",
+  "ma": "MC-HH-DS-B"
+ },
+ "phien_ban": "v1.0 · 27/11/2026"
+}

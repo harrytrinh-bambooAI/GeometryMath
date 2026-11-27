@@ -1,0 +1,1347 @@
+{
+ "ma_tran": "TN-THPT-764",
+ "ten": "Thi thử tốt nghiệp THPT môn Toán (định dạng QĐ 764/QĐ-BGDĐT)",
+ "thoi_gian_phut": 90,
+ "tong_diem": 10.0,
+ "phan": [
+  {
+   "id": "P1",
+   "ten": "Phần I - Trắc nghiệm nhiều lựa chọn",
+   "loai_cau": "tn4",
+   "so_cau": 12,
+   "diem_moi_cau": 0.25
+  },
+  {
+   "id": "P2",
+   "ten": "Phần II - Trắc nghiệm đúng/sai",
+   "loai_cau": "dung-sai",
+   "so_cau": 4,
+   "diem_moi_cau": 1.0,
+   "thang_diem_y": {
+    "1": 0.1,
+    "2": 0.25,
+    "3": 0.5,
+    "4": 1.0
+   }
+  },
+  {
+   "id": "P3",
+   "ten": "Phần III - Trắc nghiệm trả lời ngắn",
+   "loai_cau": "tra-loi-ngan",
+   "so_cau": 6,
+   "diem_moi_cau": 0.5
+  }
+ ],
+ "cau": [
+  {
+   "so": 1,
+   "phan": "P1",
+   "o": "P1-03",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-TK-01.TN.20",
+   "mau_cau": "MC-TK-01",
+   "chu_de": "thong-ke",
+   "dang": "tke.trung-binh",
+   "dang_tx": "tke.ghep-nhom",
+   "yccd": [
+    "11.TK.1"
+   ],
+   "muc_do": "NB",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.0,
+   "do_kho": 0.147,
+   "boi_canh_key": "TK|d=10,n1=3,n2=7,n3=12,n4=6,n5=2,x0=20",
+   "de_bai": "Bảng sau thống kê một mẫu số liệu ghép nhóm:\n\n| Nhóm | $[20;30)$ | $[30;40)$ | $[40;50)$ | $[50;60)$ | $[60;70)$ |\n|---|---|---|---|---|---|\n| Tần số | $3$ | $7$ | $12$ | $6$ | $2$ |\n Số trung bình của mẫu số liệu (làm tròn đến hàng phần trăm) là:",
+   "dap_so_hien": "44",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-TK-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-TK-01"
+   },
+   "dap_so_engine": null,
+   "phuong_an": {
+    "A": "45",
+    "B": "44",
+    "C": "39",
+    "D": "264"
+   },
+   "dap_an": "B",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "45",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy trung điểm của toàn bộ khoảng số liệu"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "39",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đầu mút trái của nhóm thay cho giá trị đại diện"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "264",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chia cho số nhóm (5) thay cho cỡ mẫu"
+     }
+    }
+   ]
+  },
+  {
+   "so": 2,
+   "phan": "P1",
+   "o": "P1-07",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-HS-01.TN.17",
+   "mau_cau": "MC-HS-01",
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.tiem-can-dung",
+   "dang_tx": "dt.tiem-can",
+   "yccd": [
+    "12.HS.3"
+   ],
+   "muc_do": "NB",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.0,
+   "do_kho": 0.138,
+   "boi_canh_key": "MC-HS-01|p=2,q=1,r=2,s=4",
+   "de_bai": "Tiệm cận đứng của đồ thị hàm số $y=\\dfrac{{2x + 1}}{{2x + 4}}$ là:",
+   "dap_so_hien": "x=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-01"
+   },
+   "dap_so_engine": null,
+   "phuong_an": {
+    "A": "x=- \\dfrac{1}{2}",
+    "B": "x=1",
+    "C": "x=2",
+    "D": "x=-2"
+   },
+   "dap_an": "D",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "x=- \\dfrac{1}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy nghiệm của tử số"
+     }
+    },
+    {
+     "phuong_an": "B",
+     "noi_dung": "x=1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang tiệm cận ngang"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "x=2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu khi giải mẫu bằng 0"
+     }
+    }
+   ]
+  },
+  {
+   "so": 3,
+   "phan": "P1",
+   "o": "P1-09",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-OX-02.TN.7",
+   "mau_cau": "MC-OX-02",
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "yccd": [
+    "12.OX.2"
+   ],
+   "muc_do": "NB",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.0,
+   "do_kho": 0.156,
+   "boi_canh_key": "MC-OX-02|p=2,q=-1,r=2,x0=1,y0=2,z0=3",
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;2;3)$ và vectơ $\\vec n=(2;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "dap_so_hien": "2x - y + 2z - 6=0",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "dap_so_engine": null,
+   "phuong_an": {
+    "A": "2x - y + 2z - 6=0",
+    "B": "x + 2y + 3z - 6=0",
+    "C": "2x - y + 2z + 6=0",
+    "D": "2x - y + 2z=0"
+   },
+   "dap_an": "A",
+   "nhieu": [
+    {
+     "phuong_an": "B",
+     "noi_dung": "x + 2y + 3z - 6=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "2x - y + 2z + 6=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "2x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ]
+  },
+  {
+   "so": 4,
+   "phan": "P1",
+   "o": "P1-11",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-OX-05.TN.11",
+   "mau_cau": "MC-OX-05",
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "yccd": [
+    "12.OX.1"
+   ],
+   "muc_do": "TH",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.5,
+   "do_kho": 0.337,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=2,v1=-1,v2=2,v3=4",
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "dap_so_hien": "13",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "dap_so_engine": null,
+   "phuong_an": {
+    "A": "5",
+    "B": "11",
+    "C": "13",
+    "D": "1"
+   },
+   "dap_an": "C",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "B",
+     "noi_dung": "11",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ]
+  },
+  {
+   "so": 5,
+   "phan": "P1",
+   "o": "P1-10",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-DH-01.TN.4",
+   "mau_cau": "MC-DH-01",
+   "chu_de": "dao-ham-co-ban",
+   "dang": "dh.dao-ham-tai-diem",
+   "dang_tx": "dh1.quy-tac",
+   "yccd": [
+    "11.DH.1"
+   ],
+   "muc_do": "NB",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.0,
+   "do_kho": 0.144,
+   "boi_canh_key": "MC-DH-01|p=1,q=-3,r=-2,x0=2",
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x^{2} - 2x$. Giá trị $f'(2)$ bằng:",
+   "dap_so_hien": "-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DH-01"
+   },
+   "dap_so_engine": null,
+   "phuong_an": {
+    "A": "-8",
+    "B": "-2",
+    "C": "-4",
+    "D": "4"
+   },
+   "dap_an": "B",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "-8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $f(x_0)$ thay cho $f'(x_0)$"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "-4",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Hạ bậc nhưng không nhân với số mũ"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên nhân 2 khi lấy đạo hàm $x^2$"
+     }
+    }
+   ]
+  },
+  {
+   "so": 6,
+   "phan": "P1",
+   "o": "P1-05",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-DS-01.TN.5",
+   "mau_cau": "MC-DS-01",
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "yccd": [
+    "11.DS.1"
+   ],
+   "muc_do": "NB",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.0,
+   "do_kho": 0.147,
+   "boi_canh_key": "MC-DS-01|d=4,n=20,u1=2",
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=4$. Số hạng $u_{20}$ bằng:",
+   "dap_so_hien": "78",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "dap_so_engine": null,
+   "phuong_an": {
+    "A": "78",
+    "B": "800",
+    "C": "82",
+    "D": "74"
+   },
+   "dap_an": "A",
+   "nhieu": [
+    {
+     "phuong_an": "B",
+     "noi_dung": "800",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "82",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "74",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ]
+  },
+  {
+   "so": 7,
+   "phan": "P1",
+   "o": "P1-12",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-TK-02.TN.17",
+   "mau_cau": "MC-TK-02",
+   "chu_de": "thong-ke",
+   "dang": "tke.mot",
+   "dang_tx": "tke.ghep-nhom",
+   "yccd": [
+    "11.TK.1"
+   ],
+   "muc_do": "TH",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.5,
+   "do_kho": 0.371,
+   "boi_canh_key": "TK|d=5,n1=2,n2=8,n3=10,n4=5,n5=5,x0=20",
+   "de_bai": "Bảng sau thống kê một mẫu số liệu ghép nhóm:\n\n| Nhóm | $[20;25)$ | $[25;30)$ | $[30;35)$ | $[35;40)$ | $[40;45)$ |\n|---|---|---|---|---|---|\n| Tần số | $2$ | $8$ | $10$ | $5$ | $5$ |\n Mốt của mẫu số liệu (làm tròn đến hàng phần trăm) là:",
+   "dap_so_hien": "31{,}43",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-TK-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-TK-02"
+   },
+   "dap_so_engine": null,
+   "phuong_an": {
+    "A": "32",
+    "B": "30",
+    "C": "32{,}5",
+    "D": "31{,}43"
+   },
+   "dap_an": "D",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "32",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai mẫu số công thức mốt (chỉ dùng $n_3-n_4$)"
+     }
+    },
+    {
+     "phuong_an": "B",
+     "noi_dung": "30",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đầu mút trái của nhóm chứa mốt"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "32{,}5",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy giá trị đại diện của nhóm chứa mốt"
+     }
+    }
+   ]
+  },
+  {
+   "so": 8,
+   "phan": "P1",
+   "o": "P1-06",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-ML-01.TN.14",
+   "mau_cau": "MC-ML-01",
+   "chu_de": "ham-so-mu-logarit",
+   "dang": "ml.pt-log-co-ban",
+   "dang_tx": "ml.pt-log",
+   "yccd": [
+    "11.ML.3"
+   ],
+   "muc_do": "NB",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.0,
+   "do_kho": 0.154,
+   "boi_canh_key": "MC-ML-01|b=3,p=1,q=3,r=2",
+   "de_bai": "Nghiệm của phương trình $\\log_{3}(x + 3)=2$ là:",
+   "dap_so_hien": "x=6",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-ML-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-ML-01"
+   },
+   "dap_so_engine": null,
+   "phuong_an": {
+    "A": "x=6",
+    "B": "x=5",
+    "C": "x=12",
+    "D": "x=3"
+   },
+   "dap_an": "A",
+   "nhieu": [
+    {
+     "phuong_an": "B",
+     "noi_dung": "x=5",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo cơ số và số mũ: $u=r^b$"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "x=12",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "x=3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Hiểu $\\log_b u=r$ thành $u=rb$"
+     }
+    }
+   ]
+  },
+  {
+   "so": 9,
+   "phan": "P1",
+   "o": "P1-08",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-NH-01.TN.13",
+   "mau_cau": "MC-NH-01",
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "yccd": [
+    "12.NH.1"
+   ],
+   "muc_do": "NB",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.0,
+   "do_kho": 0.136,
+   "boi_canh_key": "MC-NH-01|p=6,q=4,r=5",
+   "de_bai": "Cho hàm số $f(x)=6x^{2} + 4x + 5$. Họ nguyên hàm của $f(x)$ là:",
+   "dap_so_hien": "2x^{3} + 2x^{2} + 5x+C",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "dap_so_engine": null,
+   "phuong_an": {
+    "A": "6x^{3} + 4x^{2} + 5x+C",
+    "B": "2x^{3} + 2x^{2}+C",
+    "C": "12x + 4+C",
+    "D": "2x^{3} + 2x^{2} + 5x+C"
+   },
+   "dap_an": "D",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "6x^{3} + 4x^{2} + 5x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "B",
+     "noi_dung": "2x^{3} + 2x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "12x + 4+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    }
+   ]
+  },
+  {
+   "so": 10,
+   "phan": "P1",
+   "o": "P1-02",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-HH-A10.TN.2",
+   "mau_cau": "MC-HH-A10",
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-sa",
+   "dang_tx": "th.chop",
+   "yccd": [
+    "11.TT.2"
+   ],
+   "muc_do": "TH",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.5,
+   "do_kho": 0.379,
+   "boi_canh_key": "A|k=2",
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=2a$. Tổng diện tích bốn mặt bên của hình chóp $S.ABCD$ bằng:",
+   "dap_so_hien": "2a^{2} + a\\sqrt{5}^{2}",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-67",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-67 + geometry/problem-specs.json#HKN-67",
+    "mau_cau": "MC-HH-A10"
+   },
+   "dap_so_engine": 4.23606797749979,
+   "phuong_an": {
+    "A": "2a\\sqrt{5}^{2}",
+    "B": "a\\sqrt{5}^{2} + 3a^{2}",
+    "C": "2a^{2} + a\\sqrt{5}^{2}",
+    "D": "4a^{2}"
+   },
+   "dap_an": "C",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "2a\\sqrt{5}^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều có đường cao bằng $SB$"
+     }
+    },
+    {
+     "phuong_an": "B",
+     "noi_dung": "a\\sqrt{5}^{2} + 3a^{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả diện tích đáy (tính diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "4a^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều vuông tại $A$ với đường cao $SA$"
+     }
+    }
+   ]
+  },
+  {
+   "so": 11,
+   "phan": "P1",
+   "o": "P1-01",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-HH-C01.TN.0",
+   "mau_cau": "MC-HH-C01",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "kc-diem-mp.lap-phuong.tu-dien-vuong",
+   "dang_tx": "qh.khoang-cach",
+   "yccd": [
+    "11.VG.2"
+   ],
+   "muc_do": "TH",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.5,
+   "do_kho": 0.351,
+   "boi_canh_key": "C|c=2",
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $2$ cm. Khoảng cách từ $A$ đến mặt phẳng $(A'BD)$ bằng:",
+   "dap_so_hien": "\\dfrac{2\\sqrt{3}}{3}\\text{ cm}",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-17",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-17 + geometry/problem-specs.json#HKN-17",
+    "mau_cau": "MC-HH-C01"
+   },
+   "dap_so_engine": 1.1547005383792517,
+   "phuong_an": {
+    "A": "2\\sqrt{3}\\text{ cm}",
+    "B": "\\dfrac{2\\sqrt{3}}{3}\\text{ cm}",
+    "C": "\\sqrt{2}\\text{ cm}",
+    "D": "2\\text{ cm}"
+   },
+   "dap_an": "B",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "2\\sqrt{3}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy cả đường chéo $AC'$ (đường chéo vuông góc với mặt phẳng)"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "\\sqrt{2}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy khoảng cách từ $A$ đến đường thẳng $BD$"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "2\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi $AA'$ là khoảng cách"
+     }
+    }
+   ]
+  },
+  {
+   "so": 12,
+   "phan": "P1",
+   "o": "P1-04",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-NH-03.TN.29",
+   "mau_cau": "MC-NH-03",
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "yccd": [
+    "12.NH.2"
+   ],
+   "muc_do": "NB",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.25,
+   "thoi_gian_phut": 1.0,
+   "do_kho": 0.156,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=-1,v=4",
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng:",
+   "dap_so_hien": "5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "dap_so_engine": null,
+   "phuong_an": {
+    "A": "-11",
+    "B": "3",
+    "C": "5",
+    "D": "-24"
+   },
+   "dap_an": "C",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "-11",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "B",
+     "noi_dung": "3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "-24",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ]
+  },
+  {
+   "so": 13,
+   "phan": "P2",
+   "o": "P2-04",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-DS-OX.DS.0",
+   "mau_cau": "MC-DS-OX",
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ds.mat-cau-mat-phang",
+   "dang_tx": "ox.mc-vdc",
+   "yccd": [
+    "12.OX.2",
+    "12.OX.4"
+   ],
+   "muc_do": "VD",
+   "loai_cau": "dung-sai",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 1.0,
+   "thoi_gian_phut": 6.0,
+   "do_kho": 0.607,
+   "boi_canh_key": "MC-DS-OX|R=5,dd=4,i1=1,i2=-2,i3=3",
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S):\\left(x - 1\\right)^{2}+\\left(y + 2\\right)^{2}+\\left(z - 3\\right)^{2}=25$ và mặt phẳng $(P):x + 2y + 2z + 4=0$. Xét tính đúng/sai của các mệnh đề sau.",
+   "dap_so_hien": "a) Đ; b) Đ; c) S; d) S",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-OX",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-OX"
+   },
+   "dap_so_engine": null,
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Mặt cầu $(S)$ có tâm $I(1;-2;3)$.",
+     "dung": true,
+     "muc_do": "NB"
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Mặt cầu $(S)$ có bán kính bằng $5$.",
+     "dung": true,
+     "muc_do": "NB"
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Khoảng cách từ tâm $I$ đến $(P)$ bằng $7$.",
+     "dung": false,
+     "muc_do": "TH",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho độ dài vectơ pháp tuyến"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "$(P)$ cắt $(S)$ theo một đường tròn có bán kính bằng $\\dfrac{8}{3}$.",
+     "dung": false,
+     "muc_do": "VD",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hiệu $R-d$ thay vì dùng định lí Pythagore"
+     }
+    }
+   ],
+   "dap_an": "a) Đ; b) Đ; c) S; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "c) Khoảng cách từ tâm $I$ đến $(P)$ bằng $7$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho độ dài vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "d) $(P)$ cắt $(S)$ theo một đường tròn có bán kính bằng $\\dfrac{8}{3}$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hiệu $R-d$ thay vì dùng định lí Pythagore"
+     }
+    }
+   ]
+  },
+  {
+   "so": 14,
+   "phan": "P2",
+   "o": "P2-01",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-DS-HS.DS.3",
+   "mau_cau": "MC-DS-HS",
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "ds.ham-bac-ba",
+   "dang_tx": "hs.dao-ham-dung-sai",
+   "yccd": [
+    "12.HS.1",
+    "12.HS.2"
+   ],
+   "muc_do": "VD",
+   "loai_cau": "dung-sai",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 1.0,
+   "thoi_gian_phut": 6.0,
+   "do_kho": 0.584,
+   "boi_canh_key": "MC-DS-HS|c=1,m=2",
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 6x^{2} + 1$. Xét tính đúng/sai của các mệnh đề sau.",
+   "dap_so_hien": "a) Đ; b) S; c) S; d) Đ",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-HS",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-HS"
+   },
+   "dap_so_engine": null,
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "$f'(1)=-9$.",
+     "dung": true,
+     "muc_do": "NB"
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Hàm số nghịch biến trên khoảng $(0;2)$.",
+     "dung": false,
+     "muc_do": "TH",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $f'(x)=0$ (được $x=m$)"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Giá trị cực tiểu của hàm số bằng $1$.",
+     "dung": false,
+     "muc_do": "TH",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực đại $f(0)$ với giá trị cực tiểu"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Giá trị lớn nhất của $f(x)$ trên đoạn $[-1;1]$ bằng $1$.",
+     "dung": true,
+     "muc_do": "VD"
+    }
+   ],
+   "dap_an": "a) Đ; b) S; c) S; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "b) Hàm số nghịch biến trên khoảng $(0;2)$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $f'(x)=0$ (được $x=m$)"
+     }
+    },
+    {
+     "phuong_an": "c) Giá trị cực tiểu của hàm số bằng $1$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực đại $f(0)$ với giá trị cực tiểu"
+     }
+    }
+   ]
+  },
+  {
+   "so": 15,
+   "phan": "P2",
+   "o": "P2-02",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-DS-UD.DS.7",
+   "mau_cau": "MC-DS-UD",
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "yccd": [
+    "12.NH.2",
+    "12.UD.3"
+   ],
+   "muc_do": "VD",
+   "loai_cau": "dung-sai",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 1.0,
+   "thoi_gian_phut": 6.0,
+   "do_kho": 0.594,
+   "boi_canh_key": "MC-DS-UD|p=20,q=4",
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=20 - 4t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "dap_so_hien": "a) S; b) Đ; c) Đ; d) Đ",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "dap_so_engine": null,
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $4$ m/s.",
+     "dung": false,
+     "muc_do": "NB",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $5$ giây kể từ lúc đạp phanh.",
+     "dung": true,
+     "muc_do": "TH"
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $50$ m.",
+     "dung": true,
+     "muc_do": "VD"
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $18$ m.",
+     "dung": true,
+     "muc_do": "VD"
+    }
+   ],
+   "dap_an": "a) S; b) Đ; c) Đ; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "a) Vận tốc của ô tô lúc bắt đầu đạp phanh là $4$ m/s.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    }
+   ]
+  },
+  {
+   "so": 16,
+   "phan": "P2",
+   "o": "P2-03",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-DS-XS.DS.6",
+   "mau_cau": "MC-DS-XS",
+   "chu_de": "xac-suat-co-dieu-kien",
+   "dang": "ds.bayes",
+   "dang_tx": "xs.dieu-kien",
+   "yccd": [
+    "12.XS.1",
+    "12.XS.2"
+   ],
+   "muc_do": "VD",
+   "loai_cau": "dung-sai",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 1.0,
+   "thoi_gian_phut": 6.0,
+   "do_kho": 0.601,
+   "boi_canh_key": "MC-DS-XS|p=2/5,u=1/20,v=1/25",
+   "de_bai": "Một bệnh viện nhận bệnh nhân từ hai khu vực: khu vực I chiếm $40\\%$; tỉ lệ mắc bệnh X ở khu vực I là $5\\%$, ở khu vực II là $4\\%$. Chọn ngẫu nhiên một bệnh nhân; gọi $H$: \\\"bệnh nhân đến từ khu vực I\\\", $A$: \\\"bệnh nhân mắc bệnh X\\\". Xét tính đúng/sai của các mệnh đề sau.",
+   "dap_so_hien": "a) S; b) Đ; c) Đ; d) S",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-XS",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-XS"
+   },
+   "dap_so_engine": null,
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "$P(\\overline H)=0{,}4$.",
+     "dung": false,
+     "muc_do": "NB",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm $P(\\overline H)$ với $P(H)$"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "$P(AH)=0{,}02$.",
+     "dung": true,
+     "muc_do": "TH"
+    },
+    {
+     "nhan": "c",
+     "menh_de": "$P(A)=0{,}044$.",
+     "dung": true,
+     "muc_do": "VD"
+    },
+    {
+     "nhan": "d",
+     "menh_de": "$P(H\\mid A)=0{,}05$ (làm tròn đến hàng phần nghìn).",
+     "dung": false,
+     "muc_do": "VD",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm $P(H\\mid A)$ với $P(A\\mid H)$"
+     }
+    }
+   ],
+   "dap_an": "a) S; b) Đ; c) Đ; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "a) $P(\\overline H)=0{,}4$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm $P(\\overline H)$ với $P(H)$"
+     }
+    },
+    {
+     "phuong_an": "d) $P(H\\mid A)=0{,}05$ (làm tròn đến hàng phần nghìn).",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm $P(H\\mid A)$ với $P(A\\mid H)$"
+     }
+    }
+   ]
+  },
+  {
+   "so": 17,
+   "phan": "P3",
+   "o": "P3-01",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-HH-D05.TLN.3",
+   "mau_cau": "MC-HH-D05",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "kc-diem-mp.hop.tu-dien-vuong",
+   "dang_tx": "qh.khoang-cach",
+   "yccd": [
+    "11.VG.2"
+   ],
+   "muc_do": "VD",
+   "loai_cau": "tra-loi-ngan",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.5,
+   "thoi_gian_phut": 4.0,
+   "do_kho": 0.69,
+   "boi_canh_key": "D|p=1,q=2,r=2",
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=1$ cm, $AD=2$ cm, $AA'=2$ cm. Khoảng cách từ $A$ đến mặt phẳng $(A'BD)$ bằng bao nhiêu (đơn vị: cm) (làm tròn đến hàng phần trăm)?",
+   "dap_so_hien": "\\dfrac{\\sqrt{6}}{3}\\text{ cm}",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-27",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-27 + geometry/problem-specs.json#HKN-27",
+    "mau_cau": "MC-HH-D05"
+   },
+   "dap_so_engine": 0.8164965809277261,
+   "dap_an": "0,82"
+  },
+  {
+   "so": 18,
+   "phan": "P3",
+   "o": "P3-05",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-XS-02.TLN.8",
+   "mau_cau": "MC-XS-02",
+   "chu_de": "xac-suat-co-dieu-kien",
+   "dang": "xs.toan-phan-may",
+   "dang_tx": "xs.toan-phan",
+   "yccd": [
+    "12.XS.2"
+   ],
+   "muc_do": "VDC",
+   "loai_cau": "tra-loi-ngan",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.5,
+   "thoi_gian_phut": 6.0,
+   "do_kho": 0.897,
+   "boi_canh_key": "MC-XS-02|p=7/10,u=1/10,v=3/100",
+   "de_bai": "Một nhà máy có hai dây chuyền: dây chuyền I làm ra $70\\%$ sản phẩm với tỉ lệ phế phẩm $10\\%$, dây chuyền II làm ra $30\\%$ sản phẩm với tỉ lệ phế phẩm $3\\%$. Lấy ngẫu nhiên một sản phẩm của nhà máy. Xác suất sản phẩm đó là phế phẩm bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_so_hien": "0{,}079",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-02"
+   },
+   "dap_so_engine": null,
+   "dap_an": "0,08"
+  },
+  {
+   "so": 19,
+   "phan": "P3",
+   "o": "P3-04",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-UD-02.TLN.7",
+   "mau_cau": "MC-UD-02",
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "yccd": [
+    "12.UD.2"
+   ],
+   "muc_do": "VDC",
+   "loai_cau": "tra-loi-ngan",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.5,
+   "thoi_gian_phut": 6.0,
+   "do_kho": 0.882,
+   "boi_canh_key": "MC-UD-02|k=3,t=2",
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{3x}}$, $y=0$, $x=2$ quanh trục $Ox$ bằng bao nhiêu (làm tròn đến hàng phần mười)?",
+   "dap_so_hien": "6\\pi",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "dap_so_engine": null,
+   "dap_an": "18,8"
+  },
+  {
+   "so": 20,
+   "phan": "P3",
+   "o": "P3-02",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-XS-05.TLN.0",
+   "mau_cau": "MC-XS-05",
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem-so-chu-so",
+   "dang_tx": "tk.dem",
+   "yccd": [
+    "10.TH.1"
+   ],
+   "muc_do": "VD",
+   "loai_cau": "tra-loi-ngan",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.5,
+   "thoi_gian_phut": 4.0,
+   "do_kho": 0.628,
+   "boi_canh_key": "MC-XS-05|n=5",
+   "de_bai": "Từ các chữ số $0,1,2,\\dots,5$, lập các số tự nhiên có ba chữ số đôi một khác nhau. Số các số lập được là bao nhiêu?",
+   "dap_so_hien": "100",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-05"
+   },
+   "dap_so_engine": null,
+   "dap_an": "100"
+  },
+  {
+   "so": 21,
+   "phan": "P3",
+   "o": "P3-06",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-XS-04.TLN.4",
+   "mau_cau": "MC-XS-04",
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "muc_do": "VD",
+   "loai_cau": "tra-loi-ngan",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 0.5,
+   "thoi_gian_phut": 4.0,
+   "do_kho": 0.697,
+   "boi_canh_key": "MC-XS-04|m=5,n=7",
+   "de_bai": "Một hộp có $5$ viên bi đỏ và $7$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_so_hien": "0{,}47",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "dap_so_engine": null,
+   "dap_an": "0,47"
+  },
+  {
+   "so": 22,
+   "phan": "P3",
+   "o": "P3-03",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-HS-05.TLN.3",
+   "mau_cau": "MC-HS-05",
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.mo-hinh-loi-nhuan",
+   "dang_tx": "hs.mo-hinh",
+   "yccd": [
+    "12.HS.4"
+   ],
+   "muc_do": "VD",
+   "loai_cau": "tra-loi-ngan",
+   "nang_luc": "mo-hinh-hoa",
+   "diem": 0.5,
+   "thoi_gian_phut": 4.0,
+   "do_kho": 0.679,
+   "boi_canh_key": "MC-HS-05|F=100,cc=30,kk=3,pp=90",
+   "de_bai": "Một xưởng bán $x$ sản phẩm với giá $(90 - 3x)$ nghìn đồng mỗi sản phẩm; chi phí sản xuất là $(30x + 100)$ nghìn đồng. Lợi nhuận lớn nhất (nghìn đồng) bằng bao nhiêu?",
+   "dap_so_hien": "200",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-05"
+   },
+   "dap_so_engine": null,
+   "dap_an": "200"
+  }
+ ],
+ "chu_de_xoay_vong": {
+  "P1-02": "hinh-khong-gian-the-tich",
+  "P1-08": "nguyen-ham-tich-phan",
+  "P1-09": "oxyz-mat-phang",
+  "P1-10": "dao-ham-co-ban",
+  "P1-11": "oxyz-toa-do-vecto",
+  "P1-12": "thong-ke",
+  "P2-04": "oxyz-mat-cau",
+  "P3-05": "xac-suat-co-dieu-kien",
+  "P3-06": "to-hop-xac-suat"
+ },
+ "do_kho_du_kien": 0.5276,
+ "rang_buoc": {
+  "phu_dac_ta_100": {
+   "dat": true,
+   "chi_tiet": "phủ 100% ô; khớp"
+  },
+  "khop_ma_tran": {
+   "dat": true,
+   "chi_tiet": "khớp số câu từng phần"
+  },
+  "khong_trung_dang": {
+   "dat": true,
+   "chi_tiet": "không trùng"
+  },
+  "tong_diem": {
+   "dat": true,
+   "chi_tiet": "10.0 / 10.0"
+  },
+  "tong_thoi_gian": {
+   "dat": true,
+   "chi_tiet": "66.0 phút dự kiến / 90 phút"
+  },
+  "can_bang_dap_an": {
+   "dat": true,
+   "chi_tiet": {
+    "A": 3,
+    "B": 3,
+    "C": 3,
+    "D": 3
+   }
+  },
+  "khong_lo_dap_so": {
+   "dat": true,
+   "chi_tiet": "không lộ"
+  }
+ },
+ "so_lan_boc": 1,
+ "ma_de": "103",
+ "seed": 2026
+}

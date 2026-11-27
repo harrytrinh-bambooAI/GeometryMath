@@ -1,0 +1,148 @@
+{
+ "id": "MC-XS-02",
+ "ten": "Công thức xác suất toàn phần",
+ "chu_de": "xac-suat-co-dieu-kien",
+ "dang": "xs.toan-phan-may",
+ "dang_tx": "xs.toan-phan",
+ "yccd": [
+  "12.XS.2"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-XS-02",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VDC"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-XS-02",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "p": [
+   "3/5",
+   "2/5",
+   "7/10"
+  ],
+  "u": [
+   "1/10",
+   "1/20"
+  ],
+  "v": [
+   "3/100",
+   "1/25"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "P1": "100*p",
+  "P2": "100-100*p",
+  "U": "100*u",
+  "V": "100*v"
+ },
+ "boi_canh": "Một nhà máy có hai dây chuyền: dây chuyền I làm ra ${P1}\\%$ sản phẩm với tỉ lệ phế phẩm ${U}\\%$, dây chuyền II làm ra ${P2}\\%$ sản phẩm với tỉ lệ phế phẩm ${V}\\%$. Lấy ngẫu nhiên một sản phẩm của nhà máy.",
+ "hoi": "Xác suất sản phẩm đó là phế phẩm (làm tròn đến hàng phần trăm) bằng",
+ "dap_so": "p*u+(1-p)*v",
+ "nhieu": [
+  {
+   "bieu_thuc": "(u+v)/2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy trung bình cộng hai tỉ lệ, bỏ qua tỉ trọng"
+   }
+  },
+  {
+   "bieu_thuc": "p*u",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Chỉ tính phế phẩm của dây chuyền I"
+   }
+  },
+  {
+   "bieu_thuc": "u+v",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng hai tỉ lệ phế phẩm"
+   }
+  }
+ ],
+ "kieu": "xap-xi:4",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-XS-02']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "p": "3/5",
+   "u": "1/10",
+   "v": "3/100"
+  },
+  {
+   "p": "3/5",
+   "u": "1/10",
+   "v": "1/25"
+  },
+  {
+   "p": "3/5",
+   "u": "1/20",
+   "v": "3/100"
+  },
+  {
+   "p": "3/5",
+   "u": "1/20",
+   "v": "1/25"
+  },
+  {
+   "p": "2/5",
+   "u": "1/10",
+   "v": "3/100"
+  },
+  {
+   "p": "2/5",
+   "u": "1/10",
+   "v": "1/25"
+  },
+  {
+   "p": "2/5",
+   "u": "1/20",
+   "v": "3/100"
+  },
+  {
+   "p": "2/5",
+   "u": "1/20",
+   "v": "1/25"
+  },
+  {
+   "p": "7/10",
+   "u": "1/10",
+   "v": "3/100"
+  },
+  {
+   "p": "7/10",
+   "u": "1/10",
+   "v": "1/25"
+  },
+  {
+   "p": "7/10",
+   "u": "1/20",
+   "v": "3/100"
+  },
+  {
+   "p": "7/10",
+   "u": "1/20",
+   "v": "1/25"
+  }
+ ],
+ "so_bien_the": 12,
+ "so_cau_sinh": 23,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

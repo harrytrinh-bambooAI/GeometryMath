@@ -1,0 +1,508 @@
+{
+ "ma_tran": "KT15-HHKG11",
+ "ten": "Kiểm tra 15 phút - Toán 11, chương Quan hệ vuông góc trong không gian",
+ "thoi_gian_phut": 15,
+ "tong_diem": 10.0,
+ "phan": [
+  {
+   "id": "P1",
+   "ten": "Phần I - Trắc nghiệm nhiều lựa chọn",
+   "loai_cau": "tn4",
+   "so_cau": 6,
+   "diem_moi_cau": 1.0
+  },
+  {
+   "id": "P2",
+   "ten": "Phần II - Trả lời ngắn",
+   "loai_cau": "tra-loi-ngan",
+   "so_cau": 2,
+   "diem_moi_cau": 2.0
+  }
+ ],
+ "cau": [
+  {
+   "so": 1,
+   "phan": "P1",
+   "o": "K-02",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-HH-B04.TN.3",
+   "mau_cau": "MC-HH-B04",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "do-dai.chop-deu.chieu-cao",
+   "dang_tx": "qh.vuong-goc",
+   "yccd": [
+    "11.VG.4"
+   ],
+   "muc_do": "NB",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 1.0,
+   "thoi_gian_phut": 1.0,
+   "do_kho": 0.195,
+   "boi_canh_key": "B4|m=sqrt(3)",
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, cạnh bên bằng $a\\sqrt{3}$ và $O$ là tâm của đáy. Chiều cao $SO$ của hình chóp bằng:",
+   "dap_so_hien": "\\dfrac{a\\sqrt{10}}{2}",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-14",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-14 + geometry/problem-specs.json#HKN-14",
+    "mau_cau": "MC-HH-B04"
+   },
+   "dap_so_engine": 1.5811388300841898,
+   "phuong_an": {
+    "A": "\\dfrac{a\\sqrt{10}}{2}",
+    "B": "\\dfrac{a\\sqrt{11}}{2}",
+    "C": "a\\sqrt{2}",
+    "D": "\\dfrac{a\\sqrt{14}}{2}"
+   },
+   "dap_an": "A",
+   "nhieu": [
+    {
+     "phuong_an": "B",
+     "noi_dung": "\\dfrac{a\\sqrt{11}}{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy $OM=\\dfrac a2$ thay cho $OA$ (tính trung đoạn)"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "a\\sqrt{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy $OA=a$ (bằng cạnh đáy)"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "\\dfrac{a\\sqrt{14}}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng thay vì trừ trong định lí Pythagore"
+     }
+    }
+   ]
+  },
+  {
+   "so": 2,
+   "phan": "P1",
+   "o": "K-03",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-HH-F02.TN.7",
+   "mau_cau": "MC-HH-F02",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "goc-dt-mp.lang-tru-dung",
+   "dang_tx": "qh.goc",
+   "yccd": [
+    "11.VG.1"
+   ],
+   "muc_do": "TH",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 1.0,
+   "thoi_gian_phut": 1.5,
+   "do_kho": 0.325,
+   "boi_canh_key": "F|k=2*sqrt(3),q=sqrt(3)",
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a\\sqrt{3}$ và $AA'=2a\\sqrt{3}$. Góc giữa đường thẳng $B'C$ và mặt phẳng $(ABC)$ bằng:",
+   "dap_so_hien": "60^\\circ",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-35",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-35 + geometry/problem-specs.json#HKN-35",
+    "mau_cau": "MC-HH-F02"
+   },
+   "dap_so_engine": 60.00000000000001,
+   "phuong_an": {
+    "A": "\\approx 63{,}43^\\circ",
+    "B": "\\approx 73{,}9^\\circ",
+    "C": "30^\\circ",
+    "D": "60^\\circ"
+   },
+   "dap_an": "D",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "\\approx 63{,}43^\\circ",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Dùng $AC$ thay cho hình chiếu $BC$"
+     }
+    },
+    {
+     "phuong_an": "B",
+     "noi_dung": "\\approx 73{,}9^\\circ",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $AB$ thay cho $BC$"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "30^\\circ",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy góc $\\widehat{CB'B}$"
+     }
+    }
+   ]
+  },
+  {
+   "so": 3,
+   "phan": "P1",
+   "o": "K-05",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-HH-B02.TN.2",
+   "mau_cau": "MC-HH-B02",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "kc-diem-mp.chop-deu.tam-day",
+   "dang_tx": "qh.khoang-cach",
+   "yccd": [
+    "11.VG.2"
+   ],
+   "muc_do": "TH",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 1.0,
+   "thoi_gian_phut": 1.5,
+   "do_kho": 0.362,
+   "boi_canh_key": "B|k=sqrt(3)/2",
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=\\dfrac{a\\sqrt{3}}{2}$. Khoảng cách từ $O$ đến mặt phẳng $(SBC)$ bằng:",
+   "dap_so_hien": "\\dfrac{a\\sqrt{3}}{4}",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-11",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-11 + geometry/problem-specs.json#HKN-11",
+    "mau_cau": "MC-HH-B02"
+   },
+   "dap_so_engine": 0.43301270189221935,
+   "phuong_an": {
+    "A": "\\dfrac{- a\\sqrt{3} + 3a}{4}",
+    "B": "\\dfrac{a}{2}",
+    "C": "\\dfrac{a\\sqrt{3}}{4}",
+    "D": "\\dfrac{a\\sqrt{30}}{10}"
+   },
+   "dap_an": "C",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "\\dfrac{- a\\sqrt{3} + 3a}{4}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $\\dfrac{SO\\cdot OM}{SO+OM}$ thay cho $\\dfrac{SO\\cdot OM}{SM}$"
+     }
+    },
+    {
+     "phuong_an": "B",
+     "noi_dung": "\\dfrac{a}{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy $OM$ ($M$ trung điểm $BC$) làm khoảng cách"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "\\dfrac{a\\sqrt{30}}{10}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Dùng $OB$ thay cho $OM$ (kẻ vuông góc xuống $SB$)"
+     }
+    }
+   ]
+  },
+  {
+   "so": 4,
+   "phan": "P1",
+   "o": "K-04",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-HH-E01.TN.3",
+   "mau_cau": "MC-HH-E01",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "goc-dt-mp.lang-tru-deu",
+   "dang_tx": "qh.goc",
+   "yccd": [
+    "11.VG.1"
+   ],
+   "muc_do": "TH",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 1.0,
+   "thoi_gian_phut": 1.5,
+   "do_kho": 0.353,
+   "boi_canh_key": "E|k=2",
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=2a$. Góc giữa đường thẳng $A'B$ và mặt phẳng $(ABC)$ bằng:",
+   "dap_so_hien": "\\approx 63{,}43^\\circ",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-29",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-29 + geometry/problem-specs.json#HKN-29",
+    "mau_cau": "MC-HH-E01"
+   },
+   "dap_so_engine": 63.434948822921996,
+   "phuong_an": {
+    "A": "\\approx 65{,}91^\\circ",
+    "B": "\\approx 26{,}57^\\circ",
+    "C": "\\approx 66{,}59^\\circ",
+    "D": "\\approx 63{,}43^\\circ"
+   },
+   "dap_an": "D",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "\\approx 65{,}91^\\circ",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lập $\\tan=\\dfrac{A'B}{AB}$"
+     }
+    },
+    {
+     "phuong_an": "B",
+     "noi_dung": "\\approx 26{,}57^\\circ",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy góc $\\widehat{AA'B}$"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "\\approx 66{,}59^\\circ",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy đường cao $AM$ của đáy làm hình chiếu"
+     }
+    }
+   ]
+  },
+  {
+   "so": 5,
+   "phan": "P1",
+   "o": "K-01",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-HH-D01.TN.2",
+   "mau_cau": "MC-HH-D01",
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.hop",
+   "dang_tx": "th.hop",
+   "yccd": [
+    "11.TT.1"
+   ],
+   "muc_do": "NB",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 1.0,
+   "thoi_gian_phut": 1.0,
+   "do_kho": 0.131,
+   "boi_canh_key": "D|p=2,q=3,r=6",
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=2$ cm, $AD=3$ cm, $AA'=6$ cm. Thể tích khối hộp chữ nhật bằng:",
+   "dap_so_hien": "36\\text{ cm}",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-24",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-24 + geometry/problem-specs.json#HKN-24",
+    "mau_cau": "MC-HH-D01"
+   },
+   "dap_so_engine": 36.0,
+   "phuong_an": {
+    "A": "12\\text{ cm}",
+    "B": "36\\text{ cm}",
+    "C": "60\\text{ cm}",
+    "D": "72\\text{ cm}"
+   },
+   "dap_an": "B",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "12\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "60\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "72\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần"
+     }
+    }
+   ]
+  },
+  {
+   "so": 6,
+   "phan": "P1",
+   "o": "K-06",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-HH-A06.TN.2",
+   "mau_cau": "MC-HH-A06",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "goc-dt-mp.chop-sa.mat-ben",
+   "dang_tx": "qh.goc",
+   "yccd": [
+    "11.VG.1"
+   ],
+   "muc_do": "VD",
+   "loai_cau": "tn4",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 1.0,
+   "thoi_gian_phut": 2.5,
+   "do_kho": 0.558,
+   "boi_canh_key": "A|k=sqrt(3)",
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt{3}$. Góc giữa đường thẳng $SC$ và mặt phẳng $(SAB)$ bằng:",
+   "dap_so_hien": "\\approx 26{,}57^\\circ",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-07",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-07 + geometry/problem-specs.json#HKN-07",
+    "mau_cau": "MC-HH-A06"
+   },
+   "dap_so_engine": 26.565051177077986,
+   "phuong_an": {
+    "A": "\\approx 39{,}23^\\circ",
+    "B": "\\approx 26{,}57^\\circ",
+    "C": "\\approx 63{,}43^\\circ",
+    "D": "30^\\circ"
+   },
+   "dap_an": "B",
+   "nhieu": [
+    {
+     "phuong_an": "A",
+     "noi_dung": "\\approx 39{,}23^\\circ",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Nhầm hình chiếu của $SC$ lên $(SAB)$ là $SA$ (tính góc $\\widehat{CSA}$)"
+     }
+    },
+    {
+     "phuong_an": "C",
+     "noi_dung": "\\approx 63{,}43^\\circ",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy góc $\\widehat{SCB}$ (phụ với góc cần tìm)"
+     }
+    },
+    {
+     "phuong_an": "D",
+     "noi_dung": "30^\\circ",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lập $\\tan=\\dfrac{BC}{SA}$ (dùng $SA$ thay cho $SB$)"
+     }
+    }
+   ]
+  },
+  {
+   "so": 7,
+   "phan": "P2",
+   "o": "K-08",
+   "loai_o": "co-dinh",
+   "id_cau": "MC-HH-C02.TLN.0",
+   "mau_cau": "MC-HH-C02",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "kc-cheo-nhau.lap-phuong",
+   "dang_tx": "qh.khoang-cach",
+   "yccd": [
+    "11.VG.3"
+   ],
+   "muc_do": "VD",
+   "loai_cau": "tra-loi-ngan",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 2.0,
+   "thoi_gian_phut": 4.0,
+   "do_kho": 0.664,
+   "boi_canh_key": "C|c=2",
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $2$ cm. Khoảng cách giữa hai đường thẳng $BB'$ và $AC'$ bằng bao nhiêu (đơn vị: cm) (làm tròn đến hàng phần trăm)?",
+   "dap_so_hien": "\\sqrt{2}\\text{ cm}",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-20",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-20 + geometry/problem-specs.json#HKN-20",
+    "mau_cau": "MC-HH-C02"
+   },
+   "dap_so_engine": 1.414213562373095,
+   "dap_an": "1,41"
+  },
+  {
+   "so": 8,
+   "phan": "P2",
+   "o": "K-07",
+   "loai_o": "xoay-vong",
+   "id_cau": "MC-HH-F01.TLN.3",
+   "mau_cau": "MC-HH-F01",
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "yccd": [
+    "11.TT.1"
+   ],
+   "muc_do": "NB",
+   "loai_cau": "tra-loi-ngan",
+   "nang_luc": "tu-duy-lap-luan",
+   "diem": 2.0,
+   "thoi_gian_phut": 2.0,
+   "do_kho": 0.246,
+   "boi_canh_key": "FN|p=8,s=15,t=5",
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=8$ cm, $AC=15$ cm và $AA'=5$ cm. Thể tích khối lăng trụ bằng bao nhiêu (đơn vị: cm)?",
+   "dap_so_hien": "300\\text{ cm}",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-34",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-34 + geometry/problem-specs.json#HKN-34",
+    "mau_cau": "MC-HH-F01"
+   },
+   "dap_so_engine": 300.0,
+   "dap_an": "300"
+  }
+ ],
+ "chu_de_xoay_vong": {
+  "K-04": "hinh-khong-gian-quan-he",
+  "K-06": "hinh-khong-gian-quan-he",
+  "K-07": "hinh-khong-gian-the-tich"
+ },
+ "do_kho_du_kien": 0.3744,
+ "rang_buoc": {
+  "phu_dac_ta_100": {
+   "dat": true,
+   "chi_tiet": "phủ 100% ô; khớp"
+  },
+  "khop_ma_tran": {
+   "dat": true,
+   "chi_tiet": "khớp số câu từng phần"
+  },
+  "khong_trung_dang": {
+   "dat": true,
+   "chi_tiet": "không trùng"
+  },
+  "tong_diem": {
+   "dat": true,
+   "chi_tiet": "10.0 / 10.0"
+  },
+  "tong_thoi_gian": {
+   "dat": true,
+   "chi_tiet": "15.0 phút dự kiến / 15 phút"
+  },
+  "can_bang_dap_an": {
+   "dat": true,
+   "chi_tiet": {
+    "A": 1,
+    "B": 2,
+    "C": 1,
+    "D": 2
+   }
+  },
+  "khong_lo_dap_so": {
+   "dat": true,
+   "chi_tiet": "không lộ"
+  }
+ },
+ "so_lan_boc": 2,
+ "ma_de": "102",
+ "seed": 2026
+}

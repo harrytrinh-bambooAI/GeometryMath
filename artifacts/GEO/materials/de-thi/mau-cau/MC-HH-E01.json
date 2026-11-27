@@ -1,0 +1,94 @@
+{
+ "id": "MC-HH-E01",
+ "ten": "Góc giữa A'B và đáy (lăng trụ đều)",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "goc-dt-mp.lang-tru-deu",
+ "dang_tx": "qh.goc",
+ "yccd": [
+  "11.VG.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "E",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-29",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-29 + geometry/problem-specs.json#HKN-29"
+ },
+ "tham_so": {
+  "k": [
+   "1",
+   "sqrt(3)",
+   "sqrt(3)/3",
+   "2"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "AM": "sqrt(3)*a/2",
+  "AH": "h*sqrt(3)*a/2/sqrt(h**2+3*a**2/4)",
+  "AmM": "sqrt(h**2+3*a**2/4)"
+ },
+ "boi_canh": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'={h}$.",
+ "hoi": "Góc giữa đường thẳng $A'B$ và mặt phẳng $(ABC)$ bằng",
+ "dap_so": "atan(h/a)*180/pi",
+ "don_vi": "do",
+ "nhieu": [
+  {
+   "bieu_thuc": "90-atan(h/a)*180/pi",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy góc $\\widehat{AA'B}$"
+   }
+  },
+  {
+   "bieu_thuc": "atan(h/(sqrt(3)*a/2))*180/pi",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy đường cao $AM$ của đáy làm hình chiếu"
+   }
+  },
+  {
+   "bieu_thuc": "atan(sqrt(h**2+a**2)/a)*180/pi",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lập $\\tan=\\dfrac{A'B}{AB}$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-29",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(3)"
+  },
+  {
+   "k": "sqrt(3)/3"
+  },
+  {
+   "k": "2"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 6,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

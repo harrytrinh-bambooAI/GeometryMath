@@ -1,0 +1,89 @@
+{
+ "id": "MC-HH-B07",
+ "ten": "Diện tích xung quanh chóp tứ giác đều",
+ "chu_de": "hinh-khong-gian-the-tich",
+ "dang": "dien-tich-xq.chop-deu",
+ "dang_tx": "th.chop",
+ "yccd": [
+  "11.TT.2"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "B",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-66",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-66 + geometry/problem-specs.json#HKN-66"
+ },
+ "tham_so": {
+  "k": [
+   "sqrt(3)/2",
+   "1",
+   "sqrt(2)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SM": "sqrt(h**2+a**2/4)",
+  "SA": "sqrt(h**2+a**2/2)"
+ },
+ "boi_canh": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO={h}$.",
+ "hoi": "Diện tích xung quanh của hình chóp $S.ABCD$ bằng",
+ "dap_so": "2*a*sqrt(h**2+a**2/4)",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "2*a*h",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng chiều cao $SO$ thay cho trung đoạn"
+   }
+  },
+  {
+   "bieu_thuc": "2*a*sqrt(h**2+a**2/2)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Dùng cạnh bên $SA$ làm trung đoạn"
+   }
+  },
+  {
+   "bieu_thuc": "a*sqrt(h**2+a**2/4)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Chỉ tính hai mặt bên"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-66",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "sqrt(3)/2"
+  },
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(2)"
+  }
+ ],
+ "so_bien_the": 3,
+ "so_cau_sinh": 6,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

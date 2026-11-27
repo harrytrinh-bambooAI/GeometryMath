@@ -1,0 +1,230 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "mau_cau.schema.json",
+ "title": "Mẫu câu có tham số (v1.0 · 27/11/2026)",
+ "type": "object",
+ "required": [
+  "id",
+  "ten",
+  "chu_de",
+  "dang",
+  "dang_tx",
+  "yccd",
+  "lop",
+  "loai_mau",
+  "loai_cau",
+  "tham_so",
+  "rang_buoc",
+  "dan_xuat",
+  "boi_canh",
+  "nguon",
+  "bien_the",
+  "so_bien_the",
+  "so_cau_sinh",
+  "phien_ban"
+ ],
+ "properties": {
+  "id": {
+   "type": "string",
+   "pattern": "^MC-"
+  },
+  "ten": {
+   "type": "string"
+  },
+  "chu_de": {
+   "type": "string"
+  },
+  "dang": {
+   "type": "string"
+  },
+  "dang_tx": {
+   "type": "string"
+  },
+  "yccd": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "string",
+    "pattern": "^(10|11|12)\\.[A-Z]+\\.[0-9]+$"
+   }
+  },
+  "lop": {
+   "enum": [
+    10,
+    11,
+    12
+   ]
+  },
+  "loai_mau": {
+   "enum": [
+    "don",
+    "dung-sai"
+   ]
+  },
+  "loai_cau": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "enum": [
+     "tn4",
+     "dung-sai",
+     "tra-loi-ngan",
+     "tu-luan"
+    ]
+   }
+  },
+  "tham_so": {
+   "type": "object",
+   "description": "tên -> danh sách giá trị (chuỗi sympy); khóa '_bo' = danh sách bộ giá trị"
+  },
+  "rang_buoc": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "biểu thức sympy phải đúng"
+  },
+  "dan_xuat": {
+   "type": "object",
+   "description": "đại lượng dẫn xuất: tên -> biểu thức sympy theo tham số"
+  },
+  "boi_canh": {
+   "type": "string"
+  },
+  "hoi": {
+   "type": "string"
+  },
+  "dap_so": {
+   "type": "string",
+   "description": "hàm đáp số: biểu thức sympy theo tham số (góc theo độ, a là đơn vị độ dài)"
+  },
+  "nhieu": {
+   "type": "array",
+   "minItems": 3,
+   "items": {
+    "type": "object",
+    "required": [
+     "bieu_thuc",
+     "loi"
+    ],
+    "properties": {
+     "bieu_thuc": {
+      "type": "string"
+     },
+     "loi": {
+      "type": "object",
+      "required": [
+       "loai_loi",
+       "mo_ta"
+      ],
+      "properties": {
+       "loai_loi": {
+        "enum": [
+         "sai-tinh-toan",
+         "sai-dinh-li",
+         "sai-hinh-dung",
+         "nham-dieu-kien",
+         "thieu-chung-minh"
+        ]
+       },
+       "mo_ta": {
+        "type": "string",
+        "minLength": 5
+       }
+      }
+     }
+    }
+   },
+   "description": "sinh nhiễu: mỗi biểu thức gắn một lỗi"
+  },
+  "muc_do": {
+   "type": "object"
+  },
+  "engine": {
+   "type": "object",
+   "required": [
+    "mvp",
+    "ask",
+    "params"
+   ]
+  },
+  "y": {
+   "type": "array",
+   "minItems": 4,
+   "maxItems": 4
+  },
+  "tu_luan": {
+   "type": [
+    "array",
+    "null"
+   ]
+  },
+  "bien_the": {
+   "type": "array",
+   "minItems": 1
+  },
+  "so_bien_the": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "so_cau_sinh": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "nguon": {
+   "type": "object",
+   "required": [
+    "loai",
+    "ma"
+   ],
+   "properties": {
+    "loai": {
+     "enum": [
+      "mvp",
+      "tu-soan",
+      "chinh-thuc"
+     ]
+    },
+    "ma": {
+     "type": "string"
+    }
+   }
+  },
+  "phien_ban": {
+   "type": "string"
+  }
+ },
+ "allOf": [
+  {
+   "if": {
+    "properties": {
+     "loai_mau": {
+      "const": "don"
+     }
+    }
+   },
+   "then": {
+    "required": [
+     "hoi",
+     "dap_so",
+     "nhieu",
+     "muc_do"
+    ]
+   }
+  },
+  {
+   "if": {
+    "properties": {
+     "loai_mau": {
+      "const": "dung-sai"
+     }
+    }
+   },
+   "then": {
+    "required": [
+     "y"
+    ]
+   }
+  }
+ ]
+}

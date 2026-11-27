@@ -1,0 +1,90 @@
+{
+ "id": "MC-HS-04",
+ "ten": "Hộp không nắp có thể tích lớn nhất",
+ "chu_de": "ham-so-ung-dung-dao-ham",
+ "dang": "hs.toi-uu-hop",
+ "dang_tx": "hs.toi-uu",
+ "yccd": [
+  "12.HS.4"
+ ],
+ "lop": 12,
+ "nang_luc": "mo-hinh-hoa",
+ "ho_hinh": "MC-HS-04",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-HS-04",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "Lc": [
+   "6",
+   "12",
+   "18",
+   "30"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Từ một tấm bìa hình vuông cạnh ${Lc}$ cm, người ta cắt bỏ bốn hình vuông bằng nhau ở bốn góc rồi gấp lại thành một chiếc hộp không nắp.",
+ "hoi": "Thể tích lớn nhất của chiếc hộp (đơn vị $\\text{cm}^3$) bằng",
+ "dap_so": "2*Lc**3/27",
+ "nhieu": [
+  {
+   "bieu_thuc": "Lc**3/16",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Chọn cạnh cắt $x=\\dfrac L4$ (trung điểm miền) thay vì giải $V'(x)=0$"
+   }
+  },
+  {
+   "bieu_thuc": "Lc**3/27",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Chọn cạnh cắt $x=\\dfrac L3$"
+   }
+  },
+  {
+   "bieu_thuc": "4*Lc**3/27",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lập sai thể tích $V=x(L-x)^2$ (chỉ trừ một lần)"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-HS-04']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "Lc": "6"
+  },
+  {
+   "Lc": "12"
+  },
+  {
+   "Lc": "18"
+  },
+  {
+   "Lc": "30"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

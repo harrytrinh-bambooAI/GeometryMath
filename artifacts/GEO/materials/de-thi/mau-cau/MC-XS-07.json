@@ -1,0 +1,121 @@
+{
+ "id": "MC-XS-07",
+ "ten": "Công thức nhân: ít nhất một lần trúng",
+ "chu_de": "to-hop-xac-suat",
+ "dang": "xs11.nhan-it-nhat",
+ "dang_tx": "tk.xs-co-dien",
+ "yccd": [
+  "11.XS.2"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-XS-07",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan",
+  "tu-luan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH",
+  "tu-luan": "VD"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-XS-07",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "p": [
+   "0.6",
+   "0.7",
+   "0.8"
+  ],
+  "q": [
+   "0.5",
+   "0.9"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là ${p:xap-xi:2}$, của người thứ hai là ${q:xap-xi:2}$.",
+ "hoi": "Xác suất để bia bị trúng ít nhất một viên (làm tròn đến hàng phần trăm) bằng",
+ "dap_so": "1-(1-p)*(1-q)",
+ "nhieu": [
+  {
+   "bieu_thuc": "p+q",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+   }
+  },
+  {
+   "bieu_thuc": "p*q",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Tính xác suất cả hai cùng trúng"
+   }
+  },
+  {
+   "bieu_thuc": "1-p*q",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+   }
+  }
+ ],
+ "kieu": "xap-xi:2",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tu_luan": [
+  {
+   "noi_dung": "Gọi $A_1$, $A_2$ là biến cố người thứ nhất, thứ hai bắn trúng; $A_1$, $A_2$ độc lập. Biến cố đối của \\\"ít nhất một viên trúng\\\" là $\\overline{A_1}\\,\\overline{A_2}$.",
+   "diem": 0.5
+  },
+  {
+   "noi_dung": "$P(\\overline{A_1}\\,\\overline{A_2})=P(\\overline{A_1})P(\\overline{A_2})=(1-{p:xap-xi:2})(1-{q:xap-xi:2})$.",
+   "diem": 0.25
+  },
+  {
+   "noi_dung": "Xác suất cần tìm bằng $1-(1-{p:xap-xi:2})(1-{q:xap-xi:2})={ds}$.",
+   "diem": 0.25
+  }
+ ],
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-XS-07']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "p": "0.6",
+   "q": "0.5"
+  },
+  {
+   "p": "0.6",
+   "q": "0.9"
+  },
+  {
+   "p": "0.7",
+   "q": "0.5"
+  },
+  {
+   "p": "0.7",
+   "q": "0.9"
+  },
+  {
+   "p": "0.8",
+   "q": "0.5"
+  },
+  {
+   "p": "0.8",
+   "q": "0.9"
+  }
+ ],
+ "so_bien_the": 6,
+ "so_cau_sinh": 18,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

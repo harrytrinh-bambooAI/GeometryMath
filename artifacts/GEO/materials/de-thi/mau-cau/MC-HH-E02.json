@@ -1,0 +1,94 @@
+{
+ "id": "MC-HH-E02",
+ "ten": "Thể tích lăng trụ tam giác đều",
+ "chu_de": "hinh-khong-gian-the-tich",
+ "dang": "the-tich.lang-tru-deu",
+ "dang_tx": "th.lang-tru",
+ "yccd": [
+  "11.TT.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "E",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-53",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-53 + geometry/problem-specs.json#HKN-53"
+ },
+ "tham_so": {
+  "k": [
+   "1",
+   "sqrt(3)",
+   "2",
+   "2*sqrt(3)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "AM": "sqrt(3)*a/2",
+  "AH": "h*sqrt(3)*a/2/sqrt(h**2+3*a**2/4)",
+  "AmM": "sqrt(h**2+3*a**2/4)"
+ },
+ "boi_canh": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'={h}$.",
+ "hoi": "Thể tích khối lăng trụ bằng",
+ "dap_so": "sqrt(3)/4*a**2*h",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "sqrt(3)/12*a**2*h",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(3)/2*a**2*h",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Tính diện tích tam giác đều thành $\\dfrac{\\sqrt3}{2}a^2$"
+   }
+  },
+  {
+   "bieu_thuc": "a**2*h/2",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Coi đáy là tam giác vuông cân, $S=\\dfrac{a^2}{2}$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-53",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(3)"
+  },
+  {
+   "k": "2"
+  },
+  {
+   "k": "2*sqrt(3)"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

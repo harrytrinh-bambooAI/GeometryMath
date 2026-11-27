@@ -1,0 +1,93 @@
+{
+ "id": "MC-HH-A04",
+ "ten": "Khoảng cách giữa AB và SD",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "kc-cheo-nhau.chop-sa.canh-day",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.3"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "A",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-05",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-05 + geometry/problem-specs.json#HKN-05"
+ },
+ "tham_so": {
+  "k": [
+   "1",
+   "sqrt(3)",
+   "2",
+   "sqrt(2)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SB": "sqrt(a**2+h**2)",
+  "SC": "sqrt(2*a**2+h**2)"
+ },
+ "boi_canh": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA={h}$.",
+ "hoi": "Khoảng cách giữa hai đường thẳng $AB$ và $SD$ bằng",
+ "dap_so": "a*h/sqrt(a**2+h**2)",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "a",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $AD$ là đoạn vuông góc chung ($AD$ không vuông góc với $SD$)"
+   }
+  },
+  {
+   "bieu_thuc": "h",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $SA$ là đoạn vuông góc chung"
+   }
+  },
+  {
+   "bieu_thuc": "a*h/(a+h)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Dùng $\\dfrac{SA\\cdot AD}{SA+AD}$ thay cho $\\dfrac{SA\\cdot AD}{SD}$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-05",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "sa": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(3)"
+  },
+  {
+   "k": "2"
+  },
+  {
+   "k": "sqrt(2)"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 7,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

@@ -1,0 +1,107 @@
+{
+ "id": "MC-HH-H03",
+ "ten": "Thể tích khối nón biết đường sinh",
+ "chu_de": "khoi-tron-xoay",
+ "dang": "non.the-tich-duong-sinh",
+ "dang_tx": "tx.non",
+ "yccd": [
+  "12.TX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "HR",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-40",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-40 + geometry/problem-specs.json#HKN-40"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "r": 5,
+    "l": 13
+   },
+   {
+    "r": 3,
+    "l": 5
+   },
+   {
+    "r": 6,
+    "l": 10
+   },
+   {
+    "r": 8,
+    "l": 10
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "t": "sqrt(l**2-r**2)"
+ },
+ "boi_canh": "Cho hình nón có bán kính đáy $r={r}$ cm và độ dài đường sinh $l={l}$ cm.",
+ "hoi": "Thể tích khối nón bằng",
+ "dap_so": "pi*r**2*t/3",
+ "don_vi": "cm3",
+ "nhieu": [
+  {
+   "bieu_thuc": "pi*r**2*l/3",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng đường sinh thay cho chiều cao"
+   }
+  },
+  {
+   "bieu_thuc": "pi*r**2*t",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên hệ số $\\dfrac13$"
+   }
+  },
+  {
+   "bieu_thuc": "pi*r**2*sqrt(l**2+r**2)/3",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Cộng thay vì trừ khi tính chiều cao"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-40",
+  "ask": 0,
+  "params": {
+   "r": "r",
+   "l": "l"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "r": "5",
+   "l": "13"
+  },
+  {
+   "r": "3",
+   "l": "5"
+  },
+  {
+   "r": "6",
+   "l": "10"
+  },
+  {
+   "r": "8",
+   "l": "10"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

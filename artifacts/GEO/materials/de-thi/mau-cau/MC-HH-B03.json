@@ -1,0 +1,89 @@
+{
+ "id": "MC-HH-B03",
+ "ten": "Khoảng cách giữa AB và SC (chóp đều)",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "kc-cheo-nhau.chop-deu",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.3"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "B",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-13",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-13 + geometry/problem-specs.json#HKN-13"
+ },
+ "tham_so": {
+  "k": [
+   "sqrt(2)/2",
+   "1",
+   "sqrt(3)/2"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SM": "sqrt(h**2+a**2/4)",
+  "SA": "sqrt(h**2+a**2/2)"
+ },
+ "boi_canh": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO={h}$.",
+ "hoi": "Khoảng cách giữa hai đường thẳng $AB$ và $SC$ bằng",
+ "dap_so": "a*h/sqrt(h**2+a**2/4)",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "h*(a/2)/sqrt(h**2+a**2/4)",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Quên nhân 2: lấy $d(O,(SCD))$ thay cho $d(A,(SCD))$"
+   }
+  },
+  {
+   "bieu_thuc": "a",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $BC$ là đoạn vuông góc chung"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(h**2+a**2/4)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy trung đoạn $SM$ làm khoảng cách"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-13",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "sqrt(2)/2"
+  },
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(3)/2"
+  }
+ ],
+ "so_bien_the": 3,
+ "so_cau_sinh": 5,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

@@ -1,0 +1,89 @@
+{
+ "id": "MC-HH-B08",
+ "ten": "Bán kính mặt cầu ngoại tiếp chóp đều",
+ "chu_de": "khoi-tron-xoay",
+ "dang": "mat-cau-ngoai-tiep.chop-deu",
+ "dang_tx": "tx.noi-tiep-cau",
+ "yccd": [
+  "12.TX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "B",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-80",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-80 + geometry/problem-specs.json#HKN-80"
+ },
+ "tham_so": {
+  "k": [
+   "sqrt(2)/2",
+   "1",
+   "sqrt(2)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SM": "sqrt(h**2+a**2/4)",
+  "SA": "sqrt(h**2+a**2/2)"
+ },
+ "boi_canh": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO={h}$.",
+ "hoi": "Bán kính mặt cầu ngoại tiếp hình chóp $S.ABCD$ bằng",
+ "dap_so": "(h**2+a**2/2)/(2*h)",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "sqrt(h**2+a**2/2)/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy trung điểm cạnh bên $SA$ làm tâm"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(2)*a/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $O$ làm tâm, $R=OA$ (chưa kiểm $OS=OA$)"
+   }
+  },
+  {
+   "bieu_thuc": "h/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy trung điểm $SO$ làm tâm"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-80",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "sqrt(2)/2"
+  },
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(2)"
+  }
+ ],
+ "so_bien_the": 3,
+ "so_cau_sinh": 4,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

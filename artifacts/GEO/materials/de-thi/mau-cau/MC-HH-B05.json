@@ -1,0 +1,105 @@
+{
+ "id": "MC-HH-B05",
+ "ten": "Độ dài cạnh bên chóp đều (số cụ thể)",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "do-dai.chop-deu.canh-ben",
+ "dang_tx": "qh.vuong-goc",
+ "yccd": [
+  "11.VG.4"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "B5",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-15",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-15 + geometry/problem-specs.json#HKN-15"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "c": 6,
+    "t": 4
+   },
+   {
+    "c": 8,
+    "t": 3
+   },
+   {
+    "c": 4,
+    "t": 7
+   },
+   {
+    "c": 6,
+    "t": 3
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng ${c}$ cm và chiều cao bằng ${t}$ cm.",
+ "hoi": "Độ dài cạnh bên $SA$ bằng",
+ "dap_so": "sqrt(t**2+c**2/2)",
+ "don_vi": "cm",
+ "nhieu": [
+  {
+   "bieu_thuc": "sqrt(t**2+c**2)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $OA$ bằng cạnh đáy"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(t**2+c**2/4)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $OM$ thay cho $OA$ (tính trung đoạn)"
+   }
+  },
+  {
+   "bieu_thuc": "t+c*sqrt(2)/2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng $SO+OA$ thay vì dùng định lí Pythagore"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-15",
+  "ask": 0,
+  "params": {
+   "a": "c",
+   "h": "t"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "c": "6",
+   "t": "4"
+  },
+  {
+   "c": "8",
+   "t": "3"
+  },
+  {
+   "c": "4",
+   "t": "7"
+  },
+  {
+   "c": "6",
+   "t": "3"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

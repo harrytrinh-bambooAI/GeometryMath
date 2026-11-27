@@ -1,0 +1,8500 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "nguyen-ham-tich-phan",
+ "so_cau": 131,
+ "cau": [
+  {
+   "id": "MC-NH-01.TN.0",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "3",
+    "q": "2",
+    "r": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=3,q=2,r=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=3x^{2} + 2x + 1$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x^{3} + x^{2} + x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "6x + 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "3x^{3} + 2x^{2} + x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "x^{3} + x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "x^{3} + x^{2} + x+C",
+   "nhieu": [
+    {
+     "phuong_an": "6x + 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "3x^{3} + 2x^{2} + x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "x^{3} + x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x^{3} + x^{2} + x+C",
+    "so": null
+   },
+   "do_kho": 0.135,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.1",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "3",
+    "q": "2",
+    "r": "5"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=3,q=2,r=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=3x^{2} + 2x + 5$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x^{3} + x^{2} + 5x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "6x + 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "3x^{3} + 2x^{2} + 5x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "x^{3} + x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "x^{3} + x^{2} + 5x+C",
+   "nhieu": [
+    {
+     "phuong_an": "6x + 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "3x^{3} + 2x^{2} + 5x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "x^{3} + x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x^{3} + x^{2} + 5x+C",
+    "so": null
+   },
+   "do_kho": 0.178,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.2",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "3",
+    "q": "2",
+    "r": "-3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=3,q=2,r=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=3x^{2} + 2x - 3$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x^{3} + x^{2} - 3x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "6x + 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "3x^{3} + 2x^{2} - 3x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "x^{3} + x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "x^{3} + x^{2} - 3x+C",
+   "nhieu": [
+    {
+     "phuong_an": "6x + 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "3x^{3} + 2x^{2} - 3x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "x^{3} + x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x^{3} + x^{2} - 3x+C",
+    "so": null
+   },
+   "do_kho": 0.16,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.3",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=3,q=4,r=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=3x^{2} + 4x + 1$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x^{3} + 2x^{2} + x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "6x + 4+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "3x^{3} + 4x^{2} + x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "x^{3} + 2x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "x^{3} + 2x^{2} + x+C",
+   "nhieu": [
+    {
+     "phuong_an": "6x + 4+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "3x^{3} + 4x^{2} + x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "x^{3} + 2x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x^{3} + 2x^{2} + x+C",
+    "so": null
+   },
+   "do_kho": 0.136,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.4",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "5"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=3,q=4,r=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=3x^{2} + 4x + 5$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x^{3} + 2x^{2} + 5x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "6x + 4+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "3x^{3} + 4x^{2} + 5x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "x^{3} + 2x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "x^{3} + 2x^{2} + 5x+C",
+   "nhieu": [
+    {
+     "phuong_an": "6x + 4+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "3x^{3} + 4x^{2} + 5x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "x^{3} + 2x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x^{3} + 2x^{2} + 5x+C",
+    "so": null
+   },
+   "do_kho": 0.161,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.5",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "-3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=3,q=4,r=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=3x^{2} + 4x - 3$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x^{3} + 2x^{2} - 3x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "6x + 4+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "3x^{3} + 4x^{2} - 3x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "x^{3} + 2x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "x^{3} + 2x^{2} - 3x+C",
+   "nhieu": [
+    {
+     "phuong_an": "6x + 4+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "3x^{3} + 4x^{2} - 3x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "x^{3} + 2x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x^{3} + 2x^{2} - 3x+C",
+    "so": null
+   },
+   "do_kho": 0.158,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.6",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "3",
+    "q": "-2",
+    "r": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=3,q=-2,r=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=3x^{2} - 2x + 1$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x^{3} - x^{2} + x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "6x - 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "3x^{3} - 2x^{2} + x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "x^{3} - x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "x^{3} - x^{2} + x+C",
+   "nhieu": [
+    {
+     "phuong_an": "6x - 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "3x^{3} - 2x^{2} + x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "x^{3} - x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x^{3} - x^{2} + x+C",
+    "so": null
+   },
+   "do_kho": 0.173,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.7",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "3",
+    "q": "-2",
+    "r": "5"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=3,q=-2,r=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=3x^{2} - 2x + 5$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x^{3} - x^{2} + 5x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "6x - 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "3x^{3} - 2x^{2} + 5x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "x^{3} - x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "x^{3} - x^{2} + 5x+C",
+   "nhieu": [
+    {
+     "phuong_an": "6x - 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "3x^{3} - 2x^{2} + 5x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "x^{3} - x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x^{3} - x^{2} + 5x+C",
+    "so": null
+   },
+   "do_kho": 0.134,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.8",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "3",
+    "q": "-2",
+    "r": "-3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=3,q=-2,r=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=3x^{2} - 2x - 3$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x^{3} - x^{2} - 3x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "6x - 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "3x^{3} - 2x^{2} - 3x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "x^{3} - x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "x^{3} - x^{2} - 3x+C",
+   "nhieu": [
+    {
+     "phuong_an": "6x - 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "3x^{3} - 2x^{2} - 3x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "x^{3} - x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x^{3} - x^{2} - 3x+C",
+    "so": null
+   },
+   "do_kho": 0.131,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.9",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "6",
+    "q": "2",
+    "r": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=6,q=2,r=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=6x^{2} + 2x + 1$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x^{3} + x^{2} + x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "12x + 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "6x^{3} + 2x^{2} + x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "2x^{3} + x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "2x^{3} + x^{2} + x+C",
+   "nhieu": [
+    {
+     "phuong_an": "12x + 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "6x^{3} + 2x^{2} + x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "2x^{3} + x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x^{3} + x^{2} + x+C",
+    "so": null
+   },
+   "do_kho": 0.123,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.10",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "6",
+    "q": "2",
+    "r": "5"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=6,q=2,r=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=6x^{2} + 2x + 5$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x^{3} + x^{2} + 5x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "12x + 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "6x^{3} + 2x^{2} + 5x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "2x^{3} + x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "2x^{3} + x^{2} + 5x+C",
+   "nhieu": [
+    {
+     "phuong_an": "12x + 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "6x^{3} + 2x^{2} + 5x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "2x^{3} + x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x^{3} + x^{2} + 5x+C",
+    "so": null
+   },
+   "do_kho": 0.167,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.11",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "6",
+    "q": "2",
+    "r": "-3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=6,q=2,r=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=6x^{2} + 2x - 3$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x^{3} + x^{2} - 3x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "12x + 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "6x^{3} + 2x^{2} - 3x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "2x^{3} + x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "2x^{3} + x^{2} - 3x+C",
+   "nhieu": [
+    {
+     "phuong_an": "12x + 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "6x^{3} + 2x^{2} - 3x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "2x^{3} + x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x^{3} + x^{2} - 3x+C",
+    "so": null
+   },
+   "do_kho": 0.131,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.12",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "6",
+    "q": "4",
+    "r": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=6,q=4,r=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=6x^{2} + 4x + 1$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x^{3} + 2x^{2} + x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "12x + 4+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "6x^{3} + 4x^{2} + x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "2x^{3} + 2x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "2x^{3} + 2x^{2} + x+C",
+   "nhieu": [
+    {
+     "phuong_an": "12x + 4+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "6x^{3} + 4x^{2} + x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "2x^{3} + 2x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x^{3} + 2x^{2} + x+C",
+    "so": null
+   },
+   "do_kho": 0.129,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.13",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "6",
+    "q": "4",
+    "r": "5"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=6,q=4,r=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=6x^{2} + 4x + 5$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x^{3} + 2x^{2} + 5x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "12x + 4+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "6x^{3} + 4x^{2} + 5x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "2x^{3} + 2x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "2x^{3} + 2x^{2} + 5x+C",
+   "nhieu": [
+    {
+     "phuong_an": "12x + 4+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "6x^{3} + 4x^{2} + 5x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "2x^{3} + 2x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x^{3} + 2x^{2} + 5x+C",
+    "so": null
+   },
+   "do_kho": 0.136,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.14",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "6",
+    "q": "4",
+    "r": "-3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=6,q=4,r=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=6x^{2} + 4x - 3$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x^{3} + 2x^{2} - 3x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "12x + 4+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "6x^{3} + 4x^{2} - 3x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "2x^{3} + 2x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "2x^{3} + 2x^{2} - 3x+C",
+   "nhieu": [
+    {
+     "phuong_an": "12x + 4+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "6x^{3} + 4x^{2} - 3x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "2x^{3} + 2x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x^{3} + 2x^{2} - 3x+C",
+    "so": null
+   },
+   "do_kho": 0.147,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.15",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "6",
+    "q": "-2",
+    "r": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=6,q=-2,r=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=6x^{2} - 2x + 1$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x^{3} - x^{2} + x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "12x - 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "6x^{3} - 2x^{2} + x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "2x^{3} - x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "2x^{3} - x^{2} + x+C",
+   "nhieu": [
+    {
+     "phuong_an": "12x - 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "6x^{3} - 2x^{2} + x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "2x^{3} - x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x^{3} - x^{2} + x+C",
+    "so": null
+   },
+   "do_kho": 0.165,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.16",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "6",
+    "q": "-2",
+    "r": "5"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=6,q=-2,r=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=6x^{2} - 2x + 5$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x^{3} - x^{2} + 5x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "12x - 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "6x^{3} - 2x^{2} + 5x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "2x^{3} - x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "2x^{3} - x^{2} + 5x+C",
+   "nhieu": [
+    {
+     "phuong_an": "12x - 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "6x^{3} - 2x^{2} + 5x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "2x^{3} - x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x^{3} - x^{2} + 5x+C",
+    "so": null
+   },
+   "do_kho": 0.126,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-01.TN.17",
+   "mau_cau": "MC-NH-01",
+   "bien_the": {
+    "p": "6",
+    "q": "-2",
+    "r": "-3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.nguyen-ham-da-thuc",
+   "dang_tx": "nh.co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.1"
+   ],
+   "kien_thuc": [
+    "Nguyên hàm của đa thức"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-01|p=6,q=-2,r=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-01"
+   },
+   "de_bai": "Cho hàm số $f(x)=6x^{2} - 2x - 3$. Họ nguyên hàm của $f(x)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x^{3} - x^{2} - 3x+C",
+     "dung": true
+    },
+    {
+     "noi_dung": "12x - 2+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "noi_dung": "6x^{3} - 2x^{2} - 3x+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "noi_dung": "2x^{3} - x^{2}+C",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_an": "2x^{3} - x^{2} - 3x+C",
+   "nhieu": [
+    {
+     "phuong_an": "12x - 2+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+     }
+    },
+    {
+     "phuong_an": "6x^{3} - 2x^{2} - 3x+C",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho số mũ mới"
+     }
+    },
+    {
+     "phuong_an": "2x^{3} - x^{2}+C",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x^{3} - x^{2} - 3x+C",
+    "so": null
+   },
+   "do_kho": 0.176,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.0",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "1",
+    "m": "0",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=2,p=2,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{2}(2x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.0,
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.422,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.1",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "1",
+    "m": "0",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=3,p=2,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{3}(2x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "12",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 12.0,
+   "dap_so": {
+    "gia_tri": "12",
+    "so": 12.0
+   },
+   "do_kho": 0.431,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.2",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "1",
+    "m": "1",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=2,p=2,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{2}(2x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.0,
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.474,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TN.3",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "1",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=2,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(2x + 1)\\,dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "10",
+     "dung": true
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "noi_dung": "18",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_an": "10",
+   "nhieu": [
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "phuong_an": "18",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.157,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.3",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "1",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=2,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(2x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "10",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 10.0,
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.442,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.4",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "m": "0",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=2,p=2,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{2}(2x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "10",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 10.0,
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.444,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.5",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "m": "0",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=3,p=2,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{3}(2x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "18",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 18.0,
+   "dap_so": {
+    "gia_tri": "18",
+    "so": 18.0
+   },
+   "do_kho": 0.42,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.6",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "m": "1",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=2,p=2,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{2}(2x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.0,
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.463,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TN.7",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=2,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(2x + 3)\\,dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "14",
+     "dung": true
+    },
+    {
+     "noi_dung": "18",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "noi_dung": "22",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "noi_dung": "11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_an": "14",
+   "nhieu": [
+    {
+     "phuong_an": "18",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "phuong_an": "22",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "phuong_an": "11",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "14",
+    "so": 14.0
+   },
+   "do_kho": 0.121,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.7",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=2,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(2x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "14",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 14.0,
+   "dap_so": {
+    "gia_tri": "14",
+    "so": 14.0
+   },
+   "do_kho": 0.477,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.8",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "-1",
+    "m": "0",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=2,p=2,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{2}(2x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.468,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.9",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "-1",
+    "m": "0",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=3,p=2,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{3}(2x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.0,
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.454,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.10",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "-1",
+    "m": "1",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=2,p=2,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{2}(2x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.456,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.11",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "2",
+    "q": "-1",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=2,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(2x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.0,
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.441,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.12",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "1",
+    "m": "0",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=2,p=4,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{2}(4x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "10",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 10.0,
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.458,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.13",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "1",
+    "m": "0",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=3,p=4,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{3}(4x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "21",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 21.0,
+   "dap_so": {
+    "gia_tri": "21",
+    "so": 21.0
+   },
+   "do_kho": 0.454,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.14",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "1",
+    "m": "1",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=2,p=4,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{2}(4x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 7.0,
+   "dap_so": {
+    "gia_tri": "7",
+    "so": 7.0
+   },
+   "do_kho": 0.43,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TN.15",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "1",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=4,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(4x + 1)\\,dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "18",
+     "dung": true
+    },
+    {
+     "noi_dung": "21",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "noi_dung": "34",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "noi_dung": "17",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_an": "18",
+   "nhieu": [
+    {
+     "phuong_an": "21",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "phuong_an": "34",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "phuong_an": "17",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "18",
+    "so": 18.0
+   },
+   "do_kho": 0.172,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.15",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "1",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=4,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(4x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "18",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 18.0,
+   "dap_so": {
+    "gia_tri": "18",
+    "so": 18.0
+   },
+   "do_kho": 0.466,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.16",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "3",
+    "m": "0",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=2,p=4,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{2}(4x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "14",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 14.0,
+   "dap_so": {
+    "gia_tri": "14",
+    "so": 14.0
+   },
+   "do_kho": 0.453,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.17",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "3",
+    "m": "0",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=3,p=4,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{3}(4x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "27",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 27.0,
+   "dap_so": {
+    "gia_tri": "27",
+    "so": 27.0
+   },
+   "do_kho": 0.467,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.18",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "3",
+    "m": "1",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=2,p=4,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{2}(4x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "9",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 9.0,
+   "dap_so": {
+    "gia_tri": "9",
+    "so": 9.0
+   },
+   "do_kho": 0.472,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TN.19",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "3",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=4,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(4x + 3)\\,dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "22",
+     "dung": true
+    },
+    {
+     "noi_dung": "27",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "noi_dung": "38",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "noi_dung": "19",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_an": "22",
+   "nhieu": [
+    {
+     "phuong_an": "27",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "phuong_an": "38",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "phuong_an": "19",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "22",
+    "so": 22.0
+   },
+   "do_kho": 0.167,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.19",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "3",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=4,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(4x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "22",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 22.0,
+   "dap_so": {
+    "gia_tri": "22",
+    "so": 22.0
+   },
+   "do_kho": 0.43,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.20",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "-1",
+    "m": "0",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=2,p=4,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{2}(4x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.0,
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.457,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.21",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "-1",
+    "m": "0",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=3,p=4,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{3}(4x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "15",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 15.0,
+   "dap_so": {
+    "gia_tri": "15",
+    "so": 15.0
+   },
+   "do_kho": 0.436,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.22",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "-1",
+    "m": "1",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=2,p=4,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{2}(4x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 5.0,
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.425,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.23",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "4",
+    "q": "-1",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=4,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(4x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "14",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 14.0,
+   "dap_so": {
+    "gia_tri": "14",
+    "so": 14.0
+   },
+   "do_kho": 0.423,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.24",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "1",
+    "m": "0",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=2,p=6,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{2}(6x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "14",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 14.0,
+   "dap_so": {
+    "gia_tri": "14",
+    "so": 14.0
+   },
+   "do_kho": 0.466,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.25",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "1",
+    "m": "0",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=3,p=6,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{3}(6x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "30",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 30.0,
+   "dap_so": {
+    "gia_tri": "30",
+    "so": 30.0
+   },
+   "do_kho": 0.455,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.26",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "1",
+    "m": "1",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=2,p=6,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{2}(6x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "10",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 10.0,
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.463,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TN.27",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "1",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=6,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(6x + 1)\\,dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "26",
+     "dung": true
+    },
+    {
+     "noi_dung": "30",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "noi_dung": "50",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "noi_dung": "25",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_an": "26",
+   "nhieu": [
+    {
+     "phuong_an": "30",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "phuong_an": "50",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "phuong_an": "25",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "26",
+    "so": 26.0
+   },
+   "do_kho": 0.172,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.27",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "1",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=6,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(6x + 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "26",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 26.0,
+   "dap_so": {
+    "gia_tri": "26",
+    "so": 26.0
+   },
+   "do_kho": 0.476,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.28",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "3",
+    "m": "0",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=2,p=6,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{2}(6x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "18",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 18.0,
+   "dap_so": {
+    "gia_tri": "18",
+    "so": 18.0
+   },
+   "do_kho": 0.451,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.29",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "3",
+    "m": "0",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=3,p=6,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{3}(6x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "36",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 36.0,
+   "dap_so": {
+    "gia_tri": "36",
+    "so": 36.0
+   },
+   "do_kho": 0.463,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.30",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "3",
+    "m": "1",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=2,p=6,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{2}(6x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "12",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 12.0,
+   "dap_so": {
+    "gia_tri": "12",
+    "so": 12.0
+   },
+   "do_kho": 0.473,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TN.31",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "3",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=6,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(6x + 3)\\,dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "30",
+     "dung": true
+    },
+    {
+     "noi_dung": "36",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "noi_dung": "54",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "noi_dung": "27",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_an": "30",
+   "nhieu": [
+    {
+     "phuong_an": "36",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "phuong_an": "54",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "phuong_an": "27",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "30",
+    "so": 30.0
+   },
+   "do_kho": 0.166,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.31",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "3",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=6,q=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(6x + 3)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "30",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 30.0,
+   "dap_so": {
+    "gia_tri": "30",
+    "so": 30.0
+   },
+   "do_kho": 0.437,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.32",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "-1",
+    "m": "0",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=2,p=6,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{2}(6x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "10",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 10.0,
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.424,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.33",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "-1",
+    "m": "0",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=0,n=3,p=6,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{0}^{3}(6x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "24",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 24.0,
+   "dap_so": {
+    "gia_tri": "24",
+    "so": 24.0
+   },
+   "do_kho": 0.459,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.34",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "-1",
+    "m": "1",
+    "n": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=2,p=6,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{2}(6x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "8",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 8.0,
+   "dap_so": {
+    "gia_tri": "8",
+    "so": 8.0
+   },
+   "do_kho": 0.48,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TN.35",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "-1",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=6,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(6x - 1)\\,dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "22",
+     "dung": true
+    },
+    {
+     "noi_dung": "24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "noi_dung": "46",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "noi_dung": "23",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_an": "22",
+   "nhieu": [
+    {
+     "phuong_an": "24",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ thay cận trên, quên trừ $F(m)$"
+     }
+    },
+    {
+     "phuong_an": "46",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $x$"
+     }
+    },
+    {
+     "phuong_an": "23",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy nguyên hàm của hằng số $q$ là $q$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "22",
+    "so": 22.0
+   },
+   "do_kho": 0.132,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-02.TLN.35",
+   "mau_cau": "MC-NH-02",
+   "bien_the": {
+    "p": "6",
+    "q": "-1",
+    "m": "1",
+    "n": "3"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tich-phan-bac-nhat",
+   "dang_tx": "nh.tp-co-ban",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tích phân của hàm bậc nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-02|m=1,n=3,p=6,q=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-02"
+   },
+   "de_bai": "Giá trị của $\\displaystyle\\int_{1}^{3}(6x - 1)\\,dx$ bằng bao nhiêu?",
+   "dap_an": "22",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 22.0,
+   "dap_so": {
+    "gia_tri": "22",
+    "so": 22.0
+   },
+   "do_kho": 0.446,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.0",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "8",
+     "dung": true
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "16",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "8",
+   "nhieu": [
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "16",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "8",
+    "so": 8.0
+   },
+   "do_kho": 0.157,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.0",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "8",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 8.0,
+   "dap_so": {
+    "gia_tri": "8",
+    "so": 8.0
+   },
+   "do_kho": 0.27,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.1",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "2",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=-1,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(-1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0",
+     "dung": true
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-16",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "0",
+   "nhieu": [
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-16",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0",
+    "so": 0.0
+   },
+   "do_kho": 0.14,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.1",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "2",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=-1,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "0",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.0,
+   "dap_so": {
+    "gia_tri": "0",
+    "so": 0.0
+   },
+   "do_kho": 0.246,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.2",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "2",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=2,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(2)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "12",
+     "dung": true
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "-4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "32",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "12",
+   "nhieu": [
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "-4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "32",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "12",
+    "so": 12.0
+   },
+   "do_kho": 0.12,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.2",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "2",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=2,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "12",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 12.0,
+   "dap_so": {
+    "gia_tri": "12",
+    "so": 12.0
+   },
+   "do_kho": 0.227,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.3",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "10",
+     "dung": true
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "10",
+   "nhieu": [
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "24",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.16,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.3",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "10",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 10.0,
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.246,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.4",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2",
+     "dung": true
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "10",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "2",
+   "nhieu": [
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "10",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-24",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.152,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.4",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.224,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.5",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "14",
+     "dung": true
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "-2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "48",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "14",
+   "nhieu": [
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "-2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "48",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "14",
+    "so": 14.0
+   },
+   "do_kho": 0.152,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.5",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "4",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=2,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "14",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 14.0,
+   "dap_so": {
+    "gia_tri": "14",
+    "so": 14.0
+   },
+   "do_kho": 0.255,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.6",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "-2",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=2,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2",
+     "dung": true
+    },
+    {
+     "noi_dung": "0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "2",
+   "nhieu": [
+    {
+     "phuong_an": "0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.143,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.6",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "-2",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=2,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.249,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.7",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "-2",
+    "al": "2",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=-1,u=2,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(-1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "6",
+     "dung": true
+    },
+    {
+     "noi_dung": "0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "6",
+   "nhieu": [
+    {
+     "phuong_an": "0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.147,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.7",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "-2",
+    "al": "2",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=-1,u=2,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.0,
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.248,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.8",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "-2",
+    "al": "2",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=2,u=2,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "0",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.0,
+   "dap_so": {
+    "gia_tri": "0",
+    "so": 0.0
+   },
+   "do_kho": 0.226,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.9",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "-2",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=2,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "4",
+     "dung": true
+    },
+    {
+     "noi_dung": "0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "4",
+   "nhieu": [
+    {
+     "phuong_an": "0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.168,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.9",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "-2",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=2,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.0,
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.268,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.10",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "-2",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=2,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "8",
+     "dung": true
+    },
+    {
+     "noi_dung": "0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "8",
+   "nhieu": [
+    {
+     "phuong_an": "0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "8",
+    "so": 8.0
+   },
+   "do_kho": 0.165,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.10",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "-2",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=2,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "8",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 8.0,
+   "dap_so": {
+    "gia_tri": "8",
+    "so": 8.0
+   },
+   "do_kho": 0.28,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.11",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "-2",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=2,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2",
+     "dung": true
+    },
+    {
+     "noi_dung": "0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "10",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "2",
+   "nhieu": [
+    {
+     "phuong_an": "0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "10",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-24",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.172,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.11",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "2",
+    "v": "-2",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=2,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=2$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.239,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.12",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "10",
+     "dung": true
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "10",
+   "nhieu": [
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "24",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.136,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.12",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "10",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 10.0,
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.25,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.13",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "2",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=-1,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(-1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2",
+     "dung": true
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "10",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "2",
+   "nhieu": [
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "10",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-24",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.173,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.13",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "2",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=-1,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.262,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.14",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "2",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=2,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(2)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "14",
+     "dung": true
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "-2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "48",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "14",
+   "nhieu": [
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "-2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "48",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "14",
+    "so": 14.0
+   },
+   "do_kho": 0.152,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.14",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "2",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=2,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "14",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 14.0,
+   "dap_so": {
+    "gia_tri": "14",
+    "so": 14.0
+   },
+   "do_kho": 0.235,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.15",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "13",
+     "dung": true
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "36",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "13",
+   "nhieu": [
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "36",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "13",
+    "so": 13.0
+   },
+   "do_kho": 0.177,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.15",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "13",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 13.0,
+   "dap_so": {
+    "gia_tri": "13",
+    "so": 13.0
+   },
+   "do_kho": 0.24,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.16",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "5",
+     "dung": true
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "13",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-36",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "5",
+   "nhieu": [
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "13",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-36",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.126,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.16",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 5.0,
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.244,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.17",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "17",
+     "dung": true
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "72",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "17",
+   "nhieu": [
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "72",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "17",
+    "so": 17.0
+   },
+   "do_kho": 0.129,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.17",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "4",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=3,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "17",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 17.0,
+   "dap_so": {
+    "gia_tri": "17",
+    "so": 17.0
+   },
+   "do_kho": 0.259,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.18",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "4",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "4",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.126,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.18",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.0,
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.252,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.19",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "2",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=-1,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(-1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "8",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "8",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "8",
+    "so": 8.0
+   },
+   "do_kho": 0.13,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.19",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "2",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=-1,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "8",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 8.0,
+   "dap_so": {
+    "gia_tri": "8",
+    "so": 8.0
+   },
+   "do_kho": 0.259,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.20",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "2",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=2,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(2)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "10",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "2",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "10",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-24",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.143,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.20",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "2",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=2,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.254,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.21",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "7",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-18",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "7",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "11",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-18",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "7",
+    "so": 7.0
+   },
+   "do_kho": 0.145,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.21",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 7.0,
+   "dap_so": {
+    "gia_tri": "7",
+    "so": 7.0
+   },
+   "do_kho": 0.224,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.22",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "11",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "18",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "11",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "18",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "11",
+    "so": 11.0
+   },
+   "do_kho": 0.173,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.22",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "11",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 11.0,
+   "dap_so": {
+    "gia_tri": "11",
+    "so": 11.0
+   },
+   "do_kho": 0.277,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.23",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "5",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "13",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-36",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "5",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "13",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-36",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.138,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.23",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "3",
+    "v": "-2",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=3,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=3$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 5.0,
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.256,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.24",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2",
+     "dung": true
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "-6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "2",
+   "nhieu": [
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "-6",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.136,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.24",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.234,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.25",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "2",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=-1,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(-1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-6",
+     "dung": true
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "-6",
+   "nhieu": [
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-6",
+    "so": -6.0
+   },
+   "do_kho": 0.179,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.25",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "2",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=-1,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "-6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -6.0,
+   "dap_so": {
+    "gia_tri": "-6",
+    "so": -6.0
+   },
+   "do_kho": 0.234,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.26",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "2",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=2,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(2)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "6",
+     "dung": true
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "-10",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-16",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "6",
+   "nhieu": [
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "-10",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-16",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.127,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.26",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "2",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=2,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.0,
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.234,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.27",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "1",
+     "dung": true
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "-7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "1",
+   "nhieu": [
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "-7",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "1",
+    "so": 1.0
+   },
+   "do_kho": 0.174,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.27",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.0,
+   "dap_so": {
+    "gia_tri": "1",
+    "so": 1.0
+   },
+   "do_kho": 0.226,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.28",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-7",
+     "dung": true
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "-7",
+   "nhieu": [
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-7",
+    "so": -7.0
+   },
+   "do_kho": 0.154,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.28",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "-7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -7.0,
+   "dap_so": {
+    "gia_tri": "-7",
+    "so": -7.0
+   },
+   "do_kho": 0.235,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.29",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "5",
+     "dung": true
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "-11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "5",
+   "nhieu": [
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "-11",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-24",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.156,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.29",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "4",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=-1,v=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=4$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 5.0,
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.271,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.30",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "-2",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=-1,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-4",
+     "dung": true
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "-4",
+   "nhieu": [
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-4",
+    "so": -4.0
+   },
+   "do_kho": 0.157,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.30",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "-2",
+    "al": "2",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=1,u=-1,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "-4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -4.0,
+   "dap_so": {
+    "gia_tri": "-4",
+    "so": -4.0
+   },
+   "do_kho": 0.244,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.31",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "-2",
+    "al": "2",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=-1,u=-1,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "0",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.0,
+   "dap_so": {
+    "gia_tri": "0",
+    "so": 0.0
+   },
+   "do_kho": 0.279,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.32",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "-2",
+    "al": "2",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=2,be=2,u=-1,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(2)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-6",
+     "dung": true
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "-6",
+   "nhieu": [
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-6",
+    "so": -6.0
+   },
+   "do_kho": 0.152,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.32",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "-2",
+    "al": "2",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=2,be=2,u=-1,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[2f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "-6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -6.0,
+   "dap_so": {
+    "gia_tri": "-6",
+    "so": -6.0
+   },
+   "do_kho": 0.257,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.33",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "-2",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=-1,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-5",
+     "dung": true
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "-1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "-5",
+   "nhieu": [
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "-1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-5",
+    "so": -5.0
+   },
+   "do_kho": 0.139,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.33",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "-2",
+    "al": "3",
+    "be": "1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=1,u=-1,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "-5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -5.0,
+   "dap_so": {
+    "gia_tri": "-5",
+    "so": -5.0
+   },
+   "do_kho": 0.223,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.34",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "-2",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=-1,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-1",
+     "dung": true
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "-5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "-6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "-1",
+   "nhieu": [
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "-5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "-6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-1",
+    "so": -1.0
+   },
+   "do_kho": 0.13,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.34",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "-2",
+    "al": "3",
+    "be": "-1"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=-1,u=-1,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(-1)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "-1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -1.0,
+   "dap_so": {
+    "gia_tri": "-1",
+    "so": -1.0
+   },
+   "do_kho": 0.265,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TN.35",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "-2",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=-1,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-7",
+     "dung": true
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_an": "-7",
+   "nhieu": [
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ quên hệ số khi tách tích phân"
+     }
+    },
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu số hạng thứ hai"
+     }
+    },
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tích phân của tổng bằng tích các tích phân"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-7",
+    "so": -7.0
+   },
+   "do_kho": 0.126,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-NH-03.TLN.35",
+   "mau_cau": "MC-NH-03",
+   "bien_the": {
+    "u": "-1",
+    "v": "-2",
+    "al": "3",
+    "be": "2"
+   },
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tinh-chat",
+   "dang_tx": "nh.tp-tinh-chat",
+   "lop": 12,
+   "yccd": [
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Tính chất tích phân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-NH-03|al=3,be=2,u=-1,v=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-NH-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-NH-03"
+   },
+   "de_bai": "Cho $\\displaystyle\\int_0^1 f(x)\\,dx=-1$ và $\\displaystyle\\int_0^1 g(x)\\,dx=-2$. Giá trị của $\\displaystyle\\int_0^1\\big[3f(x)+(2)g(x)\\big]dx$ bằng bao nhiêu?",
+   "dap_an": "-7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -7.0,
+   "dap_so": {
+    "gia_tri": "-7",
+    "so": -7.0
+   },
+   "do_kho": 0.261,
+   "dap_so_engine": null
+  }
+ ]
+}

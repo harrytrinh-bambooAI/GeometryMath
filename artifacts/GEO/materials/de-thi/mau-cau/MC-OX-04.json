@@ -1,0 +1,136 @@
+{
+ "id": "MC-OX-04",
+ "ten": "Tọa độ vectơ từ hai điểm",
+ "chu_de": "oxyz-toa-do-vecto",
+ "dang": "ox.toa-do-vecto",
+ "dang_tx": "ox.vecto",
+ "yccd": [
+  "12.OX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-OX-04",
+ "loai_cau": [
+  "tn4"
+ ],
+ "muc_do": {
+  "tn4": "NB"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-OX-04",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "x1": 1,
+    "y1": 2,
+    "z1": -1,
+    "x2": 3,
+    "y2": -1,
+    "z2": 4
+   },
+   {
+    "x1": -2,
+    "y1": 0,
+    "z1": 3,
+    "x2": 1,
+    "y2": 5,
+    "z2": -2
+   },
+   {
+    "x1": 4,
+    "y1": -3,
+    "z1": 2,
+    "x2": 0,
+    "y2": 1,
+    "z2": 5
+   },
+   {
+    "x1": 2,
+    "y1": 2,
+    "z1": 0,
+    "x2": -1,
+    "y2": 4,
+    "z2": 3
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Trong không gian $Oxyz$, cho hai điểm $A({x1};{y1};{z1})$ và $B({x2};{y2};{z2})$.",
+ "hoi": "Tọa độ của vectơ $\\overrightarrow{AB}$ là",
+ "dap_so": "Tuple(x2-x1,y2-y1,z2-z1)",
+ "nhieu": [
+  {
+   "bieu_thuc": "Tuple(x1-x2,y1-y2,z1-z2)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy tọa độ điểm đầu trừ điểm cuối"
+   }
+  },
+  {
+   "bieu_thuc": "Tuple(x1+x2,y1+y2,z1+z2)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng tọa độ hai điểm"
+   }
+  },
+  {
+   "bieu_thuc": "Tuple((x1+x2)/2,(y1+y2)/2,(z1+z2)/2)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhầm sang tọa độ trung điểm"
+   }
+  }
+ ],
+ "kieu": "vecto",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": false,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-OX-04']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "x1": "1",
+   "y1": "2",
+   "z1": "-1",
+   "x2": "3",
+   "y2": "-1",
+   "z2": "4"
+  },
+  {
+   "x1": "-2",
+   "y1": "0",
+   "z1": "3",
+   "x2": "1",
+   "y2": "5",
+   "z2": "-2"
+  },
+  {
+   "x1": "4",
+   "y1": "-3",
+   "z1": "2",
+   "x2": "0",
+   "y2": "1",
+   "z2": "5"
+  },
+  {
+   "x1": "2",
+   "y1": "2",
+   "z1": "0",
+   "x2": "-1",
+   "y2": "4",
+   "z2": "3"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 4,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

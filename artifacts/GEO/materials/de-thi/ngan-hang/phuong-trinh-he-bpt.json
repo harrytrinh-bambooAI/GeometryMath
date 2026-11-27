@@ -1,0 +1,2020 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "phuong-trinh-he-bpt",
+ "so_cau": 37,
+ "cau": [
+  {
+   "id": "MC-PT-01.TLN.0",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "r": "13",
+    "x0": "1"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=2,q=3,r=13,x0=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $2x + 3y\\le 13$. Với $x=1$, số nguyên $y$ lớn nhất để $(1;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.0,
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.226,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.1",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "r": "20",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=2,q=3,r=20,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $2x + 3y\\le 20$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 5.0,
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.231,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.2",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "r": "25",
+    "x0": "1"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=2,q=3,r=25,x0=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $2x + 3y\\le 25$. Với $x=1$, số nguyên $y$ lớn nhất để $(1;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 7.0,
+   "dap_so": {
+    "gia_tri": "7",
+    "so": 7.0
+   },
+   "do_kho": 0.277,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.3",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "2",
+    "q": "4",
+    "r": "13",
+    "x0": "1"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=2,q=4,r=13,x0=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $2x + 4y\\le 13$. Với $x=1$, số nguyên $y$ lớn nhất để $(1;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.254,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.4",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "2",
+    "q": "4",
+    "r": "13",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=2,q=4,r=13,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $2x + 4y\\le 13$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.226,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.5",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "2",
+    "q": "4",
+    "r": "20",
+    "x0": "1"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=2,q=4,r=20,x0=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $2x + 4y\\le 20$. Với $x=1$, số nguyên $y$ lớn nhất để $(1;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.0,
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.272,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.6",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "2",
+    "q": "4",
+    "r": "25",
+    "x0": "1"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=2,q=4,r=25,x0=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $2x + 4y\\le 25$. Với $x=1$, số nguyên $y$ lớn nhất để $(1;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 5.0,
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.261,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.7",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "2",
+    "q": "4",
+    "r": "25",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=2,q=4,r=25,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $2x + 4y\\le 25$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 5.0,
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.231,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.8",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "3",
+    "r": "13",
+    "x0": "1"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=3,r=13,x0=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 3y\\le 13$. Với $x=1$, số nguyên $y$ lớn nhất để $(1;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.0,
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.255,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TN.9",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "3",
+    "r": "13",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-PT-01|p=3,q=3,r=13,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 3y\\le 13$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là:",
+   "lua_chon": [
+    {
+     "noi_dung": "2",
+     "dung": true
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_an": "2",
+   "nhieu": [
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.137,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.9",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "3",
+    "r": "13",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=3,r=13,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 3y\\le 13$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.275,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.10",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "3",
+    "r": "20",
+    "x0": "1"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=3,r=20,x0=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 3y\\le 20$. Với $x=1$, số nguyên $y$ lớn nhất để $(1;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 5.0,
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.246,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TN.11",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "3",
+    "r": "20",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-PT-01|p=3,q=3,r=20,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 3y\\le 20$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là:",
+   "lua_chon": [
+    {
+     "noi_dung": "4",
+     "dung": true
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_an": "4",
+   "nhieu": [
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.124,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.11",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "3",
+    "r": "20",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=3,r=20,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 3y\\le 20$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.0,
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.226,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.12",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "3",
+    "r": "25",
+    "x0": "1"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=3,r=25,x0=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 3y\\le 25$. Với $x=1$, số nguyên $y$ lớn nhất để $(1;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 7.0,
+   "dap_so": {
+    "gia_tri": "7",
+    "so": 7.0
+   },
+   "do_kho": 0.27,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TN.13",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "3",
+    "r": "25",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-PT-01|p=3,q=3,r=25,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 3y\\le 25$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là:",
+   "lua_chon": [
+    {
+     "noi_dung": "6",
+     "dung": true
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "noi_dung": "10",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_an": "6",
+   "nhieu": [
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "phuong_an": "10",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.171,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.13",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "3",
+    "r": "25",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=3,r=25,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 3y\\le 25$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.0,
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.273,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.14",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "13",
+    "x0": "1"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=4,r=13,x0=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 4y\\le 13$. Với $x=1$, số nguyên $y$ lớn nhất để $(1;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.263,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TN.15",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "13",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-PT-01|p=3,q=4,r=13,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 4y\\le 13$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là:",
+   "lua_chon": [
+    {
+     "noi_dung": "1",
+     "dung": true
+    },
+    {
+     "noi_dung": "2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_an": "1",
+   "nhieu": [
+    {
+     "phuong_an": "2",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "1",
+    "so": 1.0
+   },
+   "do_kho": 0.152,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.15",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "13",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=4,r=13,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 4y\\le 13$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.0,
+   "dap_so": {
+    "gia_tri": "1",
+    "so": 1.0
+   },
+   "do_kho": 0.27,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.16",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "20",
+    "x0": "1"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=4,r=20,x0=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 4y\\le 20$. Với $x=1$, số nguyên $y$ lớn nhất để $(1;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.0,
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.257,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TN.17",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "20",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-PT-01|p=3,q=4,r=20,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 4y\\le 20$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là:",
+   "lua_chon": [
+    {
+     "noi_dung": "3",
+     "dung": true
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_an": "3",
+   "nhieu": [
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.152,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.17",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "20",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=4,r=20,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 4y\\le 20$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.0,
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.236,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.18",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "25",
+    "x0": "1"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=4,r=25,x0=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 4y\\le 25$. Với $x=1$, số nguyên $y$ lớn nhất để $(1;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 5.0,
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.271,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TN.19",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "25",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-PT-01|p=3,q=4,r=25,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 4y\\le 25$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là:",
+   "lua_chon": [
+    {
+     "noi_dung": "4",
+     "dung": true
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_an": "4",
+   "nhieu": [
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+     }
+    },
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+     }
+    },
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên số hạng $px_0$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.151,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-01.TLN.19",
+   "mau_cau": "MC-PT-01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "25",
+    "x0": "2"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-2-an-nghiem",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-01|p=3,q=4,r=25,x0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-01"
+   },
+   "de_bai": "Cho bất phương trình bậc nhất hai ẩn $3x + 4y\\le 25$. Với $x=2$, số nguyên $y$ lớn nhất để $(2;y)$ là nghiệm của bất phương trình là bao nhiêu?",
+   "dap_an": "4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.0,
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.278,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-02.TN.0",
+   "mau_cau": "MC-PT-02",
+   "bien_the": {
+    "s": "4",
+    "t": "6",
+    "al": "3",
+    "be": "5"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.qhtt-max",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Giá trị lớn nhất trên miền nghiệm (quy hoạch tuyến tính)"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-PT-02|al=3,be=5,s=4,t=6",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-02"
+   },
+   "de_bai": "Một xưởng sản xuất $x$ sản phẩm loại I và $y$ sản phẩm loại II mỗi ngày ($x,y\\ge0$), thỏa mãn $x+y\\le 4$ và $x+2y\\le 6$. Lợi nhuận là $F=3x+5y$ (triệu đồng). Lợi nhuận lớn nhất mỗi ngày (triệu đồng) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "16",
+     "dung": true
+    },
+    {
+     "noi_dung": "15",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ sót đỉnh là giao điểm của hai đường thẳng"
+     }
+    },
+    {
+     "noi_dung": "27",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng giá trị tại hai đỉnh trên hai trục (điểm không thuộc miền)"
+     }
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy giá trị nhỏ nhất thay vì lớn nhất"
+     }
+    }
+   ],
+   "dap_an": "16",
+   "nhieu": [
+    {
+     "phuong_an": "15",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ sót đỉnh là giao điểm của hai đường thẳng"
+     }
+    },
+    {
+     "phuong_an": "27",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng giá trị tại hai đỉnh trên hai trục (điểm không thuộc miền)"
+     }
+    },
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy giá trị nhỏ nhất thay vì lớn nhất"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "16",
+    "so": 16.0
+   },
+   "do_kho": 0.537,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-02.TLN.0",
+   "mau_cau": "MC-PT-02",
+   "bien_the": {
+    "s": "4",
+    "t": "6",
+    "al": "3",
+    "be": "5"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.qhtt-max",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Giá trị lớn nhất trên miền nghiệm (quy hoạch tuyến tính)"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-02|al=3,be=5,s=4,t=6",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-02"
+   },
+   "de_bai": "Một xưởng sản xuất $x$ sản phẩm loại I và $y$ sản phẩm loại II mỗi ngày ($x,y\\ge0$), thỏa mãn $x+y\\le 4$ và $x+2y\\le 6$. Lợi nhuận là $F=3x+5y$ (triệu đồng). Lợi nhuận lớn nhất mỗi ngày (triệu đồng) bằng bao nhiêu?",
+   "dap_an": "16",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 16.0,
+   "dap_so": {
+    "gia_tri": "16",
+    "so": 16.0
+   },
+   "do_kho": 0.655,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-02.TN.1",
+   "mau_cau": "MC-PT-02",
+   "bien_the": {
+    "s": "5",
+    "t": "8",
+    "al": "2",
+    "be": "3"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.qhtt-max",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Giá trị lớn nhất trên miền nghiệm (quy hoạch tuyến tính)"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-PT-02|al=2,be=3,s=5,t=8",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-02"
+   },
+   "de_bai": "Một xưởng sản xuất $x$ sản phẩm loại I và $y$ sản phẩm loại II mỗi ngày ($x,y\\ge0$), thỏa mãn $x+y\\le 5$ và $x+2y\\le 8$. Lợi nhuận là $F=2x+3y$ (triệu đồng). Lợi nhuận lớn nhất mỗi ngày (triệu đồng) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "13",
+     "dung": true
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ sót đỉnh là giao điểm của hai đường thẳng"
+     }
+    },
+    {
+     "noi_dung": "22",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng giá trị tại hai đỉnh trên hai trục (điểm không thuộc miền)"
+     }
+    },
+    {
+     "noi_dung": "10",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy giá trị nhỏ nhất thay vì lớn nhất"
+     }
+    }
+   ],
+   "dap_an": "13",
+   "nhieu": [
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ sót đỉnh là giao điểm của hai đường thẳng"
+     }
+    },
+    {
+     "phuong_an": "22",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng giá trị tại hai đỉnh trên hai trục (điểm không thuộc miền)"
+     }
+    },
+    {
+     "phuong_an": "10",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy giá trị nhỏ nhất thay vì lớn nhất"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "13",
+    "so": 13.0
+   },
+   "do_kho": 0.529,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-02.TLN.1",
+   "mau_cau": "MC-PT-02",
+   "bien_the": {
+    "s": "5",
+    "t": "8",
+    "al": "2",
+    "be": "3"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.qhtt-max",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Giá trị lớn nhất trên miền nghiệm (quy hoạch tuyến tính)"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-02|al=2,be=3,s=5,t=8",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-02"
+   },
+   "de_bai": "Một xưởng sản xuất $x$ sản phẩm loại I và $y$ sản phẩm loại II mỗi ngày ($x,y\\ge0$), thỏa mãn $x+y\\le 5$ và $x+2y\\le 8$. Lợi nhuận là $F=2x+3y$ (triệu đồng). Lợi nhuận lớn nhất mỗi ngày (triệu đồng) bằng bao nhiêu?",
+   "dap_an": "13",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 13.0,
+   "dap_so": {
+    "gia_tri": "13",
+    "so": 13.0
+   },
+   "do_kho": 0.667,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-02.TN.2",
+   "mau_cau": "MC-PT-02",
+   "bien_the": {
+    "s": "6",
+    "t": "10",
+    "al": "4",
+    "be": "7"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.qhtt-max",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Giá trị lớn nhất trên miền nghiệm (quy hoạch tuyến tính)"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-PT-02|al=4,be=7,s=6,t=10",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-02"
+   },
+   "de_bai": "Một xưởng sản xuất $x$ sản phẩm loại I và $y$ sản phẩm loại II mỗi ngày ($x,y\\ge0$), thỏa mãn $x+y\\le 6$ và $x+2y\\le 10$. Lợi nhuận là $F=4x+7y$ (triệu đồng). Lợi nhuận lớn nhất mỗi ngày (triệu đồng) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "36",
+     "dung": true
+    },
+    {
+     "noi_dung": "35",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ sót đỉnh là giao điểm của hai đường thẳng"
+     }
+    },
+    {
+     "noi_dung": "59",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng giá trị tại hai đỉnh trên hai trục (điểm không thuộc miền)"
+     }
+    },
+    {
+     "noi_dung": "24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy giá trị nhỏ nhất thay vì lớn nhất"
+     }
+    }
+   ],
+   "dap_an": "36",
+   "nhieu": [
+    {
+     "phuong_an": "35",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ sót đỉnh là giao điểm của hai đường thẳng"
+     }
+    },
+    {
+     "phuong_an": "59",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng giá trị tại hai đỉnh trên hai trục (điểm không thuộc miền)"
+     }
+    },
+    {
+     "phuong_an": "24",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy giá trị nhỏ nhất thay vì lớn nhất"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "36",
+    "so": 36.0
+   },
+   "do_kho": 0.539,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-02.TLN.2",
+   "mau_cau": "MC-PT-02",
+   "bien_the": {
+    "s": "6",
+    "t": "10",
+    "al": "4",
+    "be": "7"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.qhtt-max",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Giá trị lớn nhất trên miền nghiệm (quy hoạch tuyến tính)"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-02|al=4,be=7,s=6,t=10",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-02"
+   },
+   "de_bai": "Một xưởng sản xuất $x$ sản phẩm loại I và $y$ sản phẩm loại II mỗi ngày ($x,y\\ge0$), thỏa mãn $x+y\\le 6$ và $x+2y\\le 10$. Lợi nhuận là $F=4x+7y$ (triệu đồng). Lợi nhuận lớn nhất mỗi ngày (triệu đồng) bằng bao nhiêu?",
+   "dap_an": "36",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 36.0,
+   "dap_so": {
+    "gia_tri": "36",
+    "so": 36.0
+   },
+   "do_kho": 0.661,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-02.TLN.3",
+   "mau_cau": "MC-PT-02",
+   "bien_the": {
+    "s": "3",
+    "t": "5",
+    "al": "5",
+    "be": "6"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.qhtt-max",
+   "dang_tx": "pt.he-bpt-2-an",
+   "lop": 10,
+   "yccd": [
+    "10.BPT.1"
+   ],
+   "kien_thuc": [
+    "Giá trị lớn nhất trên miền nghiệm (quy hoạch tuyến tính)"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-02|al=5,be=6,s=3,t=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-02"
+   },
+   "de_bai": "Một xưởng sản xuất $x$ sản phẩm loại I và $y$ sản phẩm loại II mỗi ngày ($x,y\\ge0$), thỏa mãn $x+y\\le 3$ và $x+2y\\le 5$. Lợi nhuận là $F=5x+6y$ (triệu đồng). Lợi nhuận lớn nhất mỗi ngày (triệu đồng) bằng bao nhiêu?",
+   "dap_an": "17",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 17.0,
+   "dap_so": {
+    "gia_tri": "17",
+    "so": 17.0
+   },
+   "do_kho": 0.65,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-03.TLN.0",
+   "mau_cau": "MC-PT-03",
+   "bien_the": {
+    "x0": "120",
+    "y0": "80",
+    "pp": "50",
+    "qq": "80"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he-bac-nhat-thuc-te",
+   "dang_tx": "pt.he-bac-nhat",
+   "lop": 10,
+   "yccd": [
+    "10.HPT.1"
+   ],
+   "kien_thuc": [
+    "Bài toán hệ phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-03|pp=50,qq=80,x0=120,y0=80",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-03"
+   },
+   "de_bai": "Một buổi biểu diễn bán được $200$ vé gồm hai loại: vé loại I giá $50$ nghìn đồng và vé loại II giá $80$ nghìn đồng; tổng tiền thu được là $12400$ nghìn đồng. Số vé loại I đã bán là bao nhiêu?",
+   "dap_an": "120",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 120.0,
+   "dap_so": {
+    "gia_tri": "120",
+    "so": 120.0
+   },
+   "do_kho": 0.876,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-03.TLN.1",
+   "mau_cau": "MC-PT-03",
+   "bien_the": {
+    "x0": "35",
+    "y0": "65",
+    "pp": "30",
+    "qq": "45"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he-bac-nhat-thuc-te",
+   "dang_tx": "pt.he-bac-nhat",
+   "lop": 10,
+   "yccd": [
+    "10.HPT.1"
+   ],
+   "kien_thuc": [
+    "Bài toán hệ phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-03|pp=30,qq=45,x0=35,y0=65",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-03"
+   },
+   "de_bai": "Một buổi biểu diễn bán được $100$ vé gồm hai loại: vé loại I giá $30$ nghìn đồng và vé loại II giá $45$ nghìn đồng; tổng tiền thu được là $3975$ nghìn đồng. Số vé loại I đã bán là bao nhiêu?",
+   "dap_an": "35",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 35.0,
+   "dap_so": {
+    "gia_tri": "35",
+    "so": 35.0
+   },
+   "do_kho": 0.844,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-03.TLN.2",
+   "mau_cau": "MC-PT-03",
+   "bien_the": {
+    "x0": "240",
+    "y0": "160",
+    "pp": "20",
+    "qq": "35"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he-bac-nhat-thuc-te",
+   "dang_tx": "pt.he-bac-nhat",
+   "lop": 10,
+   "yccd": [
+    "10.HPT.1"
+   ],
+   "kien_thuc": [
+    "Bài toán hệ phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-03|pp=20,qq=35,x0=240,y0=160",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-03"
+   },
+   "de_bai": "Một buổi biểu diễn bán được $400$ vé gồm hai loại: vé loại I giá $20$ nghìn đồng và vé loại II giá $35$ nghìn đồng; tổng tiền thu được là $10400$ nghìn đồng. Số vé loại I đã bán là bao nhiêu?",
+   "dap_an": "240",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 240.0,
+   "dap_so": {
+    "gia_tri": "240",
+    "so": 240.0
+   },
+   "do_kho": 0.85,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-PT-03.TLN.3",
+   "mau_cau": "MC-PT-03",
+   "bien_the": {
+    "x0": "75",
+    "y0": "125",
+    "pp": "60",
+    "qq": "100"
+   },
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he-bac-nhat-thuc-te",
+   "dang_tx": "pt.he-bac-nhat",
+   "lop": 10,
+   "yccd": [
+    "10.HPT.1"
+   ],
+   "kien_thuc": [
+    "Bài toán hệ phương trình bậc nhất hai ẩn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-PT-03|pp=60,qq=100,x0=75,y0=125",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-PT-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-PT-03"
+   },
+   "de_bai": "Một buổi biểu diễn bán được $200$ vé gồm hai loại: vé loại I giá $60$ nghìn đồng và vé loại II giá $100$ nghìn đồng; tổng tiền thu được là $17000$ nghìn đồng. Số vé loại I đã bán là bao nhiêu?",
+   "dap_an": "75",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 75.0,
+   "dap_so": {
+    "gia_tri": "75",
+    "so": 75.0
+   },
+   "do_kho": 0.864,
+   "dap_so_engine": null
+  }
+ ]
+}

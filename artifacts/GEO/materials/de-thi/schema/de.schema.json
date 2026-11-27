@@ -1,0 +1,90 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "de.schema.json",
+ "title": "Mã đề đã lắp (v1.0 · 27/11/2026)",
+ "type": "object",
+ "required": [
+  "ma_tran",
+  "ma_de",
+  "seed",
+  "thoi_gian_phut",
+  "tong_diem",
+  "cau",
+  "rang_buoc",
+  "do_kho_du_kien"
+ ],
+ "properties": {
+  "ma_de": {
+   "type": "string"
+  },
+  "seed": {
+   "type": "integer"
+  },
+  "do_kho_du_kien": {
+   "type": "number"
+  },
+  "cau": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "so",
+     "phan",
+     "o",
+     "id_cau",
+     "chu_de",
+     "dang",
+     "yccd",
+     "muc_do",
+     "loai_cau",
+     "diem",
+     "de_bai",
+     "dap_an"
+    ],
+    "properties": {
+     "so": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "loai_cau": {
+      "enum": [
+       "tn4",
+       "dung-sai",
+       "tra-loi-ngan",
+       "tu-luan"
+      ]
+     },
+     "muc_do": {
+      "enum": [
+       "NB",
+       "TH",
+       "VD",
+       "VDC"
+      ]
+     },
+     "yccd": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+       "type": "string",
+       "pattern": "^(10|11|12)\\.[A-Z]+\\.[0-9]+$"
+      }
+     },
+     "phuong_an": {
+      "type": "object",
+      "required": [
+       "A",
+       "B",
+       "C",
+       "D"
+      ]
+     }
+    }
+   }
+  },
+  "rang_buoc": {
+   "type": "object"
+  }
+ }
+}

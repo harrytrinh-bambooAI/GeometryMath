@@ -1,0 +1,107 @@
+{
+ "id": "MC-HH-DS-D",
+ "ten": "Đúng/sai: hình hộp chữ nhật",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "ds.hop",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.2",
+  "11.VG.3",
+  "11.VG.4",
+  "11.TT.1"
+ ],
+ "lop": 11,
+ "ho_hinh": "D",
+ "tham_so": {
+  "_bo": [
+   {
+    "p": 3,
+    "q": 4,
+    "r": 5
+   },
+   {
+    "p": 3,
+    "q": 4,
+    "r": 12
+   },
+   {
+    "p": 2,
+    "q": 3,
+    "r": 6
+   },
+   {
+    "p": 1,
+    "q": 2,
+    "r": 2
+   },
+   {
+    "p": 6,
+    "q": 8,
+    "r": 5
+   }
+  ]
+ },
+ "dan_xuat": {},
+ "boi_canh": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB={p}$ cm, $AD={q}$ cm, $AA'={r}$ cm.",
+ "y": [
+  {
+   "mau": "MC-HH-D01",
+   "menh_de": "Thể tích khối hộp bằng ${v}$.",
+   "muc_do": "NB"
+  },
+  {
+   "mau": "MC-HH-D02",
+   "menh_de": "Độ dài đường chéo $AC'$ bằng ${v}$.",
+   "muc_do": "TH"
+  },
+  {
+   "mau": "MC-HH-D03",
+   "menh_de": "Khoảng cách giữa $AA'$ và $BD$ bằng ${v}$.",
+   "muc_do": "TH"
+  },
+  {
+   "mau": "MC-HH-D05",
+   "menh_de": "Khoảng cách từ $A$ đến mặt phẳng $(A'BD)$ bằng ${v}$.",
+   "muc_do": "VD"
+  }
+ ],
+ "loai_mau": "dung-sai",
+ "loai_cau": [
+  "dung-sai"
+ ],
+ "bien_the": [
+  {
+   "p": "3",
+   "q": "4",
+   "r": "5"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "12"
+  },
+  {
+   "p": "2",
+   "q": "3",
+   "r": "6"
+  },
+  {
+   "p": "1",
+   "q": "2",
+   "r": "2"
+  },
+  {
+   "p": "6",
+   "q": "8",
+   "r": "5"
+  }
+ ],
+ "rang_buoc": [],
+ "so_bien_the": 5,
+ "so_cau_sinh": 5,
+ "nguon": {
+  "loai": "mvp",
+  "ma": "MC-HH-DS-D"
+ },
+ "phien_ban": "v1.0 · 27/11/2026"
+}

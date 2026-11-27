@@ -1,0 +1,163 @@
+{
+ "id": "MC-ML-05",
+ "ten": "Số nghiệm nguyên của bất phương trình lôgarit",
+ "chu_de": "ham-so-mu-logarit",
+ "dang": "ml.bpt-log-nguyen",
+ "dang_tx": "ml.bpt-log",
+ "yccd": [
+  "11.ML.3"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-ML-05",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan",
+  "tu-luan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "VD",
+  "tu-luan": "VD"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-ML-05",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "b": [
+   "2",
+   "3"
+  ],
+  "t": [
+   "2",
+   "3"
+  ],
+  "c": [
+   "1",
+   "-2",
+   "4"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "ux": "x-c"
+ },
+ "boi_canh": "",
+ "hoi": "Số nghiệm nguyên của bất phương trình $\\log_{{b}}({ux})<{t}$ là",
+ "dap_so": "b**t-1",
+ "nhieu": [
+  {
+   "bieu_thuc": "b**t",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Tính cả đầu mút $x=c$ (quên điều kiện $x>c$)"
+   }
+  },
+  {
+   "bieu_thuc": "t*b-1",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Hiểu $\\log_b u<t\\Leftrightarrow u<tb$"
+   }
+  },
+  {
+   "bieu_thuc": "b**t+c",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Quên điều kiện xác định, đếm từ $x=0$"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tu_luan": [
+  {
+   "noi_dung": "Điều kiện: $x>{c}$.",
+   "diem": 0.25
+  },
+  {
+   "noi_dung": "Vì cơ số ${b}>1$ nên bất phương trình $\\Leftrightarrow {ux}<{b}^{{t}}$, tức ${c}<x<{c}+{b}^{{t}}$.",
+   "diem": 0.5
+  },
+  {
+   "noi_dung": "Các số nguyên thỏa mãn là $x={c}+1,\\dots,{c}+{b}^{{t}}-1$; có ${ds}$ số.",
+   "diem": 0.25
+  }
+ ],
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-ML-05']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "b": "2",
+   "t": "2",
+   "c": "1"
+  },
+  {
+   "b": "2",
+   "t": "2",
+   "c": "-2"
+  },
+  {
+   "b": "2",
+   "t": "2",
+   "c": "4"
+  },
+  {
+   "b": "2",
+   "t": "3",
+   "c": "1"
+  },
+  {
+   "b": "2",
+   "t": "3",
+   "c": "-2"
+  },
+  {
+   "b": "2",
+   "t": "3",
+   "c": "4"
+  },
+  {
+   "b": "3",
+   "t": "2",
+   "c": "1"
+  },
+  {
+   "b": "3",
+   "t": "2",
+   "c": "-2"
+  },
+  {
+   "b": "3",
+   "t": "2",
+   "c": "4"
+  },
+  {
+   "b": "3",
+   "t": "3",
+   "c": "1"
+  },
+  {
+   "b": "3",
+   "t": "3",
+   "c": "-2"
+  },
+  {
+   "b": "3",
+   "t": "3",
+   "c": "4"
+  }
+ ],
+ "so_bien_the": 12,
+ "so_cau_sinh": 33,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

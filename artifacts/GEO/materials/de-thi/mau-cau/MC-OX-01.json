@@ -1,0 +1,233 @@
+{
+ "id": "MC-OX-01",
+ "ten": "Vectơ pháp tuyến của mặt phẳng",
+ "chu_de": "oxyz-mat-phang",
+ "dang": "ox.vtpt",
+ "dang_tx": "ox.mp-vtpt",
+ "yccd": [
+  "12.OX.2"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-OX-01",
+ "loai_cau": [
+  "tn4"
+ ],
+ "muc_do": {
+  "tn4": "NB"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-OX-01",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "p": [
+   "1",
+   "2",
+   "3"
+  ],
+  "q": [
+   "-1",
+   "2"
+  ],
+  "r": [
+   "3",
+   "-4"
+  ],
+  "s": [
+   "5",
+   "-7"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "mp": "p*x+q*y+r*z+s"
+ },
+ "boi_canh": "Trong không gian $Oxyz$, cho mặt phẳng $(P): {mp}=0$.",
+ "hoi": "Một vectơ pháp tuyến của $(P)$ là",
+ "dap_so": "Tuple(p,q,r)",
+ "nhieu": [
+  {
+   "bieu_thuc": "Tuple(p,q,s)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+   }
+  },
+  {
+   "bieu_thuc": "Tuple(q,r,s)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+   }
+  },
+  {
+   "bieu_thuc": "Tuple(p,q,-r)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Chép sai dấu hệ số của $z$"
+   }
+  }
+ ],
+ "kieu": "vecto",
+ "tien_to": "\\vec n=",
+ "hau_to": "",
+ "duong": false,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-OX-01']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "p": "1",
+   "q": "-1",
+   "r": "3",
+   "s": "5"
+  },
+  {
+   "p": "1",
+   "q": "-1",
+   "r": "3",
+   "s": "-7"
+  },
+  {
+   "p": "1",
+   "q": "-1",
+   "r": "-4",
+   "s": "5"
+  },
+  {
+   "p": "1",
+   "q": "-1",
+   "r": "-4",
+   "s": "-7"
+  },
+  {
+   "p": "1",
+   "q": "2",
+   "r": "3",
+   "s": "5"
+  },
+  {
+   "p": "1",
+   "q": "2",
+   "r": "3",
+   "s": "-7"
+  },
+  {
+   "p": "1",
+   "q": "2",
+   "r": "-4",
+   "s": "5"
+  },
+  {
+   "p": "1",
+   "q": "2",
+   "r": "-4",
+   "s": "-7"
+  },
+  {
+   "p": "2",
+   "q": "-1",
+   "r": "3",
+   "s": "5"
+  },
+  {
+   "p": "2",
+   "q": "-1",
+   "r": "3",
+   "s": "-7"
+  },
+  {
+   "p": "2",
+   "q": "-1",
+   "r": "-4",
+   "s": "5"
+  },
+  {
+   "p": "2",
+   "q": "-1",
+   "r": "-4",
+   "s": "-7"
+  },
+  {
+   "p": "2",
+   "q": "2",
+   "r": "3",
+   "s": "5"
+  },
+  {
+   "p": "2",
+   "q": "2",
+   "r": "3",
+   "s": "-7"
+  },
+  {
+   "p": "2",
+   "q": "2",
+   "r": "-4",
+   "s": "5"
+  },
+  {
+   "p": "2",
+   "q": "2",
+   "r": "-4",
+   "s": "-7"
+  },
+  {
+   "p": "3",
+   "q": "-1",
+   "r": "3",
+   "s": "5"
+  },
+  {
+   "p": "3",
+   "q": "-1",
+   "r": "3",
+   "s": "-7"
+  },
+  {
+   "p": "3",
+   "q": "-1",
+   "r": "-4",
+   "s": "5"
+  },
+  {
+   "p": "3",
+   "q": "-1",
+   "r": "-4",
+   "s": "-7"
+  },
+  {
+   "p": "3",
+   "q": "2",
+   "r": "3",
+   "s": "5"
+  },
+  {
+   "p": "3",
+   "q": "2",
+   "r": "3",
+   "s": "-7"
+  },
+  {
+   "p": "3",
+   "q": "2",
+   "r": "-4",
+   "s": "5"
+  },
+  {
+   "p": "3",
+   "q": "2",
+   "r": "-4",
+   "s": "-7"
+  }
+ ],
+ "so_bien_the": 24,
+ "so_cau_sinh": 24,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

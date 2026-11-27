@@ -1,0 +1,105 @@
+{
+ "id": "MC-HH-H04",
+ "ten": "Diện tích toàn phần hình nón",
+ "chu_de": "khoi-tron-xoay",
+ "dang": "non.dien-tich-tp",
+ "dang_tx": "tx.non",
+ "yccd": [
+  "12.TX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "HR",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-60",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-60 + geometry/problem-specs.json#HKN-60"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "r": 5,
+    "l": 13
+   },
+   {
+    "r": 3,
+    "l": 5
+   },
+   {
+    "r": 6,
+    "l": 10
+   },
+   {
+    "r": 8,
+    "l": 10
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình nón có bán kính đáy $r={r}$ cm và độ dài đường sinh $l={l}$ cm.",
+ "hoi": "Diện tích toàn phần của hình nón bằng",
+ "dap_so": "pi*r*l+pi*r**2",
+ "don_vi": "cm2",
+ "nhieu": [
+  {
+   "bieu_thuc": "pi*r*l",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên diện tích đáy (chỉ tính diện tích xung quanh)"
+   }
+  },
+  {
+   "bieu_thuc": "pi*r*l+2*pi*r**2",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Cộng hai đáy như hình trụ"
+   }
+  },
+  {
+   "bieu_thuc": "2*pi*r*l+pi*r**2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng $S_{xq}=2\\pi rl$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-60",
+  "ask": 0,
+  "params": {
+   "r": "r",
+   "l": "l"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "r": "5",
+   "l": "13"
+  },
+  {
+   "r": "3",
+   "l": "5"
+  },
+  {
+   "r": "6",
+   "l": "10"
+  },
+  {
+   "r": "8",
+   "l": "10"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

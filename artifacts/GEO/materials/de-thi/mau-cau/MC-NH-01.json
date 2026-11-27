@@ -1,0 +1,176 @@
+{
+ "id": "MC-NH-01",
+ "ten": "Nguyên hàm của đa thức",
+ "chu_de": "nguyen-ham-tich-phan",
+ "dang": "nh.nguyen-ham-da-thuc",
+ "dang_tx": "nh.co-ban",
+ "yccd": [
+  "12.NH.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-NH-01",
+ "loai_cau": [
+  "tn4"
+ ],
+ "muc_do": {
+  "tn4": "NB"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-NH-01",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "p": [
+   "3",
+   "6"
+  ],
+  "q": [
+   "2",
+   "4",
+   "-2"
+  ],
+  "r": [
+   "1",
+   "5",
+   "-3"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "fx": "p*x**2+q*x+r"
+ },
+ "boi_canh": "Cho hàm số $f(x)={fx}$.",
+ "hoi": "Họ nguyên hàm của $f(x)$ là",
+ "dap_so": "p*x**3/3+q*x**2/2+r*x",
+ "nhieu": [
+  {
+   "bieu_thuc": "2*p*x+q",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy đạo hàm thay vì nguyên hàm"
+   }
+  },
+  {
+   "bieu_thuc": "p*x**3+q*x**2+r*x",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên chia cho số mũ mới"
+   }
+  },
+  {
+   "bieu_thuc": "p*x**3/3+q*x**2/2",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Bỏ sót nguyên hàm của hằng số"
+   }
+  }
+ ],
+ "kieu": "ham",
+ "tien_to": "",
+ "hau_to": "+C",
+ "duong": false,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-NH-01']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "p": "3",
+   "q": "2",
+   "r": "1"
+  },
+  {
+   "p": "3",
+   "q": "2",
+   "r": "5"
+  },
+  {
+   "p": "3",
+   "q": "2",
+   "r": "-3"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "1"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "5"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "-3"
+  },
+  {
+   "p": "3",
+   "q": "-2",
+   "r": "1"
+  },
+  {
+   "p": "3",
+   "q": "-2",
+   "r": "5"
+  },
+  {
+   "p": "3",
+   "q": "-2",
+   "r": "-3"
+  },
+  {
+   "p": "6",
+   "q": "2",
+   "r": "1"
+  },
+  {
+   "p": "6",
+   "q": "2",
+   "r": "5"
+  },
+  {
+   "p": "6",
+   "q": "2",
+   "r": "-3"
+  },
+  {
+   "p": "6",
+   "q": "4",
+   "r": "1"
+  },
+  {
+   "p": "6",
+   "q": "4",
+   "r": "5"
+  },
+  {
+   "p": "6",
+   "q": "4",
+   "r": "-3"
+  },
+  {
+   "p": "6",
+   "q": "-2",
+   "r": "1"
+  },
+  {
+   "p": "6",
+   "q": "-2",
+   "r": "5"
+  },
+  {
+   "p": "6",
+   "q": "-2",
+   "r": "-3"
+  }
+ ],
+ "so_bien_the": 18,
+ "so_cau_sinh": 18,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

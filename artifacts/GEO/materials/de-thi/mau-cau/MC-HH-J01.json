@@ -1,0 +1,88 @@
+{
+ "id": "MC-HH-J01",
+ "ten": "Thể tích khối cầu",
+ "chu_de": "khoi-tron-xoay",
+ "dang": "cau.the-tich",
+ "dang_tx": "tx.cau",
+ "yccd": [
+  "12.TX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "J",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "NB"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-74",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-74 + geometry/problem-specs.json#HKN-74"
+ },
+ "tham_so": {
+  "r": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho mặt cầu có bán kính $R={r}$ cm.",
+ "hoi": "Thể tích khối cầu bằng",
+ "dap_so": "4*pi*r**3/3",
+ "don_vi": "cm3",
+ "nhieu": [
+  {
+   "bieu_thuc": "4*pi*r**2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhầm sang diện tích mặt cầu"
+   }
+  },
+  {
+   "bieu_thuc": "4*pi*r**2/3",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng $r^2$ thay cho $r^3$"
+   }
+  },
+  {
+   "bieu_thuc": "4*pi*r**3",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên hệ số $\\dfrac13$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-74",
+  "ask": 0,
+  "params": {
+   "r": "r"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "r": "3"
+  },
+  {
+   "r": "4"
+  },
+  {
+   "r": "5"
+  },
+  {
+   "r": "6"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 7,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

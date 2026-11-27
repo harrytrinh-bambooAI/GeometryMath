@@ -1,0 +1,285 @@
+{
+ "id": "KT15-HHKG11",
+ "ten": "Kiểm tra 15 phút - Toán 11, chương Quan hệ vuông góc trong không gian",
+ "loai_de": "kiem-tra-15",
+ "lop": 11,
+ "thoi_gian_phut": 15,
+ "tong_diem": 10.0,
+ "phan": [
+  {
+   "id": "P1",
+   "ten": "Phần I - Trắc nghiệm nhiều lựa chọn",
+   "loai_cau": "tn4",
+   "so_cau": 6,
+   "diem_moi_cau": 1.0
+  },
+  {
+   "id": "P2",
+   "ten": "Phần II - Trả lời ngắn",
+   "loai_cau": "tra-loi-ngan",
+   "so_cau": 2,
+   "diem_moi_cau": 2.0
+  }
+ ],
+ "can_cu": [
+  "Một chương HHKG lớp 11 (CT2018): góc, khoảng cách, thể tích.",
+  "Trọng số xoay vòng theo tần suất dạng HHKG trong 8 đề TN 2017-2024 (lich-su/tan-suat.md mục HHKG)."
+ ],
+ "gia_dinh": [
+  "Số câu và điểm (6 × 1,0 + 2 × 2,0) là giả định; thời gian dự kiến tổng 15 phút theo bảng thời gian/câu của gen/core.py."
+ ],
+ "cells": [
+  {
+   "id": "K-01",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "so_cau": 1,
+   "diem": 1.0,
+   "dac_ta": "Thể tích khối chóp/lăng trụ/hộp bằng công thức.",
+   "loai_o": "co-dinh",
+   "chu_de": "hinh-khong-gian-the-tich",
+   "yccd": [
+    "11.TT.1"
+   ],
+   "dang_tx": null,
+   "can_cu": "TN 2017-2024: dạng th.chop/th.lang-tru/th.hop có 13 câu, xuất hiện 8/8 năm (lich-su/tan-suat.md mục HHKG)"
+  },
+  {
+   "id": "K-02",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "so_cau": 1,
+   "diem": 1.0,
+   "dac_ta": "Độ dài đoạn thẳng nhờ quan hệ vuông góc.",
+   "loai_o": "co-dinh",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "yccd": [
+    "11.VG.4"
+   ],
+   "dang_tx": [
+    "qh.vuong-goc"
+   ],
+   "can_cu": "TN 2017-2024: dạng qh.vuong-goc có 0 câu, xuất hiện 0/8 năm (lich-su/tan-suat.md mục HHKG)"
+  },
+  {
+   "id": "K-03",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 1.0,
+   "dac_ta": "Góc giữa đường thẳng và mặt phẳng.",
+   "loai_o": "co-dinh",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "yccd": [
+    "11.VG.1"
+   ],
+   "dang_tx": [
+    "qh.goc"
+   ],
+   "can_cu": "TN 2017-2024: dạng qh.goc có 10 câu, xuất hiện 7/8 năm (lich-su/tan-suat.md mục HHKG)"
+  },
+  {
+   "id": "K-04",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 1.0,
+   "dac_ta": "Góc, khoảng cách hoặc thể tích (xoay vòng theo tần suất dạng HHKG).",
+   "loai_o": "xoay-vong",
+   "nhom": [
+    {
+     "chu_de": "hinh-khong-gian-quan-he",
+     "dang_tx": [
+      "qh.goc"
+     ],
+     "yccd": [
+      "11.VG.1"
+     ],
+     "trong_so": 0.3333,
+     "can_cu": "TN 2017-2024 (8 đề): 10 câu dạng qh.goc (+1 làm trơn)"
+    },
+    {
+     "chu_de": "hinh-khong-gian-quan-he",
+     "dang_tx": [
+      "qh.khoang-cach"
+     ],
+     "yccd": [
+      "11.VG.2",
+      "11.VG.3"
+     ],
+     "trong_so": 0.1818,
+     "can_cu": "TN 2017-2024 (8 đề): 5 câu dạng qh.khoang-cach (+1 làm trơn)"
+    },
+    {
+     "chu_de": "hinh-khong-gian-the-tich",
+     "dang_tx": [
+      "th.chop"
+     ],
+     "yccd": [
+      "11.TT.1",
+      "11.TT.2"
+     ],
+     "trong_so": 0.2424,
+     "can_cu": "TN 2017-2024 (8 đề): 7 câu dạng th.chop (+1 làm trơn)"
+    },
+    {
+     "chu_de": "hinh-khong-gian-the-tich",
+     "dang_tx": [
+      "th.lang-tru"
+     ],
+     "yccd": [
+      "11.TT.1",
+      "11.TT.2"
+     ],
+     "trong_so": 0.1515,
+     "can_cu": "TN 2017-2024 (8 đề): 4 câu dạng th.lang-tru (+1 làm trơn)"
+    },
+    {
+     "chu_de": "hinh-khong-gian-the-tich",
+     "dang_tx": [
+      "th.hop"
+     ],
+     "yccd": [
+      "11.TT.1",
+      "11.TT.2"
+     ],
+     "trong_so": 0.0909,
+     "can_cu": "TN 2017-2024 (8 đề): 2 câu dạng th.hop (+1 làm trơn)"
+    }
+   ]
+  },
+  {
+   "id": "K-05",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 1.0,
+   "dac_ta": "Khoảng cách từ điểm đến mặt phẳng.",
+   "loai_o": "co-dinh",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "yccd": [
+    "11.VG.2"
+   ],
+   "dang_tx": [
+    "qh.khoang-cach"
+   ],
+   "can_cu": "TN 2017-2024: dạng qh.khoang-cach có 5 câu, xuất hiện 4/8 năm (lich-su/tan-suat.md mục HHKG)"
+  },
+  {
+   "id": "K-06",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "so_cau": 1,
+   "diem": 1.0,
+   "dac_ta": "Vận dụng: khoảng cách hai đường chéo nhau hoặc góc phức hợp.",
+   "loai_o": "xoay-vong",
+   "nhom": [
+    {
+     "chu_de": "hinh-khong-gian-quan-he",
+     "dang_tx": [
+      "qh.khoang-cach"
+     ],
+     "yccd": [
+      "11.VG.2",
+      "11.VG.3"
+     ],
+     "trong_so": 0.3529,
+     "can_cu": "TN 2017-2024 (8 đề): 5 câu dạng qh.khoang-cach (+1 làm trơn)"
+    },
+    {
+     "chu_de": "hinh-khong-gian-quan-he",
+     "dang_tx": [
+      "qh.goc"
+     ],
+     "yccd": [
+      "11.VG.1"
+     ],
+     "trong_so": 0.6471,
+     "can_cu": "TN 2017-2024 (8 đề): 10 câu dạng qh.goc (+1 làm trơn)"
+    }
+   ]
+  },
+  {
+   "id": "K-07",
+   "phan": "P2",
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "so_cau": 1,
+   "diem": 2.0,
+   "dac_ta": "Thể tích khối lăng trụ/hộp (đáp số số).",
+   "loai_o": "xoay-vong",
+   "nhom": [
+    {
+     "chu_de": "hinh-khong-gian-the-tich",
+     "dang_tx": [
+      "th.lang-tru"
+     ],
+     "yccd": [
+      "11.TT.1"
+     ],
+     "trong_so": 0.625,
+     "can_cu": "TN 2017-2024 (8 đề): 4 câu dạng th.lang-tru (+1 làm trơn)"
+    },
+    {
+     "chu_de": "hinh-khong-gian-the-tich",
+     "dang_tx": [
+      "th.hop"
+     ],
+     "yccd": [
+      "11.TT.1"
+     ],
+     "trong_so": 0.375,
+     "can_cu": "TN 2017-2024 (8 đề): 2 câu dạng th.hop (+1 làm trơn)"
+    }
+   ]
+  },
+  {
+   "id": "K-08",
+   "phan": "P2",
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "so_cau": 1,
+   "diem": 2.0,
+   "dac_ta": "Tính khoảng cách (đáp số làm tròn).",
+   "loai_o": "co-dinh",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "yccd": [
+    "11.VG.2",
+    "11.VG.3"
+   ],
+   "dang_tx": [
+    "qh.khoang-cach"
+   ],
+   "can_cu": "TN 2017-2024: dạng qh.khoang-cach có 5 câu, xuất hiện 4/8 năm (lich-su/tan-suat.md mục HHKG)"
+  }
+ ],
+ "phien_ban": "v1.0 · 27/11/2026",
+ "bang": [
+  {
+   "chu_de": "hinh-khong-gian-the-tich",
+   "o": {
+    "tn4|NB": 1.0,
+    "tn4|TH": 0.4848,
+    "tra-loi-ngan|NB": 1.0
+   },
+   "tong_cau_ki_vong": 2.4848
+  },
+  {
+   "chu_de": "hinh-khong-gian-quan-he",
+   "o": {
+    "tn4|NB": 1.0,
+    "tn4|TH": 2.5151,
+    "tn4|VD": 1.0,
+    "tra-loi-ngan|VD": 1.0
+   },
+   "tong_cau_ki_vong": 5.5151
+  }
+ ],
+ "tong_cau": 8
+}

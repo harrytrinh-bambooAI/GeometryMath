@@ -1,0 +1,105 @@
+{
+ "id": "MC-HH-H05",
+ "ten": "Góc giữa đường sinh và đường cao hình nón",
+ "chu_de": "khoi-tron-xoay",
+ "dang": "non.goc-dinh",
+ "dang_tx": "tx.non",
+ "yccd": [
+  "12.TX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "HR",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-47",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-47 + geometry/problem-specs.json#HKN-47"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "r": 3,
+    "l": 6
+   },
+   {
+    "r": 5,
+    "l": 10
+   },
+   {
+    "r": 3,
+    "l": 5
+   },
+   {
+    "r": 5,
+    "l": 13
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình nón có bán kính đáy $r={r}$ cm và độ dài đường sinh $l={l}$ cm. Gọi $S$ là đỉnh, $O$ là tâm đáy và $M$ là một điểm trên đường tròn đáy.",
+ "hoi": "Góc $\\widehat{OSM}$ giữa đường sinh và đường cao bằng",
+ "dap_so": "asin(r/l)*180/pi",
+ "don_vi": "do",
+ "nhieu": [
+  {
+   "bieu_thuc": "90-asin(r/l)*180/pi",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy góc $\\widehat{SMO}$ (góc giữa đường sinh và đáy)"
+   }
+  },
+  {
+   "bieu_thuc": "atan(r/l)*180/pi",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng $\\tan=\\dfrac{OM}{SM}$ ($SM$ là cạnh huyền)"
+   }
+  },
+  {
+   "bieu_thuc": "2*asin(r/l)*180/pi",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy góc ở đỉnh của thiết diện qua trục"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-47",
+  "ask": 0,
+  "params": {
+   "r": "r",
+   "l": "l"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "r": "3",
+   "l": "6"
+  },
+  {
+   "r": "5",
+   "l": "10"
+  },
+  {
+   "r": "3",
+   "l": "5"
+  },
+  {
+   "r": "5",
+   "l": "13"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 6,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

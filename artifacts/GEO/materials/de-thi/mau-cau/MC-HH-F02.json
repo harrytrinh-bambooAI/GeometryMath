@@ -1,0 +1,118 @@
+{
+ "id": "MC-HH-F02",
+ "ten": "Góc giữa B'C và đáy",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "goc-dt-mp.lang-tru-dung",
+ "dang_tx": "qh.goc",
+ "yccd": [
+  "11.VG.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "F",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-35",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-35 + geometry/problem-specs.json#HKN-35"
+ },
+ "tham_so": {
+  "q": [
+   "1",
+   "sqrt(3)"
+  ],
+  "k": [
+   "1",
+   "2",
+   "sqrt(2)",
+   "2*sqrt(3)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "b": "q*a",
+  "h": "k*a",
+  "BC": "sqrt(a**2+b**2)"
+ },
+ "boi_canh": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC={b}$ và $AA'={h}$.",
+ "hoi": "Góc giữa đường thẳng $B'C$ và mặt phẳng $(ABC)$ bằng",
+ "dap_so": "atan(h/BC)*180/pi",
+ "don_vi": "do",
+ "nhieu": [
+  {
+   "bieu_thuc": "90-atan(h/BC)*180/pi",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy góc $\\widehat{CB'B}$"
+   }
+  },
+  {
+   "bieu_thuc": "atan(h/b)*180/pi",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Dùng $AC$ thay cho hình chiếu $BC$"
+   }
+  },
+  {
+   "bieu_thuc": "atan(h/a)*180/pi",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Dùng $AB$ thay cho $BC$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-35",
+  "ask": 0,
+  "params": {
+   "ab": "a",
+   "ac": "b",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "q": "1",
+   "k": "1"
+  },
+  {
+   "q": "1",
+   "k": "2"
+  },
+  {
+   "q": "1",
+   "k": "sqrt(2)"
+  },
+  {
+   "q": "1",
+   "k": "2*sqrt(3)"
+  },
+  {
+   "q": "sqrt(3)",
+   "k": "1"
+  },
+  {
+   "q": "sqrt(3)",
+   "k": "2"
+  },
+  {
+   "q": "sqrt(3)",
+   "k": "sqrt(2)"
+  },
+  {
+   "q": "sqrt(3)",
+   "k": "2*sqrt(3)"
+  }
+ ],
+ "so_bien_the": 8,
+ "so_cau_sinh": 10,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

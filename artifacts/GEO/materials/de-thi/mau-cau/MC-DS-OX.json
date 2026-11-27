@@ -1,0 +1,157 @@
+{
+ "id": "MC-DS-OX",
+ "ten": "Đúng/sai: mặt cầu và mặt phẳng",
+ "chu_de": "oxyz-mat-cau",
+ "dang": "ds.mat-cau-mat-phang",
+ "dang_tx": "ox.mc-vdc",
+ "yccd": [
+  "12.OX.4",
+  "12.OX.2"
+ ],
+ "lop": 12,
+ "ho_hinh": "MC-DS-OX",
+ "tham_so": {
+  "_bo": [
+   {
+    "i1": 1,
+    "i2": -2,
+    "i3": 3,
+    "R": 5,
+    "dd": 4
+   },
+   {
+    "i1": 2,
+    "i2": 1,
+    "i3": -1,
+    "R": 3,
+    "dd": -6
+   },
+   {
+    "i1": 0,
+    "i2": 3,
+    "i3": 1,
+    "R": 4,
+    "dd": -2
+   },
+   {
+    "i1": -1,
+    "i2": 2,
+    "i3": 2,
+    "R": 5,
+    "dd": 7
+   }
+  ]
+ },
+ "dan_xuat": {
+  "X": "(x-i1)**2",
+  "Y": "(y-i2)**2",
+  "Z": "(z-i3)**2",
+  "RR": "R**2",
+  "mp": "x+2*y+2*z+dd",
+  "dist": "Abs(i1+2*i2+2*i3+dd)/3"
+ },
+ "boi_canh": "Trong không gian $Oxyz$, cho mặt cầu $(S):{X:nguyen}+{Y:nguyen}+{Z:nguyen}={RR}$ và mặt phẳng $(P):{mp}=0$.",
+ "y": [
+  {
+   "menh_de": "Mặt cầu $(S)$ có tâm $I{v}$.",
+   "dap_so": "Tuple(i1,i2,i3)",
+   "muc_do": "NB",
+   "kieu": "vecto",
+   "nhieu": [
+    {
+     "bieu_thuc": "Tuple(-i1,-i2,-i3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy sai dấu tọa độ tâm"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Mặt cầu $(S)$ có bán kính bằng ${v}$.",
+   "dap_so": "R",
+   "muc_do": "NB",
+   "nhieu": [
+    {
+     "bieu_thuc": "R**2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai của vế phải"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Khoảng cách từ tâm $I$ đến $(P)$ bằng ${v}$.",
+   "dap_so": "dist",
+   "muc_do": "TH",
+   "nhieu": [
+    {
+     "bieu_thuc": "Abs(i1+2*i2+2*i3+dd)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho độ dài vectơ pháp tuyến"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "$(P)$ cắt $(S)$ theo một đường tròn có bán kính bằng ${v}$.",
+   "dap_so": "sqrt(R**2-dist**2)",
+   "muc_do": "VD",
+   "nhieu": [
+    {
+     "bieu_thuc": "R-dist",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hiệu $R-d$ thay vì dùng định lí Pythagore"
+     }
+    }
+   ]
+  }
+ ],
+ "rang_buoc": [
+  "dist<R"
+ ],
+ "loai_mau": "dung-sai",
+ "loai_cau": [
+  "dung-sai"
+ ],
+ "bien_the": [
+  {
+   "i1": "1",
+   "i2": "-2",
+   "i3": "3",
+   "R": "5",
+   "dd": "4"
+  },
+  {
+   "i1": "2",
+   "i2": "1",
+   "i3": "-1",
+   "R": "3",
+   "dd": "-6"
+  },
+  {
+   "i1": "0",
+   "i2": "3",
+   "i3": "1",
+   "R": "4",
+   "dd": "-2"
+  },
+  {
+   "i1": "-1",
+   "i2": "2",
+   "i3": "2",
+   "R": "5",
+   "dd": "7"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 4,
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-DS-OX"
+ },
+ "phien_ban": "v1.0 · 27/11/2026"
+}

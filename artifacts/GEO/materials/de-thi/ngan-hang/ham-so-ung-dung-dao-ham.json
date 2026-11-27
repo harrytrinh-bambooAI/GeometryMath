@@ -1,0 +1,2772 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "ham-so-ung-dung-dao-ham",
+ "so_cau": 43,
+ "cau": [
+  {
+   "id": "MC-HS-02.TLN.0",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "1",
+    "q": "1"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-02|p=1,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 3x + 1$. Giá trị cực đại của hàm số bằng bao nhiêu?",
+   "dap_an": "3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.0,
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.477,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TN.1",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "1",
+    "q": "5"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-02|p=1,q=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 3x + 5$. Giá trị cực đại của hàm số bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "7",
+     "dung": true
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "-1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_an": "7",
+   "nhieu": [
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "-1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "7",
+    "so": 7.0
+   },
+   "do_kho": 0.36,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TLN.1",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "1",
+    "q": "5"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-02|p=1,q=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 3x + 5$. Giá trị cực đại của hàm số bằng bao nhiêu?",
+   "dap_an": "7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 7.0,
+   "dap_so": {
+    "gia_tri": "7",
+    "so": 7.0
+   },
+   "do_kho": 0.449,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TLN.2",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "1",
+    "q": "-3"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-02|p=1,q=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 3x - 3$. Giá trị cực đại của hàm số bằng bao nhiêu?",
+   "dap_an": "-1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -1.0,
+   "dap_so": {
+    "gia_tri": "-1",
+    "so": -1.0
+   },
+   "do_kho": 0.474,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TN.3",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "4",
+    "q": "1"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-02|p=4,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 12x + 1$. Giá trị cực đại của hàm số bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "17",
+     "dung": true
+    },
+    {
+     "noi_dung": "-15",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "-2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_an": "17",
+   "nhieu": [
+    {
+     "phuong_an": "-15",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "-2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "17",
+    "so": 17.0
+   },
+   "do_kho": 0.365,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TLN.3",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "4",
+    "q": "1"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-02|p=4,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 12x + 1$. Giá trị cực đại của hàm số bằng bao nhiêu?",
+   "dap_an": "17",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 17.0,
+   "dap_so": {
+    "gia_tri": "17",
+    "so": 17.0
+   },
+   "do_kho": 0.47,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TN.4",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "4",
+    "q": "5"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-02|p=4,q=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 12x + 5$. Giá trị cực đại của hàm số bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "21",
+     "dung": true
+    },
+    {
+     "noi_dung": "-11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "-2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "13",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_an": "21",
+   "nhieu": [
+    {
+     "phuong_an": "-11",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "-2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "13",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "21",
+    "so": 21.0
+   },
+   "do_kho": 0.341,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TLN.4",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "4",
+    "q": "5"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-02|p=4,q=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 12x + 5$. Giá trị cực đại của hàm số bằng bao nhiêu?",
+   "dap_an": "21",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 21.0,
+   "dap_so": {
+    "gia_tri": "21",
+    "so": 21.0
+   },
+   "do_kho": 0.471,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TN.5",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "4",
+    "q": "-3"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-02|p=4,q=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 12x - 3$. Giá trị cực đại của hàm số bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "13",
+     "dung": true
+    },
+    {
+     "noi_dung": "-19",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "-2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_an": "13",
+   "nhieu": [
+    {
+     "phuong_an": "-19",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "-2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "13",
+    "so": 13.0
+   },
+   "do_kho": 0.343,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TLN.5",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "4",
+    "q": "-3"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-02|p=4,q=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 12x - 3$. Giá trị cực đại của hàm số bằng bao nhiêu?",
+   "dap_an": "13",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 13.0,
+   "dap_so": {
+    "gia_tri": "13",
+    "so": 13.0
+   },
+   "do_kho": 0.438,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TN.6",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "9",
+    "q": "1"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-02|p=9,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 27x + 1$. Giá trị cực đại của hàm số bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "55",
+     "dung": true
+    },
+    {
+     "noi_dung": "-53",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "28",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_an": "55",
+   "nhieu": [
+    {
+     "phuong_an": "-53",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "28",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "55",
+    "so": 55.0
+   },
+   "do_kho": 0.365,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TLN.6",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "9",
+    "q": "1"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-02|p=9,q=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 27x + 1$. Giá trị cực đại của hàm số bằng bao nhiêu?",
+   "dap_an": "55",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 55.0,
+   "dap_so": {
+    "gia_tri": "55",
+    "so": 55.0
+   },
+   "do_kho": 0.443,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TN.7",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "9",
+    "q": "5"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-02|p=9,q=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 27x + 5$. Giá trị cực đại của hàm số bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "59",
+     "dung": true
+    },
+    {
+     "noi_dung": "-49",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "32",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_an": "59",
+   "nhieu": [
+    {
+     "phuong_an": "-49",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "32",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "59",
+    "so": 59.0
+   },
+   "do_kho": 0.33,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TLN.7",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "9",
+    "q": "5"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-02|p=9,q=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 27x + 5$. Giá trị cực đại của hàm số bằng bao nhiêu?",
+   "dap_an": "59",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 59.0,
+   "dap_so": {
+    "gia_tri": "59",
+    "so": 59.0
+   },
+   "do_kho": 0.472,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TN.8",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "9",
+    "q": "-3"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-02|p=9,q=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 27x - 3$. Giá trị cực đại của hàm số bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "51",
+     "dung": true
+    },
+    {
+     "noi_dung": "-57",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "noi_dung": "24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_an": "51",
+   "nhieu": [
+    {
+     "phuong_an": "-57",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực tiểu với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm điểm cực đại với giá trị cực đại"
+     }
+    },
+    {
+     "phuong_an": "24",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $(-\\sqrt p)^3$ khi thay vào hàm số"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "51",
+    "so": 51.0
+   },
+   "do_kho": 0.376,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-02.TLN.8",
+   "mau_cau": "MC-HS-02",
+   "bien_the": {
+    "p": "9",
+    "q": "-3"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gia-tri-cuc-dai",
+   "dang_tx": "hs.cuc-tri-f'",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1"
+   ],
+   "kien_thuc": [
+    "Giá trị cực đại của hàm bậc ba"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-02|p=9,q=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-02"
+   },
+   "de_bai": "Cho hàm số $y=x^{3} - 27x - 3$. Giá trị cực đại của hàm số bằng bao nhiêu?",
+   "dap_an": "51",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 51.0,
+   "dap_so": {
+    "gia_tri": "51",
+    "so": 51.0
+   },
+   "do_kho": 0.447,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-03.TLN.0",
+   "mau_cau": "MC-HS-03",
+   "bien_the": {
+    "c": "1",
+    "n": "2"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gtnn-doan",
+   "dang_tx": "hs.gtln-doan",
+   "lop": 12,
+   "yccd": [
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "GTNN của hàm bậc ba trên đoạn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-03|c=1,n=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-03"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x + 1$. Giá trị nhỏ nhất của $f(x)$ trên đoạn $[0;2]$ bằng bao nhiêu?",
+   "dap_an": "-1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -1.0,
+   "dap_so": {
+    "gia_tri": "-1",
+    "so": -1.0
+   },
+   "do_kho": 0.461,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-03.TN.1",
+   "mau_cau": "MC-HS-03",
+   "bien_the": {
+    "c": "1",
+    "n": "3"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gtnn-doan",
+   "dang_tx": "hs.gtln-doan",
+   "lop": 12,
+   "yccd": [
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "GTNN của hàm bậc ba trên đoạn"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-03|c=1,n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-03"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x + 1$. Giá trị nhỏ nhất của $f(x)$ trên đoạn $[0;3]$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-1",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ so sánh giá trị tại hai đầu mút"
+     }
+    },
+    {
+     "noi_dung": "19",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang giá trị lớn nhất"
+     }
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $f(1)$"
+     }
+    }
+   ],
+   "dap_an": "-1",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ so sánh giá trị tại hai đầu mút"
+     }
+    },
+    {
+     "phuong_an": "19",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang giá trị lớn nhất"
+     }
+    },
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $f(1)$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-1",
+    "so": -1.0
+   },
+   "do_kho": 0.328,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-03.TLN.1",
+   "mau_cau": "MC-HS-03",
+   "bien_the": {
+    "c": "1",
+    "n": "3"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gtnn-doan",
+   "dang_tx": "hs.gtln-doan",
+   "lop": 12,
+   "yccd": [
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "GTNN của hàm bậc ba trên đoạn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-03|c=1,n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-03"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x + 1$. Giá trị nhỏ nhất của $f(x)$ trên đoạn $[0;3]$ bằng bao nhiêu?",
+   "dap_an": "-1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -1.0,
+   "dap_so": {
+    "gia_tri": "-1",
+    "so": -1.0
+   },
+   "do_kho": 0.443,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-03.TLN.2",
+   "mau_cau": "MC-HS-03",
+   "bien_the": {
+    "c": "5",
+    "n": "2"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gtnn-doan",
+   "dang_tx": "hs.gtln-doan",
+   "lop": 12,
+   "yccd": [
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "GTNN của hàm bậc ba trên đoạn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-03|c=5,n=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-03"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x + 5$. Giá trị nhỏ nhất của $f(x)$ trên đoạn $[0;2]$ bằng bao nhiêu?",
+   "dap_an": "3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.0,
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.421,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-03.TN.3",
+   "mau_cau": "MC-HS-03",
+   "bien_the": {
+    "c": "5",
+    "n": "3"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gtnn-doan",
+   "dang_tx": "hs.gtln-doan",
+   "lop": 12,
+   "yccd": [
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "GTNN của hàm bậc ba trên đoạn"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-03|c=5,n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-03"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x + 5$. Giá trị nhỏ nhất của $f(x)$ trên đoạn $[0;3]$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "3",
+     "dung": true
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ so sánh giá trị tại hai đầu mút"
+     }
+    },
+    {
+     "noi_dung": "23",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang giá trị lớn nhất"
+     }
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $f(1)$"
+     }
+    }
+   ],
+   "dap_an": "3",
+   "nhieu": [
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ so sánh giá trị tại hai đầu mút"
+     }
+    },
+    {
+     "phuong_an": "23",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang giá trị lớn nhất"
+     }
+    },
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $f(1)$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.353,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-03.TLN.3",
+   "mau_cau": "MC-HS-03",
+   "bien_the": {
+    "c": "5",
+    "n": "3"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gtnn-doan",
+   "dang_tx": "hs.gtln-doan",
+   "lop": 12,
+   "yccd": [
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "GTNN của hàm bậc ba trên đoạn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-03|c=5,n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-03"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x + 5$. Giá trị nhỏ nhất của $f(x)$ trên đoạn $[0;3]$ bằng bao nhiêu?",
+   "dap_an": "3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.0,
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.431,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-03.TLN.4",
+   "mau_cau": "MC-HS-03",
+   "bien_the": {
+    "c": "-3",
+    "n": "2"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gtnn-doan",
+   "dang_tx": "hs.gtln-doan",
+   "lop": 12,
+   "yccd": [
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "GTNN của hàm bậc ba trên đoạn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-03|c=-3,n=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-03"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x - 3$. Giá trị nhỏ nhất của $f(x)$ trên đoạn $[0;2]$ bằng bao nhiêu?",
+   "dap_an": "-5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -5.0,
+   "dap_so": {
+    "gia_tri": "-5",
+    "so": -5.0
+   },
+   "do_kho": 0.431,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-03.TN.5",
+   "mau_cau": "MC-HS-03",
+   "bien_the": {
+    "c": "-3",
+    "n": "3"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gtnn-doan",
+   "dang_tx": "hs.gtln-doan",
+   "lop": 12,
+   "yccd": [
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "GTNN của hàm bậc ba trên đoạn"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-03|c=-3,n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-03"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x - 3$. Giá trị nhỏ nhất của $f(x)$ trên đoạn $[0;3]$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-5",
+     "dung": true
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ so sánh giá trị tại hai đầu mút"
+     }
+    },
+    {
+     "noi_dung": "15",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang giá trị lớn nhất"
+     }
+    },
+    {
+     "noi_dung": "-1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $f(1)$"
+     }
+    }
+   ],
+   "dap_an": "-5",
+   "nhieu": [
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ so sánh giá trị tại hai đầu mút"
+     }
+    },
+    {
+     "phuong_an": "15",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang giá trị lớn nhất"
+     }
+    },
+    {
+     "phuong_an": "-1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính sai $f(1)$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-5",
+    "so": -5.0
+   },
+   "do_kho": 0.372,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-03.TLN.5",
+   "mau_cau": "MC-HS-03",
+   "bien_the": {
+    "c": "-3",
+    "n": "3"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.gtnn-doan",
+   "dang_tx": "hs.gtln-doan",
+   "lop": 12,
+   "yccd": [
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "GTNN của hàm bậc ba trên đoạn"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-03|c=-3,n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-03"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x - 3$. Giá trị nhỏ nhất của $f(x)$ trên đoạn $[0;3]$ bằng bao nhiêu?",
+   "dap_an": "-5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -5.0,
+   "dap_so": {
+    "gia_tri": "-5",
+    "so": -5.0
+   },
+   "do_kho": 0.422,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-04.TN.0",
+   "mau_cau": "MC-HS-04",
+   "bien_the": {
+    "Lc": "6"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.toi-uu-hop",
+   "dang_tx": "hs.toi-uu",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Hộp không nắp có thể tích lớn nhất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-04|Lc=6",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-04"
+   },
+   "de_bai": "Từ một tấm bìa hình vuông cạnh $6$ cm, người ta cắt bỏ bốn hình vuông bằng nhau ở bốn góc rồi gấp lại thành một chiếc hộp không nắp. Thể tích lớn nhất của chiếc hộp (đơn vị $\\text{cm}^3$) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "16",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{27}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L4$ (trung điểm miền) thay vì giải $V'(x)=0$"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L3$"
+     }
+    },
+    {
+     "noi_dung": "32",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lập sai thể tích $V=x(L-x)^2$ (chỉ trừ một lần)"
+     }
+    }
+   ],
+   "dap_an": "16",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{27}{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L4$ (trung điểm miền) thay vì giải $V'(x)=0$"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L3$"
+     }
+    },
+    {
+     "phuong_an": "32",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lập sai thể tích $V=x(L-x)^2$ (chỉ trừ một lần)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "16",
+    "so": 16.0
+   },
+   "do_kho": 0.529,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-04.TLN.0",
+   "mau_cau": "MC-HS-04",
+   "bien_the": {
+    "Lc": "6"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.toi-uu-hop",
+   "dang_tx": "hs.toi-uu",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Hộp không nắp có thể tích lớn nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-04|Lc=6",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-04"
+   },
+   "de_bai": "Từ một tấm bìa hình vuông cạnh $6$ cm, người ta cắt bỏ bốn hình vuông bằng nhau ở bốn góc rồi gấp lại thành một chiếc hộp không nắp. Thể tích lớn nhất của chiếc hộp (đơn vị $\\text{cm}^3$) bằng bao nhiêu?",
+   "dap_an": "16",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 16.0,
+   "dap_so": {
+    "gia_tri": "16",
+    "so": 16.0
+   },
+   "do_kho": 0.671,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-04.TN.1",
+   "mau_cau": "MC-HS-04",
+   "bien_the": {
+    "Lc": "12"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.toi-uu-hop",
+   "dang_tx": "hs.toi-uu",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Hộp không nắp có thể tích lớn nhất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-04|Lc=12",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-04"
+   },
+   "de_bai": "Từ một tấm bìa hình vuông cạnh $12$ cm, người ta cắt bỏ bốn hình vuông bằng nhau ở bốn góc rồi gấp lại thành một chiếc hộp không nắp. Thể tích lớn nhất của chiếc hộp (đơn vị $\\text{cm}^3$) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "128",
+     "dung": true
+    },
+    {
+     "noi_dung": "108",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L4$ (trung điểm miền) thay vì giải $V'(x)=0$"
+     }
+    },
+    {
+     "noi_dung": "64",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L3$"
+     }
+    },
+    {
+     "noi_dung": "256",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lập sai thể tích $V=x(L-x)^2$ (chỉ trừ một lần)"
+     }
+    }
+   ],
+   "dap_an": "128",
+   "nhieu": [
+    {
+     "phuong_an": "108",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L4$ (trung điểm miền) thay vì giải $V'(x)=0$"
+     }
+    },
+    {
+     "phuong_an": "64",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L3$"
+     }
+    },
+    {
+     "phuong_an": "256",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lập sai thể tích $V=x(L-x)^2$ (chỉ trừ một lần)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "128",
+    "so": 128.0
+   },
+   "do_kho": 0.546,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-04.TLN.1",
+   "mau_cau": "MC-HS-04",
+   "bien_the": {
+    "Lc": "12"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.toi-uu-hop",
+   "dang_tx": "hs.toi-uu",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Hộp không nắp có thể tích lớn nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-04|Lc=12",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-04"
+   },
+   "de_bai": "Từ một tấm bìa hình vuông cạnh $12$ cm, người ta cắt bỏ bốn hình vuông bằng nhau ở bốn góc rồi gấp lại thành một chiếc hộp không nắp. Thể tích lớn nhất của chiếc hộp (đơn vị $\\text{cm}^3$) bằng bao nhiêu?",
+   "dap_an": "128",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 128.0,
+   "dap_so": {
+    "gia_tri": "128",
+    "so": 128.0
+   },
+   "do_kho": 0.679,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-04.TN.2",
+   "mau_cau": "MC-HS-04",
+   "bien_the": {
+    "Lc": "18"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.toi-uu-hop",
+   "dang_tx": "hs.toi-uu",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Hộp không nắp có thể tích lớn nhất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-04|Lc=18",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-04"
+   },
+   "de_bai": "Từ một tấm bìa hình vuông cạnh $18$ cm, người ta cắt bỏ bốn hình vuông bằng nhau ở bốn góc rồi gấp lại thành một chiếc hộp không nắp. Thể tích lớn nhất của chiếc hộp (đơn vị $\\text{cm}^3$) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "432",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{729}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L4$ (trung điểm miền) thay vì giải $V'(x)=0$"
+     }
+    },
+    {
+     "noi_dung": "216",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L3$"
+     }
+    },
+    {
+     "noi_dung": "864",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lập sai thể tích $V=x(L-x)^2$ (chỉ trừ một lần)"
+     }
+    }
+   ],
+   "dap_an": "432",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{729}{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L4$ (trung điểm miền) thay vì giải $V'(x)=0$"
+     }
+    },
+    {
+     "phuong_an": "216",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L3$"
+     }
+    },
+    {
+     "phuong_an": "864",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lập sai thể tích $V=x(L-x)^2$ (chỉ trừ một lần)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "432",
+    "so": 432.0
+   },
+   "do_kho": 0.535,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-04.TLN.2",
+   "mau_cau": "MC-HS-04",
+   "bien_the": {
+    "Lc": "18"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.toi-uu-hop",
+   "dang_tx": "hs.toi-uu",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Hộp không nắp có thể tích lớn nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-04|Lc=18",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-04"
+   },
+   "de_bai": "Từ một tấm bìa hình vuông cạnh $18$ cm, người ta cắt bỏ bốn hình vuông bằng nhau ở bốn góc rồi gấp lại thành một chiếc hộp không nắp. Thể tích lớn nhất của chiếc hộp (đơn vị $\\text{cm}^3$) bằng bao nhiêu?",
+   "dap_an": "432",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 432.0,
+   "dap_so": {
+    "gia_tri": "432",
+    "so": 432.0
+   },
+   "do_kho": 0.674,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-04.TN.3",
+   "mau_cau": "MC-HS-04",
+   "bien_the": {
+    "Lc": "30"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.toi-uu-hop",
+   "dang_tx": "hs.toi-uu",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Hộp không nắp có thể tích lớn nhất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-HS-04|Lc=30",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-04"
+   },
+   "de_bai": "Từ một tấm bìa hình vuông cạnh $30$ cm, người ta cắt bỏ bốn hình vuông bằng nhau ở bốn góc rồi gấp lại thành một chiếc hộp không nắp. Thể tích lớn nhất của chiếc hộp (đơn vị $\\text{cm}^3$) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2000",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{3375}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L4$ (trung điểm miền) thay vì giải $V'(x)=0$"
+     }
+    },
+    {
+     "noi_dung": "1000",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L3$"
+     }
+    },
+    {
+     "noi_dung": "4000",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lập sai thể tích $V=x(L-x)^2$ (chỉ trừ một lần)"
+     }
+    }
+   ],
+   "dap_an": "2000",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{3375}{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L4$ (trung điểm miền) thay vì giải $V'(x)=0$"
+     }
+    },
+    {
+     "phuong_an": "1000",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chọn cạnh cắt $x=\\dfrac L3$"
+     }
+    },
+    {
+     "phuong_an": "4000",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lập sai thể tích $V=x(L-x)^2$ (chỉ trừ một lần)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2000",
+    "so": 2000.0
+   },
+   "do_kho": 0.524,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-04.TLN.3",
+   "mau_cau": "MC-HS-04",
+   "bien_the": {
+    "Lc": "30"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.toi-uu-hop",
+   "dang_tx": "hs.toi-uu",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Hộp không nắp có thể tích lớn nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-04|Lc=30",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-04"
+   },
+   "de_bai": "Từ một tấm bìa hình vuông cạnh $30$ cm, người ta cắt bỏ bốn hình vuông bằng nhau ở bốn góc rồi gấp lại thành một chiếc hộp không nắp. Thể tích lớn nhất của chiếc hộp (đơn vị $\\text{cm}^3$) bằng bao nhiêu?",
+   "dap_an": "2000",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2000.0,
+   "dap_so": {
+    "gia_tri": "2000",
+    "so": 2000.0
+   },
+   "do_kho": 0.677,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-05.TLN.0",
+   "mau_cau": "MC-HS-05",
+   "bien_the": {
+    "pp": "100",
+    "kk": "1",
+    "cc": "40",
+    "F": "500"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.mo-hinh-loi-nhuan",
+   "dang_tx": "hs.mo-hinh",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Lợi nhuận lớn nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-05|F=500,cc=40,kk=1,pp=100",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-05"
+   },
+   "de_bai": "Một xưởng bán $x$ sản phẩm với giá $(100 - x)$ nghìn đồng mỗi sản phẩm; chi phí sản xuất là $(40x + 500)$ nghìn đồng. Lợi nhuận lớn nhất (nghìn đồng) bằng bao nhiêu?",
+   "dap_an": "400",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 400.0,
+   "dap_so": {
+    "gia_tri": "400",
+    "so": 400.0
+   },
+   "do_kho": 0.654,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-05.TLN.1",
+   "mau_cau": "MC-HS-05",
+   "bien_the": {
+    "pp": "80",
+    "kk": "2",
+    "cc": "20",
+    "F": "200"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.mo-hinh-loi-nhuan",
+   "dang_tx": "hs.mo-hinh",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Lợi nhuận lớn nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-05|F=200,cc=20,kk=2,pp=80",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-05"
+   },
+   "de_bai": "Một xưởng bán $x$ sản phẩm với giá $(80 - 2x)$ nghìn đồng mỗi sản phẩm; chi phí sản xuất là $(20x + 200)$ nghìn đồng. Lợi nhuận lớn nhất (nghìn đồng) bằng bao nhiêu?",
+   "dap_an": "250",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 250.0,
+   "dap_so": {
+    "gia_tri": "250",
+    "so": 250.0
+   },
+   "do_kho": 0.649,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-05.TLN.2",
+   "mau_cau": "MC-HS-05",
+   "bien_the": {
+    "pp": "120",
+    "kk": "1",
+    "cc": "60",
+    "F": "600"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.mo-hinh-loi-nhuan",
+   "dang_tx": "hs.mo-hinh",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Lợi nhuận lớn nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-05|F=600,cc=60,kk=1,pp=120",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-05"
+   },
+   "de_bai": "Một xưởng bán $x$ sản phẩm với giá $(120 - x)$ nghìn đồng mỗi sản phẩm; chi phí sản xuất là $(60x + 600)$ nghìn đồng. Lợi nhuận lớn nhất (nghìn đồng) bằng bao nhiêu?",
+   "dap_an": "300",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 300.0,
+   "dap_so": {
+    "gia_tri": "300",
+    "so": 300.0
+   },
+   "do_kho": 0.626,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-HS-05.TLN.3",
+   "mau_cau": "MC-HS-05",
+   "bien_the": {
+    "pp": "90",
+    "kk": "3",
+    "cc": "30",
+    "F": "100"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.mo-hinh-loi-nhuan",
+   "dang_tx": "hs.mo-hinh",
+   "lop": 12,
+   "yccd": [
+    "12.HS.4"
+   ],
+   "kien_thuc": [
+    "Lợi nhuận lớn nhất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-HS-05|F=100,cc=30,kk=3,pp=90",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-HS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-HS-05"
+   },
+   "de_bai": "Một xưởng bán $x$ sản phẩm với giá $(90 - 3x)$ nghìn đồng mỗi sản phẩm; chi phí sản xuất là $(30x + 100)$ nghìn đồng. Lợi nhuận lớn nhất (nghìn đồng) bằng bao nhiêu?",
+   "dap_an": "200",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 200.0,
+   "dap_so": {
+    "gia_tri": "200",
+    "so": 200.0
+   },
+   "do_kho": 0.679,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-HS.DS.0",
+   "mau_cau": "MC-DS-HS",
+   "bien_the": {
+    "m": "1",
+    "c": "1"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "ds.ham-bac-ba",
+   "dang_tx": "hs.dao-ham-dung-sai",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1",
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hàm bậc ba"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-HS|c=1,m=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-HS",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-HS"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x^{2} + 1$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "$f'(1)=0$.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "-3",
+     "so": -3.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy đạo hàm của $3mx^2$ là $3mx$"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Hàm số nghịch biến trên khoảng $(0;2)$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "2",
+     "so": 2.0
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Giá trị cực tiểu của hàm số bằng $-3$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "-3",
+     "so": -3.0
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Giá trị lớn nhất của $f(x)$ trên đoạn $[-1;1]$ bằng $1$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "1",
+     "so": 1.0
+    }
+   ],
+   "dap_an": "a) S; b) Đ; c) Đ; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "a) $f'(1)=0$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy đạo hàm của $3mx^2$ là $3mx$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) Đ; c) Đ; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.605,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-HS.DS.1",
+   "mau_cau": "MC-DS-HS",
+   "bien_the": {
+    "m": "1",
+    "c": "4"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "ds.ham-bac-ba",
+   "dang_tx": "hs.dao-ham-dung-sai",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1",
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hàm bậc ba"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-HS|c=4,m=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-HS",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-HS"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x^{2} + 4$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "$f'(1)=-3$.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "-3",
+     "so": -3.0
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Hàm số nghịch biến trên khoảng $(0;2)$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "2",
+     "so": 2.0
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Giá trị cực tiểu của hàm số bằng $4$.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "0",
+     "so": 0.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực đại $f(0)$ với giá trị cực tiểu"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Giá trị lớn nhất của $f(x)$ trên đoạn $[-1;1]$ bằng $2$.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "4",
+     "so": 4.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ lấy giá trị tại đầu mút phải $f(1)$"
+     }
+    }
+   ],
+   "dap_an": "a) Đ; b) Đ; c) S; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "c) Giá trị cực tiểu của hàm số bằng $4$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực đại $f(0)$ với giá trị cực tiểu"
+     }
+    },
+    {
+     "phuong_an": "d) Giá trị lớn nhất của $f(x)$ trên đoạn $[-1;1]$ bằng $2$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ lấy giá trị tại đầu mút phải $f(1)$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) Đ; c) S; d) S",
+    "so": null
+   },
+   "do_kho": 0.599,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-HS.DS.2",
+   "mau_cau": "MC-DS-HS",
+   "bien_the": {
+    "m": "1",
+    "c": "-2"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "ds.ham-bac-ba",
+   "dang_tx": "hs.dao-ham-dung-sai",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1",
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hàm bậc ba"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-HS|c=-2,m=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-HS",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-HS"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 3x^{2} - 2$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "$f'(1)=0$.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "-3",
+     "so": -3.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy đạo hàm của $3mx^2$ là $3mx$"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Hàm số nghịch biến trên khoảng $(0;1)$.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "2",
+     "so": 2.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $f'(x)=0$ (được $x=m$)"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Giá trị cực tiểu của hàm số bằng $-6$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "-6",
+     "so": -6.0
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Giá trị lớn nhất của $f(x)$ trên đoạn $[-1;1]$ bằng $-2$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "-2",
+     "so": -2.0
+    }
+   ],
+   "dap_an": "a) S; b) S; c) Đ; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "a) $f'(1)=0$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy đạo hàm của $3mx^2$ là $3mx$"
+     }
+    },
+    {
+     "phuong_an": "b) Hàm số nghịch biến trên khoảng $(0;1)$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $f'(x)=0$ (được $x=m$)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) S; c) Đ; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.581,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-HS.DS.3",
+   "mau_cau": "MC-DS-HS",
+   "bien_the": {
+    "m": "2",
+    "c": "1"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "ds.ham-bac-ba",
+   "dang_tx": "hs.dao-ham-dung-sai",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1",
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hàm bậc ba"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-HS|c=1,m=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-HS",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-HS"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 6x^{2} + 1$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "$f'(1)=-9$.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "-9",
+     "so": -9.0
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Hàm số nghịch biến trên khoảng $(0;2)$.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "4",
+     "so": 4.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $f'(x)=0$ (được $x=m$)"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Giá trị cực tiểu của hàm số bằng $1$.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "-31",
+     "so": -31.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực đại $f(0)$ với giá trị cực tiểu"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Giá trị lớn nhất của $f(x)$ trên đoạn $[-1;1]$ bằng $1$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "1",
+     "so": 1.0
+    }
+   ],
+   "dap_an": "a) Đ; b) S; c) S; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "b) Hàm số nghịch biến trên khoảng $(0;2)$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $f'(x)=0$ (được $x=m$)"
+     }
+    },
+    {
+     "phuong_an": "c) Giá trị cực tiểu của hàm số bằng $1$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực đại $f(0)$ với giá trị cực tiểu"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) S; c) S; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.584,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-HS.DS.4",
+   "mau_cau": "MC-DS-HS",
+   "bien_the": {
+    "m": "2",
+    "c": "4"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "ds.ham-bac-ba",
+   "dang_tx": "hs.dao-ham-dung-sai",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1",
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hàm bậc ba"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-HS|c=4,m=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-HS",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-HS"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 6x^{2} + 4$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "$f'(1)=-3$.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "-9",
+     "so": -9.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy đạo hàm của $3mx^2$ là $3mx$"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Hàm số nghịch biến trên khoảng $(0;4)$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "4",
+     "so": 4.0
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Giá trị cực tiểu của hàm số bằng $-28$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "-28",
+     "so": -28.0
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Giá trị lớn nhất của $f(x)$ trên đoạn $[-1;1]$ bằng $-1$.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "4",
+     "so": 4.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ lấy giá trị tại đầu mút phải $f(1)$"
+     }
+    }
+   ],
+   "dap_an": "a) S; b) Đ; c) Đ; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "a) $f'(1)=-3$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy đạo hàm của $3mx^2$ là $3mx$"
+     }
+    },
+    {
+     "phuong_an": "d) Giá trị lớn nhất của $f(x)$ trên đoạn $[-1;1]$ bằng $-1$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ lấy giá trị tại đầu mút phải $f(1)$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) Đ; c) Đ; d) S",
+    "so": null
+   },
+   "do_kho": 0.579,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-HS.DS.5",
+   "mau_cau": "MC-DS-HS",
+   "bien_the": {
+    "m": "2",
+    "c": "-2"
+   },
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "ds.ham-bac-ba",
+   "dang_tx": "hs.dao-ham-dung-sai",
+   "lop": 12,
+   "yccd": [
+    "12.HS.1",
+    "12.HS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hàm bậc ba"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-HS|c=-2,m=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-HS",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-HS"
+   },
+   "de_bai": "Cho hàm số $f(x)=x^{3} - 6x^{2} - 2$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "$f'(1)=-9$.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "-9",
+     "so": -9.0
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Hàm số nghịch biến trên khoảng $(0;2)$.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "4",
+     "so": 4.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $f'(x)=0$ (được $x=m$)"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Giá trị cực tiểu của hàm số bằng $-34$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "-34",
+     "so": -34.0
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Giá trị lớn nhất của $f(x)$ trên đoạn $[-1;1]$ bằng $-7$.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "-2",
+     "so": -2.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ lấy giá trị tại đầu mút phải $f(1)$"
+     }
+    }
+   ],
+   "dap_an": "a) Đ; b) S; c) Đ; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "b) Hàm số nghịch biến trên khoảng $(0;2)$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $f'(x)=0$ (được $x=m$)"
+     }
+    },
+    {
+     "phuong_an": "d) Giá trị lớn nhất của $f(x)$ trên đoạn $[-1;1]$ bằng $-7$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ lấy giá trị tại đầu mút phải $f(1)$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) S; c) Đ; d) S",
+    "so": null
+   },
+   "do_kho": 0.595,
+   "dap_so_engine": null
+  }
+ ]
+}

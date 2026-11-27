@@ -1,0 +1,114 @@
+{
+ "id": "MC-XS-06",
+ "ten": "Công thức cộng xác suất",
+ "chu_de": "to-hop-xac-suat",
+ "dang": "xs11.cong",
+ "dang_tx": "tk.xs-co-dien",
+ "yccd": [
+  "11.XS.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-XS-06",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-XS-06",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "pa": "0.5",
+    "pb": "0.4",
+    "pab": "0.1"
+   },
+   {
+    "pa": "0.6",
+    "pb": "0.3",
+    "pab": "0.2"
+   },
+   {
+    "pa": "0.45",
+    "pb": "0.35",
+    "pab": "0.15"
+   },
+   {
+    "pa": "0.7",
+    "pb": "0.5",
+    "pab": "0.4"
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hai biến cố $A$, $B$ với $P(A)={pa:xap-xi:2}$, $P(B)={pb:xap-xi:2}$ và $P(AB)={pab:xap-xi:2}$.",
+ "hoi": "Xác suất $P(A\\cup B)$ bằng",
+ "dap_so": "pa+pb-pab",
+ "nhieu": [
+  {
+   "bieu_thuc": "pa+pb",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên trừ $P(AB)$"
+   }
+  },
+  {
+   "bieu_thuc": "pa+pb-pa*pb",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Coi $A$, $B$ độc lập khi chưa có giả thiết"
+   }
+  },
+  {
+   "bieu_thuc": "pa*pb",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhân hai xác suất"
+   }
+  }
+ ],
+ "kieu": "xap-xi:2",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-XS-06']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "pa": "0.5",
+   "pb": "0.4",
+   "pab": "0.1"
+  },
+  {
+   "pa": "0.6",
+   "pb": "0.3",
+   "pab": "0.2"
+  },
+  {
+   "pa": "0.45",
+   "pb": "0.35",
+   "pab": "0.15"
+  },
+  {
+   "pa": "0.7",
+   "pb": "0.5",
+   "pab": "0.4"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

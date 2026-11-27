@@ -1,0 +1,963 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "oxyz-mat-cau",
+ "so_cau": 12,
+ "cau": [
+  {
+   "id": "MC-OX-06.TN.0",
+   "mau_cau": "MC-OX-06",
+   "bien_the": {
+    "i1": "1",
+    "i2": "-2",
+    "i3": "3",
+    "m1": "3",
+    "m2": "0",
+    "m3": "4"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-ban-kinh",
+   "dang_tx": "ox.mc-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu qua một điểm"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-06|i1=1,i2=-2,i3=3,m1=3,m2=0,m3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-06"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S)$ có tâm $I(1;-2;3)$ và đi qua điểm $M(3;0;4)$. Bán kính của $(S)$ (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "3",
+     "dung": true
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai"
+     }
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng trị tuyệt đối hiệu tọa độ"
+     }
+    },
+    {
+     "noi_dung": "8{,}31",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng tọa độ thay vì trừ"
+     }
+    }
+   ],
+   "dap_an": "3",
+   "nhieu": [
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai"
+     }
+    },
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng trị tuyệt đối hiệu tọa độ"
+     }
+    },
+    {
+     "phuong_an": "8{,}31",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng tọa độ thay vì trừ"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.324,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-06.TLN.0",
+   "mau_cau": "MC-OX-06",
+   "bien_the": {
+    "i1": "1",
+    "i2": "-2",
+    "i3": "3",
+    "m1": "3",
+    "m2": "0",
+    "m3": "4"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-ban-kinh",
+   "dang_tx": "ox.mc-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu qua một điểm"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-06|i1=1,i2=-2,i3=3,m1=3,m2=0,m3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-06"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S)$ có tâm $I(1;-2;3)$ và đi qua điểm $M(3;0;4)$. Bán kính của $(S)$ bằng bao nhiêu?",
+   "dap_an": "3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.0,
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.67,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-06.TN.1",
+   "mau_cau": "MC-OX-06",
+   "bien_the": {
+    "i1": "0",
+    "i2": "2",
+    "i3": "-1",
+    "m1": "2",
+    "m2": "5",
+    "m3": "1"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-ban-kinh",
+   "dang_tx": "ox.mc-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu qua một điểm"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-06|i1=0,i2=2,i3=-1,m1=2,m2=5,m3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-06"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S)$ có tâm $I(0;2;-1)$ và đi qua điểm $M(2;5;1)$. Bán kính của $(S)$ (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "4{,}12",
+     "dung": true
+    },
+    {
+     "noi_dung": "17",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai"
+     }
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng trị tuyệt đối hiệu tọa độ"
+     }
+    },
+    {
+     "noi_dung": "7{,}28",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng tọa độ thay vì trừ"
+     }
+    }
+   ],
+   "dap_an": "4{,}12",
+   "nhieu": [
+    {
+     "phuong_an": "17",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai"
+     }
+    },
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng trị tuyệt đối hiệu tọa độ"
+     }
+    },
+    {
+     "phuong_an": "7{,}28",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng tọa độ thay vì trừ"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "4{,}12",
+    "so": 4.123105625617661
+   },
+   "do_kho": 0.374,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-06.TLN.1",
+   "mau_cau": "MC-OX-06",
+   "bien_the": {
+    "i1": "0",
+    "i2": "2",
+    "i3": "-1",
+    "m1": "2",
+    "m2": "5",
+    "m3": "1"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-ban-kinh",
+   "dang_tx": "ox.mc-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu qua một điểm"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-06|i1=0,i2=2,i3=-1,m1=2,m2=5,m3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-06"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S)$ có tâm $I(0;2;-1)$ và đi qua điểm $M(2;5;1)$. Bán kính của $(S)$ bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "4,12",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.123105625617661,
+   "dap_so": {
+    "gia_tri": "4{,}12",
+    "so": 4.123105625617661
+   },
+   "do_kho": 0.686,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-06.TN.2",
+   "mau_cau": "MC-OX-06",
+   "bien_the": {
+    "i1": "-1",
+    "i2": "1",
+    "i3": "2",
+    "m1": "3",
+    "m2": "-1",
+    "m3": "0"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-ban-kinh",
+   "dang_tx": "ox.mc-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu qua một điểm"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-06|i1=-1,i2=1,i3=2,m1=3,m2=-1,m3=0",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-06"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S)$ có tâm $I(-1;1;2)$ và đi qua điểm $M(3;-1;0)$. Bán kính của $(S)$ (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "4{,}9",
+     "dung": true
+    },
+    {
+     "noi_dung": "24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng trị tuyệt đối hiệu tọa độ"
+     }
+    },
+    {
+     "noi_dung": "2{,}83",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng tọa độ thay vì trừ"
+     }
+    }
+   ],
+   "dap_an": "4{,}9",
+   "nhieu": [
+    {
+     "phuong_an": "24",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng trị tuyệt đối hiệu tọa độ"
+     }
+    },
+    {
+     "phuong_an": "2{,}83",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng tọa độ thay vì trừ"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "4{,}9",
+    "so": 4.898979485566356
+   },
+   "do_kho": 0.378,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-06.TLN.2",
+   "mau_cau": "MC-OX-06",
+   "bien_the": {
+    "i1": "-1",
+    "i2": "1",
+    "i3": "2",
+    "m1": "3",
+    "m2": "-1",
+    "m3": "0"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-ban-kinh",
+   "dang_tx": "ox.mc-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu qua một điểm"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-06|i1=-1,i2=1,i3=2,m1=3,m2=-1,m3=0",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-06"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S)$ có tâm $I(-1;1;2)$ và đi qua điểm $M(3;-1;0)$. Bán kính của $(S)$ bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "4,9",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.898979485566356,
+   "dap_so": {
+    "gia_tri": "4{,}9",
+    "so": 4.898979485566356
+   },
+   "do_kho": 0.652,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-06.TN.3",
+   "mau_cau": "MC-OX-06",
+   "bien_the": {
+    "i1": "2",
+    "i2": "3",
+    "i3": "1",
+    "m1": "5",
+    "m2": "1",
+    "m3": "-1"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-ban-kinh",
+   "dang_tx": "ox.mc-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu qua một điểm"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-06|i1=2,i2=3,i3=1,m1=5,m2=1,m3=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-06"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S)$ có tâm $I(2;3;1)$ và đi qua điểm $M(5;1;-1)$. Bán kính của $(S)$ (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "4{,}12",
+     "dung": true
+    },
+    {
+     "noi_dung": "17",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai"
+     }
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng trị tuyệt đối hiệu tọa độ"
+     }
+    },
+    {
+     "noi_dung": "8{,}06",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng tọa độ thay vì trừ"
+     }
+    }
+   ],
+   "dap_an": "4{,}12",
+   "nhieu": [
+    {
+     "phuong_an": "17",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai"
+     }
+    },
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng trị tuyệt đối hiệu tọa độ"
+     }
+    },
+    {
+     "phuong_an": "8{,}06",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng tọa độ thay vì trừ"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "4{,}12",
+    "so": 4.123105625617661
+   },
+   "do_kho": 0.358,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-06.TLN.3",
+   "mau_cau": "MC-OX-06",
+   "bien_the": {
+    "i1": "2",
+    "i2": "3",
+    "i3": "1",
+    "m1": "5",
+    "m2": "1",
+    "m3": "-1"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-ban-kinh",
+   "dang_tx": "ox.mc-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu qua một điểm"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-06|i1=2,i2=3,i3=1,m1=5,m2=1,m3=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-06"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S)$ có tâm $I(2;3;1)$ và đi qua điểm $M(5;1;-1)$. Bán kính của $(S)$ bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "4,12",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.123105625617661,
+   "dap_so": {
+    "gia_tri": "4{,}12",
+    "so": 4.123105625617661
+   },
+   "do_kho": 0.667,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-OX.DS.0",
+   "mau_cau": "MC-DS-OX",
+   "bien_the": {
+    "i1": "1",
+    "i2": "-2",
+    "i3": "3",
+    "R": "5",
+    "dd": "4"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ds.mat-cau-mat-phang",
+   "dang_tx": "ox.mc-vdc",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4",
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: mặt cầu và mặt phẳng"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-OX|R=5,dd=4,i1=1,i2=-2,i3=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-OX",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-OX"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S):\\left(x - 1\\right)^{2}+\\left(y + 2\\right)^{2}+\\left(z - 3\\right)^{2}=25$ và mặt phẳng $(P):x + 2y + 2z + 4=0$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Mặt cầu $(S)$ có tâm $I(1;-2;3)$.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "(1;-2;3)",
+     "so": null
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Mặt cầu $(S)$ có bán kính bằng $5$.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "5",
+     "so": 5.0
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Khoảng cách từ tâm $I$ đến $(P)$ bằng $7$.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "\\dfrac{7}{3}",
+     "so": 2.3333333333333335,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho độ dài vectơ pháp tuyến"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "$(P)$ cắt $(S)$ theo một đường tròn có bán kính bằng $\\dfrac{8}{3}$.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{4\\sqrt{11}}{3}",
+     "so": 4.422166387140533,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hiệu $R-d$ thay vì dùng định lí Pythagore"
+     }
+    }
+   ],
+   "dap_an": "a) Đ; b) Đ; c) S; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "c) Khoảng cách từ tâm $I$ đến $(P)$ bằng $7$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho độ dài vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "d) $(P)$ cắt $(S)$ theo một đường tròn có bán kính bằng $\\dfrac{8}{3}$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hiệu $R-d$ thay vì dùng định lí Pythagore"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) Đ; c) S; d) S",
+    "so": null
+   },
+   "do_kho": 0.607,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-OX.DS.1",
+   "mau_cau": "MC-DS-OX",
+   "bien_the": {
+    "i1": "2",
+    "i2": "1",
+    "i3": "-1",
+    "R": "3",
+    "dd": "-6"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ds.mat-cau-mat-phang",
+   "dang_tx": "ox.mc-vdc",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4",
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: mặt cầu và mặt phẳng"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-OX|R=3,dd=-6,i1=2,i2=1,i3=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-OX",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-OX"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S):\\left(x - 2\\right)^{2}+\\left(y - 1\\right)^{2}+\\left(z + 1\\right)^{2}=9$ và mặt phẳng $(P):x + 2y + 2z - 6=0$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Mặt cầu $(S)$ có tâm $I(-2;-1;1)$.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "(2;1;-1)",
+     "so": null,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy sai dấu tọa độ tâm"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Mặt cầu $(S)$ có bán kính bằng $9$.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "3",
+     "so": 3.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai của vế phải"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Khoảng cách từ tâm $I$ đến $(P)$ bằng $\\dfrac{4}{3}$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "\\dfrac{4}{3}",
+     "so": 1.3333333333333333
+    },
+    {
+     "nhan": "d",
+     "menh_de": "$(P)$ cắt $(S)$ theo một đường tròn có bán kính bằng $\\dfrac{\\sqrt{65}}{3}$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{\\sqrt{65}}{3}",
+     "so": 2.6874192494328497
+    }
+   ],
+   "dap_an": "a) S; b) S; c) Đ; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "a) Mặt cầu $(S)$ có tâm $I(-2;-1;1)$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy sai dấu tọa độ tâm"
+     }
+    },
+    {
+     "phuong_an": "b) Mặt cầu $(S)$ có bán kính bằng $9$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai của vế phải"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) S; c) Đ; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.62,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-OX.DS.2",
+   "mau_cau": "MC-DS-OX",
+   "bien_the": {
+    "i1": "0",
+    "i2": "3",
+    "i3": "1",
+    "R": "4",
+    "dd": "-2"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ds.mat-cau-mat-phang",
+   "dang_tx": "ox.mc-vdc",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4",
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: mặt cầu và mặt phẳng"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-OX|R=4,dd=-2,i1=0,i2=3,i3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-OX",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-OX"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S):x^{2}+\\left(y - 3\\right)^{2}+\\left(z - 1\\right)^{2}=16$ và mặt phẳng $(P):x + 2y + 2z - 2=0$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Mặt cầu $(S)$ có tâm $I(0;3;1)$.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "(0;3;1)",
+     "so": null
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Mặt cầu $(S)$ có bán kính bằng $16$.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "4",
+     "so": 4.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai của vế phải"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Khoảng cách từ tâm $I$ đến $(P)$ bằng $6$.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "2",
+     "so": 2.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho độ dài vectơ pháp tuyến"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "$(P)$ cắt $(S)$ theo một đường tròn có bán kính bằng $2\\sqrt{3}$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "2\\sqrt{3}",
+     "so": 3.4641016151377544
+    }
+   ],
+   "dap_an": "a) Đ; b) S; c) S; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "b) Mặt cầu $(S)$ có bán kính bằng $16$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên lấy căn bậc hai của vế phải"
+     }
+    },
+    {
+     "phuong_an": "c) Khoảng cách từ tâm $I$ đến $(P)$ bằng $6$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia cho độ dài vectơ pháp tuyến"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) S; c) S; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.601,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-OX.DS.3",
+   "mau_cau": "MC-DS-OX",
+   "bien_the": {
+    "i1": "-1",
+    "i2": "2",
+    "i3": "2",
+    "R": "5",
+    "dd": "7"
+   },
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ds.mat-cau-mat-phang",
+   "dang_tx": "ox.mc-vdc",
+   "lop": 12,
+   "yccd": [
+    "12.OX.4",
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: mặt cầu và mặt phẳng"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-OX|R=5,dd=7,i1=-1,i2=2,i3=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-OX",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-OX"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt cầu $(S):\\left(x + 1\\right)^{2}+\\left(y - 2\\right)^{2}+\\left(z - 2\\right)^{2}=25$ và mặt phẳng $(P):x + 2y + 2z + 7=0$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Mặt cầu $(S)$ có tâm $I(1;-2;-2)$.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "(-1;2;2)",
+     "so": null,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy sai dấu tọa độ tâm"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Mặt cầu $(S)$ có bán kính bằng $5$.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "5",
+     "so": 5.0
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Khoảng cách từ tâm $I$ đến $(P)$ bằng $\\dfrac{14}{3}$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "\\dfrac{14}{3}",
+     "so": 4.666666666666667
+    },
+    {
+     "nhan": "d",
+     "menh_de": "$(P)$ cắt $(S)$ theo một đường tròn có bán kính bằng $\\dfrac{1}{3}$.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{\\sqrt{29}}{3}",
+     "so": 1.7950549357115013,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hiệu $R-d$ thay vì dùng định lí Pythagore"
+     }
+    }
+   ],
+   "dap_an": "a) S; b) Đ; c) Đ; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "a) Mặt cầu $(S)$ có tâm $I(1;-2;-2)$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy sai dấu tọa độ tâm"
+     }
+    },
+    {
+     "phuong_an": "d) $(P)$ cắt $(S)$ theo một đường tròn có bán kính bằng $\\dfrac{1}{3}$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hiệu $R-d$ thay vì dùng định lí Pythagore"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) Đ; c) Đ; d) S",
+    "so": null
+   },
+   "do_kho": 0.596,
+   "dap_so_engine": null
+  }
+ ]
+}

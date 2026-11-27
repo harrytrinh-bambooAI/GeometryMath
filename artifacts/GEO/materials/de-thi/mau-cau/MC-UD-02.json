@@ -1,0 +1,117 @@
+{
+ "id": "MC-UD-02",
+ "ten": "Thể tích khối tròn xoay quanh Ox",
+ "chu_de": "ung-dung-tich-phan",
+ "dang": "ud.the-tich-xoay-can",
+ "dang_tx": "ud.the-tich-xoay",
+ "yccd": [
+  "12.UD.2"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-UD-02",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "VDC"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-UD-02",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "k": [
+   "1",
+   "2",
+   "3"
+  ],
+  "t": [
+   "1",
+   "2",
+   "3"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "",
+ "hoi": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{{k}x}}$, $y=0$, $x={t}$ quanh trục $Ox$ bằng",
+ "dap_so": "pi*k*t**2/2",
+ "nhieu": [
+  {
+   "bieu_thuc": "k*t**2/2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên hệ số $\\pi$"
+   }
+  },
+  {
+   "bieu_thuc": "pi*sqrt(k)*2*t**Rational(3,2)/3",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+   }
+  },
+  {
+   "bieu_thuc": "pi*k*t**2",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-UD-02']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1",
+   "t": "1"
+  },
+  {
+   "k": "1",
+   "t": "2"
+  },
+  {
+   "k": "1",
+   "t": "3"
+  },
+  {
+   "k": "2",
+   "t": "1"
+  },
+  {
+   "k": "2",
+   "t": "2"
+  },
+  {
+   "k": "2",
+   "t": "3"
+  },
+  {
+   "k": "3",
+   "t": "1"
+  },
+  {
+   "k": "3",
+   "t": "2"
+  },
+  {
+   "k": "3",
+   "t": "3"
+  }
+ ],
+ "so_bien_the": 9,
+ "so_cau_sinh": 18,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

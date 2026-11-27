@@ -1,0 +1,176 @@
+{
+ "id": "MC-DS-02",
+ "ten": "Số hạng cấp số nhân",
+ "chu_de": "day-so-cap-so",
+ "dang": "ds.csn-so-hang",
+ "dang_tx": "ds.cap-so-nhan",
+ "yccd": [
+  "11.DS.2"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-DS-02",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-DS-02",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "u1": [
+   "2",
+   "3",
+   "-1"
+  ],
+  "q": [
+   "2",
+   "3",
+   "-2"
+  ],
+  "n": [
+   "5",
+   "6"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho cấp số nhân $(u_n)$ có $u_1={u1}$ và công bội $q={q}$.",
+ "hoi": "Số hạng $u_{{n}}$ bằng",
+ "dap_so": "u1*q**(n-1)",
+ "nhieu": [
+  {
+   "bieu_thuc": "u1*q**n",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+   }
+  },
+  {
+   "bieu_thuc": "u1+(n-1)*q",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhầm sang công thức cấp số cộng"
+   }
+  },
+  {
+   "bieu_thuc": "u1*(q**n-1)/(q-1)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": false,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-DS-02']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "u1": "2",
+   "q": "2",
+   "n": "5"
+  },
+  {
+   "u1": "2",
+   "q": "2",
+   "n": "6"
+  },
+  {
+   "u1": "2",
+   "q": "3",
+   "n": "5"
+  },
+  {
+   "u1": "2",
+   "q": "3",
+   "n": "6"
+  },
+  {
+   "u1": "2",
+   "q": "-2",
+   "n": "5"
+  },
+  {
+   "u1": "2",
+   "q": "-2",
+   "n": "6"
+  },
+  {
+   "u1": "3",
+   "q": "2",
+   "n": "5"
+  },
+  {
+   "u1": "3",
+   "q": "2",
+   "n": "6"
+  },
+  {
+   "u1": "3",
+   "q": "3",
+   "n": "5"
+  },
+  {
+   "u1": "3",
+   "q": "3",
+   "n": "6"
+  },
+  {
+   "u1": "3",
+   "q": "-2",
+   "n": "5"
+  },
+  {
+   "u1": "3",
+   "q": "-2",
+   "n": "6"
+  },
+  {
+   "u1": "-1",
+   "q": "2",
+   "n": "5"
+  },
+  {
+   "u1": "-1",
+   "q": "2",
+   "n": "6"
+  },
+  {
+   "u1": "-1",
+   "q": "3",
+   "n": "5"
+  },
+  {
+   "u1": "-1",
+   "q": "3",
+   "n": "6"
+  },
+  {
+   "u1": "-1",
+   "q": "-2",
+   "n": "5"
+  },
+  {
+   "u1": "-1",
+   "q": "-2",
+   "n": "6"
+  }
+ ],
+ "so_bien_the": 18,
+ "so_cau_sinh": 36,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

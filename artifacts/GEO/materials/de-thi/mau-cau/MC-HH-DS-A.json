@@ -1,0 +1,77 @@
+{
+ "id": "MC-HH-DS-A",
+ "ten": "Đúng/sai: chóp SA ⊥ đáy vuông",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "ds.chop-sa",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.1",
+  "11.VG.2",
+  "11.VG.4",
+  "11.TT.1"
+ ],
+ "lop": 11,
+ "ho_hinh": "A",
+ "tham_so": {
+  "k": [
+   "1",
+   "sqrt(2)",
+   "2",
+   "sqrt(6)"
+  ]
+ },
+ "dan_xuat": {
+  "h": "k*a",
+  "SB": "sqrt(a**2+h**2)",
+  "SC": "sqrt(2*a**2+h**2)"
+ },
+ "boi_canh": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA={h}$.",
+ "y": [
+  {
+   "mau": "MC-HH-A05",
+   "menh_de": "Độ dài đoạn $SC$ bằng ${v}$.",
+   "muc_do": "NB"
+  },
+  {
+   "mau": "MC-HH-A09",
+   "menh_de": "Thể tích khối chóp $S.ABCD$ bằng ${v}$.",
+   "muc_do": "TH"
+  },
+  {
+   "mau": "MC-HH-A01",
+   "menh_de": "Góc giữa $SC$ và mặt phẳng $(ABCD)$ bằng ${v}$.",
+   "muc_do": "TH"
+  },
+  {
+   "mau": "MC-HH-A03",
+   "menh_de": "Khoảng cách từ $A$ đến mặt phẳng $(SBC)$ bằng ${v}$.",
+   "muc_do": "VD"
+  }
+ ],
+ "loai_mau": "dung-sai",
+ "loai_cau": [
+  "dung-sai"
+ ],
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(2)"
+  },
+  {
+   "k": "2"
+  },
+  {
+   "k": "sqrt(6)"
+  }
+ ],
+ "rang_buoc": [],
+ "so_bien_the": 4,
+ "so_cau_sinh": 4,
+ "nguon": {
+  "loai": "mvp",
+  "ma": "MC-HH-DS-A"
+ },
+ "phien_ban": "v1.0 · 27/11/2026"
+}

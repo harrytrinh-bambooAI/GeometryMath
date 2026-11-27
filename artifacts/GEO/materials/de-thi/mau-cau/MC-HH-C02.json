@@ -1,0 +1,88 @@
+{
+ "id": "MC-HH-C02",
+ "ten": "Khoảng cách giữa BB' và AC'",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "kc-cheo-nhau.lap-phuong",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.3"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "C",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-20",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-20 + geometry/problem-specs.json#HKN-20"
+ },
+ "tham_so": {
+  "c": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng ${c}$ cm.",
+ "hoi": "Khoảng cách giữa hai đường thẳng $BB'$ và $AC'$ bằng",
+ "dap_so": "sqrt(2)*c/2",
+ "don_vi": "cm",
+ "nhieu": [
+  {
+   "bieu_thuc": "c",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $AB$ là đoạn vuông góc chung"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(2)*c",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy cả đường chéo $BD$ thay vì $BO$"
+   }
+  },
+  {
+   "bieu_thuc": "c/2",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy nửa cạnh lập phương"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-20",
+  "ask": 0,
+  "params": {
+   "a": "c"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "c": "2"
+  },
+  {
+   "c": "3"
+  },
+  {
+   "c": "4"
+  },
+  {
+   "c": "6"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

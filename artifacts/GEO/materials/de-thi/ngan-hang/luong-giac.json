@@ -1,0 +1,277 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "luong-giac",
+ "so_cau": 3,
+ "cau": [
+  {
+   "id": "MC-LG-01.TN.0",
+   "mau_cau": "MC-LG-01",
+   "bien_the": {
+    "s": "1/2"
+   },
+   "chu_de": "luong-giac",
+   "dang": "lg.sin-nghiem-duong",
+   "dang_tx": "lg.pt-co-ban",
+   "lop": 11,
+   "yccd": [
+    "11.LG.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm dương nhỏ nhất của phương trình sin cơ bản"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-LG-01|s=1/2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-LG-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-LG-01"
+   },
+   "de_bai": "Nghiệm dương nhỏ nhất của phương trình $\\sin x=\\dfrac{1}{2}$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x=\\dfrac{\\pi}{6}",
+     "dung": true
+    },
+    {
+     "noi_dung": "x=\\dfrac{\\pi}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm $\\sin$ với $\\cos$ khi tra giá trị đặc biệt"
+     }
+    },
+    {
+     "noi_dung": "x=\\dfrac{5\\pi}{6}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy nghiệm thuộc họ $x=\\pi-\\alpha+k2\\pi$"
+     }
+    },
+    {
+     "noi_dung": "x=\\dfrac{11\\pi}{6}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $-\\alpha+2\\pi$ (nhầm với họ nghiệm của $\\cos$)"
+     }
+    }
+   ],
+   "dap_an": "x=\\dfrac{\\pi}{6}",
+   "nhieu": [
+    {
+     "phuong_an": "x=\\dfrac{\\pi}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm $\\sin$ với $\\cos$ khi tra giá trị đặc biệt"
+     }
+    },
+    {
+     "phuong_an": "x=\\dfrac{5\\pi}{6}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy nghiệm thuộc họ $x=\\pi-\\alpha+k2\\pi$"
+     }
+    },
+    {
+     "phuong_an": "x=\\dfrac{11\\pi}{6}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $-\\alpha+2\\pi$ (nhầm với họ nghiệm của $\\cos$)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x=\\dfrac{\\pi}{6}",
+    "so": 0.5235987755982989
+   },
+   "do_kho": 0.156,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-LG-01.TN.1",
+   "mau_cau": "MC-LG-01",
+   "bien_the": {
+    "s": "sqrt(2)/2"
+   },
+   "chu_de": "luong-giac",
+   "dang": "lg.sin-nghiem-duong",
+   "dang_tx": "lg.pt-co-ban",
+   "lop": 11,
+   "yccd": [
+    "11.LG.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm dương nhỏ nhất của phương trình sin cơ bản"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-LG-01|s=sqrt(2)/2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-LG-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-LG-01"
+   },
+   "de_bai": "Nghiệm dương nhỏ nhất của phương trình $\\sin x=\\dfrac{\\sqrt{2}}{2}$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x=\\dfrac{\\pi}{4}",
+     "dung": true
+    },
+    {
+     "noi_dung": "x=\\dfrac{3\\pi}{4}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy nghiệm thuộc họ $x=\\pi-\\alpha+k2\\pi$"
+     }
+    },
+    {
+     "noi_dung": "x=\\dfrac{7\\pi}{4}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $-\\alpha+2\\pi$ (nhầm với họ nghiệm của $\\cos$)"
+     }
+    },
+    {
+     "noi_dung": "x=\\dfrac{5\\pi}{4}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chu kì $\\pi$ của $\\tan$"
+     }
+    }
+   ],
+   "dap_an": "x=\\dfrac{\\pi}{4}",
+   "nhieu": [
+    {
+     "phuong_an": "x=\\dfrac{3\\pi}{4}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy nghiệm thuộc họ $x=\\pi-\\alpha+k2\\pi$"
+     }
+    },
+    {
+     "phuong_an": "x=\\dfrac{7\\pi}{4}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $-\\alpha+2\\pi$ (nhầm với họ nghiệm của $\\cos$)"
+     }
+    },
+    {
+     "phuong_an": "x=\\dfrac{5\\pi}{4}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chu kì $\\pi$ của $\\tan$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x=\\dfrac{\\pi}{4}",
+    "so": 0.7853981633974483
+   },
+   "do_kho": 0.194,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-LG-01.TN.2",
+   "mau_cau": "MC-LG-01",
+   "bien_the": {
+    "s": "sqrt(3)/2"
+   },
+   "chu_de": "luong-giac",
+   "dang": "lg.sin-nghiem-duong",
+   "dang_tx": "lg.pt-co-ban",
+   "lop": 11,
+   "yccd": [
+    "11.LG.1"
+   ],
+   "kien_thuc": [
+    "Nghiệm dương nhỏ nhất của phương trình sin cơ bản"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-LG-01|s=sqrt(3)/2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-LG-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-LG-01"
+   },
+   "de_bai": "Nghiệm dương nhỏ nhất của phương trình $\\sin x=\\dfrac{\\sqrt{3}}{2}$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "x=\\dfrac{\\pi}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "x=\\dfrac{\\pi}{6}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm $\\sin$ với $\\cos$ khi tra giá trị đặc biệt"
+     }
+    },
+    {
+     "noi_dung": "x=\\dfrac{2\\pi}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy nghiệm thuộc họ $x=\\pi-\\alpha+k2\\pi$"
+     }
+    },
+    {
+     "noi_dung": "x=\\dfrac{5\\pi}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $-\\alpha+2\\pi$ (nhầm với họ nghiệm của $\\cos$)"
+     }
+    }
+   ],
+   "dap_an": "x=\\dfrac{\\pi}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "x=\\dfrac{\\pi}{6}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm $\\sin$ với $\\cos$ khi tra giá trị đặc biệt"
+     }
+    },
+    {
+     "phuong_an": "x=\\dfrac{2\\pi}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy nghiệm thuộc họ $x=\\pi-\\alpha+k2\\pi$"
+     }
+    },
+    {
+     "phuong_an": "x=\\dfrac{5\\pi}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $-\\alpha+2\\pi$ (nhầm với họ nghiệm của $\\cos$)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x=\\dfrac{\\pi}{3}",
+    "so": 1.0471975511965979
+   },
+   "do_kho": 0.147,
+   "dap_so_engine": null
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "id": "MC-HH-A09",
+ "ten": "Thể tích khối chóp SA ⊥ đáy vuông",
+ "chu_de": "hinh-khong-gian-the-tich",
+ "dang": "the-tich.chop-sa",
+ "dang_tx": "th.chop",
+ "yccd": [
+  "11.TT.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "A",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-51",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 + geometry/problem-specs.json#HKN-51"
+ },
+ "tham_so": {
+  "k": [
+   "1",
+   "sqrt(2)",
+   "sqrt(3)",
+   "2",
+   "3"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SB": "sqrt(a**2+h**2)",
+  "SC": "sqrt(2*a**2+h**2)"
+ },
+ "boi_canh": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA={h}$.",
+ "hoi": "Thể tích khối chóp $S.ABCD$ bằng",
+ "dap_so": "a**2*h/3",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "a**2*h",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên hệ số $\\dfrac13$ trong công thức thể tích khối chóp"
+   }
+  },
+  {
+   "bieu_thuc": "a**2*h/6",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng hệ số $\\dfrac16$ (nhầm sang tứ diện vuông)"
+   }
+  },
+  {
+   "bieu_thuc": "a**2*h/2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng hệ số $\\dfrac12$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-51",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "sa": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(2)"
+  },
+  {
+   "k": "sqrt(3)"
+  },
+  {
+   "k": "2"
+  },
+  {
+   "k": "3"
+  }
+ ],
+ "so_bien_the": 5,
+ "so_cau_sinh": 10,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

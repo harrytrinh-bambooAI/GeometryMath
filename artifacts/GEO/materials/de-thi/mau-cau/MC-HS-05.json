@@ -1,0 +1,124 @@
+{
+ "id": "MC-HS-05",
+ "ten": "Lợi nhuận lớn nhất",
+ "chu_de": "ham-so-ung-dung-dao-ham",
+ "dang": "hs.mo-hinh-loi-nhuan",
+ "dang_tx": "hs.mo-hinh",
+ "yccd": [
+  "12.HS.4"
+ ],
+ "lop": 12,
+ "nang_luc": "mo-hinh-hoa",
+ "ho_hinh": "MC-HS-05",
+ "loai_cau": [
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-HS-05",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "pp": 100,
+    "kk": 1,
+    "cc": 40,
+    "F": 500
+   },
+   {
+    "pp": 80,
+    "kk": 2,
+    "cc": 20,
+    "F": 200
+   },
+   {
+    "pp": 120,
+    "kk": 1,
+    "cc": 60,
+    "F": 600
+   },
+   {
+    "pp": 90,
+    "kk": 3,
+    "cc": 30,
+    "F": 100
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "gia": "pp-kk*x",
+  "cp": "cc*x+F"
+ },
+ "boi_canh": "Một xưởng bán $x$ sản phẩm với giá $({gia})$ nghìn đồng mỗi sản phẩm; chi phí sản xuất là $({cp})$ nghìn đồng.",
+ "hoi": "Lợi nhuận lớn nhất (nghìn đồng) bằng",
+ "dap_so": "(pp-cc)**2/(4*kk)-F",
+ "nhieu": [
+  {
+   "bieu_thuc": "(pp-cc)**2/(4*kk)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Quên trừ chi phí cố định"
+   }
+  },
+  {
+   "bieu_thuc": "(pp-cc)**2/(2*kk)-F",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Tính sai $x$ tối ưu ($x=\\dfrac{p-c}{k}$)"
+   }
+  },
+  {
+   "bieu_thuc": "pp**2/(4*kk)-F",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên chi phí biến đổi khi lập hàm lợi nhuận"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": false,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-HS-05']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "pp": "100",
+   "kk": "1",
+   "cc": "40",
+   "F": "500"
+  },
+  {
+   "pp": "80",
+   "kk": "2",
+   "cc": "20",
+   "F": "200"
+  },
+  {
+   "pp": "120",
+   "kk": "1",
+   "cc": "60",
+   "F": "600"
+  },
+  {
+   "pp": "90",
+   "kk": "3",
+   "cc": "30",
+   "F": "100"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 4,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

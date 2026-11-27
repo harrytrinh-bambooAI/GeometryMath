@@ -1,0 +1,102 @@
+{
+ "id": "MC-XS-08",
+ "ten": "Xác suất ít nhất một lần xuất hiện mặt sáu",
+ "chu_de": "to-hop-xac-suat",
+ "dang": "xs11.it-nhat-mot-lan",
+ "dang_tx": "tk.xs-co-dien",
+ "yccd": [
+  "11.XS.2"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-XS-08",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan",
+  "tu-luan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH",
+  "tu-luan": "VD"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-XS-08",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "n": [
+   "2",
+   "3",
+   "4"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Gieo một con xúc xắc cân đối và đồng chất ${n}$ lần liên tiếp.",
+ "hoi": "Xác suất để mặt sáu chấm xuất hiện ít nhất một lần (làm tròn đến hàng phần trăm) bằng",
+ "dap_so": "1-(Rational(5,6))**n",
+ "nhieu": [
+  {
+   "bieu_thuc": "n/6",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng xác suất của các lần gieo (các biến cố không xung khắc)"
+   }
+  },
+  {
+   "bieu_thuc": "(Rational(1,6))**n",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Tính xác suất mặt sáu xuất hiện ở mọi lần"
+   }
+  },
+  {
+   "bieu_thuc": "1-(Rational(1,6))**n",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy sai biến cố đối (\"không lần nào ra mặt sáu\" thành \"mọi lần ra mặt sáu\")"
+   }
+  }
+ ],
+ "kieu": "xap-xi:2",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tu_luan": [
+  {
+   "noi_dung": "Gọi $A_i$: \\\"lần thứ $i$ ra mặt sáu\\\"; các $A_i$ độc lập. Biến cố đối của \\\"ít nhất một lần ra mặt sáu\\\" là \\\"không lần nào ra mặt sáu\\\".",
+   "diem": 0.5
+  },
+  {
+   "noi_dung": "Xác suất không lần nào ra mặt sáu là $\\left(\\dfrac56\\right)^{{n}}$ (công thức nhân).",
+   "diem": 0.25
+  },
+  {
+   "noi_dung": "Xác suất cần tìm bằng $1-\\left(\\dfrac56\\right)^{{n}}\\approx{ds}$.",
+   "diem": 0.25
+  }
+ ],
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-XS-08']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "n": "2"
+  },
+  {
+   "n": "3"
+  },
+  {
+   "n": "4"
+  }
+ ],
+ "so_bien_the": 3,
+ "so_cau_sinh": 9,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

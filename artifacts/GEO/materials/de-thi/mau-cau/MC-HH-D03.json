@@ -1,0 +1,124 @@
+{
+ "id": "MC-HH-D03",
+ "ten": "Khoảng cách giữa AA' và BD",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "kc-cheo-nhau.hop",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.3"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "D",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-28",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-28 + geometry/problem-specs.json#HKN-28"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "p": 3,
+    "q": 4,
+    "r": 5
+   },
+   {
+    "p": 3,
+    "q": 4,
+    "r": 12
+   },
+   {
+    "p": 2,
+    "q": 3,
+    "r": 6
+   },
+   {
+    "p": 1,
+    "q": 2,
+    "r": 2
+   },
+   {
+    "p": 6,
+    "q": 8,
+    "r": 5
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB={p}$ cm, $AD={q}$ cm, $AA'={r}$ cm.",
+ "hoi": "Khoảng cách giữa hai đường thẳng $AA'$ và $BD$ bằng",
+ "dap_so": "p*q/sqrt(p**2+q**2)",
+ "don_vi": "cm",
+ "nhieu": [
+  {
+   "bieu_thuc": "p",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $AB$ là đoạn vuông góc chung"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(p**2+q**2)/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $AO$ ($O$ tâm đáy) làm khoảng cách"
+   }
+  },
+  {
+   "bieu_thuc": "p*q/(p+q)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Dùng $\\dfrac{AB\\cdot AD}{AB+AD}$ thay cho $\\dfrac{AB\\cdot AD}{BD}$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-28",
+  "ask": 0,
+  "params": {
+   "a": "p",
+   "b": "q",
+   "c": "r"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "p": "3",
+   "q": "4",
+   "r": "5"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "12"
+  },
+  {
+   "p": "2",
+   "q": "3",
+   "r": "6"
+  },
+  {
+   "p": "1",
+   "q": "2",
+   "r": "2"
+  },
+  {
+   "p": "6",
+   "q": "8",
+   "r": "5"
+  }
+ ],
+ "so_bien_the": 5,
+ "so_cau_sinh": 10,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

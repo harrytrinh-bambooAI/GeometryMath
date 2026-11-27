@@ -1,0 +1,7588 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "day-so-cap-so",
+ "so_cau": 114,
+ "cau": [
+  {
+   "id": "MC-DS-01.TN.0",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=3,n=10,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=3$. Số hạng $u_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "29",
+     "dung": true
+    },
+    {
+     "noi_dung": "32",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "155",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "26",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "29",
+   "nhieu": [
+    {
+     "phuong_an": "32",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "155",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "26",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "29",
+    "so": 29.0
+   },
+   "do_kho": 0.173,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.0",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=3,n=10,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=3$. Số hạng $u_{10}$ bằng bao nhiêu?",
+   "dap_an": "29",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 29.0,
+   "dap_so": {
+    "gia_tri": "29",
+    "so": 29.0
+   },
+   "do_kho": 0.222,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.1",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "3",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=3,n=15,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=3$. Số hạng $u_{15}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "44",
+     "dung": true
+    },
+    {
+     "noi_dung": "47",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "345",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "41",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "44",
+   "nhieu": [
+    {
+     "phuong_an": "47",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "345",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "41",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "44",
+    "so": 44.0
+   },
+   "do_kho": 0.136,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.1",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "3",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=3,n=15,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=3$. Số hạng $u_{15}$ bằng bao nhiêu?",
+   "dap_an": "44",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 44.0,
+   "dap_so": {
+    "gia_tri": "44",
+    "so": 44.0
+   },
+   "do_kho": 0.269,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.2",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "3",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=3,n=20,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=3$. Số hạng $u_{20}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "59",
+     "dung": true
+    },
+    {
+     "noi_dung": "62",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "610",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "56",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "59",
+   "nhieu": [
+    {
+     "phuong_an": "62",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "610",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "56",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "59",
+    "so": 59.0
+   },
+   "do_kho": 0.142,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.2",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "3",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=3,n=20,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=3$. Số hạng $u_{20}$ bằng bao nhiêu?",
+   "dap_an": "59",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 59.0,
+   "dap_so": {
+    "gia_tri": "59",
+    "so": 59.0
+   },
+   "do_kho": 0.223,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.3",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "4",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=4,n=10,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=4$. Số hạng $u_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "38",
+     "dung": true
+    },
+    {
+     "noi_dung": "42",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "200",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "34",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "38",
+   "nhieu": [
+    {
+     "phuong_an": "42",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "200",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "34",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "38",
+    "so": 38.0
+   },
+   "do_kho": 0.133,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.3",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "4",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=4,n=10,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=4$. Số hạng $u_{10}$ bằng bao nhiêu?",
+   "dap_an": "38",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 38.0,
+   "dap_so": {
+    "gia_tri": "38",
+    "so": 38.0
+   },
+   "do_kho": 0.23,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.4",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "4",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=4,n=15,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=4$. Số hạng $u_{15}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "58",
+     "dung": true
+    },
+    {
+     "noi_dung": "62",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "450",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "54",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "58",
+   "nhieu": [
+    {
+     "phuong_an": "62",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "450",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "54",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "58",
+    "so": 58.0
+   },
+   "do_kho": 0.168,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.4",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "4",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=4,n=15,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=4$. Số hạng $u_{15}$ bằng bao nhiêu?",
+   "dap_an": "58",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 58.0,
+   "dap_so": {
+    "gia_tri": "58",
+    "so": 58.0
+   },
+   "do_kho": 0.271,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.5",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "4",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=4,n=20,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=4$. Số hạng $u_{20}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "78",
+     "dung": true
+    },
+    {
+     "noi_dung": "82",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "800",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "74",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "78",
+   "nhieu": [
+    {
+     "phuong_an": "82",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "800",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "74",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "78",
+    "so": 78.0
+   },
+   "do_kho": 0.147,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.5",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "4",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=4,n=20,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=4$. Số hạng $u_{20}$ bằng bao nhiêu?",
+   "dap_an": "78",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 78.0,
+   "dap_so": {
+    "gia_tri": "78",
+    "so": 78.0
+   },
+   "do_kho": 0.224,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.6",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "-2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=-2,n=10,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=-2$. Số hạng $u_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-16",
+     "dung": true
+    },
+    {
+     "noi_dung": "-18",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "-70",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "-14",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "-16",
+   "nhieu": [
+    {
+     "phuong_an": "-18",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "-70",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "-14",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-16",
+    "so": -16.0
+   },
+   "do_kho": 0.134,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.6",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "-2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=-2,n=10,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=-2$. Số hạng $u_{10}$ bằng bao nhiêu?",
+   "dap_an": "-16",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -16.0,
+   "dap_so": {
+    "gia_tri": "-16",
+    "so": -16.0
+   },
+   "do_kho": 0.233,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.7",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "-2",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=-2,n=15,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=-2$. Số hạng $u_{15}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-26",
+     "dung": true
+    },
+    {
+     "noi_dung": "-28",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "-180",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "-24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "-26",
+   "nhieu": [
+    {
+     "phuong_an": "-28",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "-180",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "-24",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-26",
+    "so": -26.0
+   },
+   "do_kho": 0.122,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.7",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "-2",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=-2,n=15,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=-2$. Số hạng $u_{15}$ bằng bao nhiêu?",
+   "dap_an": "-26",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -26.0,
+   "dap_so": {
+    "gia_tri": "-26",
+    "so": -26.0
+   },
+   "do_kho": 0.275,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.8",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "-2",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=-2,n=20,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=-2$. Số hạng $u_{20}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-36",
+     "dung": true
+    },
+    {
+     "noi_dung": "-38",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "-340",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "-34",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "-36",
+   "nhieu": [
+    {
+     "phuong_an": "-38",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "-340",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "-34",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-36",
+    "so": -36.0
+   },
+   "do_kho": 0.177,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.8",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "2",
+    "d": "-2",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=-2,n=20,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=-2$. Số hạng $u_{20}$ bằng bao nhiêu?",
+   "dap_an": "-36",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -36.0,
+   "dap_so": {
+    "gia_tri": "-36",
+    "so": -36.0
+   },
+   "do_kho": 0.272,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.9",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=3,n=10,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=3$. Số hạng $u_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "24",
+     "dung": true
+    },
+    {
+     "noi_dung": "27",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "105",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "21",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "24",
+   "nhieu": [
+    {
+     "phuong_an": "27",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "105",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "21",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "24",
+    "so": 24.0
+   },
+   "do_kho": 0.172,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.9",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=3,n=10,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=3$. Số hạng $u_{10}$ bằng bao nhiêu?",
+   "dap_an": "24",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 24.0,
+   "dap_so": {
+    "gia_tri": "24",
+    "so": 24.0
+   },
+   "do_kho": 0.276,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.10",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "3",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=3,n=15,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=3$. Số hạng $u_{15}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "39",
+     "dung": true
+    },
+    {
+     "noi_dung": "42",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "270",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "36",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "39",
+   "nhieu": [
+    {
+     "phuong_an": "42",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "270",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "36",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "39",
+    "so": 39.0
+   },
+   "do_kho": 0.179,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.10",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "3",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=3,n=15,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=3$. Số hạng $u_{15}$ bằng bao nhiêu?",
+   "dap_an": "39",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 39.0,
+   "dap_so": {
+    "gia_tri": "39",
+    "so": 39.0
+   },
+   "do_kho": 0.245,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.11",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "3",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=3,n=20,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=3$. Số hạng $u_{20}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "54",
+     "dung": true
+    },
+    {
+     "noi_dung": "57",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "510",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "51",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "54",
+   "nhieu": [
+    {
+     "phuong_an": "57",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "510",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "51",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "54",
+    "so": 54.0
+   },
+   "do_kho": 0.164,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.11",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "3",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=3,n=20,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=3$. Số hạng $u_{20}$ bằng bao nhiêu?",
+   "dap_an": "54",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 54.0,
+   "dap_so": {
+    "gia_tri": "54",
+    "so": 54.0
+   },
+   "do_kho": 0.272,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.12",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "4",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=4,n=10,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=4$. Số hạng $u_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "33",
+     "dung": true
+    },
+    {
+     "noi_dung": "37",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "150",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "29",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "33",
+   "nhieu": [
+    {
+     "phuong_an": "37",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "150",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "29",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "33",
+    "so": 33.0
+   },
+   "do_kho": 0.125,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.12",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "4",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=4,n=10,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=4$. Số hạng $u_{10}$ bằng bao nhiêu?",
+   "dap_an": "33",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 33.0,
+   "dap_so": {
+    "gia_tri": "33",
+    "so": 33.0
+   },
+   "do_kho": 0.247,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.13",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "4",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=4,n=15,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=4$. Số hạng $u_{15}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "53",
+     "dung": true
+    },
+    {
+     "noi_dung": "57",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "375",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "49",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "53",
+   "nhieu": [
+    {
+     "phuong_an": "57",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "375",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "49",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "53",
+    "so": 53.0
+   },
+   "do_kho": 0.173,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.13",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "4",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=4,n=15,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=4$. Số hạng $u_{15}$ bằng bao nhiêu?",
+   "dap_an": "53",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 53.0,
+   "dap_so": {
+    "gia_tri": "53",
+    "so": 53.0
+   },
+   "do_kho": 0.232,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.14",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "4",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=4,n=20,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=4$. Số hạng $u_{20}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "73",
+     "dung": true
+    },
+    {
+     "noi_dung": "77",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "700",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "69",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "73",
+   "nhieu": [
+    {
+     "phuong_an": "77",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "700",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "69",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "73",
+    "so": 73.0
+   },
+   "do_kho": 0.156,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.14",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "4",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=4,n=20,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=4$. Số hạng $u_{20}$ bằng bao nhiêu?",
+   "dap_an": "73",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 73.0,
+   "dap_so": {
+    "gia_tri": "73",
+    "so": 73.0
+   },
+   "do_kho": 0.238,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.15",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "-2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=-2,n=10,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=-2$. Số hạng $u_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-21",
+     "dung": true
+    },
+    {
+     "noi_dung": "-23",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "-120",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "-19",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "-21",
+   "nhieu": [
+    {
+     "phuong_an": "-23",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "-120",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "-19",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-21",
+    "so": -21.0
+   },
+   "do_kho": 0.123,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.15",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "-2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=-2,n=10,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=-2$. Số hạng $u_{10}$ bằng bao nhiêu?",
+   "dap_an": "-21",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -21.0,
+   "dap_so": {
+    "gia_tri": "-21",
+    "so": -21.0
+   },
+   "do_kho": 0.234,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.16",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "-2",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=-2,n=15,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=-2$. Số hạng $u_{15}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-31",
+     "dung": true
+    },
+    {
+     "noi_dung": "-33",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "-255",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "-29",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "-31",
+   "nhieu": [
+    {
+     "phuong_an": "-33",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "-255",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "-29",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-31",
+    "so": -31.0
+   },
+   "do_kho": 0.123,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.16",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "-2",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=-2,n=15,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=-2$. Số hạng $u_{15}$ bằng bao nhiêu?",
+   "dap_an": "-31",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -31.0,
+   "dap_so": {
+    "gia_tri": "-31",
+    "so": -31.0
+   },
+   "do_kho": 0.278,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.17",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "-2",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=-2,n=20,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=-2$. Số hạng $u_{20}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-41",
+     "dung": true
+    },
+    {
+     "noi_dung": "-43",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "-440",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "-39",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "-41",
+   "nhieu": [
+    {
+     "phuong_an": "-43",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "-440",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "-39",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-41",
+    "so": -41.0
+   },
+   "do_kho": 0.173,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.17",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "-3",
+    "d": "-2",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=-2,n=20,u1=-3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=-3$ và công sai $d=-2$. Số hạng $u_{20}$ bằng bao nhiêu?",
+   "dap_an": "-41",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -41.0,
+   "dap_so": {
+    "gia_tri": "-41",
+    "so": -41.0
+   },
+   "do_kho": 0.259,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.18",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=3,n=10,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=3$. Số hạng $u_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "32",
+     "dung": true
+    },
+    {
+     "noi_dung": "35",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "185",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "29",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "32",
+   "nhieu": [
+    {
+     "phuong_an": "35",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "185",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "29",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "32",
+    "so": 32.0
+   },
+   "do_kho": 0.158,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.18",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=3,n=10,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=3$. Số hạng $u_{10}$ bằng bao nhiêu?",
+   "dap_an": "32",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 32.0,
+   "dap_so": {
+    "gia_tri": "32",
+    "so": 32.0
+   },
+   "do_kho": 0.243,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.19",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "3",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=3,n=15,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=3$. Số hạng $u_{15}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "47",
+     "dung": true
+    },
+    {
+     "noi_dung": "50",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "390",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "44",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "47",
+   "nhieu": [
+    {
+     "phuong_an": "50",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "390",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "44",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "47",
+    "so": 47.0
+   },
+   "do_kho": 0.167,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.19",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "3",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=3,n=15,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=3$. Số hạng $u_{15}$ bằng bao nhiêu?",
+   "dap_an": "47",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 47.0,
+   "dap_so": {
+    "gia_tri": "47",
+    "so": 47.0
+   },
+   "do_kho": 0.223,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.20",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "3",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=3,n=20,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=3$. Số hạng $u_{20}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "62",
+     "dung": true
+    },
+    {
+     "noi_dung": "65",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "670",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "59",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "62",
+   "nhieu": [
+    {
+     "phuong_an": "65",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "670",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "59",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "62",
+    "so": 62.0
+   },
+   "do_kho": 0.158,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.20",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "3",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=3,n=20,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=3$. Số hạng $u_{20}$ bằng bao nhiêu?",
+   "dap_an": "62",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 62.0,
+   "dap_so": {
+    "gia_tri": "62",
+    "so": 62.0
+   },
+   "do_kho": 0.223,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.21",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "4",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=4,n=10,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=4$. Số hạng $u_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "41",
+     "dung": true
+    },
+    {
+     "noi_dung": "45",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "230",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "37",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "41",
+   "nhieu": [
+    {
+     "phuong_an": "45",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "230",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "37",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "41",
+    "so": 41.0
+   },
+   "do_kho": 0.132,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.21",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "4",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=4,n=10,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=4$. Số hạng $u_{10}$ bằng bao nhiêu?",
+   "dap_an": "41",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 41.0,
+   "dap_so": {
+    "gia_tri": "41",
+    "so": 41.0
+   },
+   "do_kho": 0.271,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.22",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "4",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=4,n=15,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=4$. Số hạng $u_{15}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "61",
+     "dung": true
+    },
+    {
+     "noi_dung": "65",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "495",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "57",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "61",
+   "nhieu": [
+    {
+     "phuong_an": "65",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "495",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "57",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "61",
+    "so": 61.0
+   },
+   "do_kho": 0.155,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.22",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "4",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=4,n=15,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=4$. Số hạng $u_{15}$ bằng bao nhiêu?",
+   "dap_an": "61",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 61.0,
+   "dap_so": {
+    "gia_tri": "61",
+    "so": 61.0
+   },
+   "do_kho": 0.243,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.23",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "4",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=4,n=20,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=4$. Số hạng $u_{20}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "81",
+     "dung": true
+    },
+    {
+     "noi_dung": "85",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "860",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "77",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "81",
+   "nhieu": [
+    {
+     "phuong_an": "85",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "860",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "77",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "81",
+    "so": 81.0
+   },
+   "do_kho": 0.136,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.23",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "4",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=4,n=20,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=4$. Số hạng $u_{20}$ bằng bao nhiêu?",
+   "dap_an": "81",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 81.0,
+   "dap_so": {
+    "gia_tri": "81",
+    "so": 81.0
+   },
+   "do_kho": 0.275,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.24",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "-2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=-2,n=10,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=-2$. Số hạng $u_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-13",
+     "dung": true
+    },
+    {
+     "noi_dung": "-15",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "-40",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "-11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "-13",
+   "nhieu": [
+    {
+     "phuong_an": "-15",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "-40",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "-11",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-13",
+    "so": -13.0
+   },
+   "do_kho": 0.171,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.24",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "-2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=-2,n=10,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=-2$. Số hạng $u_{10}$ bằng bao nhiêu?",
+   "dap_an": "-13",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -13.0,
+   "dap_so": {
+    "gia_tri": "-13",
+    "so": -13.0
+   },
+   "do_kho": 0.278,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.25",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "-2",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=-2,n=15,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=-2$. Số hạng $u_{15}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-23",
+     "dung": true
+    },
+    {
+     "noi_dung": "-25",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "-135",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "-21",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "-23",
+   "nhieu": [
+    {
+     "phuong_an": "-25",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "-135",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "-21",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-23",
+    "so": -23.0
+   },
+   "do_kho": 0.153,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.25",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "-2",
+    "n": "15"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=-2,n=15,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=-2$. Số hạng $u_{15}$ bằng bao nhiêu?",
+   "dap_an": "-23",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -23.0,
+   "dap_so": {
+    "gia_tri": "-23",
+    "so": -23.0
+   },
+   "do_kho": 0.268,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TN.26",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "-2",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-01|d=-2,n=20,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=-2$. Số hạng $u_{20}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-33",
+     "dung": true
+    },
+    {
+     "noi_dung": "-35",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "noi_dung": "-280",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "noi_dung": "-31",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_an": "-33",
+   "nhieu": [
+    {
+     "phuong_an": "-35",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1+nd$"
+     }
+    },
+    {
+     "phuong_an": "-280",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    },
+    {
+     "phuong_an": "-31",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm sai số công sai cần cộng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-33",
+    "so": -33.0
+   },
+   "do_kho": 0.12,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-01.TLN.26",
+   "mau_cau": "MC-DS-01",
+   "bien_the": {
+    "u1": "5",
+    "d": "-2",
+    "n": "20"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-so-hang",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Số hạng tổng quát cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-01|d=-2,n=20,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-01"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=-2$. Số hạng $u_{20}$ bằng bao nhiêu?",
+   "dap_an": "-33",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -33.0,
+   "dap_so": {
+    "gia_tri": "-33",
+    "so": -33.0
+   },
+   "do_kho": 0.228,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.0",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=5,q=2,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=2$. Số hạng $u_{5}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "32",
+     "dung": true
+    },
+    {
+     "noi_dung": "64",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "10",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "62",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "32",
+   "nhieu": [
+    {
+     "phuong_an": "64",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "10",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "62",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "32",
+    "so": 32.0
+   },
+   "do_kho": 0.338,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.0",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=5,q=2,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=2$. Số hạng $u_{5}$ bằng bao nhiêu?",
+   "dap_an": "32",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 32.0,
+   "dap_so": {
+    "gia_tri": "32",
+    "so": 32.0
+   },
+   "do_kho": 0.464,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.1",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=6,q=2,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=2$. Số hạng $u_{6}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "64",
+     "dung": true
+    },
+    {
+     "noi_dung": "128",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "126",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "64",
+   "nhieu": [
+    {
+     "phuong_an": "128",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "126",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "64",
+    "so": 64.0
+   },
+   "do_kho": 0.326,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.1",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=6,q=2,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=2$. Số hạng $u_{6}$ bằng bao nhiêu?",
+   "dap_an": "64",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 64.0,
+   "dap_so": {
+    "gia_tri": "64",
+    "so": 64.0
+   },
+   "do_kho": 0.464,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.2",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "3",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=5,q=3,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=3$. Số hạng $u_{5}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "162",
+     "dung": true
+    },
+    {
+     "noi_dung": "486",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "14",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "242",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "162",
+   "nhieu": [
+    {
+     "phuong_an": "486",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "14",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "242",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "162",
+    "so": 162.0
+   },
+   "do_kho": 0.325,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.2",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "3",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=5,q=3,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=3$. Số hạng $u_{5}$ bằng bao nhiêu?",
+   "dap_an": "162",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 162.0,
+   "dap_so": {
+    "gia_tri": "162",
+    "so": 162.0
+   },
+   "do_kho": 0.468,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.3",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "3",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=6,q=3,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=3$. Số hạng $u_{6}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "486",
+     "dung": true
+    },
+    {
+     "noi_dung": "1458",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "17",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "728",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "486",
+   "nhieu": [
+    {
+     "phuong_an": "1458",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "17",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "728",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "486",
+    "so": 486.0
+   },
+   "do_kho": 0.327,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.3",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "3",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=6,q=3,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=3$. Số hạng $u_{6}$ bằng bao nhiêu?",
+   "dap_an": "486",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 486.0,
+   "dap_so": {
+    "gia_tri": "486",
+    "so": 486.0
+   },
+   "do_kho": 0.455,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.4",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "-2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=5,q=-2,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=-2$. Số hạng $u_{5}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "32",
+     "dung": true
+    },
+    {
+     "noi_dung": "-64",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "-6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "22",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "32",
+   "nhieu": [
+    {
+     "phuong_an": "-64",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "-6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "22",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "32",
+    "so": 32.0
+   },
+   "do_kho": 0.325,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.4",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "-2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=5,q=-2,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=-2$. Số hạng $u_{5}$ bằng bao nhiêu?",
+   "dap_an": "32",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 32.0,
+   "dap_so": {
+    "gia_tri": "32",
+    "so": 32.0
+   },
+   "do_kho": 0.463,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.5",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "-2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=6,q=-2,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=-2$. Số hạng $u_{6}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-64",
+     "dung": true
+    },
+    {
+     "noi_dung": "128",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "-8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "-42",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "-64",
+   "nhieu": [
+    {
+     "phuong_an": "128",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "-8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "-42",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-64",
+    "so": -64.0
+   },
+   "do_kho": 0.378,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.5",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "2",
+    "q": "-2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=6,q=-2,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=2$ và công bội $q=-2$. Số hạng $u_{6}$ bằng bao nhiêu?",
+   "dap_an": "-64",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -64.0,
+   "dap_so": {
+    "gia_tri": "-64",
+    "so": -64.0
+   },
+   "do_kho": 0.445,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.6",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=5,q=2,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=2$. Số hạng $u_{5}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "48",
+     "dung": true
+    },
+    {
+     "noi_dung": "96",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "93",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "48",
+   "nhieu": [
+    {
+     "phuong_an": "96",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "11",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "93",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "48",
+    "so": 48.0
+   },
+   "do_kho": 0.341,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.6",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=5,q=2,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=2$. Số hạng $u_{5}$ bằng bao nhiêu?",
+   "dap_an": "48",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 48.0,
+   "dap_so": {
+    "gia_tri": "48",
+    "so": 48.0
+   },
+   "do_kho": 0.434,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.7",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=6,q=2,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=2$. Số hạng $u_{6}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "96",
+     "dung": true
+    },
+    {
+     "noi_dung": "192",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "13",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "189",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "96",
+   "nhieu": [
+    {
+     "phuong_an": "192",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "13",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "189",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "96",
+    "so": 96.0
+   },
+   "do_kho": 0.361,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.7",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=6,q=2,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=2$. Số hạng $u_{6}$ bằng bao nhiêu?",
+   "dap_an": "96",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 96.0,
+   "dap_so": {
+    "gia_tri": "96",
+    "so": 96.0
+   },
+   "do_kho": 0.461,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.8",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "3",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=5,q=3,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=3$. Số hạng $u_{5}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "243",
+     "dung": true
+    },
+    {
+     "noi_dung": "729",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "15",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "363",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "243",
+   "nhieu": [
+    {
+     "phuong_an": "729",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "15",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "363",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "243",
+    "so": 243.0
+   },
+   "do_kho": 0.325,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.8",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "3",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=5,q=3,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=3$. Số hạng $u_{5}$ bằng bao nhiêu?",
+   "dap_an": "243",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 243.0,
+   "dap_so": {
+    "gia_tri": "243",
+    "so": 243.0
+   },
+   "do_kho": 0.431,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.9",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "3",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=6,q=3,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=3$. Số hạng $u_{6}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "729",
+     "dung": true
+    },
+    {
+     "noi_dung": "2187",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "18",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "1092",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "729",
+   "nhieu": [
+    {
+     "phuong_an": "2187",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "18",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "1092",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "729",
+    "so": 729.0
+   },
+   "do_kho": 0.363,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.9",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "3",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=6,q=3,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=3$. Số hạng $u_{6}$ bằng bao nhiêu?",
+   "dap_an": "729",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 729.0,
+   "dap_so": {
+    "gia_tri": "729",
+    "so": 729.0
+   },
+   "do_kho": 0.435,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.10",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "-2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=5,q=-2,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=-2$. Số hạng $u_{5}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "48",
+     "dung": true
+    },
+    {
+     "noi_dung": "-96",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "-5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "33",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "48",
+   "nhieu": [
+    {
+     "phuong_an": "-96",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "-5",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "33",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "48",
+    "so": 48.0
+   },
+   "do_kho": 0.369,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.10",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "-2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=5,q=-2,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=-2$. Số hạng $u_{5}$ bằng bao nhiêu?",
+   "dap_an": "48",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 48.0,
+   "dap_so": {
+    "gia_tri": "48",
+    "so": 48.0
+   },
+   "do_kho": 0.454,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.11",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "-2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=6,q=-2,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=-2$. Số hạng $u_{6}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-96",
+     "dung": true
+    },
+    {
+     "noi_dung": "192",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "-7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "-63",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "-96",
+   "nhieu": [
+    {
+     "phuong_an": "192",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "-7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "-63",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-96",
+    "so": -96.0
+   },
+   "do_kho": 0.339,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.11",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "3",
+    "q": "-2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=6,q=-2,u1=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=3$ và công bội $q=-2$. Số hạng $u_{6}$ bằng bao nhiêu?",
+   "dap_an": "-96",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -96.0,
+   "dap_so": {
+    "gia_tri": "-96",
+    "so": -96.0
+   },
+   "do_kho": 0.472,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.12",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=5,q=2,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=2$. Số hạng $u_{5}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-16",
+     "dung": true
+    },
+    {
+     "noi_dung": "-32",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "-31",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "-16",
+   "nhieu": [
+    {
+     "phuong_an": "-32",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "-31",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-16",
+    "so": -16.0
+   },
+   "do_kho": 0.349,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.12",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=5,q=2,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=2$. Số hạng $u_{5}$ bằng bao nhiêu?",
+   "dap_an": "-16",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -16.0,
+   "dap_so": {
+    "gia_tri": "-16",
+    "so": -16.0
+   },
+   "do_kho": 0.473,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.13",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=6,q=2,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=2$. Số hạng $u_{6}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-32",
+     "dung": true
+    },
+    {
+     "noi_dung": "-64",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "-63",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "-32",
+   "nhieu": [
+    {
+     "phuong_an": "-64",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "-63",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-32",
+    "so": -32.0
+   },
+   "do_kho": 0.353,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.13",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=6,q=2,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=2$. Số hạng $u_{6}$ bằng bao nhiêu?",
+   "dap_an": "-32",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -32.0,
+   "dap_so": {
+    "gia_tri": "-32",
+    "so": -32.0
+   },
+   "do_kho": 0.447,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.14",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "3",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=5,q=3,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=3$. Số hạng $u_{5}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-81",
+     "dung": true
+    },
+    {
+     "noi_dung": "-243",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "-121",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "-81",
+   "nhieu": [
+    {
+     "phuong_an": "-243",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "11",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "-121",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-81",
+    "so": -81.0
+   },
+   "do_kho": 0.371,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.14",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "3",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=5,q=3,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=3$. Số hạng $u_{5}$ bằng bao nhiêu?",
+   "dap_an": "-81",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -81.0,
+   "dap_so": {
+    "gia_tri": "-81",
+    "so": -81.0
+   },
+   "do_kho": 0.48,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.15",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "3",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=6,q=3,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=3$. Số hạng $u_{6}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-243",
+     "dung": true
+    },
+    {
+     "noi_dung": "-729",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "14",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "-364",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "-243",
+   "nhieu": [
+    {
+     "phuong_an": "-729",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "14",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "-364",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-243",
+    "so": -243.0
+   },
+   "do_kho": 0.341,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.15",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "3",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=6,q=3,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=3$. Số hạng $u_{6}$ bằng bao nhiêu?",
+   "dap_an": "-243",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -243.0,
+   "dap_so": {
+    "gia_tri": "-243",
+    "so": -243.0
+   },
+   "do_kho": 0.476,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.16",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "-2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=5,q=-2,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=-2$. Số hạng $u_{5}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-16",
+     "dung": true
+    },
+    {
+     "noi_dung": "32",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "-9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "-11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "-16",
+   "nhieu": [
+    {
+     "phuong_an": "32",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "-9",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "-11",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-16",
+    "so": -16.0
+   },
+   "do_kho": 0.345,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.16",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "-2",
+    "n": "5"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=5,q=-2,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=-2$. Số hạng $u_{5}$ bằng bao nhiêu?",
+   "dap_an": "-16",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -16.0,
+   "dap_so": {
+    "gia_tri": "-16",
+    "so": -16.0
+   },
+   "do_kho": 0.461,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TN.17",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "-2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-02|n=6,q=-2,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=-2$. Số hạng $u_{6}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "32",
+     "dung": true
+    },
+    {
+     "noi_dung": "-64",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "noi_dung": "-11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "noi_dung": "21",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_an": "32",
+   "nhieu": [
+    {
+     "phuong_an": "-64",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức $u_n=u_1q^n$"
+     }
+    },
+    {
+     "phuong_an": "-11",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang công thức cấp số cộng"
+     }
+    },
+    {
+     "phuong_an": "21",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính tổng $S_n$ thay cho $u_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "32",
+    "so": 32.0
+   },
+   "do_kho": 0.362,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-02.TLN.17",
+   "mau_cau": "MC-DS-02",
+   "bien_the": {
+    "u1": "-1",
+    "q": "-2",
+    "n": "6"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csn-so-hang",
+   "dang_tx": "ds.cap-so-nhan",
+   "lop": 11,
+   "yccd": [
+    "11.DS.2"
+   ],
+   "kien_thuc": [
+    "Số hạng cấp số nhân"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-02|n=6,q=-2,u1=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-02"
+   },
+   "de_bai": "Cho cấp số nhân $(u_n)$ có $u_1=-1$ và công bội $q=-2$. Số hạng $u_{6}$ bằng bao nhiêu?",
+   "dap_an": "32",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 32.0,
+   "dap_so": {
+    "gia_tri": "32",
+    "so": 32.0
+   },
+   "do_kho": 0.445,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.0",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "1",
+    "d": "2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=2,n=10,u1=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=1$ và công sai $d=2$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "100",
+     "dung": true
+    },
+    {
+     "noi_dung": "110",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "190",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "19",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "100",
+   "nhieu": [
+    {
+     "phuong_an": "110",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "190",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "19",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "100",
+    "so": 100.0
+   },
+   "do_kho": 0.366,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.0",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "1",
+    "d": "2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=2,n=10,u1=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=1$ và công sai $d=2$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng bao nhiêu?",
+   "dap_an": "100",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 100.0,
+   "dap_so": {
+    "gia_tri": "100",
+    "so": 100.0
+   },
+   "do_kho": 0.43,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.1",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "1",
+    "d": "2",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=2,n=12,u1=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=1$ và công sai $d=2$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "144",
+     "dung": true
+    },
+    {
+     "noi_dung": "156",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "276",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "23",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "144",
+   "nhieu": [
+    {
+     "phuong_an": "156",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "276",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "23",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "144",
+    "so": 144.0
+   },
+   "do_kho": 0.329,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.1",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "1",
+    "d": "2",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=2,n=12,u1=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=1$ và công sai $d=2$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng bao nhiêu?",
+   "dap_an": "144",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 144.0,
+   "dap_so": {
+    "gia_tri": "144",
+    "so": 144.0
+   },
+   "do_kho": 0.435,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.2",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "1",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=3,n=10,u1=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=1$ và công sai $d=3$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "145",
+     "dung": true
+    },
+    {
+     "noi_dung": "160",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "280",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "28",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "145",
+   "nhieu": [
+    {
+     "phuong_an": "160",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "280",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "28",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "145",
+    "so": 145.0
+   },
+   "do_kho": 0.363,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.2",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "1",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=3,n=10,u1=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=1$ và công sai $d=3$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng bao nhiêu?",
+   "dap_an": "145",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 145.0,
+   "dap_so": {
+    "gia_tri": "145",
+    "so": 145.0
+   },
+   "do_kho": 0.43,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.3",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "1",
+    "d": "3",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=3,n=12,u1=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=1$ và công sai $d=3$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "210",
+     "dung": true
+    },
+    {
+     "noi_dung": "228",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "408",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "34",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "210",
+   "nhieu": [
+    {
+     "phuong_an": "228",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "408",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "34",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "210",
+    "so": 210.0
+   },
+   "do_kho": 0.322,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.3",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "1",
+    "d": "3",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=3,n=12,u1=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=1$ và công sai $d=3$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng bao nhiêu?",
+   "dap_an": "210",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 210.0,
+   "dap_so": {
+    "gia_tri": "210",
+    "so": 210.0
+   },
+   "do_kho": 0.424,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.4",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "2",
+    "d": "2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=2,n=10,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=2$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "110",
+     "dung": true
+    },
+    {
+     "noi_dung": "120",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "200",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "20",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "110",
+   "nhieu": [
+    {
+     "phuong_an": "120",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "200",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "20",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "110",
+    "so": 110.0
+   },
+   "do_kho": 0.321,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.4",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "2",
+    "d": "2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=2,n=10,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=2$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng bao nhiêu?",
+   "dap_an": "110",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 110.0,
+   "dap_so": {
+    "gia_tri": "110",
+    "so": 110.0
+   },
+   "do_kho": 0.47,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.5",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "2",
+    "d": "2",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=2,n=12,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=2$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "156",
+     "dung": true
+    },
+    {
+     "noi_dung": "168",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "288",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "24",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "156",
+   "nhieu": [
+    {
+     "phuong_an": "168",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "288",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "24",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "156",
+    "so": 156.0
+   },
+   "do_kho": 0.333,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.5",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "2",
+    "d": "2",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=2,n=12,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=2$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng bao nhiêu?",
+   "dap_an": "156",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 156.0,
+   "dap_so": {
+    "gia_tri": "156",
+    "so": 156.0
+   },
+   "do_kho": 0.46,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.6",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "2",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=3,n=10,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=3$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "155",
+     "dung": true
+    },
+    {
+     "noi_dung": "170",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "290",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "29",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "155",
+   "nhieu": [
+    {
+     "phuong_an": "170",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "290",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "29",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "155",
+    "so": 155.0
+   },
+   "do_kho": 0.369,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.6",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "2",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=3,n=10,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=3$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng bao nhiêu?",
+   "dap_an": "155",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 155.0,
+   "dap_so": {
+    "gia_tri": "155",
+    "so": 155.0
+   },
+   "do_kho": 0.465,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.7",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "2",
+    "d": "3",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=3,n=12,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=3$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "222",
+     "dung": true
+    },
+    {
+     "noi_dung": "240",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "420",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "35",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "222",
+   "nhieu": [
+    {
+     "phuong_an": "240",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "420",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "35",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "222",
+    "so": 222.0
+   },
+   "do_kho": 0.326,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.7",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "2",
+    "d": "3",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=3,n=12,u1=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=2$ và công sai $d=3$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng bao nhiêu?",
+   "dap_an": "222",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 222.0,
+   "dap_so": {
+    "gia_tri": "222",
+    "so": 222.0
+   },
+   "do_kho": 0.47,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.8",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "5",
+    "d": "2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=2,n=10,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=2$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "140",
+     "dung": true
+    },
+    {
+     "noi_dung": "150",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "230",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "23",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "140",
+   "nhieu": [
+    {
+     "phuong_an": "150",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "230",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "23",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "140",
+    "so": 140.0
+   },
+   "do_kho": 0.357,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.8",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "5",
+    "d": "2",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=2,n=10,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=2$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng bao nhiêu?",
+   "dap_an": "140",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 140.0,
+   "dap_so": {
+    "gia_tri": "140",
+    "so": 140.0
+   },
+   "do_kho": 0.429,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.9",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "5",
+    "d": "2",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=2,n=12,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=2$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "192",
+     "dung": true
+    },
+    {
+     "noi_dung": "204",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "324",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "27",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "192",
+   "nhieu": [
+    {
+     "phuong_an": "204",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "324",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "27",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "192",
+    "so": 192.0
+   },
+   "do_kho": 0.322,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.9",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "5",
+    "d": "2",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=2,n=12,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=2$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng bao nhiêu?",
+   "dap_an": "192",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 192.0,
+   "dap_so": {
+    "gia_tri": "192",
+    "so": 192.0
+   },
+   "do_kho": 0.466,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.10",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "5",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=3,n=10,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=3$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "185",
+     "dung": true
+    },
+    {
+     "noi_dung": "200",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "320",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "32",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "185",
+   "nhieu": [
+    {
+     "phuong_an": "200",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "320",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "32",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "185",
+    "so": 185.0
+   },
+   "do_kho": 0.346,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.10",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "5",
+    "d": "3",
+    "n": "10"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=3,n=10,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=3$. Tổng $10$ số hạng đầu tiên $S_{10}$ bằng bao nhiêu?",
+   "dap_an": "185",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 185.0,
+   "dap_so": {
+    "gia_tri": "185",
+    "so": 185.0
+   },
+   "do_kho": 0.479,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TN.11",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "5",
+    "d": "3",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-DS-03|d=3,n=12,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=3$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "258",
+     "dung": true
+    },
+    {
+     "noi_dung": "276",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "noi_dung": "456",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "noi_dung": "38",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_an": "258",
+   "nhieu": [
+    {
+     "phuong_an": "276",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+     }
+    },
+    {
+     "phuong_an": "456",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân số số hạng với số hạng cuối"
+     }
+    },
+    {
+     "phuong_an": "38",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính $u_n$ thay cho $S_n$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "258",
+    "so": 258.0
+   },
+   "do_kho": 0.351,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-03.TLN.11",
+   "mau_cau": "MC-DS-03",
+   "bien_the": {
+    "u1": "5",
+    "d": "3",
+    "n": "12"
+   },
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.csc-tong",
+   "dang_tx": "ds.cap-so-cong",
+   "lop": 11,
+   "yccd": [
+    "11.DS.1"
+   ],
+   "kien_thuc": [
+    "Tổng n số hạng đầu cấp số cộng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-DS-03|d=3,n=12,u1=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-DS-03"
+   },
+   "de_bai": "Cho cấp số cộng $(u_n)$ có $u_1=5$ và công sai $d=3$. Tổng $12$ số hạng đầu tiên $S_{12}$ bằng bao nhiêu?",
+   "dap_an": "258",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 258.0,
+   "dap_so": {
+    "gia_tri": "258",
+    "so": 258.0
+   },
+   "do_kho": 0.465,
+   "dap_so_engine": null
+  }
+ ]
+}

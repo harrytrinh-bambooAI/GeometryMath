@@ -1,0 +1,184 @@
+{
+ "id": "MC-ML-03",
+ "ten": "Biến đổi biểu thức lôgarit",
+ "chu_de": "ham-so-mu-logarit",
+ "dang": "ml.bien-doi-log",
+ "dang_tx": "ml.bien-doi",
+ "yccd": [
+  "11.ML.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-ML-03",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-ML-03",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "u": [
+   "2",
+   "3"
+  ],
+  "v": [
+   "-1",
+   "5"
+  ],
+  "p": [
+   "2",
+   "3"
+  ],
+  "q": [
+   "1",
+   "4"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho $\\log_a x={u}$ và $\\log_a y={v}$ ($a,x,y>0$, $a\\ne1$).",
+ "hoi": "Giá trị của $\\log_a\\left(x^{{p}}y^{{q}}\\right)$ bằng",
+ "dap_so": "p*u+q*v",
+ "nhieu": [
+  {
+   "bieu_thuc": "p*u+v",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên hệ số mũ của $y$"
+   }
+  },
+  {
+   "bieu_thuc": "p*u-q*v",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Biến lôgarit của tích thành hiệu"
+   }
+  },
+  {
+   "bieu_thuc": "(p+q)*(u+v)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng các số mũ rồi nhân với tổng lôgarit"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": false,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-ML-03']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "u": "2",
+   "v": "-1",
+   "p": "2",
+   "q": "1"
+  },
+  {
+   "u": "2",
+   "v": "-1",
+   "p": "2",
+   "q": "4"
+  },
+  {
+   "u": "2",
+   "v": "-1",
+   "p": "3",
+   "q": "1"
+  },
+  {
+   "u": "2",
+   "v": "-1",
+   "p": "3",
+   "q": "4"
+  },
+  {
+   "u": "2",
+   "v": "5",
+   "p": "2",
+   "q": "1"
+  },
+  {
+   "u": "2",
+   "v": "5",
+   "p": "2",
+   "q": "4"
+  },
+  {
+   "u": "2",
+   "v": "5",
+   "p": "3",
+   "q": "1"
+  },
+  {
+   "u": "2",
+   "v": "5",
+   "p": "3",
+   "q": "4"
+  },
+  {
+   "u": "3",
+   "v": "-1",
+   "p": "2",
+   "q": "1"
+  },
+  {
+   "u": "3",
+   "v": "-1",
+   "p": "2",
+   "q": "4"
+  },
+  {
+   "u": "3",
+   "v": "-1",
+   "p": "3",
+   "q": "1"
+  },
+  {
+   "u": "3",
+   "v": "-1",
+   "p": "3",
+   "q": "4"
+  },
+  {
+   "u": "3",
+   "v": "5",
+   "p": "2",
+   "q": "1"
+  },
+  {
+   "u": "3",
+   "v": "5",
+   "p": "2",
+   "q": "4"
+  },
+  {
+   "u": "3",
+   "v": "5",
+   "p": "3",
+   "q": "1"
+  },
+  {
+   "u": "3",
+   "v": "5",
+   "p": "3",
+   "q": "4"
+  }
+ ],
+ "so_bien_the": 16,
+ "so_cau_sinh": 24,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

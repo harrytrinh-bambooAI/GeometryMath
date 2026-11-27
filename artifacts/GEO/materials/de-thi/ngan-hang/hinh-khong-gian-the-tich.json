@@ -1,0 +1,5838 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "hinh-khong-gian-the-tich",
+ "so_cau": 91,
+ "cau": [
+  {
+   "id": "MC-HH-A09.TN.0",
+   "mau_cau": "MC-HH-A09",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "A|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-51",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 + geometry/problem-specs.json#HKN-51",
+    "mau_cau": "MC-HH-A09"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a$. Thể tích khối chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a^{3}}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$ trong công thức thể tích khối chóp"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a^{3}}{6}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$ (nhầm sang tứ diện vuông)"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac12$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a^{3}}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "a^{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$ trong công thức thể tích khối chóp"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a^{3}}{6}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$ (nhầm sang tứ diện vuông)"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac12$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a^{3}}{3}",
+    "so": 0.3333333333333333
+   },
+   "do_kho": 0.161,
+   "dap_so_engine": 0.3333333333333333
+  },
+  {
+   "id": "MC-HH-A09.TLN.0",
+   "mau_cau": "MC-HH-A09",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "A|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-51",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 + geometry/problem-specs.json#HKN-51",
+    "mau_cau": "MC-HH-A09"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a$. Thể tích khối chóp $S.ABCD$ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,33",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.3333333333333333,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a^{3}}{3}",
+    "so": 0.3333333333333333
+   },
+   "do_kho": 0.474,
+   "dap_so_engine": 0.3333333333333333
+  },
+  {
+   "id": "MC-HH-A09.TN.1",
+   "mau_cau": "MC-HH-A09",
+   "bien_the": {
+    "k": "sqrt(2)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "A|k=sqrt(2)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-51",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 + geometry/problem-specs.json#HKN-51",
+    "mau_cau": "MC-HH-A09"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt{2}$. Thể tích khối chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{2}^{3}}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a\\sqrt{2}^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$ trong công thức thể tích khối chóp"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{2}^{3}}{6}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$ (nhầm sang tứ diện vuông)"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{2}^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac12$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a\\sqrt{2}^{3}}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "a\\sqrt{2}^{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$ trong công thức thể tích khối chóp"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{2}^{3}}{6}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$ (nhầm sang tứ diện vuông)"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{2}^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac12$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{2}^{3}}{3}",
+    "so": 0.4714045207910317
+   },
+   "do_kho": 0.143,
+   "dap_so_engine": 0.47140452079103173
+  },
+  {
+   "id": "MC-HH-A09.TLN.1",
+   "mau_cau": "MC-HH-A09",
+   "bien_the": {
+    "k": "sqrt(2)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "A|k=sqrt(2)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-51",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 + geometry/problem-specs.json#HKN-51",
+    "mau_cau": "MC-HH-A09"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt{2}$. Thể tích khối chóp $S.ABCD$ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,47",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.4714045207910317,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{2}^{3}}{3}",
+    "so": 0.4714045207910317
+   },
+   "do_kho": 0.489,
+   "dap_so_engine": 0.47140452079103173
+  },
+  {
+   "id": "MC-HH-A09.TN.2",
+   "mau_cau": "MC-HH-A09",
+   "bien_the": {
+    "k": "sqrt(3)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "A|k=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-51",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 + geometry/problem-specs.json#HKN-51",
+    "mau_cau": "MC-HH-A09"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt{3}$. Thể tích khối chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a\\sqrt{3}^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$ trong công thức thể tích khối chóp"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{6}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$ (nhầm sang tứ diện vuông)"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac12$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a\\sqrt{3}^{3}}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "a\\sqrt{3}^{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$ trong công thức thể tích khối chóp"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{3}}{6}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$ (nhầm sang tứ diện vuông)"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac12$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{3}^{3}}{3}",
+    "so": 0.5773502691896257
+   },
+   "do_kho": 0.179,
+   "dap_so_engine": 0.5773502691896257
+  },
+  {
+   "id": "MC-HH-A09.TLN.2",
+   "mau_cau": "MC-HH-A09",
+   "bien_the": {
+    "k": "sqrt(3)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "A|k=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-51",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 + geometry/problem-specs.json#HKN-51",
+    "mau_cau": "MC-HH-A09"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt{3}$. Thể tích khối chóp $S.ABCD$ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,58",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.5773502691896257,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{3}^{3}}{3}",
+    "so": 0.5773502691896257
+   },
+   "do_kho": 0.46,
+   "dap_so_engine": 0.5773502691896257
+  },
+  {
+   "id": "MC-HH-A09.TN.3",
+   "mau_cau": "MC-HH-A09",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "A|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-51",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 + geometry/problem-specs.json#HKN-51",
+    "mau_cau": "MC-HH-A09"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=2a$. Thể tích khối chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{2a^{3}}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "2a^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$ trong công thức thể tích khối chóp"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a^{3}}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$ (nhầm sang tứ diện vuông)"
+     }
+    },
+    {
+     "noi_dung": "a^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac12$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{2a^{3}}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "2a^{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$ trong công thức thể tích khối chóp"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a^{3}}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$ (nhầm sang tứ diện vuông)"
+     }
+    },
+    {
+     "phuong_an": "a^{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac12$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{2a^{3}}{3}",
+    "so": 0.6666666666666666
+   },
+   "do_kho": 0.175,
+   "dap_so_engine": 0.6666666666666666
+  },
+  {
+   "id": "MC-HH-A09.TLN.3",
+   "mau_cau": "MC-HH-A09",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "A|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-51",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 + geometry/problem-specs.json#HKN-51",
+    "mau_cau": "MC-HH-A09"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=2a$. Thể tích khối chóp $S.ABCD$ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,67",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.6666666666666666,
+   "dap_so": {
+    "gia_tri": "\\dfrac{2a^{3}}{3}",
+    "so": 0.6666666666666666
+   },
+   "do_kho": 0.444,
+   "dap_so_engine": 0.6666666666666666
+  },
+  {
+   "id": "MC-HH-A09.TN.4",
+   "mau_cau": "MC-HH-A09",
+   "bien_the": {
+    "k": "3"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "A|k=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-51",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 + geometry/problem-specs.json#HKN-51",
+    "mau_cau": "MC-HH-A09"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=3a$. Thể tích khối chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "a^{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "3a^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$ trong công thức thể tích khối chóp"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$ (nhầm sang tứ diện vuông)"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{3a^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac12$"
+     }
+    }
+   ],
+   "dap_an": "a^{3}",
+   "nhieu": [
+    {
+     "phuong_an": "3a^{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$ trong công thức thể tích khối chóp"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$ (nhầm sang tứ diện vuông)"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{3a^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac12$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a^{3}",
+    "so": 1.0
+   },
+   "do_kho": 0.143,
+   "dap_so_engine": 1.0
+  },
+  {
+   "id": "MC-HH-A09.TLN.4",
+   "mau_cau": "MC-HH-A09",
+   "bien_the": {
+    "k": "3"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "A|k=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-51",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 + geometry/problem-specs.json#HKN-51",
+    "mau_cau": "MC-HH-A09"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=3a$. Thể tích khối chóp $S.ABCD$ bằng $m\\cdot a^3$. Tìm $m$.",
+   "dap_an": "1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.0,
+   "dap_so": {
+    "gia_tri": "a^{3}",
+    "so": 1.0
+   },
+   "do_kho": 0.452,
+   "dap_so_engine": 1.0
+  },
+  {
+   "id": "MC-HH-A10.TN.0",
+   "mau_cau": "MC-HH-A10",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "A|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-67",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-67 + geometry/problem-specs.json#HKN-67",
+    "mau_cau": "MC-HH-A10"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a$. Tổng diện tích bốn mặt bên của hình chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "a^{2} + a\\sqrt{2}^{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a\\sqrt{2}^{2} + 2a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả diện tích đáy (tính diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "2a\\sqrt{2}^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều có đường cao bằng $SB$"
+     }
+    },
+    {
+     "noi_dung": "2a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều vuông tại $A$ với đường cao $SA$"
+     }
+    }
+   ],
+   "dap_an": "a^{2} + a\\sqrt{2}^{2}",
+   "nhieu": [
+    {
+     "phuong_an": "a\\sqrt{2}^{2} + 2a^{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả diện tích đáy (tính diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "2a\\sqrt{2}^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều có đường cao bằng $SB$"
+     }
+    },
+    {
+     "phuong_an": "2a^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều vuông tại $A$ với đường cao $SA$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a^{2} + a\\sqrt{2}^{2}",
+    "so": 2.414213562373095
+   },
+   "do_kho": 0.362,
+   "dap_so_engine": 2.414213562373095
+  },
+  {
+   "id": "MC-HH-A10.TLN.0",
+   "mau_cau": "MC-HH-A10",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "A|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-67",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-67 + geometry/problem-specs.json#HKN-67",
+    "mau_cau": "MC-HH-A10"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a$. Tổng diện tích bốn mặt bên của hình chóp $S.ABCD$ bằng $m\\cdot a^2$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "2,41",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.414213562373095,
+   "dap_so": {
+    "gia_tri": "a^{2} + a\\sqrt{2}^{2}",
+    "so": 2.414213562373095
+   },
+   "do_kho": 0.67,
+   "dap_so_engine": 2.414213562373095
+  },
+  {
+   "id": "MC-HH-A10.TN.1",
+   "mau_cau": "MC-HH-A10",
+   "bien_the": {
+    "k": "sqrt(3)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "A|k=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-67",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-67 + geometry/problem-specs.json#HKN-67",
+    "mau_cau": "MC-HH-A10"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt{3}$. Tổng diện tích bốn mặt bên của hình chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "a\\sqrt{3}^{2} + 2a^{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a\\sqrt{3}^{2} + 3a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả diện tích đáy (tính diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "4a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều có đường cao bằng $SB$"
+     }
+    },
+    {
+     "noi_dung": "2a\\sqrt{3}^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều vuông tại $A$ với đường cao $SA$"
+     }
+    }
+   ],
+   "dap_an": "a\\sqrt{3}^{2} + 2a^{2}",
+   "nhieu": [
+    {
+     "phuong_an": "a\\sqrt{3}^{2} + 3a^{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả diện tích đáy (tính diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "4a^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều có đường cao bằng $SB$"
+     }
+    },
+    {
+     "phuong_an": "2a\\sqrt{3}^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều vuông tại $A$ với đường cao $SA$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a\\sqrt{3}^{2} + 2a^{2}",
+    "so": 3.732050807568877
+   },
+   "do_kho": 0.378,
+   "dap_so_engine": 3.7320508075688767
+  },
+  {
+   "id": "MC-HH-A10.TLN.1",
+   "mau_cau": "MC-HH-A10",
+   "bien_the": {
+    "k": "sqrt(3)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "A|k=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-67",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-67 + geometry/problem-specs.json#HKN-67",
+    "mau_cau": "MC-HH-A10"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt{3}$. Tổng diện tích bốn mặt bên của hình chóp $S.ABCD$ bằng $m\\cdot a^2$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "3,73",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.732050807568877,
+   "dap_so": {
+    "gia_tri": "a\\sqrt{3}^{2} + 2a^{2}",
+    "so": 3.732050807568877
+   },
+   "do_kho": 0.661,
+   "dap_so_engine": 3.7320508075688767
+  },
+  {
+   "id": "MC-HH-A10.TN.2",
+   "mau_cau": "MC-HH-A10",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "A|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-67",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-67 + geometry/problem-specs.json#HKN-67",
+    "mau_cau": "MC-HH-A10"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=2a$. Tổng diện tích bốn mặt bên của hình chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2a^{2} + a\\sqrt{5}^{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a\\sqrt{5}^{2} + 3a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả diện tích đáy (tính diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "2a\\sqrt{5}^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều có đường cao bằng $SB$"
+     }
+    },
+    {
+     "noi_dung": "4a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều vuông tại $A$ với đường cao $SA$"
+     }
+    }
+   ],
+   "dap_an": "2a^{2} + a\\sqrt{5}^{2}",
+   "nhieu": [
+    {
+     "phuong_an": "a\\sqrt{5}^{2} + 3a^{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả diện tích đáy (tính diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "2a\\sqrt{5}^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều có đường cao bằng $SB$"
+     }
+    },
+    {
+     "phuong_an": "4a^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi bốn mặt bên đều vuông tại $A$ với đường cao $SA$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2a^{2} + a\\sqrt{5}^{2}",
+    "so": 4.23606797749979
+   },
+   "do_kho": 0.379,
+   "dap_so_engine": 4.23606797749979
+  },
+  {
+   "id": "MC-HH-A10.TLN.2",
+   "mau_cau": "MC-HH-A10",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-sa",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "A|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-67",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-67 + geometry/problem-specs.json#HKN-67",
+    "mau_cau": "MC-HH-A10"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=2a$. Tổng diện tích bốn mặt bên của hình chóp $S.ABCD$ bằng $m\\cdot a^2$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "4,24",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.23606797749979,
+   "dap_so": {
+    "gia_tri": "2a^{2} + a\\sqrt{5}^{2}",
+    "so": 4.23606797749979
+   },
+   "do_kho": 0.652,
+   "dap_so_engine": 4.23606797749979
+  },
+  {
+   "id": "MC-HH-B06.TN.0",
+   "mau_cau": "MC-HH-B06",
+   "bien_the": {
+    "k": "sqrt(6)/2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp tứ giác đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "B|k=sqrt(6)/2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-52",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-52 + geometry/problem-specs.json#HKN-52",
+    "mau_cau": "MC-HH-B06"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=\\dfrac{a\\sqrt{6}}{2}$. Thể tích khối chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{6}^{3}}{6}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{6}^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{6}^{3}}{12}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{6}^{3}}{4}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích đáy là $\\dfrac{a^2}{2}$ (nhầm hình vuông với tam giác)"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a\\sqrt{6}^{3}}{6}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{6}^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{6}^{3}}{12}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{6}^{3}}{4}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích đáy là $\\dfrac{a^2}{2}$ (nhầm hình vuông với tam giác)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{6}^{3}}{6}",
+    "so": 0.408248290463863
+   },
+   "do_kho": 0.196,
+   "dap_so_engine": 0.40824829046386296
+  },
+  {
+   "id": "MC-HH-B06.TLN.0",
+   "mau_cau": "MC-HH-B06",
+   "bien_the": {
+    "k": "sqrt(6)/2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp tứ giác đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "B|k=sqrt(6)/2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-52",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-52 + geometry/problem-specs.json#HKN-52",
+    "mau_cau": "MC-HH-B06"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=\\dfrac{a\\sqrt{6}}{2}$. Thể tích khối chóp $S.ABCD$ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,41",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.408248290463863,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{6}^{3}}{6}",
+    "so": 0.408248290463863
+   },
+   "do_kho": 0.446,
+   "dap_so_engine": 0.40824829046386296
+  },
+  {
+   "id": "MC-HH-B06.TN.1",
+   "mau_cau": "MC-HH-B06",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp tứ giác đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "B|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-52",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-52 + geometry/problem-specs.json#HKN-52",
+    "mau_cau": "MC-HH-B06"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=a$. Thể tích khối chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a^{3}}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a^{3}}{6}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích đáy là $\\dfrac{a^2}{2}$ (nhầm hình vuông với tam giác)"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a^{3}}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "a^{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a^{3}}{6}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích đáy là $\\dfrac{a^2}{2}$ (nhầm hình vuông với tam giác)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a^{3}}{3}",
+    "so": 0.3333333333333333
+   },
+   "do_kho": 0.126,
+   "dap_so_engine": 0.3333333333333333
+  },
+  {
+   "id": "MC-HH-B06.TLN.1",
+   "mau_cau": "MC-HH-B06",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp tứ giác đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "B|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-52",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-52 + geometry/problem-specs.json#HKN-52",
+    "mau_cau": "MC-HH-B06"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=a$. Thể tích khối chóp $S.ABCD$ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,33",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.3333333333333333,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a^{3}}{3}",
+    "so": 0.3333333333333333
+   },
+   "do_kho": 0.465,
+   "dap_so_engine": 0.3333333333333333
+  },
+  {
+   "id": "MC-HH-B06.TN.2",
+   "mau_cau": "MC-HH-B06",
+   "bien_the": {
+    "k": "sqrt(3)/2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp tứ giác đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "B|k=sqrt(3)/2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-52",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-52 + geometry/problem-specs.json#HKN-52",
+    "mau_cau": "MC-HH-B06"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=\\dfrac{a\\sqrt{3}}{2}$. Thể tích khối chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{6}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{12}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{4}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích đáy là $\\dfrac{a^2}{2}$ (nhầm hình vuông với tam giác)"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a\\sqrt{3}^{3}}{6}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{3}}{12}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{3}}{4}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích đáy là $\\dfrac{a^2}{2}$ (nhầm hình vuông với tam giác)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{3}^{3}}{6}",
+    "so": 0.28867513459481287
+   },
+   "do_kho": 0.183,
+   "dap_so_engine": 0.28867513459481287
+  },
+  {
+   "id": "MC-HH-B06.TLN.2",
+   "mau_cau": "MC-HH-B06",
+   "bien_the": {
+    "k": "sqrt(3)/2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp tứ giác đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "B|k=sqrt(3)/2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-52",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-52 + geometry/problem-specs.json#HKN-52",
+    "mau_cau": "MC-HH-B06"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=\\dfrac{a\\sqrt{3}}{2}$. Thể tích khối chóp $S.ABCD$ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,29",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.28867513459481287,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{3}^{3}}{6}",
+    "so": 0.28867513459481287
+   },
+   "do_kho": 0.449,
+   "dap_so_engine": 0.28867513459481287
+  },
+  {
+   "id": "MC-HH-B06.TN.3",
+   "mau_cau": "MC-HH-B06",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp tứ giác đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "B|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-52",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-52 + geometry/problem-specs.json#HKN-52",
+    "mau_cau": "MC-HH-B06"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=2a$. Thể tích khối chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{2a^{3}}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "2a^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a^{3}}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$"
+     }
+    },
+    {
+     "noi_dung": "a^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích đáy là $\\dfrac{a^2}{2}$ (nhầm hình vuông với tam giác)"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{2a^{3}}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "2a^{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a^{3}}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số $\\dfrac16$"
+     }
+    },
+    {
+     "phuong_an": "a^{3}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích đáy là $\\dfrac{a^2}{2}$ (nhầm hình vuông với tam giác)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{2a^{3}}{3}",
+    "so": 0.6666666666666666
+   },
+   "do_kho": 0.167,
+   "dap_so_engine": 0.6666666666666666
+  },
+  {
+   "id": "MC-HH-B06.TLN.3",
+   "mau_cau": "MC-HH-B06",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối chóp tứ giác đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "B|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-52",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-52 + geometry/problem-specs.json#HKN-52",
+    "mau_cau": "MC-HH-B06"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=2a$. Thể tích khối chóp $S.ABCD$ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,67",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.6666666666666666,
+   "dap_so": {
+    "gia_tri": "\\dfrac{2a^{3}}{3}",
+    "so": 0.6666666666666666
+   },
+   "do_kho": 0.436,
+   "dap_so_engine": 0.6666666666666666
+  },
+  {
+   "id": "MC-HH-B07.TN.0",
+   "mau_cau": "MC-HH-B07",
+   "bien_the": {
+    "k": "sqrt(3)/2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp tứ giác đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "B|k=sqrt(3)/2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-66",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-66 + geometry/problem-specs.json#HKN-66",
+    "mau_cau": "MC-HH-B07"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=\\dfrac{a\\sqrt{3}}{2}$. Diện tích xung quanh của hình chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2a^{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a\\sqrt{3}^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao $SO$ thay cho trung đoạn"
+     }
+    },
+    {
+     "noi_dung": "a\\sqrt{5}^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Dùng cạnh bên $SA$ làm trung đoạn"
+     }
+    },
+    {
+     "noi_dung": "a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính hai mặt bên"
+     }
+    }
+   ],
+   "dap_an": "2a^{2}",
+   "nhieu": [
+    {
+     "phuong_an": "a\\sqrt{3}^{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao $SO$ thay cho trung đoạn"
+     }
+    },
+    {
+     "phuong_an": "a\\sqrt{5}^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Dùng cạnh bên $SA$ làm trung đoạn"
+     }
+    },
+    {
+     "phuong_an": "a^{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính hai mặt bên"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2a^{2}",
+    "so": 2.0
+   },
+   "do_kho": 0.353,
+   "dap_so_engine": 1.9999999999999998
+  },
+  {
+   "id": "MC-HH-B07.TLN.0",
+   "mau_cau": "MC-HH-B07",
+   "bien_the": {
+    "k": "sqrt(3)/2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp tứ giác đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "B|k=sqrt(3)/2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-66",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-66 + geometry/problem-specs.json#HKN-66",
+    "mau_cau": "MC-HH-B07"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=\\dfrac{a\\sqrt{3}}{2}$. Diện tích xung quanh của hình chóp $S.ABCD$ bằng $m\\cdot a^2$. Tìm $m$.",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2a^{2}",
+    "so": 2.0
+   },
+   "do_kho": 0.621,
+   "dap_so_engine": 1.9999999999999998
+  },
+  {
+   "id": "MC-HH-B07.TN.1",
+   "mau_cau": "MC-HH-B07",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp tứ giác đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "B|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-66",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-66 + geometry/problem-specs.json#HKN-66",
+    "mau_cau": "MC-HH-B07"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=a$. Diện tích xung quanh của hình chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "a\\sqrt{5}^{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "2a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao $SO$ thay cho trung đoạn"
+     }
+    },
+    {
+     "noi_dung": "a\\sqrt{6}^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Dùng cạnh bên $SA$ làm trung đoạn"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{5}^{2}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính hai mặt bên"
+     }
+    }
+   ],
+   "dap_an": "a\\sqrt{5}^{2}",
+   "nhieu": [
+    {
+     "phuong_an": "2a^{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao $SO$ thay cho trung đoạn"
+     }
+    },
+    {
+     "phuong_an": "a\\sqrt{6}^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Dùng cạnh bên $SA$ làm trung đoạn"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{5}^{2}}{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính hai mặt bên"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a\\sqrt{5}^{2}",
+    "so": 2.23606797749979
+   },
+   "do_kho": 0.384,
+   "dap_so_engine": 2.23606797749979
+  },
+  {
+   "id": "MC-HH-B07.TLN.1",
+   "mau_cau": "MC-HH-B07",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp tứ giác đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "B|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-66",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-66 + geometry/problem-specs.json#HKN-66",
+    "mau_cau": "MC-HH-B07"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=a$. Diện tích xung quanh của hình chóp $S.ABCD$ bằng $m\\cdot a^2$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "2,24",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.23606797749979,
+   "dap_so": {
+    "gia_tri": "a\\sqrt{5}^{2}",
+    "so": 2.23606797749979
+   },
+   "do_kho": 0.68,
+   "dap_so_engine": 2.23606797749979
+  },
+  {
+   "id": "MC-HH-B07.TN.2",
+   "mau_cau": "MC-HH-B07",
+   "bien_the": {
+    "k": "sqrt(2)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp tứ giác đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "B|k=sqrt(2)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-66",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-66 + geometry/problem-specs.json#HKN-66",
+    "mau_cau": "MC-HH-B07"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=a\\sqrt{2}$. Diện tích xung quanh của hình chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "3a^{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "2a\\sqrt{2}^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao $SO$ thay cho trung đoạn"
+     }
+    },
+    {
+     "noi_dung": "a\\sqrt{10}^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Dùng cạnh bên $SA$ làm trung đoạn"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{3a^{2}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính hai mặt bên"
+     }
+    }
+   ],
+   "dap_an": "3a^{2}",
+   "nhieu": [
+    {
+     "phuong_an": "2a\\sqrt{2}^{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao $SO$ thay cho trung đoạn"
+     }
+    },
+    {
+     "phuong_an": "a\\sqrt{10}^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Dùng cạnh bên $SA$ làm trung đoạn"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{3a^{2}}{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính hai mặt bên"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "3a^{2}",
+    "so": 3.0
+   },
+   "do_kho": 0.342,
+   "dap_so_engine": 3.0000000000000004
+  },
+  {
+   "id": "MC-HH-B07.TLN.2",
+   "mau_cau": "MC-HH-B07",
+   "bien_the": {
+    "k": "sqrt(2)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.chop-deu",
+   "dang_tx": "th.chop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh chóp tứ giác đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "B|k=sqrt(2)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-66",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-66 + geometry/problem-specs.json#HKN-66",
+    "mau_cau": "MC-HH-B07"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=a\\sqrt{2}$. Diện tích xung quanh của hình chóp $S.ABCD$ bằng $m\\cdot a^2$. Tìm $m$.",
+   "dap_an": "3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.0,
+   "dap_so": {
+    "gia_tri": "3a^{2}",
+    "so": 3.0
+   },
+   "do_kho": 0.658,
+   "dap_so_engine": 3.0000000000000004
+  },
+  {
+   "id": "MC-HH-C05.TN.0",
+   "mau_cau": "MC-HH-C05",
+   "bien_the": {
+    "c": "3"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lap-phuong",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối lập phương"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "C|c=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-21",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-21 + geometry/problem-specs.json#HKN-21",
+    "mau_cau": "MC-HH-C05"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $3$ cm. Thể tích khối lập phương bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "27\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "54\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần $6c^2$"
+     }
+    },
+    {
+     "noi_dung": "9\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "36\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh $4c^2$"
+     }
+    }
+   ],
+   "dap_an": "27\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "54\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần $6c^2$"
+     }
+    },
+    {
+     "phuong_an": "9\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "36\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh $4c^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "27\\text{ cm}",
+    "so": 27.0
+   },
+   "do_kho": 0.18,
+   "dap_so_engine": 27.0
+  },
+  {
+   "id": "MC-HH-C05.TLN.0",
+   "mau_cau": "MC-HH-C05",
+   "bien_the": {
+    "c": "3"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lap-phuong",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối lập phương"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "C|c=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-21",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-21 + geometry/problem-specs.json#HKN-21",
+    "mau_cau": "MC-HH-C05"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $3$ cm. Thể tích khối lập phương bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "27",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 27.0,
+   "dap_so": {
+    "gia_tri": "27\\text{ cm}",
+    "so": 27.0
+   },
+   "do_kho": 0.253,
+   "dap_so_engine": 27.0
+  },
+  {
+   "id": "MC-HH-C05.TLN.1",
+   "mau_cau": "MC-HH-C05",
+   "bien_the": {
+    "c": "4"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lap-phuong",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối lập phương"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "C|c=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-21",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-21 + geometry/problem-specs.json#HKN-21",
+    "mau_cau": "MC-HH-C05"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $4$ cm. Thể tích khối lập phương bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "64",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 64.0,
+   "dap_so": {
+    "gia_tri": "64\\text{ cm}",
+    "so": 64.0
+   },
+   "do_kho": 0.249,
+   "dap_so_engine": 64.0
+  },
+  {
+   "id": "MC-HH-C05.TN.2",
+   "mau_cau": "MC-HH-C05",
+   "bien_the": {
+    "c": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lap-phuong",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối lập phương"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "C|c=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-21",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-21 + geometry/problem-specs.json#HKN-21",
+    "mau_cau": "MC-HH-C05"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $5$ cm. Thể tích khối lập phương bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "125\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "150\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần $6c^2$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{125}{3}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "100\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh $4c^2$"
+     }
+    }
+   ],
+   "dap_an": "125\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "150\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần $6c^2$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{125}{3}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "100\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh $4c^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "125\\text{ cm}",
+    "so": 125.0
+   },
+   "do_kho": 0.171,
+   "dap_so_engine": 125.0
+  },
+  {
+   "id": "MC-HH-C05.TLN.2",
+   "mau_cau": "MC-HH-C05",
+   "bien_the": {
+    "c": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lap-phuong",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối lập phương"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "C|c=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-21",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-21 + geometry/problem-specs.json#HKN-21",
+    "mau_cau": "MC-HH-C05"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $5$ cm. Thể tích khối lập phương bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "125",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 125.0,
+   "dap_so": {
+    "gia_tri": "125\\text{ cm}",
+    "so": 125.0
+   },
+   "do_kho": 0.242,
+   "dap_so_engine": 125.0
+  },
+  {
+   "id": "MC-HH-C05.TLN.3",
+   "mau_cau": "MC-HH-C05",
+   "bien_the": {
+    "c": "6"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lap-phuong",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối lập phương"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "C|c=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-21",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-21 + geometry/problem-specs.json#HKN-21",
+    "mau_cau": "MC-HH-C05"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $6$ cm. Thể tích khối lập phương bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "216",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 216.0,
+   "dap_so": {
+    "gia_tri": "216\\text{ cm}",
+    "so": 216.0
+   },
+   "do_kho": 0.278,
+   "dap_so_engine": 216.0
+  },
+  {
+   "id": "MC-HH-D01.TN.0",
+   "mau_cau": "MC-HH-D01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích hình hộp chữ nhật"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=3,q=4,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-24",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-24 + geometry/problem-specs.json#HKN-24",
+    "mau_cau": "MC-HH-D01"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=5$ cm. Thể tích khối hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "60\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "94\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần"
+     }
+    },
+    {
+     "noi_dung": "20\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "70\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    }
+   ],
+   "dap_an": "60\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "94\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần"
+     }
+    },
+    {
+     "phuong_an": "20\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "70\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "60\\text{ cm}",
+    "so": 60.0
+   },
+   "do_kho": 0.128,
+   "dap_so_engine": 60.0
+  },
+  {
+   "id": "MC-HH-D01.TLN.0",
+   "mau_cau": "MC-HH-D01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích hình hộp chữ nhật"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=3,q=4,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-24",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-24 + geometry/problem-specs.json#HKN-24",
+    "mau_cau": "MC-HH-D01"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=5$ cm. Thể tích khối hộp chữ nhật bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "60",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 60.0,
+   "dap_so": {
+    "gia_tri": "60\\text{ cm}",
+    "so": 60.0
+   },
+   "do_kho": 0.249,
+   "dap_so_engine": 60.0
+  },
+  {
+   "id": "MC-HH-D01.TN.1",
+   "mau_cau": "MC-HH-D01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "12"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích hình hộp chữ nhật"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=3,q=4,r=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-24",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-24 + geometry/problem-specs.json#HKN-24",
+    "mau_cau": "MC-HH-D01"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=12$ cm. Thể tích khối hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "144\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "192\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần"
+     }
+    },
+    {
+     "noi_dung": "48\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "168\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    }
+   ],
+   "dap_an": "144\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "192\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần"
+     }
+    },
+    {
+     "phuong_an": "48\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "168\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "144\\text{ cm}",
+    "so": 144.0
+   },
+   "do_kho": 0.176,
+   "dap_so_engine": 144.0
+  },
+  {
+   "id": "MC-HH-D01.TLN.1",
+   "mau_cau": "MC-HH-D01",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "12"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích hình hộp chữ nhật"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=3,q=4,r=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-24",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-24 + geometry/problem-specs.json#HKN-24",
+    "mau_cau": "MC-HH-D01"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=12$ cm. Thể tích khối hộp chữ nhật bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "144",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 144.0,
+   "dap_so": {
+    "gia_tri": "144\\text{ cm}",
+    "so": 144.0
+   },
+   "do_kho": 0.24,
+   "dap_so_engine": 144.0
+  },
+  {
+   "id": "MC-HH-D01.TN.2",
+   "mau_cau": "MC-HH-D01",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "r": "6"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích hình hộp chữ nhật"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=2,q=3,r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-24",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-24 + geometry/problem-specs.json#HKN-24",
+    "mau_cau": "MC-HH-D01"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=2$ cm, $AD=3$ cm, $AA'=6$ cm. Thể tích khối hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "36\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "72\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần"
+     }
+    },
+    {
+     "noi_dung": "12\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "60\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    }
+   ],
+   "dap_an": "36\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "72\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần"
+     }
+    },
+    {
+     "phuong_an": "12\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "60\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "36\\text{ cm}",
+    "so": 36.0
+   },
+   "do_kho": 0.131,
+   "dap_so_engine": 36.0
+  },
+  {
+   "id": "MC-HH-D01.TLN.2",
+   "mau_cau": "MC-HH-D01",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "r": "6"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích hình hộp chữ nhật"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=2,q=3,r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-24",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-24 + geometry/problem-specs.json#HKN-24",
+    "mau_cau": "MC-HH-D01"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=2$ cm, $AD=3$ cm, $AA'=6$ cm. Thể tích khối hộp chữ nhật bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "36",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 36.0,
+   "dap_so": {
+    "gia_tri": "36\\text{ cm}",
+    "so": 36.0
+   },
+   "do_kho": 0.245,
+   "dap_so_engine": 36.0
+  },
+  {
+   "id": "MC-HH-D01.TN.3",
+   "mau_cau": "MC-HH-D01",
+   "bien_the": {
+    "p": "1",
+    "q": "2",
+    "r": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích hình hộp chữ nhật"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=1,q=2,r=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-24",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-24 + geometry/problem-specs.json#HKN-24",
+    "mau_cau": "MC-HH-D01"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=1$ cm, $AD=2$ cm, $AA'=2$ cm. Thể tích khối hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "4\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "16\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{4}{3}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "12\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    }
+   ],
+   "dap_an": "4\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "16\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{4}{3}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "12\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "4\\text{ cm}",
+    "so": 4.0
+   },
+   "do_kho": 0.128,
+   "dap_so_engine": 4.0
+  },
+  {
+   "id": "MC-HH-D01.TLN.3",
+   "mau_cau": "MC-HH-D01",
+   "bien_the": {
+    "p": "1",
+    "q": "2",
+    "r": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích hình hộp chữ nhật"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=1,q=2,r=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-24",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-24 + geometry/problem-specs.json#HKN-24",
+    "mau_cau": "MC-HH-D01"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=1$ cm, $AD=2$ cm, $AA'=2$ cm. Thể tích khối hộp chữ nhật bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.0,
+   "dap_so": {
+    "gia_tri": "4\\text{ cm}",
+    "so": 4.0
+   },
+   "do_kho": 0.244,
+   "dap_so_engine": 4.0
+  },
+  {
+   "id": "MC-HH-D01.TN.4",
+   "mau_cau": "MC-HH-D01",
+   "bien_the": {
+    "p": "6",
+    "q": "8",
+    "r": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích hình hộp chữ nhật"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=6,q=8,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-24",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-24 + geometry/problem-specs.json#HKN-24",
+    "mau_cau": "MC-HH-D01"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=6$ cm, $AD=8$ cm, $AA'=5$ cm. Thể tích khối hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "240\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "236\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần"
+     }
+    },
+    {
+     "noi_dung": "80\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "140\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    }
+   ],
+   "dap_an": "240\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "236\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích toàn phần"
+     }
+    },
+    {
+     "phuong_an": "80\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "140\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "240\\text{ cm}",
+    "so": 240.0
+   },
+   "do_kho": 0.164,
+   "dap_so_engine": 240.0
+  },
+  {
+   "id": "MC-HH-D01.TLN.4",
+   "mau_cau": "MC-HH-D01",
+   "bien_the": {
+    "p": "6",
+    "q": "8",
+    "r": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích hình hộp chữ nhật"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=6,q=8,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-24",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-24 + geometry/problem-specs.json#HKN-24",
+    "mau_cau": "MC-HH-D01"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=6$ cm, $AD=8$ cm, $AA'=5$ cm. Thể tích khối hộp chữ nhật bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "240",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 240.0,
+   "dap_so": {
+    "gia_tri": "240\\text{ cm}",
+    "so": 240.0
+   },
+   "do_kho": 0.267,
+   "dap_so_engine": 240.0
+  },
+  {
+   "id": "MC-HH-D04.TN.0",
+   "mau_cau": "MC-HH-D04",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình hộp chữ nhật"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=3,q=4,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-65",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-65 + geometry/problem-specs.json#HKN-65",
+    "mau_cau": "MC-HH-D04"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=5$ cm. Diện tích xung quanh của hình hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "70\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "94\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "35\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng nửa chu vi đáy"
+     }
+    },
+    {
+     "noi_dung": "60\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_an": "70\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "94\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "35\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng nửa chu vi đáy"
+     }
+    },
+    {
+     "phuong_an": "60\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "70\\text{ cm}",
+    "so": 70.0
+   },
+   "do_kho": 0.177,
+   "dap_so_engine": 70.0
+  },
+  {
+   "id": "MC-HH-D04.TLN.0",
+   "mau_cau": "MC-HH-D04",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình hộp chữ nhật"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=3,q=4,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-65",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-65 + geometry/problem-specs.json#HKN-65",
+    "mau_cau": "MC-HH-D04"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=5$ cm. Diện tích xung quanh của hình hộp chữ nhật bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "70",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 70.0,
+   "dap_so": {
+    "gia_tri": "70\\text{ cm}",
+    "so": 70.0
+   },
+   "do_kho": 0.241,
+   "dap_so_engine": 70.0
+  },
+  {
+   "id": "MC-HH-D04.TN.1",
+   "mau_cau": "MC-HH-D04",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "12"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình hộp chữ nhật"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=3,q=4,r=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-65",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-65 + geometry/problem-specs.json#HKN-65",
+    "mau_cau": "MC-HH-D04"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=12$ cm. Diện tích xung quanh của hình hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "168\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "192\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "84\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng nửa chu vi đáy"
+     }
+    },
+    {
+     "noi_dung": "144\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_an": "168\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "192\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "84\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng nửa chu vi đáy"
+     }
+    },
+    {
+     "phuong_an": "144\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "168\\text{ cm}",
+    "so": 168.0
+   },
+   "do_kho": 0.153,
+   "dap_so_engine": 168.0
+  },
+  {
+   "id": "MC-HH-D04.TLN.1",
+   "mau_cau": "MC-HH-D04",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "12"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình hộp chữ nhật"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=3,q=4,r=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-65",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-65 + geometry/problem-specs.json#HKN-65",
+    "mau_cau": "MC-HH-D04"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=12$ cm. Diện tích xung quanh của hình hộp chữ nhật bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "168",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 168.0,
+   "dap_so": {
+    "gia_tri": "168\\text{ cm}",
+    "so": 168.0
+   },
+   "do_kho": 0.225,
+   "dap_so_engine": 168.0
+  },
+  {
+   "id": "MC-HH-D04.TN.2",
+   "mau_cau": "MC-HH-D04",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "r": "6"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình hộp chữ nhật"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=2,q=3,r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-65",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-65 + geometry/problem-specs.json#HKN-65",
+    "mau_cau": "MC-HH-D04"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=2$ cm, $AD=3$ cm, $AA'=6$ cm. Diện tích xung quanh của hình hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "60\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "72\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "30\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng nửa chu vi đáy"
+     }
+    },
+    {
+     "noi_dung": "36\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_an": "60\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "72\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "30\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng nửa chu vi đáy"
+     }
+    },
+    {
+     "phuong_an": "36\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "60\\text{ cm}",
+    "so": 60.0
+   },
+   "do_kho": 0.133,
+   "dap_so_engine": 60.0
+  },
+  {
+   "id": "MC-HH-D04.TLN.2",
+   "mau_cau": "MC-HH-D04",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "r": "6"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình hộp chữ nhật"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=2,q=3,r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-65",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-65 + geometry/problem-specs.json#HKN-65",
+    "mau_cau": "MC-HH-D04"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=2$ cm, $AD=3$ cm, $AA'=6$ cm. Diện tích xung quanh của hình hộp chữ nhật bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "60",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 60.0,
+   "dap_so": {
+    "gia_tri": "60\\text{ cm}",
+    "so": 60.0
+   },
+   "do_kho": 0.25,
+   "dap_so_engine": 60.0
+  },
+  {
+   "id": "MC-HH-D04.TN.3",
+   "mau_cau": "MC-HH-D04",
+   "bien_the": {
+    "p": "1",
+    "q": "2",
+    "r": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình hộp chữ nhật"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=1,q=2,r=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-65",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-65 + geometry/problem-specs.json#HKN-65",
+    "mau_cau": "MC-HH-D04"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=1$ cm, $AD=2$ cm, $AA'=2$ cm. Diện tích xung quanh của hình hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "12\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "16\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "6\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng nửa chu vi đáy"
+     }
+    },
+    {
+     "noi_dung": "4\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_an": "12\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "16\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "6\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng nửa chu vi đáy"
+     }
+    },
+    {
+     "phuong_an": "4\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "12\\text{ cm}",
+    "so": 12.0
+   },
+   "do_kho": 0.135,
+   "dap_so_engine": 12.0
+  },
+  {
+   "id": "MC-HH-D04.TLN.3",
+   "mau_cau": "MC-HH-D04",
+   "bien_the": {
+    "p": "1",
+    "q": "2",
+    "r": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình hộp chữ nhật"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=1,q=2,r=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-65",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-65 + geometry/problem-specs.json#HKN-65",
+    "mau_cau": "MC-HH-D04"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=1$ cm, $AD=2$ cm, $AA'=2$ cm. Diện tích xung quanh của hình hộp chữ nhật bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "12",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 12.0,
+   "dap_so": {
+    "gia_tri": "12\\text{ cm}",
+    "so": 12.0
+   },
+   "do_kho": 0.278,
+   "dap_so_engine": 12.0
+  },
+  {
+   "id": "MC-HH-D04.TN.4",
+   "mau_cau": "MC-HH-D04",
+   "bien_the": {
+    "p": "6",
+    "q": "8",
+    "r": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình hộp chữ nhật"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=6,q=8,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-65",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-65 + geometry/problem-specs.json#HKN-65",
+    "mau_cau": "MC-HH-D04"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=6$ cm, $AD=8$ cm, $AA'=5$ cm. Diện tích xung quanh của hình hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "140\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "236\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "70\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng nửa chu vi đáy"
+     }
+    },
+    {
+     "noi_dung": "240\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_an": "140\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "236\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "70\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng nửa chu vi đáy"
+     }
+    },
+    {
+     "phuong_an": "240\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "140\\text{ cm}",
+    "so": 140.0
+   },
+   "do_kho": 0.123,
+   "dap_so_engine": 140.0
+  },
+  {
+   "id": "MC-HH-D04.TLN.4",
+   "mau_cau": "MC-HH-D04",
+   "bien_the": {
+    "p": "6",
+    "q": "8",
+    "r": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.hop",
+   "dang_tx": "th.hop",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình hộp chữ nhật"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=6,q=8,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-65",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-65 + geometry/problem-specs.json#HKN-65",
+    "mau_cau": "MC-HH-D04"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=6$ cm, $AD=8$ cm, $AA'=5$ cm. Diện tích xung quanh của hình hộp chữ nhật bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "140",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 140.0,
+   "dap_so": {
+    "gia_tri": "140\\text{ cm}",
+    "so": 140.0
+   },
+   "do_kho": 0.27,
+   "dap_so_engine": 140.0
+  },
+  {
+   "id": "MC-HH-E02.TN.0",
+   "mau_cau": "MC-HH-E02",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ tam giác đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "E|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-53",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-53 + geometry/problem-specs.json#HKN-53",
+    "mau_cau": "MC-HH-E02"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=a$. Thể tích khối lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{4}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{12}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích tam giác đều thành $\\dfrac{\\sqrt3}{2}a^2$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Coi đáy là tam giác vuông cân, $S=\\dfrac{a^2}{2}$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a\\sqrt{3}^{3}}{4}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{3}}{12}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích tam giác đều thành $\\dfrac{\\sqrt3}{2}a^2$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Coi đáy là tam giác vuông cân, $S=\\dfrac{a^2}{2}$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{3}^{3}}{4}",
+    "so": 0.4330127018922193
+   },
+   "do_kho": 0.196,
+   "dap_so_engine": 0.4330127018922193
+  },
+  {
+   "id": "MC-HH-E02.TLN.0",
+   "mau_cau": "MC-HH-E02",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ tam giác đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "E|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-53",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-53 + geometry/problem-specs.json#HKN-53",
+    "mau_cau": "MC-HH-E02"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=a$. Thể tích khối lăng trụ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,43",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.4330127018922193,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{3}^{3}}{4}",
+    "so": 0.4330127018922193
+   },
+   "do_kho": 0.473,
+   "dap_so_engine": 0.4330127018922193
+  },
+  {
+   "id": "MC-HH-E02.TN.1",
+   "mau_cau": "MC-HH-E02",
+   "bien_the": {
+    "k": "sqrt(3)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ tam giác đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "E|k=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-53",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-53 + geometry/problem-specs.json#HKN-53",
+    "mau_cau": "MC-HH-E02"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=a\\sqrt{3}$. Thể tích khối lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{3a^{3}}{4}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{a^{3}}{4}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{3a^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích tam giác đều thành $\\dfrac{\\sqrt3}{2}a^2$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Coi đáy là tam giác vuông cân, $S=\\dfrac{a^2}{2}$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{3a^{3}}{4}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{a^{3}}{4}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{3a^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích tam giác đều thành $\\dfrac{\\sqrt3}{2}a^2$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Coi đáy là tam giác vuông cân, $S=\\dfrac{a^2}{2}$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{3a^{3}}{4}",
+    "so": 0.75
+   },
+   "do_kho": 0.166,
+   "dap_so_engine": 0.7499999999999999
+  },
+  {
+   "id": "MC-HH-E02.TLN.1",
+   "mau_cau": "MC-HH-E02",
+   "bien_the": {
+    "k": "sqrt(3)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ tam giác đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "E|k=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-53",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-53 + geometry/problem-specs.json#HKN-53",
+    "mau_cau": "MC-HH-E02"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=a\\sqrt{3}$. Thể tích khối lăng trụ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,75",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.75,
+   "dap_so": {
+    "gia_tri": "\\dfrac{3a^{3}}{4}",
+    "so": 0.75
+   },
+   "do_kho": 0.449,
+   "dap_so_engine": 0.7499999999999999
+  },
+  {
+   "id": "MC-HH-E02.TN.2",
+   "mau_cau": "MC-HH-E02",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ tam giác đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "E|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-53",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-53 + geometry/problem-specs.json#HKN-53",
+    "mau_cau": "MC-HH-E02"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=2a$. Thể tích khối lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{3}}{6}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "a\\sqrt{3}^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích tam giác đều thành $\\dfrac{\\sqrt3}{2}a^2$"
+     }
+    },
+    {
+     "noi_dung": "a^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Coi đáy là tam giác vuông cân, $S=\\dfrac{a^2}{2}$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{3}}{6}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "a\\sqrt{3}^{3}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích tam giác đều thành $\\dfrac{\\sqrt3}{2}a^2$"
+     }
+    },
+    {
+     "phuong_an": "a^{3}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Coi đáy là tam giác vuông cân, $S=\\dfrac{a^2}{2}$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+    "so": 0.8660254037844386
+   },
+   "do_kho": 0.182,
+   "dap_so_engine": 0.8660254037844386
+  },
+  {
+   "id": "MC-HH-E02.TLN.2",
+   "mau_cau": "MC-HH-E02",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ tam giác đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "E|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-53",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-53 + geometry/problem-specs.json#HKN-53",
+    "mau_cau": "MC-HH-E02"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=2a$. Thể tích khối lăng trụ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,87",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.8660254037844386,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{3}^{3}}{2}",
+    "so": 0.8660254037844386
+   },
+   "do_kho": 0.485,
+   "dap_so_engine": 0.8660254037844386
+  },
+  {
+   "id": "MC-HH-E02.TN.3",
+   "mau_cau": "MC-HH-E02",
+   "bien_the": {
+    "k": "2*sqrt(3)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ tam giác đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "E|k=2*sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-53",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-53 + geometry/problem-specs.json#HKN-53",
+    "mau_cau": "MC-HH-E02"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=2a\\sqrt{3}$. Thể tích khối lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{3a^{3}}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{a^{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "3a^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích tam giác đều thành $\\dfrac{\\sqrt3}{2}a^2$"
+     }
+    },
+    {
+     "noi_dung": "a\\sqrt{3}^{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Coi đáy là tam giác vuông cân, $S=\\dfrac{a^2}{2}$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{3a^{3}}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{a^{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "3a^{3}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính diện tích tam giác đều thành $\\dfrac{\\sqrt3}{2}a^2$"
+     }
+    },
+    {
+     "phuong_an": "a\\sqrt{3}^{3}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Coi đáy là tam giác vuông cân, $S=\\dfrac{a^2}{2}$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{3a^{3}}{2}",
+    "so": 1.5
+   },
+   "do_kho": 0.128,
+   "dap_so_engine": 1.4999999999999998
+  },
+  {
+   "id": "MC-HH-E02.TLN.3",
+   "mau_cau": "MC-HH-E02",
+   "bien_the": {
+    "k": "2*sqrt(3)"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ tam giác đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "E|k=2*sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-53",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-53 + geometry/problem-specs.json#HKN-53",
+    "mau_cau": "MC-HH-E02"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=2a\\sqrt{3}$. Thể tích khối lăng trụ bằng $m\\cdot a^3$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "1,5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.5,
+   "dap_so": {
+    "gia_tri": "\\dfrac{3a^{3}}{2}",
+    "so": 1.5
+   },
+   "do_kho": 0.435,
+   "dap_so_engine": 1.4999999999999998
+  },
+  {
+   "id": "MC-HH-E05.TN.0",
+   "mau_cau": "MC-HH-E05",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "E|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-70",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-70 + geometry/problem-specs.json#HKN-70",
+    "mau_cau": "MC-HH-E05"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=2a$. Diện tích xung quanh của hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "6a^{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{2}}{2} + 6a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "2a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính một mặt bên"
+     }
+    },
+    {
+     "noi_dung": "4a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm thiếu một mặt bên"
+     }
+    }
+   ],
+   "dap_an": "6a^{2}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{2}}{2} + 6a^{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "2a^{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính một mặt bên"
+     }
+    },
+    {
+     "phuong_an": "4a^{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm thiếu một mặt bên"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "6a^{2}",
+    "so": 6.0
+   },
+   "do_kho": 0.16,
+   "dap_so_engine": 6.0
+  },
+  {
+   "id": "MC-HH-E05.TLN.0",
+   "mau_cau": "MC-HH-E05",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "E|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-70",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-70 + geometry/problem-specs.json#HKN-70",
+    "mau_cau": "MC-HH-E05"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=2a$. Diện tích xung quanh của hình lăng trụ bằng $m\\cdot a^2$. Tìm $m$.",
+   "dap_an": "6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.0,
+   "dap_so": {
+    "gia_tri": "6a^{2}",
+    "so": 6.0
+   },
+   "do_kho": 0.278,
+   "dap_so_engine": 6.0
+  },
+  {
+   "id": "MC-HH-E05.TN.1",
+   "mau_cau": "MC-HH-E05",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "E|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-70",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-70 + geometry/problem-specs.json#HKN-70",
+    "mau_cau": "MC-HH-E05"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=a$. Diện tích xung quanh của hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "3a^{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{2}}{2} + 3a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính một mặt bên"
+     }
+    },
+    {
+     "noi_dung": "2a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm thiếu một mặt bên"
+     }
+    }
+   ],
+   "dap_an": "3a^{2}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{2}}{2} + 3a^{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "a^{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính một mặt bên"
+     }
+    },
+    {
+     "phuong_an": "2a^{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm thiếu một mặt bên"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "3a^{2}",
+    "so": 3.0
+   },
+   "do_kho": 0.134,
+   "dap_so_engine": 3.0
+  },
+  {
+   "id": "MC-HH-E05.TLN.1",
+   "mau_cau": "MC-HH-E05",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "E|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-70",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-70 + geometry/problem-specs.json#HKN-70",
+    "mau_cau": "MC-HH-E05"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=a$. Diện tích xung quanh của hình lăng trụ bằng $m\\cdot a^2$. Tìm $m$.",
+   "dap_an": "3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.0,
+   "dap_so": {
+    "gia_tri": "3a^{2}",
+    "so": 3.0
+   },
+   "do_kho": 0.225,
+   "dap_so_engine": 3.0
+  },
+  {
+   "id": "MC-HH-E05.TN.2",
+   "mau_cau": "MC-HH-E05",
+   "bien_the": {
+    "k": "3"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "E|k=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-70",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-70 + geometry/problem-specs.json#HKN-70",
+    "mau_cau": "MC-HH-E05"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=3a$. Diện tích xung quanh của hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "9a^{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}^{2}}{2} + 9a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "3a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính một mặt bên"
+     }
+    },
+    {
+     "noi_dung": "6a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm thiếu một mặt bên"
+     }
+    }
+   ],
+   "dap_an": "9a^{2}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}^{2}}{2} + 9a^{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "3a^{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ tính một mặt bên"
+     }
+    },
+    {
+     "phuong_an": "6a^{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đếm thiếu một mặt bên"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "9a^{2}",
+    "so": 9.0
+   },
+   "do_kho": 0.179,
+   "dap_so_engine": 9.000000000000002
+  },
+  {
+   "id": "MC-HH-E05.TLN.2",
+   "mau_cau": "MC-HH-E05",
+   "bien_the": {
+    "k": "3"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-deu",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "E|k=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-70",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-70 + geometry/problem-specs.json#HKN-70",
+    "mau_cau": "MC-HH-E05"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=3a$. Diện tích xung quanh của hình lăng trụ bằng $m\\cdot a^2$. Tìm $m$.",
+   "dap_an": "9",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 9.0,
+   "dap_so": {
+    "gia_tri": "9a^{2}",
+    "so": 9.0
+   },
+   "do_kho": 0.236,
+   "dap_so_engine": 9.000000000000002
+  },
+  {
+   "id": "MC-HH-F01.TN.0",
+   "mau_cau": "MC-HH-F01",
+   "bien_the": {
+    "p": "3",
+    "s": "4",
+    "t": "6"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "FN|p=3,s=4,t=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-34",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-34 + geometry/problem-specs.json#HKN-34",
+    "mau_cau": "MC-HH-F01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=3$ cm, $AC=4$ cm và $AA'=6$ cm. Thể tích khối lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "36\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "72\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac12$ của diện tích tam giác vuông"
+     }
+    },
+    {
+     "noi_dung": "12\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "24\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức khối chóp với đáy $AB\\cdot AC$"
+     }
+    }
+   ],
+   "dap_an": "36\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "72\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac12$ của diện tích tam giác vuông"
+     }
+    },
+    {
+     "phuong_an": "12\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "24\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức khối chóp với đáy $AB\\cdot AC$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "36\\text{ cm}",
+    "so": 36.0
+   },
+   "do_kho": 0.159,
+   "dap_so_engine": 36.0
+  },
+  {
+   "id": "MC-HH-F01.TLN.0",
+   "mau_cau": "MC-HH-F01",
+   "bien_the": {
+    "p": "3",
+    "s": "4",
+    "t": "6"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "FN|p=3,s=4,t=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-34",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-34 + geometry/problem-specs.json#HKN-34",
+    "mau_cau": "MC-HH-F01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=3$ cm, $AC=4$ cm và $AA'=6$ cm. Thể tích khối lăng trụ bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "36",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 36.0,
+   "dap_so": {
+    "gia_tri": "36\\text{ cm}",
+    "so": 36.0
+   },
+   "do_kho": 0.258,
+   "dap_so_engine": 36.0
+  },
+  {
+   "id": "MC-HH-F01.TN.1",
+   "mau_cau": "MC-HH-F01",
+   "bien_the": {
+    "p": "6",
+    "s": "8",
+    "t": "10"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "FN|p=6,s=8,t=10",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-34",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-34 + geometry/problem-specs.json#HKN-34",
+    "mau_cau": "MC-HH-F01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=6$ cm, $AC=8$ cm và $AA'=10$ cm. Thể tích khối lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "240\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "480\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac12$ của diện tích tam giác vuông"
+     }
+    },
+    {
+     "noi_dung": "80\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "160\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức khối chóp với đáy $AB\\cdot AC$"
+     }
+    }
+   ],
+   "dap_an": "240\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "480\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac12$ của diện tích tam giác vuông"
+     }
+    },
+    {
+     "phuong_an": "80\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "160\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức khối chóp với đáy $AB\\cdot AC$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "240\\text{ cm}",
+    "so": 240.0
+   },
+   "do_kho": 0.172,
+   "dap_so_engine": 240.0
+  },
+  {
+   "id": "MC-HH-F01.TLN.1",
+   "mau_cau": "MC-HH-F01",
+   "bien_the": {
+    "p": "6",
+    "s": "8",
+    "t": "10"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "FN|p=6,s=8,t=10",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-34",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-34 + geometry/problem-specs.json#HKN-34",
+    "mau_cau": "MC-HH-F01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=6$ cm, $AC=8$ cm và $AA'=10$ cm. Thể tích khối lăng trụ bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "240",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 240.0,
+   "dap_so": {
+    "gia_tri": "240\\text{ cm}",
+    "so": 240.0
+   },
+   "do_kho": 0.233,
+   "dap_so_engine": 240.0
+  },
+  {
+   "id": "MC-HH-F01.TN.2",
+   "mau_cau": "MC-HH-F01",
+   "bien_the": {
+    "p": "5",
+    "s": "12",
+    "t": "4"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "FN|p=5,s=12,t=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-34",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-34 + geometry/problem-specs.json#HKN-34",
+    "mau_cau": "MC-HH-F01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=5$ cm, $AC=12$ cm và $AA'=4$ cm. Thể tích khối lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "120\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "240\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac12$ của diện tích tam giác vuông"
+     }
+    },
+    {
+     "noi_dung": "40\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "80\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức khối chóp với đáy $AB\\cdot AC$"
+     }
+    }
+   ],
+   "dap_an": "120\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "240\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac12$ của diện tích tam giác vuông"
+     }
+    },
+    {
+     "phuong_an": "40\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "80\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức khối chóp với đáy $AB\\cdot AC$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "120\\text{ cm}",
+    "so": 120.0
+   },
+   "do_kho": 0.175,
+   "dap_so_engine": 120.0
+  },
+  {
+   "id": "MC-HH-F01.TLN.2",
+   "mau_cau": "MC-HH-F01",
+   "bien_the": {
+    "p": "5",
+    "s": "12",
+    "t": "4"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "FN|p=5,s=12,t=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-34",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-34 + geometry/problem-specs.json#HKN-34",
+    "mau_cau": "MC-HH-F01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=5$ cm, $AC=12$ cm và $AA'=4$ cm. Thể tích khối lăng trụ bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "120",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 120.0,
+   "dap_so": {
+    "gia_tri": "120\\text{ cm}",
+    "so": 120.0
+   },
+   "do_kho": 0.241,
+   "dap_so_engine": 120.0
+  },
+  {
+   "id": "MC-HH-F01.TN.3",
+   "mau_cau": "MC-HH-F01",
+   "bien_the": {
+    "p": "8",
+    "s": "15",
+    "t": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "FN|p=8,s=15,t=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-34",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-34 + geometry/problem-specs.json#HKN-34",
+    "mau_cau": "MC-HH-F01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=8$ cm, $AC=15$ cm và $AA'=5$ cm. Thể tích khối lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "300\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "600\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac12$ của diện tích tam giác vuông"
+     }
+    },
+    {
+     "noi_dung": "100\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "200\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức khối chóp với đáy $AB\\cdot AC$"
+     }
+    }
+   ],
+   "dap_an": "300\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "600\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac12$ của diện tích tam giác vuông"
+     }
+    },
+    {
+     "phuong_an": "100\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "200\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng công thức khối chóp với đáy $AB\\cdot AC$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "300\\text{ cm}",
+    "so": 300.0
+   },
+   "do_kho": 0.143,
+   "dap_so_engine": 300.0
+  },
+  {
+   "id": "MC-HH-F01.TLN.3",
+   "mau_cau": "MC-HH-F01",
+   "bien_the": {
+    "p": "8",
+    "s": "15",
+    "t": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "FN|p=8,s=15,t=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-34",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-34 + geometry/problem-specs.json#HKN-34",
+    "mau_cau": "MC-HH-F01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=8$ cm, $AC=15$ cm và $AA'=5$ cm. Thể tích khối lăng trụ bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "300",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 300.0,
+   "dap_so": {
+    "gia_tri": "300\\text{ cm}",
+    "so": 300.0
+   },
+   "do_kho": 0.246,
+   "dap_so_engine": 300.0
+  },
+  {
+   "id": "MC-HH-F04.TN.0",
+   "mau_cau": "MC-HH-F04",
+   "bien_the": {
+    "p": "3",
+    "s": "4",
+    "t": "6"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "FN|p=3,s=4,t=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-64",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-64 + geometry/problem-specs.json#HKN-64",
+    "mau_cau": "MC-HH-F04"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=3$ cm, $AC=4$ cm và $AA'=6$ cm. Diện tích xung quanh của hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "72\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "42\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên mặt bên chứa cạnh $BC$"
+     }
+    },
+    {
+     "noi_dung": "36\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    },
+    {
+     "noi_dung": "84\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả hai đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_an": "72\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "42\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên mặt bên chứa cạnh $BC$"
+     }
+    },
+    {
+     "phuong_an": "36\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    },
+    {
+     "phuong_an": "84\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả hai đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "72\\text{ cm}^2",
+    "so": 72.0
+   },
+   "do_kho": 0.361,
+   "dap_so_engine": 72.0
+  },
+  {
+   "id": "MC-HH-F04.TLN.0",
+   "mau_cau": "MC-HH-F04",
+   "bien_the": {
+    "p": "3",
+    "s": "4",
+    "t": "6"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "FN|p=3,s=4,t=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-64",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-64 + geometry/problem-specs.json#HKN-64",
+    "mau_cau": "MC-HH-F04"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=3$ cm, $AC=4$ cm và $AA'=6$ cm. Diện tích xung quanh của hình lăng trụ bằng bao nhiêu (đơn vị: cm²)?",
+   "dap_an": "72",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 72.0,
+   "dap_so": {
+    "gia_tri": "72\\text{ cm}^2",
+    "so": 72.0
+   },
+   "do_kho": 0.432,
+   "dap_so_engine": 72.0
+  },
+  {
+   "id": "MC-HH-F04.TLN.1",
+   "mau_cau": "MC-HH-F04",
+   "bien_the": {
+    "p": "6",
+    "s": "8",
+    "t": "10"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "FN|p=6,s=8,t=10",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-64",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-64 + geometry/problem-specs.json#HKN-64",
+    "mau_cau": "MC-HH-F04"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=6$ cm, $AC=8$ cm và $AA'=10$ cm. Diện tích xung quanh của hình lăng trụ bằng bao nhiêu (đơn vị: cm²)?",
+   "dap_an": "240",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 240.0,
+   "dap_so": {
+    "gia_tri": "240\\text{ cm}^2",
+    "so": 240.0
+   },
+   "do_kho": 0.444,
+   "dap_so_engine": 240.0
+  },
+  {
+   "id": "MC-HH-F04.TLN.2",
+   "mau_cau": "MC-HH-F04",
+   "bien_the": {
+    "p": "5",
+    "s": "12",
+    "t": "4"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "FN|p=5,s=12,t=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-64",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-64 + geometry/problem-specs.json#HKN-64",
+    "mau_cau": "MC-HH-F04"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=5$ cm, $AC=12$ cm và $AA'=4$ cm. Diện tích xung quanh của hình lăng trụ bằng bao nhiêu (đơn vị: cm²)?",
+   "dap_an": "120",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 120.0,
+   "dap_so": {
+    "gia_tri": "120\\text{ cm}^2",
+    "so": 120.0
+   },
+   "do_kho": 0.477,
+   "dap_so_engine": 120.0
+  },
+  {
+   "id": "MC-HH-F04.TN.3",
+   "mau_cau": "MC-HH-F04",
+   "bien_the": {
+    "p": "8",
+    "s": "15",
+    "t": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "FN|p=8,s=15,t=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-64",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-64 + geometry/problem-specs.json#HKN-64",
+    "mau_cau": "MC-HH-F04"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=8$ cm, $AC=15$ cm và $AA'=5$ cm. Diện tích xung quanh của hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "200\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "115\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên mặt bên chứa cạnh $BC$"
+     }
+    },
+    {
+     "noi_dung": "300\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    },
+    {
+     "noi_dung": "320\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả hai đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_an": "200\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "115\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên mặt bên chứa cạnh $BC$"
+     }
+    },
+    {
+     "phuong_an": "300\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    },
+    {
+     "phuong_an": "320\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng cả hai đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "200\\text{ cm}^2",
+    "so": 200.0
+   },
+   "do_kho": 0.332,
+   "dap_so_engine": 200.0
+  },
+  {
+   "id": "MC-HH-F04.TLN.3",
+   "mau_cau": "MC-HH-F04",
+   "bien_the": {
+    "p": "8",
+    "s": "15",
+    "t": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "dien-tich-xq.lang-tru-dung",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.2"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "FN|p=8,s=15,t=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-64",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-64 + geometry/problem-specs.json#HKN-64",
+    "mau_cau": "MC-HH-F04"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=8$ cm, $AC=15$ cm và $AA'=5$ cm. Diện tích xung quanh của hình lăng trụ bằng bao nhiêu (đơn vị: cm²)?",
+   "dap_an": "200",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 200.0,
+   "dap_so": {
+    "gia_tri": "200\\text{ cm}^2",
+    "so": 200.0
+   },
+   "do_kho": 0.434,
+   "dap_so_engine": 200.0
+  },
+  {
+   "id": "MC-HH-G01.TN.0",
+   "mau_cau": "MC-HH-G01",
+   "bien_the": {
+    "u": "13",
+    "v": "14",
+    "w": "15",
+    "t": "10"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-heron",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng biết ba cạnh đáy"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "G|t=10,u=13,v=14,w=15",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-37",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-37 + geometry/problem-specs.json#HKN-37",
+    "mau_cau": "MC-HH-G01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có $AB=13$ cm, $BC=14$ cm, $CA=15$ cm và $AA'=10$ cm. Thể tích khối lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "840\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "280\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "420\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "noi_dung": "910\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi đáy là tam giác vuông với hai cạnh góc vuông $AB$, $BC$"
+     }
+    }
+   ],
+   "dap_an": "840\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "280\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "420\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "phuong_an": "910\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi đáy là tam giác vuông với hai cạnh góc vuông $AB$, $BC$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "840\\text{ cm}",
+    "so": 840.0
+   },
+   "do_kho": 0.337,
+   "dap_so_engine": 840.0
+  },
+  {
+   "id": "MC-HH-G01.TLN.0",
+   "mau_cau": "MC-HH-G01",
+   "bien_the": {
+    "u": "13",
+    "v": "14",
+    "w": "15",
+    "t": "10"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-heron",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng biết ba cạnh đáy"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "G|t=10,u=13,v=14,w=15",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-37",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-37 + geometry/problem-specs.json#HKN-37",
+    "mau_cau": "MC-HH-G01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có $AB=13$ cm, $BC=14$ cm, $CA=15$ cm và $AA'=10$ cm. Thể tích khối lăng trụ bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "840",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 840.0,
+   "dap_so": {
+    "gia_tri": "840\\text{ cm}",
+    "so": 840.0
+   },
+   "do_kho": 0.427,
+   "dap_so_engine": 840.0
+  },
+  {
+   "id": "MC-HH-G01.TN.1",
+   "mau_cau": "MC-HH-G01",
+   "bien_the": {
+    "u": "5",
+    "v": "5",
+    "w": "6",
+    "t": "8"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-heron",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng biết ba cạnh đáy"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "G|t=8,u=5,v=5,w=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-37",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-37 + geometry/problem-specs.json#HKN-37",
+    "mau_cau": "MC-HH-G01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có $AB=5$ cm, $BC=5$ cm, $CA=6$ cm và $AA'=8$ cm. Thể tích khối lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "96\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "32\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "128\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "noi_dung": "100\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi đáy là tam giác vuông với hai cạnh góc vuông $AB$, $BC$"
+     }
+    }
+   ],
+   "dap_an": "96\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "32\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "128\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "phuong_an": "100\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi đáy là tam giác vuông với hai cạnh góc vuông $AB$, $BC$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "96\\text{ cm}",
+    "so": 96.0
+   },
+   "do_kho": 0.38,
+   "dap_so_engine": 96.0
+  },
+  {
+   "id": "MC-HH-G01.TLN.1",
+   "mau_cau": "MC-HH-G01",
+   "bien_the": {
+    "u": "5",
+    "v": "5",
+    "w": "6",
+    "t": "8"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-heron",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng biết ba cạnh đáy"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "G|t=8,u=5,v=5,w=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-37",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-37 + geometry/problem-specs.json#HKN-37",
+    "mau_cau": "MC-HH-G01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có $AB=5$ cm, $BC=5$ cm, $CA=6$ cm và $AA'=8$ cm. Thể tích khối lăng trụ bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "96",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 96.0,
+   "dap_so": {
+    "gia_tri": "96\\text{ cm}",
+    "so": 96.0
+   },
+   "do_kho": 0.444,
+   "dap_so_engine": 96.0
+  },
+  {
+   "id": "MC-HH-G01.TLN.2",
+   "mau_cau": "MC-HH-G01",
+   "bien_the": {
+    "u": "6",
+    "v": "8",
+    "w": "10",
+    "t": "5"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-heron",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng biết ba cạnh đáy"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "G|t=5,u=6,v=8,w=10",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-37",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-37 + geometry/problem-specs.json#HKN-37",
+    "mau_cau": "MC-HH-G01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có $AB=6$ cm, $BC=8$ cm, $CA=10$ cm và $AA'=5$ cm. Thể tích khối lăng trụ bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "120",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 120.0,
+   "dap_so": {
+    "gia_tri": "120\\text{ cm}",
+    "so": 120.0
+   },
+   "do_kho": 0.455,
+   "dap_so_engine": 120.0
+  },
+  {
+   "id": "MC-HH-G01.TN.3",
+   "mau_cau": "MC-HH-G01",
+   "bien_the": {
+    "u": "5",
+    "v": "5",
+    "w": "8",
+    "t": "3"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-heron",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng biết ba cạnh đáy"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "G|t=3,u=5,v=5,w=8",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-37",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-37 + geometry/problem-specs.json#HKN-37",
+    "mau_cau": "MC-HH-G01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có $AB=5$ cm, $BC=5$ cm, $CA=8$ cm và $AA'=3$ cm. Thể tích khối lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "36\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "12\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "noi_dung": "54\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{75}{2}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi đáy là tam giác vuông với hai cạnh góc vuông $AB$, $BC$"
+     }
+    }
+   ],
+   "dap_an": "36\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "12\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+     }
+    },
+    {
+     "phuong_an": "54\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{75}{2}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Coi đáy là tam giác vuông với hai cạnh góc vuông $AB$, $BC$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "36\\text{ cm}",
+    "so": 36.0
+   },
+   "do_kho": 0.341,
+   "dap_so_engine": 35.999999999999986
+  },
+  {
+   "id": "MC-HH-G01.TLN.3",
+   "mau_cau": "MC-HH-G01",
+   "bien_the": {
+    "u": "5",
+    "v": "5",
+    "w": "8",
+    "t": "3"
+   },
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "the-tich.lang-tru-heron",
+   "dang_tx": "th.lang-tru",
+   "lop": 11,
+   "yccd": [
+    "11.TT.1"
+   ],
+   "kien_thuc": [
+    "Thể tích lăng trụ đứng biết ba cạnh đáy"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "G|t=3,u=5,v=5,w=8",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-37",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-37 + geometry/problem-specs.json#HKN-37",
+    "mau_cau": "MC-HH-G01"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có $AB=5$ cm, $BC=5$ cm, $CA=8$ cm và $AA'=3$ cm. Thể tích khối lăng trụ bằng bao nhiêu (đơn vị: cm)?",
+   "dap_an": "36",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 36.0,
+   "dap_so": {
+    "gia_tri": "36\\text{ cm}",
+    "so": 36.0
+   },
+   "do_kho": 0.474,
+   "dap_so_engine": 35.999999999999986
+  }
+ ]
+}

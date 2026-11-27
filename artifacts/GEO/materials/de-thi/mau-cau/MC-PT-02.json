@@ -1,0 +1,125 @@
+{
+ "id": "MC-PT-02",
+ "ten": "Giá trị lớn nhất trên miền nghiệm (quy hoạch tuyến tính)",
+ "chu_de": "phuong-trinh-he-bpt",
+ "dang": "pt.qhtt-max",
+ "dang_tx": "pt.he-bpt-2-an",
+ "yccd": [
+  "10.BPT.1"
+ ],
+ "lop": 10,
+ "nang_luc": "mo-hinh-hoa",
+ "ho_hinh": "MC-PT-02",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-PT-02",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "s": 4,
+    "t": 6,
+    "al": 3,
+    "be": 5
+   },
+   {
+    "s": 5,
+    "t": 8,
+    "al": 2,
+    "be": 3
+   },
+   {
+    "s": 6,
+    "t": 10,
+    "al": 4,
+    "be": 7
+   },
+   {
+    "s": 3,
+    "t": 5,
+    "al": 5,
+    "be": 6
+   }
+  ]
+ },
+ "rang_buoc": [
+  "s<t",
+  "t<2*s"
+ ],
+ "dan_xuat": {},
+ "boi_canh": "Một xưởng sản xuất $x$ sản phẩm loại I và $y$ sản phẩm loại II mỗi ngày ($x,y\\ge0$), thỏa mãn $x+y\\le {s}$ và $x+2y\\le {t}$. Lợi nhuận là $F={al}x+{be}y$ (triệu đồng).",
+ "hoi": "Lợi nhuận lớn nhất mỗi ngày (triệu đồng) bằng",
+ "dap_so": "Max(al*s, be*t/2, al*(2*s-t)+be*(t-s))",
+ "nhieu": [
+  {
+   "bieu_thuc": "Max(al*s, be*t/2)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Bỏ sót đỉnh là giao điểm của hai đường thẳng"
+   }
+  },
+  {
+   "bieu_thuc": "al*s+be*t/2",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Cộng giá trị tại hai đỉnh trên hai trục (điểm không thuộc miền)"
+   }
+  },
+  {
+   "bieu_thuc": "Min(al*s, be*t/2, al*(2*s-t)+be*(t-s))",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy giá trị nhỏ nhất thay vì lớn nhất"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-PT-02']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "s": "4",
+   "t": "6",
+   "al": "3",
+   "be": "5"
+  },
+  {
+   "s": "5",
+   "t": "8",
+   "al": "2",
+   "be": "3"
+  },
+  {
+   "s": "6",
+   "t": "10",
+   "al": "4",
+   "be": "7"
+  },
+  {
+   "s": "3",
+   "t": "5",
+   "al": "5",
+   "be": "6"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 7,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

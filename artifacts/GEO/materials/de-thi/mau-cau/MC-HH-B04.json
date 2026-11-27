@@ -1,0 +1,92 @@
+{
+ "id": "MC-HH-B04",
+ "ten": "Chiều cao chóp đều khi biết cạnh bên",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "do-dai.chop-deu.chieu-cao",
+ "dang_tx": "qh.vuong-goc",
+ "yccd": [
+  "11.VG.4"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "B4",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-14",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-14 + geometry/problem-specs.json#HKN-14"
+ },
+ "tham_so": {
+  "m": [
+   "1",
+   "sqrt(2)",
+   "2",
+   "sqrt(3)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "l": "m*a",
+  "h": "sqrt(l**2-a**2/2)"
+ },
+ "boi_canh": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, cạnh bên bằng ${l}$ và $O$ là tâm của đáy.",
+ "hoi": "Chiều cao $SO$ của hình chóp bằng",
+ "dap_so": "sqrt(l**2-a**2/2)",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "sqrt(l**2-a**2)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $OA=a$ (bằng cạnh đáy)"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(l**2-a**2/4)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $OM=\\dfrac a2$ thay cho $OA$ (tính trung đoạn)"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(l**2+a**2/2)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng thay vì trừ trong định lí Pythagore"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-14",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "m": "1"
+  },
+  {
+   "m": "sqrt(2)"
+  },
+  {
+   "m": "2"
+  },
+  {
+   "m": "sqrt(3)"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 7,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

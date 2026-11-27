@@ -1,0 +1,88 @@
+{
+ "id": "MC-HH-C05",
+ "ten": "Thể tích khối lập phương",
+ "chu_de": "hinh-khong-gian-the-tich",
+ "dang": "the-tich.lap-phuong",
+ "dang_tx": "th.hop",
+ "yccd": [
+  "11.TT.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "C",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "NB"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-21",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-21 + geometry/problem-specs.json#HKN-21"
+ },
+ "tham_so": {
+  "c": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng ${c}$ cm.",
+ "hoi": "Thể tích khối lập phương bằng",
+ "dap_so": "c**3",
+ "don_vi": "cm",
+ "nhieu": [
+  {
+   "bieu_thuc": "6*c**2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhầm sang diện tích toàn phần $6c^2$"
+   }
+  },
+  {
+   "bieu_thuc": "c**3/3",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+   }
+  },
+  {
+   "bieu_thuc": "4*c**2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhầm sang diện tích xung quanh $4c^2$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-21",
+  "ask": 0,
+  "params": {
+   "a": "c"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "c": "3"
+  },
+  {
+   "c": "4"
+  },
+  {
+   "c": "5"
+  },
+  {
+   "c": "6"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 6,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

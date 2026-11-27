@@ -1,0 +1,124 @@
+{
+ "id": "MC-DS-HS",
+ "ten": "Đúng/sai: hàm bậc ba",
+ "chu_de": "ham-so-ung-dung-dao-ham",
+ "dang": "ds.ham-bac-ba",
+ "dang_tx": "hs.dao-ham-dung-sai",
+ "yccd": [
+  "12.HS.1",
+  "12.HS.2"
+ ],
+ "lop": 12,
+ "ho_hinh": "MC-DS-HS",
+ "tham_so": {
+  "m": [
+   "1",
+   "2"
+  ],
+  "c": [
+   "1",
+   "4",
+   "-2"
+  ]
+ },
+ "dan_xuat": {
+  "fx": "x**3-3*m*x**2+c"
+ },
+ "boi_canh": "Cho hàm số $f(x)={fx}$.",
+ "y": [
+  {
+   "menh_de": "$f'(1)={v}$.",
+   "dap_so": "3-6*m",
+   "muc_do": "NB",
+   "nhieu": [
+    {
+     "bieu_thuc": "3-3*m",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy đạo hàm của $3mx^2$ là $3mx$"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Hàm số nghịch biến trên khoảng $(0;{v})$.",
+   "dap_so": "2*m",
+   "muc_do": "TH",
+   "nhieu": [
+    {
+     "bieu_thuc": "m",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $f'(x)=0$ (được $x=m$)"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Giá trị cực tiểu của hàm số bằng ${v}$.",
+   "dap_so": "c-4*m**3",
+   "muc_do": "TH",
+   "nhieu": [
+    {
+     "bieu_thuc": "c",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm giá trị cực đại $f(0)$ với giá trị cực tiểu"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Giá trị lớn nhất của $f(x)$ trên đoạn $[-1;1]$ bằng ${v}$.",
+   "dap_so": "c",
+   "muc_do": "VD",
+   "nhieu": [
+    {
+     "bieu_thuc": "1-3*m+c",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ lấy giá trị tại đầu mút phải $f(1)$"
+     }
+    }
+   ]
+  }
+ ],
+ "loai_mau": "dung-sai",
+ "loai_cau": [
+  "dung-sai"
+ ],
+ "bien_the": [
+  {
+   "m": "1",
+   "c": "1"
+  },
+  {
+   "m": "1",
+   "c": "4"
+  },
+  {
+   "m": "1",
+   "c": "-2"
+  },
+  {
+   "m": "2",
+   "c": "1"
+  },
+  {
+   "m": "2",
+   "c": "4"
+  },
+  {
+   "m": "2",
+   "c": "-2"
+  }
+ ],
+ "rang_buoc": [],
+ "so_bien_the": 6,
+ "so_cau_sinh": 6,
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-DS-HS"
+ },
+ "phien_ban": "v1.0 · 27/11/2026"
+}
