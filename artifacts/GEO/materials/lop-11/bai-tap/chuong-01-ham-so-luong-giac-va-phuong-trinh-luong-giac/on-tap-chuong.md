@@ -1,6 +1,6 @@
 # Bài tập cuối chương 1. Hàm số lượng giác và phương trình lượng giác
 
-Phiên bản: v1.2 · 27/11/2026
+Phiên bản: v1.3 · 27/11/2026
 
 > Tài liệu tổng hợp/biên soạn lại cho mục đích học tập (không sao chép nguyên văn SGK/SBT). Bộ sách xương sống: Toán 11 Kết nối tri thức với cuộc sống.
 
@@ -38,10 +38,10 @@ Phiên bản: v1.2 · 27/11/2026
 - Bước 2: parabol quay xuống, đỉnh $c=1\in[-1;1]$: $\max y=2$ khi $c=1$.
 - Bước 3: so hai đầu mút: $c=-1\Rightarrow y=-1-2+1=-2$; $c=1\Rightarrow y=2$. Vậy $\min y=-2$ khi $c=-1$.
 
-**7.** Số giờ có ánh sáng ở một thành phố là $d(t)=12+2\sin\dfrac{2\pi(t-80)}{365}$ ($t$ là ngày thứ $t$ trong năm). Ngày nào $d=13$ (một nghiệm trong $[0;365]$)?
+**7.** Số giờ có ánh sáng ở một thành phố là $d(t)=12+2\sin\dfrac{2\pi(t-80)}{365}$ ($t$ là ngày thứ $t$ trong năm). Tìm các ngày $t\in[0;365]$ có $d=13$.
 *Giải.*
 - Bước 1: $d=13\Rightarrow\sin\dfrac{2\pi(t-80)}{365}=\dfrac12$.
-- Bước 2: lấy nghiệm nhỏ nhất: $\dfrac{2\pi(t-80)}{365}=\dfrac\pi6\Rightarrow t-80=\dfrac{365}{12}\approx30{,}4$.
+- Bước 2: họ nghiệm thứ nhất: $\dfrac{2\pi(t-80)}{365}=\dfrac\pi6\Rightarrow t-80=\dfrac{365}{12}\approx30{,}4$.
 - Bước 3: $t\approx110$ (ngày thứ 110). Nghiệm thứ hai $\dfrac{2\pi(t-80)}{365}=\dfrac{5\pi}6$ cho $t-80=\dfrac{5\cdot365}{12}\approx152$, $t\approx232$ cũng thuộc $[0;365]$. Vậy có hai ngày: khoảng ngày 110 và ngày 232.
 
 **8.** *[Trả lời ngắn]* Có bao nhiêu nghiệm của phương trình $\sin x+\sqrt3\cos x=1$ trong đoạn $[0;2\pi]$?
@@ -68,3 +68,4 @@ Phiên bản: v1.2 · 27/11/2026
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
 | v1.2 | 27/11/2026 | Thêm 3 bài (5→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 4 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.3 | 27/11/2026 | Bài 7: đề hỏi các nghiệm (đề cũ ghi "một nghiệm" mâu thuẫn lời giải hai nghiệm) | delivery-lead (theo REVIEW-L11-MATH-20261127) |
