@@ -1,0 +1,50 @@
+{
+ "case": "E06",
+ "variant": "V8",
+ "round": "K2",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[3].ten\", \"before\": \"Vận dụng: khoảng cách trong căn phòng\", \"after\": \"Vận dụng: khoảng cách từ đỉnh cột cờ đến mặt sân\", \"ly_do\": \"Đổi chủ đề vận dụng sang cột cờ theo yêu cầu.\"}, {\"op\": \"replace\", \"path\": \"hoat_dong[3].muc_tieu\", \"before\": \"Liên hệ thực tế.\", \"after\": \"Mô hình hoá được tình huống đo khoảng cách từ đỉnh cột cờ đến mặt sân thành bài toán khoảng cách từ điểm đến mặt phẳng.\", \"ly_do\": \"Nêu mục tiêu cụ thể cho bài toán cột cờ, bám KT11-C07-DN-010.\"}, {\"op\": \"replace\", \"path\": \"hoat_dong[3].noi_dung\", \"before\": \"Tính khoảng cách từ góc trần đến mặt tường đối diện (đo phòng học).\", \"after\": \"HS đo khoảng cách từ đỉnh cột cờ đến mặt sân: xác định điểm đỉnh cột, mặt phẳng sân, hình chiếu vuông góc của đỉnh cột lên mặt sân, rồi nêu cách đo và tính khoảng cách đó theo định nghĩa khoảng cách từ điểm đến mặt phẳng.\", \"ly_do\": \"Thay nội dung bài toán thực tế theo yêu cầu, không thêm kiến thức ngoài danh sách.\"}, {\"op\": \"replace\", \"path\": \"hoat_dong[3].san_pham\", \"before\": \"Bài làm nộp tiết sau.\", \"after\": \"Bài làm nộp tiết sau: hình vẽ mô hình hoá, cách đo và lập luận xác định khoảng cách từ đỉnh cột cờ đến mặt sân.\", \"ly_do\": \"Cụ thể hoá sản phẩm cho bài toán cột cờ.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[3].o_nha / thoi_luong_phut\", \"van_de\": \"HĐ4 làm ở nhà (perform: 'HS làm ở nhà') nhưng đang ghi o_nha=false và 5 phút, không khớp cách tổ chức.\", \"goi_y\": \"Đặt hoat_dong[3].o_nha=true và thoi_luong_phut=0; khi đó tổng phút trên lớp còn 40, cần cộng thêm 5 phút vào HĐ khác (ví dụ HD3 từ 15 lên 20) để đủ 45.\", \"ly_do\": \"Luật: HĐ ở nhà phải o_nha true, 0 phút; tổng thời lượng trên lớp phải bằng số tiết × 45. Chưa tự sửa vì không thuộc phần được yêu cầu.\"}], \"unsure\": [\"Giáo viên chưa nói rõ có muốn chuyển HĐ4 thành o_nha=true, 0 phút hay không; tôi giữ nguyên thời lượng hiện tại.\"]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[3].ten\",\"before\":\"Vận dụng: khoảng cách trong căn phòng\",\"after\":\"Vận dụng: khoảng cách từ đỉnh cột cờ đến mặt sân\",\"ly_do\":\"Đổi chủ đề vận dụng sang cột cờ theo yêu cầu.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].muc_tieu\",\"before\":\"Liên hệ thực tế.\",\"after\":\"Mô hình hoá được tình huống đo khoảng cách từ đỉnh cột cờ đến mặt sân thành bài toán khoảng cách từ điểm đến mặt phẳng.\",\"ly_do\":\"Nêu mục tiêu cụ thể cho bài toán cột cờ, bám KT11-C07-DN-010.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].noi_dung\",\"before\":\"Tính khoảng cách từ góc trần đến mặt tường đối diện (đo phòng học).\",\"after\":\"HS đo khoảng cách từ đỉnh cột cờ đến mặt sân: xác định điểm đỉnh cột, mặt phẳng sân, hình chiếu vuông góc của đỉnh cột lên mặt sân, rồi nêu cách đo và tính khoảng cách đó theo định nghĩa khoảng cách từ điểm đến mặt phẳng.\",\"ly_do\":\"Thay nội dung bài toán thực tế theo yêu cầu, không thêm kiến thức ngoài danh sách.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].san_pham\",\"before\":\"Bài làm nộp tiết sau.\",\"after\":\"Bài làm nộp tiết sau: hình vẽ mô hình hoá, cách đo và lập luận xác định khoảng cách từ đỉnh cột cờ đến mặt sân.\",\"ly_do\":\"Cụ thể hoá sản phẩm cho bài toán cột cờ.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[3].o_nha / thoi_luong_phut\",\"van_de\":\"HĐ4 làm ở nhà (perform: 'HS làm ở nhà') nhưng đang ghi o_nha=false và 5 phút, không khớp cách tổ chức.\",\"goi_y\":\"Đặt hoat_dong[3].o_nha=true và thoi_luong_phut=0; khi đó tổng phút trên lớp còn 40, cần cộng thêm 5 phút vào HĐ khác (ví dụ HD3 từ 15 lên 20) để đủ 45.\",\"ly_do\":\"Luật: HĐ ở nhà phải o_nha true, 0 phút; tổng thời lượng trên lớp phải bằng số tiết × 45. Chưa tự sửa vì không thuộc phần được yêu cầu.\"}],\"unsure\":[\"Giáo viên chưa nói rõ có muốn chuyển HĐ4 thành o_nha=true, 0 phút hay không; tôi giữ nguyên thời lượng hiện tại.\"]}}",
+ "usage": {
+  "ts": "2026-11-27T17:58:21",
+  "role": "gen",
+  "task": "K2/V8/E06",
+  "model": "claude-sonnet-5-5",
+  "input": 3392,
+  "output": 1660,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 11.6
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:21",
+   "role": "gen",
+   "task": "K2/V8/E06",
+   "model": "claude-sonnet-5-5",
+   "input": 3392,
+   "output": 1660,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 11.6
+  },
+  {
+   "ts": "2026-11-27T17:59:47",
+   "role": "gen",
+   "task": "K2/V8/E06",
+   "model": "claude-sonnet-5-5",
+   "input": 3524,
+   "output": 1764,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 12.5
+  }
+ ],
+ "server_errs0": [
+  "\"before\" không trùng nguyên văn giá trị hiện tại"
+ ],
+ "text0": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[3].ten\", \"before\": \"Vận dụng: khoảng cách trong căn phòng\", \"after\": \"Vận dụng: khoảng cách từ đỉnh cột cờ đến mặt sân\", \"ly_do\": \"Đổi chủ đề vận dụng theo yêu cầu: bài toán đo khoảng cách từ đỉnh cột cờ đến mặt sân.\"}, {\"op\": \"replace\", \"path\": \"hoat_dong[3].muc_tieu\", \"before\": \"Liên hệ thực tế.\", \"after\": \"Vận dụng định nghĩa khoảng cách từ điểm đến mặt phẳng để nêu cách đo khoảng cách từ đỉnh cột cờ đến mặt sân.\", \"ly_do\": \"Mục tiêu bám theo bài toán cột cờ mới.\"}, {\"op\": \"replace\", \"path\": \"hoat_dong[3].noi_dung\", \"before\": \"Tính khoảng cách từ góc trần đến mặt tường đối diện (đo phòng học).\", \"after\": \"Nêu cách đo khoảng cách từ đỉnh cột cờ đến mặt sân (xem mặt sân là mặt phẳng, cột cờ vuông góc với sân), thực hiện đo ở sân trường và trình bày kết quả đo cùng cách làm.\", \"ly_do\": \"Thay nội dung bài toán theo yêu cầu, vẫn giao về nhà.\"}, {\"op\": \"replace\", \"path\": \"hoat_dong[3].san_pham\", \"before\": \"Bài bbài làm nộp tiết sau.\", \"after\": \"Bài làm gồm hình vẽ mô hình hoá, cách đo và số liệu đo, nộp tiết sau.\", \"ly_do\": \"Sản phẩm bám bài toán cột cờ.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[3].thoi_luong_phut / o_nha\", \"van_de\": \"HĐ4 được giao về nhà nhưng đang để o_nha=false và 5 phút; tổng các HĐ trên lớp là 45 phút nên nếu chuyển sang 0 phút thì tổng chỉ còn 40 phút.\", \"goi_y\": \"Đặt o_nha=true, thoi_luong_phut=0 cho HĐ4 và cộng 5 phút vào HĐ3 (hoặc HĐ2) để tổng vẫn là 45 phút.\", \"ly_do\": \"Luật A5: HĐ ở nhà phải o_nha=true, 0 phút; tổng phút trên lớp phải bằng 45. Tôi không tự sửa vì không được yêu cầu.\"}, {\"vi_tri\": \"hoat_dong[1].noi_dung và phieu_hoc_tap[0].cau[1]\", \"van_de\": \"HĐ2 dùng ví dụ chóp S.ABC có SA ⊥ (ABC), AK ⊥ BC, AH ⊥ SK, trong khi PHT1 câu 2 (BT11-B26-3) cũng là dạng này, có nguy cơ trùng ví dụ.\", \"goi_y\": \"Làm rõ ví dụ ở HĐ2 là ví dụ tổng quát, không có số liệu riêng, hoặc đổi sang bài khác trong kho.\", \"ly_do\": \"Mỗi bài tập/ví dụ chỉ nên xuất hiện một lần.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"HĐ2 giao câu 1 và HĐ3 giao câu 2, 3; câu 3 (BM-007) gắn mã KT11-C07-DN-010 nhưng cách giải dùng KT11-C07-CT-003.\", \"goi_y\": \"Cân nhắc đổi kt của câu 3 thành KT11-C07-CT-003.\", \"ly_do\": \"Khớp mã kiến thức với cách giải.\"}, {\"vi_tri\": \"hoat_dong[1].to_chuc.assign và hoat_dong[1].kien_thuc[1]\", \"van_de\": \"HĐ2 phát biểu KT11-C07-CT-003 chưa đủ như danh sách (thiếu điều kiện và kết luận AH ⊥ (SBC)); chốt 'hệ thức' nhưng PHT1 câu 1 là câu hình lập phương NB.\", \"goi_y\": \"Bổ sung đúng nguyên văn phát biểu KT11-C07-CT-003 và xem lại câu giao ở HĐ2.\", \"ly_do\": \"Luật A1: phát biểu giữ nguyên như danh sách.\"}], \"unsure\": [\"Đã sửa lỗi chính tả trong bản vá san_pham; before của san_pham là nguyên văn 'Bài làm nộp tiết sau.'\"]}",
+ "retried": true
+}

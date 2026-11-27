@@ -23,6 +23,7 @@
   "loi_toan": [],
   "nhan_xet": "Câu hỏi gọn, chỉ một câu và giáo viên trả lời ngay được, nhưng ô 'Số tiết' tuy trống đã suy ra được từ 'Tiết PPCT: Tiết 1/1' (1 tiết = 45 phút). Lẽ ra trợ lý nên soạn luôn với giả định 1 tiết và ghi chú giả định đó thay vì hỏi."
  },
+ "judge2": null,
  "score": {
   "diem": 75.0,
   "A": 0,

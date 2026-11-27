@@ -1,0 +1,34 @@
+{
+ "case": "N09",
+ "variant": "V8",
+ "round": "K3",
+ "text": "{\"kind\":\"question\",\"text\":\"Bạn muốn soạn giáo án này cho đối tượng học sinh nào: cơ bản, khá hay chuyên?\"}",
+ "raw": "{\"kind\":\"question\",\"text\":\"Bạn muốn soạn giáo án này cho đối tượng học sinh nào: cơ bản, khá hay chuyên?\"}",
+ "usage": {
+  "ts": "2026-11-27T17:58:11",
+  "role": "gen",
+  "task": "K3/V8/N09",
+  "model": "claude-sonnet-5-5",
+  "input": 863,
+  "output": 59,
+  "cache_write": 0,
+  "cache_read": 4631,
+  "stop": "end_turn",
+  "sec": 1.3
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:11",
+   "role": "gen",
+   "task": "K3/V8/N09",
+   "model": "claude-sonnet-5-5",
+   "input": 863,
+   "output": 59,
+   "cache_write": 0,
+   "cache_read": 4631,
+   "stop": "end_turn",
+   "sec": 1.3
+  }
+ ],
+ "server_errs0": []
+}

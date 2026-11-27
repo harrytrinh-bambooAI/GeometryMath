@@ -1,0 +1,34 @@
+{
+ "case": "E14",
+ "variant": "V8",
+ "round": "K2",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[0].ten\", \"before\": \"Khởi động: Tính nhanh bằng định nghĩa\", \"after\": \"Khởi động: Ai tính nhanh hơn\", \"ly_do\": \"Giáo viên yêu cầu đổi tên HĐ1.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[1].kien_thuc[1].phat_bieu\", \"van_de\": \"Công thức $(a^x)'=xa^{x-1}$ sai so với danh sách KT11-C09-CT-004, đúng là $(a^x)'=a^x\\\\ln a$.\", \"goi_y\": \"Sửa phát biểu thành $(a^x)'=a^x\\\\ln a$ (có thể bổ sung $(e^x)'=e^x$, $(\\\\ln x)'=\\\\dfrac1x$, $(\\\\log_ax)'=\\\\dfrac1{x\\\\ln a}$).\", \"ly_do\": \"Phát biểu phải đúng nguyên văn danh sách kiến thức được cấp.\"}, {\"vi_tri\": \"hoat_dong[1].kien_thuc[0].phat_bieu\", \"van_de\": \"Phát biểu KT11-C09-CT-002 thiếu $(c)'=0$, $(\\\\sqrt x)'$ và $\\\\left(\\\\dfrac1x\\\\right)'$ so với danh sách.\", \"goi_y\": \"Bổ sung đủ các công thức của KT11-C09-CT-002.\", \"ly_do\": \"Giữ đúng nội dung kiến thức được cấp.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[1].kt\", \"van_de\": \"Câu 2 có $y=x^2\\\\sin x$ cần đạo hàm của $\\\\sin x$ (KT11-C09-CT-003), nhưng mã này chưa được dạy ở HĐ nào và chưa có trong mục tiêu.\", \"goi_y\": \"Thêm KT11-C09-CT-003 vào HĐ2 hoặc đổi câu 2 sang bài không dùng hàm lượng giác; có thể dùng id BT11-B32-2 trong kho.\", \"ly_do\": \"Tránh dùng kiến thức chưa dạy trong tiết.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[0].buoc_goi_y\", \"van_de\": \"Các câu trong phiếu có buoc_goi_y rỗng.\", \"goi_y\": \"Bổ sung các bước gợi ý bằng lời, không ghi kết quả.\", \"ly_do\": \"Giúp HS cơ bản tự làm theo mẫu.\"}, {\"vi_tri\": \"hoat_dong[3].noi_dung\", \"van_de\": \"HĐ4 chỉ có 2 câu cho 10 phút, trong khi HĐ1 và HĐ5 chưa nêu rõ bài cụ thể.\", \"goi_y\": \"Chỉ rõ bài tập cụ thể hoặc bổ sung câu NB-TH từ kho bài tập.\", \"ly_do\": \"Khối lượng và tính nhất quán của tiết học.\"}, {\"vi_tri\": \"hoat_dong[4].noi_dung\", \"van_de\": \"Bài vận tốc dùng phương trình chuyển động chưa nêu cụ thể và chưa có trong phiếu.\", \"goi_y\": \"Nêu rõ phương trình chuyển động hoặc đưa vào phiếu.\", \"ly_do\": \"Tránh bài tập không rõ nguồn.\"}], \"unsure\": []}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[0].ten\",\"before\":\"Khởi động: Tính nhanh bằng định nghĩa\",\"after\":\"Khởi động: Ai tính nhanh hơn\",\"ly_do\":\"Giáo viên yêu cầu đổi tên HĐ1.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1].kien_thuc[1].phat_bieu\",\"van_de\":\"Công thức $(a^x)'=xa^{x-1}$ sai so với danh sách KT11-C09-CT-004, đúng là $(a^x)'=a^x\\\\ln a$.\",\"goi_y\":\"Sửa phát biểu thành $(a^x)'=a^x\\\\ln a$ (có thể bổ sung $(e^x)'=e^x$, $(\\\\ln x)'=\\\\dfrac1x$, $(\\\\log_ax)'=\\\\dfrac1{x\\\\ln a}$).\",\"ly_do\":\"Phát biểu phải đúng nguyên văn danh sách kiến thức được cấp.\"},{\"vi_tri\":\"hoat_dong[1].kien_thuc[0].phat_bieu\",\"van_de\":\"Phát biểu KT11-C09-CT-002 thiếu $(c)'=0$, $(\\\\sqrt x)'$ và $\\\\left(\\\\dfrac1x\\\\right)'$ so với danh sách.\",\"goi_y\":\"Bổ sung đủ các công thức của KT11-C09-CT-002.\",\"ly_do\":\"Giữ đúng nội dung kiến thức được cấp.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[1].kt\",\"van_de\":\"Câu 2 có $y=x^2\\\\sin x$ cần đạo hàm của $\\\\sin x$ (KT11-C09-CT-003), nhưng mã này chưa được dạy ở HĐ nào và chưa có trong mục tiêu.\",\"goi_y\":\"Thêm KT11-C09-CT-003 vào HĐ2 hoặc đổi câu 2 sang bài không dùng hàm lượng giác; có thể dùng id BT11-B32-2 trong kho.\",\"ly_do\":\"Tránh dùng kiến thức chưa dạy trong tiết.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[0].buoc_goi_y\",\"van_de\":\"Các câu trong phiếu có buoc_goi_y rỗng.\",\"goi_y\":\"Bổ sung các bước gợi ý bằng lời, không ghi kết quả.\",\"ly_do\":\"Giúp HS cơ bản tự làm theo mẫu.\"},{\"vi_tri\":\"hoat_dong[3].noi_dung\",\"van_de\":\"HĐ4 chỉ có 2 câu cho 10 phút, trong khi HĐ1 và HĐ5 chưa nêu rõ bài cụ thể.\",\"goi_y\":\"Chỉ rõ bài tập cụ thể hoặc bổ sung câu NB-TH từ kho bài tập.\",\"ly_do\":\"Khối lượng và tính nhất quán của tiết học.\"},{\"vi_tri\":\"hoat_dong[4].noi_dung\",\"van_de\":\"Bài vận tốc dùng phương trình chuyển động chưa nêu cụ thể và chưa có trong phiếu.\",\"goi_y\":\"Nêu rõ phương trình chuyển động hoặc đưa vào phiếu.\",\"ly_do\":\"Tránh bài tập không rõ nguồn.\"}],\"unsure\":[]}}",
+ "usage": {
+  "ts": "2026-11-27T17:58:40",
+  "role": "gen",
+  "task": "K2/V8/E14",
+  "model": "claude-sonnet-5-5",
+  "input": 2824,
+  "output": 1227,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 7.9
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:40",
+   "role": "gen",
+   "task": "K2/V8/E14",
+   "model": "claude-sonnet-5-5",
+   "input": 2824,
+   "output": 1227,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 7.9
+  }
+ ],
+ "server_errs0": []
+}

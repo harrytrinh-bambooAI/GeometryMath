@@ -52,6 +52,7 @@
   ],
   "nhan_xet": "Giáo án đúng khung, đủ 45 phút, đúng tỉ lệ 1 TH – 2 VD – 2 VDC và thể hiện rõ phong cách truyền thống; gợi ý câu 5 áp dụng sai điều kiện của công thức tỉ số thể tích (phải chọn đỉnh chung $A$, không phải $D$), cần sửa trước khi dùng. HD2 dồn chứng minh công thức, nêu phương pháp và làm ví dụ mẫu trong 17 phút nên hơi chật."
  },
+ "judge2": null,
  "score": {
   "diem": 90.0,
   "A": 0,

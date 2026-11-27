@@ -42,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án bám đúng hai mục kiến thức trọng tâm, đủ 90 phút, phiếu dùng đúng bài trong kho, không ghi đáp số, mức độ phù hợp học sinh cơ bản; phần STEM thể hiện rõ ở HĐ2 và HĐ5. Tuy vậy, thời lượng HĐ2 (30 phút vừa vẽ, cắt, dán, đo vừa hình thành công thức) và HĐ5 (10 phút cho mọi nhóm trình bày 2 phút) khá căng, đồng thời các nhóm tự chọn kích thước mô hình nên việc đối chiếu với dung tích hộp sữa thật ở HĐ5 thiếu nhất quán."
  },
+ "judge2": null,
  "score": {
   "diem": 90.0,
   "A": 0,

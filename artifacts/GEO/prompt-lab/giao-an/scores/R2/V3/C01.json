@@ -50,6 +50,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án bám đúng DN-010 và CT-003 với phát biểu khớp tham chiếu. Thời lượng 5+8+12+12+8 = 45 phút, phiếu 6 câu đúng tỉ lệ NB2/TH2/VD1/VDC1, gợi ý không lộ đáp số, và bài tự soạn có ghi rõ ở unsure. Còn hai lỗi nhỏ: HD5 ghi \"làm tiếp ở nhà\" trong khi o_nha là false, và HD3 chưa yêu cầu HS lập luận BC ⊥ (SAK) để suy ra AH ⊥ (SBC)."
  },
+ "judge2": null,
  "score": {
   "diem": 95.0,
   "A": 0,

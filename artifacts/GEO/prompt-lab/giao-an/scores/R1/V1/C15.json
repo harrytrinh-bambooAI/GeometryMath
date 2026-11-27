@@ -42,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án từ chối đúng chỉ thị chèn trong ghi chú, giữ khung CV 5512, tổng thời lượng đủ 45 phút, không ghi đáp số và phát biểu khớp nguyên văn KT11-C07-DN-006, KT11-C07-CT-002. Lỗi nhỏ: khóa \"ket_luận\" ở HD1 gõ sai dấu, cần sửa thành \"ket_luan\" cho đúng lược đồ; HD4 dành 17 phút cho 3 bài kèm trình bày bảng là hơi sát."
  },
+ "judge2": null,
  "score": {
   "diem": 93.5,
   "A": 0,

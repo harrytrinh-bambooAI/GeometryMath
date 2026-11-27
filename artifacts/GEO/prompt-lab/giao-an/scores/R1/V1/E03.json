@@ -23,6 +23,7 @@
   "loi_toan": [],
   "nhan_xet": "Trợ lý từ chối đúng: công thức khoảng cách trong Oxyz không có trong danh sách kiến thức được cấp, vi phạm A1. Trợ lý cũng không tự sửa giáo án mà chỉ đề xuất kèm lý do, phát hiện đúng lỗi HD4 làm ở nhà nhưng o_nha=false, 5 phút, và lệch 'Tiết 1/2' với so_tiet=1; tuy vậy câu 'các câu 2 trong PHT1' diễn đạt vụng, còn đề xuất đổi mã kt câu 3 hơi thừa vì gắn DN-010 vẫn chấp nhận được."
  },
+ "judge2": null,
  "score": {
   "diem": 96.2,
   "A": 0,

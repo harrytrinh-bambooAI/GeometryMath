@@ -1,0 +1,65 @@
+{
+ "case": "N02",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "so_bai_tap": true,
+   "ti_le": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 90,
+   "kt_khop": 3,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "ti_le_thuc": {
+    "NB": 1,
+    "TH": 2,
+    "VD": 3,
+    "VDC": 2
+   },
+   "muc_do_lech_kho": [],
+   "so_cau": 8,
+   "cau_tu_kho": 4,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 5,
+   "chinh_xac": 4,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "HD2 Ví dụ 1: \"dùng dãy $x_n=1+\\dfrac1n$ để tính $\\lim_{x\\to1}(2x+1)$\". Một dãy cụ thể không đủ để kết luận giới hạn. Đúng phải là: lấy dãy $x_n\\to1$ bất kì ($x_n\\ne1$), chứng minh $f(x_n)\\to3$. Dãy cụ thể chỉ dùng được để minh hoạ hoặc để chứng minh giới hạn không tồn tại.",
+   "HD2 phần chốt: \"hoặc một dãy không cho kết quả như mong đợi\" là diễn đạt mơ hồ. Đúng phải là: chỉ ra hai dãy $x_n\\to x_0$ mà $f(x_n)$ có giới hạn khác nhau, hoặc một dãy mà $f(x_n)$ không có giới hạn."
+  ],
+  "nhan_xet": "Giáo án đúng khung, tổng thời lượng 90 phút, phiếu đúng tỉ lệ NB1–TH2–VD3–VDC2, các câu tự soạn đều giải được và không ghi đáp số; unsure về giới hạn vô cực là hợp lí. Cần sửa Ví dụ 1 để lập luận với dãy bất kì cho đúng định nghĩa; với lớp chuyên, độ khó các câu VD còn hơi nhẹ."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 95.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.67
+ }
+}

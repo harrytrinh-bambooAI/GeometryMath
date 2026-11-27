@@ -1,0 +1,32 @@
+{
+ "ids": [
+  "BM-043-S1",
+  "BM-043-S2",
+  "BM-043-DUNG",
+  "BM-044-S1",
+  "BM-044-S2",
+  "BM-044-DUNG",
+  "BM-045-S1",
+  "BM-045-S2",
+  "BM-045-DUNG",
+  "BM-046-S1",
+  "BM-046-S2",
+  "BM-046-DUNG",
+  "BM-047-S1",
+  "BM-047-S2",
+  "BM-047-DUNG"
+ ],
+ "text": "{\"ket_qua\":[\n{\"id\":\"BM-043-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"Thiếu hệ số 1/3 trong công thức thể tích chóp; đúng là V = (1/3)·a²·a√2 = a³√2/3.\"},\n{\"id\":\"BM-043-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"AC = a√2 (đường chéo hình vuông cạnh a), không phải a; do đó SA = a√2.\"},\n{\"id\":\"BM-043-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: góc SCA = 45°, AC = a√2, SA = a√2, V = a³√2/3.\"},\n{\"id\":\"BM-044-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"SN = 2NC nên SN/SC = 2/3, không phải 1/2.\"},\n{\"id\":\"BM-044-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"Công thức tỉ số thể tích sai: phải là tích (SM/SB)·(SN/SC), không phải tổng trừ 1.\"},\n{\"id\":\"BM-044-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: tỉ số = 1/2 · 2/3 = 1/3.\"},\n{\"id\":\"BM-045-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"H là trọng tâm tam giác đều BCD nên HB = a√3/3, không phải a√3/2 (đó là độ dài đường cao tam giác).\"},\n{\"id\":\"BM-045-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"Tính sai: V = (1/3)·(a²√3/4)·(a√6/3) = a³√18/36 = a³√2/12, không phải a³√3/18 (và thiếu bước thay số đúng).\"},\n{\"id\":\"BM-045-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: V = a³√2/12.\"},\n{\"id\":\"BM-046-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"Diện tích đáy là (2a)² = 4a², không phải 2a²; V = 4√3a³/3.\"},\n{\"id\":\"BM-046-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"Khẳng định SH là đường cao mà không chứng minh SH ⊥ (ABCD) (cần dùng (SAB)⊥(ABCD), giao tuyến AB, SH⊥AB).\"},\n{\"id\":\"BM-046-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: SH = a√3, V = 4√3a³/3.\"},\n{\"id\":\"BM-047-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"AH là đường cao trong tam giác vuông SAB: AH = SA·AB/√(SA²+AB²) = a/√2·... = a√2/2; đã dùng AD thay vì AB nên sai.\"},\n{\"id\":\"BM-047-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"Hai mặt phẳng cắt nhau không suy ra vuông góc; cần chứng minh BC ⊥ (SAB).\"},\n{\"id\":\"BM-047-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: chứng minh vuông góc hợp lệ, SB = a√2, AH = a√2/2.\"}\n]}",
+ "usage": {
+  "ts": "2026-11-27T17:45:47",
+  "role": "gen",
+  "task": "R5/STEP1/stepb-6",
+  "model": "claude-sonnet-5-5",
+  "input": 4136,
+  "output": 1164,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 7.1
+ }
+}

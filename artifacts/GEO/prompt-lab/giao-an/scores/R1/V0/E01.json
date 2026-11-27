@@ -26,6 +26,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá chỉ sửa các trường của HĐ1, có đúng 3 câu hỏi nhanh, giữ 5 phút và không ghi kết quả số; trợ lý cũng phát hiện đúng lỗi HĐ4 (o_nha=false nhưng giao làm ở nhà) và chỉ đề xuất, không tự sửa. Còn hai điểm nhỏ: câu 3 trò chơi trùng ý với PHT1 câu 1, và trợ lý chưa chỉ ra PHT1 câu 2 và câu 3 thực chất cùng một dạng, cùng đáp số."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

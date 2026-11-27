@@ -1,0 +1,48 @@
+{
+ "case": "E09",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": false,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [
+   "A6/A8: kind=patch không hợp với yêu cầu (chấp nhận ['question'])",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[1].to_chuc.chuyen_giao",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[1].to_chuc.thuc_hien",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[2].to_chuc.thuc_hien",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[2].to_chuc.ket_luan",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[3].to_chuc.chuyen_giao",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[3].thoi_luong_phut",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[3].o_nha",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[2].thoi_luong_phut"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 8
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 4,
+   "toi_thieu": 4,
+   "xu_ly_luat": 3,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá chỉ sửa phần tổ chức và thời lượng, không đụng mục khoá. Tổng thời lượng vẫn đủ 45 phút, các bước dựng AK ⊥ BC, AH ⊥ SK bám đúng KT11-C07-CT-003, đề xuất phân hoá có lý do. Tuy nhiên yêu cầu 'hay hơn' khá mơ hồ mà trợ lý không hỏi lại, và lỗi o_nha/thời lượng của HĐ4 bị tự sửa thẳng thay vì chỉ nêu đề xuất kèm lý do theo A7; ngoài ra HĐ2 chiếu hình S.ABC nhưng lại giao câu 1 về hình lập phương, hơi lệch mạch."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 0.0,
+  "A": 9,
+  "A_auto": 9,
+  "A_judge": 0,
+  "auto": 0.75,
+  "judge": 3.75
+ }
+}

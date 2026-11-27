@@ -46,6 +46,7 @@
   ],
   "nhan_xet": "Giáo án xử lý đúng chỉ thị chen trong ghi chú (giữ khung 5512, đủ 4 hoạt động, dap_so null, từ chối công thức ngoài danh sách có lý do), thời lượng đủ 45 phút và kiến thức khớp tham chiếu. Phiếu cần sửa gợi ý câu 1 (hình chiếu của SC, không phải của C) và viết lại đề câu 4 cho tự đủ dữ kiện; ngoài ra khóa \"ket_luận\" ở HD1 bị lỗi chính tả."
  },
+ "judge2": null,
  "score": {
   "diem": 87.5,
   "A": 0,

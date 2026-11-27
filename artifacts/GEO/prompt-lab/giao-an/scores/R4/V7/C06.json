@@ -50,6 +50,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án đủ khung 5512 và đủ 90 phút (6+17+17+35+15); phiếu có 8 câu đúng tỉ lệ 1/3/3/1, không lộ đáp số, các câu tự soạn đúng toán và được ghi rõ trong unsure. Với lớp chuyên, câu VDC (BT11-B25-7) còn khá nhẹ, nên bổ sung một câu khai thác tính chất TC-003 để tăng độ thách thức."
  },
+ "judge2": null,
  "score": {
   "diem": 97.5,
   "A": 0,

@@ -1,0 +1,39 @@
+{
+ "case": "E05",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true,
+   "co_de_xuat": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 1
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá thêm đúng BM-008 (mức VD, đúng id kho, dap_so null). Gợi ý dựng AH ⊥ SD trong (SAD) làm đoạn vuông góc chung là cách giải đúng, khác lời giải chuẩn nhưng hợp lệ; trợ lý cũng phát hiện và chỉ đề xuất (không tự sửa) các lỗi có sẵn: tổng 50 phút, HD4 sai o_nha, công thức thiếu bình phương, câu 3 gắn sai mã kt, câu 4 chưa được hoạt động nào dạy. Điểm trừ nhỏ: gắn mã KT11-C07-PP-001 cho câu 4 trong khi các bước gợi ý không dùng phương pháp đưa về khoảng cách điểm–mặt."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 96.2,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.75
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "case": "E10",
+ "variant": "V8",
+ "round": "K3",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[1].thoi_luong_phut\", \"before\": 20, \"after\": 15, \"ly_do\": \"Giáo viên yêu cầu giảm HĐ Hình thành xuống 15 phút.\"}, {\"op\": \"replace\", \"path\": \"hoat_dong[2].thoi_luong_phut\", \"before\": 15, \"after\": 20, \"ly_do\": \"Giáo viên yêu cầu tăng HĐ Luyện tập lên 20 phút. Tổng thời lượng các HĐ trên lớp vẫn là 5+15+20+5=45 phút.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[3].o_nha\", \"van_de\": \"HD4 có cách tổ chức là HS làm ở nhà, nộp tiết sau, nhưng o_nha=false và thoi_luong_phut=5. Như vậy tổng 45 phút đang tính cả phần làm ở nhà.\", \"goi_y\": \"Nếu giữ HD4 làm ở nhà thì đặt o_nha=true, thoi_luong_phut=0 và chia lại 5 phút cho các HĐ trên lớp để đủ 45 phút. Nếu làm trên lớp thì sửa lại phần tổ chức.\", \"ly_do\": \"Luật A5: HĐ ở nhà phải có o_nha=true và 0 phút. Tôi chưa tự sửa vì không thuộc yêu cầu.\"}, {\"vi_tri\": \"hoat_dong[1].to_chuc.assign\", \"van_de\": \"HD2 giao PHT1 câu 1, nhưng nội dung HD2 lại nêu ví dụ chóp S.ABC có SA ⊥ (ABC), trùng đề với câu 2 (BT11-B26-3). Câu 1 chỉ là hình lập phương. Ngoài ra HD3 giao câu 2, 3 nên câu 2 có thể bị lặp.\", \"goi_y\": \"Làm rõ ví dụ mẫu ở HD2 là bài nào, tránh trùng với câu 2 trong PHT1, hoặc thêm bài mới từ kho vào phiếu nếu cần.\", \"ly_do\": \"Mỗi bài tập chỉ nên xuất hiện một lần trong giáo án.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau\", \"van_de\": \"Câu 3 (BM-007) chỉ có mức TH và câu 2 là bài chóp S.ABC; với 20 phút Luyện tập chỉ có 2 câu TH, trong khi đối tượng khá cần có một câu VD. Câu 1 (NB) được giao ở HD2.\", \"goi_y\": \"Có thể thêm một câu VD từ kho (ví dụ BM-008 hoặc BT11-B26-5) nếu giáo viên muốn lấp thêm 5 phút luyện tập. Lưu ý các bài này thuộc khoảng cách giữa hai đường thẳng chéo nhau, chưa thuộc mục tiêu của tiết này.\", \"ly_do\": \"Đối tượng khá cần có ít nhất một câu VD. Tôi chưa tự thêm vì giáo viên chưa yêu cầu.\"}], \"unsure\": []}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[1].thoi_luong_phut\",\"before\":20,\"after\":15,\"ly_do\":\"Giáo viên yêu cầu giảm HĐ Hình thành xuống 15 phút.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[2].thoi_luong_phut\",\"before\":15,\"after\":20,\"ly_do\":\"Giáo viên yêu cầu tăng HĐ Luyện tập lên 20 phút. Tổng thời lượng các HĐ trên lớp vẫn là 5+15+20+5=45 phút.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[3].o_nha\",\"van_de\":\"HD4 có cách tổ chức là HS làm ở nhà, nộp tiết sau, nhưng o_nha=false và thoi_luong_phut=5. Như vậy tổng 45 phút đang tính cả phần làm ở nhà.\",\"goi_y\":\"Nếu giữ HD4 làm ở nhà thì đặt o_nha=true, thoi_luong_phut=0 và chia lại 5 phút cho các HĐ trên lớp để đủ 45 phút. Nếu làm trên lớp thì sửa lại phần tổ chức.\",\"ly_do\":\"Luật A5: HĐ ở nhà phải có o_nha=true và 0 phút. Tôi chưa tự sửa vì không thuộc yêu cầu.\"},{\"vi_tri\":\"hoat_dong[1].to_chuc.assign\",\"van_de\":\"HD2 giao PHT1 câu 1, nhưng nội dung HD2 lại nêu ví dụ chóp S.ABC có SA ⊥ (ABC), trùng đề với câu 2 (BT11-B26-3). Câu 1 chỉ là hình lập phương. Ngoài ra HD3 giao câu 2, 3 nên câu 2 có thể bị lặp.\",\"goi_y\":\"Làm rõ ví dụ mẫu ở HD2 là bài nào, tránh trùng với câu 2 trong PHT1, hoặc thêm bài mới từ kho vào phiếu nếu cần.\",\"ly_do\":\"Mỗi bài tập chỉ nên xuất hiện một lần trong giáo án.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau\",\"van_de\":\"Câu 3 (BM-007) chỉ có mức TH và câu 2 là bài chóp S.ABC; với 20 phút Luyện tập chỉ có 2 câu TH, trong khi đối tượng khá cần có một câu VD. Câu 1 (NB) được giao ở HD2.\",\"goi_y\":\"Có thể thêm một câu VD từ kho (ví dụ BM-008 hoặc BT11-B26-5) nếu giáo viên muốn lấp thêm 5 phút luyện tập. Lưu ý các bài này thuộc khoảng cách giữa hai đường thẳng chéo nhau, chưa thuộc mục tiêu của tiết này.\",\"ly_do\":\"Đối tượng khá cần có ít nhất một câu VD. Tôi chưa tự thêm vì giáo viên chưa yêu cầu.\"}],\"unsure\":[]}}",
+ "usage": {
+  "ts": "2026-11-27T17:58:29",
+  "role": "gen",
+  "task": "K3/V8/E10",
+  "model": "claude-sonnet-5-5",
+  "input": 3371,
+  "output": 1134,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 7.3
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:29",
+   "role": "gen",
+   "task": "K3/V8/E10",
+   "model": "claude-sonnet-5-5",
+   "input": 3371,
+   "output": 1134,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 7.3
+  }
+ ],
+ "server_errs0": []
+}

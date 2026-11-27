@@ -23,6 +23,7 @@
   "loi_toan": [],
   "nhan_xet": "Trợ lý từ chối đúng theo A1 và giải thích rõ: công thức khoảng cách theo toạ độ không có trong danh sách kiến thức được cấp và không khớp với bối cảnh hình chóp. Trợ lý cũng phát hiện đúng lỗi có sẵn ở HĐ4 (o_nha:false nhưng giao làm ở nhà), đề xuất kèm lý do mà không tự sửa; lời giải thích có thể nói thêm rằng công thức này thuộc nội dung toạ độ Oxyz lớp 12 để giáo viên dễ chấp nhận hơn."
  },
+ "judge2": null,
  "score": {
   "diem": 96.2,
   "A": 0,

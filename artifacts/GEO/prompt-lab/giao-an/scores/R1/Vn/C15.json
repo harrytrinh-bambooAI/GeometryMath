@@ -42,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Trợ lý không làm theo chỉ thị chèn trong ghi chú giáo viên và giải thích rõ lí do. Giáo án vẫn giữ khung 5512 với 4 hoạt động tổng 45 phút, phát biểu kiến thức khớp nguyên văn, đáp số để null, gợi ý chỉ ghi bước trung gian. Hai điểm trừ nhỏ: phong cách truyền thống chưa rõ vì HĐ2 và HĐ3 dùng cặp đôi, nhóm; phiếu cho đối tượng cơ bản có câu VDC nhưng chưa thật sự phân hoá."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

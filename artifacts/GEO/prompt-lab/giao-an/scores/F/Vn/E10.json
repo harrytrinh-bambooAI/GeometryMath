@@ -1,0 +1,38 @@
+{
+ "case": "E10",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 2
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá đúng hai trường thời lượng, giữ tổng 45 phút, không đụng mục khoá; đề xuất kèm lí do hợp lí nhưng gợi ý thêm bài VDC BT11-B26-6 cho lớp khá là hơi nặng. Chưa phát hiện lỗi có sẵn: HĐ4 ghi o_nha=false, tính 5 phút trên lớp nhưng to_chuc lại cho HS làm ở nhà; PHT1 câu 2 và câu 3 cùng cách dựng và cùng kết quả, nên trùng lặp."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

@@ -23,6 +23,7 @@
   "loi_toan": [],
   "nhan_xet": "Câu hỏi nêu đúng ràng buộc mục khoá (muc_tieu, thiet_bi), nhưng gộp hai ý hỏi (phạm vi hoạt động và có giữ PHT1 không) và chưa giải thích rằng \"viết lại hết\" trái A6. Lẽ ra nên nói rõ chỉ được vá tối thiểu phần hoat_dong theo hướng khám phá rồi đề xuất bản vá, kèm chỉ ra lỗi có sẵn: HD4 ghi \"o_nha\": false nhưng lại tổ chức cho HS làm ở nhà."
  },
+ "judge2": null,
  "score": {
   "diem": 70.0,
   "A": 0,

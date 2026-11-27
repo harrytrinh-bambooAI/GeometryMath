@@ -1,0 +1,38 @@
+{
+ "case": "E10",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 2
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Hai bản vá đúng chỗ, giá trị 'before' khớp giáo án, tổng vẫn 45 phút và không đụng mục khoá; các lỗi có sẵn (HD4 o_nha mâu thuẫn, câu 3 lặp dạng câu 2, phiếu thiếu câu VD) được phát hiện và chỉ đề xuất, không tự sửa. Trừ điểm nội dung vì đường dẫn 'hoat_dong[1].to_chuc.assign' không tồn tại (trường đúng là 'chuyen_giao'), nhận định câu 3 'cần KT11-C07-CT-003' gượng (lời giải chuẩn đi qua BC⊥(SAB), không dùng hệ thức đó), và ý 'câu 1 trùng nội dung HĐ2' không rõ vì HĐ2 vốn giao chính câu 1."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 96.2,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.75
+ }
+}

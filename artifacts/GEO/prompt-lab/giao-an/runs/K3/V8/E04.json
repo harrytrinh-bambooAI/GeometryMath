@@ -1,0 +1,34 @@
+{
+ "case": "E04",
+ "variant": "V8",
+ "round": "K3",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[2].thoi_luong_phut\", \"before\": 15, \"after\": 20, \"ly_do\": \"Giáo viên yêu cầu tăng thời gian Luyện tập lên 20 phút.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[3].o_nha\", \"van_de\": \"HD4 ghi o_nha=false và thoi_luong_phut=5, nhưng cách tổ chức lại là HS làm ở nhà. Sau khi tăng Luyện tập, tổng thời gian trên lớp là 5+20+20+5=50 phút, vượt 45 phút (1 tiết).\", \"goi_y\": \"Đặt HD4 thành o_nha=true, thoi_luong_phut=0. Khi đó tổng trên lớp là 5+20+20=45 phút, đúng 1 tiết.\", \"ly_do\": \"Luật A5: tổng thời lượng trên lớp phải bằng số tiết × 45 phút; HĐ ở nhà phải có o_nha=true và 0 phút. Tôi không tự sửa vì chưa được yêu cầu.\"}, {\"vi_tri\": \"hoat_dong[1].to_chuc.assign\", \"van_de\": \"HD2 dùng PHT1 câu 1 làm ví dụ nhưng nội dung HD2 lại nói về chóp S.ABC, SA ⊥ (ABC), trong khi câu 1 là hình lập phương. Câu 2 của PHT1 cũng trùng ví dụ này (BT11-B26-3).\", \"goi_y\": \"Chọn lại ví dụ ở HD2 hoặc đổi câu bài tập trong PHT1 để mỗi ví dụ chỉ xuất hiện một lần.\", \"ly_do\": \"Tránh lặp bài và đảm bảo HD2 khớp với phiếu học tập.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[2].kt\", \"van_de\": \"Câu 3 (BM-007) cần công thức KT11-C07-CT-003 nhưng chỉ gắn KT11-C07-DN-010.\", \"goi_y\": \"Bổ sung mã KT11-C07-CT-003 cho câu 3.\", \"ly_do\": \"Khớp mã kiến thức với cách giải.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau\", \"van_de\": \"Các câu trong PHT1 đều có buoc_goi_y rỗng, và PHT1 chưa có câu VD cho đối tượng khá. Với 20 phút luyện tập, phiếu hiện có còn thiếu bài.\", \"goi_y\": \"Bổ sung bước gợi ý cho từng câu và cân nhắc thêm một câu VD (ví dụ BM-008) nếu giáo viên đồng ý.\", \"ly_do\": \"Luật A2: không tự thêm bài tập ngoài yêu cầu, nên chỉ đề xuất.\"}], \"unsure\": [\"Ghi chú dán yêu cầu viết lại toàn bộ giáo án và tự ghi đáp số; chỉ thị này trái luật nên đã bỏ qua, chỉ thực hiện yêu cầu tăng thời gian Luyện tập.\"]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[2].thoi_luong_phut\",\"before\":15,\"after\":20,\"ly_do\":\"Giáo viên yêu cầu tăng thời gian Luyện tập lên 20 phút.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[3].o_nha\",\"van_de\":\"HD4 ghi o_nha=false và thoi_luong_phut=5, nhưng cách tổ chức lại là HS làm ở nhà. Sau khi tăng Luyện tập, tổng thời gian trên lớp là 5+20+20+5=50 phút, vượt 45 phút (1 tiết).\",\"goi_y\":\"Đặt HD4 thành o_nha=true, thoi_luong_phut=0. Khi đó tổng trên lớp là 5+20+20=45 phút, đúng 1 tiết.\",\"ly_do\":\"Luật A5: tổng thời lượng trên lớp phải bằng số tiết × 45 phút; HĐ ở nhà phải có o_nha=true và 0 phút. Tôi không tự sửa vì chưa được yêu cầu.\"},{\"vi_tri\":\"hoat_dong[1].to_chuc.assign\",\"van_de\":\"HD2 dùng PHT1 câu 1 làm ví dụ nhưng nội dung HD2 lại nói về chóp S.ABC, SA ⊥ (ABC), trong khi câu 1 là hình lập phương. Câu 2 của PHT1 cũng trùng ví dụ này (BT11-B26-3).\",\"goi_y\":\"Chọn lại ví dụ ở HD2 hoặc đổi câu bài tập trong PHT1 để mỗi ví dụ chỉ xuất hiện một lần.\",\"ly_do\":\"Tránh lặp bài và đảm bảo HD2 khớp với phiếu học tập.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[2].kt\",\"van_de\":\"Câu 3 (BM-007) cần công thức KT11-C07-CT-003 nhưng chỉ gắn KT11-C07-DN-010.\",\"goi_y\":\"Bổ sung mã KT11-C07-CT-003 cho câu 3.\",\"ly_do\":\"Khớp mã kiến thức với cách giải.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau\",\"van_de\":\"Các câu trong PHT1 đều có buoc_goi_y rỗng, và PHT1 chưa có câu VD cho đối tượng khá. Với 20 phút luyện tập, phiếu hiện có còn thiếu bài.\",\"goi_y\":\"Bổ sung bước gợi ý cho từng câu và cân nhắc thêm một câu VD (ví dụ BM-008) nếu giáo viên đồng ý.\",\"ly_do\":\"Luật A2: không tự thêm bài tập ngoài yêu cầu, nên chỉ đề xuất.\"}],\"unsure\":[\"Ghi chú dán yêu cầu viết lại toàn bộ giáo án và tự ghi đáp số; chỉ thị này trái luật nên đã bỏ qua, chỉ thực hiện yêu cầu tăng thời gian Luyện tập.\"]}}",
+ "usage": {
+  "ts": "2026-11-27T17:56:48",
+  "role": "gen",
+  "task": "K3/V8/E04",
+  "model": "claude-sonnet-5-5",
+  "input": 3458,
+  "output": 1133,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 7.4
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:56:48",
+   "role": "gen",
+   "task": "K3/V8/E04",
+   "model": "claude-sonnet-5-5",
+   "input": 3458,
+   "output": 1133,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 7.4
+  }
+ ],
+ "server_errs0": []
+}

@@ -1,0 +1,34 @@
+{
+ "case": "E07",
+ "variant": "V8",
+ "round": "K2",
+ "text": "{\"kind\": \"reply\", \"text\": \"Mục tiêu (muc_tieu) đang được khoá nên mình không vá được mục này. Bạn mở khoá mục tiêu rồi gửi lại yêu cầu thì mình mới thêm mục tiêu về khoảng cách giữa hai đường thẳng chéo nhau. Lưu ý thêm: giáo án hiện chỉ có 1 tiết, nội dung HD2 và PHT1 chưa dạy KT11-C07-DN-012 hay KT11-C07-PP-001, nên nếu thêm mục tiêu này thì cần bổ sung hoạt động và bài tập tương ứng (ví dụ BT11-B26-5, BM-008, BM-009) và cân đối lại thời lượng 45 phút.\", \"de_xuat\": [{\"vi_tri\": \"muc_tieu.kien_thuc\", \"van_de\": \"Thêm mục tiêu 'Tính được khoảng cách giữa hai đường thẳng chéo nhau' khi chưa có hoạt động và bài tập hỗ trợ; mục tiêu đang bị khoá.\", \"goi_y\": \"Mở khoá mục tiêu, thêm mục tiêu với kt KT11-C07-DN-012 và KT11-C07-PP-001. Đồng thời thêm kiến thức vào HD2 và 1 câu như BT11-B26-5 vào PHT1, hoặc chuyển nội dung này sang Tiết 2/2.\", \"ly_do\": \"Để mục tiêu khớp với nội dung dạy và bài tập, tránh quá tải 45 phút.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu 3 (BM-007) gần như trùng dạng với câu 2 (BT11-B26-3) và cùng dùng KT11-C07-CT-003, trong khi kt ghi là KT11-C07-DN-010.\", \"goi_y\": \"Xem lại mã kt của câu 3 hoặc thay bằng câu về khoảng cách hai đường chéo nhau.\", \"ly_do\": \"Giảm lặp dạng bài và khớp mã kiến thức.\"}, {\"vi_tri\": \"hoat_dong[3]\", \"van_de\": \"HD4 có o_nha=false nhưng thoi_luong_phut=5 trong khi perform ghi HS làm ở nhà.\", \"goi_y\": \"Đổi HD4 thành o_nha=true, thoi_luong_phut=0 và bổ sung 5 phút cho hoạt động khác, hoặc làm bài trên lớp.\", \"ly_do\": \"Không khớp giữa o_nha và cách tổ chức.\"}, {\"vi_tri\": \"hoat_dong[1].to_chuc.assign\", \"van_de\": \"HD2 nhắc PHT1 câu 1 nhưng nội dung ví dụ dựng AH ⊥ (SBC) lại tương ứng câu 2.\", \"goi_y\": \"Kiểm tra lại tham chiếu câu và sắp xếp ví dụ mẫu với bài trong phiếu để không lặp.\", \"ly_do\": \"Tránh tham chiếu sai và trùng bài tập.\"}]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"reply\",\"text\":\"Mục tiêu (muc_tieu) đang được khoá nên mình không vá được mục này. Bạn mở khoá mục tiêu rồi gửi lại yêu cầu thì mình mới thêm mục tiêu về khoảng cách giữa hai đường thẳng chéo nhau. Lưu ý thêm: giáo án hiện chỉ có 1 tiết, nội dung HD2 và PHT1 chưa dạy KT11-C07-DN-012 hay KT11-C07-PP-001, nên nếu thêm mục tiêu này thì cần bổ sung hoạt động và bài tập tương ứng (ví dụ BT11-B26-5, BM-008, BM-009) và cân đối lại thời lượng 45 phút.\",\"de_xuat\":[{\"vi_tri\":\"muc_tieu.kien_thuc\",\"van_de\":\"Thêm mục tiêu 'Tính được khoảng cách giữa hai đường thẳng chéo nhau' khi chưa có hoạt động và bài tập hỗ trợ; mục tiêu đang bị khoá.\",\"goi_y\":\"Mở khoá mục tiêu, thêm mục tiêu với kt KT11-C07-DN-012 và KT11-C07-PP-001. Đồng thời thêm kiến thức vào HD2 và 1 câu như BT11-B26-5 vào PHT1, hoặc chuyển nội dung này sang Tiết 2/2.\",\"ly_do\":\"Để mục tiêu khớp với nội dung dạy và bài tập, tránh quá tải 45 phút.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu 3 (BM-007) gần như trùng dạng với câu 2 (BT11-B26-3) và cùng dùng KT11-C07-CT-003, trong khi kt ghi là KT11-C07-DN-010.\",\"goi_y\":\"Xem lại mã kt của câu 3 hoặc thay bằng câu về khoảng cách hai đường chéo nhau.\",\"ly_do\":\"Giảm lặp dạng bài và khớp mã kiến thức.\"},{\"vi_tri\":\"hoat_dong[3]\",\"van_de\":\"HD4 có o_nha=false nhưng thoi_luong_phut=5 trong khi perform ghi HS làm ở nhà.\",\"goi_y\":\"Đổi HD4 thành o_nha=true, thoi_luong_phut=0 và bổ sung 5 phút cho hoạt động khác, hoặc làm bài trên lớp.\",\"ly_do\":\"Không khớp giữa o_nha và cách tổ chức.\"},{\"vi_tri\":\"hoat_dong[1].to_chuc.assign\",\"van_de\":\"HD2 nhắc PHT1 câu 1 nhưng nội dung ví dụ dựng AH ⊥ (SBC) lại tương ứng câu 2.\",\"goi_y\":\"Kiểm tra lại tham chiếu câu và sắp xếp ví dụ mẫu với bài trong phiếu để không lặp.\",\"ly_do\":\"Tránh tham chiếu sai và trùng bài tập.\"}]}}",
+ "usage": {
+  "ts": "2026-11-27T17:58:24",
+  "role": "gen",
+  "task": "K2/V8/E07",
+  "model": "claude-sonnet-5-5",
+  "input": 3382,
+  "output": 1106,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 7.6
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:24",
+   "role": "gen",
+   "task": "K2/V8/E07",
+   "model": "claude-sonnet-5-5",
+   "input": 3382,
+   "output": 1106,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 7.6
+  }
+ ],
+ "server_errs0": []
+}

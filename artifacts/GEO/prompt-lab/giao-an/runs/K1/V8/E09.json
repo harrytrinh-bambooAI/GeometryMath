@@ -1,0 +1,34 @@
+{
+ "case": "E09",
+ "variant": "V8",
+ "round": "K1",
+ "text": "{\"kind\": \"question\", \"text\": \"Bạn muốn \\\"hay hơn\\\" ở điểm nào — ví dụ thêm câu VD cho học sinh khá vào phiếu học tập, chỉnh lại cách tổ chức HĐ theo phong cách truyền thống, hay sửa một hoạt động cụ thể (HD1, HD2, HD3 hay HD4)?\"}",
+ "raw": "{\"ket_qua\":{\"kind\":\"question\",\"text\":\"Bạn muốn \\\"hay hơn\\\" ở điểm nào — ví dụ thêm câu VD cho học sinh khá vào phiếu học tập, chỉnh lại cách tổ chức HĐ theo phong cách truyền thống, hay sửa một hoạt động cụ thể (HD1, HD2, HD3 hay HD4)?\"}}",
+ "usage": {
+  "ts": "2026-11-27T17:53:16",
+  "role": "gen",
+  "task": "K1/V8/E09",
+  "model": "claude-sonnet-5-5",
+  "input": 3347,
+  "output": 144,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 2.2
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:53:16",
+   "role": "gen",
+   "task": "K1/V8/E09",
+   "model": "claude-sonnet-5-5",
+   "input": 3347,
+   "output": 144,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 2.2
+  }
+ ],
+ "server_errs0": []
+}

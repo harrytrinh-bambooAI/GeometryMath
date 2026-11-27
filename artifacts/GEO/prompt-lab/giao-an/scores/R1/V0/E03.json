@@ -23,6 +23,7 @@
   "loi_toan": [],
   "nhan_xet": "Trợ lý từ chối đúng: công thức tọa độ không có trong danh sách kiến thức được cấp. Lời giải thích rõ, không sửa giáo án, và đã phát hiện lỗi có sẵn ở HĐ4 (làm ở nhà nhưng o_nha=false, 5 phút) kèm đề xuất hợp lí; tuy vậy đề xuất thứ nhất không chỉ ra vấn đề thật mà chỉ xác nhận phát biểu đã đúng, và có lỗi chính tả 'buộc gợi ý' (đúng là 'bước gợi ý')."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

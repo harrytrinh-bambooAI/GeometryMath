@@ -52,6 +52,7 @@
   ],
   "nhan_xet": "Giáo án đúng khung, tổng 5+8+10+14+8 = 45 phút, phiếu đủ 6 câu đúng tỉ lệ NB2–TH2–VD1–VDC1 và không lộ đáp số; câu tự soạn (câu 5) đúng chủ đề, phần unsure giải thích hợp lí vì sao không lấy bài VD trong kho. Cần sửa nhỏ: thống nhất thuật ngữ \"chân đường vuông góc\" cho trường hợp điểm–đường thẳng ở HD2, và diễn đạt lại gợi ý câu 6 cho rõ (đỉnh $A$ đóng vai trò $S$, điểm $O$ đóng vai trò $A$ trong công thức); thời lượng 14 phút cho 4 câu ở HD4 và 8 phút cho 2 câu vận dụng ở HD5 hơi chặt."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

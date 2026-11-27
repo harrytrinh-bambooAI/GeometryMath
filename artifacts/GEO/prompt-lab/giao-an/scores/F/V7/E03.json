@@ -23,6 +23,7 @@
   "loi_toan": [],
   "nhan_xet": "Trợ lý từ chối đúng theo A1, giữ nguyên giáo án và phát hiện được lỗi có sẵn: HĐ4 ghi o_nha=false, 5 phút nhưng lại tổ chức cho HS làm ở nhà. Còn thiếu ý công thức tọa độ thuộc chương trình lớp 12, không phải Toán 11, và đề xuất đổi mã kt câu 3 (BM-007) chưa thật cần thiết vì lời giải chuẩn dựng AH⊥SB trực tiếp."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

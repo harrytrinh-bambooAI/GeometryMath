@@ -50,6 +50,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án đúng khung, tổng thời lượng khớp 90 phút và phiếu đúng 8 câu theo tỉ lệ 1-3-3-1; các phát biểu kiến thức khớp tham chiếu, không có đáp số tự tính, các hoạt động thể hiện rõ phong cách khám phá. Hai điểm cần lưu ý: HĐ4 chỉ có 10 phút cho hai tính chất là hơi gấp, và bài VDC chưa đủ thử thách với lớp chuyên; ngoài ra khóa \"ket_luận\" bị lỗi gõ dấu."
  },
+ "judge2": null,
  "score": {
   "diem": 95.0,
   "A": 0,

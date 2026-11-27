@@ -1,0 +1,54 @@
+{
+ "case": "N06",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 90,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 4,
+   "cau_tu_kho": 4,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 5,
+   "phong_cach": 4,
+   "to_chuc": 4,
+   "chinh_xac": 5,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án giữ đúng luật: tổng 90 phút (mỗi tiết 45 phút), phát biểu kiến thức khớp tham chiếu, mức độ bài tập đúng, dap_so null, gợi ý không lộ kết quả; ghi unsure hợp lí về công thức lãi kép/bán rã và quan hệ đối xứng ngoài danh sách được cấp. Điểm trừ: tính STEM còn nhẹ vì cơ số a do GV cho sẵn, HS không tự thu thập hay xây dựng dữ liệu; HD5 (20 phút, gồm 8 phút hoàn thiện và báo cáo 2 phút/nhóm) và phần báo cáo 3 câu của HD4 trong khoảng 5 phút đều khá chật nếu lớp có 8–10 nhóm."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 95.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.67
+ }
+}

@@ -1,4 +1,4 @@
-"""Phiên bản: v1.0 · 27/11/2026
+"""Phiên bản: v1.1 · 27/11/2026
 Gọi Anthropic Messages API (urllib), ghi usage.jsonl, chặn ngân sách cứng.
 - Khoá đọc từ GEO_AI_API_KEY / ANTHROPIC_API_KEY trong môi trường; KHÔNG in/ghi khoá.
 - Trần: 100 lượt sinh (role=gen), 2.500.000 token API (input+output+cache_write+cache_read, sinh + chấm).
@@ -10,8 +10,8 @@ HERE = pathlib.Path(__file__).resolve().parent
 USAGE = HERE / "usage.jsonl"
 GEN_MODEL = "claude-sonnet-5-5"
 JUDGE_MODEL = "claude-opus-5-5"
-MAX_GEN = 100
-MAX_TOKENS_TOTAL = 2_500_000
+MAX_GEN = 300  # v1.1: owner duyệt 300 lượt sinh (gồm 98 lượt vòng trước)
+MAX_TOKENS_TOTAL = 6_000_000  # v1.1: trần 6M (gồm 1,84M vòng trước)
 _lock = threading.Lock()
 _inflight_gen = 0
 

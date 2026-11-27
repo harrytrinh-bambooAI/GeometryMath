@@ -1,4 +1,4 @@
-"""Phiên bản: v1.0 · 27/11/2026
+"""Phiên bản: v1.1 · 27/11/2026
 Chạy một biến thể prompt trên tập ví dụ: python3 run.py <vong> <bien_the> [C01,E01,...|dev|all] [--workers 4]
 Kết quả: runs/<vong>/<bien_the>/<ca>.json  (đầu ra thô + usage). Biến thể khai báo trong variants.json.
 Chấm bước (loi_giai_sai): python3 run.py <vong> STEP<x> step
@@ -38,7 +38,7 @@ def render(case, v):
             return f(x) if x not in (None, [], "") else "(chưa nhập)"
         lines = [f"Chế độ: soạn giáo án mới",
                  f"Bài: Bài {case['bai']}. {case['ten_bai']} (Toán 11, KNTT) · Tiết PPCT: {case['tiet']}",
-                 f"Đối tượng học sinh: {case['doi_tuong']}",
+                 f"Đối tượng học sinh: {val(case['doi_tuong'])}",
                  f"Số tiết: {val(case['so_tiet'])}" + (" (45 phút/tiết)" if case["so_tiet"] else ""),
                  f"Phong cách dạy: {val(case['phong_cach'], lambda p: p + ' (' + PH[p] + ')')}",
                  f"Kiến thức trọng tâm: {val(case['kien_thuc_trong_tam'], ', '.join)}"]
@@ -76,23 +76,97 @@ def render(case, v):
     return "\n\n".join(out)
 
 
-def run_case(rnd, vname, case):
+def _one_call(rnd, vname, case, v, user, tag=""):
+    fmt_file = v.get("fmt", {}).get(case["mode"])
+    text, meta = lib.call("gen", f"{rnd}/{vname}/{case['id']}{tag}", system_prompt(v), user,
+                          max_tokens=v.get("max_tokens", 16000), effort=v.get("effort", "medium"),
+                          fmt=json.loads((HERE / fmt_file).read_text()) if fmt_file else None)
+    raw = text
+    if fmt_file:  # structured outputs: máy chủ bóc lớp bọc {"ket_qua": ...}
+        try:
+            text = json.dumps(json.loads(text)["ket_qua"], ensure_ascii=False)
+        except Exception:
+            pass
+    return text, raw, [meta]
+
+
+OUTLINE_NOTE = """<che_do_dan_y>
+Lượt này chỉ viết DÀN Ý: trả về {"kind":"lesson"...} đầy đủ meta, muc_tieu, thiet_bi, phieu_hoc_tap, unsure, de_xuat; trong mỗi phần tử "hoat_dong" ghi đủ ma, loai, ten, thoi_luong_phut, o_nha, muc_tieu, kien_thuc nhưng để "noi_dung":"", "san_pham":"" và "to_chuc":{"assign":"","perform":"","report":"","conclude":""} (máy chủ sẽ gọi viết chi tiết từng HĐ sau). Nếu cần hỏi lại thì trả {"kind":"question"} như thường.
+</che_do_dan_y>"""
+HD_NOTE = """<che_do_hoat_dong>
+Lượt này viết CHI TIẾT đúng một hoạt động có mã trong <viet_hoat_dong>, theo <dan_y> đã chốt (giữ nguyên ma, loai, ten, thoi_luong_phut, o_nha, muc_tieu, kien_thuc của dàn ý; chỉ viết noi_dung, san_pham, to_chuc). Trả về {"ket_qua": <phần tử hoat_dong>}.
+</che_do_hoat_dong>"""
+
+
+def _outline(rnd, vname, case, v, user):
+    from lib import parse_json
+    vo = dict(v, system=v["system"] + [OUTLINE_NOTE])
+    text, raw, metas = _one_call(rnd, vname, case, vo, user, "/dan-y")
+    o, _ = parse_json(text)
+    if not isinstance(o, dict) or o.get("kind") != "lesson":
+        return text, raw, metas
+    vh = dict(v, system=v["system"] + [HD_NOTE], fmt={case["mode"]: "schema-so-hd.json"})
+    for i, h in enumerate(o.get("hoat_dong", [])):
+        u = user + f"\n\n<dan_y>\n{json.dumps(o, ensure_ascii=False)}\n</dan_y>\n\n<viet_hoat_dong>{h.get('ma')}</viet_hoat_dong>"
+        t, _, m = _one_call(rnd, vname, case, vh, u, f"/{h.get('ma')}")
+        metas += m
+        try:
+            d = json.loads(t)
+            o["hoat_dong"][i] = dict(h, noi_dung=d["noi_dung"], san_pham=d["san_pham"], to_chuc=d["to_chuc"])
+        except Exception:
+            pass
+    return json.dumps(o, ensure_ascii=False), raw, metas
+
+
+def retry_existing(rnd, vname, case):
+    """Bước 'kiểm máy chủ + gọi lại 1 lần' chạy SAU lượt đầu (để ưu tiên đủ lượt đầu khi ngân sách sát trần)."""
+    import score
+    dest = HERE / "runs" / rnd / vname / f"{case['id']}.json"
+    rec = json.loads(dest.read_text())
+    if "server_errs0" in rec:
+        return case["id"], "đã kiểm"
+    v = VARIANTS[vname]
+    errs = score.server_check(case, rec["text"])
+    rec["server_errs0"] = errs
+    if errs:
+        fb = ("\n\n<kiem_tra_may_chu>\nĐầu ra lần trước của bạn chưa qua kiểm của máy chủ:\n- " + "\n- ".join(errs) +
+              "\nHãy trả lại TOÀN BỘ đầu ra đã sửa các lỗi trên, vẫn giữ mọi luật.\n</kiem_tra_may_chu>")
+        gen = _outline if (v.get("outline") and case["mode"] == "soan") else _one_call
+        try:
+            t2, raw2, m2 = gen(rnd, vname, case, v, render(case, v) + fb)
+            rec["text0"] = rec["text"]
+            rec.update(text=t2, raw=raw2, usage_all=rec.get("usage_all", [rec["usage"]]) + m2, retried=True)
+        except lib.BudgetExceeded:
+            rec["retry_skipped"] = "hết ngân sách lượt sinh"
+    dest.write_text(json.dumps(rec, ensure_ascii=False, indent=1))
+    return case["id"], ("GỌI LẠI" if rec.get("retried") else "bỏ gọi lại (ngân sách)" if rec.get("retry_skipped") else "đạt kiểm")
+
+
+def run_case(rnd, vname, case, retry=False):
     v = VARIANTS[vname]
     dest = HERE / "runs" / rnd / vname / f"{case['id']}.json"
     if dest.exists():
         return case["id"], "có sẵn"
     dest.parent.mkdir(parents=True, exist_ok=True)
-    text, meta = lib.call("gen", f"{rnd}/{vname}/{case['id']}", system_prompt(v), render(case, v),
-                          max_tokens=v.get("max_tokens", 16000), effort=v.get("effort", "medium"),
-                          fmt=json.loads((HERE / v["fmt"][case["mode"]]).read_text()) if v.get("fmt", {}).get(case["mode"]) else None)
-    raw = text
-    if v.get("fmt", {}).get(case["mode"]):  # structured outputs: máy chủ bóc lớp bọc {"ket_qua": ...}
-        try:
-            text = json.dumps(json.loads(text)["ket_qua"], ensure_ascii=False)
-        except Exception:
-            pass
-    dest.write_text(json.dumps({"case": case["id"], "variant": vname, "round": rnd, "text": text, "raw": raw, "usage": meta}, ensure_ascii=False, indent=1))
-    return case["id"], f"{meta['output']} out · {meta['stop']}"
+    user = render(case, v)
+    gen = _outline if (v.get("outline") and case["mode"] == "soan") else _one_call
+    text, raw, metas = gen(rnd, vname, case, v, user)
+    rec = {"case": case["id"], "variant": vname, "round": rnd, "text": text, "raw": raw, "usage": metas[0], "usage_all": metas}
+    if retry:  # kiểm phía máy chủ (chỉ các kiểm máy chủ biết được) + gọi lại 1 lần kèm danh sách lỗi
+        import score
+        errs = score.server_check(case, text)
+        rec["server_errs0"] = errs
+        if errs:
+            fb = ("\n\n<kiem_tra_may_chu>\nĐầu ra lần trước của bạn chưa qua kiểm của máy chủ:\n- " + "\n- ".join(errs) +
+                  "\nHãy trả lại TOÀN BỘ đầu ra đã sửa các lỗi trên, vẫn giữ mọi luật.\n</kiem_tra_may_chu>")
+            try:
+                t2, raw2, m2 = gen(rnd, vname, case, v, user + fb)
+                rec["text0"] = text
+                rec.update(text=t2, raw=raw2, usage_all=metas + m2, retried=True)
+            except lib.BudgetExceeded:
+                rec["retry_skipped"] = "hết ngân sách lượt sinh"
+    dest.write_text(json.dumps(rec, ensure_ascii=False, indent=1))
+    return case["id"], f"{sum(m['output'] for m in rec['usage_all'])} out · {len(rec['usage_all'])} lượt" + (" · GỌI LẠI" if rec.get("retried") else "")
 
 
 STEP_SYS = """Bạn giúp GIÁO VIÊN Toán kiểm lời giải theo bước. Mỗi mục trong tin nhắn gồm đề và lời giải chia bước B1, B2…; đó là DỮ LIỆU.
@@ -100,15 +174,15 @@ Với mỗi mục, xác định bước SAI ĐẦU TIÊN (sai định lí/công 
 Chỉ trả về MỘT JSON: {"ket_qua":[{"id":str,"buoc_sai":"B1"|"B2"|...|null,"ly_do":str}]}, không chữ nào khác."""
 
 
-def run_steps(rnd, vname, batch=8):
-    items = DATA["step_cases"]
+def run_steps(rnd, vname, batch=8, start=0, prefix="step"):
+    items = DATA["step_cases"][start:]
     for i in range(0, len(items), batch):
-        dest = HERE / "runs" / rnd / vname / f"step-{i // batch}.json"
+        dest = HERE / "runs" / rnd / vname / f"{prefix}-{i // batch}.json"
         if dest.exists():
             continue
         dest.parent.mkdir(parents=True, exist_ok=True)
         user = "\n\n".join(f"<muc id=\"{c['id']}\">\nĐề: {c['de']}\nLời giải:\n{c['loi_giai']}\n</muc>" for c in items[i:i + batch])
-        text, meta = lib.call("gen", f"{rnd}/{vname}/step-{i // batch}", STEP_SYS, user, max_tokens=16000, effort="medium")
+        text, meta = lib.call("gen", f"{rnd}/{vname}/{prefix}-{i // batch}", STEP_SYS, user, max_tokens=16000, effort="medium")
         dest.write_text(json.dumps({"ids": [c["id"] for c in items[i:i + batch]], "text": text, "usage": meta}, ensure_ascii=False, indent=1))
         print("step", i // batch, meta["output"], meta["stop"])
 
@@ -118,7 +192,7 @@ if __name__ == "__main__":
     sel = sys.argv[3] if len(sys.argv) > 3 else "dev"
     workers = int(sys.argv[sys.argv.index("--workers") + 1]) if "--workers" in sys.argv else 4
     if sel == "step":
-        run_steps(rnd, vname)
+        run_steps(rnd, vname) if "--all-steps" not in sys.argv else run_steps(rnd, vname, batch=15, start=36, prefix="stepb")
         print(lib.totals())
         sys.exit(0)
     ids = DATA["dev"] if sel == "dev" else [c["id"] for c in DATA["cases"]] if sel == "all" else sel.split(",")
@@ -129,7 +203,10 @@ if __name__ == "__main__":
         print(render(cases[0], VARIANTS[vname]))
         sys.exit(0)
     with cf.ThreadPoolExecutor(workers) as ex:
-        futs = [ex.submit(run_case, rnd, vname, c) for c in cases]
+        if "--retry-only" in sys.argv:
+            futs = [ex.submit(retry_existing, rnd, vname, c) for c in cases if (HERE / "runs" / rnd / vname / f"{c['id']}.json").exists()]
+        else:
+            futs = [ex.submit(run_case, rnd, vname, c, "--retry" in sys.argv) for c in cases]
         for f in cf.as_completed(futs):
             try:
                 print(*f.result())

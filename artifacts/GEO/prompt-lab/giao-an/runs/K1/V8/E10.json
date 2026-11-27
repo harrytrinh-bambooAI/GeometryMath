@@ -1,0 +1,34 @@
+{
+ "case": "E10",
+ "variant": "V8",
+ "round": "K1",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[1].thoi_luong_phut\", \"before\": 20, \"after\": 15, \"ly_do\": \"Giáo viên yêu cầu giảm HĐ Hình thành xuống 15 phút.\"}, {\"op\": \"replace\", \"path\": \"hoat_dong[2].thoi_luong_phut\", \"before\": 15, \"after\": 20, \"ly_do\": \"Giáo viên yêu cầu tăng HĐ Luyện tập lên 20 phút. Tổng thời lượng trên lớp vẫn là 5+15+20+5 = 45 phút.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[3].o_nha\", \"van_de\": \"HD4 ghi HS làm ở nhà và nộp tiết sau nhưng đang để o_nha=false và thoi_luong_phut=5. Nếu sửa thành o_nha=true, 0 phút thì tổng trên lớp chỉ còn 40 phút, không khớp 45.\", \"goi_y\": \"Giữ HD4 trên lớp 5 phút và sửa phần tổ chức cho khớp, hoặc chuyển HD4 về nhà (o_nha=true, 0 phút) rồi cộng 5 phút vào HD3 hoặc HD2.\", \"ly_do\": \"Cần khớp o_nha với cách tổ chức và tổng phút trên lớp phải bằng 45.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu 3 (BM-007) có đề, kết quả và cách làm giống câu 2 (BT11-B26-3). Câu 3 cũng gắn mã KT11-C07-DN-010 nhưng cần KT11-C07-CT-003 để giải. Phiếu chưa có câu VD cho HS khá và câu 1 trùng nội dung HĐ2 nếu GV dùng làm ví dụ mẫu.\", \"goi_y\": \"Thay câu 3 bằng một câu VD từ kho (ví dụ BT11-B26-6 hoặc BM-008) nếu GV muốn và đủ thời gian; chỉ làm khi GV yêu cầu.\", \"ly_do\": \"Đối tượng khá cần cân bằng TH–VD, có một câu VD, và các bài không nên lặp dạng.\"}, {\"vi_tri\": \"hoat_dong[1].to_chuc.assign và hoat_dong[1].noi_dung\", \"van_de\": \"HD2 vừa có ví dụ chóp S.ABC giảng mẫu vừa giao PHT1 câu 1 cho nhóm 4. Phong cách truyền thống nên GV giảng giải trước và HS làm sau. Giảm còn 15 phút thì dễ quá tải.\", \"goi_y\": \"Rà lại phân bổ thời gian trong HD2 (GV giảng định nghĩa và ví dụ, HS làm câu 1 cá nhân) cho vừa 15 phút.\", \"ly_do\": \"Thời lượng HD2 vừa giảm, cần bảo đảm khối lượng phù hợp.\"}], \"unsure\": [\"Khi tăng HD3 lên 20 phút, chưa thêm câu nào vào phiếu vì chưa được yêu cầu; 2 câu TH hiện có chỉ dùng hết khoảng 8–10 phút.\"]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[1].thoi_luong_phut\",\"before\":20,\"after\":15,\"ly_do\":\"Giáo viên yêu cầu giảm HĐ Hình thành xuống 15 phút.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[2].thoi_luong_phut\",\"before\":15,\"after\":20,\"ly_do\":\"Giáo viên yêu cầu tăng HĐ Luyện tập lên 20 phút. Tổng thời lượng trên lớp vẫn là 5+15+20+5 = 45 phút.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[3].o_nha\",\"van_de\":\"HD4 ghi HS làm ở nhà và nộp tiết sau nhưng đang để o_nha=false và thoi_luong_phut=5. Nếu sửa thành o_nha=true, 0 phút thì tổng trên lớp chỉ còn 40 phút, không khớp 45.\",\"goi_y\":\"Giữ HD4 trên lớp 5 phút và sửa phần tổ chức cho khớp, hoặc chuyển HD4 về nhà (o_nha=true, 0 phút) rồi cộng 5 phút vào HD3 hoặc HD2.\",\"ly_do\":\"Cần khớp o_nha với cách tổ chức và tổng phút trên lớp phải bằng 45.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu 3 (BM-007) có đề, kết quả và cách làm giống câu 2 (BT11-B26-3). Câu 3 cũng gắn mã KT11-C07-DN-010 nhưng cần KT11-C07-CT-003 để giải. Phiếu chưa có câu VD cho HS khá và câu 1 trùng nội dung HĐ2 nếu GV dùng làm ví dụ mẫu.\",\"goi_y\":\"Thay câu 3 bằng một câu VD từ kho (ví dụ BT11-B26-6 hoặc BM-008) nếu GV muốn và đủ thời gian; chỉ làm khi GV yêu cầu.\",\"ly_do\":\"Đối tượng khá cần cân bằng TH–VD, có một câu VD, và các bài không nên lặp dạng.\"},{\"vi_tri\":\"hoat_dong[1].to_chuc.assign và hoat_dong[1].noi_dung\",\"van_de\":\"HD2 vừa có ví dụ chóp S.ABC giảng mẫu vừa giao PHT1 câu 1 cho nhóm 4. Phong cách truyền thống nên GV giảng giải trước và HS làm sau. Giảm còn 15 phút thì dễ quá tải.\",\"goi_y\":\"Rà lại phân bổ thời gian trong HD2 (GV giảng định nghĩa và ví dụ, HS làm câu 1 cá nhân) cho vừa 15 phút.\",\"ly_do\":\"Thời lượng HD2 vừa giảm, cần bảo đảm khối lượng phù hợp.\"}],\"unsure\":[\"Khi tăng HD3 lên 20 phút, chưa thêm câu nào vào phiếu vì chưa được yêu cầu; 2 câu TH hiện có chỉ dùng hết khoảng 8–10 phút.\"]}}",
+ "usage": {
+  "ts": "2026-11-27T17:53:24",
+  "role": "gen",
+  "task": "K1/V8/E10",
+  "model": "claude-sonnet-5-5",
+  "input": 3371,
+  "output": 1168,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 8.0
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:53:24",
+   "role": "gen",
+   "task": "K1/V8/E10",
+   "model": "claude-sonnet-5-5",
+   "input": 3371,
+   "output": 1168,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 8.0
+  }
+ ],
+ "server_errs0": []
+}

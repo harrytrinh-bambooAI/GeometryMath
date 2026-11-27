@@ -26,6 +26,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá chỉ sửa HD1 và giữ nguyên 5 phút. Bản vá chuyển hoạt động thành trò chơi 3 câu hỏi nhanh, bám KT11-C07-DN-010, không ghi kết quả số và không chạm mục khoá; trợ lý cũng phát hiện đúng mâu thuẫn ở HD4 (o_nha=false nhưng giao làm ở nhà) và chỉ đề xuất kèm lý do, không tự sửa. Điểm trừ nhỏ: đáp án câu (3) nên nêu cụ thể đoạn AA' thay vì 'đoạn vuông góc hạ từ A' xuống (ABCD)', và phân bổ phút trong 4 bước còn khá sít."
  },
+ "judge2": null,
  "score": {
   "diem": 96.2,
   "A": 0,

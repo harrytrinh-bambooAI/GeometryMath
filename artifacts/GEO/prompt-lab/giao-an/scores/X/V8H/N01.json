@@ -1,0 +1,54 @@
+{
+ "case": "N01",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 4,
+   "cau_tu_kho": 1,
+   "kq_ai_ghi": 1,
+   "kq_khop_kho": 1
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 4,
+   "doi_tuong": 5,
+   "phong_cach": 5,
+   "to_chuc": 5,
+   "chinh_xac": 5,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án dùng được gần như ngay: phát biểu kiến thức khớp tham chiếu, tổng thời lượng đúng 45 phút, các hoạt động thể hiện rõ phong cách khám phá (dự đoán, kiểm chứng rồi mới hợp thức hoá), phiếu phân hoá NB–TH–VD, không lộ đáp số và có ghi unsure cho câu 4. Điểm trừ nhỏ: mục tiêu thứ ba gần trùng mục tiêu thứ nhất, nên gộp hoặc diễn đạt lại cho đo được rõ hơn."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 97.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.83
+ }
+}

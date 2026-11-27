@@ -26,6 +26,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá chỉ sửa hoạt động HD1 thành trò chơi 3 câu hỏi nhanh, giữ 5 phút, không đụng mục khoá và không ghi đáp số. Phần đề xuất phát hiện đúng lỗi HD4 làm ở nhà nhưng vẫn tính 5 phút trên lớp; tuy vậy việc nghi 'Tiết 1/2' lệch với so_tiet=1 là thừa, và gợi ý gắn CT-003 cho BM-007 chưa sát vì lời giải chuẩn dựng AH⊥SB trực tiếp."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

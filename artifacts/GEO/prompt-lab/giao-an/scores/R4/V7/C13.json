@@ -6,6 +6,7 @@
    "json_nghiem_ngat": true,
    "kind_chap_nhan": true,
    "khung_5512": true,
+   "thoi_luong": true,
    "meta_khop": true,
    "ma_kt_hop_le": true,
    "phu_trong_tam": true,
@@ -41,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án bám đúng kiến thức được cấp, tổng 45 phút khớp, phong cách khám phá thể hiện rõ (dự đoán → dựng, đo → kiểm chứng), phiếu đủ 4 mức với dap_so null và gợi ý không lộ kết quả; việc suy ra 1 tiết từ \"Tiết 1/1\" và dùng DN-006 đều được ghi vào unsure hợp lí. Điểm cần sửa nhỏ: HD5 chỉ 4 phút là chật cho câu VDC, và kết luận của HD3 còn sơ sài, nên ghi rõ ví dụ hình vuông → hình bình hành."
  },
+ "judge2": null,
  "score": {
   "diem": 97.5,
   "A": 0,

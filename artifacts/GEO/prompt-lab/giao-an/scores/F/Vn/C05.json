@@ -44,6 +44,7 @@
   ],
   "nhan_xet": "Giáo án đúng khung, tổng thời lượng đủ 45 phút, phát biểu kiến thức khớp tham chiếu, không lộ đáp số và có phân hoá TH–VD–VDC hợp lí; điểm trừ là HĐ3 viết nhầm \"trên đường thẳng\" thay vì \"trên mặt phẳng\", khoá trường bị gõ sai thành \"ket_luận\", và HĐ2 vẫn hình thành định nghĩa trên lớp như cách dạy truyền thống, chưa khai thác hết tính đảo ngược. Ở PHT1, câu 3 ghi \"Với dữ kiện trên\" nhưng câu liền trước là BM-003 (chóp đều, không có SA), nên học sinh dễ nhầm; cần chép lại đầy đủ dữ kiện cho câu này."
  },
+ "judge2": null,
  "score": {
   "diem": 90.0,
   "A": 0,

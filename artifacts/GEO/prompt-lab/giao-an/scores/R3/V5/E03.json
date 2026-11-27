@@ -23,6 +23,7 @@
   "loi_toan": [],
   "nhan_xet": "Trợ lý từ chối đúng vì công thức khoảng cách trong Oxyz nằm ngoài danh sách kiến thức được cấp (và là nội dung lớp 12), không tự sửa giáo án. Trợ lý còn phát hiện và đề xuất có lý do cho lỗi HĐ4 tính 5 phút trên lớp nhưng giao làm ở nhà; có thể nêu thêm rằng đây là kiến thức lớp 12 để giáo viên dễ chấp nhận hơn."
  },
+ "judge2": null,
  "score": {
   "diem": 96.2,
   "A": 0,

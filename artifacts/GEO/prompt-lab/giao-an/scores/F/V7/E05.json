@@ -27,6 +27,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá chỉ thêm đúng câu BM-009 mức VD về hai đường chéo nhau, để dap_so null, không đụng mục khoá. Trợ lý cũng phát hiện đúng lỗi tổng 50 phút và công thức thiếu bình phương, nhưng bước gợi ý theo hướng dựng mặt phẳng song song (PP-001) lệch với lời giải chuẩn (BD ⊥ (SAC), đoạn vuông góc chung OH), và đề xuất về gắn mã kt cho câu 3 dựa trên nhận định chưa chính xác về lời giải."
  },
+ "judge2": null,
  "score": {
   "diem": 96.2,
   "A": 0,

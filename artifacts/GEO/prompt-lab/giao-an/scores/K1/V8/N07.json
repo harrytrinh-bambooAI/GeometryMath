@@ -1,0 +1,57 @@
+{
+ "case": "N07",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 7,
+   "cau_tu_kho": 5,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 5,
+   "phong_cach": 5,
+   "to_chuc": 4,
+   "chinh_xac": 4,
+   "phieu": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "Gợi ý câu 3 (BM-059) ghi 'Kiểm tra từng nghiệm với điều kiện, loại nghiệm không thoả' dễ khiến học sinh nghĩ phải loại một nghiệm. Theo lời giải chuẩn, cả hai nghiệm $x=2\\pm2\\sqrt3$ đều thoả $x+10>0$ và được nhận, nên gợi ý nên viết 'đối chiếu điều kiện để kết luận nghiệm'.",
+   "Câu 6 viết '$\\log_2(x-1)^2=4$' có thể đọc nhầm thành $(\\log_2(x-1))^2$. Nên viết rõ $\\log_2\\left[(x-1)^2\\right]=4$."
+  ],
+  "nhan_xet": "Giáo án đúng khung CV 5512, tổng 45 phút, phong cách khám phá rõ, phân hoá hai nhóm hợp lí và không ghi đáp số. Cần chỉnh gợi ý câu 3, viết rõ kí hiệu câu 6, bỏ nhãn '(nhóm A/B)' lẫn trong bước gợi ý và câu unsure khó hiểu về 'mức gợi ý 12–18 phút'."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

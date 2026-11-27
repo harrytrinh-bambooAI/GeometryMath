@@ -49,6 +49,7 @@
   "loi_toan": [],
   "nhan_xet": "Tổng thời lượng các hoạt động trên lớp chỉ là 10+20+30+20 = 80 phút (HD5 ở nhà 0 phút), không khớp 90 phút ghi ở meta. Nội dung toán và phiếu bám đúng tham chiếu, nhưng các hoạt động nghiêng về khám phá nhóm bằng GeoGebra hơn là phong cách truyền thống (GV giảng, HS ghi, làm mẫu)."
  },
+ "judge2": null,
  "score": {
   "diem": 51.0,
   "A": 2,

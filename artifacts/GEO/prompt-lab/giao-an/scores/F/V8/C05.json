@@ -45,6 +45,7 @@
   ],
   "nhan_xet": "Giáo án đúng khung, tổng 45 phút, giữ nguyên phát biểu kiến thức và không tự tính đáp số; phong cách đảo ngược thể hiện rõ qua HĐ1 ở nhà và HĐ2 giải đáp thắc mắc bằng mô hình. Cần sửa câu 4 của phiếu (\"Với dữ kiện trên\" thiếu ngữ cảnh và giả thiết $SA\\perp(ABCD)$), đồng thời HĐ4 ghi \"tình huống thực tế mô hình hóa bằng hình chóp\" nhưng câu 5 là bài hình lập phương thuần túy, và ghi chú \"câu 4 dành cho HS khá\" thừa khi cả lớp đều là đối tượng khá."
  },
+ "judge2": null,
  "score": {
   "diem": 80.0,
   "A": 0,

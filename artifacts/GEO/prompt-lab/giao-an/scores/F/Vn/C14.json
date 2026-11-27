@@ -23,6 +23,7 @@
   "loi_toan": [],
   "nhan_xet": "Câu hỏi nhắm đúng hai trường thật sự trống là phong cách dạy và kiến thức trọng tâm, nhưng gộp hai câu hỏi vào một câu nên không thật gọn. Phần trọng tâm lẽ ra có thể tự giả định hợp lí (tiết 1/2 tập trung vào DN-010, DN-011), chỉ cần hỏi riêng phong cách."
  },
+ "judge2": null,
  "score": {
   "diem": 75.0,
   "A": 0,

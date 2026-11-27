@@ -50,6 +50,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án đủ khung, đủ 90 phút, phiếu đúng 8 câu với tỉ lệ 1-3-3-1, phát biểu kiến thức khớp tham chiếu, không tự ghi đáp số và có ghi unsure rõ ràng. Cần sửa nhỏ: mục tiêu dùng động từ \"Hiểu\" chưa đo được; bài tập cho lớp chuyên còn thiên về mức cơ bản; HD5 ghi mục tiêu \"chứng minh khó\" nhưng câu 7 là bài tính góc."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

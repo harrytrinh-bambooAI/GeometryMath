@@ -26,6 +26,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá chỉ sửa đúng các trường của HD1, đủ 3 câu hỏi nhanh, giữ 5 phút và không ghi kết quả số; trợ lý cũng đề xuất đúng các lỗi có sẵn (meta Tiết 1/2 so với so_tiet 1, HD4 làm ở nhà nhưng o_nha:false) mà không tự sửa. Cần sửa nhỏ: câu hỏi nhanh (2) trùng gần như nguyên văn PHT1 câu 1 (khoảng cách từ A' đến (ABCD)) nên làm lộ câu NB của phiếu; nên thay bằng một tình huống trực quan khác."
  },
+ "judge2": null,
  "score": {
   "diem": 96.2,
   "A": 0,

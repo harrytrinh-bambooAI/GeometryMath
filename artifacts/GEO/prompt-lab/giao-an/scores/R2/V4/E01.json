@@ -26,6 +26,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá chỉ thay các trường của HĐ1, giữ nguyên 5 phút; trò chơi có 3 câu hỏi nhanh, luật chơi, cách tính điểm rõ ràng, không ghi đáp số và không đụng mục khoá. Còn thiếu sót nhỏ: chưa đề xuất sửa lỗi có sẵn ở HĐ4 (o_nha=false nhưng phần tổ chức ghi 'HS làm ở nhà', vẫn tính 5 phút trong tiết), dùng 'bảng con' trong khi thiết bị không có, và câu 2 của trò chơi trùng ý PHT1 câu 1."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

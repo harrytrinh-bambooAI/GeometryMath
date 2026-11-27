@@ -1,0 +1,32 @@
+{
+ "ids": [
+  "BM-028-S1",
+  "BM-028-S2",
+  "BM-028-DUNG",
+  "BM-029-S1",
+  "BM-029-S2",
+  "BM-029-DUNG",
+  "BM-030-S1",
+  "BM-030-S2",
+  "BM-030-DUNG",
+  "BM-031-S1",
+  "BM-031-S2",
+  "BM-031-DUNG",
+  "BM-032-S1",
+  "BM-032-S2",
+  "BM-032-DUNG"
+ ],
+ "text": "{\"ket_qua\":[\n{\"id\":\"BM-028-S1\",\"buoc_sai\":\"B4\",\"ly_do\":\"B1–B3 đúng (R=a√2/2). Ở B4, (a√2/2)^3 = a^3·2√2/8 = a^3√2/4 nên V = 4/3·π·a^3√2/4 = √2πa^3/3 là kết quả đúng, nhưng đề kiểm tra kỹ: (a√2/2)^3 = a^3√2/4 đúng. Vậy không có lỗi.\"},\n{\"id\":\"BM-028-S2\",\"buoc_sai\":\"B4\",\"ly_do\":\"(a√2/2)^3 = a^3√2/4, không phải a^3√2/8, nên V = √2πa^3/3, không phải √2πa^3/6.\"},\n{\"id\":\"BM-028-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Các bước đều đúng.\"},\n{\"id\":\"BM-029-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Tâm mặt cầu cách đáy một khoảng AA'/2 nên R^2 = r^2 + (AA'/2)^2, không phải r^2 + AA'^2.\"},\n{\"id\":\"BM-029-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"Bán kính ngoại tiếp tam giác đều cạnh a là a√3/3, không phải a√3/2 (đó là đường cao).\"},\n{\"id\":\"BM-029-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Các bước đều đúng: R^2 = 4a^2/3, S = 16πa^2/3.\"},\n{\"id\":\"BM-030-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"Tam giác đáy vuông tại A nên tâm ngoại tiếp là trung điểm cạnh huyền BC, r = BC/2 = a, không phải trọng tâm.\"},\n{\"id\":\"BM-030-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"(a√2)^3 = 2√2a^3 nên V = 8√2πa^3/3, không phải 8πa^3/3.\"},\n{\"id\":\"BM-030-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Các bước đều đúng.\"},\n{\"id\":\"BM-031-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"BC' không song song với AD (BC' ∥ AD'). Do đó việc chuyển góc sang (AB', AD) là sai.\"},\n{\"id\":\"BM-031-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"B'D' là đường chéo mặt nên bằng a√2, không phải a√3 (a√3 là đường chéo của hình lập phương).\"},\n{\"id\":\"BM-031-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Các bước đều đúng: tam giác AB'D' đều, góc 60°.\"},\n{\"id\":\"BM-032-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"Định lí cosin có dấu trừ: cos = (MP^2 + MD^2 − PD^2)/(2MP·MD), không phải dấu cộng; kết quả >1 là vô lí.\"},\n{\"id\":\"BM-032-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"DP là trung tuyến tam giác đều ACD nên DP = a√3/2, không phải a.\"},\n{\"id\":\"BM-032-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Các bước đều đúng: cos = √3/6.\"}\n]}",
+ "usage": {
+  "ts": "2026-11-27T17:45:23",
+  "role": "gen",
+  "task": "R5/STEP1/stepb-3",
+  "model": "claude-sonnet-5-5",
+  "input": 4683,
+  "output": 1213,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 7.5
+ }
+}

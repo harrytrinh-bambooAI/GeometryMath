@@ -1,0 +1,66 @@
+{
+ "case": "N06",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 90,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 4,
+   "cau_tu_kho": 4,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 4,
+   "to_chuc": 3,
+   "chinh_xac": 5,
+   "phieu": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Phát biểu kiến thức khớp tham chiếu, tổng thời lượng đúng 90 phút, không lộ đáp số, và mạch dự án lãi kép/phân rã gắn với GeoGebra rõ ràng. HD5 khó khả thi trong 20 phút vì phải hoàn thiện poster, cho mỗi nhóm trình bày 3 phút, chấm chéo và làm thêm câu 4; ngoài ra gợi ý câu 4 hướng HS dùng lôgarit trong khi bài này chỉ cần đưa về $2^5$."
+ },
+ "judge2": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 5,
+   "phong_cach": 4,
+   "to_chuc": 3,
+   "chinh_xac": 5,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án bám đúng hai kiến thức trọng tâm, phát biểu khớp tham chiếu, đủ 90 phút (7+20+18+25+20), dap_so đều null và các mục unsure nêu đúng giới hạn kiến thức. Điểm yếu là HD5 chỉ có 20 phút mà phải hoàn thiện poster, cho mỗi nhóm trình bày 3 phút (lớp nhóm 4 HS có khoảng 10 nhóm), chấm chéo và làm thêm câu 4 VDC nên không khả thi; dự án STEM cũng khá nén so với 2 tiết."
+ },
+ "score": {
+  "diem": 87.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.17
+ }
+}

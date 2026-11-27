@@ -6,6 +6,7 @@
    "json_nghiem_ngat": true,
    "kind_chap_nhan": true,
    "khung_5512": true,
+   "thoi_luong": true,
    "meta_khop": true,
    "ma_kt_hop_le": true,
    "phu_trong_tam": true,
@@ -41,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án theo phong cách khám phá rõ ràng, tổng thời lượng 45 phút đúng, các phát biểu kiến thức khớp nguyên văn danh sách được cấp, gợi ý không lộ đáp số. Số tiết để trống được suy hợp lí từ Tiết 1/1 và ghi vào unsure; chỉ cần sửa nhỏ động từ 'Hiểu' trong mục tiêu cho đo được, và HĐ3 (14 phút, 3 nhiệm vụ cùng hình biểu diễn) hơi dày."
  },
+ "judge2": null,
  "score": {
   "diem": 95.0,
   "A": 0,

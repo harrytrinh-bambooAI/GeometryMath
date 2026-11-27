@@ -32,6 +32,7 @@
  "judge": {
   "loi": "```json\n{\"diem\":{\"muc_tieu\":4,\"doi_tuong\":5,\"phong_cach\":4,\"to_chuc\":4,\"chinh_xac\":4,\"phieu\":4},\"vi_pham_A\":[],\"loi_toan\":[\"Gợi ý PHT1 câu 2 ghi 'so sánh độ dài ba cạnh (đường chéo của các mặt bên)': B'D' là đường chéo mặt đáy trên A'B'C'D', không phải mặt bên. Đúng phải là 'đường chéo của ba mặt hì"
  },
+ "judge2": null,
  "score": {
   "diem": 100.0,
   "A": 0,

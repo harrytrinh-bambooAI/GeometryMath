@@ -1,0 +1,33 @@
+{
+ "case": "E14",
+ "variant": "Vn",
+ "round": "F",
+ "text": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[0].ten\",\"before\":\"Khởi động: Tính nhanh bằng định nghĩa\",\"after\":\"Khởi động: Ai tính nhanh hơn\",\"ly_do\":\"Đổi tên HĐ1 theo yêu cầu của giáo viên.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1].kien_thuc[1].phat_bieu\",\"van_de\":\"Công thức $(a^x)'=xa^{x-1}$ sai so với kiến thức được cấp cho KT11-C09-CT-004; đúng phải là $(a^x)'=a^x\\\\ln a$.\",\"goi_y\":\"Thay bằng $(e^x)'=e^x$; $(a^x)'=a^x\\\\ln a$; $(\\\\ln x)'=\\\\dfrac1x$; $(\\\\log_ax)'=\\\\dfrac1{x\\\\ln a}$.\",\"ly_do\":\"Công thức hiện tại sai, dễ khiến học sinh nhầm. Tôi chưa sửa vì yêu cầu chỉ là đổi tên HĐ1.\"},{\"vi_tri\":\"hoat_dong[1].kien_thuc\",\"van_de\":\"HĐ2 chưa nêu phát biểu đầy đủ của KT11-C09-CT-002 (thiếu $(c)'=0$, $(\\\\sqrt x)'$, $(1/x)'$). Mục tiêu bài cũng chưa có KT11-C09-CT-003 (đạo hàm hàm lượng giác), trong khi PHT1 câu 2 dùng $\\\\sin x$.\",\"goi_y\":\"Bổ sung đủ phát biểu của CT-002. Thêm KT11-C09-CT-003 vào HĐ2 và vào mục tiêu (mục tiêu đang bị khóa nên cần giáo viên mở khóa).\",\"ly_do\":\"Để nội dung giảng dạy khớp với bài tập trong phiếu học tập.\"}],\"unsure\":[]}",
+ "raw": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[0].ten\",\"before\":\"Khởi động: Tính nhanh bằng định nghĩa\",\"after\":\"Khởi động: Ai tính nhanh hơn\",\"ly_do\":\"Đổi tên HĐ1 theo yêu cầu của giáo viên.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1].kien_thuc[1].phat_bieu\",\"van_de\":\"Công thức $(a^x)'=xa^{x-1}$ sai so với kiến thức được cấp cho KT11-C09-CT-004; đúng phải là $(a^x)'=a^x\\\\ln a$.\",\"goi_y\":\"Thay bằng $(e^x)'=e^x$; $(a^x)'=a^x\\\\ln a$; $(\\\\ln x)'=\\\\dfrac1x$; $(\\\\log_ax)'=\\\\dfrac1{x\\\\ln a}$.\",\"ly_do\":\"Công thức hiện tại sai, dễ khiến học sinh nhầm. Tôi chưa sửa vì yêu cầu chỉ là đổi tên HĐ1.\"},{\"vi_tri\":\"hoat_dong[1].kien_thuc\",\"van_de\":\"HĐ2 chưa nêu phát biểu đầy đủ của KT11-C09-CT-002 (thiếu $(c)'=0$, $(\\\\sqrt x)'$, $(1/x)'$). Mục tiêu bài cũng chưa có KT11-C09-CT-003 (đạo hàm hàm lượng giác), trong khi PHT1 câu 2 dùng $\\\\sin x$.\",\"goi_y\":\"Bổ sung đủ phát biểu của CT-002. Thêm KT11-C09-CT-003 vào HĐ2 và vào mục tiêu (mục tiêu đang bị khóa nên cần giáo viên mở khóa).\",\"ly_do\":\"Để nội dung giảng dạy khớp với bài tập trong phiếu học tập.\"}],\"unsure\":[]}",
+ "usage": {
+  "ts": "2026-11-27T17:50:06",
+  "role": "gen",
+  "task": "F/Vn/E14",
+  "model": "claude-sonnet-5-5",
+  "input": 2836,
+  "output": 709,
+  "cache_write": 0,
+  "cache_read": 1335,
+  "stop": "end_turn",
+  "sec": 4.9
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:50:06",
+   "role": "gen",
+   "task": "F/Vn/E14",
+   "model": "claude-sonnet-5-5",
+   "input": 2836,
+   "output": 709,
+   "cache_write": 0,
+   "cache_read": 1335,
+   "stop": "end_turn",
+   "sec": 4.9
+  }
+ ]
+}

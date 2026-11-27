@@ -1,0 +1,38 @@
+{
+ "case": "E01",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 8
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 3,
+   "toi_thieu": 4,
+   "xu_ly_luat": 4,
+   "noi_dung": 3
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trò chơi 'Ai nhanh hơn' đủ 3 câu, có luật chơi, chia đội, tính điểm và vừa 5 phút. Bốn bản vá trỏ sai khoá ('to_chuc.assign/perform/report/conclude' thay vì 'chuyen_giao/thuc_hien/bao_cao/ket_luan') nên sẽ không áp được; câu hỏi (2) diễn đạt tối nghĩa, nhưng đề xuất về HD4 (o_nha=false mà làm ở nhà) là phát hiện đúng."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 77.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 3.5
+ }
+}

@@ -50,6 +50,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án đúng khung, tổng thời lượng 45 phút, phiếu đúng 6 câu theo tỉ lệ 2-2-1-1, không ghi đáp số. Các câu tự soạn và ví dụ mẫu đã ghi unsure kèm lý do; điểm trừ duy nhất là HĐ4 dành trọn 18 phút cho HS làm cá nhân (4+8+6) nên không còn thời gian cho báo cáo, chữa bài, và HĐ5 khá gấp cho một câu VDC."
  },
+ "judge2": null,
  "score": {
   "diem": 97.5,
   "A": 0,

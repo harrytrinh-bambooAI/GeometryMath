@@ -1,0 +1,54 @@
+{
+ "case": "N07",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 5,
+   "cau_tu_kho": 4,
+   "kq_ai_ghi": 1,
+   "kq_khop_kho": 1
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 4,
+   "chinh_xac": 5,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án bám đúng hai kiến thức trọng tâm, giữ nguyên phát biểu SGK, đúng khung 5512 và đủ 45 phút; các hoạt động HĐ1–HĐ3 thể hiện rõ phong cách khám phá (dự đoán, kiểm chứng, phản biện), phiếu phân hoá đúng yêu cầu và không lộ đáp số. Điểm trừ nhỏ: với lớp chuyên, bài tập còn nhẹ (chưa có câu mức VDC cho nhóm 2), HĐ5 chỉ 4 phút khá gấp cho cả trình bày lẫn chốt; gợi ý câu 3 'loại giá trị không thoả điều kiện' dễ gây hiểu nhầm vì cả hai giá trị t đều dương."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 95.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.67
+ }
+}

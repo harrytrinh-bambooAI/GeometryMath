@@ -1,0 +1,34 @@
+{
+ "case": "E14",
+ "variant": "V8",
+ "round": "K3",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[0].ten\", \"before\": \"Khởi động: Tính nhanh bằng định nghĩa\", \"after\": \"Khởi động: Ai tính nhanh hơn\", \"ly_do\": \"Giáo viên yêu cầu đổi tên HĐ1.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[1].kien_thuc[1].phat_bieu\", \"van_de\": \"Công thức $(a^x)'=xa^{x-1}$ sai so với danh sách KT11-C09-CT-004, đúng phải là $(a^x)'=a^x\\\\ln a$.\", \"goi_y\": \"Thay bằng $(a^x)'=a^x\\\\ln a$ theo đúng danh sách kiến thức được cấp.\", \"ly_do\": \"Phát biểu phải giữ đúng nội dung danh sách; lỗi sẵn có, không nằm trong yêu cầu nên chưa tự sửa.\"}, {\"vi_tri\": \"hoat_dong[1].kien_thuc\", \"van_de\": \"HĐ2 dạy KT11-C09-CT-002 và CT-004 nhưng mục tiêu bài có nhắc đến hàm số thường gặp mà chưa có CT-003 (lượng giác) trong khi PHT1 câu 2 dùng $\\\\sin x$.\", \"goi_y\": \"Bổ sung KT11-C09-CT-003 vào HĐ2 hoặc đổi câu 2 sang bài không dùng $\\\\sin x$.\", \"ly_do\": \"Câu 2 cần $(\\\\sin x)'$ nhưng chưa được dạy ở HĐ nào.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[1]\", \"van_de\": \"Câu 2 ghi nguon 'moi' nhưng kho bài tập có BT11-B32-2 ($y=x\\\\sin x$) tương tự; mã kt chỉ có CT-005.\", \"goi_y\": \"Cân nhắc dùng BT11-B32-2 và bổ sung mã KT11-C09-CT-003 vào kt.\", \"ly_do\": \"Ưu tiên bài trong kho; câu này còn dùng đạo hàm của $\\\\sin x$.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau\", \"van_de\": \"Các câu chưa có buoc_goi_y (để trống).\", \"goi_y\": \"Bổ sung các bước gợi ý bằng lời, không ghi kết quả.\", \"ly_do\": \"Hỗ trợ HS cơ bản.\"}, {\"vi_tri\": \"hoat_dong[4]\", \"van_de\": \"HĐ5 nêu bài toán vận tốc nhưng không có đề cụ thể và chưa có kiến thức về đạo hàm tại một điểm là vận tốc trong danh sách.\", \"goi_y\": \"Nêu rõ phương trình chuyển động đơn giản dùng quy tắc đã học.\", \"ly_do\": \"Đề chưa cụ thể, khó thực hiện.\"}, {\"vi_tri\": \"hoat_dong[0].noi_dung\", \"van_de\": \"Tên mới mang tính thi đua 'Ai tính nhanh hơn' nhưng nội dung HĐ1 vẫn là HS làm cá nhân tính bằng định nghĩa.\", \"goi_y\": \"Nếu muốn, chỉnh nội dung/tổ chức thành thi nhanh giữa các bàn.\", \"ly_do\": \"Để tên và nội dung khớp nhau; không tự sửa vì không được yêu cầu.\"}], \"unsure\": []}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[0].ten\",\"before\":\"Khởi động: Tính nhanh bằng định nghĩa\",\"after\":\"Khởi động: Ai tính nhanh hơn\",\"ly_do\":\"Giáo viên yêu cầu đổi tên HĐ1.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1].kien_thuc[1].phat_bieu\",\"van_de\":\"Công thức $(a^x)'=xa^{x-1}$ sai so với danh sách KT11-C09-CT-004, đúng phải là $(a^x)'=a^x\\\\ln a$.\",\"goi_y\":\"Thay bằng $(a^x)'=a^x\\\\ln a$ theo đúng danh sách kiến thức được cấp.\",\"ly_do\":\"Phát biểu phải giữ đúng nội dung danh sách; lỗi sẵn có, không nằm trong yêu cầu nên chưa tự sửa.\"},{\"vi_tri\":\"hoat_dong[1].kien_thuc\",\"van_de\":\"HĐ2 dạy KT11-C09-CT-002 và CT-004 nhưng mục tiêu bài có nhắc đến hàm số thường gặp mà chưa có CT-003 (lượng giác) trong khi PHT1 câu 2 dùng $\\\\sin x$.\",\"goi_y\":\"Bổ sung KT11-C09-CT-003 vào HĐ2 hoặc đổi câu 2 sang bài không dùng $\\\\sin x$.\",\"ly_do\":\"Câu 2 cần $(\\\\sin x)'$ nhưng chưa được dạy ở HĐ nào.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[1]\",\"van_de\":\"Câu 2 ghi nguon 'moi' nhưng kho bài tập có BT11-B32-2 ($y=x\\\\sin x$) tương tự; mã kt chỉ có CT-005.\",\"goi_y\":\"Cân nhắc dùng BT11-B32-2 và bổ sung mã KT11-C09-CT-003 vào kt.\",\"ly_do\":\"Ưu tiên bài trong kho; câu này còn dùng đạo hàm của $\\\\sin x$.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau\",\"van_de\":\"Các câu chưa có buoc_goi_y (để trống).\",\"goi_y\":\"Bổ sung các bước gợi ý bằng lời, không ghi kết quả.\",\"ly_do\":\"Hỗ trợ HS cơ bản.\"},{\"vi_tri\":\"hoat_dong[4]\",\"van_de\":\"HĐ5 nêu bài toán vận tốc nhưng không có đề cụ thể và chưa có kiến thức về đạo hàm tại một điểm là vận tốc trong danh sách.\",\"goi_y\":\"Nêu rõ phương trình chuyển động đơn giản dùng quy tắc đã học.\",\"ly_do\":\"Đề chưa cụ thể, khó thực hiện.\"},{\"vi_tri\":\"hoat_dong[0].noi_dung\",\"van_de\":\"Tên mới mang tính thi đua 'Ai tính nhanh hơn' nhưng nội dung HĐ1 vẫn là HS làm cá nhân tính bằng định nghĩa.\",\"goi_y\":\"Nếu muốn, chỉnh nội dung/tổ chức thành thi nhanh giữa các bàn.\",\"ly_do\":\"Để tên và nội dung khớp nhau; không tự sửa vì không được yêu cầu.\"}],\"unsure\":[]}}",
+ "usage": {
+  "ts": "2026-11-27T17:58:40",
+  "role": "gen",
+  "task": "K3/V8/E14",
+  "model": "claude-sonnet-5-5",
+  "input": 2824,
+  "output": 1249,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 8.7
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:40",
+   "role": "gen",
+   "task": "K3/V8/E14",
+   "model": "claude-sonnet-5-5",
+   "input": 2824,
+   "output": 1249,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 8.7
+  }
+ ],
+ "server_errs0": []
+}

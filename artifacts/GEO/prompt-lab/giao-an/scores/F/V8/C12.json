@@ -42,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án đủ 45 phút, đúng khung, phát biểu định lí Thalès và các tính chất khớp tham chiếu, phiếu dùng đúng bài trong kho, không tự ghi đáp số, gợi ý câu 2 qua AB'∥(C'BD) vẫn đúng. Cần sửa nhỏ ba chỗ: mục tiêu 3 đang gắn KT11-C04-TC-007, trong khi phần chứng minh thực chất dùng dấu hiệu KT11-C04-DL-004; tính chất \"qua điểm ngoài có duy nhất mặt phẳng song song\" không thể rút ra từ số đo như HĐ2 mô tả; thời lượng HĐ3 và HĐ4 khá sát với lớp chuyên."
  },
+ "judge2": null,
  "score": {
   "diem": 90.0,
   "A": 0,

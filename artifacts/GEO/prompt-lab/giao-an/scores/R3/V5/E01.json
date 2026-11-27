@@ -26,6 +26,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá chuyển Mở đầu thành trò chơi 'Ai nhanh hơn' đúng phạm vi, đủ 3 câu, luật chơi rõ, trong 5 phút; đáp án (2) 'điểm A' là nhận biết hình chiếu nên không vi phạm A3, và trợ lý đã phát hiện đúng mâu thuẫn ở HD4 nhưng chỉ đề xuất, không tự sửa. Điểm trừ: câu (1) và (3) kiểm tra định nghĩa sẽ dạy ở HD2 nên làm mất vai trò gợi vấn đề của Mở đầu, và trợ lý chưa đề xuất chỉnh muc_tieu của HD1 ('Gợi nhu cầu đo khoảng cách…') vốn nay không còn khớp với trò chơi."
  },
+ "judge2": null,
  "score": {
   "diem": 88.8,
   "A": 0,

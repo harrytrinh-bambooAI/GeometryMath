@@ -50,6 +50,7 @@
   "loi_toan": [],
   "nhan_xet": "HĐ4 không khả thi trong 30 phút: thời gian làm bài đã dùng hết (8 + 14 + 8 = 30 phút) nhưng vẫn yêu cầu HS lên bảng trình bày 4 câu; ngoài ra mục tiêu 'Nhận biết/Hiểu' chưa đo được. Kiến thức và kí hiệu khớp tham chiếu, phiếu đủ 8 câu đúng tỉ lệ, gợi ý không lộ đáp số, nhưng bài tập còn nhẹ so với đối tượng chuyên."
  },
+ "judge2": null,
  "score": {
   "diem": 87.5,
   "A": 0,

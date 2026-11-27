@@ -1,0 +1,39 @@
+{
+ "case": "E14",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true,
+   "co_de_xuat": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 1
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá chỉ đổi đúng tên HĐ1, không đụng mục khoá. Hai lỗi có sẵn được nêu đúng dạng đề xuất kèm lý do: công thức $(a^x)'$ sai và thiếu KT11-C09-CT-003 trong khi PHT1 câu 2 dùng $\\sin x$; đề xuất cũng ghi rõ cần giáo viên mở khoá mục tiêu."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 100.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 5
+ }
+}

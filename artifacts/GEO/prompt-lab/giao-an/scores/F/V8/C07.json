@@ -44,6 +44,7 @@
   "loi_toan": [],
   "nhan_xet": "Kiến thức và kí hiệu khớp tham chiếu, tổng 90 phút đúng, PHT1 giữ nguồn và không ghi đáp số; tuy vậy mục tiêu năng lực để rỗng (khoá còn sai chính tả \" nang_luc\" vì thừa dấu cách) nên mục tiêu chưa đủ khung CV 5512. Thời lượng làm mô hình chưa khả thi: cắt dán hộp trong 20 phút và cắt dán chóp trong 15 phút là quá gấp, đồng thời việc tính thể tích mô hình bị lặp giữa HĐ2, HĐ4 và HĐ5."
  },
+ "judge2": null,
  "score": {
   "diem": 68.5,
   "A": 1,

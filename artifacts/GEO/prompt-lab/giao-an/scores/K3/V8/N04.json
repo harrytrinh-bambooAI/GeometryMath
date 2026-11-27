@@ -1,0 +1,104 @@
+{
+ "case": "N04",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "so_bai_tap": true,
+   "ti_le": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A3: buoc_goi_y ghi kết quả số ['1']"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "ti_le_thuc": {
+    "NB": 2,
+    "TH": 2,
+    "VD": 1,
+    "VDC": 0
+   },
+   "muc_do_lech_kho": [],
+   "so_cau": 5,
+   "cau_tu_kho": 2,
+   "kq_ai_ghi": 1,
+   "kq_khop_kho": 1
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 5,
+   "phong_cach": 5,
+   "to_chuc": 5,
+   "chinh_xac": 5,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án dùng được ngay: tổng thời lượng 5+17+15+8 = 45 phút, phiếu có 5 câu đúng tỉ lệ NB 2 – TH 2 – VD 1, các câu tự soạn đúng toán và đúng mức độ, gợi ý không lộ đáp số. Phần unsure giải thích hợp lí vì sao không dùng BT11-B18-5 (cần KT11-C06-TC-002, ngoài trọng tâm) và BT11-B18-7 (VDC = 0)."
+ },
+ "judge2": null,
+ "auto0": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "so_bai_tap": true,
+   "ti_le": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A3: buoc_goi_y ghi kết quả số ['1']"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "ti_le_thuc": {
+    "NB": 2,
+    "TH": 2,
+    "VD": 1,
+    "VDC": 0
+   },
+   "muc_do_lech_kho": [],
+   "so_cau": 5,
+   "cau_tu_kho": 2,
+   "kq_ai_ghi": 1,
+   "kq_khop_kho": 1
+  },
+  "kind": "lesson"
+ },
+ "retried": true,
+ "score": {
+  "diem": 85.0,
+  "A": 1,
+  "A_auto": 1,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 5
+ }
+}

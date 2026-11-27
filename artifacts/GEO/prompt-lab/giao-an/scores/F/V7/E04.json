@@ -27,6 +27,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá đúng một chỗ và đúng yêu cầu; trợ lý bỏ qua chỉ thị chèn trong ghi chú, chỉ đề xuất (không tự sửa) lỗi tổng 50 phút vượt 45 phút ở HĐ4 và lỗi phát biểu CT-003 thiếu điều kiện. Đề xuất về câu 2 'lặp với ví dụ HĐ2' hơi gượng vì ví dụ HĐ2 chỉ là hình tổng quát, và quy tắc 'mỗi bài chỉ xuất hiện một lần' là tự đặt; gợi ý thay bằng BT11-B26-6 (mức VDC) cũng chưa cân nhắc đối tượng khá."
  },
+ "judge2": null,
  "score": {
   "diem": 96.2,
   "A": 0,

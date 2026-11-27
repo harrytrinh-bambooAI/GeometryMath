@@ -1,0 +1,33 @@
+{
+ "case": "E13",
+ "variant": "Vn",
+ "round": "F",
+ "text": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"add\",\"path\":\"phieu_hoc_tap[0].cau\",\"before\":null,\"after\":{\"so\":3,\"nguon\":\"BT11-B32-5\",\"muc_do\":\"VD\",\"de\":\"Tính đạo hàm của $y=\\\\ln(x^2+1)$.\",\"kt\":[\"KT11-C09-CT-004\",\"KT11-C09-CT-006\"],\"dap_so\":null,\"buoc_goi_y\":[\"Nhận ra đây là hàm hợp dạng $\\\\ln u$ với $u=x^2+1$.\",\"Áp dụng công thức đạo hàm hàm hợp: $y'_x=f'_u\\\\cdot u'_x$ với $f(u)=\\\\ln u$.\",\"Dùng $(\\\\ln u)'=\\\\dfrac{u'}{u}$ và tính $u'$ bằng quy tắc đạo hàm của tổng và của lũy thừa.\",\"Viết kết quả dưới dạng phân thức gọn.\"]},\"ly_do\":\"Thêm câu mức Vận dụng BT11-B32-5 từ kho bài tập vào PHT1, theo yêu cầu.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1] và hoat_dong[2]\",\"van_de\":\"Câu mới cần đạo hàm hàm hợp (KT11-C09-CT-006) và $(\\\\ln x)'$ nhưng tiết này chưa dạy KT11-C09-CT-006; HĐ2 chưa ghi $(\\\\ln x)'$ trong phần phát biểu kiến thức.\",\"goi_y\":\"Bổ sung KT11-C09-CT-006 vào một hoạt động hình thành kiến thức (hoặc GV gợi ý công thức $(\\\\ln u)'=\\\\dfrac{u'}{u}$ khi làm PHT1), và thêm $(\\\\ln x)'=\\\\dfrac1x$ vào phát biểu của HĐ2.\",\"ly_do\":\"Để học sinh đủ kiến thức làm câu 3; mục tiêu và thiết bị đang khóa nên chưa sửa phần đó.\"}],\"unsure\":[]}",
+ "raw": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"add\",\"path\":\"phieu_hoc_tap[0].cau\",\"before\":null,\"after\":{\"so\":3,\"nguon\":\"BT11-B32-5\",\"muc_do\":\"VD\",\"de\":\"Tính đạo hàm của $y=\\\\ln(x^2+1)$.\",\"kt\":[\"KT11-C09-CT-004\",\"KT11-C09-CT-006\"],\"dap_so\":null,\"buoc_goi_y\":[\"Nhận ra đây là hàm hợp dạng $\\\\ln u$ với $u=x^2+1$.\",\"Áp dụng công thức đạo hàm hàm hợp: $y'_x=f'_u\\\\cdot u'_x$ với $f(u)=\\\\ln u$.\",\"Dùng $(\\\\ln u)'=\\\\dfrac{u'}{u}$ và tính $u'$ bằng quy tắc đạo hàm của tổng và của lũy thừa.\",\"Viết kết quả dưới dạng phân thức gọn.\"]},\"ly_do\":\"Thêm câu mức Vận dụng BT11-B32-5 từ kho bài tập vào PHT1, theo yêu cầu.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1] và hoat_dong[2]\",\"van_de\":\"Câu mới cần đạo hàm hàm hợp (KT11-C09-CT-006) và $(\\\\ln x)'$ nhưng tiết này chưa dạy KT11-C09-CT-006; HĐ2 chưa ghi $(\\\\ln x)'$ trong phần phát biểu kiến thức.\",\"goi_y\":\"Bổ sung KT11-C09-CT-006 vào một hoạt động hình thành kiến thức (hoặc GV gợi ý công thức $(\\\\ln u)'=\\\\dfrac{u'}{u}$ khi làm PHT1), và thêm $(\\\\ln x)'=\\\\dfrac1x$ vào phát biểu của HĐ2.\",\"ly_do\":\"Để học sinh đủ kiến thức làm câu 3; mục tiêu và thiết bị đang khóa nên chưa sửa phần đó.\"}],\"unsure\":[]}",
+ "usage": {
+  "ts": "2026-11-27T17:50:01",
+  "role": "gen",
+  "task": "F/Vn/E13",
+  "model": "claude-sonnet-5-5",
+  "input": 2834,
+  "output": 743,
+  "cache_write": 0,
+  "cache_read": 1335,
+  "stop": "end_turn",
+  "sec": 6.2
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:50:01",
+   "role": "gen",
+   "task": "F/Vn/E13",
+   "model": "claude-sonnet-5-5",
+   "input": 2834,
+   "output": 743,
+   "cache_write": 0,
+   "cache_read": 1335,
+   "stop": "end_turn",
+   "sec": 6.2
+  }
+ ]
+}

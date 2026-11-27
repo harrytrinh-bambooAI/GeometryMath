@@ -26,6 +26,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá chỉ sửa đúng các trường của HD1, giữ nguyên 5 phút. Trò chơi có luật chơi, đội, tính điểm và 3 câu bám đúng định nghĩa KT11-C07-DN-010; câu 2 hơi trùng với PHT1 câu 1. Bản vá chưa đề xuất sửa lỗi có sẵn ở HD4: hoạt động ghi \"o_nha\": false, chiếm 5 phút trên lớp nhưng tổ chức lại là \"HS làm ở nhà\", cần làm rõ cho khớp."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

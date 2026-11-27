@@ -6,6 +6,7 @@
    "json_nghiem_ngat": true,
    "kind_chap_nhan": true,
    "khung_5512": true,
+   "thoi_luong": true,
    "meta_khop": true,
    "ma_kt_hop_le": true,
    "phu_trong_tam": true,
@@ -41,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án đúng khung, tổng 45 phút khớp 1 tiết, phát biểu kiến thức trùng nguyên văn danh sách được cấp, dap_so đều null và gợi ý không lộ kết quả. Hai giả định (số tiết, thêm DN-006) được ghi đúng vào unsure; điểm cần sửa nhỏ: tên HD1 nói 'ánh nắng' nhưng dùng đèn chiếu, và HD3 gom cả tính chất lẫn hình biểu diễn trong 10 phút hơi gấp."
  },
+ "judge2": null,
  "score": {
   "diem": 97.5,
   "A": 0,

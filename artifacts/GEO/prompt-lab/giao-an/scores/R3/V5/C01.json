@@ -50,6 +50,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án bám đúng hai kiến thức trọng tâm, phát biểu khớp tham chiếu, tổng 45 phút. Phiếu đủ 6 câu đúng tỉ lệ 2-2-1-1, gợi ý không lộ đáp số, hai câu tự soạn được ghi rõ lý do trong unsure; chỉ có HD3 hơi chật thời gian (14 phút cho 5 câu và 3 lượt lên bảng)."
  },
+ "judge2": null,
  "score": {
   "diem": 97.5,
   "A": 0,

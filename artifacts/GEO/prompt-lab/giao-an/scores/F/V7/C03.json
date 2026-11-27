@@ -42,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án đúng khung, phát biểu kiến thức khớp tham chiếu, tổng thời lượng 90 phút và phong cách truyền thống (giảng giải, làm mẫu, hỏi–đáp) rõ ràng; trợ lý không tự tính đáp số và có ghi unsure, đề xuất kèm lý do. Hạn chế chính: phiếu cho lớp cơ bản gồm NB–VD–VDC mà không có câu TH (BT11-B23-3 chỉ dùng làm ví dụ mẫu), và 14 phút cho câu VDC ở HD5 là khá căng với đối tượng này."
  },
+ "judge2": null,
  "score": {
   "diem": 87.5,
   "A": 0,

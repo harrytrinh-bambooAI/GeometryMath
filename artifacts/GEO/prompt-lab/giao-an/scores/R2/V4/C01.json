@@ -50,6 +50,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án bám đúng hai kiến thức trọng tâm, phát biểu khớp tham chiếu. Tổng thời lượng 45 phút, phiếu đúng 6 câu theo tỉ lệ 2-2-1-1, không lộ đáp số, các bài soạn mới đúng toán và đã ghi unsure hợp lí; chỉ cần sửa nhỏ: khoá 'ket_luận' ở HĐ1 sai chính tả so với 'ket_luan', và mục tiêu 'Nắm định nghĩa' nên viết thành động từ đo được (ví dụ 'Phát biểu được')."
  },
+ "judge2": null,
  "score": {
   "diem": 95.0,
   "A": 0,

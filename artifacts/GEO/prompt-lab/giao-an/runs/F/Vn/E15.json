@@ -1,0 +1,33 @@
+{
+ "case": "E15",
+ "variant": "Vn",
+ "round": "F",
+ "text": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"phieu_hoc_tap[0].cau[0].de\",\"before\":\"$y=x^3-2x+5$. $y'$?\",\"after\":\"$y=x^3-2x+5$. $\\\\dfrac{dy}{dx}$?\",\"ly_do\":\"Đây là chỗ duy nhất trong giáo án dùng kí hiệu y'; đổi sang dy/dx theo yêu cầu.\"}],\"de_xuat\":[],\"unsure\":[\"Các công thức như $(x^n)'$, $(uv)'$ trong phần phát biểu kiến thức là kí hiệu đạo hàm của biểu thức, không phải $y'$, và phải giữ đúng như danh sách kiến thức được cấp nên tôi không đổi.\",\"Nếu thầy/cô muốn đổi cả các kí hiệu $f'(x)$ hay $(\\\\cdot)'$ sang dạng $\\\\dfrac{d}{dx}(\\\\cdot)$ thì cần cho phép thay đổi phần phát biểu kiến thức.\"]}",
+ "raw": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"phieu_hoc_tap[0].cau[0].de\",\"before\":\"$y=x^3-2x+5$. $y'$?\",\"after\":\"$y=x^3-2x+5$. $\\\\dfrac{dy}{dx}$?\",\"ly_do\":\"Đây là chỗ duy nhất trong giáo án dùng kí hiệu y'; đổi sang dy/dx theo yêu cầu.\"}],\"de_xuat\":[],\"unsure\":[\"Các công thức như $(x^n)'$, $(uv)'$ trong phần phát biểu kiến thức là kí hiệu đạo hàm của biểu thức, không phải $y'$, và phải giữ đúng như danh sách kiến thức được cấp nên tôi không đổi.\",\"Nếu thầy/cô muốn đổi cả các kí hiệu $f'(x)$ hay $(\\\\cdot)'$ sang dạng $\\\\dfrac{d}{dx}(\\\\cdot)$ thì cần cho phép thay đổi phần phát biểu kiến thức.\"]}",
+ "usage": {
+  "ts": "2026-11-27T17:50:09",
+  "role": "gen",
+  "task": "F/Vn/E15",
+  "model": "claude-sonnet-5-5",
+  "input": 2844,
+  "output": 833,
+  "cache_write": 0,
+  "cache_read": 1335,
+  "stop": "end_turn",
+  "sec": 6.6
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:50:09",
+   "role": "gen",
+   "task": "F/Vn/E15",
+   "model": "claude-sonnet-5-5",
+   "input": 2844,
+   "output": 833,
+   "cache_write": 0,
+   "cache_read": 1335,
+   "stop": "end_turn",
+   "sec": 6.6
+  }
+ ]
+}

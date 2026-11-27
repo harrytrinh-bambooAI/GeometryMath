@@ -23,6 +23,7 @@
   "loi_toan": [],
   "nhan_xet": "Câu hỏi nhắm đúng trường thật sự thiếu là kiến thức trọng tâm của tiết 1/2, viết thành 1 câu, có gợi ý lựa chọn bằng mã thật trong danh sách được cấp, nhưng bỏ sót trường phong cách dạy cũng chưa nhập. Mức cần thiết chỉ trung bình vì có thể soạn luôn với giả định hợp lí theo thứ tự SGK (tiết 1: điểm–đường, điểm–mặt, đối tượng song song cùng KT11-C07-CT-003; tiết 2: hai đường chéo nhau)."
  },
+ "judge2": null,
  "score": {
   "diem": 80.0,
   "A": 0,

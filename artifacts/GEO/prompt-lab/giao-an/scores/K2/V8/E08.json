@@ -1,0 +1,35 @@
+{
+ "case": "E08",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "reply"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý từ chối đúng theo A3, không sửa phiếu, và đưa đề xuất có lý do cho các lỗi thật trong giáo án: câu 2 và câu 3 trùng dạng, mã kt của câu 3 lệch cách giải, HD4 làm ở nhà nhưng vẫn ghi 5 phút trên lớp. Điểm trừ nhỏ: câu 'máy chủ sẽ tự điền đáp số' là khẳng định không có căn cứ, và gợi ý thay bằng BT11-B26-5 (khoảng cách hai đường chéo nhau) lệch trọng tâm tiết 1 là khoảng cách từ điểm đến mặt phẳng."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 96.2,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.75
+ }
+}

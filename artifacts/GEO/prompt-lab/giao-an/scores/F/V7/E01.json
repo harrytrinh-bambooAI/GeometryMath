@@ -26,6 +26,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá chỉ sửa các trường của hoat_dong[0], giữ đúng 5 phút và phát hiện được lỗi o_nha/thời lượng ở HD4 cùng phát biểu KT11-C07-CT-003 thiếu điều kiện. Tuy vậy, bản vá dùng bảng con mà không đề xuất bổ sung vào mục thiet_bi đang khoá, 3 câu hỏi nhanh chưa ghi thành câu hỏi cụ thể, và đề xuất về chồng chéo giữa HD2 và câu 2 còn mơ hồ."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

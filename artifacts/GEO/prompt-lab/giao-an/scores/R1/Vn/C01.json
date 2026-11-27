@@ -53,6 +53,7 @@
   ],
   "nhan_xet": "Giáo án đủ khung, tổng thời lượng đúng 45 phút, phiếu đúng 6 câu theo tỉ lệ 2-2-1-1, không ghi đáp số, câu NB tự soạn đã được ghi unsure kèm đề xuất. Cần sửa nhỏ: xoá trường rỗng \"thực_hiện\" thừa ở HD1, sửa nhãn kt câu 5, và cân nhắc giảm hoạt động nhóm cho đúng phong cách truyền thống."
  },
+ "judge2": null,
  "score": {
   "diem": 85.0,
   "A": 0,

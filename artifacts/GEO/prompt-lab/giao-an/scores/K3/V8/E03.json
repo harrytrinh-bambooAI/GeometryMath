@@ -1,0 +1,45 @@
+{
+ "case": "E03",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "reply"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý từ chối đúng vì công thức toạ độ không có trong kiến thức được cấp (A1), đưa ra phương án thay thế hợp lệ và không tự sửa giáo án. Trợ lý cũng phát hiện đúng hai lỗi có sẵn (HĐ2 tham chiếu PHT1 câu 1 không khớp ví dụ; HĐ4 làm ở nhà nhưng o_nha false và vẫn tính 5 phút), tuy đề xuất đầu ghi vi_tri chưa chuẩn (trỏ vào cau[1].kt thay vì hoat_dong[1])."
+ },
+ "judge2": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Từ chối đúng: công thức khoảng cách trong toạ độ không có trong danh sách kiến thức được cấp (A1), có đưa phương án thay thế hợp lệ và phát hiện mâu thuẫn ở HĐ4 (o_nha false nhưng làm ở nhà, vẫn tính 5 phút). Đề xuất thứ nhất viết rối và đặt vi_tri chưa khớp với vấn đề nêu, đồng thời chưa chỉ ra câu 3 (BM-007) gắn kt KT11-C07-DN-010 trong khi lời giải chuẩn dùng tính chất đường vuông góc mặt phẳng và hệ thức tam giác vuông."
+ },
+ "score": {
+  "diem": 96.2,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.75
+ }
+}

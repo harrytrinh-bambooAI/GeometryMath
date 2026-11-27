@@ -52,6 +52,7 @@
   ],
   "nhan_xet": "Giáo án bám sát tham chiếu: phát biểu kiến thức đúng nguyên văn, đủ 8 câu đúng tỉ lệ 1-3-3-1, không lộ đáp số, tổng thời lượng đúng 90 phút, và tính khám phá được thể hiện thật qua các hoạt động. Cần sửa nhỏ ba chỗ: HĐ4 dồn 38 phút vào một khối và ghi lẫn lộn 'nhóm đôi rồi cá nhân' với 'theo cặp', câu 4 thiếu điều kiện $A\\notin c$, và bài tập còn hơi nhẹ so với đối tượng chuyên."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

@@ -1,0 +1,34 @@
+{
+ "case": "E13",
+ "variant": "V8",
+ "round": "K1",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"add\", \"path\": \"phieu_hoc_tap[0].cau\", \"before\": null, \"after\": {\"so\": 3, \"nguon\": \"BT11-B32-5\", \"muc_do\": \"VD\", \"de\": \"Tính đạo hàm của $y=\\\\ln(x^2+1)$.\", \"kt\": [\"KT11-C09-CT-004\", \"KT11-C09-CT-006\"], \"dap_so\": null, \"buoc_goi_y\": [\"Đặt $u=x^2+1$ để nhận ra hàm số có dạng hàm hợp $y=\\\\ln u$.\", \"Áp dụng công thức đạo hàm hàm hợp $y'_x=f'_u\\\\cdot u'_x$.\", \"Dùng $(\\\\ln x)'=\\\\dfrac1x$ cho $f'_u$ và tính $u'_x$ theo quy tắc đạo hàm của $x^n$ và hằng số.\", \"Nhân hai kết quả rồi rút gọn biểu thức.\"]}, \"ly_do\": \"Thêm câu mức VD lấy từ kho (BT11-B32-5), đúng yêu cầu giáo viên; mã kiến thức lấy từ danh sách được cấp.\"}], \"de_xuat\": [{\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu mới dùng đạo hàm hàm hợp (KT11-C09-CT-006), kiến thức chưa được dạy trong HĐ2, HĐ3 của giáo án hiện tại (mục tiêu đã khóa nên không sửa).\", \"goi_y\": \"Bổ sung KT11-C09-CT-006 vào nội dung HĐ3 hoặc có GV gợi ý ngắn khi HS làm PHT1; hoặc chọn câu VD khác nếu không muốn dạy hàm hợp ở tiết này.\", \"ly_do\": \"Tránh HS gặp câu chưa được học; hiện chỉ có BT11-B32-5 ở mức VD trong kho.\"}, {\"vi_tri\": \"hoat_dong[1].kien_thuc[0] và hoat_dong[1].kien_thuc[1]\", \"van_de\": \"Phát biểu của KT11-C09-CT-002 và KT11-C09-CT-004 trong HD2 chưa đầy đủ so với danh sách được cấp (thiếu $(c)'$, $(\\\\sqrt x)'$, $(1/x)'$, $(e^x)'$, $(\\\\ln x)'$, $(\\\\log_a x)'$).\", \"goi_y\": \"Bổ sung đầy đủ các công thức theo danh sách nếu GV muốn dạy trọn mã.\", \"ly_do\": \"Công thức $(\\\\ln x)'$ cần cho câu mới nhưng chưa xuất hiện trong HD2.\"}, {\"vi_tri\": \"hoat_dong[3].thoi_luong_phut\", \"van_de\": \"HD4 dài 10 phút cho PHT1 nay có 3 câu (NB, TH, VD), khả năng không đủ thời gian (khoảng 3-4 phút/câu NB-TH, 6-8 phút/câu VD).\", \"goi_y\": \"Cân nhắc điều chỉnh phân bổ thời lượng hoặc giao câu 3 về nhà.\", \"ly_do\": \"Tránh quá tải thời lượng; không tự sửa vì không được yêu cầu.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[0], cau[1]\", \"van_de\": \"Hai câu hiện có chưa có buoc_goi_y (rỗng). Câu 2 ghi nguon 'moi' nhưng gần giống BT11-B32-2 trong kho.\", \"goi_y\": \"Bổ sung buoc_goi_y; cân nhắc dùng id BT11-B32-2 cho câu 2.\", \"ly_do\": \"Ưu tiên id trong kho bài tập.\"}, {\"vi_tri\": \"hoat_dong[4].noi_dung\", \"van_de\": \"HD5 nêu bài vận tốc nhưng đề cụ thể không có trong giáo án.\", \"goi_y\": \"Bổ sung đề cụ thể cho bài vận tốc.\", \"ly_do\": \"Để GV triển khai được HĐ.\"}], \"unsure\": []}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"add\",\"path\":\"phieu_hoc_tap[0].cau\",\"before\":null,\"after\":{\"so\":3,\"nguon\":\"BT11-B32-5\",\"muc_do\":\"VD\",\"de\":\"Tính đạo hàm của $y=\\\\ln(x^2+1)$.\",\"kt\":[\"KT11-C09-CT-004\",\"KT11-C09-CT-006\"],\"dap_so\":null,\"buoc_goi_y\":[\"Đặt $u=x^2+1$ để nhận ra hàm số có dạng hàm hợp $y=\\\\ln u$.\",\"Áp dụng công thức đạo hàm hàm hợp $y'_x=f'_u\\\\cdot u'_x$.\",\"Dùng $(\\\\ln x)'=\\\\dfrac1x$ cho $f'_u$ và tính $u'_x$ theo quy tắc đạo hàm của $x^n$ và hằng số.\",\"Nhân hai kết quả rồi rút gọn biểu thức.\"]},\"ly_do\":\"Thêm câu mức VD lấy từ kho (BT11-B32-5), đúng yêu cầu giáo viên; mã kiến thức lấy từ danh sách được cấp.\"}],\"de_xuat\":[{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu mới dùng đạo hàm hàm hợp (KT11-C09-CT-006), kiến thức chưa được dạy trong HĐ2, HĐ3 của giáo án hiện tại (mục tiêu đã khóa nên không sửa).\",\"goi_y\":\"Bổ sung KT11-C09-CT-006 vào nội dung HĐ3 hoặc có GV gợi ý ngắn khi HS làm PHT1; hoặc chọn câu VD khác nếu không muốn dạy hàm hợp ở tiết này.\",\"ly_do\":\"Tránh HS gặp câu chưa được học; hiện chỉ có BT11-B32-5 ở mức VD trong kho.\"},{\"vi_tri\":\"hoat_dong[1].kien_thuc[0] và hoat_dong[1].kien_thuc[1]\",\"van_de\":\"Phát biểu của KT11-C09-CT-002 và KT11-C09-CT-004 trong HD2 chưa đầy đủ so với danh sách được cấp (thiếu $(c)'$, $(\\\\sqrt x)'$, $(1/x)'$, $(e^x)'$, $(\\\\ln x)'$, $(\\\\log_a x)'$).\",\"goi_y\":\"Bổ sung đầy đủ các công thức theo danh sách nếu GV muốn dạy trọn mã.\",\"ly_do\":\"Công thức $(\\\\ln x)'$ cần cho câu mới nhưng chưa xuất hiện trong HD2.\"},{\"vi_tri\":\"hoat_dong[3].thoi_luong_phut\",\"van_de\":\"HD4 dài 10 phút cho PHT1 nay có 3 câu (NB, TH, VD), khả năng không đủ thời gian (khoảng 3-4 phút/câu NB-TH, 6-8 phút/câu VD).\",\"goi_y\":\"Cân nhắc điều chỉnh phân bổ thời lượng hoặc giao câu 3 về nhà.\",\"ly_do\":\"Tránh quá tải thời lượng; không tự sửa vì không được yêu cầu.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[0], cau[1]\",\"van_de\":\"Hai câu hiện có chưa có buoc_goi_y (rỗng). Câu 2 ghi nguon 'moi' nhưng gần giống BT11-B32-2 trong kho.\",\"goi_y\":\"Bổ sung buoc_goi_y; cân nhắc dùng id BT11-B32-2 cho câu 2.\",\"ly_do\":\"Ưu tiên id trong kho bài tập.\"},{\"vi_tri\":\"hoat_dong[4].noi_dung\",\"van_de\":\"HD5 nêu bài vận tốc nhưng đề cụ thể không có trong giáo án.\",\"goi_y\":\"Bổ sung đề cụ thể cho bài vận tốc.\",\"ly_do\":\"Để GV triển khai được HĐ.\"}],\"unsure\":[]}}",
+ "usage": {
+  "ts": "2026-11-27T17:53:34",
+  "role": "gen",
+  "task": "K1/V8/E13",
+  "model": "claude-sonnet-5-5",
+  "input": 2822,
+  "output": 1476,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 9.9
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:53:34",
+   "role": "gen",
+   "task": "K1/V8/E13",
+   "model": "claude-sonnet-5-5",
+   "input": 2822,
+   "output": 1476,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 9.9
+  }
+ ],
+ "server_errs0": []
+}

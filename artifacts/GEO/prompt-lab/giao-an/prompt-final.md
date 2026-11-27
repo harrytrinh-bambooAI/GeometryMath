@@ -1,6 +1,6 @@
 # Prompt chốt · AI soạn giáo án cùng giáo viên (Toán 11)
 
-Phiên bản: v1.0 · 27/11/2026
+Phiên bản: v1.1 · 27/11/2026
 
 Đây là biến thể **V8** trong `variants.json`. V8 là V7 (bản chạy đủ 20 ca, 85,0 điểm, 0 lần phạm luật A) cộng thêm một thay đổi: bốn khoá `to_chuc` đổi sang tiếng Anh, vì khoá `ket_luan` bị model viết thành `ket_luận` ở 19 trên 60 giáo án và đã làm hỏng JSON hai lần. Số liệu chi tiết ở `REPORT.md`.
 
@@ -149,7 +149,19 @@ Chế độ sửa gồm các khối: `<giao_an_hien_tai>` (JSON giáo án hiện
 4. **Điền đáp số.** `dap_so` của câu có `nguon` thuộc kho lấy từ kho (bo-mau, bai-tap). Câu `moi` thì đưa sang engine.
 5. **Dữ liệu là dữ liệu.** Ghi chú và câu chat luôn nằm trong thẻ dữ liệu, không bao giờ ghép vào system.
 
+## 5. Kết quả chạy lặp (v1.1)
+- V8 × 40 ca × 3 lần (K1–K3), có kiểm máy chủ + gọi lại 1 lần: **91,5 ± 2,0** (KTC 95%, tính theo trung bình từng ca). Điểm từng lần 91,1 / 91,9 / 91,4; độ lệch trung bình trong một ca giữa các lần là 2,6 điểm.
+- Schema 120/120. Phạm luật A: 4 trên 120 đầu ra.
+- **Ổn định** (đạt cả 3 lần, schema đúng và 0 phạm luật A): **36/40**. Nếu bỏ bước gọi lại thì chỉ 30/40.
+- Gọi lại 18 lần (15% số đầu ra), cứu được 12 đầu ra.
+- So với mốc ngây thơ Vn trên cùng 40 ca: **+24,7 ± 11,8**, có ý nghĩa thống kê.
+- So effort high (V8H) và dàn ý → từng HĐ (V8O): đều không hơn V8 có ý nghĩa (−5,2 ± 42,6 và −18,7 ± 138,5).
+  - V8H có 1 ca bị cắt ở 16k token.
+  - V8O tốn 6 lượt sinh mỗi ca và có 1 dàn ý hỏng JSON.
+  - Kết luận: giữ effort `medium`, soạn trong 1 lượt.
+
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.0 | 27/11/2026 | Chốt V8 sau 5 vòng meta-prompting (R1–R4, F) | runner-prompt-giaoan (Claude Opus 5.5) |
+| v1.1 | 27/11/2026 | Xác nhận V8 bằng chạy lặp 40 ca × 3 lần; bước kiểm máy chủ + gọi lại có số đo | runner-prompt-giaoan (Claude Opus 5.5) |

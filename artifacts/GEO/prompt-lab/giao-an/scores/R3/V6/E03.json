@@ -23,6 +23,7 @@
   "loi_toan": [],
   "nhan_xet": "Từ chối đúng theo A1 vì công thức khoảng cách theo toạ độ không có trong danh sách kiến thức được cấp; trợ lý không sửa giáo án, chỉ đề xuất kèm lý do và gợi ý giữ KT11-C07-CT-003, giải thích rõ, đề xuất thay thế hợp lí. Tuy vậy trợ lý chưa phát hiện lỗi có sẵn ở HĐ4: tổ chức ghi \"HS làm ở nhà\" nhưng o_nha là false, nên 5 phút này mâu thuẫn với tổng 45 phút trên lớp."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

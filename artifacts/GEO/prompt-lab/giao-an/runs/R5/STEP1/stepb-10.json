@@ -1,0 +1,32 @@
+{
+ "ids": [
+  "BM-063-S1",
+  "BM-063-S2",
+  "BM-063-DUNG",
+  "BM-064-S1",
+  "BM-064-S2",
+  "BM-064-DUNG",
+  "BM-065-S1",
+  "BM-065-S2",
+  "BM-065-DUNG",
+  "BM-066-S1",
+  "BM-066-S2",
+  "BM-066-DUNG",
+  "BM-067-S1",
+  "BM-067-S2",
+  "BM-067-DUNG"
+ ],
+ "text": "{\"ket_qua\":[{\"id\":\"BM-063-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"Theo Vi-ét, x1+x2 = -b/a = 5 chứ không phải -5. Các bước sau sai theo (đáp án đúng là 5/2).\"},{\"id\":\"BM-063-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"1/x1+1/x2 = (x1+x2)/(x1x2) = 5/2, không phải 1/(x1+x2).\"},{\"id\":\"BM-063-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Vi-ét đúng, B = 5/2 đúng.\"},{\"id\":\"BM-064-S1\",\"buoc_sai\":\"B6\",\"ly_do\":\"Giải hệ x+y=50, 5x+15y=520 (nghìn): 5·50+10y=520 nên y=27, x=23. Ghi x=24, y=26 là sai (24·5+26·15=510≠520).\"},{\"id\":\"BM-064-S2\",\"buoc_sai\":\"B4\",\"ly_do\":\"Phương trình tiền phải là 5000x+15000y=520000; đã đổi nhầm giá của hai loại bút.\"},{\"id\":\"BM-064-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Hệ đúng, nghiệm x=23, y=27 thỏa mãn.\"},{\"id\":\"BM-065-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Không gian mẫu phải gồm các cặp có thứ tự (9 phần tử); liệt kê tổ hợp không thứ tự với 6 phần tử là sai và các kết quả sau sai theo (B3 n=6 sai).\"},{\"id\":\"BM-065-S2\",\"buoc_sai\":null,\"ly_do\":\"Không liệt kê không gian mẫu ở B2, nhưng n(Ω)=9, số kết quả thuận lợi 3 và P=1/3 đều đúng. Chỉ thiếu phần mô tả không gian mẫu mà đề yêu cầu, không phải lỗi toán học.\"},{\"id\":\"BM-065-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng hoàn toàn.\"},{\"id\":\"BM-066-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Thể tích mặt cầu là 4/3·π·r³ = 4π/3 mỗi viên, không phải 4π r². Tổng 6 viên là 8π, không phải 24π.\"},{\"id\":\"BM-066-S2\",\"buoc_sai\":\"B4\",\"ly_do\":\"53/9 ≈ 5,89, không phải 5,98.\"},{\"id\":\"BM-066-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: h=53/9≈5,89.\"},{\"id\":\"BM-067-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Quy đồng: -(√x+1)(√x-1) = -(x-1) = -x+1, không phải -x-1. Tử đúng là x+2√x-3.\"},{\"id\":\"BM-067-S2\",\"buoc_sai\":\"B4\",\"ly_do\":\"Kết luận 'với mọi x≥0' sai: điều kiện x≠1 phải giữ lại, vì tại x=1 biểu thức ban đầu không xác định.\"},{\"id\":\"BM-067-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng hoàn toàn.\"}]}",
+ "usage": {
+  "ts": "2026-11-27T17:46:18",
+  "role": "gen",
+  "task": "R5/STEP1/stepb-10",
+  "model": "claude-sonnet-5-5",
+  "input": 4866,
+  "output": 1183,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 8.9
+ }
+}

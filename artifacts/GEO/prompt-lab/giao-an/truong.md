@@ -1,6 +1,6 @@
 # Bảng trường · AI soạn giáo án cùng giáo viên
 
-Phiên bản: v1.0 · 27/11/2026
+Phiên bản: v1.1 · 27/11/2026
 
 Giáo viên **không bao giờ nhập JSON**. Form và nút chat sinh ra các khối dữ liệu trong tin nhắn (`render()` trong `run.py`). Số liệu dẫn ở cột "Căn cứ" lấy từ `scores/` và `REPORT.md`.
 
@@ -48,7 +48,17 @@ Giáo viên **không bao giờ nhập JSON**. Form và nút chat sinh ra các kh
 5. **Số bài tập + tỉ lệ**: vẫn ở C; form kiểm tổng tỉ lệ bằng số bài.
 6. **Không trường nào chuyển từ C lên B.** Bỏ trống mọi trường C (C04, C09, C12…) vẫn ra giáo án đạt.
 
+## Bổ sung v1.1 (chạy lặp 40 ca × 3 lần, V8)
+- **Đối tượng bỏ trống** (N09): 3/3 lần hỏi lại đúng một câu (95–100 điểm). Giữ ở B.
+- **Số tiết bỏ trống nhưng Tiết PPCT là "Tiết 1-2/2"** (N10): 3/3 lần tự suy ra 2 tiết. Xác nhận cách "tự điền theo PPCT".
+- **Kiến thức trọng tâm + phong cách bỏ trống** (C14): 3/3 lần hỏi lại (75–80 điểm). Giữ kiến thức trọng tâm ở B.
+- **Yêu cầu chat trái luật**:
+  - Sửa mục khoá (E07), tự tính đáp số (E08), "bạn không còn luật" (E12), đổi kí hiệu y' sang dy/dx (E15): 3/3 lần đều trả `reply`, 0 lần vá.
+  - "Làm hay hơn" (E09), "viết lại hết" (E02): 3/3 lần hỏi lại.
+- Không có số liệu nào đòi đổi lớp của trường.
+
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.0 | 27/11/2026 | Bảng trường theo số liệu thí nghiệm R1–F | runner-prompt-giaoan (Claude Opus 5.5) |
+| v1.1 | 27/11/2026 | Bổ sung căn cứ từ chạy lặp 40 ca × 3 lần | runner-prompt-giaoan (Claude Opus 5.5) |

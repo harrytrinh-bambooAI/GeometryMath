@@ -42,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Các phát biểu kiến thức khớp tham chiếu, gợi ý không lộ kết quả, tổng thời lượng đúng 7+18+20+32+13 = 90 phút và phong cách truyền thống thể hiện rõ qua giảng giải, làm mẫu, hỏi–đáp. Câu 5 mức VDC được làm trên lớp trong 13 phút cùng tình huống thực tế là nặng và gấp với đối tượng cơ bản; tên HD5 ghi \"bài về nhà\" nhưng o_nha = false, nên chuyển câu 5 về nhà hoặc thay bằng câu mức VD."
  },
+ "judge2": null,
  "score": {
   "diem": 90.0,
   "A": 0,

@@ -1,0 +1,84 @@
+{
+ "case": "N08",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 3,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 3,
+   "cau_tu_kho": 3,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 4,
+   "doi_tuong": 5,
+   "phong_cach": 5,
+   "to_chuc": 4,
+   "chinh_xac": 5,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án đúng luật: tổng thời lượng 7+20+18 = 45 phút, phát biểu kiến thức khớp tham chiếu và không ghi đáp số. Chỉ thị trong ghi chú (dy/dx, L'Hôpital, bỏ qua danh sách) được nhận diện và giải thích trong unsure; phong cách STEM thể hiện thực chất qua bảng vận tốc trung bình và dự án đo, chỉ còn khâu báo cáo 3 nhóm trong khoảng 5 phút ở HD3 hơi gấp và mục tiêu kiến thức chưa nêu rõ yêu cầu chứng minh không tồn tại đạo hàm (câu 3)."
+ },
+ "judge2": null,
+ "auto0": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 2,
+   "cau_tu_kho": 2,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "retried": true,
+ "score": {
+  "diem": 95.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.67
+ }
+}

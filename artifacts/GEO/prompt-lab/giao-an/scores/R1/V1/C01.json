@@ -50,6 +50,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án đúng khung 5512, đủ 45 phút, phiếu học tập đúng 6 câu theo tỉ lệ NB2–TH2–VD1–VDC1; các phát biểu kiến thức khớp tham chiếu, gợi ý không lộ đáp số, và câu tự soạn (câu 5, dạng VD) đúng toán, có ghi unsure. Điểm trừ nhỏ: HD2–HD3 dùng nhiều thảo luận nhóm đôi, nhóm bốn nên chưa đậm phong cách truyền thống (giảng giải – làm mẫu), và 18 phút cho 6 câu kèm báo cáo hơi gấp."
  },
+ "judge2": null,
  "score": {
   "diem": 95.0,
   "A": 0,

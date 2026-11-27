@@ -1,0 +1,104 @@
+{
+ "case": "C08",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "so_bai_tap": true,
+   "ti_le": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 3,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "ti_le_thuc": {
+    "NB": 0,
+    "TH": 1,
+    "VD": 2,
+    "VDC": 2
+   },
+   "muc_do_lech_kho": [],
+   "so_cau": 5,
+   "cau_tu_kho": 2,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 4,
+   "chinh_xac": 4,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "PHT1 câu 4, gợi ý 2: \"Tính độ dài $AH$ từ tam giác đáy đều, rồi tính chiều cao bằng định lí Pythagore\" bị lẫn kí hiệu. Nếu $A$ là đỉnh và $H$ là chân đường cao thì $AH$ chính là chiều cao. Đại lượng tính từ tam giác đáy đều phải là $HB=\\dfrac{a\\sqrt3}3$, sau đó $AH=\\sqrt{AB^2-HB^2}$ (theo lời giải chuẩn)."
+  ],
+  "nhan_xet": "Giáo án đúng khung, đủ 45 phút, đúng tỉ lệ TH1–VD2–VDC2, công thức tỉ số thể tích khớp SGK, các câu tự soạn (1, 3, 5) đúng toán và không ghi đáp số. Cần sửa kí hiệu $AH$/$HB$ ở gợi ý câu 4. Với lớp chuyên, nên cân nhắc đưa ít nhất một câu VDC vào giờ học thay vì giao cả hai về nhà; ngoài ra HĐ3 ghi \"nhóm\" trong khi HS làm cá nhân."
+ },
+ "judge2": null,
+ "auto0": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": false,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "so_bai_tap": true,
+   "ti_le": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A4: sai khung CV 5512"
+  ],
+  "info": {
+   "khoa_co_dau": 1,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "ti_le_thuc": {
+    "NB": 0,
+    "TH": 1,
+    "VD": 2,
+    "VDC": 2
+   },
+   "muc_do_lech_kho": [],
+   "so_cau": 5,
+   "cau_tu_kho": 0,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "retried": true,
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "case": "C12",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 3,
+   "cau_tu_kho": 3,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 4,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 3,
+   "chinh_xac": 4,
+   "phieu": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "HD2 conclude: \"GV chốt: sai số nhỏ nên các tỉ số bằng nhau\" là suy luận không chặt. Số đo chỉ gợi ý; phải nói kết quả đo gợi ý các tỉ số bằng nhau, rồi khẳng định bằng định lí Thalès."
+  ],
+  "nhan_xet": "Giáo án bám tốt phong cách STEM, thời lượng tổng đúng 45 phút, phiếu lấy đúng bài từ kho, không lộ đáp số và có unsure hợp lí. Tuy nhiên HD2 dồn dựng mô hình, đo hai lần, cắt tấm bìa thứ tư và báo cáo vào 15 phút là khó khả thi; phiếu cũng chưa có câu nào luyện trực tiếp tính chất KT11-C04-TC-007 (giao tuyến song song) dù đây là kiến thức trọng tâm."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 85.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4
+ }
+}

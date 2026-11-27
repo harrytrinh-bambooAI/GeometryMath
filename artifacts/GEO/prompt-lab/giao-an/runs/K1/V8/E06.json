@@ -1,0 +1,34 @@
+{
+ "case": "E06",
+ "variant": "V8",
+ "round": "K1",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[3].ten\", \"before\": \"Vận dụng: khoảng cách trong căn phòng\", \"after\": \"Vận dụng: khoảng cách từ đỉnh cột cờ đến mặt sân\", \"ly_do\": \"Đổi chủ đề vận dụng sang cột cờ theo yêu cầu.\"}, {\"op\": \"replace\", \"path\": \"hoat_dong[3].noi_dung\", \"before\": \"Tính khoảng cách từ góc trần đến mặt tường đối diện (đo phòng học).\", \"after\": \"Đo khoảng cách từ đỉnh cột cờ đến mặt sân: HS mô hình hoá mặt sân là mặt phẳng, xác định hình chiếu vuông góc của đỉnh cột cờ lên mặt sân (chân cột) và nêu cách đo đoạn vuông góc đó theo định nghĩa khoảng cách từ điểm đến mặt phẳng.\", \"ly_do\": \"Thay nội dung bài toán thành đo khoảng cách từ đỉnh cột cờ đến mặt sân.\"}, {\"op\": \"replace\", \"path\": \"hoat_dong[3].san_pham\", \"before\": \"Bài làm nộp tiết sau.\", \"after\": \"Bài làm gồm hình vẽ mô hình hoá, cách xác định hình chiếu của đỉnh cột cờ lên mặt sân và cách đo, nộp tiết sau.\", \"ly_do\": \"Sản phẩm khớp nội dung mới.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[1].to_chuc.assign và hoat_dong[1].noi_dung\", \"van_de\": \"HD2 giao PHT1 câu 1 nhưng nội dung nêu ví dụ chóp S.ABC trùng với câu 2 (BT11-B26-3), có nguy cơ lặp bài.\", \"goi_y\": \"Làm rõ ví dụ ở HD2 là ví dụ mẫu riêng hoặc bỏ câu 2 khỏi luyện tập.\", \"ly_do\": \"Mỗi bài tập chỉ nên xuất hiện một lần.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu 3 (BM-007) có kt ghi KT11-C07-DN-010 nhưng cách giải dùng KT11-C07-CT-003; HD3 chỉ giao câu 2, 3 nên câu 1 không được luyện.\", \"goi_y\": \"Chỉnh lại mã kt của câu 3 cho phù hợp.\", \"ly_do\": \"Khớp kiến thức với bài tập.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[*].buoc_goi_y\", \"van_de\": \"Cả ba câu có buoc_goi_y rỗng.\", \"goi_y\": \"Bổ sung các bước gợi ý cách làm bằng lời.\", \"ly_do\": \"Hỗ trợ GV và HS.\"}, {\"vi_tri\": \"hoat_dong[3].thoi_luong_phut và o_nha\", \"van_de\": \"HD4 làm ở nhà nhưng o_nha là false và thoi_luong_phut là 5, khiến tổng trên lớp vẫn là 45 nhờ tính cả HD4.\", \"goi_y\": \"Nếu giữ giao về nhà thì đặt o_nha true, thoi_luong_phut 0 và dồn 5 phút sang HD khác để tổng vẫn đủ 45.\", \"ly_do\": \"Luật A5: hoạt động ở nhà phải 0 phút.\"}], \"unsure\": [\"Chưa tự sửa o_nha và thời lượng của HD4 vì chưa được yêu cầu; cần GV quyết định chuyển 5 phút cho hoạt động nào.\"]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[3].ten\",\"before\":\"Vận dụng: khoảng cách trong căn phòng\",\"after\":\"Vận dụng: khoảng cách từ đỉnh cột cờ đến mặt sân\",\"ly_do\":\"Đổi chủ đề vận dụng sang cột cờ theo yêu cầu.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].noi_dung\",\"before\":\"Tính khoảng cách từ góc trần đến mặt tường đối diện (đo phòng học).\",\"after\":\"Đo khoảng cách từ đỉnh cột cờ đến mặt sân: HS mô hình hoá mặt sân là mặt phẳng, xác định hình chiếu vuông góc của đỉnh cột cờ lên mặt sân (chân cột) và nêu cách đo đoạn vuông góc đó theo định nghĩa khoảng cách từ điểm đến mặt phẳng.\",\"ly_do\":\"Thay nội dung bài toán thành đo khoảng cách từ đỉnh cột cờ đến mặt sân.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].san_pham\",\"before\":\"Bài làm nộp tiết sau.\",\"after\":\"Bài làm gồm hình vẽ mô hình hoá, cách xác định hình chiếu của đỉnh cột cờ lên mặt sân và cách đo, nộp tiết sau.\",\"ly_do\":\"Sản phẩm khớp nội dung mới.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1].to_chuc.assign và hoat_dong[1].noi_dung\",\"van_de\":\"HD2 giao PHT1 câu 1 nhưng nội dung nêu ví dụ chóp S.ABC trùng với câu 2 (BT11-B26-3), có nguy cơ lặp bài.\",\"goi_y\":\"Làm rõ ví dụ ở HD2 là ví dụ mẫu riêng hoặc bỏ câu 2 khỏi luyện tập.\",\"ly_do\":\"Mỗi bài tập chỉ nên xuất hiện một lần.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu 3 (BM-007) có kt ghi KT11-C07-DN-010 nhưng cách giải dùng KT11-C07-CT-003; HD3 chỉ giao câu 2, 3 nên câu 1 không được luyện.\",\"goi_y\":\"Chỉnh lại mã kt của câu 3 cho phù hợp.\",\"ly_do\":\"Khớp kiến thức với bài tập.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[*].buoc_goi_y\",\"van_de\":\"Cả ba câu có buoc_goi_y rỗng.\",\"goi_y\":\"Bổ sung các bước gợi ý cách làm bằng lời.\",\"ly_do\":\"Hỗ trợ GV và HS.\"},{\"vi_tri\":\"hoat_dong[3].thoi_luong_phut và o_nha\",\"van_de\":\"HD4 làm ở nhà nhưng o_nha là false và thoi_luong_phut là 5, khiến tổng trên lớp vẫn là 45 nhờ tính cả HD4.\",\"goi_y\":\"Nếu giữ giao về nhà thì đặt o_nha true, thoi_luong_phut 0 và dồn 5 phút sang HD khác để tổng vẫn đủ 45.\",\"ly_do\":\"Luật A5: hoạt động ở nhà phải 0 phút.\"}],\"unsure\":[\"Chưa tự sửa o_nha và thời lượng của HD4 vì chưa được yêu cầu; cần GV quyết định chuyển 5 phút cho hoạt động nào.\"]}}",
+ "usage": {
+  "ts": "2026-11-27T17:53:08",
+  "role": "gen",
+  "task": "K1/V8/E06",
+  "model": "claude-sonnet-5-5",
+  "input": 3392,
+  "output": 1325,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 9.0
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:53:08",
+   "role": "gen",
+   "task": "K1/V8/E06",
+   "model": "claude-sonnet-5-5",
+   "input": 3392,
+   "output": 1325,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 9.0
+  }
+ ],
+ "server_errs0": []
+}

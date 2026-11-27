@@ -26,6 +26,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá chỉ sửa đúng các trường của HD1, có trò chơi 'Ai nhanh hơn' với 3 câu hỏi nhanh, vẫn giữ 5 phút, không ghi kết quả số và không đụng mục khoá; tuy vậy câu (3) trùng ý với PHT1 câu 1 (khoảng cách từ $A'$ đến $(ABCD)$), nên làm giảm tác dụng của câu đó ở phiếu. Bản vá cũng không đề xuất xử lý các lỗi có sẵn trong giáo án: HD4 ghi o_nha=false nhưng HS làm ở nhà và nộp tiết sau; mục tiêu có khoảng cách từ điểm đến đường thẳng nhưng HD2 không dạy nội dung này."
  },
+ "judge2": null,
  "score": {
   "diem": 88.8,
   "A": 0,

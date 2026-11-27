@@ -42,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án bám đúng kiến thức được cấp, tổng thời lượng 90 phút, phong cách dự án STEM thể hiện rõ (làm mô hình, đổ gạo so sánh chóp với lăng trụ, trưng bày theo rubric), phiếu không lộ đáp số và mức độ ghi đúng. Cần sửa nhỏ: HD4 chỉ phân công câu 1-4 trong khi phiếu có 5 câu; HD1 bị lặp khóa \"ket_luận\"/\"ket_luan\"; HD2 dành 20 phút cho cả cắt dán và xếp khối đơn vị là khá gấp; việc \"tính diện tích bìa\" ở HD5 nằm ngoài trọng tâm."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

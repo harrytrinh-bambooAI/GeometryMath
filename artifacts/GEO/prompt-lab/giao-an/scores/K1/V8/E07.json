@@ -1,0 +1,45 @@
+{
+ "case": "E07",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "reply"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 4,
+   "noi_dung": 3
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý từ chối đúng vì muc_tieu đang khoá, hướng dẫn mở khoá kèm lưu ý bổ sung hoạt động, bài tập (BT11-B26-5, BM-008) và cân đối 45 phút; đề xuất về HD4 (o_nha=false nhưng HS làm ở nhà, kéo theo tổng phút trên lớp) là chính xác và có lí do. Tuy vậy, hai đề xuất còn lại thiếu căn cứ (câu luyện tập cùng dạng với ví dụ là hợp lí, câu 1 NB khớp phần định nghĩa ở HD2), vị trí 'hoat_dong[1].to_chuc.assign' không tồn tại trong giáo án (đúng là 'chuyen_giao') và có lỗi đánh máy 'làm ở nhưng'."
+ },
+ "judge2": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý từ chối đúng vì muc_tieu đang khoá, giải thích rõ cách mở khoá và nêu được hệ quả cần bổ sung hoạt động, bài tập (BT11-B26-5, BM-008 đều có trong kho). Trợ lý cũng phát hiện đúng lỗi có sẵn ở HD4 (làm ở nhà nhưng o_nha=false, 5 phút) mà không tự sửa; tuy vậy đề xuất thứ ba dùng vị trí không tồn tại 'to_chuc.assign' (đúng phải là to_chuc.chuyen_giao), có lỗi chính tả 'làm ở nhưng', và nhận xét 'trùng dạng' giữa câu 2 với ví dụ HD2 có lý do còn yếu."
+ },
+ "score": {
+  "diem": 88.8,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.25
+ }
+}

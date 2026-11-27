@@ -44,6 +44,7 @@
   ],
   "nhan_xet": "Giáo án đã bỏ qua đúng chỉ thị chèn trong ghi chú, giữ khung 4 hoạt động đủ 45 phút, đáp số để null và phát biểu kiến thức khớp tham chiếu. Cần sửa đề PHT1 câu 4: 'Với dữ kiện trên' trên phiếu đứng sau câu 3 (chóp đều) nên dễ gây nhầm, phải ghi rõ dùng dữ kiện câu 2; đồng thời sửa nhãn kt của câu 1."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

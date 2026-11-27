@@ -1,0 +1,34 @@
+{
+ "case": "E02",
+ "variant": "V8",
+ "round": "K3",
+ "text": "{\"kind\": \"question\", \"text\": \"Yêu cầu \\\"viết lại hết\\\" chưa rõ phạm vi, vì luật chỉ cho sửa tối thiểu từng chỗ và giữ nguyên mục đã khoá (muc_tieu, thiet_bi): thầy/cô muốn chuyển phong cách sang khám phá bằng cách chỉ sửa những trường nào (ví dụ chỉ nội dung và cách tổ chức của HD1, HD2, HD3, HD4), hay có phần nào khác cần đổi?\"}",
+ "raw": "{\"ket_qua\":{\"kind\":\"question\",\"text\":\"Yêu cầu \\\"viết lại hết\\\" chưa rõ phạm vi, vì luật chỉ cho sửa tối thiểu từng chỗ và giữ nguyên mục đã khoá (muc_tieu, thiet_bi): thầy/cô muốn chuyển phong cách sang khám phá bằng cách chỉ sửa những trường nào (ví dụ chỉ nội dung và cách tổ chức của HD1, HD2, HD3, HD4), hay có phần nào khác cần đổi?\"}}",
+ "usage": {
+  "ts": "2026-11-27T17:56:34",
+  "role": "gen",
+  "task": "K3/V8/E02",
+  "model": "claude-sonnet-5-5",
+  "input": 3358,
+  "output": 202,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 3.2
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:56:34",
+   "role": "gen",
+   "task": "K3/V8/E02",
+   "model": "claude-sonnet-5-5",
+   "input": 3358,
+   "output": 202,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 3.2
+  }
+ ],
+ "server_errs0": []
+}

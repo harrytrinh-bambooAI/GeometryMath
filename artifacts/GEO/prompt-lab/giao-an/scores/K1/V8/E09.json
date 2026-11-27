@@ -1,0 +1,35 @@
+{
+ "case": "E09",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "dung_mot_cau_hoi": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "question"
+ },
+ "judge": {
+  "diem": {
+   "dung_cho_thieu": 5,
+   "gon": 4,
+   "can_thiet": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Yêu cầu \"hay hơn\" quá mơ hồ trong khi muc_tieu và thiet_bi đã bị khoá, nên hỏi lại đúng 1 câu là hợp luật A8; các lựa chọn gợi ý cụ thể, giáo viên trả lời ngay được, dù câu hơi dài. Có thể cân nhắc kèm một gợi ý về điểm bất hợp lí sẵn có: HD4 ghi \"o_nha\": false nhưng HS làm ở nhà, mà 5 phút này vẫn tính vào 45 phút."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 90.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.33
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "case": "E02",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "dung_mot_cau_hoi": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "question"
+ },
+ "judge": {
+  "diem": {
+   "dung_cho_thieu": 4,
+   "gon": 4,
+   "can_thiet": 3
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Câu hỏi nhận ra đúng xung đột giữa \"viết lại hết\" với luật A6 và các mục đã khoá, chỉ gồm 1 câu, đưa ra phương án rõ để giáo viên chọn nhanh. Tuy vậy lẽ ra nên giải thích ngắn vì sao không viết lại cả giáo án được (A6, mục khoá) rồi đề xuất luôn bản vá cho HĐ1–HĐ4 theo hướng khám phá, thay vì chỉ hỏi."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 80.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 3.67
+ }
+}

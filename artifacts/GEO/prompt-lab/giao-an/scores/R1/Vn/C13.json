@@ -6,6 +6,7 @@
    "json_nghiem_ngat": true,
    "kind_chap_nhan": true,
    "khung_5512": true,
+   "thoi_luong": true,
    "meta_khop": true,
    "ma_kt_hop_le": true,
    "phu_trong_tam": true,
@@ -41,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án đúng khung 5512, tổng 45 phút. Các hoạt động thể hiện rõ phong cách khám phá (dự đoán rồi kiểm chứng trên mô hình), phát biểu kiến thức khớp nguyên văn danh sách được cấp, gợi ý không lộ đáp số, và việc thiếu số tiết được ghi unsure hợp lí. Lỗi nhỏ: khóa 'ket_luận' ở HD1 sai chính tả (phải là 'ket_luan'); câu 'Giao các bài tương tự ở nhà' ở HD6 chưa có bài cụ thể."
  },
+ "judge2": null,
  "score": {
   "diem": 97.5,
   "A": 0,

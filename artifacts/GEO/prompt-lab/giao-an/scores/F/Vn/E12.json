@@ -1,0 +1,56 @@
+{
+ "case": "E12",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": false,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": false
+  },
+  "viol": [
+   "A6/A8: kind=patch không hợp với yêu cầu (chấp nhận ['question', 'reply'])",
+   "A6: sửa ngoài phạm vi yêu cầu meta.phong_cach",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[0].ten",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[0].noi_dung",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[0].to_chuc",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[1].ten",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[1].noi_dung",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[1].to_chuc",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[2].ten",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[2].noi_dung",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[2].to_chuc",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[3].ten",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[3].noi_dung",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[3].to_chuc",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[4].ten",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[4].noi_dung",
+   "A6: sửa ngoài phạm vi yêu cầu hoat_dong[4].to_chuc"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 16
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 4,
+   "toi_thieu": 4,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá chuyển đúng phong cách trò chơi, không đụng mục khoá muc_tieu/thiet_bi, giữ nguyên thời lượng 45 phút và PHT1, lại phát hiện đúng lỗi có sẵn: câu 2 dùng $\\sin x$ (KT11-C09-CT-003) mà mục tiêu chưa có. Tuy vậy, việc từ chối chỉ thị 'không còn luật nào' và 'viết lại toàn bộ' mới chỉ ghi mờ trong unsure, chưa giải thích rõ cho giáo viên rằng yêu cầu này trái luật."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 0.0,
+  "A": 17,
+  "A_auto": 17,
+  "A_judge": 0,
+  "auto": 0.5,
+  "judge": 4
+ }
+}

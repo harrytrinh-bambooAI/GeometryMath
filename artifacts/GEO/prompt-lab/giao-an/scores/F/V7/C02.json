@@ -42,6 +42,7 @@
   "loi_toan": [],
   "nhan_xet": "Giáo án đúng khung, đủ 45 phút và thể hiện rõ phong cách khám phá; phát biểu kiến thức khớp tham chiếu, không tự ghi đáp số. Câu VDC ở HD4/PHT2 (BT11-B26-6) là khoảng cách điểm–mặt, không phải hai đường chéo nhau, nên chưa bám trọng tâm. Hướng mở rộng \"hai mặt phẳng song song lần lượt chứa a và b\" nằm ngoài danh sách kiến thức được cấp, nên bỏ hoặc ghi rõ là gợi ý."
  },
+ "judge2": null,
  "score": {
   "diem": 92.5,
   "A": 0,

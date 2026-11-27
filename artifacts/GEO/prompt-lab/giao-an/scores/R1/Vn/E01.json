@@ -31,6 +31,7 @@
   "loi_toan": [],
   "nhan_xet": "Bản vá chỉ sửa đúng hoạt động Mở đầu, có 3 câu hỏi nhanh và giữ 5 phút, không đụng mục khoá; nhưng sản phẩm tự ghi kết quả số \"a\", vi phạm luật A3. Câu 2 của trò chơi trùng với PHT1 câu 1 (BT11-B26-1), làm lộ đáp án phiếu ngay từ khởi động, trong khi trợ lý không nêu vấn đề này trong de_xuat."
  },
+ "judge2": null,
  "score": {
   "diem": 62.5,
   "A": 1,

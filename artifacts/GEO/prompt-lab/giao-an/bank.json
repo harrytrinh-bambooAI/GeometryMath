@@ -349,6 +349,526 @@
   "dap_so": null,
   "buoc": []
  },
+ "BT11-B15-1": {
+  "id": "BT11-B15-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 15,
+  "muc_do": "NB",
+  "de": "$\\lim\\dfrac{2n+1}{n}$?",
+  "giai": "$\\lim(2+\\tfrac1n)=2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B15-2": {
+  "id": "BT11-B15-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 15,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* $\\lim\\left(-\\dfrac12\\right)^n$ bằng: A. $0$; B. $-\\dfrac12$; C. $1$; D. $-\\infty$.",
+  "giai": "$\\left|-\\dfrac12\\right|<1$ nên $\\lim q^n=0$. Chọn **A**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B15-3": {
+  "id": "BT11-B15-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 15,
+  "muc_do": "TH",
+  "de": "$\\lim\\dfrac{n^2-3n}{4n^2+5}$.",
+  "giai": "$\\dfrac14$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B15-4": {
+  "id": "BT11-B15-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 15,
+  "muc_do": "TH",
+  "de": "$\\lim\\dfrac{3^n+2^n}{3^{n+1}}$.",
+  "giai": "Chia cho $3^n$: $\\dfrac{1+(2/3)^n}{3}\\to\\dfrac13$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B15-5": {
+  "id": "BT11-B15-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 15,
+  "muc_do": "VD",
+  "de": "Tính $\\lim\\left(\\sqrt{n^2+n}-n\\right)$.",
+  "giai": "- Bước 1: nhân liên hợp: $\\sqrt{n^2+n}-n=\\dfrac{n}{\\sqrt{n^2+n}+n}$.\n- Bước 2: chia tử và mẫu cho $n$: $\\dfrac{1}{\\sqrt{1+1/n}+1}$.\n- Bước 3: giới hạn $=\\dfrac1{1+1}=\\dfrac12$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B15-6": {
+  "id": "BT11-B15-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 15,
+  "muc_do": "VD",
+  "de": "Tính $S=1+\\tfrac12+\\tfrac14+\\dots$ (tổng vô hạn).",
+  "giai": "- Bước 1: đây là cấp số nhân lùi vô hạn với $u_1=1$, $q=\\dfrac12$, $|q|<1$.\n- Bước 2: $S=\\dfrac{u_1}{1-q}=\\dfrac1{1-\\frac12}=2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B15-7": {
+  "id": "BT11-B15-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 15,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Tính $\\lim\\left(\\sqrt{4n^2+n}-2n\\right)$.",
+  "giai": "- Nhân và chia với biểu thức liên hợp: $\\sqrt{4n^2+n}-2n=\\dfrac{n}{\\sqrt{4n^2+n}+2n}$.\n- Chia tử và mẫu cho $n$: $\\dfrac{1}{\\sqrt{4+1/n}+2}\\to\\dfrac1{2+2}=\\dfrac14$.\n- Đáp số: $0{,}25$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B15-8": {
+  "id": "BT11-B15-8",
+  "nguon": "lop-11/bai-tap",
+  "bai": 15,
+  "muc_do": "VDC",
+  "de": "Biểu diễn số thập phân vô hạn tuần hoàn $0{,}\\overline{36}$ thành phân số.",
+  "giai": "- Bước 1: $0{,}\\overline{36}=0{,}36+0{,}0036+0{,}000036+\\dots$, là tổng cấp số nhân lùi vô hạn.\n- Bước 2: $u_1=0{,}36$, $q=0{,}01$, $|q|<1$.\n- Bước 3: $S=\\dfrac{u_1}{1-q}=\\dfrac{0{,}36}{0{,}99}=\\dfrac{36}{99}=\\dfrac4{11}$ (kiểm tra: $4:11=0{,}3636\\ldots$).\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 15) | https://loigiaihay.com/bai-15-gioi-han-cua-day-so-toan-11-ket-noi-tri-thuc-e31542.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 15) | https://vietjack.com/toan-11-kn/bai-15-gioi-han-cua-day-so.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B16-1": {
+  "id": "BT11-B16-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 16,
+  "muc_do": "NB",
+  "de": "$\\lim_{x\\to1}(x^2+3x)$.",
+  "giai": "$4$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B16-2": {
+  "id": "BT11-B16-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 16,
+  "muc_do": "TH",
+  "de": "$\\lim_{x\\to3}\\dfrac{x^2-9}{x-3}$.",
+  "giai": "$6$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B16-3": {
+  "id": "BT11-B16-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 16,
+  "muc_do": "TH",
+  "de": "$\\lim_{x\\to+\\infty}\\dfrac{2x^2+x}{x^2-1}$.",
+  "giai": "$2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B16-4": {
+  "id": "BT11-B16-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 16,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* a) $\\lim_{x\\to2}(x^2-x)=2$; b) $\\lim_{x\\to+\\infty}(x^3-3x)=+\\infty$; c) $\\lim_{x\\to-\\infty}(x^3+1)=+\\infty$; d) $\\lim_{x\\to2^-}\\dfrac1{x-2}=-\\infty$.",
+  "giai": "- a) $4-2=2$: **Đúng**.\n- b) $x^3\\left(1-\\dfrac3{x^2}\\right)\\to+\\infty$: **Đúng**.\n- c) $x^3\\to-\\infty$: **Sai**.\n- d) $x<2$ nên $x-2\\to0^-$, kết quả $-\\infty$: **Đúng**.\n- Đáp án: Đ – Đ – S – Đ.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B16-5": {
+  "id": "BT11-B16-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 16,
+  "muc_do": "VD",
+  "de": "Tính $\\lim_{x\\to1^+}\\dfrac{x+1}{x-1}$ và $\\lim_{x\\to1^-}\\dfrac{x+1}{x-1}$.",
+  "giai": "- Bước 1: khi $x\\to1$ tử $x+1\\to2>0$.\n- Bước 2: $x\\to1^+$: $x-1\\to0^+$, thương $\\to+\\infty$.\n- Bước 3: $x\\to1^-$: $x-1\\to0^-$, thương $\\to-\\infty$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B16-6": {
+  "id": "BT11-B16-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 16,
+  "muc_do": "VD",
+  "de": "Tính $\\lim_{x\\to0}\\dfrac{\\sqrt{1+x}-1}{x}$.",
+  "giai": "- Bước 1: dạng $\\dfrac00$, nhân liên hợp: $\\dfrac{\\sqrt{1+x}-1}{x}=\\dfrac{(1+x)-1}{x(\\sqrt{1+x}+1)}=\\dfrac1{\\sqrt{1+x}+1}$.\n- Bước 2: khi $x\\to0$: $\\dfrac1{1+1}=\\dfrac12$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B16-7": {
+  "id": "BT11-B16-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 16,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Tính $\\lim_{x\\to1}\\dfrac{x^2-1}{x^3-1}$.",
+  "giai": "- Dạng $\\dfrac00$; phân tích: $x^2-1=(x-1)(x+1)$, $x^3-1=(x-1)(x^2+x+1)$.\n- Rút gọn $x-1\\ne0$: $\\dfrac{x+1}{x^2+x+1}\\to\\dfrac23$.\n- Đáp số: $\\dfrac23$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B16-8": {
+  "id": "BT11-B16-8",
+  "nguon": "lop-11/bai-tap",
+  "bai": 16,
+  "muc_do": "VDC",
+  "de": "Tính $\\lim_{x\\to+\\infty}\\left(\\sqrt{x^2+2x}-x\\right)$.",
+  "giai": "- Bước 1: dạng $\\infty-\\infty$, nhân liên hợp: $\\sqrt{x^2+2x}-x=\\dfrac{2x}{\\sqrt{x^2+2x}+x}$.\n- Bước 2: với $x>0$ chia tử và mẫu cho $x$: $\\dfrac{2}{\\sqrt{1+2/x}+1}$.\n- Bước 3: khi $x\\to+\\infty$: $\\dfrac{2}{1+1}=1$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 16) | https://loigiaihay.com/bai-16-gioi-han-cua-ham-so-toan-11-ket-noi-tri-thuc-e31543.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 16) | https://vietjack.com/toan-11-kn/bai-16-gioi-han-cua-ham-so.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B17-1": {
+  "id": "BT11-B17-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 17,
+  "muc_do": "NB",
+  "de": "$f(x)=\\dfrac{1}{x-2}$ liên tục trên tập nào?",
+  "giai": "$\\mathbb R\\setminus\\{2\\}$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B17-2": {
+  "id": "BT11-B17-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 17,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Hàm số nào liên tục trên $\\mathbb R$? A. $y=\\dfrac1x$; B. $y=\\tan x$; C. $y=x^3-x+1$; D. $y=\\sqrt x$.",
+  "giai": "Đa thức liên tục trên $\\mathbb R$; A không xác định tại $0$, B không xác định tại $\\dfrac\\pi2+k\\pi$, D chỉ xác định khi $x\\ge0$. Chọn **C**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B17-3": {
+  "id": "BT11-B17-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 17,
+  "muc_do": "TH",
+  "de": "Xét tính liên tục tại $x=1$ của $f(x)=\\begin{cases}\\dfrac{x^2-1}{x-1}&x\\ne1\\\\ 2&x=1\\end{cases}$.",
+  "giai": "$\\lim=\\lim(x+1)=2=f(1)$: liên tục.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B17-4": {
+  "id": "BT11-B17-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 17,
+  "muc_do": "TH",
+  "de": "Tìm $m$ để $f(x)=\\begin{cases}x+1&x<2\\\\ mx-1&x\\ge2\\end{cases}$ liên tục tại 2.",
+  "giai": "$3=2m-1\\Rightarrow m=2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B17-5": {
+  "id": "BT11-B17-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 17,
+  "muc_do": "VD",
+  "de": "Chứng minh phương trình $x^3-3x+1=0$ có ba nghiệm phân biệt.",
+  "giai": "- Bước 1: $f(x)=x^3-3x+1$ liên tục trên $\\mathbb R$.\n- Bước 2: $f(-2)=-1$, $f(0)=1$, $f(1)=-1$, $f(2)=3$.\n- Bước 3: $f(-2)f(0)<0$, $f(0)f(1)<0$, $f(1)f(2)<0$, nên có nghiệm trong mỗi khoảng $(-2;0)$, $(0;1)$, $(1;2)$; ba khoảng rời nhau nên ba nghiệm phân biệt.\n- Bước 4: đa thức bậc ba có tối đa ba nghiệm nên đúng ba nghiệm.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B17-6": {
+  "id": "BT11-B17-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 17,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Tìm $m$ để $f(x)=\\begin{cases}x^2+m&x<1\\\\ 2x+3&x\\ge1\\end{cases}$ liên tục tại $x=1$.",
+  "giai": "- $\\lim_{x\\to1^-}f(x)=1+m$; $\\lim_{x\\to1^+}f(x)=f(1)=5$.\n- Liên tục $\\Leftrightarrow1+m=5\\Rightarrow m=4$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B17-7": {
+  "id": "BT11-B17-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 17,
+  "muc_do": "VDC",
+  "de": "Chứng minh phương trình $\\cos x=x$ có nghiệm trong khoảng $\\left(0;\\dfrac\\pi2\\right)$.",
+  "giai": "- Bước 1: đặt $g(x)=\\cos x-x$, liên tục trên $\\left[0;\\dfrac\\pi2\\right]$.\n- Bước 2: $g(0)=1>0$; $g\\left(\\dfrac\\pi2\\right)=0-\\dfrac\\pi2<0$.\n- Bước 3: $g(0)g\\left(\\dfrac\\pi2\\right)<0$ nên tồn tại $c\\in\\left(0;\\dfrac\\pi2\\right)$ để $g(c)=0$, tức $\\cos c=c$. ∎\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 17) | https://loigiaihay.com/bai-17-ham-so-lien-tuc-toan-11-ket-noi-tri-thuc-e31544.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 17) | https://vietjack.com/toan-11-kn/bai-17-ham-so-lien-tuc.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B18-1": {
+  "id": "BT11-B18-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 18,
+  "muc_do": "NB",
+  "de": "Tính $8^{2/3}$.",
+  "giai": "$(\\sqrt[3]8)^2=4$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B18-2": {
+  "id": "BT11-B18-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 18,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Giá trị của $16^{3/4}$ là: A. $8$; B. $12$; C. $6$; D. $64$.",
+  "giai": "$16^{3/4}=(2^4)^{3/4}=2^3=8$. Chọn **A**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B18-3": {
+  "id": "BT11-B18-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 18,
+  "muc_do": "TH",
+  "de": "Rút gọn $\\dfrac{a^{\\sqrt3+1}\\cdot a^{2-\\sqrt3}}{(a^{\\sqrt2-1})^{\\sqrt2+1}}$ ($a>0$).",
+  "giai": "Tử $a^3$, mẫu $a^{1}$: $a^2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B18-4": {
+  "id": "BT11-B18-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 18,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Với $a>0$: a) $a^{1/2}\\cdot a^{1/3}=a^{5/6}$; b) $\\left(a^{\\sqrt2}\\right)^{\\sqrt2}=a^2$; c) $2^{-3}=-8$; d) $\\left(a^3\\right)^{-1/3}=a^{-1}$.",
+  "giai": "- a) $\\dfrac12+\\dfrac13=\\dfrac56$: **Đúng**.\n- b) $\\sqrt2\\cdot\\sqrt2=2$: **Đúng**.\n- c) $2^{-3}=\\dfrac18$: **Sai**.\n- d) $3\\cdot\\left(-\\dfrac13\\right)=-1$: **Đúng**.\n- Đáp án: Đ – Đ – S – Đ.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B18-5": {
+  "id": "BT11-B18-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 18,
+  "muc_do": "VD",
+  "de": "So sánh $\\left(\\tfrac13\\right)^{\\sqrt2}$ và $\\left(\\tfrac13\\right)^{1{,}5}$.",
+  "giai": "- Bước 1: $\\sqrt2\\approx1{,}414<1{,}5$.\n- Bước 2: hàm số $y=\\left(\\tfrac13\\right)^t$ có cơ số $\\dfrac13<1$ nên nghịch biến.\n- Bước 3: số mũ nhỏ hơn thì giá trị lớn hơn: $\\left(\\tfrac13\\right)^{\\sqrt2}>\\left(\\tfrac13\\right)^{1{,}5}$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B18-6": {
+  "id": "BT11-B18-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 18,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Với $a>0$, viết $\\sqrt{a^3\\sqrt[3]{a^2}}$ dưới dạng $a^{m/n}$ ($\\dfrac mn$ tối giản). Tính $m+n$.",
+  "giai": "- Trong căn: $a^3\\cdot a^{2/3}=a^{11/3}$.\n- Lấy căn bậc hai: $\\left(a^{11/3}\\right)^{1/2}=a^{11/6}$.\n- $m=11$, $n=6$ (tối giản), $m+n=17$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B18-7": {
+  "id": "BT11-B18-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 18,
+  "muc_do": "VDC",
+  "de": "Cho $x>0$, $x+x^{-1}=7$. Tính $x^{1/2}+x^{-1/2}$.",
+  "giai": "- Bước 1: đặt $A=x^{1/2}+x^{-1/2}>0$.\n- Bước 2: $A^2=x+2\\cdot x^{1/2}x^{-1/2}+x^{-1}=x+x^{-1}+2=9$.\n- Bước 3: $A>0$ nên $A=3$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 18) | https://loigiaihay.com/bai-18-luy-thua-voi-so-mu-thuc-toan-11-ket-noi-tri-thuc-e31935.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 18) | https://vietjack.com/toan-11-kn/bai-18-luy-thua-voi-so-mu-thuc.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B19-1": {
+  "id": "BT11-B19-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 19,
+  "muc_do": "NB",
+  "de": "$\\log_2 32$?",
+  "giai": "$5$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B19-2": {
+  "id": "BT11-B19-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 19,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Giá trị của $\\log_2\\dfrac18$ là: A. $-3$; B. $3$; C. $\\dfrac13$; D. $-\\dfrac13$.",
+  "giai": "$\\dfrac18=2^{-3}$ nên $\\log_22^{-3}=-3$. Chọn **A**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B19-3": {
+  "id": "BT11-B19-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 19,
+  "muc_do": "TH",
+  "de": "Cho $\\log_23=a$. Tính $\\log_{12}18$ theo $a$.",
+  "giai": "- Bước 1: đổi cơ số về $2$: $\\log_{12}18=\\dfrac{\\log_218}{\\log_212}$.\n- Bước 2: $\\log_218=\\log_2(2\\cdot3^2)=1+2a$; $\\log_212=\\log_2(2^2\\cdot3)=2+a$.\n- Bước 3: $\\log_{12}18=\\dfrac{1+2a}{2+a}$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B19-4": {
+  "id": "BT11-B19-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 19,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* a) $\\log_212=2+\\log_23$; b) $\\log_35\\cdot\\log_59=2$; c) $\\lg100=3$; d) $\\log_ab^2=2\\log_ab$ với $a>0,a\\ne1,b>0$.",
+  "giai": "- a) $\\log_2(4\\cdot3)=2+\\log_23$: **Đúng**.\n- b) Đổi cơ số: $\\log_35\\cdot\\log_59=\\log_39=2$: **Đúng**.\n- c) $\\lg100=2$: **Sai**.\n- d) Công thức lũy thừa của logarit: **Đúng**.\n- Đáp án: Đ – Đ – S – Đ.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B19-5": {
+  "id": "BT11-B19-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 19,
+  "muc_do": "VD",
+  "de": "Tính $A=\\log_26+\\log_2\\dfrac13$.",
+  "giai": "- Bước 1: $\\log_2x+\\log_2y=\\log_2(xy)$ với $x,y>0$.\n- Bước 2: $A=\\log_2\\left(6\\cdot\\dfrac13\\right)=\\log_22=1$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B19-6": {
+  "id": "BT11-B19-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 19,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Tính $B=2\\log_36-\\log_34$.",
+  "giai": "- $2\\log_36=\\log_3 36$.\n- $B=\\log_336-\\log_34=\\log_3\\dfrac{36}4=\\log_39=2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B19-7": {
+  "id": "BT11-B19-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 19,
+  "muc_do": "VDC",
+  "de": "Độ pH được tính bởi $\\mathrm{pH}=-\\lg[H^+]$. Tìm pH khi $[H^+]=10^{-7}$ và khi $[H^+]=4\\cdot10^{-5}$.",
+  "giai": "- Bước 1: $[H^+]=10^{-7}$: $\\mathrm{pH}=-\\lg10^{-7}=7$.\n- Bước 2: $[H^+]=4\\cdot10^{-5}$: $\\lg(4\\cdot10^{-5})=\\lg4-5$.\n- Bước 3: $\\mathrm{pH}=5-\\lg4\\approx5-0{,}602=4{,}40$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 19) | https://loigiaihay.com/bai-19-logarit-toan-11-ket-noi-tri-thuc-e31936.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 19) | https://vietjack.com/toan-11-kn/bai-19-logarit.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B20-1": {
+  "id": "BT11-B20-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 20,
+  "muc_do": "NB",
+  "de": "TXĐ của $y=\\log_3(x-2)$.",
+  "giai": "$x>2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B20-2": {
+  "id": "BT11-B20-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 20,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Hàm số $y=2^x$: A. đồng biến trên $\\mathbb R$; B. nghịch biến trên $\\mathbb R$; C. đồng biến trên $(0;+\\infty)$ và nghịch biến trên $(-\\infty;0)$; D. có tập giá trị là $\\mathbb R$.",
+  "giai": "Cơ số $2>1$ nên đồng biến trên $\\mathbb R$; tập giá trị là $(0;+\\infty)$. Chọn **A**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B20-3": {
+  "id": "BT11-B20-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 20,
+  "muc_do": "TH",
+  "de": "So sánh $\\log_{0,5}3$ và $\\log_{0,5}5$.",
+  "giai": "cơ số $<1$ nghịch biến: $\\log_{0,5}3>\\log_{0,5}5$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B20-4": {
+  "id": "BT11-B20-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 20,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Cho $y=\\log_{1/2}x$. a) Tập xác định là $(0;+\\infty)$; b) hàm số nghịch biến trên tập xác định; c) đồ thị đi qua điểm $(1;0)$; d) $\\log_{1/2}2>0$.",
+  "giai": "- a) **Đúng**. b) Cơ số $\\dfrac12<1$: **Đúng**. c) $\\log_{1/2}1=0$: **Đúng**.\n- d) $\\log_{1/2}2=-1<0$: **Sai**.\n- Đáp án: Đ – Đ – Đ – S.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B20-5": {
+  "id": "BT11-B20-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 20,
+  "muc_do": "VD",
+  "de": "Tìm TXĐ của $y=\\log_2(x^2-4x+3)$.",
+  "giai": "- Bước 1: điều kiện $x^2-4x+3>0$.\n- Bước 2: $x^2-4x+3=(x-1)(x-3)>0\\Leftrightarrow x<1$ hoặc $x>3$.\n- Bước 3: $D=(-\\infty;1)\\cup(3;+\\infty)$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B20-6": {
+  "id": "BT11-B20-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 20,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Với $x$ thuộc tập xác định của $y=\\ln(6-x)+\\sqrt{x-1}$, có bao nhiêu giá trị nguyên của $x$?",
+  "giai": "- Điều kiện: $6-x>0$ và $x-1\\ge0$, tức $1\\le x<6$.\n- Các số nguyên: $1,2,3,4,5$.\n- Có $5$ giá trị.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B20-7": {
+  "id": "BT11-B20-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 20,
+  "muc_do": "VDC",
+  "de": "Vi khuẩn tăng gấp đôi sau mỗi $3$ giờ, ban đầu có $500$ con. Số vi khuẩn sau $t$ giờ? Sau bao lâu đạt $16\\,000$ con?",
+  "giai": "- Bước 1: sau $t$ giờ có $\\dfrac t3$ lần gấp đôi: $N(t)=500\\cdot2^{t/3}$.\n- Bước 2: $N=16\\,000\\Rightarrow2^{t/3}=32=2^5$.\n- Bước 3: $\\dfrac t3=5\\Rightarrow t=15$ giờ.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 20) | https://loigiaihay.com/bai-20-ham-so-mu-va-ham-so-logarit-toan-11-ket-noi-tri-thuc-e31937.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 20) | https://vietjack.com/toan-11-kn/bai-20-ham-so-mu-va-ham-so-logarit.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B21-1": {
+  "id": "BT11-B21-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 21,
+  "muc_do": "NB",
+  "de": "$2^x=8$.",
+  "giai": "$x=3$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B21-2": {
+  "id": "BT11-B21-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 21,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Nghiệm của phương trình $\\log_3x=2$ là: A. $x=6$; B. $x=9$; C. $x=8$; D. $x=\\dfrac23$.",
+  "giai": "$x=3^2=9$ (điều kiện $x>0$ thỏa). Chọn **B**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B21-3": {
+  "id": "BT11-B21-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 21,
+  "muc_do": "TH",
+  "de": "$\\log_2(x-1)=3$.",
+  "giai": "$x=9$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B21-4": {
+  "id": "BT11-B21-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 21,
+  "muc_do": "TH",
+  "de": "$4^x-3\\cdot2^x+2=0$.",
+  "giai": "$t=2^x$: $t^2-3t+2=0$, $t=1,2$: $x=0,1$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B21-5": {
+  "id": "BT11-B21-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 21,
+  "muc_do": "VD",
+  "de": "Giải $\\log_2x+\\log_2(x-3)=2$.",
+  "giai": "- Bước 1: điều kiện $x>0$ và $x-3>0$, tức $x>3$.\n- Bước 2: $\\log_2[x(x-3)]=2\\Rightarrow x(x-3)=4\\Rightarrow x^2-3x-4=0\\Rightarrow x=4$ hoặc $x=-1$.\n- Bước 3: đối chiếu điều kiện: loại $x=-1$, nhận $x=4$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B21-6": {
+  "id": "BT11-B21-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 21,
+  "muc_do": "VD",
+  "de": "Giải bất phương trình $\\left(\\tfrac12\\right)^{x}>\\tfrac14$.",
+  "giai": "- Bước 1: $\\tfrac14=\\left(\\tfrac12\\right)^2$ nên bất phương trình thành $\\left(\\tfrac12\\right)^x>\\left(\\tfrac12\\right)^2$.\n- Bước 2: cơ số $\\dfrac12<1$ nên đảo chiều: $x<2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B21-7": {
+  "id": "BT11-B21-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 21,
+  "muc_do": "VDC",
+  "de": "Gửi $200$ triệu đồng, lãi $7\\%$/năm (lãi nhập gốc). Sau ít nhất bao nhiêu năm số tiền vượt $300$ triệu?",
+  "giai": "- Bước 1: sau $n$ năm: $200(1{,}07)^n$.\n- Bước 2: $200(1{,}07)^n>300\\Rightarrow(1{,}07)^n>1{,}5\\Rightarrow n>\\log_{1{,}07}1{,}5=\\dfrac{\\ln1{,}5}{\\ln1{,}07}\\approx5{,}99$.\n- Bước 3: $n$ nguyên nên $n=6$. Thử: $200\\cdot1{,}07^6\\approx300{,}1>300$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B21-8": {
+  "id": "BT11-B21-8",
+  "nguon": "lop-11/bai-tap",
+  "bai": 21,
+  "muc_do": "VDC",
+  "de": "*[Trả lời ngắn]* Tìm giá trị nguyên lớn nhất của $m$ để phương trình $4^x-2^{x+1}+m=0$ có nghiệm thực.",
+  "giai": "- Bước 1: đặt $t=2^x>0$: $t^2-2t+m=0$. Cần phương trình này có nghiệm $t>0$.\n- Bước 2: có nghiệm khi $\\Delta'=1-m\\ge0\\Leftrightarrow m\\le1$.\n- Bước 3: với $m\\le1$: tổng hai nghiệm $=2>0$; nếu $m>0$ tích $>0$ nên cả hai nghiệm dương; nếu $m\\le0$ thì nghiệm $1+\\sqrt{1-m}>0$. Vậy điều kiện chỉ là $m\\le1$.\n- Số nguyên lớn nhất: $m=1$ (khi đó $t=1$, $x=0$).\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 21) | https://loigiaihay.com/bai-21-phuong-trinh-bat-phuong-trinh-mu-va-logarit-toan-11-ket-noi-tri-thuc-e31939.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 21) | https://vietjack.com/toan-11-kn/bai-21-phuong-trinh-bat-phuong-trinh-mu-va-logarit.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
  "BT11-B22-1": {
   "id": "BT11-B22-1",
   "nguon": "lop-11/bai-tap",
@@ -776,6 +1296,226 @@
   "muc_do": "VDC",
   "de": "*[Trả lời ngắn]* Chóp $S.ABCD$ đáy hình vuông cạnh $2a$, tam giác $SAB$ đều và nằm trong mặt phẳng vuông góc với đáy. Tính thể tích theo $a$.",
   "giai": "- Bước 1: gọi $H$ là trung điểm $AB$; $\\triangle SAB$ đều nên $SH\\perp AB$ và $SH=\\dfrac{2a\\sqrt3}2=a\\sqrt3$.\n- Bước 2: $(SAB)\\perp(ABCD)$, giao tuyến $AB$, $SH\\perp AB$ nên $SH\\perp(ABCD)$.\n- Bước 3: $V=\\dfrac13S_{ABCD}\\cdot SH=\\dfrac13\\cdot4a^2\\cdot a\\sqrt3=\\dfrac{4\\sqrt3a^3}3$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 27) | https://loigiaihay.com/bai-27-the-tich-toan-11-ket-noi-tri-thuc-e31964.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 27) | https://vietjack.com/toan-11-kn/bai-27-the-tich.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (5→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B31-1": {
+  "id": "BT11-B31-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 31,
+  "muc_do": "NB",
+  "de": "Đạo hàm của $f(x)=x^2$ tại $x_0=3$ theo định nghĩa.",
+  "giai": "$\\lim\\dfrac{x^2-9}{x-3}=\\lim(x+3)=6$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B31-2": {
+  "id": "BT11-B31-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 31,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Hệ số góc của tiếp tuyến của đồ thị $y=f(x)$ tại điểm có hoành độ $x_0$ là: A. $f(x_0)$; B. $f'(x_0)$; C. $f''(x_0)$; D. $\\dfrac1{f'(x_0)}$.",
+  "giai": "Ý nghĩa hình học của đạo hàm. Chọn **B**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B31-3": {
+  "id": "BT11-B31-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 31,
+  "muc_do": "TH",
+  "de": "Viết phương trình tiếp tuyến của $y=x^2$ tại điểm có hoành độ 1.",
+  "giai": "$f'(1)=2$, $f(1)=1$: $y=2x-1$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B31-4": {
+  "id": "BT11-B31-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 31,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Cho $y=x^3$. a) $y'(1)=3$; b) tiếp tuyến tại điểm có hoành độ $1$ là $y=3x-2$; c) tiếp tuyến đó cắt $Oy$ tại $(0;-2)$; d) hệ số góc tiếp tuyến tại $x=-1$ bằng $-3$.",
+  "giai": "$y'=3x^2$.\n- a) $y'(1)=3$: **Đúng**.\n- b) $y(1)=1$; $y=3(x-1)+1=3x-2$: **Đúng**.\n- c) $x=0\\Rightarrow y=-2$: **Đúng**.\n- d) $y'(-1)=3(-1)^2=3\\ne-3$: **Sai**.\n- Đáp án: Đ – Đ – Đ – S.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B31-5": {
+  "id": "BT11-B31-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 31,
+  "muc_do": "VD",
+  "de": "Chất điểm chuyển động có $s(t)=t^2+2t$ (m). Tính vận tốc tại $t=3$ s.",
+  "giai": "- Bước 1: vận tốc tức thời là đạo hàm của quãng đường: $v(t)=s'(t)$.\n- Bước 2: $s'(t)=2t+2$ (quy tắc ở bài 32).\n- Bước 3: $v(3)=2\\cdot3+2=8$ m/s.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B31-6": {
+  "id": "BT11-B31-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 31,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Tiếp tuyến của đồ thị $y=x^2-2x$ tại điểm $M$ có hệ số góc bằng $4$. Tìm hoành độ của $M$.",
+  "giai": "- $y'=2x-2$.\n- Hệ số góc $=4\\Rightarrow2x-2=4\\Rightarrow x=3$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B31-7": {
+  "id": "BT11-B31-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 31,
+  "muc_do": "VDC",
+  "de": "Chứng minh $f(x)=|x|$ không có đạo hàm tại $x=0$.",
+  "giai": "- Bước 1: xét $\\dfrac{f(x)-f(0)}{x-0}=\\dfrac{|x|}x$.\n- Bước 2: $x\\to0^+$: $\\dfrac{|x|}x=1\\to1$. $x\\to0^-$: $\\dfrac{|x|}x=-1\\to-1$.\n- Bước 3: hai giới hạn một phía khác nhau nên không tồn tại $\\lim_{x\\to0}\\dfrac{f(x)-f(0)}x$, tức $f'(0)$ không tồn tại. ∎\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 31) | https://loigiaihay.com/bai-31-dinh-nghia-va-y-nghia-cua-dao-ham-toan-11-ket-noi-tri-thuc-e31972.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 31) | https://vietjack.com/toan-11-kn/bai-31-dinh-nghia-va-y-nghia-cua-dao-ham.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B32-1": {
+  "id": "BT11-B32-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 32,
+  "muc_do": "NB",
+  "de": "$y=x^3-2x+5$. $y'$?",
+  "giai": "$3x^2-2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B32-2": {
+  "id": "BT11-B32-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 32,
+  "muc_do": "TH",
+  "de": "$y=x\\sin x$.",
+  "giai": "$y'=\\sin x+x\\cos x$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B32-3": {
+  "id": "BT11-B32-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 32,
+  "muc_do": "TH",
+  "de": "$y=\\dfrac{x+1}{x-1}$.",
+  "giai": "$y'=\\dfrac{(x-1)-(x+1)}{(x-1)^2}=\\dfrac{-2}{(x-1)^2}$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B32-4": {
+  "id": "BT11-B32-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 32,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* a) $(\\sin x)'=\\cos x$; b) $(\\cos2x)'=-2\\sin2x$; c) $(x\\ln x)'=\\ln x$; d) $(e^{2x})'=2e^{2x}$.",
+  "giai": "- a) **Đúng**. b) $-\\sin2x\\cdot(2x)'=-2\\sin2x$: **Đúng**.\n- c) $(x\\ln x)'=\\ln x+x\\cdot\\dfrac1x=\\ln x+1$: **Sai**.\n- d) **Đúng**.\n- Đáp án: Đ – Đ – S – Đ.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B32-5": {
+  "id": "BT11-B32-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 32,
+  "muc_do": "VD",
+  "de": "Tính đạo hàm của $y=\\ln(x^2+1)$.",
+  "giai": "- Quy tắc: $(\\ln u)'=\\dfrac{u'}{u}$ với $u=x^2+1$, $u'=2x$.\n- $y'=\\dfrac{2x}{x^2+1}$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B32-6": {
+  "id": "BT11-B32-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 32,
+  "muc_do": "VD",
+  "de": "Viết phương trình tiếp tuyến của $y=x^3-3x$ tại điểm có hoành độ $2$.",
+  "giai": "- Bước 1: $y'=3x^2-3$, $y'(2)=9$; $y(2)=8-6=2$.\n- Bước 2: phương trình $y=9(x-2)+2=9x-16$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B32-7": {
+  "id": "BT11-B32-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 32,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Cho $y=x^2e^x$. Tính $y'(1)$.",
+  "giai": "- $y'=2xe^x+x^2e^x=(x^2+2x)e^x$.\n- $y'(1)=(1+2)e=3e$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B32-8": {
+  "id": "BT11-B32-8",
+  "nguon": "lop-11/bai-tap",
+  "bai": 32,
+  "muc_do": "VDC",
+  "de": "Tìm $m$ để tiếp tuyến của $y=x^3-mx$ tại điểm có hoành độ $1$ song song với đường thẳng $y=2x+5$.",
+  "giai": "- Bước 1: $y'=3x^2-m$, hệ số góc tại $x=1$ là $3-m$.\n- Bước 2: song song với $y=2x+5$ nên $3-m=2\\Rightarrow m=1$.\n- Bước 3: kiểm tra không trùng: $y(1)=1-m=0$, tiếp tuyến $y=2(x-1)=2x-2\\ne2x+5$ (không trùng). Vậy $m=1$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 32) | https://loigiaihay.com/bai-32-cac-quy-tac-tinh-dao-ham-toan-11-ket-noi-tri-thuc-e31973.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 32) | https://vietjack.com/toan-11-kn/bai-32-cac-quy-tac-tinh-dao-ham.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B33-1": {
+  "id": "BT11-B33-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 33,
+  "muc_do": "NB",
+  "de": "$y=x^4-3x$, $y''$?",
+  "giai": "$y'=4x^3-3$; $y''=12x^2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B33-2": {
+  "id": "BT11-B33-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 33,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Đạo hàm cấp hai của $y=x^3$ là: A. $3x^2$; B. $6x$; C. $6$; D. $x^3$.",
+  "giai": "$y'=3x^2$, $y''=6x$. Chọn **B**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B33-3": {
+  "id": "BT11-B33-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 33,
+  "muc_do": "TH",
+  "de": "$y=\\sin2x$. Tính $y''$ và kiểm tra $y''+4y=0$.",
+  "giai": "$y'=2\\cos2x$, $y''=-4\\sin2x$; $y''+4y=0$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B33-4": {
+  "id": "BT11-B33-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 33,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Cho $y=e^{2x}$. a) $y'=2e^{2x}$; b) $y''=4e^{2x}$; c) $y''-2y'=0$; d) $y''+y'=0$.",
+  "giai": "- a) **Đúng**. b) $y''=2\\cdot2e^{2x}=4e^{2x}$: **Đúng**.\n- c) $4e^{2x}-2\\cdot2e^{2x}=0$: **Đúng**.\n- d) $4e^{2x}+2e^{2x}=6e^{2x}\\ne0$: **Sai**.\n- Đáp án: Đ – Đ – Đ – S.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B33-5": {
+  "id": "BT11-B33-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 33,
+  "muc_do": "VD",
+  "de": "Chuyển động có $s(t)=t^3-3t^2+2t$. Tính gia tốc tại $t=2$.",
+  "giai": "- Bước 1: $v=s'=3t^2-6t+2$.\n- Bước 2: $a=s''=6t-6$.\n- Bước 3: $a(2)=6\\cdot2-6=6$ m/s$^2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B33-6": {
+  "id": "BT11-B33-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 33,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Chuyển động có $s(t)=2t^3-9t^2+12t$ ($t$ giây). Tại thời điểm nào gia tốc bằng $0$?",
+  "giai": "- $v=s'=6t^2-18t+12$; $a=s''=12t-18$.\n- $a=0\\Rightarrow t=\\dfrac{18}{12}=1{,}5$ (giây).",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B33-7": {
+  "id": "BT11-B33-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 33,
+  "muc_do": "VDC",
+  "de": "Chứng minh hàm số $y=xe^x$ thỏa mãn $y''-2y'+y=0$.",
+  "giai": "- Bước 1: $y'=e^x+xe^x=(1+x)e^x$.\n- Bước 2: $y''=e^x+(1+x)e^x=(2+x)e^x$.\n- Bước 3: $y''-2y'+y=\\left[(2+x)-2(1+x)+x\\right]e^x=0\\cdot e^x=0$. ∎\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 33) | https://loigiaihay.com/bai-33-dao-ham-cap-hai-toan-11-ket-noi-tri-thuc-e31974.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 33) | https://vietjack.com/toan-11-kn/bai-33-dao-ham-cap-hai.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
   "dap_so": null,
   "buoc": []
  },
@@ -2629,6 +3369,88 @@
     "mo_ta": "Lấy $MN=AC=6$ (quên một nửa)",
     "loi_giai": "B1: $MN=PQ=AC=6$.\nB2: $NP=MQ=\\dfrac{BD}2=4$.\nB3: Chu vi $=2(6+4)=20$.",
     "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-059": {
+  "id": "BM-059",
+  "nguon": "baseline/bo-mau",
+  "bai": 21,
+  "muc_do": "VD",
+  "de": "Giải phương trình $\\log_3(x^2-3x+2)=\\log_3(x+10)$.",
+  "giai": "B1: Điều kiện $x^2-3x+2>0$ và $x+10>0$.\nB2: PT $\\Leftrightarrow x^2-3x+2=x+10\\Leftrightarrow x^2-4x-8=0\\Leftrightarrow x=2\\pm2\\sqrt3$.\nB3: Hai nghiệm thỏa $x+10>0$ (và khi đó $x^2-3x+2=x+10>0$): nhận cả hai.",
+  "dap_so": "$x=2\\pm2\\sqrt3$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "ĐK"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$x=2\\pm2\\sqrt3$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$x=2\\pm2\\sqrt3$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Loại nghiệm âm $2-2\\sqrt3$ vì nghĩ $x$ phải dương",
+    "loi_giai": "B1: Điều kiện $x^2-3x+2>0$ và $x+10>0$.\nB2: PT $\\Leftrightarrow x^2-3x+2=x+10\\Leftrightarrow x^2-4x-8=0\\Leftrightarrow x=2\\pm2\\sqrt3$.\nB3: $2-2\\sqrt3<0$ nên loại; nghiệm $x=2+2\\sqrt3$.",
+    "diem_dung": 0.75
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Chuyển vế sai: $x^2-2x-8=0$",
+    "loi_giai": "B1: Điều kiện $x^2-3x+2>0$ và $x+10>0$.\nB2: $x^2-3x+2=x+10\\Leftrightarrow x^2-2x-8=0\\Leftrightarrow x=4$ hoặc $x=-2$.\nB3: Thử ĐK: $x=4$ và $x=-2$ đều thỏa; nghiệm $x\\in\\{4;-2\\}$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-060": {
+  "id": "BM-060",
+  "nguon": "baseline/bo-mau",
+  "bai": 17,
+  "muc_do": "VD",
+  "de": "Tìm $a$ để $f(x)=\\begin{cases}\\dfrac{\\sqrt{x+3}-2}{x-1}&x\\ne1\\\\ a&x=1\\end{cases}$ liên tục tại $x=1$.",
+  "giai": "B1: Cần $\\lim_{x\\to1}f(x)=f(1)=a$.\nB2: $\\dfrac{\\sqrt{x+3}-2}{x-1}=\\dfrac{1}{\\sqrt{x+3}+2}$ ($x\\ne1$).\nB3: Giới hạn $=\\dfrac14$, vậy $a=\\dfrac14$.",
+  "dap_so": "$a=\\dfrac14$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$\\lim f=a$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$\\dfrac1{\\sqrt{x+3}+2}$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac14$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Nhân liên hợp sai dấu: được $\\dfrac1{\\sqrt{x+3}-2}$",
+    "loi_giai": "B1: Cần $\\lim_{x\\to1}f(x)=f(1)=a$.\nB2: $\\dfrac{\\sqrt{x+3}-2}{x-1}=\\dfrac1{\\sqrt{x+3}-2}$.\nB3: Giới hạn không tồn tại hữu hạn; không có $a$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cho rằng chỉ cần $f(1)$ xác định nên mọi $a$ đều được",
+    "loi_giai": "B1: $f(1)=a$ xác định nên $f$ liên tục với mọi $a$.\nB2: $\\dfrac{\\sqrt{x+3}-2}{x-1}=\\dfrac{1}{\\sqrt{x+3}+2}$ ($x\\ne1$).\nB3: Vậy mọi $a\\in\\mathbb R$.",
+    "diem_dung": 0.5
    }
   ]
  }

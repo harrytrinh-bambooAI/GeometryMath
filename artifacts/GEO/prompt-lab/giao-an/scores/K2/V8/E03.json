@@ -1,0 +1,35 @@
+{
+ "case": "E03",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "reply"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý từ chối đúng vì công thức tọa độ không có trong danh sách kiến thức được cấp (A1), đưa phương án thay thế hợp lệ và chỉ đề xuất kèm lý do, không tự sửa giáo án; trợ lý cũng phát hiện đúng lỗi có sẵn: HĐ4 làm ở nhà nhưng o_nha=false và vẫn tính 5 phút. Câu 'tổng phút trên lớp vẫn 45 nếu giữ nguyên' diễn đạt chưa rõ (thực tế trên lớp chỉ 40 phút), và nhận xét câu 3 'trùng dạng' cần nêu rõ hơn rằng câu 3 đặt thêm hình chóp đáy vuông."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 96.2,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.75
+ }
+}

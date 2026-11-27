@@ -72,6 +72,7 @@
   ],
   "nhan_xet": "Tổng thời lượng các hoạt động trên lớp là 7+8+10+13 = 38 phút, không bằng 45 phút; PHT1 không khớp với HD3 và phiếu dùng kiến thức ngoài danh sách được cấp (thể tích, toạ độ). Ngoài các lỗi trên, giáo án bám tốt hai kiến thức trọng tâm, có phong cách khám phá rõ và không tự ghi đáp số."
  },
+ "judge2": null,
  "score": {
   "diem": 0.0,
   "A": 7,

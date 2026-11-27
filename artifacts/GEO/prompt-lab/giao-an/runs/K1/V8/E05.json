@@ -1,0 +1,34 @@
+{
+ "case": "E05",
+ "variant": "V8",
+ "round": "K1",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"add\", \"path\": \"phieu_hoc_tap[0].cau\", \"before\": null, \"after\": {\"so\": 4, \"nguon\": \"BM-008\", \"muc_do\": \"VD\", \"de\": \"Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\\\perp(ABCD)$ và $SA=a\\\\sqrt3$. Tính khoảng cách giữa hai đường thẳng $AB$ và $SD$.\", \"kt\": [\"KT11-C07-DN-012\", \"KT11-C07-PP-001\"], \"dap_so\": null, \"buoc_goi_y\": [\"Xác định hai đường thẳng AB và SD chéo nhau.\", \"Chứng minh AB vuông góc với (SAD) bằng cách dùng AB ⊥ AD và AB ⊥ SA.\", \"Trong mặt phẳng (SAD), dựng AH vuông góc với SD tại H.\", \"Chỉ ra AH là đoạn vuông góc chung của AB và SD.\", \"Tính AH trong tam giác SAD vuông tại A từ SA và AD.\"]}, \"ly_do\": \"Giáo viên yêu cầu thêm một câu Vận dụng về khoảng cách hai đường thẳng chéo nhau lấy từ kho. BM-008 là câu VD phù hợp, chưa có trong phiếu và đúng id kho.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[*].thoi_luong_phut\", \"van_de\": \"Tổng thời lượng các HĐ là 5+20+20+5 = 50 phút, vượt 45 phút của 1 tiết.\", \"goi_y\": \"Giảm 5 phút, ví dụ HD3 xuống 15 phút. Có thể chuyển HD4 thành HĐ ở nhà (o_nha true, 0 phút) rồi cân lại thời lượng HD2 và HD3.\", \"ly_do\": \"Luật A5: tổng thời lượng trên lớp phải đúng bằng số tiết × 45.\"}, {\"vi_tri\": \"hoat_dong[3]\", \"van_de\": \"HD4 ghi o_nha false và 5 phút, nhưng cách tổ chức là HS làm ở nhà và nộp tiết sau.\", \"goi_y\": \"Đặt o_nha true và thoi_luong_phut 0, hoặc sửa cách tổ chức thành làm trên lớp.\", \"ly_do\": \"Luật A5: HĐ làm ở nhà phải có o_nha true và 0 phút.\"}, {\"vi_tri\": \"hoat_dong[1].kien_thuc[1].phat_bieu\", \"van_de\": \"Công thức ghi $\\\\dfrac1{AH}=\\\\dfrac1{SA}+\\\\dfrac1{AK}$ thiếu bình phương so với danh sách.\", \"goi_y\": \"Sửa thành $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$ (KT11-C07-CT-003). Cần sửa luôn cách nói \\\"hệ thức\\\" trong HD2 cho khớp.\", \"ly_do\": \"Luật A1: công thức phải đúng nội dung trong danh sách kiến thức.\"}, {\"vi_tri\": \"hoat_dong[2].noi_dung\", \"van_de\": \"HD3 chỉ giao câu 2, 3, nên câu 4 vừa thêm chưa được hoạt động nào nhắc tới. Không HĐ nào dạy KT11-C07-DN-012 và KT11-C07-PP-001, mà mục tiêu đã khoá cũng không có khoảng cách hai đường chéo nhau.\", \"goi_y\": \"Nếu muốn dùng câu 4, thêm câu 4 vào HD3 (cần thêm 6–8 phút) hoặc giao ở nhà. Cân nhắc bổ sung hai mã kiến thức trên vào một HĐ.\", \"ly_do\": \"Khớp nội bộ giữa phiếu và hoạt động; câu mới dùng kiến thức chưa được dạy trong tiết này.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[1] và cau[2]\", \"van_de\": \"Câu 2 (BT11-B26-3) và câu 3 (BM-007) gần như trùng dạng, đều là d(A,(SBC)) với SA ⊥ đáy và SA = a. Câu 3 gắn mã DN-010 trong khi cách làm dùng CT-003.\", \"goi_y\": \"Có thể thay một trong hai câu bằng bài khác trong kho. Kiểm tra lại mã kt của câu 3.\", \"ly_do\": \"Tránh lặp dạng bài và đảm bảo mã kiến thức khớp.\"}], \"unsure\": [\"Giáo viên không nói rõ câu nào trong kho, nên chọn BM-008 vì có mức VD và dùng đúng KT11-C07-DN-012, KT11-C07-PP-001. Có thể đổi sang BM-009 nếu muốn bài khó hơn.\"]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"add\",\"path\":\"phieu_hoc_tap[0].cau\",\"before\":null,\"after\":{\"so\":4,\"nguon\":\"BM-008\",\"muc_do\":\"VD\",\"de\":\"Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\\\perp(ABCD)$ và $SA=a\\\\sqrt3$. Tính khoảng cách giữa hai đường thẳng $AB$ và $SD$.\",\"kt\":[\"KT11-C07-DN-012\",\"KT11-C07-PP-001\"],\"dap_so\":null,\"buoc_goi_y\":[\"Xác định hai đường thẳng AB và SD chéo nhau.\",\"Chứng minh AB vuông góc với (SAD) bằng cách dùng AB ⊥ AD và AB ⊥ SA.\",\"Trong mặt phẳng (SAD), dựng AH vuông góc với SD tại H.\",\"Chỉ ra AH là đoạn vuông góc chung của AB và SD.\",\"Tính AH trong tam giác SAD vuông tại A từ SA và AD.\"]},\"ly_do\":\"Giáo viên yêu cầu thêm một câu Vận dụng về khoảng cách hai đường thẳng chéo nhau lấy từ kho. BM-008 là câu VD phù hợp, chưa có trong phiếu và đúng id kho.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[*].thoi_luong_phut\",\"van_de\":\"Tổng thời lượng các HĐ là 5+20+20+5 = 50 phút, vượt 45 phút của 1 tiết.\",\"goi_y\":\"Giảm 5 phút, ví dụ HD3 xuống 15 phút. Có thể chuyển HD4 thành HĐ ở nhà (o_nha true, 0 phút) rồi cân lại thời lượng HD2 và HD3.\",\"ly_do\":\"Luật A5: tổng thời lượng trên lớp phải đúng bằng số tiết × 45.\"},{\"vi_tri\":\"hoat_dong[3]\",\"van_de\":\"HD4 ghi o_nha false và 5 phút, nhưng cách tổ chức là HS làm ở nhà và nộp tiết sau.\",\"goi_y\":\"Đặt o_nha true và thoi_luong_phut 0, hoặc sửa cách tổ chức thành làm trên lớp.\",\"ly_do\":\"Luật A5: HĐ làm ở nhà phải có o_nha true và 0 phút.\"},{\"vi_tri\":\"hoat_dong[1].kien_thuc[1].phat_bieu\",\"van_de\":\"Công thức ghi $\\\\dfrac1{AH}=\\\\dfrac1{SA}+\\\\dfrac1{AK}$ thiếu bình phương so với danh sách.\",\"goi_y\":\"Sửa thành $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$ (KT11-C07-CT-003). Cần sửa luôn cách nói \\\"hệ thức\\\" trong HD2 cho khớp.\",\"ly_do\":\"Luật A1: công thức phải đúng nội dung trong danh sách kiến thức.\"},{\"vi_tri\":\"hoat_dong[2].noi_dung\",\"van_de\":\"HD3 chỉ giao câu 2, 3, nên câu 4 vừa thêm chưa được hoạt động nào nhắc tới. Không HĐ nào dạy KT11-C07-DN-012 và KT11-C07-PP-001, mà mục tiêu đã khoá cũng không có khoảng cách hai đường chéo nhau.\",\"goi_y\":\"Nếu muốn dùng câu 4, thêm câu 4 vào HD3 (cần thêm 6–8 phút) hoặc giao ở nhà. Cân nhắc bổ sung hai mã kiến thức trên vào một HĐ.\",\"ly_do\":\"Khớp nội bộ giữa phiếu và hoạt động; câu mới dùng kiến thức chưa được dạy trong tiết này.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[1] và cau[2]\",\"van_de\":\"Câu 2 (BT11-B26-3) và câu 3 (BM-007) gần như trùng dạng, đều là d(A,(SBC)) với SA ⊥ đáy và SA = a. Câu 3 gắn mã DN-010 trong khi cách làm dùng CT-003.\",\"goi_y\":\"Có thể thay một trong hai câu bằng bài khác trong kho. Kiểm tra lại mã kt của câu 3.\",\"ly_do\":\"Tránh lặp dạng bài và đảm bảo mã kiến thức khớp.\"}],\"unsure\":[\"Giáo viên không nói rõ câu nào trong kho, nên chọn BM-008 vì có mức VD và dùng đúng KT11-C07-DN-012, KT11-C07-PP-001. Có thể đổi sang BM-009 nếu muốn bài khó hơn.\"]}}",
+ "usage": {
+  "ts": "2026-11-27T17:51:42",
+  "role": "gen",
+  "task": "K1/V8/E05",
+  "model": "claude-sonnet-5-5",
+  "input": 3382,
+  "output": 2400,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 16.8
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:51:42",
+   "role": "gen",
+   "task": "K1/V8/E05",
+   "model": "claude-sonnet-5-5",
+   "input": 3382,
+   "output": 2400,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 16.8
+  }
+ ],
+ "server_errs0": []
+}

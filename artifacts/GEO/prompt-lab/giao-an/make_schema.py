@@ -1,4 +1,4 @@
-"""Phiên bản: v1.0 · 27/11/2026
+"""Phiên bản: v1.1 · 27/11/2026
 Sinh schema-so.json (JSON Schema cho structured outputs, output_config.format) khớp prompts/schema.md.
 Gốc bọc {"ket_qua": anyOf[lesson|patch|question|reply]}; run.py bóc lớp bọc.
 Lịch sử: v1.0 27/11/2026 runner-prompt-giaoan — bản đầu.
@@ -50,3 +50,8 @@ lesson_q["properties"]["meta"]["properties"]["phong_cach"] = S()
 for name, root in (("schema-so-soan.json", {"type": "object", "properties": {"ket_qua": lesson_q}, "required": ["ket_qua"], "additionalProperties": False}), ("schema-so-sua.json", wrap(patch, question, reply))):
     (pathlib.Path(__file__).resolve().parent / name).write_text(json.dumps(root, ensure_ascii=False))
     print(name, len(json.dumps(root)))
+# v1.1: schema một HĐ (dàn ý → từng HĐ), to_chuc khoá tiếng Anh như V8
+hd_en = obj({"ma": S(), "loai": enum("mo-dau", "hinh-thanh", "luyen-tap", "van-dung"), "ten": S(), "thoi_luong_phut": {"type": "integer"}, "o_nha": {"type": "boolean"}, "muc_tieu": S(), "noi_dung": S(), "san_pham": S(), "to_chuc": obj({"assign": S(), "perform": S(), "report": S(), "conclude": S()}), "kien_thuc": arr(obj({"kt": S(), "phat_bieu": S()}))})
+root_hd = {"type": "object", "properties": {"ket_qua": hd_en}, "required": ["ket_qua"], "additionalProperties": False}
+(pathlib.Path(__file__).resolve().parent / "schema-so-hd.json").write_text(json.dumps(root_hd, ensure_ascii=False))
+print("schema-so-hd.json", len(json.dumps(root_hd)))
