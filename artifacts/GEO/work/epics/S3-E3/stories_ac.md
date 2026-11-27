@@ -1,4 +1,4 @@
-Phiên bản: v0.3 · 2026-11-26
+Phiên bản: v0.4 · 2026-11-27
 # S3-E3 — Kết quả lớp (bảng lớp × bài) và "Cả lớp vướng ở đâu" — màn ưu tiên C3-04: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA. Nguồn: `work/s23/story-map-s23.md` (R2 khóa, 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Ch3 (22/11/2026), `Design/s23/DQ.md` và ảnh `c3-*.png` (26/11/2026), `PO-DECISIONS.md` PO-53, PO-61…65. Khi nguồn mâu thuẫn thì PO-61 thắng STAGES.
@@ -75,6 +75,7 @@ Phiên bản: v0.3 · 2026-11-26
 | MSG-S3-45 | Inline + nút "Thử lại" | "Chưa gộp được. Thử lại." | — |
 | MSG-S3-46 | Page state | "Em chưa mở bài này." | — |
 | MSG-S3-47 | Page state + nút "Thử lại" | "Chưa tải được kết quả lớp." | — |
+| MSG-S3-98 | Dòng trên thẻ (giáo viên) | "Lớp này đã tắt trợ lý AI nên chưa gộp tự động. Thầy cô vẫn xem được dữ liệu từng bước." | — |
 | MSG-S3-48 | Chip | "AI gộp" · "Cần thầy cô xác nhận" (hai nhãn cố định trên mọi thẻ nhận định) | — |
 
 ## US-S3E3-01 — Bảng lớp × bài, ô là trạng thái, không cột tổng, không sắp "tốt nhất"
@@ -102,7 +103,7 @@ Phiên bản: v0.3 · 2026-11-26
 **US-S3E3-01-SC1 — Bảng 8 học sinh × 4 đề đúng từng ô** · Nguồn: BR-S3E3-01, 02; DQ-21
 - Given: cô Lan đã đăng nhập; bộ tuần 15 của 11A1 có trạng thái từng ô theo bảng F-S3-051 (F-S3-050)
 - When: mở Theo dõi, chọn lớp 11A1, mở Kết quả lớp của "Bộ bài tuần 15"
-- Then: bảng có đúng 8 hàng và 4 cột Đề 1 SC-đáy, Đề 2 d(A,SBC), Đề 3 hai mặt phẳng, Đề 4 thể tích; mỗi ô khớp F-S3-051, ví dụ Bình An Đề 1 Đúng, Chi Mai Đề 4 Chưa làm, Gia Bảo Đề 3 Đang làm, Khánh Linh cả bốn ô Chưa làm; dòng phụ đề hiện "8 em Đang học"
+- Then: bảng có đúng 8 hàng và 4 cột Đề 1 · SC–đáy, Đề 2 · d(A,SBC), Đề 3 · hai mặt phẳng, Đề 4 · thể tích (PO-82); mỗi ô khớp F-S3-051, ví dụ Bình An Đề 1 Đúng, Chi Mai Đề 4 Chưa làm, Gia Bảo Đề 3 Đang làm, Khánh Linh cả bốn ô Chưa làm; dòng phụ đề hiện "8 em Đang học"
 
 
 **US-S3E3-01-SC2 — Giao diện không có cột tổng, dòng tổng, phần trăm hay xếp hạng** · Nguồn: BR-S3E3-03
@@ -337,6 +338,9 @@ Phiên bản: v0.3 · 2026-11-26
 | BR-S3E3-37 | Bộ gộp lỗi hoặc quá 10 giây thì hiện dữ liệu thô kèm MSG-S3-45 "Thử lại"; không hiện thẻ cũ của lần khác. | QA-S3E3-11 |
 | BR-S3E3-38 | Gộp tính lại khi mở màn hoặc bấm "Làm mới"; nếu dữ liệu đầu vào không đổi thì dùng kết quả đã có, không gọi lại bộ gộp. | chi phí AI |
 | BR-S3E3-39 | Chỉ chủ lớp xem; học sinh không có API này. | PO-61 |
+| BR-S3E3-40 | Mã người dùng (`HS-…`) không đưa vào địa chỉ trang hay chuỗi truy vấn. Dòng và người trong dữ liệu kết quả có `userId` (UUID); trang bài làm của một em mở bằng `hs=<userId>`. Mã người dùng vẫn hiện trên màn hình như một trường được phép. | PO-61; PO-74 |
+| BR-S3E3-41 | Lớp đã tắt trợ lý AI (US-S3E5-04): "Cả lớp vướng ở đâu" không gọi bộ gộp, không phát sinh chi phí AI; thẻ hiện dữ liệu thô kèm MSG-S3-98, không có "Thử lại". Bật lại thì gộp như bình thường. | PO-85; BR-S3E5-42 |
+| BR-S3E3-42 | Tổng thời gian chờ bộ gộp của cả màn không quá 10 giây, không cộng dồn qua nhiều đề và không phụ thuộc `geo.ai.timeout`; quá thì các đề chưa gộp hiện dữ liệu thô kèm "Thử lại" (BR-S3E3-37). Em vào lớp bằng tên cũng có hàng và mở được bằng chứng theo `userId` (BR-S3E3-40). | PO-83; PO-74 |
 
 - **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E3-02, QA-S3E3-05, QA-S3E3-06, QA-S3E3-10, QA-S3E3-11.
 
@@ -492,3 +496,4 @@ Phiên bản: v0.3 · 2026-11-26
 | v0.1 | 2026-11-26 | Tạo mới: story và AC của S3-E3, ready for R3 | runner-T-261126-14 (BA) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
 | v0.3 | 2026-11-26 | Áp PO-66 (gate R3, T-261126-37): bỏ nhãn giả định chưa chốt, ghi "đã chốt PO-66" | runner-T-261126-37 (BA/QC) |
+| v0.4 | 2026-11-27 | PO-74: thêm BR-S3E3-40 (userId UUID thay userCode trong địa chỉ trang); PO-82: tên cột "Đề n · tên"; PO-83: BR-S3E3-42 trần chờ tổng 10 giây; PO-85: BR-S3E3-41 và MSG-S3-98 tắt gộp khi lớp tắt AI | runner-po-s3 (PO/BA) |

@@ -1,4 +1,4 @@
-Phiên bản: v0.3 · 2026-11-26
+Phiên bản: v0.4 · 2026-11-27
 # S3-E5 — Nhật ký thao tác nhạy cảm (AuditEvent), thông báo riêng tư, danh sách trường dữ liệu được phép, công tắc AI theo lớp: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA. Nguồn: `work/s23/story-map-s23.md` (R2 khóa, 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Ch3 (22/11/2026), `Design/s23/DQ.md` và ảnh `c3-*.png` (26/11/2026), `PO-DECISIONS.md` PO-53, PO-61…65. Khi nguồn mâu thuẫn thì PO-61 thắng STAGES.
@@ -88,7 +88,7 @@ Phiên bản: v0.3 · 2026-11-26
 | BR-S3E5-04 | Thao tác nhạy cảm và AuditEvent thành công cùng một giao dịch: ghi nhật ký lỗi thì thao tác không xảy ra. | an toàn |
 | BR-S3E5-05 | Nhật ký chỉ thêm: không có API hay lệnh ứng dụng sửa hoặc xóa; cơ sở dữ liệu từ chối UPDATE và DELETE của tài khoản ứng dụng. | an toàn |
 | BR-S3E5-06 | Đặt lịch lần đầu cho bộ Nháp không phải sự kiện; chỉ đổi giờ sau khi bộ Đã giao mới ghi. | QA-S3E5-03 |
-| BR-S3E5-07 | Lần bị từ chối vì quyền hoặc quan hệ ghi một sự kiện bảo mật (Từ chối) chỉ có loại, người gọi, loại đối tượng, giờ, để đếm M-S3-06. | M-S3-06; QA-S3E5-02 |
+| BR-S3E5-07 | Lần bị từ chối vì quyền hoặc quan hệ ghi một sự kiện bảo mật (Từ chối) chỉ có loại, người gọi, loại đối tượng, giờ, để đếm M-S3-06. Để nhật ký không phình khi bị gọi dồn: ghi tối đa 1 hàng Từ chối trong mỗi giờ cho mỗi cặp (người gọi, loại đối tượng); các lần từ chối thêm trong cùng giờ vẫn trả NOT_FOUND/FORBIDDEN nhưng không thêm hàng. | M-S3-06; QA-S3E5-02; PO-76 |
 | BR-S3E5-08 | Chủ lớp đọc được nhật ký của lớp mình (chỉ đọc); học sinh không đọc được; người khác không thấy lớp. | QA-S3E5-01 |
 
 - **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E1-12, QA-S3E5-01, QA-S3E5-02, QA-S3E5-03.
@@ -146,7 +146,7 @@ Phiên bản: v0.3 · 2026-11-26
 **US-S3E5-01-FC3 — Thao tác bị từ chối ghi sự kiện bảo mật** · Nguồn: BR-S3E5-07 · PO-66 (QA-S3E5-02)
 - Given: thầy Khôi đã đăng nhập; bộ đếm sự kiện bảo mật của dữ liệu thử bằng 0
 - When: thầy Khôi gọi "Mở ngay" của bộ tuần 15 lớp 11A1
-- Then: máy chủ trả NOT_FOUND; có một bản ghi kết quả Từ chối với người gọi `GV-4D8R-2WNX` và loại đối tượng là bộ; không có AuditEvent EARLY_RELEASE thành công; bản ghi Từ chối không chứa tên lớp hay nội dung yêu cầu
+- Then: máy chủ trả NOT_FOUND; có một bản ghi kết quả Từ chối với người gọi `GV-4D8R-2WNX` và loại đối tượng là bộ; không có AuditEvent EARLY_RELEASE thành công; bản ghi Từ chối không chứa tên lớp hay nội dung yêu cầu; gọi thêm lần nữa trong cùng giờ vẫn trả NOT_FOUND nhưng số hàng Từ chối của cặp (người gọi, bộ) vẫn là 1 (BR-S3E5-07, PO-76)
 
 
 **US-S3E5-01-FC4 — Nhật ký chỉ thêm, không sửa không xóa** · Nguồn: BR-S3E5-05
@@ -288,7 +288,7 @@ Phiên bản: v0.3 · 2026-11-26
 | BR-S3E5-34 | Thân yêu cầu có trường ngoài danh sách bị từ chối VALIDATION_FAILED, không lưu phần nào. | PO-61 |
 | BR-S3E5-35 | Tên hiển thị không được trông như email (có `@` và dấu chấm sau) hoặc số điện thoại (từ 9 chữ số trở lên, bỏ khoảng trắng và dấu chấm hay gạch); "Minh 10A" và tên có số ngắn vẫn được nhận. | PO-61; QA-S3E5-05 |
 | BR-S3E5-36 | Mã trường kỹ thuật của MVP (`org_id`) chỉ là định danh nội bộ không do người dùng nhập, không hiển thị và không có trong phản hồi API. | QA-S3E5-07 |
-| BR-S3E5-37 | Nhật ký truy cập của máy chủ web không lưu địa chỉ IP quá 7 ngày; không bảng ứng dụng nào lưu IP hay thiết bị của người dùng. Ngoại lệ duy nhất: bộ đếm tần suất theo địa chỉ mạng của BR-S2E1-06 giữ ở bộ nhớ tạm hoặc khóa đã băm có hạn tối đa 1 giờ, không thành cột hay bảng bền vững, không có trong `allowed_fields` (Đã chốt PO-66 · vừa · RV_s23 M-03). | QA-S3E5-06; PO-63 |
+| BR-S3E5-37 | Nhật ký truy cập của máy chủ web không lưu địa chỉ IP quá 7 ngày; không bảng ứng dụng nào lưu IP hay thiết bị của người dùng. Ngoại lệ duy nhất: bộ đếm tần suất theo địa chỉ mạng của BR-S2E1-06 giữ ở bộ nhớ tạm hoặc ở hàng có khóa đã băm bằng HMAC (khóa bí mật của máy chủ) có hạn lưu tối đa 1 giờ rồi bị công việc dọn xóa (PO-71), không phải cột bền vững gắn vào tài khoản, không có trong `allowed_fields` (Đã chốt PO-66 · vừa · RV_s23 M-03). | QA-S3E5-06; PO-63 |
 
 - **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E5-05, QA-S3E5-06, QA-S3E5-07.
 
@@ -483,12 +483,12 @@ Phiên bản: v0.3 · 2026-11-26
 
 | BR | Quy tắc | Nguồn |
 |---|---|---|
-| BR-S3E5-50 | Mọi tài khoản (giáo viên, học sinh, mọi trạng thái lớp) có nút "Xóa tài khoản" ở Cài đặt; xóa cần nhập lại mật khẩu và gõ chữ "XÓA" xác nhận. | PO-64; PO-66 (G5) |
+| BR-S3E5-50 | Mọi tài khoản (giáo viên, học sinh, mọi trạng thái lớp) có nút "Xóa tài khoản" ở Cài đặt; xóa cần nhập lại mật khẩu và gõ chữ "XÓA" xác nhận. Ngoại lệ: tài khoản học sinh vào lớp bằng tên, không có mật khẩu (PO-61), xóa chỉ cần gõ "XÓA" xác nhận, không có bước mật khẩu và không có bộ đếm sai. | PO-64; PO-66 (G5); PO-72 |
 | BR-S3E5-51 | Xóa có hiệu lực ngay phía người dùng: tài khoản không đăng nhập, không khôi phục được, mã người dùng và mã khôi phục hết hiệu lực và không cấp lại; dữ liệu của tài khoản (tên hiển thị, cờ đã đọc, bài làm, lượt hỏi AI, thành viên lớp) bị xóa vật lý trong tối đa 30 ngày. | PO-64; PO-66 (G5, G12: ngưỡng 30 ngày chỉnh sau L6) |
 | BR-S3E5-52 | Giáo viên còn lớp Đang dạy không xóa được cho tới khi lưu trữ hết lớp (US-S3E6-02); học sinh xóa được ở mọi lúc. | PO-66 (G5) |
 | BR-S3E5-53 | Sau khi xóa học sinh, bài làm của em biến mất khỏi bảng lớp và mọi số liệu; AuditEvent cũ giữ loại, giờ, đối tượng nhưng mã người dùng thay bằng "đã xóa" (nhật ký không chứa dữ liệu cá nhân, BR-S3E5-03). | PO-66 (G5); BR-S3E5-05 |
-| BR-S3E5-54 | Chính sách lưu và xóa hiện trong văn bản thông báo riêng tư: bài làm giữ tới khi tài khoản bị xóa; nhật ký IP của máy chủ web không quá 7 ngày; xóa tài khoản thì xóa trong tối đa 30 ngày. | PO-64; BR-S3E5-37 |
-| BR-S3E5-55 | Xóa tài khoản idempotent theo khóa yêu cầu; chỉ chủ tài khoản xóa được tài khoản của mình, người khác trả NOT_FOUND; sai mật khẩu khi xác nhận tính vào bộ đếm khóa 10 lần/15 phút (BR-S2E1-09). | BR-S3E2-06; QA-S3E1-04 |
+| BR-S3E5-54 | Chính sách lưu và xóa hiện trong văn bản thông báo riêng tư: bài làm giữ tới khi tài khoản bị xóa; nhật ký IP của máy chủ web không quá 7 ngày; xóa tài khoản thì xóa trong tối đa 30 ngày. Văn bản hiện hành là bản 1.0; trước cổng phát hành L7 mọi chỉnh nội dung sửa tại chỗ giữ số 1.0 (chưa có người dùng thật); từ khi phát hành, mỗi lần đổi nội dung phát hành bản mới (1.1, 1.2…) và người đã đọc phải đọc lại (US-S3E5-02-SC4); tập tài khoản "phải đọc" nạp lúc khởi động, nên sau lệnh chuyển tài khoản MVP phải khởi động lại máy chủ. | PO-64; BR-S3E5-37; PO-67 |
+| BR-S3E5-55 | Xóa tài khoản idempotent theo khóa yêu cầu; chỉ chủ tài khoản xóa được tài khoản của mình, người khác trả NOT_FOUND; sai mật khẩu khi xác nhận tính vào bộ đếm khóa 10 lần/15 phút (BR-S2E1-09); tài khoản không có mật khẩu (vào lớp bằng tên) bỏ qua bước này và không tăng bộ đếm nào (BR-S3E5-50). | BR-S3E2-06; QA-S3E1-04; PO-72 |
 
 ### Tiêu chí chấp nhận
 
@@ -539,3 +539,4 @@ Phiên bản: v0.3 · 2026-11-26
 | v0.1 | 2026-11-26 | Tạo mới: story và AC của S3-E5, ready for R3 | runner-T-261126-14 (BA) |
 | v0.2 | 2026-11-26 | Sửa theo RV_s23: BR-S3E5-30 thêm thực thể chặng 2, BR-S3E5-33 ngoại lệ ảnh đề, BR-S3E5-37 ngoại lệ bộ đếm tần suất; đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
 | v0.3 | 2026-11-26 | G5: story mới US-S3E5-05 (xóa tài khoản, chính sách lưu/xóa) gồm BR-S3E5-50…55 và 8 AC/TC; G3: văn bản nêu mã khôi phục của học sinh; bỏ nhãn giả định chưa chốt (PO-66) | runner-T-261126-37 (BA/QC) |
+| v0.4 | 2026-11-27 | Chốt PO-67/71/72/76: văn bản riêng tư 1.0 sửa tại chỗ tới L7 rồi mới tăng phiên bản (BR-S3E5-54); BR-S3E5-07 ≤1 hàng Từ chối/giờ/(người, loại); BR-S3E5-37 hàng HMAC ≤1 giờ; BR-S3E5-50/55 học sinh vào lớp bằng tên xóa chỉ gõ XÓA | runner-po-s3 (PO/BA) |

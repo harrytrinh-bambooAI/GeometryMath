@@ -91,7 +91,7 @@
 | D-02 | Mất ≤ ~10,6 giây sự kiện không bền khi sập | **Đóng: D-GEO-126** (chỉ thao tác hình; open, hint, ask, unlock bền) | NFR-GEO-050, 051 | ChuDauTu (đã phán) |
 | D-03 | Bật RLS ở MVP cho bảng dữ liệu học sinh? | **Đóng: D-GEO-127** — bật sau khi đo trên khung mã; chính sách có sẵn (`03_schema.sql` §13), `bench/rls_enable.sql` | NFR-GEO-035 | TechLead (đo) |
 | D-04 | Chính sách lưu giữ `event_log` / `qa_turn` | **Đóng cho MVP: D-GEO-128** — MVP không dọn; cơ chế `drop_old_partitions` có sẵn, không chạy (ADR-GEO-13). Thời hạn vẫn chờ pháp lý | NFR-GEO-045 | ChuDauTu, pháp lý (PO-21) |
-| D-05 | Thời gian chờ tối đa của cổng AI | TBD (D-GEO-072) | NFR-GEO-054 | TechLead |
+| D-05 | Thời gian chờ tối đa của cổng AI | **Đóng: D-GEO-072 · PO-78** — 10 giây dev/test, 90 giây prod, 45 giây một lần gọi HTTP (`geo.ai.timeout`, `geo.ai.anthropic.attempt-timeout`; `app/docs/CONFIG.md`); chỉnh sau khi đo thật | NFR-GEO-054 | TechLead |
 | D-06 | Phương án giờ mở sau khi đã mở: không đổi (D-GEO-042 A) hay cho khóa lại (B)? Lược đồ cài A; chọn B thì bỏ một nhánh trong `fn_set_release` và bỏ đệm quyết định "đã mở" | A | NFR-GEO-024; ADR-GEO-10 | GiaoVienCoVan |
 | D-07 | Kích thước lớp tối đa | **Đóng: D-GEO-167** — không giới hạn; Q09 phân trang theo `(name_key, user_id)` | Q09 | — |
 | D-08 | Gợi ý mức 2 chỉ xin được sau mức 1 cho cả bài giao và tự học? | **Đóng: D-GEO-108** — phải xem Gợi ý 1 trước (`fn_get_hint` trả `LEVEL_ORDER`) | Q05 | — |

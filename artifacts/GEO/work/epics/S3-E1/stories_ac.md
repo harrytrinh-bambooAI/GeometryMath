@@ -1,4 +1,4 @@
-Phiên bản: v0.3 · 2026-11-26
+Phiên bản: v0.4 · 2026-11-27
 # S3-E1 — Lớp, mã lớp, duyệt vào lớp, đặt lại mật khẩu, quyền theo quan hệ: story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA. Nguồn: `work/s23/story-map-s23.md` (R2 khóa, 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Ch3 (22/11/2026), `Design/s23/DQ.md` và ảnh `c3-*.png` (26/11/2026), `PO-DECISIONS.md` PO-53, PO-61…65. Khi nguồn mâu thuẫn thì PO-61 thắng STAGES.
@@ -183,9 +183,9 @@ Phiên bản: v0.3 · 2026-11-26
 | BR-S3E1-11 | Mã đúng và lớp nhận người mới: tạo `ClassMembership` Chờ duyệt; không có đường vào thẳng Đang học, mọi em phải được chủ lớp duyệt. | DQ-23; PO-66 (G4) |
 | BR-S3E1-12 | Trong lúc Chờ duyệt, học sinh không thấy bài của lớp nhưng vẫn dùng Tự học. | DQ-27; PO-65 (Q9) |
 | BR-S3E1-13 | Mã sai, mã cũ sau khi đặt lại và mã bị khóa cùng một thông điệp, không nói lớp có tồn tại hay không. | PO-61; chống dò mã |
-| BR-S3E1-14 | Nhập sai 10 lần trong 15 phút theo tài khoản học sinh thì RATE_LIMITED; đếm theo tài khoản, không theo mã lớp. | PO-53; D-GEO-185; QA-S3E1-07 |
+| BR-S3E1-14 | Nhập sai 10 lần trong 15 phút theo tài khoản học sinh thì RATE_LIMITED; đếm theo tài khoản, không theo mã lớp. Mỗi lần gửi lại yêu cầu vào lớp sau trạng thái Bị từ chối hoặc Đã rời cũng tính là một lượt vào cùng bộ đếm này (10 lần/15 phút) và vào bộ đếm 30 lần/24 giờ của BR-S3E1-17, để không gửi lại vô hạn. | PO-53; D-GEO-185; QA-S3E1-07; PO-75 |
 | BR-S3E1-15 | Một học sinh có tối đa một bản ghi Chờ duyệt hoặc Đang học cho mỗi lớp; gửi lặp không tạo thêm. | CL-FN-10 |
-| BR-S3E1-17 | Ngoài giới hạn 10 lần sai/15 phút (BR-S3E1-14), mỗi tài khoản học sinh có giới hạn tổng lượt nhập mã lớp sai: 30 lần trong 24 giờ; chạm ngưỡng thì RATE_LIMITED tới khi lần sai cũ nhất rời cửa sổ 24 giờ. Hai giới hạn cùng hiệu lực, cùng thông điệp MSG-S3-08; đếm theo tài khoản (ngưỡng chỉnh sau L6, PO-66 G12). | PO-66 (G4); RV_s23 M-08 |
+| BR-S3E1-17 | Ngoài giới hạn 10 lần sai/15 phút (BR-S3E1-14), mỗi tài khoản học sinh có giới hạn tổng lượt nhập mã lớp sai: 30 lần trong 24 giờ; chạm ngưỡng thì RATE_LIMITED tới khi lần sai cũ nhất rời cửa sổ 24 giờ. Hai giới hạn cùng hiệu lực, cùng thông điệp MSG-S3-08; đếm theo tài khoản (ngưỡng chỉnh sau L6, PO-66 G12); lượt gửi lại sau Bị từ chối/Đã rời cũng được đếm (BR-S3E1-14, PO-75). | PO-66 (G4); RV_s23 M-08; PO-75 |
 
 - **DoR:** Ready for R3; giả định đã chốt PO-66: QA-S3E1-02, QA-S3E1-07, QA-S3E1-08.
 
@@ -525,3 +525,4 @@ Phiên bản: v0.3 · 2026-11-26
 | v0.1 | 2026-11-26 | Tạo mới: story và AC của S3-E1, ready for R3 | runner-T-261126-14 (BA) |
 | v0.2 | 2026-11-26 | thêm BR-S3E1-16 và US-S3E1-01-SC6 (lớp MVP đã chuyển), RV_s23 M-02; đổi mã mẫu sai bảng ký tự (RV_s23 m-01) | runner-T-261126-15 (QC soát phản biện, RV_s23) |
 | v0.3 | 2026-11-26 | G4: BR-S3E1-06/-11 duyệt bắt buộc, BR-S3E1-17 giới hạn tổng lượt (30 lần/24 giờ), thêm FC8, BV1; G5: US-S3E1-05 và Bị từ chối được nhận; bỏ nhãn giả định chưa chốt (PO-66) | runner-T-261126-37 (BA/QC) |
+| v0.4 | 2026-11-27 | PO-75: BR-S3E1-14/-17 tính lượt gửi lại sau Bị từ chối/Đã rời vào hạn mức 10 lần/15 phút và 30 lần/24 giờ | runner-po-s3 (PO/BA) |

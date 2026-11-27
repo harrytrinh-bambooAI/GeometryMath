@@ -1,4 +1,4 @@
-Phiên bản: v0.3 · 2026-11-26
+Phiên bản: v0.4 · 2026-11-27
 # S3-E6 — Chữa bài từ kết quả sang Trình chiếu, xuất kết quả lớp, lưu trữ lớp, nhắc việc trong ứng dụng (P1): story Dev-Ready và tiêu chí chấp nhận
 
 > Chủ sở hữu: BA. Nguồn: `work/s23/story-map-s23.md` (R2 khóa, 26/11/2026), `brief-s23.md`, `brd-delta-s23.md`, `STAGES-AFTER-MVP.md` Ch3 (22/11/2026), `Design/s23/DQ.md` và ảnh `c3-*.png` (26/11/2026), `PO-DECISIONS.md` PO-53, PO-61…65. Khi nguồn mâu thuẫn thì PO-61 thắng STAGES.
@@ -71,7 +71,8 @@ Phiên bản: v0.3 · 2026-11-26
 | MSG-S3-92 | Toast | "Đề đã được sửa. Mở Trình chiếu từ đầu đề." | — |
 | MSG-S3-93 | Hộp xác nhận | "Lưu trữ lớp {tên lớp}? Lớp chỉ còn xem, mã lớp ngừng dùng." | — |
 | MSG-S3-94 | Inline | "Đã xuất quá nhiều lần. Vui lòng thử lại sau ít phút." | RATE_LIMITED |
-| MSG-S3-95 | Thông báo trong ứng dụng | "Bộ {tên bộ} sắp hết hạn: {HH:mm, dd/MM/yyyy}" | — |
+| MSG-S3-95 | Thông báo trong ứng dụng | "Bộ {tên bộ} sắp hết hạn: {HH:mm, dd/MM/yyyy}" (tên bộ đã bắt đầu bằng "Bộ " thì không thêm "Bộ " nữa, PO-69) | — |
+| MSG-S3-97 | Inline (giáo viên) | "Lớp này đã lưu trữ, không giao bộ mới được." | CONFLICT |
 | MSG-S3-96 | Page state | "Lớp này đã lưu trữ. Em chỉ xem được." | — |
 
 ## US-S3E6-01 — Chữa bài từ kết quả sang Trình chiếu
@@ -165,7 +166,7 @@ Phiên bản: v0.3 · 2026-11-26
 | BR-S3E6-11 | Tên tệp `ket-qua-<tên lớp không dấu>-<tên bộ không dấu>-<yyyyMMdd>.csv`; không chứa tên hay mã học sinh. | PO-61 |
 | BR-S3E6-12 | Ô văn bản bắt đầu bằng `=`, `+`, `-` hoặc `@` được thêm dấu nháy đơn ở đầu để bảng tính không chạy như công thức. | an toàn tệp |
 | BR-S3E6-13 | Mỗi giáo viên xuất tối đa 10 lần trong 1 giờ; chỉ chủ lớp xuất. | QA-S3E6-05 |
-| BR-S3E6-14 | Lưu trữ lớp: trạng thái Đã lưu trữ; mã lớp ngừng dùng; không nhận em mới; không giao bộ mới; em Chờ duyệt tự thành Bị từ chối; không đặt lại mật khẩu; Kết quả lớp và xuất vẫn dùng được; lịch mở lời giải vẫn chạy. | Ch3 §8; QA-S3E6-06 |
+| BR-S3E6-14 | Lưu trữ lớp: trạng thái Đã lưu trữ; mã lớp ngừng dùng; không nhận em mới; không giao bộ mới (giao vào lớp đã lưu trữ trả CONFLICT kèm MSG-S3-97, cả đường tạo bộ lẫn đường giao bộ có sẵn, PO-70); em Chờ duyệt tự thành Bị từ chối; không đặt lại mật khẩu; Kết quả lớp và xuất vẫn dùng được; lịch mở lời giải vẫn chạy. | Ch3 §8; QA-S3E6-06 |
 | BR-S3E6-15 | Học sinh Đang học thấy lớp đã lưu trữ ở mục "Lớp đã lưu trữ", chỉ xem; không còn bộ mới. | QA-S3E6-06 |
 | BR-S3E6-16 | Chủ lớp bỏ lưu trữ được: lớp về Đang dạy và nhận mã lớp mới. | QA-S3E6-07 |
 | BR-S3E6-17 | Lớp đã lưu trữ không tính vào giới hạn 20 lớp Đang dạy. | BR-S3E1-04 |
@@ -280,7 +281,7 @@ Phiên bản: v0.3 · 2026-11-26
 | BR | Quy tắc | Nguồn |
 |---|---|---|
 | BR-S3E6-20 | Nhắc "sắp hết hạn" gửi 24 giờ trước `due_at`, một lần cho mỗi bộ và mỗi học sinh, chỉ cho học sinh Đang học còn ít nhất một đề Chưa làm hoặc Đang làm trong bộ. | QA-S3E6-08 |
-| BR-S3E6-21 | Giờ yên lặng 21:00 đến 06:00 giờ Việt Nam: nhắc rơi trong khung được hoãn tới 06:00; đúng 21:00:00 là đã yên lặng, đúng 06:00:00 là được gửi. | QA-S3E6-08 |
+| BR-S3E6-21 | Giờ yên lặng 21:00 đến 06:00 giờ Việt Nam: nhắc rơi trong khung được hoãn tới 06:00; đúng 21:00:00 là đã yên lặng, đúng 06:00:00 là được gửi. Giờ yên lặng chỉ áp cho nhắc "sắp hết hạn"; thông báo "Có bài mới" và mở lời giải không bị hoãn. Lời giải mở theo lịch chỉ xét bộ có giờ mở trong 1 ngày gần nhất; em đã nhận "Mở ngay" không nhận thêm lần hai; lùi hạn sau khi đã nhắc thì nhắc thêm một lần theo hạn mới (không trùng, BR-S3E6-25). | QA-S3E6-08; PO-68 |
 | BR-S3E6-22 | Bộ không có `due_at` thì không có nhắc "sắp hết hạn"; bộ giao khi còn ít hơn 24 giờ đến hạn không có nhắc này (đã có thông báo bài mới). | QA-S3E6-08 |
 | BR-S3E6-23 | Giáo viên đổi `due_at`: hủy nhắc cũ chưa gửi và lên lịch lại theo hạn mới. | QA-S3E6-08 |
 | BR-S3E6-24 | Khi tới giờ mở lời giải theo lịch, mỗi học sinh Đang học nhận một thông báo "lời giải đã mở" (Mở ngay vẫn do US-S3E4-02). | US-S3E4-03 |
@@ -380,3 +381,4 @@ Phiên bản: v0.3 · 2026-11-26
 | v0.1 | 2026-11-26 | Tạo mới: story và AC của S3-E6, ready for R3 | runner-T-261126-14 (BA) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
 | v0.3 | 2026-11-26 | Áp PO-66 (gate R3, T-261126-37): bỏ nhãn giả định chưa chốt, ghi "đã chốt PO-66" | runner-T-261126-37 (BA/QC) |
+| v0.4 | 2026-11-27 | PO-68: BR-S3E6-21 làm rõ phạm vi giờ yên lặng, cửa sổ lời giải, Mở ngay không nhắc hai lần, nhắc theo hạn mới; PO-69: MSG-S3-95 không lặp "Bộ"; PO-70: thêm MSG-S3-97 và BR-S3E6-14 giao vào lớp lưu trữ trả CONFLICT | runner-po-s3 (PO/BA) |

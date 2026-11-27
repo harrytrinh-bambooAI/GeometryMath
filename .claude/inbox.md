@@ -288,7 +288,7 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Mục tiêu:** đóng các điểm T-28 để mở.
   1. [QC] TC-S3E1-01 phản hồi tạo lớp có thêm `id` — chấp nhận? API lớp ở `/api/v1/teacher/my-classes/**` (vì `/teacher/classes` là của MVP).
   2. [FIX S2-E1?] TC-S3E5-22: màn Đăng ký S2-E1 khoá nút khi chưa tick nên không hiện MSG-S3-84 (máy chủ trả đúng).
-  3. [PO] văn bản riêng tư 1.0 sửa tại chỗ hay phát hành 1.1; tập "phải đọc thông báo" nạp lúc khởi động (chuyển tài khoản bằng lệnh MVP chỉ bị chặn sau khi khởi động lại).
+  3. [PO] văn bản riêng tư 1.0 sửa tại chỗ hay phát hành 1.1; tập "phải đọc thông báo" nạp lúc khởi động (chuyển tài khoản bằng lệnh MVP chỉ bị chặn sau khi khởi động lại). → chốt PO-67
   4. [Dev] KHÔNG nới `class_member_name_uq` (đăng nhập tên MVP dựa vào nó): em trùng tên nhận name_key kèm mã người dùng; `fn_student_login` chỉ nhận lớp join_mode='name'.
   5. [Test chập chờn] TC-GEO-0804 (khoá Redis `:mon:`, trượt 2/4 lượt), TC-GEO-0494 (e4 mobile).
   6. [Tổ hợp] T-28 kiểm trên wave0 chưa có T-29 — T-30/T-31 kiểm trên bản kết hợp.
@@ -299,8 +299,8 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 ## Việc: câu mở sau T-31 lượt 2 (S3-E4 + S3-E5-01 + S3-E6-03) · ghi 27/11/2026
 - **Mục tiêu:** đóng các điểm agent A để mở.
   1. [FIX iam, Dev-S3E5-08] iam phát `StudentPasswordResetEvent` SAU commit → ghi AuditEvent lỗi thì mật khẩu vẫn đổi; TC-S3E5-07 chưa đạt trọn (Mở ngay/Đổi giờ quay lui đúng). Cần phát trong giao dịch hoặc outbox.
-  2. [PO] giờ yên lặng chỉ áp cho nhắc "sắp hết hạn"; lời giải mở theo lịch chỉ xét bộ có giờ mở trong 1 ngày gần nhất; em đã nhận "Mở ngay" không nhận lần hai; lùi hạn sau khi nhắc → nhắc thêm theo hạn mới.
-  3. [BA] MSG-S3-95 "Bộ {tên bộ}" lệch câu ví dụ AC; tạm: tên đã bắt đầu "Bộ " thì không thêm.
+  2. [PO] giờ yên lặng chỉ áp cho nhắc "sắp hết hạn"; lời giải mở theo lịch chỉ xét bộ có giờ mở trong 1 ngày gần nhất; em đã nhận "Mở ngay" không nhận lần hai; lùi hạn sau khi nhắc → nhắc thêm theo hạn mới. → chốt PO-68
+  3. [BA] MSG-S3-95 "Bộ {tên bộ}" lệch câu ví dụ AC; tạm: tên đã bắt đầu "Bộ " thì không thêm. → chốt PO-69
   4. [Vận hành] tác vụ nhắc chạy mỗi phút ở mọi profile; tắt bằng `GEO_S3E6_REMINDER_CRON=-`.
   5. [Manual] TC-S3E4-02, 21, 27.
 - **Nguồn:** báo cáo agent A; `epics/S3-E4/qc_findings.md`, `S3-E5/qc_findings.md` v0.2 (Dev-S3E5-08…10).
@@ -311,8 +311,8 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Mục tiêu:** đóng các điểm còn mở sau khi code chặng 3 đủ.
   1. [FIX Dev] danh sách AuditEvent (S3-E4) JOIN `app_user` → dòng của người đã xoá không hiện (Dev-S3E5-16) → LEFT JOIN.
   2. [FIX Dev] giao qua `practice-sets/{id}/assign` tới lớp đã lưu trữ vẫn NOT_FOUND (fn_assign_practice_set); đường tạo bộ đã trả CONFLICT.
-  3. [BA] câu CONFLICT "Lớp này đã lưu trữ, không giao bộ mới được." tự đặt (spec chưa có MSG riêng); ghi chú US-GEO-701-FC7 là "chỉ MVP" (thanh bên chặng 3 có Tổng quan, Lớp học).
-  4. [PO] `auth_failure.ip_key` lưu HMAC IP trong CSDL 1 ngày, lệch BR-S3E5-37 (bộ nhớ tạm ≤ 1 giờ) — đang ghi ngoại lệ PO-53; văn bản riêng tư 1.0 sửa tại chỗ hay phát hành 1.1; màn chiếu từ kết quả bản rút gọn, chưa có hình.
+  3. [BA] câu CONFLICT "Lớp này đã lưu trữ, không giao bộ mới được." tự đặt (spec chưa có MSG riêng); ghi chú US-GEO-701-FC7 là "chỉ MVP" (thanh bên chặng 3 có Tổng quan, Lớp học). → chốt PO-70
+  4. [PO] `auth_failure.ip_key` lưu HMAC IP trong CSDL 1 ngày, lệch BR-S3E5-37 (bộ nhớ tạm ≤ 1 giờ) — đang ghi ngoại lệ PO-53; văn bản riêng tư 1.0 sửa tại chỗ hay phát hành 1.1; màn chiếu từ kết quả bản rút gọn, chưa có hình. → chốt PO-71 (văn bản riêng tư: PO-67)
   5. [QC] thay đổi hợp đồng: thân có trường thừa nay nhận 400 (BR-S3E5-34) — đã sửa test E1/E7/S2-E1/S2-E8 + test_cases.md; các ca mobile của FIX F3 chưa chạy (regression cuối phase phủ).
   6. [Vận hành] job dọn bia mộ tài khoản xoá chạy hằng ngày; xuất CSV giới hạn 10 lần/giờ.
 - **Nguồn:** báo cáo agent F3 + runner-fix-s3int + runner-fix-s3f3; `epics/S3-E5/qc_findings.md` (Dev-S3E5-11…21), `S3-E6/qc_findings.md` (Dev-S3E6-01…08), `E7/qc_findings.md` (Dev-E7-12).
@@ -326,7 +326,7 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
   3. [major, phòng thủ chiều sâu] `V415:48`, `V416:32` `fn_account_purge_rows` SECURITY DEFINER không `REVOKE … FROM PUBLIC`; cùng `fn_audit_event`, `fn_class_join_request`. Migration mới REVOKE + GRANT đúng vai.
   4. [major] `AccountPurgeJob.java:51` trễ đầu 24 giờ → máy chủ khởi động lại hằng ngày thì job dọn không bao giờ chạy.
   5. [minor ×9] xem báo cáo (chỉ mục `audit_log.actor_user_id`, CSV chống công thức thiếu TAB/CR, `sourcemap: true` bản production, `userCode` trong query string…).
-  6. [PO] mục 8 báo cáo: phạm vi US-S3E5-05 có gồm học sinh vào lớp bằng tên không.
+  6. [PO] mục 8 báo cáo: phạm vi US-S3E5-05 có gồm học sinh vào lớp bằng tên không. → chốt PO-72
 - **Nguồn:** `artifacts/GEO/evidence/REVIEW-T20-T32-20261127.md` (Sonnet, 27/11/2026).
 - **Xong khi:** make verify xanh; e2e-affected 0 trượt; ca thử mục 1 tái hiện trước khi sửa (hoặc ghi "không tái hiện").
 - **Ngoài phạm vi:** tính năng mới; vùng chưa soát (liệt kê cuối báo cáo).
@@ -335,12 +335,29 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - Dev-S3E5-08 (iam event sau commit) **ĐÓNG** adc4a30 · Dev-S3E5-16 (LEFT JOIN app_user) **ĐÓNG** 77ccd29 · assign lớp lưu trữ → CONFLICT **ĐÓNG** 3f1d412 (V417).
 - Kiểm: make verify 301 UT (1 bỏ qua) + 243 IT đạt; e2e-affected L1 805/806 (run 20261127-064727), TC-GEO-0605 mobile-iphone chạy lại 1/1 (20261127-065117).
 - FIX soát B (fix-rv-b, gộp 27/11): mục 3 REVOKE **ĐÓNG** 1f0e612 (V418); mục 7 chỉ mục **ĐÓNG** db8af83 (V419); mục 5+6 CSV **ĐÓNG** 08c0ad2; mục 9 nhắc việc phân trang **ĐÓNG** a1568bb; mục 11 sourcemap **ĐÓNG** 27b0890. Kiểm: verify 302 UT + 248 IT; web xanh; e2e L2 952/952 (20261127-070819).
-- [PO] mục 8: HS vào lớp bằng tên không có mật khẩu → không xoá được tài khoản. Đề xuất: xác nhận bằng gõ "XÓA", không tăng bộ đếm sai.
-- [PO] mục 10: HS đọc đề Kho chung theo id — PO-66 G2 đã cho phép (gợi ý, lời giải khoá). Đề xuất: giữ, ghi DECISIONS.
-- [PO/BA] mục 12: `userCode` trong query string. Đề xuất: thêm userId (UUID) vào Row/Person, trang bài làm dùng `hs=<uuid>`, cập nhật TC S3-E3 (đổi hợp đồng API).
-- [PO] mục 13: gửi lại yêu cầu vào lớp sau Bị từ chối/Đã rời không giới hạn. Đề xuất: tính vào hạn mức 10 lần/15 phút, 30 lần/24 giờ (đổi BR-S3E1-14).
+- [PO] mục 8: HS vào lớp bằng tên không có mật khẩu → không xoá được tài khoản. Đề xuất: xác nhận bằng gõ "XÓA", không tăng bộ đếm sai. → chốt PO-72
+- [PO] mục 10: HS đọc đề Kho chung theo id — PO-66 G2 đã cho phép (gợi ý, lời giải khoá). Đề xuất: giữ, ghi DECISIONS. → chốt PO-73
+- [PO/BA] mục 12: `userCode` trong query string. Đề xuất: thêm userId (UUID) vào Row/Person, trang bài làm dùng `hs=<uuid>`, cập nhật TC S3-E3 (đổi hợp đồng API). → chốt PO-74
+- [PO] mục 13: gửi lại yêu cầu vào lớp sau Bị từ chối/Đã rời không giới hạn. Đề xuất: tính vào hạn mức 10 lần/15 phút, 30 lần/24 giờ (đổi BR-S3E1-14). → chốt PO-75
 - FIX soát A (fix-rv-a, gộp 27/11): mục 1 ClassAiSwitchFilter **ĐÓNG** 87abfd1 (tái hiện: `;x=1`, `%71uestions`, `%2D` lọt); mục 2 audit denied ≤1 hàng/giờ **ĐÓNG** 1750377; mục 4 AccountPurgeJob cron 03:00 **ĐÓNG** 5507c5d; probeLockedSolution **ĐÓNG** fbc5cce; TC-GEO-0605 **ĐÓNG** 3ff281b (240/240). Verify bản kết hợp A+B 304 UT + 251 IT.
-- [PO/BA] BR-S3E5-07 + tên TC-S3E4-23 ("mỗi yêu cầu một bản ghi Từ chối") → nay ≤1 hàng/giờ mỗi (người, loại): chỉnh câu chữ.
+- [PO/BA] BR-S3E5-07 + tên TC-S3E4-23 ("mỗi yêu cầu một bản ghi Từ chối") → nay ≤1 hàng/giờ mỗi (người, loại): chỉnh câu chữ. → chốt PO-76
 - [Web/UX] WebKit di động đôi khi nhận chạm vào `<html>` khi dòng tóm tắt kho đề về muộn làm bố cục dịch → đặt chiều cao tối thiểu cho dòng tóm tắt.
 - [Vận hành] lượt e2e ghi đè `artifacts/GEO/evidence/theme/*.png` → cho script e2e ghi ra thư mục khác.
 - Câu mở mới: [Test chập chờn] `AssignmentSetS3E2IT.probeLockedSolution` regex LEAK khớp "45" trong giờ "23:45:42" → trượt khi chạy ở phút 45; sửa regex. [Test chập chờn] TC-GEO-0605 mobile-iphone hết giờ chờ UI 1 lần.
+
+## Việc: FIX theo PO-DECISIONS 27/11 (PO-71…76, 83, 85, 74)
+- **Mục tiêu:** đưa code khớp các quyết định PO ngày 27/11/2026; mỗi thay đổi có test.
+  1. [PO-72] xóa tài khoản học sinh vào lớp bằng tên (không mật khẩu): chỉ cần gõ "XÓA", bỏ bước mật khẩu, không tăng bộ đếm sai (BR-S3E5-50, -55). TC mới TC-S3E5-61; TC-S3E5-53/58 giữ.
+  2. [PO-74] thêm `userId` (UUID) vào Row/Person của Kết quả lớp; trang bài làm dùng `hs=<userId>`; bỏ `userCode` khỏi query string; em vào lớp bằng tên mở được bằng chứng theo `userId` (BR-S3E3-40; DEV-S3E3-08). Cập nhật TC S3-E3 (TC-S3E3-58 mới; TC có địa chỉ `hs=HS-…` phải đổi) và hợp đồng API.
+  3. [PO-75] gửi lại yêu cầu vào lớp sau Bị từ chối/Đã rời tính vào hạn mức 10 lần/15 phút và 30 lần/24 giờ (BR-S3E1-14, -17). TC mới TC-S3E1-55.
+  4. [PO-76] audit "Từ chối" ≤ 1 hàng/giờ mỗi (người, loại đối tượng): kiểm lại đã đủ cho mọi đường từ chối (không chỉ `SetReleaseService`); TC-S3E5-09 và TC-S3E4-23 kỳ vọng mới.
+  5. [PO-71] `auth_failure.ip_key` hạn lưu 1 giờ (không phải 1 ngày) + công việc dọn xóa theo giờ; TC cho dọn xóa.
+  6. [PO-83] tổng thời gian chờ bộ gộp "Cả lớp vướng ở đâu" ≤ 10 giây, không cộng dồn, độc lập `geo.ai.timeout` (BR-S3E3-42); thêm prompt hệ thống cho task `class_stuck` và giá trị `ai_purpose` riêng trong `aigateway`.
+  7. [PO-85] lớp tắt AI thì không gọi bộ gộp, thẻ hiện dữ liệu thô kèm MSG-S3-98 (BR-S3E3-41); TC mới cho S3-E3 (đề xuất TC-S3E3-59) và đối chiếu TC-S3E5-51.
+  8. [PO-70] giao qua `practice-sets/{id}/assign` vào lớp lưu trữ trả CONFLICT kèm MSG-S3-97; hiện MSG-S3-97 ở giao diện giáo viên.
+  9. [PO-69] thông báo MSG-S3-95 không lặp "Bộ " (tên đã bắt đầu bằng "Bộ ").
+  10. [PO-68] kiểm code nhắc việc khớp bốn điểm của BR-S3E6-21 (giờ yên lặng chỉ cho nhắc hạn; cửa sổ lời giải 1 ngày; Mở ngay không báo lần hai; lùi hạn thì nhắc thêm một lần).
+- **Nguồn:** `PO-DECISIONS.md` PO-67…85 (27/11/2026); `epics/S3-E1/stories_ac.md` v0.4, `S3-E3` v0.4, `S3-E5` v0.4, `S3-E6` v0.4, TC cùng phiên bản.
+- **Xong khi:** make verify xanh; e2e-affected 0 trượt cho S3-E1, E3, E4, E5, E6; mỗi mục 1–10 có test tương ứng; test_cases.md khớp.
+- **Ngoài phạm vi:** chặng 4; sửa spec (PO đã chốt); mục chờ chủ đầu tư.
+- **Việc tài liệu còn lại (BA, không phải code):** thêm AC 606-SC8 cho n = 0, câu "Hôm nay em chưa có bài cần làm." khi sinh lại E6 (PO-80); sinh lại `traceability` cho TC mới (TC-S3E5-61, TC-S3E1-55, TC-S3E3-58).

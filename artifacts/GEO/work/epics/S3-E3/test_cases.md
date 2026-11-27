@@ -1,4 +1,4 @@
-Phiên bản: v0.3 · 2026-11-26
+Phiên bản: v0.4 · 2026-11-27
 # S3-E3 — test case (Kết quả lớp (bảng lớp × bài) và "Cả lớp vướng ở đâu" — màn ưu tiên C3-04)
 
 > Chủ sở hữu: QC. Lập từ `stories_ac.md` cùng thư mục (mỗi tiêu chí có ít nhất một case) và `test_design.md`. **Trạng thái: ready for R3**; mức epic **P0**. Id ổn định; tiêu chí bị gạch bỏ thì case giữ id với N/A. AI là giả lập (D-GEO-047). Kỳ vọng bám Given / When / Then của AC, giá trị cụ thể lấy từ dữ liệu mẫu chung.
@@ -126,6 +126,7 @@ Phiên bản: v0.3 · 2026-11-26
 | TC-S3E3-55 | Dữ liệu đầu vào không đổi thì không gọi lại bộ gộp | Medium | Abnormal (Fail case/Edge case) | phi chức năng | tích hợp CSDL / đơn vị | IT | Kỹ sư kiểm thử với quyền đọc cơ sở dữ liệu thử | • nhà cung cấp AI giả lập đếm lượt gọi<br/>• Đề 3 đã được gộp một lần | • Không có dữ liệu nhập riêng | 1. cô Lan bấm "Làm mới" hai lần khi chưa có tương tác mới | • số lượt gọi nhà cung cấp vẫn là 1<br/>• nhận định giữ nguyên<br/>• "Cập nhật lúc" được cập nhật theo lần làm mới | US-S3E3-03 · FC9; CL-X-01 · ENG |
 | TC-S3E3-56 | Thẻ không có phần trăm hay xếp hạng toàn lớp | Medium | Abnormal (Fail case/Edge case) | dữ liệu trả về | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • bộ gộp giả lập trả nhận định có chứa chữ "75% lớp sai bước này" và "đề khó nhất lớp" (F-S3-051) | • Hàng dữ liệu: F-S3-051 | 1. gọi API "Cả lớp vướng ở đâu" | • thân phản hồi không chứa phần trăm của lớp hay xếp hạng<br/>• câu nhận định vi phạm bị loại hoặc cắt phần đó<br/>• số duy nhất trong thẻ là số bài làm căn cứ n | US-S3E3-03 · FC10; CL-FN-12 |
 | TC-S3E3-57 | Chưa ai làm thì không có thẻ nhận định | Medium | Abnormal (Fail case/Edge case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • "Bộ bài tuần 16" vừa giao, chưa em nào mở (F-S3-052) | • Hàng dữ liệu: F-S3-052 | 1. mở Kết quả lớp của bộ đó | • khung "Cả lớp vướng ở đâu" hiện MSG-S3-43 với m = 0 cho mỗi đề hoặc một câu chung "Chưa có bài làm"<br/>• không thẻ nhận định, không dữ liệu thô rỗng không giải thích | US-S3E3-03 · FC11; CL-FN-03 |
+| TC-S3E3-58 | Địa chỉ trang bài làm dùng userId, không dùng mã người dùng | High | Normal (Success case) | chức năng | E2E trình duyệt (Playwright) + tích hợp API | E2E-UI | Giáo viên Lan (chủ lớp 11A1) | • bảng lớp 11A1 đã mở | • Hàng dữ liệu: Chi Mai `HS-8L2K-77AB` | 1. bấm ô Xem lại của Chi Mai<br/>2. đọc địa chỉ trang và dữ liệu trả về của bảng | • địa chỉ có `hs=<UUID>`, không chứa `HS-8L2K-77AB`<br/>• mỗi dòng của bảng có `userId`<br/>• mã người dùng vẫn hiện trên màn hình | BR-S3E3-40; PO-74 |
 
 ## 4. Truy vết story → tiêu chí → case
 
@@ -202,3 +203,4 @@ Phiên bản: v0.3 · 2026-11-26
 | v0.1 | 2026-11-26 | Tạo mới: 57 case của S3-E3 | runner-T-261126-14 (QC) |
 | v0.2 | 2026-11-26 | đổi mã mẫu `HS-`/`GV-` có ký tự 0, 1, O, I sang ký tự hợp lệ (BR-S2E1-04), RV_s23 m-01 | runner-T-261126-15 (QC soát phản biện, RV_s23) |
 | v0.3 | 2026-11-26 | Áp PO-66: đổi nhãn PROVISIONAL thành PO-66 | runner-T-261126-37 (BA/QC) |
+| v0.4 | 2026-11-27 | Thêm TC-S3E3-58 (userId trong địa chỉ trang, PO-74) | runner-po-s3 (PO/BA) |
