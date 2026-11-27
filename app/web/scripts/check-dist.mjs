@@ -25,8 +25,17 @@ for (const f of files(dir)) {
   const list = f.endsWith('.map') ? FORBIDDEN : [...FORBIDDEN, ...FORBIDDEN_CODE];
   for (const s of list) if (text.includes(s)) hits.push(`${f}: ${s}`);
 }
+// Dev-REV-B6: bản production không có tệp .map và không trỏ tới .map (sourcemap tắt ở vite.config.ts).
+if (dir === 'dist') {
+  for (const f of files(dir)) {
+    if (f.endsWith('.map')) hits.push(`${f}: tệp sourcemap trong bản production`);
+    else if (/\.(js|css)$/.test(f) && readFileSync(f, 'utf8').includes('sourceMappingURL=')) {
+      hits.push(`${f}: sourceMappingURL trong bản production`);
+    }
+  }
+}
 if (hits.length) {
   console.error(`check-dist: bản production còn móc kiểm thử (${hits.length}):\n  ${hits.join('\n  ')}`);
   process.exit(1);
 }
-console.log(`check-dist: ${dir} sạch (không có ${[...FORBIDDEN, ...FORBIDDEN_CODE].join(', ')})`);
+console.log(`check-dist: ${dir} sạch (không có ${[...FORBIDDEN, ...FORBIDDEN_CODE].join(', ')}${dir === 'dist' ? ', không .map' : ''})`);
