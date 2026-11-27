@@ -11,8 +11,11 @@ import type { Project } from '@playwright/test';
  * - GEO_E2E_RESET=0: bỏ bước reset seed vàng ở globalSetup (khi chạy vào máy chủ không dùng geo_e2e).
  * - GEO_E2E_WEBKIT=0: tắt dự án WebKit (mặc định bật nếu trình duyệt WebKit đã cài).
  * - GEO_E2E_EVIDENCE=full|fail: bằng chứng video + trace cho mọi test (full) hay chỉ test trượt (fail, mặc định).
+ * - GEO_E2E_RETRIES: số lần thử lại của dự án UI/mobile (ui-*, mobile-*); mặc định 1 (E2E-SPLIT 27/11, T-33 đề xuất).
+ *   Dự án `api` KHÔNG thử lại (lỗi API là lỗi thật). Ca đạt sau retry = "flaky": reporter đếm riêng (totals.flaky,
+ *   flakyTests ở summary.json), vẫn tính đạt, không lẫn với đạt ngay. GEO_E2E_RETRIES=0 để tắt.
  * - GEO_E2E_WORKERS: số worker Playwright (mặc định nửa số lõi, tối thiểu 2; T-261126-43). Máy dùng chung đang tải cao
- *   thì hạ xuống (ví dụ 2) thay vì nới thời gian chờ. Không bật retries để che lỗi (retries chỉ 1 khi CI).
+ *   thì hạ xuống (ví dụ 2) thay vì nới thời gian chờ. Retries chỉ cho UI/mobile (xem GEO_E2E_RETRIES), luôn báo riêng ca flaky.
  * Dự án:
  * - `api`        tests/**\/*.api.spec.ts, chỉ HTTP; bằng chứng: trace + ảnh chụp bảng yêu cầu/phản hồi + http.json.
  * - `ui-chromium` tests/**\/*.ui.spec.ts trên Chromium máy tính (giáo viên, F-GEO-102); ảnh chụp + trace + video.
@@ -50,6 +53,10 @@ function e2eWorkers(): number {
   return Math.max(2, Math.floor(availableParallelism() / 2));
 }
 
+const uiRetries = (() => {
+  const v = Number.parseInt(process.env.GEO_E2E_RETRIES ?? '', 10);
+  return Number.isFinite(v) && v >= 0 ? v : 1;
+})();
 const withWebkit = process.env.GEO_E2E_WEBKIT !== '0' && webkitInstalled;
 
 /**
@@ -95,13 +102,16 @@ if (withWebkit) {
 // Cùng các spec P0 trên điện thoại Android (Chromium, Pixel 7): chạy cả khi máy không cài WebKit.
 projects.push({ name: 'mobile-pixel', testMatch: MOBILE_P0, use: { ...devices['Pixel 7'], baseURL: webURL, ...uiEvidence } });
 
+// Chỉ dự án UI/mobile được thử lại (E2E-SPLIT): ca UI chập chờn do tải máy; ca API loại B không thử lại.
+for (const p of projects) if (p.name !== 'api') p.retries = uiRetries;
+
 export default defineConfig({
   testDir: './tests',
   outputDir: `test-results/${run}`,
   fullyParallel: true,
   workers: e2eWorkers(),
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 1 : 0,
+  retries: 0, // dự án UI/mobile đặt retries riêng bên dưới (uiRetries); api không thử lại
   globalSetup: './support/global-setup.ts',
   reporter: [['list'], ['./reporters/evidence-reporter.ts', { outDir: 'evidence' }]],
   use: {

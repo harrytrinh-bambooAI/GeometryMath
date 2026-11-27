@@ -6,6 +6,10 @@
  *   L0  spec của epic sở hữu tệp bị đụng + smoke (@smoke)          trên api + ui-chromium
  *   L1  L0 + spec các epic phụ thuộc (deps của luật)              trên api + ui-chromium
  *   L2  trọn bộ                                                   trên api + ui-chromium
+ *   Diff CHỈ app/server/src/main/** (mã, tài nguyên, migration) (E2E-SPLIT, DECISIONS 27/11 "Chiến lược E2E"): api + ca UI
+ *     loại A của màn/epic liên quan trên ui-chromium; KHÔNG chạy mobile-*; ca UI gắn @loai-B (nếu còn) bị loại bằng
+ *     --grep-invert. Ca loại B đã chuyển sang `*.flow.api.spec.ts` (project api). Diff đụng app/web/** thì chạy UI như
+ *     trên; gate (make e2e trọn bộ) không đổi.
  *   L0/L1 thêm: spec P0 điện thoại (MOBILE_P0, *.p0m.ui.spec.ts) của màn bị đụng trên mobile-pixel / mobile-iphone.
  * Chọn test bằng một biểu thức -g của Playwright (khớp "<project> <tệp> <tiêu đề> <tag>"), nên không cần --project.
  *
@@ -23,6 +27,8 @@ import { fileURLToPath } from 'node:url';
 const APP = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TESTS = path.join(APP, 'e2e', 'tests');
 const FEATURES = path.join(APP, 'web', 'src', 'features');
+const SERVER_ONLY = /^app\/server\/src\/main\/(java|resources)\//;
+const B_TAG = '@loai-B';
 const RANK = { none: 0, L0: 1, L1: 2, L2: 3 };
 const DESKTOP = '(api|ui-chromium)';
 const MOBILE = 'mobile-(pixel|iphone)';
@@ -138,7 +144,8 @@ function plan(files, map) {
   const owners = [...new Set(items.filter((x) => x.level !== 'none' && x.epic).map((x) => x.epic))];
   const deps = eff === 'L1' ? [...new Set(items.filter((x) => x.level === 'L1').flatMap((x) => x.deps))].filter((d) => !owners.includes(d)) : [];
   const epics = [...owners, ...deps];
-  const res = { level: eff, base: null, files: items, owners, deps, epics, specDirs: [], missingSpecs: [], specs: [], mobileSpecs: [], grep: '' };
+  const serverOnly = level !== 'none' && level !== 'L2' && items.every((x) => x.level === 'none' || SERVER_ONLY.test(x.file));
+  const res = { level: eff, serverOnly, grepInvert: serverOnly ? B_TAG : '', base: null, files: items, owners, deps, epics, specDirs: [], missingSpecs: [], specs: [], mobileSpecs: [], grep: '' };
   if (eff === 'L2') {
     res.specs = ['(trọn bộ api + ui-chromium)'];
     res.grep = `^${DESKTOP} `;
@@ -150,14 +157,14 @@ function plan(files, map) {
   res.specDirs = withDir.map(dirOf);
   res.specs = withDir.flatMap((e) => specFiles(dirOf(e)).filter((f) => /\.(api|ui)\.spec\.ts$/.test(f)));
   const ownerDirs = owners.filter((e) => withDir.includes(e)).map(dirOf);
-  res.mobileSpecs = ownerDirs.flatMap((d) => specFiles(d)).filter((f) => MOBILE_P0.some((re) => re.test(f)));
+  res.mobileSpecs = serverOnly ? [] : ownerDirs.flatMap((d) => specFiles(d)).filter((f) => MOBILE_P0.some((re) => re.test(f)));
   const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const named = res.specDirs.filter((d) => d !== '').map(esc);
   const alts = [`^${DESKTOP} .*@smoke\\b`];
   if (named.length) alts.push(`^${DESKTOP} (${named.join('|')})/`);
   if (res.specDirs.includes('')) alts.push(`^${DESKTOP} [^/ ]+\\.spec\\.ts `);
   const mob = ownerDirs.filter((d) => d !== '').map(esc);
-  if (res.mobileSpecs.length && mob.length) alts.push(`^${MOBILE} (${mob.join('|')})/`);
+  if (!serverOnly && res.mobileSpecs.length && mob.length) alts.push(`^${MOBILE} (${mob.join('|')})/`);
   res.grep = alts.join('|');
   return res;
 }
@@ -177,7 +184,7 @@ function printPlan(p, out = console.log) {
   } else {
     out('Spec: trọn bộ api + ui-chromium (smoke nằm trong đó)');
   }
-  out(`Playwright -g: ${p.grep}`);
+  out(`Playwright -g: ${p.grep}${p.grepInvert ? ` · --grep-invert ${p.grepInvert}` : ''}${p.serverOnly ? ' · diff chỉ server: api + ca UI loại A, không mobile' : ''}`);
 }
 
 function selftest(map) {
@@ -191,6 +198,15 @@ function selftest(map) {
     for (const e of c.epicsInclude ?? []) if (!p.epics.includes(e)) errs.push(`thiếu epic ${e}`);
     for (const d of c.specDirsInclude ?? []) if (!p.specDirs.includes(d)) errs.push(`thiếu thư mục spec ${d}`);
     if (p.level !== 'L2' && !p.grep.includes('@smoke')) errs.push('thiếu smoke');
+    if (c.serverOnly !== undefined && p.serverOnly !== c.serverOnly) errs.push(`serverOnly ${p.serverOnly} ≠ ${c.serverOnly}`);
+    if (c.serverOnly) {
+      if (p.grepInvert !== B_TAG) errs.push('thiếu --grep-invert @loai-B');
+      if (p.mobileSpecs.length) errs.push('diff chỉ server mà còn spec mobile');
+      // 0 ca UI loại B: không spec *.ui.spec.ts nào được chọn còn test gắn @loai-B (ca B nằm ở *.api.spec.ts)
+      const bad = p.specs.filter((f) => /\.ui\.spec\.ts$/.test(f)).filter((f) => /@loai-B\b/.test(readFileSync(path.join(TESTS, f), 'utf8')));
+      if (bad.length) errs.push(`còn ca UI loại B ở ${bad.join(', ')}`);
+      for (const f of c.apiSpecsInclude ?? []) if (!p.specs.includes(f)) errs.push(`thiếu spec API ${f}`);
+    }
     const nSpec = p.level === 'L2' ? 'trọn bộ' : `${p.specs.length} spec + ${p.mobileSpecs.length} spec điện thoại + smoke`;
     console.log(`${errs.length ? 'LỆCH' : 'ĐẠT '} · ${c.name} · ${p.level} · epic ${p.epics.join(', ') || '-'} · ${nSpec}${errs.length ? ` · ${errs.join('; ')}` : ''}`);
     if (errs.length) bad++;
@@ -213,7 +229,7 @@ function main() {
     timeZone: 'Asia/Ho_Chi_Minh', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit',
   }).format(new Date()).replace(/[-: ]/g, (c) => (c === ' ' ? '-' : ''));
   const t0 = Date.now();
-  const r = spawnSync(path.join(APP, 'scripts', 'e2e.sh'), ['-g', p.grep, ...o.pw], {
+  const r = spawnSync(path.join(APP, 'scripts', 'e2e.sh'), ['-g', p.grep, ...(p.grepInvert ? ['--grep-invert', p.grepInvert] : []), ...o.pw], {
     cwd: APP, stdio: 'inherit', env: { ...process.env, GEO_E2E_RUN: run },
   });
   const rc = r.status ?? 1;

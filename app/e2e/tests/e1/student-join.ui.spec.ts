@@ -101,37 +101,6 @@ test('Tên hiển thị rỗng @TC-GEO-0107', async ({ page }) => {
   expect(posted, 'không gửi yêu cầu nên không có học sinh nào được tạo').toBe(0);
 });
 
-test('Tên hiển thị 61 ký tự @TC-GEO-0108', async ({ page, request }) => {
-  const name = 'A'.repeat(61);
-  await page.goto('/hs/vao-lop');
-  await page.getByTestId('e1-join-name').fill(name);
-  await page.getByTestId('e1-join-code').fill('HK7M2A');
-  const res = page.waitForResponse((r) => r.url().endsWith('/api/v1/auth/student'));
-  await page.getByTestId('e1-join-submit').click();
-  const r = await res;
-  expect(r.status()).toBe(400);
-  expect(((await r.json()) as { code: string }).code).toBe('VALIDATION_FAILED');
-  await expect(page.getByTestId('e1-join-name-error')).toHaveText(MSG['10']);
-  await expect(page).toHaveURL(/\/hs\/vao-lop$/);
-  const teacher = await devToken(request, 'F-GEO-003');
-  const m = (await (
-    await request.get(`${API}/api/v1/teacher/assignments/${BG('BG-1')}/monitor`, { headers: bearer(teacher) })
-  ).json()) as { students: Array<{ displayName: string }> };
-  expect(m.students.some((s) => s.displayName.startsWith('AAAAAAAAAA'))).toBe(false);
-});
-
-test('Mã lớp không tồn tại @TC-GEO-0109', async ({ page }) => {
-  await page.goto('/hs/vao-lop');
-  await page.getByTestId('e1-join-name').fill('An');
-  await page.getByTestId('e1-join-code').fill('ZZ9ZZ9');
-  const res = page.waitForResponse((r) => r.url().endsWith('/api/v1/auth/student'));
-  await page.getByTestId('e1-join-submit').click();
-  const body = await (await res).text();
-  await expect(page.getByTestId('e1-join-code-error')).toHaveText(MSG['11']);
-  await expect(page.getByTestId('e1-join-name')).toHaveValue('An');
-  for (const leak of ['11A1', '9B', '9C', 'THPT', 'THCS', 'Mẫu']) expect(body).not.toContain(leak);
-});
-
 test('Phiên hết hạn @TC-GEO-0110', async ({ page, request }) => {
   await studentJoinUI(page, 'An', 'HK7M2A');
   await expect(page.getByTestId('e1-greeting')).toHaveText('Chào An');
@@ -151,26 +120,4 @@ test('Phiên hết hạn @TC-GEO-0110', async ({ page, request }) => {
   await page.getByTestId('e1-join-code').fill('HK7M2A');
   await page.getByTestId('e1-join-submit').click();
   await expect(page.getByTestId('e1-assignment-HKG-01-progress')).toHaveText('2/3 · Đã xem gợi ý 2');
-});
-
-test('Gõ sai mã lớp nhiều lần không bị khóa riêng @TC-GEO-0173', async ({ page }) => {
-  const statuses: number[] = [];
-  page.on('response', (r) => {
-    if (r.url().endsWith('/api/v1/auth/student')) statuses.push(r.status());
-  });
-  await page.goto('/hs/vao-lop');
-  await page.getByTestId('e1-join-name').fill('An');
-  await page.getByTestId('e1-join-code').fill('ZZ9ZZ9');
-  for (let i = 1; i <= 11; i++) {
-    const res = page.waitForResponse((r) => r.url().endsWith('/api/v1/auth/student'));
-    await page.getByTestId('e1-join-submit').click();
-    await res;
-    await expect(page.getByTestId('e1-join-code-error')).toHaveText(MSG['11']);
-  }
-  expect(statuses).toHaveLength(11);
-  expect(statuses.every((s) => s === 400), `không lần nào 429: ${statuses.join(',')}`).toBe(true);
-  await page.getByTestId('e1-join-code').fill('HK7M2A');
-  await page.getByTestId('e1-join-submit').click();
-  await expect(page).toHaveURL(/\/hs\/bai-cua-em$/);
-  await expect(page.getByTestId('e1-greeting')).toHaveText('Chào An');
 });

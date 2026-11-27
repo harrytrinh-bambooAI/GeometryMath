@@ -83,25 +83,3 @@ test('Chưa gõ XÓA thì nút xác nhận bị khóa @TC-S3E5-59', async ({ pag
   expect(e.details?.[0]?.field).toBe('confirm');
   expect((await codeLogin(request, an.userCode, PASSWORD)).status()).toBe(200);
 });
-
-test('Tên hiển thị là email @TC-S3E5-33', async ({ page, request }, testInfo) => {
-  await page.setExtraHTTPHeaders({ 'X-Forwarded-For': ipOf(testInfo) });
-  await page.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
-  await page.goto('/hs/dang-ky');
-  await page.getByTestId('s2e1-role-student').click();
-  await page.getByTestId('s2e1-name').fill('mai@example.org');
-  await page.getByTestId('s2e1-password').fill('MaiMai#2026');
-  await page.getByTestId('s2e1-privacy').check();
-  const resp = page.waitForResponse((r) => r.url().includes('/api/v1/auth/register'));
-  await page.getByTestId('s2e1-register-submit').click();
-  expect((await resp).status()).toBe(400);
-  await expect(page.getByTestId('s2e1-name-error')).toHaveText('Tên hiển thị không nên là email hay số điện thoại.');
-  await expect(page.getByTestId('s2e1-codes')).toHaveCount(0);
-  // gọi thẳng
-  const r = await request.post(`${API}/api/v1/auth/register`, {
-    headers: { 'X-Forwarded-For': ipOf(testInfo).replace(/\.\d+$/, '.7') },
-    data: { displayName: 'mai@example.org', role: 'student', password: 'MaiMai#2026', privacyAck: true, privacyVersion: '1.0' },
-  });
-  expect(r.status()).toBe(400);
-  expect((await err(r)).code).toBe('VALIDATION_FAILED');
-});

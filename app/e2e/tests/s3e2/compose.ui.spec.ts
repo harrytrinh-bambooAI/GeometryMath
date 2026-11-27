@@ -76,44 +76,6 @@ test('@TC-S3E2-03 xem trước như học sinh: làm thử Đề 1, xin gợi ý
   for (const name of ['Bình An', 'Chi Mai', 'Đức Huy']) expect((await home(request, sb.classes[0]!.students[name]!.token)).groups).toEqual([]);
 });
 
-test('@TC-S3E2-04 giao bộ: học sinh Đang học thấy, em Chờ duyệt không thấy', async ({ page, request }) => {
-  const sb = await sandbox(request);
-  const d = await draft(request, sb, { items: [1, 2, 4, 5], dueAt: DUE, releaseAt: vn('2026-12-13', '08:00') });
-  await openSet(page, sb, d.id);
-  await giao(page);
-  for (const name of ['Bình An', 'Chi Mai', 'Đức Huy']) {
-    const h = await home(request, sb.classes[0]!.students[name]!.token);
-    expect(h.groups.flatMap((g) => g.sets).map((s) => s.title)).toEqual(['Bộ bài tuần 16']);
-  }
-  for (const name of ['Hoàng Nam', 'Thu Hà']) expect((await home(request, sb.classes[0]!.pending[name]!.token)).groups).toEqual([]);
-  const list = (await (await request.get(T, { headers: bearer(sb.teacher.token) })).json()) as { items: Array<{ status: string }> };
-  expect(list.items.filter((s) => s.status === 'assigned')).toHaveLength(1);
-});
-
-test('@TC-S3E2-07 bộ không có đề không giao được: MSG-S3-23, VALIDATION_FAILED, vẫn Nháp', async ({ page, request }) => {
-  const sb = await sandbox(request);
-  const d = await draft(request, sb, { items: [] });
-  await openSet(page, sb, d.id);
-  await page.getByTestId('s3e2-assign').click();
-  await expect(page.getByTestId('s3e2-error')).toHaveText('Bộ bài cần từ 1 đến 20 đề.');
-  const r = await assignRaw(request, sb.teacher.token, d.id);
-  expect(r.status()).toBe(400);
-  expect(((await r.json()) as { code: string }).code).toBe('VALIDATION_FAILED');
-  expect((await teacherSet(request, sb.teacher.token, d.id)).status).toBe('draft');
-});
-
-test('@TC-S3E2-09 thêm trùng Đề 1: MSG-S3-24, bộ vẫn một lần Đề 1', async ({ page, request }) => {
-  const sb = await sandbox(request);
-  const d = await draft(request, sb, { items: [1] });
-  await openSet(page, sb, d.id);
-  await page.getByTestId(`s3e2-add-${CODE(1)}`).click();
-  await expect(page.getByTestId('s3e2-note')).toHaveText('Đề này đã có trong bộ.');
-  await expect(page.getByTestId('s3e2-count')).toHaveText('Đề trong bộ (1)');
-  const r = await request.post(`${T}/${d.id}/items`, { headers: bearer(sb.teacher.token), data: { problemVersionId: V(1) } });
-  expect(r.status()).toBe(400);
-  expect((await teacherSet(request, sb.teacher.token, d.id)).items).toHaveLength(1);
-});
-
 test('@TC-S3E2-10 chưa chọn lớp thì nút Giao chờ chọn: MSG-S3-25, gọi thẳng VALIDATION_FAILED', async ({ page, request }) => {
   const sb = await sandbox(request);
   const d = await draft(request, sb, { classId: null });
@@ -126,16 +88,4 @@ test('@TC-S3E2-10 chưa chọn lớp thì nút Giao chờ chọn: MSG-S3-25, g�
   expect(err.code).toBe('VALIDATION_FAILED');
   expect(JSON.stringify(err)).toContain('Chưa chọn lớp để giao.');
   expect((await teacherSet(request, sb.teacher.token, d.id)).status).toBe('draft');
-});
-
-test('@TC-S3E2-13 hạn làm đã qua khi giao: cảnh báo, giáo viên xác nhận thì giao, học sinh thấy Quá hạn ngay', async ({ page, request }) => {
-  const sb = await sandbox(request);
-  const d = await draft(request, sb, { items: [1, 2], dueAt: hours(-1), releaseAt: hours(48) });
-  await openSet(page, sb, d.id);
-  await page.getByTestId('s3e2-assign').click();
-  await expect(page.getByTestId('s3e2-due-past')).toContainText('Hạn làm đã qua');
-  await page.getByTestId('s3e2-confirm-ok').click();
-  await expect(page.getByTestId('s3e2-status')).toHaveText('Đã giao');
-  const h = await home(request, sb.classes[0]!.students['Bình An']!.token);
-  expect(h.groups[0]!.sets[0]!.overdue).toBe(true);
 });
