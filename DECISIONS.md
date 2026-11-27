@@ -57,3 +57,4 @@ Phiên bản: v0.1 · 2026-11-26 · quyết định đã chốt — 1 dòng / qu
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-26 | Tạo từ delivery-lead/templates/DECISIONS.md | |
+| 2026-11-28 | Code chặng 5 chạy hết 8 đợt theo PLAN_code-s5 v1.0 (17 task, 2 Opus song song, ~123M token, ~48,5 giờ agent), dừng ở gate owner T-261128-67. E4/E6 sau cờ tắt mặc định (PO-64/QS5-01 chưa chốt); AI mock; bench chấm (QS5-27) chờ "Go" | Owner chọn "Chạy hết 8 đợt" 28/11 |
