@@ -408,3 +408,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** commit 83d3052 nhánh content-bal; DECISIONS 27/11 "Kho đề 84 đề".
 - **Xong khi:** test prompt/mock đạt; `make bench-mvp` mock xanh; (đo AI thật chỉ khi owner cho phép chi phí).
 - **Ngoài phạm vi:** đổi model AI; nới ngưỡng.
+
+## Việc: baseline kiểm chứng AI — lấp chỗ hở sau danh mục nguồn · ghi 27/11/2026
+- **Mục tiêu:** từ danh mục `artifacts/GEO/materials/baseline/` (88 nguồn) dựng bộ baseline thật: (1) tải tay ≥ 20 PDF hướng dẫn chấm chính thức (Sở HN/HCM vào 10, Bộ TN THPT) → chuẩn hoá thành bước + điểm; (2) bộ hình học không gian tiếng Việt tự dựng từ SGK (chưa có dataset nào); (3) xác minh đơn vị công tác/sách của 6 giáo viên (hiện chỉ có số theo dõi); (4) gộp vào PLAN kho bài giảng v1.1: lời giải có cấu trúc bước (mã bước, KT, điểm, tiêu chí, lỗi thường gặp).
+- **Nguồn:** `baseline/nguon-loi-giai.md`, `baseline/nguon-bai-giang.md` v1.0 27/11.
+- **Xong khi:** chờ owner duyệt phương án (việc > 1 giờ, nhiều cách làm).
+- **Ngoài phạm vi:** app/**; scrape hàng loạt loigiaihay/vietjack/hoc247/vndoc (rủi ro bản quyền).
