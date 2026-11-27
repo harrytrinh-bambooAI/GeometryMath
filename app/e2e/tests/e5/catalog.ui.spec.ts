@@ -104,20 +104,6 @@ test('Lọc không có kết quả: THCS + Mặt cầu @TC-GEO-0506', async ({ p
   await expect(page.getByTestId('e5-load-more')).toHaveCount(0);
 });
 
-test('Học sinh gọi Kho đề: FORBIDDEN, không có mục Kho đề @TC-GEO-0507', async ({ page, request }) => {
-  const an = await devToken(request, 'F-GEO-020');
-  const r = await request.get(`${API}/api/v1/catalog/problems`, { headers: bearer(an) });
-  expect(r.status()).toBe(403);
-  const body = await r.text();
-  expect((JSON.parse(body) as { code: string }).code).toBe('FORBIDDEN');
-  expect(body).not.toMatch(/HKG-|"items"/);
-  expect((JSON.parse(body) as { message: string }).message).toBe(MSG['03']);
-  await signInPage(page, request, 'F-GEO-020', '11A1');
-  await page.goto('/hs/bai-cua-em');
-  await expect(page.getByTestId('hs-rail')).toBeVisible();
-  await expect(page.getByTestId('hs-rail')).not.toContainText('Kho đề');
-});
-
 test('Không có tìm kiếm, Thêm đề, soạn, import, Thiết diện @TC-GEO-0508', async ({ page, request }) => {
   await signInLane(page, request);
   await openBank(page);

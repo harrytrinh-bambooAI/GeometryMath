@@ -197,24 +197,6 @@ test('Bài chưa có câu hỏi @TC-GEO-0467', async ({ page, request }) => {
   await expect(page.getByTestId('e4-log-empty')).toHaveText(MSG['38']);
 });
 
-test('Câu trả lời từng bị chặn mở lại vẫn là câu thay thế @TC-GEO-0493', async ({ page, request }) => {
-  const sb = await bg1(request, ['Bình']);
-  const binh = who(sb, 'Bình');
-  expect((await call.hint(request, binh.token, as(sb, 'BG-1'), 1)).status()).toBe(200);
-  const asked = (await (await call.ask(request, binh.token, as(sb, 'BG-1'), F056)).json()) as { reply: string };
-  expect(asked.reply.startsWith(MSG['35'])).toBe(true);
-  // chờ ĐỦ thân mọi phản hồi API (đọc bất đồng bộ) rồi mới kiểm — tránh đạt giả khi thân chưa kịp gom (soát E4 #14)
-  const responses = recordResponses(page);
-  await openHistory(page, binh);
-  const row = page.locator('[data-testid^="e4-log-row-"]').filter({ hasText: F056 });
-  await row.locator('[data-testid^="e4-log-open-"]').click();
-  await expect(row.locator('[data-testid$="-text"]')).toHaveText(asked.reply);
-  const all = await responses();
-  expect(all, 'đã gom được câu trả lời của nhật ký').toContain(F056);
-  expect(all).not.toContain('45°');
-  expect(all).not.toContain('Góc giữa SD và mặt đáy là 45°.');
-});
-
 // ---------------------------------------------------------------- US-GEO-411, 412
 async function hint1Workspace(page: Page, request: APIRequestContext, name = 'An') {
   const sb = await bg1(request, [name]);

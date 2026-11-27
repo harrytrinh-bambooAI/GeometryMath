@@ -11,7 +11,7 @@ import { assignRaw, bearer, CODE, draft, home, hours, sandbox, T, teacherPage, t
 const DUE = '2026-12-11T13:00:00Z'; // 11/12/2026 20:00 giờ Việt Nam
 const vn = (d: string, hm: string) => new Date(`${d}T${hm}:00+07:00`).toISOString();
 
-test('@TC-S3E2-04 giao bộ: học sinh Đang học thấy, em Chờ duyệt không thấy', async ({ request, browser }, testInfo) => {
+test('@TC-S3E2-04 @loai-B giao bộ: học sinh Đang học thấy, em Chờ duyệt không thấy', async ({ request, browser }, testInfo) => {
   const sb = await sandbox(request);
   const d = await draft(request, sb, { items: [1, 2, 4, 5], dueAt: DUE, releaseAt: vn('2026-12-13', '08:00') });
   const a = await assignRaw(request, sb.teacher.token, d.id);
@@ -29,7 +29,7 @@ test('@TC-S3E2-04 giao bộ: học sinh Đang học thấy, em Chờ duyệt kh�
   });
 });
 
-test('@TC-S3E2-07 bộ không có đề không giao được: MSG-S3-23, VALIDATION_FAILED, vẫn Nháp', async ({ request, browser }, testInfo) => {
+test('@TC-S3E2-07 @loai-B bộ không có đề không giao được: MSG-S3-23, VALIDATION_FAILED, vẫn Nháp', async ({ request, browser }, testInfo) => {
   const sb = await sandbox(request);
   const d = await draft(request, sb, { items: [] });
   const r = await assignRaw(request, sb.teacher.token, d.id);
@@ -44,7 +44,7 @@ test('@TC-S3E2-07 bộ không có đề không giao được: MSG-S3-23, VALIDAT
   });
 });
 
-test('@TC-S3E2-09 thêm trùng Đề 1: MSG-S3-24, bộ vẫn một lần Đề 1', async ({ request, browser }, testInfo) => {
+test('@TC-S3E2-09 @loai-B thêm trùng Đề 1: MSG-S3-24, bộ vẫn một lần Đề 1', async ({ request, browser }, testInfo) => {
   const sb = await sandbox(request);
   const d = await draft(request, sb, { items: [1] });
   const r = await request.post(`${T}/${d.id}/items`, { headers: bearer(sb.teacher.token), data: { problemVersionId: V(1) } });
@@ -58,7 +58,7 @@ test('@TC-S3E2-09 thêm trùng Đề 1: MSG-S3-24, bộ vẫn một lần Đề 
   });
 });
 
-test('@TC-S3E2-13 hạn làm đã qua khi giao: giáo viên xác nhận thì giao, học sinh thấy Quá hạn ngay', async ({ request, browser }, testInfo) => {
+test('@TC-S3E2-13 @loai-B hạn làm đã qua khi giao: giáo viên xác nhận thì giao, học sinh thấy Quá hạn ngay', async ({ request, browser }, testInfo) => {
   const sb = await sandbox(request);
   const d = await draft(request, sb, { items: [1, 2], dueAt: hours(-1), releaseAt: hours(48) });
   const a = await assignRaw(request, sb.teacher.token, d.id); // confirmPastRelease: true = bước "xác nhận" của hộp cảnh báo
