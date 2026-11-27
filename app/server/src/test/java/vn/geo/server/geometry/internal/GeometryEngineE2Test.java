@@ -425,6 +425,31 @@ class GeometryEngineE2Test {
     Figure sph = engine.build("sphere", Map.of("r", 5.0));
     assertThat(engine.measure(sph, new AskedQuantity("", "sphere_area", List.of("O", "M"))))
         .isCloseTo(100 * Math.PI, off);
+    // chóp đáy tam giác S.ABC (S = A′ của lăng trụ 3-4-5, h = 5): SA = 5 ⟂ đáy
+    // SAB = 3·5/2, SAC = 4·5/2, SBC = (1/2)·BC·√(SA² + d(A, BC)²) với BC = 5, d = 12/5
+    Figure tri = engine.build("prism_tri_right", Map.of("ab", 3.0, "ac", 4.0, "h", 5.0));
+    assertThat(
+            engine.measure(
+                tri, new AskedQuantity("", "pyramid_lateral", List.of("A′", "A", "B", "C"))))
+        .isCloseTo(7.5 + 10 + 2.5 * Math.sqrt(25 + 2.4 * 2.4), off);
+    // lăng trụ đứng đáy tam giác: chu vi 12 × h 5
+    assertThat(
+            engine.measure(
+                tri, new AskedQuantity("", "prism_lateral", List.of("A", "B", "C", "A′"))))
+        .isCloseTo(60, off);
+    // cạnh bên xiên (đỉnh trên C′ so với đáy ABD của hộp): lỗi tham số
+    assertThatThrownBy(() ->
+            engine.measure(
+                box, new AskedQuantity("", "prism_lateral", List.of("A", "B", "D", "C′"))))
+        .isInstanceOf(IllegalArgumentException.class);
+    // cầu qua bốn đỉnh B, D, A′, C′ của hộp 3×4×5 (tâm là tâm hộp, không ở gốc tọa độ):
+    // mọi đỉnh hộp nằm trên cầu bán kính nửa đường chéo = √50 / 2
+    Figure b3 = engine.build("box", Map.of("a", 3.0, "b", 4.0, "c", 5.0));
+    List<String> skew = List.of("B", "D", "A′", "C′");
+    assertThat(engine.measure(b3, new AskedQuantity("", "sphere_radius", skew)))
+        .isCloseTo(Math.sqrt(50) / 2, off);
+    assertThat(engine.measure(b3, new AskedQuantity("", "sphere_area", skew)))
+        .isCloseTo(50 * Math.PI, off);
     // bốn điểm đồng phẳng hoặc ba điểm: lỗi tham số, không 500
     assertThatThrownBy(() ->
             engine.measure(

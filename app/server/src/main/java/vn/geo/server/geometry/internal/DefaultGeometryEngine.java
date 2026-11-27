@@ -430,7 +430,19 @@ public class DefaultGeometryEngine implements GeometryEngine {
         for (int i = 0; i < k; i++) {
           per += V.dist(base[i], base[(i + 1) % k]);
         }
-        yield per * V.distToPlane(f.point(n.get(k)), base[0], base[1], base[2]);
+        double[] apex = f.point(n.get(k));
+        double h = V.distToPlane(apex, base[0], base[1], base[2]);
+        // S_xq = chu vi đáy × chiều cao chỉ đúng lăng trụ đứng: cạnh bên (đỉnh trên nối đỉnh đáy
+        // gần nhất) phải vuông góc đáy, tức dài bằng khoảng cách tới mặt đáy
+        double edge = Double.MAX_VALUE;
+        for (double[] b : base) {
+          edge = Math.min(edge, V.dist(apex, b));
+        }
+        if (Double.isNaN(h) || Math.abs(edge - h) > 1e-9 * Math.max(1, edge)) {
+          throw new IllegalArgumentException(
+              "prism_lateral chỉ áp dụng cho lăng trụ đứng: cạnh bên không vuông góc mặt đáy");
+        }
+        yield per * h;
       }
       default -> throw new IllegalArgumentException("đại lượng không biết: " + q.kind());
     };

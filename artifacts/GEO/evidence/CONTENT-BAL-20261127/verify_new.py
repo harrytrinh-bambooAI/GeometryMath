@@ -1,4 +1,4 @@
-# Phiên bản: v1.0 · 2026-11-27 · runner-content-bal
+# Phiên bản: v1.1 · 2026-11-27 · runner-content-bal
 # Tự kiểm độc lập đáp số 38 đề mới: dựng tọa độ bằng Python (không dùng engine Java), đo đại lượng
 # theo định nghĩa hình học, so với biểu thức đáp số "py" tại a = 1, 2, 3 (đề không tham số: một lần).
 # Chạy: python3 -I verify_new.py   (thoát 1 nếu có đại lượng sai)

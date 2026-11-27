@@ -1,5 +1,5 @@
 {
- "_doc": "Phiên bản: v1.1 · 2026-11-27 (v1.1: cân chuyên đề, thêm HKN-47…84 — mỗi dạng 16–20 đề, đủ THCS và THPT; v1.0 · 2026-11-26 · T-261126-02, PO-60, MVP.md §5 P0). Gói nội dung Kho đề MVP: đề HKN-xx do AI soạn (agent mvp-content) theo dạng sách giáo khoa, không chép tài liệu có bản quyền. Mỗi đề có cấp, loại khối, dạng bài, đề, hai gợi ý, đáp số và lời giải từng bước; mô tả dựng (bộ dựng, tham số, đại lượng đề hỏi) nằm ở geometry/problem-specs.json cùng mã. Nạp bằng ContentPackLoader vào bộ 'main'; nhãn kiểm chứng do engine tính khi nạp (BR-GEO-213), tệp này không mang nhãn. Không nằm trong seed e2e (Kho đề e2e giữ sáu đề, TC-GEO-0125).",
+ "_doc": "Phiên bản: v1.2 · 2026-11-27 (v1.2: sửa chip HKN-52, gợi ý HKN-69/71/75, đổi HKN-77 sang thể tích cầu; v1.1: cân chuyên đề, thêm HKN-47…84 — mỗi dạng 16–20 đề, đủ THCS và THPT; v1.0 · 2026-11-26 · T-261126-02, PO-60, MVP.md §5 P0). Gói nội dung Kho đề MVP: đề HKN-xx do AI soạn (agent mvp-content) theo dạng sách giáo khoa, không chép tài liệu có bản quyền. Mỗi đề có cấp, loại khối, dạng bài, đề, hai gợi ý, đáp số và lời giải từng bước; mô tả dựng (bộ dựng, tham số, đại lượng đề hỏi) nằm ở geometry/problem-specs.json cùng mã. Nạp bằng ContentPackLoader vào bộ 'main'; nhãn kiểm chứng do engine tính khi nạp (BR-GEO-213), tệp này không mang nhãn. Không nằm trong seed e2e (Kho đề e2e giữ sáu đề, TC-GEO-0125).",
  "version": 1,
  "bank": "main",
  "problems": [
@@ -1738,7 +1738,7 @@
    "statement": "Cắt một hình nón bởi mặt phẳng qua trục được thiết diện là tam giác đều cạnh 2a. Tính diện tích toàn phần của hình nón theo a.",
    "hints": [
     "Thiết diện qua trục là tam giác cân có cạnh bên là đường sinh, cạnh đáy là đường kính đáy.",
-    "Từ đó r = a, l = 2a; Stp = πr·l + πr²."
+    "Thiết diện là tam giác đều cạnh 2a: r bằng nửa cạnh nào và l bằng cạnh nào? Sau đó dùng Stp = πr·l + πr²."
    ],
    "answer": "Stp = 3πa²",
    "steps": [
@@ -1791,7 +1791,7 @@
    "statement": "Cắt một hình trụ bởi mặt phẳng qua trục OO′ được thiết diện là hình vuông có diện tích 16 cm². Tính diện tích xung quanh của hình trụ (để kết quả theo π).",
    "hints": [
     "Thiết diện qua trục là hình chữ nhật có hai kích thước là đường kính đáy và chiều cao.",
-    "Hình vuông cạnh 4 cm nên 2r = h = 4 cm."
+    "Hình vuông diện tích 16 cm² có cạnh bao nhiêu? Đối chiếu cạnh đó với đường kính đáy 2r và chiều cao h để tìm r và h."
    ],
    "answer": "Sxq = 16π cm²",
    "steps": [
@@ -1882,7 +1882,7 @@
    "statement": "Một quả bóng được đặt vừa khít trong một chiếc hộp hình lập phương cạnh 10 cm (quả bóng tiếp xúc với cả sáu mặt hộp). Tính thể tích quả bóng (để kết quả theo π).",
    "hints": [
     "Đường kính quả bóng bằng cạnh hình lập phương.",
-    "R = 5 cm; V = 4/3·πR³."
+    "Từ đường kính, bán kính R của quả bóng là bao nhiêu? Rồi thay vào V = 4/3·πR³."
    ],
    "answer": "V = (500/3)·π cm³",
    "steps": [
@@ -1927,17 +1927,17 @@
    "level": "thcs",
    "solid": "sphere",
    "topic": "Mặt cầu",
-   "statement": "Cho mặt cầu tâm O bán kính OM = 7 cm. Tính diện tích mặt cầu (để kết quả theo π).",
+   "statement": "Cho mặt cầu tâm O đi qua điểm M với OM = 6 cm. Tính thể tích khối cầu (để kết quả theo π).",
    "hints": [
-    "S = 4πR².",
-    "7² = 49."
+    "OM là bán kính R của mặt cầu.",
+    "Thay R vào V = 4/3·πR³: R³ bằng bao nhiêu?"
    ],
-   "answer": "S = 196π cm²",
+   "answer": "V = 288π cm³",
    "steps": [
     {
      "title": "Áp dụng công thức",
-     "body": "S = 4π · 49 = 196π cm².",
-     "why": "Diện tích mặt cầu bằng 4πR²."
+     "body": "V = 4/3 · π · 6³ = 4/3 · π · 216 = 288π cm³.",
+     "why": "Thể tích khối cầu bằng 4/3·πR³."
     }
    ]
   },

@@ -40,8 +40,8 @@ public class CatalogService {
 
   /**
    * Tiêu chí MVP (REQ-GEO-49, D-GEO-055): kho 40 đến 100 đề, ít nhất 40 đề đã kiểm chứng. Trần 60
-   * nâng lên 100 ngày 2026-11-27 khi owner cân chuyên đề Kho đề MVP lên 84 đề (+ 6 HKG = 90; TẠM,
-   * chờ ghi DECISIONS).
+   * nâng lên 100 ngày 2026-11-27 khi owner cân chuyên đề Kho đề MVP lên 84 đề (+ 6 HKG = 90; xem
+   * DECISIONS 27/11 Kho đề 84 đề).
    */
   public static final int MVP_MIN = 40;
 

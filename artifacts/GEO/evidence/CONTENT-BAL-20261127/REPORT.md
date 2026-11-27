@@ -53,3 +53,4 @@ Soạn theo dạng bài SGK Toán 8–9, 11, 12 và đề thi tốt nghiệp THP
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.0 | 2026-11-27 | Bản đầu | runner-content-bal (phiên chính ghi tệp) |
+| v1.1 | 2026-11-27 | Sửa 5 phát hiện soát độc lập: chip HKN-52, gợi ý HKN-69/71/75 thành câu hỏi dẫn, HKN-77 đổi sang thể tích cầu; engine prism_lateral kiểm lăng trụ đứng | runner-content-bal-fix |
