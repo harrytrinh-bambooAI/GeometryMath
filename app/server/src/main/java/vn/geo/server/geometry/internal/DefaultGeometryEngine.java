@@ -374,13 +374,47 @@ public class DefaultGeometryEngine implements GeometryEngine {
         double r = V.dist(f.point(n.get(0)), f.point(n.get(2)));
         yield 2 * Math.PI * r * (r + h);
       }
-      case "sphere_radius" -> V.dist(f.point(n.get(0)), f.point(n.get(1)));
+      case "sphere_radius" -> sphereRadius(f, n);
       case "sphere_volume" -> {
-        double r = V.dist(f.point(n.get(0)), f.point(n.get(1)));
+        double r = sphereRadius(f, n);
         yield 4 * Math.PI * r * r * r / 3;
       }
       default -> throw new IllegalArgumentException("đại lượng không biết: " + q.kind());
     };
+  }
+
+  /**
+   * Bán kính mặt cầu từ [tâm, điểm trên mặt cầu]. Câu mở sau FIX T-05: bộ dựng "sphere" đặt tên tâm
+   * là O (điểm trên mặt cầu là M), đề tự đặt tâm I (hay điểm trên mặt cầu A) thì tên không có trong
+   * hình — ánh xạ tên lạ về mặt cầu của hình: tâm lạ = tâm mặt cầu, điểm lạ = điểm trên mặt cầu
+   * (bán kính lấy từ mặt cầu). Tên có sẵn trong hình vẫn dùng như cũ (HKG-06 tâm I của mặt cầu
+   * ngoại tiếp).
+   */
+  static double sphereRadius(Figure f, List<String> n) {
+    double[] c = f.points().get(n.get(0));
+    double[] p = f.points().get(n.get(1));
+    if (c != null && p != null) {
+      return V.dist(c, p);
+    }
+    SceneDto.SceneSurface ball =
+        f.surfaces() == null
+            ? null
+            : f.surfaces().stream().filter(x -> "sphere".equals(x.kind())).findFirst().orElse(null);
+    if (ball == null || ball.center() == null || ball.center().size() != 3) {
+      // không có mặt cầu để ánh xạ: báo đúng tên thiếu như trước
+      return V.dist(f.point(n.get(0)), f.point(n.get(1)));
+    }
+    double[] center = {ball.center().get(0), ball.center().get(1), ball.center().get(2)};
+    if (c == null) {
+      c = center;
+    }
+    if (p == null) {
+      if (V.dist(c, center) > 1e-9 * Math.max(1, ball.radius())) {
+        throw new IllegalArgumentException("không có đỉnh " + n.get(1));
+      }
+      return ball.radius();
+    }
+    return V.dist(c, p);
   }
 
   /**

@@ -108,6 +108,6 @@ test('Không còn bài cần làm @TC-GEO-0877', async ({ page, request }) => {
   const an = stu(sb, 'An');
   expect((await api.openSolution(request, an.token, asg(sb, 'BG-3'))).status()).toBe(200);
   await mine(page, an, 'An');
-  await expect(page.getByTestId('e6-todo')).toHaveText('Hôm nay em không có bài nào cần làm.');
+  await expect(page.getByTestId('e6-todo')).toHaveText('Hôm nay em chưa có bài cần làm.'); // PO-80 (8)
   await expect(page.getByTestId('e1-my-assignments')).not.toContainText('có 0 bài');
 });

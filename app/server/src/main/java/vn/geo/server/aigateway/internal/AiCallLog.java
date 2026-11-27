@@ -8,7 +8,8 @@ public interface AiCallLog {
   /**
    * @param orgId trường của người gọi; nền tảng khi gọi ngoài phiên (bộ đề chuẩn)
    * @param userId người gọi hoặc null
-   * @param purpose giá trị enum ai_purpose (qa, solution, scene, hint, lecture)
+   * @param purpose giá trị enum ai_purpose (qa, solution, scene, hint, lecture, class_stuck —
+   *     PO-83)
    * @param status ok | error | timeout
    */
   record Entry(

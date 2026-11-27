@@ -35,3 +35,7 @@ test('TC-S3E3-42 dữ liệu thô gom theo bước; TC-S3E3-36 banner nêu m tr�
   assert.equal(MSG.below(4, 5), 'Mới có 4 trên 5 bài làm cho đề này, chưa đủ để gộp. Dưới đây là dữ liệu thô.');
   assert.equal(MSG.small(5), 'Lớp có ít hơn 5 học sinh, chưa gộp được. Dưới đây là dữ liệu thô.');
 });
+
+test('TC-S3E3-59 lớp tắt trợ lý AI: thẻ hiện MSG-S3-98 nguyên văn (PO-85)', () => {
+  assert.equal(MSG.aiOff, 'Lớp này đã tắt trợ lý AI nên chưa gộp tự động. Thầy cô vẫn xem được dữ liệu từng bước.');
+});

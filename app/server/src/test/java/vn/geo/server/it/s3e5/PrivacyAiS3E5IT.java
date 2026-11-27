@@ -63,7 +63,8 @@ class PrivacyAiS3E5IT extends AbstractE1IT {
   }
 
   @Test
-  @DisplayName("TC-S3E5-51 \"AI gộp\" của giáo viên không bị tắt theo công tắc lớp")
+  @DisplayName(
+      "TC-S3E5-51 Công tắc AI của lớp chỉ chặn phía học sinh, phía giáo viên không bị chặn theo công tắc (bước 3 PO-85: TC-S3E3-59)")
   void teacherSideAiIsNotSwitchedOff() throws Exception {
     jdbc.sql("UPDATE class SET ai_enabled = false WHERE id = :id").param("id", CLASS_11A1).update();
     try {

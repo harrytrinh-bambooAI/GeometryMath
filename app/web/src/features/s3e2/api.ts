@@ -154,7 +154,7 @@ export const setsApi = {
     apiRequest<SolutionView>(`/api/v1/student/assignment-sets/${enc(id)}/items/${position}/solution`),
 };
 
-/** Thông điệp MSG-S3-21…28 (stories_ac.md S3-E2). */
+/** Thông điệp MSG-S3-21…28 (stories_ac.md S3-E2) và MSG-S3-97 (S3-E6). */
 export const MSG = {
   s21: 'Giờ mở lời giải sớm hơn hạn làm. Em sẽ thấy lời giải trước khi hết hạn.',
   s22: 'Bộ có đề đang ở trạng thái Cần xem lại. Thầy cô xem lại trước khi giao.',
@@ -164,6 +164,8 @@ export const MSG = {
   s26: 'Lời giải đã mở, không đổi giờ được.',
   s27: 'Chưa có bài nào. Khi thầy cô giao bài, bài sẽ hiện ở đây.',
   s28: 'Quá hạn',
+  /** MSG-S3-97 (PO-70, BR-S3E6-14): máy chủ trả CONFLICT kèm câu này khi giao vào lớp đã lưu trữ; giao diện hiện nguyên văn. */
+  s97: 'Lớp này đã lưu trữ, không giao bộ mới được.',
 } as const;
 
 export const STATUS_LABEL: Record<SetStatus, string> = {

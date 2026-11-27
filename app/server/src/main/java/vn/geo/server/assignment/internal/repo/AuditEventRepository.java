@@ -91,6 +91,21 @@ public class AuditEventRepository {
         .single();
   }
 
+  /** PO-76: đã có hàng Từ chối của (người gọi, loại đối tượng) từ {@code since} chưa. */
+  public boolean deniedSince(UUID actor, String targetType, Instant since) {
+    return jdbc.sql(
+            """
+            SELECT EXISTS (SELECT 1 FROM audit_log l
+                           WHERE l.org_id = :orgId AND l.actor_user_id = :actor AND l.outcome = 'denied'
+                             AND l.target_type = :targetType AND l.occurred_at > :since LIMIT 1)
+            """)
+        .param("actor", actor)
+        .param("targetType", targetType)
+        .param("since", OffsetDateTime.ofInstant(since, ZoneOffset.UTC))
+        .query(Boolean.class)
+        .single();
+  }
+
   /** Yêu cầu cùng khóa chống lặp đã có tác dụng chưa (BR-S3E4-16). */
   public boolean exists(UUID actor, String action, UUID targetId, String requestKey) {
     return jdbc.sql(

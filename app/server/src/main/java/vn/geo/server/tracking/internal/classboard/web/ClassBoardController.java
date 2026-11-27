@@ -57,9 +57,10 @@ public class ClassBoardController {
       @PathVariable UUID classId,
       @PathVariable UUID setId,
       @RequestParam int item,
-      @RequestParam String userCode,
+      @RequestParam UUID userId,
       @RequestParam(defaultValue = "false") boolean work) {
-    return board.evidence(classId, setId, item, userCode, work);
+    // PO-74 (BR-S3E3-40): em xác định bằng userId (UUID), không bằng mã người dùng trong địa chỉ
+    return board.evidence(classId, setId, item, userId, work);
   }
 
   @NoStore

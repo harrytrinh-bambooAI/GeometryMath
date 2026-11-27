@@ -152,3 +152,29 @@ test('Mọi lớp bắt buộc duyệt: API không nhận tham số tắt duyệ
   const d = (await (await teacherApi.detail(request, w.people['Cô Lan']!.token, w.classes['11A2']!.id)).json()) as { activeCount: number; pendingCount: number; approvalRequired: boolean };
   expect(d).toMatchObject({ activeCount: 1, pendingCount: 1, approvalRequired: true });
 });
+
+test('Gửi lại yêu cầu sau Bị từ chối / Đã rời tính vào hạn mức @TC-S3E1-57', async ({ request }) => {
+  // PO-75 (BR-S3E1-14, -17): mỗi lần gửi lại sau Bị từ chối hoặc Đã rời là một lượt của hạn mức 10/15 phút và 30/24 giờ
+  const w = await world(request);
+  const lan = w.people['Cô Lan']!;
+  const c = w.classes['11A1']!;
+  const nam = w.people['Hoàng Nam']!;
+  expect((await teacherApi.decide(request, lan.token, c.id, nam.id, 'reject')).status()).toBe(200);
+  for (let i = 1; i <= 10; i++) {
+    const r = await join(request, nam.token, c.code);
+    expect(r.status(), `lần gửi lại ${i}: ${await r.text()}`).toBe(200);
+    expect((await teacherApi.decide(request, lan.token, c.id, nam.id, 'reject')).status()).toBe(200);
+  }
+  const eleventh = await join(request, nam.token, c.code);
+  expect(eleventh.status()).toBe(429);
+  expect((await err(eleventh)).message).toBe(MSG.s08);
+  // Đã rời: 29 lượt rải trong 24 giờ (mỗi 15 phút dưới 10), lần gửi lại thứ 30 vẫn được nhận và tính lượt, lần sau bị chặn
+  const tu = w.people['Văn Tú']!;
+  await hook(request, 's3e1/join-attempts/seed', { userId: tu.id, minutesAgo: Array.from({ length: 29 }, (_, i) => 20 + i * 48) });
+  const back = await join(request, tu.token, c.code);
+  expect(back.status(), await back.text()).toBe(200);
+  expect((await teacherApi.decide(request, lan.token, c.id, tu.id, 'reject')).status()).toBe(200);
+  const again = await join(request, tu.token, c.code);
+  expect(again.status()).toBe(429);
+  expect((await err(again)).message).toBe(MSG.s08);
+});

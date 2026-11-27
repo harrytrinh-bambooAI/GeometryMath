@@ -1,5 +1,6 @@
 package vn.geo.server.tracking.internal.classboard.service;
 
+import java.time.Duration;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -18,11 +19,29 @@ public class StuckSettings {
 
   private volatile int minAggregate;
 
+  /**
+   * PO-83 (BR-S3E3-42): trần chờ bộ gộp của cả màn, không cộng dồn qua nhiều đề và không phụ thuộc
+   * {@code geo.ai.timeout} (geo.tracking.stuck-deadline, mặc định 10 giây).
+   */
+  private volatile Duration deadline;
+
   /** userId giáo viên → (vị trí đề → JSON trả lời của bộ gộp giả lập). */
   private final Map<UUID, Map<Integer, String>> scripts = new ConcurrentHashMap<>();
 
-  public StuckSettings(@Value("${geo.tracking.min-aggregate:5}") int minAggregate) {
+  public StuckSettings(
+      @Value("${geo.tracking.min-aggregate:5}") int minAggregate,
+      @Value("${geo.tracking.stuck-deadline:PT10S}") Duration deadline) {
     this.minAggregate = Math.max(1, minAggregate);
+    this.deadline = deadline;
+  }
+
+  public Duration deadline() {
+    return deadline;
+  }
+
+  /** Chỉ kiểm thử đổi lúc chạy (đo trần chờ mà không phải chờ đủ 10 giây). */
+  public void deadline(Duration value) {
+    this.deadline = value;
   }
 
   public int minAggregate() {

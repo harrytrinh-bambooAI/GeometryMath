@@ -16,6 +16,9 @@ import vn.geo.server.it.s3e4.AbstractS3E4IT;
  */
 class AuditEventS3E5IT extends AbstractS3E4IT {
 
+  @org.springframework.beans.factory.annotation.Autowired
+  org.springframework.data.redis.core.StringRedisTemplate redis;
+
   private static final String RESET = "/api/v1/teacher/my-classes/%s/students/%s/password-reset";
 
   private void reset(World w, String teacher, String klass, String student) throws Exception {
@@ -194,7 +197,7 @@ class AuditEventS3E5IT extends AbstractS3E4IT {
 
   @Test
   @DisplayName(
-      "Dev-REV-A2 Lặp yêu cầu bị từ chối N lần trong cửa sổ 1 giờ chỉ ghi 1 hàng denied cho mỗi (người, loại, đối tượng)")
+      "TC-S3E5-09 Dev-REV-A2 + PO-76 Lặp yêu cầu bị từ chối trong cửa sổ 1 giờ chỉ ghi 1 hàng denied cho mỗi (người gọi, loại đối tượng), kể cả khi Redis mất khóa")
   void deniedIsRateLimitedPerActorAndType() throws Exception {
     World w = world();
     String set =
@@ -224,7 +227,8 @@ class AuditEventS3E5IT extends AbstractS3E4IT {
         "SELECT count(*) FROM audit_log WHERE actor_user_id = ? AND outcome = 'denied'"
             + " AND action = 'early_release'";
     assertThat(count(sql, khoiId)).as("10 lần NOT_FOUND, 1 hàng").isEqualTo(1);
-    // loại khác của cùng người: khóa riêng, vẫn ghi đúng 1 hàng
+    // PO-76: loại thao tác khác nhưng cùng (người gọi, loại đối tượng = bộ): không thêm hàng trong
+    // giờ
     for (int i = 0; i < 3; i++) {
       send(
           "POST",
@@ -236,6 +240,18 @@ class AuditEventS3E5IT extends AbstractS3E4IT {
             count(
                 "SELECT count(*) FROM audit_log WHERE actor_user_id = ? AND outcome = 'denied'",
                 khoiId))
-        .isEqualTo(2);
+        .isEqualTo(1);
+    // Redis mất khóa (khởi động lại, hết bộ nhớ): CSDL vẫn chặn hàng thứ hai trong giờ
+    redis.delete(redis.keys("*audit-denied*"));
+    assertThat(
+            send("POST", "/api/v1/teacher/assignment-sets/" + set + "/open-now", khoi, "{}")
+                .statusCode())
+        .isEqualTo(404);
+    assertThat(
+            count(
+                "SELECT count(*) FROM audit_log WHERE actor_user_id = ? AND outcome = 'denied'",
+                khoiId))
+        .as("PO-76: tối đa 1 hàng mỗi giờ cho (người gọi, loại đối tượng)")
+        .isEqualTo(1);
   }
 }

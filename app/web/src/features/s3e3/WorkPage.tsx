@@ -14,9 +14,9 @@ export function WorkPage() {
   const classId = params.get('lop') ?? '';
   const setId = params.get('bo') ?? '';
   const item = Number(params.get('de') ?? '0');
-  const userCode = params.get('ma') ?? '';
-  const [ev, retry] = useLoad<Evidence>(`s3e3-work-${setId}-${item}-${userCode}`, (s) =>
-    resultsApi.evidence(classId, setId, item, userCode, true, s),
+  const userId = params.get('hs') ?? ''; // PO-74 (BR-S3E3-40): userId UUID, không mã người dùng
+  const [ev, retry] = useLoad<Evidence>(`s3e3-work-${setId}-${item}-${userId}`, (s) =>
+    resultsApi.evidence(classId, setId, item, userId, true, s),
   );
   const back = `/gv/ket-qua-lop?lop=${encodeURIComponent(classId)}&bo=${encodeURIComponent(setId)}`;
   return (

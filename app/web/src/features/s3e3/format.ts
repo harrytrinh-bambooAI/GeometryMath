@@ -24,6 +24,8 @@ export const MSG = {
   small: (min: number) => `Lớp có ít hơn ${min} học sinh, chưa gộp được. Dưới đây là dữ liệu thô.`,
   below: (m: number, min: number) => `Mới có ${m} trên ${min} bài làm cho đề này, chưa đủ để gộp. Dưới đây là dữ liệu thô.`,
   failed: 'Chưa gộp được. Thử lại.',
+  /** MSG-S3-98 (BR-S3E3-41, PO-85): lớp tắt trợ lý AI — không gộp tự động, không "Thử lại". */
+  aiOff: 'Lớp này đã tắt trợ lý AI nên chưa gộp tự động. Thầy cô vẫn xem được dữ liệu từng bước.',
   notOpened: 'Em chưa mở bài này.',
   loadFailed: 'Chưa tải được kết quả lớp.',
   subtitle: 'Xếp theo tên. Không có cột tổng, không xếp hạng.',

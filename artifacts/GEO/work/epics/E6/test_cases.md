@@ -175,7 +175,7 @@
 | TC-GEO-0647 | Không có thẻ chuỗi ngày và phần trăm theo dạng | Medium | Abnormal (Fail case/Edge case) | chức năng | thủ công trên thiết bị | E2E-UI | Học sinh An | • An ở "Bài của em" | • Không có dữ liệu nhập riêng | 1. Xem toàn màn | • Không có thẻ "3 ngày liên tiếp", không có khối "Em đang học tới đâu", không có phần trăm theo dạng bài, không có xếp hạng | US-GEO-606 · FC3; CL-UI-03; PROVISIONAL D-GEO-078 |
 | TC-GEO-0648 | Con trỏ hỏng | Medium | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Học sinh An | • Phiên của An | • Hàng dữ liệu: F-GEO-084<br/>• Giá trị nhập: `khong-phai-con-tro` | 1. Gọi danh sách bài với con trỏ `khong-phai-con-tro` (F-GEO-084) | • `INVALID_CURSOR`<br/>• Màn hiện "Danh sách đã thay đổi. Vui lòng tải lại từ đầu." (MSG-GEO-05) | US-GEO-606 · FC4; CL-FN-08; ENG |
 | TC-GEO-0869 | Dòng "Hôm nay em có n bài cần làm" | Medium | Normal (Success case) | chức năng | tích hợp API + thủ công trên thiết bị | E2E-UI | Học sinh An | • An có BG-1 tiến độ 2/3, BG-2 chưa mở (0/3), BG-3 đã xem lời giải (3/3) (F-GEO-050; fixture §4) | • Hàng dữ liệu: F-GEO-050 | 1. An mở "Bài của em" | • Dưới "Chào An" có dòng "Hôm nay em có 2 bài cần làm" (BG-1 và BG-2; BG-3 không tính vì đã xem lời giải) | US-GEO-606 · SC7; CL-FN-12; PROVISIONAL D-GEO-138; D-GEO-138 |
-| TC-GEO-0877 | Không còn bài cần làm | Low | Normal (Success case) | chức năng | tích hợp API + thủ công trên thiết bị | E2E-UI | Học sinh 11A1 đã xem lời giải mọi bài | • Một học sinh lớp 11A1 đã xem lời giải (3/3) của mọi bài giao của lớp | • Không có dữ liệu nhập riêng | 1. Em mở "Bài của em" | • Dưới "Chào {tên hiển thị}" có dòng "Hôm nay em không có bài nào cần làm."<br/>• Không có dòng "Hôm nay em có 0 bài cần làm" | US-GEO-606 · SC8; CL-FN-12; PROVISIONAL D-GEO-182; D-GEO-182; BVA n = 0 (cặp với TC-GEO-0869) |
+| TC-GEO-0877 | Không còn bài cần làm | Low | Normal (Success case) | chức năng | tích hợp API + thủ công trên thiết bị | E2E-UI | Học sinh 11A1 đã xem lời giải mọi bài | • Một học sinh lớp 11A1 đã xem lời giải (3/3) của mọi bài giao của lớp | • Không có dữ liệu nhập riêng | 1. Em mở "Bài của em" | • Dưới "Chào {tên hiển thị}" có dòng "Hôm nay em chưa có bài cần làm." (PO-80)<br/>• Không có dòng "Hôm nay em có 0 bài cần làm" | US-GEO-606 · SC8; CL-FN-12; D-GEO-182; PO-80; BVA n = 0 (cặp với TC-GEO-0869) |
 
 ### US-GEO-607 — Xem trước như học sinh
 
@@ -336,7 +336,7 @@
 | US-GEO-606 | US-GEO-606-FC3 | Failure | Không có thẻ chuỗi ngày và phần trăm theo dạng | Active · PROVISIONAL | TC-GEO-0647 |
 | US-GEO-606 | US-GEO-606-FC4 | Failure | Con trỏ hỏng | Active | TC-GEO-0648 |
 | US-GEO-606 | US-GEO-606-SC7 | Success | Dòng "Hôm nay em có n bài cần làm" | Active · PROVISIONAL | TC-GEO-0869 |
-| US-GEO-606 | US-GEO-606-SC8 | Success | Không còn bài cần làm | Active · PROVISIONAL | TC-GEO-0877 |
+| US-GEO-606 | US-GEO-606-SC8 | Success | Không còn bài cần làm (n = 0) | Active · PO-80 | TC-GEO-0877 |
 | US-GEO-607 | US-GEO-607-SC1 | Success | Mở xem trước | Active | TC-GEO-0649 |
 | US-GEO-607 | US-GEO-607-SC2 | Success | Lời giải khóa trong xem trước | Active · PROVISIONAL | TC-GEO-0650 |
 | US-GEO-607 | US-GEO-607-SC3 | Success | Gợi ý xem được, không ghi sự kiện | Active · PROVISIONAL | TC-GEO-0651 |

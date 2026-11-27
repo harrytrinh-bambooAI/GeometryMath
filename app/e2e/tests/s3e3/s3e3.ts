@@ -98,8 +98,9 @@ export const board051 = (request: APIRequestContext, opts: Parameters<typeof cla
 
 export const R = `${API}/api/v1/teacher/class-results`;
 export const setUrl = (sb: Sandbox, ci = 0, si = 0) => `${R}/${sb.classes[ci]!.id}/sets/${sb.classes[ci]!.sets[si]!.id}`;
-export const evidenceUrl = (sb: Sandbox, item: number, userCode: string, ci = 0, si = 0) =>
-  `${setUrl(sb, ci, si)}/evidence?item=${item}&userCode=${encodeURIComponent(userCode)}`;
+/** PO-74 (BR-S3E3-40): bằng chứng theo userId (UUID); mã người dùng không vào chuỗi truy vấn. */
+export const evidenceUrl = (sb: Sandbox, item: number, userId: string, ci = 0, si = 0) =>
+  `${setUrl(sb, ci, si)}/evidence?item=${item}&userId=${encodeURIComponent(userId)}`;
 
 export async function getJson<T>(request: APIRequestContext, url: string, token: string): Promise<T> {
   const r = await request.get(url, { headers: bearer(token) });

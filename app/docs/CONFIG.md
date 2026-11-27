@@ -120,6 +120,10 @@ Tạo lỗi có `Retry-After` trong mã: `AppException.rateLimited(Duration)`, `
 | `geo.ai.anthropic.effort` (`GEO_AI_EFFORT`) | rỗng = mặc định của model | `output_config.effort` |
 | `geo.ai.pricing.<model>` | Sonnet 5.5: 2 / 10 USD (cache đọc 0,10); Opus 5.5: 4 / 20 (0,20); Haiku 5.5: 0,10 / 0,50 — USD / 1 triệu token | bắt buộc có giá của `geo.ai.model` khi provider=anthropic (ProfileGuard từ chối khởi động nếu thiếu; model khác ghi 0 + cảnh báo một lần); nguồn: bảng giá Anthropic theo skill claude-api (cached 2026-11-03), chép 2026-11-26; chi phí = usage thật × giá → `ai_call_log.cost_micro_usd` |
 | `geo.ai.cost-per-call` | 0,12 | chi phí mô phỏng của mock (KG-07) |
+| `geo.tracking.stuck-deadline` | `PT10S` | PO-83 (BR-S3E3-42): trần chờ bộ gộp "Cả lớp vướng ở đâu" của CẢ màn; mỗi lượt chỉ chờ phần còn lại (`AiGateway.complete(req, maxWait)`), không cộng dồn, không theo `geo.ai.timeout`. Task `class_stuck` có prompt hệ thống riêng và `ai_purpose` = `class_stuck` (V421) |
+| `geo.auth.failure-purge-cron` | `0 5 * * * *` (phút 5 mỗi giờ, giờ VN; `-` = tắt) | PO-71: `AuthFailurePurgeJob` dọn `auth_failure` (HMAC IP) cũ hơn 1 giờ (V420 `fn_purge_auth_failure`) |
+| `geo.signature.upgrade-on-start` | `true` | Câu mở sau T-05: `SignatureUpgrade` tính lại chữ ký chuẩn bản cũ → `SIG_VERSION` khi máy chủ sẵn sàng (V422; lũy đẳng) |
+| `geo.audit.denied-window` | `PT1H` | PO-76: tối đa một hàng "Từ chối" mỗi (người gọi, loại đối tượng) trong cửa sổ; Redis là đường nhanh, CSDL là nguồn đúng |
 
 Đầu ra AI thật được đưa về đúng định dạng của mock (JSON theo task: scene, solution, hint, ocr, qa) rồi đi qua đường kiểm sẵn có (engine.check, AnswerExpr, Kiểm soát đáp án) — không nới kiểm. Bộ đo: `make bench-mvp` (mục 7).
 

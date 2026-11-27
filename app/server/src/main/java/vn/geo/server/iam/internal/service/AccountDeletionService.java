@@ -24,6 +24,8 @@ import vn.geo.server.iam.internal.repo.CodeAccountRepository;
  *       tồn tại, QA-S3E1-04).
  *   <li>Phải gõ đúng "XÓA" và nhập lại mật khẩu; sai mật khẩu tính vào bộ đếm khóa đăng nhập 10
  *       lần/15 phút (BR-S2E1-09), ghi trong giao dịch riêng rồi mới ném lỗi.
+ *   <li>PO-72: học sinh vào lớp bằng tên (tài khoản không có mật khẩu) chỉ cần gõ "XÓA": không bước
+ *       mật khẩu, không xét và không tăng bộ đếm sai (BR-S3E5-50, -55).
  *   <li>Giáo viên còn lớp Đang dạy: CONFLICT nêu tên các lớp (BR-S3E5-52).
  *   <li>Xóa: bia mộ ẩn danh + xóa ngay bài làm, lượt hỏi AI, thành viên lớp; mọi phiên bị hủy; mã
  *       không cấp lại. Dọn vật lý sau 30 ngày ở {@link #purge(Instant)}.
@@ -77,15 +79,19 @@ public class AccountDeletionService {
     if (!CONFIRM_WORD.equals(confirm == null ? null : confirm.strip())) {
       throw AppException.invalidField("confirm", MSG_CONFIRM);
     }
-    if (password == null || password.isEmpty()) {
-      throw AppException.invalidField("password", MSG_PASSWORD);
-    }
     Instant now = clock.instant();
     Outcome o =
         tx.execute(s -> {
           Target t = repo.lock(p.orgId(), p.userId()).orElse(null);
           if (t == null || t.deleted()) {
             return new Done(false); // đã xóa (bấm hai lần): không làm gì thêm
+          }
+          if (t.passwordHash() == null && "student".equals(t.role())) {
+            // PO-72: không có mật khẩu (vào lớp bằng tên) — gõ XÓA là đủ, không có bộ đếm sai
+            return new Done(repo.delete(p.orgId(), p.userId(), now));
+          }
+          if (password == null || password.isEmpty()) {
+            return new Fail(AppException.invalidField("password", MSG_PASSWORD));
           }
           if (t.loginLockedUntil() != null && now.isBefore(t.loginLockedUntil())) {
             Duration left = Duration.between(now, t.loginLockedUntil());

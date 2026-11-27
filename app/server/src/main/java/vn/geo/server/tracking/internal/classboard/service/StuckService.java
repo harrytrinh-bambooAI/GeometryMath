@@ -41,13 +41,16 @@ public class StuckService {
   static final String TASK = "class_stuck";
 
   /**
-   * Trần chờ bộ gộp cho cả màn (BR-S3E3-37; mỗi lượt gọi còn chịu trần geo.ai.timeout của cổng).
+   * Trần chờ mặc định của cả màn (BR-S3E3-37, -42; PO-83). Giá trị đang dùng ở {@link
+   * StuckSettings#deadline()}; mỗi lượt gọi chỉ được chờ phần còn lại của trần, không cộng dồn và
+   * không phụ thuộc geo.ai.timeout.
    */
   static final Duration DEADLINE = Duration.ofSeconds(10);
 
   static final int CACHE_MAX = 5_000;
 
-  public record Person(String displayName, String userCode) {}
+  /** userId (UUID) để mở bằng chứng; mã người dùng chỉ để hiện (BR-S3E3-40, PO-74). */
+  public record Person(UUID userId, String displayName, String userCode) {}
 
   public record InsightView(
       int position,
@@ -61,14 +64,16 @@ public class StuckService {
   public record RawEntry(int step, String kind, String text, Instant at) {}
 
   /**
-   * mode: insight (đã gộp) | raw (chưa đủ ngưỡng) | failed (bộ gộp lỗi/quá giờ) | none (chưa ai
-   * làm).
+   * mode: insight (đã gộp) | raw (chưa đủ ngưỡng) | failed (bộ gộp lỗi/quá giờ) | ai_off (lớp tắt
+   * trợ lý AI: dữ liệu thô kèm MSG-S3-98, không "Thử lại", PO-85) | none (chưa ai làm).
    */
   public record ItemView(int position, String title, String mode, int works, List<RawEntry> raw) {}
 
+  /** aiOff: lớp đã tắt trợ lý AI nên không gộp tự động (BR-S3E3-41, MSG-S3-98). */
   public record Stuck(
       int minAggregate,
       boolean classTooSmall,
+      boolean aiOff,
       List<InsightView> insights,
       List<ItemView> items,
       Instant updatedAt) {}
@@ -99,6 +104,8 @@ public class StuckService {
   public Stuck stuck(UUID classId, UUID setId) {
     Scope s = board.scope(classId, setId); // kiểm vai + quan hệ trước mọi lượt gọi bộ gộp
     int min = settings.minAggregate();
+    // PO-85 (BR-S3E3-41): lớp tắt trợ lý AI thì không gọi bộ gộp, không phát sinh chi phí AI
+    boolean aiOff = !repo.aiEnabled(classId);
     Set<UUID> active = ClassBoardService.activeIds(s.members());
     boolean small = active.size() < min;
     List<UUID> ids = s.assignmentIds();
@@ -120,7 +127,7 @@ public class StuckService {
 
     List<InsightView> insights = new ArrayList<>();
     List<ItemView> items = new ArrayList<>();
-    long deadline = System.nanoTime() + DEADLINE.toNanos();
+    long deadline = System.nanoTime() + settings.deadline().toNanos();
     boolean gaveUp = false;
     for (Column c : s.columns()) {
       ColumnView cv = ClassBoardService.view(c);
@@ -169,14 +176,21 @@ public class StuckService {
         items.add(new ItemView(cv.position(), cv.title(), "none", 0, List.of()));
         continue;
       }
+      if (aiOff) {
+        items.add(new ItemView(cv.position(), cv.title(), "ai_off", m, raw));
+        continue;
+      }
       if (small || m < min) {
         items.add(new ItemView(cv.position(), cv.title(), "raw", m, raw));
         continue;
       }
-      List<Insight> found = gaveUp ? null : aggregate(s, c, workers, sheets);
+      long left = deadline - System.nanoTime();
+      gaveUp = gaveUp || left <= 0;
+      List<Insight> found =
+          gaveUp ? null : aggregate(s, c, workers, sheets, Duration.ofNanos(left));
       if (found == null) {
         items.add(new ItemView(cv.position(), cv.title(), "failed", m, raw));
-        gaveUp = gaveUp || System.nanoTime() > deadline; // quá trần chờ: không gọi tiếp các đề sau
+        gaveUp = gaveUp || System.nanoTime() >= deadline; // quá trần chờ: không gọi tiếp các đề sau
         continue;
       }
       items.add(new ItemView(cv.position(), cv.title(), "insight", m, List.of()));
@@ -184,7 +198,7 @@ public class StuckService {
         List<Person> evidence =
             in.works().stream()
                 .map(i -> workers.get(i - 1))
-                .map(w -> new Person(w.displayName(), ClassBoardService.codeKey(w)))
+                .map(w -> new Person(w.userId(), w.displayName(), ClassBoardService.codeKey(w)))
                 .toList();
         insights.add(
             new InsightView(
@@ -202,11 +216,12 @@ public class StuckService {
             .reversed()
             .thenComparingInt(InsightView::position)
             .thenComparingInt(InsightView::step));
-    return new Stuck(min, small, insights, items, Instant.now());
+    return new Stuck(min, small, aiOff, insights, items, Instant.now());
   }
 
   /** Nhận định đã lọc của một đề; null = bộ gộp lỗi, quá giờ hoặc trả lời không đọc được. */
-  private List<Insight> aggregate(Scope s, Column c, List<Member> workers, List<Sheet> sheets) {
+  private List<Insight> aggregate(
+      Scope s, Column c, List<Member> workers, List<Sheet> sheets, Duration maxWait) {
     String prompt = StuckDigest.prompt(c.position(), sheets);
     StringBuilder who = new StringBuilder(prompt);
     for (Member m : workers) {
@@ -219,7 +234,8 @@ public class StuckService {
       return hit.insights(); // đầu vào không đổi: không gọi lại bộ gộp (BR-S3E3-38)
     }
     try {
-      AiResponse r = ai.complete(new AiRequest(TASK, prompt));
+      // PO-83: chỉ chờ phần còn lại của trần cả màn (không theo geo.ai.timeout)
+      AiResponse r = ai.complete(new AiRequest(TASK, prompt), maxWait);
       String content = r.content();
       if ("mock".equals(r.provider())) {
         String scripted = settings.scripted(s.teacher().userId(), c.position());

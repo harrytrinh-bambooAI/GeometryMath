@@ -124,4 +124,14 @@ public class AuthRepository {
     }
     return n;
   }
+
+  /**
+   * PO-71: dọn lần thử sai (HMAC IP) cũ hơn {@code cutoff}; hàm CSDL kẹp mốc về tối đa now − 1 giờ.
+   */
+  public long purgeAuthFailures(java.time.Instant cutoff) {
+    return jdbc.sql("SELECT fn_purge_auth_failure(:cutoff)")
+        .param("cutoff", java.time.OffsetDateTime.ofInstant(cutoff, java.time.ZoneOffset.UTC))
+        .query(Long.class)
+        .single();
+  }
 }

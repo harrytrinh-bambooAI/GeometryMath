@@ -143,6 +143,10 @@ test('@TC-S3E5-09 thao tác bị từ chối ghi một bản ghi Từ chối ch�
   const denied = await deniedOf(request, khoi(w).id);
   expect(denied).toEqual([{ type: 'EARLY_RELEASE', actorCode: khoi(w).userCode, actorRole: 'teacher', targetType: 'assignment_set', result: 'DENIED', bare: true }]);
   expect(JSON.stringify(denied)).not.toContain('11A1');
+  // PO-76: gọi lần hai trong cùng giờ vẫn NOT_FOUND, số hàng Từ chối của (người gọi, bộ) vẫn là 1
+  const again = await api.openNow(request, khoi(w).token, set.id, { requestKey: randomUUID() });
+  expect(again.status()).toBe(404);
+  expect(await deniedOf(request, khoi(w).id)).toHaveLength(1);
   expect(await auditOf(request, lan(w).token, klass(w, '11A1').id), 'không có EARLY_RELEASE thành công').toEqual([]);
   expect((await follow(request, lan(w).token, set.id)).releaseState).toBe('upcoming');
 });
