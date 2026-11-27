@@ -38,6 +38,9 @@ public class ReminderService {
   static final LocalTime QUIET_TO = LocalTime.of(6, 0);
   static final Duration LEAD = Duration.ofHours(24);
 
+  /** Cỡ trang khi duyệt bộ cần nhắc; duyệt hết mọi trang mỗi lượt (Dev-REV-B5). */
+  public static final int PAGE = 1000;
+
   public record Run(int dueSoonEvents, int releasedEvents) {}
 
   private final ReminderRepository repo;
@@ -55,49 +58,77 @@ public class ReminderService {
 
   /** Một lượt của tác vụ ở giờ {@code now} (IT và móc kiểm thử giả lập đồng hồ qua tham số này). */
   public Run runAt(Instant now) {
+    return runAt(now, PAGE);
+  }
+
+  /**
+   * Như {@link #runAt(Instant)} với cỡ trang {@code page}: duyệt theo khóa tới hết, để bộ sau vị
+   * trí thứ {@code page} không bị bỏ sót khi các bộ đầu đã nhắc vẫn còn trong cửa sổ 24 giờ.
+   */
+  public Run runAt(Instant now, int page) {
     int due = 0;
-    for (ReminderRepository.DueSet s : repo.dueWithinDay(now)) {
-      if (sendAt(s.dueAt().minus(LEAD)).isAfter(now)) {
-        continue;
+    List<ReminderRepository.DueSet> dues = List.of();
+    do {
+      dues = repo.dueWithinDay(now, dues.isEmpty() ? null : dues.get(dues.size() - 1), page);
+      for (ReminderRepository.DueSet s : dues) {
+        if (dueSoon(s, now)) {
+          due++;
+        }
       }
-      List<UUID> to = repo.unfinishedStudents(s.orgId(), s.classId(), s.id());
-      if (to.isEmpty()) {
-        continue;
-      }
-      events.publish(
-          new AssignmentSetNotice(
-              eventId("due_soon", s.id(), s.dueAt()),
-              s.orgId(),
-              now,
-              AssignmentSetNotice.Kind.DUE_SOON,
-              s.id(),
-              s.classId(),
-              s.title(),
-              null,
-              to,
-              s.dueAt()));
-      due++;
-    }
+    } while (dues.size() == page);
     int released = 0;
-    for (ReminderRepository.ReleasedSet s : repo.releasedWithinDay(now)) {
-      List<UUID> to = repo.activeStudents(s.orgId(), s.classId());
-      if (to.isEmpty()) {
-        continue;
+    List<ReminderRepository.ReleasedSet> rels = List.of();
+    do {
+      rels = repo.releasedWithinDay(now, rels.isEmpty() ? null : rels.get(rels.size() - 1), page);
+      for (ReminderRepository.ReleasedSet s : rels) {
+        if (solutionReleased(s, now)) {
+          released++;
+        }
       }
-      events.publish(
-          new AssignmentSetNotice(
-              eventId("solution_released", s.id(), s.releaseAt()),
-              s.orgId(),
-              now,
-              AssignmentSetNotice.Kind.SOLUTION_RELEASED,
-              s.id(),
-              s.classId(),
-              s.title(),
-              s.releaseAt(),
-              to));
-      released++;
-    }
+    } while (rels.size() == page);
     return new Run(due, released);
+  }
+
+  private boolean dueSoon(ReminderRepository.DueSet s, Instant now) {
+    if (sendAt(s.dueAt().minus(LEAD)).isAfter(now)) {
+      return false;
+    }
+    List<UUID> to = repo.unfinishedStudents(s.orgId(), s.classId(), s.id());
+    if (to.isEmpty()) {
+      return false;
+    }
+    events.publish(
+        new AssignmentSetNotice(
+            eventId("due_soon", s.id(), s.dueAt()),
+            s.orgId(),
+            now,
+            AssignmentSetNotice.Kind.DUE_SOON,
+            s.id(),
+            s.classId(),
+            s.title(),
+            null,
+            to,
+            s.dueAt()));
+    return true;
+  }
+
+  private boolean solutionReleased(ReminderRepository.ReleasedSet s, Instant now) {
+    List<UUID> to = repo.activeStudents(s.orgId(), s.classId());
+    if (to.isEmpty()) {
+      return false;
+    }
+    events.publish(
+        new AssignmentSetNotice(
+            eventId("solution_released", s.id(), s.releaseAt()),
+            s.orgId(),
+            now,
+            AssignmentSetNotice.Kind.SOLUTION_RELEASED,
+            s.id(),
+            s.classId(),
+            s.title(),
+            s.releaseAt(),
+            to));
+    return true;
   }
 
   /** Giờ gửi của một giờ nhắc theo giờ yên lặng 21:00–06:00 giờ Việt Nam (BR-S3E6-21). */

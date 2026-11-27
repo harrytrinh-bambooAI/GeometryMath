@@ -30,9 +30,10 @@ public class ReminderRepository {
 
   /**
    * Bộ Đã giao có hạn trong (now, now + 24 giờ] và được giao trước mốc 24 giờ trước hạn
-   * (BR-S3E6-20, BR-S3E6-22). Giờ yên lặng do dịch vụ xét.
+   * (BR-S3E6-20, BR-S3E6-22). Giờ yên lặng do dịch vụ xét. Phân trang theo khóa {@code (due_at,
+   * id)} sau {@code after} (null = trang đầu), tối đa {@code limit} hàng (Dev-REV-B5).
    */
-  public List<DueSet> dueWithinDay(Instant now) {
+  public List<DueSet> dueWithinDay(Instant now, DueSet after, int limit) {
     return raw.sql(
             """
             SELECT s.id, s.org_id, s.class_id, s.title, s.due_at FROM assignment_set s
@@ -40,10 +41,15 @@ public class ReminderRepository {
               AND s.due_at > CAST(:now AS timestamptz)
               AND s.due_at <= CAST(:now AS timestamptz) + interval '24 hours'
               AND s.assigned_at <= s.due_at - interval '24 hours'
-            ORDER BY s.due_at, s.id LIMIT 1000
+              AND (CAST(:afterAt AS timestamptz) IS NULL
+                   OR (s.due_at, s.id) > (CAST(:afterAt AS timestamptz), CAST(:afterId AS uuid)))
+            ORDER BY s.due_at, s.id LIMIT :limit
             -- sqllint:allow=tenant tác vụ nền nhắc việc cho mọi trường (không có ngữ cảnh trường)
             """)
         .param("now", at(now))
+        .param("afterAt", after == null ? null : at(after.dueAt()))
+        .param("afterId", after == null ? null : after.id())
+        .param("limit", limit)
         .query((rs, i) ->
             new DueSet(
                 rs.getObject(1, UUID.class),
@@ -56,9 +62,10 @@ public class ReminderRepository {
 
   /**
    * Bộ Đã giao có giờ mở lời giải theo lịch rơi trong (now - 1 ngày, now], đặt sau lúc giao
-   * (BR-S3E6-24). Cửa sổ 1 ngày cho phép bù khi tác vụ lỡ vài lượt mà không gửi lại bộ cũ.
+   * (BR-S3E6-24). Cửa sổ 1 ngày cho phép bù khi tác vụ lỡ vài lượt mà không gửi lại bộ cũ. Phân
+   * trang theo khóa {@code (release_at, id)} như {@link #dueWithinDay}.
    */
-  public List<ReleasedSet> releasedWithinDay(Instant now) {
+  public List<ReleasedSet> releasedWithinDay(Instant now, ReleasedSet after, int limit) {
     return raw.sql(
             """
             SELECT s.id, s.org_id, s.class_id, s.title, s.release_at FROM assignment_set s
@@ -66,10 +73,15 @@ public class ReminderRepository {
               AND s.release_at <= CAST(:now AS timestamptz)
               AND s.release_at > CAST(:now AS timestamptz) - interval '1 day'
               AND (s.assigned_at IS NULL OR s.release_at > s.assigned_at)
-            ORDER BY s.release_at, s.id LIMIT 1000
+              AND (CAST(:afterAt AS timestamptz) IS NULL
+                   OR (s.release_at, s.id) > (CAST(:afterAt AS timestamptz), CAST(:afterId AS uuid)))
+            ORDER BY s.release_at, s.id LIMIT :limit
             -- sqllint:allow=tenant tác vụ nền nhắc việc cho mọi trường (không có ngữ cảnh trường)
             """)
         .param("now", at(now))
+        .param("afterAt", after == null ? null : at(after.releaseAt()))
+        .param("afterId", after == null ? null : after.id())
+        .param("limit", limit)
         .query((rs, i) ->
             new ReleasedSet(
                 rs.getObject(1, UUID.class),

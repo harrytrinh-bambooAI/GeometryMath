@@ -257,6 +257,31 @@ class ReminderS3E6IT extends AbstractS3E4IT {
 
   @Test
   @DisplayName(
+      "Dev-REV-B5 Duyệt theo trang tới hết: cỡ trang 1 vẫn nhắc đủ ba bộ sắp hết hạn (hai bộ cùng giờ hạn) và hai bộ mở lời giải")
+  void pagesThroughAllSets() throws Exception {
+    World w = world11A1();
+    UUID a = setWithDue(w, "Bộ A", vn(4, 20, 0, 0), 1, 2);
+    UUID b = setWithDue(w, "Bộ B", vn(4, 20, 0, 0), 3, 4);
+    UUID c = setWithDue(w, "Bộ C", vn(4, 20, 30, 0), 5, 6);
+    for (UUID s : List.of(a, b)) {
+      jdbc.sql("UPDATE assignment_set SET release_at = :r WHERE id = :id")
+          .param("r", odt(vn(3, 20, 0, 0)))
+          .param("id", s)
+          .update();
+    }
+    ReminderService.Run run = reminders.runAt(vn(3, 20, 30, 0), 1);
+    assertThat(run.dueSoonEvents()).isGreaterThanOrEqualTo(3);
+    assertThat(run.releasedEvents()).isGreaterThanOrEqualTo(2);
+    for (UUID s : List.of(a, b, c)) {
+      assertThat(received(w, s, "due_soon")).as("bộ " + s).isEqualTo(once(ACTIVE_8));
+    }
+    for (UUID s : List.of(a, b)) {
+      assertThat(received(w, s, "solution_open")).as("bộ " + s).isEqualTo(once(ACTIVE_8));
+    }
+  }
+
+  @Test
+  @DisplayName(
       "TC-S3E6-33 Giáo viên đổi hạn: lúc 03/12 20:00 không nhắc; lúc 04/12 20:00 bốn em chưa xong nhận nhắc hạn \"20:00, 05/12/2026\"")
   void dueChanged() throws Exception {
     World w = world11A1();
