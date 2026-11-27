@@ -217,7 +217,7 @@ public class SceneService {
       return Optional.empty();
     }
     ProblemSpec s = ps.get();
-    Figure f = engine.build(s.template(), s.paramsAt(1));
+    Figure f = engine.build(s, 1);
     return Optional.of(
         engine.toScene(
             f, new SceneMeta(sceneId, "engine", s.unit(), s.chips(), s.hidden(), status)));

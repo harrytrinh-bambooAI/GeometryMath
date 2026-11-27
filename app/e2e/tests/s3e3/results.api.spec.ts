@@ -130,7 +130,7 @@ test('@TC-S3E3-29 bằng chứng của em ngoài lớp (Mi Na chỉ thuộc 10B)
   const sb = await board051(request, {}, [{ name: '10B', students: [{ name: 'Mi Na' }], sets: [{ title: 'Bộ 10B', cells: { 'Mi Na': ['Đúng'] } }] }]);
   const mina = sb.otherClasses[0]!.students['Mi Na']!;
   const other = sb.otherClasses[0]!;
-  for (const url of [evidenceUrl(sb, 1, mina.id), `${setUrl(sb).replace(sb.classes[0]!.id, other.id).replace(sb.classes[0]!.sets[0]!.id, other.sets[0]!.id)}/evidence?item=1&userCode=${mina.userCode}`]) {
+  for (const url of [evidenceUrl(sb, 1, mina.id), `${setUrl(sb).replace(sb.classes[0]!.id, other.id).replace(sb.classes[0]!.sets[0]!.id, other.sets[0]!.id)}/evidence?item=1&userId=${mina.id}`]) {
     const r = await request.get(url, { headers: bearer(sb.teacher.token) });
     expect(r.status(), url).toBe(404);
     const text = await r.text();

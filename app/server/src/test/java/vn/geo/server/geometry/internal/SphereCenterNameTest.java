@@ -40,4 +40,17 @@ class SphereCenterNameTest {
         .isEqualTo(engine.signature(spec("O", "M")).orElseThrow().canonical());
     assertThat(engine.verify(spec("I", "M"), "R = 3 cm; V = 36π cm³").answerOk()).isTrue();
   }
+
+  @Test
+  @DisplayName(
+      "Nhãn mặt cầu theo tên trong đề: hình dựng cho đề tâm I, điểm A có đỉnh I, A (không O, M)")
+  void sphereLabelsFollowStatement() {
+    var f = engine.build(spec("I", "A"), 1);
+    assertThat(f.points().keySet()).containsExactly("I", "A");
+    assertThat(f.edges()).containsExactly(java.util.List.of("I", "A"));
+    assertThat(engine.check(f.points(), f.constraints()).satisfied()).isTrue();
+    assertThat(engine.measure(f, spec("I", "A").asked().get(0)))
+        .isCloseTo(3.0, org.assertj.core.data.Offset.offset(1e-9));
+    assertThat(engine.build(spec("O", "M"), 1).points().keySet()).containsExactly("O", "M");
+  }
 }

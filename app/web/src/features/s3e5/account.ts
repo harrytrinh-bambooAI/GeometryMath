@@ -16,10 +16,12 @@ export function currentUserId(): string | null {
 }
 
 export const accountApi = {
+  /** Cờ hasPassword của tài khoản hiện tại (DECISIONS ca6594d, PO-72). */
+  me: () => api.get<{ hasPassword?: boolean }>('/api/v1/account/me'),
   /** Xóa tài khoản của chính mình; idempotent theo requestId. */
-  deleteAccount: (userId: string, password: string, confirm: string, requestId: string) =>
+  deleteAccount: (userId: string, password: string | null, confirm: string, requestId: string) =>
     api.post<{ deleted: boolean }>(`/api/v1/account/users/${encodeURIComponent(userId)}/delete`, {
-      password,
+      ...(password === null ? {} : { password }),
       confirm,
       requestId,
     }),

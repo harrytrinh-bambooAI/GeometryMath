@@ -79,7 +79,9 @@ test('Học sinh vào lớp bằng tên (không mật khẩu) xóa tài khoản 
   const e = await err(wrong);
   expect(e.code).toBe('VALIDATION_FAILED');
   expect(e.details?.[0]?.field).toBe('confirm');
-  expect((await request.get(`${API}/api/v1/account/me`, { headers: bearer(em.token) })).status(), 'tài khoản còn').not.toBe(401);
+  const me = await request.get(`${API}/api/v1/account/me`, { headers: bearer(em.token) });
+  expect(me.status(), 'tài khoản còn').toBe(200);
+  expect(((await me.json()) as { hasPassword: boolean }).hasPassword, 'màn xóa không hỏi mật khẩu').toBe(false);
   const r = await deleteAccount(request, em.token, em.userId, { confirm: 'XÓA' });
   expect(r.status(), await r.text()).toBe(200);
   expect(((await r.json()) as { deleted: boolean }).deleted).toBe(true);

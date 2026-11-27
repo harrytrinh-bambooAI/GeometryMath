@@ -241,12 +241,14 @@ public class CodeAccountRepository {
       String displayName,
       String role,
       boolean hasRecoveryCode,
-      String privacyVersion) {}
+      String privacyVersion,
+      boolean hasPassword) {}
 
   public Optional<Me> me(UUID orgId, UUID id) {
     return jdbc.sql(
             """
-            SELECT user_code, display_name, role::text, recovery_hmac IS NOT NULL, privacy_ack_version
+            SELECT user_code, display_name, role::text, recovery_hmac IS NOT NULL, privacy_ack_version,
+                   password_hash IS NOT NULL
             FROM app_user WHERE org_id = :orgId AND id = :id LIMIT 1
             """)
         .param("orgId", orgId)
@@ -257,7 +259,8 @@ public class CodeAccountRepository {
                 rs.getString(2),
                 rs.getString(3),
                 rs.getBoolean(4),
-                rs.getString(5)))
+                rs.getString(5),
+                rs.getBoolean(6)))
         .optional();
   }
 

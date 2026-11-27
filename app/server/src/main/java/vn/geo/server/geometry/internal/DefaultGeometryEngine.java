@@ -383,6 +383,59 @@ public class DefaultGeometryEngine implements GeometryEngine {
     };
   }
 
+  @Override
+  public Figure build(ProblemSpec spec, double a) {
+    Figure f = build(spec.template(), spec.paramsAt(a));
+    return relabel(f, sphereNames(f, spec));
+  }
+
+  /** Tên tâm / điểm trên mặt cầu theo đề (đại lượng sphere_*), cho bộ dựng "sphere" (O, M). */
+  static Map<String, String> sphereNames(Figure f, ProblemSpec spec) {
+    Map<String, String> m = new LinkedHashMap<>();
+    if (!"sphere".equals(f.template()) || spec.asked() == null) {
+      return m;
+    }
+    for (AskedQuantity q : spec.asked()) {
+      if (q.kind() == null || !q.kind().startsWith("sphere_") || q.points() == null) {
+        continue;
+      }
+      String[] defaults = {"O", "M"};
+      for (int i = 0; i < Math.min(2, q.points().size()); i++) {
+        String want = q.points().get(i);
+        if (want != null
+            && !want.isBlank()
+            && !f.points().containsKey(want)
+            && !m.containsKey(defaults[i])
+            && !m.containsValue(want)) {
+          m.put(defaults[i], want);
+        }
+      }
+    }
+    return m;
+  }
+
+  /** Đổi tên điểm của hình (đỉnh, cạnh, mặt, ràng buộc); không đổi tọa độ hay mặt cong. */
+  static Figure relabel(Figure f, Map<String, String> names) {
+    if (names.isEmpty()) {
+      return f;
+    }
+    java.util.function.Function<String, String> r = n -> names.getOrDefault(n, n);
+    java.util.function.Function<List<String>, List<String>> rl = l -> l.stream().map(r).toList();
+    LinkedHashMap<String, double[]> pts = new LinkedHashMap<>();
+    f.points().forEach((k, v) -> pts.put(r.apply(k), v));
+    return new Figure(
+        f.template(),
+        f.solidKind(),
+        f.params(),
+        pts,
+        f.edges().stream().map(rl).toList(),
+        f.faces().stream().map(rl).toList(),
+        f.surfaces(),
+        f.constraints().stream()
+            .map(c -> new Constraint(c.kind(), rl.apply(c.points()), c.value()))
+            .toList());
+  }
+
   /**
    * Bán kính mặt cầu từ [tâm, điểm trên mặt cầu]. Câu mở sau FIX T-05: bộ dựng "sphere" đặt tên tâm
    * là O (điểm trên mặt cầu là M), đề tự đặt tâm I (hay điểm trên mặt cầu A) thì tên không có trong
