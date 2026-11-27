@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.UUID;
 import org.springframework.stereotype.Repository;
 import vn.geo.server.common.db.TenantJdbc;
+import vn.geo.server.common.security.TenantContext;
 
 /**
  * AuditEvent chặng 3 trên audit_log (US-S3E5-01, PLAN A8). Ghi CHỈ qua fn_audit_event (bảng chỉ
@@ -88,6 +89,32 @@ public class AuditEventRepository {
         .param("action", action)
         .param("targetType", targetType)
         .query(Long.class)
+        .single();
+  }
+
+  /**
+   * PO-76: khóa tư vấn mức giao dịch theo (người gọi, loại đối tượng) để kiểm-rồi-ghi nguyên tử;
+   * gọi trong giao dịch, trước {@link #deniedSince}.
+   */
+  public void lockDenied(UUID actor, String targetType) {
+    jdbc.sql("SELECT pg_advisory_xact_lock(hashtextextended(:k, 0))")
+        .param("k", "audit_denied:" + TenantContext.orgId() + ":" + actor + ":" + targetType)
+        .query((rs, i) -> 0)
+        .list();
+  }
+
+  /** PO-76: đã có hàng Từ chối của (người gọi, loại đối tượng) từ {@code since} chưa. */
+  public boolean deniedSince(UUID actor, String targetType, Instant since) {
+    return jdbc.sql(
+            """
+            SELECT EXISTS (SELECT 1 FROM audit_log l
+                           WHERE l.org_id = :orgId AND l.actor_user_id = :actor AND l.outcome = 'denied'
+                             AND l.target_type = :targetType AND l.occurred_at > :since LIMIT 1)
+            """)
+        .param("actor", actor)
+        .param("targetType", targetType)
+        .param("since", OffsetDateTime.ofInstant(since, ZoneOffset.UTC))
+        .query(Boolean.class)
         .single();
   }
 

@@ -82,6 +82,24 @@ public class ClassBoardRepository {
         .optional();
   }
 
+  /**
+   * PO-85 (BR-S3E3-41): công tắc trợ lý AI của lớp (US-S3E5-04). Tắt thì "Cả lớp vướng ở đâu" không
+   * gọi bộ gộp.
+   */
+  public boolean aiEnabled(UUID classId) {
+    return jdbc.sql(
+            """
+            SELECT c.ai_enabled FROM class c
+            WHERE c.org_id = :orgId AND c.id = :classId
+            LIMIT 1
+            -- sqllint:allow=ownership công tắc AI của lớp (iam), chỉ đọc
+            """)
+        .param("classId", classId)
+        .query(Boolean.class)
+        .optional()
+        .orElse(true);
+  }
+
   /** Bộ Đã giao (kể cả Đã đóng) của lớp, mới giao nhất trước; bộ Nháp và lưu trữ không có bảng. */
   public List<SetRow> sets(UUID classId) {
     return jdbc.sql(

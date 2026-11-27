@@ -76,7 +76,7 @@ test('Yêu cầu đăng ký chỉ chứa các trường cho phép @TC-S2E1-006',
   const me = await request.get(`${API}/api/v1/account/me`, { headers: bearer(reg.token) });
   const text = await me.text();
   for (const leaked of ['binh@example.com', '0912345678', '2010-01-01', 'THPT A', 'base64']) expect(text).not.toContain(leaked);
-  expect(Object.keys(JSON.parse(text)).sort()).toEqual(['classes', 'displayName', 'hasRecoveryCode', 'privacyVersion', 'role', 'userCode']);
+  expect(Object.keys(JSON.parse(text)).sort()).toEqual(['classes', 'displayName', 'hasPassword', 'hasRecoveryCode', 'privacyVersion', 'role', 'userCode']);
 });
 
 test('Tên 1 ký tự và khoảng trắng đầu cuối được cắt @TC-S2E1-010', async ({ request }, testInfo) => {

@@ -26,6 +26,15 @@ public interface GeometryEngine {
    */
   Figure build(String template, Map<String, Double> params);
 
+  /**
+   * Dựng hình của một đề tại a và đặt tên điểm theo đề (DECISIONS ca6594d, câu mở sau T-05): bộ
+   * dựng mặt cầu đặt tâm O, điểm trên mặt cầu M; đề gọi tâm I, điểm A thì hình (và cảnh) mang nhãn
+   * I, A.
+   */
+  default Figure build(ProblemSpec spec, double a) {
+    return build(spec.template(), spec.paramsAt(a));
+  }
+
   /** Bộ dựng engine biết (SCENE-CONTRACT.md §3). */
   boolean knows(String template);
 

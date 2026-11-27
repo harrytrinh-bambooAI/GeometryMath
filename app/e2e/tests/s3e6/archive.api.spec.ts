@@ -17,6 +17,7 @@ test('Giao bộ mới cho lớp đã lưu trữ @TC-S3E6-19', async ({ request }
   expect(d.status()).toBe(409);
   const created = await err(d);
   expect(created.code).toBe('CONFLICT');
+  expect(created.message, 'MSG-S3-97 (PO-70)').toBe('Lớp này đã lưu trữ, không giao bộ mới được.');
   // đường giao bộ đã soạn (practice-sets/{id}/assign, fn_assign_practice_set): cũng CONFLICT, cùng câu (FIX T-34)
   const p = await request.get(`${API}/api/v1/teacher/practice/problems`, { headers: bearer(lan.token) });
   expect(p.status()).toBe(200);

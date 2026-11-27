@@ -6,6 +6,15 @@ package vn.geo.server.aigateway.api;
 public interface AiGateway {
   AiResponse complete(AiRequest request);
 
+  /**
+   * Như {@link #complete(AiRequest)} với trần chờ riêng của người gọi: thời gian chờ = nhỏ hơn giữa
+   * {@code maxWait} và {@code geo.ai.timeout} (PO-83: bộ gộp "Cả lớp vướng ở đâu" có trần tổng 10
+   * giây cho cả màn, không phụ thuộc {@code geo.ai.timeout} 90 giây ở prod). Quá trần: TIMEOUT.
+   */
+  default AiResponse complete(AiRequest request, java.time.Duration maxWait) {
+    return complete(request);
+  }
+
   /** Model đang hiệu lực (ghi vào báo cáo bộ đề chuẩn). */
   default String model() {
     return "unknown";

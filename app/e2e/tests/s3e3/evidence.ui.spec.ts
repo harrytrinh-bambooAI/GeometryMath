@@ -1,6 +1,6 @@
 import type { Page } from '@playwright/test';
 import { expect, test } from '../../support/fixtures.ts';
-import { board051, cellOf, event, evidenceUrl, getJson, openBoard, student, walk, type Ev, type Sandbox } from './s3e3.ts';
+import { board051, cellOf, event, evidenceUrl, getJson, openBoard, setUrl, student, walk, type Ev, type Sandbox } from './s3e3.ts';
 
 /** S3-E3 · khung "BẰNG CHỨNG" của một ô (US-S3E3-02): đủ tương tác, chữ thuần, chỉ đọc, em đã rời, làm mới. */
 
@@ -78,7 +78,7 @@ test('@TC-S3E3-25 học sinh Đã rời: khung chỉ đọc có chip "đã rời
 
 test('@TC-S3E3-26 "Mở bài làm" chỉ đọc, không sinh tương tác', async ({ page, request }) => {
   const sb = await board051(request, maiDe3());
-  const url = evidenceUrl(sb, 3, student(sb, 'Chi Mai').userCode);
+  const url = evidenceUrl(sb, 3, student(sb, 'Chi Mai').id);
   const before = await getJson<Record<string, unknown>>(request, url, sb.teacher.token);
   const writes: string[] = [];
   page.on('request', (r) => {
@@ -136,7 +136,7 @@ test('@TC-S3E3-32 số điện thoại em tự gõ trong câu hỏi: hiện nguy
   await openBoard(page, sb);
   await pick(page, sb, 'Chi Mai', 3);
   await expect(page.getByTestId('s3e3-ev-question-text')).toHaveText(q);
-  const body = await getJson<unknown>(request, evidenceUrl(sb, 3, student(sb, 'Chi Mai').userCode), sb.teacher.token);
+  const body = await getJson<unknown>(request, evidenceUrl(sb, 3, student(sb, 'Chi Mai').id), sb.teacher.token);
   const w = walk(body);
   for (const k of w.keys) expect(k).not.toMatch(/phone|tel|mobile|contact/i);
   expect(w.strings.filter((s) => s.includes('0912345678'))).toEqual([q]);
@@ -156,4 +156,26 @@ test('@TC-S3E3-33 dữ liệu đổi trong lúc đang xem: Làm mới ở khung 
   await expect(page.getByTestId('s3e3-ev-attempt')).toContainText('khớp');
   await expect(page.getByTestId('s3e3-ev-updated')).toHaveText(/^Cập nhật lúc \d\d:\d\d$/);
   await expect(cellOf(page, student(sb, 'Gia Bảo'), 3)).toHaveText('Đúng');
+});
+
+test('@TC-S3E3-58 địa chỉ trang bài làm dùng userId (hs=), không dùng mã người dùng; mã vẫn hiện trên màn hình', async ({ page, request }) => {
+  const sb = await board051(request, maiDe3());
+  const mai = student(sb, 'Chi Mai');
+  const calls: string[] = [];
+  page.on('request', (r) => {
+    if (r.url().includes('/api/')) calls.push(r.url());
+  });
+  await openBoard(page, sb);
+  await pick(page, sb, 'Chi Mai', 3);
+  await expect(page.getByTestId('s3e3-ev-code')).toHaveText(mai.userCode);
+  await page.getByTestId('s3e3-open-work').click();
+  await expect(page.getByTestId('s3e3-work-title')).toHaveText('Bài làm của Chi Mai · Đề 3 · hai mặt phẳng');
+  const url = new URL(page.url());
+  expect(url.searchParams.get('hs')).toBe(mai.id);
+  expect(page.url()).not.toContain(mai.userCode);
+  expect(calls.length).toBeGreaterThan(0);
+  for (const c of calls) expect(c, c).not.toContain(mai.userCode);
+  expect(calls.some((c) => c.includes(`userId=${mai.id}`))).toBe(true);
+  const board = await getJson<{ rows: Array<{ userId: string; userCode: string }> }>(request, `${setUrl(sb)}/board`, sb.teacher.token);
+  for (const row of board.rows) expect(row.userId).toMatch(/^[0-9a-f-]{36}$/);
 });

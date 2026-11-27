@@ -21,6 +21,7 @@ import {
 /** S3-E3 · API Kết quả lớp: trường được phép, quyền theo quan hệ, phân trang con trỏ, nhãn và câu chữ của thẻ gộp. */
 
 interface Row {
+  userId: string;
   displayName: string;
   userCode: string;
   left: boolean;
@@ -46,7 +47,7 @@ test('@TC-S3E3-03 thân phản hồi bảng lớp không chứa tổng, phần t
   const body = (await r.json()) as BoardBody;
   expect(body.rows).toHaveLength(8);
   for (const row of body.rows) {
-    expect(Object.keys(row).sort()).toEqual(['cells', 'displayName', 'left', 'userCode']);
+    expect(Object.keys(row).sort()).toEqual(['cells', 'displayName', 'left', 'userCode', 'userId']);
     expect(row.cells).toEqual(BOARD[row.displayName]!.map((c: Cell) => STATUS[c]));
   }
   for (const k of walk(body).keys) expect(k, `khóa ${k}`).not.toMatch(BANNED);
@@ -65,7 +66,7 @@ test('@TC-S3E3-16 giáo viên khác gọi kết quả lớp 11A1 nhận NOT_FOUN
 test('@TC-S3E3-17 học sinh gọi kết quả lớp và bằng chứng của bạn nhận FORBIDDEN', async ({ request }) => {
   const sb = await board051(request);
   const an = student(sb, 'Bình An');
-  for (const url of [`${setUrl(sb)}/board`, evidenceUrl(sb, 3, student(sb, 'Chi Mai').userCode)]) {
+  for (const url of [`${setUrl(sb)}/board`, evidenceUrl(sb, 3, student(sb, 'Chi Mai').id)]) {
     const r = await request.get(url, { headers: bearer(an.token) });
     expect(r.status(), url).toBe(403);
     const text = await r.text();
@@ -129,7 +130,7 @@ test('@TC-S3E3-29 bằng chứng của em ngoài lớp (Mi Na chỉ thuộc 10B)
   const sb = await board051(request, {}, [{ name: '10B', students: [{ name: 'Mi Na' }], sets: [{ title: 'Bộ 10B', cells: { 'Mi Na': ['Đúng'] } }] }]);
   const mina = sb.otherClasses[0]!.students['Mi Na']!;
   const other = sb.otherClasses[0]!;
-  for (const url of [evidenceUrl(sb, 1, mina.userCode), `${setUrl(sb).replace(sb.classes[0]!.id, other.id).replace(sb.classes[0]!.sets[0]!.id, other.sets[0]!.id)}/evidence?item=1&userCode=${mina.userCode}`]) {
+  for (const url of [evidenceUrl(sb, 1, mina.id), `${setUrl(sb).replace(sb.classes[0]!.id, other.id).replace(sb.classes[0]!.sets[0]!.id, other.sets[0]!.id)}/evidence?item=1&userId=${mina.id}`]) {
     const r = await request.get(url, { headers: bearer(sb.teacher.token) });
     expect(r.status(), url).toBe(404);
     const text = await r.text();
@@ -140,7 +141,7 @@ test('@TC-S3E3-29 bằng chứng của em ngoài lớp (Mi Na chỉ thuộc 10B)
 
 test('@TC-S3E3-30 giáo viên khác đọc bằng chứng Chi Mai × Đề 3 của 11A1 nhận NOT_FOUND, không lộ tên hay câu hỏi', async ({ request }) => {
   const sb = await board051(request, { events: [{ student: 'Chi Mai', item: 3, kind: 'ask', text: CHI_MAI_Q, at: '15:12' }] });
-  const r = await request.get(evidenceUrl(sb, 3, student(sb, 'Chi Mai').userCode), { headers: bearer(sb.otherTeacher.token) });
+  const r = await request.get(evidenceUrl(sb, 3, student(sb, 'Chi Mai').id), { headers: bearer(sb.otherTeacher.token) });
   expect(r.status()).toBe(404);
   const text = await r.text();
   expect(JSON.parse(text).code).toBe('NOT_FOUND');
@@ -155,10 +156,10 @@ test('@TC-S3E3-31 thân phản hồi bằng chứng chỉ có trường được
       { student: 'Chi Mai', item: 3, kind: 'ask', text: CHI_MAI_Q, at: '15:12' },
     ],
   });
-  const r = await request.get(evidenceUrl(sb, 3, student(sb, 'Chi Mai').userCode), { headers: bearer(sb.teacher.token) });
+  const r = await request.get(evidenceUrl(sb, 3, student(sb, 'Chi Mai').id), { headers: bearer(sb.teacher.token) });
   expect(r.status()).toBe(200);
   expect(r.headers()['cache-control']).toContain('no-store');
-  const allowed = ['displayName', 'userCode', 'left', 'item', 'position', 'title', 'status', 'openedAt', 'attempts', 'hints', 'questions', 'at', 'value', 'matched', 'level', 'text', 'stoppedStep', 'updatedAt'];
+  const allowed = ['userId', 'displayName', 'userCode', 'left', 'item', 'position', 'title', 'status', 'openedAt', 'attempts', 'hints', 'questions', 'at', 'value', 'matched', 'level', 'text', 'stoppedStep', 'updatedAt'];
   for (const k of new Set(walk(await r.json()).keys)) {
     expect(allowed, `khóa ${k}`).toContain(k);
     expect(k).not.toMatch(/email|phone|birth|school|avatar|photo|ip|device/i);

@@ -15,7 +15,7 @@ const ipOf = (t: TestInfo) => {
   return `10.${110 + (h[0]! % 40)}.${h[1]}.${(h[2]! % 250) + 1}`;
 };
 
-test('Tên hiển thị là email @TC-S3E5-33', async ({ request, browser }, testInfo) => {
+test('Tên hiển thị là email @TC-S3E5-33 @loai-B', async ({ request, browser }, testInfo) => {
   const r = await request.post(`${API}/api/v1/auth/register`, {
     headers: { 'X-Forwarded-For': ipOf(testInfo).replace(/\.\d+$/, '.7') },
     data: { displayName: 'mai@example.org', role: 'student', password: 'MaiMai#2026', privacyAck: true, privacyVersion: '1.0' },

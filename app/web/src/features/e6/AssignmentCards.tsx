@@ -56,7 +56,7 @@ export function AssignmentCards() {
     <>
       {todo !== null ? (
         <p className="e6-todo" data-testid={tid('e6', 'todo')} data-count={todo}>
-          {todo === 0 ? 'Hôm nay em không có bài nào cần làm.' : `Hôm nay em có ${todo} bài cần làm`}
+          {todo === 0 ? 'Hôm nay em chưa có bài cần làm.' : `Hôm nay em có ${todo} bài cần làm`}
         </p>
       ) : null}
       {error ? (

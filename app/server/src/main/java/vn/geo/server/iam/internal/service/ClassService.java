@@ -544,6 +544,11 @@ public class ClassService {
           if ("active".equals(prev)) {
             return new JoinFail(new AppException(ErrorCode.CONFLICT, MSG_03));
           }
+          if ("rejected".equals(prev) || "left".equals(prev)) {
+            // PO-75: gửi lại sau Bị từ chối / Đã rời tính vào hạn mức 10 lần/15 phút, 30 lần/24 giờ
+            // (BR-S3E1-14, -17) — không giới hạn thì làm phiền giáo viên và dò được mã lớp.
+            repo.recordFailedAttempt(p.orgId(), Uuid7.next(), p.userId(), now);
+          }
           return new JoinOk("pending", t.get().name());
         });
     return switch (o) {

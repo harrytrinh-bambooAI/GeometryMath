@@ -19,8 +19,9 @@ export const resultsApi = {
   sets: (classId: string, signal?: AbortSignal) => apiRequest<Sets>(`${BASE}/${enc(classId)}/sets`, { signal }),
   board: (classId: string, setId: string, cursor?: string | null, signal?: AbortSignal) =>
     apiRequest<Board>(`${setPath(classId, setId)}/board`, { query: cursor ? { cursor } : {}, signal }),
-  evidence: (classId: string, setId: string, item: number, userCode: string, work: boolean, signal?: AbortSignal) =>
-    apiRequest<Evidence>(`${setPath(classId, setId)}/evidence`, { query: { item, userCode, work }, signal }),
+  /** PO-74: em xác định bằng userId (UUID); mã người dùng không vào chuỗi truy vấn (BR-S3E3-40). */
+  evidence: (classId: string, setId: string, item: number, userId: string, work: boolean, signal?: AbortSignal) =>
+    apiRequest<Evidence>(`${setPath(classId, setId)}/evidence`, { query: { item, userId, work }, signal }),
   stuck: (classId: string, setId: string, signal?: AbortSignal) =>
     apiRequest<Stuck>(`${setPath(classId, setId)}/stuck`, { signal }),
 };

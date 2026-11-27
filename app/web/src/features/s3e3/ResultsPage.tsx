@@ -7,7 +7,7 @@ import { cellLabel, columnLabel, MSG, STATUS_ICON, STATUS_LABEL } from './format
 import { StuckPanel } from './StuckPanel.tsx';
 
 export interface Picked {
-  userCode: string;
+  userId: string;
   item: number;
 }
 
@@ -95,7 +95,7 @@ export function ResultsPage() {
             <StuckPanel key={`${classId}|${setId}`} classId={classId} setId={setId} refresh={refresh} onPick={setPicked} />
             {picked && (
               <EvidencePanel
-                key={`${picked.userCode}|${picked.item}`}
+                key={`${picked.userId}|${picked.item}`}
                 classId={classId}
                 setId={setId}
                 picked={picked}
@@ -162,7 +162,7 @@ function BoardCard(p: { classId: string; setId: string; refresh: number; picked:
           </thead>
           <tbody>
             {rows.map((r, idx) => (
-              <tr key={`${r.userCode}|${idx}`} data-testid="s3e3-row" data-code={r.userCode}>
+              <tr key={`${r.userId}|${idx}`} data-testid="s3e3-row" data-code={r.userCode} data-user={r.userId}>
                 <th scope="row" className="s3e3-stick s3e3-name">
                   <b>{r.displayName}</b>
                   {r.left && (
@@ -175,7 +175,7 @@ function BoardCard(p: { classId: string; setId: string; refresh: number; picked:
                 {r.cells.map((s: CellStatus, i) => {
                   const col = b.columns[i];
                   if (!col) return null;
-                  const on = p.picked?.userCode === r.userCode && p.picked.item === col.position;
+                  const on = p.picked?.userId === r.userId && p.picked.item === col.position;
                   return (
                     <td key={col.position}>
                       <button
@@ -186,7 +186,7 @@ function BoardCard(p: { classId: string; setId: string; refresh: number; picked:
                         data-item={col.position}
                         aria-label={cellLabel(r.displayName, col, s)}
                         aria-pressed={on}
-                        onClick={() => p.onPick({ userCode: r.userCode, item: col.position })}
+                        onClick={() => p.onPick({ userId: r.userId, item: col.position })}
                       >
                         <Icon name={STATUS_ICON[s]} inline />
                         {STATUS_LABEL[s]}

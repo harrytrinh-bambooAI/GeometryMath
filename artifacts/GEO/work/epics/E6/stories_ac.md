@@ -499,12 +499,12 @@ Chuyển trạng thái: Chưa đặt giờ → Sắp mở (đặt giờ) · Chư
 - When: An mở "Bài của em".
 - Then: dưới "Chào An" có dòng "Hôm nay em có 2 bài cần làm" (BG-1 và BG-2; BG-3 không tính vì đã xem lời giải).
 
-**US-GEO-606-SC8 — Không còn bài cần làm** · Nguồn: D-GEO-138, 182 · PROVISIONAL D-GEO-182
+**US-GEO-606-SC8 — Không còn bài cần làm (n = 0)** · Nguồn: D-GEO-138, 182; PO-80 (8)
 - Given: một học sinh lớp 11A1 đã xem lời giải (3/3) của mọi bài giao của lớp.
 - When: em mở "Bài của em".
-- Then: dưới "Chào {tên hiển thị}" có dòng "Hôm nay em không có bài nào cần làm."; không có dòng "Hôm nay em có 0 bài cần làm".
+- Then: dưới "Chào {tên hiển thị}" có dòng "Hôm nay em chưa có bài cần làm." (PO-80); không có dòng "Hôm nay em có 0 bài cần làm".
 
-- **Mở và quyết định đang dùng:** D-GEO-075 (Q-GV), D-GEO-078, 101; D-GEO-138 (n = số bài được giao chưa xem lời giải); D-GEO-182 (n = 0: "Hôm nay em không có bài nào cần làm."). Kích thước trang theo `architecture/04_query_catalogue.md`, trần chung 100 (D-GEO-168).
+- **Mở và quyết định đang dùng:** D-GEO-075 (Q-GV), D-GEO-078, 101; D-GEO-138 (n = số bài được giao chưa xem lời giải); D-GEO-182 → PO-80 (8) 27/11/2026 (n = 0: "Hôm nay em chưa có bài cần làm."). Kích thước trang theo `architecture/04_query_catalogue.md`, trần chung 100 (D-GEO-168).
 - **DoR:** Ready.
 
 ## US-GEO-607 — Xem trước như học sinh

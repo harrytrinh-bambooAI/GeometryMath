@@ -12,8 +12,8 @@ import type { Picked } from './ResultsPage.tsx';
  * sửa dữ liệu; nút "Nhắn em" của bản mẫu không làm ở chặng 3 (QA-S3E3-03).
  */
 export function EvidencePanel(p: { classId: string; setId: string; picked: Picked; refresh: number; onRefreshed: () => void }) {
-  const [ev, retry] = useLoad<Evidence>(`s3e3-ev-${p.setId}-${p.picked.userCode}-${p.picked.item}-${p.refresh}`, (s) =>
-    resultsApi.evidence(p.classId, p.setId, p.picked.item, p.picked.userCode, false, s),
+  const [ev, retry] = useLoad<Evidence>(`s3e3-ev-${p.setId}-${p.picked.userId}-${p.picked.item}-${p.refresh}`, (s) =>
+    resultsApi.evidence(p.classId, p.setId, p.picked.item, p.picked.userId, false, s),
   );
   if (ev.state === 'loading')
     return (
@@ -33,7 +33,7 @@ export function EvidencePanel(p: { classId: string; setId: string; picked: Picke
       </section>
     );
   const e = ev.data;
-  const work = `bai-lam?lop=${encodeURIComponent(p.classId)}&bo=${encodeURIComponent(p.setId)}&de=${e.item.position}&ma=${encodeURIComponent(e.userCode)}`;
+  const work = `bai-lam?lop=${encodeURIComponent(p.classId)}&bo=${encodeURIComponent(p.setId)}&de=${e.item.position}&hs=${encodeURIComponent(e.userId)}`; // PO-74: hs=<userId>, không mã người dùng
   return (
     <section className="card s3e3-card" data-testid="s3e3-evidence" data-status={e.status}>
       <div className="s3e3-kicker" data-testid="s3e3-ev-title">

@@ -41,7 +41,8 @@ public class InstrumentedAiGateway implements AiGateway {
   public static final String LANE_HEADER = "X-Geo-Test-Lane";
 
   private static final Logger log = LoggerFactory.getLogger(InstrumentedAiGateway.class);
-  private static final Set<String> PURPOSES = Set.of("scene", "solution", "hint", "qa", "lecture");
+  private static final Set<String> PURPOSES =
+      Set.of("scene", "solution", "hint", "qa", "lecture", "class_stuck");
   private static final Set<String> DRAFT_SCENE = Set.of("draft_ocr", "draft_read", "draft_build");
 
   private final AiProvider provider;
@@ -81,7 +82,16 @@ public class InstrumentedAiGateway implements AiGateway {
 
   @Override
   public AiResponse complete(AiRequest request) {
+    return complete(request, null);
+  }
+
+  @Override
+  public AiResponse complete(AiRequest request, java.time.Duration maxWait) {
     long start = System.nanoTime();
+    long waitMs = settings.timeout().toMillis();
+    if (maxWait != null) {
+      waitMs = Math.max(0, Math.min(waitMs, maxWait.toMillis()));
+    }
     String outcome = "success";
     AuthPrincipal who = RequestContext.isAuthenticated() ? RequestContext.principal() : null;
     String model = settings.model();
@@ -98,7 +108,7 @@ public class InstrumentedAiGateway implements AiGateway {
     AiProvider.Usage usage = null;
     String servedModel = null;
     try {
-      AiProvider.Result res = future.get(settings.timeout().toMillis(), TimeUnit.MILLISECONDS);
+      AiProvider.Result res = future.get(waitMs, TimeUnit.MILLISECONDS);
       content = res.content() == null ? "" : res.content();
       usage = res.usage();
       servedModel = res.model();

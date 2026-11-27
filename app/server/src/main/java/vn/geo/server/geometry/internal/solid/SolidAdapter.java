@@ -50,7 +50,7 @@ public class SolidAdapter {
           false, null, null, GeometryEngine.LABEL_NEEDS_REVIEW, "chưa có mô tả dựng không gian");
     }
     try {
-      Figure f = engine.build(spec.template(), spec.paramsAt(1));
+      Figure f = engine.build(spec, 1);
       GeometryEngine.AskedQuantity q = spec.asked().get(0);
       double v = engine.measure(f, q);
       String unit = q.kind().startsWith("angle") ? "angle" : "number";
@@ -80,7 +80,7 @@ public class SolidAdapter {
           false, null, GeometryEngine.LABEL_NEEDS_REVIEW, "chưa có mô tả dựng không gian");
     }
     try {
-      Figure f = engine.build(spec.template(), spec.paramsAt(1));
+      Figure f = engine.build(spec, 1);
       SceneDto scene =
           engine.toScene(
               f,

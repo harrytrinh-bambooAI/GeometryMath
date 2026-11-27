@@ -1,4 +1,4 @@
-Phiên bản: v0.4 · 2026-11-27
+Phiên bản: v0.5 · 2026-11-27
 # S3-E1 — test case (Lớp, mã lớp, duyệt vào lớp, đặt lại mật khẩu, quyền theo quan hệ)
 
 > Chủ sở hữu: QC. Lập từ `stories_ac.md` cùng thư mục (mỗi tiêu chí có ít nhất một case) và `test_design.md`. **Trạng thái: ready for R3**; mức epic **P0**. Id ổn định; tiêu chí bị gạch bỏ thì case giữ id với N/A. AI là giả lập (D-GEO-047). Kỳ vọng bám Given / When / Then của AC, giá trị cụ thể lấy từ dữ liệu mẫu chung.
@@ -134,7 +134,7 @@ Phiên bản: v0.4 · 2026-11-27
 | TC-S3E1-51 | Học sinh Chờ duyệt, Đã rời hoặc Bị từ chối không thấy bài lớp | High | Abnormal (Fail case/Edge case) | phân quyền | tích hợp API | E2E-API | Học sinh Hoàng Nam (Chờ duyệt ở 11A1) | • Hoàng Nam Chờ duyệt, Văn Tú Đã rời (bài mới giao sau khi rời), một em Bị từ chối ở 11A1 (F-S3-030, F-S3-028, F-S3-050) | • Hàng dữ liệu: F-S3-028, F-S3-030, F-S3-050 | 1. từng em mở Bài của em và gọi chi tiết bộ tuần 15 bằng mã nội bộ | • Bài của em không có nhóm 11A1<br/>• chi tiết bộ trả NOT_FOUND<br/>• Văn Tú vẫn xem được lịch sử bài của chính mình ở Tự học | US-S3E1-05 · FC4; CL-FN-04 |
 | TC-S3E1-52 | Con trỏ phân trang của lớp khác | Medium | Abnormal (Fail case/Edge case) | phân quyền | tích hợp API | E2E-API | Giáo viên Lan (chủ lớp 11A1 và 11A2) | • cô Lan lấy được con trỏ trang kế của danh sách học sinh lớp 10B từ phiên của thầy Khôi (F-S3-012) | • Hàng dữ liệu: F-S3-012 | 1. cô Lan gọi danh sách học sinh 11A1 với con trỏ đó | • máy chủ trả INVALID_CURSOR<br/>• thân phản hồi không chứa dữ liệu của 10B | US-S3E1-05 · FC5; CL-FN-08 |
 | TC-S3E1-53 | Mỗi lần từ chối vì quan hệ được ghi để đếm | Medium | Abnormal (Fail case/Edge case) | phân quyền | tích hợp CSDL / đơn vị | IT | Kỹ sư kiểm thử với quyền đọc cơ sở dữ liệu thử | • bộ đếm sự kiện bảo mật của dữ liệu thử đang bằng 0 | • Không có dữ liệu nhập riêng | 1. chạy 5 yêu cầu ngoài quan hệ (thầy Khôi gọi 11A1, Bình An gọi API giáo viên, hai yêu cầu đổi mã lớp, một con trỏ lạ) | • bộ đếm tăng đúng 5<br/>• mỗi bản ghi chỉ có loại, mã người gọi, loại đối tượng và giờ máy chủ, không có nội dung yêu cầu | US-S3E1-05 · FC6; CL-X-03 · ENG; PO-66 (QA-S3E5-02) |
-| TC-S3E1-55 | Gửi lại yêu cầu sau Bị từ chối tính vào hạn mức | High | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Học sinh Hoàng Nam | • yêu cầu vào 11A1 đã Bị từ chối | • mã `HK-4P7Q` | 1. gửi lại yêu cầu vào lớp 11 lần liên tiếp trong 15 phút (mỗi lần sau khi bị từ chối lại) | • 10 lần đầu được nhận, lần 11 trả RATE_LIMITED với MSG-S3-08<br/>• sau 30 lượt trong 24 giờ cũng RATE_LIMITED | US-S3E1-02 · FC4; BR-S3E1-14, -17; PO-75 |
+| TC-S3E1-57 | Gửi lại yêu cầu sau Bị từ chối / Đã rời tính vào hạn mức | High | Abnormal (Fail case/Edge case) | chức năng | tích hợp API | E2E-API | Học sinh Hoàng Nam | • yêu cầu vào 11A1 đã Bị từ chối | • mã `HK-4P7Q` | 1. gửi lại yêu cầu vào lớp 11 lần liên tiếp trong 15 phút (mỗi lần sau khi bị từ chối lại) | • 10 lần đầu được nhận, lần 11 trả RATE_LIMITED với MSG-S3-08<br/>• sau 30 lượt trong 24 giờ cũng RATE_LIMITED | US-S3E1-02 · FC4; BR-S3E1-14, -17; PO-75 |
 
 ## 4. Truy vết story → tiêu chí → case
 
@@ -211,4 +211,5 @@ Phiên bản: v0.4 · 2026-11-27
 | v0.1 | 2026-11-26 | Tạo mới: 53 case của S3-E1 | runner-T-261126-14 (QC) |
 | v0.2 | 2026-11-26 | thêm TC-S3E1-54 cho SC6, RV_s23 M-02; đổi mã mẫu sai bảng ký tự (RV_s23 m-01) | runner-T-261126-15 (QC soát phản biện, RV_s23) |
 | v0.3 | 2026-11-26 | G4: BR-S3E1-06/-11 duyệt bắt buộc, BR-S3E1-17 giới hạn tổng lượt (30 lần/24 giờ), thêm FC8, BV1; G5: US-S3E1-05 và Bị từ chối được nhận; bỏ nhãn giả định chưa chốt (PO-66) | runner-T-261126-37 (BA/QC) |
-| v0.4 | 2026-11-27 | Thêm TC-S3E1-55: gửi lại sau Bị từ chối/Đã rời tính vào hạn mức (PO-75) | runner-po-s3 (PO/BA) |
+| v0.4 | 2026-11-27 | Thêm TC-S3E1-55 (nay TC-S3E1-57): gửi lại sau Bị từ chối/Đã rời tính vào hạn mức (PO-75) | runner-po-s3 (PO/BA) |
+| v0.5 | 2026-11-27 | Đổi mã ca PO-75 "gửi lại sau Bị từ chối/Đã rời" TC-S3E1-55 → TC-S3E1-57 (trùng mã với ca "dò mã chậm 30 lần/24 giờ" đã có); thêm bước Đã rời 30/24 giờ | runner-fix-po27 (Dev/QC, FIX PO 27/11) |

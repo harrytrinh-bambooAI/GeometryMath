@@ -364,7 +364,9 @@ public class CodeAuthService {
       String role,
       boolean hasRecoveryCode,
       String privacyVersion,
-      java.util.List<Membership> classes) {}
+      java.util.List<Membership> classes,
+      // DECISIONS ca6594d (PO-72): false = vào lớp bằng tên, màn xóa tài khoản không hỏi mật khẩu
+      boolean hasPassword) {}
 
   /** Lớp của người dùng và trạng thái thành viên (pending, active, left, rejected; A6). */
   public record Membership(String className, String status) {}
@@ -390,7 +392,8 @@ public class CodeAuthService {
                 m.privacyVersion(),
                 repo.memberships(p.orgId(), p.userId()).stream()
                     .map(x -> new Membership(x.className(), x.status()))
-                    .toList()))
+                    .toList(),
+                m.hasPassword()))
         .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND, "Không tìm thấy tài khoản."));
   }
 

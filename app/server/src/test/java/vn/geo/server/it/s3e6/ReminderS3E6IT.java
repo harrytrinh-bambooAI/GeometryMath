@@ -3,6 +3,7 @@ package vn.geo.server.it.s3e6;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
@@ -419,5 +420,82 @@ class ReminderS3E6IT extends AbstractS3E4IT {
     for (OffsetDateTime c : created) {
       assertThat(c.toInstant()).isBetween(vn(3, 20, 0, 0), vn(3, 20, 0, 59));
     }
+  }
+
+  // ------------------------------------------------------------------ PO-68 (BR-S3E6-21)
+
+  private void releaseAt(UUID set, Instant at) {
+    jdbc.sql("UPDATE assignment_set SET release_at = :r WHERE id = :id")
+        .param("r", odt(at))
+        .param("id", set)
+        .update();
+  }
+
+  private static Map<String, Long> times(List<String> names, long n) {
+    return names.stream().collect(Collectors.toMap(x -> x, x -> n));
+  }
+
+  @Test
+  @DisplayName(
+      "PO-68 (a) giờ yên lặng chỉ áp cho nhắc hạn: lời giải mở theo lịch lúc 23:00 được báo ngay lúc 23:00")
+  void quietHoursDoNotDeferSolutionOpen() throws Exception {
+    World w = world11A1();
+    UUID set = setWithDue(w, "Bộ bài tuần 15", null);
+    releaseAt(set, vn(6, 23, 0, 0));
+    reminders.runAt(vn(6, 23, 0, 0));
+    assertThat(received(w, set, "solution_open")).isEqualTo(once(ACTIVE_8));
+  }
+
+  @Test
+  @DisplayName(
+      "PO-68 (b) lời giải mở theo lịch chỉ xét bộ có giờ mở trong 1 ngày gần nhất: quá 1 ngày thì không báo")
+  void solutionWindowIsOneDay() throws Exception {
+    World w = world11A1();
+    UUID set = setWithDue(w, "Bộ bài tuần 15", null);
+    releaseAt(set, vn(6, 8, 0, 0));
+    reminders.runAt(vn(7, 8, 0, 1));
+    assertThat(received(w, set, "solution_open")).isEmpty();
+    reminders.runAt(vn(7, 7, 59, 0)); // còn trong 1 ngày
+    assertThat(received(w, set, "solution_open")).isEqualTo(once(ACTIVE_8));
+  }
+
+  @Test
+  @DisplayName(
+      "PO-68 (c) em đã nhận \"Mở ngay\" không nhận thông báo mở lời giải lần hai khi tác vụ lịch chạy")
+  void openNowNotNotifiedTwice() throws Exception {
+    World w = world11A1();
+    UUID set = setWithDue(w, "Bộ bài tuần 15", null);
+    releaseAt(set, Instant.now().plus(Duration.ofHours(30)));
+    var open = send("POST", "/api/v1/teacher/assignment-sets/" + set + "/open-now", lan(w), "{}");
+    assertThat(open.statusCode()).as(open.body()).isEqualTo(200);
+    assertThat(received(w, set, "solution_open")).isEqualTo(once(ACTIVE_8));
+    reminders.runAt(Instant.now().plusSeconds(60));
+    reminders.runAt(Instant.now().plusSeconds(120));
+    assertThat(received(w, set, "solution_open")).isEqualTo(once(ACTIVE_8));
+  }
+
+  @Test
+  @DisplayName(
+      "PO-68 (d) lùi hạn sau khi đã nhắc: nhắc thêm đúng một lần theo hạn mới; mỗi (em, bộ, hạn) một thông báo")
+  void postponedAfterReminderRemindsOnceMore() throws Exception {
+    World w = world11A1();
+    UUID set = setWithDue(w, "Bộ bài tuần 15", vn(4, 20, 0, 0));
+    reminders.runAt(vn(3, 20, 0, 0));
+    assertThat(received(w, set, "due_soon")).isEqualTo(once(ACTIVE_8));
+    jdbc.sql("UPDATE assignment_set SET due_at = :due WHERE id = :id")
+        .param("due", odt(vn(5, 20, 0, 0)))
+        .param("id", set)
+        .update();
+    reminders.runAt(vn(3, 20, 30, 0));
+    assertThat(received(w, set, "due_soon"))
+        .as("chưa tới giờ nhắc của hạn mới")
+        .isEqualTo(once(ACTIVE_8));
+    reminders.runAt(vn(4, 20, 0, 0));
+    reminders.runAt(vn(4, 20, 1, 0));
+    assertThat(received(w, set, "due_soon")).isEqualTo(times(ACTIVE_8, 2));
+    assertThat(bodies(set, "due_soon"))
+        .containsExactlyInAnyOrder(
+            "Bộ bài tuần 15 sắp hết hạn: 20:00, 04/12/2026",
+            "Bộ bài tuần 15 sắp hết hạn: 20:00, 05/12/2026");
   }
 }

@@ -67,3 +67,23 @@ test('Người khác không xóa được tài khoản của em @TC-S3E5-60', as
   const students = await teacherApi.students(request, lan.token, w.classes['11A1']!.id);
   expect(await students.text()).toContain('Bình An');
 });
+
+test('Học sinh vào lớp bằng tên (không mật khẩu) xóa tài khoản chỉ cần gõ XÓA @TC-S3E5-61', async ({ request }) => {
+  // PO-72: em vào lớp bằng tên + mã lớp MVP (không mật khẩu) vẫn xóa được tài khoản; không bước mật khẩu, không bộ đếm sai
+  const name = `Xóa ${Date.now() % 1_000_000}`;
+  const s = await request.post(`${API}/api/v1/auth/student`, { data: { displayName: name, joinCode: 'HK7M2A' } });
+  expect(s.status(), await s.text()).toBe(200);
+  const em = (await s.json()) as { token: string; userId: string };
+  const wrong = await deleteAccount(request, em.token, em.userId, { confirm: 'xoa' });
+  expect(wrong.status()).toBe(400);
+  const e = await err(wrong);
+  expect(e.code).toBe('VALIDATION_FAILED');
+  expect(e.details?.[0]?.field).toBe('confirm');
+  const me = await request.get(`${API}/api/v1/account/me`, { headers: bearer(em.token) });
+  expect(me.status(), 'tài khoản còn').toBe(200);
+  expect(((await me.json()) as { hasPassword: boolean }).hasPassword, 'màn xóa không hỏi mật khẩu').toBe(false);
+  const r = await deleteAccount(request, em.token, em.userId, { confirm: 'XÓA' });
+  expect(r.status(), await r.text()).toBe(200);
+  expect(((await r.json()) as { deleted: boolean }).deleted).toBe(true);
+  expect((await request.get(`${API}/api/v1/account/me`, { headers: bearer(em.token) })).status(), 'thẻ cũ hết hiệu lực').toBe(401);
+});

@@ -1,4 +1,4 @@
-# Phiên bản: v1.0 · 2026-11-27 · US-S3E5-03 danh sách trường dữ liệu được phép thu (BR-S3E5-30).
+# Phiên bản: v1.1 · 2026-11-27 (v1.1: thêm api aiOff, PO-85; hasPassword, PO-72 — runner-fix-po27) · US-S3E5-03 danh sách trường dữ liệu được phép thu (BR-S3E5-30).
 # Mỗi dòng: loại<TAB>thực thể<TAB>trường<TAB>lý do<TAB>mã quyết định. loại db = bảng.cột; api = khóa JSON.
 # Tên khớp mẫu cấm chỉ được có khi lý do bắt đầu bằng "NGOẠI LỆ". Thêm trường mới: thêm dòng ở đây, có lý do và mã PO-nn.
 # Test: quality/AllowedFieldsTest (quét tĩnh API), it/s3e5/AllowedFieldsS3E5IT (cột CSDL, gọi API thật).
@@ -1033,3 +1033,5 @@ db	present_from_results_event	created_at	Sự kiện đo M-S3-04 chữa bài t�
 api	api	archived	Cờ lớp Đã lưu trữ của học sinh (US-S3E6-02, BR-S3E6-15)	PO-66
 api	api	sessionId	Mã phiên Trình chiếu mở từ Kết quả lớp (US-S3E6-01)	PO-66
 api	api	startStep	Bước bắt đầu của Trình chiếu mở từ Kết quả lớp (US-S3E6-01)	PO-66
+api	api	aiOff	Cờ lớp đã tắt trợ lý AI của thẻ "Cả lớp vướng ở đâu": dữ liệu thô kèm MSG-S3-98 (BR-S3E3-41)	PO-85
+api	api	hasPassword	Cờ tài khoản có mật khẩu: màn xóa tài khoản không hỏi mật khẩu khi false (US-S3E5-05, PO-72)	PO-72

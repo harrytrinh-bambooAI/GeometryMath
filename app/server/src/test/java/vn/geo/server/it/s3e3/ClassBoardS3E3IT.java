@@ -2,10 +2,12 @@ package vn.geo.server.it.s3e3;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -232,5 +234,108 @@ class ClassBoardS3E3IT extends AbstractE1IT {
     assertThat(third.get("insights")).isEqualTo(first.get("insights"));
     assertThat(java.time.Instant.parse(third.get("updatedAt").asString()))
         .isAfter(java.time.Instant.parse(first.get("updatedAt").asString()));
+  }
+
+  @Test
+  @DisplayName(
+      "TC-S3E3-58 dữ liệu bảng có userId; bằng chứng mở theo userId, kể cả em vào lớp bằng tên chưa có mã (PO-74, BR-S3E3-40)")
+  void evidenceByUserId() throws Exception {
+    var sb = board051(List.of());
+    var mai = sb.classes().getFirst().students().get("Chi Mai");
+    // em vào lớp bằng tên: chưa có mã người dùng
+    jdbc.sql("UPDATE app_user SET user_code = NULL WHERE id = :id").param("id", mai.id()).update();
+    JsonNode board = json(get(base(sb) + "/board", sb.teacher().token()));
+    JsonNode row = null;
+    for (JsonNode r : board.get("rows")) {
+      assertThat(r.has("userId")).as(r.toString()).isTrue();
+      if (r.get("userId").asString().equals(mai.id().toString())) {
+        row = r;
+      }
+    }
+    assertThat(row).as("hàng của em vào lớp bằng tên").isNotNull();
+    assertThat(row.get("userCode").asString()).isEmpty();
+    var ev = get(base(sb) + "/evidence?item=3&userId=" + mai.id(), sb.teacher().token());
+    assertThat(ev.statusCode()).as(ev.body()).isEqualTo(200);
+    assertThat(json(ev).get("userId").asString()).isEqualTo(mai.id().toString());
+    assertThat(json(ev).get("displayName").asString()).isEqualTo("Chi Mai");
+    // mã người dùng không còn là tham số của địa chỉ
+    var an = sb.classes().getFirst().students().get("Bình An");
+    var old = get(base(sb) + "/evidence?item=3&userCode=" + an.userCode(), sb.teacher().token());
+    assertThat(old.statusCode()).isEqualTo(400);
+  }
+
+  @Test
+  @DisplayName(
+      "TC-S3E3-59 lớp tắt trợ lý AI: \"Cả lớp vướng ở đâu\" không gọi bộ gộp, thẻ chỉ dữ liệu thô kèm MSG-S3-98; bật lại thì gộp (PO-85)")
+  void classAiOffSkipsAggregator() throws Exception {
+    var sb = board051(List.of());
+    UUID classId = sb.classes().getFirst().id();
+    UUID teacher = sb.teacher().id();
+    jdbc.sql("UPDATE class SET ai_enabled = false WHERE id = :id").param("id", classId).update();
+    mock.reset();
+    long before = aiCalls(teacher);
+    JsonNode off = json(get(base(sb) + "/stuck", sb.teacher().token()));
+    assertThat(off.get("aiOff").asBoolean()).isTrue();
+    assertThat(off.get("insights").size()).isZero();
+    for (JsonNode i : off.get("items")) {
+      assertThat(i.get("mode").asString()).as("đề " + i.get("position")).isIn("ai_off", "none");
+    }
+    assertThat(item(off, 2).get("mode").asString()).isEqualTo("ai_off");
+    assertThat(stuckPrompts()).isEmpty();
+    assertThat(aiCalls(teacher)).isEqualTo(before);
+    jdbc.sql("UPDATE class SET ai_enabled = true WHERE id = :id").param("id", classId).update();
+    JsonNode on = json(get(base(sb) + "/stuck", sb.teacher().token()));
+    assertThat(on.get("aiOff").asBoolean()).isFalse();
+    assertThat(on.get("insights").size()).isPositive();
+    assertThat(stuckPrompts()).hasSize(4);
+  }
+
+  @Test
+  @DisplayName(
+      "TC-S3E3-60 tổng thời gian chờ bộ gộp của cả màn không quá trần, không cộng dồn qua các đề và không theo geo.ai.timeout; lượt gọi ghi ai_purpose class_stuck (PO-83, BR-S3E3-42)")
+  void wholeScreenDeadline() throws Exception {
+    var sb = board051(List.of());
+    UUID teacher = sb.teacher().id();
+    mock.reset();
+    Duration original = settings.deadline();
+    try {
+      settings.deadline(Duration.ofMillis(1_500));
+      mock.setDelay(teacher.toString(), null, 1_000L); // mỗi lượt 1 giây: cộng dồn 4 đề = 4 giây
+      long t0 = System.nanoTime();
+      JsonNode stuck = json(get(base(sb) + "/stuck", sb.teacher().token()));
+      long ms = Duration.ofNanos(System.nanoTime() - t0).toMillis();
+      // Trần cấu hình 1,5 giây + dư rộng 2 giây cho máy chậm; vẫn nhỏ hơn 4 giây nếu cộng dồn 4 đề.
+      // Kiểm chính xác nằm ở số lượt gọi (stuckPrompts) bên dưới, không phụ thuộc đồng hồ.
+      assertThat(ms).as("chờ cả màn (ms)").isLessThan(3_500);
+      assertThat(item(stuck, 1).get("mode").asString()).isEqualTo("insight");
+      for (int pos = 2; pos <= 4; pos++) {
+        assertThat(item(stuck, pos).get("mode").asString()).as("đề " + pos).isEqualTo("failed");
+      }
+      assertThat(stuckPrompts().size())
+          .as("không gọi tiếp sau khi hết trần")
+          .isLessThanOrEqualTo(2);
+      String purpose =
+          jdbc.sql(
+                  """
+                  SELECT purpose::text FROM ai_call_log
+                  WHERE user_id = :u AND occurred_at > now() - interval '1 hour'
+                  ORDER BY occurred_at DESC LIMIT 1
+                  """)
+              .param("u", teacher)
+              .query(String.class)
+              .single();
+      assertThat(purpose).isEqualTo("class_stuck");
+    } finally {
+      settings.deadline(original);
+      mock.setDelay(teacher.toString(), null, null);
+    }
+  }
+
+  private long aiCalls(UUID user) {
+    return jdbc.sql(
+            "SELECT count(*) FROM ai_call_log WHERE user_id = :u AND occurred_at > now() - interval '1 hour'")
+        .param("u", user)
+        .query(Long.class)
+        .single();
   }
 }

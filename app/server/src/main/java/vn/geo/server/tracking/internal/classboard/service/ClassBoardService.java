@@ -48,7 +48,13 @@ public class ClassBoardService {
 
   public record ColumnView(int position, String title) {}
 
-  public record Row(String displayName, String userCode, boolean left, List<String> cells) {}
+  /**
+   * Một hàng của bảng. {@code userId} (UUID) là khóa mở bằng chứng và trang bài làm ({@code hs=});
+   * mã người dùng chỉ để hiện, không vào địa chỉ trang hay chuỗi truy vấn (BR-S3E3-40, PO-74). Em
+   * vào lớp bằng tên (chưa có mã) có userCode rỗng.
+   */
+  public record Row(
+      UUID userId, String displayName, String userCode, boolean left, List<String> cells) {}
 
   public record Board(
       UUID setId,
@@ -66,6 +72,7 @@ public class ClassBoardService {
   public record QuestionView(Instant at, String text) {}
 
   public record Evidence(
+      UUID userId,
       String displayName,
       String userCode,
       boolean left,
@@ -169,7 +176,7 @@ public class ClassBoardService {
       for (Column c : s.columns()) {
         cells.add(statusOf(mine.get(c.assignmentId())));
       }
-      out.add(new Row(m.displayName(), codeKey(m), m.left(), cells));
+      out.add(new Row(m.userId(), m.displayName(), codeKey(m), m.left(), cells));
     }
     return new Board(
         s.setId(),
@@ -183,17 +190,16 @@ public class ClassBoardService {
 
   /** Bằng chứng của một ô (em × đề). {@code withStatement} = "Mở bài làm" chỉ đọc (BR-S3E3-24). */
   public Evidence evidence(
-      UUID classId, UUID setId, int position, String userCode, boolean withStatement) {
+      UUID classId, UUID setId, int position, UUID userId, boolean withStatement) {
     Scope s = scope(classId, setId);
     Column col =
         s.columns().stream()
             .filter(c -> c.position() == position)
             .findFirst()
             .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
-    String code = userCode == null ? "" : userCode.strip().toUpperCase(java.util.Locale.ROOT);
     Member m =
         s.members().stream()
-            .filter(x -> !code.isEmpty() && code.equals(x.userCode()))
+            .filter(x -> userId != null && userId.equals(x.userId()))
             .findFirst()
             .orElseThrow(() -> new AppException(ErrorCode.NOT_FOUND));
     List<UUID> one = List.of(col.assignmentId());
@@ -210,6 +216,7 @@ public class ClassBoardService {
             progress.map(ClassBoardRepository.Progress::hintLevelMax).orElse(0),
             hints.stream().mapToInt(ClassBoardRepository.HintUse::level).max().orElse(0));
     return new Evidence(
+        m.userId(),
         m.displayName(),
         codeKey(m),
         m.left(),

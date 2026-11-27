@@ -19,7 +19,9 @@ export interface ColumnView {
   position: number;
   title: string;
 }
+/** userId (UUID) mở bằng chứng và trang bài làm (hs=); mã người dùng chỉ để hiện (BR-S3E3-40, PO-74). */
 export interface Row {
+  userId: string;
   displayName: string;
   userCode: string;
   left: boolean;
@@ -35,6 +37,7 @@ export interface Board {
   updatedAt: string;
 }
 export interface Evidence {
+  userId: string;
   displayName: string;
   userCode: string;
   left: boolean;
@@ -49,6 +52,7 @@ export interface Evidence {
   updatedAt: string;
 }
 export interface Person {
+  userId: string;
   displayName: string;
   userCode: string;
 }
@@ -70,13 +74,15 @@ export interface RawEntry {
 export interface StuckItem {
   position: number;
   title: string;
-  mode: 'insight' | 'raw' | 'failed' | 'none';
+  mode: 'insight' | 'raw' | 'failed' | 'ai_off' | 'none';
   works: number;
   raw: RawEntry[];
 }
 export interface Stuck {
   minAggregate: number;
   classTooSmall: boolean;
+  /** Lớp đã tắt trợ lý AI: không gộp tự động, chỉ dữ liệu thô kèm MSG-S3-98 (BR-S3E3-41, PO-85). */
+  aiOff?: boolean;
   insights: Insight[];
   items: StuckItem[];
   updatedAt: string;

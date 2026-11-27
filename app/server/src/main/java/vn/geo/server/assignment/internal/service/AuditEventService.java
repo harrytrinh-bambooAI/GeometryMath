@@ -96,25 +96,32 @@ public class AuditEventService {
   }
 
   /**
-   * Bản ghi Từ chối: chỉ loại, người gọi, loại đối tượng, giờ (BR-S3E5-07, M-S3-06). Dev-REV-A2:
-   * tối đa một hàng mỗi (người gọi, loại, loại đối tượng) trong cửa sổ {@code
-   * geo.audit.denied-window} (mặc định 1 giờ) — audit_log chỉ thêm, không xóa được, nên lặp yêu cầu
-   * sai vai/NOT_FOUND không được làm phình bảng. Redis lỗi thì vẫn ghi (không mất dấu vết).
+   * Bản ghi Từ chối: chỉ loại, người gọi, loại đối tượng, giờ (BR-S3E5-07, M-S3-06). PO-76: tối đa
+   * một hàng mỗi (người gọi, loại đối tượng) trong cửa sổ {@code geo.audit.denied-window} (mặc định
+   * 1 giờ), bất kể loại thao tác — audit_log chỉ thêm, không xóa được, nên lặp yêu cầu sai
+   * vai/NOT_FOUND không được làm phình bảng. Mọi đường từ chối của nhật ký thao tác đi qua hàm này
+   * (requireTeacher, Mở ngay / Đổi giờ). Redis là đường nhanh; CSDL là nguồn đúng (Redis lỗi hoặc
+   * mất khóa vẫn không ghi hàng thứ hai trong giờ). Yêu cầu vẫn bị từ chối bình thường.
    */
   public void denied(AuthPrincipal p, String action, String targetType) {
-    if (!firstInWindow(p, action, targetType)) {
+    if (!firstInWindow(p, targetType)) {
       return;
     }
-    separateTx.executeWithoutResult(
-        s -> repo.recordDenied(p.userId(), roleOf(p), action, targetType));
+    Instant since = Instant.now().minus(deniedWindow);
+    separateTx.executeWithoutResult(s -> {
+      repo.lockDenied(p.userId(), targetType);
+      if (!repo.deniedSince(p.userId(), targetType, since)) {
+        repo.recordDenied(p.userId(), roleOf(p), action, targetType);
+      }
+    });
   }
 
-  private boolean firstInWindow(AuthPrincipal p, String action, String targetType) {
-    String key = keys.key("audit-denied", String.valueOf(p.userId()), action, targetType);
+  private boolean firstInWindow(AuthPrincipal p, String targetType) {
+    String key = keys.key("audit-denied", String.valueOf(p.userId()), targetType);
     try {
       return !Boolean.FALSE.equals(redis.opsForValue().setIfAbsent(key, "1", deniedWindow));
     } catch (RuntimeException e) {
-      log.warn("audit denied: Redis lỗi, ghi không giới hạn ({})", e.getClass().getSimpleName());
+      log.warn("audit denied: Redis lỗi, xét theo CSDL ({})", e.getClass().getSimpleName());
       return true;
     }
   }

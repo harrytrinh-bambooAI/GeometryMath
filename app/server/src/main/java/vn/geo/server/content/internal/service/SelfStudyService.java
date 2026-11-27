@@ -289,7 +289,7 @@ public class SelfStudyService {
     try {
       if (template != null && engine.knows(template)) {
         ProblemSpec spec = engine.specFrom(out);
-        Figure f = engine.build(spec.template(), spec.paramsAt(1));
+        Figure f = engine.build(spec, 1); // nhãn điểm theo đề (tâm cầu I…)
         if (!engine.check(f.points(), f.constraints()).satisfied()) {
           throw AppException.invalidField("statement", MSG_18);
         }

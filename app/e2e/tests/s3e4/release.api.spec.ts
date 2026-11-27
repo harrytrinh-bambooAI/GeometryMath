@@ -75,7 +75,7 @@ test('@TC-S3E4-22 web đổi giờ trước, điện thoại Mở ngay với phi
   expect((await auditOf(request, lan(w).token, klass(w, '11A1').id)).map((x) => x.type)).toEqual(['RELEASE_TIME_CHANGE']);
 });
 
-test('@TC-S3E4-23 giáo viên khác gọi Mở ngay / Đổi giờ: NOT_FOUND, giờ mở không đổi, không thông báo, mỗi yêu cầu một bản ghi Từ chối', async ({ request }) => {
+test('@TC-S3E4-23 giáo viên khác gọi Mở ngay / Đổi giờ: NOT_FOUND, giờ mở không đổi, không thông báo, một bản ghi Từ chối mỗi (người gọi, loại đối tượng) mỗi giờ', async ({ request }) => {
   const w = await smallWorld(request);
   const set = await assignedSet(request, lan(w), klass(w, '11A1').id);
   const before = await follow(request, lan(w).token, set.id);
@@ -90,8 +90,9 @@ test('@TC-S3E4-23 giáo viên khác gọi Mở ngay / Đổi giờ: NOT_FOUND, g
   expect(after.version).toBe(before.version);
   expect((await notesOf(request, who(w, 'Bình An').token)).map((n) => n.body)).toEqual(['Có bài mới: Bộ bài tuần 15']);
   expect(await auditOf(request, lan(w).token, klass(w, '11A1').id)).toEqual([]);
+  // PO-76: một hàng Từ chối mỗi (người gọi, loại đối tượng) trong mỗi giờ, không phải mỗi yêu cầu
   const denied = await deniedOf(request, khoi(w).id);
-  expect(denied.map((d) => d.type).sort()).toEqual(['EARLY_RELEASE', 'RELEASE_TIME_CHANGE']);
+  expect(denied.map((d) => d.type)).toEqual(['EARLY_RELEASE']);
   for (const d of denied) expect(d).toMatchObject({ actorCode: khoi(w).userCode, targetType: 'assignment_set', result: 'DENIED', bare: true });
 });
 

@@ -49,7 +49,12 @@ function StuckBody(p: { s: Stuck; showRest: boolean; onShowRest: () => void; onR
   const nobody = s.items.every((i) => i.mode === 'none');
   return (
     <>
-      {s.classTooSmall && !nobody && (
+      {s.aiOff && !nobody && (
+        <p className="s3e3-banner" data-testid="s3e3-msg-ai-off">
+          {MSG.aiOff}
+        </p>
+      )}
+      {s.classTooSmall && !s.aiOff && !nobody && (
         <p className="s3e3-banner" data-testid="s3e3-msg-small">
           {MSG.small(s.minAggregate)}
         </p>
@@ -105,11 +110,11 @@ function Card({ c, updatedAt, onPick }: { c: Insight; updatedAt: string; onPick:
       {open && (
         <ul className="s3e3-people" data-testid="s3e3-insight-people">
           {c.evidence.map((e) => (
-            <li key={e.userCode}>
+            <li key={e.userId}>
               <button
                 className="btn ghost sm s3e3-person"
                 data-testid="s3e3-insight-person"
-                onClick={() => onPick({ userCode: e.userCode, item: c.position })}
+                onClick={() => onPick({ userId: e.userId, item: c.position })}
               >
                 <b>{e.displayName}</b>
                 <span className="mono muted">{e.userCode}</span>
@@ -128,7 +133,7 @@ function RawBlock({ it, s, onRetry }: { it: StuckItem; s: Stuck; onRetry: () => 
     <article className="s3e3-raw" data-testid="s3e3-raw" data-position={it.position} data-mode={it.mode}>
       <b>{columnLabel(it)}</b>
       {it.mode === 'failed' && <Failed onRetry={onRetry} />}
-      {it.mode !== 'failed' && !s.classTooSmall && (
+      {it.mode !== 'failed' && it.mode !== 'ai_off' && !s.classTooSmall && (
         <p className="s3e3-banner" data-testid="s3e3-msg-below">
           {MSG.below(it.works, s.minAggregate)}
         </p>

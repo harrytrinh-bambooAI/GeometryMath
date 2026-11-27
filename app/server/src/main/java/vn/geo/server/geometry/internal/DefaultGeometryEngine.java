@@ -448,6 +448,96 @@ public class DefaultGeometryEngine implements GeometryEngine {
     };
   }
 
+  @Override
+  public Figure build(ProblemSpec spec, double a) {
+    Figure f = build(spec.template(), spec.paramsAt(a));
+    return relabel(f, sphereNames(f, spec));
+  }
+
+  /** Tên tâm / điểm trên mặt cầu theo đề (đại lượng sphere_*), cho bộ dựng "sphere" (O, M). */
+  static Map<String, String> sphereNames(Figure f, ProblemSpec spec) {
+    Map<String, String> m = new LinkedHashMap<>();
+    if (!"sphere".equals(f.template()) || spec.asked() == null) {
+      return m;
+    }
+    for (AskedQuantity q : spec.asked()) {
+      if (q.kind() == null || !q.kind().startsWith("sphere_") || q.points() == null) {
+        continue;
+      }
+      String[] defaults = {"O", "M"};
+      for (int i = 0; i < Math.min(2, q.points().size()); i++) {
+        String want = q.points().get(i);
+        if (want != null
+            && !want.isBlank()
+            && !f.points().containsKey(want)
+            && !m.containsKey(defaults[i])
+            && !m.containsValue(want)) {
+          m.put(defaults[i], want);
+        }
+      }
+    }
+    return m;
+  }
+
+  /** Đổi tên điểm của hình (đỉnh, cạnh, mặt, ràng buộc); không đổi tọa độ hay mặt cong. */
+  static Figure relabel(Figure f, Map<String, String> names) {
+    if (names.isEmpty()) {
+      return f;
+    }
+    java.util.function.Function<String, String> r = n -> names.getOrDefault(n, n);
+    java.util.function.Function<List<String>, List<String>> rl = l -> l.stream().map(r).toList();
+    LinkedHashMap<String, double[]> pts = new LinkedHashMap<>();
+    f.points().forEach((k, v) -> pts.put(r.apply(k), v));
+    return new Figure(
+        f.template(),
+        f.solidKind(),
+        f.params(),
+        pts,
+        f.edges().stream().map(rl).toList(),
+        f.faces().stream().map(rl).toList(),
+        f.surfaces(),
+        f.constraints().stream()
+            .map(c -> new Constraint(c.kind(), rl.apply(c.points()), c.value()))
+            .toList());
+  }
+
+  /**
+   * Bán kính mặt cầu từ [tâm, điểm trên mặt cầu]. Câu mở sau FIX T-05: bộ dựng "sphere" đặt tên tâm
+   * là O (điểm trên mặt cầu là M), đề tự đặt tâm I (hay điểm trên mặt cầu A) thì tên không có trong
+   * hình — ánh xạ tên lạ về mặt cầu của hình: tâm lạ = tâm mặt cầu, điểm lạ = điểm trên mặt cầu
+   * (bán kính lấy từ mặt cầu). Tên có sẵn trong hình vẫn dùng như cũ (HKG-06 tâm I của mặt cầu
+   * ngoại tiếp).
+   */
+  static double sphereRadius(Figure f, List<String> n) {
+    if (n.size() >= 4) {
+      return circumsphereRadius(f, n);
+    }
+    double[] c = f.points().get(n.get(0));
+    double[] p = f.points().get(n.get(1));
+    if (c != null && p != null) {
+      return V.dist(c, p);
+    }
+    SceneDto.SceneSurface ball =
+        f.surfaces() == null
+            ? null
+            : f.surfaces().stream().filter(x -> "sphere".equals(x.kind())).findFirst().orElse(null);
+    if (ball == null || ball.center() == null || ball.center().size() != 3) {
+      // không có mặt cầu để ánh xạ: báo đúng tên thiếu như trước
+      return V.dist(f.point(n.get(0)), f.point(n.get(1)));
+    }
+    double[] center = {ball.center().get(0), ball.center().get(1), ball.center().get(2)};
+    if (c == null) {
+      c = center;
+    }
+    if (p == null) {
+      if (V.dist(c, center) > 1e-9 * Math.max(1, ball.radius())) {
+        throw new IllegalArgumentException("không có đỉnh " + n.get(1));
+      }
+      return ball.radius();
+    }
+    return V.dist(c, p);
+  }
+
   /**
    * Số điểm của từng loại đại lượng (volume_prism: ít nhất 4 — ba đỉnh đáy trở lên và một đỉnh
    * trên).
@@ -474,13 +564,10 @@ public class DefaultGeometryEngine implements GeometryEngine {
           Map.entry("prism_lateral", 4));
 
   /**
-   * Bán kính mặt cầu: [tâm, điểm trên cầu] là khoảng cách; bốn điểm không đồng phẳng là bán kính
-   * mặt cầu đi qua bốn điểm đó (ngoại tiếp tứ diện — dùng cho cầu ngoại tiếp chóp, lăng trụ, hộp).
+   * Bốn điểm không đồng phẳng: bán kính mặt cầu đi qua bốn điểm đó (ngoại tiếp tứ diện — dùng cho
+   * cầu ngoại tiếp chóp, lăng trụ, hộp). Hai điểm [tâm, điểm trên cầu]: xem {@link #sphereRadius}.
    */
-  private static double sphereRadius(Figure f, List<String> n) {
-    if (n.size() == 2) {
-      return V.dist(f.point(n.get(0)), f.point(n.get(1)));
-    }
+  private static double circumsphereRadius(Figure f, List<String> n) {
     double[] p0 = f.point(n.get(0));
     double[] a = V.sub(f.point(n.get(1)), p0);
     double[] b = V.sub(f.point(n.get(2)), p0);
