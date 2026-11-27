@@ -384,3 +384,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** báo cáo FIX T-05; commit 7d8e48d; `MVP-METRICS-20261127-0840`.
 - **Xong khi:** IT tính lại chữ ký v1→v2 đạt; test đề cầu tâm I dựng/kiểm đạt; make verify xanh.
 - **Ngoài phạm vi:** đổi model AI; nới ngưỡng.
+
+## Việc: E2E tách UI / API đợt 2 · ghi 27/11/2026
+- **Mục tiêu:** chuyển nốt 32 ca loại B còn chạy UI sang `*.flow.api.spec.ts` + ảnh trang cuối, gắn `@loai-B`; QC/BA rà tay bảng phân loại A/B (506 A + 32 B đang theo heuristic).
+- **Nguồn:** `artifacts/GEO/evidence/E2E-SPLIT-20261127/REPORT.md`; `artifacts/GEO/work/s23/e2e-ui-classification.md` (27/11/2026).
+- **Xong khi:** 0 ca B chạy UI; `make e2e-affected-selftest` đạt; `make e2e` trọn bộ 0 trượt; `make verify && make traceability ARGS="--strict --all"` không giảm phủ (trừ TC chờ FIX theo PO-DECISIONS).
+- **Ngoài phạm vi:** code sản phẩm; xoá ca loại A.
