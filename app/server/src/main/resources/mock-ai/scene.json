@@ -13,7 +13,7 @@
         "kind": "space", "solid": "pyramid", "level": "thpt",
         "template": "pyramid_square_sa", "params": { "a": "a", "sa": "a" }, "unit": "a",
         "chips": [ { "text": "SA = a", "points": ["S", "A"] }, { "text": "AD = a", "points": ["A", "D"] } ],
-        "asked": [ { "name": "V", "kind": "volume_pyramid", "points": ["S", "A", "B", "C", "D"] } ],
+        "asked": [ { "name": "V", "kind": "pyramid_volume", "points": ["A", "B", "C", "D", "S"] } ],
         "hidden": []
       }
     },
