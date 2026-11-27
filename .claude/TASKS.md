@@ -35,7 +35,7 @@ Task giao agent con có khối `.claude/queue.md` CÙNG ID; map trạng thái �
 | T-261126-30 | S3-E3 · Kết quả lớp + Cả lớp vướng ở đâu | STAGE-2-3-PLAN v0.2 | `cd .claude/worktrees/s3-e3/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS=--all` | 4h/10M, Opus | Todo | |
 | T-261126-31 | S3-E4 · Tổng quan giáo viên + theo dõi nhanh + thông báo trong ứng dụng | STAGE-2-3-PLAN v0.2 | `cd .claude/worktrees/s3-e4/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS=--all` | 3h/8M, Opus | Todo | |
 | T-261126-32 | S3-E6 · Chữa bài, xuất kết quả, lưu trữ lớp, nhắc việc | STAGE-2-3-PLAN v0.2 | `cd .claude/worktrees/s3-e6/app && make verify && make web-build && make e2e && make e2e && make traceability ARGS=--all` | 3h/8M, Opus | Todo | |
-| T-261126-33 | S3 · Kiểm thử chặng 3 | STAGE-2-3-PLAN v0.2 | `cd app && make e2e && make e2e && make traceability ARGS=--all && test -s ../artifacts/GEO/evidence/S3-L6/REPORT.md` | 2.5h/3M, Sonnet | Todo | |
+| T-261126-33 | S3 · Kiểm thử chặng 3 | STAGE-2-3-PLAN v0.2 | `cd app && make e2e && make e2e && make traceability ARGS=--all && test -s ../artifacts/GEO/evidence/S3-L6/REPORT.md` | 2.5h/3M, Sonnet | Done 27/11: S3-L6/REPORT.md — e2e 1846/1851 + 1844/1851 (chập chờn, chạy lại 15/15), S3 292/292 tự động + 7 manual, traceability lệch 0 | |
 | T-261126-34 | GATE · Owner L7 chặng 3 + cổng "giáo viên thật dùng lặp lại" | STAGE-2-3-PLAN v0.2 | `grep -q "S3 L7 OK" DECISIONS.md` | , Sonnet | Wait-User | |
 | T-261126-36 | DESIGN · Designer Dom: rà + hoàn thiện màn chặng 2–3 (8 màn thiếu, trả lời Q_Dom) | lệnh owner 26/11 | ≥ 38 ảnh + REVIEW-Dom + Q_Dom trả lời + DQ-29 | ~300–500k token, Sonnet | Done | gộp 2be47fa (45 ảnh, Q_Dom v0.3: 13 CẦN OWNER, DQ-29…43) |
 
