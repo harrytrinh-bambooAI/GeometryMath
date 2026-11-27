@@ -1,0 +1,12 @@
+4 s3e6.ClassResultsS3E6IT
+14 s3e6.ReminderS3E6IT
+3 s3e1.ClassS3E1IT
+3 s3e2.AssignmentSetS3E2IT
+1 s3e5.AuditFailureS3E5IT
+3 s3e5.PrivacyAiS3E5IT
+4 s3e5.AuditEventS3E5IT
+2 s3e5.AccountDeletionS3E5IT
+6 s3e5.AllowedFieldsS3E5IT
+2 s3e5.SecurityDefinerGrantsIT
+3 s3e4.NotificationS3E4IT
+5 s3e3.ClassBoardS3E3IT
