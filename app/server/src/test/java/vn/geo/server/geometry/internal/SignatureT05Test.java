@@ -85,4 +85,51 @@ class SignatureT05Test {
         F226_REAL_AI.replace("[\"S\",\"D\",\"A\",\"B\",\"C\"]", "[\"S\",\"Q\",\"M\",\"N\",\"P\"]");
     assertThat(engine.signature(engine.specFrom(mapper.readTree(bad)))).isEmpty();
   }
+
+  /**
+   * TC-GEO-0484 (hồi quy sau T-05): luật F-GEO-235 của AI giả lập ghi loại "volume_pyramid" —
+   * engine không có loại này nên từ chữ ký bản 2 (đo giá trị) đề không có chữ ký, màn báo
+   * MSG-GEO-58 thay vì mở lời giải. Mọi luật 'scene' có template + asked (trừ kịch bản AI lỗi cố ý)
+   * phải ra chữ ký.
+   */
+  @Test
+  @DisplayName("Mọi luật scene của AI giả lập (trừ kịch bản lỗi) dựng được chữ ký bản 2")
+  void mockSceneRulesHaveSignature() throws Exception {
+    JsonNode rules;
+    try (java.io.InputStream in =
+        SignatureT05Test.class.getResourceAsStream("/mock-ai/scene.json")) {
+      // '$1'…'$9' là nhóm bắt được từ đề (số): thay bằng số của đề kho (HKG-04: r = 3, l = 5)
+      String raw = new String(in.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8);
+      rules =
+          mapper
+              .readTree(raw.replace("$1", "3").replace("$2", "5").replaceAll("\\$[3-9]", "2"))
+              .path("rules");
+    }
+    int checked = 0;
+    for (JsonNode r : rules) {
+      JsonNode resp = r.path("response");
+      if (r.path("pattern").asString("").contains("kịch bản AI lỗi")
+          || !resp.has("template")
+          || !resp.has("asked")) {
+        continue;
+      }
+      assertThat(engine.signature(engine.specFrom(resp)))
+          .as("chữ ký của luật %s", r.path("id").asString(""))
+          .isPresent();
+      checked++;
+    }
+    assertThat(checked).isGreaterThanOrEqualTo(12);
+  }
+
+  @Test
+  @DisplayName("TC-GEO-0484 F-GEO-235: cùng hình HKG-01, hỏi thể tích thì có chữ ký và khác HKG-01")
+  void f235VolumeDiffersFromHkg01() {
+    String f235 =
+        F226_REAL_AI.replace(
+            "{\"name\":\"\",\"kind\":\"angle_line_plane\",\"points\":[\"S\",\"D\",\"A\",\"B\",\"C\"]}",
+            "{\"name\":\"V\",\"kind\":\"pyramid_volume\",\"points\":[\"A\",\"B\",\"C\",\"D\",\"S\"]}");
+    GeometryEngine.Signature s = sigOf(f235);
+    assertThat(s.canonical()).isEqualTo("2|pyramid_square_sa|a=1;sa=1|pyramid_volume=0.333333");
+    assertThat(s.sha256()).isNotEqualTo(sig("HKG-01").sha256());
+  }
 }
