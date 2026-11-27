@@ -13,6 +13,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.support.TransactionTemplate;
 import vn.geo.server.common.error.AppException;
 import vn.geo.server.common.id.Uuid7;
 import vn.geo.server.common.security.Role;
@@ -31,7 +32,8 @@ import vn.geo.server.tracking.internal.classboard.repo.ClassExportRepository;
  *   <li>UTF-8 có BOM; cột: Tên hiển thị, Mã người dùng, Đã rời, rồi "Đề n" cho mỗi đề; ô trạng thái
  *       Đúng / Xem lại / Đang làm / Chưa làm như bảng (cùng luật hàng của S3-E3: em Đã rời chỉ có
  *       hàng khi có bài làm). Không tổng, điểm, hạng, câu hỏi, đáp số, mã lớp, tên giáo viên.
- *   <li>Ô bắt đầu bằng {@code = + - @} được thêm dấu nháy đơn (không chạy như công thức).
+ *   <li>Ô bắt đầu bằng {@code = + - @}, TAB hoặc CR được thêm dấu nháy đơn (không chạy như công
+ *       thức).
  *   <li>Tên tệp {@code ket-qua-<lớp>-<bộ>-<yyyyMMdd>.csv} không dấu, không tên hay mã học sinh.
  *   <li>Chỉ chủ lớp (NOT_FOUND cho người khác, FORBIDDEN cho học sinh); tối đa 10 lần / 1 giờ mỗi
  *       giáo viên (RATE_LIMITED kèm Retry-After, MSG-S3-94). Lớp Đã lưu trữ vẫn xuất được.
@@ -56,16 +58,19 @@ public class ClassExportService {
   private final ClassBoardService board;
   private final ClassBoardRepository repo;
   private final ClassExportRepository exports;
+  private final TransactionTemplate tx;
   private final Clock clock;
 
   public ClassExportService(
       ClassBoardService board,
       ClassBoardRepository repo,
       ClassExportRepository exports,
+      TransactionTemplate tx,
       Clock clock) {
     this.board = board;
     this.repo = repo;
     this.exports = exports;
+    this.tx = tx;
     this.clock = clock;
   }
 
@@ -73,11 +78,18 @@ public class ClassExportService {
     Roles.require(Role.TEACHER);
     ClassBoardService.Scope s = board.scope(classId, setId); // NOT_FOUND ngoài quan hệ
     Instant now = clock.instant();
-    List<Instant> recent = exports.exportsSince(s.teacher().userId(), now.minus(WINDOW));
-    if (recent.size() >= MAX_PER_HOUR) {
-      Duration wait = Duration.between(now, recent.get(0).plus(WINDOW));
-      throw AppException.rateLimited(wait.isNegative() ? Duration.ofSeconds(1) : wait, MSG_LIMIT);
-    }
+    UUID teacher = s.teacher().userId();
+    // Kiểm hạn mức và ghi lần xuất trong cùng giao dịch, khóa theo giáo viên: hai yêu cầu song song
+    // không cùng đọc 9 lần cũ rồi cùng qua (Dev-REV-B4, REVIEW-T20-T32 mục 6).
+    tx.executeWithoutResult(st -> {
+      exports.lockTeacher(teacher);
+      List<Instant> recent = exports.exportsSince(teacher, now.minus(WINDOW));
+      if (recent.size() >= MAX_PER_HOUR) {
+        Duration wait = Duration.between(now, recent.get(0).plus(WINDOW));
+        throw AppException.rateLimited(wait.isNegative() ? Duration.ofSeconds(1) : wait, MSG_LIMIT);
+      }
+      exports.record(Uuid7.next(), teacher, classId, now);
+    });
     Map<UUID, Map<UUID, Work>> works = ClassBoardService.worksByUser(repo.works(s.assignmentIds()));
     StringBuilder out = new StringBuilder("﻿");
     List<String> head = new ArrayList<>(List.of("Tên hiển thị", "Mã người dùng", "Đã rời"));
@@ -101,7 +113,6 @@ public class ClassExportService {
       }
       line(out, row);
     }
-    exports.record(Uuid7.next(), s.teacher().userId(), classId, now);
     String name =
         "ket-qua-"
             + slug(s.className(), false)
@@ -128,10 +139,16 @@ public class ClassExportService {
     out.append("\r\n");
   }
 
+  /**
+   * Ký tự đầu ô khiến Excel / LibreOffice diễn giải ô như công thức (OWASP CSV Injection): {@code =
+   * + - @}, TAB và CR (Dev-REV-B3, REVIEW-T20-T32 mục 5).
+   */
+  static final String FORMULA_LEAD = "=+-@\t\r";
+
   /** Vô hiệu công thức (BR-S3E6-12) rồi đặt trong nháy kép theo RFC 4180 khi cần. */
   static String cell(String raw) {
     String v = raw == null ? "" : raw;
-    if (!v.isEmpty() && "=+-@".indexOf(v.charAt(0)) >= 0) {
+    if (!v.isEmpty() && FORMULA_LEAD.indexOf(v.charAt(0)) >= 0) {
       v = "'" + v;
     }
     if (v.contains(",") || v.contains("\"") || v.contains("\n") || v.contains("\r")) {

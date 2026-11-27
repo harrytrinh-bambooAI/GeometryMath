@@ -109,6 +109,37 @@ class ClassResultsS3E6IT extends AbstractE1IT {
 
   @Test
   @DisplayName(
+      "Dev-REV-B4 Hai lần xuất song song khi đã có 9 lần trong giờ: đúng một lần qua, một lần RATE_LIMITED; tổng 10 lần")
+  void exportLimitHoldsUnderConcurrency() throws Exception {
+    jdbc.sql("DELETE FROM class_export_log").update();
+    for (int i = 0; i < 9; i++) {
+      assertThat(raw(BASE + "/export", lan()).statusCode()).isEqualTo(200);
+    }
+    for (int round = 0; round < 3; round++) {
+      var req =
+          HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + BASE + "/export"))
+              .header("Authorization", "Bearer " + lan())
+              .GET()
+              .build();
+      var a = http.sendAsync(req, HttpResponse.BodyHandlers.discarding());
+      var b = http.sendAsync(req, HttpResponse.BodyHandlers.discarding());
+      List<Integer> codes =
+          java.util.stream.Stream.of(a.get().statusCode(), b.get().statusCode()).sorted().toList();
+      assertThat(codes).as("lượt " + round).isEqualTo(List.of(200, 429));
+      assertThat(count("SELECT count(*) FROM class_export_log WHERE teacher_id = '" + LAN + "'"))
+          .as("lượt " + round)
+          .isEqualTo(10);
+      // bỏ lần mới nhất: còn 9 lần trong giờ cho lượt sau
+      jdbc.sql(
+              "DELETE FROM class_export_log WHERE id = (SELECT id FROM class_export_log"
+                  + " WHERE teacher_id = :t ORDER BY created_at DESC LIMIT 1)")
+          .param("t", LAN)
+          .update();
+    }
+  }
+
+  @Test
+  @DisplayName(
       "US-S3E6-02 xuất CSV: đúng hàng/cột F-S3-051, tên tệp, giới hạn 10 lần/giờ, chỉ chủ lớp")
   void exportCsv() throws Exception {
     jdbc.sql("DELETE FROM class_export_log").update();
