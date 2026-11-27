@@ -23,6 +23,14 @@ public class ClassExportRepository {
     this.raw = raw;
   }
 
+  /** Khóa giao dịch theo giáo viên: kiểm hạn mức rồi ghi lần xuất không bị chen (Dev-REV-B4). */
+  public void lockTeacher(UUID teacherId) {
+    jdbc.sql("SELECT 1 FROM (SELECT pg_advisory_xact_lock(hashtext(:k))) l")
+        .param("k", "class-export:" + teacherId)
+        .query(Integer.class)
+        .single();
+  }
+
   /** Giờ các lần xuất của giáo viên từ {@code since}, cũ nhất trước (tối đa 50). */
   public List<Instant> exportsSince(UUID teacherId, Instant since) {
     return jdbc.sql(

@@ -16,9 +16,14 @@ const proxy = {
   '/dev': { target: apiTarget, changeOrigin: false },
 };
 
-export default defineConfig({
+// Bản production không kèm .map (Dev-REV-B6, REVIEW-T20-T32 mục 11): .map chép nguyên mã nguồn giao diện
+// (kể cả chú thích BR/PO). Bản e2e (VITE_GEO_TEST_HOOKS=1) và dev giữ .map để đọc vết lỗi.
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
   server: { host: '127.0.0.1', port: webPort, strictPort: true, proxy },
   preview: { host: '127.0.0.1', port: webPort, strictPort: true, proxy },
-  build: { outDir: 'dist', sourcemap: true },
-});
+  build: {
+    outDir: 'dist',
+    sourcemap: mode !== 'production' || process.env.VITE_GEO_TEST_HOOKS === '1',
+  },
+}));
