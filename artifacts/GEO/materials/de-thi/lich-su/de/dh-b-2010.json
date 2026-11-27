@@ -1,0 +1,157 @@
+{
+ "ma": "dh-b-2010",
+ "ky_thi": "dh-b",
+ "nam": 2010,
+ "cau_truc_loai": "tu-luan",
+ "cau_truc": {
+  "phan": [
+   {
+    "id": "P1",
+    "ten": "Phần chung",
+    "loai_cau": "tu-luan",
+    "so_cau": 7,
+    "diem": 7
+   },
+   {
+    "id": "P2",
+    "ten": "Phần riêng - chương trình chuẩn (thí sinh chọn chuẩn hoặc nâng cao)",
+    "loai_cau": "tu-luan",
+    "so_cau": 3,
+    "diem": 3
+   }
+  ],
+  "thoi_gian_phut": 180,
+  "nguon_cau_truc": "Đề thi: 180 phút, thang 10 điểm (câu 1 gồm 2 ý 1 điểm; còn lại theo từng câu)"
+ },
+ "do_tin_cay": "cao: nội dung đọc từ text đề trong bộ tổng hợp; điểm theo thang chuẩn của đề; muc_do là suy luận theo vị trí/độ khó điển hình (đề ĐH không công bố mức độ)",
+ "ghi_chu": "Chỉ ghi phần riêng theo chương trình Chuẩn; phần riêng Nâng cao (3 điểm, thay thế) KHÔNG đưa vào.",
+ "nguon": [
+  {
+   "url": "https://toanmath.com/toanmath-pdf/tong-hop-88-de-thi-thpt-quoc-gia-mon-toan-cua-bo-gddt-2005-2026.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  }
+ ],
+ "cau": [
+  {
+   "so": "1a",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.khao-sat",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Khảo sát hàm y=(2x+1)/(x+1)"
+  },
+  {
+   "so": "1b",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.tuong-giao-m",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "y=-2x+m cắt (C) tại A,B, diện tích OAB cho trước"
+  },
+  {
+   "so": "2a",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "luong-giac",
+   "dang": "lg.pt",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "PT (sin2x+cos2x)cos x+2cos2x-sin x=0"
+  },
+  {
+   "so": "2b",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.vo-ti",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "PT vô tỉ căn(3x+1)-căn(6-x)+3x^2-14x-8=0"
+  },
+  {
+   "so": "3",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tp-log",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Tích phân ln x/(x(2+ln x)^2)"
+  },
+  {
+   "so": "4",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "th.lang-tru-goc+tx.noi-tiep-cau",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Thể tích lăng trụ tam giác đều và bán kính mặt cầu ngoại tiếp tứ diện GABC"
+  },
+  {
+   "so": "5",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "bat-dang-thuc-cuc-tri",
+   "dang": "bdt.cuc-tri",
+   "lop": 10,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "GTNN của M với a+b+c=1, a,b,c>=0"
+  },
+  {
+   "so": "6a",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxy-hinh-phang",
+   "dang": "oxy.tam-giac",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Tam giác vuông tại A biết C, phân giác trong, diện tích: viết PT cạnh BC"
+  },
+  {
+   "so": "6b",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.mp-pt",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Tìm b,c biết (ABC)⊥(P) và d(O,(ABC))=1/3"
+  },
+  {
+   "so": "7",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "so-phuc",
+   "dang": "sp.tap-hop-diem",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Tập hợp điểm biểu diễn z thỏa |z-i|=|(1+i)z|"
+  }
+ ]
+}

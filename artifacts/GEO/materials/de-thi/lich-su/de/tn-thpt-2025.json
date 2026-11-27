@@ -1,0 +1,319 @@
+{
+ "ma": "tn-thpt-2025",
+ "ky_thi": "tn-thpt",
+ "nam": 2025,
+ "ma_de_dung": "0101",
+ "cau_truc_loai": "moi",
+ "cau_truc": {
+  "phan": [
+   {
+    "id": "P1",
+    "ten": "Phần I - Trắc nghiệm nhiều lựa chọn (4 phương án, 1 đúng)",
+    "loai_cau": "tn4",
+    "so_cau": 12,
+    "diem": 3.0
+   },
+   {
+    "id": "P2",
+    "ten": "Phần II - Trắc nghiệm đúng/sai (mỗi câu 4 ý)",
+    "loai_cau": "dung-sai",
+    "so_cau": 4,
+    "diem": 4.0
+   },
+   {
+    "id": "P3",
+    "ten": "Phần III - Trắc nghiệm trả lời ngắn",
+    "loai_cau": "tra-loi-ngan",
+    "so_cau": 6,
+    "diem": 3.0
+   }
+  ],
+  "thoi_gian_phut": 90,
+  "nguon_cau_truc": "QĐ 764/QĐ-BGDĐT ngày 08/03/2024: 12 câu x 0,25 đ; 4 câu đúng/sai (đúng 1/2/3/4 ý được 0,1/0,25/0,5/1,0 đ); 6 câu x 0,5 đ; tổng 10 đ"
+ },
+ "do_tin_cay": "cao cho chủ đề (đọc từ text + ảnh đề 2025); muc_do suy theo vị trí (P1: 1-9 NB, 10-12 TH; P2: câu 1 TH, còn lại VD; P3: 3 câu đầu VD, 3 câu cuối VDC)",
+ "ghi_chu": "Đề chính thức đợt thi 6/2025; mã 0101 (24 mã đề, thứ tự câu khác nhau). Ảnh đề mã 0102-0105 đã đối chiếu số câu/cấu trúc.",
+ "nguon": [
+  {
+   "url": "https://toanmath.com/toanmath-pdf/de-chinh-thuc-ky-thi-tot-nghiep-thpt-nam-2025-mon-toan.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  },
+  {
+   "url": "https://toanmath.com/toanmath-pdf/tong-hop-88-de-thi-thpt-quoc-gia-mon-toan-cua-bo-gddt-2005-2026.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  },
+  {
+   "url": "https://luatvietnam.vn/giao-duc/quyet-dinh-764-qd-bgddt-2024-cau-truc-de-thi-ky-thi-tot-nghiep-thpt-tu-2025-302643-d1.html",
+   "http": 403,
+   "tra_ngay": "2026-11-27"
+  }
+ ],
+ "cau": [
+  {
+   "so": 1,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "qh.vecto",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Phát biểu đúng về tổng các vectơ trong hình lăng trụ"
+  },
+  {
+   "so": 2,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "qh.song-song",
+   "lop": 11,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Đường thẳng AB song song với mặt phẳng nào trong hình hộp"
+  },
+  {
+   "so": 3,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "thong-ke",
+   "dang": "tke.ghep-nhom",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "giao-tiep",
+   "tom_tat": "Tứ phân vị thứ ba của mẫu số liệu ghép nhóm (thời lượng cuộc gọi)"
+  },
+  {
+   "so": 4,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.dt-vtcp",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Vectơ chỉ phương của đường thẳng cho bằng phương trình chính tắc"
+  },
+  {
+   "so": 5,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.co-ban",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Họ nguyên hàm của f(x)=x^2"
+  },
+  {
+   "so": 6,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.cap-so-cong",
+   "lop": 11,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Số hạng u5 của cấp số cộng u1=4, d=-3"
+  },
+  {
+   "so": 7,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "luong-giac",
+   "dang": "lg.pt-co-ban",
+   "lop": 11,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Tập nghiệm của phương trình sin x = 0"
+  },
+  {
+   "so": 8,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Diện tích hình phẳng giới hạn bởi y=2x-3, trục hoành, x=1, x=2"
+  },
+  {
+   "so": 9,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.mp-pt",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Phương trình mặt phẳng qua điểm A với vectơ pháp tuyến cho trước"
+  },
+  {
+   "so": 10,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "ham-so-mu-logarit",
+   "dang": "ml.pt-log",
+   "lop": 11,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Nghiệm của phương trình log3(2x-1)=2"
+  },
+  {
+   "so": 11,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.tiem-can",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Tiệm cận đứng của hàm phân thức từ đồ thị"
+  },
+  {
+   "so": 12,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "th.chop",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Thể tích khối chóp có SA vuông góc đáy, đáy tam giác vuông"
+  },
+  {
+   "so": 13,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.dao-ham-dung-sai",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Hàm f(x)=x^3-12x-8: đạo hàm, nghiệm f'=0, giá trị, GTLN trên [-3;3] (4 ý đúng/sai)"
+  },
+  {
+   "so": 14,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "ham-so-mu-logarit",
+   "dang": "ml.mo-hinh",
+   "lop": 11,
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "tom_tat": "Nồng độ thuốc tồn dư y'(t)=k.y(t): mô hình mũ, tìm k và dự báo (4 ý đúng/sai)"
+  },
+  {
+   "so": 15,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.van-toc-quang-duong+ox.vecto",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "tom_tat": "Vật chuyển động trong Oxyz, v(t)=bt+300: quãng đường, vectơ vận tốc (4 ý đúng/sai)"
+  },
+  {
+   "so": 16,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "xac-suat-co-dieu-kien",
+   "dang": "xs.dieu-kien",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Phần mềm đánh dấu tin nhắn quảng cáo: xác suất có điều kiện, toàn phần (4 ý đúng/sai)"
+  },
+  {
+   "so": 17,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-co-dien",
+   "lop": 11,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Xếp 6 số vào 6 vị trí thành các cấp số cộng: xác suất"
+  },
+  {
+   "so": 18,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.mo-hinh",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "tom_tat": "Doanh thu F(x), chi phí G(x): tìm số sản phẩm để lợi nhuận lớn nhất"
+  },
+  {
+   "so": 19,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he-bpt-2-an",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Thực đơn nước chanh - khoai chiên: quy hoạch tuyến tính tìm doanh thu lớn nhất"
+  },
+  {
+   "so": 20,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "qh.khoang-cach",
+   "lop": 11,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Khoảng cách giữa AC và SD của chóp đáy hình thoi"
+  },
+  {
+   "so": 21,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem",
+   "lop": 11,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Xếp 7 quyển sách vào 4 ngăn, mỗi ngăn có ít nhất 1 quyển: đếm/xác suất"
+  },
+  {
+   "so": 22,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay",
+   "lop": 12,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Thể tích chân đế: chóp cụt trừ phần khoét dạng chỏm cầu"
+  }
+ ]
+}

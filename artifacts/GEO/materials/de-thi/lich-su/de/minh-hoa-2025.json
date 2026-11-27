@@ -1,0 +1,319 @@
+{
+ "ma": "minh-hoa-2025",
+ "ky_thi": "minh-hoa",
+ "nam": 2025,
+ "ma_de_dung": "MH 2025 (công bố 29/12/2023)",
+ "cau_truc_loai": "moi",
+ "cau_truc": {
+  "phan": [
+   {
+    "id": "P1",
+    "ten": "Phần I - Trắc nghiệm nhiều lựa chọn (4 phương án, 1 đúng)",
+    "loai_cau": "tn4",
+    "so_cau": 12,
+    "diem": 3.0
+   },
+   {
+    "id": "P2",
+    "ten": "Phần II - Trắc nghiệm đúng/sai (mỗi câu 4 ý)",
+    "loai_cau": "dung-sai",
+    "so_cau": 4,
+    "diem": 4.0
+   },
+   {
+    "id": "P3",
+    "ten": "Phần III - Trắc nghiệm trả lời ngắn",
+    "loai_cau": "tra-loi-ngan",
+    "so_cau": 6,
+    "diem": 3.0
+   }
+  ],
+  "thoi_gian_phut": 90,
+  "nguon_cau_truc": "QĐ 764/QĐ-BGDĐT ngày 08/03/2024: 12 câu x 0,25 đ; 4 câu đúng/sai (đúng 1/2/3/4 ý được 0,1/0,25/0,5/1,0 đ); 6 câu x 0,5 đ; tổng 10 đ"
+ },
+ "do_tin_cay": "cao cho chủ đề (đọc từ text + ảnh đề 2025); muc_do suy theo vị trí (P1: 1-9 NB, 10-12 TH; P2: câu 1 TH, còn lại VD; P3: 3 câu đầu VD, 3 câu cuối VDC)",
+ "ghi_chu": "Đề minh họa theo cấu trúc mới; ngày công bố 29/12/2023 theo bài báo; không xác minh được liệu có bản cập nhật sau QĐ 764 (08/03/2024).",
+ "nguon": [
+  {
+   "url": "https://toanmath.com/toanmath-pdf/tong-hop-88-de-thi-thpt-quoc-gia-mon-toan-cua-bo-gddt-2005-2026.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  },
+  {
+   "url": "https://lifestyle.zingnews.vn/bo-gd-dt-cong-bo-de-minh-hoa-cau-truc-de-thi-tot-nghiep-thpt-2025-post1451684.html",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  },
+  {
+   "url": "https://luatvietnam.vn/giao-duc/quyet-dinh-764-qd-bgddt-2024-cau-truc-de-thi-ky-thi-tot-nghiep-thpt-tu-2025-302643-d1.html",
+   "http": 403,
+   "tra_ngay": "2026-11-27"
+  }
+ ],
+ "cau": [
+  {
+   "so": 1,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.co-ban",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Nguyên hàm của f(x)=e^x"
+  },
+  {
+   "so": 2,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Hình phẳng giới hạn bởi y=f(x)>0, trục hoành, x=a, x=b (công thức tích phân)"
+  },
+  {
+   "so": 3,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "thong-ke",
+   "dang": "tke.ghep-nhom",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "giao-tiep",
+   "tom_tat": "So sánh hai mẫu số liệu ghép nhóm M1, M2 bằng số đặc trưng"
+  },
+  {
+   "so": 4,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.dt-pt",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Phương trình đường thẳng qua M với vectơ chỉ phương u"
+  },
+  {
+   "so": 5,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.dau-he-so",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "giao-tiep",
+   "tom_tat": "Mệnh đề đúng về hàm phân thức từ đồ thị"
+  },
+  {
+   "so": 6,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "ham-so-mu-logarit",
+   "dang": "ml.bpt-log",
+   "lop": 11,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Tập nghiệm của BPT log2(x-1)<3"
+  },
+  {
+   "so": 7,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.mp-vtpt",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Vectơ pháp tuyến của mặt phẳng (P)"
+  },
+  {
+   "so": 8,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "qh.vuong-goc",
+   "lop": 11,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Mặt phẳng nào vuông góc với (ABCD) trong chóp S.ABCD"
+  },
+  {
+   "so": 9,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "ham-so-mu-logarit",
+   "dang": "ml.pt-mu",
+   "lop": 11,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Nghiệm của phương trình 2^x=6"
+  },
+  {
+   "so": 10,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.cap-so-cong",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Số hạng u5 của cấp số cộng u1=1, u2=3"
+  },
+  {
+   "so": 11,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "qh.vecto",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Phát biểu đúng về vectơ trong hình hộp"
+  },
+  {
+   "so": 12,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.don-dieu-do-thi",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "giao-tiep",
+   "tom_tat": "Hàm số đồng biến trên khoảng nào (từ đồ thị)"
+  },
+  {
+   "so": 13,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.dao-ham-dung-sai",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Hàm f(x)=2cos x+x: giá trị, đạo hàm, nghiệm f'=0, GTLN (4 ý đúng/sai)"
+  },
+  {
+   "so": 14,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "tom_tat": "Ô tô nhập làn cao tốc, v(t)=at+b: tìm a, b, quãng đường (4 ý đúng/sai)"
+  },
+  {
+   "so": 15,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "xac-suat-co-dieu-kien",
+   "dang": "xs.dieu-kien",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Khảo sát khách hàng 'sẽ mua/không mua': xác suất có điều kiện (4 ý đúng/sai)"
+  },
+  {
+   "so": 16,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-vdc",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Thiên thạch và hệ thống quan sát trong Oxyz: khoảng cách, mặt cầu (4 ý đúng/sai)"
+  },
+  {
+   "so": 17,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "qh.khoang-cach",
+   "lop": 11,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Khoảng cách giữa AA' và BC của lăng trụ đứng"
+  },
+  {
+   "so": 18,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem",
+   "lop": 11,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Trò chơi 4 trụ: tổng số thử thách nhỏ nhất của đường đi qua mọi trụ"
+  },
+  {
+   "so": 19,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-vdc",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "GPS: xác định vị trí M từ 4 vệ tinh, khoảng cách tới O"
+  },
+  {
+   "so": 20,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich",
+   "lop": 12,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Diện tích sân chơi giới hạn bởi các parabol"
+  },
+  {
+   "so": 21,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.mo-hinh",
+   "lop": 12,
+   "muc_do": "VDC",
+   "nang_luc": "mo-hinh-hoa",
+   "tom_tat": "Doanh thu F(x), chi phí bình quân G(x): tối ưu lợi nhuận"
+  },
+  {
+   "so": 22,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "xac-suat-co-dieu-kien",
+   "dang": "xs.toan-phan",
+   "lop": 12,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hai hộp bóng: chuyển 1 quả từ hộp I sang II rồi lấy ra, xác suất"
+  }
+ ]
+}

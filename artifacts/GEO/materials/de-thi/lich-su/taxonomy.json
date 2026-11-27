@@ -1,0 +1,815 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "ghi_chu": "chu_de theo mạch CT2018 + chủ đề CT2006 (số phức, khối tròn xoay, Oxy). lop_ct2006 dùng cho đề ≤2024 và ĐH; lop_ct2018 dùng cho đề 2025+ (null = không còn trong CT2018). dang có thể ghép bằng dấu '+' khi một câu chứa nhiều dạng.",
+ "muc_do": {
+  "NB": "Nhận biết",
+  "TH": "Thông hiểu",
+  "VD": "Vận dụng",
+  "VDC": "Vận dụng cao"
+ },
+ "nang_luc": [
+  "tu-duy-lap-luan",
+  "mo-hinh-hoa",
+  "giai-quyet-van-de",
+  "giao-tiep",
+  "cong-cu"
+ ],
+ "chu_de": [
+  {
+   "id": "ham-so-ung-dung-dao-ham",
+   "ten": "Ứng dụng đạo hàm",
+   "mo_ta": "Đơn điệu, cực trị, GTLN/GTNN, tối ưu, hàm hợp/hàm ẩn, mô hình hàm số thực tế",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Giải tích - Hàm số",
+   "dang": [
+    {
+     "id": "hs.bbt-cuc-tri",
+     "mo_ta": "Đọc BBT/đồ thị: điểm cực trị, giá trị cực đại/cực tiểu"
+    },
+    {
+     "id": "hs.cuc-tri-f'",
+     "mo_ta": "Số điểm cực trị khi cho f'(x) (bảng xét dấu hoặc công thức)"
+    },
+    {
+     "id": "hs.do-thi-cuc-tri",
+     "mo_ta": "Số điểm cực trị đọc từ đồ thị"
+    },
+    {
+     "id": "hs.don-dieu-bbt",
+     "mo_ta": "Khoảng đơn điệu từ BBT/bảng xét dấu"
+    },
+    {
+     "id": "hs.don-dieu-do-thi",
+     "mo_ta": "Khoảng đơn điệu từ đồ thị"
+    },
+    {
+     "id": "hs.don-dieu-ham",
+     "mo_ta": "Xét tính đơn điệu hàm cho bằng công thức hoặc f'(x)"
+    },
+    {
+     "id": "hs.gtln-doan",
+     "mo_ta": "GTLN/GTNN trên một đoạn"
+    },
+    {
+     "id": "hs.gtln-m",
+     "mo_ta": "GTLN/GTNN chứa tham số"
+    },
+    {
+     "id": "hs.don-dieu-m",
+     "mo_ta": "Tính đơn điệu chứa tham số m"
+    },
+    {
+     "id": "hs.cuc-tri-m",
+     "mo_ta": "Cực trị chứa tham số m (đếm giá trị nguyên)"
+    },
+    {
+     "id": "hs.cuc-tri-hinh-hoc",
+     "mo_ta": "Cực trị với điều kiện hình học (tam giác vuông/cân, diện tích, vuông góc)"
+    },
+    {
+     "id": "hs.cuc-tri-duong-thang",
+     "mo_ta": "Đường thẳng đi qua hai điểm cực trị"
+    },
+    {
+     "id": "hs.toi-uu",
+     "mo_ta": "Bài toán tối ưu thực tế"
+    },
+    {
+     "id": "hs.mo-hinh",
+     "mo_ta": "Mô hình hàm số thực tế: doanh thu, chi phí, lợi nhuận"
+    },
+    {
+     "id": "hs.dao-ham-dung-sai",
+     "mo_ta": "Đạo hàm, nghiệm f'(x)=0, GTLN trên đoạn (dạng đúng/sai)"
+    },
+    {
+     "id": "hs.f'-do-thi",
+     "mo_ta": "Cho đồ thị/BBT của f'(x), suy ra tính chất của f hoặc hàm liên quan"
+    },
+    {
+     "id": "hs.f'-bbt",
+     "mo_ta": "Cho BBT/đồ thị f hoặc f', xét hàm hợp g(x) (VDC)"
+    },
+    {
+     "id": "hs.ham-hop",
+     "mo_ta": "Hàm hợp/hàm ẩn: đếm cực trị, nghiệm, giá trị tham số"
+    },
+    {
+     "id": "hs.f-vdc",
+     "mo_ta": "Hàm bậc ba/bốn với điều kiện cực trị hoặc giá trị (VDC)"
+    }
+   ]
+  },
+  {
+   "id": "ham-so-do-thi",
+   "ten": "Hàm số và đồ thị",
+   "mo_ta": "Nhận dạng/khảo sát đồ thị, tiệm cận, tương giao, tiếp tuyến, số nghiệm theo BBT",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Giải tích - Hàm số",
+   "dang": [
+    {
+     "id": "dt.nhan-dang",
+     "mo_ta": "Nhận dạng đồ thị hoặc BBT của hàm bậc ba/bốn/phân thức"
+    },
+    {
+     "id": "dt.tiem-can",
+     "mo_ta": "Tiệm cận đứng/ngang"
+    },
+    {
+     "id": "dt.tiem-can-vdc",
+     "mo_ta": "Tiệm cận kết hợp hình học (VDC)"
+    },
+    {
+     "id": "dt.tuong-giao",
+     "mo_ta": "Tương giao đồ thị, số giao điểm"
+    },
+    {
+     "id": "dt.tuong-giao-m",
+     "mo_ta": "Tương giao chứa tham số (số nghiệm, điều kiện hình học)"
+    },
+    {
+     "id": "dt.so-nghiem-bbt",
+     "mo_ta": "Số nghiệm PT dạng f(x)=m, f(g(x))=m từ BBT/đồ thị"
+    },
+    {
+     "id": "dt.tiep-tuyen",
+     "mo_ta": "Tiếp tuyến của đồ thị"
+    },
+    {
+     "id": "dt.tiep-tuyen-vdc",
+     "mo_ta": "Tiếp tuyến, điều kiện cắt đồ thị (VDC)"
+    },
+    {
+     "id": "dt.dau-he-so",
+     "mo_ta": "Dấu các hệ số, mệnh đề đúng từ đồ thị"
+    },
+    {
+     "id": "dt.co-ban",
+     "mo_ta": "Tính chất cơ bản (giao trục, giá trị tại điểm)"
+    },
+    {
+     "id": "dt.khao-sat",
+     "mo_ta": "Khảo sát sự biến thiên và vẽ đồ thị (câu 1a của đề ĐH)"
+    },
+    {
+     "id": "dt.diem-tren-do-thi",
+     "mo_ta": "Tìm điểm thuộc đồ thị thỏa điều kiện (khoảng cách...)"
+    }
+   ]
+  },
+  {
+   "id": "ham-so-mu-logarit",
+   "ten": "Hàm số mũ - logarit",
+   "mo_ta": "Lũy thừa, mũ, logarit, PT/BPT mũ-log, lãi suất, mô hình mũ",
+   "lop_ct2006": 12,
+   "lop_ct2018": 11,
+   "mach_ct2018": "Giải tích - Mũ & Logarit",
+   "dang": [
+    {
+     "id": "ml.pt-mu",
+     "mo_ta": "Giải PT mũ"
+    },
+    {
+     "id": "ml.bpt-mu",
+     "mo_ta": "Giải BPT mũ"
+    },
+    {
+     "id": "ml.pt-log",
+     "mo_ta": "Giải PT logarit"
+    },
+    {
+     "id": "ml.bpt-log",
+     "mo_ta": "Giải BPT logarit"
+    },
+    {
+     "id": "ml.bien-doi",
+     "mo_ta": "Biến đổi, tính giá trị biểu thức logarit/lũy thừa"
+    },
+    {
+     "id": "ml.tap-xac-dinh",
+     "mo_ta": "Tập xác định hàm lũy thừa/mũ/logarit"
+    },
+    {
+     "id": "ml.dao-ham",
+     "mo_ta": "Đạo hàm hàm lũy thừa/mũ/logarit"
+    },
+    {
+     "id": "ml.khai-niem",
+     "mo_ta": "Khái niệm, giá trị hàm số mũ/lũy thừa"
+    },
+    {
+     "id": "ml.lai-suat",
+     "mo_ta": "Lãi suất, tăng trưởng (ứng dụng thực tế)"
+    },
+    {
+     "id": "ml.mo-hinh",
+     "mo_ta": "Mô hình mũ trong thực tế (phân rã, nồng độ)"
+    },
+    {
+     "id": "ml.pt-m",
+     "mo_ta": "PT/BPT mũ-log chứa tham số"
+    },
+    {
+     "id": "ml.pt-bpt-nguyen",
+     "mo_ta": "Đếm số nguyên thỏa PT/BPT mũ-log"
+    },
+    {
+     "id": "ml.vdc",
+     "mo_ta": "Bài toán mũ-logarit nâng cao (hai ẩn, min/max)"
+    }
+   ]
+  },
+  {
+   "id": "nguyen-ham-tich-phan",
+   "ten": "Nguyên hàm - tích phân",
+   "mo_ta": "Nguyên hàm, tính tích phân (tính chất, đổi biến, từng phần), tích phân hàm ẩn",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Giải tích - Nguyên hàm, tích phân",
+   "dang": [
+    {
+     "id": "nh.co-ban",
+     "mo_ta": "Nguyên hàm cơ bản"
+    },
+    {
+     "id": "nh.tp-tinh-chat",
+     "mo_ta": "Tích phân/nguyên hàm dùng tính chất, đổi cận"
+    },
+    {
+     "id": "nh.tp-co-ban",
+     "mo_ta": "Tính tích phân cơ bản"
+    },
+    {
+     "id": "nh.tp-huu-ti",
+     "mo_ta": "Tích phân hàm hữu tỉ"
+    },
+    {
+     "id": "nh.tp-vo-ti",
+     "mo_ta": "Tích phân hàm chứa căn"
+    },
+    {
+     "id": "nh.tp-mu",
+     "mo_ta": "Tích phân hàm chứa e^x"
+    },
+    {
+     "id": "nh.tp-log",
+     "mo_ta": "Tích phân hàm chứa logarit"
+    },
+    {
+     "id": "nh.tp-luong-giac",
+     "mo_ta": "Tích phân hàm lượng giác"
+    },
+    {
+     "id": "nh.tp-phan-tu",
+     "mo_ta": "Tích phân/nguyên hàm từng phần"
+    },
+    {
+     "id": "nh.tp-do-thi",
+     "mo_ta": "Tích phân đọc từ đồ thị"
+    },
+    {
+     "id": "nh.f-ham-an",
+     "mo_ta": "Tích phân/nguyên hàm hàm ẩn (cho f', F, điều kiện)"
+    }
+   ]
+  },
+  {
+   "id": "ung-dung-tich-phan",
+   "ten": "Ứng dụng tích phân",
+   "mo_ta": "Diện tích hình phẳng, thể tích tròn xoay, vận tốc - quãng đường",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Giải tích - Nguyên hàm, tích phân",
+   "dang": [
+    {
+     "id": "ud.dien-tich",
+     "mo_ta": "Diện tích hình phẳng"
+    },
+    {
+     "id": "ud.dien-tich-vdc",
+     "mo_ta": "Diện tích hình phẳng nâng cao (hai đồ thị, tham số)"
+    },
+    {
+     "id": "ud.the-tich-xoay",
+     "mo_ta": "Thể tích khối tròn xoay"
+    },
+    {
+     "id": "ud.van-toc-quang-duong",
+     "mo_ta": "Vận tốc - quãng đường, đại lượng biến thiên theo thời gian"
+    }
+   ]
+  },
+  {
+   "id": "so-phuc",
+   "ten": "Số phức",
+   "mo_ta": "Khái niệm, phép toán, biểu diễn, PT bậc hai, tập hợp điểm, cực trị môđun",
+   "lop_ct2006": 12,
+   "lop_ct2018": null,
+   "mach_ct2018": "Chương trình 2006 (không còn trong CT2018)",
+   "dang": [
+    {
+     "id": "sp.co-ban",
+     "mo_ta": "Phần thực/ảo, liên hợp, môđun, số thuần ảo"
+    },
+    {
+     "id": "sp.bieu-dien",
+     "mo_ta": "Điểm biểu diễn số phức"
+    },
+    {
+     "id": "sp.tinh-toan",
+     "mo_ta": "Cộng trừ nhân chia số phức"
+    },
+    {
+     "id": "sp.tim-z",
+     "mo_ta": "Tìm số phức thỏa điều kiện"
+    },
+    {
+     "id": "sp.pt-bac-hai",
+     "mo_ta": "Nghiệm phức của PT bậc hai"
+    },
+    {
+     "id": "sp.pt-bac-hai-m",
+     "mo_ta": "PT bậc hai trên tập số phức chứa tham số"
+    },
+    {
+     "id": "sp.tap-hop-diem",
+     "mo_ta": "Tập hợp điểm biểu diễn"
+    },
+    {
+     "id": "sp.cuc-tri-mo-dun",
+     "mo_ta": "Cực trị môđun số phức"
+    },
+    {
+     "id": "sp.dem-so-phuc",
+     "mo_ta": "Đếm số phức thỏa điều kiện"
+    }
+   ]
+  },
+  {
+   "id": "hinh-khong-gian-the-tich",
+   "ten": "HHKG - thể tích khối đa diện",
+   "mo_ta": "Thể tích khối chóp/lăng trụ/hộp, tỉ số thể tích, khái niệm khối đa diện",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Hình học - Hình học không gian",
+   "dang": [
+    {
+     "id": "th.khai-niem",
+     "mo_ta": "Khái niệm khối đa diện, mặt đối xứng"
+    },
+    {
+     "id": "th.chop",
+     "mo_ta": "Thể tích khối chóp"
+    },
+    {
+     "id": "th.chop-goc",
+     "mo_ta": "Thể tích chóp khi cho góc/quan hệ vuông góc"
+    },
+    {
+     "id": "th.lang-tru",
+     "mo_ta": "Thể tích khối lăng trụ"
+    },
+    {
+     "id": "th.lang-tru-goc",
+     "mo_ta": "Thể tích lăng trụ khi cho góc/hình chiếu"
+    },
+    {
+     "id": "th.lang-tru-thuc-te",
+     "mo_ta": "Thể tích lăng trụ, bài toán thực tế"
+    },
+    {
+     "id": "th.hop",
+     "mo_ta": "Thể tích hình hộp/lập phương"
+    },
+    {
+     "id": "th.ty-so",
+     "mo_ta": "Tỉ số thể tích, chia khối"
+    },
+    {
+     "id": "th.chop-vdc",
+     "mo_ta": "Thể tích khối chóp (VDC)"
+    },
+    {
+     "id": "th.lang-tru-vdc",
+     "mo_ta": "Thể tích lăng trụ/khối đa diện (VDC)"
+    },
+    {
+     "id": "th.hop-vdc",
+     "mo_ta": "Thể tích hình hộp (VDC)"
+    }
+   ]
+  },
+  {
+   "id": "hinh-khong-gian-quan-he",
+   "ten": "HHKG - quan hệ song song, vuông góc",
+   "mo_ta": "Góc, khoảng cách, quan hệ vuông góc/song song, vectơ trong không gian",
+   "lop_ct2006": 11,
+   "lop_ct2018": 11,
+   "mach_ct2018": "Hình học - Hình học không gian",
+   "dang": [
+    {
+     "id": "qh.goc",
+     "mo_ta": "Góc giữa đường thẳng với mặt phẳng, hai đường thẳng"
+    },
+    {
+     "id": "qh.goc-mp",
+     "mo_ta": "Góc giữa hai mặt phẳng"
+    },
+    {
+     "id": "qh.khoang-cach",
+     "mo_ta": "Khoảng cách (điểm - mặt phẳng, hai đường chéo nhau)"
+    },
+    {
+     "id": "qh.vuong-goc",
+     "mo_ta": "Quan hệ vuông góc, chứng minh vuông góc"
+    },
+    {
+     "id": "qh.song-song",
+     "mo_ta": "Quan hệ song song"
+    },
+    {
+     "id": "qh.vecto",
+     "mo_ta": "Vectơ trong không gian"
+    }
+   ]
+  },
+  {
+   "id": "khoi-tron-xoay",
+   "ten": "Khối tròn xoay",
+   "mo_ta": "Nón, trụ, cầu: công thức, thiết diện, nội/ngoại tiếp, thực tế",
+   "lop_ct2006": 12,
+   "lop_ct2018": null,
+   "mach_ct2018": "Chương trình 2006 (CT2018 chỉ còn ở dạng ứng dụng tích phân)",
+   "dang": [
+    {
+     "id": "tx.non",
+     "mo_ta": "Hình nón: thể tích, diện tích xung quanh"
+    },
+    {
+     "id": "tx.tru",
+     "mo_ta": "Hình trụ: thể tích, diện tích xung quanh"
+    },
+    {
+     "id": "tx.cau",
+     "mo_ta": "Mặt cầu/khối cầu: diện tích, thể tích, bán kính"
+    },
+    {
+     "id": "tx.thiet-dien",
+     "mo_ta": "Thiết diện của nón/trụ"
+    },
+    {
+     "id": "tx.noi-tiep-cau",
+     "mo_ta": "Nón/trụ nội tiếp cầu, mặt cầu ngoại tiếp"
+    },
+    {
+     "id": "tx.thuc-te",
+     "mo_ta": "Khối tròn xoay trong bài toán thực tế"
+    }
+   ]
+  },
+  {
+   "id": "oxyz-toa-do-vecto",
+   "ten": "Oxyz - tọa độ điểm, vectơ",
+   "mo_ta": "Tọa độ điểm/vectơ, hình chiếu, trung điểm, tích vô hướng",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Hình học - PP tọa độ trong không gian",
+   "dang": [
+    {
+     "id": "ox.toa-do-diem",
+     "mo_ta": "Tọa độ điểm: hình chiếu, trung điểm, đối xứng"
+    },
+    {
+     "id": "ox.vecto",
+     "mo_ta": "Tọa độ vectơ, tích vô hướng"
+    }
+   ]
+  },
+  {
+   "id": "oxyz-mat-phang",
+   "ten": "Oxyz - mặt phẳng",
+   "mo_ta": "Phương trình mặt phẳng, vectơ pháp tuyến, khoảng cách, bài toán nâng cao",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Hình học - PP tọa độ trong không gian",
+   "dang": [
+    {
+     "id": "ox.mp-co-ban",
+     "mo_ta": "Mặt phẳng: phương trình đặc biệt, điểm thuộc mặt phẳng"
+    },
+    {
+     "id": "ox.mp-vtpt",
+     "mo_ta": "Vectơ pháp tuyến của mặt phẳng"
+    },
+    {
+     "id": "ox.mp-pt",
+     "mo_ta": "Viết phương trình mặt phẳng"
+    },
+    {
+     "id": "ox.mp-song-song",
+     "mo_ta": "Mặt phẳng song song/qua điểm"
+    },
+    {
+     "id": "ox.mp-khoang-cach",
+     "mo_ta": "Khoảng cách tới mặt phẳng"
+    },
+    {
+     "id": "ox.mp-vdc",
+     "mo_ta": "Mặt phẳng nâng cao"
+    }
+   ]
+  },
+  {
+   "id": "oxyz-duong-thang",
+   "ten": "Oxyz - đường thẳng",
+   "mo_ta": "Phương trình đường thẳng, vectơ chỉ phương, bài toán nâng cao",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Hình học - PP tọa độ trong không gian",
+   "dang": [
+    {
+     "id": "ox.dt-vtcp",
+     "mo_ta": "Vectơ chỉ phương của đường thẳng"
+    },
+    {
+     "id": "ox.dt-pt",
+     "mo_ta": "Viết phương trình đường thẳng"
+    },
+    {
+     "id": "ox.dt-tong-hop",
+     "mo_ta": "Đường thẳng thỏa điều kiện (cắt, vuông góc, nằm trong)"
+    },
+    {
+     "id": "ox.dt-cuc-tri",
+     "mo_ta": "Đường thẳng, khoảng cách lớn nhất/nhỏ nhất"
+    },
+    {
+     "id": "ox.dt-vdc",
+     "mo_ta": "Đường thẳng nâng cao (VDC)"
+    }
+   ]
+  },
+  {
+   "id": "oxyz-mat-cau",
+   "ten": "Oxyz - mặt cầu",
+   "mo_ta": "Phương trình mặt cầu, vị trí tương đối, cực trị, mô hình thực tế",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Hình học - PP tọa độ trong không gian",
+   "dang": [
+    {
+     "id": "ox.mc-co-ban",
+     "mo_ta": "Tâm, bán kính mặt cầu"
+    },
+    {
+     "id": "ox.mc-pt",
+     "mo_ta": "Viết phương trình mặt cầu"
+    },
+    {
+     "id": "ox.mc-vitri",
+     "mo_ta": "Mặt phẳng cắt mặt cầu (đường tròn giao)"
+    },
+    {
+     "id": "ox.mc-cuc-tri",
+     "mo_ta": "Mặt cầu và cực trị khoảng cách/diện tích"
+    },
+    {
+     "id": "ox.mc-vdc",
+     "mo_ta": "Mặt cầu nâng cao hoặc mô hình thực tế (GPS, vệ tinh, vành đai)"
+    }
+   ]
+  },
+  {
+   "id": "oxyz-tong-hop",
+   "ten": "Oxyz - tổng hợp",
+   "mo_ta": "Vị trí tương đối, bài toán kết hợp nhiều yếu tố",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Hình học - PP tọa độ trong không gian",
+   "dang": [
+    {
+     "id": "ox.vitri",
+     "mo_ta": "Vị trí tương đối, tìm điểm thỏa điều kiện"
+    }
+   ]
+  },
+  {
+   "id": "oxy-hinh-phang",
+   "ten": "Hình học phẳng Oxy",
+   "mo_ta": "Tọa độ trong mặt phẳng: đường thẳng, đường tròn, tam giác, tứ giác, elip (đề ĐH)",
+   "lop_ct2006": 10,
+   "lop_ct2018": 10,
+   "mach_ct2018": "Hình học - PP tọa độ trong mặt phẳng",
+   "dang": [
+    {
+     "id": "oxy.duong-thang",
+     "mo_ta": "Đường thẳng trong mặt phẳng, điểm thuộc đường thẳng"
+    },
+    {
+     "id": "oxy.duong-tron",
+     "mo_ta": "Đường tròn: viết phương trình, tiếp xúc, tiếp tuyến"
+    },
+    {
+     "id": "oxy.tam-giac",
+     "mo_ta": "Tam giác: tìm tọa độ đỉnh, viết phương trình cạnh"
+    },
+    {
+     "id": "oxy.hinh-vuong",
+     "mo_ta": "Hình vuông"
+    },
+    {
+     "id": "oxy.hinh-chu-nhat",
+     "mo_ta": "Hình chữ nhật"
+    },
+    {
+     "id": "oxy.hinh-thang",
+     "mo_ta": "Hình thang (cân)"
+    },
+    {
+     "id": "oxy.hinh-binh-hanh",
+     "mo_ta": "Hình bình hành"
+    }
+   ]
+  },
+  {
+   "id": "luong-giac",
+   "ten": "Lượng giác",
+   "mo_ta": "Công thức lượng giác, PT lượng giác, hàm số lượng giác",
+   "lop_ct2006": 11,
+   "lop_ct2018": 11,
+   "mach_ct2018": "Đại số - Hàm số lượng giác",
+   "dang": [
+    {
+     "id": "lg.pt",
+     "mo_ta": "Giải phương trình lượng giác"
+    },
+    {
+     "id": "lg.pt-co-ban",
+     "mo_ta": "Phương trình lượng giác cơ bản (đề TN)"
+    }
+   ]
+  },
+  {
+   "id": "to-hop-xac-suat",
+   "ten": "Tổ hợp - xác suất cổ điển",
+   "mo_ta": "Quy tắc đếm, hoán vị, chỉnh hợp, tổ hợp, nhị thức Newton, xác suất cổ điển",
+   "lop_ct2006": 11,
+   "lop_ct2018": 11,
+   "mach_ct2018": "Thống kê & Xác suất / Đại số tổ hợp",
+   "dang": [
+    {
+     "id": "tk.to-hop-co-ban",
+     "mo_ta": "Quy tắc đếm, hoán vị, chỉnh hợp, tổ hợp"
+    },
+    {
+     "id": "tk.nhi-thuc",
+     "mo_ta": "Nhị thức Newton, hệ số/số hạng trong khai triển"
+    },
+    {
+     "id": "tk.xs-co-dien",
+     "mo_ta": "Xác suất cổ điển (chọn đồ vật, lập số)"
+    },
+    {
+     "id": "tk.dem",
+     "mo_ta": "Bài toán đếm nâng cao (xếp, chia nhóm, trò chơi)"
+    }
+   ]
+  },
+  {
+   "id": "xac-suat-co-dieu-kien",
+   "ten": "Xác suất có điều kiện",
+   "mo_ta": "Biến cố độc lập, xác suất có điều kiện, công thức xác suất toàn phần, Bayes",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Thống kê & Xác suất",
+   "dang": [
+    {
+     "id": "xs.dieu-kien",
+     "mo_ta": "Xác suất có điều kiện, bảng hai chiều, Bayes"
+    },
+    {
+     "id": "xs.toan-phan",
+     "mo_ta": "Công thức xác suất toàn phần"
+    },
+    {
+     "id": "xs.doc-lap",
+     "mo_ta": "Biến cố độc lập, xác suất giao"
+    }
+   ]
+  },
+  {
+   "id": "thong-ke",
+   "ten": "Thống kê mẫu ghép nhóm",
+   "mo_ta": "Khoảng biến thiên, tứ phân vị, phương sai, độ lệch chuẩn của mẫu ghép nhóm",
+   "lop_ct2006": 12,
+   "lop_ct2018": 12,
+   "mach_ct2018": "Thống kê & Xác suất",
+   "dang": [
+    {
+     "id": "tke.ghep-nhom",
+     "mo_ta": "Số đặc trưng mẫu số liệu ghép nhóm"
+    }
+   ]
+  },
+  {
+   "id": "day-so-cap-so",
+   "ten": "Dãy số - cấp số",
+   "mo_ta": "Dãy số, cấp số cộng, cấp số nhân",
+   "lop_ct2006": 11,
+   "lop_ct2018": 11,
+   "mach_ct2018": "Đại số - Dãy số",
+   "dang": [
+    {
+     "id": "ds.cap-so-cong",
+     "mo_ta": "Cấp số cộng"
+    },
+    {
+     "id": "ds.cap-so-nhan",
+     "mo_ta": "Cấp số nhân"
+    },
+    {
+     "id": "ds.so-hang",
+     "mo_ta": "Số hạng của dãy số"
+    }
+   ]
+  },
+  {
+   "id": "gioi-han-lien-tuc",
+   "ten": "Giới hạn - liên tục",
+   "mo_ta": "Giới hạn dãy số/hàm số, hàm liên tục",
+   "lop_ct2006": 11,
+   "lop_ct2018": 11,
+   "mach_ct2018": "Giải tích - Giới hạn",
+   "dang": [
+    {
+     "id": "gh.day-so",
+     "mo_ta": "Giới hạn dãy số/hàm số"
+    }
+   ]
+  },
+  {
+   "id": "dao-ham-co-ban",
+   "ten": "Đạo hàm cơ bản",
+   "mo_ta": "Quy tắc tính đạo hàm (lớp 11)",
+   "lop_ct2006": 11,
+   "lop_ct2018": 11,
+   "mach_ct2018": "Giải tích - Đạo hàm",
+   "dang": [
+    {
+     "id": "dh1.quy-tac",
+     "mo_ta": "Quy tắc đạo hàm"
+    }
+   ]
+  },
+  {
+   "id": "phuong-trinh-he-bpt",
+   "ten": "Phương trình, hệ, bất phương trình đại số",
+   "mo_ta": "PT/BPT vô tỉ, hệ phương trình, hệ BPT bậc nhất hai ẩn (quy hoạch tuyến tính)",
+   "lop_ct2006": 10,
+   "lop_ct2018": 10,
+   "mach_ct2018": "Đại số",
+   "dang": [
+    {
+     "id": "pt.vo-ti",
+     "mo_ta": "Giải PT vô tỉ"
+    },
+    {
+     "id": "pt.bpt-vo-ti",
+     "mo_ta": "Giải BPT vô tỉ"
+    },
+    {
+     "id": "pt.he",
+     "mo_ta": "Giải hệ phương trình"
+    },
+    {
+     "id": "pt.he-bpt-2-an",
+     "mo_ta": "Hệ BPT bậc nhất hai ẩn, quy hoạch tuyến tính"
+    },
+    {
+     "id": "pt.he-bac-nhat",
+     "mo_ta": "Hệ phương trình bậc nhất nhiều ẩn (bài toán thực tế)"
+    }
+   ]
+  },
+  {
+   "id": "bat-dang-thuc-cuc-tri",
+   "ten": "Bất đẳng thức - cực trị đại số",
+   "mo_ta": "Chứng minh BĐT, GTLN/GTNN biểu thức nhiều biến (câu phân loại cao của đề ĐH)",
+   "lop_ct2006": 10,
+   "lop_ct2018": 10,
+   "mach_ct2018": "Đại số",
+   "dang": [
+    {
+     "id": "bdt.cm",
+     "mo_ta": "Chứng minh bất đẳng thức"
+    },
+    {
+     "id": "bdt.cuc-tri",
+     "mo_ta": "GTLN/GTNN biểu thức nhiều biến có ràng buộc"
+    }
+   ]
+  }
+ ]
+}

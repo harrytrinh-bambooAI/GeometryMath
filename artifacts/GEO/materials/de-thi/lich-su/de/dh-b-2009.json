@@ -1,0 +1,157 @@
+{
+ "ma": "dh-b-2009",
+ "ky_thi": "dh-b",
+ "nam": 2009,
+ "cau_truc_loai": "tu-luan",
+ "cau_truc": {
+  "phan": [
+   {
+    "id": "P1",
+    "ten": "Phần chung",
+    "loai_cau": "tu-luan",
+    "so_cau": 7,
+    "diem": 7
+   },
+   {
+    "id": "P2",
+    "ten": "Phần riêng - chương trình chuẩn (thí sinh chọn chuẩn hoặc nâng cao)",
+    "loai_cau": "tu-luan",
+    "so_cau": 3,
+    "diem": 3
+   }
+  ],
+  "thoi_gian_phut": 180,
+  "nguon_cau_truc": "Đề thi: 180 phút, thang 10 điểm (câu 1 gồm 2 ý 1 điểm; còn lại theo từng câu)"
+ },
+ "do_tin_cay": "cao: nội dung đọc từ text đề trong bộ tổng hợp; điểm theo thang chuẩn của đề; muc_do là suy luận theo vị trí/độ khó điển hình (đề ĐH không công bố mức độ)",
+ "ghi_chu": "Chỉ ghi phần riêng theo chương trình Chuẩn; phần riêng Nâng cao (3 điểm, thay thế) KHÔNG đưa vào.",
+ "nguon": [
+  {
+   "url": "https://toanmath.com/toanmath-pdf/tong-hop-88-de-thi-thpt-quoc-gia-mon-toan-cua-bo-gddt-2005-2026.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  }
+ ],
+ "cau": [
+  {
+   "so": "1a",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.khao-sat",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Khảo sát hàm y=2x^4-4x^2"
+  },
+  {
+   "so": "1b",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.tuong-giao-m",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Tìm m để x^2|x^2-2|=m có đúng 6 nghiệm"
+  },
+  {
+   "so": "2a",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "luong-giac",
+   "dang": "lg.pt",
+   "lop": 11,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "PT lượng giác phối hợp sin, cos, bậc ba và cung gấp"
+  },
+  {
+   "so": "2b",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hệ phương trình hai ẩn đối xứng dạng xy+x+1=7y"
+  },
+  {
+   "so": "3",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tp-phan-tu",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Tích phân (3+ln x)/(x+1)^2"
+  },
+  {
+   "so": "4",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "th.lang-tru-goc",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Thể tích tứ diện A'ABC của lăng trụ, B' chiếu lên trọng tâm"
+  },
+  {
+   "so": "5",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "bat-dang-thuc-cuc-tri",
+   "dang": "bdt.cuc-tri",
+   "lop": 10,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "GTNN của A theo x,y với (x+y)^3+4xy>=2"
+  },
+  {
+   "so": "6a",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxy-hinh-phang",
+   "dang": "oxy.duong-tron",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Đường tròn tiếp xúc hai đường thẳng với tâm thuộc đường tròn cho trước"
+  },
+  {
+   "so": "6b",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.mp-pt",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Mặt phẳng qua A, B cách đều C và D"
+  },
+  {
+   "so": "7",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "so-phuc",
+   "dang": "sp.tim-z",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Tìm z thỏa |z-(2+i)|=căn10 và z.z̄=25"
+  }
+ ]
+}
