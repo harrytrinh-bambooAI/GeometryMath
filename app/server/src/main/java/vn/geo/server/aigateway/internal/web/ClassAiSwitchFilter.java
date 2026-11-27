@@ -14,6 +14,7 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import org.springframework.web.util.UrlPathHelper;
 import tools.jackson.databind.json.JsonMapper;
 import vn.geo.server.common.error.ApiError;
 import vn.geo.server.common.error.ErrorCode;
@@ -39,7 +40,21 @@ public class ClassAiSwitchFilter extends OncePerRequestFilter {
       "Lớp này đã tắt trợ lý AI. Em vẫn làm bài và xem gợi ý có sẵn.";
 
   private static final Pattern ASK =
-      Pattern.compile("^/api/v1/student/assignments/([0-9a-fA-F-]{36})/questions$");
+      Pattern.compile(
+          "^/api/v1/student/assignments/([0-9a-fA-F-]{36})/questions$", Pattern.CASE_INSENSITIVE);
+
+  /**
+   * Dev-REV-A1: so khớp trên đường đã chuẩn hóa như Spring MVC thấy khi chọn bộ xử lý — giải mã
+   * %xx, bỏ tham số đường dẫn {@code ;...} ở mọi đoạn, gộp {@code //}, bỏ {@code /} cuối. Khớp trên
+   * {@code getRequestURI()} thô thì {@code …/questions;x=1} hay {@code …/%71uestions} né được công
+   * tắc mà vẫn tới bộ xử lý hỏi đáp.
+   */
+  private static final UrlPathHelper PATHS = new UrlPathHelper();
+
+  static {
+    PATHS.setRemoveSemicolonContent(true);
+    PATHS.setUrlDecode(true);
+  }
 
   private final ClassAiPolicy policy;
   private final JsonMapper mapper;
@@ -51,7 +66,13 @@ public class ClassAiSwitchFilter extends OncePerRequestFilter {
 
   @Override
   protected boolean shouldNotFilter(HttpServletRequest request) {
-    return !"POST".equals(request.getMethod()) || !ASK.matcher(request.getRequestURI()).matches();
+    return !"POST".equalsIgnoreCase(request.getMethod())
+        || !ASK.matcher(normalizedPath(request)).matches();
+  }
+
+  static String normalizedPath(HttpServletRequest request) {
+    String path = PATHS.getPathWithinApplication(request).replaceAll("/{2,}", "/");
+    return path.length() > 1 && path.endsWith("/") ? path.substring(0, path.length() - 1) : path;
   }
 
   @Override
@@ -60,7 +81,7 @@ public class ClassAiSwitchFilter extends OncePerRequestFilter {
       throws ServletException, IOException {
     if (RequestContext.isAuthenticated()) {
       AuthPrincipal p = RequestContext.principal();
-      Matcher m = ASK.matcher(request.getRequestURI());
+      Matcher m = ASK.matcher(normalizedPath(request));
       if (p.role() == Role.STUDENT && m.matches()) {
         UUID assignment;
         try {

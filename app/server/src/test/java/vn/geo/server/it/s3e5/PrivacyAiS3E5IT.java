@@ -96,4 +96,53 @@ class PrivacyAiS3E5IT extends AbstractE1IT {
     assertThat(policy.blockedForStudent(ORG_A, AN, BG1)).isFalse();
     assertThat(List.of(BG1)).isNotEmpty();
   }
+
+  /**
+   * Dev-REV-A1 (bản soát T-20…T-32 mục 1): đường dẫn biến thể mà Spring MVC vẫn đưa vào bộ xử lý
+   * hỏi đáp (tham số đường dẫn {@code ;}, ký tự mã hóa %xx, {@code //}, {@code /} cuối, UUID chữ
+   * hoa) không được né công tắc AI theo lớp: hoặc FORBIDDEN AI_OFF_FOR_CLASS, hoặc không tới bộ xử
+   * lý; tuyệt đối không thêm lượt ai_call_log.
+   */
+  @Test
+  @DisplayName("Dev-REV-A1 Biến thể đường dẫn không né công tắc AI theo lớp")
+  void pathVariantsCannotBypassClassAiSwitch() throws Exception {
+    jdbc.sql("UPDATE class SET ai_enabled = false WHERE id = :id").param("id", CLASS_11A1).update();
+    try {
+      String id = BG1.toString();
+      List<String> variants =
+          List.of(
+              "/api/v1/student/assignments/" + id + "/questions",
+              "/api/v1/student/assignments/" + id + "/questions;x=1",
+              "/api/v1/student/assignments;x=1/" + id + "/questions",
+              "/api/v1/student/assignments/" + id + ";x=1/questions",
+              "/api/v1/student/assignments/" + id + "/%71uestions",
+              "/api/v1/student/assignments/" + id.replace("-", "%2D") + "/questions",
+              "/api/v1/student//assignments/" + id + "/questions",
+              "/api/v1//student/assignments/" + id + "//questions",
+              "/api/v1/student/assignments/" + id + "/questions/",
+              "/api/v1/student/assignments/" + id.toUpperCase() + "/questions",
+              "/api/v1/student/assignments/" + id + "%2Fquestions",
+              "/API/v1/student/assignments/" + id + "/questions");
+      List<String> leaks = new java.util.ArrayList<>();
+      for (String path : variants) {
+        long before = count("SELECT count(*) FROM ai_call_log WHERE user_id = '" + AN + "'");
+        HttpResponse<String> r =
+            post(
+                path,
+                an(),
+                "{\"question\":\"Gợi ý giúp em\",\"requestId\":\"" + UUID.randomUUID() + "\"}");
+        long after = count("SELECT count(*) FROM ai_call_log WHERE user_id = '" + AN + "'");
+        boolean blocked = r.statusCode() == 403 && r.body().contains("AI_OFF_FOR_CLASS");
+        boolean notRouted = r.statusCode() >= 400 && r.statusCode() != 403;
+        if (after != before || !(blocked || notRouted)) {
+          leaks.add(path + " -> " + r.statusCode() + " " + r.body());
+        }
+      }
+      assertThat(leaks).as("biến thể né công tắc AI").isEmpty();
+    } finally {
+      jdbc.sql("UPDATE class SET ai_enabled = true WHERE id = :id")
+          .param("id", CLASS_11A1)
+          .update();
+    }
+  }
 }
