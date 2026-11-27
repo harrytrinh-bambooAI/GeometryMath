@@ -15,24 +15,25 @@ FROM (VALUES
 WHERE p.org_id = platform_org_id() AND p.code = t.code;
 
 -- 2) Chữ ký chuẩn của sáu đề kho (D-GEO-150, ADR-GEO-15): chuỗi chuẩn giống hệt GeometryEngine.signature (Java) cho mô tả
---    dựng ở server/src/main/resources/geometry/problem-specs.json; IT E4 (SignatureE4IT) đối chiếu từng hàng với Java.
+--    dựng ở server/src/main/resources/geometry/problem-specs.json; IT E4 (HelpE4IT.signaturesMatchSeed) đối chiếu từng hàng
+--    với Java. Bản 2 (T-05, 27/11/2026): đại lượng hỏi theo GIÁ TRỊ đo trên bản dựng đã quy về a = 1, không theo danh sách điểm.
 INSERT INTO problem_signature (org_id, problem_version_id, sig_version, template_id, params_norm, asked_quantity, signature)
-SELECT platform_org_id(), format('00000000-0000-7000-8000-%s', lpad((100000 + s.n)::text, 12, '0'))::uuid, 1,
+SELECT platform_org_id(), format('00000000-0000-7000-8000-%s', lpad((100000 + s.n)::text, 12, '0'))::uuid, 2,
        (SELECT st.id FROM solid_template st WHERE st.code = s.solid), s.params::jsonb, s.asked,
        digest(convert_to(s.canonical, 'UTF8'), 'sha256')
 FROM (VALUES
-  (31, 'pyramid',  '{"a":1,"sa":1}',          'angle_line_plane:S,D,A,B,D',
-       '1|pyramid_square_sa|a=1;sa=1|angle_line_plane:S,D,A,B,D'),
-  (32, 'cube',     '{"a":1}',                 'dist_lines:A,C,B′,D′',
-       '1|cube|a=1|dist_lines:A,C,B′,D′'),
-  (33, 'prism',    '{"a":1,"h":1.5}',         'volume_prism:A,B,C,A′',
-       '1|prism|a=1;h=1.5|volume_prism:A,B,C,A′'),
-  (34, 'cone',     '{"r":1,"l":1.666667}',    'cone_lateral:S,O,M+cone_volume:S,O,M',
-       '1|cone_rl|r=1;l=1.666667|cone_lateral:S,O,M+cone_volume:S,O,M'),
-  (35, 'cylinder', '{"r":1,"h":2.5}',         'cyl_total_area:O,O′,M',
-       '1|cylinder|r=1;h=2.5|cyl_total_area:O,O′,M'),
-  (36, 'sphere',   '{"a":1}',                 'sphere_radius:I,A+sphere_volume:I,A',
-       '1|sphere_circum_cube|a=1|sphere_radius:I,A+sphere_volume:I,A')
+  (31, 'pyramid',  '{"a":1,"sa":1}',          'angle_line_plane=45',
+       '2|pyramid_square_sa|a=1;sa=1|angle_line_plane=45'),
+  (32, 'cube',     '{"a":1}',                 'dist_lines=1',
+       '2|cube|a=1|dist_lines=1'),
+  (33, 'prism',    '{"a":1,"h":1.5}',         'volume_prism=0.649519',
+       '2|prism|a=1;h=1.5|volume_prism=0.649519'),
+  (34, 'cone',     '{"r":1,"l":1.666667}',    'cone_lateral=5.235989+cone_volume=1.396264',
+       '2|cone_rl|r=1;l=1.666667|cone_lateral=5.235989+cone_volume=1.396264'),
+  (35, 'cylinder', '{"r":1,"h":2.5}',         'cyl_total_area=21.991149',
+       '2|cylinder|r=1;h=2.5|cyl_total_area=21.991149'),
+  (36, 'sphere',   '{"a":1}',                 'sphere_radius=0.866025+sphere_volume=2.720699',
+       '2|sphere_circum_cube|a=1|sphere_radius=0.866025+sphere_volume=2.720699')
 ) AS s(n, solid, params, asked, canonical);
 
 -- 3) Phần tô màu và phần vẽ thêm theo bước của lời giải (US-GEO-407, 408; fixture §2 "Dữ liệu hình và khóa" theo khung

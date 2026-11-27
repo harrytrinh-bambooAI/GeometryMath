@@ -125,16 +125,20 @@ public interface GeometryEngine {
 
   /**
    * Chữ ký chuẩn của đề (D-GEO-150, ADR-GEO-15; E4 US-GEO-406): (bộ dựng; bộ tham số đã quy về a =
-   * 1 — chia cho tham số đầu tiên của bộ dựng, làm tròn 6 chữ số; đại lượng đề hỏi theo nhãn đỉnh
-   * chuẩn của bộ dựng). Không phụ thuộc tên điểm, cách viết, chữ thêm. {@code canonical} có dạng
-   * {@code 1|pyramid_square_sa|a=1;sa=1|angle_line_plane:S,D,A,B,D}; {@code sha256} là băm UTF-8
-   * của chuỗi đó (cột problem_signature.signature). Rỗng khi bộ dựng không có hoặc đề không có đại
-   * lượng hỏi.
+   * 1 — chia cho tham số đầu tiên của bộ dựng, làm tròn 6 chữ số; đại lượng đề hỏi = loại và GIÁ
+   * TRỊ đo trên bản dựng với bộ tham số đã quy, làm tròn 6 chữ số). Không phụ thuộc tên điểm, cách
+   * chọn điểm, cách viết, chữ thêm. {@code canonical} có dạng {@code
+   * 2|pyramid_square_sa|a=1;sa=1|angle_line_plane=45}; {@code sha256} là băm UTF-8 của chuỗi đó
+   * (cột problem_signature.signature). Rỗng khi bộ dựng không có, đề không có đại lượng hỏi, hoặc
+   * không dựng/đo được.
    */
   Optional<Signature> signature(ProblemSpec spec);
 
-  /** Phiên bản thuật toán chữ ký (problem_signature.sig_version). */
-  int SIG_VERSION = 1;
+  /**
+   * Phiên bản thuật toán chữ ký (problem_signature.sig_version). 2 (T-05, 27/11/2026): đại lượng
+   * hỏi theo giá trị đo thay cho danh sách điểm.
+   */
+  int SIG_VERSION = 2;
 
   /** Chữ ký chuẩn của một đề; {@code solidKind} để tra solid_template. */
   record Signature(

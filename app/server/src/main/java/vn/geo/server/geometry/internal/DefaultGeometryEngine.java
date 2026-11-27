@@ -124,9 +124,31 @@ public class DefaultGeometryEngine implements GeometryEngine {
       norm.put(k, d.doubleValue());
       parts.add(k + "=" + d.toPlainString());
     }
+    // Đại lượng hỏi theo GIÁ TRỊ đo trên bản dựng đã quy về a = 1 (SIG_VERSION 2, T-05): không
+    // phụ thuộc tên điểm hay cách chọn điểm (mặt đáy (ABD) hay (ABC), SD hay SB đối xứng). Bản 1
+    // ghép nguyên danh sách điểm nên AI thật chọn (A,B,C) cho mặt đáy là lệch chữ ký với đề kho.
+    Figure fig;
+    try {
+      fig = Builders.build(spec.template(), norm);
+    } catch (RuntimeException e) {
+      return Optional.empty(); // không dựng được bằng hình mẫu: không có chữ ký (BR-GEO-183)
+    }
     List<String> asked = new ArrayList<>();
     for (AskedQuantity q : spec.asked()) {
-      asked.add(q.kind() + ":" + String.join(",", q.points()));
+      double v;
+      try {
+        v = measure(fig, q);
+      } catch (RuntimeException e) {
+        return Optional.empty();
+      }
+      if (!Double.isFinite(v)) {
+        return Optional.empty();
+      }
+      java.math.BigDecimal d =
+          java.math.BigDecimal.valueOf(v)
+              .setScale(6, java.math.RoundingMode.HALF_UP)
+              .stripTrailingZeros();
+      asked.add(q.kind() + "=" + (d.signum() == 0 ? "0" : d.toPlainString()));
     }
     String askedText = String.join("+", asked);
     String canonical =

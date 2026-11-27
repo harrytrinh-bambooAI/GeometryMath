@@ -16,7 +16,7 @@ import tools.jackson.databind.json.JsonMapper;
 public final class AnthropicPrompts {
 
   /** Phiên bản prompt của nhà cung cấp anthropic. */
-  public static final String VERSION = "a1";
+  public static final String VERSION = "a2";
 
   private AnthropicPrompts() {}
 
@@ -95,6 +95,13 @@ public final class AnthropicPrompts {
           - Tọa độ phải thỏa CHÍNH XÁC mọi dữ kiện (độ dài, vuông góc, bằng nhau): ghi số thập phân với \
           ít nhất 10 chữ số có nghĩa (ví dụ 0.8660254038), không ghi biểu thức.
           - Gồm mọi đỉnh có tên trong đề (kể cả A′, tâm O, đỉnh S, điểm M trên đường tròn đáy…).
+          - Điểm đề đã đặt tên: giữ đúng tên trong đề. Hình tròn xoay và mặt cầu: điểm đề KHÔNG đặt \
+          tên thì dùng tên mặc định dưới đây và LUÔN ghi đủ các điểm đó, kể cả khi đề không nhắc tới:
+            · hình nón: S (đỉnh), O (tâm đáy), M (một điểm trên đường tròn đáy);
+            · hình trụ: O, O′ (tâm hai đáy), M (trên đường tròn đáy tâm O), M′ (trên đường tròn đáy \
+          tâm O′, MM′ là một đường sinh);
+            · mặt cầu, khối cầu: O (tâm), M (một điểm trên mặt cầu);
+            · mặt cầu ngoại tiếp hình lập phương: I (tâm mặt cầu) cùng mọi đỉnh của hình.
           """
           + ANSWER_FORMAT
           + JSON_ONLY;

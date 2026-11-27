@@ -185,6 +185,11 @@
     "F-GEO-111": {
       "points": { "A": [0, 0, 0], "B": [0, 0, 0], "C": [0, 0, 0], "D": [0, 0, 0], "E": [0, 0, 0], "F": [0, 0, 0] }
     },
-    "F-GEO-112": { "answer": "60°", "status": "Đã kiểm chứng", "verified": true }
+    "F-GEO-112": { "answer": "60°", "status": "Đã kiểm chứng", "verified": true },
+    "T05-AI-THAT-HKG01": {
+      "chips": [{ "text": "SA = a", "points": ["S", "A"] }, { "text": "AB = a", "points": ["A", "B"] }],
+      "asked": [{ "name": "", "kind": "angle_line_plane", "points": ["S", "D", "A", "B", "C"] }],
+      "hidden": ["ang:S-D-A"]
+    }
   }
 }
