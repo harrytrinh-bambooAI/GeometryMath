@@ -1,0 +1,115 @@
+/* S5-E2 (T-261128-52): ra đề theo ma trận, bộ đề nháp. Chỉ token theme; chữ phụ ≥ 14 px; nội dung toán dùng --font-math. */
+.s5e2-page {
+  max-width: 960px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.s5e2-title {
+  font-size: 22px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+.s5e2-sub {
+  font-size: 18px;
+  margin: 8px 0 4px;
+}
+.s5e2-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+.s5e2-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+.s5e2-field input,
+.s5e2-field select,
+.s5e2-table input {
+  min-height: var(--ctl-h);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  color: var(--text);
+  padding: 0 8px;
+  max-width: 100%;
+}
+.s5e2-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+.s5e2-table th,
+.s5e2-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 6px 8px;
+  text-align: left;
+}
+.s5e2-table input {
+  width: 90px;
+}
+.s5e2-fieldset {
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 8px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+.s5e2-check,
+.s5e2-slider {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+.s5e2-fixed {
+  margin: 0;
+  padding-left: 18px;
+}
+.s5e2-err {
+  color: var(--red);
+  font-size: 14px;
+}
+.s5e2-actions,
+.s5e2-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.s5e2-questions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.s5e2-q {
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 10px 12px;
+  background: var(--panel);
+}
+.s5e2-q-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.s5e2-math,
+.s5e2-options {
+  font-family: var(--font-math);
+  overflow-wrap: anywhere;
+}
+.s5e2-options {
+  margin: 4px 0 0;
+  padding-left: 18px;
+}

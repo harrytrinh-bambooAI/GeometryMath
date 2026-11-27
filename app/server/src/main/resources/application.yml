@@ -121,6 +121,8 @@ geo:
   s5.grading.enabled: ${GEO_S5_GRADING_ENABLED:false}         # P5: S5-E4 + US-S5E5-02/03 (chờ PO-64); tắt = API 404, menu ẩn, job không chạy
   s5.ai-grading.enabled: ${GEO_S5_AI_GRADING_ENABLED:false}   # P5: S5-E6 AI đề xuất điểm (chờ PO-64, QS5-30)
   # --- T-261128-52 (S5-E2) ---
+  s5.exam.data-dir: ${GEO_EXAM_DATA_DIR:artifacts/GEO/materials/de-thi}   # US-S5E2-01: thư mục dữ liệu đề (chỉ đọc); tương đối = tìm từ thư mục chạy lên các thư mục cha
+  s5.exam.data-version: ${GEO_EXAM_DATA_VERSION:de-thi v1.0}            # BR-S5E2-01: nhãn phiên bản gắn vào bản ghi đã nạp
   # --- T-261128-53 (S5-E1) ---
   s5.lesson-plan.daily-limit: ${GEO_S5_LESSON_PLAN_DAILY_LIMIT:30}   # BR-S5E1-08, QS5-04: lượt AI soạn (mới + vá) mỗi giáo viên mỗi ngày giờ VN
   # --- T-261128-54 (S5-E1, S5-E2 xuất) ---

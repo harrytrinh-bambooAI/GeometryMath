@@ -1,4 +1,4 @@
-# Phiên bản: v1.2 · 2026-11-28 (v1.2: khóa/cột S5-E1 giáo án, T-261128-53; v1.1: thêm api aiOff, PO-85; hasPassword, PO-72 — runner-fix-po27) · US-S3E5-03 danh sách trường dữ liệu được phép thu (BR-S3E5-30).
+# Phiên bản: v1.3 · 2026-11-28 (v1.3: gộp v1.2 của T-261128-52 và T-261128-53; v1.2: bảng exam_* và khóa form ra đề S5-E2 — runner-T-261128-52 / khóa/cột S5-E1 giáo án — runner-T-261128-53; v1.1: thêm api aiOff, PO-85; hasPassword, PO-72 — runner-fix-po27) · US-S3E5-03 danh sách trường dữ liệu được phép thu (BR-S3E5-30).
 # Mỗi dòng: loại<TAB>thực thể<TAB>trường<TAB>lý do<TAB>mã quyết định. loại db = bảng.cột; api = khóa JSON.
 # Tên khớp mẫu cấm chỉ được có khi lý do bắt đầu bằng "NGOẠI LỆ". Thêm trường mới: thêm dòng ở đây, có lý do và mã PO-nn.
 # Test: quality/AllowedFieldsTest (quét tĩnh API), it/s3e5/AllowedFieldsS3E5IT (cột CSDL, gọi API thật).
@@ -1150,3 +1150,60 @@ db	lp_exercise	level	Cột giáo án / danh mục soạn giáo án (V525, US-S5E
 db	lp_exercise	statement	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
 db	lp_exercise	answer	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
 db	lp_exercise	source	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	exam_data_version	version	Dữ liệu đề dùng chung: phiên bản đã nạp, báo cáo nạp (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_data_version	content_hash	Dữ liệu đề dùng chung: phiên bản đã nạp, báo cáo nạp (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_data_version	meta	Dữ liệu đề dùng chung: phiên bản đã nạp, báo cáo nạp (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_data_version	report	Dữ liệu đề dùng chung: phiên bản đã nạp, báo cáo nạp (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_data_version	loaded_at	Dữ liệu đề dùng chung: phiên bản đã nạp, báo cáo nạp (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_matrix	code	Ma trận đề chuẩn dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_matrix	id	Ma trận đề chuẩn dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_matrix	data_version	Ma trận đề chuẩn dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_matrix	name	Ma trận đề chuẩn dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_matrix	exam_kind	Ma trận đề chuẩn dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_matrix	grade	Ma trận đề chuẩn dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_matrix	minutes	Ma trận đề chuẩn dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_matrix	total_points	Ma trận đề chuẩn dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_matrix	body	Ma trận đề chuẩn dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_matrix	content_hash	Ma trận đề chuẩn dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_item_template	code	Mẫu câu dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_item_template	data_version	Mẫu câu dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_item_template	topic	Mẫu câu dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_item_template	body	Mẫu câu dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_item_template	content_hash	Mẫu câu dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_bank_item	code	Câu ngân hàng đề dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_bank_item	data_version	Câu ngân hàng đề dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_bank_item	template_code	Câu ngân hàng đề dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_bank_item	topic	Câu ngân hàng đề dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_bank_item	item_type	Câu ngân hàng đề dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_bank_item	level	Câu ngân hàng đề dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_bank_item	body	Câu ngân hàng đề dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_bank_item	content_hash	Câu ngân hàng đề dùng chung (US-S5E2-01); không có dữ liệu cá nhân	PO-65
+db	exam_set	id	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	org_id	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	teacher_id	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	class_id	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	matrix_code	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	name	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	seed	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	params	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	status	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	human_label	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	report	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	approved_by	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	approved_at	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_set	created_at	Bộ đề của giáo viên: ma trận, tham số form, seed, trạng thái duyệt, người/giờ duyệt (US-S5E2-03, 04)	PO-65
+db	exam_variant	id	Mã đề của bộ đề: danh sách câu đã lắp, độ khó dự kiến (US-S5E2-03, 04)	PO-65
+db	exam_variant	org_id	Mã đề của bộ đề: danh sách câu đã lắp, độ khó dự kiến (US-S5E2-03, 04)	PO-65
+db	exam_variant	set_id	Mã đề của bộ đề: danh sách câu đã lắp, độ khó dự kiến (US-S5E2-03, 04)	PO-65
+db	exam_variant	code	Mã đề của bộ đề: danh sách câu đã lắp, độ khó dự kiến (US-S5E2-03, 04)	PO-65
+db	exam_variant	position	Mã đề của bộ đề: danh sách câu đã lắp, độ khó dự kiến (US-S5E2-03, 04)	PO-65
+db	exam_variant	difficulty	Mã đề của bộ đề: danh sách câu đã lắp, độ khó dự kiến (US-S5E2-03, 04)	PO-65
+db	exam_variant	body	Mã đề của bộ đề: danh sách câu đã lắp, độ khó dự kiến (US-S5E2-03, 04)	PO-65
+db	exam_variant	updated_at	Mã đề của bộ đề: danh sách câu đã lắp, độ khó dự kiến (US-S5E2-03, 04)	PO-65
+api	api	matrixCode	Mã ma trận chuẩn (loại đề) của form ra đề (US-S5E2-02)	PO-65
+api	api	chapters	Chương được chọn trên form ra đề (US-S5E2-02)	PO-65
+api	api	minutes	Thời gian làm bài (phút) của form ra đề (US-S5E2-02)	PO-65
+api	api	parts	Số câu và điểm mỗi phần của form ra đề (US-S5E2-02)	PO-65
+api	api	levels	Tỉ lệ mức độ NB/TH/VD/VDC của form ra đề (US-S5E2-02)	PO-65
+api	api	variantCount	Số mã đề 1–8 của form ra đề (US-S5E2-02, QS5-07)	PO-65
+api	api	so	Số thứ tự câu trong mã đề khi thay câu (US-S5E2-04)	PO-65
