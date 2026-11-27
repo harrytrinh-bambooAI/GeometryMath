@@ -339,5 +339,8 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - [PO] mục 10: HS đọc đề Kho chung theo id — PO-66 G2 đã cho phép (gợi ý, lời giải khoá). Đề xuất: giữ, ghi DECISIONS.
 - [PO/BA] mục 12: `userCode` trong query string. Đề xuất: thêm userId (UUID) vào Row/Person, trang bài làm dùng `hs=<uuid>`, cập nhật TC S3-E3 (đổi hợp đồng API).
 - [PO] mục 13: gửi lại yêu cầu vào lớp sau Bị từ chối/Đã rời không giới hạn. Đề xuất: tính vào hạn mức 10 lần/15 phút, 30 lần/24 giờ (đổi BR-S3E1-14).
+- FIX soát A (fix-rv-a, gộp 27/11): mục 1 ClassAiSwitchFilter **ĐÓNG** 87abfd1 (tái hiện: `;x=1`, `%71uestions`, `%2D` lọt); mục 2 audit denied ≤1 hàng/giờ **ĐÓNG** 1750377; mục 4 AccountPurgeJob cron 03:00 **ĐÓNG** 5507c5d; probeLockedSolution **ĐÓNG** fbc5cce; TC-GEO-0605 **ĐÓNG** 3ff281b (240/240). Verify bản kết hợp A+B 304 UT + 251 IT.
+- [PO/BA] BR-S3E5-07 + tên TC-S3E4-23 ("mỗi yêu cầu một bản ghi Từ chối") → nay ≤1 hàng/giờ mỗi (người, loại): chỉnh câu chữ.
+- [Web/UX] WebKit di động đôi khi nhận chạm vào `<html>` khi dòng tóm tắt kho đề về muộn làm bố cục dịch → đặt chiều cao tối thiểu cho dòng tóm tắt.
 - [Vận hành] lượt e2e ghi đè `artifacts/GEO/evidence/theme/*.png` → cho script e2e ghi ra thư mục khác.
 - Câu mở mới: [Test chập chờn] `AssignmentSetS3E2IT.probeLockedSolution` regex LEAK khớp "45" trong giờ "23:45:42" → trượt khi chạy ở phút 45; sửa regex. [Test chập chờn] TC-GEO-0605 mobile-iphone hết giờ chờ UI 1 lần.
