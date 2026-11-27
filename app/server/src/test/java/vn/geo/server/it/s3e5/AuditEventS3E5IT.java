@@ -161,4 +161,34 @@ class AuditEventS3E5IT extends AbstractS3E4IT {
         .contains("audit_log_class")
         .doesNotContain("Seq Scan");
   }
+
+  @Test
+  @DisplayName(
+      "Dev-REV-B2 Ẩn danh hóa AuditEvent khi xóa tài khoản lọc actor_user_id bằng chỉ mục (không quét tuần tự audit_log)")
+  void anonymizeByActorUsesIndex() throws Exception {
+    World w = world();
+    String sql =
+        "EXPLAIN UPDATE audit_log SET actor_user_id = '00000000-0000-0000-0000-000000000000'"
+            + " WHERE org_id = '"
+            + w.orgId()
+            + "' AND actor_user_id = '"
+            + w.people().get("Cô Lan").id()
+            + "'";
+    StringBuilder plan = new StringBuilder();
+    try (var c = dataSource.getConnection();
+        var st = c.createStatement()) {
+      c.setAutoCommit(false);
+      st.execute("SET LOCAL enable_seqscan = off");
+      try (var rs = st.executeQuery(sql)) {
+        while (rs.next()) {
+          plan.append(rs.getString(1)).append('\n');
+        }
+      }
+      c.rollback();
+    }
+    assertThat(plan.toString())
+        .as("kế hoạch UPDATE theo actor_user_id")
+        .contains("audit_log_actor_idx")
+        .doesNotContain("Seq Scan");
+  }
 }
