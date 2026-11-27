@@ -1,0 +1,53 @@
+{
+ "case": "E02",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": false,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [
+   "A6/A8: kind=patch không hợp với yêu cầu (chấp nhận ['question', 'reply'])",
+   "A6: sửa ngoài phạm vi yêu cầu meta.phong_cach",
+   "A6: thay cả khối hoat_dong",
+   "A6: thay cả khối phieu_hoc_tap"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 3
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 4,
+   "toi_thieu": 2,
+   "xu_ly_luat": 3,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [
+   {
+    "luat": "A6",
+    "trich": "\"op\":\"replace\",\"path\":\"phieu_hoc_tap\""
+   },
+   {
+    "luat": "A6",
+    "trich": "\"op\":\"replace\",\"path\":\"hoat_dong\""
+   }
+  ],
+  "loi_toan": [
+   "PHT1 câu 3 (BM-007) gắn kt KT11-C07-DN-010, nhưng lời giải dựng AH ⊥ SB theo đúng mẹo của KT11-C07-CT-003. Lỗi này có sẵn trong giáo án, trợ lý giữ nguyên và không đề xuất sửa."
+  ],
+  "nhan_xet": "Nội dung khám phá đúng kiến thức, không lộ đáp số, tổng 45 phút trên lớp, mục khoá được tôn trọng và có đề xuất kèm lý do. Tuy vậy, trợ lý thay trọn khối hoat_dong và cả phiếu học tập (phần phiếu vốn không cần đổi) mà không giải thích rằng yêu cầu \"viết lại hết\" vượt luật bản vá tối thiểu; trợ lý cũng tự sửa lỗi thời lượng HD4 ở nhà mà không nêu ra."
+ },
+ "score": {
+  "diem": 0.0,
+  "A": 6,
+  "A_auto": 4,
+  "A_judge": 2,
+  "auto": 0.75,
+  "judge": 3.25
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "case": "C02",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 5,
+   "cau_tu_kho": 5,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 4,
+   "chinh_xac": 5,
+   "phieu": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án đúng khung, đủ 45 phút và thể hiện rõ phong cách khám phá; phát biểu kiến thức khớp tham chiếu, không tự ghi đáp số. Câu VDC ở HD4/PHT2 (BT11-B26-6) là khoảng cách điểm–mặt, không phải hai đường chéo nhau, nên chưa bám trọng tâm. Hướng mở rộng \"hai mặt phẳng song song lần lượt chứa a và b\" nằm ngoài danh sách kiến thức được cấp, nên bỏ hoặc ghi rõ là gợi ý."
+ },
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

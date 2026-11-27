@@ -1,0 +1,55 @@
+{
+ "case": "C05",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 6,
+   "tong_phut": 45,
+   "kt_khop": 4,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 5,
+   "cau_tu_kho": 5,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 5,
+   "phong_cach": 4,
+   "to_chuc": 4,
+   "chinh_xac": 4,
+   "phieu": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "HĐ3 phần kết luận ghi \"tìm hình chiếu của điểm trên đường thẳng, rồi dùng tam giác vuông\", đúng phải là \"tìm hình chiếu của điểm trên mặt phẳng (P)\" (hình chiếu của S lên (P) là H)."
+  ],
+  "nhan_xet": "Giáo án đúng khung, tổng thời lượng đủ 45 phút, phát biểu kiến thức khớp tham chiếu, không lộ đáp số và có phân hoá TH–VD–VDC hợp lí; điểm trừ là HĐ3 viết nhầm \"trên đường thẳng\" thay vì \"trên mặt phẳng\", khoá trường bị gõ sai thành \"ket_luận\", và HĐ2 vẫn hình thành định nghĩa trên lớp như cách dạy truyền thống, chưa khai thác hết tính đảo ngược. Ở PHT1, câu 3 ghi \"Với dữ kiện trên\" nhưng câu liền trước là BM-003 (chóp đều, không có SA), nên học sinh dễ nhầm; cần chép lại đầy đủ dữ kiện cho câu này."
+ },
+ "score": {
+  "diem": 90.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.33
+ }
+}

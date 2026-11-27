@@ -1,0 +1,18 @@
+{
+ "case": "C13",
+ "variant": "V0",
+ "round": "R1",
+ "text": "{\"kind\":\"question\",\"text\":\"Bài 14. Phép chiếu song song này dạy trong bao nhiêu tiết (số tiết) để tôi phân bổ đúng thời lượng 45 phút mỗi tiết?\"}",
+ "usage": {
+  "ts": "2026-11-27T16:34:39",
+  "role": "gen",
+  "task": "R1/V0/C13",
+  "model": "claude-sonnet-5-5",
+  "input": 714,
+  "output": 82,
+  "cache_write": 2210,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 2.0
+ }
+}

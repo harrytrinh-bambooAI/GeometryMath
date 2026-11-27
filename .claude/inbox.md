@@ -414,3 +414,15 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** `baseline/nguon-loi-giai.md`, `baseline/nguon-bai-giang.md` v1.0 27/11.
 - **Xong khi:** chờ owner duyệt phương án (việc > 1 giờ, nhiều cách làm).
 - **Ngoài phạm vi:** app/**; scrape hàng loạt loigiaihay/vietjack/hoc247/vndoc (rủi ro bản quyền).
+
+## Việc: chuẩn prompt soạn giáo án (luật cố định + form nhập) bằng meta-prompting · ghi 27/11/2026 · CHỜ DUYỆT
+- **Mục tiêu:** cấu trúc prompt soạn bài giảng cùng giáo viên = luật cố định (bất biến, như "giữ mặt" khi gen ảnh) + trường bắt buộc + tuỳ chọn; tìm cấu trúc tốt nhất bằng meta-prompting thử 100–300 lượt trên bộ ví dụ; chốt bảng "cố định / bắt buộc nhập / tuỳ chọn" → đặc tả giao diện form (giáo viên không gõ JSON).
+- **Nguồn:** AnthropicPrompts.java (AUTHORING_CHAT, VERSION a2); bo-mau v1.0 (c89c863); PLAN-kho-bai-giang v1.0 (khung CV 5512); baseline/nguon-bai-giang.md.
+- **Xong khi:** bench prompt chạy được (mock + thật), báo cáo điểm theo vòng; bản prompt chốt đạt ngưỡng; bảng trường + mock giao diện; owner duyệt.
+- **Ngoài phạm vi:** code UI thật trong app/** (để epic sau); đổi model mặc định.
+
+## Việc: dữ liệu ĐỀ (ma trận + đặc tả + mẫu câu + bộ lắp đề) · ghi 27/11/2026 · CHỜ DUYỆT
+- **Mục tiêu:** tách "đề" thành dữ liệu riêng (khác bài tập, giáo án): ngân hàng câu gắn nhãn (kiến thức/YCCĐ, loại câu, mức độ, năng lực) + mẫu câu có tham số + ma trận đề chuẩn rút từ đề lịch sử (phần cố định vs xoay vòng, tần suất chủ đề theo năm) + bộ lắp đề theo form (loại đề, phạm vi, số câu, thời gian, tỉ lệ mức).
+- **Nguồn:** đề TN THPT chính thức + minh hoạ (moet.gov.vn), đề ĐH khối A/B tự luận cũ, văn bản ma trận/đặc tả của Bộ (cần tra, ghi ngày); 84 đề MVP (problem-specs.json) làm mẫu câu; bo-mau (loi_thuong_gap → phương án nhiễu).
+- **Xong khi:** bảng tần suất chủ đề × năm có nguồn; schema + check.py exit 0; bộ lắp sinh ≥ 3 mã đề khớp ma trận 100%, đáp số khớp engine.
+- **Ngoài phạm vi:** app/** (nối app ở epic sau); chép nguyên văn đề có bản quyền ngoài đề chính thức của Bộ/Sở.

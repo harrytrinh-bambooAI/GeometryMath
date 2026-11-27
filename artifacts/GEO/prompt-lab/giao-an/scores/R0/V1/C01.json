@@ -1,0 +1,61 @@
+{
+ "case": "C01",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "so_bai_tap": true,
+   "ti_le": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "ti_le_thuc": {
+    "NB": 2,
+    "TH": 2,
+    "VD": 1,
+    "VDC": 1
+   },
+   "muc_do_lech_kho": [],
+   "so_cau": 6,
+   "cau_tu_kho": 4,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 5,
+   "phong_cach": 3,
+   "to_chuc": 4,
+   "chinh_xac": 5,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án bám đúng hai kiến thức trọng tâm, phát biểu khớp tham chiếu, tổng thời lượng 5+8+12+12+8=45 phút; phiếu đủ 6 câu đúng tỉ lệ NB2-TH2-VD1-VDC1, không ghi đáp số, câu soạn mới (câu 2, câu 5) đúng chủ đề và đã được ghi unsure hợp lí. Phong cách truyền thống chưa rõ: HD3 và HD5 dùng thảo luận nhóm 4 người là chính, nên chuyển thành GV giảng giải, làm mẫu rồi HS làm cá nhân."
+ },
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

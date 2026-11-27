@@ -1,0 +1,25 @@
+{
+ "ids": [
+  "BM-005-S1",
+  "BM-005-DUNG",
+  "BM-006-S1",
+  "BM-006-DUNG",
+  "BM-007-S1",
+  "BM-007-DUNG",
+  "BM-008-S1",
+  "BM-008-DUNG"
+ ],
+ "text": "{\"ket_qua\":[{\"id\":\"BM-005-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"AC=√(AB²+AD²)=√(a²+3a²)=2a, không phải a√3. Do đó góc là 45°, không phải 49,11°.\"},{\"id\":\"BM-005-DUNG\",\"buoc_sai\":null,\"ly_do\":\"AC=2a, CC'=2a nên tam giác ACC' vuông cân tại C, góc bằng 45°. Lời giải đúng.\"},{\"id\":\"BM-006-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Tam giác ABC vuông tại A nên BC=√(AB²+AC²)=2a, không phải √(AC²−AB²). Sai công thức Pythagore.\"},{\"id\":\"BM-006-DUNG\",\"buoc_sai\":null,\"ly_do\":\"BC=2a, BB'=2a nên tan=1, góc 45°. Lời giải đúng.\"},{\"id\":\"BM-007-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Từ AB⊥BC không suy ra d(A,(SBC))=AB. AB không vuông góc với (SBC) vì AB không vuông góc với SB. Phải kẻ AH⊥SB, khoảng cách là AH=a√2/2.\"},{\"id\":\"BM-007-DUNG\",\"buoc_sai\":null,\"ly_do\":\"BC⊥(SAB) nên AH⊥(SBC). Tam giác SAB vuông cân tại A có SB=a√2 nên AH=SB/2=a√2/2. Lời giải đúng.\"},{\"id\":\"BM-008-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"AD cắt SD nên không thể là đoạn vuông góc chung của hai đường chéo nhau AB và SD. Hơn nữa AD không vuông góc với SD. Đáp án đúng là d=a√3/2.\"},{\"id\":\"BM-008-DUNG\",\"buoc_sai\":null,\"ly_do\":\"AB∥(SCD) nên d(AB,SD)=d(A,(SCD))=AK. Có 1/AK²=1/(3a²)+1/a²=4/(3a²) nên AK=a√3/2. Lời giải đúng.\"}]}",
+ "usage": {
+  "ts": "2026-11-27T16:41:59",
+  "role": "gen",
+  "task": "R3/STEP1/step-1",
+  "model": "claude-sonnet-5-5",
+  "input": 2534,
+  "output": 777,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 5.8
+ }
+}

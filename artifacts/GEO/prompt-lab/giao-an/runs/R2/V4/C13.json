@@ -1,0 +1,19 @@
+{
+ "case": "C13",
+ "variant": "V4",
+ "round": "R2",
+ "text": "{\"kind\":\"question\",\"text\":\"Bài này dạy trong bao nhiêu tiết (số tiết), để tôi phân bổ tổng thời lượng đúng bằng số tiết × 45 phút?\"}",
+ "raw": "{\"kind\":\"question\",\"text\":\"Bài này dạy trong bao nhiêu tiết (số tiết), để tôi phân bổ tổng thời lượng đúng bằng số tiết × 45 phút?\"}",
+ "usage": {
+  "ts": "2026-11-27T16:38:21",
+  "role": "gen",
+  "task": "R2/V4/C13",
+  "model": "claude-sonnet-5-5",
+  "input": 754,
+  "output": 74,
+  "cache_write": 3807,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 2.1
+ }
+}

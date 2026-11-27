@@ -1,0 +1,64 @@
+{
+ "case": "C01",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "so_bai_tap": true,
+   "ti_le": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "ti_le_thuc": {
+    "NB": 2,
+    "TH": 2,
+    "VD": 1,
+    "VDC": 1
+   },
+   "muc_do_lech_kho": [],
+   "so_cau": 6,
+   "cau_tu_kho": 4,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 5,
+   "phong_cach": 5,
+   "to_chuc": 4,
+   "chinh_xac": 4,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "HD2 nêu chứng minh 'BC ⊥ (SAK) vì sao? khi đó AH ⊥ BC và AH ⊥ SK nên AH ⊥ (SBC)' nhưng không ghi căn cứ BC ⊥ AK, BC ⊥ SA. Đúng phải là: BC ⊥ AK và BC ⊥ SA (hai đường cắt nhau trong (SAK)) nên BC ⊥ (SAK), suy ra AH ⊥ BC. Lập luận này dùng định lí KT11-C07-DL-001, không nằm trong danh sách trọng tâm nhưng có trong danh sách được cấp nên chấp nhận được.",
+   "Câu 3 (BM-007) ghi kt CT-003, nhưng lời giải chuẩn dùng tam giác SAB vuông cân với K≡B. Gợi ý của đầu ra vẫn đúng (AH ⊥ SB, hệ thức trong tam giác vuông SAB) nên không phải lỗi toán, chỉ là cách gắn mã hơi gượng."
+  ],
+  "nhan_xet": "Giáo án bám sát hai kiến thức trọng tâm, phát biểu khớp tham chiếu, phiếu đúng 6 câu theo tỉ lệ NB2-TH2-VD1-VDC1, không lộ đáp số; unsure giải thích hợp lí vì sao soạn mới câu 1, 5 và bỏ các câu VD về hai đường chéo nhau. Thời lượng 6+17+15+7=45 phút nhưng HD3 khá chật (13 phút làm bài + chữa 3 câu trong 2 phút), nên giáo viên cần điều chỉnh nhẹ phần báo cáo."
+ },
+ "score": {
+  "diem": 95.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.67
+ }
+}

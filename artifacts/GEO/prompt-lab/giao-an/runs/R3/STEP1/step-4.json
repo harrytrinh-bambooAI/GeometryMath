@@ -1,0 +1,21 @@
+{
+ "ids": [
+  "BM-009-S2",
+  "BM-010-S2",
+  "BM-011-S2",
+  "BM-012-S2"
+ ],
+ "text": "BM-009: SA=a, AC=a√2, SC=√(a²+2a²)=a√3, không phải 2a. OC=a√2/2. Bước B1, B2 đúng (tam giác CHO ~ CAS, OH/SA=OC/SC). B3 sai: SC=a√3. OH = a·(a√2/2)/(a√3)=a√2/(2√3)=a√6/6. Bước sai đầu tiên là B3.\n\nBM-010: Hình chóp đều có cạnh a, AC=a√2, OA=a√2/2, SO²=a²-a²/2=a²/2, SO=a√2/2. B2 ghi a√3/2 là sai. Kiểm B1: AB∥CD nên AB∥(SCD), d(AB,SC)=d(AB,(SCD))=d(A,(SCD)). Đúng. A,O,C thẳng hàng, AC=2OC nên d(A)=2d(O). Đúng. B2 sai.\n\nBM-011: OM=3 (nửa cạnh đáy 6 là 3), không phải 3√2. B1 đúng. B2 sai: OM=3, SM=5, OH=12/5=2,4.\n\nBM-012: Công thức khoảng cách là 1/d²=1/AB²+1/AD²+1/AA'², không phải tổng 1/d. B1 đúng (A.A'BD có AB, AD, AA' đôi một vuông góc). B2 sai. Đúng: 1/d²=1/a²+1/(4a²)+1/(4a²)=3/(2a²), d=a√(2/3)=a√6/3.\n\n{\"ket_qua\":[{\"id\":\"BM-009-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"SC=√(SA²+AC²)=√(a²+2a²)=a√3, không phải 2a. Đúng: OH=a·(a√2/2)/(a√3)=a√6/6.\"},{\"id\":\"BM-010-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"SO²=SA²-OA²=a²-a²/2=a²/2 nên SO=a√2/2, không phải a√3/2.\"},{\"id\":\"BM-011-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"OM bằng nửa cạnh đáy = 3, không phải 3√2. Khi đó SM=5 và OH=12/5=2,4 cm.\"},{\"id\":\"BM-012-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"Công thức đúng là 1/d²=1/AB²+1/AD²+1/AA'² (bình phương), không phải tổng các nghịch đảo. Đúng: d=a√6/3.\"}]}",
+ "usage": {
+  "ts": "2026-11-27T16:48:30",
+  "role": "gen",
+  "task": "R3/STEP1/step-4",
+  "model": "claude-sonnet-5-5",
+  "input": 1612,
+  "output": 916,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 7.1
+ }
+}

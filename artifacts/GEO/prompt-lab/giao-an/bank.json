@@ -1,0 +1,2635 @@
+{
+ "BT11-B10-1": {
+  "id": "BT11-B10-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 10,
+  "muc_do": "NB",
+  "de": "Qua 4 điểm không đồng phẳng có bao nhiêu mặt phẳng đi qua 3 trong 4 điểm?",
+  "giai": "$C_4^3=4$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B10-2": {
+  "id": "BT11-B10-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 10,
+  "muc_do": "NB",
+  "de": "Hình chóp có đáy lục giác có bao nhiêu mặt?",
+  "giai": "6 mặt bên + 1 đáy = 7.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B10-3": {
+  "id": "BT11-B10-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 10,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Hình chóp có đáy là ngũ giác có tất cả bao nhiêu cạnh? A. $5$; B. $10$; C. $6$; D. $15$.",
+  "giai": "Đáy có $5$ cạnh, mỗi đỉnh đáy nối với đỉnh chóp bằng $1$ cạnh bên ($5$ cạnh): $5+5=10$. Chọn **B**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B10-4": {
+  "id": "BT11-B10-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 10,
+  "muc_do": "TH",
+  "de": "Chóp $S.ABCD$ đáy là hình bình hành. Tìm $(SAB)\\cap(SCD)$.",
+  "giai": "$S$ là điểm chung; $AB\\parallel CD$ nên giao tuyến là đường thẳng qua $S$ song song $AB$ (định lí 3 giao tuyến).",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B10-5": {
+  "id": "BT11-B10-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 10,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Cho tứ diện $ABCD$, $M\\in AB$, $N\\in AC$ ($M,N$ khác $A$). a) $M,N,B,C$ đồng phẳng; b) $MN$ và $BC$ luôn cắt nhau; c) $(DMN)\\cap(ABC)=MN$; d) $A,M,N,D$ đồng phẳng.",
+  "giai": "- a) $M,N,B,C$ cùng thuộc $(ABC)$: **Đúng**.\n- b) Có thể song song (khi $\\dfrac{AM}{AB}=\\dfrac{AN}{AC}$): **Sai**.\n- c) $M,N$ là hai điểm chung của $(DMN)$ và $(ABC)$, $D\\notin(ABC)$: **Đúng**.\n- d) $A,M,N$ không thẳng hàng nên xác định $(ABC)$, mà $D\\notin(ABC)$: **Sai**.\n- Đáp án: Đ – S – Đ – S.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B10-6": {
+  "id": "BT11-B10-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 10,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy là hình bình hành tâm $O$; $M$ là trung điểm $SC$. Tìm giao điểm $I$ của $AM$ và $(SBD)$.",
+  "giai": "- Bước 1: $AM\\subset(SAC)$ và $(SAC)\\cap(SBD)=SO$ (vì $S,O$ là hai điểm chung).\n- Bước 2: trong $(SAC)$, $AM$ và $SO$ cùng nằm trong một mặt phẳng nên cắt nhau tại $I$; $I\\in AM$ và $I\\in SO\\subset(SBD)$, nên $I=AM\\cap(SBD)$.\n- Bước 3: $AM$, $SO$ là hai trung tuyến của $\\triangle SAC$ ($O$ trung điểm $AC$, $M$ trung điểm $SC$) nên $I$ là trọng tâm, $\\dfrac{AI}{AM}=\\dfrac23$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B10-7": {
+  "id": "BT11-B10-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 10,
+  "muc_do": "VDC",
+  "de": "Cho tứ diện $ABCD$, $M\\in AB$, $N\\in AC$ sao cho $MN\\not\\parallel BC$. Tìm giao tuyến của $(DMN)$ và $(DBC)$.",
+  "giai": "- Bước 1: $D$ là điểm chung thứ nhất của hai mặt phẳng.\n- Bước 2: $MN$ và $BC$ cùng nằm trong $(ABC)$ và không song song nên cắt nhau tại $E$.\n- Bước 3: $E\\in MN\\subset(DMN)$ và $E\\in BC\\subset(DBC)$, nên $E$ là điểm chung thứ hai.\n- Bước 4: giao tuyến là đường thẳng $DE$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 10) | https://loigiaihay.com/bai-10-duong-thang-va-mat-phang-trong-khong-gian-toan-11-ket-noi-tri-thuc-e31528.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 10) | https://vietjack.com/toan-11-kn/bai-10-duong-thang-va-mat-phang-trong-khong-gian.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B11-1": {
+  "id": "BT11-B11-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 11,
+  "muc_do": "NB",
+  "de": "Hai đường thẳng không có điểm chung có song song không?",
+  "giai": "Chưa chắc: có thể chéo nhau.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B11-2": {
+  "id": "BT11-B11-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 11,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Hai đường thẳng phân biệt cùng song song với một đường thẳng thứ ba thì: A. chéo nhau; B. cắt nhau; C. song song với nhau; D. có thể cắt nhau.",
+  "giai": "Đây là tính chất bắc cầu của quan hệ song song trong không gian. Chọn **C**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B11-3": {
+  "id": "BT11-B11-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 11,
+  "muc_do": "TH",
+  "de": "Tứ diện $ABCD$, $M,N$ là trung điểm $AB,AC$. Chứng minh $MN\\parallel BC$.",
+  "giai": "(dùng hình, xét $\\triangle ABC$ có $M,N$ là trung điểm hai cạnh)\n- $MN$ nối trung điểm hai cạnh $AB,AC$ của $\\triangle ABC$ nên $MN$ là đường trung bình.\n- Do đó $MN\\parallel BC$ và $MN=\\dfrac12BC$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B11-4": {
+  "id": "BT11-B11-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 11,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình thang $AB\\parallel CD$. Tìm $(SAB)\\cap(SCD)$.",
+  "giai": "- Bước 1: $S$ là điểm chung của hai mặt phẳng.\n- Bước 2: $AB\\subset(SAB)$, $CD\\subset(SCD)$ và $AB\\parallel CD$.\n- Bước 3: theo định lí về giao tuyến của hai mặt phẳng chứa hai đường thẳng song song, giao tuyến là đường thẳng $d$ qua $S$ với $d\\parallel AB\\parallel CD$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B11-5": {
+  "id": "BT11-B11-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 11,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình bình hành. $M,N$ là trung điểm $SA,SB$. Chứng minh $MN\\parallel CD$.",
+  "giai": "- Bước 1: $MN$ là đường trung bình của $\\triangle SAB$ nên $MN\\parallel AB$.\n- Bước 2: $ABCD$ là hình bình hành nên $AB\\parallel CD$.\n- Bước 3: $MN\\parallel AB$ và $AB\\parallel CD$, theo tính chất bắc cầu, $MN\\parallel CD$. ∎",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B11-6": {
+  "id": "BT11-B11-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 11,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Tứ diện $ABCD$ có $M,N,P,Q$ lần lượt là trung điểm $AB,BC,CD,DA$; $AC=6$, $BD=8$. Tính chu vi tứ giác $MNPQ$.",
+  "giai": "- $MN$, $PQ$ là đường trung bình của $\\triangle ABC$, $\\triangle ACD$ nên $MN=PQ=\\dfrac{AC}2=3$ (và cùng song song $AC$).\n- $NP$, $MQ$ là đường trung bình của $\\triangle BCD$, $\\triangle ABD$ nên $NP=MQ=\\dfrac{BD}2=4$.\n- Chu vi $=2(3+4)=14$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B11-7": {
+  "id": "BT11-B11-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 11,
+  "muc_do": "VDC",
+  "de": "Tứ diện $ABCD$, $G_1,G_2$ là trọng tâm $\\triangle ABC$, $\\triangle ABD$. Chứng minh $G_1G_2\\parallel CD$ và tính $\\dfrac{G_1G_2}{CD}$.",
+  "giai": "- Bước 1: gọi $E$ là trung điểm $AB$; $CE$ là trung tuyến của $\\triangle ABC$ nên $G_1\\in EC$ với $\\dfrac{EG_1}{EC}=\\dfrac13$. Tương tự $G_2\\in ED$, $\\dfrac{EG_2}{ED}=\\dfrac13$.\n- Bước 2: trong $\\triangle ECD$, $\\dfrac{EG_1}{EC}=\\dfrac{EG_2}{ED}$ nên theo định lí Thalès đảo $G_1G_2\\parallel CD$.\n- Bước 3: hai tam giác $EG_1G_2$ và $ECD$ đồng dạng tỉ số $\\dfrac13$ nên $\\dfrac{G_1G_2}{CD}=\\dfrac13$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 11) | https://loigiaihay.com/bai-11-hai-duong-thang-song-song-toan-11-ket-noi-tri-thuc-e31531.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 11) | https://vietjack.com/toan-11-kn/bai-11-hai-duong-thang-song-song.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 4 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B12-1": {
+  "id": "BT11-B12-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 12,
+  "muc_do": "NB",
+  "de": "Cho $a\\parallel b$, $b\\subset(P)$, $a\\not\\subset(P)$. Kết luận?",
+  "giai": "$a\\parallel(P)$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B12-2": {
+  "id": "BT11-B12-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 12,
+  "muc_do": "TH",
+  "de": "Tứ diện $ABCD$, $I,J$ trung điểm $AB,AC$. Chứng minh $IJ\\parallel(BCD)$.",
+  "giai": "$IJ\\parallel BC\\subset(BCD)$, $IJ\\not\\subset(BCD)$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B12-3": {
+  "id": "BT11-B12-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 12,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Cho đường thẳng $a\\parallel(P)$. a) Mọi đường thẳng nằm trong $(P)$ đều song song $a$; b) trong $(P)$ có vô số đường thẳng song song $a$; c) nếu $(Q)\\supset a$ và $(Q)\\cap(P)=b$ thì $b\\parallel a$; d) $a$ và $(P)$ có đúng một điểm chung.",
+  "giai": "- a) Có đường thẳng trong $(P)$ chéo $a$: **Sai**.\n- b) Lấy $(Q)\\supset a$ cắt $(P)$ theo $b$ thì $b\\parallel a$; mọi đường thẳng trong $(P)$ song song $b$ đều song song $a$, nên có vô số: **Đúng**.\n- c) Định lí giao tuyến: **Đúng**.\n- d) $a\\parallel(P)$ nghĩa là không có điểm chung: **Sai**.\n- Đáp án: S – Đ – Đ – S.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B12-4": {
+  "id": "BT11-B12-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 12,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình bình hành. Chứng minh $AB\\parallel(SCD)$.",
+  "giai": "- Bước 1: $AB\\parallel CD$ (hình bình hành) và $CD\\subset(SCD)$.\n- Bước 2: $AB\\not\\subset(SCD)$ (vì $A\\notin(SCD)$).\n- Bước 3: theo dấu hiệu đường thẳng song song mặt phẳng, $AB\\parallel(SCD)$. ∎",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B12-5": {
+  "id": "BT11-B12-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 12,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình bình hành, $M$ là trung điểm $SA$. Chứng minh $SC\\parallel(MBD)$.",
+  "giai": "- Bước 1: gọi $O=AC\\cap BD$, $O$ là trung điểm $AC$.\n- Bước 2: $OM$ là đường trung bình của $\\triangle SAC$ nên $OM\\parallel SC$; $OM\\subset(MBD)$.\n- Bước 3: $SC\\not\\subset(MBD)$, vậy $SC\\parallel(MBD)$. ∎",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B12-6": {
+  "id": "BT11-B12-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 12,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Tứ diện $ABCD$; $M\\in AB$, $N\\in AC$ với $\\dfrac{AM}{AB}=\\dfrac{AN}{AC}=\\dfrac23$; $BC=9$. Tính $MN$.",
+  "giai": "- Theo Thalès đảo, $MN\\parallel BC$ (và do đó $MN\\parallel(BCD)$).\n- $\\triangle AMN\\sim\\triangle ABC$ tỉ số $\\dfrac23$ nên $MN=\\dfrac23\\cdot9=6$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B12-7": {
+  "id": "BT11-B12-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 12,
+  "muc_do": "VDC",
+  "de": "Tứ diện $ABCD$, $M\\in AB$. Mặt phẳng $(\\alpha)$ qua $M$ song song $BC$ và $AD$. Tìm thiết diện của $(\\alpha)$ với tứ diện.",
+  "giai": "- Bước 1: $(\\alpha)\\parallel BC$ và $(\\alpha)\\cap(ABC)\\ni M$ nên $(\\alpha)\\cap(ABC)=MN$ với $MN\\parallel BC$, $N\\in AC$.\n- Bước 2: $(\\alpha)\\parallel AD$ và $(\\alpha)\\cap(ABD)\\ni M$ nên $(\\alpha)\\cap(ABD)=MQ$ với $MQ\\parallel AD$, $Q\\in BD$.\n- Bước 3: $(\\alpha)\\cap(BCD)$ đi qua $Q$ và song song $BC$: cắt $CD$ tại $P$, $QP\\parallel BC$.\n- Bước 4: $N$ ở trên $AC$ với $NP\\parallel AD$ (vì $(\\alpha)\\cap(ACD)=NP$ và $(\\alpha)\\parallel AD$). Ta có $MN\\parallel BC\\parallel QP$ và $MQ\\parallel AD\\parallel NP$, nên thiết diện là hình bình hành $MNPQ$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 12) | https://loigiaihay.com/bai-12-duong-thang-va-mat-phang-song-song-toan-11-ket-noi-tri-thuc-e31532.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 12) | https://vietjack.com/toan-11-kn/bai-12-duong-thang-va-mat-phang-song-song.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |\n| v1.3 | 27/11/2026 | Bài 3b: viết lại lập luận (bỏ cách nói \"hình chiếu của a\") | delivery-lead (theo REVIEW-L11-MATH-20261127) |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B13-1": {
+  "id": "BT11-B13-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 13,
+  "muc_do": "NB",
+  "de": "Hai mặt phẳng phân biệt không cắt nhau thì?",
+  "giai": "Song song.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B13-2": {
+  "id": "BT11-B13-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 13,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Nếu $(P)\\parallel(Q)$ và đường thẳng $a\\subset(P)$ thì: A. $a\\parallel(Q)$; B. $a$ cắt $(Q)$; C. $a\\subset(Q)$; D. $a$ và $(Q)$ chéo nhau.",
+  "giai": "$(P)$ và $(Q)$ không có điểm chung nên $a$ cũng không có điểm chung với $(Q)$, tức $a\\parallel(Q)$. Chọn **A**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B13-3": {
+  "id": "BT11-B13-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 13,
+  "muc_do": "TH",
+  "de": "Hình hộp $ABCD.A'B'C'D'$. Chứng minh $(ABB'A')\\parallel(CDD'C')$.",
+  "giai": "- Bước 1: $ABCD$ là hình bình hành nên $AB\\parallel CD$; $ADD'A'$ là hình bình hành nên $AA'\\parallel DD'$.\n- Bước 2: $AB,AA'$ cắt nhau trong $(ABB'A')$, $CD,DD'$ cắt nhau trong $(CDD'C')$ và $AB\\parallel CD$, $AA'\\parallel DD'$.\n- Bước 3: theo dấu hiệu hai mặt phẳng song song, $(ABB'A')\\parallel(CDD'C')$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B13-4": {
+  "id": "BT11-B13-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 13,
+  "muc_do": "VD",
+  "de": "Lăng trụ $ABC.A'B'C'$. Chứng minh $(ABC)\\parallel(A'B'C')$.",
+  "giai": "- Bước 1: các mặt bên là hình bình hành nên $AB\\parallel A'B'$ và $AC\\parallel A'C'$.\n- Bước 2: $AB$, $AC$ cắt nhau tại $A$ và cùng nằm trong $(ABC)$; $A'B'\\subset(A'B'C')$, $A'C'\\subset(A'B'C')$.\n- Bước 3: theo dấu hiệu, $(ABC)\\parallel(A'B'C')$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B13-5": {
+  "id": "BT11-B13-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 13,
+  "muc_do": "VD",
+  "de": "Ba mặt phẳng song song cắt hai cát tuyến tại $A,B,C$ và $A',B',C'$. Biết $AB=3$, $BC=5$, $A'B'=4{,}5$. Tính $B'C'$.",
+  "giai": "- Bước 1: định lí Thalès trong không gian: $\\dfrac{AB}{BC}=\\dfrac{A'B'}{B'C'}$.\n- Bước 2: $B'C'=\\dfrac{BC\\cdot A'B'}{AB}=\\dfrac{5\\cdot4{,}5}{3}=7{,}5$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B13-6": {
+  "id": "BT11-B13-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 13,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Ba mặt phẳng song song $(P),(Q),(R)$ cắt hai cát tuyến lần lượt tại $A,B,C$ và $A',B',C'$. Biết $\\dfrac{AB}{BC}=\\dfrac23$ và $A'C'=15$. Tính $A'B'$.",
+  "giai": "- Định lí Thalès trong không gian: $\\dfrac{A'B'}{B'C'}=\\dfrac{AB}{BC}=\\dfrac23$.\n- $\\dfrac{A'B'}{A'C'}=\\dfrac{2}{2+3}=\\dfrac25$ nên $A'B'=\\dfrac25\\cdot15=6$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B13-7": {
+  "id": "BT11-B13-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 13,
+  "muc_do": "VDC",
+  "de": "Hình hộp $ABCD.A'B'C'D'$. Chứng minh $(AB'D')\\parallel(C'BD)$.",
+  "giai": "- Bước 1: $BB'D'D$ là hình bình hành nên $B'D'\\parallel BD$; $B'D'\\subset(AB'D')$, $BD\\subset(C'BD)$.\n- Bước 2: $ABC'D'$ có $AB\\parallel D'C'$ và $AB=D'C'$ nên là hình bình hành, suy ra $AD'\\parallel BC'$; $AD'\\subset(AB'D')$, $BC'\\subset(C'BD)$.\n- Bước 3: $B'D'$ và $AD'$ cắt nhau tại $D'$, song song với $BD$ và $BC'$ tương ứng, nên $(AB'D')\\parallel(C'BD)$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 13) | https://loigiaihay.com/bai-13-hai-mat-phang-song-song-toan-11-ket-noi-tri-thuc-e31533.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 13) | https://vietjack.com/toan-11-kn/bai-13-hai-mat-phang-song-song.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 4 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B14-1": {
+  "id": "BT11-B14-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 14,
+  "muc_do": "NB",
+  "de": "Phép chiếu song song có giữ trung điểm đoạn thẳng không?",
+  "giai": "Có (giữ tỉ số).",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B14-2": {
+  "id": "BT11-B14-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 14,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Phép chiếu song song biến hai đường thẳng song song (không song song với phương chiếu) thành: A. hai đường thẳng song song hoặc trùng nhau; B. hai đường thẳng cắt nhau; C. hai đường thẳng chéo nhau; D. luôn là hai đường thẳng song song phân biệt.",
+  "giai": "Tính chất bảo toàn song song: hai ảnh song song hoặc trùng (trùng khi hai đường thẳng nằm trong cùng một mặt phẳng song song phương chiếu). Chọn **A**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B14-3": {
+  "id": "BT11-B14-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 14,
+  "muc_do": "TH",
+  "de": "Hình vuông có hình biểu diễn là hình nào?",
+  "giai": "Hình bình hành (có thể suy biến).",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B14-4": {
+  "id": "BT11-B14-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 14,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Về phép chiếu song song: a) giữ tỉ số độ dài hai đoạn thẳng cùng nằm trên một đường thẳng; b) hình chiếu của trung điểm một đoạn thẳng là trung điểm hình chiếu của đoạn thẳng; c) hình chiếu của hình tròn luôn là hình tròn; d) hình chiếu của góc $60^\\circ$ luôn có số đo $60^\\circ$.",
+  "giai": "- a) **Đúng**. b) **Đúng** (hệ quả của a).\n- c) Thường là hình elip: **Sai**.\n- d) Không bảo toàn góc: **Sai**.\n- Đáp án: Đ – Đ – S – S.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B14-5": {
+  "id": "BT11-B14-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 14,
+  "muc_do": "VD",
+  "de": "$M$ thuộc đoạn $AB$, $MA=2MB$. Hình chiếu $M'$ trên $A'B'$ có $M'A'$ gấp mấy lần $M'B'$?",
+  "giai": "- Phép chiếu song song bảo toàn tỉ số độ dài của hai đoạn thẳng nằm trên cùng một đường thẳng.\n- $\\dfrac{M'A'}{M'B'}=\\dfrac{MA}{MB}=2$: gấp $2$ lần.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B14-6": {
+  "id": "BT11-B14-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 14,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Tam giác $ABC$ có hình biểu diễn $A'B'C'$. Điểm $M\\in AB$ với $AM=3MB$; $A'B'=12$. Tính $A'M'$.",
+  "giai": "- $\\dfrac{AM}{AB}=\\dfrac34$ và tỉ số này được bảo toàn: $\\dfrac{A'M'}{A'B'}=\\dfrac34$.\n- $A'M'=\\dfrac34\\cdot12=9$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B14-7": {
+  "id": "BT11-B14-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 14,
+  "muc_do": "VDC",
+  "de": "Vì sao hình biểu diễn của tam giác đều nói chung không phải là tam giác đều?",
+  "giai": "- Bước 1: phép chiếu song song không bảo toàn độ dài và độ lớn góc.\n- Bước 2: nó chỉ bảo toàn tính song song và tỉ số độ dài trên cùng một đường thẳng (do đó giữ trung điểm, giữ trọng tâm).\n- Bước 3: nên hình biểu diễn của tam giác đều là một tam giác bất kì (cạnh, góc có thể khác nhau), nhưng các đường trung tuyến vẫn biểu diễn các đường trung tuyến.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 14) | https://loigiaihay.com/bai-14-phep-chieu-song-song-toan-11-ket-noi-tri-thuc-e31534.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 14) | https://vietjack.com/toan-11-kn/bai-14-phep-chieu-song-song.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B22-1": {
+  "id": "BT11-B22-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 22,
+  "muc_do": "NB",
+  "de": "Góc giữa $AB$ và $CD$ trong hình lập phương $ABCD.A'B'C'D'$?",
+  "giai": "$AB\\parallel CD$: $0^\\circ$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B22-2": {
+  "id": "BT11-B22-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 22,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Trong hình lập phương $ABCD.A'B'C'D'$, góc giữa $AB$ và $A'D'$ bằng: A. $0^\\circ$; B. $45^\\circ$; C. $60^\\circ$; D. $90^\\circ$.",
+  "giai": "$A'D'\\parallel AD$ nên góc $(AB,A'D')=(AB,AD)=90^\\circ$ ($ABCD$ là hình vuông). Chọn **D**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B22-3": {
+  "id": "BT11-B22-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 22,
+  "muc_do": "TH",
+  "de": "Hình lập phương $ABCD.A'B'C'D'$. Tính góc giữa $AB'$ và $BC'$.",
+  "giai": "- Bước 1: $BC'\\parallel AD'$ (vì $ABC'D'$ là hình bình hành), nên góc $(AB',BC')$ bằng góc $(AB',AD')$.\n- Bước 2: $\\triangle AB'D'$ có $AB'=B'D'=D'A=a\\sqrt2$ (ba đường chéo các mặt) nên là tam giác đều.\n- Bước 3: $\\widehat{B'AD'}=60^\\circ$, vậy góc giữa hai đường thẳng là $60^\\circ$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B22-4": {
+  "id": "BT11-B22-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 22,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Hình lập phương $ABCD.A'B'C'D'$. a) $AC\\perp BD$; b) $AC\\perp B'D'$; c) góc giữa $AC$ và $A'D$ bằng $60^\\circ$; d) góc giữa $BD'$ và $AC$ bằng $60^\\circ$.",
+  "giai": "- a) Hai đường chéo hình vuông $ABCD$: **Đúng**.\n- b) $AC\\parallel A'C'$ và $A'C'\\perp B'D'$ (đường chéo hình vuông $A'B'C'D'$): **Đúng**.\n- c) $A'D\\parallel B'C$; $\\triangle ACB'$ đều (cạnh $a\\sqrt2$) nên góc $(AC,B'C)=60^\\circ$: **Đúng**.\n- d) $AC\\perp BD$ và $AC\\perp DD'$ nên $AC\\perp(BDD'B')\\Rightarrow AC\\perp BD'$, góc $90^\\circ$: **Sai**.\n- Đáp án: Đ – Đ – Đ – S.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B22-5": {
+  "id": "BT11-B22-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 22,
+  "muc_do": "VD",
+  "de": "Tứ diện đều $ABCD$ cạnh $a$. Chứng minh $AB\\perp CD$.",
+  "giai": "- Bước 1: gọi $M$ là trung điểm $CD$.\n- Bước 2: $\\triangle ACD$ đều nên $AM\\perp CD$; $\\triangle BCD$ đều nên $BM\\perp CD$.\n- Bước 3: $AM,BM$ cắt nhau trong $(ABM)$ nên $CD\\perp(ABM)$, mà $AB\\subset(ABM)$ nên $CD\\perp AB$. ∎",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B22-6": {
+  "id": "BT11-B22-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 22,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Tứ diện đều $ABCD$ cạnh $a$, $M$ là trung điểm $BC$. Tính $\\cos$ góc giữa $AB$ và $DM$.",
+  "giai": "- Bước 1: gọi $P$ là trung điểm $AC$; $PM\\parallel AB$, $PM=\\dfrac a2$; nên góc $(AB,DM)$ bằng góc $\\widehat{PMD}$.\n- Bước 2: $DM=PD=\\dfrac{a\\sqrt3}2$ (đường trung tuyến của tam giác đều cạnh $a$).\n- Bước 3: $\\cos\\widehat{PMD}=\\dfrac{MP^2+MD^2-PD^2}{2\\,MP\\cdot MD}=\\dfrac{\\frac{a^2}4}{2\\cdot\\frac a2\\cdot\\frac{a\\sqrt3}2}=\\dfrac1{2\\sqrt3}=\\dfrac{\\sqrt3}6$.\n- Đáp số: $\\dfrac{\\sqrt3}6$ ($\\approx0{,}289$).",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B22-7": {
+  "id": "BT11-B22-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 22,
+  "muc_do": "VDC",
+  "de": "Tứ diện $ABCD$ có $AB=CD=a$; $M,N$ lần lượt là trung điểm $BC,AD$ và $MN=\\dfrac{a\\sqrt3}{2}$. Tính góc giữa $AB$ và $CD$.",
+  "giai": "- Bước 1: gọi $P$ là trung điểm $AC$. $PM$ là đường trung bình của $\\triangle ABC$: $PM\\parallel AB$, $PM=\\dfrac a2$. $PN$ là đường trung bình của $\\triangle ACD$: $PN\\parallel CD$, $PN=\\dfrac a2$.\n- Bước 2: góc $(AB,CD)$ bằng góc giữa $PM$ và $PN$ (hoặc bù với nó).\n- Bước 3: $\\cos\\widehat{MPN}=\\dfrac{PM^2+PN^2-MN^2}{2\\,PM\\cdot PN}=\\dfrac{\\frac{a^2}4+\\frac{a^2}4-\\frac{3a^2}4}{\\frac{a^2}2}=-\\dfrac12\\Rightarrow\\widehat{MPN}=120^\\circ$.\n- Bước 4: góc giữa hai đường thẳng nằm trong $[0^\\circ;90^\\circ]$ nên bằng $180^\\circ-120^\\circ=60^\\circ$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 22) | https://loigiaihay.com/bai-22-hai-duong-thang-vuong-goc-toan-11-ket-noi-tri-thuc-e31959.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 22) | https://vietjack.com/toan-11-kn/bai-22-hai-duong-thang-vuong-goc.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B23-1": {
+  "id": "BT11-B23-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 23,
+  "muc_do": "NB",
+  "de": "$d\\perp(P)$ thì $d$ vuông góc với bao nhiêu đường thẳng trong $(P)$?",
+  "giai": "Mọi đường thẳng trong $(P)$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B23-2": {
+  "id": "BT11-B23-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 23,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Điều kiện đủ để đường thẳng $d$ vuông góc với mặt phẳng $(P)$ là: A. $d$ vuông góc với một đường thẳng nằm trong $(P)$; B. $d$ vuông góc với hai đường thẳng cắt nhau nằm trong $(P)$; C. $d$ vuông góc với hai đường thẳng song song nằm trong $(P)$; D. $d$ song song với một đường thẳng nằm trong $(P)$.",
+  "giai": "Đây là dấu hiệu nhận biết đường thẳng vuông góc với mặt phẳng; A và C chưa đủ, D sai. Chọn **B**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B23-3": {
+  "id": "BT11-B23-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 23,
+  "muc_do": "TH",
+  "de": "Chóp $S.ABCD$ đáy là hình vuông, $SA\\perp(ABCD)$. Chứng minh $BC\\perp(SAB)$.",
+  "giai": "- Bước 1: $BC\\perp AB$ (hình vuông).\n- Bước 2: $SA\\perp(ABCD)$ và $BC\\subset(ABCD)$ nên $SA\\perp BC$.\n- Bước 3: $AB,SA$ cắt nhau tại $A$ và cùng nằm trong $(SAB)$, nên $BC\\perp(SAB)$. ∎",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B23-4": {
+  "id": "BT11-B23-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 23,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Chóp $S.ABCD$ đáy hình vuông, $SA\\perp(ABCD)$. a) $SA\\perp BD$; b) $CD\\perp(SAD)$; c) $BD\\perp SC$; d) $AC\\perp(SBD)$.",
+  "giai": "- a) $BD\\subset(ABCD)$: **Đúng**.\n- b) $CD\\perp AD$, $CD\\perp SA$, $AD,SA$ cắt nhau trong $(SAD)$: **Đúng**.\n- c) $BD\\perp AC$, $BD\\perp SA\\Rightarrow BD\\perp(SAC)\\Rightarrow BD\\perp SC$: **Đúng**.\n- d) $AC\\perp BD$ nhưng $AC$ không vuông góc $SB$ (hoặc $SD$): **Sai**.\n- Đáp án: Đ – Đ – Đ – S.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B23-5": {
+  "id": "BT11-B23-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 23,
+  "muc_do": "VD",
+  "de": "Với giả thiết trên (chóp $S.ABCD$ đáy hình vuông, $SA\\perp(ABCD)$), chứng minh $BD\\perp(SAC)$.",
+  "giai": "- Bước 1: $BD\\perp AC$ (hai đường chéo hình vuông).\n- Bước 2: $BD\\perp SA$ (vì $SA\\perp(ABCD)$ và $BD\\subset(ABCD)$).\n- Bước 3: $AC,SA$ cắt nhau tại $A$ trong $(SAC)$ nên $BD\\perp(SAC)$. ∎",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B23-6": {
+  "id": "BT11-B23-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 23,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABC$ có $SA=SB=SC$, $H$ là tâm đường tròn ngoại tiếp $\\triangle ABC$. Chứng minh $SH\\perp(ABC)$.",
+  "giai": "- Bước 1: $HA=HB=HC$ (bán kính đường tròn ngoại tiếp) và $SA=SB=SC$.\n- Bước 2: $S$ và $H$ cùng cách đều $A,B,C$ nên cùng thuộc trục của đường tròn ngoại tiếp $\\triangle ABC$ — tập các điểm cách đều ba đỉnh là đường thẳng qua $H$ vuông góc $(ABC)$.\n- Bước 3: vậy $SH\\perp(ABC)$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B23-7": {
+  "id": "BT11-B23-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 23,
+  "muc_do": "VDC",
+  "de": "Tứ diện $OABC$ có $OA,OB,OC$ đôi một vuông góc, $H$ là trực tâm $\\triangle ABC$. Chứng minh $OH\\perp(ABC)$.",
+  "giai": "- Bước 1: $OA\\perp OB$, $OA\\perp OC$ nên $OA\\perp(OBC)$, suy ra $OA\\perp BC$.\n- Bước 2: $H$ là trực tâm nên $AH\\perp BC$. $OA$ và $AH$ cắt nhau tại $A$ trong $(OAH)$ nên $BC\\perp(OAH)$, do đó $BC\\perp OH$.\n- Bước 3: tương tự, $OB\\perp(OAC)\\Rightarrow OB\\perp AC$ và $BH\\perp AC$ nên $AC\\perp(OBH)\\Rightarrow AC\\perp OH$.\n- Bước 4: $BC,AC$ cắt nhau trong $(ABC)$ nên $OH\\perp(ABC)$. ∎\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 23) | https://loigiaihay.com/bai-23-duong-thang-vuong-goc-voi-mat-phang-toan-11-ket-noi-tri-thuc-e31960.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 23) | https://vietjack.com/toan-11-kn/bai-23-duong-thang-vuong-goc-voi-mat-phang.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 4 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B24-1": {
+  "id": "BT11-B24-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 24,
+  "muc_do": "NB",
+  "de": "Hình chiếu vuông góc của điểm $S$ lên $(ABC)$ là gì?",
+  "giai": "Chân đường vuông góc hạ từ $S$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B24-2": {
+  "id": "BT11-B24-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 24,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Góc giữa đường thẳng $d$ và mặt phẳng $(P)$ khi $d\\perp(P)$ bằng: A. $0^\\circ$; B. $45^\\circ$; C. $60^\\circ$; D. $90^\\circ$.",
+  "giai": "Theo định nghĩa, nếu $d\\perp(P)$ thì góc giữa $d$ và $(P)$ bằng $90^\\circ$. Chọn **D**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B24-3": {
+  "id": "BT11-B24-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 24,
+  "muc_do": "TH",
+  "de": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. Tính góc giữa $SC$ và mặt đáy.",
+  "giai": "- Bước 1: $SA\\perp(ABCD)$ nên $AC$ là hình chiếu của $SC$ lên $(ABCD)$; góc cần tìm là $\\widehat{SCA}$.\n- Bước 2: $AC=a\\sqrt2$.\n- Bước 3: $\\tan\\widehat{SCA}=\\dfrac{SA}{AC}=\\dfrac a{a\\sqrt2}=\\dfrac1{\\sqrt2}$, suy ra góc $\\approx35{,}26^\\circ$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B24-4": {
+  "id": "BT11-B24-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 24,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a\\sqrt2$. a) hình chiếu của $SC$ lên đáy là $AC$; b) góc giữa $SC$ và đáy là $\\widehat{SCA}$; c) góc giữa $SC$ và đáy bằng $45^\\circ$; d) góc giữa $SB$ và đáy bằng $60^\\circ$.",
+  "giai": "- a) **Đúng**; b) **Đúng**.\n- c) $AC=a\\sqrt2=SA$, $\\tan\\widehat{SCA}=1$: **Đúng**.\n- d) $\\tan\\widehat{SBA}=\\dfrac{a\\sqrt2}a=\\sqrt2\\Rightarrow\\approx54{,}7^\\circ\\ne60^\\circ$: **Sai**.\n- Đáp án: Đ – Đ – Đ – S.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B24-5": {
+  "id": "BT11-B24-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 24,
+  "muc_do": "VD",
+  "de": "Với dữ kiện trên ($SA=a$, đáy hình vuông cạnh $a$), tính góc giữa $SB$ và $(ABCD)$.",
+  "giai": "- Hình chiếu của $SB$ lên $(ABCD)$ là $AB$; góc cần tìm là $\\widehat{SBA}$.\n- $\\tan\\widehat{SBA}=\\dfrac{SA}{AB}=\\dfrac aa=1$, nên góc bằng $45^\\circ$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B24-6": {
+  "id": "BT11-B24-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 24,
+  "muc_do": "VDC",
+  "de": "Hình lập phương $ABCD.A'B'C'D'$ cạnh $a$. Tính góc giữa $A'C$ và $(ABCD)$.",
+  "giai": "- Bước 1: $AA'\\perp(ABCD)$ nên hình chiếu của $A'C$ lên $(ABCD)$ là $AC$; góc cần tìm là $\\widehat{A'CA}$.\n- Bước 2: $AC=a\\sqrt2$, $AA'=a$.\n- Bước 3: $\\tan\\widehat{A'CA}=\\dfrac{a}{a\\sqrt2}=\\dfrac1{\\sqrt2}$, góc $\\approx35{,}26^\\circ$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B24-7": {
+  "id": "BT11-B24-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 24,
+  "muc_do": "VDC",
+  "de": "*[Trả lời ngắn]* Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. Tính $\\sin$ góc giữa $SC$ và $(SAB)$.",
+  "giai": "- Bước 1: $BC\\perp AB$ và $BC\\perp SA$ nên $BC\\perp(SAB)$; hình chiếu của $C$ lên $(SAB)$ là $B$.\n- Bước 2: góc giữa $SC$ và $(SAB)$ là $\\widehat{CSB}$.\n- Bước 3: $SC=\\sqrt{SA^2+AC^2}=\\sqrt{a^2+2a^2}=a\\sqrt3$, $BC=a$.\n- Bước 4: $\\sin\\widehat{CSB}=\\dfrac{BC}{SC}=\\dfrac1{\\sqrt3}=\\dfrac{\\sqrt3}3$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 24) | https://loigiaihay.com/bai-24-phep-chieu-vuong-goc-goc-giua-duong-thang-va-mat-phang-toan-11-ket-noi-tri-thuc-e31961.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 24) | https://vietjack.com/toan-11-kn/bai-24-phep-chieu-vuong-goc.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B25-1": {
+  "id": "BT11-B25-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 25,
+  "muc_do": "NB",
+  "de": "Hai mặt phẳng vuông góc có góc bao nhiêu độ?",
+  "giai": "$90^\\circ$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B25-2": {
+  "id": "BT11-B25-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 25,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Nếu mặt phẳng $(P)$ chứa một đường thẳng $a$ mà $a\\perp(Q)$ thì: A. $(P)\\parallel(Q)$; B. $(P)\\perp(Q)$; C. $(P)$ trùng $(Q)$; D. $(P)$ và $(Q)$ cắt nhau nhưng không vuông góc.",
+  "giai": "Đây là dấu hiệu hai mặt phẳng vuông góc. Chọn **B**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B25-3": {
+  "id": "BT11-B25-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 25,
+  "muc_do": "TH",
+  "de": "Chóp $S.ABCD$, $SA\\perp(ABCD)$. Chứng minh $(SAB)\\perp(ABCD)$.",
+  "giai": "$(SAB)\\ni SA\\perp(ABCD)$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B25-4": {
+  "id": "BT11-B25-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 25,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Chóp $S.ABCD$ đáy hình vuông, $SA\\perp(ABCD)$. a) $(SAB)\\perp(ABCD)$; b) $(SAD)\\perp(SAB)$; c) $(SAC)\\perp(SBD)$; d) $(SBC)\\perp(SAC)$.",
+  "giai": "- a) $(SAB)\\supset SA\\perp(ABCD)$: **Đúng**.\n- b) $(SAB)\\cap(SAD)=SA$ và $AB\\perp AD$, nên góc phẳng nhị diện $\\widehat{BAD}=90^\\circ$: **Đúng**.\n- c) $BD\\perp AC$ (đường chéo hình vuông) và $BD\\perp SA$ nên $BD\\perp(SAC)$, mà $BD\\subset(SBD)$: **Đúng**.\n- d) Chọn hệ tọa độ $A(0;0;0)$, $B(a;0;0)$, $D(0;a;0)$, $S(0;0;s)$: pháp tuyến $(SBC)$ là $(s;0;a)$, của $(SAC)$ là $(1;-1;0)$; tích vô hướng $s\\ne0$: **Sai**.\n- Đáp án: Đ – Đ – Đ – S.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B25-5": {
+  "id": "BT11-B25-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 25,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a\\sqrt3$. Tính góc nhị diện $[S,BC,A]$.",
+  "giai": "- Bước 1: $BC\\perp(SAB)$ (vì $BC\\perp AB$, $BC\\perp SA$) nên $BC\\perp SB$ và $BC\\perp AB$.\n- Bước 2: vậy $\\widehat{SBA}$ là góc phẳng nhị diện của $[S,BC,A]$.\n- Bước 3: $\\tan\\widehat{SBA}=\\dfrac{SA}{AB}=\\dfrac{a\\sqrt3}a=\\sqrt3\\Rightarrow\\widehat{SBA}=60^\\circ$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B25-6": {
+  "id": "BT11-B25-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 25,
+  "muc_do": "VD",
+  "de": "*[Trả lời ngắn]* Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. Tính $\\tan$ của góc giữa $(SBD)$ và $(ABCD)$.",
+  "giai": "- Bước 1: gọi $O=AC\\cap BD$; $AO\\perp BD$ và $SO\\perp BD$ (vì $BD\\perp(SAC)$). Giao tuyến $BD$.\n- Bước 2: góc cần tìm là $\\widehat{SOA}$.\n- Bước 3: $AO=\\dfrac{a\\sqrt2}2$, $\\tan\\widehat{SOA}=\\dfrac{SA}{AO}=\\dfrac a{a\\sqrt2/2}=\\sqrt2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B25-7": {
+  "id": "BT11-B25-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 25,
+  "muc_do": "VDC",
+  "de": "Chóp $S.ABCD$ đáy hình vuông, $SA\\perp(ABCD)$. Chứng minh $(SBD)\\perp(SAC)$.",
+  "giai": "- Bước 1: $BD\\perp AC$ (đường chéo hình vuông).\n- Bước 2: $BD\\perp SA$ (vì $SA\\perp(ABCD)$).\n- Bước 3: $AC,SA$ cắt nhau trong $(SAC)$ nên $BD\\perp(SAC)$.\n- Bước 4: $BD\\subset(SBD)$ nên $(SBD)\\perp(SAC)$. ∎\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 25) | https://loigiaihay.com/bai-25-hai-mat-phang-vuong-goc-toan-11-ket-noi-tri-thuc-e31962.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 25) | https://vietjack.com/toan-11-kn/bai-25-hai-mat-phang-vuong-goc.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |\n| v1.3 | 27/11/2026 | Bài 7: nêu rõ đáy hình vuông (bài 3 không có); bài 4c: bỏ \"xem bài 4\", lập luận đầy đủ | delivery-lead (theo REVIEW-L11-MATH-20261127) |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B26-1": {
+  "id": "BT11-B26-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 26,
+  "muc_do": "NB",
+  "de": "Khoảng cách từ $A'$ đến $(ABCD)$ trong hình lập phương cạnh $a$?",
+  "giai": "$a$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B26-2": {
+  "id": "BT11-B26-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 26,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Hình lập phương cạnh $a$. Khoảng cách giữa hai mặt phẳng song song $(ABCD)$ và $(A'B'C'D')$ bằng: A. $a$; B. $a\\sqrt2$; C. $\\dfrac a2$; D. $a\\sqrt3$.",
+  "giai": "Hai mặt đáy song song và $AA'\\perp$ cả hai, nên khoảng cách bằng $AA'=a$. Chọn **A**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B26-3": {
+  "id": "BT11-B26-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 26,
+  "muc_do": "TH",
+  "de": "Chóp $S.ABC$, $SA\\perp(ABC)$, $SA=a$, $\\triangle ABC$ vuông tại $B$, $AB=a$. Tính $d(A,(SBC))$.",
+  "giai": "- Bước 1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\n- Bước 2: kẻ $AH\\perp SB$ ($H\\in SB$). $AH\\perp BC$ (vì $BC\\perp(SAB)$) nên $AH\\perp(SBC)$, tức $d(A,(SBC))=AH$.\n- Bước 3: $SB=a\\sqrt2$, trong tam giác vuông $SAB$: $AH=\\dfrac{SA\\cdot AB}{SB}=\\dfrac{a^2}{a\\sqrt2}=\\dfrac{a\\sqrt2}2$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B26-4": {
+  "id": "BT11-B26-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 26,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. a) $d(S,(ABCD))=a$; b) $d(A,(SBC))=\\dfrac{a\\sqrt2}2$; c) $d(AB,(SCD))=a$; d) $BC\\perp(SAB)$.",
+  "giai": "- a) $SA\\perp(ABCD)$: **Đúng**.\n- b) $BC\\perp(SAB)$; kẻ $AH\\perp SB$ thì $AH\\perp(SBC)$, $AH=\\dfrac{a\\cdot a}{a\\sqrt2}=\\dfrac{a\\sqrt2}2$: **Đúng**.\n- c) $AB\\parallel CD\\Rightarrow AB\\parallel(SCD)$, $d(AB,(SCD))=d(A,(SCD))=\\dfrac{SA\\cdot AD}{SD}=\\dfrac{a\\sqrt2}2\\ne a$: **Sai**.\n- d) **Đúng**.\n- Đáp án: Đ – Đ – S – Đ.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B26-5": {
+  "id": "BT11-B26-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 26,
+  "muc_do": "VD",
+  "de": "Hình lập phương cạnh $a$. Tính khoảng cách giữa hai đường thẳng chéo nhau $AB$ và $A'D'$.",
+  "giai": "- Bước 1: $AA'\\perp AB$ và $AA'\\perp A'D'$ (vì $AA'\\perp$ đáy, mặt $A'B'C'D'$ vuông góc với $AA'$).\n- Bước 2: $AA'$ cắt $AB$ tại $A$ và cắt $A'D'$ tại $A'$, nên $AA'$ là đoạn vuông góc chung.\n- Bước 3: $d(AB,A'D')=AA'=a$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B26-6": {
+  "id": "BT11-B26-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 26,
+  "muc_do": "VDC",
+  "de": "Tứ diện $OABC$ có $OA,OB,OC$ đôi một vuông góc, $OA=OB=OC=a$. Tính $d(O,(ABC))$.",
+  "giai": "- Bước 1: kẻ $OK\\perp BC$ ($K\\in BC$), $K$ là trung điểm $BC$; $\\dfrac1{OK^2}=\\dfrac1{OB^2}+\\dfrac1{OC^2}=\\dfrac2{a^2}$.\n- Bước 2: $BC\\perp(OAK)$; kẻ $OH\\perp AK$ thì $OH\\perp(ABC)$, $d=OH$.\n- Bước 3: trong tam giác vuông $OAK$: $\\dfrac1{OH^2}=\\dfrac1{OA^2}+\\dfrac1{OK^2}=\\dfrac1{a^2}+\\dfrac2{a^2}=\\dfrac3{a^2}$.\n- Bước 4: $OH=\\dfrac a{\\sqrt3}=\\dfrac{a\\sqrt3}3$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B26-7": {
+  "id": "BT11-B26-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 26,
+  "muc_do": "VDC",
+  "de": "*[Trả lời ngắn]* Chóp $S.ABCD$ đáy hình vuông cạnh $3$, $SA\\perp(ABCD)$, $SA=3$. Tính $d(A,(SBD))$.",
+  "giai": "- Bước 1: $AS,AB,AD$ đôi một vuông góc, nên $A$ có khoảng cách tới $(SBD)$ thỏa $\\dfrac1{d^2}=\\dfrac1{AS^2}+\\dfrac1{AB^2}+\\dfrac1{AD^2}$.\n- Bước 2: $\\dfrac1{d^2}=\\dfrac19+\\dfrac19+\\dfrac19=\\dfrac13\\Rightarrow d=\\sqrt3$.\n- Kiểm tra theo cách dựng: $AO=\\dfrac{3\\sqrt2}2$, $SO=\\sqrt{9+\\frac92}=\\dfrac{3\\sqrt6}2$, $d=\\dfrac{SA\\cdot AO}{SO}=\\dfrac{3\\cdot\\frac{3\\sqrt2}2}{\\frac{3\\sqrt6}2}=\\sqrt3$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 26) | https://loigiaihay.com/bai-26-khoang-cach-toan-11-ket-noi-tri-thuc-e31963.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 26) | https://vietjack.com/toan-11-kn/bai-26-khoang-cach.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B27-1": {
+  "id": "BT11-B27-1",
+  "nguon": "lop-11/bai-tap",
+  "bai": 27,
+  "muc_do": "NB",
+  "de": "Thể tích chóp đáy vuông cạnh 3, cao 4.",
+  "giai": "$\\dfrac13\\cdot9\\cdot4=12$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B27-2": {
+  "id": "BT11-B27-2",
+  "nguon": "lop-11/bai-tap",
+  "bai": 27,
+  "muc_do": "NB",
+  "de": "*[Trắc nghiệm]* Thể tích khối lăng trụ có diện tích đáy $B$ và chiều cao $h$ là: A. $Bh$; B. $\\dfrac13Bh$; C. $\\dfrac12Bh$; D. $3Bh$.",
+  "giai": "Lăng trụ: $V=Bh$ (khối chóp mới là $\\dfrac13Bh$). Chọn **A**.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B27-3": {
+  "id": "BT11-B27-3",
+  "nguon": "lop-11/bai-tap",
+  "bai": 27,
+  "muc_do": "TH",
+  "de": "Lăng trụ đứng đáy là tam giác vuông cân cạnh góc vuông $a$, cạnh bên $2a$. Thể tích.",
+  "giai": "$\\dfrac{a^2}2\\cdot2a=a^3$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B27-4": {
+  "id": "BT11-B27-4",
+  "nguon": "lop-11/bai-tap",
+  "bai": 27,
+  "muc_do": "TH",
+  "de": "*[Đúng/sai]* Lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=3$, $AC=4$, $AA'=5$. a) $S_{ABC}=6$; b) $V_{ABC.A'B'C'}=30$; c) $V_{A'.ABC}=10$; d) $V_{A.BCC'B'}=15$.",
+  "giai": "- a) $\\dfrac12\\cdot3\\cdot4=6$: **Đúng**.\n- b) $V=6\\cdot5=30$: **Đúng**.\n- c) $V_{A'.ABC}=\\dfrac13\\cdot6\\cdot5=10$: **Đúng**.\n- d) $V_{A.A'B'C'}=10$ nên $V_{A.BCC'B'}=30-10=20\\ne15$: **Sai**.\n- Đáp án: Đ – Đ – Đ – S.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B27-5": {
+  "id": "BT11-B27-5",
+  "nguon": "lop-11/bai-tap",
+  "bai": 27,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SC$ tạo với đáy góc $45^\\circ$. Tính thể tích.",
+  "giai": "- Bước 1: góc giữa $SC$ và đáy là $\\widehat{SCA}=45^\\circ$.\n- Bước 2: $AC=a\\sqrt2$; tam giác $SAC$ vuông cân tại $A$ nên $SA=AC=a\\sqrt2$.\n- Bước 3: $V=\\dfrac13S_{ABCD}\\cdot SA=\\dfrac13a^2\\cdot a\\sqrt2=\\dfrac{a^3\\sqrt2}3$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B27-6": {
+  "id": "BT11-B27-6",
+  "nguon": "lop-11/bai-tap",
+  "bai": 27,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABC$, $M$ là trung điểm $SB$, $N\\in SC$ với $SN=2NC$. Tính $\\dfrac{V_{S.AMN}}{V_{S.ABC}}$.",
+  "giai": "- Bước 1: hai khối chóp chung đỉnh $S$, đáy trong cùng các tia $SA,SB,SC$: $\\dfrac{V_{S.AMN}}{V_{S.ABC}}=\\dfrac{SA}{SA}\\cdot\\dfrac{SM}{SB}\\cdot\\dfrac{SN}{SC}$.\n- Bước 2: $\\dfrac{SM}{SB}=\\dfrac12$; $SN=2NC\\Rightarrow SN=\\dfrac23SC$.\n- Bước 3: tỉ số $=1\\cdot\\dfrac12\\cdot\\dfrac23=\\dfrac13$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B27-7": {
+  "id": "BT11-B27-7",
+  "nguon": "lop-11/bai-tap",
+  "bai": 27,
+  "muc_do": "VDC",
+  "de": "Tính thể tích khối tứ diện đều cạnh $a$.",
+  "giai": "- Bước 1: đáy $BCD$ là tam giác đều cạnh $a$: $S=\\dfrac{a^2\\sqrt3}4$. Chân đường cao $H$ là trọng tâm $\\triangle BCD$ nên $HB=\\dfrac{a\\sqrt3}3$.\n- Bước 2: chiều cao $AH=\\sqrt{AB^2-HB^2}=\\sqrt{a^2-\\dfrac{a^2}3}=\\dfrac{a\\sqrt6}3$.\n- Bước 3: $V=\\dfrac13\\cdot\\dfrac{a^2\\sqrt3}4\\cdot\\dfrac{a\\sqrt6}3=\\dfrac{a^3\\sqrt{18}}{36}=\\dfrac{a^3\\sqrt2}{12}$.",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BT11-B27-8": {
+  "id": "BT11-B27-8",
+  "nguon": "lop-11/bai-tap",
+  "bai": 27,
+  "muc_do": "VDC",
+  "de": "*[Trả lời ngắn]* Chóp $S.ABCD$ đáy hình vuông cạnh $2a$, tam giác $SAB$ đều và nằm trong mặt phẳng vuông góc với đáy. Tính thể tích theo $a$.",
+  "giai": "- Bước 1: gọi $H$ là trung điểm $AB$; $\\triangle SAB$ đều nên $SH\\perp AB$ và $SH=\\dfrac{2a\\sqrt3}2=a\\sqrt3$.\n- Bước 2: $(SAB)\\perp(ABCD)$, giao tuyến $AB$, $SH\\perp AB$ nên $SH\\perp(ABCD)$.\n- Bước 3: $V=\\dfrac13S_{ABCD}\\cdot SH=\\dfrac13\\cdot4a^2\\cdot a\\sqrt3=\\dfrac{4\\sqrt3a^3}3$.\n\n## Nguồn\n\n| Nội dung trong bài | Nguồn | Link | Ghi chú |\n|---|---|---|---|\n| Toàn bộ đề và lời giải | Tác giả tài liệu | - | tự soạn (cùng dạng với SGK/SBT, không trích nguyên văn) |\n| Đối chiếu dạng bài | SBT Toán 11 KNTT trên loigiaihay | https://loigiaihay.com/sbt-toan-11-ket-noi-tri-thuc-c1567.html | chỉ tham khảo dạng, không chép |\n| Đối chiếu dạng bài, mức độ | Giải bài tập SGK Toán 11 KNTT – loigiaihay (Bài 27) | https://loigiaihay.com/bai-27-the-tich-toan-11-ket-noi-tri-thuc-e31964.html | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng bài, mức độ | Giải SGK Toán 11 KNTT – VietJack (Bài 27) | https://vietjack.com/toan-11-kn/bai-27-the-tich.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ dẫn, không chép đề/lời giải |\n| Đối chiếu dạng đề kiểm tra (trắc nghiệm, đúng/sai, trả lời ngắn) | Đề thi giữa kì 1 Toán 11 KNTT (đề số 9) – loigiaihay | https://loigiaihay.com/de-thi-giua-ki-1-toan-11-ket-noi-tri-thuc-de-so-9-a188921.html | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng/mức độ, không chép đề |\n| Đối chiếu cấu trúc đề 2025 | Đề thi giữa kì 1 Toán 11 cấu trúc mới KNTT – VietJack | https://vietjack.com/de-kiem-tra-lop-11/de-thi-giua-ki-1-toan-lop-11-cau-truc-moi-ket-noi.jsp | đã mở được (HTTP 200, 27/11/2026); chỉ tham khảo dạng, không chép đề |\n\n## Lịch sử\n\n| Phiên bản | Ngày | Thay đổi | Ai |\n|---|---|---|---|\n| v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |\n| v1.2 | 27/11/2026 | Thêm 3 bài (5→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |",
+  "dap_so": null,
+  "buoc": []
+ },
+ "BM-001": {
+  "id": "BM-001",
+  "nguon": "baseline/bo-mau",
+  "bai": 24,
+  "muc_do": "TH",
+  "de": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt6$. Tính góc giữa đường thẳng $SC$ và mặt phẳng $(ABCD)$.",
+  "giai": "B1: $SA\\perp(ABCD)$ nên $AC$ là hình chiếu của $SC$ lên $(ABCD)$; góc cần tìm là $\\widehat{SCA}$.\nB2: $AC$ là đường chéo hình vuông cạnh $a$: $AC=a\\sqrt2$.\nB3: $\\tan\\widehat{SCA}=\\dfrac{SA}{AC}=\\dfrac{a\\sqrt6}{a\\sqrt2}=\\sqrt3\\Rightarrow\\widehat{SCA}=60^\\circ$.",
+  "dap_so": "$60^\\circ$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$(SC,(ABCD))=\\widehat{SCA}$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$AC=a\\sqrt2$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\tan\\widehat{SCA}=\\sqrt3$, góc $60^\\circ$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy góc $\\widehat{ASC}$ (góc giữa $SC$ và đường vuông góc $SA$) làm góc với mặt phẳng",
+    "loi_giai": "B1: Góc giữa $SC$ và $(ABCD)$ là $\\widehat{ASC}$.\nB2: $AC$ là đường chéo hình vuông cạnh $a$: $AC=a\\sqrt2$.\nB3: $\\tan\\widehat{ASC}=\\dfrac{AC}{SA}=\\dfrac{1}{\\sqrt3}\\Rightarrow$ góc $30^\\circ$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Tính sai $AC=a$ (nhầm đường chéo với cạnh)",
+    "loi_giai": "B1: $SA\\perp(ABCD)$ nên $AC$ là hình chiếu của $SC$ lên $(ABCD)$; góc cần tìm là $\\widehat{SCA}$.\nB2: $AC=a$.\nB3: $\\tan\\widehat{SCA}=\\dfrac{a\\sqrt6}{a}=\\sqrt6\\Rightarrow\\widehat{SCA}\\approx67{,}79^\\circ$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-002": {
+  "id": "BM-002",
+  "nguon": "baseline/bo-mau",
+  "bai": 24,
+  "muc_do": "VD",
+  "de": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt2$. Tính góc giữa đường thẳng $SC$ và mặt phẳng $(SAB)$.",
+  "giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Hình chiếu của $C$ lên $(SAB)$ là $B$, nên hình chiếu của $SC$ là $SB$; góc cần tìm là $\\widehat{CSB}$.\nB3: $SC=\\sqrt{SA^2+AC^2}=\\sqrt{2a^2+2a^2}=2a$.\nB4: $\\sin\\widehat{CSB}=\\dfrac{BC}{SC}=\\dfrac a{2a}=\\dfrac12\\Rightarrow\\widehat{CSB}=30^\\circ$.",
+  "dap_so": "$30^\\circ$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$BC\\perp(SAB)$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$(SC,(SAB))=\\widehat{CSB}$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$SC=2a$"
+   },
+   {
+    "ma": "B4",
+    "ket_qua": "$30^\\circ$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Chọn nhầm góc $\\widehat{CSA}$ (hình chiếu lên đáy thay vì lên $(SAB)$)",
+    "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Góc cần tìm là $\\widehat{CSA}$.\nB3: $SC=\\sqrt{SA^2+AC^2}=\\sqrt{2a^2+2a^2}=2a$.\nB4: $\\cos\\widehat{CSA}=\\dfrac{SA}{SC}=\\dfrac{\\sqrt2}{2}\\Rightarrow 45^\\circ$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Tính $SC=\\sqrt{SA^2+AB^2}=a\\sqrt3$ (dùng nhầm $AB$ thay $AC$)",
+    "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Hình chiếu của $C$ lên $(SAB)$ là $B$, nên hình chiếu của $SC$ là $SB$; góc cần tìm là $\\widehat{CSB}$.\nB3: $SC=\\sqrt{SA^2+AB^2}=a\\sqrt3$.\nB4: $\\sin\\widehat{CSB}=\\dfrac{a}{a\\sqrt3}\\Rightarrow\\widehat{CSB}\\approx35{,}26^\\circ$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-003": {
+  "id": "BM-003",
+  "nguon": "baseline/bo-mau",
+  "bai": 24,
+  "muc_do": "TH",
+  "de": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy $a$, $O$ là tâm đáy và $SO=\\dfrac{a\\sqrt6}{2}$. Tính góc giữa cạnh bên $SA$ và mặt đáy.",
+  "giai": "B1: $SO\\perp(ABCD)$ nên hình chiếu của $SA$ là $OA$; góc cần tìm là $\\widehat{SAO}$.\nB2: $OA=\\dfrac{AC}2=\\dfrac{a\\sqrt2}2$.\nB3: $\\tan\\widehat{SAO}=\\dfrac{SO}{OA}=\\dfrac{a\\sqrt6/2}{a\\sqrt2/2}=\\sqrt3\\Rightarrow 60^\\circ$.",
+  "dap_so": "$60^\\circ$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$\\widehat{SAO}$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$OA=\\dfrac{a\\sqrt2}{2}$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$60^\\circ$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $OA=a\\sqrt2$ (quên chia đôi đường chéo)",
+    "loi_giai": "B1: $SO\\perp(ABCD)$ nên hình chiếu của $SA$ là $OA$; góc cần tìm là $\\widehat{SAO}$.\nB2: $OA=a\\sqrt2$.\nB3: $\\tan\\widehat{SAO}=\\dfrac{a\\sqrt6/2}{a\\sqrt2}=\\dfrac{\\sqrt3}2\\Rightarrow\\approx40{,}89^\\circ$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy góc ở đỉnh $\\widehat{ASO}$ làm góc giữa $SA$ và đáy",
+    "loi_giai": "B1: Góc cần tìm là $\\widehat{ASO}$.\nB2: $OA=\\dfrac{AC}2=\\dfrac{a\\sqrt2}2$.\nB3: $\\tan\\widehat{ASO}=\\dfrac{OA}{SO}=\\dfrac1{\\sqrt3}\\Rightarrow 30^\\circ$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-004": {
+  "id": "BM-004",
+  "nguon": "baseline/bo-mau",
+  "bai": 22,
+  "muc_do": "TH",
+  "de": "Cho hình lập phương $ABCD.A'B'C'D'$ cạnh $a$. Tính góc giữa hai đường thẳng $AB'$ và $AD'$.",
+  "giai": "B1: $AB'$, $AD'$, $B'D'$ là đường chéo của ba mặt hình vuông cạnh $a$ nên đều bằng $a\\sqrt2$.\nB2: Tam giác $AB'D'$ đều nên $\\widehat{B'AD'}=60^\\circ$; đó là góc giữa hai đường thẳng.",
+  "dap_so": "$60^\\circ$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$AB'=AD'=B'D'=a\\sqrt2$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$60^\\circ$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $B'D'$ là đường chéo của khối ($a\\sqrt3$)",
+    "loi_giai": "B1: $AB'=AD'=a\\sqrt2$, $B'D'=a\\sqrt3$.\nB2: $\\cos\\widehat{B'AD'}=\\dfrac{2a^2+2a^2-3a^2}{2\\cdot2a^2}=\\dfrac14\\Rightarrow\\approx75{,}52^\\circ$.",
+    "diem_dung": 0
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Lấy góc giữa hai vectơ $\\vec{B'A},\\vec{AD'}$ ($120^\\circ$) mà không đưa về $[0^\\circ;90^\\circ]$",
+    "loi_giai": "B1: $AB'$, $AD'$, $B'D'$ là đường chéo của ba mặt hình vuông cạnh $a$ nên đều bằng $a\\sqrt2$.\nB2: Góc giữa hai vectơ $\\vec{B'A}$ và $\\vec{AD'}$ là $180^\\circ-60^\\circ=120^\\circ$, vậy góc giữa hai đường thẳng là $120^\\circ$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-005": {
+  "id": "BM-005",
+  "nguon": "baseline/bo-mau",
+  "bai": 24,
+  "muc_do": "TH",
+  "de": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=a$, $AD=a\\sqrt3$, $AA'=2a$. Tính góc giữa đường chéo $AC'$ và mặt phẳng $(ABCD)$.",
+  "giai": "B1: $CC'\\perp(ABCD)$ nên hình chiếu của $AC'$ là $AC$; góc cần tìm là $\\widehat{C'AC}$.\nB2: $AC=\\sqrt{AB^2+AD^2}=\\sqrt{a^2+3a^2}=2a$.\nB3: $CC'=2a=AC$ nên tam giác $ACC'$ vuông cân tại $C$, $\\widehat{C'AC}=45^\\circ$.",
+  "dap_so": "$45^\\circ$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$\\widehat{C'AC}$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$AC=2a$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$45^\\circ$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $AC=AD=a\\sqrt3$ (nhầm đường chéo với cạnh)",
+    "loi_giai": "B1: $CC'\\perp(ABCD)$ nên hình chiếu của $AC'$ là $AC$; góc cần tìm là $\\widehat{C'AC}$.\nB2: $AC=a\\sqrt3$.\nB3: $\\tan\\widehat{C'AC}=\\dfrac{2a}{a\\sqrt3}\\Rightarrow\\approx49{,}11^\\circ$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy góc $\\widehat{C'AB}$ (với một cạnh đáy) làm góc với mặt phẳng",
+    "loi_giai": "B1: Góc cần tìm là $\\widehat{C'AB}$.\nB2: $AC=\\sqrt{AB^2+AD^2}=\\sqrt{a^2+3a^2}=2a$.\nB3: $AC'=2a\\sqrt2$, $\\cos\\widehat{C'AB}=\\dfrac{AB}{AC'}=\\dfrac1{2\\sqrt2}\\Rightarrow\\approx69{,}30^\\circ$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-006": {
+  "id": "BM-006",
+  "nguon": "baseline/bo-mau",
+  "bai": 24,
+  "muc_do": "TH",
+  "de": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a\\sqrt3$, $AA'=2a$. Tính góc giữa đường thẳng $B'C$ và mặt phẳng $(ABC)$.",
+  "giai": "B1: $BB'\\perp(ABC)$ nên hình chiếu của $B'C$ là $BC$; góc cần tìm là $\\widehat{B'CB}$.\nB2: $BC=\\sqrt{AB^2+AC^2}=\\sqrt{a^2+3a^2}=2a$.\nB3: $BB'=BC=2a$ nên $\\tan\\widehat{B'CB}=1$, góc bằng $45^\\circ$.",
+  "dap_so": "$45^\\circ$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$\\widehat{B'CB}$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$BC=2a$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$45^\\circ$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Trừ thay vì cộng: $BC=\\sqrt{3a^2-a^2}=a\\sqrt2$",
+    "loi_giai": "B1: $BB'\\perp(ABC)$ nên hình chiếu của $B'C$ là $BC$; góc cần tìm là $\\widehat{B'CB}$.\nB2: $BC=\\sqrt{AC^2-AB^2}=a\\sqrt2$.\nB3: $\\tan\\widehat{B'CB}=\\dfrac{2a}{a\\sqrt2}=\\sqrt2\\Rightarrow\\approx54{,}74^\\circ$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $AC$ làm hình chiếu của $B'C$ (sai chân hình chiếu của $B'$)",
+    "loi_giai": "B1: Hình chiếu của $B'C$ lên $(ABC)$ là $AC$, góc cần tìm là $\\widehat{B'CA}$.\nB2: $BC=\\sqrt{AB^2+AC^2}=\\sqrt{a^2+3a^2}=2a$.\nB3: $AB'=a\\sqrt5$, $\\tan\\widehat{B'CA}=\\dfrac{AB'}{AC}=\\dfrac{\\sqrt5}{\\sqrt3}\\Rightarrow\\approx52{,}24^\\circ$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-007": {
+  "id": "BM-007",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "TH",
+  "de": "Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a$. Tính khoảng cách từ $A$ đến mặt phẳng $(SBC)$.",
+  "giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Kẻ $AH\\perp SB$; $AH\\subset(SAB)$ nên $AH\\perp BC$, do đó $AH\\perp(SBC)$, $d(A,(SBC))=AH$.\nB3: Tam giác $SAB$ vuông cân tại $A$: $AH=\\dfrac{SB}2=\\dfrac{a\\sqrt2}2$.",
+  "dap_so": "$\\dfrac{a\\sqrt2}{2}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$BC\\perp(SAB)$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$d=AH$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$AH=\\dfrac{a\\sqrt2}2$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $AB$ là khoảng cách vì $AB\\perp BC$",
+    "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: $AB\\perp BC$ nên $d(A,(SBC))=AB$.\nB3: $d(A,(SBC))=a$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Quên khai căn: từ $AH^2=\\dfrac{a^2}2$ suy ra $AH=\\dfrac a2$",
+    "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Kẻ $AH\\perp SB$; $AH\\subset(SAB)$ nên $AH\\perp BC$, do đó $AH\\perp(SBC)$, $d(A,(SBC))=AH$.\nB3: $\\dfrac1{AH^2}=\\dfrac2{a^2}\\Rightarrow AH=\\dfrac a2$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-008": {
+  "id": "BM-008",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "VD",
+  "de": "Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt3$. Tính khoảng cách giữa hai đường thẳng $AB$ và $SD$.",
+  "giai": "B1: $AB\\parallel CD\\subset(SCD)$ nên $AB\\parallel(SCD)$ và $d(AB,SD)=d(A,(SCD))$.\nB2: $CD\\perp(SAD)$; kẻ $AK\\perp SD$ thì $AK\\perp CD$, nên $AK\\perp(SCD)$.\nB3: $\\dfrac1{AK^2}=\\dfrac1{SA^2}+\\dfrac1{AD^2}=\\dfrac1{3a^2}+\\dfrac1{a^2}=\\dfrac4{3a^2}\\Rightarrow AK=\\dfrac{a\\sqrt3}2$.",
+  "dap_so": "$\\dfrac{a\\sqrt3}{2}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$d(AB,SD)=d(A,(SCD))$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$d=AK$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$AK=\\dfrac{a\\sqrt3}{2}$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy $AD$ làm đoạn vuông góc chung ($AD$ không vuông góc với $SD$)",
+    "loi_giai": "B1: $AD\\perp AB$ và $AD$ cắt $SD$ tại $D$ nên $AD$ là đoạn vuông góc chung.\nB2: Vậy $d(AB,SD)=AD$.\nB3: $d(AB,SD)=a$.",
+    "diem_dung": 0
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Cộng phân số sai: $\\dfrac1{3a^2}+\\dfrac1{a^2}=\\dfrac2{4a^2}$",
+    "loi_giai": "B1: $AB\\parallel CD\\subset(SCD)$ nên $AB\\parallel(SCD)$ và $d(AB,SD)=d(A,(SCD))$.\nB2: $CD\\perp(SAD)$; kẻ $AK\\perp SD$ thì $AK\\perp CD$, nên $AK\\perp(SCD)$.\nB3: $\\dfrac1{AK^2}=\\dfrac1{3a^2}+\\dfrac1{a^2}=\\dfrac2{4a^2}\\Rightarrow AK=a\\sqrt2$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-009": {
+  "id": "BM-009",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "VD",
+  "de": "Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. Tính khoảng cách giữa hai đường thẳng chéo nhau $BD$ và $SC$.",
+  "giai": "B1: $BD\\perp AC$, $BD\\perp SA$ nên $BD\\perp(SAC)$ tại $O$. Kẻ $OH\\perp SC$ ($H\\in SC$) thì $OH\\perp BD$, $OH\\perp SC$: $OH$ là đoạn vuông góc chung.\nB2: $\\triangle CHO\\sim\\triangle CAS$ (chung góc $C$, cùng vuông) nên $\\dfrac{OH}{SA}=\\dfrac{OC}{SC}$, $OH=\\dfrac{SA\\cdot OC}{SC}$.\nB3: $OC=\\dfrac{a\\sqrt2}2$, $SC=a\\sqrt3$, nên $OH=\\dfrac{a\\cdot a\\sqrt2/2}{a\\sqrt3}=\\dfrac{a\\sqrt6}6$.",
+  "dap_so": "$\\dfrac{a\\sqrt6}{6}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$d(BD,SC)=OH$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$OH=\\dfrac{SA\\cdot OC}{SC}$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$OH=\\dfrac{a\\sqrt6}6$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lập sai tỉ số đồng dạng: $\\dfrac{OH}{OC}=\\dfrac{SA}{AC}$",
+    "loi_giai": "B1: $BD\\perp AC$, $BD\\perp SA$ nên $BD\\perp(SAC)$ tại $O$. Kẻ $OH\\perp SC$ ($H\\in SC$) thì $OH\\perp BD$, $OH\\perp SC$: $OH$ là đoạn vuông góc chung.\nB2: $\\dfrac{OH}{OC}=\\dfrac{SA}{AC}\\Rightarrow OH=\\dfrac{OC\\cdot SA}{AC}$.\nB3: $OH=\\dfrac{a\\sqrt2/2\\cdot a}{a\\sqrt2}=\\dfrac a2$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Tính $SC=2a$ (sai Pythagore)",
+    "loi_giai": "B1: $BD\\perp AC$, $BD\\perp SA$ nên $BD\\perp(SAC)$ tại $O$. Kẻ $OH\\perp SC$ ($H\\in SC$) thì $OH\\perp BD$, $OH\\perp SC$: $OH$ là đoạn vuông góc chung.\nB2: $\\triangle CHO\\sim\\triangle CAS$ (chung góc $C$, cùng vuông) nên $\\dfrac{OH}{SA}=\\dfrac{OC}{SC}$, $OH=\\dfrac{SA\\cdot OC}{SC}$.\nB3: $OC=\\dfrac{a\\sqrt2}2$, $SC=2a$, $OH=\\dfrac{a\\sqrt2}4$.",
+    "diem_dung": 0.75
+   }
+  ]
+ },
+ "BM-010": {
+  "id": "BM-010",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "VDC",
+  "de": "Cho hình chóp tứ giác đều $S.ABCD$ có tất cả các cạnh bằng $a$. Tính khoảng cách giữa hai đường thẳng $AB$ và $SC$.",
+  "giai": "B1: $AB\\parallel(SCD)$ nên $d(AB,SC)=d(A,(SCD))$; $AO\\cap(SCD)=C$, $AC=2OC$ nên $d(A,(SCD))=2d(O,(SCD))$.\nB2: $SO=\\sqrt{SA^2-OA^2}=\\sqrt{a^2-\\dfrac{a^2}2}=\\dfrac{a\\sqrt2}2$.\nB3: Gọi $M$ trung điểm $CD$, $OM=\\dfrac a2$; $\\dfrac1{d_O^2}=\\dfrac1{SO^2}+\\dfrac1{OM^2}=\\dfrac2{a^2}+\\dfrac4{a^2}=\\dfrac6{a^2}$, $d_O=\\dfrac{a\\sqrt6}6$.\nB4: $d(AB,SC)=2\\cdot\\dfrac{a\\sqrt6}6=\\dfrac{a\\sqrt6}3$.",
+  "dap_so": "$\\dfrac{a\\sqrt6}{3}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$d=2d(O,(SCD))$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$SO=\\dfrac{a\\sqrt2}2$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$d(O,(SCD))=\\dfrac{a\\sqrt6}6$"
+   },
+   {
+    "ma": "B4",
+    "ket_qua": "$\\dfrac{a\\sqrt6}3$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B1",
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Bỏ tỉ số: coi $d(A,(SCD))=d(O,(SCD))$",
+    "loi_giai": "B1: $AB\\parallel(SCD)$ nên $d(AB,SC)=d(A,(SCD))=d(O,(SCD))$.\nB2: $SO=\\sqrt{SA^2-OA^2}=\\sqrt{a^2-\\dfrac{a^2}2}=\\dfrac{a\\sqrt2}2$.\nB3: Gọi $M$ trung điểm $CD$, $OM=\\dfrac a2$; $\\dfrac1{d_O^2}=\\dfrac1{SO^2}+\\dfrac1{OM^2}=\\dfrac2{a^2}+\\dfrac4{a^2}=\\dfrac6{a^2}$, $d_O=\\dfrac{a\\sqrt6}6$.\nB4: $d(AB,SC)=\\dfrac{a\\sqrt6}6$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $SO=\\dfrac{a\\sqrt3}2$ (nhầm với trung đoạn)",
+    "loi_giai": "B1: $AB\\parallel(SCD)$ nên $d(AB,SC)=d(A,(SCD))$; $AO\\cap(SCD)=C$, $AC=2OC$ nên $d(A,(SCD))=2d(O,(SCD))$.\nB2: $SO=\\dfrac{a\\sqrt3}2$.\nB3: $\\dfrac1{d_O^2}=\\dfrac4{3a^2}+\\dfrac4{a^2}=\\dfrac{16}{3a^2}$, $d_O=\\dfrac{a\\sqrt3}4$.\nB4: $d(AB,SC)=\\dfrac{a\\sqrt3}2$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-011": {
+  "id": "BM-011",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "TH",
+  "de": "Hình chóp tứ giác đều $S.ABCD$ có cạnh đáy $6$ cm, chiều cao $SO=4$ cm. Tính khoảng cách từ tâm đáy $O$ đến mặt bên $(SBC)$.",
+  "giai": "B1: Gọi $M$ trung điểm $BC$ thì $BC\\perp OM$, $BC\\perp SO$ nên $BC\\perp(SOM)$; kẻ $OH\\perp SM$ thì $OH\\perp(SBC)$.\nB2: $OM=3$ cm, $SM=\\sqrt{4^2+3^2}=5$ cm.\nB3: $OH=\\dfrac{SO\\cdot OM}{SM}=\\dfrac{12}5=2{,}4$ cm.",
+  "dap_so": "$2{,}4$ cm",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$d=OH$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$OM=3$, $SM=5$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$OH=2{,}4$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $OM$ làm khoảng cách từ $O$ đến $(SBC)$",
+    "loi_giai": "B1: $OM\\perp BC$ nên $d(O,(SBC))=OM$.\nB2: $OM=3$ cm, $SM=\\sqrt{4^2+3^2}=5$ cm.\nB3: $d=OM=3$ cm.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $OM=3\\sqrt2$ (nhầm với $OB$)",
+    "loi_giai": "B1: Gọi $M$ trung điểm $BC$ thì $BC\\perp OM$, $BC\\perp SO$ nên $BC\\perp(SOM)$; kẻ $OH\\perp SM$ thì $OH\\perp(SBC)$.\nB2: $OM=3\\sqrt2$, $SM=\\sqrt{16+18}=\\sqrt{34}$.\nB3: $OH=\\dfrac{4\\cdot3\\sqrt2}{\\sqrt{34}}\\approx2{,}91$ cm.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-012": {
+  "id": "BM-012",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "VD",
+  "de": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=a$, $AD=2a$, $AA'=2a$. Tính khoảng cách từ $A$ đến mặt phẳng $(A'BD)$.",
+  "giai": "B1: $AB$, $AD$, $AA'$ đôi một vuông góc tại $A$ (tứ diện vuông $A.A'BD$).\nB2: $\\dfrac1{d^2}=\\dfrac1{AB^2}+\\dfrac1{AD^2}+\\dfrac1{AA'^2}$.\nB3: $\\dfrac1{d^2}=\\dfrac1{a^2}+\\dfrac1{4a^2}+\\dfrac1{4a^2}=\\dfrac3{2a^2}\\Rightarrow d=\\dfrac{a\\sqrt6}3$.",
+  "dap_so": "$\\dfrac{a\\sqrt6}{3}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "Tứ diện vuông tại $A$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "Công thức tứ diện vuông"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$d=\\dfrac{a\\sqrt6}3$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Bình phương sai: $\\dfrac1{(2a)^2}=\\dfrac1{2a^2}$",
+    "loi_giai": "B1: $AB$, $AD$, $AA'$ đôi một vuông góc tại $A$ (tứ diện vuông $A.A'BD$).\nB2: $\\dfrac1{d^2}=\\dfrac1{AB^2}+\\dfrac1{AD^2}+\\dfrac1{AA'^2}$.\nB3: $\\dfrac1{d^2}=\\dfrac1{a^2}+\\dfrac1{2a^2}+\\dfrac1{2a^2}=\\dfrac2{a^2}\\Rightarrow d=\\dfrac{a\\sqrt2}2$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng sai công thức $\\dfrac1d=\\dfrac1{AB}+\\dfrac1{AD}+\\dfrac1{AA'}$",
+    "loi_giai": "B1: $AB$, $AD$, $AA'$ đôi một vuông góc tại $A$ (tứ diện vuông $A.A'BD$).\nB2: $\\dfrac1d=\\dfrac1{AB}+\\dfrac1{AD}+\\dfrac1{AA'}$.\nB3: $\\dfrac1d=\\dfrac1a+\\dfrac1{2a}+\\dfrac1{2a}=\\dfrac2a\\Rightarrow d=\\dfrac a2$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-013": {
+  "id": "BM-013",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "VD",
+  "de": "Cho lăng trụ tam giác đều $ABC.A'B'C'$ có cạnh đáy $a$ và $AA'=a$. Tính khoảng cách từ $A$ đến mặt phẳng $(A'BC)$.",
+  "giai": "B1: $M$ trung điểm $BC$: $AM\\perp BC$, $AA'\\perp BC$ nên $BC\\perp(A'AM)$; kẻ $AH\\perp A'M$ thì $AH\\perp(A'BC)$.\nB2: $AM=\\dfrac{a\\sqrt3}2$.\nB3: $\\dfrac1{AH^2}=\\dfrac1{a^2}+\\dfrac4{3a^2}=\\dfrac7{3a^2}\\Rightarrow AH=\\dfrac{a\\sqrt{21}}7$.",
+  "dap_so": "$\\dfrac{a\\sqrt{21}}{7}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$d=AH$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$AM=\\dfrac{a\\sqrt3}2$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$AH=\\dfrac{a\\sqrt{21}}7$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $AM=a\\sqrt3$ (quên chia 2)",
+    "loi_giai": "B1: $M$ trung điểm $BC$: $AM\\perp BC$, $AA'\\perp BC$ nên $BC\\perp(A'AM)$; kẻ $AH\\perp A'M$ thì $AH\\perp(A'BC)$.\nB2: $AM=a\\sqrt3$.\nB3: $\\dfrac1{AH^2}=\\dfrac1{a^2}+\\dfrac1{3a^2}=\\dfrac4{3a^2}\\Rightarrow AH=\\dfrac{a\\sqrt3}2$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $AM$ là khoảng cách từ $A$ đến $(A'BC)$",
+    "loi_giai": "B1: $AM\\perp BC$ nên $d(A,(A'BC))=AM$.\nB2: $AM=\\dfrac{a\\sqrt3}2$.\nB3: $d=AM=\\dfrac{a\\sqrt3}2$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-014": {
+  "id": "BM-014",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "TH",
+  "de": "Cho lăng trụ tam giác đều $ABC.A'B'C'$ có cạnh đáy $a$ và $AA'=2a$. Tính khoảng cách giữa hai đường thẳng $AA'$ và $BC$.",
+  "giai": "B1: $M$ trung điểm $BC$: $AM\\perp BC$ và $AM\\perp AA'$ (vì $AA'\\perp(ABC)$), $AM$ cắt cả hai đường nên là đoạn vuông góc chung.\nB2: $AM=\\dfrac{a\\sqrt3}2$.",
+  "dap_so": "$\\dfrac{a\\sqrt3}{2}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$d=AM$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$\\dfrac{a\\sqrt3}2$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy $AB$ làm đoạn vuông góc chung ($AB$ không vuông góc $BC$)",
+    "loi_giai": "B1: $AB$ nối $AA'$ với $BC$ và $AB\\perp AA'$ nên $d(AA',BC)=AB$.\nB2: $d=AB=a$.",
+    "diem_dung": 0
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Nhầm đường cao với bán kính ngoại tiếp: $AM=\\dfrac{a\\sqrt3}3$",
+    "loi_giai": "B1: $M$ trung điểm $BC$: $AM\\perp BC$ và $AM\\perp AA'$ (vì $AA'\\perp(ABC)$), $AM$ cắt cả hai đường nên là đoạn vuông góc chung.\nB2: $AM=\\dfrac{a\\sqrt3}3$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-015": {
+  "id": "BM-015",
+  "nguon": "baseline/bo-mau",
+  "bai": 27,
+  "muc_do": "NB",
+  "de": "Một lăng trụ đứng tam giác $ABC.A'B'C'$ có đáy là tam giác đều cạnh $6$ cm và chiều cao $10$ cm. Tính thể tích lăng trụ.",
+  "giai": "B1: $S_{đáy}=\\dfrac{6^2\\sqrt3}4=9\\sqrt3$ cm$^2$.\nB2: $V=S\\cdot h=9\\sqrt3\\cdot10=90\\sqrt3$ cm$^3$.",
+  "dap_so": "$90\\sqrt3$ cm$^3$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$9\\sqrt3$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$90\\sqrt3$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Chia sai: $\\dfrac{36\\sqrt3}4=12\\sqrt3$",
+    "loi_giai": "B1: $S=\\dfrac{36\\sqrt3}4=12\\sqrt3$.\nB2: $V=120\\sqrt3$ cm$^3$.",
+    "diem_dung": 0
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng công thức khối chóp $V=\\dfrac13Sh$",
+    "loi_giai": "B1: $S_{đáy}=\\dfrac{6^2\\sqrt3}4=9\\sqrt3$ cm$^2$.\nB2: $V=\\dfrac13\\cdot9\\sqrt3\\cdot10=30\\sqrt3$ cm$^3$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-016": {
+  "id": "BM-016",
+  "nguon": "baseline/bo-mau",
+  "bai": 27,
+  "muc_do": "TH",
+  "de": "Lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác với $AB=13$ cm, $BC=14$ cm, $CA=15$ cm và chiều cao $10$ cm. Tính thể tích lăng trụ.",
+  "giai": "B1: Nửa chu vi $p=\\dfrac{13+14+15}2=21$.\nB2: $S=\\sqrt{21\\cdot8\\cdot7\\cdot6}=\\sqrt{7056}=84$ cm$^2$.\nB3: $V=84\\cdot10=840$ cm$^3$.",
+  "dap_so": "$840$ cm$^3$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$p=21$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$S=84$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$840$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Khai căn sai $\\sqrt{7056}=86$",
+    "loi_giai": "B1: Nửa chu vi $p=\\dfrac{13+14+15}2=21$.\nB2: $S=\\sqrt{7056}=86$.\nB3: $V=860$ cm$^3$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng chu vi $42$ thay nửa chu vi trong Heron",
+    "loi_giai": "B1: $p=13+14+15=42$.\nB2: $S=\\sqrt{42\\cdot29\\cdot28\\cdot27}\\approx959{,}6$.\nB3: $V\\approx9596$ cm$^3$.",
+    "diem_dung": 0
+   }
+  ]
+ },
+ "BM-017": {
+  "id": "BM-017",
+  "nguon": "baseline/bo-mau",
+  "bai": 27,
+  "muc_do": "NB",
+  "de": "Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt3$. Tính thể tích khối chóp $S.ABCD$ theo $a$.",
+  "giai": "B1: $SA\\perp(ABCD)$ nên chiều cao là $SA=a\\sqrt3$.\nB2: $S_{ABCD}=a^2$.\nB3: $V=\\dfrac13a^2\\cdot a\\sqrt3=\\dfrac{a^3\\sqrt3}3$.",
+  "dap_so": "$\\dfrac{a^3\\sqrt3}{3}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$h=a\\sqrt3$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$a^2$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac{a^3\\sqrt3}3$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên hệ số $\\dfrac13$",
+    "loi_giai": "B1: $SA\\perp(ABCD)$ nên chiều cao là $SA=a\\sqrt3$.\nB2: $S_{ABCD}=a^2$.\nB3: $V=a^2\\cdot a\\sqrt3=a^3\\sqrt3$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $SC$ làm chiều cao",
+    "loi_giai": "B1: Chiều cao là $SC=\\sqrt{3a^2+2a^2}=a\\sqrt5$.\nB2: $S_{ABCD}=a^2$.\nB3: $V=\\dfrac13a^2\\cdot a\\sqrt5=\\dfrac{a^3\\sqrt5}3$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-018": {
+  "id": "BM-018",
+  "nguon": "baseline/bo-mau",
+  "bai": 27,
+  "muc_do": "TH",
+  "de": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy $a$, $O$ là tâm đáy và cạnh bên tạo với mặt đáy góc $60^\\circ$. Tính thể tích khối chóp theo $a$.",
+  "giai": "B1: $OA=\\dfrac{AC}2=\\dfrac{a\\sqrt2}2$.\nB2: Góc giữa $SA$ và đáy là $\\widehat{SAO}=60^\\circ$, $SO=OA\\tan60^\\circ=\\dfrac{a\\sqrt6}2$.\nB3: $V=\\dfrac13a^2\\cdot\\dfrac{a\\sqrt6}2=\\dfrac{a^3\\sqrt6}6$.",
+  "dap_so": "$\\dfrac{a^3\\sqrt6}{6}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$OA=\\dfrac{a\\sqrt2}2$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$SO=\\dfrac{a\\sqrt6}2$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac{a^3\\sqrt6}6$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng sai tỉ số lượng giác: $SO=\\dfrac{OA}{\\tan60^\\circ}$",
+    "loi_giai": "B1: $OA=\\dfrac{AC}2=\\dfrac{a\\sqrt2}2$.\nB2: $SO=\\dfrac{OA}{\\tan60^\\circ}=\\dfrac{a\\sqrt6}6$.\nB3: $V=\\dfrac13a^2\\cdot\\dfrac{a\\sqrt6}6=\\dfrac{a^3\\sqrt6}{18}$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $OA=a\\sqrt2$ (quên chia đôi)",
+    "loi_giai": "B1: $OA=a\\sqrt2$.\nB2: $SO=a\\sqrt2\\cdot\\sqrt3=a\\sqrt6$.\nB3: $V=\\dfrac{a^3\\sqrt6}3$.",
+    "diem_dung": 0
+   }
+  ]
+ },
+ "BM-019": {
+  "id": "BM-019",
+  "nguon": "baseline/bo-mau",
+  "bai": 27,
+  "muc_do": "NB",
+  "de": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác đều cạnh $a$ và $AA'=a\\sqrt3$. Tính thể tích khối lăng trụ theo $a$.",
+  "giai": "B1: $S_{ABC}=\\dfrac{a^2\\sqrt3}4$.\nB2: Lăng trụ đứng nên chiều cao $h=AA'=a\\sqrt3$.\nB3: $V=\\dfrac{a^2\\sqrt3}4\\cdot a\\sqrt3=\\dfrac{3a^3}4$.",
+  "dap_so": "$\\dfrac{3a^3}{4}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$\\dfrac{a^2\\sqrt3}4$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$h=a\\sqrt3$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac{3a^3}4$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Coi như lăng trụ xiên, lấy $h=AA'\\sin60^\\circ$",
+    "loi_giai": "B1: $S_{ABC}=\\dfrac{a^2\\sqrt3}4$.\nB2: $h=AA'\\sin60^\\circ=\\dfrac{3a}2$.\nB3: $V=\\dfrac{a^2\\sqrt3}4\\cdot\\dfrac{3a}2=\\dfrac{3\\sqrt3a^3}8$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng $S=\\dfrac{a^2\\sqrt3}2$ cho tam giác đều",
+    "loi_giai": "B1: $S_{ABC}=\\dfrac{a^2\\sqrt3}2$.\nB2: Lăng trụ đứng nên chiều cao $h=AA'=a\\sqrt3$.\nB3: $V=\\dfrac{3a^3}2$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-031": {
+  "id": "BM-031",
+  "nguon": "baseline/bo-mau",
+  "bai": 22,
+  "muc_do": "TH",
+  "de": "Cho hình lập phương $ABCD.A'B'C'D'$. Tính góc giữa hai đường thẳng $AB'$ và $BC'$.",
+  "giai": "B1: $ABC'D'$ là hình bình hành nên $BC'\\parallel AD'$; góc $(AB',BC')=(AB',AD')$.\nB2: $AB'=B'D'=D'A=a\\sqrt2$ (đường chéo các mặt) nên $\\triangle AB'D'$ đều.\nB3: $\\widehat{B'AD'}=60^\\circ$; góc cần tìm là $60^\\circ$.",
+  "dap_so": "$60^\\circ$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$(AB',BC')=(AB',AD')$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$\\triangle AB'D'$ đều"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$60^\\circ$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Cho $BC'\\parallel AD$ (nhầm đường song song) rồi suy ra góc $(AB',AD)=90^\\circ$",
+    "loi_giai": "B1: $BC'\\parallel AD$ nên góc $(AB',BC')=(AB',AD)$.\nB2: $AD\\perp(ABB'A')$ nên $AD\\perp AB'$.\nB3: Góc cần tìm là $90^\\circ$.",
+    "diem_dung": 0
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $B'D'=a\\sqrt3$ nên tam giác không đều, $\\cos=\\dfrac14$",
+    "loi_giai": "B1: $ABC'D'$ là hình bình hành nên $BC'\\parallel AD'$; góc $(AB',BC')=(AB',AD')$.\nB2: $AB'=AD'=a\\sqrt2$, $B'D'=a\\sqrt3$.\nB3: $\\cos\\widehat{B'AD'}=\\dfrac{2+2-3}{4}=\\dfrac14$, góc $\\approx75{,}52^\\circ$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-032": {
+  "id": "BM-032",
+  "nguon": "baseline/bo-mau",
+  "bai": 22,
+  "muc_do": "VD",
+  "de": "Cho tứ diện đều $ABCD$ cạnh $a$, $M$ là trung điểm $BC$. Tính côsin của góc giữa hai đường thẳng $AB$ và $DM$.",
+  "giai": "B1: Gọi $P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; góc $(AB,DM)$ bằng góc giữa $MP$ và $MD$.\nB2: $DM=DP=\\dfrac{a\\sqrt3}2$ (trung tuyến tam giác đều).\nB3: $\\cos\\widehat{PMD}=\\dfrac{MP^2+MD^2-PD^2}{2MP\\cdot MD}=\\dfrac{a^2/4}{2\\cdot\\frac a2\\cdot\\frac{a\\sqrt3}2}=\\dfrac{\\sqrt3}6$.",
+  "dap_so": "$\\dfrac{\\sqrt3}{6}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$(AB,DM)=(MP,MD)$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$DM=DP=\\dfrac{a\\sqrt3}2$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac{\\sqrt3}6$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Viết sai định lí côsin (đổi dấu cạnh đối diện)",
+    "loi_giai": "B1: Gọi $P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; góc $(AB,DM)$ bằng góc giữa $MP$ và $MD$.\nB2: $DM=DP=\\dfrac{a\\sqrt3}2$ (trung tuyến tam giác đều).\nB3: $\\cos\\widehat{PMD}=\\dfrac{MP^2+MD^2+PD^2}{2MP\\cdot MD}=\\dfrac{7a^2/4}{a^2\\sqrt3/2}=\\dfrac{7\\sqrt3}{6}$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $DP=a$ (nhầm với cạnh)",
+    "loi_giai": "B1: Gọi $P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; góc $(AB,DM)$ bằng góc giữa $MP$ và $MD$.\nB2: $DM=\\dfrac{a\\sqrt3}2$, $DP=a$.\nB3: $\\cos\\widehat{PMD}=\\dfrac{\\frac{a^2}4+\\frac{3a^2}4-a^2}{\\dots}=0$, góc $90^\\circ$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-033": {
+  "id": "BM-033",
+  "nguon": "baseline/bo-mau",
+  "bai": 22,
+  "muc_do": "VDC",
+  "de": "Tứ diện $ABCD$ có $AB=CD=a$; $M,N$ lần lượt là trung điểm $BC,AD$ và $MN=\\dfrac{a\\sqrt3}2$. Tính góc giữa $AB$ và $CD$.",
+  "giai": "B1: $P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; $PN\\parallel CD$, $PN=\\dfrac a2$.\nB2: Góc $(AB,CD)$ bằng $\\widehat{MPN}$ hoặc bù với nó.\nB3: $\\cos\\widehat{MPN}=\\dfrac{a^2/4+a^2/4-3a^2/4}{a^2/2}=-\\dfrac12\\Rightarrow\\widehat{MPN}=120^\\circ$.\nB4: Góc giữa hai đường thẳng thuộc $[0^\\circ;90^\\circ]$ nên bằng $60^\\circ$.",
+  "dap_so": "$60^\\circ$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$PM=PN=\\dfrac a2$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$(AB,CD)=\\widehat{MPN}$ hoặc $180^\\circ-\\widehat{MPN}$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\widehat{MPN}=120^\\circ$"
+   },
+   {
+    "ma": "B4",
+    "ket_qua": "$60^\\circ$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B4",
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Kết luận góc giữa hai đường thẳng là $120^\\circ$",
+    "loi_giai": "B1: $P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; $PN\\parallel CD$, $PN=\\dfrac a2$.\nB2: Góc $(AB,CD)$ bằng $\\widehat{MPN}$ hoặc bù với nó.\nB3: $\\cos\\widehat{MPN}=\\dfrac{a^2/4+a^2/4-3a^2/4}{a^2/2}=-\\dfrac12\\Rightarrow\\widehat{MPN}=120^\\circ$.\nB4: Vậy góc giữa $AB$ và $CD$ bằng $120^\\circ$.",
+    "diem_dung": 0.75
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Tính sai tử số: $\\dfrac{a^2}4+\\dfrac{a^2}4-\\dfrac{3a^2}4=\\dfrac{a^2}4$",
+    "loi_giai": "B1: $P$ trung điểm $AC$: $PM\\parallel AB$, $PM=\\dfrac a2$; $PN\\parallel CD$, $PN=\\dfrac a2$.\nB2: Góc $(AB,CD)$ bằng $\\widehat{MPN}$ hoặc bù với nó.\nB3: $\\cos\\widehat{MPN}=\\dfrac{a^2/4}{a^2/2}=\\dfrac12\\Rightarrow\\widehat{MPN}=60^\\circ$.\nB4: Góc cần tìm là $60^\\circ$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-034": {
+  "id": "BM-034",
+  "nguon": "baseline/bo-mau",
+  "bai": 23,
+  "muc_do": "VDC",
+  "de": "Tứ diện $OABC$ có $OA,OB,OC$ đôi một vuông góc, $H$ là trực tâm tam giác $ABC$. Chứng minh $OH\\perp(ABC)$.",
+  "giai": "B1: $OA\\perp OB$, $OA\\perp OC$ nên $OA\\perp(OBC)\\Rightarrow OA\\perp BC$.\nB2: $AH\\perp BC$ (trực tâm); $OA,AH$ cắt nhau trong $(OAH)$ nên $BC\\perp(OAH)\\Rightarrow BC\\perp OH$.\nB3: Tương tự $OB\\perp(OAC)\\Rightarrow OB\\perp AC$, $BH\\perp AC$ nên $AC\\perp(OBH)\\Rightarrow AC\\perp OH$.\nB4: $BC,AC$ cắt nhau trong $(ABC)$ nên $OH\\perp(ABC)$.",
+  "dap_so": "$OH\\perp(ABC)$ (chứng minh)",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$OA\\perp BC$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$BC\\perp OH$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$AC\\perp OH$"
+   },
+   {
+    "ma": "B4",
+    "ket_qua": "$OH\\perp(ABC)$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B4",
+    "loai_loi": "thieu-chung-minh",
+    "mo_ta": "Chỉ có $OH\\perp BC$ đã kết luận $OH\\perp(ABC)$ (bỏ B3, dùng một đường)",
+    "loi_giai": "B1: $OA\\perp OB$, $OA\\perp OC$ nên $OA\\perp(OBC)\\Rightarrow OA\\perp BC$.\nB2: $AH\\perp BC$ (trực tâm); $OA,AH$ cắt nhau trong $(OAH)$ nên $BC\\perp(OAH)\\Rightarrow BC\\perp OH$.\nB3: (bỏ qua)\nB4: $OH\\perp BC$, $BC\\subset(ABC)$ nên $OH\\perp(ABC)$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Suy $BC\\perp(OAH)$ chỉ từ $OA\\perp BC$ (một đường)",
+    "loi_giai": "B1: $OA\\perp OB$, $OA\\perp OC$ nên $OA\\perp(OBC)\\Rightarrow OA\\perp BC$.\nB2: $OA\\perp BC$ nên $BC\\perp(OAH)$, do đó $BC\\perp OH$.\nB3: Tương tự $OB\\perp(OAC)\\Rightarrow OB\\perp AC$, $BH\\perp AC$ nên $AC\\perp(OBH)\\Rightarrow AC\\perp OH$.\nB4: $BC,AC$ cắt nhau trong $(ABC)$ nên $OH\\perp(ABC)$.",
+    "diem_dung": 0.75
+   }
+  ]
+ },
+ "BM-035": {
+  "id": "BM-035",
+  "nguon": "baseline/bo-mau",
+  "bai": 24,
+  "muc_do": "TH",
+  "de": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. Tính góc giữa $SC$ và mặt đáy.",
+  "giai": "B1: $AC$ là hình chiếu của $SC$ lên $(ABCD)$; góc cần tìm là $\\widehat{SCA}$.\nB2: $AC=a\\sqrt2$.\nB3: $\\tan\\widehat{SCA}=\\dfrac{a}{a\\sqrt2}=\\dfrac1{\\sqrt2}\\Rightarrow\\widehat{SCA}\\approx35{,}26^\\circ$.",
+  "dap_so": "$\\arctan\\dfrac{1}{\\sqrt2}\\approx35{,}26^\\circ$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$\\widehat{SCA}$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$AC=a\\sqrt2$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\tan=\\dfrac1{\\sqrt2}$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng $\\sin\\widehat{SCA}=\\dfrac{SA}{AC}$",
+    "loi_giai": "B1: $AC$ là hình chiếu của $SC$ lên $(ABCD)$; góc cần tìm là $\\widehat{SCA}$.\nB2: $AC=a\\sqrt2$.\nB3: $\\sin\\widehat{SCA}=\\dfrac{SA}{AC}=\\dfrac1{\\sqrt2}\\Rightarrow 45^\\circ$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy góc $\\widehat{SCB}$ (với cạnh $BC$) làm góc với mặt đáy",
+    "loi_giai": "B1: Góc cần tìm là $\\widehat{SCB}$.\nB2: $AC=a\\sqrt2$.\nB3: $SB=a\\sqrt2$, $\\tan\\widehat{SCB}=\\dfrac{SB}{BC}=\\sqrt2\\Rightarrow\\approx54{,}74^\\circ$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-036": {
+  "id": "BM-036",
+  "nguon": "baseline/bo-mau",
+  "bai": 24,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. Tính $\\sin$ của góc giữa $SC$ và $(SAB)$.",
+  "giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$; hình chiếu của $C$ là $B$.\nB2: Góc giữa $SC$ và $(SAB)$ là $\\widehat{CSB}$.\nB3: $SC=\\sqrt{a^2+2a^2}=a\\sqrt3$, $BC=a$.\nB4: $\\sin\\widehat{CSB}=\\dfrac{BC}{SC}=\\dfrac{\\sqrt3}3$.",
+  "dap_so": "$\\dfrac{\\sqrt3}{3}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$BC\\perp(SAB)$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$\\widehat{CSB}$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$SC=a\\sqrt3$"
+   },
+   {
+    "ma": "B4",
+    "ket_qua": "$\\dfrac{\\sqrt3}3$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B4",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng $\\sin=\\dfrac{SB}{SC}$ (cạnh kề)",
+    "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$; hình chiếu của $C$ là $B$.\nB2: Góc giữa $SC$ và $(SAB)$ là $\\widehat{CSB}$.\nB3: $SC=\\sqrt{a^2+2a^2}=a\\sqrt3$, $BC=a$.\nB4: $\\sin\\widehat{CSB}=\\dfrac{SB}{SC}=\\dfrac{a\\sqrt2}{a\\sqrt3}=\\dfrac{\\sqrt6}3$.",
+    "diem_dung": 0.75
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Tính $SC=a\\sqrt2$ (dùng $AB$ thay $AC$)",
+    "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$; hình chiếu của $C$ là $B$.\nB2: Góc giữa $SC$ và $(SAB)$ là $\\widehat{CSB}$.\nB3: $SC=\\sqrt{a^2+a^2}=a\\sqrt2$.\nB4: $\\sin\\widehat{CSB}=\\dfrac{a}{a\\sqrt2}=\\dfrac{\\sqrt2}2$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-037": {
+  "id": "BM-037",
+  "nguon": "baseline/bo-mau",
+  "bai": 25,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a\\sqrt3$. Tính số đo góc nhị diện $[S,BC,A]$.",
+  "giai": "B1: $BC\\perp(SAB)$ nên $BC\\perp SB$ và $BC\\perp AB$.\nB2: $\\widehat{SBA}$ là góc phẳng nhị diện của $[S,BC,A]$.\nB3: $\\tan\\widehat{SBA}=\\dfrac{a\\sqrt3}a=\\sqrt3\\Rightarrow 60^\\circ$.",
+  "dap_so": "$60^\\circ$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$BC\\perp SB$, $BC\\perp AB$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$\\widehat{SBA}$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$60^\\circ$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy góc $\\widehat{SCA}$ làm góc phẳng nhị diện",
+    "loi_giai": "B1: $BC\\perp(SAB)$ nên $BC\\perp SB$ và $BC\\perp AB$.\nB2: Góc phẳng nhị diện là $\\widehat{SCA}$.\nB3: $\\tan\\widehat{SCA}=\\dfrac{a\\sqrt3}{a\\sqrt2}\\Rightarrow\\approx50{,}77^\\circ$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Đảo tỉ số tan",
+    "loi_giai": "B1: $BC\\perp(SAB)$ nên $BC\\perp SB$ và $BC\\perp AB$.\nB2: $\\widehat{SBA}$ là góc phẳng nhị diện của $[S,BC,A]$.\nB3: $\\tan\\widehat{SBA}=\\dfrac{AB}{SA}=\\dfrac1{\\sqrt3}\\Rightarrow30^\\circ$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-038": {
+  "id": "BM-038",
+  "nguon": "baseline/bo-mau",
+  "bai": 25,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. Tính $\\tan$ của góc giữa $(SBD)$ và $(ABCD)$.",
+  "giai": "B1: $O=AC\\cap BD$: $AO\\perp BD$, $SO\\perp BD$ (vì $BD\\perp(SAC)$); giao tuyến là $BD$.\nB2: Góc cần tìm là $\\widehat{SOA}$.\nB3: $AO=\\dfrac{a\\sqrt2}2$, $\\tan\\widehat{SOA}=\\dfrac{SA}{AO}=\\sqrt2$.",
+  "dap_so": "$\\sqrt2$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$AO\\perp BD$, $SO\\perp BD$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$\\widehat{SOA}$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\sqrt2$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy góc $\\widehat{SBA}$ (giao tuyến không phải $AB$)",
+    "loi_giai": "B1: $O=AC\\cap BD$: $AO\\perp BD$, $SO\\perp BD$ (vì $BD\\perp(SAC)$); giao tuyến là $BD$.\nB2: Góc cần tìm là $\\widehat{SBA}$.\nB3: $\\tan\\widehat{SBA}=\\dfrac aa=1$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $AO=a\\sqrt2$",
+    "loi_giai": "B1: $O=AC\\cap BD$: $AO\\perp BD$, $SO\\perp BD$ (vì $BD\\perp(SAC)$); giao tuyến là $BD$.\nB2: Góc cần tìm là $\\widehat{SOA}$.\nB3: $AO=a\\sqrt2$, $\\tan\\widehat{SOA}=\\dfrac{\\sqrt2}2$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-039": {
+  "id": "BM-039",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "TH",
+  "de": "Chóp $S.ABC$, $SA\\perp(ABC)$, $SA=a$, tam giác $ABC$ vuông tại $B$, $AB=a$. Tính $d(A,(SBC))$.",
+  "giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Kẻ $AH\\perp SB$; $AH\\perp BC$ nên $AH\\perp(SBC)$, $d=AH$.\nB3: $SB=a\\sqrt2$, $AH=\\dfrac{SA\\cdot AB}{SB}=\\dfrac{a\\sqrt2}2$.",
+  "dap_so": "$\\dfrac{a\\sqrt2}{2}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$BC\\perp(SAB)$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$d=AH$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac{a\\sqrt2}2$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng $AH=\\dfrac{SB}{SA\\cdot AB}$ (đảo công thức)",
+    "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Kẻ $AH\\perp SB$; $AH\\perp BC$ nên $AH\\perp(SBC)$, $d=AH$.\nB3: $AH=\\dfrac{SA\\cdot SB}{AB}=a\\sqrt2$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "thieu-chung-minh",
+    "mo_ta": "Kẻ $AH\\perp SB$ rồi khẳng định $AH\\perp(SBC)$ không nêu $AH\\perp BC$",
+    "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Kẻ $AH\\perp SB$ thì $d(A,(SBC))=AH$.\nB3: $SB=a\\sqrt2$, $AH=\\dfrac{SA\\cdot AB}{SB}=\\dfrac{a\\sqrt2}2$.",
+    "diem_dung": 0.75
+   }
+  ]
+ },
+ "BM-040": {
+  "id": "BM-040",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "VD",
+  "de": "Hình lập phương $ABCD.A'B'C'D'$ cạnh $a$. Tính khoảng cách giữa hai đường thẳng chéo nhau $AB$ và $A'D'$.",
+  "giai": "B1: $AA'\\perp AB$ và $AA'\\perp A'D'$.\nB2: $AA'$ cắt $AB$ tại $A$, cắt $A'D'$ tại $A'$ nên là đoạn vuông góc chung.\nB3: $d(AB,A'D')=AA'=a$.",
+  "dap_so": "$a$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$AA'$ vuông góc cả hai"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "Đoạn vuông góc chung $AA'$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$a$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $AD'$ làm đoạn vuông góc chung",
+    "loi_giai": "B1: $AD'$ nối $A\\in AB$ với $D'\\in A'D'$.\nB2: Coi $AD'$ là đoạn vuông góc chung.\nB3: $d=AD'=a\\sqrt2$.",
+    "diem_dung": 0
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "thieu-chung-minh",
+    "mo_ta": "Không chỉ ra $AA'$ cắt cả hai đường",
+    "loi_giai": "B1: $AA'\\perp AB$ và $AA'\\perp A'D'$.\nB2: (không nêu)\nB3: $d(AB,A'D')=AA'=a$.",
+    "diem_dung": 0.75
+   }
+  ]
+ },
+ "BM-041": {
+  "id": "BM-041",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "VDC",
+  "de": "Tứ diện $OABC$ có $OA,OB,OC$ đôi một vuông góc, $OA=OB=OC=a$. Tính $d(O,(ABC))$.",
+  "giai": "B1: Kẻ $OK\\perp BC$, $K$ trung điểm $BC$; $\\dfrac1{OK^2}=\\dfrac2{a^2}$.\nB2: $BC\\perp(OAK)$; kẻ $OH\\perp AK$ thì $OH\\perp(ABC)$.\nB3: $\\dfrac1{OH^2}=\\dfrac1{a^2}+\\dfrac2{a^2}=\\dfrac3{a^2}$.\nB4: $OH=\\dfrac{a\\sqrt3}3$.",
+  "dap_so": "$\\dfrac{a\\sqrt3}{3}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$OK^2=\\dfrac{a^2}2$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$d=OH$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac1{OH^2}=\\dfrac3{a^2}$"
+   },
+   {
+    "ma": "B4",
+    "ket_qua": "$\\dfrac{a\\sqrt3}3$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Cộng sai: $\\dfrac1{a^2}+\\dfrac2{a^2}=\\dfrac2{a^2}$",
+    "loi_giai": "B1: Kẻ $OK\\perp BC$, $K$ trung điểm $BC$; $\\dfrac1{OK^2}=\\dfrac2{a^2}$.\nB2: $BC\\perp(OAK)$; kẻ $OH\\perp AK$ thì $OH\\perp(ABC)$.\nB3: $\\dfrac1{OH^2}=\\dfrac2{a^2}$.\nB4: $OH=\\dfrac{a\\sqrt2}2$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $OK$ là khoảng cách",
+    "loi_giai": "B1: Kẻ $OK\\perp BC$, $K$ trung điểm $BC$; $\\dfrac1{OK^2}=\\dfrac2{a^2}$.\nB2: $OK\\perp BC$ nên $d(O,(ABC))=OK$.\nB3: (bỏ)\nB4: $d=\\dfrac{a\\sqrt2}2$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-042": {
+  "id": "BM-042",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình vuông cạnh $3$, $SA\\perp(ABCD)$, $SA=3$. Tính $d(A,(SBD))$.",
+  "giai": "B1: $AS,AB,AD$ đôi một vuông góc nên $\\dfrac1{d^2}=\\dfrac1{AS^2}+\\dfrac1{AB^2}+\\dfrac1{AD^2}$.\nB2: $\\dfrac1{d^2}=\\dfrac13\\Rightarrow d=\\sqrt3$.",
+  "dap_so": "$\\sqrt3$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "Công thức tứ diện vuông"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$\\sqrt3$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Quên khai căn: $d=3$",
+    "loi_giai": "B1: $AS,AB,AD$ đôi một vuông góc nên $\\dfrac1{d^2}=\\dfrac1{AS^2}+\\dfrac1{AB^2}+\\dfrac1{AD^2}$.\nB2: $\\dfrac1{d^2}=\\dfrac13\\Rightarrow d=3$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng $d=\\dfrac{SA\\cdot AB}{SB}$ (khoảng cách tới $(SBC)$)",
+    "loi_giai": "B1: $d=\\dfrac{SA\\cdot AB}{SB}$.\nB2: $d=\\dfrac{9}{3\\sqrt2}=\\dfrac{3\\sqrt2}2$.",
+    "diem_dung": 0
+   }
+  ]
+ },
+ "BM-043": {
+  "id": "BM-043",
+  "nguon": "baseline/bo-mau",
+  "bai": 27,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SC$ tạo với đáy góc $45^\\circ$. Tính thể tích khối chóp.",
+  "giai": "B1: Góc giữa $SC$ và đáy là $\\widehat{SCA}=45^\\circ$.\nB2: $AC=a\\sqrt2$, tam giác $SAC$ vuông cân nên $SA=a\\sqrt2$.\nB3: $V=\\dfrac13a^2\\cdot a\\sqrt2=\\dfrac{a^3\\sqrt2}3$.",
+  "dap_so": "$\\dfrac{a^3\\sqrt2}{3}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$\\widehat{SCA}=45^\\circ$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$SA=a\\sqrt2$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac{a^3\\sqrt2}3$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên hệ số $\\dfrac13$ của khối chóp",
+    "loi_giai": "B1: Góc giữa $SC$ và đáy là $\\widehat{SCA}=45^\\circ$.\nB2: $AC=a\\sqrt2$, tam giác $SAC$ vuông cân nên $SA=a\\sqrt2$.\nB3: $V=a^2\\cdot a\\sqrt2=a^3\\sqrt2$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $SA=AC=a$ (nhầm $AC=a$)",
+    "loi_giai": "B1: Góc giữa $SC$ và đáy là $\\widehat{SCA}=45^\\circ$.\nB2: $AC=a$ nên $SA=a$.\nB3: $V=\\dfrac{a^3}3$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-044": {
+  "id": "BM-044",
+  "nguon": "baseline/bo-mau",
+  "bai": 27,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABC$; $M$ là trung điểm $SB$, $N\\in SC$ với $SN=2NC$. Tính $\\dfrac{V_{S.AMN}}{V_{S.ABC}}$.",
+  "giai": "B1: $\\dfrac{V_{S.AMN}}{V_{S.ABC}}=\\dfrac{SA}{SA}\\cdot\\dfrac{SM}{SB}\\cdot\\dfrac{SN}{SC}$.\nB2: $\\dfrac{SM}{SB}=\\dfrac12$, $SN=2NC\\Rightarrow\\dfrac{SN}{SC}=\\dfrac23$.\nB3: Tỉ số $=\\dfrac12\\cdot\\dfrac23=\\dfrac13$.",
+  "dap_so": "$\\dfrac13$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "Công thức tỉ số"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$\\dfrac12$; $\\dfrac23$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac13$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Đọc $SN=2NC$ thành $\\dfrac{SN}{SC}=\\dfrac12$",
+    "loi_giai": "B1: $\\dfrac{V_{S.AMN}}{V_{S.ABC}}=\\dfrac{SA}{SA}\\cdot\\dfrac{SM}{SB}\\cdot\\dfrac{SN}{SC}$.\nB2: $\\dfrac{SM}{SB}=\\dfrac12$, $\\dfrac{SN}{SC}=\\dfrac12$.\nB3: Tỉ số $=\\dfrac14$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng tỉ số thay vì nhân",
+    "loi_giai": "B1: $\\dfrac{V_{S.AMN}}{V_{S.ABC}}=\\dfrac{SM}{SB}+\\dfrac{SN}{SC}-1$.\nB2: $\\dfrac{SM}{SB}=\\dfrac12$, $SN=2NC\\Rightarrow\\dfrac{SN}{SC}=\\dfrac23$.\nB3: Tỉ số $=\\dfrac12+\\dfrac23-1=\\dfrac16$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-045": {
+  "id": "BM-045",
+  "nguon": "baseline/bo-mau",
+  "bai": 27,
+  "muc_do": "VDC",
+  "de": "Tính thể tích khối tứ diện đều cạnh $a$.",
+  "giai": "B1: $S_{BCD}=\\dfrac{a^2\\sqrt3}4$; chân đường cao $H$ là trọng tâm, $HB=\\dfrac{a\\sqrt3}3$.\nB2: $AH=\\sqrt{a^2-\\dfrac{a^2}3}=\\dfrac{a\\sqrt6}3$.\nB3: $V=\\dfrac13\\cdot\\dfrac{a^2\\sqrt3}4\\cdot\\dfrac{a\\sqrt6}3=\\dfrac{a^3\\sqrt2}{12}$.",
+  "dap_so": "$\\dfrac{a^3\\sqrt2}{12}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$HB=\\dfrac{a\\sqrt3}3$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$AH=\\dfrac{a\\sqrt6}3$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac{a^3\\sqrt2}{12}$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy $HB$ bằng đường cao tam giác đều $\\dfrac{a\\sqrt3}2$",
+    "loi_giai": "B1: $HB=\\dfrac{a\\sqrt3}2$.\nB2: $AH=\\sqrt{a^2-\\dfrac{3a^2}4}=\\dfrac a2$.\nB3: $V=\\dfrac13\\cdot\\dfrac{a^2\\sqrt3}4\\cdot\\dfrac a2=\\dfrac{a^3\\sqrt3}{24}$.",
+    "diem_dung": 0
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Rút gọn sai $\\sqrt{18}=2\\sqrt3$",
+    "loi_giai": "B1: $S_{BCD}=\\dfrac{a^2\\sqrt3}4$; chân đường cao $H$ là trọng tâm, $HB=\\dfrac{a\\sqrt3}3$.\nB2: $AH=\\sqrt{a^2-\\dfrac{a^2}3}=\\dfrac{a\\sqrt6}3$.\nB3: $V=\\dfrac{a^3\\sqrt{18}}{36}=\\dfrac{a^3\\sqrt3}{18}$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-046": {
+  "id": "BM-046",
+  "nguon": "baseline/bo-mau",
+  "bai": 27,
+  "muc_do": "VDC",
+  "de": "Chóp $S.ABCD$ đáy hình vuông cạnh $2a$, tam giác $SAB$ đều và nằm trong mặt phẳng vuông góc với đáy. Tính thể tích theo $a$.",
+  "giai": "B1: $H$ trung điểm $AB$: $SH\\perp AB$, $SH=\\dfrac{2a\\sqrt3}2=a\\sqrt3$.\nB2: $(SAB)\\perp(ABCD)$, giao tuyến $AB$, $SH\\perp AB$ nên $SH\\perp(ABCD)$.\nB3: $V=\\dfrac13\\cdot4a^2\\cdot a\\sqrt3=\\dfrac{4\\sqrt3a^3}3$.",
+  "dap_so": "$\\dfrac{4\\sqrt3a^3}{3}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$SH=a\\sqrt3$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$SH\\perp(ABCD)$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac{4\\sqrt3a^3}3$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy diện tích đáy $2a^2$ (quên bình phương $2$)",
+    "loi_giai": "B1: $H$ trung điểm $AB$: $SH\\perp AB$, $SH=\\dfrac{2a\\sqrt3}2=a\\sqrt3$.\nB2: $(SAB)\\perp(ABCD)$, giao tuyến $AB$, $SH\\perp AB$ nên $SH\\perp(ABCD)$.\nB3: $V=\\dfrac13\\cdot2a^2\\cdot a\\sqrt3=\\dfrac{2\\sqrt3a^3}3$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "thieu-chung-minh",
+    "mo_ta": "Không chứng minh $SH\\perp(ABCD)$, chỉ ghi \"$SH$ là đường cao\"",
+    "loi_giai": "B1: $H$ trung điểm $AB$: $SH\\perp AB$, $SH=\\dfrac{2a\\sqrt3}2=a\\sqrt3$.\nB2: $SH$ là đường cao của hình chóp.\nB3: $V=\\dfrac13\\cdot4a^2\\cdot a\\sqrt3=\\dfrac{4\\sqrt3a^3}3$.",
+    "diem_dung": 0.75
+   }
+  ]
+ },
+ "BM-047": {
+  "id": "BM-047",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình chữ nhật $AB=a$, $AD=2a$, $SA\\perp(ABCD)$, $SA=a$. Chứng minh $(SAB)\\perp(SBC)$ và tính $d(A,(SBC))$.",
+  "giai": "B1: $BC\\perp AB$, $BC\\perp SA\\Rightarrow BC\\perp(SAB)$; $BC\\subset(SBC)$ nên $(SBC)\\perp(SAB)$.\nB2: Kẻ $AH\\perp SB$; $AH\\perp BC$ nên $AH\\perp(SBC)$.\nB3: $SB=a\\sqrt2$, $AH=\\dfrac{a^2}{a\\sqrt2}=\\dfrac{a\\sqrt2}2$.",
+  "dap_so": "$\\dfrac{a\\sqrt2}{2}$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$(SBC)\\perp(SAB)$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$d=AH$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac{a\\sqrt2}2$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Dùng $AD=2a$ thay $AB$ trong tam giác $SAB$",
+    "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA\\Rightarrow BC\\perp(SAB)$; $BC\\subset(SBC)$ nên $(SBC)\\perp(SAB)$.\nB2: Kẻ $AH\\perp SB$; $AH\\perp BC$ nên $AH\\perp(SBC)$.\nB3: $AH=\\dfrac{SA\\cdot AD}{\\sqrt{SA^2+AD^2}}=\\dfrac{2a}{\\sqrt5}$.",
+    "diem_dung": 0.75
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Kết luận $(SAB)\\perp(SBC)$ vì chúng có chung $SB$",
+    "loi_giai": "B1: $(SAB)$ và $(SBC)$ cắt nhau theo $SB$ nên vuông góc.\nB2: Kẻ $AH\\perp SB$; $AH\\perp BC$ nên $AH\\perp(SBC)$.\nB3: $SB=a\\sqrt2$, $AH=\\dfrac{a^2}{a\\sqrt2}=\\dfrac{a\\sqrt2}2$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-048": {
+  "id": "BM-048",
+  "nguon": "baseline/bo-mau",
+  "bai": 25,
+  "muc_do": "VD",
+  "de": "Tứ diện đều $S.ABC$ cạnh $a$. Tính góc giữa mặt bên $(SBC)$ và đáy $(ABC)$.",
+  "giai": "B1: $H$ trọng tâm $\\triangle ABC$ (chân đường cao); $M$ trung điểm $BC$: $AM\\perp BC$, $SM\\perp BC$.\nB2: Góc cần tìm là $\\widehat{SMH}$.\nB3: $HM=\\dfrac13AM=\\dfrac{a\\sqrt3}6$, $SM=\\dfrac{a\\sqrt3}2$.\nB4: $\\cos\\widehat{SMH}=\\dfrac{HM}{SM}=\\dfrac13\\Rightarrow\\approx70{,}53^\\circ$.",
+  "dap_so": "$\\arccos\\dfrac13\\approx70{,}53^\\circ$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$AM\\perp BC$, $SM\\perp BC$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$\\widehat{SMH}$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$HM=\\dfrac{a\\sqrt3}6$"
+   },
+   {
+    "ma": "B4",
+    "ket_qua": "$\\cos=\\dfrac13$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy $HM=\\dfrac23AM$ (nhầm vị trí trọng tâm)",
+    "loi_giai": "B1: $H$ trọng tâm $\\triangle ABC$ (chân đường cao); $M$ trung điểm $BC$: $AM\\perp BC$, $SM\\perp BC$.\nB2: Góc cần tìm là $\\widehat{SMH}$.\nB3: $HM=\\dfrac23AM=\\dfrac{a\\sqrt3}3$.\nB4: $\\cos\\widehat{SMH}=\\dfrac23\\Rightarrow\\approx48{,}19^\\circ$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy góc $\\widehat{SAM}$ (cạnh bên với đáy)",
+    "loi_giai": "B1: $H$ trọng tâm $\\triangle ABC$ (chân đường cao); $M$ trung điểm $BC$: $AM\\perp BC$, $SM\\perp BC$.\nB2: Góc cần tìm là $\\widehat{SAH}$.\nB3: $HM=\\dfrac13AM=\\dfrac{a\\sqrt3}6$, $SM=\\dfrac{a\\sqrt3}2$.\nB4: $\\cos\\widehat{SAH}=\\dfrac{AH}{SA}=\\dfrac{\\sqrt3}3\\Rightarrow\\approx54{,}74^\\circ$.",
+    "diem_dung": 0.5
+   }
+  ]
+ },
+ "BM-049": {
+  "id": "BM-049",
+  "nguon": "baseline/bo-mau",
+  "bai": 26,
+  "muc_do": "VDC",
+  "de": "Chóp $S.ABCD$ đáy hình chữ nhật $AB=3$, $AD=6$, $SA\\perp(ABCD)$, $SA=3$. Tính $d(A,(SBD))$.",
+  "giai": "B1: $AS,AB,AD$ đôi một vuông góc: $\\dfrac1{d^2}=\\dfrac1{SA^2}+\\dfrac1{AB^2}+\\dfrac1{AD^2}$.\nB2: $\\dfrac1{d^2}=\\dfrac19+\\dfrac19+\\dfrac1{36}=\\dfrac14$.\nB3: $d=2$.",
+  "dap_so": "$2$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "Công thức"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$\\dfrac14$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$2$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Quy đồng sai: $\\dfrac19+\\dfrac19+\\dfrac1{36}=\\dfrac3{36}$",
+    "loi_giai": "B1: $AS,AB,AD$ đôi một vuông góc: $\\dfrac1{d^2}=\\dfrac1{SA^2}+\\dfrac1{AB^2}+\\dfrac1{AD^2}$.\nB2: $\\dfrac1{d^2}=\\dfrac{3}{36}=\\dfrac1{12}$.\nB3: $d=2\\sqrt3$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Coi đáy là hình vuông cạnh 3 (bỏ $AD=6$)",
+    "loi_giai": "B1: $\\dfrac1{d^2}=\\dfrac3{SA^2}$ (đáy vuông cạnh 3).\nB2: $\\dfrac1{d^2}=\\dfrac13$.\nB3: $d=\\sqrt3$.",
+    "diem_dung": 0
+   }
+  ]
+ },
+ "BM-050": {
+  "id": "BM-050",
+  "nguon": "baseline/bo-mau",
+  "bai": 10,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình bình hành tâm $O$; $M$ là trung điểm $SC$. Tìm giao điểm $I$ của $AM$ và $(SBD)$, tính $\\dfrac{AI}{AM}$.",
+  "giai": "B1: $AM\\subset(SAC)$, $(SAC)\\cap(SBD)=SO$.\nB2: Trong $(SAC)$, $AM\\cap SO=I$; $I\\in SO\\subset(SBD)$ nên $I=AM\\cap(SBD)$.\nB3: $AM,SO$ là hai trung tuyến của $\\triangle SAC$ nên $I$ là trọng tâm, $\\dfrac{AI}{AM}=\\dfrac23$.",
+  "dap_so": "$I=AM\\cap SO$, $\\dfrac{AI}{AM}=\\dfrac23$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$(SAC)\\cap(SBD)=SO$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$I=AM\\cap SO$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac23$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy tỉ số trọng tâm là $\\dfrac12$",
+    "loi_giai": "B1: $AM\\subset(SAC)$, $(SAC)\\cap(SBD)=SO$.\nB2: Trong $(SAC)$, $AM\\cap SO=I$; $I\\in SO\\subset(SBD)$ nên $I=AM\\cap(SBD)$.\nB3: $I$ là trọng tâm nên $\\dfrac{AI}{AM}=\\dfrac12$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy giao tuyến $(SAC)\\cap(SBD)=SB$",
+    "loi_giai": "B1: $(SAC)\\cap(SBD)=SB$.\nB2: $I=AM\\cap SB$.\nB3: Không xác định được tỉ số ($AM$ và $SB$ chéo nhau).",
+    "diem_dung": 0
+   }
+  ]
+ },
+ "BM-051": {
+  "id": "BM-051",
+  "nguon": "baseline/bo-mau",
+  "bai": 11,
+  "muc_do": "VDC",
+  "de": "Tứ diện $ABCD$, $G_1,G_2$ là trọng tâm $\\triangle ABC$, $\\triangle ABD$. Chứng minh $G_1G_2\\parallel CD$ và tính $\\dfrac{G_1G_2}{CD}$.",
+  "giai": "B1: $E$ trung điểm $AB$: $G_1\\in EC$, $\\dfrac{EG_1}{EC}=\\dfrac13$; $G_2\\in ED$, $\\dfrac{EG_2}{ED}=\\dfrac13$.\nB2: Trong $\\triangle ECD$, theo Thalès đảo $G_1G_2\\parallel CD$.\nB3: $\\triangle EG_1G_2\\sim\\triangle ECD$ tỉ số $\\dfrac13$: $\\dfrac{G_1G_2}{CD}=\\dfrac13$.",
+  "dap_so": "$\\dfrac13$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$\\dfrac{EG_1}{EC}=\\dfrac{EG_2}{ED}=\\dfrac13$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$G_1G_2\\parallel CD$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$\\dfrac13$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy $\\dfrac{EG_1}{EC}=\\dfrac23$ (nhầm tỉ số từ đỉnh)",
+    "loi_giai": "B1: $\\dfrac{EG_1}{EC}=\\dfrac{EG_2}{ED}=\\dfrac23$.\nB2: Trong $\\triangle ECD$, theo Thalès đảo $G_1G_2\\parallel CD$.\nB3: $\\dfrac{G_1G_2}{CD}=\\dfrac23$.",
+    "diem_dung": 0.25
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "thieu-chung-minh",
+    "mo_ta": "Khẳng định $G_1G_2\\parallel CD$ không nêu tỉ số bằng nhau / Thalès",
+    "loi_giai": "B1: $E$ trung điểm $AB$: $G_1\\in EC$, $\\dfrac{EG_1}{EC}=\\dfrac13$; $G_2\\in ED$, $\\dfrac{EG_2}{ED}=\\dfrac13$.\nB2: Dễ thấy $G_1G_2\\parallel CD$.\nB3: $\\triangle EG_1G_2\\sim\\triangle ECD$ tỉ số $\\dfrac13$: $\\dfrac{G_1G_2}{CD}=\\dfrac13$.",
+    "diem_dung": 0.75
+   }
+  ]
+ },
+ "BM-052": {
+  "id": "BM-052",
+  "nguon": "baseline/bo-mau",
+  "bai": 12,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình bình hành, $M$ là trung điểm $SA$. Chứng minh $SC\\parallel(MBD)$.",
+  "giai": "B1: $O=AC\\cap BD$ là trung điểm $AC$.\nB2: $OM$ là đường trung bình $\\triangle SAC$ nên $OM\\parallel SC$, $OM\\subset(MBD)$.\nB3: $SC\\not\\subset(MBD)$ nên $SC\\parallel(MBD)$.",
+  "dap_so": "$SC\\parallel(MBD)$ (chứng minh)",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$O$ trung điểm $AC$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$OM\\parallel SC$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$SC\\parallel(MBD)$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "thieu-chung-minh",
+    "mo_ta": "Không nêu $SC\\not\\subset(MBD)$",
+    "loi_giai": "B1: $O=AC\\cap BD$ là trung điểm $AC$.\nB2: $OM$ là đường trung bình $\\triangle SAC$ nên $OM\\parallel SC$, $OM\\subset(MBD)$.\nB3: Vậy $SC\\parallel(MBD)$.",
+    "diem_dung": 0.75
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Dùng $MB$ làm đường trung bình song song $SC$",
+    "loi_giai": "B1: $O=AC\\cap BD$ là trung điểm $AC$.\nB2: $MB$ là đường trung bình nên $MB\\parallel SC$.\nB3: $SC\\not\\subset(MBD)$ nên $SC\\parallel(MBD)$.",
+    "diem_dung": 0.25
+   }
+  ]
+ },
+ "BM-053": {
+  "id": "BM-053",
+  "nguon": "baseline/bo-mau",
+  "bai": 13,
+  "muc_do": "VD",
+  "de": "Ba mặt phẳng song song $(P),(Q),(R)$ cắt hai cát tuyến lần lượt tại $A,B,C$ và $A',B',C'$. Biết $\\dfrac{AB}{BC}=\\dfrac23$ và $A'C'=15$. Tính $A'B'$.",
+  "giai": "B1: $\\dfrac{A'B'}{B'C'}=\\dfrac{AB}{BC}=\\dfrac23$.\nB2: $\\dfrac{A'B'}{A'C'}=\\dfrac25$ nên $A'B'=6$.",
+  "dap_so": "$6$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$\\dfrac{A'B'}{B'C'}=\\dfrac23$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$6$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $\\dfrac{A'B'}{A'C'}=\\dfrac23$",
+    "loi_giai": "B1: $\\dfrac{A'B'}{B'C'}=\\dfrac{AB}{BC}=\\dfrac23$.\nB2: $A'B'=\\dfrac23\\cdot15=10$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Đảo tỉ số: $\\dfrac{A'B'}{B'C'}=\\dfrac32$",
+    "loi_giai": "B1: $\\dfrac{A'B'}{B'C'}=\\dfrac{BC}{AB}=\\dfrac32$.\nB2: $A'B'=\\dfrac35\\cdot15=9$.",
+    "diem_dung": 0
+   }
+  ]
+ },
+ "BM-054": {
+  "id": "BM-054",
+  "nguon": "baseline/bo-mau",
+  "bai": 10,
+  "muc_do": "VD",
+  "de": "Chóp $S.ABCD$ đáy hình bình hành. $M$ là trung điểm $SC$. Mặt phẳng $(ABM)$ cắt $SD$ tại $N$. Chứng minh $N$ là trung điểm $SD$.",
+  "giai": "B1: $AB\\parallel CD\\subset(SCD)$ nên $AB\\parallel(SCD)$.\nB2: $(ABM)\\cap(SCD)=MN$ nên $MN\\parallel AB\\parallel CD$.\nB3: Trong $\\triangle SCD$, $M$ trung điểm $SC$, $MN\\parallel CD$ nên $N$ trung điểm $SD$.",
+  "dap_so": "$N$ là trung điểm $SD$ (chứng minh)",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$AB\\parallel(SCD)$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$MN\\parallel CD$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$N$ trung điểm $SD$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B2",
+    "loai_loi": "thieu-chung-minh",
+    "mo_ta": "Khẳng định $MN\\parallel CD$ không dựa vào định lí giao tuyến",
+    "loi_giai": "B1: $AB\\parallel CD\\subset(SCD)$ nên $AB\\parallel(SCD)$.\nB2: $MN\\parallel CD$.\nB3: Trong $\\triangle SCD$, $M$ trung điểm $SC$, $MN\\parallel CD$ nên $N$ trung điểm $SD$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng Thalès sai: kết luận $SN=2ND$",
+    "loi_giai": "B1: $AB\\parallel CD\\subset(SCD)$ nên $AB\\parallel(SCD)$.\nB2: $(ABM)\\cap(SCD)=MN$ nên $MN\\parallel AB\\parallel CD$.\nB3: $MN\\parallel CD$ nên $\\dfrac{SN}{ND}=\\dfrac{SC}{SM}=2$.",
+    "diem_dung": 0.75
+   }
+  ]
+ },
+ "BM-055": {
+  "id": "BM-055",
+  "nguon": "baseline/bo-mau",
+  "bai": 13,
+  "muc_do": "VDC",
+  "de": "Chóp $S.ABCD$ đáy hình bình hành có diện tích $36$. $M\\in SA$ với $SM=\\dfrac13SA$; mặt phẳng $(\\alpha)$ qua $M$ song song $(ABCD)$ cắt $SB,SC,SD$ tại $N,P,Q$. Tính diện tích $MNPQ$.",
+  "giai": "B1: $(\\alpha)\\parallel(ABCD)$ nên $\\dfrac{SM}{SA}=\\dfrac{SN}{SB}=\\dfrac{SP}{SC}=\\dfrac{SQ}{SD}=\\dfrac13$.\nB2: $MNPQ$ đồng dạng $ABCD$ tỉ số $k=\\dfrac13$.\nB3: $S_{MNPQ}=k^2S_{ABCD}=\\dfrac19\\cdot36=4$.",
+  "dap_so": "$4$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$k=\\dfrac13$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "Đồng dạng tỉ số $\\dfrac13$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$4$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng tỉ số diện tích bằng $k$",
+    "loi_giai": "B1: $(\\alpha)\\parallel(ABCD)$ nên $\\dfrac{SM}{SA}=\\dfrac{SN}{SB}=\\dfrac{SP}{SC}=\\dfrac{SQ}{SD}=\\dfrac13$.\nB2: $MNPQ$ đồng dạng $ABCD$ tỉ số $k=\\dfrac13$.\nB3: $S_{MNPQ}=k\\cdot S_{ABCD}=12$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Đọc $SM=\\dfrac13SA$ thành $k=\\dfrac23$ (tính từ $A$)",
+    "loi_giai": "B1: $\\dfrac{SM}{SA}=\\dfrac23$.\nB2: Đồng dạng tỉ số $\\dfrac23$.\nB3: $S=\\dfrac49\\cdot36=16$.",
+    "diem_dung": 0
+   }
+  ]
+ },
+ "BM-056": {
+  "id": "BM-056",
+  "nguon": "baseline/bo-mau",
+  "bai": 11,
+  "muc_do": "TH",
+  "de": "Tứ diện $ABCD$ có $M,N,P,Q$ lần lượt là trung điểm $AB,BC,CD,DA$; $AC=6$, $BD=8$. Tính chu vi tứ giác $MNPQ$.",
+  "giai": "B1: $MN=PQ=\\dfrac{AC}2=3$.\nB2: $NP=MQ=\\dfrac{BD}2=4$.\nB3: Chu vi $=2(3+4)=14$.",
+  "dap_so": "$14$",
+  "buoc": [
+   {
+    "ma": "B1",
+    "ket_qua": "$3$"
+   },
+   {
+    "ma": "B2",
+    "ket_qua": "$4$"
+   },
+   {
+    "ma": "B3",
+    "ket_qua": "$14$"
+   }
+  ],
+  "loi_giai_sai": [
+   {
+    "id": "S1",
+    "buoc_sai": "B3",
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Chỉ cộng hai cạnh: $3+4=7$",
+    "loi_giai": "B1: $MN=PQ=\\dfrac{AC}2=3$.\nB2: $NP=MQ=\\dfrac{BD}2=4$.\nB3: Chu vi $=3+4=7$.",
+    "diem_dung": 0.5
+   },
+   {
+    "id": "S2",
+    "buoc_sai": "B1",
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy $MN=AC=6$ (quên một nửa)",
+    "loi_giai": "B1: $MN=PQ=AC=6$.\nB2: $NP=MQ=\\dfrac{BD}2=4$.\nB3: Chu vi $=2(6+4)=20$.",
+    "diem_dung": 0.25
+   }
+  ]
+ }
+}

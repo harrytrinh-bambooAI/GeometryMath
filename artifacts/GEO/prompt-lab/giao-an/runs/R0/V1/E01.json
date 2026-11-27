@@ -1,0 +1,18 @@
+{
+ "case": "E01",
+ "variant": "V1",
+ "round": "R0",
+ "text": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[0].ten\",\"before\":\"Khởi động: Khoảng cách từ đèn trần đến sàn\",\"after\":\"Khởi động: Trò chơi \\\"Ai nhanh hơn\\\"\",\"ly_do\":\"Đổi hoạt động Mở đầu thành trò chơi theo yêu cầu.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[0].muc_tieu\",\"before\":\"Gợi nhu cầu đo khoảng cách từ điểm đến mặt phẳng.\",\"after\":\"Tạo hứng thú qua trò chơi; gợi nhu cầu đo khoảng cách từ điểm đến mặt phẳng.\",\"ly_do\":\"Phù hợp hình thức trò chơi.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[0].noi_dung\",\"before\":\"GV chiếu ảnh đèn treo trần, hỏi đo khoảng cách từ bóng đèn xuống sàn thế nào.\",\"after\":\"Trò chơi \\\"Ai nhanh hơn\\\" gồm 3 câu hỏi nhanh, GV chiếu từng câu: (1) Đèn treo trần: đo khoảng cách từ bóng đèn xuống sàn theo hướng nào? (2) Trong hình lập phương, đoạn nào thể hiện khoảng cách từ đỉnh A' đến mặt đáy (ABCD)? (3) Trong các đoạn nối một điểm với các điểm của mặt phẳng, đoạn nào ngắn nhất? Vì sao?\",\"ly_do\":\"Thay bằng 3 câu hỏi nhanh, chỉ dùng nội dung trực quan, không thêm kiến thức ngoài danh sách.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[0].san_pham\",\"before\":\"Câu trả lời: đo theo phương thẳng đứng (vuông góc với sàn).\",\"after\":\"Đáp án 3 câu hỏi nhanh và đội/HS thắng cuộc; HS nhận ra khoảng cách đo theo phương vuông góc với mặt phẳng.\",\"ly_do\":\"Phù hợp trò chơi.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[0].to_chuc\",\"before\":{\"chuyen_giao\":\"GV nêu câu hỏi.\",\"thuc_hien\":\"HS thảo luận cặp đôi 2 phút.\",\"bao_cao\":\"2 HS trả lời.\",\"ket_luan\":\"GV dẫn vào bài.\"},\"after\":{\"chuyen_giao\":\"GV chia lớp thành các đội, nêu luật: giơ tay (hoặc bảng con) nhanh nhất và đúng nhất được điểm.\",\"thuc_hien\":\"Mỗi câu HS suy nghĩ khoảng 30 giây, trả lời nhanh; tổng thời gian chơi khoảng 4 phút.\",\"bao_cao\":\"Đội/HS nhanh nhất trả lời và giải thích ngắn gọn.\",\"ket_luan\":\"GV công bố đội thắng, chốt: khoảng cách đo theo phương vuông góc với mặt phẳng, rồi dẫn vào bài.\"},\"ly_do\":\"Tổ chức theo trò chơi; tổng vẫn 5 phút.\"}],\"de_xuat\":[{\"vi_tri\":\"meta / hoat_dong\",\"van_de\":\"Meta ghi 'Tiết 1/2' nhưng số tiết là 1; HD4 'thực hiện ở nhà' nhưng o_nha:false và tính 5 phút trên lớp.\",\"goi_y\":\"Làm rõ số tiết; nếu HD4 làm ở nhà thì đặt o_nha:true, thời lượng 0 và bổ sung 5 phút cho hoạt động khác để đủ 45 phút.\",\"ly_do\":\"Tránh sai lệch thời lượng trên lớp theo luật; không tự sửa vì không được yêu cầu.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu 3 (BM-007) gắn mã KT11-C07-DN-010 nhưng lời giải thường dùng KT11-C07-CT-003.\",\"goi_y\":\"Cân nhắc gắn thêm KT11-C07-CT-003.\",\"ly_do\":\"Đồng nhất mã kiến thức với cách giải.\"}],\"unsure\":[]}",
+ "usage": {
+  "ts": "2026-11-27T16:31:41",
+  "role": "gen",
+  "task": "R0/V1/E01",
+  "model": "claude-sonnet-5-5",
+  "input": 3455,
+  "output": 1534,
+  "cache_write": 2552,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 10.7
+ }
+}

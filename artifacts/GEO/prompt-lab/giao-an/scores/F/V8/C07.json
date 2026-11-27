@@ -1,0 +1,55 @@
+{
+ "case": "C07",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": false,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A4: sai khung CV 5512"
+  ],
+  "info": {
+   "khoa_co_dau": 1,
+   "tong_phut": 90,
+   "kt_khop": 3,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 4,
+   "cau_tu_kho": 4,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 3,
+   "doi_tuong": 5,
+   "phong_cach": 5,
+   "to_chuc": 3,
+   "chinh_xac": 5,
+   "phieu": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Kiến thức và kí hiệu khớp tham chiếu, tổng 90 phút đúng, PHT1 giữ nguồn và không ghi đáp số; tuy vậy mục tiêu năng lực để rỗng (khoá còn sai chính tả \" nang_luc\" vì thừa dấu cách) nên mục tiêu chưa đủ khung CV 5512. Thời lượng làm mô hình chưa khả thi: cắt dán hộp trong 20 phút và cắt dán chóp trong 15 phút là quá gấp, đồng thời việc tính thể tích mô hình bị lặp giữa HĐ2, HĐ4 và HĐ5."
+ },
+ "score": {
+  "diem": 68.5,
+  "A": 1,
+  "A_auto": 1,
+  "A_judge": 0,
+  "auto": 0.9,
+  "judge": 4.17
+ }
+}

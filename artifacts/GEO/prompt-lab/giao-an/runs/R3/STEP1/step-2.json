@@ -1,0 +1,25 @@
+{
+ "ids": [
+  "BM-009-S1",
+  "BM-009-DUNG",
+  "BM-010-S1",
+  "BM-010-DUNG",
+  "BM-011-S1",
+  "BM-011-DUNG",
+  "BM-012-S1",
+  "BM-012-DUNG"
+ ],
+ "text": "{\"ket_qua\":[{\"id\":\"BM-009-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Tam giác đồng dạng CHO ~ CAS cho OH/SA = OC/SC, không phải OC/AC. Dùng AC thay cho SC là sai (SC = a√3, AC = a√2). Kết quả đúng là a√6/6, không phải a/2.\"},{\"id\":\"BM-009-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: OH = a·(a√2/2)/(a√3) = a√6/6.\"},{\"id\":\"BM-010-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"d(A,(SCD)) = 2d(O,(SCD)) vì AC cắt mặt phẳng tại C và AC = 2OC, nên d(A,(SCD)) ≠ d(O,(SCD)). Kết quả đúng là a√6/3.\"},{\"id\":\"BM-010-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: d_O = a√6/6 nên d = a√6/3.\"},{\"id\":\"BM-011-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"OM ⊥ BC không suy ra OM ⊥ (SBC), vì OM không vuông góc với SM. Khoảng cách phải là đường cao OH của tam giác SOM, bằng 12/5 = 2,4 cm, không phải 3 cm.\"},{\"id\":\"BM-011-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: OH = 4·3/5 = 2,4 cm.\"},{\"id\":\"BM-012-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"Tính sai: 1/a² + 1/(2a²) + 1/(2a²) dùng AD² = 2a² và AA'² = 2a², nhưng phải là (2a)² = 4a². Kết quả đúng là 3/(2a²), d = a√6/3.\"},{\"id\":\"BM-012-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: 1/a² + 1/(4a²) + 1/(4a²) = 3/(2a²), d = a√6/3.\"}]}",
+ "usage": {
+  "ts": "2026-11-27T16:42:05",
+  "role": "gen",
+  "task": "R3/STEP1/step-2",
+  "model": "claude-sonnet-5-5",
+  "input": 3058,
+  "output": 757,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 5.6
+ }
+}

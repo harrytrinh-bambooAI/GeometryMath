@@ -1,0 +1,19 @@
+{
+ "case": "C14",
+ "variant": "V7",
+ "round": "F",
+ "text": "{\"kind\":\"question\",\"text\":\"Tiết 1/2 của Bài 26 này em cần tập trung vào những mã kiến thức nào trong danh sách được cấp (ví dụ khoảng cách từ điểm đến đường thẳng/mặt phẳng KT11-C07-DN-010 và công thức KT11-C07-CT-003, hay cả khoảng cách giữa hai đường thẳng chéo nhau)?\"}",
+ "raw": "{\"kind\":\"question\",\"text\":\"Tiết 1/2 của Bài 26 này em cần tập trung vào những mã kiến thức nào trong danh sách được cấp (ví dụ khoảng cách từ điểm đến đường thẳng/mặt phẳng KT11-C07-DN-010 và công thức KT11-C07-CT-003, hay cả khoảng cách giữa hai đường thẳng chéo nhau)?\"}",
+ "usage": {
+  "ts": "2026-11-27T16:45:45",
+  "role": "gen",
+  "task": "F/V7/C14",
+  "model": "claude-sonnet-5-5",
+  "input": 1246,
+  "output": 360,
+  "cache_write": 0,
+  "cache_read": 4593,
+  "stop": "end_turn",
+  "sec": 3.4
+ }
+}

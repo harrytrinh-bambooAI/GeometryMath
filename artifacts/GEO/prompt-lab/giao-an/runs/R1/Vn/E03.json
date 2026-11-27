@@ -1,0 +1,18 @@
+{
+ "case": "E03",
+ "variant": "Vn",
+ "round": "R1",
+ "text": "{\"kind\":\"question\",\"text\":\"Công thức d = |ax0+by0+cz0+d|/√(a²+b²+c²) cần tọa độ Oxyz và phương trình mặt phẳng (chưa có trong danh sách kiến thức được cấp cho bài này), và HĐ2 đang dạy KT11-C07-CT-003 (mục tiêu của bài). Thầy/cô muốn tôi (a) thay hẳn hệ thức bằng công thức tọa độ và cập nhật cả mục tiêu, hay (b) giữ hệ thức 1/AH² ở HĐ2 và chỉ thêm công thức tọa độ làm cách giải thứ hai?\"}",
+ "usage": {
+  "ts": "2026-11-27T16:35:30",
+  "role": "gen",
+  "task": "R1/Vn/E03",
+  "model": "claude-sonnet-5-5",
+  "input": 3401,
+  "output": 240,
+  "cache_write": 0,
+  "cache_read": 1335,
+  "stop": "end_turn",
+  "sec": 2.7
+ }
+}

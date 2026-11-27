@@ -1,0 +1,56 @@
+{
+ "case": "C10",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 3,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 3,
+   "cau_tu_kho": 2,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 4,
+   "doi_tuong": 3,
+   "phong_cach": 4,
+   "to_chuc": 3,
+   "chinh_xac": 3,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "HĐ2 chọn ví dụ BT11-B10-4, $(SAB)\\cap(SCD)$ với đáy hình bình hành, nhưng lại hướng HS 'tìm điểm chung thứ hai bằng cách xét hai đường thẳng AB và CD' rồi chốt 'đường thẳng nối hai điểm đó là giao tuyến'. Vì $AB\\parallel CD$ nên không có điểm chung thứ hai theo cách này. Đúng phải là: giao tuyến là đường thẳng qua $S$ song song $AB$ (định lí ba giao tuyến), kiến thức này nằm ngoài danh sách được cấp. Nên thay bằng ví dụ có hai điểm chung tìm được, ví dụ $(SAC)\\cap(SBD)=SO$ hoặc BT11-B10-7.",
+   "unsure ghi 'hai ví dụ ở HD3 là bài tự soạn' nhưng HD3 chỉ có một ví dụ ($DM\\cap(SAC)$)."
+  ],
+  "nhan_xet": "Giáo án đúng khung CV 5512, đủ 45 phút, phiếu NB–TH–VD hợp lí và không lộ đáp số. Lỗi chính là ví dụ khám phá ở HĐ2 không tìm được điểm chung thứ hai, mâu thuẫn với quy tắc vừa chốt và gây khó cho HS cơ bản, cần thay ví dụ khác."
+ },
+ "score": {
+  "diem": 80.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 3.67
+ }
+}

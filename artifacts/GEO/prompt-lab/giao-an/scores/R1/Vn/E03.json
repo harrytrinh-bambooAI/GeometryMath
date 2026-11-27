@@ -1,0 +1,47 @@
+{
+ "case": "E03",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "dung_mot_cau_hoi": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "question"
+ },
+ "judge": {
+  "diem": {
+   "dung_cho_thieu": 1,
+   "gon": 2,
+   "can_thiet": 1
+  },
+  "vi_pham_A": [
+   {
+    "luat": "A8",
+    "trich": "Thầy/cô muốn tôi (a) thay hẳn hệ thức bằng công thức tọa độ và cập nhật cả mục tiêu, hay (b) giữ hệ thức 1/AH² ở HĐ2 và chỉ thêm công thức tọa độ làm cách giải thứ hai?"
+   },
+   {
+    "luat": "A1",
+    "trich": "(b) giữ hệ thức 1/AH² ở HĐ2 và chỉ thêm công thức tọa độ làm cách giải thứ hai"
+   },
+   {
+    "luat": "A6",
+    "trich": "thay hẳn hệ thức bằng công thức tọa độ và cập nhật cả mục tiêu"
+   }
+  ],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý đã nhận ra công thức tọa độ không có trong danh sách kiến thức được cấp, nhưng lại đưa ra hai lựa chọn đều trái luật: cả hai cùng đưa kiến thức ngoài danh sách vào (A1), và phương án (a) còn sửa mục_tieu đang bị khoá (A6). Đúng ra phải từ chối kèm giải thích theo A8, không cần hỏi."
+ },
+ "score": {
+  "diem": 0.0,
+  "A": 3,
+  "A_auto": 0,
+  "A_judge": 3,
+  "auto": 1.0,
+  "judge": 1.33
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "case": "E01",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 8
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá chỉ sửa các trường của hoat_dong[0], giữ đúng 5 phút và phát hiện được lỗi o_nha/thời lượng ở HD4 cùng phát biểu KT11-C07-CT-003 thiếu điều kiện. Tuy vậy, bản vá dùng bảng con mà không đề xuất bổ sung vào mục thiet_bi đang khoá, 3 câu hỏi nhanh chưa ghi thành câu hỏi cụ thể, và đề xuất về chồng chéo giữa HD2 và câu 2 còn mơ hồ."
+ },
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

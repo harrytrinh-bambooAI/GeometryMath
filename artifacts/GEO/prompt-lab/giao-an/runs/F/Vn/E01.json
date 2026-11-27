@@ -1,0 +1,18 @@
+{
+ "case": "E01",
+ "variant": "Vn",
+ "round": "R1",
+ "text": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[0].ten\",\"before\":\"Khởi động: Khoảng cách từ đèn trần đến sàn\",\"after\":\"Khởi động: Trò chơi 'Ai nhanh hơn'\",\"ly_do\":\"Đổi hoạt động Mở đầu thành trò chơi theo yêu cầu.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[0].muc_tieu\",\"before\":\"Gợi nhu cầu đo khoảng cách từ điểm đến mặt phẳng.\",\"after\":\"Tạo hứng thú, huy động kinh nghiệm về khoảng cách (điểm đến sàn, điểm đến mặt phẳng) và gợi nhu cầu định nghĩa khoảng cách từ điểm đến mặt phẳng.\",\"ly_do\":\"Điều chỉnh mục tiêu cho phù hợp hình thức trò chơi, vẫn giữ mục đích dẫn vào bài.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[0].noi_dung\",\"before\":\"GV chiếu ảnh đèn treo trần, hỏi đo khoảng cách từ bóng đèn xuống sàn thế nào.\",\"after\":\"Trò chơi 'Ai nhanh hơn' gồm 3 câu hỏi nhanh, mỗi câu khoảng 1 phút, GV chiếu lần lượt: Câu 1: Bóng đèn treo trên trần, muốn đo khoảng cách từ bóng đèn xuống sàn thì đo theo phương nào? Câu 2: Trong hình lập phương cạnh a, khoảng cách từ đỉnh A' đến mặt đáy (ABCD) bằng bao nhiêu? Câu 3: Trong các đoạn nối điểm M với các điểm của mặt phẳng (P), đoạn nào ngắn nhất, vì sao? Nhóm giơ bảng đúng và nhanh nhất ghi điểm.\",\"ly_do\":\"Thiết kế 3 câu hỏi nhanh theo yêu cầu, bám nội dung khoảng cách từ điểm đến mặt phẳng.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[0].san_pham\",\"before\":\"Câu trả lời: đo theo phương thẳng đứng (vuông góc với sàn).\",\"after\":\"Đáp án 3 câu trên bảng nhóm: (1) đo theo phương thẳng đứng, vuông góc với sàn; (2) bằng độ dài cạnh bên AA', tức a; (3) đoạn vuông góc MH ngắn nhất. Bảng điểm của các nhóm.\",\"ly_do\":\"Cập nhật sản phẩm theo 3 câu hỏi.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[0].to_chuc\",\"before\":{\"chuyen_giao\":\"GV nêu câu hỏi.\",\"thuc_hien\":\"HS thảo luận cặp đôi 2 phút.\",\"bao_cao\":\"2 HS trả lời.\",\"ket_luan\":\"GV dẫn vào bài.\"},\"after\":{\"chuyen_giao\":\"GV chia lớp thành các nhóm, phổ biến luật: mỗi câu hỏi chiếu lên, nhóm nào giơ bảng nhóm có đáp án đúng và nhanh nhất được 1 điểm.\",\"thuc_hien\":\"HS thảo luận nhanh trong nhóm, ghi đáp án vào bảng nhóm và giơ lên khi có hiệu lệnh (mỗi câu khoảng 1 phút).\",\"bao_cao\":\"Nhóm nhanh nhất giải thích ngắn gọn đáp án; GV ghi điểm.\",\"ket_luan\":\"GV tổng kết điểm, nhận xét: khoảng cách là độ dài đoạn vuông góc ngắn nhất, từ đó dẫn vào định nghĩa khoảng cách từ điểm đến mặt phẳng.\"},\"ly_do\":\"Tổ chức theo hình thức trò chơi, vẫn giữ tổng thời lượng 5 phút.\"}],\"de_xuat\":[],\"unsure\":[]}",
+ "usage": {
+  "ts": "2026-11-27T16:35:27",
+  "role": "gen",
+  "task": "R1/Vn/E01",
+  "model": "claude-sonnet-5-5",
+  "input": 3392,
+  "output": 1448,
+  "cache_write": 0,
+  "cache_read": 1335,
+  "stop": "end_turn",
+  "sec": 9.0
+ }
+}
