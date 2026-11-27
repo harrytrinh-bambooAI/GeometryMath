@@ -5,8 +5,8 @@ Kiểm:
   1. Mọi mã AC còn hiệu lực trong work/epics/E<n>/stories_ac.md xuất hiện ở ít nhất một TC (cột Remark của test_cases.md).
   2. Mọi TC có trường "Tự động hóa" với giá trị E2E-UI, E2E-API, IT hoặc Manual; Manual phải kèm lý do ("Manual — <lý do>").
   3. Mã TC không trùng trong toàn bộ các epic; mã AC mà TC trỏ tới phải có thật.
-Dùng (epic S2-E1…E9, S3-E1…E6 cũng nhận được; thêm giá trị UT cho epic S*; chạy không tham số vẫn là 7 epic MVP):
-  python3 -I work/tools/check_ac_tc.py S2-E1 S3-E1      kiểm các epic chặng 2–3
+Dùng (epic S2-E1…E9, S3-E1…E6, S5-E1…E6 cũng nhận được; thêm giá trị UT cho epic S*; chạy không tham số vẫn là 7 epic MVP):
+  python3 -I work/tools/check_ac_tc.py S2-E1 S3-E1      kiểm các epic chặng 2–3 (S5-E1 … chặng 5)
   python3 -I work/tools/check_ac_tc.py                       kiểm cả 7 epic, in lỗi, thoát 1 nếu có lỗi
   python3 -I work/tools/check_ac_tc.py E1                    chỉ kiểm các epic nêu
   python3 -I work/tools/check_ac_tc.py --trace work/traceability.md   kiểm rồi ghi bảng AC → TC
@@ -18,9 +18,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(HERE, '..'))
 AUTO = ('E2E-UI', 'E2E-API', 'IT', 'Manual')
 AUTO_S = AUTO + ('UT',)   # epic S2-*, S3-*: thêm UT (kiểm thử đơn vị cho engine / logic thuần)
-AC_RE = re.compile(r'^(~~)?\*\*(US-(?:GEO-\d{3}|S[23]E\d+-\d{2})-(?:SC|FC|BV)\d+) — (.+?)\*\*')   # BV (giá trị biên) chỉ có ở epic S2-*, S3-*
-REF_RE = re.compile(r'(US-(?:GEO-\d{3}|S[23]E\d+-\d{2}))(?: · |-)((?:SC|FC|BV)\d+)')
-EPIC_RE = re.compile(r'E[1-7]|S[23]-E\d+')
+AC_RE = re.compile(r'^(~~)?\*\*(US-(?:GEO-\d{3}|S[235]E\d+-\d{2})-(?:SC|FC|BV)\d+) — (.+?)\*\*')   # BV (giá trị biên) chỉ có ở epic S2-*, S3-*
+REF_RE = re.compile(r'(US-(?:GEO-\d{3}|S[235]E\d+-\d{2}))(?: · |-)((?:SC|FC|BV)\d+)')
+EPIC_RE = re.compile(r'E[1-7]|S[235]-E\d+')
 
 
 def split_row(line):
@@ -51,7 +51,7 @@ def read_tcs(epic):
         row = dict(zip(hdr, c))
         refs = sorted({f'{s}-{k}' for s, k in REF_RE.findall(row['Remark'])})
         tcs.append(dict(id=row['No'], title=row.get('Tiêu đề', ''), auto=row.get('Tự động hóa'), refs=refs,
-                        other=sorted(set(re.findall(r'(?:NFR|BR|REQ|D)-(?:GEO-\d+|S[23]E\d+-\d+)|DQ-\d+|PO-\d+|US-S[23]E\d+-\d{2}(?!-)', row['Remark']))), line=ln, epic=epic))
+                        other=sorted(set(re.findall(r'(?:NFR|BR|REQ|D)-(?:GEO-\d+|S[235]E\d+-\d+)|DQ-\d+|PO-\d+|US-S[235]E\d+-\d{2}(?!-)', row['Remark']))), line=ln, epic=epic))
     return tcs
 
 

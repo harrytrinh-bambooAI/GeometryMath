@@ -10,7 +10,7 @@ import { redactText } from '../support/redact.ts';
  *   evidence/<run>/<TC-id>/<project>__<tên-test>/
  * rồi sinh evidence/<run>/summary.json (TC -> trạng thái -> đường dẫn bằng chứng) và evidence/<run>/index.html.
  * evidence/latest.txt giữ mã lượt mới nhất (make e2e-report mở bản này).
- * Mã TC lấy từ tag của test: '@TC-GEO-0100', '@TC-S2E1-019' (TC của QC chặng 1–3) hoặc '@TC-KHUNG-nn' (test khung, không thuộc test_cases.md).
+ * Mã TC lấy từ tag của test: '@TC-GEO-0100', '@TC-S2E1-019', '@TC-S5E1-01' (TC của QC chặng 1–5) hoặc '@TC-KHUNG-nn' (test khung, không thuộc test_cases.md).
  * Test không gắn mã TC vẫn có bằng chứng, xếp vào thư mục _khong-ma-TC.
  */
 /** Tệp văn bản trong trace.zip (sự kiện, mạng, tài nguyên JSON/HTML/JS, mã nguồn test): che JWT/Bearer/token. */
@@ -47,7 +47,7 @@ export function redactTraceZip(src: string, target: string): boolean {
   }
 }
 
-const TC_TAG = /^@(TC-GEO-\d{4}|TC-S[23]E\d+-\d+|TC-KHUNG-\d+)$/; // TC-S2E1-019, TC-S3E6-01 (T-261126-45)
+const TC_TAG = /^@(TC-GEO-\d{4}|TC-S[235]E\d+-\d+|TC-KHUNG-\d+)$/; // TC-S2E1-019, TC-S3E6-01 (T-261126-45), TC-S5E1-01 (T-261128-51)
 /** Chuỗi trông giống mã TC (để cảnh báo khi sai định dạng, ví dụ @TC-GEO-120, TC_GEO_0120, @tc-geo-0120). */
 const TC_LIKE = /@?\bTC[-_ ]?[A-Z]*[-_ ]?\d+[0-9A-Z-]*/gi;
 const NO_TC = '_khong-ma-TC';
@@ -117,7 +117,7 @@ export default class EvidenceReporter implements Reporter {
       this.warned.add(key);
       process.stderr.write(
         `[bằng chứng] CẢNH BÁO: "${c}" ở ${path.relative(process.cwd(), test.location.file)}:${test.location.line} ` +
-          `("${test.title}") không đúng định dạng mã TC (@TC-GEO-nnnn, @TC-S2En-nnn, @TC-S3En-nnn hoặc @TC-KHUNG-n); không được tính vào truy vết.\n`,
+          `("${test.title}") không đúng định dạng mã TC (@TC-GEO-nnnn, @TC-S2En-nnn, @TC-S3En-nnn, @TC-S5En-nn hoặc @TC-KHUNG-n); không được tính vào truy vết.\n`,
       );
     }
   }
@@ -192,11 +192,11 @@ export default class EvidenceReporter implements Reporter {
   onEnd(result: FullResult): void {
     // Test không chạy tới (lượt bị ngắt, dừng sớm vì quá số lỗi, bị bỏ qua trước khi chạy): onTestEnd không
     // được gọi => vẫn đưa vào summary với trạng thái tương ứng (interrupted / skipped), không có bằng chứng.
-    const seen = new Set(this.entries.map((e) => `${e.file}:${e.line}|${e.project}`));
+    const seen = new Set(this.entries.map((e) => `${e.file}:${e.line}|${e.title}|${e.project}`));
     for (const t of this.suite?.allTests() ?? []) {
       const project = t.parent.project()?.name ?? 'khong-ro';
       const file = path.relative(process.cwd(), t.location.file);
-      if (seen.has(`${file}:${t.location.line}|${project}`)) continue;
+      if (seen.has(`${file}:${t.location.line}|${t.title}|${project}`)) continue;
       const status: TestResult['status'] =
         result.status === 'interrupted' || result.status === 'timedout' ? 'interrupted' : 'skipped';
       const tcs = t.tags.map((x) => TC_TAG.exec(x)?.[1]).filter((x): x is string => !!x);
@@ -220,12 +220,13 @@ export default class EvidenceReporter implements Reporter {
     }
 
     // Lần thử cuối cùng của mỗi (TC, test, project) quyết định trạng thái.
+    // Khóa gồm cả title: test sinh trong vòng lặp cùng dòng mã có title khác nhau, không được gộp (BUG-S23-001).
     const last = new Map<string, Entry>();
-    for (const e of this.entries) last.set(`${e.tc}|${e.file}:${e.line}|${e.project}`, e);
+    for (const e of this.entries) last.set(`${e.tc}|${e.file}:${e.line}|${e.title}|${e.project}`, e);
     const finals = [...last.values()];
     // Tổng số test đếm theo (test, project), KHÔNG nhân theo số mã TC gắn trên một test.
     const perTest = new Map<string, Entry>();
-    for (const e of finals) perTest.set(`${e.file}:${e.line}|${e.project}`, e);
+    for (const e of finals) perTest.set(`${e.file}:${e.line}|${e.title}|${e.project}`, e);
     const tests = [...perTest.values()];
 
     const tcs: Record<string, { status: 'passed' | 'failed' | 'skipped'; tests: Entry[] }> = {};

@@ -202,6 +202,27 @@ public final class AnthropicPrompts {
       """
           + JSON_ONLY;
 
+  // ===== Chặng 5 (T-261128-51, PLAN_code-s5 P4, §5 luật 2): hằng prompt của task AI mới, mỗi task
+  // chỉ thêm NGAY DƯỚI mốc của mình (task: lesson_plan, lesson_patch, class_notice, kb_qa,
+  // grade_ocr,
+  // grade, exam_draft, class_errors — giá trị ai_purpose đã có từ V500–V504).
+  // --- T-261128-51 (khung) ---
+  // --- T-261128-52 (S5-E2) ---
+  // --- T-261128-53 (S5-E1) ---
+  // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
+  // --- T-261128-55 (S5-E5) ---
+  // --- T-261128-56 (S5-E3) ---
+  // --- T-261128-57 (S5-E4) ---
+  // --- T-261128-58 (S5-E3) ---
+  // --- T-261128-59 (S5-E4) ---
+  // --- T-261128-60 (S5-E4) ---
+  // --- T-261128-61 (S5-E6) ---
+  // --- T-261128-62 (S5-E6) ---
+  // --- T-261128-63 (S5-E2, S5-E3) ---
+  // --- T-261128-64 (S5-E5) ---
+  // --- T-261128-65 (S5-E6) ---
+  // --- FIX chặng 5 (task FIX T-261128-*) ---
+
   private static final String GENERIC =
       COMMON
           + """
@@ -219,6 +240,22 @@ public final class AnthropicPrompts {
       case "lecture" -> LECTURE;
       case "authoring_chat" -> AUTHORING_CHAT;
       case "class_stuck" -> CLASS_STUCK;
+      // Chặng 5 (T-261128-51): mỗi task thêm "case" NGAY DƯỚI mốc của mình.
+      // --- T-261128-52 (S5-E2) ---
+      // --- T-261128-53 (S5-E1) ---
+      // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
+      // --- T-261128-55 (S5-E5) ---
+      // --- T-261128-56 (S5-E3) ---
+      // --- T-261128-57 (S5-E4) ---
+      // --- T-261128-58 (S5-E3) ---
+      // --- T-261128-59 (S5-E4) ---
+      // --- T-261128-60 (S5-E4) ---
+      // --- T-261128-61 (S5-E6) ---
+      // --- T-261128-62 (S5-E6) ---
+      // --- T-261128-63 (S5-E2, S5-E3) ---
+      // --- T-261128-64 (S5-E5) ---
+      // --- T-261128-65 (S5-E6) ---
+      // --- FIX chặng 5 (task FIX T-261128-*) ---
       default -> GENERIC;
     };
   }
@@ -227,6 +264,22 @@ public final class AnthropicPrompts {
   static boolean expectsJson(String task) {
     return switch (task == null ? "" : task) {
       case "scene", "solution", "hint", "ocr", "authoring_chat", "class_stuck" -> true;
+      // Chặng 5 (T-261128-51): task trả JSON thêm "case \"<task>\" -> true;" NGAY DƯỚI mốc.
+      // --- T-261128-52 (S5-E2) ---
+      // --- T-261128-53 (S5-E1) ---
+      // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
+      // --- T-261128-55 (S5-E5) ---
+      // --- T-261128-56 (S5-E3) ---
+      // --- T-261128-57 (S5-E4) ---
+      // --- T-261128-58 (S5-E3) ---
+      // --- T-261128-59 (S5-E4) ---
+      // --- T-261128-60 (S5-E4) ---
+      // --- T-261128-61 (S5-E6) ---
+      // --- T-261128-62 (S5-E6) ---
+      // --- T-261128-63 (S5-E2, S5-E3) ---
+      // --- T-261128-64 (S5-E5) ---
+      // --- T-261128-65 (S5-E6) ---
+      // --- FIX chặng 5 (task FIX T-261128-*) ---
       default -> false;
     };
   }

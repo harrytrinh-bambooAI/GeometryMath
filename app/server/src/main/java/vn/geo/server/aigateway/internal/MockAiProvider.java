@@ -120,6 +120,24 @@ public class MockAiProvider implements AiProvider {
       }
       return mapper.writeValueAsString(out);
     }
+    // Chặng 5 (T-261128-51, PLAN_code-s5 P4): đáp mẫu task AI mới theo F-S5-090…095; mỗi task thêm
+    // nhánh "if (\"<task>\".equals(call.task())) {…}" NGAY DƯỚI mốc của mình.
+    // --- T-261128-51 (khung) ---
+    // --- T-261128-52 (S5-E2) ---
+    // --- T-261128-53 (S5-E1) ---
+    // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
+    // --- T-261128-55 (S5-E5) ---
+    // --- T-261128-56 (S5-E3) ---
+    // --- T-261128-57 (S5-E4) ---
+    // --- T-261128-58 (S5-E3) ---
+    // --- T-261128-59 (S5-E4) ---
+    // --- T-261128-60 (S5-E4) ---
+    // --- T-261128-61 (S5-E6) ---
+    // --- T-261128-62 (S5-E6) ---
+    // --- T-261128-63 (S5-E2, S5-E3) ---
+    // --- T-261128-64 (S5-E5) ---
+    // --- T-261128-65 (S5-E6) ---
+    // --- FIX chặng 5 (task FIX T-261128-*) ---
     return QA_REPLY;
   }
 

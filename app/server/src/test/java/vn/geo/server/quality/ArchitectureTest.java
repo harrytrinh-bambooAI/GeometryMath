@@ -94,6 +94,28 @@ class ArchitectureTest {
               // --- T-261126-30 (S3-E3) ---
               // --- T-261126-31 (S3-E4, S3-E5) ---
               // --- T-261126-32 (S3-E6, S3-E5) ---
+              // Chặng 5 (T-261128-51, PLAN_code-s5 §5 luật 2): mỗi task thêm module mới NGAY DƯỚI
+              // mốc của mình.
+              // --- T-261128-51 (khung) ---
+              "vn.geo.server.lessonplan..",
+              "vn.geo.server.exam..",
+              "vn.geo.server.assessment..",
+              "vn.geo.server.aigrade..",
+              // --- T-261128-52 (S5-E2) ---
+              // --- T-261128-53 (S5-E1) ---
+              // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
+              // --- T-261128-55 (S5-E5) ---
+              // --- T-261128-56 (S5-E3) ---
+              // --- T-261128-57 (S5-E4) ---
+              // --- T-261128-58 (S5-E3) ---
+              // --- T-261128-59 (S5-E4) ---
+              // --- T-261128-60 (S5-E4) ---
+              // --- T-261128-61 (S5-E6) ---
+              // --- T-261128-62 (S5-E6) ---
+              // --- T-261128-63 (S5-E2, S5-E3) ---
+              // --- T-261128-64 (S5-E5) ---
+              // --- T-261128-65 (S5-E6) ---
+              // --- FIX chặng 5 (task FIX T-261128-*) ---
               // --- FIX (task FIX T-261126-35, 43+) ---
               "vn.geo.server.sample..");
 

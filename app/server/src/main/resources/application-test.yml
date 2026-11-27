@@ -12,3 +12,6 @@ geo:
   content.pack.load-on-start: false   # IT nạp gói tường minh (ContentPackMvpIT)
   http.trust-forwarded-for: true
   ai.api-key: KHOA-THU-KHONG-LO
+  # T-261128-51 (PLAN_code-s5 P5): bật cả hai cờ chặng 5 ở hồ sơ test (IT); mặc định false ở application.yml.
+  s5.grading.enabled: true
+  s5.ai-grading.enabled: true
