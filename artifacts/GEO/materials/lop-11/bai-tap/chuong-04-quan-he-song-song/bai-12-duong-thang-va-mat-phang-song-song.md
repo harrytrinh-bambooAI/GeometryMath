@@ -1,6 +1,6 @@
 # Bài tập – Bài 12. Đường thẳng và mặt phẳng song song
 
-Phiên bản: v1.2 · 27/11/2026
+Phiên bản: v1.3 · 27/11/2026
 
 > Tài liệu tổng hợp/biên soạn lại cho mục đích học tập (không sao chép nguyên văn SGK/SBT). Bộ sách xương sống: Toán 11 Kết nối tri thức với cuộc sống.
 
@@ -15,7 +15,7 @@ Phiên bản: v1.2 · 27/11/2026
 **3.** *[Đúng/sai]* Cho đường thẳng $a\parallel(P)$. a) Mọi đường thẳng nằm trong $(P)$ đều song song $a$; b) trong $(P)$ có vô số đường thẳng song song $a$; c) nếu $(Q)\supset a$ và $(Q)\cap(P)=b$ thì $b\parallel a$; d) $a$ và $(P)$ có đúng một điểm chung.
 *Giải.*
 - a) Có đường thẳng trong $(P)$ chéo $a$: **Sai**.
-- b) Mọi đường thẳng trong $(P)$ song song với hình chiếu của $a$ đều song song $a$: **Đúng**.
+- b) Lấy $(Q)\supset a$ cắt $(P)$ theo $b$ thì $b\parallel a$; mọi đường thẳng trong $(P)$ song song $b$ đều song song $a$, nên có vô số: **Đúng**.
 - c) Định lí giao tuyến: **Đúng**.
 - d) $a\parallel(P)$ nghĩa là không có điểm chung: **Sai**.
 - Đáp án: S – Đ – Đ – S.
@@ -63,3 +63,4 @@ Phiên bản: v1.2 · 27/11/2026
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
 | v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.3 | 27/11/2026 | Bài 3b: viết lại lập luận (bỏ cách nói "hình chiếu của a") | delivery-lead (theo REVIEW-L11-MATH-20261127) |

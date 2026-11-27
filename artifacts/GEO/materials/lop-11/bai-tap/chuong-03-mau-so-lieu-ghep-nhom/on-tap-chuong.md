@@ -1,6 +1,6 @@
 # Bài tập cuối chương 3. Các số đặc trưng đo xu thế trung tâm của mẫu số liệu ghép nhóm
 
-Phiên bản: v1.2 · 27/11/2026
+Phiên bản: v1.3 · 27/11/2026
 
 > Tài liệu tổng hợp/biên soạn lại cho mục đích học tập (không sao chép nguyên văn SGK/SBT). Bộ sách xương sống: Toán 11 Kết nối tri thức với cuộc sống.
 
@@ -9,7 +9,10 @@ Phiên bản: v1.2 · 27/11/2026
 *Giải.* $\dfrac{5+7}2=6$. Chọn **B**.
 
 ### Thông hiểu
-**2.** Tìm mốt. *Giải.* Nhóm $[10;20)$: $M_o=10+\dfrac{15}{15+5}\cdot10=17{,}5$.
+**2.** Thời gian tự học (phút) của $46$ học sinh: $[0;10)$: 5; $[10;20)$: 20; $[20;30)$: 15; $[30;40)$: 6. Tìm mốt.
+*Giải.*
+- Bước 1: tần số lớn nhất $20$ nên nhóm chứa mốt là $[10;20)$; $n_{m-1}=5$, $n_{m+1}=15$, $h=10$.
+- Bước 2: $M_o=10+\dfrac{20-5}{(20-5)+(20-15)}\cdot10=10+\dfrac{15}{20}\cdot10=17{,}5$ (phút).
 
 **3.** *[Đúng/sai]* Chiều cao (cm) của $30$ HS: $[150;160)$: 6; $[160;170)$: 14; $[170;180)$: 8; $[180;190)$: 2. a) Nhóm chứa mốt là $[160;170)$; b) số trung bình bằng $167$; c) nhóm chứa trung vị là $[160;170)$; d) trung vị lớn hơn số trung bình.
 *Giải.*
@@ -56,3 +59,4 @@ Phiên bản: v1.2 · 27/11/2026
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 3 bài, lời giải ngắn | agent runner-materials-l11 |
 | v1.2 | 27/11/2026 | Thêm 3 bài (3→6, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.3 | 27/11/2026 | Bài 2: bổ sung bảng số liệu (đề thiếu dữ kiện), lời giải từng bước | delivery-lead (theo REVIEW-L11-MATH-20261127) |

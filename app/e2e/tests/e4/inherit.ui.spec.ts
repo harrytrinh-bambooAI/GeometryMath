@@ -72,22 +72,6 @@ test('Bài giao mở thì bài tự học kế thừa cũng mở @TC-GEO-0435', 
   await expect(page.getByTestId('e4-step-1')).toBeVisible();
 });
 
-test('Dán lại đề của bài giao Chưa đặt giờ thì lời giải tự học cũng khóa @TC-GEO-0481', async ({ page, request }) => {
-  const { sb, an } = await classWith(request, [{ key: 'BG-2', code: 'HKG-02', release: 'unset' }]);
-  const id = await selfStudy(request, an.token, HKG['02']);
-  await openWorkspace(page, an, id);
-  await uiHints(page, id);
-  await lockedInherited(page);
-  // giáo viên đặt giờ: vẫn khóa cho tới khi giờ đó tới
-  const at = new Date(Date.now() + 4000).toISOString();
-  expect((await call.release(request, sb.teacher.token, sb.classes[0]!.assignments['BG-2']!, { releaseAt: at, expectedRev: 0 })).status()).toBe(200);
-  await page.reload();
-  await lockedInherited(page);
-  await page.waitForTimeout(Math.max(0, Date.parse(at) - Date.now() + 1000));
-  await page.reload();
-  await viewable(page);
-});
-
 async function inheritedVariant(page: Page, request: APIRequestContext, statement: string) {
   const { an } = await classWith(request, [{ key: 'BG-1', code: 'HKG-01' }]);
   const id = await selfStudy(request, an.token, statement);

@@ -29,6 +29,9 @@ const TESTS = path.join(APP, 'e2e', 'tests');
 const FEATURES = path.join(APP, 'web', 'src', 'features');
 const SERVER_ONLY = /^app\/server\/src\/main\/(java|resources)\//;
 const B_TAG = '@loai-B';
+// E2E-SPLIT2: ca B đã chuyển (*.flow.api.spec.ts, project api) cũng gắn @loai-B để truy vết; --grep-invert chỉ loại ca
+// @loai-B còn ở project UI/mobile (danh sách để sau), KHÔNG loại ca B chạy bằng API.
+const B_UI_INVERT = `^(ui|mobile)-[a-z]+ .*${B_TAG}\\b`;
 const RANK = { none: 0, L0: 1, L1: 2, L2: 3 };
 const DESKTOP = '(api|ui-chromium)';
 const MOBILE = 'mobile-(pixel|iphone)';
@@ -145,7 +148,7 @@ function plan(files, map) {
   const deps = eff === 'L1' ? [...new Set(items.filter((x) => x.level === 'L1').flatMap((x) => x.deps))].filter((d) => !owners.includes(d)) : [];
   const epics = [...owners, ...deps];
   const serverOnly = level !== 'none' && level !== 'L2' && items.every((x) => x.level === 'none' || SERVER_ONLY.test(x.file));
-  const res = { level: eff, serverOnly, grepInvert: serverOnly ? B_TAG : '', base: null, files: items, owners, deps, epics, specDirs: [], missingSpecs: [], specs: [], mobileSpecs: [], grep: '' };
+  const res = { level: eff, serverOnly, grepInvert: serverOnly ? B_UI_INVERT : '', base: null, files: items, owners, deps, epics, specDirs: [], missingSpecs: [], specs: [], mobileSpecs: [], grep: '' };
   if (eff === 'L2') {
     res.specs = ['(trọn bộ api + ui-chromium)'];
     res.grep = `^${DESKTOP} `;
@@ -200,7 +203,13 @@ function selftest(map) {
     if (p.level !== 'L2' && !p.grep.includes('@smoke')) errs.push('thiếu smoke');
     if (c.serverOnly !== undefined && p.serverOnly !== c.serverOnly) errs.push(`serverOnly ${p.serverOnly} ≠ ${c.serverOnly}`);
     if (c.serverOnly) {
-      if (p.grepInvert !== B_TAG) errs.push('thiếu --grep-invert @loai-B');
+      if (p.grepInvert !== B_UI_INVERT) errs.push('thiếu --grep-invert @loai-B (chỉ UI)');
+      // ca B chạy bằng API (project api) không bị loại; ca B còn ở UI/mobile thì bị loại
+      const inv = new RegExp(p.grepInvert);
+      if (inv.test(`api s3e1/classes.flow.api.spec.ts Ca B ${B_TAG}`)) errs.push('--grep-invert loại cả ca B chạy API');
+      if (!inv.test(`ui-chromium s3e5/account.ui.spec.ts Ca B ${B_TAG}`) || !inv.test(`mobile-pixel x.ui.spec.ts Ca ${B_TAG}`)) errs.push('--grep-invert không loại ca B ở UI');
+      // mọi ca *.flow.api.spec.ts của diff đều được chọn (không bị grep-invert): đếm tệp flow có trong danh sách spec
+      for (const f of p.specs.filter((s) => /\.flow\.api\.spec\.ts$/.test(s))) if (inv.test(`api ${f} x ${B_TAG}`)) errs.push(`ca B API bị loại ở ${f}`);
       if (p.mobileSpecs.length) errs.push('diff chỉ server mà còn spec mobile');
       // 0 ca UI loại B: không spec *.ui.spec.ts nào được chọn còn test gắn @loai-B (ca B nằm ở *.api.spec.ts)
       const bad = p.specs.filter((f) => /\.ui\.spec\.ts$/.test(f)).filter((f) => /@loai-B\b/.test(readFileSync(path.join(TESTS, f), 'utf8')));

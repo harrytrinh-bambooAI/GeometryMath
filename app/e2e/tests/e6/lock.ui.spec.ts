@@ -77,13 +77,3 @@ test('Công thức và phương pháp tổng quát vẫn được trả lời, k
   await expect(page.getByTestId('e4-qa-answer-1-text')).not.toContainText(MSG['35']);
   await expect(page.getByTestId('e4-qa-answer-1-source')).toContainText('Nguồn');
 });
-
-test('Sau giờ mở, trợ lý được nêu đáp số @TC-GEO-0670', async ({ page, request }) => {
-  const sb = await twoClasses(request, [{ key: 'BG-1', code: 'HKG-01' }]);
-  const id = asg(sb, 'BG-1');
-  const v = (await (await api.releaseView(request, sb.teacher.token, id)).json()) as { releaseRev: number };
-  expect((await api.release(request, sb.teacher.token, id, { openNow: true, expectedRev: v.releaseRev })).status()).toBe(200);
-  await work(page, stu(sb, 'An'), 'An', id, 'ask');
-  await askUi(page, 'Đáp số bài này là bao nhiêu?');
-  await expect(page.getByTestId('e4-qa-answer-1-text')).toHaveText('Góc giữa SD và mặt đáy là 45°.');
-});

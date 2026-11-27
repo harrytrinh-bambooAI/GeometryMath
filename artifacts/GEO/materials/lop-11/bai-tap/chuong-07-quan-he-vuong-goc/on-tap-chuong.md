@@ -1,6 +1,6 @@
 # Bài tập cuối chương 7. Quan hệ vuông góc trong không gian
 
-Phiên bản: v1.2 · 27/11/2026
+Phiên bản: v1.3 · 27/11/2026
 
 > Tài liệu tổng hợp/biên soạn lại cho mục đích học tập (không sao chép nguyên văn SGK/SBT). Bộ sách xương sống: Toán 11 Kết nối tri thức với cuộc sống.
 
@@ -9,7 +9,7 @@ Phiên bản: v1.2 · 27/11/2026
 *Giải.* $V=(2a)^3=8a^3$. Chọn **C**.
 
 ### Thông hiểu
-**2.** Tính thể tích khối chóp ở trên. *Giải.* $\dfrac13\cdot2a^2\cdot a=\dfrac{2a^3}3$.
+**2.** Chóp $S.ABCD$ đáy hình chữ nhật, $AB=a$, $AD=2a$, $SA\perp(ABCD)$, $SA=a$. Tính thể tích khối chóp. *Giải.* $S_{ABCD}=2a^2$, $V=\dfrac13\cdot2a^2\cdot a=\dfrac{2a^3}3$.
 
 ### Vận dụng
 **3.** Chóp $S.ABCD$ đáy hình chữ nhật $AB=a$, $AD=2a$, $SA\perp(ABCD)$, $SA=a$. Chứng minh $(SAB)\perp(SBC)$ và tính $d(A,(SBC))$.
@@ -60,3 +60,4 @@ Phiên bản: v1.2 · 27/11/2026
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
 | v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 4 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.3 | 27/11/2026 | Bài 2: đề tự chứa dữ kiện (bỏ tham chiếu "khối chóp ở trên" bị đứt) | delivery-lead (theo REVIEW-L11-MATH-20261127) |

@@ -15,7 +15,7 @@ const studentEnd = (p: Person, testId: string) => async (page: Page) => {
   await expect(page.getByTestId(testId)).toBeVisible();
 };
 
-test('Lưu trữ lớp có em Chờ duyệt thì các em đó bị từ chối tự động @TC-S3E6-16', async ({ request, browser }, testInfo) => {
+test('Lưu trữ lớp có em Chờ duyệt thì các em đó bị từ chối tự động @TC-S3E6-16 @loai-B', async ({ request, browser }, testInfo) => {
   const w = await world(request);
   const lan = w.people['Cô Lan']!;
   const c = w.classes['11A1']!;
@@ -31,7 +31,7 @@ test('Lưu trữ lớp có em Chờ duyệt thì các em đó bị từ chối t
   });
 });
 
-test('Học sinh nhập mã của lớp đã lưu trữ @TC-S3E6-18', async ({ request, browser }, testInfo) => {
+test('Học sinh nhập mã của lớp đã lưu trữ @TC-S3E6-18 @loai-B', async ({ request, browser }, testInfo) => {
   const w = await world(request);
   const lan = w.people['Cô Lan']!;
   const c = w.classes['11A2']!;

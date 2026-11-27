@@ -1,6 +1,6 @@
 # Bài tập – Bài 25. Hai mặt phẳng vuông góc
 
-Phiên bản: v1.2 · 27/11/2026
+Phiên bản: v1.3 · 27/11/2026
 
 > Tài liệu tổng hợp/biên soạn lại cho mục đích học tập (không sao chép nguyên văn SGK/SBT). Bộ sách xương sống: Toán 11 Kết nối tri thức với cuộc sống.
 
@@ -20,7 +20,7 @@ Phiên bản: v1.2 · 27/11/2026
 *Giải.*
 - a) $(SAB)\supset SA\perp(ABCD)$: **Đúng**.
 - b) $(SAB)\cap(SAD)=SA$ và $AB\perp AD$, nên góc phẳng nhị diện $\widehat{BAD}=90^\circ$: **Đúng**.
-- c) $BD\perp(SAC)$ (xem bài 4): **Đúng**.
+- c) $BD\perp AC$ (đường chéo hình vuông) và $BD\perp SA$ nên $BD\perp(SAC)$, mà $BD\subset(SBD)$: **Đúng**.
 - d) Chọn hệ tọa độ $A(0;0;0)$, $B(a;0;0)$, $D(0;a;0)$, $S(0;0;s)$: pháp tuyến $(SBC)$ là $(s;0;a)$, của $(SAC)$ là $(1;-1;0)$; tích vô hướng $s\ne0$: **Sai**.
 - Đáp án: Đ – Đ – Đ – S.
 
@@ -40,7 +40,7 @@ Phiên bản: v1.2 · 27/11/2026
 - Bước 3: $AO=\dfrac{a\sqrt2}2$, $\tan\widehat{SOA}=\dfrac{SA}{AO}=\dfrac a{a\sqrt2/2}=\sqrt2$.
 
 ### Vận dụng cao
-**7.** Với giả thiết bài 3, chứng minh $(SBD)\perp(SAC)$.
+**7.** Chóp $S.ABCD$ đáy hình vuông, $SA\perp(ABCD)$. Chứng minh $(SBD)\perp(SAC)$.
 *Giải.*
 - Bước 1: $BD\perp AC$ (đường chéo hình vuông).
 - Bước 2: $BD\perp SA$ (vì $SA\perp(ABCD)$).
@@ -64,3 +64,4 @@ Phiên bản: v1.2 · 27/11/2026
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |
 | v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.3 | 27/11/2026 | Bài 7: nêu rõ đáy hình vuông (bài 3 không có); bài 4c: bỏ "xem bài 4", lập luận đầy đủ | delivery-lead (theo REVIEW-L11-MATH-20261127) |

@@ -390,3 +390,21 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** `artifacts/GEO/evidence/E2E-SPLIT-20261127/REPORT.md`; `artifacts/GEO/work/s23/e2e-ui-classification.md` (27/11/2026).
 - **Xong khi:** 0 ca B chạy UI; `make e2e-affected-selftest` đạt; `make e2e` trọn bộ 0 trượt; `make verify && make traceability ARGS="--strict --all"` không giảm phủ (trừ TC chờ FIX theo PO-DECISIONS).
 - **Ngoài phạm vi:** code sản phẩm; xoá ca loại A.
+
+## Việc: cân chuyên đề Kho đề MVP · ghi 27/11/2026 (owner yêu cầu) · nhánh content-bal
+- **Mục tiêu:** `catalog-mvp.json` mỗi dạng bài 16–20 đề, có cả THCS + THPT: thêm HKN-47…84 (Góc +4, Thể tích +8, Diện tích +13, Mặt cầu +13); 46 → 84 đề, có lời giải từng bước, mỗi đề có `problem-specs.json` cùng mã, engine kiểm hình đạt.
+- **Nguồn:** `app/server/src/main/resources/content/catalog-mvp.json` v1.0 (26/11/2026), `geometry/problem-specs.json`; phân bố hiện tại: Khoảng cách 20, Góc 12, Thể tích 8 (0 THPT), Diện tích 3, Mặt cầu 3.
+- **Xong khi:** IT nạp gói nội dung: 84 đề, 0 đề nhãn "Cần xem lại"; `make bench-mvp` (mock) xanh; `make verify` xanh; bảng phân bố mới 16–20/dạng.
+- **Ngoài phạm vi:** seed e2e (giữ 6 đề, TC-GEO-0125); đổi engine trừ khi đề hợp lệ bị kiểm sai (ghi rõ); kho Toán 11 trong artifacts/GEO/materials.
+
+## Hàng đợi chạy · 27/11/2026 (owner duyệt: xếp hàng, giới hạn 2 Opus)
+Đang chạy: content-bal (Opus, 46→84 đề), fix-po27 (Opus).
+1. Agent đầu tiên xong → soát độc lập nhánh đó (Sonnet, chỉ diff + "Xong khi", chỉ báo lỗi) + soát chéo toán 305 bài Toán 11 `artifacts/GEO/materials/lop-11/bai-tap` (Sonnet, chỉ báo lỗi, ghi `artifacts/GEO/evidence/REVIEW-L11-MATH-20261127.md`).
+2. Agent thứ hai xong → soát độc lập nhánh đó (Sonnet); E2E tách UI/API đợt 2 (Opus, worktree e2e-split2, cổng 54409) ngay khi đủ suất.
+3. Nhánh soát đạt → gộp worktree-mvp-wave0 → push.
+
+## Việc: prompt AI biết 7 loại đại lượng mới · ghi 27/11/2026 (sau content-bal)
+- **Mục tiêu:** `AnthropicPrompts` (scene/self-study) mô tả được các loại đại lượng mới của engine (sphere_area, cyl_lateral, cyl_volume, cone_total_area, pyramid_volume, pyramid_lateral, prism_lateral, cầu ngoại tiếp 4 điểm) để Tự học với đề dạng Diện tích/Mặt cầu dựng + kiểm được.
+- **Nguồn:** commit 83d3052 nhánh content-bal; DECISIONS 27/11 "Kho đề 84 đề".
+- **Xong khi:** test prompt/mock đạt; `make bench-mvp` mock xanh; (đo AI thật chỉ khi owner cho phép chi phí).
+- **Ngoài phạm vi:** đổi model AI; nới ngưỡng.

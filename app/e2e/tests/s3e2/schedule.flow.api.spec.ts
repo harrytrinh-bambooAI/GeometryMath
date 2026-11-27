@@ -13,7 +13,7 @@ const DUE = '2026-12-11T13:00:00Z'; // 11/12/2026 20:00 giờ Việt Nam
 const vn = (d: string, hm: string) => new Date(`${d}T${hm}:00+07:00`).toISOString();
 const ms = (iso: string | null | undefined) => (iso ? new Date(iso).getTime() : null);
 
-test('@TC-S3E2-16 giờ mở riêng của Đề 3 ghi đè giờ của bộ, học sinh thấy đúng giờ từng đề', async ({ request, browser }, testInfo) => {
+test('@TC-S3E2-16 @loai-B giờ mở riêng của Đề 3 ghi đè giờ của bộ, học sinh thấy đúng giờ từng đề', async ({ request, browser }, testInfo) => {
   const sb = await sandbox(request);
   // Bước "chế độ Từng bài + giờ riêng Đề 3 + Lưu nháp" = tạo/lưu nháp với giờ mở riêng của đề 3
   const d = await draft(request, sb, { items: [1, 2, 3, 4], dueAt: DUE, releaseAt: vn('2026-12-13', '08:00'), itemReleases: { 3: vn('2026-12-14', '08:00') } });
@@ -30,7 +30,7 @@ test('@TC-S3E2-16 giờ mở riêng của Đề 3 ghi đè giờ của bộ, h�
   });
 });
 
-test('@TC-S3E2-22 chọn "Giữ giờ mở sớm" thì giao được với giờ mở đã đặt', async ({ request, browser }, testInfo) => {
+test('@TC-S3E2-22 @loai-B chọn "Giữ giờ mở sớm" thì giao được với giờ mở đã đặt', async ({ request, browser }, testInfo) => {
   const sb = await sandbox(request);
   const early = vn('2026-12-10', '08:00');
   const d = await draft(request, sb, { items: [1, 2, 4, 5], dueAt: DUE, releaseAt: early });
@@ -48,7 +48,7 @@ test('@TC-S3E2-22 chọn "Giữ giờ mở sớm" thì giao được với giờ
   });
 });
 
-test('@TC-S3E2-33 "Vẫn giao": bộ giao đủ 4 đề, Đề 3 giữ nhãn ở Kho đề, học sinh không thấy nhãn', async ({ request, browser }, testInfo) => {
+test('@TC-S3E2-33 @loai-B "Vẫn giao": bộ giao đủ 4 đề, Đề 3 giữ nhãn ở Kho đề, học sinh không thấy nhãn', async ({ request, browser }, testInfo) => {
   const sb = await sandbox(request);
   const d = await draft(request, sb, { dueAt: DUE, releaseAt: vn('2026-12-13', '08:00') });
   const a = await assignRaw(request, sb.teacher.token, d.id); // bước "Vẫn giao" + xác nhận
@@ -70,7 +70,7 @@ test('@TC-S3E2-33 "Vẫn giao": bộ giao đủ 4 đề, Đề 3 giữ nhãn ở
   });
 });
 
-test('@TC-S3E2-41 lưu trữ bộ Đã đóng: rời Bài đang giao và danh sách của học sinh, hiện ở Bộ đã lưu trữ', async ({ request, browser }, testInfo) => {
+test('@TC-S3E2-41 @loai-B lưu trữ bộ Đã đóng: rời Bài đang giao và danh sách của học sinh, hiện ở Bộ đã lưu trữ', async ({ request, browser }, testInfo) => {
   const sb = await sandbox(request);
   const set = await assigned(request, sb, { title: 'Bộ bài tuần 15', items: [1, 2] });
   const c = await request.post(`${T}/${set.id}/close`, { headers: bearer(sb.teacher.token), data: { requestKey: randomUUID() } });

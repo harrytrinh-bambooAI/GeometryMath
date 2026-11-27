@@ -43,20 +43,6 @@ test('Tình trạng khi bài còn khóa @TC-GEO-0702', async ({ page, request })
   expect(await status(page)).toEqual(['Đang chờ lời giải', 'Đang làm', 'Tự làm, không cần gợi ý', 'Đang chờ lời giải', 'Chưa bắt đầu']);
 });
 
-test('Tình trạng sau khi mở lời giải @TC-GEO-0703', async ({ page, request }) => {
-  const b = await box(request, golden());
-  const id = asg(b, 'BG-1');
-  // Giáo viên mẫu "Mở ngay" BG-1; An xem lời giải; Dũng chưa xem
-  const r = await call.release(request, b.teacher.token, id, { openNow: true });
-  expect(r.status(), await r.text()).toBe(200);
-  expect((await call.solution(request, st(b, 'An').token, id)).status()).toBe(200);
-  await request.post(`${API}/test-hooks/e7/restart`, { data: { assignmentId: id } });
-  await openMonitor(page, b);
-  await page.reload();
-  await expect.poll(() => status(page)).toEqual(['Đã xem lời giải', 'Đang làm', 'Tự làm, không cần gợi ý', 'Đang làm', 'Chưa bắt đầu']);
-  await expect(page.getByTestId('e7-lock')).toHaveCount(0);
-});
-
 test('Thẻ vàng khi lời giải khóa @TC-GEO-0704', async ({ page, request }) => {
   const b = await box(request, golden());
   await openMonitor(page, b, 'BG-1');
@@ -213,22 +199,4 @@ test('Chưa ai hỏi @TC-GEO-0718', async ({ page, request }) => {
   await expect(page.getByTestId('e7-asking-empty')).toHaveText('Chưa có câu hỏi nào.');
   const asks = await page.locator('[data-testid^="e7-asks-"]:not([data-testid^="e7-asks-btn"]):not([data-testid^="e7-asking"])').allTextContents();
   expect(asks).toEqual(['—', '—', '—', '—', '—']);
-});
-
-test('Không có nhận định do AI viết @TC-GEO-0720', async ({ page, request }) => {
-  const b = await box(request, golden());
-  const callsOf = async (userId: string) =>
-    ((await (await request.get(`${API}/test-hooks/ai/calls?userId=${userId}&limit=100`)).json()) as unknown[]).length;
-  const n = await callsOf(b.teacher.id);
-  await openMonitor(page, b);
-  await expect(page.getByTestId('e7-group')).toHaveCount(4);
-  for (const g of await page.getByTestId('e7-group').all()) {
-    await expect(g.getByTestId('e7-group-meta')).toHaveText(/^[^·]+ · \d+ lượt$/);
-  }
-  const asking = await page.getByTestId('e7-asking').innerText();
-  for (const s of ['nên', 'vướng', 'gợi ý cho giáo viên', 'AI']) expect(asking).not.toContain(s);
-  expect(await callsOf(b.teacher.id)).toBe(n);
-  // dữ liệu trả về của trang không gọi AI cho bất kỳ học sinh nào
-  for (const name of NAMES) expect(await callsOf(st(b, name).id)).toBe(0);
-  expect((await request.get(`${API}/api/v1/teacher/assignments/${asg(b, 'BG-1')}/monitor`, { headers: bearer(b.teacher.token) })).status()).toBe(200);
 });

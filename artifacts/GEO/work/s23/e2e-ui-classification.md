@@ -1,4 +1,4 @@
-Phiên bản: v1.0 · 2026-11-27
+Phiên bản: v1.1 · 2026-11-27
 
 # Phân loại ca UI E2E: A (kiểm giao diện/hành động) và B (chỉ dữ liệu/nghiệp vụ) · DECISIONS 27/11 "Chiến lược E2E"
 
@@ -10,11 +10,32 @@ Quy tắc: **A** = hiển thị, ẩn-hiện, bố cục, khung 3D, di động P
 | Mục | Số |
 |---|---|
 | Test UI trước (tiêu đề test trong `*.ui.spec.ts`) | 564 |
-| Đã chuyển sang API (B, `*.flow.api.spec.ts`) | 26 |
-| Còn lại UI loại A | 506 |
-| B nhưng CHƯA chuyển (đợt sau; heuristic: không kiểm bố cục/ẩn-hiện, có gọi API đối chứng) | 32 |
+| Đã chuyển sang API (B, `*.flow.api.spec.ts`, gắn `@loai-B`) | 37 (đợt 1: 26, đợt 2: 11) |
+| Còn lại UI loại A | 526 (506 + 20 ca đổi B->A ở rà tay đợt 2) |
+| B còn chạy UI | 1, để sau fix-po27: TC-S3E5-53 |
 
-Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ mã nguồn (không đọc từng ca); ca B chưa chuyển vẫn chạy UI trong mọi lượt (không mất phủ), chờ đợt chuyển sau. Mỗi ca A đã đọc/giữ nguyên, không xoá.
+Ghi chú đợt 2 (E2E-SPLIT2, 27/11): đã RÀ TAY đủ 32 ca B theo heuristic (đọc thân từng ca): 11 chuyển sang API, 20 đổi sang A (cột "Lý do" ghi lý do mới; 6 trong đó là ca A giữ chỗ bấm cho ca B đợt 1 nên không thể là B), 1 để sau fix-po27. Phần 506 ca A còn lại vẫn theo heuristic đợt 1, chưa rà tay từng ca (TẠM). Ca B đã chuyển gắn `@loai-B` để truy vết; `make e2e-affected` khi diff chỉ server chỉ loại ca `@loai-B` ở project UI/mobile, không loại ca B chạy API.
+
+### Ca đổi loại ở rà tay đợt 2 (B -> A)
+| TC | Lý do |
+|---|---|
+| TC-GEO-0118 | kiểm toàn bộ nội dung trình duyệt nhận (phản hồi + HTML/JS/CSS đã tải), cần trình duyệt thật |
+| TC-GEO-0410 | chụp ảnh + sửa ô chữ + Dựng hình trên iPhone |
+| TC-GEO-0473 | ẩn-hiện nút bài giảng trong câu trả lời |
+| TC-GEO-0539 | bấm "Tải thêm" với con trỏ hỏng, màn hiện lỗi |
+| TC-GEO-0609 | bấm Giao, màn hiện lỗi MSG-42 tại chỗ |
+| TC-GEO-0663 | đồng hồ thiết bị bị chỉnh (page.clock): hành vi phía trình duyệt |
+| TC-GEO-0689 | trang đang mở tự hiện thông báo trong 10 giây |
+| TC-GEO-0697 | nhịp hỏi lại trạng thái của trang (≤ 8 giây) |
+| TC-S2E1-030 | trang chuyển về đăng nhập + thông báo hết phiên |
+| TC-S2E3-026 | đóng tab, mở lại trang khôi phục tiến trình |
+| TC-S2E7-005 | khung 3D: xoay, đo, thêm đường phụ |
+| TC-S2E7-023 | mất mạng lúc trình chiếu, bấm tiếp/thoát |
+| TC-S2E9-043 | ẩn-hiện nút "Em nghĩ đáp số này đúng" |
+| TC-S3E5-16 | màn Đăng ký: tick riêng tư, nhãn phiên bản, bấm Đăng ký |
+| TC-S3E1-05, 06, 45 | ca A giữ công tắc mã lớp / lỗi form Tạo lớp / nút Hủy cho ca B đợt 1 |
+| TC-S3E2-01, 02 | ca A giữ thêm đề, lưu nháp, kéo thả cho ca B đợt 1 |
+| TC-S3E6-17 | ca A giữ nút Bỏ lưu trữ + hộp xác nhận cho ca B đợt 1 |
 
 ## 1. Ca B đã chuyển sang API
 | TC | Tệp mới (project api) | Ca A giữ chỗ bấm cùng màn |
@@ -45,17 +66,27 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | TC-S3E5-33 | `s3e5/account.flow.api.spec.ts` | TC-S3E5-53, 59, 55 |
 | TC-S3E6-16 | `s3e6/archive.flow.api.spec.ts` | TC-S3E6-15, 17, 26 |
 | TC-S3E6-18 | `s3e6/archive.flow.api.spec.ts` | TC-S3E6-15, 17, 26 |
+| TC-GEO-0102 | `e1/student-join.flow.api.spec.ts` | TC-GEO-0100, 0101, 0104 |
+| TC-GEO-0481 | `e4/inherit.flow.api.spec.ts` | TC-GEO-0434, 0435 |
+| TC-GEO-0493 | `e4/qa.flow.api.spec.ts` | TC-GEO-0463 |
+| TC-GEO-0507 | `e5/catalog.flow.api.spec.ts` | TC-GEO-0500 |
+| TC-GEO-0516 | `e5/detail.flow.api.spec.ts` | TC-GEO-0515 |
+| TC-GEO-0670 | `e6/lock.flow.api.spec.ts` | TC-GEO-0656 |
+| TC-GEO-0703 | `e7/monitor.flow.api.spec.ts` | TC-GEO-0700, 0701, 0702 |
+| TC-GEO-0720 | `e7/monitor.flow.api.spec.ts` | TC-GEO-0700, 0701, 0702 |
+| TC-S2E8-107 | `s2e8/compose.flow.api.spec.ts` | TC-S2E8-105 |
+| TC-S2E8-076 | `s2e8/result.flow.api.spec.ts` | TC-S2E8-075 |
+| TC-S3E3-14 | `s3e3/board.flow.api.spec.ts` | TC-S3E3-04 (cùng tệp board.ui) |
 
 ## 2. Ca UI còn lại (một dòng mỗi test; loại A trừ khi ghi B chưa chuyển)
 | Spec | Mã TC | A/B | Trạng thái | Lý do | Tiêu đề |
 |---|---|---|---|---|---|
-| e1/ai-gateway.ui.spec.ts | TC-GEO-0118 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | trạng thái trợ lý AI/gợi ý bận hiện ở giao diện | test('Khóa của nhà cung cấp không xuống trình duyệt  async ({ page, re |
+| e1/ai-gateway.ui.spec.ts | TC-GEO-0118 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | kiểm toàn bộ nội dung trình duyệt nhận (phản hồi + HTML/JS/CSS đã tải) -> cần trình duyệt thật | test('Khóa của nhà cung cấp không xuống trình duyệt  async ({ page, re |
 | e1/ai-gateway.ui.spec.ts | TC-GEO-0120 | A | giữ UI (A) | trạng thái trợ lý AI/gợi ý bận hiện ở giao diện | test('Nhà cung cấp trả lỗi  async ({ page, request }, testInfo) => { |
 | e1/ai-gateway.ui.spec.ts | TC-GEO-0122 | A | giữ UI (A) | trạng thái trợ lý AI/gợi ý bận hiện ở giao diện | test('Bấm "Thử lại" sau lỗi  async ({ page, request }, testInfo) => { |
 | e1/ai-gateway.ui.spec.ts | TC-GEO-0128 | A | giữ UI (A) | trạng thái trợ lý AI/gợi ý bận hiện ở giao diện | test('Học sinh gọi bài của lớp khác cùng trường  async ({ page, reques |
 | e1/student-join.ui.spec.ts | TC-GEO-0100 | A | giữ UI (A) | màn Vào lớp: nhập, chuyển trang, phiên hết hạn · chạy thêm mobile-iphone/mobile-pixel | test('Vào lớp bằng tên và mã lớp đúng   async ({ page }) => { |
 | e1/student-join.ui.spec.ts | TC-GEO-0101 | A | giữ UI (A) | màn Vào lớp: nhập, chuyển trang, phiên hết hạn · chạy thêm mobile-iphone/mobile-pixel | test('Tên chưa có trong lớp thì thành học sinh mới của lớp đó  async ( |
-| e1/student-join.ui.spec.ts | TC-GEO-0102 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | màn Vào lớp: nhập, chuyển trang, phiên hết hạn · chạy thêm mobile-iphone/mobile-pixel | test('Vào lại với cùng tên thì giữ đúng dữ liệu của mình  async ({ pag |
 | e1/student-join.ui.spec.ts | TC-GEO-0103 | A | giữ UI (A) | màn Vào lớp: nhập, chuyển trang, phiên hết hạn · chạy thêm mobile-iphone/mobile-pixel | test('Mã lớp quyết định trường và lớp  async ({ page }) => { |
 | e1/student-join.ui.spec.ts | TC-GEO-0104 | A | giữ UI (A) | màn Vào lớp: nhập, chuyển trang, phiên hết hạn · chạy thêm mobile-iphone/mobile-pixel | test('Màn "Vào lớp" chỉ có hai ô nhập  async ({ page }) => { |
 | e1/student-join.ui.spec.ts | TC-GEO-0107 | A | giữ UI (A) | màn Vào lớp: nhập, chuyển trang, phiên hết hạn · chạy thêm mobile-iphone/mobile-pixel | test('Tên hiển thị rỗng  async ({ page }) => { |
@@ -133,7 +164,6 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | e4/hints.ui.spec.ts | TC-GEO-0430 | A | giữ UI (A) | hiển thị gợi ý theo bậc, ẩn-hiện · chạy thêm mobile-iphone/mobile-pixel | test('Bài tự học chưa xem gợi ý nào: tab Lời giải khóa  async ({ page, |
 | e4/inherit.ui.spec.ts | TC-GEO-0434 | A | giữ UI (A) | kế thừa trạng thái gợi ý khi mở lại | test('Dán lại đề đang khóa thì bị khóa theo bài giao  async ({ page, r |
 | e4/inherit.ui.spec.ts | TC-GEO-0435 | A | giữ UI (A) | kế thừa trạng thái gợi ý khi mở lại | test('Bài giao mở thì bài tự học kế thừa cũng mở  async ({ page, reque |
-| e4/inherit.ui.spec.ts | TC-GEO-0481 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | kế thừa trạng thái gợi ý khi mở lại | test('Dán lại đề của bài giao Chưa đặt giờ thì lời giải tự học cũng kh |
 | e4/inherit.ui.spec.ts | TC-GEO-0482 | A | giữ UI (A) | kế thừa trạng thái gợi ý khi mở lại | test('Đề viết lại với cạnh 2a vẫn kế thừa  async ({ page, request }) = |
 | e4/inherit.ui.spec.ts | TC-GEO-0483 | A | giữ UI (A) | kế thừa trạng thái gợi ý khi mở lại | test('Đề viết lại câu chữ, thêm chữ vẫn kế thừa khóa  async ({ page, r |
 | e4/inherit.ui.spec.ts | TC-GEO-0484 | A | giữ UI (A) | kế thừa trạng thái gợi ý khi mở lại | test('Cùng hình nhưng hỏi đại lượng khác thì không kế thừa khóa  async |
@@ -152,12 +182,11 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | e4/qa.ui.spec.ts | TC-GEO-0464 | A | giữ UI (A) | hỏi đáp: ô nhập, hiển thị trả lời (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Lọc nhật ký theo bài  async ({ page, request }) => { |
 | e4/qa.ui.spec.ts | TC-GEO-0465 | A | giữ UI (A) | hỏi đáp: ô nhập, hiển thị trả lời (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Mở lại câu trả lời đã lưu, không gọi AI lại  async ({ page, requ |
 | e4/qa.ui.spec.ts | TC-GEO-0467 | A | giữ UI (A) | hỏi đáp: ô nhập, hiển thị trả lời (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Bài chưa có câu hỏi  async ({ page, request }) => { |
-| e4/qa.ui.spec.ts | TC-GEO-0493 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | hỏi đáp: ô nhập, hiển thị trả lời (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Câu trả lời từng bị chặn mở lại vẫn là câu thay thế  async ({ pa |
 | e4/qa.ui.spec.ts | TC-GEO-0469 | A | giữ UI (A) | hỏi đáp: ô nhập, hiển thị trả lời (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Bấm từ khóa trong gợi ý  async ({ page, request }) => { |
 | e4/qa.ui.spec.ts | TC-GEO-0470 | A | giữ UI (A) | hỏi đáp: ô nhập, hiển thị trả lời (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Bài giảng do AI viết mang nhãn chờ duyệt  async ({ page, request |
 | e4/qa.ui.spec.ts | TC-GEO-0471 | A | giữ UI (A) | hỏi đáp: ô nhập, hiển thị trả lời (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Từ khóa trong lời giải  async ({ page, request }) => { |
 | e4/qa.ui.spec.ts | TC-GEO-0472 | A | giữ UI (A) | hỏi đáp: ô nhập, hiển thị trả lời (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Đóng hộp bài giảng: về đúng chỗ, điểm M và tiến độ không đổi  as |
-| e4/qa.ui.spec.ts | TC-GEO-0473 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | hỏi đáp: ô nhập, hiển thị trả lời (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Cụm từ không có bài giảng  async ({ page, request }) => { |
+| e4/qa.ui.spec.ts | TC-GEO-0473 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | ẩn-hiện nút bài giảng trong câu trả lời trên màn | test('Cụm từ không có bài giảng  async ({ page, request }) => { |
 | e4/qa.ui.spec.ts | TC-GEO-0475 | A | giữ UI (A) | hỏi đáp: ô nhập, hiển thị trả lời (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Không dùng nhãn "Giáo viên đã duyệt" cho bảy bài Giáo án mẫu  as |
 | e4/qa.ui.spec.ts | TC-GEO-0494 | A | giữ UI (A) | hỏi đáp: ô nhập, hiển thị trả lời (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Cờ chờ soát hiện cho học sinh và giáo viên  async ({ page, reque |
 | e4/selfstudy.ui.spec.ts | TC-GEO-0400 | A | giữ UI (A) | Tự học: nhập, hiển thị | test('Dán đề và nhận hình  async ({ page, request }) => { |
@@ -165,7 +194,7 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | e4/selfstudy.ui.spec.ts | TC-GEO-0404 | A | giữ UI (A) | Tự học: nhập, hiển thị | test('Đề rỗng  async ({ page, request }) => { |
 | e4/selfstudy.ui.spec.ts | TC-GEO-0406 | A | giữ UI (A) | Tự học: nhập, hiển thị | test('Trợ lý lỗi khi dựng hình  async ({ page, request }) => { |
 | e4/selfstudy.ui.spec.ts | TC-GEO-0409 | A | giữ UI (A) | Tự học: nhập, hiển thị | test('Ảnh rõ được đọc thành chữ để sửa (iPhone)  async ({ browser, req |
-| e4/selfstudy.ui.spec.ts | TC-GEO-0410 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | Tự học: nhập, hiển thị | test('Sửa chữ đọc từ ảnh rồi dựng hình  async ({ browser, request }) = |
+| e4/selfstudy.ui.spec.ts | TC-GEO-0410 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | chụp ảnh + sửa ô chữ + Dựng hình trên iPhone (hành động nhập trên điện thoại) | test('Sửa chữ đọc từ ảnh rồi dựng hình  async ({ browser, request }) = |
 | e4/selfstudy.ui.spec.ts | TC-GEO-0415 | A | giữ UI (A) | Tự học: nhập, hiển thị | test('Vào màn khám phá từ "Tự khám phá" của Bài của em  async ({ page, |
 | e4/selfstudy.ui.spec.ts | TC-GEO-0416 | A | giữ UI (A) | Tự học: nhập, hiển thị | test('"Mở chế độ tự học"  async ({ page, request }) => { |
 | e4/selfstudy.ui.spec.ts | TC-GEO-0417 | A | giữ UI (A) | Tự học: nhập, hiển thị | test('Màn khám phá không có gợi ý, lời giải, hỏi đáp  async ({ page, r |
@@ -188,16 +217,14 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | e5/catalog.ui.spec.ts | TC-GEO-0504, TC-GEO-0510 | A | giữ UI (A) | Kho đề: lọc, danh sách, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Nội dung thẻ HKG-01   async ({ page, request }) => { |
 | e5/catalog.ui.spec.ts | TC-GEO-0505 | A | giữ UI (A) | Kho đề: lọc, danh sách, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Kho đề trên điện thoại: một cột, lọc THCS, Giao bài bấm được  as |
 | e5/catalog.ui.spec.ts | TC-GEO-0506 | A | giữ UI (A) | Kho đề: lọc, danh sách, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Lọc không có kết quả: THCS + Mặt cầu  async ({ page, request })  |
-| e5/catalog.ui.spec.ts | TC-GEO-0507 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | Kho đề: lọc, danh sách, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Học sinh gọi Kho đề: FORBIDDEN, không có mục Kho đề  async ({ pa |
 | e5/catalog.ui.spec.ts | TC-GEO-0508 | A | giữ UI (A) | Kho đề: lọc, danh sách, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Không có tìm kiếm, Thêm đề, soạn, import, Thiết diện  async ({ p |
 | e5/catalog.ui.spec.ts | TC-GEO-0511 | A | giữ UI (A) | Kho đề: lọc, danh sách, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Đề cần xem lại: nhãn khác màu, vẫn AI soạn, Giao bài bấm được  a |
 | e5/catalog.ui.spec.ts | TC-GEO-0512 | A | giữ UI (A) | Kho đề: lọc, danh sách, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Giáo viên C: kho và lời giải đứng tên Giáo viên mẫu  async ({ pa |
 | e5/catalog.ui.spec.ts | TC-GEO-0514 | A | giữ UI (A) | Kho đề: lọc, danh sách, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Không có "Giáo viên đã duyệt" trên 48 thẻ và trang chi tiết  asy |
 | e5/catalog.ui.spec.ts | TC-GEO-0532, TC-GEO-0537 | A | giữ UI (A) | Kho đề: lọc, danh sách, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Tải lần lượt hết kho: 20, 20, 8; mỗi mã đúng một lần   async ({  |
 | e5/catalog.ui.spec.ts | TC-GEO-0538 | A | giữ UI (A) | Kho đề: lọc, danh sách, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Đổi bộ lọc giữa chừng: làm lại từ đầu, 20 đề THCS  async ({ page |
-| e5/catalog.ui.spec.ts | TC-GEO-0539 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | Kho đề: lọc, danh sách, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Con trỏ hỏng: màn hiện MSG-GEO-05  async ({ page, request }) =>  |
+| e5/catalog.ui.spec.ts | TC-GEO-0539 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | bấm "Tải thêm" với con trỏ hỏng, màn hiện lỗi, không thêm thẻ | test('Con trỏ hỏng: màn hiện MSG-GEO-05  async ({ page, request }) => |
 | e5/detail.ui.spec.ts | TC-GEO-0515 | A | giữ UI (A) | chi tiết đề: hiển thị (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Bốn phần của trang chi tiết HKG-01   async ({ page, request }) = |
-| e5/detail.ui.spec.ts | TC-GEO-0516 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | chi tiết đề: hiển thị (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Giáo viên thấy lời giải dù BG-1 đang Sắp mở  async ({ page, requ |
 | e5/detail.ui.spec.ts | TC-GEO-0517 | A | giữ UI (A) | chi tiết đề: hiển thị (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Chip đáp số khớp tính toán chỉ ở đề đã kiểm chứng  async ({ page |
 | e5/detail.ui.spec.ts | TC-GEO-0518 | A | giữ UI (A) | chi tiết đề: hiển thị (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Hình xoay được trên trang chi tiết  async ({ page, request }) => |
 | e5/detail.ui.spec.ts | TC-GEO-0519 | A | giữ UI (A) | chi tiết đề: hiển thị (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Trang chi tiết trên điện thoại: xếp dọc đúng thứ tự, không cuộn  |
@@ -207,7 +234,7 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | e6/assign.ui.spec.ts | TC-GEO-0605 | A | giữ UI (A) | màn Giao bài: chọn lớp, bố cục (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Danh sách lớp ở bước 1  async ({ page, request }) => { |
 | e6/assign.ui.spec.ts | TC-GEO-0606 | A | giữ UI (A) | màn Giao bài: chọn lớp, bố cục (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Giao cho một lớp   async ({ page, request }) => { |
 | e6/assign.ui.spec.ts | TC-GEO-0607 | A | giữ UI (A) | màn Giao bài: chọn lớp, bố cục (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Nút giao ghi tên lớp đang chọn  async ({ page, request }) => { |
-| e6/assign.ui.spec.ts | TC-GEO-0609 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | màn Giao bài: chọn lớp, bố cục (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Giao lại cùng đề cho cùng lớp  async ({ page, request }) => { |
+| e6/assign.ui.spec.ts | TC-GEO-0609 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | bấm Giao, màn hiện lỗi MSG-42 tại chỗ | test('Giao lại cùng đề cho cùng lớp  async ({ page, request }) => { |
 | e6/assign.ui.spec.ts | TC-GEO-0610 | A | giữ UI (A) | màn Giao bài: chọn lớp, bố cục (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Bấm đúp nút giao: một bài, một thông báo  async ({ page, request |
 | e6/assign.ui.spec.ts | TC-GEO-0611 | A | giữ UI (A) | màn Giao bài: chọn lớp, bố cục (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Không có giao theo bộ  async ({ page, request }) => { |
 | e6/assign.ui.spec.ts | TC-GEO-0612 | A | giữ UI (A) | màn Giao bài: chọn lớp, bố cục (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Mặc định cả hai công tắc bật  async ({ page, request }) => { |
@@ -227,19 +254,18 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | e6/assign.ui.spec.ts | (không gắn mã TC) | A | giữ UI (A) | màn Giao bài: chọn lớp, bố cục (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Dev-E6-02 "Ngay bây giờ": mất phản hồi lệnh mở, bấm lại → một bà |
 | e6/auto.ui.spec.ts | TC-GEO-0687 | A | giữ UI (A) | tự mở lời giải: hiển thị trạng thái | test('Tới giờ thì lời giải tự mở, không tải lại  async ({ page, reques |
 | e6/auto.ui.spec.ts | TC-GEO-0688 | A | giữ UI (A) | tự mở lời giải: hiển thị trạng thái | test('Đếm ngược trên thẻ khóa giảm dần, không bao giờ âm  async ({ pag |
-| e6/auto.ui.spec.ts | TC-GEO-0689 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | tự mở lời giải: hiển thị trạng thái | test('Giáo viên mở ngay khi học sinh đang xem  async ({ page, request  |
+| e6/auto.ui.spec.ts | TC-GEO-0689 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | trang đang mở tự hiện thông báo trong 10 giây (hành vi thời gian thực của trang) | test('Giáo viên mở ngay khi học sinh đang xem  async ({ page, request |
 | e6/auto.ui.spec.ts | TC-GEO-0690 | A | giữ UI (A) | tự mở lời giải: hiển thị trạng thái | test('"Bài của em" đang mở cũng đổi nhãn  async ({ page, request }) => |
 | e6/auto.ui.spec.ts | TC-GEO-0693 | A | giữ UI (A) | tự mở lời giải: hiển thị trạng thái | test('Mất mạng đúng lúc tới giờ: thẻ khóa giữ, có mạng lại thì mở tron |
 | e6/auto.ui.spec.ts | TC-GEO-0694 | A | giữ UI (A) | tự mở lời giải: hiển thị trạng thái | test('Đồng hồ thiết bị nhanh 30 giây: chỉ mở theo giờ máy chủ  async ( |
-| e6/auto.ui.spec.ts | TC-GEO-0697 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | tự mở lời giải: hiển thị trạng thái | test('Trang đang chờ khóa hỏi lại trạng thái không quá 8 giây một lần  |
+| e6/auto.ui.spec.ts | TC-GEO-0697 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | nhịp hỏi lại trạng thái của trang (hành vi trình duyệt) | test('Trang đang chờ khóa hỏi lại trạng thái không quá 8 giây một lần |
 | e6/auto.ui.spec.ts | TC-GEO-0864 | A | giữ UI (A) | tự mở lời giải: hiển thị trạng thái | test('Phản hồi trạng thái khóa không cho lưu đệm  async ({ page, reque |
 | e6/lock.ui.spec.ts | TC-GEO-0656 | A | giữ UI (A) | thẻ khóa lời giải | test('Đã mở thì trả lời giải (BG-3: hai bước, 24√3 cm³)  async ({ page |
 | e6/lock.ui.spec.ts | TC-GEO-0658 | A | giữ UI (A) | thẻ khóa lời giải | test('Thẻ khóa của bài Sắp mở: giờ mở và "Còn 1 giờ 0 phút"  async ({  |
 | e6/lock.ui.spec.ts | TC-GEO-0659 | A | giữ UI (A) | thẻ khóa lời giải | test('Thẻ khóa của bài Chưa đặt giờ: không giờ, không đếm ngược  async |
-| e6/lock.ui.spec.ts | TC-GEO-0663 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | thẻ khóa lời giải | test('Đồng hồ thiết bị bị chỉnh nhanh 2 giờ: vẫn khóa  async ({ page,  |
+| e6/lock.ui.spec.ts | TC-GEO-0663 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | đồng hồ thiết bị (page.clock) vẫn khóa: hành vi phía trình duyệt | test('Đồng hồ thiết bị bị chỉnh nhanh 2 giờ: vẫn khóa  async ({ page, |
 | e6/lock.ui.spec.ts | TC-GEO-0667 | A | giữ UI (A) | thẻ khóa lời giải | test('Hỏi thẳng đáp số khi đang khóa: MSG-GEO-35 kèm Gợi ý 2  async ({ |
 | e6/lock.ui.spec.ts | TC-GEO-0669 | A | giữ UI (A) | thẻ khóa lời giải | test('Công thức và phương pháp tổng quát vẫn được trả lời, kèm Nguồn   |
-| e6/lock.ui.spec.ts | TC-GEO-0670 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | thẻ khóa lời giải | test('Sau giờ mở, trợ lý được nêu đáp số  async ({ page, request }) => |
 | e6/mine.ui.spec.ts | TC-GEO-0639 | A | giữ UI (A) | Bài của em: danh sách | test('Bài Sắp mở, đang làm dở  async ({ page, request }) => { |
 | e6/mine.ui.spec.ts | TC-GEO-0640 | A | giữ UI (A) | Bài của em: danh sách | test('Bài Chưa đặt giờ, chưa bắt đầu  async ({ page, request }) => { |
 | e6/mine.ui.spec.ts | TC-GEO-0641 | A | giữ UI (A) | Bài của em: danh sách | test('Bài Đã mở, đã xem lời giải  async ({ page, request }) => { |
@@ -270,7 +296,6 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | e7/monitor.ui.spec.ts | TC-GEO-0700 | A | giữ UI (A) | Theo dõi lớp: bảng, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Bốn thẻ tổng   async ({ page, request }) => { |
 | e7/monitor.ui.spec.ts | TC-GEO-0701 | A | giữ UI (A) | Theo dõi lớp: bảng, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Bảng học sinh   async ({ page, request }) => { |
 | e7/monitor.ui.spec.ts | TC-GEO-0702 | A | giữ UI (A) | Theo dõi lớp: bảng, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Tình trạng khi bài còn khóa  async ({ page, request }) => { |
-| e7/monitor.ui.spec.ts | TC-GEO-0703 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | Theo dõi lớp: bảng, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Tình trạng sau khi mở lời giải  async ({ page, request }) => { |
 | e7/monitor.ui.spec.ts | TC-GEO-0704 | A | giữ UI (A) | Theo dõi lớp: bảng, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Thẻ vàng khi lời giải khóa  async ({ page, request }) => { |
 | e7/monitor.ui.spec.ts | TC-GEO-0705 | A | giữ UI (A) | Theo dõi lớp: bảng, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Vào trang từ mục "Theo dõi"  async ({ page, request }) => { |
 | e7/monitor.ui.spec.ts | TC-GEO-0707 | A | giữ UI (A) | Theo dõi lớp: bảng, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Chưa em nào mở bài  async ({ page, request }) => { |
@@ -282,7 +307,6 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | e7/monitor.ui.spec.ts | TC-GEO-0715 | A | giữ UI (A) | Theo dõi lớp: bảng, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Câu hỏi của một em  async ({ page, request }) => { |
 | e7/monitor.ui.spec.ts | TC-GEO-0716 | A | giữ UI (A) | Theo dõi lớp: bảng, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Khối "Học sinh đang hỏi gì" gộp câu trùng  async ({ page, reques |
 | e7/monitor.ui.spec.ts | TC-GEO-0718 | A | giữ UI (A) | Theo dõi lớp: bảng, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Chưa ai hỏi  async ({ page, request }) => { |
-| e7/monitor.ui.spec.ts | TC-GEO-0720 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | Theo dõi lớp: bảng, ẩn-hiện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test('Không có nhận định do AI viết  async ({ page, request }) => { |
 | e7/offline.ui.spec.ts | TC-GEO-0729 | A | giữ UI (A) | mất mạng: nút tắt, thông báo | test('Mất mạng khi đang thao tác  async ({ page, request, context }) = |
 | home.ui.spec.ts | TC-KHUNG-03 | A | giữ UI (A) | trang chủ hiển thị | test('trang chủ mở, máy chủ sẵn sàng, giờ Việt Nam, vào vùng Giáo viên |
 | s2e1/layout.p0m.ui.spec.ts | (không gắn mã TC) | A | giữ UI (A) | bố cục di động P0 · chạy thêm mobile-iphone/mobile-pixel | test('S2-E1 bố cục đăng ký, màn mã, đăng nhập, khôi phục không tràn và |
@@ -290,7 +314,7 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | s2e1/login.ui.spec.ts | TC-S2E1-020 | A | giữ UI (A) | đăng nhập/khôi phục: nhập, lỗi chung | test('Giáo viên đăng nhập đúng   async ({ page }) => { |
 | s2e1/login.ui.spec.ts | TC-S2E1-022 | A | giữ UI (A) | đăng nhập/khôi phục: nhập, lỗi chung | test('Sai mật khẩu hiện câu chung  async ({ page }) => { |
 | s2e1/login.ui.spec.ts | TC-S2E1-029 | A | giữ UI (A) | đăng nhập/khôi phục: nhập, lỗi chung | test('Để trống một trong hai ô  async ({ page }) => { |
-| s2e1/login.ui.spec.ts | TC-S2E1-030 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | đăng nhập/khôi phục: nhập, lỗi chung | test('Phiên hết hạn thì yêu cầu bị từ chối  async ({ page, request },  |
+| s2e1/login.ui.spec.ts | TC-S2E1-030 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | trang chuyển về đăng nhập + thông báo hết phiên khi bấm điều hướng | test('Phiên hết hạn thì yêu cầu bị từ chối  async ({ page, request }, |
 | s2e1/login.ui.spec.ts | TC-S2E1-031 | A | giữ UI (A) | đăng nhập/khôi phục: nhập, lỗi chung | test('Khôi phục đúng đặt được mật khẩu mới  async ({ page, request },  |
 | s2e1/login.ui.spec.ts | TC-S2E1-033 | A | giữ UI (A) | đăng nhập/khôi phục: nhập, lỗi chung | test('Sai mã khôi phục hiện câu chung  async ({ page, request }, testI |
 | s2e1/login.ui.spec.ts | TC-S2E1-043 | A | giữ UI (A) | đăng nhập/khôi phục: nhập, lỗi chung | test('Tài khoản chuyển phải đặt mật khẩu mới ở lần đăng nhập đầu  asyn |
@@ -323,7 +347,7 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | s2e3/paste.ui.spec.ts | TC-S2E3-007 | A | giữ UI (A) | dán đề: nhập, hiển thị | test(' mã HTML và script hiện thành chữ, không thực thi', async ({ pag |
 | s2e3/paste.ui.spec.ts | TC-S2E3-008 | A | giữ UI (A) | dán đề: nhập, hiển thị | test(' nháp chữ còn khi rời màn rồi quay lại', async ({ page, request  |
 | s2e3/pipeline.ui.spec.ts | TC-S2E3-021 | A | giữ UI (A) | luồng đọc đề: bước, bố cục | test(' bốn bước chạy đúng thứ tự, kết thúc có hình, lời giải nháp, Đã  |
-| s2e3/pipeline.ui.spec.ts | TC-S2E3-026 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | luồng đọc đề: bước, bố cục | test(' đóng tab rồi mở lại vẫn thấy tiến trình, không tạo tác vụ thứ h |
+| s2e3/pipeline.ui.spec.ts | TC-S2E3-026 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | đóng tab, mở lại trang khôi phục tiến trình trên màn | test(' đóng tab rồi mở lại vẫn thấy tiến trình, không tạo tác vụ thứ h |
 | s2e3/pipeline.ui.spec.ts | TC-S2E3-028 | A | giữ UI (A) | luồng đọc đề: bước, bố cục | test(' hủy tác vụ đang dựng: dừng, "Đã hủy", đề vẫn là nháp chữ', asyn |
 | s2e3/pipeline.ui.spec.ts | TC-S2E3-030 | A | giữ UI (A) | luồng đọc đề: bước, bố cục | test(' engine không dựng thì lưu "Cần xem lại · hình do AI dựng" với b |
 | s2e3/pipeline.ui.spec.ts | TC-S2E3-031 | A | giữ UI (A) | luồng đọc đề: bước, bố cục | test(' lưu bản nháp chữ thì đề không chọn được để giao, kèm "bản nháp  |
@@ -396,7 +420,7 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | s2e7/present.ui.spec.ts | TC-S2E7-002 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' hiện bước kế hiện đúng một bước và tô màu hình', async ({ page, |
 | s2e7/present.ui.spec.ts | TC-S2E7-003 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' phím mũi tên và Space điều khiển bước', async ({ page, request  |
 | s2e7/present.ui.spec.ts | TC-S2E7-004 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' che lời giải ẩn tất cả, bỏ che hiện lại đúng bước', async ({ pa |
-| s2e7/present.ui.spec.ts | TC-S2E7-005 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | trình chiếu: toàn màn hình, bố cục | test(' xoay hình, đo, thêm đường phụ thì hình đổi ngay', async ({ page |
+| s2e7/present.ui.spec.ts | TC-S2E7-005 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | khung 3D: xoay, đo, thêm đường phụ | test(' xoay hình, đo, thêm đường phụ thì hình đổi ngay', async ({ page |
 | s2e7/present.ui.spec.ts | TC-S2E7-006 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' ở bước cuối nút Hiện bước kế khóa', async ({ page, request }, i |
 | s2e7/present.ui.spec.ts | TC-S2E7-007 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' ở bước 0 nút Bước trước khóa', async ({ page, request }, info)  |
 | s2e7/present.ui.spec.ts | TC-S2E7-008 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' lời giải 30 bước chiếu đủ 30 bước, chuyển bước dưới 200 ms', as |
@@ -411,7 +435,7 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | s2e7/present.ui.spec.ts | TC-S2E7-020 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' vào Trình chiếu khi đã mất mạng và chưa tải sẵn', async ({ page |
 | s2e7/present.ui.spec.ts | TC-S2E7-021 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' mất mạng khi đang tải sẵn thì báo chưa đủ', async ({ page, requ |
 | s2e7/present.ui.spec.ts | TC-S2E7-022 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' thoát Trình chiếu xóa dữ liệu tải sẵn khỏi bộ nhớ trình duyệt', |
-| s2e7/present.ui.spec.ts | TC-S2E7-023 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | trình chiếu: toàn màn hình, bố cục | test(' phiên hết hạn lúc mất mạng thì chiếu tiếp, về lại thì đăng nhập |
+| s2e7/present.ui.spec.ts | TC-S2E7-023 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | mất mạng lúc trình chiếu, bấm tiếp/thoát | test(' phiên hết hạn lúc mất mạng thì chiếu tiếp, về lại thì đăng nhập |
 | s2e7/present.ui.spec.ts | TC-S2E7-024 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' đề đang giao và lời giải khóa thì hỏi lại', async ({ page, requ |
 | s2e7/present.ui.spec.ts | TC-S2E7-025 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' Tiếp tục thì vào chiếu, máy học sinh vẫn khóa', async ({ page,  |
 | s2e7/present.ui.spec.ts | TC-S2E7-026 | A | giữ UI (A) | trình chiếu: toàn màn hình, bố cục | test(' Hủy thì ở lại màn đề và không thay đổi gì', async ({ page, requ |
@@ -426,7 +450,6 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | s2e8/compose.ui.spec.ts | TC-S2E8-100 | A | giữ UI (A) | soạn bộ luyện: kéo thả, bấm | test(' giờ mở đã qua cần xác nhận', async ({ page, request }) => { |
 | s2e8/compose.ui.spec.ts | TC-S2E8-101 | A | giữ UI (A) | soạn bộ luyện: kéo thả, bấm | test(' học sinh gửi báo Em nghĩ đáp số này đúng sau khi bị chấm Sai',  |
 | s2e8/compose.ui.spec.ts | TC-S2E8-105 | A | giữ UI (A) | soạn bộ luyện: kéo thả, bấm | test(' giáo viên thấy báo kèm đáp số và dạng chuẩn', async ({ page, re |
-| s2e8/compose.ui.spec.ts | TC-S2E8-107 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | soạn bộ luyện: kéo thả, bấm | test(' Giữ nguyên thì kết quả không đổi', async ({ page, request }) => |
 | s2e8/keypad.p0m.ui.spec.ts | TC-S2E8-001 | A | giữ UI (A) | bàn phím số trên điện thoại · chạy thêm mobile-iphone/mobile-pixel | test(' phím số chèn chữ số vào ô', async ({ page, request }) => { |
 | s2e8/keypad.p0m.ui.spec.ts | TC-S2E8-002 | A | giữ UI (A) | bàn phím số trên điện thoại · chạy thêm mobile-iphone/mobile-pixel | test(' phím căn và phân số chèn đúng ký hiệu', async ({ page, request  |
 | s2e8/keypad.p0m.ui.spec.ts | TC-S2E8-003 | A | giữ UI (A) | bàn phím số trên điện thoại · chạy thêm mobile-iphone/mobile-pixel | test(' phím π, mũ và độ chèn đúng', async ({ page, request }) => { |
@@ -455,7 +478,6 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | s2e8/play.p0m.ui.spec.ts | TC-S2E8-072 | A | giữ UI (A) | làm bài luyện trên điện thoại · chạy thêm mobile-iphone/mobile-pixel | test(' bài 20 câu thanh tiến độ 20 đoạn', async ({ page, request }) => |
 | s2e8/play.p0m.ui.spec.ts | TC-S2E8-112 | A | giữ UI (A) | làm bài luyện trên điện thoại · chạy thêm mobile-iphone/mobile-pixel | test(' luồng C đầy đủ: đúng, sai cú pháp, sai, hết lượt, khác dạng viế |
 | s2e8/result.p0m.ui.spec.ts | TC-S2E8-075 | A | giữ UI (A) | màn kết quả luyện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test(' làm hết thì hiện số câu đúng và câu cần xem lại', async ({ page |
-| s2e8/result.p0m.ui.spec.ts | TC-S2E8-076 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | màn kết quả luyện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test(' không có điểm, phần trăm hay xếp hạng', async ({ page, request  |
 | s2e8/result.p0m.ui.spec.ts | TC-S2E8-077 | A | giữ UI (A) | màn kết quả luyện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test(' chưa làm xong thì báo còn bao nhiêu câu', async ({ page, reques |
 | s2e8/result.p0m.ui.spec.ts | TC-S2E8-079 | A | giữ UI (A) | màn kết quả luyện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test(' tới giờ mở thì xem được lời giải', async ({ page, request }) => |
 | s2e8/result.p0m.ui.spec.ts | TC-S2E8-081 | A | giữ UI (A) | màn kết quả luyện (di động P0) · chạy thêm mobile-iphone/mobile-pixel | test(' chưa đặt giờ mở thì ghi Thầy cô chưa đặt giờ mở', async ({ page |
@@ -470,7 +492,7 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | s2e9/choice.ui.spec.ts | TC-S2E9-032 | A | giữ UI (A) | trắc nghiệm: chọn, hiển thị | test(' câu có nhiều lượt: lựa chọn sai bị làm mờ', async ({ page, requ |
 | s2e9/choice.ui.spec.ts | TC-S2E9-033 | A | giữ UI (A) | trắc nghiệm: chọn, hiển thị | test(' chưa chọn thì nút Kiểm tra khóa', async ({ page, request }) =>  |
 | s2e9/choice.ui.spec.ts | TC-S2E9-042 | A | giữ UI (A) | trắc nghiệm: chọn, hiển thị | test(' bài luyện hỗn hợp: kết quả đếm chung hai kiểu câu', async ({ pa |
-| s2e9/choice.ui.spec.ts | TC-S2E9-043 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | trắc nghiệm: chọn, hiển thị | test(' nút Em nghĩ đáp số này đúng không hiện ở câu trắc nghiệm', asyn |
+| s2e9/choice.ui.spec.ts | TC-S2E9-043 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | ẩn-hiện nút "Em nghĩ đáp số này đúng" ở câu trắc nghiệm | test(' nút Em nghĩ đáp số này đúng không hiện ở câu trắc nghiệm', asyn |
 | s2e9/variant-export.ui.spec.ts | TC-S2E9-003 | A | giữ UI (A) | biến thể đề, xuất: bấm, hiển thị | test(' biến thể mới mang Cần xem lại và AI soạn', async ({ page, reque |
 | s2e9/variant-export.ui.spec.ts | TC-S2E9-014 | A | giữ UI (A) | biến thể đề, xuất: bấm, hiển thị | test(' xuất ảnh PNG của một đề', async ({ page, request }, info) => { |
 | s2e9/variant-export.ui.spec.ts | TC-S2E9-015 | A | giữ UI (A) | biến thể đề, xuất: bấm, hiển thị | test(' xuất PDF nhiều đề', async ({ page, request }, info) => { |
@@ -480,8 +502,8 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | s2e9/variant-export.ui.spec.ts | TC-S2E9-028 | A | giữ UI (A) | biến thể đề, xuất: bấm, hiển thị | test(' chọn hạn 1 hoặc 30 ngày', async ({ page, request }, info) => { |
 | s3e1/classes.ui.spec.ts | TC-S3E1-01 | A | giữ UI (A) | màn Lớp học: nút, hộp xác nhận, hai tab | test('Tạo lớp hợp lệ, nhận mã lớp và trang in  async ({ page, request  |
 | s3e1/classes.ui.spec.ts | TC-S3E1-04 | A | giữ UI (A) | màn Lớp học: nút, hộp xác nhận, hai tab | test('Đặt lại mã lớp: mã cũ hết hiệu lực, thành viên giữ nguyên  async |
-| s3e1/classes.ui.spec.ts | TC-S3E1-05 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | màn Lớp học: nút, hộp xác nhận, hai tab | test('Tắt "Cho vào lớp bằng mã" thì mã bị khóa, bật lại thì dùng được  |
-| s3e1/classes.ui.spec.ts | TC-S3E1-06 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | màn Lớp học: nút, hộp xác nhận, hai tab | test('Tên lớp rỗng  async ({ page, request }) => { |
+| s3e1/classes.ui.spec.ts | TC-S3E1-05 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | ca A giữ chỗ bấm công tắc "Cho vào lớp bằng mã" cho các ca B đợt 1 | test('Tắt "Cho vào lớp bằng mã" thì mã bị khóa, bật lại thì dùng được |
+| s3e1/classes.ui.spec.ts | TC-S3E1-06 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | ca A giữ lỗi ô Tên lớp trên form Tạo lớp | test('Tên lớp rỗng  async ({ page, request }) => { |
 | s3e1/classes.ui.spec.ts | TC-S3E1-12 | A | giữ UI (A) | màn Lớp học: nút, hộp xác nhận, hai tab | test('Nhập mã đúng, vào trạng thái Chờ duyệt  async ({ page, request } |
 | s3e1/classes.ui.spec.ts | TC-S3E1-17 | A | giữ UI (A) | màn Lớp học: nút, hộp xác nhận, hai tab | test('Mã sai  async ({ page, request }) => { |
 | s3e1/classes.ui.spec.ts | TC-S3E1-24 | A | giữ UI (A) | màn Lớp học: nút, hộp xác nhận, hai tab | test('Duyệt một em, em thấy bài của lớp  async ({ page, request }) =>  |
@@ -489,9 +511,9 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | s3e1/classes.ui.spec.ts | TC-S3E1-27 | A | giữ UI (A) | màn Lớp học: nút, hộp xác nhận, hai tab | test('Cho em rời lớp, dữ liệu cũ vẫn ở Kết quả lớp  async ({ page, req |
 | s3e1/classes.ui.spec.ts | TC-S3E1-30 | A | giữ UI (A) | màn Lớp học: nút, hộp xác nhận, hai tab | test('Hai tab cùng duyệt một em  async ({ page, request }) => { |
 | s3e1/classes.ui.spec.ts | TC-S3E1-34 | A | giữ UI (A) | màn Lớp học: nút, hộp xác nhận, hai tab | test('Đặt lại mật khẩu, mật khẩu tạm hiện một lần  async ({ page, requ |
-| s3e1/classes.ui.spec.ts | TC-S3E1-45 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | màn Lớp học: nút, hộp xác nhận, hai tab | test('Hủy ở hộp xác nhận thì không đổi gì  async ({ page, request }) = |
-| s3e2/compose.ui.spec.ts | TC-S3E2-01 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | soạn bộ bài: kéo thả, xem trước, nút Giao chờ chọn | test(' tạo bộ nháp từ bốn đề và lưu', async ({ page, request }) => { |
-| s3e2/compose.ui.spec.ts | TC-S3E2-02 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | soạn bộ bài: kéo thả, xem trước, nút Giao chờ chọn | test(' kéo thả Đề 4 lên đầu, thứ tự lưu lại và học sinh thấy đúng thứ  |
+| s3e1/classes.ui.spec.ts | TC-S3E1-45 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | ca A giữ nút Hủy của hộp xác nhận | test('Hủy ở hộp xác nhận thì không đổi gì  async ({ page, request }) = |
+| s3e2/compose.ui.spec.ts | TC-S3E2-01 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | ca A giữ chỗ bấm thêm đề / lưu nháp cho các ca B đợt 1 | test(' tạo bộ nháp từ bốn đề và lưu', async ({ page, request }) => { |
+| s3e2/compose.ui.spec.ts | TC-S3E2-02 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | kéo thả thứ tự đề (ca A giữ chỗ bấm cho ca B đợt 1) | test(' kéo thả Đề 4 lên đầu, thứ tự lưu lại và học sinh thấy đúng thứ |
 | s3e2/compose.ui.spec.ts | TC-S3E2-03 | A | giữ UI (A) | soạn bộ bài: kéo thả, xem trước, nút Giao chờ chọn | test(' xem trước như học sinh: làm thử Đề 1, xin gợi ý, không ghi gì,  |
 | s3e2/compose.ui.spec.ts | TC-S3E2-10 | A | giữ UI (A) | soạn bộ bài: kéo thả, xem trước, nút Giao chờ chọn | test(' chưa chọn lớp thì nút Giao chờ chọn: MSG-S3-25, gọi thẳng VALID |
 | s3e2/schedule.ui.spec.ts | TC-S3E2-15 | A | giữ UI (A) | lịch mở: chế độ giờ, banner cảnh báo | test(' đặt giờ mở cho cả bộ: bốn đề cùng giờ, không cảnh báo vì sau hạ |
@@ -512,7 +534,6 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | s3e3/board.ui.spec.ts | TC-S3E3-11 | A | giữ UI (A) | bảng lớp × bài: ô, màu+chữ, bố cục | test(' chưa ai làm bài của bộ: 8 hàng Chưa làm, MSG-S3-41, không thẻ n |
 | s3e3/board.ui.spec.ts | TC-S3E3-12 | A | giữ UI (A) | bảng lớp × bài: ô, màu+chữ, bố cục | test(' lớp không có học sinh Đang học: MSG-S3-42 kèm liên kết tới danh |
 | s3e3/board.ui.spec.ts | TC-S3E3-13 | A | giữ UI (A) | bảng lớp × bài: ô, màu+chữ, bố cục | test(' học sinh Chờ duyệt không có hàng và không có trong thân phản hồ |
-| s3e3/board.ui.spec.ts | TC-S3E3-14 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | bảng lớp × bài: ô, màu+chữ, bố cục | test(' bộ Nháp không có trong danh sách chọn bộ; gọi thẳng API nhận NO |
 | s3e3/board.ui.spec.ts | TC-S3E3-15 | A | giữ UI (A) | bảng lớp × bài: ô, màu+chữ, bố cục | test(' đang tải hiện khung chờ dạng bảng; lỗi tải hiện MSG-S3-47 và Th |
 | s3e3/board.ui.spec.ts | TC-S3E3-21 | A | giữ UI (A) | bảng lớp × bài: ô, màu+chữ, bố cục | test(' học sinh Đã rời có bài làm: có hàng, chip "đã rời", vẫn xếp the |
 | s3e3/evidence.ui.spec.ts | TC-S3E3-22 | A | giữ UI (A) | bằng chứng bài làm: hiển thị | test(' bấm ô Xem lại hiện đủ bằng chứng: đáp số, gợi ý, câu hỏi nguyên |
@@ -559,20 +580,20 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | s3e4/overview.ui.spec.ts | TC-S3E4-07 | A | giữ UI (A) | tổng quan lớp: hiển thị | test(' lời giải đã mở: rời thẻ "Lời giải đang khóa", có chip Đã mở ở " |
 | s3e4/overview.ui.spec.ts | TC-S3E4-09 | A | giữ UI (A) | tổng quan lớp: hiển thị | test(' không em nào chờ duyệt: thẻ "Em chờ duyệt" ẩn, hai thẻ còn lại  |
 | s3e4/overview.ui.spec.ts | TC-S3E4-13 | A | giữ UI (A) | tổng quan lớp: hiển thị | test(' bộ Nháp không xuất hiện ở thẻ nào', async ({ page, request }) = |
-| s3e5/account.ui.spec.ts | TC-S3E5-53 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | Cài đặt › Xóa tài khoản: nút khóa/mở, hộp nhập | test('Học sinh xóa tài khoản của mình  async ({ page, request }) => { |
+| s3e5/account.ui.spec.ts | TC-S3E5-53 | B | để sau fix-po27 (TC thuộc danh sách PO-74 / PO-DECISIONS 27/11; là ca A giữ chỗ bấm cho TC-S3E5-33) | Cài đặt › Xóa tài khoản: nút khóa/mở, hộp nhập | test('Học sinh xóa tài khoản của mình  async ({ page, request }) => { |
 | s3e5/account.ui.spec.ts | TC-S3E5-55 | A | giữ UI (A) | Cài đặt › Xóa tài khoản: nút khóa/mở, hộp nhập | test('Văn bản thông báo riêng tư nêu chính sách lưu và xóa  async ({ p |
 | s3e5/account.ui.spec.ts | TC-S3E5-59 | A | giữ UI (A) | Cài đặt › Xóa tài khoản: nút khóa/mở, hộp nhập | test('Chưa gõ XÓA thì nút xác nhận bị khóa  async ({ page, request })  |
 | s3e5/ai.ui.spec.ts | TC-S3E5-40 | A | giữ UI (A) | công tắc AI của lớp: hiển thị | test('Tắt công tắc thì khung trợ lý ẩn ở học sinh  async ({ page, brow |
 | s3e5/ai.ui.spec.ts | TC-S3E5-42 | A | giữ UI (A) | công tắc AI của lớp: hiển thị | test('Luồng học cơ bản vẫn chạy khi tắt  async ({ page, request }) =>  |
 | s3e5/ai.ui.spec.ts | TC-S3E5-45 | A | giữ UI (A) | công tắc AI của lớp: hiển thị | test('Lớp mới mặc định bật  async ({ page, request }) => { |
-| s3e5/privacy.ui.spec.ts | TC-S3E5-16 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | thông báo riêng tư: hiển thị, tick | test('Đăng ký có tick thì lưu cờ và phiên bản  async ({ page, request  |
+| s3e5/privacy.ui.spec.ts | TC-S3E5-16 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | màn Đăng ký: tick riêng tư, nhãn phiên bản, bấm Đăng ký | test('Đăng ký có tick thì lưu cờ và phiên bản  async ({ page, request |
 | s3e5/privacy.ui.spec.ts | TC-S3E5-18 | A | giữ UI (A) | thông báo riêng tư: hiển thị, tick | test('Tài khoản MVP chuyển sang thấy thông báo ở lần vào đầu tiên  asy |
 | s3e5/privacy.ui.spec.ts | TC-S3E5-19 | A | giữ UI (A) | thông báo riêng tư: hiển thị, tick | test('Phiên bản văn bản tăng thì hiện lại một lần  async ({ page, requ |
 | s3e5/privacy.ui.spec.ts | TC-S3E5-20 | A | giữ UI (A) | thông báo riêng tư: hiển thị, tick | test('Văn bản nêu đủ các ý bắt buộc  async ({ page, request }) => { |
 | s3e5/privacy.ui.spec.ts | TC-S3E5-21 | A | giữ UI (A) | thông báo riêng tư: hiển thị, tick | test('Đã đọc bản hiện hành thì không hiện lại  async ({ page, request  |
 | s3e5/privacy.ui.spec.ts | TC-S3E5-22 | A | giữ UI (A) | thông báo riêng tư: hiển thị, tick | test('Đăng ký không tick bị từ chối  async ({ page, request }, testInf |
 | s3e6/archive.ui.spec.ts | TC-S3E6-15 | A | giữ UI (A) | lưu trữ lớp: nút, hộp xác nhận | test('Lưu trữ lớp: trạng thái, mã và hiển thị của học sinh  async ({ p |
-| s3e6/archive.ui.spec.ts | TC-S3E6-17 | B | B chưa chuyển (ứng viên đợt sau; giữ UI tạm) | lưu trữ lớp: nút, hộp xác nhận | test('Bỏ lưu trữ thì lớp về Đang dạy với mã lớp mới  async ({ page, re |
+| s3e6/archive.ui.spec.ts | TC-S3E6-17 | A | giữ UI (A) · đổi B->A ở rà tay đợt 2 | ca A giữ nút Bỏ lưu trữ + hộp xác nhận cho ca B đợt 1 | test('Bỏ lưu trữ thì lớp về Đang dạy với mã lớp mới  async ({ page, re |
 | s3e6/archive.ui.spec.ts | TC-S3E6-26 | A | giữ UI (A) | lưu trữ lớp: nút, hộp xác nhận | test('Hủy ở hộp lưu trữ không đổi gì  async ({ page, request }) => { |
 | s3e6/export.ui.spec.ts | TC-S3E6-11 | A | giữ UI (A) | xuất kết quả: hiển thị | test('Xuất bảng tuần 15 đúng hàng và cột  async ({ page, request }) => |
 | s3e6/export.ui.spec.ts | TC-S3E6-12 | A | giữ UI (A) | xuất kết quả: hiển thị | test('Tên tệp không chứa tên học sinh  async ({ page, request }) => { |
@@ -592,3 +613,4 @@ Ghi chú: loại A/B của ca chưa chuyển được gán theo heuristic từ m
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.0 | 2026-11-27 | Phân loại đầu tiên, chuyển 26 ca B | runner-e2e-split |
+| v1.1 | 2026-11-27 | Rà tay 32 ca B: chuyển 11 sang API, đổi 20 sang A, 1 để sau fix-po27 (TC-S3E5-53) | runner-e2e-split2 |

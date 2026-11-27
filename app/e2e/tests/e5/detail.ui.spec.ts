@@ -34,17 +34,6 @@ test('Bốn phần của trang chi tiết HKG-01 @TC-GEO-0515 @smoke', async ({ 
   await expect(page.getByTestId('e5-hint-2').locator('p')).toHaveText(F031_HINTS[1]!);
 });
 
-test('Giáo viên thấy lời giải dù BG-1 đang Sắp mở @TC-GEO-0516', async ({ page, request }) => {
-  const an = await devToken(request, 'F-GEO-020');
-  const mine = (await (await request.get(`${API}/api/v1/student/assignments`, { headers: bearer(an) })).json()) as {
-    items: Array<{ id: string; releaseState: string }>;
-  };
-  expect(mine.items.find((a) => a.id === BG('BG-1'))?.releaseState).toBe('upcoming');
-  await signInPage(page, request, 'F-GEO-003');
-  await openDetail(page, PV('HKG-01'));
-  await expectFullSolution(page);
-});
-
 test('Chip đáp số khớp tính toán chỉ ở đề đã kiểm chứng @TC-GEO-0517', async ({ page, request }) => {
   await signInLane(page, request);
   await openDetail(page, PV('HKG-01'));

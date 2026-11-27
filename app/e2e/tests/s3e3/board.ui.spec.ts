@@ -124,15 +124,6 @@ test('@TC-S3E3-13 học sinh Chờ duyệt không có hàng và không có trong
   expect(text).not.toContain('Thu Hà');
 });
 
-test('@TC-S3E3-14 bộ Nháp không có trong danh sách chọn bộ; gọi thẳng API nhận NOT_FOUND', async ({ page, request }) => {
-  const sb = await board051(request, { moreSets: [{ title: WEEK16, status: 'draft', items: 2 }] });
-  await openBoard(page, sb, 0, null);
-  await expect(page.getByTestId('s3e3-set-select').locator('option')).toHaveText([WEEK15]);
-  const r = await request.get(`${setUrl(sb, 0, 1)}/board`, { headers: bearer(sb.teacher.token) });
-  expect(r.status()).toBe(404);
-  expect(((await r.json()) as { code: string }).code).toBe('NOT_FOUND');
-});
-
 test('@TC-S3E3-15 đang tải hiện khung chờ dạng bảng; lỗi tải hiện MSG-S3-47 và Thử lại tải lại được', async ({ page, request }) => {
   const sb = await board051(request);
   let fail = true;
