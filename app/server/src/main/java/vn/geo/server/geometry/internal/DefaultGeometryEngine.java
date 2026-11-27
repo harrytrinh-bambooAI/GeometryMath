@@ -321,7 +321,14 @@ public class DefaultGeometryEngine implements GeometryEngine {
     if (need == null) {
       throw new IllegalArgumentException("đại lượng không biết: " + q.kind());
     }
-    boolean ok = "volume_prism".equals(q.kind()) ? n.size() >= need : n.size() == need;
+    boolean ok =
+        switch (q.kind()) {
+          case "volume_prism", "pyramid_volume", "pyramid_lateral", "prism_lateral" ->
+              n.size() >= need;
+          // mặt cầu: [tâm, điểm trên cầu] hoặc bốn điểm không đồng phẳng trên cầu (T-CONTENT-BAL)
+          case "sphere_radius", "sphere_volume", "sphere_area" -> n.size() == 2 || n.size() == 4;
+          default -> n.size() == need;
+        };
     if (!ok) {
       throw new IllegalArgumentException(
           "đại lượng " + q.kind() + " cần " + need + " điểm, nhận " + n.size());
@@ -374,10 +381,56 @@ public class DefaultGeometryEngine implements GeometryEngine {
         double r = V.dist(f.point(n.get(0)), f.point(n.get(2)));
         yield 2 * Math.PI * r * (r + h);
       }
-      case "sphere_radius" -> V.dist(f.point(n.get(0)), f.point(n.get(1)));
+      case "sphere_radius" -> sphereRadius(f, n);
       case "sphere_volume" -> {
-        double r = V.dist(f.point(n.get(0)), f.point(n.get(1)));
+        double r = sphereRadius(f, n);
         yield 4 * Math.PI * r * r * r / 3;
+      }
+      case "sphere_area" -> {
+        double r = sphereRadius(f, n);
+        yield 4 * Math.PI * r * r;
+      }
+      case "cyl_lateral" -> {
+        double h = V.dist(f.point(n.get(0)), f.point(n.get(1)));
+        yield 2 * Math.PI * V.dist(f.point(n.get(0)), f.point(n.get(2))) * h;
+      }
+      case "cyl_volume" -> {
+        double h = V.dist(f.point(n.get(0)), f.point(n.get(1)));
+        double r = V.dist(f.point(n.get(0)), f.point(n.get(2)));
+        yield Math.PI * r * r * h;
+      }
+      case "cone_total_area" -> {
+        double r = V.dist(f.point(n.get(1)), f.point(n.get(2)));
+        yield Math.PI * r * (r + V.dist(f.point(n.get(0)), f.point(n.get(2))));
+      }
+      case "pyramid_volume" -> {
+        double[][] base = new double[n.size() - 1][];
+        for (int i = 0; i < base.length; i++) {
+          base[i] = f.point(n.get(i));
+        }
+        double h = V.distToPlane(f.point(n.get(n.size() - 1)), base[0], base[1], base[2]);
+        yield V.polygonArea(base) * h / 3;
+      }
+      case "pyramid_lateral" -> {
+        double[] s = f.point(n.get(0));
+        int k = n.size() - 1;
+        double sum = 0;
+        for (int i = 0; i < k; i++) {
+          sum += V.polygonArea(s, f.point(n.get(1 + i)), f.point(n.get(1 + (i + 1) % k)));
+        }
+        yield sum;
+      }
+      case "prism_lateral" -> {
+        int k = n.size() - 1;
+        double[][] base = new double[k][];
+        double per = 0;
+        for (int i = 0; i < k; i++) {
+          base[i] = f.point(n.get(i));
+        }
+        for (int i = 0; i < k; i++) {
+          per += V.dist(base[i], base[(i + 1) % k]);
+        }
+        yield per * V.distToPlane(f.point(n.get(k)), base[0], base[1], base[2]);
       }
       default -> throw new IllegalArgumentException("đại lượng không biết: " + q.kind());
     };
@@ -399,7 +452,45 @@ public class DefaultGeometryEngine implements GeometryEngine {
           Map.entry("cone_volume", 3),
           Map.entry("cyl_total_area", 3),
           Map.entry("sphere_radius", 2),
-          Map.entry("sphere_volume", 2));
+          Map.entry("sphere_volume", 2),
+          Map.entry("sphere_area", 2),
+          Map.entry("cyl_lateral", 3),
+          Map.entry("cyl_volume", 3),
+          Map.entry("cone_total_area", 3),
+          Map.entry("pyramid_volume", 4),
+          Map.entry("pyramid_lateral", 4),
+          Map.entry("prism_lateral", 4));
+
+  /**
+   * Bán kính mặt cầu: [tâm, điểm trên cầu] là khoảng cách; bốn điểm không đồng phẳng là bán kính
+   * mặt cầu đi qua bốn điểm đó (ngoại tiếp tứ diện — dùng cho cầu ngoại tiếp chóp, lăng trụ, hộp).
+   */
+  private static double sphereRadius(Figure f, List<String> n) {
+    if (n.size() == 2) {
+      return V.dist(f.point(n.get(0)), f.point(n.get(1)));
+    }
+    double[] p0 = f.point(n.get(0));
+    double[] a = V.sub(f.point(n.get(1)), p0);
+    double[] b = V.sub(f.point(n.get(2)), p0);
+    double[] d = V.sub(f.point(n.get(3)), p0);
+    double[] bd = V.cross(b, d);
+    double det = 2 * V.dot(a, bd);
+    double scale = V.norm(a) * V.norm(b) * V.norm(d);
+    if (Math.abs(det) <= 1e-12 * Math.max(scale, 1e-300)) {
+      throw new IllegalArgumentException("bốn điểm mặt cầu đồng phẳng");
+    }
+    double[] da = V.cross(d, a);
+    double[] ab = V.cross(a, b);
+    double na = V.dot(a, a);
+    double nb = V.dot(b, b);
+    double nd = V.dot(d, d);
+    double[] c =
+        V.of(
+            (na * bd[0] + nb * da[0] + nd * ab[0]) / det,
+            (na * bd[1] + nb * da[1] + nd * ab[1]) / det,
+            (na * bd[2] + nb * da[2] + nd * ab[2]) / det);
+    return V.norm(c);
+  }
 
   private static double clamp(double x) {
     return Math.max(-1, Math.min(1, x));

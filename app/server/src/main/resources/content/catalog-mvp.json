@@ -1,5 +1,5 @@
 {
- "_doc": "Phiên bản: v1.0 · 2026-11-26 · T-261126-02 (PO-60, MVP.md §5 P0). Gói nội dung Kho đề MVP: đề HKN-xx do AI soạn (agent mvp-content) theo dạng sách giáo khoa, không chép tài liệu có bản quyền. Mỗi đề có cấp, loại khối, dạng bài, đề, hai gợi ý, đáp số và lời giải từng bước; mô tả dựng (bộ dựng, tham số, đại lượng đề hỏi) nằm ở geometry/problem-specs.json cùng mã. Nạp bằng ContentPackLoader vào bộ 'main'; nhãn kiểm chứng do engine tính khi nạp (BR-GEO-213), tệp này không mang nhãn. Không nằm trong seed e2e (Kho đề e2e giữ sáu đề, TC-GEO-0125).",
+ "_doc": "Phiên bản: v1.1 · 2026-11-27 (v1.1: cân chuyên đề, thêm HKN-47…84 — mỗi dạng 16–20 đề, đủ THCS và THPT; v1.0 · 2026-11-26 · T-261126-02, PO-60, MVP.md §5 P0). Gói nội dung Kho đề MVP: đề HKN-xx do AI soạn (agent mvp-content) theo dạng sách giáo khoa, không chép tài liệu có bản quyền. Mỗi đề có cấp, loại khối, dạng bài, đề, hai gợi ý, đáp số và lời giải từng bước; mô tả dựng (bộ dựng, tham số, đại lượng đề hỏi) nằm ở geometry/problem-specs.json cùng mã. Nạp bằng ContentPackLoader vào bộ 'main'; nhãn kiểm chứng do engine tính khi nạp (BR-GEO-213), tệp này không mang nhãn. Không nằm trong seed e2e (Kho đề e2e giữ sáu đề, TC-GEO-0125).",
  "version": 1,
  "bank": "main",
  "problems": [
@@ -1134,6 +1134,1018 @@
      "title": "Áp dụng công thức",
      "body": "V = 4/3·π·(2a)³ = 32πa³/3.",
      "why": "Lập phương của 2a là 8a³."
+    }
+   ]
+  },
+  {
+   "code": "HKN-47",
+   "level": "thcs",
+   "solid": "cone",
+   "topic": "Góc",
+   "statement": "Một hình nón có đỉnh S, tâm đáy O, bán kính đáy OM = 3 cm và đường sinh SM = 6 cm. Tính góc OSM tạo bởi đường sinh và đường cao của hình nón.",
+   "hints": [
+    "Tam giác SOM vuông tại O.",
+    "Trong tam giác vuông, sin của góc bằng cạnh đối chia cạnh huyền."
+   ],
+   "answer": "30°",
+   "steps": [
+    {
+     "title": "Nhận tam giác vuông",
+     "body": "SO là đường cao nên SO ⊥ OM, tam giác SOM vuông tại O với cạnh huyền SM = 6 cm.",
+     "why": "Đường cao hình nón vuông góc với mặt đáy."
+    },
+    {
+     "title": "Tính sin",
+     "body": "sin OSM = OM / SM = 3 / 6 = 1/2.",
+     "why": "sin góc nhọn bằng cạnh đối chia cạnh huyền."
+    },
+    {
+     "title": "Kết luận",
+     "body": "sin OSM = 1/2 nên góc OSM = 30°.",
+     "why": "Góc nhọn có sin bằng 1/2 là 30°."
+    }
+   ]
+  },
+  {
+   "code": "HKN-48",
+   "level": "thcs",
+   "solid": "cone",
+   "topic": "Góc",
+   "statement": "Một hình nón có đỉnh S, tâm đáy O, bán kính đáy OM = 5 cm và chiều cao SO = 5 cm. Tính góc SMO giữa đường sinh SM và bán kính đáy OM.",
+   "hints": [
+    "Tam giác SOM vuông tại O và có hai cạnh góc vuông bằng nhau.",
+    "Tam giác vuông cân có hai góc nhọn bằng nhau."
+   ],
+   "answer": "45°",
+   "steps": [
+    {
+     "title": "Nhận tam giác vuông",
+     "body": "SO ⊥ OM nên tam giác SOM vuông tại O, có SO = OM = 5 cm.",
+     "why": "Đường cao hình nón vuông góc với mặt đáy."
+    },
+    {
+     "title": "Tam giác vuông cân",
+     "body": "Tam giác SOM vuông cân tại O nên góc SMO = góc OSM.",
+     "why": "Hai cạnh góc vuông bằng nhau thì hai góc nhọn bằng nhau."
+    },
+    {
+     "title": "Kết luận",
+     "body": "Hai góc nhọn có tổng 90° nên góc SMO = 45°.",
+     "why": "Tổng hai góc nhọn của tam giác vuông bằng 90°."
+    }
+   ]
+  },
+  {
+   "code": "HKN-49",
+   "level": "thcs",
+   "solid": "cube",
+   "topic": "Góc",
+   "statement": "Cho hình lập phương ABCD.A′B′C′D′ có cạnh 4 cm. Tính góc A′BD.",
+   "hints": [
+    "A′B, BD, A′D đều là đường chéo của các mặt hình lập phương.",
+    "Các mặt bằng nhau nên ba đường chéo đó dài bằng nhau."
+   ],
+   "answer": "60°",
+   "steps": [
+    {
+     "title": "Tính ba cạnh",
+     "body": "A′B, BD, DA′ là đường chéo của ba hình vuông cạnh 4 cm nên đều bằng 4√2 cm.",
+     "why": "Đường chéo hình vuông cạnh a bằng a√2."
+    },
+    {
+     "title": "Nhận dạng tam giác",
+     "body": "Tam giác A′BD có ba cạnh bằng nhau nên là tam giác đều.",
+     "why": "Tam giác có ba cạnh bằng nhau là tam giác đều."
+    },
+    {
+     "title": "Kết luận",
+     "body": "Góc A′BD = 60°.",
+     "why": "Mỗi góc của tam giác đều bằng 60°."
+    }
+   ]
+  },
+  {
+   "code": "HKN-50",
+   "level": "thcs",
+   "solid": "pyramid",
+   "topic": "Góc",
+   "statement": "Cho hình chóp tứ giác đều S.ABCD có tất cả các cạnh đều bằng 6 cm. Tính góc ASC.",
+   "hints": [
+    "Tính AC là đường chéo của hình vuông đáy.",
+    "So sánh SA² + SC² với AC² rồi dùng định lý Pythagore đảo."
+   ],
+   "answer": "90°",
+   "steps": [
+    {
+     "title": "Tính AC",
+     "body": "Đáy ABCD là hình vuông cạnh 6 cm nên AC = 6√2 cm, AC² = 72.",
+     "why": "Đường chéo hình vuông cạnh a bằng a√2."
+    },
+    {
+     "title": "So sánh bình phương",
+     "body": "SA² + SC² = 36 + 36 = 72 = AC².",
+     "why": "Chuẩn bị dùng định lý Pythagore đảo."
+    },
+    {
+     "title": "Kết luận",
+     "body": "Tam giác SAC vuông tại S, nên góc ASC = 90°.",
+     "why": "Định lý Pythagore đảo: tổng bình phương hai cạnh bằng bình phương cạnh còn lại thì tam giác vuông."
+    }
+   ]
+  },
+  {
+   "code": "HKN-51",
+   "level": "thpt",
+   "solid": "pyramid",
+   "topic": "Thể tích",
+   "statement": "Cho hình chóp S.ABCD có đáy ABCD là hình vuông cạnh a, SA vuông góc với mặt phẳng đáy và SA = a√3. Tính thể tích khối chóp S.ABCD theo a.",
+   "hints": [
+    "SA ⊥ (ABCD) nên SA là đường cao của khối chóp.",
+    "Thể tích khối chóp bằng 1/3 diện tích đáy nhân chiều cao."
+   ],
+   "answer": "V = (√3/3)·a³",
+   "steps": [
+    {
+     "title": "Xác định chiều cao",
+     "body": "SA ⊥ (ABCD) nên chiều cao khối chóp là SA = a√3.",
+     "why": "Đường cao của chóp là đoạn vuông góc từ đỉnh xuống đáy."
+    },
+    {
+     "title": "Diện tích đáy",
+     "body": "S(ABCD) = a².",
+     "why": "Diện tích hình vuông cạnh a là a²."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = 1/3 · a² · a√3 = a³√3/3.",
+     "why": "Công thức V = 1/3·B·h."
+    }
+   ]
+  },
+  {
+   "code": "HKN-52",
+   "level": "thpt",
+   "solid": "pyramid",
+   "topic": "Thể tích",
+   "statement": "Cho hình chóp tứ giác đều S.ABCD có cạnh đáy bằng a, O là tâm của đáy và cạnh bên tạo với mặt đáy góc 60°. Tính thể tích khối chóp theo a.",
+   "hints": [
+    "Góc giữa cạnh bên SA và đáy là góc SAO.",
+    "Tính OA rồi dùng tan 60° để ra chiều cao SO."
+   ],
+   "answer": "V = (√6/6)·a³",
+   "steps": [
+    {
+     "title": "Tính OA",
+     "body": "OA = AC/2 = a√2/2.",
+     "why": "O là tâm hình vuông, trung điểm đường chéo."
+    },
+    {
+     "title": "Tính chiều cao",
+     "body": "SO = OA · tan 60° = a√2/2 · √3 = a√6/2.",
+     "why": "Tam giác SOA vuông tại O, góc SAO = 60°."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = 1/3 · a² · a√6/2 = a³√6/6.",
+     "why": "Công thức V = 1/3·B·h."
+    }
+   ]
+  },
+  {
+   "code": "HKN-53",
+   "level": "thpt",
+   "solid": "prism",
+   "topic": "Thể tích",
+   "statement": "Cho lăng trụ đứng ABC.A′B′C′ có đáy là tam giác đều cạnh a và cạnh bên AA′ = a√3. Tính thể tích khối lăng trụ theo a.",
+   "hints": [
+    "Diện tích tam giác đều cạnh a là a²√3/4.",
+    "Thể tích lăng trụ bằng diện tích đáy nhân chiều cao."
+   ],
+   "answer": "V = (3/4)·a³",
+   "steps": [
+    {
+     "title": "Diện tích đáy",
+     "body": "S(ABC) = a²√3/4.",
+     "why": "Công thức diện tích tam giác đều."
+    },
+    {
+     "title": "Chiều cao",
+     "body": "Lăng trụ đứng nên chiều cao là AA′ = a√3.",
+     "why": "Cạnh bên lăng trụ đứng vuông góc với đáy."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = a²√3/4 · a√3 = 3a³/4.",
+     "why": "Công thức V = B·h; √3·√3 = 3."
+    }
+   ]
+  },
+  {
+   "code": "HKN-54",
+   "level": "thpt",
+   "solid": "prism",
+   "topic": "Thể tích",
+   "statement": "Cho lăng trụ đứng ABC.A′B′C′ có đáy ABC vuông tại A, AB = a, AC = a√3 và AA′ = 2a. Tính thể tích khối lăng trụ theo a.",
+   "hints": [
+    "Đáy là tam giác vuông tại A: diện tích bằng nửa tích hai cạnh góc vuông.",
+    "Chiều cao lăng trụ đứng là cạnh bên."
+   ],
+   "answer": "V = √3·a³",
+   "steps": [
+    {
+     "title": "Diện tích đáy",
+     "body": "S(ABC) = 1/2 · a · a√3 = a²√3/2.",
+     "why": "Diện tích tam giác vuông bằng nửa tích hai cạnh góc vuông."
+    },
+    {
+     "title": "Chiều cao",
+     "body": "h = AA′ = 2a.",
+     "why": "Lăng trụ đứng có cạnh bên vuông góc với đáy."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = a²√3/2 · 2a = a³√3.",
+     "why": "Công thức V = B·h."
+    }
+   ]
+  },
+  {
+   "code": "HKN-55",
+   "level": "thpt",
+   "solid": "cylinder",
+   "topic": "Thể tích",
+   "statement": "Một hình trụ có hai đáy là hai hình tròn tâm O và O′, bán kính đáy bằng a và chiều cao OO′ = 2a. Tính thể tích khối trụ theo a.",
+   "hints": [
+    "Thể tích khối trụ bằng diện tích đáy nhân chiều cao.",
+    "Diện tích đáy là πr²."
+   ],
+   "answer": "V = 2πa³",
+   "steps": [
+    {
+     "title": "Diện tích đáy",
+     "body": "B = π·a².",
+     "why": "Diện tích hình tròn bán kính r là πr²."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = πa² · 2a = 2πa³.",
+     "why": "Công thức V = π·r²·h."
+    }
+   ]
+  },
+  {
+   "code": "HKN-56",
+   "level": "thpt",
+   "solid": "cone",
+   "topic": "Thể tích",
+   "statement": "Cho hình nón đỉnh S, tâm đáy O, bán kính đáy OM = 2a và chiều cao SO = 3a. Tính thể tích khối nón theo a.",
+   "hints": [
+    "Thể tích khối nón bằng 1/3 diện tích đáy nhân chiều cao.",
+    "Diện tích đáy là π·(2a)² = 4πa²."
+   ],
+   "answer": "V = 4πa³",
+   "steps": [
+    {
+     "title": "Diện tích đáy",
+     "body": "B = π·(2a)² = 4πa².",
+     "why": "Diện tích hình tròn bán kính r là πr²."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = 1/3 · 4πa² · 3a = 4πa³.",
+     "why": "Công thức V = 1/3·π·r²·h."
+    }
+   ]
+  },
+  {
+   "code": "HKN-57",
+   "level": "thcs",
+   "solid": "pyramid",
+   "topic": "Thể tích",
+   "statement": "Một hình chóp tứ giác đều S.ABCD có cạnh đáy 10 cm, O là tâm của đáy và chiều cao SO = 12 cm. Tính thể tích hình chóp.",
+   "hints": [
+    "Đáy là hình vuông cạnh 10 cm.",
+    "Thể tích hình chóp đều bằng 1/3 diện tích đáy nhân chiều cao."
+   ],
+   "answer": "V = 400 cm³",
+   "steps": [
+    {
+     "title": "Diện tích đáy",
+     "body": "S(ABCD) = 10² = 100 cm².",
+     "why": "Diện tích hình vuông bằng cạnh nhân cạnh."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = 1/3 · 100 · 12 = 400 cm³.",
+     "why": "Công thức V = 1/3·S·h của hình chóp đều."
+    }
+   ]
+  },
+  {
+   "code": "HKN-58",
+   "level": "thcs",
+   "solid": "cylinder",
+   "topic": "Thể tích",
+   "statement": "Một chiếc hộp hình trụ có bán kính đáy 3 cm và chiều cao 5 cm. Tính thể tích của hộp (để kết quả theo π).",
+   "hints": [
+    "Thể tích hình trụ V = π·r²·h.",
+    "r² = 9."
+   ],
+   "answer": "V = 45π cm³",
+   "steps": [
+    {
+     "title": "Diện tích đáy",
+     "body": "S = π·3² = 9π cm².",
+     "why": "Diện tích hình tròn bán kính r là πr²."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = 9π · 5 = 45π cm³.",
+     "why": "Thể tích hình trụ bằng diện tích đáy nhân chiều cao."
+    }
+   ]
+  },
+  {
+   "code": "HKN-59",
+   "level": "thcs",
+   "solid": "cylinder",
+   "topic": "Diện tích",
+   "statement": "Một hình trụ có bán kính đáy 4 cm và chiều cao 6 cm. Tính diện tích xung quanh của hình trụ (để kết quả theo π).",
+   "hints": [
+    "Diện tích xung quanh hình trụ bằng chu vi đáy nhân chiều cao.",
+    "Chu vi đáy là 2πr."
+   ],
+   "answer": "Sxq = 48π cm²",
+   "steps": [
+    {
+     "title": "Chu vi đáy",
+     "body": "C = 2π · 4 = 8π cm.",
+     "why": "Chu vi đường tròn bán kính r là 2πr."
+    },
+    {
+     "title": "Diện tích xung quanh",
+     "body": "Sxq = 8π · 6 = 48π cm².",
+     "why": "Công thức Sxq = 2πrh."
+    }
+   ]
+  },
+  {
+   "code": "HKN-60",
+   "level": "thcs",
+   "solid": "cone",
+   "topic": "Diện tích",
+   "statement": "Một hình nón có bán kính đáy OM = 6 cm và đường sinh SM = 10 cm. Tính diện tích toàn phần của hình nón (để kết quả theo π).",
+   "hints": [
+    "Diện tích toàn phần bằng diện tích xung quanh cộng diện tích đáy.",
+    "Sxq = π·r·l, Sđáy = π·r²."
+   ],
+   "answer": "Stp = 96π cm²",
+   "steps": [
+    {
+     "title": "Diện tích xung quanh",
+     "body": "Sxq = π · 6 · 10 = 60π cm².",
+     "why": "Công thức Sxq = πrl."
+    },
+    {
+     "title": "Diện tích đáy",
+     "body": "Sđáy = π · 6² = 36π cm².",
+     "why": "Diện tích hình tròn bán kính r là πr²."
+    },
+    {
+     "title": "Diện tích toàn phần",
+     "body": "Stp = 60π + 36π = 96π cm².",
+     "why": "Stp = Sxq + Sđáy."
+    }
+   ]
+  },
+  {
+   "code": "HKN-61",
+   "level": "thcs",
+   "solid": "cone",
+   "topic": "Diện tích",
+   "statement": "Một hình nón có bán kính đáy OM = 3 cm và chiều cao SO = 4 cm. Tính diện tích xung quanh của hình nón (để kết quả theo π).",
+   "hints": [
+    "Tính đường sinh SM từ tam giác vuông SOM.",
+    "Sxq = π·r·l."
+   ],
+   "answer": "Sxq = 15π cm²",
+   "steps": [
+    {
+     "title": "Tính đường sinh",
+     "body": "Tam giác SOM vuông tại O nên SM = √(3² + 4²) = 5 cm.",
+     "why": "Định lý Pythagore."
+    },
+    {
+     "title": "Diện tích xung quanh",
+     "body": "Sxq = π · 3 · 5 = 15π cm².",
+     "why": "Công thức Sxq = πrl."
+    }
+   ]
+  },
+  {
+   "code": "HKN-62",
+   "level": "thcs",
+   "solid": "pyramid",
+   "topic": "Diện tích",
+   "statement": "Một hình chóp tứ giác đều S.ABCD có cạnh đáy 6 cm, O là tâm đáy và chiều cao SO = 4 cm. Tính diện tích xung quanh của hình chóp.",
+   "hints": [
+    "Tính trung đoạn: khoảng cách từ S đến trung điểm một cạnh đáy.",
+    "Sxq = nửa chu vi đáy nhân trung đoạn."
+   ],
+   "answer": "Sxq = 60 cm²",
+   "steps": [
+    {
+     "title": "Tính trung đoạn",
+     "body": "Gọi H là trung điểm BC thì OH = 3 cm, tam giác SOH vuông tại O nên SH = √(4² + 3²) = 5 cm.",
+     "why": "Định lý Pythagore; SH ⊥ BC vì tam giác SBC cân tại S."
+    },
+    {
+     "title": "Nửa chu vi đáy",
+     "body": "p = 4 · 6 / 2 = 12 cm.",
+     "why": "Chu vi hình vuông bằng 4 lần cạnh."
+    },
+    {
+     "title": "Diện tích xung quanh",
+     "body": "Sxq = p · d = 12 · 5 = 60 cm².",
+     "why": "Công thức Sxq = p·d của hình chóp đều."
+    }
+   ]
+  },
+  {
+   "code": "HKN-63",
+   "level": "thcs",
+   "solid": "prism",
+   "topic": "Diện tích",
+   "statement": "Một lăng trụ đứng ABC.A′B′C′ có đáy là tam giác đều cạnh 4 cm và chiều cao AA′ = 10 cm. Tính diện tích xung quanh của lăng trụ.",
+   "hints": [
+    "Các mặt bên của lăng trụ đứng là hình chữ nhật.",
+    "Sxq = chu vi đáy nhân chiều cao."
+   ],
+   "answer": "Sxq = 120 cm²",
+   "steps": [
+    {
+     "title": "Chu vi đáy",
+     "body": "C = 3 · 4 = 12 cm.",
+     "why": "Tam giác đều có ba cạnh bằng nhau."
+    },
+    {
+     "title": "Diện tích xung quanh",
+     "body": "Sxq = 12 · 10 = 120 cm².",
+     "why": "Công thức Sxq = C·h của lăng trụ đứng."
+    }
+   ]
+  },
+  {
+   "code": "HKN-64",
+   "level": "thcs",
+   "solid": "prism",
+   "topic": "Diện tích",
+   "statement": "Một lăng trụ đứng ABC.A′B′C′ có đáy ABC vuông tại A với AB = 6 cm, AC = 8 cm và chiều cao AA′ = 10 cm. Tính diện tích xung quanh của lăng trụ.",
+   "hints": [
+    "Tính BC bằng định lý Pythagore.",
+    "Sxq = chu vi đáy nhân chiều cao."
+   ],
+   "answer": "Sxq = 240 cm²",
+   "steps": [
+    {
+     "title": "Tính BC",
+     "body": "BC = √(6² + 8²) = 10 cm.",
+     "why": "Định lý Pythagore trong tam giác vuông tại A."
+    },
+    {
+     "title": "Chu vi đáy",
+     "body": "C = 6 + 8 + 10 = 24 cm.",
+     "why": "Chu vi là tổng ba cạnh."
+    },
+    {
+     "title": "Diện tích xung quanh",
+     "body": "Sxq = 24 · 10 = 240 cm².",
+     "why": "Công thức Sxq = C·h của lăng trụ đứng."
+    }
+   ]
+  },
+  {
+   "code": "HKN-65",
+   "level": "thcs",
+   "solid": "box",
+   "topic": "Diện tích",
+   "statement": "Một hình hộp chữ nhật ABCD.A′B′C′D′ có AB = 3 cm, AD = 4 cm và AA′ = 5 cm. Tính diện tích xung quanh của hình hộp.",
+   "hints": [
+    "Bốn mặt bên là các hình chữ nhật có chung chiều cao AA′.",
+    "Sxq = chu vi đáy nhân chiều cao."
+   ],
+   "answer": "Sxq = 70 cm²",
+   "steps": [
+    {
+     "title": "Chu vi đáy",
+     "body": "C = 2 · (3 + 4) = 14 cm.",
+     "why": "Chu vi hình chữ nhật bằng hai lần tổng hai kích thước."
+    },
+    {
+     "title": "Diện tích xung quanh",
+     "body": "Sxq = 14 · 5 = 70 cm².",
+     "why": "Công thức Sxq = C·h."
+    }
+   ]
+  },
+  {
+   "code": "HKN-66",
+   "level": "thpt",
+   "solid": "pyramid",
+   "topic": "Diện tích",
+   "statement": "Cho hình chóp tứ giác đều S.ABCD có cạnh đáy a, O là tâm đáy và chiều cao SO = a√3/2. Tính diện tích xung quanh của hình chóp theo a.",
+   "hints": [
+    "Gọi H là trung điểm BC, tính trung đoạn SH từ tam giác SOH.",
+    "Bốn mặt bên là bốn tam giác cân bằng nhau."
+   ],
+   "answer": "Sxq = 2a²",
+   "steps": [
+    {
+     "title": "Tính trung đoạn",
+     "body": "OH = a/2, SH = √(3a²/4 + a²/4) = a.",
+     "why": "Tam giác SOH vuông tại O; định lý Pythagore."
+    },
+    {
+     "title": "Một mặt bên",
+     "body": "S(SBC) = 1/2 · BC · SH = 1/2 · a · a = a²/2.",
+     "why": "SH ⊥ BC vì tam giác SBC cân tại S."
+    },
+    {
+     "title": "Diện tích xung quanh",
+     "body": "Sxq = 4 · a²/2 = 2a².",
+     "why": "Bốn mặt bên bằng nhau."
+    }
+   ]
+  },
+  {
+   "code": "HKN-67",
+   "level": "thpt",
+   "solid": "pyramid",
+   "topic": "Diện tích",
+   "statement": "Cho hình chóp S.ABCD có đáy ABCD là hình vuông cạnh a, SA vuông góc với mặt phẳng đáy và SA = a. Tính tổng diện tích bốn mặt bên của hình chóp theo a.",
+   "hints": [
+    "Hai mặt SAB, SAD vuông tại A; chứng minh BC ⊥ SB và CD ⊥ SD.",
+    "SB = SD = a√2."
+   ],
+   "answer": "Sxq = (1+√2)·a²",
+   "steps": [
+    {
+     "title": "Hai mặt chứa SA",
+     "body": "Tam giác SAB, SAD vuông tại A nên mỗi tam giác có diện tích a·a/2 = a²/2.",
+     "why": "SA ⊥ (ABCD) nên SA ⊥ AB, SA ⊥ AD."
+    },
+    {
+     "title": "Hai mặt còn lại",
+     "body": "BC ⊥ AB và BC ⊥ SA nên BC ⊥ (SAB), suy ra BC ⊥ SB; tương tự CD ⊥ SD. SB = SD = a√2 nên S(SBC) = S(SCD) = a · a√2/2.",
+     "why": "Định lý ba đường vuông góc."
+    },
+    {
+     "title": "Cộng lại",
+     "body": "Sxq = 2 · a²/2 + 2 · a²√2/2 = a²(1 + √2).",
+     "why": "Diện tích xung quanh là tổng diện tích các mặt bên."
+    }
+   ]
+  },
+  {
+   "code": "HKN-68",
+   "level": "thpt",
+   "solid": "cylinder",
+   "topic": "Diện tích",
+   "statement": "Cho hình trụ có bán kính đáy a và chiều cao OO′ = a√3. Tính diện tích xung quanh của hình trụ theo a.",
+   "hints": [
+    "Sxq = 2π·r·h.",
+    "Thay r = a, h = a√3."
+   ],
+   "answer": "Sxq = 2√3·π·a²",
+   "steps": [
+    {
+     "title": "Áp dụng công thức",
+     "body": "Sxq = 2π · a · a√3.",
+     "why": "Diện tích xung quanh hình trụ bằng chu vi đáy nhân chiều cao."
+    },
+    {
+     "title": "Rút gọn",
+     "body": "Sxq = 2√3·πa².",
+     "why": "Gom các thừa số."
+    }
+   ]
+  },
+  {
+   "code": "HKN-69",
+   "level": "thpt",
+   "solid": "cone",
+   "topic": "Diện tích",
+   "statement": "Cắt một hình nón bởi mặt phẳng qua trục được thiết diện là tam giác đều cạnh 2a. Tính diện tích toàn phần của hình nón theo a.",
+   "hints": [
+    "Thiết diện qua trục là tam giác cân có cạnh bên là đường sinh, cạnh đáy là đường kính đáy.",
+    "Từ đó r = a, l = 2a; Stp = πr·l + πr²."
+   ],
+   "answer": "Stp = 3πa²",
+   "steps": [
+    {
+     "title": "Đọc bán kính và đường sinh",
+     "body": "Đường kính đáy 2a nên r = a; đường sinh l = 2a.",
+     "why": "Thiết diện qua trục gồm hai đường sinh và một đường kính đáy."
+    },
+    {
+     "title": "Diện tích xung quanh",
+     "body": "Sxq = π · a · 2a = 2πa².",
+     "why": "Công thức Sxq = πrl."
+    },
+    {
+     "title": "Toàn phần",
+     "body": "Stp = 2πa² + πa² = 3πa².",
+     "why": "Stp = Sxq + Sđáy."
+    }
+   ]
+  },
+  {
+   "code": "HKN-70",
+   "level": "thpt",
+   "solid": "prism",
+   "topic": "Diện tích",
+   "statement": "Cho lăng trụ đứng ABC.A′B′C′ có đáy là tam giác đều cạnh a và AA′ = 2a. Tính diện tích xung quanh của lăng trụ theo a.",
+   "hints": [
+    "Ba mặt bên là ba hình chữ nhật bằng nhau.",
+    "Mỗi mặt bên có kích thước a × 2a."
+   ],
+   "answer": "Sxq = 6a²",
+   "steps": [
+    {
+     "title": "Một mặt bên",
+     "body": "Mặt ABB′A′ là hình chữ nhật a × 2a, diện tích 2a².",
+     "why": "Lăng trụ đứng có mặt bên là hình chữ nhật."
+    },
+    {
+     "title": "Diện tích xung quanh",
+     "body": "Sxq = 3 · 2a² = 6a².",
+     "why": "Ba mặt bên bằng nhau vì đáy là tam giác đều."
+    }
+   ]
+  },
+  {
+   "code": "HKN-71",
+   "level": "thpt",
+   "solid": "cylinder",
+   "topic": "Diện tích",
+   "statement": "Cắt một hình trụ bởi mặt phẳng qua trục OO′ được thiết diện là hình vuông có diện tích 16 cm². Tính diện tích xung quanh của hình trụ (để kết quả theo π).",
+   "hints": [
+    "Thiết diện qua trục là hình chữ nhật có hai kích thước là đường kính đáy và chiều cao.",
+    "Hình vuông cạnh 4 cm nên 2r = h = 4 cm."
+   ],
+   "answer": "Sxq = 16π cm²",
+   "steps": [
+    {
+     "title": "Tìm r và h",
+     "body": "Cạnh hình vuông là 4 cm nên h = 4 cm và 2r = 4 cm, r = 2 cm.",
+     "why": "Hình vuông diện tích 16 có cạnh 4."
+    },
+    {
+     "title": "Diện tích xung quanh",
+     "body": "Sxq = 2π · 2 · 4 = 16π cm².",
+     "why": "Công thức Sxq = 2πrh."
+    }
+   ]
+  },
+  {
+   "code": "HKN-72",
+   "level": "thcs",
+   "solid": "sphere",
+   "topic": "Mặt cầu",
+   "statement": "Cho mặt cầu tâm O bán kính OM = 5 cm. Tính diện tích mặt cầu (để kết quả theo π).",
+   "hints": [
+    "Diện tích mặt cầu bán kính R là 4πR².",
+    "R² = 25."
+   ],
+   "answer": "S = 100π cm²",
+   "steps": [
+    {
+     "title": "Áp dụng công thức",
+     "body": "S = 4π · 5² = 100π cm².",
+     "why": "Diện tích mặt cầu bằng 4πR²."
+    }
+   ]
+  },
+  {
+   "code": "HKN-73",
+   "level": "thcs",
+   "solid": "sphere",
+   "topic": "Mặt cầu",
+   "statement": "Một quả bóng hình cầu có bán kính 6 cm. Tính diện tích mặt quả bóng và thể tích của nó (để kết quả theo π).",
+   "hints": [
+    "S = 4πR², V = 4/3·πR³.",
+    "R² = 36, R³ = 216."
+   ],
+   "answer": "S = 144π cm²; V = 288π cm³",
+   "steps": [
+    {
+     "title": "Diện tích mặt cầu",
+     "body": "S = 4π · 36 = 144π cm².",
+     "why": "Công thức S = 4πR²."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = 4/3 · π · 216 = 288π cm³.",
+     "why": "Công thức V = 4/3·πR³."
+    }
+   ]
+  },
+  {
+   "code": "HKN-74",
+   "level": "thcs",
+   "solid": "sphere",
+   "topic": "Mặt cầu",
+   "statement": "Một mặt cầu tâm O có diện tích 64π cm². Tính thể tích của khối cầu (để kết quả theo π).",
+   "hints": [
+    "Từ 4πR² = 64π tìm R.",
+    "V = 4/3·πR³."
+   ],
+   "answer": "V = (256/3)·π cm³",
+   "steps": [
+    {
+     "title": "Tìm bán kính",
+     "body": "4πR² = 64π ⇒ R² = 16 ⇒ R = 4 cm.",
+     "why": "Công thức diện tích mặt cầu."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = 4/3 · π · 4³ = 256π/3 cm³.",
+     "why": "Công thức V = 4/3·πR³."
+    }
+   ]
+  },
+  {
+   "code": "HKN-75",
+   "level": "thcs",
+   "solid": "sphere",
+   "topic": "Mặt cầu",
+   "statement": "Một quả bóng được đặt vừa khít trong một chiếc hộp hình lập phương cạnh 10 cm (quả bóng tiếp xúc với cả sáu mặt hộp). Tính thể tích quả bóng (để kết quả theo π).",
+   "hints": [
+    "Đường kính quả bóng bằng cạnh hình lập phương.",
+    "R = 5 cm; V = 4/3·πR³."
+   ],
+   "answer": "V = (500/3)·π cm³",
+   "steps": [
+    {
+     "title": "Tìm bán kính",
+     "body": "Quả bóng tiếp xúc hai mặt đối diện nên đường kính bằng 10 cm, R = 5 cm.",
+     "why": "Khoảng cách giữa hai mặt đối diện của hình lập phương bằng cạnh."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = 4/3 · π · 125 = 500π/3 cm³.",
+     "why": "Công thức V = 4/3·πR³."
+    }
+   ]
+  },
+  {
+   "code": "HKN-76",
+   "level": "thcs",
+   "solid": "sphere",
+   "topic": "Mặt cầu",
+   "statement": "Một mô hình quả địa cầu có dạng hình cầu đường kính 20 cm. Tính diện tích bề mặt của mô hình (để kết quả theo π).",
+   "hints": [
+    "Bán kính bằng nửa đường kính.",
+    "S = 4πR²."
+   ],
+   "answer": "S = 400π cm²",
+   "steps": [
+    {
+     "title": "Bán kính",
+     "body": "R = 20 / 2 = 10 cm.",
+     "why": "Bán kính bằng nửa đường kính."
+    },
+    {
+     "title": "Diện tích",
+     "body": "S = 4π · 10² = 400π cm².",
+     "why": "Công thức S = 4πR²."
+    }
+   ]
+  },
+  {
+   "code": "HKN-77",
+   "level": "thcs",
+   "solid": "sphere",
+   "topic": "Mặt cầu",
+   "statement": "Cho mặt cầu tâm O bán kính OM = 7 cm. Tính diện tích mặt cầu (để kết quả theo π).",
+   "hints": [
+    "S = 4πR².",
+    "7² = 49."
+   ],
+   "answer": "S = 196π cm²",
+   "steps": [
+    {
+     "title": "Áp dụng công thức",
+     "body": "S = 4π · 49 = 196π cm².",
+     "why": "Diện tích mặt cầu bằng 4πR²."
+    }
+   ]
+  },
+  {
+   "code": "HKN-78",
+   "level": "thpt",
+   "solid": "sphere",
+   "topic": "Mặt cầu",
+   "statement": "Cho hình lập phương ABCD.A′B′C′D′ cạnh a, I là tâm hình lập phương. Tính diện tích mặt cầu ngoại tiếp hình lập phương theo a.",
+   "hints": [
+    "Tâm mặt cầu ngoại tiếp là I, trung điểm đường chéo AC′.",
+    "R = AC′/2 = a√3/2."
+   ],
+   "answer": "S = 3πa²",
+   "steps": [
+    {
+     "title": "Tìm tâm và bán kính",
+     "body": "I cách đều tám đỉnh; R = IA = AC′/2 = a√3/2.",
+     "why": "Bốn đường chéo hình lập phương bằng nhau và cắt nhau tại trung điểm mỗi đường."
+    },
+    {
+     "title": "Diện tích",
+     "body": "S = 4π · 3a²/4 = 3πa².",
+     "why": "Công thức S = 4πR²."
+    }
+   ]
+  },
+  {
+   "code": "HKN-79",
+   "level": "thpt",
+   "solid": "pyramid",
+   "topic": "Mặt cầu",
+   "statement": "Cho hình chóp S.ABCD có đáy ABCD là hình vuông cạnh a, SA vuông góc với mặt phẳng đáy và SA = a√2. Tính bán kính và diện tích mặt cầu ngoại tiếp hình chóp theo a.",
+   "hints": [
+    "Các góc SAC, SBC, SDC đều là góc vuông.",
+    "Tâm mặt cầu là trung điểm SC, R = SC/2."
+   ],
+   "answer": "R = a; S = 4πa²",
+   "steps": [
+    {
+     "title": "Các góc vuông",
+     "body": "SA ⊥ AC; BC ⊥ (SAB) nên BC ⊥ SB; CD ⊥ (SAD) nên CD ⊥ SD.",
+     "why": "Định lý ba đường vuông góc."
+    },
+    {
+     "title": "Tâm mặt cầu",
+     "body": "A, B, D cùng nhìn SC dưới góc vuông nên năm điểm S, A, B, C, D nằm trên mặt cầu đường kính SC.",
+     "why": "Điểm nhìn một đoạn dưới góc vuông nằm trên mặt cầu đường kính đoạn đó."
+    },
+    {
+     "title": "Bán kính",
+     "body": "SC = √(SA² + AC²) = √(2a² + 2a²) = 2a, R = a.",
+     "why": "AC = a√2."
+    },
+    {
+     "title": "Diện tích",
+     "body": "S = 4πa².",
+     "why": "Công thức S = 4πR²."
+    }
+   ]
+  },
+  {
+   "code": "HKN-80",
+   "level": "thpt",
+   "solid": "pyramid",
+   "topic": "Mặt cầu",
+   "statement": "Cho hình chóp tứ giác đều S.ABCD có tất cả các cạnh bằng a, O là tâm đáy. Tính bán kính và thể tích khối cầu ngoại tiếp hình chóp theo a.",
+   "hints": [
+    "Tính SO rồi so sánh với OA.",
+    "Nếu OS = OA = OB = OC = OD thì O là tâm mặt cầu ngoại tiếp."
+   ],
+   "answer": "R = a√2/2; V = (√2/3)·π·a³",
+   "steps": [
+    {
+     "title": "Tính OA",
+     "body": "OA = AC/2 = a√2/2.",
+     "why": "O là trung điểm đường chéo hình vuông."
+    },
+    {
+     "title": "Tính SO",
+     "body": "SO = √(SA² − OA²) = √(a² − a²/2) = a√2/2.",
+     "why": "Tam giác SOA vuông tại O."
+    },
+    {
+     "title": "Tâm và bán kính",
+     "body": "OS = OA = OB = OC = OD = a√2/2 nên O là tâm, R = a√2/2.",
+     "why": "Tâm mặt cầu cách đều các đỉnh."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = 4/3 · π · (a√2/2)³ = 4/3 · π · a³√2/4 = √2πa³/3.",
+     "why": "Công thức V = 4/3·πR³."
+    }
+   ]
+  },
+  {
+   "code": "HKN-81",
+   "level": "thpt",
+   "solid": "box",
+   "topic": "Mặt cầu",
+   "statement": "Cho hình hộp chữ nhật ABCD.A′B′C′D′ có AB = a, AD = 2a và AA′ = 2a. Tính diện tích mặt cầu ngoại tiếp hình hộp theo a.",
+   "hints": [
+    "Tâm mặt cầu là giao điểm các đường chéo của hình hộp.",
+    "R = AC′/2 với AC′² = AB² + AD² + AA′²."
+   ],
+   "answer": "S = 9πa²",
+   "steps": [
+    {
+     "title": "Đường chéo",
+     "body": "AC′ = √(a² + 4a² + 4a²) = 3a.",
+     "why": "Đường chéo hình hộp chữ nhật bằng căn tổng bình phương ba kích thước."
+    },
+    {
+     "title": "Bán kính",
+     "body": "R = AC′/2 = 3a/2.",
+     "why": "Tâm là trung điểm các đường chéo, cách đều tám đỉnh."
+    },
+    {
+     "title": "Diện tích",
+     "body": "S = 4π · 9a²/4 = 9πa².",
+     "why": "Công thức S = 4πR²."
+    }
+   ]
+  },
+  {
+   "code": "HKN-82",
+   "level": "thpt",
+   "solid": "prism",
+   "topic": "Mặt cầu",
+   "statement": "Cho lăng trụ đứng ABC.A′B′C′ có đáy là tam giác đều cạnh a và AA′ = 2a. Tính diện tích mặt cầu ngoại tiếp lăng trụ theo a.",
+   "hints": [
+    "Tâm mặt cầu là trung điểm đoạn nối tâm hai đáy.",
+    "R² = r² + (h/2)² với r là bán kính đường tròn ngoại tiếp đáy."
+   ],
+   "answer": "S = (16/3)·π·a²",
+   "steps": [
+    {
+     "title": "Bán kính đáy",
+     "body": "Đường tròn ngoại tiếp tam giác đều cạnh a có r = a√3/3, r² = a²/3.",
+     "why": "r = cạnh / √3."
+    },
+    {
+     "title": "Bán kính mặt cầu",
+     "body": "R² = a²/3 + a² = 4a²/3.",
+     "why": "Tâm cách mặt đáy h/2 = a; định lý Pythagore."
+    },
+    {
+     "title": "Diện tích",
+     "body": "S = 4π · 4a²/3 = 16πa²/3.",
+     "why": "Công thức S = 4πR²."
+    }
+   ]
+  },
+  {
+   "code": "HKN-83",
+   "level": "thpt",
+   "solid": "prism",
+   "topic": "Mặt cầu",
+   "statement": "Cho lăng trụ đứng ABC.A′B′C′ có đáy ABC vuông tại A, AB = a, AC = a√3 và AA′ = 2a. Tính bán kính và thể tích khối cầu ngoại tiếp lăng trụ theo a.",
+   "hints": [
+    "Đường tròn ngoại tiếp tam giác vuông có tâm là trung điểm cạnh huyền.",
+    "R² = r² + (AA′/2)²."
+   ],
+   "answer": "R = a√2; V = (8√2/3)·π·a³",
+   "steps": [
+    {
+     "title": "Bán kính đáy",
+     "body": "BC = √(a² + 3a²) = 2a nên r = BC/2 = a.",
+     "why": "Tâm đường tròn ngoại tiếp tam giác vuông là trung điểm cạnh huyền."
+    },
+    {
+     "title": "Bán kính mặt cầu",
+     "body": "R² = a² + a² = 2a², R = a√2.",
+     "why": "Tâm mặt cầu cách đáy AA′/2 = a."
+    },
+    {
+     "title": "Thể tích",
+     "body": "V = 4/3 · π · (a√2)³ = 4/3 · π · 2√2a³ = 8√2πa³/3.",
+     "why": "Công thức V = 4/3·πR³."
+    }
+   ]
+  },
+  {
+   "code": "HKN-84",
+   "level": "thpt",
+   "solid": "pyramid",
+   "topic": "Mặt cầu",
+   "statement": "Cho hình chóp S.ABCD có đáy ABCD là hình vuông cạnh a, SA vuông góc với mặt phẳng đáy và SA = 2a. Tính diện tích mặt cầu ngoại tiếp hình chóp theo a.",
+   "hints": [
+    "Mặt cầu ngoại tiếp có đường kính SC.",
+    "SC² = SA² + AC²."
+   ],
+   "answer": "S = 6πa²",
+   "steps": [
+    {
+     "title": "Đường kính",
+     "body": "A, B, D nhìn SC dưới góc vuông nên mặt cầu ngoại tiếp có đường kính SC.",
+     "why": "BC ⊥ SB, CD ⊥ SD, SA ⊥ AC."
+    },
+    {
+     "title": "Bán kính",
+     "body": "SC = √(4a² + 2a²) = a√6, R = a√6/2.",
+     "why": "AC = a√2."
+    },
+    {
+     "title": "Diện tích",
+     "body": "S = 4π · 6a²/4 = 6πa².",
+     "why": "Công thức S = 4πR²."
     }
    ]
   }

@@ -70,7 +70,10 @@ public interface GeometryEngine {
    * Đại lượng đề hỏi. kind: angle_line_plane [P, Q, A, B, C] (độ) · dist_lines [A, B, C, D] ·
    * dist_point_plane [P, A, B, C] · length [P, Q] · angle [P, O, Q] (độ) · volume_prism [đáy…, đỉnh
    * mặt trên] · cone_lateral [S, O, M] · cone_volume [S, O, M] · cyl_total_area [O, O′, M] ·
-   * sphere_radius [I, A] · sphere_volume [I, A].
+   * sphere_radius [I, A] · sphere_volume [I, A] · sphere_area [I, A] (ba loại mặt cầu cũng nhận bốn
+   * điểm không đồng phẳng trên cầu: cầu ngoại tiếp) · cyl_lateral [O, O′, M] · cyl_volume [O, O′,
+   * M] · cone_total_area [S, O, M] · pyramid_volume [đáy…, đỉnh] · pyramid_lateral [đỉnh, đáy…] ·
+   * prism_lateral [đáy…, đỉnh mặt trên] (lăng trụ đứng).
    */
   record AskedQuantity(String name, String kind, List<String> points) {}
 

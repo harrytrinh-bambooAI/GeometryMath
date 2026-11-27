@@ -384,4 +384,54 @@ class GeometryEngineE2Test {
         engine.measure(f, new AskedQuantity("", "dist_point_plane", List.of("A", "A′", "B", "C")));
     assertThat(d).isCloseTo(60 / Math.sqrt(769), org.assertj.core.data.Offset.offset(1e-9));
   }
+
+  @Test
+  @DisplayName(
+      "Đại lượng diện tích, thể tích, cầu ngoại tiếp (cân chuyên đề Kho đề MVP, 27/11): giá trị"
+          + " theo công thức")
+  void areaVolumeSphereKinds() {
+    var off = org.assertj.core.data.Offset.offset(1e-9);
+    Figure cyl = engine.build("cylinder", Map.of("r", 4.0, "h", 6.0));
+    List<String> oom = List.of("O", "O′", "M");
+    assertThat(engine.measure(cyl, new AskedQuantity("", "cyl_lateral", oom)))
+        .isCloseTo(48 * Math.PI, off);
+    assertThat(engine.measure(cyl, new AskedQuantity("", "cyl_volume", oom)))
+        .isCloseTo(96 * Math.PI, off);
+    Figure cone = engine.build("cone_rl", Map.of("r", 6.0, "l", 10.0));
+    assertThat(
+            engine.measure(cone, new AskedQuantity("", "cone_total_area", List.of("S", "O", "M"))))
+        .isCloseTo(96 * Math.PI, off);
+    Figure pyr = engine.build("pyramid", Map.of("a", 6.0, "h", 4.0));
+    assertThat(
+            engine.measure(
+                pyr, new AskedQuantity("", "pyramid_volume", List.of("A", "B", "C", "D", "S"))))
+        .isCloseTo(48, off);
+    assertThat(
+            engine.measure(
+                pyr, new AskedQuantity("", "pyramid_lateral", List.of("S", "A", "B", "C", "D"))))
+        .isCloseTo(60, off);
+    Figure box = engine.build("box", Map.of("a", 3.0, "b", 4.0, "c", 5.0));
+    assertThat(
+            engine.measure(
+                box, new AskedQuantity("", "prism_lateral", List.of("A", "B", "C", "D", "A′"))))
+        .isCloseTo(70, off);
+    // cầu qua bốn đỉnh A, B, D, A′ của hộp 1×2×2: R = 3/2
+    Figure b2 = engine.build("box", Map.of("a", 1.0, "b", 2.0, "c", 2.0));
+    List<String> four = List.of("A", "B", "D", "A′");
+    assertThat(engine.measure(b2, new AskedQuantity("", "sphere_radius", four)))
+        .isCloseTo(1.5, off);
+    assertThat(engine.measure(b2, new AskedQuantity("", "sphere_area", four)))
+        .isCloseTo(9 * Math.PI, off);
+    Figure sph = engine.build("sphere", Map.of("r", 5.0));
+    assertThat(engine.measure(sph, new AskedQuantity("", "sphere_area", List.of("O", "M"))))
+        .isCloseTo(100 * Math.PI, off);
+    // bốn điểm đồng phẳng hoặc ba điểm: lỗi tham số, không 500
+    assertThatThrownBy(() ->
+            engine.measure(
+                box, new AskedQuantity("", "sphere_radius", List.of("A", "B", "C", "D"))))
+        .isInstanceOf(IllegalArgumentException.class);
+    assertThatThrownBy(
+            () -> engine.measure(box, new AskedQuantity("", "sphere_area", List.of("A", "B", "C"))))
+        .isInstanceOf(IllegalArgumentException.class);
+  }
 }
