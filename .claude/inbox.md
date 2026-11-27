@@ -370,3 +370,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** `artifacts/GEO/evidence/MVP-METRICS-20261127-0816/report.md` + report.json (27/11/2026 08:16).
 - **Xong khi:** `make bench-mvp` (mock) xanh và chạy lại AI thật: "Kết luận chỉ số bắt buộc: **ĐẠT**"; make verify xanh.
 - **Ngoài phạm vi:** đổi model AI; nới ngưỡng.
+
+## Việc: E2E tách UI / API theo DECISIONS 27/11 (chạy SAU T-33)
+- **Mục tiêu:** Playwright UI chỉ cho ca loại A (kiểm giao diện/hành động); ca loại B chuyển sang luồng gọi API đúng thứ tự E2E + 1 ảnh trạng thái cuối làm bằng chứng; `e2e-affected` diff chỉ server → api + loại A màn liên quan.
+- **Nguồn:** `app/e2e/playwright.config.ts`, 72 `*.ui.spec.ts`, 49 `*.api.spec.ts`, `app/scripts/e2e-affected.mjs` + impact-map (27/11/2026); DECISIONS 27/11 "Chiến lược E2E".
+- **Xong khi:** `make e2e-affected-selftest` đạt (thêm mẫu diff chỉ server → 0 ca UI loại B); `make traceability ARGS="--strict --all"` không giảm phủ TC; một lượt `make e2e` trọn bộ đạt; báo cáo trước/sau: thời gian, số ca UI, số ca chập chờn.
+- **Ngoài phạm vi:** xoá ca UI loại A; đổi lượt gate (vẫn chạy trọn UI); sửa code sản phẩm.
