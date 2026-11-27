@@ -1,5 +1,5 @@
 # Hàng đợi agent con · GEO
-Phiên bản: v0.3 · 2026-11-26 · tạo từ delivery-lead/templates/queue.md. Định dạng: đầu tệp `<skill>/scripts/queue.py`.
+Phiên bản: v0.4 · 2026-11-28 · tạo từ delivery-lead/templates/queue.md. Định dạng: đầu tệp `<skill>/scripts/queue.py`.
 <!-- Mỗi khối = 1 task trong .claude/TASKS.md, CÙNG ID. Trạng thái: todo | running | wait-user | done | failed | blocked | skip. -->
 <!-- Dòng thường (không phải #, <!--, Phiên bản) đặt ở đây = ghi chú chung, được chèn vào brief của MỌI task. -->
 <!-- Khối dưới là mẫu (skip, không được giao). Xoá hoặc sửa khi có task thật. -->
@@ -102,7 +102,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Kiểm: `cd .claude/worktrees/s2-e1/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E1" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E1`
 - Ngoài phạm vi: lớp/mã lớp/duyệt (S3-E1), engine, tắt luồng đăng nhập MVP
 - Model: opus · Ngân sách: 3.5 giờ
-- Phụ thuộc: T-261126-41 (gộp sau T-50; trước khi kiểm cuối: git merge worktree-mvp-wave0)
+- Phụ thuộc: T-261126-41 (gộp sau T-261126-50; trước khi kiểm cuối: git merge worktree-mvp-wave0)
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/iam/|app/server/src/test/java/vn/geo/server/(it/s2e1|iam)/|app/server/src/main/resources/db/migration/V1[12][0-9]__|app/web/src/(features/s2e1|shared/auth)/|app/e2e/tests/s2e1/|app/db/seed/(e2e/80[0-9]_|fixture-ids\.d/s2e1)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E1/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W4
 ## T-261126-19 · S2-E2 · L5 Dev · epic-common v1.3 · wt s2-e2 · ‖18 · 5h/14M · Khung môn học + hình phẳng + bench-s2 [done]
@@ -112,7 +112,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Kiểm: `cd .claude/worktrees/s2-e2/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2-E2" && make bench-s2 && make bench-mvp && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S2-E2`
 - Ngoài phạm vi: iam, kho đề, bài luyện, grade dạng tương đương (21)
 - Model: opus · Ngân sách: 5 giờ
-- Phụ thuộc: T-261126-41 (gộp sau T-50; trước khi kiểm cuối: git merge worktree-mvp-wave0)
+- Phụ thuộc: T-261126-41 (gộp sau T-261126-50; trước khi kiểm cuối: git merge worktree-mvp-wave0)
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(subject|geometry|content)/|app/server/src/main/resources/(content/plane/|db/migration/V1[34][0-9]__)|app/server/src/test/java/vn/geo/server/(it/s2e2|subject|geometry|content)/|app/docs/SCENE-CONTRACT-2D\.md|app/web/src/(features/s2e2|shared/scene2d)/|app/web/package(-lock)?\.json|app/server/pom\.xml|app/e2e/tests/s2e2/|app/db/seed/(e2e/81[0-9]_|fixture-ids\.d/s2e2)|app/scripts/bench-s2\.sh|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E2/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W4
 ## T-261126-20 · S2-E5 · L5 Dev · epic-common v1.3 · wt s2-e5 · ‖21 · 4h/10M · Duyệt lời giải có phiên bản + StepCheck [done]
@@ -175,7 +175,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261126-22, T-261126-23
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(content/.*(variant|export|Variant|Export)|geometry/internal/variant|assignment/.*Choice)|app/server/src/main/resources/db/migration/V2[89][0-9]__|app/server/src/test/java/vn/geo/server/(it/s2e9|content|geometry|assignment)/|app/web/src/features/(s2e9|s2e8)/|app/web/package(-lock)?\.json|app/e2e/tests/s2e9/|app/db/seed/(e2e/87[0-9]_|fixture-ids\.d/s2e9)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S2-E9/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s23 §3 W7
-## T-261126-26 · S2 · L6 Tester · tester SKILL + Playwright · wt mvp-wave0 (chỉ đọc code) · 2.5h/3M · Kiểm thử chặng 2 [todo]
+## T-261126-26 · S2 · L6 Tester · tester SKILL + Playwright · wt mvp-wave0 (chỉ đọc code) · 2.5h/3M · Kiểm thử chặng 2 [skip]
 - Mục tiêu: e2e 2 lượt + TC Manual/khám phá qua API theo scope; bộ câu thử moi đáp án mở rộng (bài luyện, trình chiếu, giả làm giáo viên); bench-s2; báo cáo + bug draft
 - Nguồn: epics/S2-*/test_cases.md (ebec17a 26/11); domains/geo/scope.json (confirmed); PLAN_code-s23 v1.0 §7
 - Xong khi: mọi TC có status; lệch audit = 0
@@ -323,9 +323,195 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Model: opus · Ngân sách: 1.5 giờ · Cổng: FIX W4 54649 · 6699 · 8124 · 5204
 - Phụ thuộc: T-261126-41
 
+## T-261128-51 · S5 · L5 Dev khung chung + dữ liệu mẫu · epic-common v1.6 · wt s5-base · 1.5h/4M · Truy vết S5 --strict, feature rỗng s5e1…s5e6, mốc tệp chung, ai_purpose, cờ, seed F-S5-*, BUG-S23-001 [todo]
+- Mục tiêu: (1) `app/e2e/scripts/traceability.ts` nhận thư mục `S5-E\d+`, mã `TC-S5En-nn`, bí danh `S5`; `evidence-reporter.ts` nhận tag `TC-S5E` và **sửa BUG-S23-001** (dòng 227–229: khóa đếm `perTest`/`last` thêm `title` để test vòng lặp cùng dòng không bị gộp; 283 → 285 ở bộ S23); `check_ac_tc.py` nhận `S5-E*`/`US-S5E`; `e2e-affected.mjs` + `s23/impact-map.json` có mục S5 (module mới → feature); (2) 6 feature rỗng `app/web/src/features/s5e1…s5e6/index.tsx` cắm vào `index.ts`/`types.ts`; `package-info.java` cho `lessonplan`, `exam`, `assessment`, `aigrade`; (3) mốc `T-261128-52…65` trong 5 tệp chung S23 + `AnthropicPrompts.java` + `MockAiProvider.java`; (4) V500–V504: 8 giá trị `ai_purpose` (`lesson_plan`, `lesson_patch`, `class_notice`, `kb_qa`, `grade_ocr`, `grade`, `exam_draft`, `class_errors`) bằng `ADD VALUE IF NOT EXISTS`; (5) cờ `geo.s5.grading.enabled`, `geo.s5.ai-grading.enabled` mặc định false, bật ở hồ sơ test/e2e; (6) `fixture-ids.d/s5.json` đủ 27 mã F-S5 (PLAN P8) + `s5_000_core.sql` nạp phần dùng schema sẵn có (F-S5-001, 002, 010, 011, 050); kiểm `s5_*` chạy sau `930_*`
+- Nguồn: epics/S5-E1/stories_ac.md §"Dữ liệu mẫu chung của chặng 5" (80e9b6f 28/11); PLAN_code-s5 v1.0 §1 P4–P8, §4, §5; inbox BUG-S23-001 + artifacts/GEO/evidence/E2E-S23-20261128/BUG-LIST.md (28/11); PLAN_code-s23 §5 (mẫu khung T-41)
+- Xong khi: verify + web-build + e2e-affected xanh; traceability --strict MVP,S2,S3 vẫn đạt; traceability --epic S5 liệt kê đủ 219 TC (chưa chạy, không --strict); check_ac_tc S5-E1…E6 0 lỗi; s5.json có 27 mã; báo cáo e2e S23 đếm đúng test vòng lặp
+- Kiểm: `cd .claude/worktrees/s5-base/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3" && make traceability ARGS="--epic S5" && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E1 S5-E2 S5-E3 S5-E4 S5-E5 S5-E6 && python3 ../artifacts/GEO/work/s5/check_s5.py && test "$(grep -o 'F-S5-' db/seed/fixture-ids.d/s5.json | wc -l)" -ge 27`
+- Ngoài phạm vi: code tính năng S5; bảng nghiệp vụ mới (do task chủ); sửa đặc tả S5; assertion test S2/S3
+- Model: opus · Ngân sách: 1.5 giờ · Cổng: 54709 · 6739 · 8200 · 5280
+- Phụ thuộc: T-261126-33
+- Phạm vi tệp: ^(app/e2e/(scripts|reporters|support)/|app/scripts/e2e-affected[^/]*|artifacts/GEO/work/s23/impact-map\.json|artifacts/GEO/work/tools/check_ac_tc\.py|app/web/src/features/(index|types)\.ts|app/web/src/features/s5e[1-6]/index\.tsx|app/server/src/main/java/vn/geo/server/(lessonplan|exam|assessment|aigrade)/package-info\.java|app/server/src/main/resources/db/migration/V50[0-4]__|app/db/seed/(e2e/s5_000_|fixture-ids\.d/s5\.json)|app/server/src/(main|test)/resources/application[^/]*\.yml|app/e2e/tests/s5e[1-6]/\.gitkeep|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|app/\.env\.ports)
+- Kế hoạch: PLAN_code-s5 §3 W0
+
+## T-261128-52 · S5-E2 · L5 Dev · epic-common v1.6 · wt s5-e2a · ‖53 · 4h/10M · Ra đề theo ma trận: nạp ma trận/ngân hàng, form, lắp nhiều mã đề Java, sửa và duyệt bộ đề [todo]
+- Mục tiêu: US-S5E2-01…04: nạp `materials/de-thi/` (4 ma trận, 110 mẫu câu, 1 774 câu) có kiểm schema + đáp số engine (sai số > 1e-6 thì từ chối); form ra đề (loại, lớp, chương, thời gian, số câu/điểm, tỉ lệ mức, 1–8 mã, QS5-07); lắp nhiều mã tương đương viết lại `lap_de.py` bằng Java giữ 7 ràng buộc, tái lập theo seed (QS5-06; IT đối chứng `check.py`); xem/sửa bộ đề nháp, thay câu cùng ô, nhãn hai trục "Máy lắp" (QS5-08), duyệt vào kho "Của tôi". Seed F-S5-030…032
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W1, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev
+- Kiểm: `cd .claude/worktrees/s5-e2a/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5-E2 --defer US-S5E2-05,US-S5E2-06" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E2`
+- Ngoài phạm vi: xuất DOCX/PDF (54), soạn đề từ tài liệu (63), giao bài có chấm (57); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 4 giờ · Cổng: 54719 · 6749 · 8201 · 5281
+- Phụ thuộc: T-261128-51
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/exam/(?!.*/(export|draft)/)|app/server/src/test/java/vn/geo/server/(it/s5e2|exam)/|app/web/src/features/s5e2/(?!(export|draft)/)|app/e2e/tests/s5e2/|app/server/pom\.xml|app/server/src/main/resources/db/migration/V5(0[5-9]|1[0-9]|2[0-4])__|app/db/seed/(e2e/s5_1[0-4]|fixture-ids\.d/s5e2)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E2/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W1
+
+## T-261128-53 · S5-E1 · L5 Dev · epic-common v1.6 · wt s5-e1a · ‖52 · 3.5h/9M · Trợ lý giáo án: form B/C, máy chủ dựng tin nhắn + kiểm luật A, màn kết quả [todo]
+- Mục tiêu: US-S5E1-01…03: form "Soạn giáo án mới" (trường B bắt buộc, C tuỳ chọn, tích sẵn theo Tiết PPCT); máy chủ dựng tin nhắn theo prompt V8 (`prompt-lab/giao-an/prompt-final.md` v1.1), gọi task `lesson_plan` (mock F-S5-093/093b), kiểm tất định luật A, gọi lại một lần; hạn mức soạn 30 lượt/ngày (QS5-04); kiến thức `nhap-tam` vẫn cấp (QS5-03); màn kết quả dựng theo `kind`, nhãn "AI chưa chắc", khung đề xuất, câu hỏi lại. Seed F-S5-020, 021
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W1, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev
+- Kiểm: `cd .claude/worktrees/s5-e1a/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5-E1 --defer US-S5E1-04,US-S5E1-05" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E1`
+- Ngoài phạm vi: chat vá, duyệt và xuất (54); AI thật; sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 3.5 giờ · Cổng: 54729 · 6759 · 8202 · 5282
+- Phụ thuộc: T-261128-51
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/lessonplan/(?!.*/(patch|export|list)/)|app/server/src/test/java/vn/geo/server/(it/s5e1|lessonplan)/|app/web/src/features/s5e1/|app/web/package(-lock)?\.json|app/e2e/tests/s5e1/|app/server/src/main/resources/db/migration/V5(2[5-9]|3[0-9]|4[0-4])__|app/db/seed/(e2e/s5_1[5-9]|fixture-ids\.d/s5e1)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E1/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W1
+
+## T-261128-54 · S5-E1+E2-05 · L5 Dev · epic-common v1.6 · wt s5-e1b · ‖55 · 3.5h/9M · Chat vá giáo án, duyệt + xuất giáo án và mã đề (DOCX/PDF dùng chung) [todo]
+- Mục tiêu: US-S5E1-04 (chat vá theo mục, bản vá trước → sau, nhận từng dòng/cả bản, khoá mục, hoàn tác; task `lesson_patch` mock); US-S5E1-05 (duyệt, xuất DOCX khung 5512 + PDF, "Giáo án của tôi"); bộ dựng chung `common/export/docx` (Apache POI, QS5-05; pdfbox có sẵn); rồi US-S5E2-05 (xuất mã đề: đề, đáp án, hướng dẫn chấm, bảng đặc tả) dùng lại bộ dựng
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W2, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev
+- Kiểm: `cd .claude/worktrees/s5-e1b/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5-E1,S5-E2 --defer US-S5E2-06" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E1 S5-E2`
+- Ngoài phạm vi: kho tri thức (56), luồng D (63); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 3.5 giờ · Cổng: 54739 · 6769 · 8203 · 5283
+- Phụ thuộc: T-261128-52, T-261128-53
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(lessonplan/.*/(patch|export|list)/|exam/.*/export/|common/export/)|app/server/src/test/java/vn/geo/server/(it/s5e1|it/s5e2|lessonplan|exam|common/export)/|app/web/src/features/(s5e1/|s5e2/export/)|app/e2e/tests/(s5e1|s5e2)/|app/server/pom\.xml|app/server/src/main/resources/db/migration/V5(5[5-9]|6[0-9]|7[0-4])__|app/db/seed/(e2e/s5_2[0-4]|fixture-ids\.d/s5e1b)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E1/(status|qc_findings)\.md|artifacts/GEO/work/epics/S5-E2/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W2
+
+## T-261128-55 · S5-E5a · L5 Dev · epic-common v1.6 · wt s5-e5a · ‖54 · 2.5h/6M · Công tắc AI lớp, tắt khẩn, hạn mức + thông báo trợ lý soạn [todo]
+- Mục tiêu: US-S5E5-04: công tắc AI chấm/trợ lý theo lớp (mặc định QS5-26), tắt khẩn toàn hệ thống cho người vận hành, định nghĩa lượt + hạn mức lớp/học sinh/token, cảnh báo 80 % (QS5-04), báo cáo dùng AI; QS5-02 không multi-tenant; US-S5E5-01: trợ lý soạn nháp thông báo lớp (task `class_notice` mock), giáo viên sửa và tự bấm Gửi qua kênh thông báo S3-E4, dòng "Soạn với trợ lý AI, thầy cô đã duyệt" (QS5-25)
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W2, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev
+- Kiểm: `cd .claude/worktrees/s5-e5a/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5-E1,S5-E2,S5-E5 --defer US-S5E1-04,US-S5E1-05,US-S5E2-05,US-S5E2-06,US-S5E5-02,US-S5E5-03" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E5`
+- Ngoài phạm vi: tổng hợp lỗi (64), thông báo đẩy ngoài ứng dụng; sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 2.5 giờ · Cổng: 54749 · 6779 · 8204 · 5284
+- Phụ thuộc: T-261128-52, T-261128-53
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(aigateway/.*/(quota|killswitch)/|aigateway/.*ClassAiSwitch|notify/.*/draft/)|app/server/src/test/java/vn/geo/server/(it/s5e5|aigateway|notify)/|app/web/src/features/s5e5/|app/e2e/tests/s5e5/|app/server/src/main/resources/db/migration/V5(7[5-9]|8[0-9]|9[0-4])__|app/db/seed/(e2e/s5_2[5-9]|fixture-ids\.d/s5e5)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E5/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W2
+
+## T-261128-56 · S5-E3a · L5 Dev · epic-common v1.6 · wt s5-e3a · ‖57 · 3.5h/9M · Kho tri thức: tài liệu có phiên bản, gắn lớp/bài, bộ truy xuất toàn văn tiếng Việt [todo]
+- Mục tiêu: US-S5E3-01 (thêm tài liệu, đưa giáo án đã duyệt vào kho, phiên bản bất biến, Nháp → Chờ duyệt → Đang dùng → Lưu trữ), US-S5E3-02 (gắn lớp/bài theo tài liệu, QS5-11, thời hạn hiệu lực), US-S5E3-07 (tách mục theo tiêu đề, tìm toàn văn PostgreSQL bỏ dấu, ưu tiên mã `KT11-…`, ngưỡng điểm, QS5-09). Seed F-S5-040, 041
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W3, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev
+- Kiểm: `cd .claude/worktrees/s5-e3a/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5-E1,S5-E2,S5-E3,S5-E5 --defer US-S5E2-06,US-S5E3-03,US-S5E3-04,US-S5E3-05,US-S5E3-06,US-S5E5-02,US-S5E5-03" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E3`
+- Ngoài phạm vi: hỏi đáp + kiểm soát đáp án (58), lịch sử (63); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 3.5 giờ · Cổng: 54759 · 6789 · 8205 · 5285
+- Phụ thuộc: T-261128-54, T-261128-55
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/knowledge/(internal/kb/(?!(qa|policy|firewall|history)/)|api/Kb)|app/server/src/test/java/vn/geo/server/(it/s5e3|knowledge)/|app/web/src/features/s5e3/|app/e2e/tests/s5e3/|app/server/src/main/resources/db/migration/V6(0[5-9]|1[0-9]|2[0-4])__|app/db/seed/(e2e/s5_3[0-4]|fixture-ids\.d/s5e3)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E3/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W3
+
+## T-261128-57 · S5-E4a · L5 Dev · epic-common v1.6 · wt s5-e4a · ‖56 · 4h/10M · Rubric, giao bài có chấm, kho ảnh an toàn (sau cờ grading) [todo]
+- Mục tiêu: Sau cờ `geo.s5.grading.enabled` (mặc định tắt, PO-64/QS5-01 chưa chốt): US-S5E4-01 (rubric có phiên bản, 2 mẫu hệ thống, 1–10 tiêu chí bội 0,25, bất biến khi đã dùng, QS5-15), US-S5E4-02 (giao bài có chấm: đề hoặc bộ đề đã duyệt, rubric, chế độ chấm QS5-16 với cổng "AI đề xuất" stub luôn đóng `ClassAiGateQuery`, hạn nộp chỉ kéo dài QS5-17, nộp muộn, lịch công bố), US-S5E4-08 (cổng `ImageStore`: mã hoá AES-GCM tệp cục bộ ở dev/test, bản S3 tại VN sau cấu hình prod QS5-18; URL ký 5 phút; gỡ EXIF/GPS; xoá theo năm học và tài khoản; `forAi` bản gỡ EXIF QS5-30). Seed F-S5-051, 052
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W3, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev (cờ bật ở hồ sơ test/e2e, tắt mặc định ở prod)
+- Kiểm: `cd .claude/worktrees/s5-e4a/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5-E1,S5-E2,S5-E4,S5-E5 --defer US-S5E2-06,US-S5E4-03,US-S5E4-04,US-S5E4-05,US-S5E4-06,US-S5E4-07,US-S5E4-09,US-S5E5-02,US-S5E5-03" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E4`
+- Ngoài phạm vi: chụp nộp + OCR (59), chấm tay (60), mức trợ giúp (58); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 4 giờ · Cổng: 54769 · 6799 · 8206 · 5286
+- Phụ thuộc: T-261128-54, T-261128-55
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/assessment/(api/|.*/(rubric|assign|storage)/)|app/server/src/test/java/vn/geo/server/(it/s5e4|assessment)/|app/web/src/features/s5e4/(index\.tsx|rubric/|assign/|storage/)|app/e2e/tests/s5e4/|app/server/pom\.xml|app/server/src/main/resources/db/migration/V6(2[5-9]|3[0-9]|4[0-4])__|app/db/seed/(e2e/s5_3[5-9]|fixture-ids\.d/s5e4)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E4/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W3
+
+## T-261128-58 · S5-E3b · L5 Dev · epic-common v1.6 · wt s5-e3b · ‖59 · 3.5h/9M · Hỏi đáp theo kho có nguồn, mức trợ giúp + lịch đáp số, kiểm soát đáp án đầy đủ [todo]
+- Mục tiêu: US-S5E3-03 (hỏi đáp học sinh dựa trên kho đã gắn, luôn kèm nguồn, thông báo riêng tư trước lần hỏi đầu, task `kb_qa` mock F-S5-094/094b, QS5-10), US-S5E3-04 (mức trợ giúp theo bài mặc định QS5-12, lịch công bố đáp số, kiểm ở máy chủ trước khi gọi AI; ô chọn trong form bài có chấm `features/s5e4/assign/HelpLevel*`), US-S5E3-05 (bộ kiểm đầu ra KS-1…KS-5 mở rộng, lọc mục khớp đáp số QS5-13, không lộ ghi chú riêng/bài của bạn, nhật ký `ai_interaction`/`ai_policy_decision` QS5-14; bộ câu thử `fixtures/firewall-s5.json` ≥ 60 câu lộ = 0)
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W4, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev
+- Kiểm: `cd .claude/worktrees/s5-e3b/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5-E1,S5-E2,S5-E3,S5-E4,S5-E5 --defer US-S5E2-06,US-S5E3-06,US-S5E4-03,US-S5E4-04,US-S5E4-05,US-S5E4-06,US-S5E4-07,US-S5E4-09,US-S5E5-02,US-S5E5-03" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E3`
+- Ngoài phạm vi: lịch sử + báo chặn sai (63); sửa lõi KS MVP (V60); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 3.5 giờ · Cổng: 54779 · 6809 · 8207 · 5287
+- Phụ thuộc: T-261128-56, T-261128-57
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(knowledge/internal/kb/(qa|policy|firewall)/|answers/.*KsS5|assignment/.*HelpLevel)|app/server/src/test/java/vn/geo/server/(it/s5e3|knowledge|answers)/|app/web/src/features/(s5e3/|s5e4/assign/HelpLevel)|app/e2e/tests/s5e3/|app/e2e/fixtures/firewall-s5\.json|app/server/src/main/resources/db/migration/V6(5[5-9]|6[0-9]|7[0-4])__|app/db/seed/(e2e/s5_4[0-4]|fixture-ids\.d/s5e3b)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E3/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W4
+
+## T-261128-59 · S5-E4b · L5 Dev · epic-common v1.6 · wt s5-e4b · ‖58 · 3.5h/9M · Chụp và nộp nhiều trang trên iPhone, gửi lại lũy đẳng, OCR bài nộp (sau cờ grading) [todo]
+- Mục tiêu: Sau cờ grading: US-S5E4-03 (chụp nhiều trang PWA, kiểm độ rõ ≥ 0,5, xếp trang, HEIC → JPEG, 1–10 trang ≤ 8 MB QS5-19, thông báo riêng tư S5 QS5-01), US-S5E4-09 (gửi lại khi mất mạng lũy đẳng, nộp lại trước hạn, nộp muộn có nhãn, tải dồn), US-S5E4-04 (bản đọc chữ phái sinh task `grade_ocr` mock F-S5-095, tô đoạn < 0,6 QS5-20, giáo viên sửa có lịch sử). OCR viết tay thật **cần bench owner duyệt (QS5-27)**, không chặn code. Seed F-S5-053…057
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W4, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev (cờ bật ở hồ sơ test/e2e, tắt mặc định ở prod)
+- Kiểm: `cd .claude/worktrees/s5-e4b/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5-E1,S5-E2,S5-E3,S5-E4,S5-E5 --defer US-S5E2-06,US-S5E3-03,US-S5E3-04,US-S5E3-05,US-S5E3-06,US-S5E4-05,US-S5E4-06,US-S5E4-07,US-S5E5-02,US-S5E5-03" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E4`
+- Ngoài phạm vi: hàng chờ + chấm tay (60), đề xuất điểm (61); thiết bị iOS thật (tester ghi Manual); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 3.5 giờ · Cổng: 54789 · 6819 · 8208 · 5288
+- Phụ thuộc: T-261128-56, T-261128-57
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/assessment/.*/(submit|ocr)/|app/server/src/test/java/vn/geo/server/(it/s5e4|assessment)/.*(Submit|Ocr|submit|ocr)|app/web/src/features/s5e4/(submit|ocr)/|app/web/package(-lock)?\.json|app/web/vite\.config\.ts|app/e2e/tests/s5e4/(submit|ocr)|app/server/src/main/resources/db/migration/V6(7[5-9]|8[0-9]|9[0-4])__|app/db/seed/(e2e/s5_4[5-9]|fixture-ids\.d/s5e4b)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E4/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W4
+
+## T-261128-60 · S5-E4c · L5 Dev · epic-common v1.6 · wt s5-e4c · ‖61 · 3h/8M · Hàng chờ chấm, chấm tay theo rubric + duyệt điểm, trả bài (sau cờ grading) [todo]
+- Mục tiêu: Sau cờ grading: US-S5E4-05 (hàng chờ theo bài, trạng thái, cờ xếp trước, lọc lớp/bài), US-S5E4-06 (chấm tay theo rubric trên web, Duyệt thành `approved_grade`, nhật ký trước/sau, phím tắt QS5-23), US-S5E4-07 (trả bài theo lịch công bố, không lộ gì của AI, thu hồi 15 phút QS5-31, thông báo trong ứng dụng)
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W5, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev (cờ bật ở hồ sơ test/e2e, tắt mặc định ở prod)
+- Kiểm: `cd .claude/worktrees/s5-e4c/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5-E1,S5-E2,S5-E3,S5-E4,S5-E5 --defer US-S5E2-06,US-S5E3-06,US-S5E5-02,US-S5E5-03" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E4`
+- Ngoài phạm vi: đề xuất AI trên màn chấm (62), phúc khảo (QS5-29); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 3 giờ · Cổng: 54799 · 6829 · 8209 · 5289
+- Phụ thuộc: T-261128-58, T-261128-59
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/assessment/.*/(queue|review|returned)/|app/server/src/test/java/vn/geo/server/(it/s5e4|assessment)/.*(Queue|Review|Return|queue|review|return)|app/web/src/features/s5e4/(queue|review|return)/|app/e2e/tests/s5e4/(queue|review|return)|app/server/src/main/resources/db/migration/V7(0[5-9]|1[0-9]|2[0-4])__|app/db/seed/(e2e/s5_5[0-4]|fixture-ids\.d/s5e4c)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E4/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W5
+
+## T-261128-61 · S5-E6a · L5 Dev · epic-common v1.6 · wt s5-e6a · ‖60 · 2.5h/6M · AI đề xuất điểm theo tiêu chí + engine làm tín hiệu thứ hai (máy chủ, sau cờ ai-grading) [todo]
+- Mục tiêu: Sau cờ `geo.s5.ai-grading.enabled` (mặc định tắt): US-S5E6-01 (task `grade` mock F-S5-090/091: điểm từng tiêu chí, lý do, vùng ảnh, tin cậy; máy chủ kiểm thang, tổng, luật chặn KPI v1.0), US-S5E6-03 (đối chiếu đáp số cuối với engine qua bộ so khớp KS-1/KS-2, lệch thì gắn cờ). Chỉ API + IT, không giao diện. Chất lượng chấm AI thật **cần bench owner duyệt (QS5-27)**, không chặn code
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W5, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev (cờ bật ở hồ sơ test/e2e, tắt mặc định ở prod)
+- Kiểm: `cd .claude/worktrees/s5-e6a/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5-E1,S5-E2,S5-E3,S5-E4,S5-E5,S5-E6 --defer US-S5E2-06,US-S5E3-06,US-S5E4-05,US-S5E4-06,US-S5E4-07,US-S5E5-02,US-S5E5-03,US-S5E6-02,US-S5E6-04,US-S5E6-05,US-S5E6-06" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E6`
+- Ngoài phạm vi: giao diện chấm có đề xuất (62), KPI/cổng (65); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 2.5 giờ · Cổng: 54809 · 6839 · 8210 · 5290
+- Phụ thuộc: T-261128-58, T-261128-59
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/aigrade/(api/|.*/(proposal|engine)/)|app/server/src/test/java/vn/geo/server/(it/s5e6|aigrade)/|app/e2e/tests/s5e6/[^/]*\.api\.spec\.ts|app/server/pom\.xml|app/server/src/main/resources/db/migration/V7(2[5-9]|3[0-9]|4[0-4])__|app/db/seed/(e2e/s5_5[5-9]|fixture-ids\.d/s5e6)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E6/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W5
+
+## T-261128-62 · S5-E6b · L5 Dev · epic-common v1.6 · wt s5-e6b · ‖63 · 3.5h/9M · AI từ chối chấm, màn chấm có đề xuất AI, chạy song song (sau cờ ai-grading) [todo]
+- Mục tiêu: Sau cờ ai-grading: US-S5E6-02 (từ chối: ảnh kém F-S5-092, tin cậy < 0,6 QS5-22, hết giờ → chuyển chấm tay có lý do), US-S5E6-04 (màn chấm: nhận/sửa/bỏ từng tiêu chí, khoanh vùng ảnh, nhận cả bài khi không có cờ; cắm qua `assessment/**/review/AiProposalSlot*`), US-S5E6-05 (chạy song song: giáo viên chấm tay trước, đề xuất hiện sau khi duyệt, lưu cặp so sánh, lấy mẫu QS5-24)
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W6, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev (cờ bật ở hồ sơ test/e2e, tắt mặc định ở prod)
+- Kiểm: `cd .claude/worktrees/s5-e6b/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5 --defer US-S5E2-06,US-S5E3-06,US-S5E5-02,US-S5E5-03,US-S5E6-06" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E6`
+- Ngoài phạm vi: báo cáo KPI + cổng (65); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 3.5 giờ · Cổng: 54819 · 6849 · 8211 · 5291
+- Phụ thuộc: T-261128-60, T-261128-61
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(aigrade/.*/(refusal|shadow|review)/|assessment/.*/review/AiProposalSlot)|app/server/src/test/java/vn/geo/server/(it/s5e6|aigrade)/|app/web/src/features/s5e6/(?!kpi/)|app/web/package(-lock)?\.json|app/e2e/tests/s5e6/|app/server/src/main/resources/db/migration/V7(5[5-9]|6[0-9]|7[0-4])__|app/db/seed/(e2e/s5_6[0-4]|fixture-ids\.d/s5e6b)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E6/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W6
+
+## T-261128-63 · S5-E2-06+E3-06 · L5 Dev · epic-common v1.6 · wt s5-e2e3 · ‖62 · 2.5h/6M · Trợ lý soạn đề nháp từ tài liệu (luồng D) + giáo viên xem lịch sử hỏi đáp, báo chặn sai [todo]
+- Mục tiêu: US-S5E2-06 (soạn đề nháp từ tài liệu Đang dùng của giáo viên, task `exam_draft` mock, đi qua đường kiểm chứng đề S2-E3, hạn mức BR-S5E1-08, chặn tài liệu của giáo viên khác F-S5-041); US-S5E3-06 (lịch sử hỏi đáp theo bài, báo "chặn sai"/"lẽ ra phải chặn")
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W6, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev
+- Kiểm: `cd .claude/worktrees/s5-e2e3/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5 --defer US-S5E5-02,US-S5E5-03,US-S5E6-02,US-S5E6-04,US-S5E6-05,US-S5E6-06" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E2 S5-E3`
+- Ngoài phạm vi: sửa lắp đề (52), bộ kiểm KS (58); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 2.5 giờ · Cổng: 54829 · 6859 · 8212 · 5292
+- Phụ thuộc: T-261128-60, T-261128-61
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(exam/.*/draft/|knowledge/internal/kb/history/)|app/server/src/test/java/vn/geo/server/(it/s5e2|it/s5e3|exam|knowledge)/.*(Draft|History|draft|history)|app/web/src/features/(s5e2/draft|s5e3/history)/|app/e2e/tests/(s5e2/draft|s5e3/history)|app/server/src/main/resources/db/migration/V7(7[5-9]|8[0-9]|9[0-4])__|app/db/seed/(e2e/s5_6[5-9]|fixture-ids\.d/s5e2e3)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E2/(status|qc_findings)\.md|artifacts/GEO/work/epics/S5-E3/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W6
+
+## T-261128-64 · S5-E5b · L5 Dev · epic-common v1.6 · wt s5-e5b · ‖65 · 2.5h/6M · Tổng hợp lỗi sai của lớp (COP-02) + Nên nhắc lại trên lớp (sau cờ grading) [todo]
+- Mục tiêu: Sau cờ grading: US-S5E5-02 (tổng hợp lỗi theo tiêu chí và loại lỗi từ `approved_grade` + `criterion_assessment` + tín hiệu engine, có bằng chứng, không gắn nhãn học sinh; task `class_errors` mock), US-S5E5-03 (từ nhận định gợi ý bài luyện từ ngân hàng + tài liệu trong kho, giáo viên chọn rồi giao bộ bài S3-E2 hoặc chiếu)
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W7, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev (cờ bật ở hồ sơ test/e2e, tắt mặc định ở prod)
+- Kiểm: `cd .claude/worktrees/s5-e5b/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5 --defer US-S5E6-06" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E5`
+- Ngoài phạm vi: cổng KPI (65); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 2.5 giờ · Cổng: 54839 · 6869 · 8213 · 5293
+- Phụ thuộc: T-261128-62, T-261128-63
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/tracking/.*/errors/|app/server/src/test/java/vn/geo/server/(it/s5e5|tracking)/.*(Error|error|Insight|insight)|app/web/src/features/s5e5/insights/|app/e2e/tests/s5e5/insights|app/server/src/main/resources/db/migration/V8(0[5-9]|1[0-9]|2[0-4])__|app/db/seed/(e2e/s5_7[0-4]|fixture-ids\.d/s5e5b)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E5/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W7
+
+## T-261128-65 · S5-E6c · L5 Dev · epic-common v1.6 · wt s5-e6c · ‖64 · 1.5h/4M · Báo cáo khớp AI–giáo viên theo KPI §2–§4 (KTC) + cổng bật/đóng/mở lại AI đề xuất (sau cờ ai-grading) [todo]
+- Mục tiêu: Sau cờ ai-grading: US-S5E6-06 (báo cáo khớp theo KPI v1.0 §2–§4 với KTC 95 % Wilson/t QS5-32, ≥ 20 bài QS5-21, cổng bật/đóng/mở lại theo lớp, tự đóng sau hai đợt dưới ngưỡng QS5-24); thay stub `ClassAiGateQuery` của 57 bằng bản thật
+- Nguồn: epics/S5-E*/{stories_ac,test_cases}.md v1.1 (gộp 80e9b6f 28/11); s5/brief-s5.md v0.2, estimate-s5.md v0.2, questions-s5.md v0.2 (28/11); PLAN_code-s5 v1.0 §3 W7, §5
+- Xong khi: verify + web-build + e2e-affected xanh; mọi TC của US trong task có test gắn mã `TC-S5En-nn` và chạy đạt (traceability --strict); AI chỉ mock; status.md dòng Dev (cờ bật ở hồ sơ test/e2e, tắt mặc định ở prod)
+- Kiểm: `cd .claude/worktrees/s5-e6c/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5 --defer US-S5E5-02,US-S5E5-03" && python3 ../artifacts/GEO/work/s5/check_s5.py && python3 ../artifacts/GEO/work/tools/check_ac_tc.py S5-E6`
+- Ngoài phạm vi: tổng hợp lỗi (64); bật cổng thật cho lớp (cần bench QS5-27 + lớp pilot); sửa đặc tả S5 (stories_ac, test_cases, estimate, check_s5.py); tệp khung của 51; gọi AI thật
+- Model: opus · Ngân sách: 1.5 giờ · Cổng: 54859 · 6889 · 8215 · 5295
+- Phụ thuộc: T-261128-62, T-261128-63
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(aigrade/.*/(kpi|gate)/|assessment/api/ClassAiGate)|app/server/src/test/java/vn/geo/server/(it/s5e6|aigrade)/.*(Kpi|Gate|kpi|gate)|app/web/src/features/s5e6/kpi/|app/e2e/tests/s5e6/kpi|app/server/src/main/resources/db/migration/V8(2[5-9]|3[0-9]|4[0-4])__|app/db/seed/(e2e/s5_7[5-9]|fixture-ids\.d/s5e6c)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E6/(status|qc_findings)\.md)
+- Kế hoạch: PLAN_code-s5 §3 W7
+
+## T-261128-66 · S5 · L6 Tester · tester SKILL + Playwright · wt mvp-wave0 · 3h/4M · Kiểm thử chặng 5 [todo]
+- Mục tiêu: chạy 219 TC chặng 5 trên `worktree-mvp-wave0` đã gộp W0–W7 (cờ grading + ai-grading bật ở hồ sơ e2e): E2E-UI bằng Playwright trước, còn lại E2E-API; ca quyền theo quan hệ (giáo viên khác, học sinh lớp khác), không lộ đáp án (bộ `firewall-s5.json` lộ = 0), không lộ gì của AI cho học sinh; iOS/HEIC thiết bị thật ghi Manual; bằng chứng + REPORT.md + BUG-LIST.md theo mẫu `artifacts/GEO/evidence/E2E-S23-20261128/`
+- Nguồn: epics/S5-*/test_cases.md v1.1 (80e9b6f 28/11); mẫu E2E-S23-20261128/REPORT.md (28/11); scope.json tester; PLAN_code-s5 v1.0 §3 W8
+- Xong khi: mọi TC S5 có status; lệch audit = 0; REPORT.md có bảng UI/API đạt/tổng
+- Kiểm: `cd app && make e2e && make traceability ARGS="--strict --epic MVP,S2,S3,S5" && test -s ../artifacts/GEO/evidence/E2E-S5/REPORT.md && test -s ../artifacts/GEO/evidence/E2E-S5/BUG-LIST.md`
+- Ngoài phạm vi: sửa code (lỗi → BUG-LIST, phiên chính tạo FIX); AI thật; bench QS5-27
+- Model: opus · Ngân sách: 3 giờ
+- Phụ thuộc: T-261128-64, T-261128-65
+- Phạm vi tệp: ^(artifacts/GEO/evidence/E2E-S5/|artifacts/GEO/work/epics/S5-E[1-6]/status\.md)
+- Kế hoạch: PLAN_code-s5 §3 W8
+
+## T-261128-67 · GATE · Owner L7 chặng 5 (L5a phát hành; L5b/L5c chờ PO-64, bench QS5-27, lớp pilot) [wait-user]
+- Mục tiêu: owner quyết phát hành L5a (S5-E1, S5-E2, S5-E3, US-S5E5-01, 04); chốt QS5-01/QS5-30 (PO-64) để bật cờ grading (L5b); duyệt bench QS5-27 trước khi bật ai-grading cho lớp (L5c)
+- Nguồn: artifacts/GEO/evidence/E2E-S5/REPORT.md; s5/questions-s5.md v0.2; brief-s5 §5
+- Xong khi: DECISIONS có "S5 L7 OK"
+- Kiểm: `grep -q "S5 L7 OK" DECISIONS.md`
+- Ngoài phạm vi: deploy
+- Chờ: owner quyết
+- Phụ thuộc: T-261128-66
+
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
+| v0.4 | 2026-11-28 | Thêm 17 khối chặng 5 theo PLAN_code-s5 v1.0: T-261128-51 (khung + seed F-S5 + BUG-S23-001), 52–65 (14 task code, đợt W1–W7, 88 ngày dev), 66 tester L6, 67 gate L7 [wait-user]; sửa ghi chú phụ thuộc 'T-50' ở 18, 19 → T-261126-50 (validate báo thiếu) | agent plan-s5 |
 | v0.3 | 2026-11-26 | T-17 (PLAN_code-s23 v1.0): thêm T-41 (khung chung), T-42 (dữ liệu mẫu S3); khối 18–33 thêm Kế hoạch + Phạm vi tệp, kiểm traceability --strict + check_ac_tc; dời US-S2E5-05 → 22, US-S3E5-01 → 31, US-S3E5-03/05 → 32; phụ thuộc 21 (+18), 22–25 theo đợt, 28–29 (+42) | runner-T-261126-17 |
 | v0.2 | 2026-11-26 | Nạp 25 khối plan chặng 2–3 (T-05, T-08…T-34) | delivery-lead |
 | v0.1 | 2026-11-26 | Tạo từ delivery-lead/templates/queue.md | |
