@@ -18,9 +18,16 @@ Phiên bản: v1.2 · 27/11/2026
 **4.** $4^x-3\cdot2^x+2=0$. *Giải.* $t=2^x$: $t^2-3t+2=0$, $t=1,2$: $x=0,1$.
 
 ### Vận dụng
-**5.** $\log_2x+\log_2(x-3)=2$. *Giải.* ĐK $x>3$; $x(x-3)=4\Rightarrow x=4$ (loại $-1$).
+**5.** Giải $\log_2x+\log_2(x-3)=2$.
+*Giải.*
+- Bước 1: điều kiện $x>0$ và $x-3>0$, tức $x>3$.
+- Bước 2: $\log_2[x(x-3)]=2\Rightarrow x(x-3)=4\Rightarrow x^2-3x-4=0\Rightarrow x=4$ hoặc $x=-1$.
+- Bước 3: đối chiếu điều kiện: loại $x=-1$, nhận $x=4$.
 
-**6.** $\left(\tfrac12\right)^{x}>\tfrac14$. *Giải.* $x<2$.
+**6.** Giải bất phương trình $\left(\tfrac12\right)^{x}>\tfrac14$.
+*Giải.*
+- Bước 1: $\tfrac14=\left(\tfrac12\right)^2$ nên bất phương trình thành $\left(\tfrac12\right)^x>\left(\tfrac12\right)^2$.
+- Bước 2: cơ số $\dfrac12<1$ nên đảo chiều: $x<2$.
 
 ### Vận dụng cao
 **7.** Gửi $200$ triệu đồng, lãi $7\%$/năm (lãi nhập gốc). Sau ít nhất bao nhiêu năm số tiền vượt $300$ triệu?
@@ -52,4 +59,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

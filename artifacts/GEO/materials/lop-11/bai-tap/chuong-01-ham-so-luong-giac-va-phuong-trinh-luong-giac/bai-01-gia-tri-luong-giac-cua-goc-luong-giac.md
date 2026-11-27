@@ -30,7 +30,9 @@ Phiên bản: v1.2 · 27/11/2026
 
 ### Vận dụng
 **6.** Rút gọn $A=\sin(\pi+x)+\cos\left(\dfrac\pi2-x\right)+\cos(2\pi-x)$.
-*Giải.* $-\sin x+\sin x+\cos x=\cos x$.
+*Giải.*
+- $\sin(\pi+x)=-\sin x$ (hơn kém $\pi$); $\cos\left(\dfrac\pi2-x\right)=\sin x$ (phụ nhau); $\cos(2\pi-x)=\cos x$.
+- $A=-\sin x+\sin x+\cos x=\cos x$.
 
 **7.** *[Trả lời ngắn]* Cho $\tan\alpha=3$. Tính $T=\dfrac{2\sin\alpha+\cos\alpha}{\sin\alpha-\cos\alpha}$.
 *Giải.*
@@ -40,7 +42,9 @@ Phiên bản: v1.2 · 27/11/2026
 
 ### Vận dụng cao
 **8.** Chứng minh $\dfrac{\sin^4x-\cos^4x}{\sin^2x}=1-\cot^2x$.
-*Giải.* Tử $=(\sin^2x-\cos^2x)(\sin^2x+\cos^2x)=\sin^2x-\cos^2x$. Chia cho $\sin^2x$: $1-\cot^2x$. ∎
+*Giải.*
+- Bước 1: $\sin^4x-\cos^4x=(\sin^2x-\cos^2x)(\sin^2x+\cos^2x)=\sin^2x-\cos^2x$.
+- Bước 2: chia cho $\sin^2x\ne0$: $\dfrac{\sin^2x-\cos^2x}{\sin^2x}=1-\dfrac{\cos^2x}{\sin^2x}=1-\cot^2x$. ∎
 
 ## Nguồn
 
@@ -58,4 +62,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 0 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

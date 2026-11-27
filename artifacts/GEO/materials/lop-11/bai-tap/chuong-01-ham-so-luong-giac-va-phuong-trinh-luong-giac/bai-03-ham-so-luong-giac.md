@@ -25,7 +25,11 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – Đ – S.
 
 ### Vận dụng
-**6.** Tìm TXĐ của $y=\dfrac{1}{1-\cos x}$. *Giải.* $\cos x\ne1\Rightarrow x\ne k2\pi$. $D=\mathbb R\setminus\{k2\pi\}$.
+**6.** Tìm TXĐ của $y=\dfrac{1}{1-\cos x}$.
+*Giải.*
+- Bước 1: điều kiện $1-\cos x\ne0\Leftrightarrow\cos x\ne1$.
+- Bước 2: $\cos x=1\Leftrightarrow x=k2\pi$.
+- Bước 3: $D=\mathbb R\setminus\{k2\pi\mid k\in\mathbb Z\}$.
 
 **7.** *[Trả lời ngắn]* Tính tổng giá trị lớn nhất và giá trị nhỏ nhất của $y=\cos^2x-2\cos x+3$.
 *Giải.*
@@ -56,4 +60,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

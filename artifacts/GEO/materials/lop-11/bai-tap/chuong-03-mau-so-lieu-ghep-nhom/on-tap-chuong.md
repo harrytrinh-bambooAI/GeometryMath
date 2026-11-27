@@ -20,10 +20,17 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – Đ – S.
 
 ### Vận dụng
-**4.** Thời gian đi học (phút) của 50 HS: $[0;10)$:5; $[10;20)$:20; $[20;30)$:15; $[30;40)$:10. Tính trung bình và trung vị.
-*Giải.* $\bar x=\dfrac{5\cdot5+20\cdot15+15\cdot25+10\cdot35}{50}=21$. $n/2=25$; $cf=5,25,\dots$ nên nhóm $[10;20)$: $M_e=10+\dfrac{25-5}{20}\cdot10=20$.
+**4.** Thời gian đi học (phút) của $50$ HS: $[0;10)$: 5; $[10;20)$: 20; $[20;30)$: 15; $[30;40)$: 10. Tính trung bình và trung vị.
+*Giải.*
+- Bước 1 (trung bình): đại diện $5,15,25,35$: $\bar x=\dfrac{5\cdot5+20\cdot15+15\cdot25+10\cdot35}{50}=\dfrac{1050}{50}=21$.
+- Bước 2 (trung vị): $\dfrac n2=25$; tần số tích luỹ $5,25,40,50$ nên nhóm $[10;20)$.
+- Bước 3: $M_e=10+\dfrac{25-5}{20}\cdot10=20$.
 
-**5.** Cùng dữ liệu, tính $Q_3$. *Giải.* $3n/4=37{,}5$; $cf=5,25,40$: nhóm $[20;30)$: $Q_3=20+\dfrac{37{,}5-25}{15}\cdot10\approx28{,}33$.
+**5.** Cùng dữ liệu, tính $Q_3$.
+*Giải.*
+- Bước 1: $\dfrac{3n}4=37{,}5$; tần số tích luỹ $5,25,40,50$.
+- Bước 2: $25<37{,}5\le40$ nên $Q_3$ thuộc nhóm $[20;30)$.
+- Bước 3: $Q_3=20+\dfrac{37{,}5-25}{15}\cdot10\approx28{,}33$.
 
 ### Vận dụng cao
 **6.** *[Trả lời ngắn]* Mẫu ghép nhóm: $[0;20)$: 5; $[20;40)$: $a$; $[40;60)$: 10; $[60;80)$: 5. Tìm $a$ để số trung bình bằng $40$.
@@ -48,4 +55,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 3 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 3 bài (3→6, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 0 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 3 bài (3→6, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

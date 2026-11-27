@@ -24,7 +24,10 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – S – Đ.
 
 ### Vận dụng
-**6.** Dân số tăng 2%/năm, hiện 1 triệu. Sau 5 năm? *Giải.* $10^6\cdot1{,}02^5\approx1\,104\,081$.
+**6.** Dân số tăng $2\%$/năm, hiện nay $1$ triệu người. Sau $5$ năm là bao nhiêu?
+*Giải.*
+- Mỗi năm dân số nhân $1{,}02$: cấp số nhân với $u_0=10^6$, $q=1{,}02$.
+- Sau $5$ năm: $10^6\cdot1{,}02^5=10^6\cdot1{,}10408\ldots\approx1\,104\,081$ người.
 
 **7.** *[Trả lời ngắn]* Cấp số nhân có $5$ số hạng, $u_1=3$, $u_5=48$, công bội $q>0$. Tính tổng $5$ số hạng.
 *Giải.*
@@ -56,4 +59,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

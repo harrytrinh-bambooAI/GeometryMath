@@ -24,7 +24,11 @@ Phiên bản: v1.2 · 27/11/2026
 - Bước 2: $A\cap B=\{(3,4)\}$ nên $P(AB)=\dfrac1{36}=\dfrac16\cdot\dfrac16$: hai biến cố độc lập.
 - Bước 3: $P(A\cup B)=\dfrac16+\dfrac16-\dfrac1{36}=\dfrac{11}{36}$.
 
-**5.** Một cầu thủ sút phạt đền thành công $0{,}8$. Sút 3 lần độc lập, xác suất thành công đúng 2 lần. *Giải.* $3\cdot0{,}8^2\cdot0{,}2=0{,}384$.
+**5.** Một cầu thủ sút phạt đền thành công với xác suất $0{,}8$. Sút $3$ lần độc lập, tính xác suất thành công đúng $2$ lần.
+*Giải.*
+- Bước 1: có $3$ cách chọn lần trượt (lần nào trong $3$ lần).
+- Bước 2: mỗi cách có xác suất $0{,}8\cdot0{,}8\cdot0{,}2=0{,}128$.
+- Bước 3: các cách xung khắc nên xác suất $=3\cdot0{,}128=0{,}384$.
 
 ### Vận dụng cao
 **6.** *[Trả lời ngắn]* Một cầu thủ sút $3$ lần độc lập, mỗi lần thành công với xác suất $p$. Biết xác suất có ít nhất một lần thành công là $0{,}992$. Tìm $p$.
@@ -49,4 +53,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (4→6, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (4→6, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

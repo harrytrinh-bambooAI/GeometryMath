@@ -25,7 +25,11 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – Đ – S.
 
 ### Vận dụng
-**6.** Điểm 30 HS ghép nhóm $[5;6),[6;7),[7;8),[8;9),[9;10]$ có tần số $2,5,10,9,4$. Nhóm nào có tần số tương đối lớn nhất và là bao nhiêu? *Giải.* $[7;8)$, $\dfrac{10}{30}\approx33{,}3\%$.
+**6.** Điểm $30$ HS ghép nhóm $[5;6),[6;7),[7;8),[8;9),[9;10]$ có tần số $2,5,10,9,4$. Nhóm nào có tần số tương đối lớn nhất và bằng bao nhiêu?
+*Giải.*
+- Bước 1: kiểm tra $n=2+5+10+9+4=30$.
+- Bước 2: tần số tương đối $f_i=\dfrac{m_i}{30}$: $6{,}7\%;\ 16{,}7\%;\ 33{,}3\%;\ 30\%;\ 13{,}3\%$.
+- Bước 3: lớn nhất là nhóm $[7;8)$ với $\dfrac{10}{30}\approx33{,}3\%$.
 
 ### Vận dụng cao
 **7.** Vì sao khi ghép nhóm ta mất thông tin? Cho ví dụ.
@@ -51,4 +55,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

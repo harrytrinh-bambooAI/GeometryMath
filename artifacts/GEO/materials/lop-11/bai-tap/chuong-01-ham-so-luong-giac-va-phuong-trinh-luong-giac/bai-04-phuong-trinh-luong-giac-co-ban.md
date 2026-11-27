@@ -23,8 +23,12 @@ Phiên bản: v1.2 · 27/11/2026
 **5.** Giải $\cos3x=\cos x$. *Giải.* $3x=\pm x+k2\pi\Rightarrow x=k\pi$ hoặc $x=\dfrac{k\pi}2$; gộp: $x=\dfrac{k\pi}{2}$.
 
 ### Vận dụng
-**6.** Giải $\sin2x=\cos x$ (bằng cách đưa về cùng hàm) trên $[0;2\pi]$.
-*Giải.* $\cos x(2\sin x-1)=0$: $\cos x=0\Rightarrow x=\tfrac\pi2,\tfrac{3\pi}2$; $\sin x=\tfrac12\Rightarrow x=\tfrac\pi6,\tfrac{5\pi}6$. Bốn nghiệm.
+**6.** Giải $\sin2x=\cos x$ trên $[0;2\pi]$ (đưa về cùng hàm).
+*Giải.*
+- Bước 1: $\sin2x=2\sin x\cos x$ nên phương trình thành $\cos x(2\sin x-1)=0$.
+- Bước 2: $\cos x=0\Rightarrow x=\dfrac\pi2$ hoặc $x=\dfrac{3\pi}2$ (trong $[0;2\pi]$).
+- Bước 3: $\sin x=\dfrac12\Rightarrow x=\dfrac\pi6$ hoặc $x=\dfrac{5\pi}6$.
+- Kết luận: bốn nghiệm $\dfrac\pi6,\dfrac\pi2,\dfrac{5\pi}6,\dfrac{3\pi}2$.
 
 **7.** *[Trả lời ngắn]* Có bao nhiêu nghiệm của phương trình $\cos2x=\dfrac12$ trong đoạn $[0;\pi]$?
 *Giải.*
@@ -55,4 +59,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

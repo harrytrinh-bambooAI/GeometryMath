@@ -28,7 +28,10 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – S – Đ.
 
 ### Vận dụng
-**5.** Tính $A=\log_26+\log_2\dfrac13$. *Giải.* $\log_2(6\cdot\tfrac13)=1$.
+**5.** Tính $A=\log_26+\log_2\dfrac13$.
+*Giải.*
+- Bước 1: $\log_2x+\log_2y=\log_2(xy)$ với $x,y>0$.
+- Bước 2: $A=\log_2\left(6\cdot\dfrac13\right)=\log_22=1$.
 
 **6.** *[Trả lời ngắn]* Tính $B=2\log_36-\log_34$.
 *Giải.*
@@ -58,4 +61,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

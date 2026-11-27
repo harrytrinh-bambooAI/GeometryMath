@@ -22,7 +22,11 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – Đ – S.
 
 ### Vận dụng
-**5.** TXĐ của $y=\log_2(x^2-4x+3)$. *Giải.* $x^2-4x+3>0\Rightarrow x<1$ hoặc $x>3$.
+**5.** Tìm TXĐ của $y=\log_2(x^2-4x+3)$.
+*Giải.*
+- Bước 1: điều kiện $x^2-4x+3>0$.
+- Bước 2: $x^2-4x+3=(x-1)(x-3)>0\Leftrightarrow x<1$ hoặc $x>3$.
+- Bước 3: $D=(-\infty;1)\cup(3;+\infty)$.
 
 **6.** *[Trả lời ngắn]* Với $x$ thuộc tập xác định của $y=\ln(6-x)+\sqrt{x-1}$, có bao nhiêu giá trị nguyên của $x$?
 *Giải.*
@@ -53,4 +57,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

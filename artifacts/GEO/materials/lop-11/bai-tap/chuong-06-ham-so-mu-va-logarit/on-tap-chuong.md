@@ -15,7 +15,10 @@ Phiên bản: v1.2 · 27/11/2026
 - $\log_{3^{1/2}}3^3=\dfrac{3}{1/2}=6$.
 
 ### Vận dụng
-**3.** Giải $9^x-4\cdot3^x+3=0$. *Giải.* $x=0$ hoặc $x=1$.
+**3.** Giải $9^x-4\cdot3^x+3=0$.
+*Giải.*
+- Bước 1: đặt $t=3^x>0$: $t^2-4t+3=0\Rightarrow t=1$ hoặc $t=3$.
+- Bước 2: $3^x=1\Rightarrow x=0$; $3^x=3\Rightarrow x=1$.
 
 **4.** Giải phương trình $\log_3(x^2-3x+2)=\log_3(x+10)$.
 *Giải.*
@@ -30,7 +33,11 @@ Phiên bản: v1.2 · 27/11/2026
 - Bước 2: cơ số $\dfrac12<1$ nên đảo chiều: $x-1\le\left(\dfrac12\right)^{-1}=2\Rightarrow x\le3$.
 - Bước 3: kết hợp: $1<x\le3$.
 
-**6.** Tìm TXĐ của $y=\dfrac{1}{\sqrt{2^x-4}}$. *Giải.* $2^x>4\Rightarrow x>2$.
+**6.** Tìm TXĐ của $y=\dfrac{1}{\sqrt{2^x-4}}$.
+*Giải.*
+- Bước 1: cần $2^x-4>0$ (căn ở mẫu nên phải dương).
+- Bước 2: $2^x>4=2^2\Rightarrow x>2$ (cơ số $2>1$).
+- Bước 3: $D=(2;+\infty)$.
 
 ### Vận dụng cao
 **7.** *[Trả lời ngắn]* Cho $a,b>0$ thỏa $a^2+b^2=14ab$. Tính $\dfrac{\log_2\dfrac{a+b}{4}}{\log_2a+\log_2b}$.
@@ -55,4 +62,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 5 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

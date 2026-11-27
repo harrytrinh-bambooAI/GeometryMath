@@ -28,7 +28,10 @@ Phiên bản: v1.2 · 27/11/2026
 - Bước 2: $AB$, $AC$ cắt nhau tại $A$ và cùng nằm trong $(ABC)$; $A'B'\subset(A'B'C')$, $A'C'\subset(A'B'C')$.
 - Bước 3: theo dấu hiệu, $(ABC)\parallel(A'B'C')$.
 
-**5.** Ba mặt phẳng song song cắt hai cát tuyến tại $A,B,C$ và $A',B',C'$. Biết $AB=3,BC=5,A'B'=4,5$. Tính $B'C'$. *Giải.* $\dfrac{AB}{BC}=\dfrac{A'B'}{B'C'}\Rightarrow B'C'=\dfrac{5\cdot4{,}5}3=7{,}5$.
+**5.** Ba mặt phẳng song song cắt hai cát tuyến tại $A,B,C$ và $A',B',C'$. Biết $AB=3$, $BC=5$, $A'B'=4{,}5$. Tính $B'C'$.
+*Giải.*
+- Bước 1: định lí Thalès trong không gian: $\dfrac{AB}{BC}=\dfrac{A'B'}{B'C'}$.
+- Bước 2: $B'C'=\dfrac{BC\cdot A'B'}{AB}=\dfrac{5\cdot4{,}5}{3}=7{,}5$.
 
 **6.** *[Trả lời ngắn]* Ba mặt phẳng song song $(P),(Q),(R)$ cắt hai cát tuyến lần lượt tại $A,B,C$ và $A',B',C'$. Biết $\dfrac{AB}{BC}=\dfrac23$ và $A'C'=15$. Tính $A'B'$.
 ![Hai mặt phẳng song song cắt bởi mặt phẳng thứ ba](../../hinh/hai-mat-phang-song-song.svg)
@@ -60,4 +63,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 4 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

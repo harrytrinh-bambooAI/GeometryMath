@@ -16,9 +16,16 @@ Phiên bản: v1.2 · 27/11/2026
 **3.** Hai xạ thủ trúng bia với xác suất $0{,}8$ và $0{,}7$, bắn độc lập. Xác suất cả hai trúng. *Giải.* $0{,}56$.
 
 ### Vận dụng
-**4.** Xác suất có đúng một người trúng (câu 2). *Giải.* $0{,}8\cdot0{,}3+0{,}2\cdot0{,}7=0{,}38$.
+**4.** Hai xạ thủ trúng bia với xác suất $0{,}8$ và $0{,}7$, bắn độc lập. Tính xác suất có đúng một người trúng.
+*Giải.*
+- Bước 1: trường hợp 1: người thứ nhất trúng, người thứ hai trượt: $0{,}8\cdot0{,}3=0{,}24$.
+- Bước 2: trường hợp 2: người thứ nhất trượt, người thứ hai trúng: $0{,}2\cdot0{,}7=0{,}14$.
+- Bước 3: hai trường hợp xung khắc: $0{,}24+0{,}14=0{,}38$.
 
-**5.** Xác suất có ít nhất một người trúng. *Giải.* $1-0{,}2\cdot0{,}3=0{,}94$.
+**5.** Với hai xạ thủ trên ($0{,}8$ và $0{,}7$), tính xác suất có ít nhất một người trúng.
+*Giải.*
+- Bước 1: biến cố đối: cả hai cùng trượt, xác suất $0{,}2\cdot0{,}3=0{,}06$.
+- Bước 2: xác suất cần tìm $=1-0{,}06=0{,}94$.
 
 **6.** *[Trả lời ngắn]* Ba xạ thủ bắn độc lập, xác suất trúng bia lần lượt là $0{,}9$; $0{,}8$; $0{,}7$. Tính xác suất cả ba cùng trúng.
 *Giải.*
@@ -48,4 +55,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

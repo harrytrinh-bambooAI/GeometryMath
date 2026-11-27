@@ -23,7 +23,10 @@ Phiên bản: v1.2 · 27/11/2026
 
 ### Vận dụng
 **6.** Chứng minh $\cos x\cos\left(\tfrac\pi3-x\right)\cos\left(\tfrac\pi3+x\right)=\tfrac14\cos3x$.
-*Giải.* $\cos(\tfrac\pi3-x)\cos(\tfrac\pi3+x)=\tfrac12[\cos2x+\cos\tfrac{2\pi}3]=\tfrac12\cos2x-\tfrac14$. Nhân $\cos x$: $\tfrac12\cos x\cos2x-\tfrac14\cos x=\tfrac14(\cos3x+\cos x)-\tfrac14\cos x=\tfrac14\cos3x$. ∎
+*Giải.*
+- Bước 1: tích thành tổng: $\cos\left(\tfrac\pi3-x\right)\cos\left(\tfrac\pi3+x\right)=\tfrac12\left[\cos2x+\cos\tfrac{2\pi}3\right]=\tfrac12\cos2x-\tfrac14$.
+- Bước 2: nhân với $\cos x$: $\tfrac12\cos x\cos2x-\tfrac14\cos x$.
+- Bước 3: $\cos x\cos2x=\tfrac12(\cos3x+\cos x)$ nên biểu thức $=\tfrac14(\cos3x+\cos x)-\tfrac14\cos x=\tfrac14\cos3x$. ∎
 
 **7.** *[Trả lời ngắn]* Cho $a,b\in\left(0;\dfrac\pi2\right)$ với $\tan a=\dfrac12$, $\tan b=\dfrac13$. Tính $a+b$ (rad).
 *Giải.*
@@ -55,4 +58,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

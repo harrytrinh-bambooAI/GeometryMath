@@ -24,7 +24,10 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – S – Đ.
 
 ### Vận dụng
-**5.** Hai xạ thủ bắn độc lập. $A$: "xạ thủ 1 trúng", $B$: "xạ thủ 2 trúng". Mô tả biến cố "có đúng một người trúng". *Giải.* $(A\cap\bar B)\cup(\bar A\cap B)$.
+**5.** Hai xạ thủ bắn độc lập. $A$: "xạ thủ $1$ trúng", $B$: "xạ thủ $2$ trúng". Mô tả biến cố "có đúng một người trúng".
+*Giải.*
+- Bước 1: đúng một người trúng gồm hai trường hợp: xạ thủ $1$ trúng và xạ thủ $2$ trượt ($A\cap\bar B$), hoặc xạ thủ $1$ trượt và xạ thủ $2$ trúng ($\bar A\cap B$).
+- Bước 2: hai trường hợp xung khắc nên biến cố là $(A\cap\bar B)\cup(\bar A\cap B)$.
 
 **6.** *[Trả lời ngắn]* Gieo hai con xúc xắc. $A$ là biến cố "tổng số chấm $\ge10$". Có bao nhiêu kết quả thuận lợi cho $A$?
 *Giải.*
@@ -55,4 +58,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

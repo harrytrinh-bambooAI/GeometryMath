@@ -24,7 +24,11 @@ Phiên bản: v1.2 · 27/11/2026
 - Bước 2: $(ABM)\cap(SCD)=MN$ ($M,N$ cùng thuộc hai mặt phẳng), nên theo định lí giao tuyến $MN\parallel AB\parallel CD$.
 - Bước 3: trong $\triangle SCD$, $M$ là trung điểm $SC$ và $MN\parallel CD$ nên $N$ là trung điểm $SD$.
 
-**5.** Chóp $S.ABCD$ đáy hình bình hành. $(\alpha)$ qua $M\in SA$ song song $(ABCD)$ cắt $SB,SC,SD$ lần lượt tại $N,P,Q$. Chứng minh $MNPQ$ là hình bình hành. *Giải.* $(\alpha)\parallel(ABCD)$ nên $MN\parallel AB$, $QP\parallel DC$, $MQ\parallel AD$, $NP\parallel BC$; $AB\parallel DC$, $AD\parallel BC$ suy ra $MN\parallel QP$, $MQ\parallel NP$. ∎
+**5.** Chóp $S.ABCD$ đáy hình bình hành. Mặt phẳng $(\alpha)$ qua $M\in SA$ song song $(ABCD)$ cắt $SB,SC,SD$ lần lượt tại $N,P,Q$. Chứng minh $MNPQ$ là hình bình hành.
+*Giải.*
+- Bước 1: $(\alpha)\parallel(ABCD)$ nên giao tuyến của $(\alpha)$ với các mặt bên song song với giao tuyến của $(ABCD)$ với các mặt đó: $MN\parallel AB$, $NP\parallel BC$, $PQ\parallel CD$, $QM\parallel DA$.
+- Bước 2: $AB\parallel CD$ nên $MN\parallel PQ$; $AD\parallel BC$ nên $MQ\parallel NP$.
+- Bước 3: tứ giác có hai cặp cạnh đối song song là hình bình hành. ∎
 
 ### Vận dụng cao
 **6.** Hình hộp $ABCD.A'B'C'D'$. Chứng minh $AC'$, $A'C$, $BD'$, $B'D$ cắt nhau tại một điểm là trung điểm của mỗi đường.
@@ -58,4 +62,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 4 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

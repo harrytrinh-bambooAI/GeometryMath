@@ -22,7 +22,10 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – S – Đ.
 
 ### Vận dụng
-**5.** $y=\ln(x^2+1)$. *Giải.* $y'=\dfrac{2x}{x^2+1}$.
+**5.** Tính đạo hàm của $y=\ln(x^2+1)$.
+*Giải.*
+- Quy tắc: $(\ln u)'=\dfrac{u'}{u}$ với $u=x^2+1$, $u'=2x$.
+- $y'=\dfrac{2x}{x^2+1}$.
 
 **6.** Viết phương trình tiếp tuyến của $y=x^3-3x$ tại điểm có hoành độ $2$.
 *Giải.*
@@ -57,4 +60,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

@@ -18,9 +18,16 @@ Phiên bản: v1.2 · 27/11/2026
 **4.** $\lim\dfrac{3^n+2^n}{3^{n+1}}$. *Giải.* Chia cho $3^n$: $\dfrac{1+(2/3)^n}{3}\to\dfrac13$.
 
 ### Vận dụng
-**5.** $\lim(\sqrt{n^2+n}-n)$. *Giải.* $=\lim\dfrac{n}{\sqrt{n^2+n}+n}=\lim\dfrac1{\sqrt{1+1/n}+1}=\dfrac12$.
+**5.** Tính $\lim\left(\sqrt{n^2+n}-n\right)$.
+*Giải.*
+- Bước 1: nhân liên hợp: $\sqrt{n^2+n}-n=\dfrac{n}{\sqrt{n^2+n}+n}$.
+- Bước 2: chia tử và mẫu cho $n$: $\dfrac{1}{\sqrt{1+1/n}+1}$.
+- Bước 3: giới hạn $=\dfrac1{1+1}=\dfrac12$.
 
-**6.** Tính $S=1+\tfrac12+\tfrac14+\dots$ *Giải.* $u_1=1$, $q=\tfrac12$: $S=2$.
+**6.** Tính $S=1+\tfrac12+\tfrac14+\dots$ (tổng vô hạn).
+*Giải.*
+- Bước 1: đây là cấp số nhân lùi vô hạn với $u_1=1$, $q=\dfrac12$, $|q|<1$.
+- Bước 2: $S=\dfrac{u_1}{1-q}=\dfrac1{1-\frac12}=2$.
 
 **7.** *[Trả lời ngắn]* Tính $\lim\left(\sqrt{4n^2+n}-2n\right)$.
 *Giải.*
@@ -51,4 +58,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

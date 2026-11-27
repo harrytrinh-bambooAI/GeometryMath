@@ -1,6 +1,6 @@
 # Tài liệu Toán lớp 11 (GDPT 2018) – hệ thống hoá theo SGK
 
-Phiên bản: v1.1 · 27/11/2026
+Phiên bản: v1.2 · 27/11/2026
 
 > Tài liệu tổng hợp/biên soạn lại cho mục đích học tập. Lý thuyết viết lại bằng lời riêng; bài tập tự soạn kèm lời giải. Không sao chép nguyên văn SGK/SBT.
 
@@ -9,9 +9,23 @@ Toán 11 **Kết nối tri thức với cuộc sống** (NXB Giáo dục Việt 
 
 ## Quy ước
 - Lý thuyết: `ly-thuyet/chuong-NN-<tên>/bai-NN-<tên>.md`; bài tập: `bai-tap/chuong-NN-<tên>/bai-NN-<tên>.md`; ôn tập chương: `on-tap-chuong.md`.
-- Bài tập chia mức Nhận biết / Thông hiểu / Vận dụng / Vận dụng cao, có lời giải ngắn.
+- Bài tập chia mức Nhận biết / Thông hiểu / Vận dụng / Vận dụng cao; có các dạng *[Trắc nghiệm]* (4 lựa chọn), *[Đúng/sai]* (4 ý a–d), *[Trả lời ngắn]* theo cấu trúc đề 2025 (bài không gắn nhãn là tự luận); lời giải từng bước cho mức Vận dụng trở lên.
 - Công thức dùng LaTeX (`$...$`). Hình SVG trong `hinh/`.
 - Mỗi tệp có bảng Nguồn ở cuối; tổng hợp ở [nguon-tong-hop.md](nguon-tong-hop.md).
+
+## Số bài tập theo chương (v1.2)
+| Chương | Bài (lý thuyết) | Số bài tập (v1.1 → v1.2) | Mỗi tệp bài / cuối chương |
+|---|---|---|---|
+| 1. Hàm số lượng giác và phương trình lượng giác | 1–4 | 29 → 40 | 8 / 8 |
+| 2. Dãy số, cấp số cộng, cấp số nhân | 5–7 | 23 → 31 | 8 / 7 |
+| 3. Mẫu số liệu ghép nhóm | 8–9 | 14 → 21 | 7–8 / 6 |
+| 4. Quan hệ song song | 10–14 | 29 → 42 | 7 / 7 |
+| 5. Giới hạn, hàm số liên tục | 15–17 | 22 → 30 | 7–8 / 7 |
+| 6. Hàm số mũ và logarit | 18–21 | 23 → 36 | 7–8 / 7 |
+| 7. Quan hệ vuông góc | 22–27 | 31 → 50 | 7–8 / 7 |
+| 8. Quy tắc tính xác suất | 28–30 | 17 → 27 | 7 / 6 |
+| 9. Đạo hàm | 31–33 | 19 → 28 | 7–8 / 6 |
+| **Tổng** | 33 bài | **207 → 305** | |
 
 ## Mục lục
 
@@ -170,14 +184,17 @@ Nguồn đối chiếu (mở 27/11/2026): [loigiaihay – SGK Toán 11 KNTT](htt
 - [hai-mat-phang-song-song.svg](hinh/hai-mat-phang-song-song.svg)
 - [hinh-chop-sabcd.svg](hinh/hinh-chop-sabcd.svg)
 - [hinh-hop.svg](hinh/hinh-hop.svg)
+- [hinh-chop-sa-vuong-goc-day.svg](hinh/hinh-chop-sa-vuong-goc-day.svg)
 - [hinh-lang-tru.svg](hinh/hinh-lang-tru.svg)
+- [hinh-tu-dien-oabc-vuong.svg](hinh/hinh-tu-dien-oabc-vuong.svg)
+- [hinh-tu-dien-trung-diem.svg](hinh/hinh-tu-dien-trung-diem.svg)
 - [khoang-cach-diem-mat-phang.svg](hinh/khoang-cach-diem-mat-phang.svg)
 - [phep-chieu-song-song.svg](hinh/phep-chieu-song-song.svg)
 - [tiep-tuyen-do-thi.svg](hinh/tiep-tuyen-do-thi.svg)
 - [xac-suat-ve-venn.svg](hinh/xac-suat-ve-venn.svg)
 
 ## Tình trạng
-Đủ 9/9 chương, 33/33 bài (lý thuyết + bài tập) và 9 bài tập cuối chương. Còn thiếu: phần *Hoạt động thực hành trải nghiệm* (2 chủ đề mỗi tập), *Bài tập cuối năm* và bài tập chuyên đề nâng cao; số bài tập mỗi bài còn ít (4–6).
+Đủ 9/9 chương, 33/33 bài (lý thuyết + bài tập) và 9 bài tập cuối chương. Còn thiếu: phần *Hoạt động thực hành trải nghiệm* (2 chủ đề mỗi tập), *Bài tập cuối năm* và bài tập chuyên đề nâng cao; nay mỗi bài có 7–8 bài tập, mỗi bài tập cuối chương 6–8 bài (tổng 305).
 
 **Phạm vi rà nguồn v1.1 (27/11/2026):** đã rà 33/33 bài + 9/9 bài tập cuối chương (tên bài, thứ tự, link nguồn). Chưa rà: nội dung từng công thức/bài tập so với SGK (không đối chiếu từng câu); mục lục chưa đối chiếu bản in NXBGD.
 
@@ -186,3 +203,4 @@ Nguồn đối chiếu (mở 27/11/2026): [loigiaihay – SGK Toán 11 KNTT](htt
 |---|---|---|---|
 | v1.0 | 27/11/2026 | Khởi tạo: 9 chương, 33 bài, 19 hình SVG | agent runner-materials-l11 |
 | v1.1 | 27/11/2026 | Rà nguồn thật: đối chiếu mục lục với loigiaihay + VietJack; thêm 2–3 link nguồn đã mở được (HTTP 200) vào 75 tệp bài; sửa link SBT sai; sửa tên chương 3 và nhãn "Bài tập cuối chương"; mở rộng nguon-tong-hop.md | agent runner-materials-l11-verify |
+| v1.2 | 27/11/2026 | Bài tập 207 → 305 (đủ 300): thêm 98 bài có dạng trắc nghiệm/đúng-sai/trả lời ngắn; viết lại 116 lời giải bài cũ thành từng bước; thêm 3 hình SVG (22 hình) và chèn hình vào bài hình học chương 4, 7; thêm nguồn đề kiểm tra | agent runner-mat-300 |

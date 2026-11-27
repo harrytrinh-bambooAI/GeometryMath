@@ -31,7 +31,11 @@ Phiên bản: v1.2 · 27/11/2026
 - Bước 2: $AC=a\sqrt2$; tam giác $SAC$ vuông cân tại $A$ nên $SA=AC=a\sqrt2$.
 - Bước 3: $V=\dfrac13S_{ABCD}\cdot SA=\dfrac13a^2\cdot a\sqrt2=\dfrac{a^3\sqrt2}3$.
 
-**6.** $S.ABC$, $M$ trung điểm $SB$, $N\in SC$ với $SN=2NC$. Tỉ số $\dfrac{V_{S.AMN}}{V_{S.ABC}}$. *Giải.* $1\cdot\dfrac12\cdot\dfrac23=\dfrac13$.
+**6.** Chóp $S.ABC$, $M$ là trung điểm $SB$, $N\in SC$ với $SN=2NC$. Tính $\dfrac{V_{S.AMN}}{V_{S.ABC}}$.
+*Giải.*
+- Bước 1: hai khối chóp chung đỉnh $S$, đáy trong cùng các tia $SA,SB,SC$: $\dfrac{V_{S.AMN}}{V_{S.ABC}}=\dfrac{SA}{SA}\cdot\dfrac{SM}{SB}\cdot\dfrac{SN}{SC}$.
+- Bước 2: $\dfrac{SM}{SB}=\dfrac12$; $SN=2NC\Rightarrow SN=\dfrac23SC$.
+- Bước 3: tỉ số $=1\cdot\dfrac12\cdot\dfrac23=\dfrac13$.
 
 ### Vận dụng cao
 **7.** Tính thể tích khối tứ diện đều cạnh $a$.
@@ -62,4 +66,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 3 bài (5→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 3 bài (5→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

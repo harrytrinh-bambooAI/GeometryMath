@@ -21,9 +21,17 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: S – Đ – Đ – S.
 
 ### Vận dụng
-**4.** Chóp $S.ABCD$ đáy hình bình hành. Chứng minh $AB\parallel(SCD)$. *Giải.* $AB\parallel CD\subset(SCD)$ và $AB\not\subset(SCD)$.
+**4.** Chóp $S.ABCD$ đáy hình bình hành. Chứng minh $AB\parallel(SCD)$.
+*Giải.*
+- Bước 1: $AB\parallel CD$ (hình bình hành) và $CD\subset(SCD)$.
+- Bước 2: $AB\not\subset(SCD)$ (vì $A\notin(SCD)$).
+- Bước 3: theo dấu hiệu đường thẳng song song mặt phẳng, $AB\parallel(SCD)$. ∎
 
-**5.** Chóp $S.ABCD$ đáy hình bình hành, $M$ là trung điểm $SA$. Chứng minh $SC\parallel(MBD)$. *Giải.* $O=AC\cap BD$; $OM$ là đường trung bình $\triangle SAC$ nên $OM\parallel SC$, $OM\subset(MBD)$. ∎
+**5.** Chóp $S.ABCD$ đáy hình bình hành, $M$ là trung điểm $SA$. Chứng minh $SC\parallel(MBD)$.
+*Giải.*
+- Bước 1: gọi $O=AC\cap BD$, $O$ là trung điểm $AC$.
+- Bước 2: $OM$ là đường trung bình của $\triangle SAC$ nên $OM\parallel SC$; $OM\subset(MBD)$.
+- Bước 3: $SC\not\subset(MBD)$, vậy $SC\parallel(MBD)$. ∎
 
 **6.** *[Trả lời ngắn]* Tứ diện $ABCD$; $M\in AB$, $N\in AC$ với $\dfrac{AM}{AB}=\dfrac{AN}{AC}=\dfrac23$; $BC=9$. Tính $MN$.
 *Giải.*
@@ -54,4 +62,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

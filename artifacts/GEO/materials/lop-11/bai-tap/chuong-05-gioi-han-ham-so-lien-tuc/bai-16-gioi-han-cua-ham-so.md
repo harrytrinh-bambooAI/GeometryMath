@@ -23,9 +23,16 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – S – Đ.
 
 ### Vận dụng
-**5.** $\lim_{x\to1^+}\dfrac{x+1}{x-1}$ và $\lim_{x\to1^-}\dfrac{x+1}{x-1}$. *Giải.* Tử $\to2>0$; $x-1\to0^+$ nên $+\infty$; từ trái $-\infty$.
+**5.** Tính $\lim_{x\to1^+}\dfrac{x+1}{x-1}$ và $\lim_{x\to1^-}\dfrac{x+1}{x-1}$.
+*Giải.*
+- Bước 1: khi $x\to1$ tử $x+1\to2>0$.
+- Bước 2: $x\to1^+$: $x-1\to0^+$, thương $\to+\infty$.
+- Bước 3: $x\to1^-$: $x-1\to0^-$, thương $\to-\infty$.
 
-**6.** $\lim_{x\to0}\dfrac{\sqrt{1+x}-1}{x}$. *Giải.* $=\lim\dfrac1{\sqrt{1+x}+1}=\dfrac12$.
+**6.** Tính $\lim_{x\to0}\dfrac{\sqrt{1+x}-1}{x}$.
+*Giải.*
+- Bước 1: dạng $\dfrac00$, nhân liên hợp: $\dfrac{\sqrt{1+x}-1}{x}=\dfrac{(1+x)-1}{x(\sqrt{1+x}+1)}=\dfrac1{\sqrt{1+x}+1}$.
+- Bước 2: khi $x\to0$: $\dfrac1{1+1}=\dfrac12$.
 
 **7.** *[Trả lời ngắn]* Tính $\lim_{x\to1}\dfrac{x^2-1}{x^3-1}$.
 *Giải.*
@@ -56,4 +63,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

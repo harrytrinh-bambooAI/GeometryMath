@@ -20,9 +20,17 @@ Phiên bản: v1.2 · 27/11/2026
 - Do đó $MN\parallel BC$ và $MN=\dfrac12BC$.
 
 ### Vận dụng
-**4.** Chóp $S.ABCD$ đáy hình thang $AB\parallel CD$. Tìm $(SAB)\cap(SCD)$. *Giải.* $S$ chung, $AB\parallel CD$: giao tuyến là đường thẳng $d$ qua $S$, $d\parallel AB\parallel CD$.
+**4.** Chóp $S.ABCD$ đáy hình thang $AB\parallel CD$. Tìm $(SAB)\cap(SCD)$.
+*Giải.*
+- Bước 1: $S$ là điểm chung của hai mặt phẳng.
+- Bước 2: $AB\subset(SAB)$, $CD\subset(SCD)$ và $AB\parallel CD$.
+- Bước 3: theo định lí về giao tuyến của hai mặt phẳng chứa hai đường thẳng song song, giao tuyến là đường thẳng $d$ qua $S$ với $d\parallel AB\parallel CD$.
 
-**5.** Chóp $S.ABCD$ đáy hình bình hành. $M,N$ trung điểm $SA,SB$. Chứng minh $MN\parallel CD$. *Giải.* $MN\parallel AB$ (đường trung bình $\triangle SAB$), $AB\parallel CD$ nên $MN\parallel CD$.
+**5.** Chóp $S.ABCD$ đáy hình bình hành. $M,N$ là trung điểm $SA,SB$. Chứng minh $MN\parallel CD$.
+*Giải.*
+- Bước 1: $MN$ là đường trung bình của $\triangle SAB$ nên $MN\parallel AB$.
+- Bước 2: $ABCD$ là hình bình hành nên $AB\parallel CD$.
+- Bước 3: $MN\parallel AB$ và $AB\parallel CD$, theo tính chất bắc cầu, $MN\parallel CD$. ∎
 
 **6.** *[Trả lời ngắn]* Tứ diện $ABCD$ có $M,N,P,Q$ lần lượt là trung điểm $AB,BC,CD,DA$; $AC=6$, $BD=8$. Tính chu vi tứ giác $MNPQ$.
 ![Tứ diện với các trung điểm cạnh](../../hinh/hinh-tu-dien-trung-diem.svg)
@@ -54,4 +62,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 4 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

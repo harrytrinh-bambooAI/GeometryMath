@@ -24,7 +24,11 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – Đ – S.
 
 ### Vận dụng
-**6.** Gửi 100 triệu, lãi 6%/năm, lãi nhập gốc. Viết công thức số tiền sau $n$ năm. *Giải.* $A_n=100(1{,}06)^n$ (triệu); dãy tăng.
+**6.** Gửi $100$ triệu đồng, lãi $6\%$/năm, lãi nhập gốc. Viết công thức số tiền sau $n$ năm.
+*Giải.*
+- Sau $1$ năm: $100\cdot1{,}06$; sau $2$ năm: $100\cdot1{,}06^2$; mỗi năm nhân thêm $1{,}06$.
+- Công thức: $A_n=100\cdot(1{,}06)^n$ (triệu đồng).
+- $A_n$ là cấp số nhân công bội $1{,}06>1$ nên dãy tăng.
 
 **7.** *[Trả lời ngắn]* Cho dãy $u_1=1$, $u_{n+1}=2u_n+1$. Tính $u_5$.
 *Giải.*
@@ -55,4 +59,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

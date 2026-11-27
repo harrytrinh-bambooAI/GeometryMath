@@ -23,9 +23,16 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – S – Đ.
 
 ### Vận dụng
-**5.** Cùng bảng, tính $Q_1$. *Giải.* $n/4=5$, nhóm $[10;20)$: $Q_1=10+\dfrac{5-4}6\cdot10\approx11{,}67$.
+**5.** Cùng bảng ($[0;10)$: 4; $[10;20)$: 6; $[20;30)$: 10), tính $Q_1$.
+*Giải.*
+- Bước 1: $n=20$, $\dfrac n4=5$; tần số tích luỹ $4,10,20$.
+- Bước 2: $4<5\le10$ nên $Q_1$ thuộc nhóm $[10;20)$.
+- Bước 3: $Q_1=10+\dfrac{5-4}{6}\cdot10\approx11{,}67$.
 
-**6.** Tính mốt. *Giải.* Nhóm $[20;30)$ ($m_j=10,m_{j-1}=6$, $m_{j+1}=0$): $M_o=20+\dfrac{4}{4+10}\cdot10\approx22{,}86$.
+**6.** Với bảng trên, tính mốt.
+*Giải.*
+- Bước 1: nhóm có tần số lớn nhất là $[20;30)$ ($m_j=10$), với $m_{j-1}=6$, $m_{j+1}=0$.
+- Bước 2: $M_o=20+\dfrac{10-6}{(10-6)+(10-0)}\cdot10=20+\dfrac4{14}\cdot10\approx22{,}86$.
 
 **7.** *[Trả lời ngắn]* Bảng: $[0;10)$: 2; $[10;20)$: 8; $[20;30)$: 6; $[30;40)$: 4. Tính số trung bình.
 *Giải.*
@@ -56,4 +63,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

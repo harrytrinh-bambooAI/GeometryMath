@@ -20,7 +20,10 @@ Phiên bản: v1.2 · 27/11/2026
 **5.** Tính $1+4+7+\dots+100$. *Giải.* $d=3$, $n=34$, $S=\dfrac{34\cdot101}2=1717$.
 
 ### Vận dụng
-**6.** Hàng ghế rạp: hàng 1 có 20 ghế, mỗi hàng sau nhiều hơn 2 ghế, tất cả 15 hàng. Tổng ghế? *Giải.* $S_{15}=\dfrac{15(2\cdot20+14\cdot2)}2=510$.
+**6.** Hàng ghế rạp: hàng $1$ có $20$ ghế, mỗi hàng sau nhiều hơn $2$ ghế, tất cả $15$ hàng. Tổng số ghế?
+*Giải.*
+- Bước 1: số ghế mỗi hàng lập cấp số cộng $u_1=20$, $d=2$, $n=15$.
+- Bước 2: $S_{15}=\dfrac{15\,[2\cdot20+14\cdot2]}{2}=\dfrac{15\cdot68}2=510$ ghế.
 
 **7.** *[Trả lời ngắn]* Cấp số cộng có tổng $n$ số hạng đầu $S_n=2n^2+3n$. Tính $u_{10}$.
 *Giải.*
@@ -51,4 +54,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 6 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (6→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

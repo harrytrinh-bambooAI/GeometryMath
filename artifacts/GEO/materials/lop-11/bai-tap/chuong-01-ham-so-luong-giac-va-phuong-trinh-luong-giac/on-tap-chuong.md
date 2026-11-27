@@ -20,7 +20,10 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – S – Đ.
 
 ### Vận dụng
-**4.** Giải $2\cos^2x-3\cos x+1=0$. *Giải.* Đặt $t=\cos x$: $t=1$ hoặc $t=\tfrac12$. Nghiệm $x=k2\pi$, $x=\pm\tfrac\pi3+k2\pi$.
+**4.** Giải $2\cos^2x-3\cos x+1=0$.
+*Giải.*
+- Bước 1: đặt $t=\cos x\in[-1;1]$: $2t^2-3t+1=0\Rightarrow t=1$ hoặc $t=\dfrac12$ (cả hai thuộc $[-1;1]$).
+- Bước 2: $\cos x=1\Rightarrow x=k2\pi$; $\cos x=\dfrac12\Rightarrow x=\pm\dfrac\pi3+k2\pi$ ($k\in\mathbb Z$).
 
 **5.** Giải $\sin x+\cos x=1$.
 *Giải.*
@@ -64,4 +67,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 3 bài (5→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 3 bài (5→8, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 4 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

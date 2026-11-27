@@ -24,7 +24,11 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – S – Đ.
 
 ### Vận dụng
-**5.** So sánh $\left(\tfrac13\right)^{\sqrt2}$ và $\left(\tfrac13\right)^{1{,}5}$. *Giải.* $\sqrt2<1{,}5$, cơ số $<1$ nên $(\tfrac13)^{\sqrt2}>(\tfrac13)^{1{,}5}$.
+**5.** So sánh $\left(\tfrac13\right)^{\sqrt2}$ và $\left(\tfrac13\right)^{1{,}5}$.
+*Giải.*
+- Bước 1: $\sqrt2\approx1{,}414<1{,}5$.
+- Bước 2: hàm số $y=\left(\tfrac13\right)^t$ có cơ số $\dfrac13<1$ nên nghịch biến.
+- Bước 3: số mũ nhỏ hơn thì giá trị lớn hơn: $\left(\tfrac13\right)^{\sqrt2}>\left(\tfrac13\right)^{1{,}5}$.
 
 **6.** *[Trả lời ngắn]* Với $a>0$, viết $\sqrt{a^3\sqrt[3]{a^2}}$ dưới dạng $a^{m/n}$ ($\dfrac mn$ tối giản). Tính $m+n$.
 *Giải.*
@@ -55,4 +59,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 4 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 3 bài (4→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 2 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

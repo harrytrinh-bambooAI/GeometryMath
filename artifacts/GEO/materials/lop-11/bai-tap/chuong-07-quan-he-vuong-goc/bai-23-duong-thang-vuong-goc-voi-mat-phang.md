@@ -30,7 +30,11 @@ Phiên bản: v1.2 · 27/11/2026
 - Đáp án: Đ – Đ – Đ – S.
 
 ### Vận dụng
-**5.** Với giả thiết trên, chứng minh $BD\perp(SAC)$. *Giải.* $BD\perp AC$ (hai đường chéo hình vuông), $BD\perp SA$.
+**5.** Với giả thiết trên (chóp $S.ABCD$ đáy hình vuông, $SA\perp(ABCD)$), chứng minh $BD\perp(SAC)$.
+*Giải.*
+- Bước 1: $BD\perp AC$ (hai đường chéo hình vuông).
+- Bước 2: $BD\perp SA$ (vì $SA\perp(ABCD)$ và $BD\subset(ABCD)$).
+- Bước 3: $AC,SA$ cắt nhau tại $A$ trong $(SAC)$ nên $BD\perp(SAC)$. ∎
 
 **6.** Chóp $S.ABC$ có $SA=SB=SC$, $H$ là tâm đường tròn ngoại tiếp $\triangle ABC$. Chứng minh $SH\perp(ABC)$.
 *Giải.*
@@ -63,4 +67,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 4 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |

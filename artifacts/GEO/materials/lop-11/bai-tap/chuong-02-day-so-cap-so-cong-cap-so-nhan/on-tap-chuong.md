@@ -16,9 +16,16 @@ Phiên bản: v1.2 · 27/11/2026
 **3.** CSN có $S_3=7$, $u_1=1$. Tìm $q$. *Giải.* $1+q+q^2=7\Rightarrow q=2$ hoặc $q=-3$.
 
 ### Vận dụng
-**4.** Tìm $n$ để $1+3+5+\dots+(2n-1)=169$. *Giải.* Tổng $=n^2$, $n=13$.
+**4.** Tìm $n$ để $1+3+5+\dots+(2n-1)=169$.
+*Giải.*
+- Bước 1: các số hạng lập cấp số cộng $u_1=1$, $d=2$, $u_n=2n-1$.
+- Bước 2: $S_n=\dfrac{n(1+2n-1)}2=n^2$.
+- Bước 3: $n^2=169\Rightarrow n=13$ (loại $n=-13$).
 
-**5.** Một quả bóng thả từ 10 m, mỗi lần nảy lên bằng 60% độ cao trước. Độ cao sau lần nảy thứ 4? *Giải.* $10\cdot0{,}6^4=1{,}296$ m.
+**5.** Một quả bóng thả từ $10$ m, mỗi lần nảy lên bằng $60\%$ độ cao trước. Độ cao sau lần nảy thứ $4$?
+*Giải.*
+- Mỗi lần nảy, độ cao nhân $0{,}6$: cấp số nhân $u_0=10$, $q=0{,}6$.
+- Sau lần thứ $4$: $10\cdot0{,}6^4=10\cdot0{,}1296=1{,}296$ m.
 
 ### Vận dụng cao
 **6.** Chứng minh nếu $a,b,c$ lập cấp số cộng thì $a^2+ab+b^2,\ a^2+ac+c^2,\ b^2+bc+c^2$ lập cấp số cộng.
@@ -50,4 +57,4 @@ Phiên bản: v1.2 · 27/11/2026
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.1 | 27/11/2026 | Bản trước: 5 bài, lời giải ngắn | agent runner-materials-l11 |
-| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 1 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
+| v1.2 | 27/11/2026 | Thêm 2 bài (5→7, có trắc nghiệm/đúng-sai/trả lời ngắn), viết lại 3 lời giải từng bước, cập nhật nguồn | agent runner-mat-300 |
