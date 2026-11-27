@@ -35,6 +35,34 @@ class AssignmentSetS3E2IT extends AbstractE1IT {
           "(^|[^0-9.,])45([^0-9]|$)|π\\s*/\\s*4|pi\\s*/\\s*4|0[.,]785|bốn mươi lăm|Đáp số|Lập luận đầy đủ|Hướng làm",
           Pattern.CASE_INSENSITIVE);
 
+  /**
+   * Dev-REV-A4: mốc thời gian (ISO, giờ "23:45:42"), UUID và mã băm hex chứa "45" không phải đáp số
+   * — bỏ chúng trước khi dò LEAK, nếu không ca thử trượt khi chạy ở phút/giây 45.
+   */
+  static final Pattern NOT_ANSWER =
+      Pattern.compile(
+          "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(:\\d{2}(\\.\\d+)?)?(Z|[+-]\\d{2}:\\d{2})?"
+              + "|\\b\\d{1,2}:\\d{2}(:\\d{2}(\\.\\d+)?)?\\b"
+              + "|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+              + "|\\b[0-9a-fA-F]{16,}\\b");
+
+  static boolean leaks(String body) {
+    return LEAK.matcher(NOT_ANSWER.matcher(body).replaceAll(" ")).find();
+  }
+
+  @Test
+  @DisplayName("Dev-REV-A4 Dò LEAK bỏ qua mốc thời gian, UUID; vẫn bắt đáp số 45")
+  void leakProbeIgnoresTimestamps() {
+    assertThat(leaks("{\"releaseAt\":\"2026-11-27T23:45:42.123Z\"}")).isFalse();
+    assertThat(leaks("{\"at\":\"2026-11-27T16:45:00+07:00\",\"t\":\"23:45\"}")).isFalse();
+    assertThat(leaks("{\"id\":\"019abc12-3456-7000-8045-45ab00000045\"}")).isFalse();
+    assertThat(leaks("{\"etag\":\"\\\"a1b245c3d4e5f6a7b8\\\"\"}")).isFalse();
+    assertThat(leaks("{\"answer\":\"45\"}")).isTrue();
+    assertThat(leaks("góc bằng 45°")).isTrue();
+    assertThat(leaks("{\"value\":45}")).isTrue();
+    assertThat(leaks("lúc 23:45 góc = 45 độ")).isTrue();
+  }
+
   @Autowired S3E2SandboxService sandbox;
 
   private final HttpClient http = HttpClient.newHttpClient();
@@ -122,7 +150,7 @@ class AssignmentSetS3E2IT extends AbstractE1IT {
     for (HttpResponse<String> r : all) {
       String where =
           r.request().method() + " " + r.request().uri().getPath() + " → " + r.statusCode();
-      assertThat(LEAK.matcher(r.body()).find()).as(where + ": " + r.body()).isFalse();
+      assertThat(leaks(r.body())).as(where + ": " + r.body()).isFalse();
       assertThat(r.headers().firstValue("Cache-Control").orElse(""))
           .as(where + " Cache-Control")
           .contains("no-store");
