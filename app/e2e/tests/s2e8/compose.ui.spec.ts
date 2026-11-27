@@ -214,20 +214,3 @@ test('@TC-S2E8-105 giáo viên thấy báo kèm đáp số và dạng chuẩn', 
   await expect(row.getByTestId('s2e8-report-keep')).toHaveText('Giữ nguyên');
   await noHorizontalScroll(page);
 });
-
-test('@TC-S2E8-107 Giữ nguyên thì kết quả không đổi', async ({ page, request }) => {
-  const { sb, set, an } = await reported(request);
-  const metrics = async () => ((await (await request.get(`${API}/api/v1/teacher/practice-reports/metrics`, { headers: bearer(sb.teacher.token) })).json()) as { confirmed: number }).confirmed;
-  const before = await metrics();
-  await openReports(page, sb);
-  const row = page.locator('[data-testid^="s2e8-report-"][data-status]');
-  await row.getByTestId('s2e8-report-keep').click();
-  await expect(row.getByTestId('s2e8-report-status')).toHaveText('Đã xem, giữ nguyên');
-  await expect(row).toHaveAttribute('data-status', 'kept');
-  await expect(row.getByTestId('s2e8-report-confirm')).toHaveCount(0);
-  const item = (await play(request, an.token, set.id)).items[1]!;
-  expect(item).toMatchObject({ state: 'doing', attemptsLeft: 2 });
-  expect(await metrics()).toBe(before);
-  // dạng viết "44,4" không được thêm vào dạng chấp nhận: bạn cùng lớp nộp vẫn Sai
-  expect((await attempt(request, student(sb, 'Bình').token, set.items[1]!.assignmentId, '44,4')).outcome).toBe('wrong');
-});

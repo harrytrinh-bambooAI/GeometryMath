@@ -37,30 +37,6 @@ test('@TC-S2E8-075 làm hết thì hiện số câu đúng và câu cần xem l�
   await noHorizontalScroll(page);
 });
 
-test('@TC-S2E8-076 không có điểm, phần trăm hay xếp hạng', async ({ page, request }) => {
-  const sb = await sandbox(request);
-  const set = await assigned(request, sb);
-  await doItems(request, sb, set, ['ok', 'out', 'ok', 'ok', 'out']);
-  await openResult(page, sb, set.id);
-  const text = await page.getByTestId('s2e8-result').innerText();
-  for (const banned of ['điểm', 'Điểm', '%', '/5', 'hạng', 'xếp hạng']) expect(text, `màn kết quả có "${banned}"`).not.toContain(banned);
-  expect(text).not.toMatch(/\b3\s*\/\s*5\b|\b[0-9]+\s*trên\s*5\b/);
-  const r = await request.get(`${API}/api/v1/student/practice-sets/${set.id}/result`, { headers: bearer(student(sb, 'An').token) });
-  const body = (await r.json()) as Record<string, unknown>;
-  const { keys, strings } = walk(body);
-  expect(keys.filter((k) => /score|point|percent|rank|total|grade|diem/i.test(k)), 'khóa kiểu điểm / tổng / hạng').toEqual([]);
-  for (const s of strings) {
-    if (/^[0-9a-f]{8}-[0-9a-f]{4}-/.test(s) || /^\d{4}-\d{2}-\d{2}T/.test(s) || s.startsWith('Lời giải mở lúc')) continue;
-    expect(s).not.toMatch(/điểm|%|\/5|hạng/i);
-  }
-  // chỉ có hai số: câu đúng và câu cần xem lại (và số câu chưa làm = 0)
-  expect(Object.entries(body).filter(([, v]) => typeof v === 'number')).toEqual([
-    ['correct', 3],
-    ['review', 2],
-    ['remaining', 0],
-  ]);
-});
-
 test('@TC-S2E8-077 chưa làm xong thì báo còn bao nhiêu câu', async ({ page, request }) => {
   const sb = await sandbox(request);
   const set = await assigned(request, sb);

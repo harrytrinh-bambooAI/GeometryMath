@@ -22,7 +22,7 @@ const studentEnd = (p: Person, testId: string) => async (page: Page) => {
   await expect(page.getByTestId(testId)).toBeVisible();
 };
 
-test('Tên lớp đúng 60 ký tự được nhận @TC-S3E1-03', async ({ request, browser }, testInfo) => {
+test('Tên lớp đúng 60 ký tự được nhận @TC-S3E1-03 @loai-B', async ({ request, browser }, testInfo) => {
   const w = await world(request, { teachers: ['Cô Lan'], classes: [] });
   const lan = w.people['Cô Lan']!;
   const r = await teacherApi.create(request, lan.token, { name: 'A'.repeat(60), grade: 10, academicYear: '2026–2027' });
@@ -51,7 +51,7 @@ for (const [title, name, year, field, msg] of [
   });
 }
 
-test('Chặn quá 20 lớp Đang dạy @TC-S3E1-10', async ({ request, browser }, testInfo) => {
+test('Chặn quá 20 lớp Đang dạy @TC-S3E1-10 @loai-B', async ({ request, browser }, testInfo) => {
   const w = await world(request, { teachers: ['Cô Lan'], classes: [] });
   const lan = w.people['Cô Lan']!;
   const t = lan.token;
@@ -70,7 +70,7 @@ test('Chặn quá 20 lớp Đang dạy @TC-S3E1-10', async ({ request, browser }
   await captureFinalState(browser, testInfo, teacherEnd(lan, '/gv/lop-hoc', 's3e1-create-name'));
 });
 
-test('Mã gõ chữ thường và có khoảng trắng vẫn được nhận @TC-S3E1-13', async ({ request, browser }, testInfo) => {
+test('Mã gõ chữ thường và có khoảng trắng vẫn được nhận @TC-S3E1-13 @loai-B', async ({ request, browser }, testInfo) => {
   const w = await world(request);
   const bao = w.people['Gia Bảo']!;
   const r = await join(request, bao.token, `  ${w.classes['11A1']!.code.toLowerCase()} `);
@@ -81,7 +81,7 @@ test('Mã gõ chữ thường và có khoảng trắng vẫn được nhận @TC
   await captureFinalState(browser, testInfo, studentEnd(bao, 's3e1-join-waiting'));
 });
 
-test('Mọi lớp bắt buộc giáo viên duyệt: mã đúng luôn vào Chờ duyệt @TC-S3E1-15', async ({ request, browser }, testInfo) => {
+test('Mọi lớp bắt buộc giáo viên duyệt: mã đúng luôn vào Chờ duyệt @TC-S3E1-15 @loai-B', async ({ request, browser }, testInfo) => {
   const w = await world(request);
   const bao = w.people['Gia Bảo']!;
   const r = await join(request, bao.token, w.classes['11A2']!.code);
@@ -92,7 +92,7 @@ test('Mọi lớp bắt buộc giáo viên duyệt: mã đúng luôn vào Chờ 
   await captureFinalState(browser, testInfo, studentEnd(bao, 's3e1-join-waiting'));
 });
 
-test('Em đã rời xin vào lại lớp @TC-S3E1-16', async ({ request, browser }, testInfo) => {
+test('Em đã rời xin vào lại lớp @TC-S3E1-16 @loai-B', async ({ request, browser }, testInfo) => {
   const w = await world(request);
   const tu = w.people['Văn Tú']!;
   const r = await join(request, tu.token, w.classes['11A1']!.code);
@@ -133,7 +133,7 @@ for (const [tc, title] of [
   });
 }
 
-test('Em đã Đang học lớp này nhập lại mã @TC-S3E1-22', async ({ request, browser }, testInfo) => {
+test('Em đã Đang học lớp này nhập lại mã @TC-S3E1-22 @loai-B', async ({ request, browser }, testInfo) => {
   const w = await world(request);
   const an = w.people['Bình An']!;
   const r = await join(request, an.token, w.classes['11A1']!.code);
@@ -144,7 +144,7 @@ test('Em đã Đang học lớp này nhập lại mã @TC-S3E1-22', async ({ req
   await captureFinalState(browser, testInfo, studentEnd(an, 's3e1-join-code'));
 });
 
-test('Từ chối một em @TC-S3E1-26', async ({ request, browser }, testInfo) => {
+test('Từ chối một em @TC-S3E1-26 @loai-B', async ({ request, browser }, testInfo) => {
   const w = await world(request);
   const lan = w.people['Cô Lan']!;
   const nam = w.people['Hoàng Nam']!;
@@ -158,7 +158,7 @@ test('Từ chối một em @TC-S3E1-26', async ({ request, browser }, testInfo) 
   await captureFinalState(browser, testInfo, studentEnd(nam, 's3e1-join-rejected'));
 });
 
-test('Em đăng nhập bằng mật khẩu tạm và phải đặt mật khẩu mới @TC-S3E1-35', async ({ request, browser }, testInfo) => {
+test('Em đăng nhập bằng mật khẩu tạm và phải đặt mật khẩu mới @TC-S3E1-35 @loai-B', async ({ request, browser }, testInfo) => {
   const w = await world(request);
   const mai = w.people['Chi Mai']!;
   const temp = ((await (await teacherApi.resetPassword(request, w.people['Cô Lan']!.token, w.classes['11A1']!.id, mai.id)).json()) as { tempPassword: string }).tempPassword;
