@@ -1,4 +1,4 @@
-# Phiên bản: v1.1 · 2026-11-27 (v1.1: thêm api aiOff, PO-85; hasPassword, PO-72 — runner-fix-po27) · US-S3E5-03 danh sách trường dữ liệu được phép thu (BR-S3E5-30).
+# Phiên bản: v1.2 · 2026-11-28 (v1.2: khóa/cột S5-E1 giáo án, T-261128-53; v1.1: thêm api aiOff, PO-85; hasPassword, PO-72 — runner-fix-po27) · US-S3E5-03 danh sách trường dữ liệu được phép thu (BR-S3E5-30).
 # Mỗi dòng: loại<TAB>thực thể<TAB>trường<TAB>lý do<TAB>mã quyết định. loại db = bảng.cột; api = khóa JSON.
 # Tên khớp mẫu cấm chỉ được có khi lý do bắt đầu bằng "NGOẠI LỆ". Thêm trường mới: thêm dòng ở đây, có lý do và mã PO-nn.
 # Test: quality/AllowedFieldsTest (quét tĩnh API), it/s3e5/AllowedFieldsS3E5IT (cột CSDL, gọi API thật).
@@ -1035,3 +1035,118 @@ api	api	sessionId	Mã phiên Trình chiếu mở từ Kết quả lớp (US-S3E6
 api	api	startStep	Bước bắt đầu của Trình chiếu mở từ Kết quả lớp (US-S3E6-01)	PO-66
 api	api	aiOff	Cờ lớp đã tắt trợ lý AI của thẻ "Cả lớp vướng ở đâu": dữ liệu thô kèm MSG-S3-98 (BR-S3E3-41)	PO-85
 api	api	hasPassword	Cờ tài khoản có mật khẩu: màn xóa tài khoản không hỏi mật khẩu khi false (US-S3E5-05, PO-72)	PO-72
+# --- T-261128-53 (S5-E1, trợ lý soạn giáo án; PO-27, PO-28) ---
+api	api	tietPpct	Tiết PPCT chọn trên form soạn giáo án (US-S5E1-01)	PO-28
+api	api	doiTuong	Đối tượng học sinh của giáo án (Cơ bản/Khá/Chuyên) (US-S5E1-01)	PO-28
+api	api	phongCach	Phong cách dạy của giáo án (US-S5E1-01)	PO-28
+api	api	kienThuc	Mã kiến thức trọng tâm của giáo án (US-S5E1-01)	PO-28
+api	api	soTiet	Số tiết của giáo án (US-S5E1-01)	PO-28
+api	api	phieuHocTap	Bật/tắt phiếu học tập (US-S5E1-01)	PO-28
+api	api	soBaiTap	Số bài tập trong phiếu (US-S5E1-01)	PO-28
+api	api	tiLe	Tỉ lệ NB/TH/VD/VDC (US-S5E1-01)	PO-28
+api	api	phanHoa	Phân hoá nhóm (US-S5E1-01)	PO-28
+api	api	phanMem	Phần mềm hình tích hợp (US-S5E1-01)	PO-28
+api	api	thietBi	Thiết bị sẵn có (US-S5E1-01)	PO-28
+api	api	ghiChu	Ghi chú tối đa 500 ký tự gửi AI như dữ liệu (không chứa định danh học sinh) (US-S5E1-01)	PO-28
+api	api	periodId	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	request	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	lockedSections	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	lesson	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	sections	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	mucTieu	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	nangLuc	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	phamChat	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	giaoVien	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	hocSinh	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	hoatDong	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	nhan	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	loai	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	loaiLabel	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	ten	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	thoiLuongPhut	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	oNha	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	sanPham	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	noiDung	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	toChuc	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	chuyenGiao	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	thucHien	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	baoCao	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	ketLuan	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	phatBieu	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	chuaSoat	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	tongPhut	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	cau	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	so	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	nguon	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	mucDo	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	de	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	kt	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	dapSo	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	dapSoNguon	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	nhanMay	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	buocGoiY	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	deXuat	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	viTri	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	vanDe	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	goiY	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	lyDo	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	chapters	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	lessons	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	periods	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	knowledge	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	focus	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	meta	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	fixKeys	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	checkLog	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+api	api	day	Khóa JSON của API giáo án (LessonPlanController, US-S5E1-01…03)	PO-27
+db	lesson_plan	id	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	org_id	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	teacher_id	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	code	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	period_id	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	request	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	status	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	content	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	reply	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	check_log	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	fix_keys	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	ai_calls	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	version	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	human_label	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	locked_sections	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	created_at	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan	updated_at	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_version	plan_id	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_version	org_id	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_version	version	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_version	content	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_version	created_at	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_turn	id	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_turn	org_id	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_turn	teacher_id	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_turn	turn_day	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_turn	kind	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_turn	plan_id	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_turn	counted	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lesson_plan_turn	created_at	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_ppct_lesson	lesson_no	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_ppct_lesson	chapter_no	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_ppct_lesson	chapter_title	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_ppct_lesson	title	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_ppct_period	id	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_ppct_period	lesson_no	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_ppct_period	ord	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_ppct_period	label	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_ppct_period	periods	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_ppct_period	focus	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_ppct_period	extra_knowledge	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_knowledge_unit	code	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_knowledge_unit	lesson_no	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_knowledge_unit	statement	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_knowledge_unit	status	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_exercise	code	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_exercise	lesson_no	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_exercise	level	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_exercise	statement	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_exercise	answer	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27
+db	lp_exercise	source	Cột giáo án / danh mục soạn giáo án (V525, US-S5E1-01…03)	PO-27

@@ -42,7 +42,31 @@ public class InstrumentedAiGateway implements AiGateway {
 
   private static final Logger log = LoggerFactory.getLogger(InstrumentedAiGateway.class);
   private static final Set<String> PURPOSES =
-      Set.of("scene", "solution", "hint", "qa", "lecture", "class_stuck");
+      Set.of(
+          "scene",
+          "solution",
+          "hint",
+          "qa",
+          "lecture",
+          "class_stuck",
+          // Chặng 5 (T-261128-53, theo báo cáo T-51): cả 8 task S5 (ai_purpose V500) thêm MỘT lần ở
+          // đây để các task AI sau không sửa dòng này.
+          "lesson_plan",
+          "lesson_patch",
+          "class_notice",
+          "kb_qa",
+          "grade_ocr",
+          "grade",
+          "exam_draft",
+          "class_errors");
+
+  /**
+   * Chi tiết lỗi khi nhà cung cấp từ chối an toàn ({@code stop_reason = refusal}): người gọi phân
+   * biệt "AI không xử lý được yêu cầu này" với "AI tạm thời chưa sẵn sàng" (S5-E1 giao-dien.md §2,
+   * MSG-S5-04) qua thông điệp của lỗi.
+   */
+  public static final String REFUSAL_MESSAGE = "AI không xử lý được yêu cầu này.";
+
   private static final Set<String> DRAFT_SCENE = Set.of("draft_ocr", "draft_read", "draft_build");
 
   private final AiProvider provider;
@@ -95,7 +119,8 @@ public class InstrumentedAiGateway implements AiGateway {
     String outcome = "success";
     AuthPrincipal who = RequestContext.isAuthenticated() ? RequestContext.principal() : null;
     String model = settings.model();
-    String promptVersion = settings.promptVersion();
+    String taskVersion = AnthropicPrompts.taskVersion(request.task());
+    String promptVersion = taskVersion != null ? taskVersion : settings.promptVersion();
     Simulation sim =
         control.simulationFor(who == null ? null : who.userId().toString(), currentLane());
     String scenario =
@@ -123,6 +148,9 @@ public class InstrumentedAiGateway implements AiGateway {
         throw new AppException(ErrorCode.TIMEOUT, "AI phản hồi quá thời gian cho phép.", e);
       }
       outcome = "error";
+      if (isRefusal(e.getCause())) {
+        throw new AppException(ErrorCode.DEPENDENCY_UNAVAILABLE, REFUSAL_MESSAGE, e);
+      }
       // không đưa thông điệp của nhà cung cấp ra ngoài (có thể chứa nội dung phản hồi thô)
       log.warn(
           "nhà cung cấp AI lỗi: provider={} task={} lỗi={}",
@@ -205,6 +233,11 @@ public class InstrumentedAiGateway implements AiGateway {
     } catch (RuntimeException e) {
       log.warn("không ghi được ai_call_log: {}", e.toString());
     }
+  }
+
+  /** Nhà cung cấp từ chối an toàn (AnthropicAiProvider: "… (refusal)"; giả lập: cùng câu). */
+  private static boolean isRefusal(Throwable cause) {
+    return cause != null && cause.getMessage() != null && cause.getMessage().contains("(refusal)");
   }
 
   /** Ước lượng token (≈ 4 ký tự một token) khi nhà cung cấp không trả số token thật (mock). */

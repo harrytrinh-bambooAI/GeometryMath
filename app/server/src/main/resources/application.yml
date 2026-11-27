@@ -122,6 +122,7 @@ geo:
   s5.ai-grading.enabled: ${GEO_S5_AI_GRADING_ENABLED:false}   # P5: S5-E6 AI đề xuất điểm (chờ PO-64, QS5-30)
   # --- T-261128-52 (S5-E2) ---
   # --- T-261128-53 (S5-E1) ---
+  s5.lesson-plan.daily-limit: ${GEO_S5_LESSON_PLAN_DAILY_LIMIT:30}   # BR-S5E1-08, QS5-04: lượt AI soạn (mới + vá) mỗi giáo viên mỗi ngày giờ VN
   # --- T-261128-54 (S5-E1, S5-E2 xuất) ---
   # --- T-261128-55 (S5-E5) ---
   # --- T-261128-56 (S5-E3) ---

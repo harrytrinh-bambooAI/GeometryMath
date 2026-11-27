@@ -125,6 +125,123 @@ public class MockAiProvider implements AiProvider {
     // --- T-261128-51 (khung) ---
     // --- T-261128-52 (S5-E2) ---
     // --- T-261128-53 (S5-E1) ---
+    if ("lesson_plan".equals(call.task())) {
+      // F-S5-093 (giáo án hợp lệ F-S5-021 dựng từ chính tin nhắn: số tiết, kiến thức, kho) và biến
+      // thể theo kịch bản của móc kiểm thử (scenario, hoặc qaReplies = danh sách theo lượt gọi):
+      // F-S5-093b Σ 50' (phạm A5) · keys (khoá sai dấu) · badkt (mã ngoài danh sách + dap_so do AI)
+      // · unsure (HĐ4 "unsure" + 1 de_xuat) · question · broken (JSON hỏng) · refusal · "{…}"
+      // nguyên
+      // văn.
+      String scripted = control.nextQa(call.scenario());
+      String variant =
+          scripted != null ? scripted : call.scenario() == null ? "F-S5-093" : call.scenario();
+      if (variant.startsWith("{")) {
+        return variant;
+      }
+      switch (variant) {
+        case "refusal" -> throw new IllegalStateException("AI từ chối yêu cầu (refusal)");
+        case "broken" -> {
+          return "{\"kind\":\"lesson\",\"meta\":{\"bai\":\"Bài 26";
+        }
+        case "question" -> {
+          return "{\"kind\":\"question\",\"text\":\"Thầy cô muốn soạn 1 hay 2 tiết?\","
+              + "\"field\":\"soTiet\"}";
+        }
+        default -> {
+          // dựng tiếp bên dưới
+        }
+      }
+      String p = call.prompt();
+      Matcher mn = Pattern.compile("Số tiết: (\\d+)").matcher(p);
+      int n = mn.find() ? Integer.parseInt(mn.group(1)) : 1;
+      Matcher mb = Pattern.compile("Bài: (.+?) \\(Toán 11").matcher(p);
+      Matcher mt = Pattern.compile("Tiết PPCT: (.+)").matcher(p);
+      Matcher mf = Pattern.compile("Kiến thức trọng tâm: (.+)").matcher(p);
+      java.util.List<String> focus =
+          mf.find() ? java.util.List.of(mf.group(1).trim().split(",\\s*")) : java.util.List.of();
+      Map<String, String> stmts = new java.util.LinkedHashMap<>();
+      Matcher mk = Pattern.compile("(?m)^- (KT11-[A-Z0-9-]+): (.+)$").matcher(p);
+      while (mk.find()) {
+        stmts.put(mk.group(1), mk.group(2));
+      }
+      java.util.List<String[]> kho = new java.util.ArrayList<>();
+      Matcher mx = Pattern.compile("(?m)^- ([A-Z0-9-]+) \\[(NB|TH|VD|VDC)\\] (.+)$").matcher(p);
+      while (mx.find()) {
+        kho.add(new String[] {mx.group(1), mx.group(2), mx.group(3)});
+      }
+      ObjectNode out = mapper.createObjectNode().put("kind", "lesson");
+      ObjectNode meta = out.putObject("meta");
+      meta.put("bai", mb.find() ? mb.group(1) : "");
+      meta.put("tiet", mt.find() ? mt.group(1).trim() : "");
+      meta.put("so_tiet", n).put("tong_phut", n * 45);
+      ObjectNode mtieu = out.putObject("muc_tieu");
+      ObjectNode kt0 = mtieu.putArray("kien_thuc").addObject();
+      kt0.put("noi_dung", "Xác định được khoảng cách theo định nghĩa và tính được bằng hệ thức.");
+      tools.jackson.databind.node.ArrayNode ktCodes = kt0.putArray("kt");
+      focus.forEach(ktCodes::add);
+      if ("badkt".equals(variant)) {
+        ktCodes.add("KT11-C08-DN-099");
+      }
+      mtieu.putArray("keys".equals(variant) ? " nang_luc" : "nang_luc").add("Tư duy và lập luận.");
+      mtieu.putArray("pham_chat").add("Chăm chỉ, trách nhiệm.");
+      ObjectNode tb = out.putObject("thiet_bi");
+      tb.putArray("giao_vien").add("Máy chiếu").add("Mô hình hình chóp");
+      tb.putArray("hoc_sinh").add("Thước, bút chì");
+      String[][] hd = {
+        {"mo-dau", "Khởi động: Khoảng cách từ điểm"},
+        {"hinh-thanh", "Hình thành: khoảng cách từ điểm đến mặt phẳng"},
+        {"luyen-tap", "Luyện tập: PHT1"},
+        {"van-dung", "Vận dụng: đo khoảng cách trong lớp học"}
+      };
+      int[] mins = {5 * n, 20 * n, 15 * n, ("F-S5-093b".equals(variant) ? 10 : 5) * n};
+      tools.jackson.databind.node.ArrayNode acts = out.putArray("hoat_dong");
+      for (int i = 0; i < 4; i++) {
+        ObjectNode a = acts.addObject();
+        a.put("ma", "HD" + (i + 1)).put("loai", hd[i][0]).put("ten", hd[i][1]);
+        a.put("thoi_luong_phut", mins[i]).put("o_nha", false);
+        a.put("muc_tieu", "HS đạt mục tiêu của " + hd[i][1] + ".");
+        a.put("noi_dung", "Nội dung " + hd[i][1] + ".");
+        a.put("san_pham", "Câu trả lời và lập luận của HS.");
+        ObjectNode tc = a.putObject("to_chuc");
+        tc.put("assign", "GV giao nhiệm vụ.").put("perform", "HS thực hiện cá nhân.");
+        tc.put("report", "HS báo cáo.");
+        tc.put(i == 0 && "keys".equals(variant) ? "ket_luận" : "conclude", "GV chốt.");
+        tools.jackson.databind.node.ArrayNode akt = a.putArray("kien_thuc");
+        if (i == 1) {
+          for (String c : focus) {
+            akt.addObject().put("kt", c).put("phat_bieu", stmts.getOrDefault(c, ""));
+          }
+        }
+      }
+      tools.jackson.databind.node.ArrayNode pht = out.putArray("phieu_hoc_tap");
+      if (p.contains("Phiếu học tập: có")) {
+        tools.jackson.databind.node.ArrayNode cau =
+            pht.addObject().put("ma", "PHT1").putArray("cau");
+        for (int i = 0; i < Math.min(3, kho.size()); i++) {
+          ObjectNode c = cau.addObject().put("so", i + 1).put("nguon", kho.get(i)[0]);
+          c.put("muc_do", kho.get(i)[1]).put("de", kho.get(i)[2]);
+          c.putArray("kt").add(focus.isEmpty() ? "" : focus.get(0));
+          if (i == 1 && "badkt".equals(variant)) {
+            c.put("dap_so", "a√6/3");
+          } else {
+            c.putNull("dap_so");
+          }
+          c.putArray("buoc_goi_y").add("Dựng hình chiếu vuông góc rồi áp dụng hệ thức.");
+        }
+      }
+      tools.jackson.databind.node.ArrayNode unsure = out.putArray("unsure");
+      tools.jackson.databind.node.ArrayNode deXuat = out.putArray("de_xuat");
+      if ("unsure".equals(variant)) {
+        unsure.add("HĐ4: chưa chắc thời lượng vận dụng đủ cho cả lớp.");
+        deXuat
+            .addObject()
+            .put("vi_tri", "HĐ4")
+            .put("van_de", "Tổng 50' > 45'")
+            .put("goi_y", "Giảm HĐ4 còn 5 phút.")
+            .put("ly_do", "Tổng thời lượng trên lớp phải bằng số tiết × 45.");
+      }
+      return mapper.writeValueAsString(out);
+    }
     // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
     // --- T-261128-55 (S5-E5) ---
     // --- T-261128-56 (S5-E3) ---
