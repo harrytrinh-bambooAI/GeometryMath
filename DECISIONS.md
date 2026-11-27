@@ -51,6 +51,7 @@ Phiên bản: v0.1 · 2026-11-26 · quyết định đã chốt — 1 dòng / qu
 | 2026-11-27 | Prompt-lab giáo án mở rộng 300 lượt sinh, trần 6M token API; bản chốt chạy lặp 3 lần/ca, báo trung bình ± KTC 95% và tỉ lệ ổn định (đạt cả 3 lần); judge chấm lặp ~20% để đo độ dao động | Owner duyệt sau vòng 100 lượt (a2f456a); 1 lần chạy không đủ tin cậy (V7 95,4 trên 6 ca → 85,0 trên 20 ca) |
 | 2026-11-27 | KPI chấm AI: tính toán = hướng 20 / bước 40 / kết quả 20 / hình 10 / trình bày 10; chứng minh = 25/50/0/15/10; 5 luật chặn; ngưỡng phát hành khởi điểm — chuẩn chung `artifacts/GEO/materials/baseline/KPI.md` | Owner "KPI OK" |
 | 2026-11-27 | Dữ liệu ĐỀ là miền riêng: ngân hàng câu gắn nhãn + mẫu câu tham số (đáp số engine, nhiễu từ lỗi thường gặp) + ma trận đề (ô cố định / ô xoay vòng theo tần suất đề lịch sử) + bộ lắp đề qua form. Bước 1 Sonnet thu thập + gắn nhãn đề lịch sử; bước 2 Opus dựng schema/ma trận/bộ lắp sau khi prompt-lab 300 xong (≤ 2 Opus) | Owner "Go" |
+| 2026-11-28 | Làm trọn chặng 2 và 3 trước: E2E trọn bộ (UI và tương tác bằng Playwright, phần còn lại qua API), danh sách lỗi có ảnh nhúng base64, không dẫn link tệp. Song song đặc tả chặng 5 (PO/BA/QC), story 1–3 ngày công, effort kiểm thử ≤ 30 % effort dev. Code chặng 5 làm sau khi có đặc tả và chặng 2, 3 qua E2E. Bỏ qua điều kiện mở chặng 5 ("trường cam kết pilot") theo lệnh owner | Owner /goal 28/11 |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
