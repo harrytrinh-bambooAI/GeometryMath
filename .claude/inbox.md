@@ -426,3 +426,4 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** đề TN THPT chính thức + minh hoạ (moet.gov.vn), đề ĐH khối A/B tự luận cũ, văn bản ma trận/đặc tả của Bộ (cần tra, ghi ngày); 84 đề MVP (problem-specs.json) làm mẫu câu; bo-mau (loi_thuong_gap → phương án nhiễu).
 - **Xong khi:** bảng tần suất chủ đề × năm có nguồn; schema + check.py exit 0; bộ lắp sinh ≥ 3 mã đề khớp ma trận 100%, đáp số khớp engine.
 - **Ngoài phạm vi:** app/** (nối app ở epic sau); chép nguyên văn đề có bản quyền ngoài đề chính thức của Bộ/Sở.
+- [28/11] BUG-S23-001 (Minor): app/e2e/reporters/evidence-reporter.ts dòng 227–229 khóa đếm thiếu title → đếm thiếu test vòng lặp (283 vs 285). Sửa cùng lô task chặng 5 đầu tiên đụng e2e. Nguồn: artifacts/GEO/evidence/E2E-S23-20261128/BUG-LIST.md
