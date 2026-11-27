@@ -396,3 +396,9 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - **Nguồn:** `app/server/src/main/resources/content/catalog-mvp.json` v1.0 (26/11/2026), `geometry/problem-specs.json`; phân bố hiện tại: Khoảng cách 20, Góc 12, Thể tích 8 (0 THPT), Diện tích 3, Mặt cầu 3.
 - **Xong khi:** IT nạp gói nội dung: 84 đề, 0 đề nhãn "Cần xem lại"; `make bench-mvp` (mock) xanh; `make verify` xanh; bảng phân bố mới 16–20/dạng.
 - **Ngoài phạm vi:** seed e2e (giữ 6 đề, TC-GEO-0125); đổi engine trừ khi đề hợp lệ bị kiểm sai (ghi rõ); kho Toán 11 trong artifacts/GEO/materials.
+
+## Hàng đợi chạy · 27/11/2026 (owner duyệt: xếp hàng, giới hạn 2 Opus)
+Đang chạy: content-bal (Opus, 46→84 đề), fix-po27 (Opus).
+1. Agent đầu tiên xong → soát độc lập nhánh đó (Sonnet, chỉ diff + "Xong khi", chỉ báo lỗi) + soát chéo toán 305 bài Toán 11 `artifacts/GEO/materials/lop-11/bai-tap` (Sonnet, chỉ báo lỗi, ghi `artifacts/GEO/evidence/REVIEW-L11-MATH-20261127.md`).
+2. Agent thứ hai xong → soát độc lập nhánh đó (Sonnet); E2E tách UI/API đợt 2 (Opus, worktree e2e-split2, cổng 54409) ngay khi đủ suất.
+3. Nhánh soát đạt → gộp worktree-mvp-wave0 → push.

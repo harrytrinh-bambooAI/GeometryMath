@@ -1,6 +1,6 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 ~09:30
+# PROGRESS · GeometryMath (GEO) · cập nhật 27/11/2026 chiều
 Mục tiêu hiện tại: chặng 3 chờ owner duyệt gate T-27, T-34; dọn inbox (FIX theo PO-DECISIONS, E2E đợt 2); kho bài giảng Toán 11.
-Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`), nhiều commit cục bộ CHƯA push (lần push cuối 5db3799). Không agent nào đang chạy.
+Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`), nhiều commit cục bộ CHƯA push (lần push cuối 5db3799). Đã push 16567a3. ĐANG CHẠY: content-bal (cân Kho đề 46→84, mỗi dạng 16–20) + fix-po27 (FIX PO-DECISIONS 27/11 + câu mở T-05); hàng đợi tiếp theo xem cuối .claude/inbox.md "Hàng đợi chạy".
 Đã xong 27/11 (phiên sáng):
 - FIX trước gate T-34 (Dev-S3E5-08, -16, assign lớp lưu trữ → CONFLICT V417).
 - Soát độc lập T-20…T-32 (`artifacts/GEO/evidence/REVIEW-T20-T32-20261127.md`) + lô FIX A/B (V418 REVOKE, V419, ClassAiSwitchFilter, audit denied, AccountPurgeJob cron, CSV, nhắc việc, sourcemap).
@@ -18,4 +18,4 @@ Bước tiếp theo:
 5. Kho bài giảng Toán 11: phiên riêng, `đọc artifacts/GEO/materials/PLAN-kho-bai-giang.md và làm`. Bài tập 305 bài chưa có soát chéo toán bởi model khác.
 Lưu ý vận hành: hook worktree chặn `source`, lệnh ghép `cd …; git`, vòng lặp git → dùng `git -C <repo>` từng lệnh và đích make; worktree con tạo trong `.claude/worktrees/` của wave0, mỗi cái app/.env.ports riêng. Đo AI thật: `cd app && zsh -i -c 'GEO_AI_PROVIDER=anthropic make bench-mvp'` (khoá trong ~/.zshrc).
 Inbox: .claude/inbox.md. Quyết định: DECISIONS.md (mới nhất 27/11 "Chiến lược E2E", "E2E tách UI/API").
-Rủi ro: thư mục rác `artifacts/GEO/evidence/MVP-METRICS-20261127-0803` (lần đo hỏng, untracked) — owner xoá tay; chưa push.
+Rủi ro: không. Owner tự kiểm tay 7 ca thiết bị thật rồi nghiệm thu L7 (S2, S3).
