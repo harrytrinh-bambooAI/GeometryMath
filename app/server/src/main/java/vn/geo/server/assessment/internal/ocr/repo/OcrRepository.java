@@ -123,13 +123,16 @@ public class OcrRepository {
         .update();
   }
 
-  public int deleteOfYear(String year) {
+  public int deleteOfYear(String year, UUID assignmentScope) {
     return jdbc.sql(
             """
             DELETE FROM ocr_artifact WHERE academic_year = :y
+              AND (CAST(:a AS uuid) IS NULL OR submission_id IN
+                   (SELECT s.id FROM submission s WHERE s.assignment_id = CAST(:a AS uuid)))
             -- sqllint:allow=tenant job xoá theo năm học chạy xuyên trường (BR-S5E4-28b)
             """)
         .param("y", year)
+        .param("a", assignmentScope)
         .update();
   }
 

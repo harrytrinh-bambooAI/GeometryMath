@@ -219,12 +219,18 @@ public class GradedAssignmentRepository {
         .optional();
   }
 
-  /** Số bài nộp đã có của một bài (theo ảnh đã lưu; T-261128-59 thay bằng bảng submission). */
+  /**
+   * Số bài nộp đã có của một bài = số hàng {@code submission} (nộp lại không tăng; T-261128-60,
+   * Dev-S5E4-08) + ảnh của móc kiểm thử T-57 không gắn phiên bản bài nộp nào (giữ ca cũ của móc).
+   */
   public int submissions(UUID orgId, UUID assignmentId) {
     return jdbc.sql(
             """
-            SELECT count(DISTINCT s.submission_id) FROM stored_image s
-            WHERE s.org_id = :orgId AND s.assignment_id = :a
+            SELECT (SELECT count(*) FROM submission b WHERE b.org_id = :orgId AND b.assignment_id = :a)
+                 + (SELECT count(DISTINCT s.submission_id) FROM stored_image s
+                    WHERE s.org_id = :orgId AND s.assignment_id = :a
+                      AND NOT EXISTS (SELECT 1 FROM submission_version v
+                                      WHERE v.org_id = :orgId AND v.id = s.submission_id))
             """)
         .param("orgId", orgId)
         .param("a", assignmentId)

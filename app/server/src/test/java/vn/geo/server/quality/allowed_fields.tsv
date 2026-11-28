@@ -1543,6 +1543,73 @@ api	api	h	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 0
 api	api	idempotencyKey	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
 api	api	derivedUploadId	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
 api	api	clarity	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+# --- T-261128-60 ---
+db	submission	grading_state	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	submission	row_version	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	submission	return_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	submission	returned_at	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	org_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	submission_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	assignment_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	class_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	student_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	seq	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	submission_version	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	rubric_version_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	criteria	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	total	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	comment	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	approved_by	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	approved_at	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	approved_grade	academic_year	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_audit	id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_audit	org_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_audit	assignment_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_audit	submission_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_audit	actor_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_audit	action	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_audit	before_value	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_audit	after_value	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_audit	n	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_audit	at	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_return	id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_return	org_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_return	assignment_id	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_return	returned_by	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_return	returned_at	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_return	n	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+db	grade_return	undone_at	Chấm tay, điểm duyệt, trả bài (US-S5E4-05, 06, 07, V705)	PO-64
+api	api	criteria	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	comment	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	ord	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	flags	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	summaryLine	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	notSubmitted	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	processing	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	waiting	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	returnable	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	prevSubmissionId	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	nextSubmissionId	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	maxPoints	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	score	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	scale	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	totalBefore	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	totalAfter	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	changes	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	actorId	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	undoUntil	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	returnedAt	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	returnedCount	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	undone	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	solutionStatus	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	rubricCode	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	rubricVersion	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	rubricName	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	detail	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	returned	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	grades	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
+api	api	withStudent	Khóa API chấm tay, trả bài (US-S5E4-05, 06, 07)	PO-64
 # --- T-261128-61 ---
 db	ai_grade_proposal	id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
 db	ai_grade_proposal	org_id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64

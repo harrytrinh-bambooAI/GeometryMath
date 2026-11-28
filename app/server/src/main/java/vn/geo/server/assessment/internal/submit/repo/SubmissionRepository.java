@@ -308,13 +308,33 @@ public class SubmissionRepository {
   public void setCurrentVersion(UUID orgId, UUID id, int version) {
     jdbc.sql(
             """
-            UPDATE submission SET current_version = :v, updated_at = now()
+            UPDATE submission SET current_version = :v, updated_at = now(),
+              grading_state = CASE WHEN grading_state = 'returned' THEN grading_state ELSE 'waiting' END
             WHERE org_id = :orgId AND id = :id
             """)
         .param("orgId", orgId)
         .param("id", id)
         .param("v", version)
         .update();
+  }
+
+  /**
+   * Trạng thái chấm hiệu lực (T-261128-60, BR-S5E4-15, 20): waiting | approved | returned; bài Đã
+   * duyệt của bài công bố giờ cố định coi là Đã trả khi đồng hồ CSDL tới giờ công bố.
+   */
+  public String gradingState(UUID orgId, UUID id) {
+    return jdbc.sql(
+            """
+            SELECT CASE WHEN s.grading_state = 'approved' AND g.release_mode = 'at_time' AND g.release_at <= now()
+                        THEN 'returned' ELSE s.grading_state END
+            FROM submission s JOIN graded_assignment g ON g.org_id = :orgId AND g.id = s.assignment_id
+            WHERE s.org_id = :orgId AND s.id = :id LIMIT 1
+            """)
+        .param("orgId", orgId)
+        .param("id", id)
+        .query(String.class)
+        .optional()
+        .orElse("waiting");
   }
 
   public void insertVersion(
@@ -503,13 +523,15 @@ public class SubmissionRepository {
   }
 
   /** Bài nộp của năm học đã kết thúc (phiên bản, bản đọc chữ xoá theo khoá ngoại). */
-  public int deleteOfYear(String year) {
+  public int deleteOfYear(String year, UUID assignmentScope) {
     return jdbc.sql(
             """
             DELETE FROM submission WHERE academic_year = :y
+              AND (CAST(:a AS uuid) IS NULL OR assignment_id = CAST(:a AS uuid))
             -- sqllint:allow=tenant job xoá theo năm học chạy xuyên trường (BR-S5E4-28b)
             """)
         .param("y", year)
+        .param("a", assignmentScope)
         .update();
   }
 
