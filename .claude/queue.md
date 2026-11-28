@@ -543,6 +543,17 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(assessment|aigateway)/|app/server/src/test/java/vn/geo/server/|app/e2e/tests/s5e[45]/|artifacts/GEO/evidence/REVIEW-S5-20261128\.md|artifacts/GEO/work/epics/S5-E4/(status|qc_findings)\.md)
 - Cổng: 54899
 
+## T-261128-72 · S5-FIX · L5 Dev FIX REVIEW mục 7 · epic-common v1.6 · wt s5-fix4 · 1.5h/3M · job ghi bù cặp điểm AI/GV khi điểm cắm AI lỗi lúc Duyệt [running]
+- Mục tiêu: REVIEW-S5-20261128 mục 7: khi `AiProposalSlot.approved(...)`/`recordFirstApproval` lỗi trong `AiProposalSlotAdvice` (điểm GV đã lưu, chỉ log.warn), cặp (điểm AI, điểm GV) không được mất êm. Cách đã chốt (DECISIONS 28/11): GIỮ giao dịch Duyệt không đổi (AI lỗi không làm hỏng chấm tay) + job ghi bù định kỳ/idempotent điền điểm GV còn thiếu vào bản so sánh song song (mở rộng cách ShadowService.comparison đang điền bù điểm AI), đếm số lần ghi bù (log/metric). Có IT: giả lập recordFirstApproval ném lỗi → chạy job → cặp đủ, KPI/cổng AI (BR-S5E6-14) tính đúng; chạy job 2 lần không nhân đôi. Cập nhật REVIEW mục 7 → "Đã sửa" (tăng v1.3) và qc_findings S5-E6.
+- Nguồn: artifacts/GEO/evidence/REVIEW-S5-20261128.md v1.2 mục 7 (28/11); epics/S5-E6 stories_ac.md (BR-S5E6-14); DECISIONS.md dòng 28/11 "REVIEW mục 7: job ghi bù"
+- Xong khi: verify + web-build + e2e-affected xanh; traceability --strict đạt; REVIEW mục 7 "Đã sửa", phiên bản v1.3.
+- Kiểm: `cd .claude/worktrees/s5-fix4/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5" && grep -q 'v1.3' ../artifacts/GEO/evidence/REVIEW-S5-20261128.md`
+- Ngoài phạm vi: đổi giao dịch Duyệt; tính năng khác; sửa đặc tả; gọi AI thật; bật cờ grading
+- Model: sonnet · Ngân sách: 1,5 giờ
+- Phụ thuộc: T-261128-71
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(assessment|aigrade|aigateway)/|app/server/src/main/resources/db/migration/|app/server/src/test/java/vn/geo/server/|app/e2e/tests/s5e6/|artifacts/GEO/evidence/REVIEW-S5-20261128\.md|artifacts/GEO/work/epics/S5-E6/(status|qc_findings)\.md)
+- Cổng: 54909
+
 ## T-261128-67 · GATE · Owner L7 chặng 5 (L5a phát hành; L5b/L5c chờ PO-64, bench QS5-27, lớp pilot) [wait-user]
 - Mục tiêu: owner quyết phát hành L5a (S5-E1, S5-E2, S5-E3, US-S5E5-01, 04); chốt QS5-01/QS5-30 (PO-64) để bật cờ grading (L5b); duyệt bench QS5-27 trước khi bật ai-grading cho lớp (L5c)
 - Nguồn: artifacts/GEO/evidence/E2E-S5/REPORT.md; s5/questions-s5.md v0.2; brief-s5 §5
