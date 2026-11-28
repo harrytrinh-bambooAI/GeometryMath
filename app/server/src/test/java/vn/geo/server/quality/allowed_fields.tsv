@@ -1838,3 +1838,9 @@ db	ai_class_gate	batches_done	Trạng thái cổng AI đề xuất của lớp (
 db	ai_class_gate	closed_at	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64
 db	ai_class_gate	close_reason	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64
 db	ai_class_gate	updated_at	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64
+# --- T-261128-68 ---
+db	ocr_artifact	reason	Lý do việc đọc chữ nền không được nhận lượt AI (Dev-S5E5-10, V846)	PO-64
+db	grade_review_open	org_id	Giờ mở màn chấm lần đầu cho KPI (g) (BR-S5E6-15, V847)	PO-64
+db	grade_review_open	submission_id	Giờ mở màn chấm lần đầu cho KPI (g) (BR-S5E6-15, V847)	PO-64
+db	grade_review_open	teacher_id	Giờ mở màn chấm lần đầu cho KPI (g) (BR-S5E6-15, V847)	PO-64
+db	grade_review_open	opened_at	Giờ mở màn chấm lần đầu cho KPI (g) (BR-S5E6-15, V847)	PO-64

@@ -2,6 +2,8 @@ import type { APIRequestContext, APIResponse } from '@playwright/test';
 import { expect } from '../../support/fixtures.ts';
 import { API, bearer, world, type ClassSpec, type Person, type World } from '../s3e1/s3e1.ts';
 import { bc01, rb01, type Graded } from '../s5e4/s5e4.ts';
+import { approve, ok, returnAll } from '../s5e4/review/grading.ts';
+import { P1, P2, aiOn, ack as submitAck, submitOk, waitOcr } from '../s5e4/submit/submit.ts';
 import { KT, json, tl01, type DocView } from './kb.ts';
 
 /**
@@ -157,9 +159,26 @@ export async function decisionOf(rq: APIRequestContext, orgId: string, userId: s
   return { ...d!, rule_code: d!.rule_code ?? null };
 }
 
-export async function release(rq: APIRequestContext, orgId: string, gradedId: string) {
-  const r = await json<{ updated: number }>(await rq.post(`${API}/test-hooks/s5e3/qa/release`, { data: { orgId, gradedId } }), 200);
-  expect(r.updated).toBe(1);
+/**
+ * "Cô Lan bấm Trả bài" luồng thật (US-S5E4-07, T-261128-68): học sinh nộp ảnh, cô duyệt theo RB-01 rồi Trả bài — mở
+ * khoá đáp số cho CHÍNH em (fn_kb_qa_context V845 cùng luật fn_graded_solution).
+ */
+export async function returnReal(rq: APIRequestContext, teacher: Person, student: Person, gradedId: string) {
+  await submitAck(rq, student);
+  const s = await submitOk(rq, student, gradedId, [P1, P2]);
+  await approve(rq, teacher, s.id, [2, 4, 2, 1, 1], 'Làm tốt');
+  const r = await ok<{ returned: number; status: string }>(await returnAll(rq, teacher, gradedId));
+  expect(r.returned).toBe(1);
+  return s;
+}
+
+/** Bài nộp của bạn có bản đọc chữ (AI chấm của lớp bật để việc đọc chữ nền chạy; mock F-S5-095 theo trang). */
+export async function peerSubmission(rq: APIRequestContext, teacher: Person, classId: string, peer: Person, gradedId: string) {
+  await aiOn(rq, teacher, classId);
+  await submitAck(rq, peer);
+  const s = await submitOk(rq, peer, gradedId, [P1, P2]);
+  await waitOcr(rq, teacher, s.id);
+  return s;
 }
 
 export async function lectureApproval(rq: APIRequestContext, approved: boolean) {

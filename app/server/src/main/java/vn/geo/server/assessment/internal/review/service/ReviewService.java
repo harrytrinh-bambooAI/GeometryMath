@@ -69,6 +69,9 @@ public class ReviewService {
     AuthPrincipal me = Roles.require(Role.TEACHER);
     Item i = support.ownedItem(me, submissionId);
     Row a = support.ownedAssignment(me, i.assignmentId());
+    if (!"approved".equals(i.state()) && !"returned".equals(i.state())) {
+      repo.markOpened(me.orgId(), i.id(), me.userId()); // KPI (g): giờ mở màn chấm (T-261128-68)
+    }
     Map<String, Object> m = GradingSupport.view(i);
     m.put("versionId", i.versionId().toString());
     m.put("submissionVersion", i.version());

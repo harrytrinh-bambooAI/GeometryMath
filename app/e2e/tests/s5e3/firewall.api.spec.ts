@@ -17,7 +17,8 @@ import {
   leak,
   mock,
   prompt,
-  release,
+  peerSubmission,
+  returnReal,
   setup,
   state,
   warningsUrl,
@@ -71,8 +72,8 @@ test('Học sinh dán đáp số nhờ xác nhận bị chặn trước khi gọ
 });
 
 test('Sau giờ công bố thì không chặn đáp số của chính bài @TC-S5E3-31', async ({ request }) => {
-  const { w, an, bc } = await setup(request);
-  await release(request, w.orgId, bc.id); // cô Lan bấm Trả bài
+  const { w, lan, an, bc } = await setup(request);
+  await returnReal(request, lan, an, bc.id); // An nộp, cô Lan duyệt rồi bấm Trả bài (luồng thật)
   await mock(request, an.id, 'F-S5-094b');
   const r = await ask(request, an, bc.id, 'Khoảng cách từ A đến (SBC) bằng bao nhiêu?');
   expect(r.kind).toBe('concept');
@@ -99,7 +100,7 @@ test('Mục tài liệu chứa đáp số của bài đang khoá không được
 });
 
 test('Ghi chú riêng, rubric và bài của bạn không bao giờ tới AI hay học sinh @TC-S5E3-33', async ({ request }) => {
-  const { an, bc } = await setup(request, 'hints_concepts', { privateNote: PRIVATE_NOTE });
+  const { w, lan, an, bc, c11 } = await setup(request, 'hints_concepts', { privateNote: PRIVATE_NOTE });
   await mock(request, an.id, 's5e3-leak');
   for (const q of ['Bạn Mai làm bài này thế nào?', 'Rubric chấm bài này ra sao?', Q_SC1]) {
     const r = await ask(request, an, bc.id, q);
@@ -107,6 +108,15 @@ test('Ghi chú riêng, rubric và bài của bạn không bao giờ tới AI hay
     for (const s of [PRIVATE_NOTE, RUBRIC_LINE, 'a√3/3', 'Chi Mai']) expect(p, `yêu cầu AI của "${q}"`).not.toContain(s);
     expect(leak(JSON.stringify(r)), `phản hồi của "${q}"`).toBeNull();
   }
+  // bài nộp thật của bạn Chi Mai (bản đọc chữ F-S5-095): câu trả lời chép lại nội dung bài của bạn bị chặn
+  const mai = w.people['Chi Mai']!;
+  await peerSubmission(request, lan, c11.id, mai, bc.id);
+  const line = 'Kẻ AH ⊥ SB tại H. Vì BC ⊥ (SAB) nên AH ⊥ (SBC).';
+  await mock(request, an.id, JSON.stringify({ kind: 'concept', reply: `Bạn Mai làm thế này: ${line}` }));
+  const r = await ask(request, an, bc.id, Q_SC1);
+  expect(r.reply).not.toContain('Vì BC ⊥ (SAB)');
+  expect((await decisionOf(request, w.orgId, an.id, r.interactionId)).rule_code).toBe('private_content');
+  expect((await prompt(request, r.interactionId)) ?? '').not.toContain('Vì BC ⊥ (SAB)');
 });
 
 test('Bộ kiểm lỗi thì đóng, không trả nội dung dở @TC-S5E3-34', async ({ request }) => {

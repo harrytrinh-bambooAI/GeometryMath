@@ -186,14 +186,15 @@ export function SubmitPage() {
     if (!offline) return;
     const again = () => void send(pages);
     window.addEventListener('online', again);
-    if (navigator.onLine && !sending.current) {
-      const t = window.setTimeout(again, 1500);
-      return () => {
-        window.clearTimeout(t);
-        window.removeEventListener('online', again);
-      };
-    }
-    return () => window.removeEventListener('online', again);
+    // Thử lại định kỳ: WebKit không luôn phát sự kiện 'online' / cập nhật navigator.onLine khi mạng trở lại
+    // (TC-S5E4-49 trượt riêng ui-webkit; T-261128-68). Lần gửi lỗi mạng chỉ ghi lại nháp, cùng khóa lũy đẳng.
+    const t = window.setInterval(() => {
+      if (!sending.current) again();
+    }, navigator.onLine ? 1500 : 3000);
+    return () => {
+      window.clearInterval(t);
+      window.removeEventListener('online', again);
+    };
   }, [offline, pages, send]);
 
   async function onFile(e: React.ChangeEvent<HTMLInputElement>) {

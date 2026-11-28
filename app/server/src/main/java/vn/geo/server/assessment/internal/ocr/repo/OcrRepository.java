@@ -22,10 +22,11 @@ public class OcrRepository {
       String status,
       String pagesJson,
       UUID editedBy,
-      Instant createdAt) {}
+      Instant createdAt,
+      String reason) {}
 
   private static final String COLS =
-      "o.id, o.submission_id, o.version_id, o.version, o.status, o.pages::text AS pages, o.edited_by, o.created_at";
+      "o.id, o.submission_id, o.version_id, o.version, o.status, o.pages::text AS pages, o.edited_by, o.created_at, o.reason";
 
   private final JdbcClient jdbc;
 
@@ -42,7 +43,8 @@ public class OcrRepository {
         rs.getString("status"),
         rs.getString("pages"),
         rs.getObject("edited_by", UUID.class),
-        rs.getTimestamp("created_at").toInstant());
+        rs.getTimestamp("created_at").toInstant(),
+        rs.getString("reason"));
   }
 
   /** Mọi phiên bản bản đọc chữ của một phiên bản bài nộp, cũ trước. */
@@ -81,13 +83,29 @@ public class OcrRepository {
       String pagesJson,
       UUID editedBy,
       String year) {
+    return append(
+        orgId, id, submissionId, versionId, studentId, status, pagesJson, editedBy, year, null);
+  }
+
+  /** Như trên, kèm lý do không nhận lượt AI (bản "failed" của việc nền; Dev-S5E5-10). */
+  public int append(
+      UUID orgId,
+      UUID id,
+      UUID submissionId,
+      UUID versionId,
+      UUID studentId,
+      String status,
+      String pagesJson,
+      UUID editedBy,
+      String year,
+      String reason) {
     return jdbc.sql(
             """
             INSERT INTO ocr_artifact (id, org_id, submission_id, version_id, student_id, version, status, pages,
-                                      edited_by, academic_year)
+                                      edited_by, academic_year, reason)
             SELECT :id, :orgId, :sub, :v, :st,
                    COALESCE((SELECT max(x.version) FROM ocr_artifact x WHERE x.org_id = :orgId AND x.version_id = :v), 0) + 1,
-                   :status, CAST(:pages AS jsonb), :by, :y
+                   :status, CAST(:pages AS jsonb), :by, :y, :reason
             RETURNING version
             """)
         .param("id", id)
@@ -99,6 +117,7 @@ public class OcrRepository {
         .param("pages", pagesJson)
         .param("by", editedBy)
         .param("y", year)
+        .param("reason", reason)
         .query(Integer.class)
         .single();
   }

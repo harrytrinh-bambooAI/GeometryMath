@@ -144,6 +144,8 @@ export interface Ocr {
   status: 'pending' | 'done' | 'failed';
   statusLabel: string;
   canRetry: boolean;
+  /** lý do không nhận lượt AI (hạn mức / AI chấm tắt; T-261128-68) */
+  reason?: string;
   version?: number;
   editedBy?: string;
   aiAuthored?: boolean;

@@ -77,7 +77,12 @@ public class GradingSupport {
   public static List<Map<String, Object>> flags(Item i) {
     List<Map<String, Object>> f = new ArrayList<>();
     if ("failed".equals(i.ocr())) {
-      f.add(Map.of("code", "unreadable", "label", "Chưa đọc được"));
+      f.add(
+          Map.of(
+              "code",
+              "unreadable",
+              "label",
+              i.ocrReason() == null ? "Chưa đọc được" : "AI không chấm: " + i.ocrReason()));
     }
     if (i.lateSeconds() != null) {
       f.add(

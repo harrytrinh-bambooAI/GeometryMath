@@ -60,6 +60,14 @@ public class OcrService {
   public static final String LABEL_DONE = "Đã đọc chữ";
   public static final String LABEL_FAILED = "Chưa đọc được";
 
+  /**
+   * Nhãn bản "failed": việc nền không được nhận lượt AI thì hiện lý do (Dev-S5E5-10, TC-S5E5-23),
+   * AI lỗi thật thì "Chưa đọc được".
+   */
+  public static String failedLabel(String reason) {
+    return reason == null ? LABEL_FAILED : "AI không chấm: " + reason;
+  }
+
   private final OcrRepository repo;
   private final SubmissionRepository subs;
   private final ImageStoreService images;
@@ -118,10 +126,12 @@ public class OcrService {
             .orElseThrow();
     ArrayNode pages = mapper.createArrayNode();
     boolean ok = true;
+    String reason = null;
     for (int p = 1; p <= ver.pages(); p++) {
       AiQuota.Admission a = quota.admitGrading(orgId, sub.classId(), "grade_ocr");
       if (!a.allowed()) {
         ok = false;
+        reason = a.reason(); // Dev-S5E5-10: màn hiện lý do thay cho "Chưa đọc được"
         break;
       }
       String prompt = prompt(p, aiImage(orgId, versionId, p));
@@ -152,7 +162,8 @@ public class OcrService {
         ok ? "done" : "failed",
         ok ? mapper.writeValueAsString(pages) : "[]",
         null,
-        sub.schoolYear());
+        sub.schoolYear(),
+        ok ? null : reason);
   }
 
   /**
@@ -255,7 +266,10 @@ public class OcrService {
     }
     boolean failed = "failed".equals(pick.status());
     m.put("status", failed ? "failed" : "done");
-    m.put("statusLabel", failed ? LABEL_FAILED : LABEL_DONE);
+    m.put("statusLabel", failed ? failedLabel(pick.reason()) : LABEL_DONE);
+    if (failed && pick.reason() != null) {
+      m.put("reason", pick.reason());
+    }
     m.put("canRetry", failed && !running.contains(v.id()));
     if (!failed) {
       m.put("version", pick.version());

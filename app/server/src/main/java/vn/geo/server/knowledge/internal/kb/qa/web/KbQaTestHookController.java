@@ -22,8 +22,6 @@ public class KbQaTestHookController {
 
   public record Firewall(UUID userId, Long delayMs, Boolean fault) {}
 
-  public record Release(UUID orgId, UUID gradedId) {}
-
   public record LectureApproval(String slug, boolean approved) {}
 
   private final KbQaTestHookService hooks;
@@ -51,11 +49,6 @@ public class KbQaTestHookController {
   public Map<String, Object> firewall(@RequestBody Firewall f) {
     hooks.firewall(f.userId(), f.delayMs(), f.fault());
     return Map.of("ok", true);
-  }
-
-  @PostMapping("/test-hooks/s5e3/qa/release")
-  public Map<String, Object> release(@RequestBody Release r) {
-    return Map.of("updated", hooks.release(r.orgId(), r.gradedId()));
   }
 
   @PostMapping("/test-hooks/s5e3/qa/lecture")

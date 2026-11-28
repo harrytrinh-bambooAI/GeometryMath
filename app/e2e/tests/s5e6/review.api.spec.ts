@@ -199,3 +199,20 @@ test('Sửa điểm sau khi thấy đề xuất không đổi cặp đã lưu @T
   expect(cmp.pairs).toBe(5);
   expect(cmp.criteria.find((x) => x.name === 'Các bước')).toMatchObject({ aiPoints: 3, teacherPoints: 2.5 });
 });
+
+// ------------------------------------------------------------------ T-261128-68: KPI (g) từ luồng thật
+test('Thời gian duyệt (g) tính từ lúc mở màn chấm tới Duyệt, luồng thật @TC-S5E6-37', async ({ request }) => {
+  const c = await setup(request, 'ai_proposal');
+  await mock(request, c.w.people['Bình An']!, [gradeJson()]);
+  const { sub } = await submit(request, c, 'Bình An');
+  const v = await waitAi(request, c.lan, sub.id); // cô Lan mở màn chấm (ghi giờ mở lần đầu)
+  expect(v.ai).toMatchObject({ aiStatus: 'proposed' });
+  await new Promise((r) => setTimeout(r, 1100));
+  const r = await gradeRaw(request, c.lan, sub.id, { version: v.version, acceptAll: true, comment: '' });
+  expect(r.status(), await r.text()).toBe(200);
+  const rep = await request.get(`${API}/api/v1/teacher/my-classes/${c.c11.id}/ai-grading/report`, { headers: bearer(c.lan.token) });
+  expect(rep.status(), await rep.text()).toBe(200);
+  const g = ((await rep.json()) as { metrics: { g: { medianSeconds: number | null; n: number } } }).metrics.g;
+  expect(g.n).toBe(1);
+  expect(g.medianSeconds).toBeGreaterThanOrEqual(1);
+});

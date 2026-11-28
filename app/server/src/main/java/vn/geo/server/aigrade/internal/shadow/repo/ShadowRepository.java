@@ -41,6 +41,28 @@ public class ShadowRepository {
     }
   }
 
+  /**
+   * Số bài nộp của cùng bài có chấm nộp TRƯỚC bài này (theo giờ tạo, rồi mã) — luật "tối thiểu 2
+   * bài" của lấy mẫu song song (US-S5E6-04, BR-S5E6-17; T-261128-68).
+   */
+  public int earlier(UUID orgId, UUID assignmentId, UUID submissionId) {
+    Integer n =
+        jdbc.sql(
+                """
+                SELECT count(*) FROM submission o
+                JOIN submission s ON s.org_id = o.org_id AND s.id = :sid
+                WHERE o.org_id = :orgId AND s.org_id = :orgId AND o.assignment_id = :a
+                  AND (o.created_at, o.id) < (s.created_at, s.id)
+                -- sqllint:allow=ownership read model: thứ tự bài nộp (assessment) cho lấy mẫu song song
+                """)
+            .param("orgId", orgId)
+            .param("sid", submissionId)
+            .param("a", assignmentId)
+            .query(Integer.class)
+            .single();
+    return n == null ? 0 : n;
+  }
+
   public Optional<SubInfo> info(UUID orgId, UUID submissionId) {
     return jdbc.sql(
             """

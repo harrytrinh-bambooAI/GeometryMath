@@ -73,19 +73,6 @@ public class KbQaTestHookRepository {
         .listOfRows();
   }
 
-  /** "Cô Lan bấm Trả bài" (màn Trả bài của T-261128-60 chưa có): bài có chấm đã trả. */
-  public int release(UUID orgId, UUID gradedId) {
-    return jdbc.sql(
-            """
-            UPDATE graded_assignment SET status = 'returned', updated_at = now()
-            WHERE org_id = :orgId AND id = :id
-            -- sqllint:allow=ownership móc e2e: Trả bài (T-261128-60) chưa có, công bố đáp số BC-01
-            """)
-        .param("orgId", orgId)
-        .param("id", gradedId)
-        .update();
-  }
-
   /**
    * Bật/tắt nhãn "Giáo viên đã duyệt" của bài giảng mẫu e2e (hàm chỉ có trong CSDL e2e, seed
    * s5_400).

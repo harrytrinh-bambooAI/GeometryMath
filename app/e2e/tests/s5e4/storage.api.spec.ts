@@ -2,6 +2,7 @@ import { expect, test } from '../../support/fixtures.ts';
 import { API, PASSWORD, bearer, hook } from '../s3e1/s3e1.ts';
 import { deleteAccount } from '../s3e5/account.ts';
 import { EXIF_JPG, hasMetadata, isJpeg, pageUrl, setup, sha256, state, submitImage } from './s5e4.ts';
+import { ack, aiOn, submitOk, waitOcr } from './submit/submit.ts';
 
 /**
  * US-S5E4-08 — kho ảnh bài làm: mã hoá khi lưu, URL ký 5 phút, gỡ EXIF/GPS, xoá theo tài khoản và năm học, ảnh gửi AI.
@@ -127,27 +128,28 @@ test('Hết năm học job xoá ảnh và bản đọc chữ @TC-S5E4-44', async
 });
 
 test('Yêu cầu gửi AI không có EXIF và danh tính @TC-S5E4-45', async ({ request }) => {
+  // T-261128-68: luồng thật — Bình An nộp 2 trang exif-gps.jpg, việc đọc chữ nền grade_ocr chạy (AI chấm của 11A1 bật)
   const { w, lan, c11, bc } = await setup(request);
   const an = w.people['Bình An']!;
-  // AI chấm của 11A1 bật (US-S5E5-04; mặc định tắt)
-  const on = await request.put(`${API}/api/v1/teacher/my-classes/${c11.id}/ai-switches`, { headers: bearer(lan.token), data: { aiGrading: true } });
-  expect(on.status(), await on.text()).toBe(200);
-  const s = await submitImage(request, w, bc.id, an);
-  const out = (await hook(request, 's5e4/ocr', { orgId: w.orgId, userId: lan.id, role: 'TEACHER', submissionId: s.submissionId, pageNo: 1 })) as {
-    status: string;
-    reply: string;
-  };
-  expect(out.status).toBe('done');
-  const reply = JSON.parse(out.reply) as { text: string; unsure: unknown[]; request: string };
-  expect(reply.unsure).toHaveLength(2); // F-S5-095
-  const req = reply.request;
-  // ảnh trong yêu cầu ở giả lập không có EXIF/GPS
-  const b64 = req.split('base64,')[1]!;
-  const img = Buffer.from(b64, 'base64');
-  expect(isJpeg(img)).toBe(true);
-  expect(hasMetadata(img)).toBe(false);
-  // không danh tính: tên, mã người dùng, mã lớp, id
-  for (const bad of ['Bình An', an.userCode, c11.code, an.id, c11.id, w.orgId, 'Cô Lan', '11A1']) {
-    expect(req, bad).not.toContain(bad);
+  expect(hasMetadata(EXIF_JPG), 'ảnh mẫu có EXIF').toBe(true);
+  await ack(request, an);
+  await aiOn(request, lan, c11.id);
+  const bn01 = await submitOk(request, an, bc.id, [EXIF_JPG, EXIF_JPG]);
+  const o = await waitOcr(request, lan, bn01.id);
+  expect(o.status).toBe('done');
+  expect(o.pages.flatMap((p) => p.segments).filter((x) => x.unsure)).toHaveLength(2); // F-S5-095: mỗi trang 1 đoạn chưa chắc
+  for (const n of ['1', '2']) {
+    // yêu cầu grade_ocr của trang n (cùng ảnh + prompt việc nền đã gửi)
+    const r = await request.get(`${API}/test-hooks/s5e4/submit/ocr-prompt?${new URLSearchParams({ orgId: w.orgId, versionId: bn01.versionId, pageNo: n })}`);
+    expect(r.status()).toBe(200);
+    const req = ((await r.json()) as { prompt: string }).prompt;
+    // ảnh trong yêu cầu không có EXIF/GPS
+    const img = Buffer.from(req.split('base64,')[1]!, 'base64');
+    expect(isJpeg(img)).toBe(true);
+    expect(hasMetadata(img)).toBe(false);
+    // không danh tính: tên, mã người dùng, mã lớp, id
+    for (const bad of ['Bình An', an.userCode, c11.code, an.id, c11.id, w.orgId, 'Cô Lan', '11A1']) {
+      expect(req, bad).not.toContain(bad);
+    }
   }
 });
