@@ -1,5 +1,6 @@
 package vn.geo.server.assessment.internal.ocr.service;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.LinkedHashMap;
@@ -135,6 +136,8 @@ public class OcrService {
         break;
       }
       String prompt = prompt(p, aiImage(orgId, versionId, p));
+      UUID caller = RequestContext.principal().userId();
+      Instant askedAt = Instant.now().minusMillis(5);
       JsonNode reply = null;
       for (int attempt = 0; attempt < 2 && reply == null; attempt++) { // gọi lại 1 lần (PO-78)
         try {
@@ -144,6 +147,7 @@ public class OcrService {
               "grade_ocr trang {} lần {} lỗi: {}", p, attempt + 1, e.getClass().getSimpleName());
         }
       }
+      addTokens(orgId, sub.classId(), caller, askedAt);
       if (reply == null) {
         ok = false;
         break;
@@ -164,6 +168,18 @@ public class OcrService {
         null,
         sub.schoolYear(),
         ok ? null : reason);
+  }
+
+  /** Cộng token thật của các lượt grade_ocr vừa gọi vào trần token của lớp (REVIEW-S5 mục 8). */
+  private void addTokens(UUID orgId, UUID classId, UUID userId, Instant since) {
+    if (classId == null) {
+      return;
+    }
+    try {
+      quota.addTokensSince(orgId, classId, userId, since);
+    } catch (RuntimeException e) {
+      log.warn("không cộng được token AI của lớp: {}", e.toString());
+    }
   }
 
   /**

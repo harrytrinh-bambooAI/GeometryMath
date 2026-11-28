@@ -24,6 +24,9 @@ public interface AiQuota {
   /** Lý do cờ "AI không chấm" khi lớp hết lượt chấm (US-S5E5-04-FC3). */
   String REASON_GRADE_QUOTA = "lớp đã hết lượt AI hôm nay";
 
+  /** Lý do cờ "AI không chấm" khi lớp đã chạm trần token trong ngày (REVIEW-S5 mục 8). */
+  String REASON_TOKEN_QUOTA = "lớp đã hết hạn mức token AI hôm nay";
+
   /** Lý do cờ "AI không chấm" khi AI chấm của lớp tắt hoặc tắt khẩn. */
   String REASON_GRADE_OFF = "AI chấm của lớp đang tắt";
 
