@@ -1298,6 +1298,73 @@ db	lesson_plan_patch	section	Cột duyệt / phiên bản / bản vá giáo án 
 db	lesson_plan_patch	patches	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
 db	lesson_plan_patch	decisions	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
 db	lesson_plan_patch	created_at	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+# --- T-261128-57 ---
+db	rubric	id	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric	org_id	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric	teacher_id	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric	code	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric	current_version	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric	created_at	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric	updated_at	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_version	id	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_version	org_id	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_version	rubric_id	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_version	version	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_version	name	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_version	template	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_version	scale	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_version	guide	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_version	created_by	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_version	created_at	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_criterion	id	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_criterion	org_id	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_criterion	rubric_version_id	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_criterion	ord	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_criterion	name	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_criterion	description	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_criterion	max_points	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	rubric_criterion	direction_dependent	Rubric có phiên bản của giáo viên (US-S5E4-01, V625)	PO-64
+db	graded_assignment	id	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	org_id	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	teacher_id	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	class_id	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	code	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	title	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	problem_version_id	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	exam_set_id	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	exam_code	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	rubric_version_id	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	scale	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	due_at	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	allow_late	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	grading_mode	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	release_mode	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	release_at	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	status	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	created_at	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	graded_assignment	updated_at	Bài có chấm: đề, rubric, hạn nộp, chế độ chấm, lịch công bố (US-S5E4-02, V625)	PO-64
+db	stored_image	id	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	org_id	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	assignment_id	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	submission_id	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	page_no	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	kind	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	student_id	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	class_id	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	academic_year	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	content_type	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	sha256	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	bytes	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	object_key	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	stored_image	created_at	Siêu dữ liệu ảnh bài làm trong kho mã hoá, không tên học sinh (US-S5E4-08, V625)	PO-64
+db	assessment_audit	id	AuditEvent xoá ảnh: chỉ số lượng, không nội dung (US-S5E4-08, V625)	PO-64
+db	assessment_audit	org_id	AuditEvent xoá ảnh: chỉ số lượng, không nội dung (US-S5E4-08, V625)	PO-64
+db	assessment_audit	actor_id	AuditEvent xoá ảnh: chỉ số lượng, không nội dung (US-S5E4-08, V625)	PO-64
+db	assessment_audit	action	AuditEvent xoá ảnh: chỉ số lượng, không nội dung (US-S5E4-08, V625)	PO-64
+db	assessment_audit	target_id	AuditEvent xoá ảnh: chỉ số lượng, không nội dung (US-S5E4-08, V625)	PO-64
+db	assessment_audit	detail	AuditEvent xoá ảnh: chỉ số lượng, không nội dung (US-S5E4-08, V625)	PO-64
+db	assessment_audit	n	AuditEvent xoá ảnh: chỉ số lượng, không nội dung (US-S5E4-08, V625)	PO-64
+db	assessment_audit	at	AuditEvent xoá ảnh: chỉ số lượng, không nội dung (US-S5E4-08, V625)	PO-64
 # --- T-261128-56 ---
 db	kb_document	id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
 db	kb_document	org_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
