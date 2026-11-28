@@ -571,6 +571,64 @@ public class MockAiProvider implements AiProvider {
     }
     // --- T-261128-62 (S5-E6) ---
     // --- T-261128-63 (S5-E2, S5-E3) ---
+    if ("exam_draft".equals(call.task())) {
+      // Trợ lý soạn đề nháp (US-S5E2-06): "Số đề: N" trong tin nhắn; thứ tự AI trả: 2 đề dựng được,
+      // 1
+      // đề engine không dựng được (bộ dựng lạ), rồi các đề dựng được. Biến thể theo kịch bản:
+      // "s5e2-draft-mismatch" = đề đầu ghi đáp số a√3/3 trong khi engine tính a√6/3 (FC3); "{…}"
+      // nguyên văn; qaReplies = danh sách theo lượt gọi.
+      String scripted = control.nextQa(call.scenario());
+      String variant = scripted != null ? scripted : call.scenario() == null ? "" : call.scenario();
+      if (variant.startsWith("{")) {
+        return variant;
+      }
+      Matcher mn = Pattern.compile("Số đề: (\\d+)").matcher(call.prompt());
+      int n = mn.find() ? Math.min(10, Math.max(1, Integer.parseInt(mn.group(1)))) : 5;
+      String sec = "Hệ thức 1/AH²";
+      String[][] valid = {{"a√2", "a√6/3"}, {"a", "a√2/2"}, {"a√3", "a√3/2"}, {"2a", "2a√5/5"}};
+      ObjectNode out = mapper.createObjectNode();
+      tools.jackson.databind.node.ArrayNode arr = out.putArray("drafts");
+      int v = 0;
+      for (int i = 0; i < n; i++) {
+        ObjectNode d = arr.addObject();
+        if (i == 2) {
+          d.put(
+              "statement",
+              "Cho lăng trụ xiên ABC.A'B'C' có đáy là tam giác đều cạnh a, hình chiếu của A' lên đáy"
+                  + " lệch tâm. Tính khoảng cách từ A' đến mặt phẳng (ABC).");
+          d.put("section", "Khoảng cách từ điểm đến mặt phẳng");
+          ObjectNode sc = d.putObject("scene");
+          sc.put("template", "prism_oblique_custom");
+          sc.putObject("params").put("a", "a");
+          sc.put("unit", "a");
+          ObjectNode q = sc.putArray("asked").addObject();
+          q.put("name", "");
+          q.put("kind", "dist_point_plane");
+          q.putArray("points").add("A'").add("A").add("B").add("C");
+          d.put("answer", "a√6/3");
+          continue;
+        }
+        String[] p = valid[v % valid.length];
+        v++;
+        String sa = p[0];
+        d.put(
+            "statement",
+            "Cho hình chóp S.ABCD đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = "
+                + sa
+                + ". Tính khoảng cách từ A đến mặt phẳng (SBC).");
+        d.put("section", sec);
+        ObjectNode sc = d.putObject("scene");
+        sc.put("template", "pyramid_square_sa");
+        sc.putObject("params").put("a", "a").put("sa", sa);
+        sc.put("unit", "a");
+        ObjectNode q = sc.putArray("asked").addObject();
+        q.put("name", "");
+        q.put("kind", "dist_point_plane");
+        q.putArray("points").add("A").add("S").add("B").add("C");
+        d.put("answer", i == 0 && "s5e2-draft-mismatch".equals(variant) ? "a√3/3" : p[1]);
+      }
+      return mapper.writeValueAsString(out);
+    }
     // --- T-261128-64 (S5-E5) ---
     // --- T-261128-65 (S5-E6) ---
     // --- FIX chặng 5 (task FIX T-261128-*) ---

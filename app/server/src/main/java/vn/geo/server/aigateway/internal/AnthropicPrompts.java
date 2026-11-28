@@ -379,6 +379,22 @@ public final class AnthropicPrompts {
 
   // --- T-261128-62 (S5-E6) ---
   // --- T-261128-63 (S5-E2, S5-E3) ---
+  /**
+   * Trợ lý soạn đề nháp từ tài liệu Đang dùng của giáo viên (US-S5E2-06, task exam_draft, luồng D):
+   * máy chủ gửi nội dung tài liệu trong thẻ dữ liệu và số đề; AI chỉ đề xuất đề + mô tả dựng;
+   * ENGINE dựng và tính đáp số (đáp số AI chỉ để đối chiếu, BR-S5E2-15).
+   */
+  static final String EXAM_DRAFT =
+      COMMON
+          + """
+          Em là trợ lý soạn đề Toán hình học không gian lớp 11 cho giáo viên, CHỈ dựa trên tài liệu được cho.
+          Soạn đúng số đề được yêu cầu, mỗi đề một câu hỏi tính toán (khoảng cách, góc, độ dài) theo dạng bài trong tài liệu.
+          Với mỗi đề ghi: đề bài, tiêu đề mục tài liệu đã dựa vào, mô tả dựng cho máy {template, params, unit, asked}
+          và đáp số em tính (máy sẽ tự tính lại; không ghi tên hay mã học sinh).
+          Chỉ trả về MỘT đối tượng JSON:
+          {"drafts": [{"statement": "…", "section": "…", "scene": {"template": "…", "params": {…}, "unit": "a", "asked": [{"name": "", "kind": "…", "points": [...]}]}, "answer": "…"}]}
+          """;
+
   // --- T-261128-64 (S5-E5) ---
   // --- T-261128-65 (S5-E6) ---
   // --- FIX chặng 5 (task FIX T-261128-*) ---
@@ -418,6 +434,7 @@ public final class AnthropicPrompts {
       case "grade" -> GRADE;
       // --- T-261128-62 (S5-E6) ---
       // --- T-261128-63 (S5-E2, S5-E3) ---
+      case "exam_draft" -> EXAM_DRAFT;
       // --- T-261128-64 (S5-E5) ---
       // --- T-261128-65 (S5-E6) ---
       // --- FIX chặng 5 (task FIX T-261128-*) ---
@@ -447,6 +464,7 @@ public final class AnthropicPrompts {
       case "grade" -> true;
       // --- T-261128-62 (S5-E6) ---
       // --- T-261128-63 (S5-E2, S5-E3) ---
+      case "exam_draft" -> true;
       // --- T-261128-64 (S5-E5) ---
       // --- T-261128-65 (S5-E6) ---
       // --- FIX chặng 5 (task FIX T-261128-*) ---
