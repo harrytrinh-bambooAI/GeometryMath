@@ -24,11 +24,12 @@ loadtest-smoke: ; cd loadtest && ../server/mvnw -B -ntp -f pom.xml gatling:test 
 e2e-smoke:      ; $(ENV) cd e2e && npm ci && GEO_E2E_RESET=0 npm run test:smoke   # chỉ dự án api, vào máy chủ đang chạy ở GEO_PORT
 
 # Giao diện (app/web) và E2E có bằng chứng (app/e2e)
-.PHONY: web-install web-build web-dev e2e e2e-report e2e-reset traceability
+.PHONY: web-install web-build web-dev e2e e2e-full e2e-report e2e-reset traceability
 web-install:  ; cd web && npm ci
 web-build:    ; cd web && npm run typecheck && npm run lint && npm test && npm run build
 web-dev:      ; $(ENV) cd web && npm run dev       # Vite ở GEO_WEB_PORT, proxy -> máy chủ GEO_PORT (chạy `make run` song song)
 e2e:          ; scripts/e2e.sh $(ARGS)             # bật máy chủ + web riêng, reset seed, chạy api + ui, sinh e2e/evidence/<run>/
+e2e-full:     ; scripts/e2e.sh $(ARGS)             # T-261128-69: trọn bộ MỌI project (api + ui + mobile), lượt định kỳ 2–3 đợt / tester; khác e2e-affected (L0/L1/LA/L2)
 e2e-report:   ; @scripts/e2e-report.sh             # in đường dẫn và mở báo cáo bằng chứng của lượt mới nhất
 e2e-reset:    ; scripts/seed-reset.sh $(or $(DB),geo_e2e)   # đưa geo_e2e (hoặc DB=geo_dev) về trạng thái vàng
 traceability: ; cd e2e && node scripts/traceability.ts $(ARGS)   # ARGS="--all", "--epic E1", "--strict --epic MVP,S2-E1 --defer US-…" (exit 1 khi thiếu/trượt)
@@ -78,5 +79,5 @@ exam-import: ; $(ENV) $(MVN) spring-boot:run -Dspring-boot.run.profiles=$(or $(P
 # --- FIX (task FIX T-261126-35, 43+) ---
 # T-261126-45: E2E theo mức ảnh hưởng (DECISIONS 26/11). BASE=<ref> (mặc định worktree-mvp-wave0); ARGS="--dry-run" chỉ in mức + spec.
 .PHONY: e2e-affected e2e-affected-selftest
-e2e-affected:          ; node scripts/e2e-affected.mjs $(if $(BASE),--base $(BASE)) $(ARGS)   # L0/L1/L2 từ diff + artifacts/GEO/work/s23/impact-map.json -> scripts/e2e.sh một lượt; ghi evidence/<run>/impact.json
-e2e-affected-selftest: ; node scripts/e2e-affected.mjs --selftest   # 4 diff mẫu (dry-run): mức + spec mong đợi; exit 1 nếu lệch
+e2e-affected:          ; node scripts/e2e-affected.mjs $(if $(BASE),--base $(BASE)) $(ARGS)   # L0/L1/LA/L2 từ diff + artifacts/GEO/work/s23/impact-map.json -> scripts/e2e.sh một lượt; ghi evidence/<run>/impact.json
+e2e-affected-selftest: ; node scripts/e2e-affected.mjs --selftest   # diff mẫu (dry-run): mức + spec mong đợi; exit 1 nếu lệch

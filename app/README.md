@@ -45,10 +45,19 @@ make web-build        # typecheck + lint + test hàm thuần + build -> web/dist
 make e2e              # bật máy chủ (DB geo_e2e) + web (bản build) trên cổng riêng, reset seed vàng, chạy api + ui,
                       # sinh e2e/evidence/<run>/index.html + summary.json + traceability.txt, rồi tắt
 make e2e ARGS="--project=api"   # tham số thêm cho Playwright
+make e2e-full         # trọn bộ MỌI project (api + ui + mobile): lượt định kỳ 2–3 đợt và của tester (cùng scripts/e2e.sh)
+make e2e-affected     # E2E cách lai (T-261128-69): mức theo diff, xem dưới
 make e2e-report       # in truy vết và mở báo cáo lượt mới nhất
 make e2e-reset        # đưa geo_e2e về trạng thái vàng (DB=geo_dev cho dev)
 make traceability ARGS="--all"  # TC nào có test, đạt/trượt, TC E2E chưa có test
 ```
+E2E cách lai (DECISIONS 28/11; `make e2e-affected`, bản đồ `artifacts/GEO/work/s23/impact-map.json` v1.2): UI chiếm ≈ 90 % thời gian
+(S23: UI 678 test 3,4 phút, API 285 test 24 giây) nên API chạy rộng, UI chạy hẹp.
+- `L0`/`L1`: API cho epic sở hữu + phụ thuộc; UI (ui-chromium) CHỈ spec `*.ui.spec.ts` của epic sở hữu tệp đổi (`--ui-own`, mặc định bật; `--no-ui-own` để UI chạy cả epic phụ thuộc); mobile P0 như cũ.
+- `LA`: tệp dùng chung (`allowed_fields.tsv`, `sql-lint.properties`, `application*.yml`, `AnthropicPrompts`/`MockAiProvider`, `Makefile`, `README`) -> project `api` trọn bộ, KHÔNG UI. Lẫn với tệp L0/L1: mức theo L0/L1 và thêm API trọn bộ.
+- `L2` (router, token, hạ tầng e2e, seed chung, migration ngoài khoảng, tệp lạ): trọn bộ api + ui-chromium. Gate và lượt định kỳ: `make e2e-full`.
+- `make e2e-affected-selftest` kiểm bản đồ (ca mẫu trong mục `selftest`); `make e2e-affected ARGS="--dry-run"` chỉ in mức + spec.
+
 Chạy trên máy dùng chung / tải cao (T-261126-43):
 - `GEO_E2E_WORKERS=<n>`: số worker Playwright (mặc định nửa số lõi, tối thiểu 2). Máy đang tải cao thì hạ, ví dụ
   `GEO_E2E_WORKERS=2 make e2e`. Không bật retries để che lỗi.
