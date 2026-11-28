@@ -543,7 +543,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(assessment|aigateway)/|app/server/src/test/java/vn/geo/server/|app/e2e/tests/s5e[45]/|artifacts/GEO/evidence/REVIEW-S5-20261128\.md|artifacts/GEO/work/epics/S5-E4/(status|qc_findings)\.md)
 - Cổng: 54899
 
-## T-261128-72 · S5-FIX · L5 Dev FIX REVIEW mục 7 · epic-common v1.6 · wt s5-fix4 · 1.5h/3M · job ghi bù cặp điểm AI/GV khi điểm cắm AI lỗi lúc Duyệt [running]
+## T-261128-72 · S5-FIX · L5 Dev FIX REVIEW mục 7 · epic-common v1.6 · wt s5-fix4 · 1.5h/3M · job ghi bù cặp điểm AI/GV khi điểm cắm AI lỗi lúc Duyệt [done]
 - Mục tiêu: REVIEW-S5-20261128 mục 7: khi `AiProposalSlot.approved(...)`/`recordFirstApproval` lỗi trong `AiProposalSlotAdvice` (điểm GV đã lưu, chỉ log.warn), cặp (điểm AI, điểm GV) không được mất êm. Cách đã chốt (DECISIONS 28/11): GIỮ giao dịch Duyệt không đổi (AI lỗi không làm hỏng chấm tay) + job ghi bù định kỳ/idempotent điền điểm GV còn thiếu vào bản so sánh song song (mở rộng cách ShadowService.comparison đang điền bù điểm AI), đếm số lần ghi bù (log/metric). Có IT: giả lập recordFirstApproval ném lỗi → chạy job → cặp đủ, KPI/cổng AI (BR-S5E6-14) tính đúng; chạy job 2 lần không nhân đôi. Cập nhật REVIEW mục 7 → "Đã sửa" (tăng v1.3) và qc_findings S5-E6.
 - Nguồn: artifacts/GEO/evidence/REVIEW-S5-20261128.md v1.2 mục 7 (28/11); epics/S5-E6 stories_ac.md (BR-S5E6-14); DECISIONS.md dòng 28/11 "REVIEW mục 7: job ghi bù"
 - Xong khi: verify + web-build + e2e-affected xanh; traceability --strict đạt; REVIEW mục 7 "Đã sửa", phiên bản v1.3.
@@ -553,6 +553,16 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261128-71
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(assessment|aigrade|aigateway)/|app/server/src/main/resources/db/migration/|app/server/src/test/java/vn/geo/server/|app/e2e/tests/s5e6/|artifacts/GEO/evidence/REVIEW-S5-20261128\.md|artifacts/GEO/work/epics/S5-E6/(status|qc_findings)\.md)
 - Cổng: 54909
+
+## T-261128-73 · DEMO · Video giới thiệu tính năng MVP (chặng 1, 2, 3, 5) · wt demo-video · 3h/5M · chạy local + quay video Full HD MP4 theo kịch bản [done]
+- Mục tiêu: Chạy app hiện tại ở local (profile dev, AI mock, cổng của worktree), nạp dữ liệu test/dummy (seed-reset, fixtures e2e, móc /test-hooks dev) đủ để trình diễn, rồi quay video giới thiệu các tính năng theo kịch bản người dùng (giáo viên, học sinh; chặng 1 MVP, chặng 2, 3, 5). Có thể bật cờ geo.s5.grading/ai-grading CHỈ trong phiên dev local để trình diễn E4/E6 (ghi chú trên màn "bản thử, tắt trong bản phát hành"). Output: (1) clip từng kịch bản `artifacts/GEO/evidence/DEMO-20261128/clips/NN-<tên>.mp4`; (2) video tổng `artifacts/GEO/evidence/DEMO-20261128/GEO-MVP-demo-full-1080p.mp4` (H.264, yuv420p, 1920x1080, 30fps, có màn tiêu đề + phụ đề tiếng Việt ngắn mỗi bước, nhịp xem được: dừng ~1,5–3 s mỗi màn chính); (3) `artifacts/GEO/evidence/DEMO-20261128/SCRIPT.md` tóm tắt từng kịch bản (mục tiêu, vai, các bước, tính năng thể hiện, mốc thời gian trong video tổng, dữ liệu dùng); (4) `artifacts/GEO/evidence/DEMO-20261128/probe.txt` = kết quả ffprobe của video tổng. Quay bằng Playwright (viewport + recordVideo 1920x1080, script riêng trong `app/e2e/demo/`, KHÔNG đưa vào bộ test e2e); chuyển WebM → MP4 bằng npm `ffmpeg-static` + `ffprobe-static` cài trong thư mục tạm ngoài repo (không cài hệ thống, không thêm vào package.json của dự án).
+- Nguồn: app hiện tại nhánh worktree-mvp-wave0 @ HEAD; features `app/web/src/features/*`; kịch bản/US: artifacts/GEO/work/epics/*/stories_ac.md, MVP.md, PRODUCT-MASTER.md; E2E UI hiện có `app/e2e/tests/**` (cách đăng nhập + nạp dữ liệu)
+- Xong khi: video tổng tồn tại, ffprobe báo h264 1920x1080, thời lượng ≥ 180 s; ≥ 6 clip kịch bản; SCRIPT.md có mốc thời gian cho mọi clip.
+- Kiểm: `test -s artifacts/GEO/evidence/DEMO-20261128/GEO-MVP-demo-full-1080p.mp4 && grep -q 'h264' artifacts/GEO/evidence/DEMO-20261128/probe.txt && grep -q '1920' artifacts/GEO/evidence/DEMO-20261128/probe.txt && grep -q '1080' artifacts/GEO/evidence/DEMO-20261128/probe.txt && grep -q 'aac' artifacts/GEO/evidence/DEMO-20261128/probe.txt && test $(ls artifacts/GEO/evidence/DEMO-20261128/clips/*.mp4 | wc -l) -ge 6 && test -s artifacts/GEO/evidence/DEMO-20261128/SCRIPT.md`
+- Ngoài phạm vi: sửa code sản phẩm (server/web) — chỉ thêm script quay trong app/e2e/demo/; gọi AI thật; profile prod; cổng 5432/6379/54329; dữ liệu thật của học sinh (chỉ tên giả); gửi/đăng video ra ngoài
+- Model: opus · Ngân sách: 3 giờ
+- Phạm vi tệp: ^(app/e2e/demo/|artifacts/GEO/evidence/DEMO-20261128/|app/\.env\.ports)
+- Cổng: 54919
 
 ## T-261128-67 · GATE · Owner L7 chặng 5 (L5a phát hành; L5b/L5c chờ PO-64, bench QS5-27, lớp pilot) [wait-user]
 - Mục tiêu: owner quyết phát hành L5a (S5-E1, S5-E2, S5-E3, US-S5E5-01, 04); chốt QS5-01/QS5-30 (PO-64) để bật cờ grading (L5b); duyệt bench QS5-27 trước khi bật ai-grading cho lớp (L5c)

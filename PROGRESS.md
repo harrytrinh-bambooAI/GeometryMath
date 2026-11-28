@@ -11,6 +11,7 @@ Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport
 - FIX T-72 (REVIEW mục 7, tự quyết ghi ở DECISIONS): job ghi bù cặp điểm AI/GV, giữ giao dịch Duyệt; phiên chính chạy lại check exit 0 (verify 295/295, e2e-affected 146/146, strict ĐẠT); REVIEW v1.3 = 7 sửa, 1 chấp nhận.
 - Hồi quy trọn bộ lần 2 sau FIX T-70 (HEAD 2af318f): 2059/2063 đạt (1 chập chờn đạt sau retry), 4 skipped, 0 trượt; 1158/1158 mã TC; traceability --strict ĐẠT.
 
+- Video demo MVP chặng 1–5 (T-73): `artifacts/GEO/evidence/DEMO-20261128/GEO-MVP-demo-full-1080p.mp4` (9:46, 1920x1080 h264 + aac, giọng EN, intro BambooAI; MP4 ngoài git), 19 clip + SCRIPT.md.
 Đang dở: không có agent nào chạy. Soát độc lập §7 + FIX T-70, T-71 đã gộp: REVIEW-S5-20261128 v1.2 v1.3 (mục 7, 8 đã sửa).
 Bước tiếp theo:
 1. Owner nghiệm thu gate T-261128-67 (chặng 5) + còn L7 chặng 2, 3 và 7 ca tay chặng 3 (S3E2-37, E3-07, E4-02, E4-21, E4-27, E5-26, E6-10) + ca tay HEIC iPhone thật (S5-E4).
