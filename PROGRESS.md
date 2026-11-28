@@ -1,5 +1,5 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 28/11/2026 ~14:10
-Mục tiêu hiện tại (/goal 28/11): E2E chặng 2+3 + bug list ảnh nhúng → code chặng 5 theo đặc tả v1.1 — CẢ HAI XONG; chờ owner nghiệm thu (gate T-261128-67).
+# PROGRESS · GeometryMath (GEO) · cập nhật 28/11/2026 ~14:30
+Mục tiêu hiện tại (/goal 28/11): E2E chặng 2+3 + bug list ảnh nhúng → code chặng 5 theo đặc tả v1.1 — CẢ HAI XONG. Owner hoãn nghiệm thu, bench, câu chặn, kiểm tay (DECISIONS 28/11) — gate T-261128-67 treo wait-user.
 Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`), đã push.
 
 Đã xong 28/11:
