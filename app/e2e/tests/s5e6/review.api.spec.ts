@@ -1,5 +1,5 @@
 import { expect, test } from '../../support/fixtures.ts';
-import { API, bearer } from '../s3e1/s3e1.ts';
+import { API, bearer, hook } from '../s3e1/s3e1.ts';
 import { SUB } from '../s5e4/submit/submit.ts';
 import { MSG, approve, gradeCalls, gradeJson, gradeRaw, mock, proposalRaw, queue, setup, submit, view, waitAi } from './s5e6b.ts';
 
@@ -215,4 +215,33 @@ test('Thời gian duyệt (g) tính từ lúc mở màn chấm tới Duyệt, lu
   const g = ((await rep.json()) as { metrics: { g: { medianSeconds: number | null; n: number } } }).metrics.g;
   expect(g.n).toBe(1);
   expect(g.medianSeconds).toBeGreaterThanOrEqual(1);
+});
+
+// ------------------------------------------------------------------ T-261128-72: ghi bù cặp AI/GV (REVIEW-S5 mục 7)
+test('Ghi cặp lúc Duyệt lỗi: Duyệt vẫn thành công, job ghi bù đủ cặp, chạy 2 lần không nhân đôi (T-261128-72)', async ({ request }) => {
+  const { c, sub } = await parallelBn02(request);
+  await hook(request, 's5e6/shadow-fault', { times: 1 });
+  const g = await approve(request, c.lan, sub.id, [2, 2.5, 0, 1, 0.5]); // AI lỗi không làm hỏng chấm tay
+  expect(g.grade).toMatchObject({ total: 6 });
+  const kpi = async () =>
+    (await (await request.get(`${API}/api/v1/teacher/my-classes/${c.c11.id}/ai-grading/report`, { headers: bearer(c.lan.token) })).json()) as { n_bai: number; n_cap: number };
+  const cmp = async () =>
+    (await (await request.get(`${SUB}/${sub.id}/comparison`, { headers: bearer(c.lan.token) })).json()) as {
+      pairs: number;
+      aiDone: boolean;
+      criteria: Array<{ name: string; aiPoints: number; teacherPoints: number }>;
+    };
+  expect((await cmp()).pairs).toBe(0); // cặp mất êm
+  expect(await kpi()).toMatchObject({ n_bai: 0, n_cap: 0 });
+  const b1 = (await hook(request, 's5e6/shadow-backfill', { orgId: c.w.orgId, submissionId: sub.id })) as { added: number; total: number };
+  expect(b1.added).toBe(5);
+  const x = await cmp();
+  expect(x).toMatchObject({ pairs: 5, aiDone: true });
+  expect(x.criteria.find((k) => k.name === 'Các bước')).toMatchObject({ aiPoints: 3, teacherPoints: 2.5 });
+  expect(await kpi()).toMatchObject({ n_bai: 1, n_cap: 5 });
+  const b2 = (await hook(request, 's5e6/shadow-backfill', { orgId: c.w.orgId, submissionId: sub.id })) as { added: number; total: number };
+  expect(b2.added).toBe(0);
+  expect(b2.total).toBeGreaterThanOrEqual(b1.total);
+  expect((await cmp()).pairs).toBe(5);
+  expect(await kpi()).toMatchObject({ n_bai: 1, n_cap: 5 });
 });

@@ -250,6 +250,61 @@ public class ShadowRepository {
         .list();
   }
 
+  // ------------------------------------------------------------------ ghi bù điểm GV (REVIEW mục
+  // 7)
+
+  /** Bài đã duyệt lần đầu nhưng còn thiếu cặp (ghi cặp lúc Duyệt lỗi). */
+  public record Orphan(UUID orgId, UUID submissionId) {}
+
+  /**
+   * Bài chế độ song song / AI đề xuất đã có bản duyệt đầu (seq 1) mà số cặp ít hơn số tiêu chí
+   * rubric (job nền, mọi trường).
+   */
+  public List<Orphan> orphans(int limit) {
+    return jdbc.sql(
+            """
+            SELECT s.org_id, s.id AS submission_id
+            FROM submission s
+            JOIN graded_assignment g ON g.org_id = s.org_id AND g.id = s.assignment_id
+            JOIN approved_grade ag ON ag.org_id = s.org_id AND ag.submission_id = s.id AND ag.seq = 1
+            WHERE g.grading_mode IN ('parallel', 'ai_proposal')
+              AND (SELECT count(*) FROM ai_shadow_pair p WHERE p.org_id = s.org_id AND p.submission_id = s.id)
+                  < (SELECT count(*) FROM rubric_criterion rc
+                     WHERE rc.org_id = s.org_id AND rc.rubric_version_id = g.rubric_version_id)
+            ORDER BY ag.approved_at LIMIT :n
+            -- sqllint:allow=tenant,ownership job nền quét mọi trường; đọc bài nộp, bản duyệt đầu, rubric (assessment)
+            """)
+        .param("n", limit)
+        .query((rs, i) ->
+            new Orphan(
+                rs.getObject("org_id", UUID.class), rs.getObject("submission_id", UUID.class)))
+        .list();
+  }
+
+  /** Điểm giáo viên theo tiêu chí của bản duyệt ĐẦU (seq 1); rỗng nếu chưa có. */
+  public java.util.Map<Integer, BigDecimal> firstApprovalPoints(UUID orgId, UUID submissionId) {
+    java.util.Optional<String> json =
+        jdbc.sql(
+                """
+                SELECT ag.criteria::text FROM approved_grade ag
+                WHERE ag.org_id = :orgId AND ag.submission_id = :sid AND ag.seq = 1 LIMIT 1
+                -- sqllint:allow=ownership read model: bản duyệt đầu (assessment) cho ghi bù cặp so sánh
+                """)
+            .param("orgId", orgId)
+            .param("sid", submissionId)
+            .query(String.class)
+            .optional();
+    java.util.Map<Integer, BigDecimal> out = new java.util.HashMap<>();
+    if (json.isEmpty()) {
+      return out;
+    }
+    for (tools.jackson.databind.JsonNode c :
+        new tools.jackson.databind.json.JsonMapper().readTree(json.get())) {
+      out.put(c.get("ord").asInt(), new BigDecimal(c.get("points").asString()));
+    }
+    return out;
+  }
+
   // ------------------------------------------------------------------ xoá (BR-S5E4-28)
 
   /** Ẩn danh cặp của học sinh đã xoá tài khoản (giữ cho số liệu lớp). */

@@ -42,6 +42,9 @@ public class ShadowService {
 
   /** Ghi cặp của lần duyệt đầu (bài song song); đã có cặp thì giữ nguyên. */
   public void recordFirstApproval(UUID orgId, SubInfo s, Map<Integer, BigDecimal> teacher) {
+    if (failNext.getAndUpdate(v -> Math.max(0, v - 1)) > 0) {
+      throw new IllegalStateException("móc kiểm thử: recordFirstApproval lỗi");
+    }
     if (!repo.pairs(orgId, s.id()).isEmpty()) {
       return;
     }
@@ -73,6 +76,95 @@ public class ShadowService {
           a,
           a == null ? null : pid);
     }
+  }
+
+  private static final org.slf4j.Logger log =
+      org.slf4j.LoggerFactory.getLogger(ShadowService.class);
+
+  private final java.util.concurrent.atomic.AtomicLong backfilled =
+      new java.util.concurrent.atomic.AtomicLong();
+
+  private final java.util.concurrent.atomic.AtomicInteger failNext =
+      new java.util.concurrent.atomic.AtomicInteger();
+
+  /** Chỉ móc kiểm thử dev/test gọi: {@code recordFirstApproval} lỗi {@code n} lần kế tiếp. */
+  public void failNextFirstApproval(int n) {
+    failNext.set(Math.max(0, n));
+  }
+
+  /** Tổng số cặp đã ghi bù từ lúc chạy (đếm cho log / quan sát). */
+  public long backfilledCount() {
+    return backfilled.get();
+  }
+
+  /**
+   * Ghi bù cặp (điểm AI, điểm GV) cho bài đã duyệt lần đầu mà ghi cặp lúc Duyệt lỗi (REVIEW-S5 mục
+   * 7). Idempotent: chỉ thêm tiêu chí chưa có cặp. Trả số cặp ghi thêm.
+   */
+  public int backfillPairs(UUID orgId, UUID submissionId) {
+    Optional<SubInfo> o = repo.info(orgId, submissionId);
+    if (o.isEmpty() || !o.get().approved() || !policy.shadow(orgId, o.get())) {
+      return 0;
+    }
+    SubInfo s = o.get();
+    Map<Integer, BigDecimal> teacher = repo.firstApprovalPoints(orgId, s.id());
+    if (teacher.isEmpty()) {
+      return 0;
+    }
+    java.util.Set<Integer> have = new java.util.HashSet<>();
+    for (Pair x : repo.pairs(orgId, s.id())) {
+      have.add(x.ord());
+    }
+    Map<Integer, BigDecimal> ai = new HashMap<>();
+    UUID pid = null;
+    Optional<Proposal> p = proposals.latest(orgId, s.id(), s.currentVersion());
+    if (p.isPresent() && "proposed".equals(p.get().status())) {
+      pid = p.get().id();
+      for (CriterionRow c : proposals.criteriaOf(orgId, pid)) {
+        ai.put(c.ord(), c.points());
+      }
+    }
+    boolean sampled = policy.sampled(orgId, s);
+    int n = 0;
+    for (RubricRow r : proposals.criteria(orgId, s.rubricVersionId())) {
+      BigDecimal t = teacher.get(r.ord());
+      if (t == null || have.contains(r.ord())) {
+        continue;
+      }
+      BigDecimal a = ai.get(r.ord());
+      repo.insertPair(
+          orgId,
+          Uuid7.next(),
+          s,
+          sampled,
+          r.ord(),
+          r.name(),
+          r.max(),
+          t,
+          a,
+          a == null ? null : pid);
+      n++;
+    }
+    if (n > 0) {
+      backfilled.addAndGet(n);
+      log.info("Ghi bù {} cặp AI/GV cho bài {} (tổng {})", n, submissionId, backfilled.get());
+    }
+    return n;
+  }
+
+  /**
+   * Một lượt job ghi bù: quét bài còn thiếu cặp, ghi bù từng bài (lỗi một bài không chặn bài khác).
+   */
+  public int backfillPending(int limit) {
+    int total = 0;
+    for (ShadowRepository.Orphan x : repo.orphans(limit)) {
+      try {
+        total += backfillPairs(x.orgId(), x.submissionId());
+      } catch (RuntimeException e) {
+        log.warn("Ghi bù cặp lỗi bài {}: {}", x.submissionId(), e.toString());
+      }
+    }
+    return total;
   }
 
   /** So sánh AI – giáo viên của một bài đã duyệt (giáo viên chủ lớp). */
