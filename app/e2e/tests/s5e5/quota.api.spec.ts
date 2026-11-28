@@ -273,3 +273,33 @@ test('Người vận hành tắt khẩn task kb_qa toàn hệ thống @TC-S5E5-2
     await request.put(KILL, { headers: { ...bearer(op.token), ...lane }, data: { task: 'kb_qa', off: false } });
   }
 });
+
+test('Đọc chữ nền cộng token AI vào trần token của lớp; chạm trần thì không gọi AI @TC-S5E5-26', async ({ request }) => {
+  // REVIEW-S5 mục 8 (T-261128-71): grade_ocr đi qua cổng hạn mức như hỏi đáp kho
+  const c = await s5e4Setup(request);
+  const an = c.w.people['Bình An']!;
+  await aiOn(request, c.lan, c.c11.id);
+  await ack(request, an);
+  const tokens = () => readCounter(request, c.w.orgId, 'class', c.c11.id, 'tokens');
+  expect(await tokens()).toBe(0);
+  const bn01 = await submitOk(request, an, c.bc.id, [P1]);
+  expect((await waitOcr(request, c.lan, bn01.id)).status).toBe('done');
+  const after1 = await tokens();
+  expect(after1).toBeGreaterThan(0); // lượt OCR (mô phỏng) đã cộng token vào trần lớp
+  // bài thứ hai: bộ đếm tăng tiếp (N lượt OCR → tổng tăng đúng)
+  const mai = c.w.people['Chi Mai']!;
+  await ack(request, mai);
+  const bn02 = await submitOk(request, mai, c.bc.id, [P1]);
+  expect((await waitOcr(request, c.lan, bn02.id)).status).toBe('done');
+  expect(await tokens()).toBeGreaterThan(after1);
+  // chạm trần token (2 000 000): bài mới không gọi AI, ghi lý do hạn mức
+  await counter(request, c.w.orgId, 'class', c.c11.id, 'tokens', 2_000_000);
+  const huy = c.w.people['Đức Huy']!;
+  await ack(request, huy);
+  const before = await aiCalls(request, huy.id);
+  const bn03 = await submitOk(request, huy, c.bc.id, [P1]);
+  const o = await waitOcr(request, c.lan, bn03.id);
+  expect(o.status).toBe('failed');
+  expect((o as unknown as { reason?: string }).reason).toBe('lớp đã hết hạn mức token AI hôm nay');
+  expect(await aiCalls(request, huy.id)).toBe(before);
+});

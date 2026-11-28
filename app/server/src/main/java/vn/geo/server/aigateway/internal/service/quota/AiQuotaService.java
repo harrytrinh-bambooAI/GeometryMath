@@ -178,6 +178,10 @@ public class AiQuotaService implements AiQuota {
     if (!gradingOn(orgId, classId, task)) {
       return new Admission(false, REASON_GRADE_OFF);
     }
+    if (repo.counter(orgId, CLASS, classId, "tokens", day) >= limits.classTokens()) {
+      repo.add(orgId, CLASS, classId, "blocked", day, 1);
+      return new Admission(false, REASON_TOKEN_QUOTA);
+    }
     if (repo.counter(orgId, CLASS, classId, "grade", day) >= limits.classGrade()) {
       repo.add(orgId, CLASS, classId, "blocked", day, 1);
       return new Admission(false, REASON_GRADE_QUOTA);
