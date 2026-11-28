@@ -14,9 +14,19 @@ import org.springframework.stereotype.Component;
 public class ShadowJob {
 
   private final ShadowGrader grader;
+  private final ShadowService shadow;
 
-  public ShadowJob(ShadowGrader grader) {
+  public ShadowJob(ShadowGrader grader, ShadowService shadow) {
     this.grader = grader;
+    this.shadow = shadow;
+  }
+
+  /** Ghi bù cặp AI/GV còn thiếu (REVIEW-S5 mục 7), chu kỳ riêng, idempotent. */
+  @Scheduled(
+      fixedDelayString = "${geo.s5.ai-grading.backfill-ms:60000}",
+      initialDelayString = "${geo.s5.ai-grading.backfill-ms:60000}")
+  public void backfill() {
+    shadow.backfillPending(50);
   }
 
   @Scheduled(
