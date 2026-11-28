@@ -499,6 +499,17 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Cổng: 54849
 - Kế hoạch: PLAN_code-s5 §4 FIX W7
 
+## T-261128-69 · TOOL · L5 Dev công cụ E2E cách lai · wt e2e-lai · 1h/2M · e2e-affected: tệp dùng chung → API trọn bộ, UI chỉ màn của task [running]
+- Mục tiêu: theo DECISIONS 28/11 "E2E cách lai": (1) `app/scripts/e2e-affected.mjs` + `artifacts/GEO/work/s23/impact-map.json`: tệp dùng chung (quality/allowed_fields.tsv, quality/sql-lint.properties, application*.yml, aigateway/internal/{AnthropicPrompts,MockAiProvider}.java, Makefile, README) không kéo lên L2 nữa mà ra mức mới `LA` = project api trọn bộ + KHÔNG UI; (2) thêm cờ `--ui-own` (mặc định bật khi mức ≤ L1): UI chỉ chạy spec `*.ui.spec.ts` của feature/epic có tệp đổi, trên ui-chromium; mobile P0 giữ như cũ; (3) thêm target `make e2e-full` = `scripts/e2e.sh` trọn bộ mọi project (dùng cho lượt định kỳ 2–3 đợt và tester); (4) selftest của bản đồ thêm ≥ 3 ca mới (tệp dùng chung → LA; feature s5e4 web → UI chỉ s5e4; migration ngoài khoảng → L2) và đều đạt; README mục E2E ghi cách lai.
+- Nguồn: DECISIONS.md dòng 28/11 "E2E cách lai"; app/scripts/e2e-affected.mjs (đầu tệp mô tả L0/L1/L2); impact-map.json v1.1 (T-51); số liệu: UI ≈ 90 % thời gian (E2E-S23: UI 678 test 3,4 phút, API 285 test 24 giây)
+- Xong khi: selftest đạt; dry-run trên diff mẫu chỉ tệp allowed_fields cho mức LA không có UI.
+- Kiểm: `cd .claude/worktrees/e2e-lai/app && make e2e-affected-selftest && node scripts/e2e-affected.mjs --dry-run --files app/server/src/test/java/vn/geo/server/quality/allowed_fields.tsv | grep -q 'LA' && make verify`
+- Ngoài phạm vi: test/spec nghiệp vụ; code máy chủ/web; cấu hình playwright projects (chỉ đọc)
+- Model: sonnet · Ngân sách: 1 giờ
+- Phụ thuộc: T-261128-65
+- Phạm vi tệp: ^(app/scripts/e2e-affected[^/]*|artifacts/GEO/work/s23/impact-map\.json|app/Makefile|app/README\.md|app/\.env\.ports)
+- Cổng: 54869
+
 ## T-261128-66 · S5 · L6 Tester · tester SKILL + Playwright · wt mvp-wave0 · 3h/4M · Kiểm thử chặng 5 [todo]
 - Mục tiêu: chạy 219 TC chặng 5 trên `worktree-mvp-wave0` đã gộp W0–W7 (cờ grading + ai-grading bật ở hồ sơ e2e): E2E-UI bằng Playwright trước, còn lại E2E-API; ca quyền theo quan hệ (giáo viên khác, học sinh lớp khác), không lộ đáp án (bộ `firewall-s5.json` lộ = 0), không lộ gì của AI cho học sinh; iOS/HEIC thiết bị thật ghi Manual; bằng chứng + REPORT.md + BUG-LIST.md theo mẫu `artifacts/GEO/evidence/E2E-S23-20261128/`
 - Nguồn: epics/S5-*/test_cases.md v1.1 (80e9b6f 28/11); mẫu E2E-S23-20261128/REPORT.md (28/11); scope.json tester; PLAN_code-s5 v1.0 §3 W8
