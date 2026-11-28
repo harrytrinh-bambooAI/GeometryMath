@@ -1,0 +1,138 @@
+{
+ "id": "MC-OX-06",
+ "ten": "Bán kính mặt cầu qua một điểm",
+ "chu_de": "oxyz-mat-cau",
+ "dang": "ox.mc-ban-kinh",
+ "dang_tx": "ox.mc-pt",
+ "yccd": [
+  "12.OX.4"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-OX-06",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-OX-06",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "i1": 1,
+    "i2": -2,
+    "i3": 3,
+    "m1": 3,
+    "m2": 0,
+    "m3": 4
+   },
+   {
+    "i1": 0,
+    "i2": 2,
+    "i3": -1,
+    "m1": 2,
+    "m2": 5,
+    "m3": 1
+   },
+   {
+    "i1": -1,
+    "i2": 1,
+    "i3": 2,
+    "m1": 3,
+    "m2": -1,
+    "m3": 0
+   },
+   {
+    "i1": 2,
+    "i2": 3,
+    "i3": 1,
+    "m1": 5,
+    "m2": 1,
+    "m3": -1
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Trong không gian $Oxyz$, cho mặt cầu $(S)$ có tâm $I({i1};{i2};{i3})$ và đi qua điểm $M({m1};{m2};{m3})$.",
+ "hoi": "Bán kính của $(S)$ (làm tròn đến hàng phần trăm) bằng",
+ "dap_so": "sqrt((m1-i1)**2+(m2-i2)**2+(m3-i3)**2)",
+ "nhieu": [
+  {
+   "bieu_thuc": "(m1-i1)**2+(m2-i2)**2+(m3-i3)**2",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Quên lấy căn bậc hai"
+   }
+  },
+  {
+   "bieu_thuc": "Abs(m1-i1)+Abs(m2-i2)+Abs(m3-i3)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng trị tuyệt đối hiệu tọa độ"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt((m1+i1)**2+(m2+i2)**2+(m3+i3)**2)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Cộng tọa độ thay vì trừ"
+   }
+  }
+ ],
+ "kieu": "xap-xi:2",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-OX-06']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "i1": "1",
+   "i2": "-2",
+   "i3": "3",
+   "m1": "3",
+   "m2": "0",
+   "m3": "4"
+  },
+  {
+   "i1": "0",
+   "i2": "2",
+   "i3": "-1",
+   "m1": "2",
+   "m2": "5",
+   "m3": "1"
+  },
+  {
+   "i1": "-1",
+   "i2": "1",
+   "i3": "2",
+   "m1": "3",
+   "m2": "-1",
+   "m3": "0"
+  },
+  {
+   "i1": "2",
+   "i2": "3",
+   "i3": "1",
+   "m1": "5",
+   "m2": "1",
+   "m3": "-1"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

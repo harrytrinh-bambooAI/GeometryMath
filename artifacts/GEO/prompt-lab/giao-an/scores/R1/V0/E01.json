@@ -1,0 +1,38 @@
+{
+ "case": "E01",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 5
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá chỉ sửa các trường của HĐ1, có đúng 3 câu hỏi nhanh, giữ 5 phút và không ghi kết quả số; trợ lý cũng phát hiện đúng lỗi HĐ4 (o_nha=false nhưng giao làm ở nhà) và chỉ đề xuất, không tự sửa. Còn hai điểm nhỏ: câu 3 trò chơi trùng ý với PHT1 câu 1, và trợ lý chưa chỉ ra PHT1 câu 2 và câu 3 thực chất cùng một dạng, cùng đáp số."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "ma_tran": "CK2-L11",
+ "so_ma": 4,
+ "seed": 2026,
+ "do_kho": [
+  0.5372,
+  0.5253,
+  0.5281,
+  0.524
+ ],
+ "lech_do_kho": 0.025,
+ "dat_do_kho_5pt": true,
+ "cau_dung_lai_giua_cac_ma": 0,
+ "rang_buoc_tung_ma": {
+  "101": {
+   "phu_dac_ta_100": true,
+   "khop_ma_tran": true,
+   "khong_trung_dang": true,
+   "tong_diem": true,
+   "tong_thoi_gian": true,
+   "can_bang_dap_an": true,
+   "khong_lo_dap_so": true
+  },
+  "102": {
+   "phu_dac_ta_100": true,
+   "khop_ma_tran": true,
+   "khong_trung_dang": true,
+   "tong_diem": true,
+   "tong_thoi_gian": true,
+   "can_bang_dap_an": true,
+   "khong_lo_dap_so": true
+  },
+  "103": {
+   "phu_dac_ta_100": true,
+   "khop_ma_tran": true,
+   "khong_trung_dang": true,
+   "tong_diem": true,
+   "tong_thoi_gian": true,
+   "can_bang_dap_an": true,
+   "khong_lo_dap_so": true
+  },
+  "104": {
+   "phu_dac_ta_100": true,
+   "khop_ma_tran": true,
+   "khong_trung_dang": true,
+   "tong_diem": true,
+   "tong_thoi_gian": true,
+   "can_bang_dap_an": true,
+   "khong_lo_dap_so": true
+  }
+ }
+}

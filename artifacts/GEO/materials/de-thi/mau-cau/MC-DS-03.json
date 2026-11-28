@@ -1,0 +1,145 @@
+{
+ "id": "MC-DS-03",
+ "ten": "Tổng n số hạng đầu cấp số cộng",
+ "chu_de": "day-so-cap-so",
+ "dang": "ds.csc-tong",
+ "dang_tx": "ds.cap-so-cong",
+ "yccd": [
+  "11.DS.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-DS-03",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-DS-03",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "u1": [
+   "1",
+   "2",
+   "5"
+  ],
+  "d": [
+   "2",
+   "3"
+  ],
+  "n": [
+   "10",
+   "12"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho cấp số cộng $(u_n)$ có $u_1={u1}$ và công sai $d={d}$.",
+ "hoi": "Tổng ${n}$ số hạng đầu tiên $S_{{n}}$ bằng",
+ "dap_so": "n*(2*u1+(n-1)*d)/2",
+ "nhieu": [
+  {
+   "bieu_thuc": "n*(2*u1+n*d)/2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng $u_n=u_1+nd$ khi tính tổng"
+   }
+  },
+  {
+   "bieu_thuc": "n*(u1+(n-1)*d)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhân số số hạng với số hạng cuối"
+   }
+  },
+  {
+   "bieu_thuc": "u1+(n-1)*d",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Tính $u_n$ thay cho $S_n$"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-DS-03']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "u1": "1",
+   "d": "2",
+   "n": "10"
+  },
+  {
+   "u1": "1",
+   "d": "2",
+   "n": "12"
+  },
+  {
+   "u1": "1",
+   "d": "3",
+   "n": "10"
+  },
+  {
+   "u1": "1",
+   "d": "3",
+   "n": "12"
+  },
+  {
+   "u1": "2",
+   "d": "2",
+   "n": "10"
+  },
+  {
+   "u1": "2",
+   "d": "2",
+   "n": "12"
+  },
+  {
+   "u1": "2",
+   "d": "3",
+   "n": "10"
+  },
+  {
+   "u1": "2",
+   "d": "3",
+   "n": "12"
+  },
+  {
+   "u1": "5",
+   "d": "2",
+   "n": "10"
+  },
+  {
+   "u1": "5",
+   "d": "2",
+   "n": "12"
+  },
+  {
+   "u1": "5",
+   "d": "3",
+   "n": "10"
+  },
+  {
+   "u1": "5",
+   "d": "3",
+   "n": "12"
+  }
+ ],
+ "so_bien_the": 12,
+ "so_cau_sinh": 24,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

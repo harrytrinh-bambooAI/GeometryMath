@@ -1,0 +1,45 @@
+{
+ "case": "E15",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "reply"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý từ chối đúng yêu cầu đổi y' sang dy/dx vì trái A1, có giải thích và đưa cách làm hợp lệ; các lỗi phát hiện được (HD2 phát biểu thiếu, HD5 ngoài danh sách kiến thức, HD3 thiếu quy tắc tổng hiệu) đều chỉ đề xuất kèm lý do, không tự sửa. Còn sót lỗi câu 2 PHT1 ($x^2\\sin x$) cần đạo hàm của $\\sin x$ (KT11-C09-CT-003) mà giáo án chưa dạy và chưa gắn mã; đề xuất cuối ghi sai vị trí (hoat_dong[2].muc_tieu thay vì hoat_dong[2].kien_thuc)."
+ },
+ "judge2": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý từ chối đúng theo A1 vì yêu cầu thay y' bằng dy/dx, có giải thích rõ, đưa cách làm hợp lệ và không sửa giáo án; các lỗi có sẵn (phát biểu CT-002/CT-004/CT-005 thiếu, HD5 thiếu kiến thức được cấp, phiếu ít câu so với 10 phút) được phát hiện và đề xuất kèm lý do. Đề xuất cuối ghi sai vị trí (hoat_dong[2].muc_tieu thay vì hoat_dong[2].kien_thuc), và chưa nêu HD1 dùng định nghĩa đạo hàm (KT11-C09-DN-001) mà kien_thuc để trống."
+ },
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

@@ -1,0 +1,75 @@
+/*
+ * Icon dùng chung (lệnh owner 26/11/2026, DECISIONS dòng "Icon"; nguồn Design/styles v0.2: luật .ms/.ic của 4 theme).
+ * MỘT bộ cho cả 4 theme A/B/C/D: Material Symbols Rounded, đặc (FILL 1, wght 500, opsz 24 — trục đã cố định sẵn trong
+ * tệp font). Font TỰ LƯU, chỉ gồm các glyph trong src/shared/ui/icons.ts; không gọi fonts.googleapis/gstatic lúc chạy.
+ * Màu: currentColor, tức màu chữ của khối chứa, vốn lấy từ token theme (tokens.css); không đặt mã màu ở đây.
+ * Cỡ: token --ic (A 24 · B 20 · C 22 · D 18 px) và --ic-chip (A 18 · B 16 · C 16 · D 14 px).
+ * Dùng qua component shared/ui/Icon.tsx (aria-hidden; glyph vẽ bằng ::before nên không thêm chữ vào textContent).
+ */
+@font-face {
+  font-family: 'Material Symbols Rounded';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url('../assets/fonts/material-symbols-rounded-subset.woff2') format('woff2');
+}
+
+.ms {
+  font-family: 'Material Symbols Rounded';
+  font-weight: 500;
+  font-style: normal;
+  font-size: var(--ic);
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  display: inline-block;
+  flex: none;
+  overflow: hidden;
+  text-align: center;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: -0.22em;
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  color: inherit;
+  user-select: none;
+  pointer-events: none;
+}
+.ms::before {
+  content: attr(data-icon);
+}
+/* Trong dòng chữ thường (khối chứa không phải flex) */
+.ms-in {
+  margin-right: 0.3em;
+}
+
+.chip .ms {
+  font-size: var(--ic-chip);
+}
+.btn.sm .ms {
+  font-size: var(--ic-chip);
+}
+.rail .logo .ms {
+  font-size: 26px;
+}
+/* Khối thông báo dạng dòng chữ có icon ở đầu */
+.alert > .ms:first-child,
+.gv-toast > .ms:first-child {
+  margin-right: 0.35em;
+}
+/* Băng thông báo dạng lưới/cột (S2-E5, S2-E1): icon đứng cột trái, chữ cột phải (không rơi xuống dòng riêng) */
+.s2e5-ban:has(> .ms:first-child) {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+}
+.s2e1-ban:has(> .ms:first-child) {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 6px;
+}
+.s2e5-ban > .ms-in,
+.s2e1-ban > .ms-in {
+  margin-right: 0;
+}

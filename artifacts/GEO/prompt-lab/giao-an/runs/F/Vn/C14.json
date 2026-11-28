@@ -1,0 +1,19 @@
+{
+ "case": "C14",
+ "variant": "Vn",
+ "round": "F",
+ "text": "{\"kind\":\"question\",\"text\":\"Bạn muốn dùng phong cách dạy nào cho tiết này (truyền thống, khám phá, lớp học đảo ngược, dự án STEM hay trò chơi), và có kiến thức trọng tâm nào cần nhấn mạnh trong số 5 mã kiến thức được cấp không?\"}",
+ "raw": "{\"kind\":\"question\",\"text\":\"Bạn muốn dùng phong cách dạy nào cho tiết này (truyền thống, khám phá, lớp học đảo ngược, dự án STEM hay trò chơi), và có kiến thức trọng tâm nào cần nhấn mạnh trong số 5 mã kiến thức được cấp không?\"}",
+ "usage": {
+  "ts": "2026-11-27T16:45:29",
+  "role": "gen",
+  "task": "F/Vn/C14",
+  "model": "claude-sonnet-5-5",
+  "input": 1206,
+  "output": 121,
+  "cache_write": 0,
+  "cache_read": 1335,
+  "stop": "end_turn",
+  "sec": 2.0
+ }
+}

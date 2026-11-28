@@ -139,7 +139,7 @@ Dữ liệu mẫu tạo sẵn: 1 giáo viên, 2 lớp (một THCS, một THPT), 
 - Bài tự học: mức 3 mở sau khi đã xem mức 1 và 2 (giả định, xem mục 10).
 
 **E. Giáo viên (dữ liệu mẫu)**
-- Kho đề: 40–60 đề hình không gian chia theo cấp và chủ đề, mỗi đề có hình, đáp số, lời giải từng bước, gợi ý, nhãn kiểm chứng, và ghi rõ "AI soạn".
+- Kho đề: 84 đề hình không gian chia theo cấp và chủ đề (mỗi dạng bài 16–20 đề, DECISIONS 27/11), mỗi đề có hình, đáp số, lời giải từng bước, gợi ý, nhãn kiểm chứng, và ghi rõ "AI soạn".
 - Giao một đề hoặc một bộ đề cho lớp mẫu; đặt, đổi, mở sớm thời điểm hiện lời giải.
 - Trang theo dõi lớp: ai đã mở bài, dùng gợi ý mức nào, hỏi gì trong chat.
 - Xem trước giao diện học sinh.
@@ -197,7 +197,7 @@ Giả định team 2–4 người: 1 full-stack/3D, 1 backend/AI, 1 người có
 | 1 | M0 Nền | App chạy ngoài artifact với AI thật; 20 đề đầu tiên; đo tỉ lệ hình và đáp số đúng lần đầu |
 | 2 | M1 Hình đúng | Engine, mô tả hình bằng ràng buộc, thư viện hình mẫu, kiểm chứng đáp số; đo lại |
 | 3 | M2 Tương tác | Thêm điểm, đo đạc, nét khuất, chọn trực tiếp, điện thoại, sửa lỗi đã biết |
-| 4 | M3 Gợi ý và kho đề | Thang gợi ý, lời giải đồng bộ hình; kho 40–60 đề hoàn chỉnh |
+| 4 | M3 Gợi ý và kho đề | Thang gợi ý, lời giải đồng bộ hình; kho 84 đề hoàn chỉnh (trần tiêu chí 100) |
 | 5 | M4 Giáo viên mẫu | Lớp mẫu, giao bài, giờ mở lời giải, khóa ở server, trang theo dõi lớp |
 | 6 | M5 Dùng thử | Một nhóm nhỏ học sinh và giáo viên dùng thử; tổng hợp số liệu; quyết định bước tiếp |
 
@@ -228,6 +228,6 @@ MVP xong khi: bốn chỉ số bắt buộc đạt, toàn bộ P0 chạy trên m
 **Câu hỏi mở**
 1. Bài tự học: lời giải mở sau khi xem gợi ý mức 1 và 2 (đang giả định), hay cách khác?
 2. Cách hiểu "lời giải AI thành 1 giáo viên" ở mục 1 có đúng ý bạn không?
-3. Ai soát kho 40–60 đề? Có nguồn đề nào ưu tiên (sách giáo khoa, đề thi) không?
+3. Ai soát kho 84 đề? Có nguồn đề nào ưu tiên (sách giáo khoa, đề thi) không?
 4. Dùng thử ở M5 với ai: nội bộ, hay một lớp thật?
 5. Giữ tên "Hình Học Cùng AI" hay đổi?

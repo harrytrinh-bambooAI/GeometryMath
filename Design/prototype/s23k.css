@@ -1,0 +1,61 @@
+/* s23k.css · Phiên bản: v0.3 (T-261126-40: scroll-padding chừa chỗ cho thanh nav, không che tiêu đề màn) · v0.2 · 2026-11-26 · thanh nav gọn (1 dòng ≤44px, thu/mở) + chế độ kịch bản + toàn màn hình (T-261126-38) */
+.s23nav{display:block;padding:0;position:sticky;top:0;z-index:60;box-shadow:0 2px 10px rgba(20,27,45,.25)}
+.nv1{display:flex;align-items:center;gap:8px;padding:0 12px;height:40px;box-sizing:border-box;flex-wrap:nowrap;min-width:0;overflow:hidden}
+.nv1 b .sh{display:none}.nv1 b{margin:0;white-space:nowrap;font-size:13px}
+.nv1 .cur{color:#C9D2E6;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1}
+.nv1 button{font:inherit;font-size:12px;font-weight:700;border:0;border-radius:99px;padding:6px 11px;background:rgba(255,255,255,.14);color:#fff;cursor:pointer;white-space:nowrap}
+.nv1 button.go{background:#F0522B}.nv1 button:hover{filter:brightness(1.15)}
+.s23nav.mini{background:transparent;box-shadow:none;position:fixed;left:8px;top:6px;width:auto}
+.s23nav.mini .nv1{background:#141B2D;border-radius:99px;height:34px;padding:0 4px 0 12px}
+.s23nav.mini .nv1>*:not(.tg):not(b){display:none}.s23nav.mini .nvm,.s23nav.mini .kbbar{display:none!important}
+.nvm{display:none;background:#1B243B;border-top:1px solid rgba(255,255,255,.12);max-height:68vh;overflow:auto;padding:10px 14px 14px}
+.nvm.open{display:block}
+.nvm .grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:8px}
+.nvm .g{color:#8F9BB5;font-weight:700;margin:0 6px 0 0;min-width:70px}
+.nvm a{padding:5px 10px;border-radius:99px;background:rgba(255,255,255,.08);color:#C9D2E6;font-weight:600;text-decoration:none}
+.nvm a.on{background:#F0522B;color:#fff}
+.kbbar{background:#243252;border-top:1px solid rgba(255,255,255,.12);padding:8px 14px 10px;max-height:46vh;overflow:auto}
+.kbtop{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.kbtop .nm{font-weight:800;font-size:13px}.kbtop .cnt{font-family:'JetBrains Mono',monospace;font-weight:700;color:#FFD9CF}
+.kbprog{flex:1;min-width:90px;height:6px;border-radius:9px;background:rgba(255,255,255,.18);overflow:hidden}.kbprog i{display:block;height:100%;background:#F0522B}
+.kbbar button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:7px 13px;background:rgba(255,255,255,.16);color:#fff;cursor:pointer}
+.kbbar button.nx{background:#F0522B}.kbbar button:disabled{opacity:.35;cursor:default}
+.kbnote{margin-top:8px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;color:#EAEFFB;font-size:12.5px;line-height:1.5}
+.kbnote .h{grid-column:1/-1;font-size:14px;font-weight:800;color:#fff}
+.kbnote .h .role{display:inline-block;padding:2px 9px;border-radius:99px;font-size:11px;margin-right:6px;background:#3B5BDB}
+.kbnote .h .role.hs{background:#0F8A5F}.kbnote .h .role.ai{background:#7C4DFF}
+.kbnote div.c{background:rgba(255,255,255,.07);border-radius:10px;padding:7px 10px}.kbnote div.c b{display:block;color:#FFD9CF;font-size:11px;margin-bottom:2px}
+.kbnote .miss{grid-column:1/-1;background:#5A3A12;color:#FFE2A6;border-radius:10px;padding:7px 10px;font-weight:700}
+.kbbar.min .kbnote .c,.kbbar.min .kbnote .miss{display:none}
+.kbhl{outline:3px solid #F0522B!important;outline-offset:3px;border-radius:10px;box-shadow:0 0 0 7px rgba(240,82,43,.22)!important;position:relative;z-index:2}
+[data-go]{cursor:pointer}
+@media(max-width:760px){.nv1 b .lg{display:none}.nv1 b .sh{display:inline}.kbnote{grid-template-columns:1fr}.nv1 b{font-size:12px}.nv1 .cur{display:none}.nv1{gap:5px;padding:0 8px}.nv1 button{padding:6px 8px}}
+/* toàn màn hình (Trình chiếu kịch bản) */
+body.kbfs{overflow:hidden;background:#0E1424}
+body.kbfs .s23nav{display:none!important}
+body.kbfs #app{position:fixed;left:0;top:0;width:100vw;height:calc(100vh - 118px);overflow:hidden}
+body.kbfs #app .screen{position:absolute!important;left:50%;top:0;transform-origin:top center;margin:0!important}
+body.kbfs .kbintro,body.kbfs .kbmiss{margin-top:20px}
+.kbfsbar{display:none}
+body.kbfs .kbfsbar{display:block;position:fixed;left:0;right:0;bottom:0;height:118px;box-sizing:border-box;background:#141B2D;color:#EAEFFB;padding:8px 20px;font-size:14px;line-height:1.45;z-index:90;overflow:hidden}
+.kbfsbar .t{font-weight:800;font-size:16px;color:#fff}.kbfsbar .t .role{display:inline-block;padding:1px 9px;border-radius:99px;font-size:12px;margin-right:8px;background:#3B5BDB}
+.kbfsbar .t .role.hs{background:#0F8A5F}.kbfsbar .t .role.ai{background:#7C4DFF}
+.kbfsbar .x{display:flex;gap:18px}.kbfsbar .x div{flex:1}.kbfsbar .x b{color:#FFD9CF}
+.kbfsbar .pg{position:absolute;left:0;top:0;height:4px;background:#F0522B}
+.kbfsbar .st{position:absolute;right:20px;top:8px;font-size:12px;color:#8F9BB5}
+/* trang mở đầu + màn chưa vẽ */
+.kbintro{max-width:1040px;margin:18px auto;padding:0 14px;font-family:inherit;color:#141B2D}
+.kbintro h1{font-size:24px;margin:6px 0}.kbintro p.lead{font-size:14.5px;line-height:1.6;color:#44506B;margin:0 0 12px}
+.kbintro .kbfig{background:#fff;border-radius:16px;padding:12px;overflow-x:auto;border:1px solid #D2D9E8}.kbintro svg{min-width:760px;width:100%;height:auto;display:block}
+.kbintro svg text{font-family:'Be Vietnam Pro',system-ui,sans-serif}.kbintro svg a{cursor:pointer}
+.kbintro .kbrules{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin:14px 0}
+.kbintro .kbrules div{background:#fff;border:1px solid #D2D9E8;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.5}.kbintro .kbrules b{display:block;color:#3B5BDB}
+.kbintro .kblist{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin:12px 0 40px}
+.kbintro .kblist a{display:block;background:#fff;border:1.5px solid #D2D9E8;border-radius:14px;padding:14px 16px;text-decoration:none;color:inherit}
+.kbintro .kblist a:hover{border-color:#F0522B}.kbintro .kblist a b{display:block;font-size:15px;margin-bottom:4px}
+.kbintro .kblist a span{font-size:12.5px;color:#44506B;line-height:1.5}.kbintro .kblist a i{font-style:normal;display:inline-block;margin-top:6px;font-size:11.5px;font-weight:700;color:#F0522B}
+.kbmiss{max-width:760px;margin:60px auto;background:#FFF6DD;border:2px dashed #E3B341;border-radius:18px;padding:34px;text-align:center;color:#6B4A00;font-size:15px;line-height:1.6}
+.kbmiss b{display:block;font-size:20px;margin-bottom:8px}
+
+html{scroll-padding-top:calc(var(--navh,0px) + 16px)}.kbhl{scroll-margin-top:calc(var(--navh,0px) + 24px)}
+#app{padding-top:6px}

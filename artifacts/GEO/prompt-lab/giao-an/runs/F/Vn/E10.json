@@ -1,0 +1,33 @@
+{
+ "case": "E10",
+ "variant": "Vn",
+ "round": "F",
+ "text": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[1].thoi_luong_phut\",\"before\":20,\"after\":15,\"ly_do\":\"Giảm thời lượng HĐ Hình thành kiến thức từ 20 xuống 15 phút theo yêu cầu.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[2].thoi_luong_phut\",\"before\":15,\"after\":20,\"ly_do\":\"Tăng thời lượng HĐ Luyện tập từ 15 lên 20 phút theo yêu cầu; tổng vẫn 5+15+20+5 = 45 phút.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1].noi_dung\",\"van_de\":\"HĐ Hình thành còn 15 phút nhưng vẫn gồm định nghĩa, cách dựng AH ⊥ (SBC) và hệ thức, có thể hơi chật.\",\"goi_y\":\"Cho HS làm PHT1 câu 1 nhanh (khoảng 2 phút), GV chiếu sẵn hình dựng AK, AH để tiết kiệm thời gian vẽ.\",\"ly_do\":\"Bảo đảm đủ thời gian chốt định nghĩa và hệ thức trong 15 phút.\"},{\"vi_tri\":\"hoat_dong[2].noi_dung\",\"van_de\":\"Luyện tập tăng lên 20 phút nên có thể thêm bài để tận dụng thời gian.\",\"goi_y\":\"Có thể thêm bài BT11-B26-6 (VDC) hoặc bài khác trong kho vào PHT1 cho HS khá, nếu thầy/cô muốn.\",\"ly_do\":\"Đối tượng khá, còn dư thời gian luyện tập.\"}],\"unsure\":[]}",
+ "raw": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[1].thoi_luong_phut\",\"before\":20,\"after\":15,\"ly_do\":\"Giảm thời lượng HĐ Hình thành kiến thức từ 20 xuống 15 phút theo yêu cầu.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[2].thoi_luong_phut\",\"before\":15,\"after\":20,\"ly_do\":\"Tăng thời lượng HĐ Luyện tập từ 15 lên 20 phút theo yêu cầu; tổng vẫn 5+15+20+5 = 45 phút.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1].noi_dung\",\"van_de\":\"HĐ Hình thành còn 15 phút nhưng vẫn gồm định nghĩa, cách dựng AH ⊥ (SBC) và hệ thức, có thể hơi chật.\",\"goi_y\":\"Cho HS làm PHT1 câu 1 nhanh (khoảng 2 phút), GV chiếu sẵn hình dựng AK, AH để tiết kiệm thời gian vẽ.\",\"ly_do\":\"Bảo đảm đủ thời gian chốt định nghĩa và hệ thức trong 15 phút.\"},{\"vi_tri\":\"hoat_dong[2].noi_dung\",\"van_de\":\"Luyện tập tăng lên 20 phút nên có thể thêm bài để tận dụng thời gian.\",\"goi_y\":\"Có thể thêm bài BT11-B26-6 (VDC) hoặc bài khác trong kho vào PHT1 cho HS khá, nếu thầy/cô muốn.\",\"ly_do\":\"Đối tượng khá, còn dư thời gian luyện tập.\"}],\"unsure\":[]}",
+ "usage": {
+  "ts": "2026-11-27T17:49:49",
+  "role": "gen",
+  "task": "F/Vn/E10",
+  "model": "claude-sonnet-5-5",
+  "input": 3368,
+  "output": 618,
+  "cache_write": 0,
+  "cache_read": 1335,
+  "stop": "end_turn",
+  "sec": 4.7
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:49:49",
+   "role": "gen",
+   "task": "F/Vn/E10",
+   "model": "claude-sonnet-5-5",
+   "input": 3368,
+   "output": 618,
+   "cache_write": 0,
+   "cache_read": 1335,
+   "stop": "end_turn",
+   "sec": 4.7
+  }
+ ]
+}

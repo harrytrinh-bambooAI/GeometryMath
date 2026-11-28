@@ -1,0 +1,35 @@
+{
+ "case": "E15",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "reply"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Từ chối đúng theo A1: giữ kí hiệu y' của SGK, giải thích rõ và có phương án thay thế; các đề xuất kèm lý do và không tự sửa, đặc biệt phát hiện đúng câu 2 PHT1 thiếu mã KT11-C09-CT-003. Điểm trừ nhỏ: đề xuất 1 viện dẫn sai luật (việc ưu tiên id trong kho không thuộc A3), và nhận xét về 'kí hiệu x^2 dạng chữ thường' ở HD1 mơ hồ, không có giá trị sửa."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

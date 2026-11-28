@@ -1,0 +1,19 @@
+{
+ "case": "E02",
+ "variant": "V7",
+ "round": "F",
+ "text": "{\"kind\": \"question\", \"text\": \"Yêu cầu \\\"viết lại hết\\\" chưa rõ phạm vi, vì mục tiêu và thiết bị đã khoá nên không được đổi: thầy/cô muốn tôi chỉ đổi theo hướng khám phá những hoạt động nào (ví dụ chỉ cách tổ chức của HD1, HD2, HD3, HD4), và giữ nguyên phiếu học tập PHT1 hay không?\"}",
+ "raw": "{\"ket_qua\":{\"kind\":\"question\",\"text\":\"Yêu cầu \\\"viết lại hết\\\" chưa rõ phạm vi, vì mục tiêu và thiết bị đã khoá nên không được đổi: thầy/cô muốn tôi chỉ đổi theo hướng khám phá những hoạt động nào (ví dụ chỉ cách tổ chức của HD1, HD2, HD3, HD4), và giữ nguyên phiếu học tập PHT1 hay không?\"}}",
+ "usage": {
+  "ts": "2026-11-27T16:46:03",
+  "role": "gen",
+  "task": "F/V7/E02",
+  "model": "claude-sonnet-5-5",
+  "input": 3418,
+  "output": 174,
+  "cache_write": 0,
+  "cache_read": 6603,
+  "stop": "end_turn",
+  "sec": 3.4
+ }
+}

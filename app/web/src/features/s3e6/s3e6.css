@@ -1,0 +1,124 @@
+/* S3-E6 (T-261126-32): thanh thao tác Kết quả lớp / lớp, hộp xác nhận, Trình chiếu từ kết quả, lớp đã lưu trữ.
+   Chỉ token theme; chữ phụ ≥ 14 px; nút cao ≥ 44 px. */
+.s3e6-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  min-width: 0;
+}
+.s3e6-bar .btn,
+.s3e6-row .btn {
+  min-height: 44px;
+}
+.s3e6-err {
+  color: var(--red);
+  font-size: 14px;
+}
+.s3e6-fix {
+  margin-top: 8px;
+  min-height: 44px;
+}
+.s3e6-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: color-mix(in srgb, var(--text) 35%, transparent);
+  z-index: 50;
+}
+.s3e6-dialog {
+  max-width: 520px;
+  width: 100%;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.s3e6-dialog-title {
+  font-size: 18px;
+  margin: 0;
+  display: flex;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+.s3e6-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.s3e6-present {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  min-width: 0;
+}
+.s3e6-present-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.s3e6-present-title {
+  font-size: 24px;
+  margin: 0;
+  flex: 1 1 auto;
+  overflow-wrap: anywhere;
+}
+.s3e6-statement {
+  font-family: var(--font-math);
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.s3e6-steps {
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.s3e6-step {
+  font-family: var(--font-math);
+  font-size: 19px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.s3e6-toast {
+  align-self: flex-start;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  font-size: 15px;
+}
+.s3e6-archived {
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.s3e6-archived h3 {
+  margin: 0 0 8px;
+}
+.s3e6-archived ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.s3e6-archived li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.s3e6-archived-msg {
+  font-size: 14px;
+}

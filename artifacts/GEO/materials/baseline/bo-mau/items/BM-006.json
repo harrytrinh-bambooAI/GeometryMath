@@ -1,0 +1,86 @@
+{
+ "id": "BM-006",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-35 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-35 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa đường thẳng và mặt phẳng",
+ "muc_do": "TH",
+ "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a\\sqrt3$, $AA'=2a$. Tính góc giữa đường thẳng $B'C$ và mặt phẳng $(ABC)$.",
+ "dap_so": {
+  "gia_tri": "$45^\\circ$",
+  "so": 45.0
+ },
+ "dap_so_engine": 44.99999999999999,
+ "kien_thuc": [
+  "Lăng trụ đứng: cạnh bên vuông góc đáy",
+  "Góc giữa đường thẳng và mặt phẳng"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$BB'\\perp(ABC)$ nên hình chiếu của $B'C$ là $BC$; góc cần tìm là $\\widehat{B'CB}$.",
+   "ket_qua_trung_gian": "$\\widehat{B'CB}$",
+   "kien_thuc": "Hình chiếu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\widehat{B'CB}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $AC$ làm hình chiếu của $B'C$ (sai chân hình chiếu của $B'$)",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$BC=\\sqrt{AB^2+AC^2}=\\sqrt{a^2+3a^2}=2a$.",
+   "ket_qua_trung_gian": "$BC=2a$",
+   "kien_thuc": "Pythagore",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $BC=2a$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Trừ thay vì cộng: $BC=\\sqrt{3a^2-a^2}=a\\sqrt2$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 2.0
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$BB'=BC=2a$ nên $\\tan\\widehat{B'CB}=1$, góc bằng $45^\\circ$.",
+   "ket_qua_trung_gian": "$45^\\circ$",
+   "kien_thuc": "tan",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $45^\\circ$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 45.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Trừ thay vì cộng: $BC=\\sqrt{3a^2-a^2}=a\\sqrt2$",
+   "loi_giai": "B1: $BB'\\perp(ABC)$ nên hình chiếu của $B'C$ là $BC$; góc cần tìm là $\\widehat{B'CB}$.\nB2: $BC=\\sqrt{AC^2-AB^2}=a\\sqrt2$.\nB3: $\\tan\\widehat{B'CB}=\\dfrac{2a}{a\\sqrt2}=\\sqrt2\\Rightarrow\\approx54{,}74^\\circ$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Lấy $AC$ làm hình chiếu của $B'C$ (sai chân hình chiếu của $B'$)",
+   "loi_giai": "B1: Hình chiếu của $B'C$ lên $(ABC)$ là $AC$, góc cần tìm là $\\widehat{B'CA}$.\nB2: $BC=\\sqrt{AB^2+AC^2}=\\sqrt{a^2+3a^2}=2a$.\nB3: $AB'=a\\sqrt5$, $\\tan\\widehat{B'CA}=\\dfrac{AB'}{AC}=\\dfrac{\\sqrt5}{\\sqrt3}\\Rightarrow\\approx52{,}24^\\circ$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

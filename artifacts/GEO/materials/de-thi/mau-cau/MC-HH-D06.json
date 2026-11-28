@@ -1,0 +1,124 @@
+{
+ "id": "MC-HH-D06",
+ "ten": "Diện tích mặt cầu ngoại tiếp hình hộp",
+ "chu_de": "khoi-tron-xoay",
+ "dang": "mat-cau-ngoai-tiep.hop",
+ "dang_tx": "tx.noi-tiep-cau",
+ "yccd": [
+  "12.TX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "D",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-81",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-81 + geometry/problem-specs.json#HKN-81"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "p": 3,
+    "q": 4,
+    "r": 5
+   },
+   {
+    "p": 3,
+    "q": 4,
+    "r": 12
+   },
+   {
+    "p": 2,
+    "q": 3,
+    "r": 6
+   },
+   {
+    "p": 1,
+    "q": 2,
+    "r": 2
+   },
+   {
+    "p": 6,
+    "q": 8,
+    "r": 5
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB={p}$ cm, $AD={q}$ cm, $AA'={r}$ cm.",
+ "hoi": "Diện tích mặt cầu ngoại tiếp hình hộp chữ nhật bằng",
+ "dap_so": "pi*(p**2+q**2+r**2)",
+ "don_vi": "cm2",
+ "nhieu": [
+  {
+   "bieu_thuc": "4*pi*(p**2+q**2+r**2)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy đường chéo $AC'$ làm bán kính"
+   }
+  },
+  {
+   "bieu_thuc": "pi*(p**2+q**2)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy bán kính bằng nửa đường chéo đáy"
+   }
+  },
+  {
+   "bieu_thuc": "pi*(p**2+q**2+r**2)/4",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Dùng $S=\\pi R^2$ thay cho $4\\pi R^2$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-81",
+  "ask": 0,
+  "params": {
+   "a": "p",
+   "b": "q",
+   "c": "r"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "p": "3",
+   "q": "4",
+   "r": "5"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "12"
+  },
+  {
+   "p": "2",
+   "q": "3",
+   "r": "6"
+  },
+  {
+   "p": "1",
+   "q": "2",
+   "r": "2"
+  },
+  {
+   "p": "6",
+   "q": "8",
+   "r": "5"
+  }
+ ],
+ "so_bien_the": 5,
+ "so_cau_sinh": 10,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

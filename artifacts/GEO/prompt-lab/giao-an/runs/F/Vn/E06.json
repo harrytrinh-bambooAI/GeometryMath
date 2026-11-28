@@ -1,0 +1,33 @@
+{
+ "case": "E06",
+ "variant": "Vn",
+ "round": "F",
+ "text": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[3].ten\",\"before\":\"Vận dụng: khoảng cách trong căn phòng\",\"after\":\"Vận dụng: đo khoảng cách từ đỉnh cột cờ đến mặt sân\",\"ly_do\":\"Đổi chủ đề vận dụng sang bài toán cột cờ theo yêu cầu.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].muc_tieu\",\"before\":\"Liên hệ thực tế.\",\"after\":\"Vận dụng khái niệm khoảng cách từ điểm đến mặt phẳng để mô hình hoá và đề xuất cách đo khoảng cách từ đỉnh cột cờ đến mặt sân.\",\"ly_do\":\"Làm rõ mục tiêu theo bối cảnh cột cờ.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].noi_dung\",\"before\":\"Tính khoảng cách từ góc trần đến mặt tường đối diện (đo phòng học).\",\"after\":\"Coi mặt sân là mặt phẳng, đỉnh cột cờ là điểm M. Hãy đề xuất phương án đo khoảng cách từ đỉnh cột cờ đến mặt sân (chỉ rõ chân đường vuông góc H, vì sao MH là khoảng cách cần tìm) và thực hiện đo, tính toán từ các số liệu đo được (ví dụ dùng thước dây, góc nâng hoặc bóng cột cờ).\",\"ly_do\":\"Thay nội dung bài toán theo yêu cầu.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].san_pham\",\"before\":\"Bài làm nộp tiết sau.\",\"after\":\"Bài làm nộp tiết sau gồm: hình vẽ mô hình hoá, phương án đo, số liệu đo và kết quả tính khoảng cách từ đỉnh cột cờ đến mặt sân.\",\"ly_do\":\"Cụ thể hoá sản phẩm.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].to_chuc.chuyen_giao\",\"before\":\"GV giao việc.\",\"after\":\"GV nêu bài toán đo khoảng cách từ đỉnh cột cờ đến mặt sân và yêu cầu về sản phẩm nộp.\",\"ly_do\":\"Phù hợp nội dung mới.\"}],\"de_xuat\":[],\"unsure\":[\"Giữ nguyên HĐ làm ở nhà (thoi_luong_phut 0, o_nha true). Thực tế HD4 hiện ghi thoi_luong_phut 5 và o_nha false, dù HS làm ở nhà; bạn có muốn đổi thành o_nha true và thoi_luong_phut 0 (khi đó tổng thời gian trên lớp còn 40 phút, cần phân bổ lại 5 phút) không?\"]}",
+ "raw": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[3].ten\",\"before\":\"Vận dụng: khoảng cách trong căn phòng\",\"after\":\"Vận dụng: đo khoảng cách từ đỉnh cột cờ đến mặt sân\",\"ly_do\":\"Đổi chủ đề vận dụng sang bài toán cột cờ theo yêu cầu.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].muc_tieu\",\"before\":\"Liên hệ thực tế.\",\"after\":\"Vận dụng khái niệm khoảng cách từ điểm đến mặt phẳng để mô hình hoá và đề xuất cách đo khoảng cách từ đỉnh cột cờ đến mặt sân.\",\"ly_do\":\"Làm rõ mục tiêu theo bối cảnh cột cờ.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].noi_dung\",\"before\":\"Tính khoảng cách từ góc trần đến mặt tường đối diện (đo phòng học).\",\"after\":\"Coi mặt sân là mặt phẳng, đỉnh cột cờ là điểm M. Hãy đề xuất phương án đo khoảng cách từ đỉnh cột cờ đến mặt sân (chỉ rõ chân đường vuông góc H, vì sao MH là khoảng cách cần tìm) và thực hiện đo, tính toán từ các số liệu đo được (ví dụ dùng thước dây, góc nâng hoặc bóng cột cờ).\",\"ly_do\":\"Thay nội dung bài toán theo yêu cầu.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].san_pham\",\"before\":\"Bài làm nộp tiết sau.\",\"after\":\"Bài làm nộp tiết sau gồm: hình vẽ mô hình hoá, phương án đo, số liệu đo và kết quả tính khoảng cách từ đỉnh cột cờ đến mặt sân.\",\"ly_do\":\"Cụ thể hoá sản phẩm.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].to_chuc.chuyen_giao\",\"before\":\"GV giao việc.\",\"after\":\"GV nêu bài toán đo khoảng cách từ đỉnh cột cờ đến mặt sân và yêu cầu về sản phẩm nộp.\",\"ly_do\":\"Phù hợp nội dung mới.\"}],\"de_xuat\":[],\"unsure\":[\"Giữ nguyên HĐ làm ở nhà (thoi_luong_phut 0, o_nha true). Thực tế HD4 hiện ghi thoi_luong_phut 5 và o_nha false, dù HS làm ở nhà; bạn có muốn đổi thành o_nha true và thoi_luong_phut 0 (khi đó tổng thời gian trên lớp còn 40 phút, cần phân bổ lại 5 phút) không?\"]}",
+ "usage": {
+  "ts": "2026-11-27T17:49:40",
+  "role": "gen",
+  "task": "F/Vn/E06",
+  "model": "claude-sonnet-5-5",
+  "input": 3389,
+  "output": 999,
+  "cache_write": 0,
+  "cache_read": 1335,
+  "stop": "end_turn",
+  "sec": 6.4
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:49:40",
+   "role": "gen",
+   "task": "F/Vn/E06",
+   "model": "claude-sonnet-5-5",
+   "input": 3389,
+   "output": 999,
+   "cache_write": 0,
+   "cache_read": 1335,
+   "stop": "end_turn",
+   "sec": 6.4
+  }
+ ]
+}

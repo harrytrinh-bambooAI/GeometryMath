@@ -1,0 +1,108 @@
+{
+ "id": "BM-065",
+ "nguon": {
+  "loai": "de-chinh-thuc",
+  "ref": "Sở GD&ĐT Quảng Nam — HDC chính thức Toán TS10 2025-2026, Bài 3b, trang 2/4 — https://storage-vnportal.vnpt.vn/qnm-ubnd/6141/ẢNH/2. HDC_Toan (chung)_TS10_2526.pdf (tải 27/11/2026)"
+ },
+ "cap": "thcs",
+ "chu_de": "Xác suất – không gian mẫu",
+ "muc_do": "TH",
+ "de_bai": "Một tàu điện có ba toa số $1,2,3$ mở cửa đón khách. Hương và Giang mỗi người chọn ngẫu nhiên một toa để lên. Mô tả không gian mẫu và tính xác suất của biến cố $E$: \"Hương và Giang cùng lên một toa\".",
+ "dap_so": {
+  "gia_tri": "$P(E)=\\dfrac13$",
+  "so": 0.3333333333333333
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Không gian mẫu",
+  "Xác suất cổ điển"
+ ],
+ "tong_diem": 0.75,
+ "bieu_diem": "chinh-thuc",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Kết quả là cặp $(a,b)$: Hương lên toa $a$, Giang lên toa $b$.",
+   "ket_qua_trung_gian": "Mô tả kết quả",
+   "kien_thuc": "Mô tả phép thử",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Mô tả kết quả",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$\\Omega=\\{(1,1);(1,2);(1,3);(2,1);(2,2);(2,3);(3,1);(3,2);(3,3)\\}$ (lập bảng).",
+   "ket_qua_trung_gian": "$\\Omega$ có 9 phần tử",
+   "kien_thuc": "Liệt kê không gian mẫu",
+   "diem": 0.25,
+   "tieu_chi_dat": "Đủ 9 phần tử (đúng 4 phần tử được 0,125)",
+   "cach_khac": [
+    "Kí hiệu $H_iG_j$ (HDC cho cách khác đủ điểm)"
+   ],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Coi kết quả không có thứ tự: $\\Omega$ gồm 6 cặp $\\{1,1\\},\\{1,2\\},\\dots$",
+     "tru": 0.25
+    },
+    {
+     "mo_ta": "Không mô tả/liệt kê không gian mẫu, chỉ ghi $n(\\Omega)=9$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$n(\\Omega)=9$.",
+   "ket_qua_trung_gian": "$9$",
+   "kien_thuc": "Đếm",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $9$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 9.0
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "Kết quả thuận lợi: $(1,1);(2,2);(3,3)$.",
+   "ket_qua_trung_gian": "3 kết quả",
+   "kien_thuc": "Biến cố",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: 3 kết quả",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 3.0
+  },
+  {
+   "ma": "B5",
+   "noi_dung": "$P(E)=\\dfrac39=\\dfrac13$.",
+   "ket_qua_trung_gian": "$\\dfrac13$",
+   "kien_thuc": "Xác suất cổ điển",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac13$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.3333333333333333
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Coi kết quả không có thứ tự: $\\Omega$ gồm 6 cặp $\\{1,1\\},\\{1,2\\},\\dots$",
+   "loi_giai": "B1: Kết quả là cặp $(a,b)$: Hương lên toa $a$, Giang lên toa $b$.\nB2: $\\Omega=\\{\\{1,1\\};\\{1,2\\};\\{1,3\\};\\{2,2\\};\\{2,3\\};\\{3,3\\}\\}$.\nB3: $n(\\Omega)=6$.\nB4: Kết quả thuận lợi: $(1,1);(2,2);(3,3)$.\nB5: $P(E)=\\dfrac36=\\dfrac12$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "thieu-chung-minh",
+   "mo_ta": "Không mô tả/liệt kê không gian mẫu, chỉ ghi $n(\\Omega)=9$",
+   "loi_giai": "B1: Kết quả là cặp $(a,b)$: Hương lên toa $a$, Giang lên toa $b$.\nB2: (không liệt kê)\nB3: $n(\\Omega)=9$.\nB4: Kết quả thuận lợi: $(1,1);(2,2);(3,3)$.\nB5: $P(E)=\\dfrac39=\\dfrac13$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Hai lời giải sai cùng bước B2 nhưng khác loại lỗi. S1: B1 (0,125) và B4 (3 kết quả thuận lợi, 0,125) vẫn đúng = 0,25."
+}

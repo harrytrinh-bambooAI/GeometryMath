@@ -1,0 +1,87 @@
+{
+ "id": "BM-029",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-82 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-82 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Mặt cầu",
+ "muc_do": "VD",
+ "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác đều cạnh $a$ và $AA'=2a$. Tính diện tích mặt cầu ngoại tiếp lăng trụ theo $a$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{16\\pi a^2}{3}$",
+  "so": 16.755160819145562
+ },
+ "dap_so_engine": 16.755160819145562,
+ "kien_thuc": [
+  "Mặt cầu ngoại tiếp lăng trụ đứng: $R^2=r^2+\\left(\\dfrac h2\\right)^2$",
+  "$S=4\\pi R^2$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Bán kính đường tròn ngoại tiếp đáy $r=\\dfrac{a\\sqrt3}3$, $r^2=\\dfrac{a^2}3$.",
+   "ket_qua_trung_gian": "$r^2=\\dfrac{a^2}3$",
+   "kien_thuc": "Bán kính ngoại tiếp tam giác đều",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $r^2=\\dfrac{a^2}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $r$ bằng đường cao tam giác đều $\\dfrac{a\\sqrt3}2$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.3333333333333333
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$R^2=r^2+\\left(\\dfrac{AA'}2\\right)^2=\\dfrac{a^2}3+a^2=\\dfrac{4a^2}3$.",
+   "ket_qua_trung_gian": "$R^2=\\dfrac{4a^2}3$",
+   "kien_thuc": "Tâm là trung điểm đoạn nối hai tâm đáy",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $R^2=\\dfrac{4a^2}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng cả chiều cao $h$ thay vì $\\dfrac h2$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 1.3333333333333333
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$S=4\\pi R^2=\\dfrac{16\\pi a^2}3$.",
+   "ket_qua_trung_gian": "$\\dfrac{16\\pi a^2}3$",
+   "kien_thuc": "Diện tích mặt cầu",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{16\\pi a^2}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 16.755160819145562
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng cả chiều cao $h$ thay vì $\\dfrac h2$",
+   "loi_giai": "B1: Bán kính đường tròn ngoại tiếp đáy $r=\\dfrac{a\\sqrt3}3$, $r^2=\\dfrac{a^2}3$.\nB2: $R^2=r^2+AA'^2=\\dfrac{a^2}3+4a^2=\\dfrac{13a^2}3$.\nB3: $S=\\dfrac{52\\pi a^2}3$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $r$ bằng đường cao tam giác đều $\\dfrac{a\\sqrt3}2$",
+   "loi_giai": "B1: $r=\\dfrac{a\\sqrt3}2$, $r^2=\\dfrac{3a^2}4$.\nB2: $R^2=\\dfrac{3a^2}4+a^2=\\dfrac{7a^2}4$.\nB3: $S=7\\pi a^2$.",
+   "diem_dung": 0
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

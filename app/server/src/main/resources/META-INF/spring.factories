@@ -1,0 +1,2 @@
+org.springframework.boot.EnvironmentPostProcessor=\
+vn.geo.server.common.config.ProfileGuard

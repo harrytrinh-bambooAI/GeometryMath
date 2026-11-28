@@ -1,0 +1,89 @@
+{
+ "id": "BM-023",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-62 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-62 (v1.1)"
+ },
+ "cap": "thcs",
+ "chu_de": "Diện tích xung quanh hình chóp đều",
+ "muc_do": "TH",
+ "de_bai": "Một hình chóp tứ giác đều $S.ABCD$ có cạnh đáy $6$ cm, $O$ là tâm đáy và chiều cao $SO=4$ cm. Tính diện tích xung quanh của hình chóp.",
+ "dap_so": {
+  "gia_tri": "$60$ cm$^2$",
+  "so": 60.0
+ },
+ "dap_so_engine": 60.0,
+ "kien_thuc": [
+  "Trung đoạn hình chóp đều",
+  "$S_{xq}=p\\cdot d$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$H$ trung điểm $BC$: $OH=3$, $SH=\\sqrt{4^2+3^2}=5$ cm (trung đoạn).",
+   "ket_qua_trung_gian": "$SH=5$",
+   "kien_thuc": "Pythagore",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $SH=5$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng chiều cao $SO$ làm trung đoạn",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 5.0
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Nửa chu vi đáy $p=\\dfrac{4\\cdot6}2=12$ cm.",
+   "ket_qua_trung_gian": "$p=12$",
+   "kien_thuc": "Chu vi",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $p=12$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 12.0
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$S_{xq}=p\\cdot d=12\\cdot5=60$ cm$^2$.",
+   "ket_qua_trung_gian": "$60$",
+   "kien_thuc": "Diện tích xung quanh hình chóp đều",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $60$",
+   "cach_khac": [
+    "$4\\cdot\\dfrac12\\cdot6\\cdot5$"
+   ],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Nhân chu vi (không phải nửa chu vi) với trung đoạn",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 60.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Dùng chiều cao $SO$ làm trung đoạn",
+   "loi_giai": "B1: Trung đoạn $=SO=4$ cm.\nB2: Nửa chu vi đáy $p=\\dfrac{4\\cdot6}2=12$ cm.\nB3: $S_{xq}=12\\cdot4=48$ cm$^2$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Nhân chu vi (không phải nửa chu vi) với trung đoạn",
+   "loi_giai": "B1: $H$ trung điểm $BC$: $OH=3$, $SH=\\sqrt{4^2+3^2}=5$ cm (trung đoạn).\nB2: Nửa chu vi đáy $p=\\dfrac{4\\cdot6}2=12$ cm.\nB3: $S_{xq}=24\\cdot5=120$ cm$^2$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "S1: B2 đúng, độc lập nên được 0,25."
+}

@@ -1,0 +1,114 @@
+{
+ "id": "MC-HH-F01",
+ "ten": "Thể tích lăng trụ đứng đáy vuông",
+ "chu_de": "hinh-khong-gian-the-tich",
+ "dang": "the-tich.lang-tru-dung",
+ "dang_tx": "th.lang-tru",
+ "yccd": [
+  "11.TT.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "FN",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "NB"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-34",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-34 + geometry/problem-specs.json#HKN-34"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "p": 3,
+    "s": 4,
+    "t": 6
+   },
+   {
+    "p": 6,
+    "s": 8,
+    "t": 10
+   },
+   {
+    "p": 5,
+    "s": 12,
+    "t": 4
+   },
+   {
+    "p": 8,
+    "s": 15,
+    "t": 5
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB={p}$ cm, $AC={s}$ cm và $AA'={t}$ cm.",
+ "hoi": "Thể tích khối lăng trụ bằng",
+ "dap_so": "p*s*t/2",
+ "don_vi": "cm",
+ "nhieu": [
+  {
+   "bieu_thuc": "p*s*t",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên hệ số $\\dfrac12$ của diện tích tam giác vuông"
+   }
+  },
+  {
+   "bieu_thuc": "p*s*t/6",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+   }
+  },
+  {
+   "bieu_thuc": "p*s*t/3",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng công thức khối chóp với đáy $AB\\cdot AC$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-34",
+  "ask": 0,
+  "params": {
+   "ab": "p",
+   "ac": "s",
+   "h": "t"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "p": "3",
+   "s": "4",
+   "t": "6"
+  },
+  {
+   "p": "6",
+   "s": "8",
+   "t": "10"
+  },
+  {
+   "p": "5",
+   "s": "12",
+   "t": "4"
+  },
+  {
+   "p": "8",
+   "s": "15",
+   "t": "5"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

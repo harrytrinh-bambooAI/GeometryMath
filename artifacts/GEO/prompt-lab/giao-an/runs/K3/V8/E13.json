@@ -1,0 +1,34 @@
+{
+ "case": "E13",
+ "variant": "V8",
+ "round": "K3",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"add\", \"path\": \"phieu_hoc_tap[0].cau\", \"before\": null, \"after\": {\"so\": 3, \"nguon\": \"BT11-B32-5\", \"muc_do\": \"VD\", \"de\": \"Tính đạo hàm của $y=\\\\ln(x^2+1)$.\", \"kt\": [\"KT11-C09-CT-004\", \"KT11-C09-CT-006\"], \"dap_so\": null, \"buoc_goi_y\": [\"Đặt $u=x^2+1$ và nhận ra $y=\\\\ln u$ là hàm hợp.\", \"Áp dụng công thức đạo hàm của $\\\\ln x$ cho biến $u$, rồi nhân với $u'_x$ theo công thức đạo hàm hàm hợp.\", \"Tính $u'$ bằng quy tắc đạo hàm của tổng và $(x^n)'$, thay vào và rút gọn.\"]}, \"ly_do\": \"Thêm câu mức VD lấy từ kho bài tập (BT11-B32-5) vào cuối PHT1, đánh số tiếp theo là câu 3.\"}], \"de_xuat\": [{\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu BT11-B32-5 cần đạo hàm hàm hợp (KT11-C09-CT-006), nhưng kiến thức này chưa được dạy ở HD2, HD3 và không có trong mục tiêu bài (mục tiêu đã khoá).\", \"goi_y\": \"Giao câu 3 như bài mở rộng/làm ở nhà, hoặc bổ sung một HĐ/mục tiêu về đạo hàm hàm hợp ở tiết 2/2.\", \"ly_do\": \"HS chưa được học quy tắc hàm hợp trong tiết này nên khó tự làm câu 3 trên lớp.\"}, {\"vi_tri\": \"hoat_dong[3] (HD4)\", \"van_de\": \"HD4 chỉ có 10 phút cho PHT1 với 3 câu (NB, TH, VD) và còn báo cáo, nên có thể thiếu thời gian (cần khoảng 3–4 phút/câu NB–TH và 6–8 phút/câu VD).\", \"goi_y\": \"Cân nhắc điều chỉnh thời lượng các HĐ hoặc để câu 3 làm ở nhà.\", \"ly_do\": \"Không tự sửa thời lượng vì ngoài yêu cầu.\"}, {\"vi_tri\": \"hoat_dong[1].kien_thuc, hoat_dong[2]\", \"van_de\": \"HD2 liệt kê KT11-C09-CT-004 nhưng thiếu KT11-C09-CT-003 trong khi câu 2 PHT1 cần $(\\\\sin x)'$; HD3 có mục tiêu 'Vận dụng' thay vì động từ đo được.\", \"goi_y\": \"Bổ sung KT11-C09-CT-003 vào HD2 nếu muốn HS làm câu 2.\", \"ly_do\": \"Rà lỗi sẵn có, không tự vá.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[1]\", \"van_de\": \"Câu 2 có nguồn 'moi' trong khi kho có BT11-B32-2 tương tự ($y=x\\\\sin x$); các câu 1, 2 chưa có buoc_goi_y.\", \"goi_y\": \"Cân nhắc dùng id kho và bổ sung bước gợi ý.\", \"ly_do\": \"A3 ưu tiên id trong kho bài tập.\"}], \"unsure\": []}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"add\",\"path\":\"phieu_hoc_tap[0].cau\",\"before\":null,\"after\":{\"so\":3,\"nguon\":\"BT11-B32-5\",\"muc_do\":\"VD\",\"de\":\"Tính đạo hàm của $y=\\\\ln(x^2+1)$.\",\"kt\":[\"KT11-C09-CT-004\",\"KT11-C09-CT-006\"],\"dap_so\":null,\"buoc_goi_y\":[\"Đặt $u=x^2+1$ và nhận ra $y=\\\\ln u$ là hàm hợp.\",\"Áp dụng công thức đạo hàm của $\\\\ln x$ cho biến $u$, rồi nhân với $u'_x$ theo công thức đạo hàm hàm hợp.\",\"Tính $u'$ bằng quy tắc đạo hàm của tổng và $(x^n)'$, thay vào và rút gọn.\"]},\"ly_do\":\"Thêm câu mức VD lấy từ kho bài tập (BT11-B32-5) vào cuối PHT1, đánh số tiếp theo là câu 3.\"}],\"de_xuat\":[{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu BT11-B32-5 cần đạo hàm hàm hợp (KT11-C09-CT-006), nhưng kiến thức này chưa được dạy ở HD2, HD3 và không có trong mục tiêu bài (mục tiêu đã khoá).\",\"goi_y\":\"Giao câu 3 như bài mở rộng/làm ở nhà, hoặc bổ sung một HĐ/mục tiêu về đạo hàm hàm hợp ở tiết 2/2.\",\"ly_do\":\"HS chưa được học quy tắc hàm hợp trong tiết này nên khó tự làm câu 3 trên lớp.\"},{\"vi_tri\":\"hoat_dong[3] (HD4)\",\"van_de\":\"HD4 chỉ có 10 phút cho PHT1 với 3 câu (NB, TH, VD) và còn báo cáo, nên có thể thiếu thời gian (cần khoảng 3–4 phút/câu NB–TH và 6–8 phút/câu VD).\",\"goi_y\":\"Cân nhắc điều chỉnh thời lượng các HĐ hoặc để câu 3 làm ở nhà.\",\"ly_do\":\"Không tự sửa thời lượng vì ngoài yêu cầu.\"},{\"vi_tri\":\"hoat_dong[1].kien_thuc, hoat_dong[2]\",\"van_de\":\"HD2 liệt kê KT11-C09-CT-004 nhưng thiếu KT11-C09-CT-003 trong khi câu 2 PHT1 cần $(\\\\sin x)'$; HD3 có mục tiêu 'Vận dụng' thay vì động từ đo được.\",\"goi_y\":\"Bổ sung KT11-C09-CT-003 vào HD2 nếu muốn HS làm câu 2.\",\"ly_do\":\"Rà lỗi sẵn có, không tự vá.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[1]\",\"van_de\":\"Câu 2 có nguồn 'moi' trong khi kho có BT11-B32-2 tương tự ($y=x\\\\sin x$); các câu 1, 2 chưa có buoc_goi_y.\",\"goi_y\":\"Cân nhắc dùng id kho và bổ sung bước gợi ý.\",\"ly_do\":\"A3 ưu tiên id trong kho bài tập.\"}],\"unsure\":[]}}",
+ "usage": {
+  "ts": "2026-11-27T17:58:38",
+  "role": "gen",
+  "task": "K3/V8/E13",
+  "model": "claude-sonnet-5-5",
+  "input": 2822,
+  "output": 1235,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 8.6
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:38",
+   "role": "gen",
+   "task": "K3/V8/E13",
+   "model": "claude-sonnet-5-5",
+   "input": 2822,
+   "output": 1235,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 8.6
+  }
+ ],
+ "server_errs0": []
+}

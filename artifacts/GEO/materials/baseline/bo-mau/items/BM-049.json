@@ -1,0 +1,85 @@
+{
+ "id": "BM-049",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/on-tap-chuong.md — bài 7 (v1.3 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách từ điểm đến mặt phẳng",
+ "muc_do": "VDC",
+ "de_bai": "Chóp $S.ABCD$ đáy hình chữ nhật $AB=3$, $AD=6$, $SA\\perp(ABCD)$, $SA=3$. Tính $d(A,(SBD))$.",
+ "dap_so": {
+  "gia_tri": "$2$",
+  "so": 2.0
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Tứ diện vuông"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$AS,AB,AD$ đôi một vuông góc: $\\dfrac1{d^2}=\\dfrac1{SA^2}+\\dfrac1{AB^2}+\\dfrac1{AD^2}$.",
+   "ket_qua_trung_gian": "Công thức",
+   "kien_thuc": "Tứ diện vuông",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Công thức",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Coi đáy là hình vuông cạnh 3 (bỏ $AD=6$)",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$\\dfrac1{d^2}=\\dfrac19+\\dfrac19+\\dfrac1{36}=\\dfrac14$.",
+   "ket_qua_trung_gian": "$\\dfrac14$",
+   "kien_thuc": "Tính",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac14$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Quy đồng sai: $\\dfrac19+\\dfrac19+\\dfrac1{36}=\\dfrac3{36}$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.25
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$d=2$.",
+   "ket_qua_trung_gian": "$2$",
+   "kien_thuc": "Kết luận",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 2.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Quy đồng sai: $\\dfrac19+\\dfrac19+\\dfrac1{36}=\\dfrac3{36}$",
+   "loi_giai": "B1: $AS,AB,AD$ đôi một vuông góc: $\\dfrac1{d^2}=\\dfrac1{SA^2}+\\dfrac1{AB^2}+\\dfrac1{AD^2}$.\nB2: $\\dfrac1{d^2}=\\dfrac{3}{36}=\\dfrac1{12}$.\nB3: $d=2\\sqrt3$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Coi đáy là hình vuông cạnh 3 (bỏ $AD=6$)",
+   "loi_giai": "B1: $\\dfrac1{d^2}=\\dfrac3{SA^2}$ (đáy vuông cạnh 3).\nB2: $\\dfrac1{d^2}=\\dfrac13$.\nB3: $d=\\sqrt3$.",
+   "diem_dung": 0
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

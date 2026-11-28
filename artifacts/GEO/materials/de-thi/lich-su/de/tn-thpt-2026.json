@@ -1,0 +1,314 @@
+{
+ "ma": "tn-thpt-2026",
+ "ky_thi": "tn-thpt",
+ "nam": 2026,
+ "ma_de_dung": "0101 (đợt 1)",
+ "cau_truc_loai": "moi",
+ "cau_truc": {
+  "phan": [
+   {
+    "id": "P1",
+    "ten": "Phần I - Trắc nghiệm nhiều lựa chọn (4 phương án, 1 đúng)",
+    "loai_cau": "tn4",
+    "so_cau": 12,
+    "diem": 3.0
+   },
+   {
+    "id": "P2",
+    "ten": "Phần II - Trắc nghiệm đúng/sai (mỗi câu 4 ý)",
+    "loai_cau": "dung-sai",
+    "so_cau": 4,
+    "diem": 4.0
+   },
+   {
+    "id": "P3",
+    "ten": "Phần III - Trắc nghiệm trả lời ngắn",
+    "loai_cau": "tra-loi-ngan",
+    "so_cau": 6,
+    "diem": 3.0
+   }
+  ],
+  "thoi_gian_phut": 90,
+  "nguon_cau_truc": "QĐ 764/QĐ-BGDĐT ngày 08/03/2024: 12 câu x 0,25 đ; 4 câu đúng/sai (đúng 1/2/3/4 ý được 0,1/0,25/0,5/1,0 đ); 6 câu x 0,5 đ; tổng 10 đ"
+ },
+ "do_tin_cay": "cao cho chủ đề (đọc từ text + ảnh đề 2025); muc_do suy theo vị trí (P1: 1-9 NB, 10-12 TH; P2: câu 1 TH, còn lại VD; P3: 3 câu đầu VD, 3 câu cuối VDC)",
+ "ghi_chu": "NGOÀI phạm vi yêu cầu (2017-2025) nhưng nguồn có sẵn: đề chính thức đợt 1/2026 (mã 0101). Cấu trúc 12/4/6 khớp đề; chưa tra văn bản riêng cho 2026 (giả định giữ nguyên cấu trúc QĐ 764).",
+ "nguon": [
+  {
+   "url": "https://toanmath.com/toanmath-pdf/de-chinh-thuc-ky-thi-tot-nghiep-thpt-nam-2026-mon-toan.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  },
+  {
+   "url": "https://toanmath.com/toanmath-pdf/tong-hop-88-de-thi-thpt-quoc-gia-mon-toan-cua-bo-gddt-2005-2026.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  }
+ ],
+ "cau": [
+  {
+   "so": 1,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.cap-so-cong",
+   "lop": 11,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Số hạng u2 của cấp số cộng u1=5, d=-1"
+  },
+  {
+   "so": 2,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "dao-ham-co-ban",
+   "dang": "dh1.quy-tac",
+   "lop": 11,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Đạo hàm của f(x)+g(x) khi biết f', g'"
+  },
+  {
+   "so": 3,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.co-ban",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Phát biểu đúng về nguyên hàm [3+f(x)]dx"
+  },
+  {
+   "so": 4,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "ham-so-mu-logarit",
+   "dang": "ml.pt-log",
+   "lop": 11,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Nghiệm của phương trình log3(x-1)=1"
+  },
+  {
+   "so": 5,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.vecto",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Tọa độ vectơ AB"
+  },
+  {
+   "so": 6,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "xac-suat-co-dieu-kien",
+   "dang": "xs.doc-lap",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Xác suất giao của hai biến cố độc lập"
+  },
+  {
+   "so": 7,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "qh.vecto",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Vectơ bằng vectơ AB trong hình lập phương"
+  },
+  {
+   "so": 8,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he-bpt-2-an",
+   "lop": 10,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Cặp số là nghiệm của hệ BPT bậc nhất hai ẩn"
+  },
+  {
+   "so": 9,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.co-ban",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "F(x)=4x^3 là nguyên hàm của hàm nào"
+  },
+  {
+   "so": 10,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.tiem-can",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Tiệm cận ngang từ BBT"
+  },
+  {
+   "so": 11,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "day-so-cap-so",
+   "dang": "ds.cap-so-nhan",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Số hạng u4 của cấp số nhân"
+  },
+  {
+   "so": 12,
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "diem": 0.25,
+   "chu_de": "thong-ke",
+   "dang": "tke.ghep-nhom",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "giao-tiep",
+   "tom_tat": "Số đặc trưng của mẫu ghép nhóm (thời gian học trực tuyến)"
+  },
+  {
+   "so": 13,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "xac-suat-co-dieu-kien",
+   "dang": "xs.dieu-kien",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Ứng dụng AI sàng lọc bệnh: xác suất có điều kiện (4 ý đúng/sai)"
+  },
+  {
+   "so": 14,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.dao-ham-dung-sai",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hàm f(x)=x^3/3-5x^2+9x+8: đạo hàm, cực trị, giá trị (4 ý đúng/sai)"
+  },
+  {
+   "so": 15,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "mo-hinh-hoa",
+   "tom_tat": "Pin năng lượng mặt trời: F(t) từ tốc độ lưu trữ f(t) (4 ý đúng/sai)"
+  },
+  {
+   "so": 16,
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "diem": 1.0,
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-vdc",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Vành đai bảo vệ và máy bay không người lái trong Oxyz (4 ý đúng/sai)"
+  },
+  {
+   "so": 17,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "hinh-khong-gian-quan-he",
+   "dang": "qh.khoang-cach",
+   "lop": 11,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Khoảng cách từ P đến mặt phẳng (MED) trong hình lập phương"
+  },
+  {
+   "so": 18,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem",
+   "lop": 11,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Điền 15 số vào 15 ô của trò chơi thỏa điều kiện"
+  },
+  {
+   "so": 19,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay",
+   "lop": 12,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Thể tích hạt cườm: quay nửa elip quanh Ox"
+  },
+  {
+   "so": 20,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem",
+   "lop": 11,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Gắn 12 bóng đèn (4 đỏ, 8 xanh) lên đa giác đều 12 cạnh"
+  },
+  {
+   "so": 21,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he-bac-nhat",
+   "lop": 10,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Bảng bán hàng 4 ngày: lập hệ phương trình tìm doanh thu ngày thứ Bảy"
+  },
+  {
+   "so": 22,
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "diem": 0.5,
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.mo-hinh",
+   "lop": 12,
+   "muc_do": "VDC",
+   "nang_luc": "mo-hinh-hoa",
+   "tom_tat": "Chi phí sản xuất và doanh thu chế biến nông sản: tối ưu lợi nhuận"
+  }
+ ]
+}

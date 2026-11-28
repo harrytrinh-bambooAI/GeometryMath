@@ -1,0 +1,86 @@
+{
+ "id": "BM-017",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-51 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-51 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Thể tích khối chóp",
+ "muc_do": "NB",
+ "de_bai": "Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt3$. Tính thể tích khối chóp $S.ABCD$ theo $a$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a^3\\sqrt3}{3}$",
+  "so": 0.5773502691896257
+ },
+ "dap_so_engine": 0.5773502691896257,
+ "kien_thuc": [
+  "$V=\\dfrac13Bh$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$SA\\perp(ABCD)$ nên chiều cao là $SA=a\\sqrt3$.",
+   "ket_qua_trung_gian": "$h=a\\sqrt3$",
+   "kien_thuc": "Chiều cao khối chóp",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $h=a\\sqrt3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $SC$ làm chiều cao",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 1.7320508075688772
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$S_{ABCD}=a^2$.",
+   "ket_qua_trung_gian": "$a^2$",
+   "kien_thuc": "Diện tích hình vuông",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $a^2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 1.0
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$V=\\dfrac13a^2\\cdot a\\sqrt3=\\dfrac{a^3\\sqrt3}3$.",
+   "ket_qua_trung_gian": "$\\dfrac{a^3\\sqrt3}3$",
+   "kien_thuc": "Thể tích khối chóp",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a^3\\sqrt3}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Quên hệ số $\\dfrac13$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.5773502691896257
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Quên hệ số $\\dfrac13$",
+   "loi_giai": "B1: $SA\\perp(ABCD)$ nên chiều cao là $SA=a\\sqrt3$.\nB2: $S_{ABCD}=a^2$.\nB3: $V=a^2\\cdot a\\sqrt3=a^3\\sqrt3$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Lấy $SC$ làm chiều cao",
+   "loi_giai": "B1: Chiều cao là $SC=\\sqrt{3a^2+2a^2}=a\\sqrt5$.\nB2: $S_{ABCD}=a^2$.\nB3: $V=\\dfrac13a^2\\cdot a\\sqrt5=\\dfrac{a^3\\sqrt5}3$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

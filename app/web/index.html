@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="vi" data-theme="c">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hình Học Không Gian Cùng AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--
+      Font của 4 theme (T-261126-50, Design/styles/STYLES.md): D Inter + JetBrains Mono (mặc định), A Nunito,
+      B IBM Plex Sans/Mono, C Be Vietnam Pro. Google Fonts, đều có bộ ký tự tiếng Việt; trình duyệt chỉ tải tệp
+      font của theme đang dùng. Mất mạng: token --font có font hệ thống dự phòng (display=swap, không chặn chữ).
+    -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Nunito:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Bad+Script&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Áp theme đã lưu trên máy trước khi React chạy (không nháy màu); khung đồng bộ theme của tài khoản sau. -->
+    <script>
+      try {
+        var t = localStorage.getItem('geo.theme');
+        if (t === 'a' || t === 'b' || t === 'c' || t === 'd') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

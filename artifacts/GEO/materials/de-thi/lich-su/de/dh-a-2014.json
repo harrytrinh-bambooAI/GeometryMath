@@ -1,0 +1,167 @@
+{
+ "ma": "dh-a-2014",
+ "ky_thi": "dh-a",
+ "nam": 2014,
+ "cau_truc_loai": "tu-luan",
+ "cau_truc": {
+  "phan": [
+   {
+    "id": "P1",
+    "ten": "Toàn bộ đề (9 câu)",
+    "loai_cau": "tu-luan",
+    "so_cau": 11,
+    "diem": 10.0
+   }
+  ],
+  "thoi_gian_phut": 180,
+  "nguon_cau_truc": "Đề thi: 180 phút, thang 10 điểm (câu 1 gồm 2 ý 1 điểm; còn lại theo từng câu)"
+ },
+ "do_tin_cay": "cao: đối chiếu trực tiếp với PDF chính thức của Bộ; muc_do là suy luận theo vị trí/độ khó điển hình (đề ĐH không công bố mức độ)",
+ "ghi_chu": "Đề 2014 không còn tách phần chung/riêng. Đề Toán khối A và A1 là một đề chung. Câu 8, 9 nội dung chi tiết đọc từ đề PDF chính thức.",
+ "nguon": [
+  {
+   "url": "https://hocmai.vn/file.php/1/Thu_vien_de_thi/Tuyen%20sinh%20DH,%20CD/Nam_2014/Tuyen_sinh_dai_hoc/Khoi_A/Toan/TOAN_DH_AA1_CT_14_DE.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  },
+  {
+   "url": "https://toanmath.com/toanmath-pdf/tong-hop-88-de-thi-thpt-quoc-gia-mon-toan-cua-bo-gddt-2005-2026.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  }
+ ],
+ "cau": [
+  {
+   "so": "1a",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.khao-sat",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Khảo sát hàm y=(x+2)/(x-1)"
+  },
+  {
+   "so": "1b",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.diem-tren-do-thi",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Tìm M thuộc (C) với khoảng cách đến đường thẳng y=-x bằng căn2"
+  },
+  {
+   "so": "2",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "luong-giac",
+   "dang": "lg.pt",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "PT sin x+4cos x=2+sin2x"
+  },
+  {
+   "so": "3",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Diện tích hình phẳng giới hạn bởi y=x^2-x+3 và y=2x+1"
+  },
+  {
+   "so": "4a",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 0.5,
+   "chu_de": "so-phuc",
+   "dang": "sp.tim-z",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Tìm phần thực, phần ảo của z từ z+(2+i)z̄=3+5i"
+  },
+  {
+   "so": "4b",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 0.5,
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-co-dien",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Hộp 16 thẻ, chọn 4 thẻ: xác suất cùng số chẵn"
+  },
+  {
+   "so": "5",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.mp-pt+ox.vitri",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Giao điểm d và (P); mặt phẳng chứa d vuông góc (P)"
+  },
+  {
+   "so": "6",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "th.chop+qh.khoang-cach",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Chóp S.ABCD đáy vuông: thể tích và khoảng cách A đến (SBD)"
+  },
+  {
+   "so": "7",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxy-hinh-phang",
+   "dang": "oxy.hinh-vuong",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hình vuông ABCD, M trung điểm AB, AN=3NC: viết PT đường thẳng CD"
+  },
+  {
+   "so": "8",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he",
+   "lop": 10,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hệ phương trình chứa căn x(12-y)... và x^3-8x-1=2căn(y-2)"
+  },
+  {
+   "so": "9",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "bat-dang-thuc-cuc-tri",
+   "dang": "bdt.cuc-tri",
+   "lop": 10,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "GTLN của P với x^2+y^2+z^2=2, x,y,z>=0"
+  }
+ ]
+}

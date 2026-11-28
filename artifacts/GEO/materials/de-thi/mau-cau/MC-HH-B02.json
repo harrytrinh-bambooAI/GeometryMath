@@ -1,0 +1,109 @@
+{
+ "id": "MC-HH-B02",
+ "ten": "Khoảng cách từ tâm đáy đến mặt bên (chóp đều)",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "kc-diem-mp.chop-deu.tam-day",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.2"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "B",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan",
+  "tu-luan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "VD",
+  "tu-luan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-11",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-11 + geometry/problem-specs.json#HKN-11"
+ },
+ "tham_so": {
+  "k": [
+   "1/2",
+   "1",
+   "sqrt(3)/2",
+   "sqrt(2)/2"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SM": "sqrt(h**2+a**2/4)",
+  "SA": "sqrt(h**2+a**2/2)"
+ },
+ "boi_canh": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO={h}$.",
+ "hoi": "Khoảng cách từ $O$ đến mặt phẳng $(SBC)$ bằng",
+ "dap_so": "h*(a/2)/sqrt(h**2+a**2/4)",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "a/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $OM$ ($M$ trung điểm $BC$) làm khoảng cách"
+   }
+  },
+  {
+   "bieu_thuc": "h*(sqrt(2)*a/2)/sqrt(h**2+a**2/2)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Dùng $OB$ thay cho $OM$ (kẻ vuông góc xuống $SB$)"
+   }
+  },
+  {
+   "bieu_thuc": "h*(a/2)/(h+a/2)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Dùng $\\dfrac{SO\\cdot OM}{SO+OM}$ thay cho $\\dfrac{SO\\cdot OM}{SM}$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-11",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "tu_luan": [
+  {
+   "noi_dung": "Gọi $M$ là trung điểm $BC$, kẻ $OK\\perp SM$ ($K\\in SM$). Vì $BC\\perp OM$, $BC\\perp SO$ nên $BC\\perp(SOM)$, suy ra $BC\\perp OK$; do đó $OK\\perp(SBC)$, $d(O,(SBC))=OK$.",
+   "diem": 0.5
+  },
+  {
+   "noi_dung": "$OM=\\dfrac a2$, $SM=\\sqrt{SO^2+OM^2}={SM}$.",
+   "diem": 0.25
+  },
+  {
+   "noi_dung": "$OK=\\dfrac{SO\\cdot OM}{SM\\,}={ds}$.",
+   "diem": 0.25
+  }
+ ],
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1/2"
+  },
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(3)/2"
+  },
+  {
+   "k": "sqrt(2)/2"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 11,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

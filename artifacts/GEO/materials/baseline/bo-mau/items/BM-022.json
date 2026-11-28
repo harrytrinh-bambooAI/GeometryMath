@@ -1,0 +1,87 @@
+{
+ "id": "BM-022",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-60 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-60 (v1.1)"
+ },
+ "cap": "thcs",
+ "chu_de": "Diện tích toàn phần hình nón",
+ "muc_do": "NB",
+ "de_bai": "Một hình nón có bán kính đáy $OM=6$ cm và đường sinh $SM=10$ cm. Tính diện tích toàn phần của hình nón (kết quả theo $\\pi$).",
+ "dap_so": {
+  "gia_tri": "$96\\pi$ cm$^2$",
+  "so": 301.59289474462014
+ },
+ "dap_so_engine": 301.59289474462014,
+ "kien_thuc": [
+  "$S_{xq}=\\pi rl$",
+  "$S_{tp}=S_{xq}+S_{đáy}$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$S_{xq}=\\pi\\cdot6\\cdot10=60\\pi$ cm$^2$.",
+   "ket_qua_trung_gian": "$60\\pi$",
+   "kien_thuc": "Diện tích xung quanh",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $60\\pi$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng công thức hình trụ $S_{xq}=2\\pi rl$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 188.49555921538757
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$S_{đáy}=\\pi\\cdot6^2=36\\pi$ cm$^2$.",
+   "ket_qua_trung_gian": "$36\\pi$",
+   "kien_thuc": "Diện tích hình tròn",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $36\\pi$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 113.09733552923255
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$S_{tp}=60\\pi+36\\pi=96\\pi$ cm$^2$.",
+   "ket_qua_trung_gian": "$96\\pi$",
+   "kien_thuc": "Diện tích toàn phần",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $96\\pi$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Cộng hai đáy như hình trụ",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 301.59289474462014
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng công thức hình trụ $S_{xq}=2\\pi rl$",
+   "loi_giai": "B1: $S_{xq}=2\\pi\\cdot6\\cdot10=120\\pi$.\nB2: $S_{đáy}=\\pi\\cdot6^2=36\\pi$ cm$^2$.\nB3: $S_{tp}=120\\pi+36\\pi=156\\pi$ cm$^2$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Cộng hai đáy như hình trụ",
+   "loi_giai": "B1: $S_{xq}=\\pi\\cdot6\\cdot10=60\\pi$ cm$^2$.\nB2: $S_{đáy}=\\pi\\cdot6^2=36\\pi$ cm$^2$.\nB3: $S_{tp}=60\\pi+2\\cdot36\\pi=132\\pi$ cm$^2$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "S1: B2 đúng, độc lập nên được 0,25."
+}

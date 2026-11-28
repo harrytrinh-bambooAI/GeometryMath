@@ -1,0 +1,125 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "role": "STUDENT"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b99f-7069-be2a-367c9c71dd2a",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 3
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/student/assignments/00000000-0000-7000-8000-000000000040/questions",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "requestBody": {
+      "question": "Vì sao A là hình chiếu của S?"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b9a4-730b-9af8-ba824b8b59dc",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "229",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"id\":9,\"question\":\"Vì sao A là hình chiếu của S?\",\"replyKind\":\"concept\",\"reply\":\"[Trợ lý giả lập] Em hãy đọc lại dữ kiện của đề và thử tìm mối liên hệ giữa các yếu tố đã cho nhé.\"}",
+    "ms": 10
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/questions/9/answer",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b9af-7598-a5a7-e75ad9ca42a1",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "323",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"id\":9,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"askedAt\":\"2026-11-22T15:46:12.008824Z\",\"question\":\"Vì sao A là hình chiếu của S?\",\"replyKind\":\"concept\",\"reply\":\"[Trợ lý giả lập] Em hãy đọc lại dữ kiện của đề và thử tìm mối liên hệ giữa các yếu tố đã cho nhé.\"}",
+    "ms": 5
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000003",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b9b5-7485-ab57-1502abcc8d78",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 3
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/questions/9/answer",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 403,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b9b7-70b2-afc1-f1653d782fcb",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"code\":\"FORBIDDEN\",\"message\":\"Bạn không có quyền thực hiện thao tác này.\",\"requestId\":\"01a203ef-b9b7-70b2-afc1-f1653d782fcb\"}",
+    "ms": 2
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/teacher/assignments/00000000-0000-7000-8000-000000000040/monitor",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b9bb-740b-928c-334d0634b9e4",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "2905",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"problemCode\":\"HKG-01\",\"className\":\"11A1\",\"releaseState\":\"upcoming\",\"studentCount\":5,\"openedCount\":4,\"students\":[{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"displayName\":\"An\",\"opened\":true,\"k\":2,\"label\":\"Đã xem gợi ý 2\",\"hintLevel\":2,\"askCount\":5,\"toolCount\":4,\"activeMinutes\":23},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000021\",\"displayName\":\"Bình\",\"opened\":true,\"k\":1,\"label\":\"Đã xem gợi ý 1\",\"hintLevel\":1,\"askCount\":2,\"toolCount\":2,\"activeMinutes\":11},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000022\",\"displayName\":\"Chi\",\"opened\":true,\"k\":0,\"label\":\"Đã mở bài\",\"hintLevel\":0,\"askCount\":0,\"toolCount\":6,\"activeMinutes\":9},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000023\",\"displayName\":\"Dũng\",\"opened\":true,\"k\":2,\"label\":\"Đã xem gợi ý 2\",\"hintLevel\":2,\"askCount\":2,\"toolCount\":3,\"activeMinutes\":21},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000024\",\"displayName\":\"Hà\",\"opened\":false,\"k\":0,\"label\":\"Chưa bắt đầu\",\"hintLevel\":0,\"askCount\":0,\"toolCount\":0,\"activeMinutes\":0}],\"questions\":[{\"id\":9,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:46:12.008824Z\",\"askerName\":\"An\"},{\"id\":8,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S? (1795362371405)\",\"askedAt\":\"2026-11-22T15:46:11.430823Z\",\"askerName\":\"An\"},{\"id\":7,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Tan của một góc là gì?\",\"askedAt\":\"2026-11-22T15:23:10.684Z\",\"askerName\":\"Dũng\"},{\"id\":6,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Cho em xin đáp số luôn được không?\",\"askedAt\":\"2026-11-22T15:22:10.684Z\",\"askerName\":\"An\"},{\"id\":5,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:21:10.684Z\",\"askerName\":\"An\"},{\"id\":4,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:20:10.684Z\",\"askerName\":\"Bình\"},{\"id\":3,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:19:10.684Z\",\"askerName\":\"Bình\"},{\"id\":2,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:18:10.684Z\",\"askerName\":\"Dũng\"},{\"id\":1,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:17:10.684Z\",\"askerName\":\"An\"}]}",
+    "ms": 9
+  }
+]

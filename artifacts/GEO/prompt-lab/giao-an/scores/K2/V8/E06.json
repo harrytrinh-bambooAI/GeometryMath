@@ -1,0 +1,64 @@
+{
+ "case": "E06",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 4
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá chỉ sửa các trường của HĐ4, đúng chủ đề cột cờ, không ghi kết quả số và không đụng mục khoá. Trợ lý đã phát hiện và đề xuất có lý do việc o_nha=false/5 phút không khớp với cách giao về nhà; riêng nội dung 'HS đo... rồi nêu cách đo' còn chung chung vì khó đo trực tiếp đỉnh cột, nên gợi ý thêm cách đo khả thi."
+ },
+ "judge2": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá chỉ thay tên, mục tiêu, nội dung và sản phẩm của HĐ4 theo đúng yêu cầu, vẫn giữ việc giao về nhà, không đụng mục khoá và không ghi đáp số. Trợ lý đã phát hiện đúng lỗi có sẵn (o_nha=false nhưng ghi 5 phút) và chỉ đề xuất kèm lý do, nhưng phần van_de lẫn chữ tiếng Anh 'perform' và mục unsure lặp ý với de_xuat, nên phần nội dung cần chỉnh nhỏ."
+ },
+ "auto0": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": false,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 4
+  },
+  "kind": "patch"
+ },
+ "retried": true,
+ "score": {
+  "diem": 96.2,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.75
+ }
+}

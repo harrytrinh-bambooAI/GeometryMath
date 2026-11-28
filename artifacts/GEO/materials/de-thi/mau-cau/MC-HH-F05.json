@@ -1,0 +1,109 @@
+{
+ "id": "MC-HH-F05",
+ "ten": "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông",
+ "chu_de": "khoi-tron-xoay",
+ "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+ "dang_tx": "tx.noi-tiep-cau",
+ "yccd": [
+  "12.TX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "F",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-83",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83"
+ },
+ "tham_so": {
+  "q": [
+   "1",
+   "sqrt(3)"
+  ],
+  "k": [
+   "2",
+   "1",
+   "2*sqrt(3)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "b": "q*a",
+  "h": "k*a",
+  "BC": "sqrt(a**2+b**2)"
+ },
+ "boi_canh": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC={b}$ và $AA'={h}$.",
+ "hoi": "Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng",
+ "dap_so": "sqrt(BC**2+h**2)/2",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "sqrt(BC**2+h**2)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+   }
+  },
+  {
+   "bieu_thuc": "BC/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(BC**2/4+h**2)",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-83",
+  "ask": 0,
+  "params": {
+   "ab": "a",
+   "ac": "b",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "q": "1",
+   "k": "2"
+  },
+  {
+   "q": "1",
+   "k": "1"
+  },
+  {
+   "q": "1",
+   "k": "2*sqrt(3)"
+  },
+  {
+   "q": "sqrt(3)",
+   "k": "2"
+  },
+  {
+   "q": "sqrt(3)",
+   "k": "1"
+  },
+  {
+   "q": "sqrt(3)",
+   "k": "2*sqrt(3)"
+  }
+ ],
+ "so_bien_the": 6,
+ "so_cau_sinh": 12,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

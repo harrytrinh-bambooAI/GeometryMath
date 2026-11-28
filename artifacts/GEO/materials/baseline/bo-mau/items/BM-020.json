@@ -1,0 +1,75 @@
+{
+ "id": "BM-020",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-56 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-56 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Thể tích khối nón",
+ "muc_do": "NB",
+ "de_bai": "Cho hình nón đỉnh $S$, tâm đáy $O$, bán kính đáy $OM=2a$ và chiều cao $SO=3a$. Tính thể tích khối nón theo $a$.",
+ "dap_so": {
+  "gia_tri": "$4\\pi a^3$",
+  "so": 12.566370614359172
+ },
+ "dap_so_engine": 12.566370614359172,
+ "kien_thuc": [
+  "$V=\\dfrac13\\pi r^2h$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$B=\\pi(2a)^2=4\\pi a^2$.",
+   "ket_qua_trung_gian": "$4\\pi a^2$",
+   "kien_thuc": "Diện tích hình tròn",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $4\\pi a^2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Bình phương sai $(2a)^2=2a^2$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 12.566370614359172
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$V=\\dfrac13\\cdot4\\pi a^2\\cdot3a=4\\pi a^3$.",
+   "ket_qua_trung_gian": "$4\\pi a^3$",
+   "kien_thuc": "Thể tích khối nón",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $4\\pi a^3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng công thức khối trụ $V=Bh$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 12.566370614359172
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Bình phương sai $(2a)^2=2a^2$",
+   "loi_giai": "B1: $B=\\pi(2a)^2=2\\pi a^2$.\nB2: $V=\\dfrac13\\cdot2\\pi a^2\\cdot3a=2\\pi a^3$.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng công thức khối trụ $V=Bh$",
+   "loi_giai": "B1: $B=\\pi(2a)^2=4\\pi a^2$.\nB2: $V=4\\pi a^2\\cdot3a=12\\pi a^3$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

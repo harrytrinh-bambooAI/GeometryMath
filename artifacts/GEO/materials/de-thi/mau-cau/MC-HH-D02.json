@@ -1,0 +1,124 @@
+{
+ "id": "MC-HH-D02",
+ "ten": "Đường chéo hình hộp chữ nhật",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "do-dai.hop.duong-cheo",
+ "dang_tx": "qh.vuong-goc",
+ "yccd": [
+  "11.VG.4"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "D",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-25",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-25 + geometry/problem-specs.json#HKN-25"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "p": 3,
+    "q": 4,
+    "r": 5
+   },
+   {
+    "p": 3,
+    "q": 4,
+    "r": 12
+   },
+   {
+    "p": 2,
+    "q": 3,
+    "r": 6
+   },
+   {
+    "p": 1,
+    "q": 2,
+    "r": 2
+   },
+   {
+    "p": 6,
+    "q": 8,
+    "r": 5
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB={p}$ cm, $AD={q}$ cm, $AA'={r}$ cm.",
+ "hoi": "Độ dài đường chéo $AC'$ bằng",
+ "dap_so": "sqrt(p**2+q**2+r**2)",
+ "don_vi": "cm",
+ "nhieu": [
+  {
+   "bieu_thuc": "p+q+r",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng ba kích thước thay vì dùng định lí Pythagore"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(p**2+q**2)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Nhầm sang đường chéo đáy $AC$"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(p**2+q**2)+r",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng $AC+CC'$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-25",
+  "ask": 0,
+  "params": {
+   "a": "p",
+   "b": "q",
+   "c": "r"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "p": "3",
+   "q": "4",
+   "r": "5"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "12"
+  },
+  {
+   "p": "2",
+   "q": "3",
+   "r": "6"
+  },
+  {
+   "p": "1",
+   "q": "2",
+   "r": "2"
+  },
+  {
+   "p": "6",
+   "q": "8",
+   "r": "5"
+  }
+ ],
+ "so_bien_the": 5,
+ "so_cau_sinh": 10,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

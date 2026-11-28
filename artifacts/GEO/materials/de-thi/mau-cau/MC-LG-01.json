@@ -1,0 +1,91 @@
+{
+ "id": "MC-LG-01",
+ "ten": "Nghiệm dương nhỏ nhất của phương trình sin cơ bản",
+ "chu_de": "luong-giac",
+ "dang": "lg.sin-nghiem-duong",
+ "dang_tx": "lg.pt-co-ban",
+ "yccd": [
+  "11.LG.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-LG-01",
+ "loai_cau": [
+  "tn4"
+ ],
+ "muc_do": {
+  "tn4": "NB"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-LG-01",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "s": [
+   "1/2",
+   "sqrt(2)/2",
+   "sqrt(3)/2"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "",
+ "hoi": "Nghiệm dương nhỏ nhất của phương trình $\\sin x={s}$ là",
+ "dap_so": "asin(s)",
+ "nhieu": [
+  {
+   "bieu_thuc": "acos(s)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhầm $\\sin$ với $\\cos$ khi tra giá trị đặc biệt"
+   }
+  },
+  {
+   "bieu_thuc": "pi-asin(s)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy nghiệm thuộc họ $x=\\pi-\\alpha+k2\\pi$"
+   }
+  },
+  {
+   "bieu_thuc": "2*pi-asin(s)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy $-\\alpha+2\\pi$ (nhầm với họ nghiệm của $\\cos$)"
+   }
+  },
+  {
+   "bieu_thuc": "asin(s)+pi",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng chu kì $\\pi$ của $\\tan$"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "x=",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-LG-01']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "s": "1/2"
+  },
+  {
+   "s": "sqrt(2)/2"
+  },
+  {
+   "s": "sqrt(3)/2"
+  }
+ ],
+ "so_bien_the": 3,
+ "so_cau_sinh": 3,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

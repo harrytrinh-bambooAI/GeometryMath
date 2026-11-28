@@ -1,0 +1,32 @@
+{
+ "ids": [
+  "BM-013-S1",
+  "BM-013-S2",
+  "BM-013-DUNG",
+  "BM-014-S1",
+  "BM-014-S2",
+  "BM-014-DUNG",
+  "BM-015-S1",
+  "BM-015-S2",
+  "BM-015-DUNG",
+  "BM-016-S1",
+  "BM-016-S2",
+  "BM-016-DUNG",
+  "BM-017-S1",
+  "BM-017-S2",
+  "BM-017-DUNG"
+ ],
+ "text": "{\"ket_qua\":[{\"id\":\"BM-013-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Đường cao tam giác đều cạnh a là AM = a√3/2, không phải a√3. Các bước sau dùng giá trị sai này.\"},{\"id\":\"BM-013-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"AM ⊥ BC không suy ra d(A,(A'BC)) = AM. AM không vuông góc với (A'BC) vì AM không vuông góc với A'M. Khoảng cách đúng là AH = a√21/7.\"},{\"id\":\"BM-013-DUNG\",\"buoc_sai\":null,\"ly_do\":\"AM = a√3/2 nên 1/AM² = 4/(3a²). Do đó 1/AH² = 1/a² + 4/(3a²) = 7/(3a²) và AH = a√21/7. Lời giải đúng.\"},{\"id\":\"BM-014-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"AB không vuông góc với BC (góc ABC = 60°), nên AB không phải đoạn vuông góc chung. Kết luận d = AB là sai.\"},{\"id\":\"BM-014-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"AM là đường cao tam giác đều cạnh a, nên AM = a√3/2, không phải a√3/3.\"},{\"id\":\"BM-014-DUNG\",\"buoc_sai\":null,\"ly_do\":\"AM là đoạn vuông góc chung của AA' và BC, AM = a√3/2. Lời giải đúng.\"},{\"id\":\"BM-015-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"36√3/4 = 9√3, không phải 12√3. Do đó V = 90√3 chứ không phải 120√3.\"},{\"id\":\"BM-015-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"Thể tích lăng trụ là V = S·h = 90√3. Công thức 1/3·S·h là của hình chóp.\"},{\"id\":\"BM-015-DUNG\",\"buoc_sai\":null,\"ly_do\":\"S = 9√3, V = S·h = 90√3 cm³. Lời giải đúng.\"},{\"id\":\"BM-016-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Công thức Heron cho S = √(21·8·7·6) = √7056 = 84, không phải 86. Do đó V = 840 chứ không phải 860.\"},{\"id\":\"BM-016-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"p là nửa chu vi, p = 42/2 = 21. Lời giải lấy p bằng cả chu vi là 42, sai.\"},{\"id\":\"BM-016-DUNG\",\"buoc_sai\":null,\"ly_do\":\"p = 21, S = √7056 = 84, V = 840 cm³. Lời giải đúng.\"},{\"id\":\"BM-017-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"Thể tích khối chóp là V = (1/3)·S·h. Lời giải thiếu hệ số 1/3 nên kết quả sai.\"},{\"id\":\"BM-017-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"Chiều cao của chóp là SA = a√3 vì SA ⊥ (ABCD). SC không vuông góc với đáy nên không phải chiều cao.\"},{\"id\":\"BM-017-DUNG\",\"buoc_sai\":null,\"ly_do\":\"h = SA = a√3, S = a², V = (1/3)·a²·a√3 = a³√3/3. Lời giải đúng.\"}]}",
+ "usage": {
+  "ts": "2026-11-27T17:45:02",
+  "role": "gen",
+  "task": "R5/STEP1/stepb-0",
+  "model": "claude-sonnet-5-5",
+  "input": 3585,
+  "output": 1224,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 8.2
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "case": "E03",
+ "variant": "V0",
+ "round": "R1",
+ "text": "{\"kind\":\"reply\",\"text\":\"Mình chưa thể thay hệ thức ở HĐ2 theo yêu cầu này. Công thức d = |ax0+by0+cz0+d|/√(a²+b²+c²) (khoảng cách từ điểm đến mặt phẳng trong tọa độ) không nằm trong danh sách kiến thức được cấp cho bài này, nên mình không được thêm vào. Ngoài ra, HĐ2 đang dạy hình học tổng hợp (dựng AH ⊥ (SBC)), còn công thức tọa độ thuộc phương pháp khác. Câu 2 của PHT1 (BT11-B26-3) cũng gắn với KT11-C07-CT-003, nên bỏ hệ thức này sẽ làm mục tiêu và phiếu học tập không còn khớp. Mình giữ nguyên HĐ2. Nếu bạn muốn, mình có thể đề xuất cách giúp học sinh tính nhanh hơn bằng hệ thức KT11-C07-CT-003, ví dụ thêm bước gợi ý cho câu 2 và câu 3.\",\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1].kien_thuc[1]\",\"van_de\":\"Mục tiêu kiến thức ghi 'Tính được khoảng cách từ chân đường cao đến mặt bên của hình chóp', phát biểu ở HĐ2 đã đúng với KT11-C07-CT-003.\",\"goi_y\":\"Giữ nguyên hệ thức 1/AH² = 1/SA² + 1/AK²; nếu cần tăng tốc độ tính thì thêm buộc gợi ý bằng lời cho PHT1 câu 2, 3.\",\"ly_do\":\"Công thức tọa độ không có trong danh sách kiến thức được cấp.\"},{\"vi_tri\":\"hoat_dong\",\"van_de\":\"Tổng thời lượng các HĐ trên lớp (5+20+15+5) bằng 45 phút nhưng HĐ4 ghi làm ở nhà với o_nha=false và thoi_luong_phut=5.\",\"goi_y\":\"Nếu HĐ4 giao về nhà thì đặt o_nha=true, thoi_luong_phut=0 và phân bổ lại 5 phút cho các HĐ trên lớp.\",\"ly_do\":\"Quy ước: HĐ làm ở nhà ghi o_nha=true và thời lượng 0.\"}]}",
+ "usage": {
+  "ts": "2026-11-27T16:35:27",
+  "role": "gen",
+  "task": "R1/V0/E03",
+  "model": "claude-sonnet-5-5",
+  "input": 3401,
+  "output": 855,
+  "cache_write": 0,
+  "cache_read": 2210,
+  "stop": "end_turn",
+  "sec": 6.2
+ }
+}

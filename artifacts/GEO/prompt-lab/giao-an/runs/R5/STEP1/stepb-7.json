@@ -1,0 +1,32 @@
+{
+ "ids": [
+  "BM-048-S1",
+  "BM-048-S2",
+  "BM-048-DUNG",
+  "BM-049-S1",
+  "BM-049-S2",
+  "BM-049-DUNG",
+  "BM-050-S1",
+  "BM-050-S2",
+  "BM-050-DUNG",
+  "BM-051-S1",
+  "BM-051-S2",
+  "BM-051-DUNG",
+  "BM-052-S1",
+  "BM-052-S2",
+  "BM-052-DUNG"
+ ],
+ "text": "{\"ket_qua\":[{\"id\":\"BM-048-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"AM = a√3/2 nên HM = (1/3)AM = a√3/6, không phải (2/3)AM = a√3/3 (2/3 AM là AH). Các bước sau dùng kết quả sai này.\"},{\"id\":\"BM-048-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"Góc giữa hai mặt phẳng là góc SMH (SM và AM cùng vuông góc với giao tuyến BC), không phải góc SAH, là góc giữa cạnh SA và đáy.\"},{\"id\":\"BM-048-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: HM = a√3/6, SM = a√3/2, cos = 1/3, góc ≈ 70,53°.\"},{\"id\":\"BM-049-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"1/9 + 1/9 + 1/36 = 9/36 = 1/4, không phải 3/36. Lời giải ghi 3/36 là sai (1/SA² = 1/9, không phải 1/36).\"},{\"id\":\"BM-049-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"Đáy là hình chữ nhật 3×6, không phải hình vuông cạnh 3, nên 1/AD² = 1/36, không phải 1/9.\"},{\"id\":\"BM-049-DUNG\",\"buoc_sai\":null,\"ly_do\":\"1/9 + 1/9 + 1/36 = 1/4, d = 2: đúng.\"},{\"id\":\"BM-050-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"I là trọng tâm tam giác SAC nên AI/AM = 2/3, không phải 1/2.\"},{\"id\":\"BM-050-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"Giao tuyến của (SAC) và (SBD) là SO, không phải SB (B không thuộc (SAC)).\"},{\"id\":\"BM-050-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: I là trọng tâm tam giác SAC, AI/AM = 2/3.\"},{\"id\":\"BM-051-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"Trọng tâm chia trung tuyến theo tỉ số EG1/EC = 1/3, không phải 2/3 (E là trung điểm AB, G1 ∈ EC). Kéo theo tỉ số sai ở B3.\"},{\"id\":\"BM-051-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"Không chứng minh, chỉ nói 'dễ thấy' mà bỏ qua việc dùng EG1/EC = EG2/ED để áp dụng Thalès đảo. Đây là điều đề yêu cầu chứng minh.\"},{\"id\":\"BM-051-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: EG1/EC = EG2/ED = 1/3, Thalès đảo cho G1G2 ∥ CD, tỉ số 1/3.\"},{\"id\":\"BM-052-S1\",\"buoc_sai\":null,\"ly_do\":\"Đúng: OM là đường trung bình của tam giác SAC, OM ∥ SC, OM ⊂ (MBD), SC ⊄ (MBD) nên SC ∥ (MBD).\"},{\"id\":\"BM-052-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"MB không phải đường trung bình của tam giác nào và MB không song song SC (MB cắt SC hoặc chéo nhau). Đường trung bình đúng là OM.\"},{\"id\":\"BM-052-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng.\"}]}",
+ "usage": {
+  "ts": "2026-11-27T17:45:55",
+  "role": "gen",
+  "task": "R5/STEP1/stepb-7",
+  "model": "claude-sonnet-5-5",
+  "input": 4026,
+  "output": 1290,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 8.1
+ }
+}

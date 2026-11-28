@@ -1,0 +1,87 @@
+{
+ "id": "BM-013",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-32 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-32 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách từ điểm đến mặt phẳng",
+ "muc_do": "VD",
+ "de_bai": "Cho lăng trụ tam giác đều $ABC.A'B'C'$ có cạnh đáy $a$ và $AA'=a$. Tính khoảng cách từ $A$ đến mặt phẳng $(A'BC)$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a\\sqrt{21}}{7}$",
+  "so": 0.6546536707079771
+ },
+ "dap_so_engine": 0.6546536707079772,
+ "kien_thuc": [
+  "Dựng khoảng cách",
+  "Đường cao tam giác đều",
+  "Hệ thức lượng"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$M$ trung điểm $BC$: $AM\\perp BC$, $AA'\\perp BC$ nên $BC\\perp(A'AM)$; kẻ $AH\\perp A'M$ thì $AH\\perp(A'BC)$.",
+   "ket_qua_trung_gian": "$d=AH$",
+   "kien_thuc": "Dựng đường vuông góc",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $d=AH$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Coi $AM$ là khoảng cách từ $A$ đến $(A'BC)$",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$AM=\\dfrac{a\\sqrt3}2$.",
+   "ket_qua_trung_gian": "$AM=\\dfrac{a\\sqrt3}2$",
+   "kien_thuc": "Đường cao tam giác đều",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AM=\\dfrac{a\\sqrt3}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $AM=a\\sqrt3$ (quên chia 2)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.8660254037844386
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\dfrac1{AH^2}=\\dfrac1{a^2}+\\dfrac4{3a^2}=\\dfrac7{3a^2}\\Rightarrow AH=\\dfrac{a\\sqrt{21}}7$.",
+   "ket_qua_trung_gian": "$AH=\\dfrac{a\\sqrt{21}}7$",
+   "kien_thuc": "Hệ thức lượng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AH=\\dfrac{a\\sqrt{21}}7$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.6546536707079771
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $AM=a\\sqrt3$ (quên chia 2)",
+   "loi_giai": "B1: $M$ trung điểm $BC$: $AM\\perp BC$, $AA'\\perp BC$ nên $BC\\perp(A'AM)$; kẻ $AH\\perp A'M$ thì $AH\\perp(A'BC)$.\nB2: $AM=a\\sqrt3$.\nB3: $\\dfrac1{AH^2}=\\dfrac1{a^2}+\\dfrac1{3a^2}=\\dfrac4{3a^2}\\Rightarrow AH=\\dfrac{a\\sqrt3}2$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Coi $AM$ là khoảng cách từ $A$ đến $(A'BC)$",
+   "loi_giai": "B1: $AM\\perp BC$ nên $d(A,(A'BC))=AM$.\nB2: $AM=\\dfrac{a\\sqrt3}2$.\nB3: $d=AM=\\dfrac{a\\sqrt3}2$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

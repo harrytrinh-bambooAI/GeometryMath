@@ -1,0 +1,4455 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "oxyz-toa-do-vecto",
+ "so_cau": 64,
+ "cau": [
+  {
+   "id": "MC-OX-04.TN.0",
+   "mau_cau": "MC-OX-04",
+   "bien_the": {
+    "x1": "1",
+    "y1": "2",
+    "z1": "-1",
+    "x2": "3",
+    "y2": "-1",
+    "z2": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.toa-do-vecto",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tọa độ vectơ từ hai điểm"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-04|x1=1,x2=3,y1=2,y2=-1,z1=-1,z2=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-04"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho hai điểm $A(1;2;-1)$ và $B(3;-1;4)$. Tọa độ của vectơ $\\overrightarrow{AB}$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "(2;-3;5)",
+     "dung": true
+    },
+    {
+     "noi_dung": "(-2;3;-5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm đầu trừ điểm cuối"
+     }
+    },
+    {
+     "noi_dung": "(4;1;3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng tọa độ hai điểm"
+     }
+    },
+    {
+     "noi_dung": "(2;\\dfrac{1}{2};\\dfrac{3}{2})",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang tọa độ trung điểm"
+     }
+    }
+   ],
+   "dap_an": "(2;-3;5)",
+   "nhieu": [
+    {
+     "phuong_an": "(-2;3;-5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm đầu trừ điểm cuối"
+     }
+    },
+    {
+     "phuong_an": "(4;1;3)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng tọa độ hai điểm"
+     }
+    },
+    {
+     "phuong_an": "(2;\\dfrac{1}{2};\\dfrac{3}{2})",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang tọa độ trung điểm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "(2;-3;5)",
+    "so": null
+   },
+   "do_kho": 0.138,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-04.TN.1",
+   "mau_cau": "MC-OX-04",
+   "bien_the": {
+    "x1": "-2",
+    "y1": "0",
+    "z1": "3",
+    "x2": "1",
+    "y2": "5",
+    "z2": "-2"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.toa-do-vecto",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tọa độ vectơ từ hai điểm"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-04|x1=-2,x2=1,y1=0,y2=5,z1=3,z2=-2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-04"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho hai điểm $A(-2;0;3)$ và $B(1;5;-2)$. Tọa độ của vectơ $\\overrightarrow{AB}$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "(3;5;-5)",
+     "dung": true
+    },
+    {
+     "noi_dung": "(-3;-5;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm đầu trừ điểm cuối"
+     }
+    },
+    {
+     "noi_dung": "(-1;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng tọa độ hai điểm"
+     }
+    },
+    {
+     "noi_dung": "(- \\dfrac{1}{2};\\dfrac{5}{2};\\dfrac{1}{2})",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang tọa độ trung điểm"
+     }
+    }
+   ],
+   "dap_an": "(3;5;-5)",
+   "nhieu": [
+    {
+     "phuong_an": "(-3;-5;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm đầu trừ điểm cuối"
+     }
+    },
+    {
+     "phuong_an": "(-1;5;1)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng tọa độ hai điểm"
+     }
+    },
+    {
+     "phuong_an": "(- \\dfrac{1}{2};\\dfrac{5}{2};\\dfrac{1}{2})",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang tọa độ trung điểm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "(3;5;-5)",
+    "so": null
+   },
+   "do_kho": 0.138,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-04.TN.2",
+   "mau_cau": "MC-OX-04",
+   "bien_the": {
+    "x1": "4",
+    "y1": "-3",
+    "z1": "2",
+    "x2": "0",
+    "y2": "1",
+    "z2": "5"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.toa-do-vecto",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tọa độ vectơ từ hai điểm"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-04|x1=4,x2=0,y1=-3,y2=1,z1=2,z2=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-04"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho hai điểm $A(4;-3;2)$ và $B(0;1;5)$. Tọa độ của vectơ $\\overrightarrow{AB}$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "(-4;4;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "(4;-4;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm đầu trừ điểm cuối"
+     }
+    },
+    {
+     "noi_dung": "(4;-2;7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng tọa độ hai điểm"
+     }
+    },
+    {
+     "noi_dung": "(2;-1;\\dfrac{7}{2})",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang tọa độ trung điểm"
+     }
+    }
+   ],
+   "dap_an": "(-4;4;3)",
+   "nhieu": [
+    {
+     "phuong_an": "(4;-4;-3)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm đầu trừ điểm cuối"
+     }
+    },
+    {
+     "phuong_an": "(4;-2;7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng tọa độ hai điểm"
+     }
+    },
+    {
+     "phuong_an": "(2;-1;\\dfrac{7}{2})",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang tọa độ trung điểm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "(-4;4;3)",
+    "so": null
+   },
+   "do_kho": 0.156,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-04.TN.3",
+   "mau_cau": "MC-OX-04",
+   "bien_the": {
+    "x1": "2",
+    "y1": "2",
+    "z1": "0",
+    "x2": "-1",
+    "y2": "4",
+    "z2": "3"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.toa-do-vecto",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tọa độ vectơ từ hai điểm"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-04|x1=2,x2=-1,y1=2,y2=4,z1=0,z2=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-04"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho hai điểm $A(2;2;0)$ và $B(-1;4;3)$. Tọa độ của vectơ $\\overrightarrow{AB}$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "(-3;2;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "(3;-2;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm đầu trừ điểm cuối"
+     }
+    },
+    {
+     "noi_dung": "(1;6;3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng tọa độ hai điểm"
+     }
+    },
+    {
+     "noi_dung": "(\\dfrac{1}{2};3;\\dfrac{3}{2})",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang tọa độ trung điểm"
+     }
+    }
+   ],
+   "dap_an": "(-3;2;3)",
+   "nhieu": [
+    {
+     "phuong_an": "(3;-2;-3)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm đầu trừ điểm cuối"
+     }
+    },
+    {
+     "phuong_an": "(1;6;3)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng tọa độ hai điểm"
+     }
+    },
+    {
+     "phuong_an": "(\\dfrac{1}{2};3;\\dfrac{3}{2})",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang tọa độ trung điểm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "(-3;2;3)",
+    "so": null
+   },
+   "do_kho": 0.174,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.0",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "3",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "3",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.362,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.0",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.0,
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.477,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.1",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "9",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "13",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "9",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "11",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "13",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "9",
+    "so": 9.0
+   },
+   "do_kho": 0.334,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.1",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "9",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 9.0,
+   "dap_so": {
+    "gia_tri": "9",
+    "so": 9.0
+   },
+   "do_kho": 0.444,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.2",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-1",
+     "dung": true
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "-1",
+   "nhieu": [
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-1",
+    "so": -1.0
+   },
+   "do_kho": 0.378,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.2",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "-1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -1.0,
+   "dap_so": {
+    "gia_tri": "-1",
+    "so": -1.0
+   },
+   "do_kho": 0.432,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.3",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "5",
+     "dung": true
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "5",
+   "nhieu": [
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.343,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.3",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 5.0,
+   "dap_so": {
+    "gia_tri": "5",
+    "so": 5.0
+   },
+   "do_kho": 0.453,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.4",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=-2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;-2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-1",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "-1",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-1",
+    "so": -1.0
+   },
+   "do_kho": 0.343,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.4",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=-2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;-2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "-1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -1.0,
+   "dap_so": {
+    "gia_tri": "-1",
+    "so": -1.0
+   },
+   "do_kho": 0.438,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.5",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=-2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;-2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-7",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "-7",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-7",
+    "so": -7.0
+   },
+   "do_kho": 0.327,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.5",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=-2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;-2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "-7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -7.0,
+   "dap_so": {
+    "gia_tri": "-7",
+    "so": -7.0
+   },
+   "do_kho": 0.478,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.6",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=-2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;-2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-5",
+     "dung": true
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "-5",
+   "nhieu": [
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-5",
+    "so": -5.0
+   },
+   "do_kho": 0.37,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.6",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=-2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;-2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "-5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -5.0,
+   "dap_so": {
+    "gia_tri": "-5",
+    "so": -5.0
+   },
+   "do_kho": 0.441,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.7",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=-2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;-2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-11",
+     "dung": true
+    },
+    {
+     "noi_dung": "-3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "-11",
+   "nhieu": [
+    {
+     "phuong_an": "-3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-7",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-11",
+    "so": -11.0
+   },
+   "do_kho": 0.328,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.7",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=-1,u3=-2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;-1;-2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "-11",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -11.0,
+   "dap_so": {
+    "gia_tri": "-11",
+    "so": -11.0
+   },
+   "do_kho": 0.468,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.8",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "11",
+     "dung": true
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "11",
+   "nhieu": [
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "11",
+    "so": 11.0
+   },
+   "do_kho": 0.36,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.8",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "11",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 11.0,
+   "dap_so": {
+    "gia_tri": "11",
+    "so": 11.0
+   },
+   "do_kho": 0.468,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.9",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "17",
+     "dung": true
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "15",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "17",
+   "nhieu": [
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "15",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "17",
+    "so": 17.0
+   },
+   "do_kho": 0.337,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.9",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "17",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 17.0,
+   "dap_so": {
+    "gia_tri": "17",
+    "so": 17.0
+   },
+   "do_kho": 0.476,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.10",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "7",
+     "dung": true
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "7",
+   "nhieu": [
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "7",
+    "so": 7.0
+   },
+   "do_kho": 0.334,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.10",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 7.0,
+   "dap_so": {
+    "gia_tri": "7",
+    "so": 7.0
+   },
+   "do_kho": 0.434,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.11",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "13",
+     "dung": true
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "13",
+   "nhieu": [
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "11",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "13",
+    "so": 13.0
+   },
+   "do_kho": 0.337,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.11",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "13",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 13.0,
+   "dap_so": {
+    "gia_tri": "13",
+    "so": 13.0
+   },
+   "do_kho": 0.479,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.12",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=-2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;-2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "7",
+     "dung": true
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "7",
+   "nhieu": [
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "7",
+    "so": 7.0
+   },
+   "do_kho": 0.373,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.12",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=-2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;-2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 7.0,
+   "dap_so": {
+    "gia_tri": "7",
+    "so": 7.0
+   },
+   "do_kho": 0.42,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.13",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=-2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;-2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "1",
+     "dung": true
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "1",
+   "nhieu": [
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "11",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-11",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "1",
+    "so": 1.0
+   },
+   "do_kho": 0.371,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.13",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=-2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;-2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.0,
+   "dap_so": {
+    "gia_tri": "1",
+    "so": 1.0
+   },
+   "do_kho": 0.423,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.14",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=-2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;-2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "3",
+     "dung": true
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "3",
+   "nhieu": [
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-9",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.362,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.14",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=-2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;-2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.0,
+   "dap_so": {
+    "gia_tri": "3",
+    "so": 3.0
+   },
+   "do_kho": 0.436,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.15",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=-2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;-2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-3",
+     "dung": true
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-15",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "-3",
+   "nhieu": [
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-15",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-3",
+    "so": -3.0
+   },
+   "do_kho": 0.362,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.15",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "1",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=1,u2=3,u3=-2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(1;3;-2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "-3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -3.0,
+   "dap_so": {
+    "gia_tri": "-3",
+    "so": -3.0
+   },
+   "do_kho": 0.443,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.16",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "6",
+     "dung": true
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "10",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "6",
+   "nhieu": [
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "10",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.35,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.16",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.0,
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.469,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.17",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "12",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 12.0,
+   "dap_so": {
+    "gia_tri": "12",
+    "so": 12.0
+   },
+   "do_kho": 0.428,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.18",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-2",
+     "dung": true
+    },
+    {
+     "noi_dung": "-4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "-2",
+   "nhieu": [
+    {
+     "phuong_an": "-4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-2",
+    "so": -2.0
+   },
+   "do_kho": 0.351,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.18",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "-2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -2.0,
+   "dap_so": {
+    "gia_tri": "-2",
+    "so": -2.0
+   },
+   "do_kho": 0.436,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.19",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.0,
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.453,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.20",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=-2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;-2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2",
+     "dung": true
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "2",
+   "nhieu": [
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.362,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.20",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=-2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;-2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.466,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.21",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=-2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;-2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-4",
+     "dung": true
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "-4",
+   "nhieu": [
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-4",
+    "so": -4.0
+   },
+   "do_kho": 0.334,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.21",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=-2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;-2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "-4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -4.0,
+   "dap_so": {
+    "gia_tri": "-4",
+    "so": -4.0
+   },
+   "do_kho": 0.444,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.22",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=-2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;-2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-6",
+     "dung": true
+    },
+    {
+     "noi_dung": "-4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "-6",
+   "nhieu": [
+    {
+     "phuong_an": "-4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-6",
+    "so": -6.0
+   },
+   "do_kho": 0.337,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.22",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=-2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;-2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "-6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -6.0,
+   "dap_so": {
+    "gia_tri": "-6",
+    "so": -6.0
+   },
+   "do_kho": 0.467,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.23",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=-2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;-2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-12",
+     "dung": true
+    },
+    {
+     "noi_dung": "-4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "-12",
+   "nhieu": [
+    {
+     "phuong_an": "-4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-8",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-12",
+    "so": -12.0
+   },
+   "do_kho": 0.333,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.23",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "-1",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=-1,u3=-2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;-1;-2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "-12",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -12.0,
+   "dap_so": {
+    "gia_tri": "-12",
+    "so": -12.0
+   },
+   "do_kho": 0.48,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.24",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "14",
+     "dung": true
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "13",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "14",
+   "nhieu": [
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "13",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "14",
+    "so": 14.0
+   },
+   "do_kho": 0.339,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.24",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "14",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 14.0,
+   "dap_so": {
+    "gia_tri": "14",
+    "so": 14.0
+   },
+   "do_kho": 0.457,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.25",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "20",
+     "dung": true
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "16",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "20",
+   "nhieu": [
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "16",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "20",
+    "so": 20.0
+   },
+   "do_kho": 0.329,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.25",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "20",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 20.0,
+   "dap_so": {
+    "gia_tri": "20",
+    "so": 20.0
+   },
+   "do_kho": 0.43,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.26",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "6",
+     "dung": true
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "6",
+   "nhieu": [
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-6",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.352,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.26",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.0,
+   "dap_so": {
+    "gia_tri": "6",
+    "so": 6.0
+   },
+   "do_kho": 0.473,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.27",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "12",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 12.0,
+   "dap_so": {
+    "gia_tri": "12",
+    "so": 12.0
+   },
+   "do_kho": 0.446,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.28",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=-2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;-2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "10",
+     "dung": true
+    },
+    {
+     "noi_dung": "12",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "10",
+   "nhieu": [
+    {
+     "phuong_an": "12",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.337,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.28",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=-2,v1=3,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;-2)$ và $\\vec v=(3;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "10",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 10.0,
+   "dap_so": {
+    "gia_tri": "10",
+    "so": 10.0
+   },
+   "do_kho": 0.426,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.29",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "3",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=-2,v1=3,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;-2)$ và $\\vec v=(3;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.0,
+   "dap_so": {
+    "gia_tri": "4",
+    "so": 4.0
+   },
+   "do_kho": 0.43,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.30",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=-2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;-2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2",
+     "dung": true
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-10",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "2",
+   "nhieu": [
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "5",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-10",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.362,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.30",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "1"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=-2,v1=-1,v2=2,v3=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;-2)$ và $\\vec v=(-1;2;1)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2",
+    "so": 2.0
+   },
+   "do_kho": 0.47,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TN.31",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=-2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;-2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "-4",
+     "dung": true
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "noi_dung": "8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "noi_dung": "-16",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_an": "-4",
+   "nhieu": [
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Bỏ sót thành phần thứ ba"
+     }
+    },
+    {
+     "phuong_an": "8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng các thành phần thay vì nhân"
+     }
+    },
+    {
+     "phuong_an": "-16",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu thành phần thứ hai"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "-4",
+    "so": -4.0
+   },
+   "do_kho": 0.368,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-05.TLN.31",
+   "mau_cau": "MC-OX-05",
+   "bien_the": {
+    "u1": "2",
+    "u2": "3",
+    "u3": "-2",
+    "v1": "-1",
+    "v2": "2",
+    "v3": "4"
+   },
+   "chu_de": "oxyz-toa-do-vecto",
+   "dang": "ox.tich-vo-huong",
+   "dang_tx": "ox.vecto",
+   "lop": 12,
+   "yccd": [
+    "12.OX.1"
+   ],
+   "kien_thuc": [
+    "Tích vô hướng hai vectơ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-OX-05|u1=2,u2=3,u3=-2,v1=-1,v2=2,v3=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-05"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho $\\vec u=(2;3;-2)$ và $\\vec v=(-1;2;4)$. Tích vô hướng $\\vec u\\cdot\\vec v$ bằng bao nhiêu?",
+   "dap_an": "-4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": -4.0,
+   "dap_so": {
+    "gia_tri": "-4",
+    "so": -4.0
+   },
+   "do_kho": 0.457,
+   "dap_so_engine": null
+  }
+ ]
+}

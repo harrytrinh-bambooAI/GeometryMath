@@ -1,0 +1,93 @@
+/* S2-E2 · C2-05 làm bài hình phẳng. Chỉ token theme; chữ phụ ≥ 14 px (PO-66 G17); chạm ≥ 44 px (BR-S2E2-11). */
+.s2e2-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  max-width: 1100px;
+  min-width: 0;
+}
+@media (min-width: 820px) {
+  .s2e2-page {
+    grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr);
+    align-items: start;
+  }
+}
+.s2e2-figure-card,
+.s2e2-tools,
+.s2e2-hints {
+  padding: 14px;
+  min-width: 0;
+}
+.s2e2-side {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+.s2e2-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.s2e2-statement {
+  font-family: var(--font-math, var(--font));
+  margin: 0 0 12px;
+  font-size: var(--fs);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.s2e2-h {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+.s2e2-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.s2e2-toolbar .btn,
+.s2e2-hints .btn,
+.s2e2-page .alert .btn {
+  min-height: 44px;
+  min-width: 44px;
+}
+.s2e2-notice {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  border-radius: var(--r-sm);
+  background: var(--yel-s);
+  color: var(--text);
+  font-size: 14px;
+}
+.s2e2-measures {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.s2e2-measures li {
+  font-family: var(--font-math, var(--font-mono));
+  font-size: 15px;
+  padding: 4px 10px;
+  border-radius: var(--r-sm);
+  background: var(--pri-s);
+  color: var(--text);
+}
+.s2e2-hints ol {
+  margin: 0 0 8px;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.s2e2-skel {
+  background: var(--soft);
+  border: 1px solid var(--line);
+}
+.s2e2-skel-figure {
+  aspect-ratio: 4 / 3;
+}
+.s2e2-skel-tools {
+  height: 120px;
+}

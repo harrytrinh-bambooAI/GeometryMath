@@ -1,0 +1,5802 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "oxyz-duong-thang",
+ "so_cau": 61,
+ "cau": [
+  {
+   "id": "MC-OX-03.TN.0",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "2",
+    "p": "2",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=-1,x0=1,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.14,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.1",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "2",
+    "p": "2",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=4,x0=1,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;4)",
+    "so": null
+   },
+   "do_kho": 0.138,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.2",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "2",
+    "p": "2",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=-1,x0=1,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.127,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.3",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "2",
+    "p": "2",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=4,x0=1,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;4)",
+    "so": null
+   },
+   "do_kho": 0.156,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.4",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "2",
+    "p": "-3",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=-1,x0=1,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.136,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.5",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "2",
+    "p": "-3",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=4,x0=1,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;4)",
+    "so": null
+   },
+   "do_kho": 0.122,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.6",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "2",
+    "p": "-3",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=-1,x0=1,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.138,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.7",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "2",
+    "p": "-3",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=4,x0=1,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;4)",
+    "so": null
+   },
+   "do_kho": 0.129,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.8",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "-4",
+    "p": "2",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=-1,x0=1,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.149,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.9",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "-4",
+    "p": "2",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=4,x0=1,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;4)",
+    "so": null
+   },
+   "do_kho": 0.15,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.10",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "-4",
+    "p": "2",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=-1,x0=1,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.132,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.11",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "-4",
+    "p": "2",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=4,x0=1,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;4)",
+    "so": null
+   },
+   "do_kho": 0.129,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.12",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "-4",
+    "p": "-3",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=-1,x0=1,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.148,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.13",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "-4",
+    "p": "-3",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=4,x0=1,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;4)",
+    "so": null
+   },
+   "do_kho": 0.177,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.14",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "-4",
+    "p": "-3",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=-1,x0=1,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.168,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.15",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "3",
+    "z0": "-4",
+    "p": "-3",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=4,x0=1,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;4)",
+    "so": null
+   },
+   "do_kho": 0.157,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.16",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "2",
+    "p": "2",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=-1,x0=1,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.132,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.17",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "2",
+    "p": "2",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=4,x0=1,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;4)",
+    "so": null
+   },
+   "do_kho": 0.129,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.18",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "2",
+    "p": "2",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=-1,x0=1,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.14,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.19",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "2",
+    "p": "2",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=4,x0=1,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;4)",
+    "so": null
+   },
+   "do_kho": 0.129,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.20",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "2",
+    "p": "-3",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=-1,x0=1,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.136,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.21",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "2",
+    "p": "-3",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=4,x0=1,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;4)",
+    "so": null
+   },
+   "do_kho": 0.157,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.22",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "2",
+    "p": "-3",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=-1,x0=1,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.122,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.23",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "2",
+    "p": "-3",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=4,x0=1,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;4)",
+    "so": null
+   },
+   "do_kho": 0.155,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.24",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "2",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=-1,x0=1,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.176,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.26",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "2",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=-1,x0=1,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.177,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.27",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "2",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=4,x0=1,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{2}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;4)",
+    "so": null
+   },
+   "do_kho": 0.135,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.28",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "-3",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=-1,x0=1,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.175,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.30",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "-3",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=-1,x0=1,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.155,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.31",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "1",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "-3",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=4,x0=1,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x - 1}}{{-3}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(1;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-1;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(1;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-1;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;4)",
+    "so": null
+   },
+   "do_kho": 0.14,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.32",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "2",
+    "p": "2",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=-1,x0=-2,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.145,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.33",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "2",
+    "p": "2",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=4,x0=-2,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;4)",
+    "so": null
+   },
+   "do_kho": 0.17,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.34",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "2",
+    "p": "2",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=-1,x0=-2,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.168,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.35",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "2",
+    "p": "2",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=4,x0=-2,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;4)",
+    "so": null
+   },
+   "do_kho": 0.176,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.36",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "2",
+    "p": "-3",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=-1,x0=-2,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.137,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.37",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "2",
+    "p": "-3",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=4,x0=-2,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;4)",
+    "so": null
+   },
+   "do_kho": 0.171,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.38",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "2",
+    "p": "-3",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=-1,x0=-2,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.124,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.39",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "2",
+    "p": "-3",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=4,x0=-2,y0=3,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;4)",
+    "so": null
+   },
+   "do_kho": 0.172,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.40",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "-4",
+    "p": "2",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=-1,x0=-2,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.147,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.41",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "-4",
+    "p": "2",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=4,x0=-2,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;4)",
+    "so": null
+   },
+   "do_kho": 0.177,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.42",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "-4",
+    "p": "2",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=-1,x0=-2,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.15,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.43",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "-4",
+    "p": "2",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=4,x0=-2,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;4)",
+    "so": null
+   },
+   "do_kho": 0.153,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.44",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "-4",
+    "p": "-3",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=-1,x0=-2,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.157,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.45",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "-4",
+    "p": "-3",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=4,x0=-2,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y - 3}}{{1}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;4)",
+    "so": null
+   },
+   "do_kho": 0.122,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.46",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "-4",
+    "p": "-3",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=-1,x0=-2,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.152,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.47",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "3",
+    "z0": "-4",
+    "p": "-3",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=4,x0=-2,y0=3,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y - 3}}{{5}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;3;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;-3;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;3;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;-3;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;4)",
+    "so": null
+   },
+   "do_kho": 0.124,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.48",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "2",
+    "p": "2",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=-1,x0=-2,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.154,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.49",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "2",
+    "p": "2",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=4,x0=-2,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;4)",
+    "so": null
+   },
+   "do_kho": 0.138,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.50",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "2",
+    "p": "2",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=-1,x0=-2,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.146,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.51",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "2",
+    "p": "2",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=4,x0=-2,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;4)",
+    "so": null
+   },
+   "do_kho": 0.152,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.52",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "2",
+    "p": "-3",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=-1,x0=-2,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.158,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.53",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "2",
+    "p": "-3",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=4,x0=-2,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;4)",
+    "so": null
+   },
+   "do_kho": 0.154,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.54",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "2",
+    "p": "-3",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=-1,x0=-2,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z - 2}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.16,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.55",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "2",
+    "p": "-3",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=4,x0=-2,y0=-1,z0=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z - 2}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;-2)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;-2)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;4)",
+    "so": null
+   },
+   "do_kho": 0.156,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.56",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "2",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=1,r=-1,x0=-2,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.137,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.57",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "2",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=-1,x0=-2,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.164,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.58",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "2",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=2,q=5,r=4,x0=-2,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{2}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(2;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(2;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(2;5;4)",
+    "so": null
+   },
+   "do_kho": 0.15,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.59",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "-3",
+    "q": "1",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=-1,x0=-2,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;-1)",
+    "so": null
+   },
+   "do_kho": 0.123,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.60",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "-3",
+    "q": "1",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=1,r=4,x0=-2,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y + 1}}{{1}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;1;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;1;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;1;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;1;4)",
+    "so": null
+   },
+   "do_kho": 0.141,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.61",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "-3",
+    "q": "5",
+    "r": "-1"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=-1,x0=-2,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z + 4}}{{-1}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;-1)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;1)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;-1)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;1)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;-1)",
+    "so": null
+   },
+   "do_kho": 0.166,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-03.TN.62",
+   "mau_cau": "MC-OX-03",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "-1",
+    "z0": "-4",
+    "p": "-3",
+    "q": "5",
+    "r": "4"
+   },
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.vtcp",
+   "dang_tx": "ox.dt-vtcp",
+   "lop": 12,
+   "yccd": [
+    "12.OX.3"
+   ],
+   "kien_thuc": [
+    "Vectơ chỉ phương của đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-03|p=-3,q=5,r=4,x0=-2,y0=-1,z0=-4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-03",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-03"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho đường thẳng $d:\\dfrac{{x + 2}}{{-3}}=\\dfrac{{y + 1}}{{5}}=\\dfrac{{z + 4}}{{4}}$. Một vectơ chỉ phương của $d$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec u=(-3;5;4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec u=(-2;-1;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(2;1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "noi_dung": "\\vec u=(-3;5;-4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_an": "\\vec u=(-3;5;4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec u=(-2;-1;-4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy tọa độ điểm thuộc $d$ làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(2;1;4)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy các số trên tử (đổi dấu) làm vectơ chỉ phương"
+     }
+    },
+    {
+     "phuong_an": "\\vec u=(-3;5;-4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu một thành phần"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec u=(-3;5;4)",
+    "so": null
+   },
+   "do_kho": 0.136,
+   "dap_so_engine": null
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+{
+ "case": "C09",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 4,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 5,
+   "cau_tu_kho": 5,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 3,
+   "phong_cach": 4,
+   "to_chuc": 4,
+   "chinh_xac": 4,
+   "phieu": 3
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "Câu 1 PHT1 gắn kt \"KT11-C07-TC-001\" nhưng bài chỉ dùng AB ∥ CD ⇒ góc 0° (KT11-C07-DN-001). Đây là gắn nhãn sai, không phải sai toán.",
+   "Đề xuất thay câu 5 bằng BM-031 không hợp lí vì BM-031 trùng nội dung với câu 3 (BT11-B22-3: góc giữa AB' và BC')."
+  ],
+  "nhan_xet": "Giáo án đúng khung, tổng thời lượng khớp 45 phút, phát biểu kiến thức khớp tham chiếu, không lộ đáp số; trợ lý đã tự phát hiện và ghi unsure, de_xuat cho gợi ý câu 5 dùng kiến thức đường vuông góc mặt phẳng nằm ngoài danh sách. Tuy vậy, chặng cuối là bài chứng minh VD khó so với đối tượng cơ bản, HĐ2–HĐ3 vẫn thiên về giảng giải, chưa mang tính trò chơi, và phương án thay thế câu 5 bị trùng câu 3."
+ },
+ "judge2": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 4,
+   "to_chuc": 4,
+   "chinh_xac": 4,
+   "phieu": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án đủ khung, tổng 45 phút, phát biểu kiến thức khớp tham chiếu, không lộ đáp số; trò chơi rõ ở HĐ1, HĐ4, HĐ5 nhưng HĐ2–HĐ3 vẫn thuần giảng giải, và câu 1 gắn nhầm thẻ KT11-C07-TC-001. Trợ lý đã tự cảnh báo câu 5 dùng quan hệ đường thẳng vuông góc mặt phẳng (ngoài danh sách), nhưng đề xuất thay bằng BM-031 lại trùng nội dung với câu 3 (BT11-B22-3)."
+ },
+ "auto0": {
+  "schema": false,
+  "checks": {
+   "json_nghiem_ngat": false
+  },
+  "viol": [
+   "không parse được / kind sai"
+  ],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": null
+ },
+ "retried": true,
+ "score": {
+  "diem": 82.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 3.83
+ }
+}

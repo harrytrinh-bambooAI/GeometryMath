@@ -1,0 +1,35 @@
+{
+ "case": "E09",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "dung_mot_cau_hoi": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "question"
+ },
+ "judge": {
+  "diem": {
+   "dung_cho_thieu": 5,
+   "gon": 4,
+   "can_thiet": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Yêu cầu \"Làm cho giáo án hay hơn\" thật sự mơ hồ: theo A6, nếu tự vá thì dễ đụng tới mục không được yêu cầu, nên hỏi đúng 1 câu là xử lí đúng luật, và các gợi ý lựa chọn giúp giáo viên trả lời ngay. Câu hỏi hơi dài do liệt kê ví dụ, và chưa tranh thủ nêu điểm bất nhất có sẵn trong giáo án: HD4 ghi \"o_nha\": false, tính 5 phút trên lớp nhưng phần tổ chức lại để HS làm ở nhà."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 95.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.67
+ }
+}

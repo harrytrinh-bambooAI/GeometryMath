@@ -1,0 +1,109 @@
+{
+ "id": "MC-HH-F03",
+ "ten": "Khoảng cách từ A đến (A'BC) (đáy vuông)",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "kc-diem-mp.lang-tru-dung",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.2"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "F",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-36",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-36 + geometry/problem-specs.json#HKN-36"
+ },
+ "tham_so": {
+  "q": [
+   "1",
+   "sqrt(3)"
+  ],
+  "k": [
+   "1",
+   "2",
+   "sqrt(3)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "b": "q*a",
+  "h": "k*a",
+  "BC": "sqrt(a**2+b**2)"
+ },
+ "boi_canh": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC={b}$ và $AA'={h}$.",
+ "hoi": "Khoảng cách từ $A$ đến mặt phẳng $(A'BC)$ bằng",
+ "dap_so": "1/sqrt(1/a**2+1/b**2+1/h**2)",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "a*b/BC",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy khoảng cách từ $A$ đến đường thẳng $BC$"
+   }
+  },
+  {
+   "bieu_thuc": "h",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $AA'$ là khoảng cách"
+   }
+  },
+  {
+   "bieu_thuc": "1/(1/a+1/b+1/h)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Cộng nghịch đảo độ dài thay vì nghịch đảo bình phương"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-36",
+  "ask": 0,
+  "params": {
+   "ab": "a",
+   "ac": "b",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "q": "1",
+   "k": "1"
+  },
+  {
+   "q": "1",
+   "k": "2"
+  },
+  {
+   "q": "1",
+   "k": "sqrt(3)"
+  },
+  {
+   "q": "sqrt(3)",
+   "k": "1"
+  },
+  {
+   "q": "sqrt(3)",
+   "k": "2"
+  },
+  {
+   "q": "sqrt(3)",
+   "k": "sqrt(3)"
+  }
+ ],
+ "so_bien_the": 6,
+ "so_cau_sinh": 12,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

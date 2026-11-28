@@ -1,0 +1,32 @@
+{
+ "ids": [
+  "BM-038-S1",
+  "BM-038-S2",
+  "BM-038-DUNG",
+  "BM-039-S1",
+  "BM-039-S2",
+  "BM-039-DUNG",
+  "BM-040-S1",
+  "BM-040-S2",
+  "BM-040-DUNG",
+  "BM-041-S1",
+  "BM-041-S2",
+  "BM-041-DUNG",
+  "BM-042-S1",
+  "BM-042-S2",
+  "BM-042-DUNG"
+ ],
+ "text": "{\"ket_qua\":[{\"id\":\"BM-038-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Góc giữa (SBD) và (ABCD) là góc SOA (AO⊥BD, SO⊥BD), không phải góc SBA; B1 đúng.\"},{\"id\":\"BM-038-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"AO = a√2/2 (nửa đường chéo), không phải a√2; do đó tan SOA = SA/AO = √2, không phải √2/2.\"},{\"id\":\"BM-038-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: góc SOA, AO = a√2/2, tan = a/(a√2/2) = √2.\"},{\"id\":\"BM-039-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"Công thức sai: AH = SA·AB/SB = a·a/(a√2) = a√2/2, không phải SA·SB/AB.\"},{\"id\":\"BM-039-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"Kết luận d(A,(SBC)) = AH mà không chứng minh AH ⊥ (SBC) (cần AH ⊥ BC do BC ⊥ (SAB)); thiếu lập luận then chốt.\"},{\"id\":\"BM-039-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: BC⊥(SAB), AH⊥(SBC), SB=a√2, AH=a√2/2.\"},{\"id\":\"BM-040-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"AD' không vuông góc với AB (góc DAB' ... góc giữa AD' và AB là 90°? thực tế AD' không vuông góc A'D'), nên không phải đoạn vuông góc chung; AD' và A'D' tạo góc 45°.\"},{\"id\":\"BM-040-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"Bước B2 bỏ trống: không nêu AA' cắt cả hai đường nên là đoạn vuông góc chung; lập luận thiếu, dù kết quả a đúng.\"},{\"id\":\"BM-040-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: AA' là đoạn vuông góc chung, d = a.\"},{\"id\":\"BM-041-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"Phải có 1/OH² = 1/OA² + 1/OK² = 1/a² + 2/a² = 3/a²; ghi 2/a² là sai.\"},{\"id\":\"BM-041-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"OK ⊥ BC không suy ra OK ⊥ (ABC); OK không vuông góc AK nên d ≠ OK. Đáp số đúng là a√3/3.\"},{\"id\":\"BM-041-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: 1/OH² = 3/a², OH = a√3/3.\"},{\"id\":\"BM-042-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"1/d² = 1/9+1/9+1/9 = 1/3 nên d = √3, không phải 3 (kết luận từ 1/d²=1/3 sai).\"},{\"id\":\"BM-042-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"Công thức d = SA·AB/SB là khoảng cách từ A đến SB, không phải đến (SBD); sai khái niệm.\"},{\"id\":\"BM-042-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: 1/d² = 1/3, d = √3.\"}]}",
+ "usage": {
+  "ts": "2026-11-27T17:45:40",
+  "role": "gen",
+  "task": "R5/STEP1/stepb-5",
+  "model": "claude-sonnet-5-5",
+  "input": 3678,
+  "output": 1239,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 7.7
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "case": "E05",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true,
+   "co_de_xuat": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 1
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 3,
+   "noi_dung": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "Lỗi có sẵn trong giáo án, bản vá không phát hiện: HD2 ghi \"$\\dfrac1{AH}=\\dfrac1{SA}+\\dfrac1{AK}$\", đúng phải là $\\dfrac1{AH^2}=\\dfrac1{SA^2}+\\dfrac1{AK^2}$ (KT11-C07-CT-003)."
+  ],
+  "nhan_xet": "Bản vá chỉ thêm câu BM-008 đúng mức VD và đúng chủ đề, dap_so null, gợi ý không lộ kết quả, và đề xuất hợp lí về mục tiêu đang khoá cũng như vị trí câu 4 trong tiến trình. Tuy nhiên bản vá bỏ sót hai lỗi có sẵn cần đề xuất: công thức CT-003 ở HD2 thiếu bình phương, và tổng thời lượng các hoạt động là 50 phút, khác 45 (vi phạm A5); bản vá còn mô tả sai là tiết \"đã kín\"."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

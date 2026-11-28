@@ -1,0 +1,75 @@
+{
+ "id": "BM-014",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-33 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-33 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách giữa hai đường thẳng chéo nhau",
+ "muc_do": "TH",
+ "de_bai": "Cho lăng trụ tam giác đều $ABC.A'B'C'$ có cạnh đáy $a$ và $AA'=2a$. Tính khoảng cách giữa hai đường thẳng $AA'$ và $BC$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a\\sqrt3}{2}$",
+  "so": 0.8660254037844386
+ },
+ "dap_so_engine": 0.8660254037844387,
+ "kien_thuc": [
+  "Đoạn vuông góc chung",
+  "Đường cao tam giác đều"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$M$ trung điểm $BC$: $AM\\perp BC$ và $AM\\perp AA'$ (vì $AA'\\perp(ABC)$), $AM$ cắt cả hai đường nên là đoạn vuông góc chung.",
+   "ket_qua_trung_gian": "$d=AM$",
+   "kien_thuc": "Đoạn vuông góc chung",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $d=AM$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $AB$ làm đoạn vuông góc chung ($AB$ không vuông góc $BC$)",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$AM=\\dfrac{a\\sqrt3}2$.",
+   "ket_qua_trung_gian": "$\\dfrac{a\\sqrt3}2$",
+   "kien_thuc": "Đường cao tam giác đều",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a\\sqrt3}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Nhầm đường cao với bán kính ngoại tiếp: $AM=\\dfrac{a\\sqrt3}3$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.8660254037844386
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lấy $AB$ làm đoạn vuông góc chung ($AB$ không vuông góc $BC$)",
+   "loi_giai": "B1: $AB$ nối $AA'$ với $BC$ và $AB\\perp AA'$ nên $d(AA',BC)=AB$.\nB2: $d=AB=a$.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Nhầm đường cao với bán kính ngoại tiếp: $AM=\\dfrac{a\\sqrt3}3$",
+   "loi_giai": "B1: $M$ trung điểm $BC$: $AM\\perp BC$ và $AM\\perp AA'$ (vì $AA'\\perp(ABC)$), $AM$ cắt cả hai đường nên là đoạn vuông góc chung.\nB2: $AM=\\dfrac{a\\sqrt3}3$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

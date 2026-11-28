@@ -1,0 +1,87 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "role": "STUDENT"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b8cb-72cd-9b9d-b7ad565a0c35",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 6
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/teacher/assignments/00000000-0000-7000-8000-000000000041/release",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "requestBody": {
+      "openNow": false,
+      "releaseAt": "2026-11-22T15:47:10.684Z",
+      "expectedRev": 0
+    },
+    "status": 403,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b8d4-76e0-8b80-4948f0283a39",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"code\":\"FORBIDDEN\",\"message\":\"Bạn không có quyền thực hiện thao tác này.\",\"requestId\":\"01a203ef-b8d4-76e0-8b80-4948f0283a39\"}",
+    "ms": 5
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/student/assignments/00000000-0000-7000-8000-000000000041",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b8d9-7031-a7b0-b741e7360600",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "332",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"id\":\"00000000-0000-7000-8000-000000000041\",\"problemCode\":\"HKG-02\",\"statement\":\"Cho hình lập phương ABCD.A′B′C′D′ cạnh a. Tính khoảng cách giữa AC và B′D′.\",\"className\":\"11A1\",\"releaseState\":\"unset\",\"allowHint\":true,\"allowQa\":true,\"verifyStatus\":\"verified\",\"progress\":{\"k\":0,\"label\":\"Chưa bắt đầu\"}}",
+    "ms": 10
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/student/assignments/00000000-0000-7000-8000-000000000041/solution",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 403,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b8e3-73f4-aec8-041305851398",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"code\":\"FORBIDDEN\",\"message\":\"Lời giải chưa mở.\",\"requestId\":\"01a203ef-b8e3-73f4-aec8-041305851398\"}",
+    "ms": 6
+  }
+]

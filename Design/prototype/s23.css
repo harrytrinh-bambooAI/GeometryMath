@@ -1,0 +1,56 @@
+/* s23.css · Phiên bản: v0.1 · 2026-11-26 · thành phần mới C2/C3 (nền chung ở s23-base.css, trích từ index.html) */
+body{background:#D9DEEA;overflow:auto}
+#app{display:block;overflow:visible}
+#app .screen{border-radius:0;height:900px;margin:0}
+.s23nav{background:#141B2D;color:#fff;padding:8px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px}
+.s23nav b{margin-right:6px;font-size:13px}.s23nav a{padding:5px 10px;border-radius:99px;background:rgba(255,255,255,.08);color:#C9D2E6;font-weight:600;text-decoration:none}
+.s23nav a.on{background:#F0522B;color:#fff}.s23nav .g{color:#8F9BB5;font-weight:700;margin-left:8px}
+.screen.nofr{display:flex;flex-direction:column}
+.pgs{display:flex;gap:0;align-items:center;font-size:12.5px;font-weight:700}
+.pgs .p{display:flex;gap:8px;align-items:center;flex:1;padding:10px 12px;border-radius:12px;background:var(--soft);border:1.5px solid var(--line);color:var(--muted)}
+.pgs .p.on{border-color:var(--pri);background:var(--pri-s);color:var(--pri)}.pgs .p.ok{border-color:#BFE8D6;background:var(--grn-s);color:var(--grn)}
+.pgs .p.bad{border-color:#F3B8B3;background:var(--red-s);color:var(--red)}.pgs .p.wait{border-color:#F3D894;background:var(--yel-s);color:#9A6B00}
+.pgs .ln{width:14px;height:2px;background:var(--line);flex:none}
+.ban{display:flex;gap:11px;align-items:flex-start;border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.5;font-weight:600}
+.ban svg.ic{width:20px;height:20px;margin-top:1px}.ban.red{background:var(--red-s);color:#8A2A1A}.ban.yel{background:var(--yel-s);color:#7A5200}.ban.grn{background:var(--grn-s);color:#0B5E41}.ban.pur{background:var(--pur-s);color:#5B3FC4}.ban.pri{background:var(--pri-s);color:#2F49B5}
+.ban .btn{margin-top:6px}.ban p{margin:2px 0 0;font-weight:500}
+.stp{border:1.5px solid var(--line);border-radius:14px;background:#fff;padding:12px 14px;display:flex;gap:12px;align-items:flex-start}
+.stp.bad{border-color:#F3B8B3;background:#FFF8F7}.stp.cur{border-color:var(--pri);box-shadow:0 0 0 3px rgba(59,91,219,.12)}
+.stp .tx{font-size:14px;line-height:1.6;flex:1;min-width:0}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:700}
+.code{font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:.08em;background:#141B2D;color:#fff;border-radius:12px;padding:12px 18px;font-size:22px;text-align:center}
+.code.sm{font-size:16px;padding:9px 14px;letter-spacing:.06em}.code.lt{background:var(--pri-s);color:var(--pri)}
+.kbd2{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;background:#E3E8F2;padding:10px;border-radius:16px}
+.kbd2 b{background:#fff;border-radius:11px;padding:13px 0;font-size:17px;font-weight:700;box-shadow:0 1px 0 rgba(20,27,45,.18);font-family:'JetBrains Mono',monospace;min-height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.kbd2 b.fn{background:#C9D3F5;color:var(--pri-d)}.kbd2 b.ok{background:var(--pri);color:#fff}.kbd2 b.w2{grid-column:span 2}
+.dev-phone .kbd2{gap:5px;padding:7px}.dev-phone .kbd2 b{padding:9px 0;font-size:15px;min-height:40px}
+.mathin{border:2px solid var(--pri);border-radius:14px;padding:12px 16px;font-size:22px;font-weight:700;background:#fff;display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace}
+.mathin.bad{border-color:var(--red);background:#FFF8F7}.mathin.ok{border-color:var(--grn);background:#F3FBF7}
+.cur1{display:inline-block;width:2px;height:26px;background:var(--pri);animation:bl 1s steps(2) infinite}@keyframes bl{50%{opacity:0}}
+.cell{display:flex;align-items:center;justify-content:center;border-radius:10px;height:44px;font-weight:700;font-size:12.5px;gap:5px}
+.cell.g{background:var(--grn-s);color:var(--grn)}.cell.y{background:var(--yel-s);color:#9A6B00}.cell.n{background:#EEF1F7;color:var(--faint)}.cell.r{background:var(--pri-s);color:var(--pri)}
+.cell.hl{outline:3px solid var(--pri);outline-offset:1px}
+.pres{background:#0E1424;color:#fff}.pres .tb{background:rgba(255,255,255,.08);border-radius:16px;padding:8px 10px;display:flex;gap:6px;align-items:center}
+.pres .tb span{padding:9px 14px;border-radius:11px;font-weight:700;font-size:13px;color:#C9D2E6;display:flex;gap:7px;align-items:center;cursor:pointer}
+.pres .tb span.on{background:var(--pri);color:#fff}.pres .tb svg.ic{width:17px;height:17px}
+.pres .fg{background:#fff;border-radius:22px;display:flex;align-items:center;justify-content:center;padding:16px}
+.pres .fg svg{height:100%;max-width:100%}
+.pres .stpb{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);border-radius:16px;padding:16px 18px;font-size:20px;line-height:1.55}
+.pres .stpb.cur{border-color:#7C9BFF;background:rgba(124,155,255,.14)}.pres .stpb.hid{border-style:dashed;color:#8F9BB5;font-size:16px;display:flex;gap:10px;align-items:center}
+.blurimg{background:repeating-linear-gradient(#F1EEE3 0 17px,#DAD5C3 17px 18px);border-radius:12px;padding:16px;font:15px/18px 'Bradley Hand','Comic Sans MS',cursive;color:#7C7A72;filter:blur(2.2px);height:120px;overflow:hidden}
+.pt{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:.02em;margin-bottom:4px}
+.opt2{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:center;font-weight:600;font-size:13.2px;cursor:pointer}
+.opt2.on{border-color:var(--pri);background:var(--pri-s)}
+.rd{width:20px;height:20px;border-radius:50%;border:2px solid #B9C2D8;flex:none;background:#fff}.opt2.on .rd{border:6px solid var(--pri)}
+.print{background:#fff;border:1px solid #CBD2E0;box-shadow:0 8px 24px rgba(20,27,45,.12);padding:22px;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;border-radius:6px}
+.dev-phone .pgs{flex-direction:column;align-items:stretch;gap:6px}.dev-phone .pgs .ln{display:none}
+.dev-phone .screen.nofr{display:block;overflow-y:auto}
+.fixh{height:calc(100% - 66px)}
+.bigfig{height:100%;display:flex;align-items:center;justify-content:center;padding:6px}.bigfig svg{height:100%;max-width:100%}
+
+/* v0.2 · 2026-11-26 · sửa theo REVIEW-Dom: R-01 "Đang làm" không dùng màu cam/đỏ (dễ nhầm lỗi); R-02 chữ học sinh >= 14-16px (Q_Dom A5) */
+.dev-ipad .small,.dev-phone .small{font-size:14px}
+.dev-ipad .tiny,.dev-phone .tiny{font-size:13px}
+.dev-ipad .chip,.dev-phone .chip{font-size:13px}
+.dev-ipad .prob{font-size:16px}.dev-phone .prob{font-size:14px}
+.dev-phone .kbd2 b{min-height:44px}/* R-03: vùng chạm >= 44px (Q_Dom A5), trước đó 40px */

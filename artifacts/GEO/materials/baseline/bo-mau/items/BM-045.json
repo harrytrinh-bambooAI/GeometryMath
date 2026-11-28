@@ -1,0 +1,87 @@
+{
+ "id": "BM-045",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-27-the-tich.md — bài 7 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Thể tích khối chóp",
+ "muc_do": "VDC",
+ "de_bai": "Tính thể tích khối tứ diện đều cạnh $a$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a^3\\sqrt2}{12}$",
+  "so": 0.11785113019775793
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Chân đường cao tứ diện đều là trọng tâm đáy",
+  "$V=\\dfrac13Bh$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$S_{BCD}=\\dfrac{a^2\\sqrt3}4$; chân đường cao $H$ là trọng tâm, $HB=\\dfrac{a\\sqrt3}3$.",
+   "ket_qua_trung_gian": "$HB=\\dfrac{a\\sqrt3}3$",
+   "kien_thuc": "Trọng tâm tam giác đều",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $HB=\\dfrac{a\\sqrt3}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $HB$ bằng đường cao tam giác đều $\\dfrac{a\\sqrt3}2$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.5773502691896257
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$AH=\\sqrt{a^2-\\dfrac{a^2}3}=\\dfrac{a\\sqrt6}3$.",
+   "ket_qua_trung_gian": "$AH=\\dfrac{a\\sqrt6}3$",
+   "kien_thuc": "Pythagore",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AH=\\dfrac{a\\sqrt6}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.8164965809277259
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$V=\\dfrac13\\cdot\\dfrac{a^2\\sqrt3}4\\cdot\\dfrac{a\\sqrt6}3=\\dfrac{a^3\\sqrt2}{12}$.",
+   "ket_qua_trung_gian": "$\\dfrac{a^3\\sqrt2}{12}$",
+   "kien_thuc": "Thể tích",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a^3\\sqrt2}{12}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Rút gọn sai $\\sqrt{18}=2\\sqrt3$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.11785113019775793
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lấy $HB$ bằng đường cao tam giác đều $\\dfrac{a\\sqrt3}2$",
+   "loi_giai": "B1: $HB=\\dfrac{a\\sqrt3}2$.\nB2: $AH=\\sqrt{a^2-\\dfrac{3a^2}4}=\\dfrac a2$.\nB3: $V=\\dfrac13\\cdot\\dfrac{a^2\\sqrt3}4\\cdot\\dfrac a2=\\dfrac{a^3\\sqrt3}{24}$.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Rút gọn sai $\\sqrt{18}=2\\sqrt3$",
+   "loi_giai": "B1: $S_{BCD}=\\dfrac{a^2\\sqrt3}4$; chân đường cao $H$ là trọng tâm, $HB=\\dfrac{a\\sqrt3}3$.\nB2: $AH=\\sqrt{a^2-\\dfrac{a^2}3}=\\dfrac{a\\sqrt6}3$.\nB3: $V=\\dfrac{a^3\\sqrt{18}}{36}=\\dfrac{a^3\\sqrt3}{18}$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

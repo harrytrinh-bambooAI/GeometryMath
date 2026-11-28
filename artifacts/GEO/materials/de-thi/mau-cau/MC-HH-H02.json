@@ -1,0 +1,105 @@
+{
+ "id": "MC-HH-H02",
+ "ten": "Thể tích khối nón",
+ "chu_de": "khoi-tron-xoay",
+ "dang": "non.the-tich",
+ "dang_tx": "tx.non",
+ "yccd": [
+  "12.TX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "H",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-56",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-56 + geometry/problem-specs.json#HKN-56"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "r": 3,
+    "t": 4
+   },
+   {
+    "r": 6,
+    "t": 8
+   },
+   {
+    "r": 5,
+    "t": 12
+   },
+   {
+    "r": 9,
+    "t": 12
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình nón có bán kính đáy $r={r}$ cm và chiều cao $h={t}$ cm.",
+ "hoi": "Thể tích khối nón bằng",
+ "dap_so": "pi*r**2*t/3",
+ "don_vi": "cm3",
+ "nhieu": [
+  {
+   "bieu_thuc": "pi*r**2*t",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên hệ số $\\dfrac13$"
+   }
+  },
+  {
+   "bieu_thuc": "pi*r*t**2/3",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Đổi vai bán kính và chiều cao"
+   }
+  },
+  {
+   "bieu_thuc": "pi*r**2*sqrt(r**2+t**2)/3",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng đường sinh thay cho chiều cao"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-56",
+  "ask": 0,
+  "params": {
+   "r": "r",
+   "h": "t"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "r": "3",
+   "t": "4"
+  },
+  {
+   "r": "6",
+   "t": "8"
+  },
+  {
+   "r": "5",
+   "t": "12"
+  },
+  {
+   "r": "9",
+   "t": "12"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

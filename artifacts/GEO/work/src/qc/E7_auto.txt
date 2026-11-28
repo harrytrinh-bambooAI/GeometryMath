@@ -1,0 +1,4 @@
+# E7 — cột "Tự động hóa" (PO-50): chỉ ghi case khác mặc định của gen_cases.py (auto_default).
+# TC-GEO-nnnn | E2E-UI / E2E-API / IT / Manual | lý do (bắt buộc với Manual)
+TC-GEO-0706 | E2E-UI | Playwright giả lập điện thoại (F-GEO-103); kiểm bố cục
+TC-GEO-0729 | E2E-UI | Playwright cắt mạng (offline) giữa lúc thao tác rồi nối lại; đếm sự kiện qua Theo dõi lớp

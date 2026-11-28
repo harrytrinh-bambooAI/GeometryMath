@@ -1,0 +1,936 @@
+[
+ {
+  "id": "LG-001",
+  "ten": "Cổng Sở GD&ĐT Hà Nội - tuyển sinh lớp 10 (đề + hướng dẫn chấm chính thức)",
+  "url": "https://hanoi.edu.vn/",
+  "loai": "de-thi-chinh-thuc",
+  "cap": "THCS",
+  "chu_de": [
+   "dai-so",
+   "hinh-hoc-phang",
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": true,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "Cơ quan quản lý GD Hà Nội; đề thi chính thức kèm hướng dẫn chấm theo từng ý (chưa xác minh từng tệp)",
+  "license": "Tài liệu nhà nước; chỉ trích dẫn/link",
+  "dung_cho_baseline": "Chuẩn biểu điểm từng bước đề vào 10 Hà Nội: map điểm thành phần để chấm bước AI",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-002",
+  "ten": "Cổng GD&ĐT TP.HCM - tuyển sinh lớp 10",
+  "url": "https://hcm.edu.vn/",
+  "loai": "de-thi-chinh-thuc",
+  "cap": "THCS",
+  "chu_de": [
+   "dai-so",
+   "hinh-hoc-phang",
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": true,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "Sở GD&ĐT TP.HCM công bố đề và hướng dẫn chấm (chưa xác minh từng tệp)",
+  "license": "Tài liệu nhà nước; chỉ link",
+  "dung_cho_baseline": "Biểu điểm đề vào 10 TPHCM; đối chiếu lời giải AI",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-003",
+  "ten": "Bộ GD&ĐT (moet.gov.vn) - đề và đáp án thi tốt nghiệp THPT",
+  "url": "https://moet.gov.vn",
+  "loai": "de-thi-chinh-thuc",
+  "cap": "THPT",
+  "chu_de": [
+   "tong-hop",
+   "ham-so",
+   "hinh-hoc-khong-gian",
+   "xac-suat"
+  ],
+  "co_loi_giai_buoc": false,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "Bộ công bố đề, đáp án chính thức theo mã đề; không có lời giải chi tiết",
+  "license": "Tài liệu nhà nước; chỉ link",
+  "dung_cho_baseline": "Đáp án cuối (đúng/sai) làm ground truth cho đáp số AI",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-004",
+  "ten": "Phòng GD&ĐT Quốc Oai - đề thi thử vào 10 kèm hướng dẫn chấm (PDF)",
+  "url": "https://cdn.thuvienphapluat.vn/uploads/Hoidapphapluat/2024/TTTT/240502/Toan/HN/de-thi-thu-toan-vao-lop-10-lan-1-nam-2024-2025-phong-gddt-quoc-oai-ha-noi.pdf",
+  "loai": "de-thi-chinh-thuc",
+  "cap": "THCS",
+  "chu_de": [
+   "dai-so",
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": true,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Đề thi thử cấp phòng GD có hướng dẫn chấm từng câu; bản host trên thuvienphapluat",
+  "license": "Bản quyền Phòng GD; chỉ link, không chép",
+  "dung_cho_baseline": "Mẫu thang điểm từng bước để thử bộ chấm tự động",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-005",
+  "ten": "VTC News - Sở GD&ĐT Hà Nội chốt cách chấm Toán lớp 10 (2026)",
+  "url": "https://vtcnews.vn/so-gd-dt-ha-noi-chot-cach-cham-bai-toan-thi-lop-10-gay-tranh-luan-ar1021682.html",
+  "loai": "web-giai-bai",
+  "cap": "THCS",
+  "chu_de": [
+   "dai-so",
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": false,
+  "co_bieu_diem_buoc": true,
+  "co_dap_so": false,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Báo chính thống trích hướng dẫn chấm của Sở (câu 5, 0,5 đ); chỉ mô tả cách chấm",
+  "license": "Báo chí; chỉ link",
+  "dung_cho_baseline": "Ca biên: khi nhiều cách đặt điều kiện, chấm tương đương",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-006",
+  "ten": "Hocmai - đề thi và đáp án chi tiết Toán vào 10 Hà Nội 2025",
+  "url": "https://huongnghiep.hocmai.vn/de-thi-dap-an-chi-tiet-mon-toan-tuyen-sinh-lop-10-ha-noi-nam-2025",
+  "loai": "web-giai-bai",
+  "cap": "THCS",
+  "chu_de": [
+   "dai-so",
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": true,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Trang giáo viên soạn, lời giải chi tiết đề chính thức; biểu điểm theo đề gốc (cần đối chiếu)",
+  "license": "Bản quyền Hocmai; chỉ link",
+  "dung_cho_baseline": "Lời giải tham chiếu có bước cho đề HN 2025",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-007",
+  "ten": "Tiền Phong - đáp án tham khảo Toán vào 10 Hà Nội 2025",
+  "url": "https://tienphong.vn/dap-an-tham-khao-mon-toan-ky-thi-vao-lop-10-thpt-tai-ha-noi-nam-2025-post1749408.tpo",
+  "loai": "web-giai-bai",
+  "cap": "THCS",
+  "chu_de": [
+   "dai-so",
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Báo lớn, đáp án tham khảo do giáo viên soạn, không chính thức",
+  "license": "Báo chí; chỉ link",
+  "dung_cho_baseline": "Đối chiếu đáp số thứ cấp",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-008",
+  "ten": "Znews - đề và gợi ý đáp án Toán vào 10 Hà Nội",
+  "url": "https://znews.vn/de-thi-va-goi-y-dap-an-mon-toan-vao-lop-10-o-ha-noi-post1655691.html",
+  "loai": "web-giai-bai",
+  "cap": "THCS",
+  "chu_de": [
+   "dai-so",
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Báo lớn, gợi ý đáp án; không chính thức",
+  "license": "Báo chí; chỉ link",
+  "dung_cho_baseline": "Đối chiếu đáp số thứ cấp",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-009",
+  "ten": "Giáo dục & Thời đại - hướng dẫn giải đề Toán vào 10 Hà Nội",
+  "url": "https://giaoduc.net.vn/huong-dan-giai-goi-y-dap-ap-de-thi-toan-vao-lop-10-ha-noi-post198996.gd",
+  "loai": "web-giai-bai",
+  "cap": "THCS",
+  "chu_de": [
+   "dai-so",
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Báo ngành GD, hướng dẫn giải của giáo viên",
+  "license": "Báo chí; chỉ link",
+  "dung_cho_baseline": "Lời giải tham chiếu thứ hai để kiểm chéo",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-010",
+  "ten": "Hocmai - đáp án tham khảo Toán TN THPT 2025",
+  "url": "https://huongnghiep.hocmai.vn/dap-an-chinh-thuc-mon-toan-ky-thi-tot-nghiep-thpt-2025",
+  "loai": "web-giai-bai",
+  "cap": "THPT",
+  "chu_de": [
+   "tong-hop",
+   "ham-so",
+   "hinh-hoc-khong-gian"
+  ],
+  "co_loi_giai_buoc": false,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Đáp án tham khảo theo mã đề, không phải bản của Bộ",
+  "license": "Bản quyền Hocmai; chỉ link",
+  "dung_cho_baseline": "Đối chiếu đáp số trắc nghiệm",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-011",
+  "ten": "Loigiaihay - đề thi vào 10 môn Toán (kèm đáp án chi tiết)",
+  "url": "https://loigiaihay.com/de-thi-vao-10-mon-toan-c1387.html",
+  "loai": "web-giai-bai",
+  "cap": "THCS",
+  "chu_de": [
+   "dai-so",
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": true,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Trang lớn do giáo viên biên soạn; nhiều đề có thang điểm, cần kiểm từng đề",
+  "license": "Bản quyền Loigiaihay; chỉ link, không scrape hàng loạt",
+  "dung_cho_baseline": "Lời giải có bước cho đề tuyển sinh",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-012",
+  "ten": "Loigiaihay - SGK/SBT Toán 11 Kết nối tri thức",
+  "url": "https://loigiaihay.com/sgk-toan-11-ket-noi-tri-thuc-c1370.html",
+  "loai": "web-giai-bai",
+  "cap": "THPT",
+  "chu_de": [
+   "dao-ham",
+   "quan-he-song-song",
+   "quan-he-vuong-goc",
+   "luong-giac"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Giải bài SGK từng bước do giáo viên soạn, có biên tập",
+  "license": "Bản quyền Loigiaihay; chỉ link",
+  "dung_cho_baseline": "Lời giải bước cho bài SGK Toán 11 (trọng tâm)",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-013",
+  "ten": "VietJack - Toán 11 Kết nối tri thức",
+  "url": "https://vietjack.com/toan-11-kn/index.jsp",
+  "loai": "web-giai-bai",
+  "cap": "THPT",
+  "chu_de": [
+   "dao-ham",
+   "hinh-hoc-khong-gian",
+   "gioi-han"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Trang giáo viên soạn, giải SGK chi tiết",
+  "license": "Bản quyền VietJack; chỉ link",
+  "dung_cho_baseline": "Kiểm chéo lời giải SGK Toán 11",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-014",
+  "ten": "VietJack - trang chủ (đề thi, giải SGK mọi cấp)",
+  "url": "https://vietjack.com/",
+  "loai": "web-giai-bai",
+  "cap": "ca-hai",
+  "chu_de": [
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Trang giáo viên lớn, biên tập",
+  "license": "Bản quyền VietJack; chỉ link",
+  "dung_cho_baseline": "Nguồn dự phòng cho bài ngoài danh mục",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-015",
+  "ten": "Hoc247 - tài liệu và đề Toán",
+  "url": "https://hoc247.net/",
+  "loai": "web-giai-bai",
+  "cap": "ca-hai",
+  "chu_de": [
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Trang giáo viên soạn, đề có đáp án",
+  "license": "Bản quyền Hoc247; chỉ link",
+  "dung_cho_baseline": "Nguồn dự phòng kiểm chéo đáp số",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-016",
+  "ten": "VnDoc - tài liệu Toán",
+  "url": "https://vndoc.com/",
+  "loai": "web-giai-bai",
+  "cap": "ca-hai",
+  "chu_de": [
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Trang tổng hợp lớn; chất lượng không đều giữa các bài",
+  "license": "Bản quyền VnDoc; chỉ link",
+  "dung_cho_baseline": "Kiểm chéo đáp số, ưu tiên bài có biên tập",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-017",
+  "ten": "ToanMath.com - đề thi thử kèm đáp án",
+  "url": "https://toanmath.com/de-thi-thu-toan",
+  "loai": "web-giai-bai",
+  "cap": "THPT",
+  "chu_de": [
+   "tong-hop",
+   "hinh-hoc-khong-gian"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": true,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Cộng đồng giáo viên Toán; đề thi thử thường kèm đáp án và thang điểm",
+  "license": "Bản quyền tác giả từng tệp; chỉ link",
+  "dung_cho_baseline": "Đề có thang điểm để thử bộ chấm bước",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-018",
+  "ten": "THCS.ToanMath.com - đề tuyển sinh lớp 10 môn Toán",
+  "url": "https://thcs.toanmath.com/de-thi-tuyen-sinh-lop-10-mon-toan",
+  "loai": "web-giai-bai",
+  "cap": "THCS",
+  "chu_de": [
+   "dai-so",
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": true,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Tổng hợp đề tuyển sinh các tỉnh kèm đáp án và hướng dẫn chấm",
+  "license": "Bản quyền tác giả từng tệp; chỉ link",
+  "dung_cho_baseline": "Kho đề có biểu điểm nhiều tỉnh",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-019",
+  "ten": "Violet.vn - kho giáo án và đề của giáo viên",
+  "url": "https://violet.vn/",
+  "loai": "web-giai-bai",
+  "cap": "ca-hai",
+  "chu_de": [
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "C",
+  "can_cu_tin_cay": "Giáo viên tự đăng, không biên tập thống nhất",
+  "license": "Bản quyền tác giả; chỉ link",
+  "dung_cho_baseline": "Chỉ tham khảo thêm",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-020",
+  "ten": "NXB Giáo dục VN - Sách giáo khoa điện tử",
+  "url": "https://sachgiaokhoa.nxbgd.vn/",
+  "loai": "sach",
+  "cap": "ca-hai",
+  "chu_de": [
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "NXB chính thức của SGK; có ví dụ mẫu từng bước trong sách",
+  "license": "Bản quyền NXBGDVN; chỉ link",
+  "dung_cho_baseline": "Chuẩn trình bày lời giải mẫu SGK",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-021",
+  "ten": "NXB Giáo dục VN - trang chủ",
+  "url": "https://www.nxbgd.vn",
+  "loai": "sach",
+  "cap": "ca-hai",
+  "chu_de": [
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "NXB chính thức; sách bài tập, sách tham khảo",
+  "license": "Bản quyền NXBGDVN; chỉ link",
+  "dung_cho_baseline": "Tra sách bài tập có đáp số chính thức",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-022",
+  "ten": "PRM800K (OpenAI) - nhãn đúng/sai từng bước",
+  "url": "https://github.com/openai/prm800k",
+  "loai": "dataset",
+  "cap": "ca-hai",
+  "chu_de": [
+   "tong-hop",
+   "dai-so",
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "Bài báo Let's Verify Step by Step (OpenAI), 800K nhãn bước do người gán",
+  "license": "MIT (code); dữ liệu theo repo, kiểm lại trước khi dùng thương mại",
+  "dung_cho_baseline": "Hiệu chỉnh bộ kiểm bước; tiếng Anh, cần dịch thử",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-023",
+  "ten": "MATH (Hendrycks) - bài thi + lời giải từng bước",
+  "url": "https://github.com/hendrycks/math",
+  "loai": "dataset",
+  "cap": "THPT",
+  "chu_de": [
+   "dai-so",
+   "hinh-hoc-phang",
+   "xac-suat"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "NeurIPS 2021, 12.5K bài thi đấu kèm lời giải",
+  "license": "MIT",
+  "dung_cho_baseline": "Bộ đối chiếu lời giải/đáp số tiếng Anh",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-024",
+  "ten": "MATH trên Hugging Face (EleutherAI/hendrycks_math)",
+  "url": "https://huggingface.co/datasets/EleutherAI/hendrycks_math",
+  "loai": "dataset",
+  "cap": "THPT",
+  "chu_de": [
+   "dai-so",
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "Bản phân phối của MATH",
+  "license": "MIT",
+  "dung_cho_baseline": "Tải nhanh để chạy eval",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-025",
+  "ten": "GSM8K (OpenAI) - toán đố có lời giải từng bước",
+  "url": "https://github.com/openai/grade-school-math",
+  "loai": "dataset",
+  "cap": "THCS",
+  "chu_de": [
+   "so-hoc",
+   "dai-so"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "Cobbe et al. 2021, 8.5K bài, lời giải nhiều bước",
+  "license": "MIT",
+  "dung_cho_baseline": "Eval bước lập luận cấp THCS",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-026",
+  "ten": "GSM8K trên Hugging Face",
+  "url": "https://huggingface.co/datasets/openai/gsm8k",
+  "loai": "dataset",
+  "cap": "THCS",
+  "chu_de": [
+   "so-hoc"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "Bản phân phối chính thức",
+  "license": "MIT",
+  "dung_cho_baseline": "Tải nhanh",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-027",
+  "ten": "ProcessBench (Qwen) - lỗi bước đầu tiên",
+  "url": "https://github.com/QwenLM/ProcessBench",
+  "loai": "dataset",
+  "cap": "ca-hai",
+  "chu_de": [
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "Zheng et al. 2024; 3.4K ca, chuyên gia gán bước sai đầu tiên",
+  "license": "Apache-2.0 (kiểm lại dữ liệu)",
+  "dung_cho_baseline": "Benchmark trực tiếp đo bộ kiểm bước AI",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-028",
+  "ten": "Math-Shepherd (nhãn bước tự động)",
+  "url": "https://huggingface.co/datasets/peiyi9979/Math-Shepherd",
+  "loai": "dataset",
+  "cap": "ca-hai",
+  "chu_de": [
+   "dai-so"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Nhãn bước sinh tự động (Monte Carlo), không phải người gán",
+  "license": "Apache-2.0 (kiểm lại)",
+  "dung_cho_baseline": "Dữ liệu phụ; nhãn có nhiễu",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-029",
+  "ten": "Geometry3K / InterGPS - hình học phẳng có chương trình giải",
+  "url": "https://github.com/lupantech/InterGPS",
+  "loai": "dataset",
+  "cap": "THPT",
+  "chu_de": [
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "ACL 2021, 3002 bài hình học có chú thích hình và lời giải dạng chương trình",
+  "license": "MIT (kiểm lại dữ liệu)",
+  "dung_cho_baseline": "Eval hình học phẳng",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-030",
+  "ten": "Geometry3K bản Hugging Face (hiyouga)",
+  "url": "https://huggingface.co/datasets/hiyouga/geometry3k",
+  "loai": "dataset",
+  "cap": "THPT",
+  "chu_de": [
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": false,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Bản lại của cộng đồng, chủ yếu đáp án",
+  "license": "Theo thẻ dataset",
+  "dung_cho_baseline": "Eval đáp số hình học",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-031",
+  "ten": "UniGeo - hình học phẳng + chứng minh",
+  "url": "https://github.com/chen-judge/UniGeo",
+  "loai": "dataset",
+  "cap": "THPT",
+  "chu_de": [
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "EMNLP 2022, có chuỗi chứng minh từng bước",
+  "license": "Kiểm lại license repo",
+  "dung_cho_baseline": "Mẫu lời giải chứng minh hình học",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-032",
+  "ten": "GeoQA",
+  "url": "https://github.com/chen-judge/GeoQA",
+  "loai": "dataset",
+  "cap": "THCS",
+  "chu_de": [
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "Chen 2021, bài hình học Trung Quốc có chương trình giải",
+  "license": "Kiểm lại license repo",
+  "dung_cho_baseline": "Eval hình học, ảnh khác phong cách VN",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-033",
+  "ten": "MathVerse - bài toán có hình, 6 mức độ",
+  "url": "https://github.com/ZrrSkywalker/MathVerse",
+  "loai": "dataset",
+  "cap": "ca-hai",
+  "chu_de": [
+   "hinh-hoc-phang",
+   "ham-so"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "ECCV 2024; có chấm lập luận từng bước",
+  "license": "Kiểm lại license repo",
+  "dung_cho_baseline": "Kiểm AI đọc hình",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-034",
+  "ten": "MathVista",
+  "url": "https://huggingface.co/datasets/AI4Math/MathVista",
+  "loai": "dataset",
+  "cap": "ca-hai",
+  "chu_de": [
+   "hinh-hoc-phang"
+  ],
+  "co_loi_giai_buoc": false,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "ICLR 2024; chủ yếu đáp án",
+  "license": "CC-BY-SA 4.0 (kiểm lại)",
+  "dung_cho_baseline": "Eval đáp số có hình",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-035",
+  "ten": "NuminaMath-CoT - 860K bài kèm lời giải",
+  "url": "https://huggingface.co/datasets/AI-MO/NuminaMath-CoT",
+  "loai": "dataset",
+  "cap": "ca-hai",
+  "chu_de": [
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Tổng hợp từ nhiều kho, lời giải sinh bằng GPT-4, chưa kiểm hết",
+  "license": "Apache-2.0",
+  "dung_cho_baseline": "Nguồn bài mở rộng; cần lọc",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-036",
+  "ten": "Step-DPO (nhãn bước sai)",
+  "url": "https://github.com/dvlab-research/Step-DPO",
+  "loai": "dataset",
+  "cap": "ca-hai",
+  "chu_de": [
+   "dai-so"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Paper 2024; dữ liệu cặp bước đúng/sai",
+  "license": "Kiểm lại license",
+  "dung_cho_baseline": "Phụ trợ nhận lỗi bước",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-037",
+  "ten": "Paul's Online Notes - ví dụ giải từng bước (Calculus)",
+  "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+  "loai": "quoc-te",
+  "cap": "dai-hoc",
+  "chu_de": [
+   "dao-ham",
+   "gioi-han",
+   "tich-phan"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "Giáo trình ĐH Lamar do giảng viên soạn",
+  "license": "Bản quyền tác giả, dùng học tập; chỉ link",
+  "dung_cho_baseline": "Đối chiếu bài đạo hàm/giới hạn",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-038",
+  "ten": "OpenStax - Precalculus 2e",
+  "url": "https://openstax.org/details/books/precalculus-2e",
+  "loai": "sach",
+  "cap": "ca-hai",
+  "chu_de": [
+   "luong-giac",
+   "ham-so",
+   "day-so"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "NXB đại học mở, có bộ đáp án",
+  "license": "CC BY 4.0",
+  "dung_cho_baseline": "Ví dụ và đáp án chuẩn; dùng lại hợp pháp",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-039",
+  "ten": "OpenStax - Calculus Volume 1",
+  "url": "https://openstax.org/details/books/calculus-volume-1",
+  "loai": "sach",
+  "cap": "dai-hoc",
+  "chu_de": [
+   "dao-ham",
+   "gioi-han"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "NXB đại học mở",
+  "license": "CC BY-NC-SA 4.0",
+  "dung_cho_baseline": "Bài đạo hàm/giới hạn có lời giải",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-040",
+  "ten": "OpenStax - College Algebra 2e",
+  "url": "https://openstax.org/details/books/college-algebra-2e",
+  "loai": "sach",
+  "cap": "ca-hai",
+  "chu_de": [
+   "dai-so",
+   "ham-so"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "NXB đại học mở",
+  "license": "CC BY 4.0",
+  "dung_cho_baseline": "Bài đại số có đáp án",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-041",
+  "ten": "Khan Academy - Geometry",
+  "url": "https://www.khanacademy.org/math/geometry",
+  "loai": "quoc-te",
+  "cap": "ca-hai",
+  "chu_de": [
+   "hinh-hoc-phang",
+   "hinh-hoc-khong-gian"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Giáo dục phi lợi nhuận, lời giải mẫu",
+  "license": "CC BY-NC-SA cho nội dung (kiểm lại)",
+  "dung_cho_baseline": "Tham khảo cách trình bày bước",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-042",
+  "ten": "MathCentre (UK) - tài liệu hỗ trợ",
+  "url": "https://www.mathcentre.ac.uk/",
+  "loai": "quoc-te",
+  "cap": "ca-hai",
+  "chu_de": [
+   "dai-so",
+   "luong-giac"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Trung tâm đại học Anh, tài liệu có đáp án",
+  "license": "CC BY-NC-ND (kiểm lại)",
+  "dung_cho_baseline": "Đối chiếu",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-043",
+  "ten": "ExamSolutions (UK) - lời giải đề A-level",
+  "url": "https://www.examsolutions.net/",
+  "loai": "quoc-te",
+  "cap": "THPT",
+  "chu_de": [
+   "dai-so",
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": true,
+  "co_dap_so": true,
+  "tin_cay": "B",
+  "can_cu_tin_cay": "Giáo viên soạn, bám mark scheme hội đồng thi Anh",
+  "license": "Bản quyền; chỉ link",
+  "dung_cho_baseline": "Mẫu mark scheme từng bước (method/accuracy marks)",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-044",
+  "ten": "IMO Official - đề thi",
+  "url": "https://www.imo-official.org/problems.aspx",
+  "loai": "de-thi-chinh-thuc",
+  "cap": "ca-hai",
+  "chu_de": [
+   "hinh-hoc-phang",
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": false,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": false,
+  "tin_cay": "A",
+  "can_cu_tin_cay": "Tổ chức IMO chính thức; chỉ đề",
+  "license": "Bản quyền IMO; chỉ link",
+  "dung_cho_baseline": "Chỉ cho bài khó, ngoài trọng tâm",
+  "http": 200,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-045",
+  "ten": "Diễn đàn Toán học (diendantoanhoc.net)",
+  "url": "https://diendantoanhoc.net/",
+  "loai": "forum",
+  "cap": "ca-hai",
+  "chu_de": [
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "C",
+  "can_cu_tin_cay": "Cộng đồng VN, lời giải thành viên đăng, không kiểm định",
+  "license": "Bản quyền thành viên; chỉ link",
+  "dung_cho_baseline": "Ý tưởng giải khác, không làm chuẩn",
+  "http": 403,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-046",
+  "ten": "Art of Problem Solving - Community",
+  "url": "https://artofproblemsolving.com/community",
+  "loai": "forum",
+  "cap": "ca-hai",
+  "chu_de": [
+   "hinh-hoc-phang",
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "C",
+  "can_cu_tin_cay": "Cộng đồng quốc tế, chưa kiểm định",
+  "license": "Bản quyền thành viên; chỉ link",
+  "dung_cho_baseline": "Kiểm chéo bài thi đấu",
+  "http": 403,
+  "tra_ngay": "2026-11-27"
+ },
+ {
+  "id": "LG-047",
+  "ten": "Math StackExchange",
+  "url": "https://math.stackexchange.com/",
+  "loai": "forum",
+  "cap": "ca-hai",
+  "chu_de": [
+   "tong-hop"
+  ],
+  "co_loi_giai_buoc": true,
+  "co_bieu_diem_buoc": false,
+  "co_dap_so": true,
+  "tin_cay": "C",
+  "can_cu_tin_cay": "Có bình chọn/chấp nhận nhưng không kiểm định",
+  "license": "CC BY-SA 4.0",
+  "dung_cho_baseline": "Kiểm chéo, trích dẫn cần ghi nguồn",
+  "http": 403,
+  "tra_ngay": "2026-11-27"
+ }
+]

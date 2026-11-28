@@ -1,0 +1,96 @@
+{
+ "id": "BM-048",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/on-tap-chuong.md — bài 5 (v1.3 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa hai mặt phẳng",
+ "muc_do": "VD",
+ "de_bai": "Tứ diện đều $S.ABC$ cạnh $a$. Tính góc giữa mặt bên $(SBC)$ và đáy $(ABC)$.",
+ "dap_so": {
+  "gia_tri": "$\\arccos\\dfrac13\\approx70{,}53^\\circ$",
+  "so": 70.52877936550931
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Góc giữa hai mặt phẳng",
+  "Trọng tâm"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$H$ trọng tâm $\\triangle ABC$ (chân đường cao); $M$ trung điểm $BC$: $AM\\perp BC$, $SM\\perp BC$.",
+   "ket_qua_trung_gian": "$AM\\perp BC$, $SM\\perp BC$",
+   "kien_thuc": "Trung tuyến tam giác đều",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AM\\perp BC$, $SM\\perp BC$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Góc cần tìm là $\\widehat{SMH}$.",
+   "ket_qua_trung_gian": "$\\widehat{SMH}$",
+   "kien_thuc": "Góc giữa hai mặt phẳng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\widehat{SMH}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy góc $\\widehat{SAM}$ (cạnh bên với đáy)",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$HM=\\dfrac13AM=\\dfrac{a\\sqrt3}6$, $SM=\\dfrac{a\\sqrt3}2$.",
+   "ket_qua_trung_gian": "$HM=\\dfrac{a\\sqrt3}6$",
+   "kien_thuc": "Trọng tâm",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $HM=\\dfrac{a\\sqrt3}6$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $HM=\\dfrac23AM$ (nhầm vị trí trọng tâm)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.28867513459481287
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "$\\cos\\widehat{SMH}=\\dfrac{HM}{SM}=\\dfrac13\\Rightarrow\\approx70{,}53^\\circ$.",
+   "ket_qua_trung_gian": "$\\cos=\\dfrac13$",
+   "kien_thuc": "cos",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\cos=\\dfrac13$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 70.52877936550931
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lấy $HM=\\dfrac23AM$ (nhầm vị trí trọng tâm)",
+   "loi_giai": "B1: $H$ trọng tâm $\\triangle ABC$ (chân đường cao); $M$ trung điểm $BC$: $AM\\perp BC$, $SM\\perp BC$.\nB2: Góc cần tìm là $\\widehat{SMH}$.\nB3: $HM=\\dfrac23AM=\\dfrac{a\\sqrt3}3$.\nB4: $\\cos\\widehat{SMH}=\\dfrac23\\Rightarrow\\approx48{,}19^\\circ$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Lấy góc $\\widehat{SAM}$ (cạnh bên với đáy)",
+   "loi_giai": "B1: $H$ trọng tâm $\\triangle ABC$ (chân đường cao); $M$ trung điểm $BC$: $AM\\perp BC$, $SM\\perp BC$.\nB2: Góc cần tìm là $\\widehat{SAH}$.\nB3: $HM=\\dfrac13AM=\\dfrac{a\\sqrt3}6$, $SM=\\dfrac{a\\sqrt3}2$.\nB4: $\\cos\\widehat{SAH}=\\dfrac{AH}{SA}=\\dfrac{\\sqrt3}3\\Rightarrow\\approx54{,}74^\\circ$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

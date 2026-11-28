@@ -1,0 +1,61 @@
+{
+ "case": "N09",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": false,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A6/A8: kind=lesson không hợp với yêu cầu (chấp nhận ['question'])"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 4,
+   "cau_tu_kho": 2,
+   "kq_ai_ghi": 1,
+   "kq_khop_kho": 1
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 4,
+   "chinh_xac": 4,
+   "phieu": 4
+  },
+  "vi_pham_A": [
+   {
+    "luat": "A1",
+    "trich": "$(ku)'=ku'$ với $k$ là hằng số"
+   }
+  ],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án tổ chức trò chơi rõ ràng, công thức khớp tham chiếu, tổng thời lượng 7+11+13+14 = 45 phút. Trợ lý ghi unsure hợp lí khi giả định đối tượng cơ bản và loại đúng các bài ngoài kiến thức trọng tâm, nhưng HD3 tự thêm quy tắc $(ku)'=ku'$ vốn không có trong danh sách kiến thức được cấp, còn bài VDC giao về nhà cho học sinh cơ bản hơi nặng dù đã được đề xuất."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 56.0,
+  "A": 2,
+  "A_auto": 1,
+  "A_judge": 1,
+  "auto": 0.9,
+  "judge": 4.33
+ }
+}

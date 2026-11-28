@@ -1,0 +1,34 @@
+{
+ "case": "N09",
+ "variant": "V8",
+ "round": "K2",
+ "text": "{\"kind\":\"question\",\"text\":\"Bạn muốn soạn giáo án này cho đối tượng học sinh nào: cơ bản (co-ban), khá (kha) hay chuyên (chuyen)?\"}",
+ "raw": "{\"kind\":\"question\",\"text\":\"Bạn muốn soạn giáo án này cho đối tượng học sinh nào: cơ bản (co-ban), khá (kha) hay chuyên (chuyen)?\"}",
+ "usage": {
+  "ts": "2026-11-27T17:58:06",
+  "role": "gen",
+  "task": "K2/V8/N09",
+  "model": "claude-sonnet-5-5",
+  "input": 863,
+  "output": 74,
+  "cache_write": 0,
+  "cache_read": 4631,
+  "stop": "end_turn",
+  "sec": 1.3
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:06",
+   "role": "gen",
+   "task": "K2/V8/N09",
+   "model": "claude-sonnet-5-5",
+   "input": 863,
+   "output": 74,
+   "cache_write": 0,
+   "cache_read": 4631,
+   "stop": "end_turn",
+   "sec": 1.3
+  }
+ ],
+ "server_errs0": []
+}

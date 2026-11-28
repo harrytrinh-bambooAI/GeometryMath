@@ -1,0 +1,86 @@
+{
+ "case": "N07",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 7,
+   "cau_tu_kho": 5,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 4,
+   "doi_tuong": 4,
+   "phong_cach": 4,
+   "to_chuc": 4,
+   "chinh_xac": 5,
+   "phieu": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án đúng khung, tổng 45 phút, phát biểu kiến thức khớp tham chiếu, không ghi đáp số, câu 6 (tham số m) hợp đối tượng chuyên. Cần sửa nhỏ: mục tiêu ghi \"chứng minh tập nghiệm\" chưa chuẩn; HĐ4 dùng hết 16 phút cho làm bài và báo cáo nên không còn thời gian chốt, mỗi nhóm chỉ trình bày 1/2 câu; nhãn nhóm \"nền tảng vững chắc hơn\" dễ gây hiểu nhầm."
+ },
+ "judge2": null,
+ "auto0": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": false,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A5: tổng 44 phút ≠ 1×45"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 44,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 6,
+   "cau_tu_kho": 4,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "retried": true,
+ "score": {
+  "diem": 87.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.17
+ }
+}

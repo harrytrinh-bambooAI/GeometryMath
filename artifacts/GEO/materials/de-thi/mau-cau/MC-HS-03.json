@@ -1,0 +1,107 @@
+{
+ "id": "MC-HS-03",
+ "ten": "GTNN của hàm bậc ba trên đoạn",
+ "chu_de": "ham-so-ung-dung-dao-ham",
+ "dang": "hs.gtnn-doan",
+ "dang_tx": "hs.gtln-doan",
+ "yccd": [
+  "12.HS.2"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-HS-03",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-HS-03",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "c": [
+   "1",
+   "5",
+   "-3"
+  ],
+  "n": [
+   "2",
+   "3"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "fx": "x**3-3*x+c"
+ },
+ "boi_canh": "Cho hàm số $f(x)={fx}$.",
+ "hoi": "Giá trị nhỏ nhất của $f(x)$ trên đoạn $[0;{n}]$ bằng",
+ "dap_so": "c-2",
+ "nhieu": [
+  {
+   "bieu_thuc": "c",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Chỉ so sánh giá trị tại hai đầu mút"
+   }
+  },
+  {
+   "bieu_thuc": "n**3-3*n+c",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhầm sang giá trị lớn nhất"
+   }
+  },
+  {
+   "bieu_thuc": "c+2",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Tính sai $f(1)$"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": false,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-HS-03']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "c": "1",
+   "n": "2"
+  },
+  {
+   "c": "1",
+   "n": "3"
+  },
+  {
+   "c": "5",
+   "n": "2"
+  },
+  {
+   "c": "5",
+   "n": "3"
+  },
+  {
+   "c": "-3",
+   "n": "2"
+  },
+  {
+   "c": "-3",
+   "n": "3"
+  }
+ ],
+ "so_bien_the": 6,
+ "so_cau_sinh": 9,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

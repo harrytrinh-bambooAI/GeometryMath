@@ -1,0 +1,105 @@
+{
+ "id": "MC-HH-I03",
+ "ten": "Diện tích xung quanh hình trụ",
+ "chu_de": "khoi-tron-xoay",
+ "dang": "tru.dien-tich-xq",
+ "dang_tx": "tx.tru",
+ "yccd": [
+  "12.TX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "I",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "NB"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-59",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-59 + geometry/problem-specs.json#HKN-59"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "r": 3,
+    "t": 7
+   },
+   {
+    "r": 4,
+    "t": 10
+   },
+   {
+    "r": 2,
+    "t": 5
+   },
+   {
+    "r": 5,
+    "t": 6
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình trụ có bán kính đáy $r={r}$ cm và chiều cao $h={t}$ cm.",
+ "hoi": "Diện tích xung quanh của hình trụ bằng",
+ "dap_so": "2*pi*r*t",
+ "don_vi": "cm2",
+ "nhieu": [
+  {
+   "bieu_thuc": "pi*r*t",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng $\\pi rh$ (nhầm với hình nón)"
+   }
+  },
+  {
+   "bieu_thuc": "2*pi*r*t+2*pi*r**2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng hai đáy (diện tích toàn phần)"
+   }
+  },
+  {
+   "bieu_thuc": "pi*r**2*t",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhầm sang thể tích"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-59",
+  "ask": 0,
+  "params": {
+   "r": "r",
+   "h": "t"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "r": "3",
+   "t": "7"
+  },
+  {
+   "r": "4",
+   "t": "10"
+  },
+  {
+   "r": "2",
+   "t": "5"
+  },
+  {
+   "r": "5",
+   "t": "6"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 7,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

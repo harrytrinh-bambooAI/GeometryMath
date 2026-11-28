@@ -1,0 +1,818 @@
+[
+  {
+    "id": "BG-001",
+    "ten": "Hành trang số NXBGDVN (SGK điện tử KNTT, đọc trực tuyến)",
+    "url": "https://hanhtrangso.nxbgd.vn/",
+    "loai": "sgk-chinh-thuc",
+    "tac_gia_don_vi": "Nhà xuất bản Giáo dục Việt Nam",
+    "cap": "ca-hai",
+    "chu_de": [
+      "SGK Toán 1-12 bộ KNTT",
+      "hình học không gian",
+      "quan hệ song song",
+      "quan hệ vuông góc",
+      "khoảng cách",
+      "góc",
+      "thể tích"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Cổng học liệu số chính thức của NXB Giáo dục Việt Nam, đơn vị phát hành SGK được Bộ GD&ĐT phê duyệt",
+    "license": "Bản quyền NXBGDVN/tác giả; chỉ đọc online hợp pháp, không sao chép nguyên văn",
+    "dung_cho_baseline": "Chuẩn phát biểu định nghĩa/định lí/ký hiệu theo SGK KNTT; đối chiếu chữ nghĩa với bài giảng AI",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-002",
+    "ten": "Hành trang số - Sách giáo khoa điện tử",
+    "url": "https://hanhtrangso.nxbgd.vn/sach-giao-khoa-dien-tu",
+    "loai": "sgk-chinh-thuc",
+    "tac_gia_don_vi": "Nhà xuất bản Giáo dục Việt Nam",
+    "cap": "ca-hai",
+    "chu_de": [
+      "SGK điện tử",
+      "Toán 11"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Trang SGK điện tử của NXBGDVN",
+    "license": "Bản quyền NXBGDVN/tác giả; chỉ đọc online hợp pháp, không sao chép nguyên văn",
+    "dung_cho_baseline": "Mục lục bài và thứ tự kiến thức theo SGK",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-003",
+    "ten": "Hành trang số - mục Cánh Diều",
+    "url": "https://hanhtrangso.nxbgd.vn/canhdieu",
+    "loai": "sgk-chinh-thuc",
+    "tac_gia_don_vi": "NXBGDVN / bộ Cánh Diều",
+    "cap": "ca-hai",
+    "chu_de": [
+      "SGK Toán bộ Cánh Diều",
+      "hình học không gian",
+      "quan hệ song song",
+      "quan hệ vuông góc",
+      "khoảng cách",
+      "góc",
+      "thể tích"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Do NXBGDVN vận hành; bộ Cánh Diều được Bộ GD&ĐT phê duyệt",
+    "license": "Bản quyền NXBGDVN/tác giả; chỉ đọc online hợp pháp, không sao chép nguyên văn",
+    "dung_cho_baseline": "Đối chiếu thứ 2: cách phát biểu bộ Cánh Diều khi KNTT diễn đạt khác",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-004",
+    "ten": "Sách giáo khoa NXBGDVN (sachgiaokhoa.nxbgd.vn)",
+    "url": "https://sachgiaokhoa.nxbgd.vn",
+    "loai": "sgk-chinh-thuc",
+    "tac_gia_don_vi": "Nhà xuất bản Giáo dục Việt Nam",
+    "cap": "ca-hai",
+    "chu_de": [
+      "SGK",
+      "SGV"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Cổng chính thức của NXBGDVN",
+    "license": "Bản quyền NXBGDVN/tác giả; chỉ đọc online hợp pháp, không sao chép nguyên văn",
+    "dung_cho_baseline": "Tra bản SGK/SGV chính thống, kiểm số bài, tên bài",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-005",
+    "ten": "Tập huấn NXBGDVN (taphuan.nxbgd.vn)",
+    "url": "https://taphuan.nxbgd.vn",
+    "loai": "tai-lieu-bo",
+    "tac_gia_don_vi": "NXBGDVN",
+    "cap": "ca-hai",
+    "chu_de": [
+      "tập huấn giáo viên",
+      "SGV",
+      "phương pháp dạy học"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Cổng tập huấn GV của NXBGDVN, tài liệu hướng dẫn theo SGK mới",
+    "license": "Bản quyền NXBGDVN/tác giả; chỉ đọc online hợp pháp, không sao chép nguyên văn; một số mục cần tài khoản GV",
+    "dung_cho_baseline": "Phương pháp dạy học và mạch kiến thức theo SGV",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-006",
+    "ten": "Cổng thông tin Bộ Giáo dục và Đào tạo",
+    "url": "https://moet.gov.vn",
+    "loai": "tai-lieu-bo",
+    "tac_gia_don_vi": "Bộ Giáo dục và Đào tạo",
+    "cap": "ca-hai",
+    "chu_de": [
+      "Chương trình GDPT 2018",
+      "Thông tư 32/2018",
+      "Thông tư 13/2022",
+      "PPCT"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Cổng chính thức của Bộ GD&ĐT; nơi ban hành Chương trình GDPT 2018 môn Toán, văn bản sửa đổi và hướng dẫn PPCT",
+    "license": "Văn bản quy phạm pháp luật, tự do tham khảo",
+    "dung_cho_baseline": "Chuẩn yêu cầu cần đạt cho từng lớp; ranh giới nội dung THCS/THPT",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-007",
+    "ten": "Wikipedia tiếng Việt - Chương trình giáo dục phổ thông 2018",
+    "url": "https://vi.wikipedia.org/wiki/Chương_trình_giáo_dục_phổ_thông_2018",
+    "loai": "tai-lieu-bo",
+    "tac_gia_don_vi": "Cộng đồng Wikipedia (tổng hợp văn bản của Bộ GD&ĐT)",
+    "cap": "ca-hai",
+    "chu_de": [
+      "Chương trình GDPT 2018",
+      "lộ trình áp dụng"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Trang tổng hợp có dẫn nguồn văn bản Bộ GD&ĐT; không phải văn bản gốc",
+    "license": "CC BY-SA 4.0",
+    "dung_cho_baseline": "Tra nhanh khung chương trình; xác nhận lại với moet.gov.vn",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-008",
+    "ten": "Loigiaihay (lý thuyết, SGK các bộ)",
+    "url": "https://loigiaihay.com",
+    "loai": "tong-hop-kien-thuc",
+    "tac_gia_don_vi": "Loigiaihay.com",
+    "cap": "ca-hai",
+    "chu_de": [
+      "lý thuyết SGK",
+      "hình học không gian",
+      "quan hệ song song",
+      "quan hệ vuông góc",
+      "khoảng cách",
+      "góc",
+      "thể tích"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Tổng hợp lý thuyết, giải SGK/SBT theo 3 bộ; không công bố hội đồng biên tập nhưng bám sát SGK, dễ đối chiếu",
+    "license": "Bản quyền trang; chỉ link, không sao chép",
+    "dung_cho_baseline": "Đối chiếu thứ 2 sau SGK: tóm tắt lý thuyết từng bài",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-009",
+    "ten": "VietJack - lý thuyết & bài giải Toán",
+    "url": "https://vietjack.com",
+    "loai": "tong-hop-kien-thuc",
+    "tac_gia_don_vi": "VietJack",
+    "cap": "ca-hai",
+    "chu_de": [
+      "lý thuyết",
+      "giải SGK/SBT",
+      "hình học không gian",
+      "quan hệ song song",
+      "quan hệ vuông góc",
+      "khoảng cách",
+      "góc",
+      "thể tích"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Tổng hợp lý thuyết/giải bài bám SGK 3 bộ; nền tảng lớn nhưng nội dung tổng hợp không qua thẩm định độc lập",
+    "license": "Bản quyền trang; chỉ link",
+    "dung_cho_baseline": "Đối chiếu thứ 2 lý thuyết và lời giải mẫu",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-010",
+    "ten": "HOC247 - tài liệu Toán",
+    "url": "https://hoc247.net",
+    "loai": "tong-hop-kien-thuc",
+    "tac_gia_don_vi": "HOC247",
+    "cap": "ca-hai",
+    "chu_de": [
+      "lý thuyết",
+      "chuyên đề",
+      "đề thi"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Kho tài liệu và bài giảng có GV ký tên; chất lượng không đồng đều",
+    "license": "Bản quyền trang; chỉ link",
+    "dung_cho_baseline": "Nguồn đối chiếu thứ 3; ưu tiên bài có tên GV",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-011",
+    "ten": "ToanMath.com - tài liệu Toán",
+    "url": "https://toanmath.com",
+    "loai": "tong-hop-kien-thuc",
+    "tac_gia_don_vi": "Cộng đồng giáo viên Toán (ToanMath)",
+    "cap": "ca-hai",
+    "chu_de": [
+      "chuyên đề",
+      "phương pháp giải",
+      "đề thi"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Kho chuyên đề tổng hợp từ GV/tổ Toán nhiều trường; chất lượng không đồng đều, cần kiểm từng tệp",
+    "license": "Tài liệu của tác giả gốc; chỉ link",
+    "dung_cho_baseline": "Tìm phương pháp giải và dạng bài; không dùng làm chuẩn phát biểu",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-012",
+    "ten": "Wikipedia tiếng Việt - Hình học không gian",
+    "url": "https://vi.wikipedia.org/wiki/H%C3%ACnh_h%E1%BB%8Dc_kh%C3%B4ng_gian",
+    "loai": "tong-hop-kien-thuc",
+    "tac_gia_don_vi": "Cộng đồng Wikipedia",
+    "cap": "ca-hai",
+    "chu_de": [
+      "hình học không gian",
+      "quan hệ song song",
+      "quan hệ vuông góc",
+      "khoảng cách",
+      "góc",
+      "thể tích"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Bách khoa mở có nguồn dẫn; thuật ngữ tiếng Việt có thể khác SGK",
+    "license": "CC BY-SA 4.0",
+    "dung_cho_baseline": "Đối chiếu thuật ngữ; không phải chuẩn phát biểu",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-013",
+    "ten": "Wikipedia tiếng Anh - Solid geometry",
+    "url": "https://en.wikipedia.org/wiki/Solid_geometry",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "Cộng đồng Wikipedia",
+    "cap": "ca-hai",
+    "chu_de": [
+      "solid geometry",
+      "thể tích",
+      "đa diện"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Bách khoa mở có tài liệu dẫn, thường chính xác với kiến thức nền",
+    "license": "CC BY-SA 4.0",
+    "dung_cho_baseline": "Đối chiếu định nghĩa/định lí gốc tiếng Anh",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-014",
+    "ten": "ProofWiki",
+    "url": "https://proofwiki.org",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "Cộng đồng ProofWiki",
+    "cap": "dai-hoc",
+    "chu_de": [
+      "chứng minh",
+      "định lí",
+      "định nghĩa"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Wiki chứng minh có kiểm duyệt cộng đồng, nhiều định lí kèm chứng minh đầy đủ",
+    "license": "CC BY-SA 4.0",
+    "dung_cho_baseline": "Kiểm chứng chứng minh của định lí do AI nêu",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-015",
+    "ten": "Wolfram MathWorld - Solid Geometry",
+    "url": "https://mathworld.wolfram.com/SolidGeometry.html",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "Eric W. Weisstein / Wolfram Research",
+    "cap": "dai-hoc",
+    "chu_de": [
+      "solid geometry",
+      "công thức",
+      "đa diện"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Bách khoa toán học có biên tập, tham khảo học thuật chuẩn",
+    "license": "Bản quyền Wolfram; chỉ link",
+    "dung_cho_baseline": "Chuẩn công thức và định nghĩa hình học (đối chiếu quốc tế)",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-016",
+    "ten": "Wolfram MathWorld (trang chủ)",
+    "url": "https://mathworld.wolfram.com",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "Wolfram Research",
+    "cap": "dai-hoc",
+    "chu_de": [
+      "toàn bộ toán học",
+      "công thức"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Bách khoa có biên tập, được trích dẫn rộng rãi trong học thuật",
+    "license": "Bản quyền Wolfram; chỉ link",
+    "dung_cho_baseline": "Chuẩn công thức, định lí tổng quát",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-017",
+    "ten": "nLab",
+    "url": "https://ncatlab.org",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "Cộng đồng nLab",
+    "cap": "dai-hoc",
+    "chu_de": [
+      "đại số",
+      "phạm trù",
+      "cơ sở toán học"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Wiki học thuật mở do nhà toán học viết; thiên về toán cao cấp, ít dùng cho THPT",
+    "license": "Mở (xem trang)",
+    "dung_cho_baseline": "Chỉ dùng khi cần định nghĩa trừu tượng; không áp cho THCS-THPT",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-018",
+    "ten": "Euclid's Elements (D. Joyce, Clark University)",
+    "url": "https://mathcs.clarku.edu/~djoyce/java/elements/elements.html",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "David E. Joyce, Clark University",
+    "cap": "ca-hai",
+    "chu_de": [
+      "hình học Euclid",
+      "tiên đề",
+      "định lí cổ điển"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Bản chú giải Euclid của giáo sư đại học, tài liệu học thuật chuẩn",
+    "license": "Chủ yếu mở cho mục đích giáo dục; kiểm giấy phép",
+    "dung_cho_baseline": "Gốc tiên đề và định lí hình học phẳng/không gian",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-019",
+    "ten": "Khan Academy (Mỹ)",
+    "url": "https://www.khanacademy.org/math",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "Khan Academy (tổ chức phi lợi nhuận)",
+    "cap": "ca-hai",
+    "chu_de": [
+      "Toán THCS-THPT",
+      "hình học"
+    ],
+    "dinh_dang": "khoa-hoc",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Tổ chức giáo dục phi lợi nhuận lớn toàn cầu, nội dung có thẩm định nội bộ",
+    "license": "CC BY-NC-SA (phần lớn)",
+    "dung_cho_baseline": "Đối chiếu cách giải thích trực giác",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-020",
+    "ten": "Khan Academy tiếng Việt",
+    "url": "https://vn.khanacademy.org",
+    "loai": "nen-tang",
+    "tac_gia_don_vi": "Khan Academy / bản dịch Việt",
+    "cap": "THCS",
+    "chu_de": [
+      "Toán cơ bản"
+    ],
+    "dinh_dang": "khoa-hoc",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Bản dịch Việt do cộng đồng, phủ chủ đề hạn chế",
+    "license": "CC BY-NC-SA",
+    "dung_cho_baseline": "Đối chiếu thuật ngữ cho kiến thức nền",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-021",
+    "ten": "3Blue1Brown (website)",
+    "url": "https://www.3blue1brown.com",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "Grant Sanderson",
+    "cap": "dai-hoc",
+    "chu_de": [
+      "trực giác",
+      "đại số tuyến tính",
+      "giải tích"
+    ],
+    "dinh_dang": "video",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Kênh Toán trực quan nổi tiếng, tác giả học Toán tại Stanford, được trích dẫn trong giáo dục",
+    "license": "CC BY-NC-SA",
+    "dung_cho_baseline": "Kiểm tra giải thích trực giác (khi có chủ đề trùng)",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-022",
+    "ten": "MIT OpenCourseWare",
+    "url": "https://ocw.mit.edu",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "Massachusetts Institute of Technology",
+    "cap": "dai-hoc",
+    "chu_de": [
+      "giải tích",
+      "đại số tuyến tính",
+      "hình học"
+    ],
+    "dinh_dang": "khoa-hoc",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Giáo trình đại học chính thức của MIT",
+    "license": "CC BY-NC-SA 4.0",
+    "dung_cho_baseline": "Chuẩn nền đại học cho định nghĩa nâng cao",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-023",
+    "ten": "OpenStax - Precalculus 2e",
+    "url": "https://openstax.org/details/books/precalculus-2e",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "OpenStax, Rice University",
+    "cap": "THPT",
+    "chu_de": [
+      "lượng giác",
+      "hàm số",
+      "vectơ",
+      "hình học giải tích"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Giáo trình mở có phản biện chuyên gia, Rice University",
+    "license": "CC BY 4.0",
+    "dung_cho_baseline": "Chuẩn phát biểu lượng giác, hàm số, dãy số (đối chiếu quốc tế)",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-024",
+    "ten": "Paul's Online Math Notes (Lamar University)",
+    "url": "https://tutorial.math.lamar.edu",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "Paul Dawkins, Lamar University",
+    "cap": "dai-hoc",
+    "chu_de": [
+      "đại số",
+      "giải tích",
+      "giới hạn",
+      "đạo hàm"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "A",
+    "can_cu_tin_cay": "Ghi chú học thuật của giảng viên đại học, được trích dẫn rộng rãi",
+    "license": "Bản quyền tác giả; dùng phi thương mại cho giáo dục",
+    "dung_cho_baseline": "Đối chiếu giới hạn, đạo hàm (Toán 11)",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-025",
+    "ten": "Brilliant Wiki",
+    "url": "https://brilliant.org/wiki/",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "Brilliant.org",
+    "cap": "ca-hai",
+    "chu_de": [
+      "toán sơ cấp",
+      "logic",
+      "hình học"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Wiki do biên tập viên và cộng đồng viết, chất lượng khá nhưng không có phản biện học thuật độc lập",
+    "license": "Bản quyền Brilliant; chỉ link",
+    "dung_cho_baseline": "Giải thích khái niệm bằng ví dụ; đối chiếu thứ 3",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-026",
+    "ten": "GeoGebra",
+    "url": "https://www.geogebra.org",
+    "loai": "quoc-te",
+    "tac_gia_don_vi": "GeoGebra GmbH / Markus Hohenwarter",
+    "cap": "ca-hai",
+    "chu_de": [
+      "hình học",
+      "trực quan hóa",
+      "đồ thị"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Phần mềm toán giáo dục dùng rộng rãi, nhiều học liệu do giáo viên đóng góp",
+    "license": "Miễn phí phi thương mại; xem điều khoản",
+    "dung_cho_baseline": "Dựng mô hình hình học không gian để kiểm tra trực quan",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-027",
+    "ten": "Thầy Liêm (YouTube)",
+    "url": "https://www.youtube.com/@ThayLiem",
+    "loai": "giao-vien",
+    "tac_gia_don_vi": "Thầy Liêm",
+    "cap": "ca-hai",
+    "chu_de": [
+      "bài giảng Toán"
+    ],
+    "dinh_dang": "video",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Kênh YouTube giáo dục lớn, khoảng 1,45 triệu người đăng ký (đo 27/11/2026); chưa xác minh được đơn vị công tác",
+    "license": "Bản quyền tác giả; chỉ link",
+    "dung_cho_baseline": "Đối chiếu cách giảng dễ hiểu; không làm chuẩn phát biểu",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-028",
+    "ten": "Thầy Nguyễn Quốc Chí (YouTube)",
+    "url": "https://www.youtube.com/@thaynguyenquocchi",
+    "loai": "giao-vien",
+    "tac_gia_don_vi": "Thầy Nguyễn Quốc Chí",
+    "cap": "THPT",
+    "chu_de": [
+      "ôn thi THPT",
+      "bài giảng Toán"
+    ],
+    "dinh_dang": "video",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Khoảng 899 nghìn người đăng ký (đo 27/11/2026); toplist.vn mô tả là giáo viên có lượng học sinh học trực tiếp và online rất lớn (nguồn thứ cấp); đơn vị công tác/sách chưa xác minh",
+    "license": "Bản quyền tác giả; chỉ link",
+    "dung_cho_baseline": "Đối chiếu cách trình bày phương pháp giải",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-029",
+    "ten": "Thầy Nguyễn Phan Tiến (YouTube)",
+    "url": "https://www.youtube.com/@thay.nguyenphantien",
+    "loai": "giao-vien",
+    "tac_gia_don_vi": "Thầy Nguyễn Phan Tiến",
+    "cap": "THPT",
+    "chu_de": [
+      "Toán 10, 11, 12"
+    ],
+    "dinh_dang": "video",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Khoảng 639 nghìn người đăng ký (đo 27/11/2026); kênh có khóa học Toán 10-12 trả phí; đơn vị công tác chưa xác minh",
+    "license": "Bản quyền tác giả; chỉ link",
+    "dung_cho_baseline": "Đối chiếu bài giảng Toán 11",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-030",
+    "ten": "Toán Thầy Kiên (YouTube)",
+    "url": "https://www.youtube.com/@toanthaykien",
+    "loai": "giao-vien",
+    "tac_gia_don_vi": "Thầy Kiên",
+    "cap": "THCS",
+    "chu_de": [
+      "Toán tiểu học và THCS"
+    ],
+    "dinh_dang": "video",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Khoảng 50,2 nghìn người đăng ký (27/11/2026); mô tả kênh: kiến thức Toán tiểu học và THCS; chưa xác minh đơn vị công tác",
+    "license": "Bản quyền tác giả; chỉ link",
+    "dung_cho_baseline": "Đối chiếu bài giảng THCS",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-031",
+    "ten": "Thầy Hồ Thức Thuận - Mclass (qua bài Zing News)",
+    "url": "https://lifestyle.zingnews.vn/thay-giao-toan-co-hon-20000-nguoi-theo-hoc-post1244439.html",
+    "loai": "giao-vien",
+    "tac_gia_don_vi": "Hồ Thức Thuận, hệ thống Mclass.vn",
+    "cap": "THPT",
+    "chu_de": [
+      "luyện thi THPT",
+      "livestream Toán"
+    ],
+    "dinh_dang": "video",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Zing News (báo điện tử): hơn 20.000 học viên trên Mclass; trang cá nhân 365 nghìn người theo dõi; fanpage khoảng 1 triệu; 9 năm luyện thi THPT (ngày bài báo chưa xác minh)",
+    "license": "Bản quyền báo/tác giả; chỉ link",
+    "dung_cho_baseline": "Đối chiếu bài giảng luyện thi; cần kiểm kênh chính thức",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-032",
+    "ten": "Thầy Đặng Việt Hùng (YouTube)",
+    "url": "https://www.youtube.com/@thaydangviethung",
+    "loai": "giao-vien",
+    "tac_gia_don_vi": "Đặng Việt Hùng (liên quan Moon.vn, chưa xác minh)",
+    "cap": "THPT",
+    "chu_de": [
+      "Toán THPT"
+    ],
+    "dinh_dang": "video",
+    "tin_cay": "C",
+    "can_cu_tin_cay": "Kênh tồn tại nhưng chỉ khoảng 4,95 nghìn người đăng ký; sách/đơn vị chưa xác minh được",
+    "license": "Bản quyền tác giả; chỉ link",
+    "dung_cho_baseline": "Chỉ tham khảo; không dùng làm chuẩn",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-033",
+    "ten": "VioEdu (vioedu.vn)",
+    "url": "https://vioedu.vn",
+    "loai": "nen-tang",
+    "tac_gia_don_vi": "VioEdu",
+    "cap": "THCS",
+    "chu_de": [
+      "luyện tập Toán",
+      "thi trực tuyến"
+    ],
+    "dinh_dang": "khoa-hoc",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Nền tảng thi trực tuyến phổ biến ở Việt Nam, đề bám chương trình; không phải nguồn lý thuyết chuẩn",
+    "license": "Bản quyền; chỉ link",
+    "dung_cho_baseline": "Đối chiếu đề luyện, không dùng làm chuẩn lý thuyết",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-034",
+    "ten": "OLM.vn",
+    "url": "https://olm.vn",
+    "loai": "nen-tang",
+    "tac_gia_don_vi": "OLM",
+    "cap": "ca-hai",
+    "chu_de": [
+      "bài giảng",
+      "luyện tập"
+    ],
+    "dinh_dang": "khoa-hoc",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Nền tảng học trực tuyến lớn, có GV ký tên; curl bị chặn (403), trình duyệt mở được",
+    "license": "Bản quyền; chỉ link",
+    "dung_cho_baseline": "Đối chiếu bài giảng; cần kiểm từng bài",
+    "http": 403,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-035",
+    "ten": "Hocmai.vn",
+    "url": "https://hocmai.vn",
+    "loai": "nen-tang",
+    "tac_gia_don_vi": "Hocmai",
+    "cap": "THPT",
+    "chu_de": [
+      "luyện thi",
+      "bài giảng Toán"
+    ],
+    "dinh_dang": "khoa-hoc",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Nền tảng luyện thi lâu năm, có đội GV và biên soạn",
+    "license": "Bản quyền; chỉ link",
+    "dung_cho_baseline": "Đối chiếu bài giảng luyện thi",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-036",
+    "ten": "Vuihoc.vn",
+    "url": "https://vuihoc.vn",
+    "loai": "nen-tang",
+    "tac_gia_don_vi": "Vuihoc",
+    "cap": "ca-hai",
+    "chu_de": [
+      "bài giảng Toán",
+      "luyện thi"
+    ],
+    "dinh_dang": "khoa-hoc",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Nền tảng học online có GV và học liệu bám SGK",
+    "license": "Bản quyền; chỉ link",
+    "dung_cho_baseline": "Đối chiếu bài giảng",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-037",
+    "ten": "Khoá học VietJack",
+    "url": "https://khoahoc.vietjack.com",
+    "loai": "nen-tang",
+    "tac_gia_don_vi": "VietJack",
+    "cap": "ca-hai",
+    "chu_de": [
+      "khóa học Toán"
+    ],
+    "dinh_dang": "khoa-hoc",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Khóa học của VietJack, bám SGK",
+    "license": "Bản quyền; chỉ link",
+    "dung_cho_baseline": "Đối chiếu bài giảng",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-038",
+    "ten": "Moon.vn",
+    "url": "https://moon.vn",
+    "loai": "nen-tang",
+    "tac_gia_don_vi": "Moon.vn",
+    "cap": "THPT",
+    "chu_de": [
+      "luyện thi",
+      "sách luyện thi"
+    ],
+    "dinh_dang": "khoa-hoc",
+    "tin_cay": "B",
+    "can_cu_tin_cay": "Tổ chức giáo dục trực tuyến, có xuất bản sách luyện thi",
+    "license": "Bản quyền; chỉ link",
+    "dung_cho_baseline": "Đối chiếu bài giảng luyện thi",
+    "http": 200,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-039",
+    "ten": "Diễn đàn Toán học (diendantoanhoc.org)",
+    "url": "https://diendantoanhoc.org/",
+    "loai": "forum",
+    "tac_gia_don_vi": "Cộng đồng VMF",
+    "cap": "ca-hai",
+    "chu_de": [
+      "thảo luận lý thuyết",
+      "bài toán"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "C",
+    "can_cu_tin_cay": "Diễn đàn lâu năm của cộng đồng Toán Việt Nam; bài viết không thẩm định",
+    "license": "Quyền của từng tác giả; chỉ link",
+    "dung_cho_baseline": "Tham khảo lập luận; không làm chuẩn",
+    "http": 403,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-040",
+    "ten": "Mathematics Stack Exchange",
+    "url": "https://math.stackexchange.com/",
+    "loai": "forum",
+    "tac_gia_don_vi": "Cộng đồng Stack Exchange",
+    "cap": "dai-hoc",
+    "chu_de": [
+      "hỏi đáp toán",
+      "chứng minh"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "C",
+    "can_cu_tin_cay": "Hỏi đáp cộng đồng có biểu quyết, nhiều câu trả lời tốt nhưng không đảm bảo",
+    "license": "CC BY-SA 4.0",
+    "dung_cho_baseline": "Kiểm chéo lập luận; trích kèm điểm số",
+    "http": 403,
+    "tra_ngay": "2026-11-27"
+  },
+  {
+    "id": "BG-041",
+    "ten": "Art of Problem Solving community",
+    "url": "https://artofproblemsolving.com/community",
+    "loai": "forum",
+    "tac_gia_don_vi": "Cộng đồng AoPS",
+    "cap": "ca-hai",
+    "chu_de": [
+      "thảo luận bài toán",
+      "olympiad"
+    ],
+    "dinh_dang": "web",
+    "tin_cay": "C",
+    "can_cu_tin_cay": "Diễn đàn lớn cho Toán thi đấu, nhiều GV và học sinh giỏi",
+    "license": "Quyền của từng tác giả; chỉ link",
+    "dung_cho_baseline": "Kiểm chéo lập luận bài thi",
+    "http": 403,
+    "tra_ngay": "2026-11-27"
+  }
+]

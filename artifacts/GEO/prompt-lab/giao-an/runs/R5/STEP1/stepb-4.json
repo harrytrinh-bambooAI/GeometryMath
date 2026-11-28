@@ -1,0 +1,32 @@
+{
+ "ids": [
+  "BM-033-S1",
+  "BM-033-S2",
+  "BM-033-DUNG",
+  "BM-034-S1",
+  "BM-034-S2",
+  "BM-034-DUNG",
+  "BM-035-S1",
+  "BM-035-S2",
+  "BM-035-DUNG",
+  "BM-036-S1",
+  "BM-036-S2",
+  "BM-036-DUNG",
+  "BM-037-S1",
+  "BM-037-S2",
+  "BM-037-DUNG"
+ ],
+ "text": "{\"ket_qua\":[\n{\"id\":\"BM-033-S1\",\"buoc_sai\":\"B4\",\"ly_do\":\"Góc giữa hai đường thẳng thuộc [0°;90°]. MPN = 120° thì góc giữa AB và CD là 60°, không phải 120°.\"},\n{\"id\":\"BM-033-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"Định lý cos phải là (PM²+PN²−MN²)/(2·PM·PN) = (a²/4+a²/4−3a²/4)/(a²/2) = −1/2. Lời giải bỏ mất số hạng và MN², nên cos = 1/2 là sai.\"},\n{\"id\":\"BM-033-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: MPN = 120°, góc giữa hai đường thẳng là 60°.\"},\n{\"id\":\"BM-034-S1\",\"buoc_sai\":\"B4\",\"ly_do\":\"Chỉ có OH ⊥ BC, chưa đủ để kết luận OH ⊥ (ABC). Bước B3 bị bỏ qua nên thiếu OH ⊥ AC, cần hai đường thẳng cắt nhau.\"},\n{\"id\":\"BM-034-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"Từ OA ⊥ BC chưa suy ra được BC ⊥ (OAH). Cần thêm AH ⊥ BC (H là trực tâm) và OA, AH cắt nhau. Lời giải thiếu AH ⊥ BC.\"},\n{\"id\":\"BM-034-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Chứng minh đúng và đầy đủ.\"},\n{\"id\":\"BM-035-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"sin SCA = SA/SC, không phải SA/AC. SC = a√3 nên sin = 1/√3. SA/AC = tan, và tan SCA = 1/√2 nên góc ≈ 35,26°, không phải 45°.\"},\n{\"id\":\"BM-035-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"Hình chiếu của SC lên đáy là AC nên góc cần tìm là SCA, không phải SCB. SCB không phải góc giữa SC và mặt đáy.\"},\n{\"id\":\"BM-035-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: tan SCA = 1/√2, góc ≈ 35,26°.\"},\n{\"id\":\"BM-036-S1\",\"buoc_sai\":\"B4\",\"ly_do\":\"Trong tam giác SBC vuông tại B, sin CSB = đối/huyền = BC/SC = 1/√3. Lời giải dùng SB/SC, đó là cos.\"},\n{\"id\":\"BM-036-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"SC² = SA² + AC² = a² + 2a² = 3a², nên SC = a√3. Lời giải tính SC = a√2 là sai.\"},\n{\"id\":\"BM-036-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: sin = BC/SC = √3/3.\"},\n{\"id\":\"BM-037-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Góc phẳng nhị diện [S,BC,A] là SBA, vì BC ⊥ SB và BC ⊥ AB. SCA không phải góc phẳng nhị diện này.\"},\n{\"id\":\"BM-037-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"Trong tam giác SAB vuông tại A, tan SBA = SA/AB = √3 nên góc là 60°. Lời giải lấy AB/SA, bị ngược.\"},\n{\"id\":\"BM-037-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: tan SBA = √3, góc = 60°.\"}\n]}",
+ "usage": {
+  "ts": "2026-11-27T17:45:32",
+  "role": "gen",
+  "task": "R5/STEP1/stepb-4",
+  "model": "claude-sonnet-5-5",
+  "input": 4627,
+  "output": 1325,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 8.7
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "_doc": "S2-E1 (T-261126-18): FX-01…FX-03 của stories_ac.md S2-E1, nạp ở app/db/seed/e2e/800_s2e1_core.sql. userCode/password/recoveryCode là dữ liệu thử (không phải bí mật thật).",
+  "orgs": {
+    "F-S2-100": { "id": "00000000-0000-7000-8002-000000000100", "name": "Cộng đồng" }
+  },
+  "users": {
+    "F-S2-001": { "id": "00000000-0000-7000-8002-000000000001", "org": "F-S2-100", "role": "TEACHER", "displayName": "Cô Trang", "userCode": "GV-7K2M-9Q4D", "password": "Trang@2026x", "recoveryCode": "RC-7K2M-9Q4D-3W8X" },
+    "F-S2-002": { "id": "00000000-0000-7000-8002-000000000002", "org": "F-S2-100", "role": "STUDENT", "displayName": "An", "userCode": "HS-3F8A-2L6P", "password": "AnHoc#2026", "recoveryCode": "RC-4F7H-2K9M-6Q3V" },
+    "F-S2-003": { "id": "00000000-0000-7000-8002-000000000003", "org": "F-S2-100", "role": "STUDENT", "displayName": "Bình", "userCode": "HS-5B7C-8R2T", "password": "BinhHoc#2026", "recoveryCode": "RC-5B7C-8R2T-4N6P" }
+  },
+  "classes": {
+    "F-S2-011": { "id": "00000000-0000-7000-8002-000000000011", "org": "F-S2-100", "name": "11A1", "code": "CTLPAA" }
+  }
+}

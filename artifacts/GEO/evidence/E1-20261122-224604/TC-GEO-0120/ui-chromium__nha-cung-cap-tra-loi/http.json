@@ -1,0 +1,172 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "role": "STUDENT"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c06b-7685-84ed-00ef7cdba9b5",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:13 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 5
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/test-hooks/ai",
+    "requestBody": {
+      "mode": "error",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "lane": "ui-chromium-5"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c157-746c-88f1-940a54458ab7",
+      "content-type": "application/json",
+      "content-length": "39",
+      "date": "Sun, 22 Nov 2026 15:46:13 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"model\":\"gia-lap-1\",\"timeoutMs\":10000}",
+    "ms": 5
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/test-hooks/ai/calls?userId=00000000-0000-7000-8000-000000000020&limit=100",
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c15c-724f-bfac-7df870fb07e6",
+      "content-type": "application/json",
+      "content-length": "688",
+      "date": "Sun, 22 Nov 2026 15:46:13 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "[{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":57,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"}]",
+    "ms": 8
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "role": "STUDENT"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c164-75dc-9aef-c415e59a2345",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:13 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 2
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/students/00000000-0000-7000-8000-000000000020/questions",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c166-74da-98dc-619a0bcbbdfd",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "1053",
+      "date": "Sun, 22 Nov 2026 15:46:13 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"items\":[{\"id\":10,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:46:13.365300Z\",\"askerName\":\"An\"},{\"id\":9,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:46:12.008824Z\",\"askerName\":\"An\"},{\"id\":8,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S? (1795362371405)\",\"askedAt\":\"2026-11-22T15:46:11.430823Z\",\"askerName\":\"An\"},{\"id\":6,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Cho em xin đáp số luôn được không?\",\"askedAt\":\"2026-11-22T15:22:10.684Z\",\"askerName\":\"An\"},{\"id\":5,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:21:10.684Z\",\"askerName\":\"An\"},{\"id\":1,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:17:10.684Z\",\"askerName\":\"An\"}]}",
+    "ms": 4
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/test-hooks/ai/calls?userId=00000000-0000-7000-8000-000000000020&limit=100",
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c1c4-76fd-a70b-b8b77475e19a",
+      "content-type": "application/json",
+      "content-length": "914",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "[{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":0,\"costMicro\":0,\"latencyMs\":0,\"status\":\"error\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":57,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"}]",
+    "ms": 5
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "role": "STUDENT"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c1cd-73e9-bcc3-cac17101ebf8",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 6
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/students/00000000-0000-7000-8000-000000000020/questions",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c1d2-7639-8c24-b753157a8b75",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "1053",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"items\":[{\"id\":10,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:46:13.365300Z\",\"askerName\":\"An\"},{\"id\":9,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:46:12.008824Z\",\"askerName\":\"An\"},{\"id\":8,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S? (1795362371405)\",\"askedAt\":\"2026-11-22T15:46:11.430823Z\",\"askerName\":\"An\"},{\"id\":6,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Cho em xin đáp số luôn được không?\",\"askedAt\":\"2026-11-22T15:22:10.684Z\",\"askerName\":\"An\"},{\"id\":5,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:21:10.684Z\",\"askerName\":\"An\"},{\"id\":1,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:17:10.684Z\",\"askerName\":\"An\"}]}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/test-hooks/ai",
+    "requestBody": {
+      "mode": "ok",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "lane": "ui-chromium-5"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c212-75bb-906a-368b8ee9636f",
+      "content-type": "application/json",
+      "content-length": "39",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"model\":\"gia-lap-1\",\"timeoutMs\":10000}",
+    "ms": 3
+  }
+]

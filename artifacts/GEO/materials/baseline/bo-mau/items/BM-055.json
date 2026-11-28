@@ -1,0 +1,86 @@
+{
+ "id": "BM-055",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-04-quan-he-song-song/on-tap-chuong.md — bài 7 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Mặt phẳng song song – thiết diện",
+ "muc_do": "VDC",
+ "de_bai": "Chóp $S.ABCD$ đáy hình bình hành có diện tích $36$. $M\\in SA$ với $SM=\\dfrac13SA$; mặt phẳng $(\\alpha)$ qua $M$ song song $(ABCD)$ cắt $SB,SC,SD$ tại $N,P,Q$. Tính diện tích $MNPQ$.",
+ "dap_so": {
+  "gia_tri": "$4$",
+  "so": 4.0
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Thalès",
+  "Tỉ số diện tích hình đồng dạng $k^2$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$(\\alpha)\\parallel(ABCD)$ nên $\\dfrac{SM}{SA}=\\dfrac{SN}{SB}=\\dfrac{SP}{SC}=\\dfrac{SQ}{SD}=\\dfrac13$.",
+   "ket_qua_trung_gian": "$k=\\dfrac13$",
+   "kien_thuc": "Thalès",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $k=\\dfrac13$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Đọc $SM=\\dfrac13SA$ thành $k=\\dfrac23$ (tính từ $A$)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.3333333333333333
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$MNPQ$ đồng dạng $ABCD$ tỉ số $k=\\dfrac13$.",
+   "ket_qua_trung_gian": "Đồng dạng tỉ số $\\dfrac13$",
+   "kien_thuc": "Đồng dạng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Đồng dạng tỉ số $\\dfrac13$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$S_{MNPQ}=k^2S_{ABCD}=\\dfrac19\\cdot36=4$.",
+   "ket_qua_trung_gian": "$4$",
+   "kien_thuc": "Tỉ số diện tích",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $4$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng tỉ số diện tích bằng $k$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 4.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng tỉ số diện tích bằng $k$",
+   "loi_giai": "B1: $(\\alpha)\\parallel(ABCD)$ nên $\\dfrac{SM}{SA}=\\dfrac{SN}{SB}=\\dfrac{SP}{SC}=\\dfrac{SQ}{SD}=\\dfrac13$.\nB2: $MNPQ$ đồng dạng $ABCD$ tỉ số $k=\\dfrac13$.\nB3: $S_{MNPQ}=k\\cdot S_{ABCD}=12$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Đọc $SM=\\dfrac13SA$ thành $k=\\dfrac23$ (tính từ $A$)",
+   "loi_giai": "B1: $\\dfrac{SM}{SA}=\\dfrac23$.\nB2: Đồng dạng tỉ số $\\dfrac23$.\nB3: $S=\\dfrac49\\cdot36=16$.",
+   "diem_dung": 0
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

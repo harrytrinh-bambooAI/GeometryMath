@@ -1,0 +1,97 @@
+{
+ "id": "BM-066",
+ "nguon": {
+  "loai": "de-chinh-thuc",
+  "ref": "Sở GD&ĐT Quảng Nam — HDC chính thức Toán TS10 2025-2026, Bài 5, trang 4/4 — https://storage-vnportal.vnpt.vn/qnm-ubnd/6141/ẢNH/2. HDC_Toan (chung)_TS10_2526.pdf (tải 27/11/2026)"
+ },
+ "cap": "thcs",
+ "chu_de": "Thể tích hình trụ – hình cầu (thực tế)",
+ "muc_do": "VD",
+ "de_bai": "Một ly thủy tinh hình trụ bán kính đáy $R=3$ cm, mực nước ban đầu cao $5$ cm. Thả vào ly $6$ viên bi sắt hình cầu bán kính $r=1$ cm thì nước dâng lên, không tràn. Tính chiều cao mực nước sau khi thả bi (bỏ qua độ dày ly, làm tròn đến hàng phần trăm).",
+ "dap_so": {
+  "gia_tri": "$h=\\dfrac{53}9\\approx5{,}89$ cm",
+  "so": 5.888888888888889
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "$V_{trụ}=\\pi R^2h$",
+  "$V_{cầu}=\\dfrac43\\pi r^3$"
+ ],
+ "tong_diem": 0.5,
+ "bieu_diem": "chinh-thuc",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$V_1=\\pi\\cdot3^2\\cdot5=45\\pi$ cm$^3$.",
+   "ket_qua_trung_gian": "$45\\pi$",
+   "kien_thuc": "Thể tích trụ",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $45\\pi$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 141.3716694115407
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$V_2=6\\cdot\\dfrac43\\pi\\cdot1^3=8\\pi$; tổng $V=V_1+V_2=53\\pi$ cm$^3$.",
+   "ket_qua_trung_gian": "$53\\pi$",
+   "kien_thuc": "Thể tích cầu",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $53\\pi$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng công thức diện tích mặt cầu $4\\pi r^2$ cho thể tích bi",
+     "tru": 0.125
+    }
+   ],
+   "ket_qua_so": 166.50441064025904
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Gọi $h$ là chiều cao mực nước mới: $9\\pi h=53\\pi$.",
+   "ket_qua_trung_gian": "$9\\pi h=53\\pi$",
+   "kien_thuc": "Lập phương trình",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $9\\pi h=53\\pi$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "$h=\\dfrac{53}9\\approx5{,}89$ cm.",
+   "ket_qua_trung_gian": "$5{,}89$",
+   "kien_thuc": "Tính và làm tròn",
+   "diem": 0.125,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $5{,}89$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Chia sai $\\dfrac{53}9\\approx5{,}98$",
+     "tru": 0.125
+    }
+   ],
+   "ket_qua_so": 5.888888888888889
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng công thức diện tích mặt cầu $4\\pi r^2$ cho thể tích bi",
+   "loi_giai": "B1: $V_1=\\pi\\cdot3^2\\cdot5=45\\pi$ cm$^3$.\nB2: $V_2=6\\cdot4\\pi\\cdot1^2=24\\pi$; $V=69\\pi$.\nB3: $9\\pi h=69\\pi$.\nB4: $h=\\dfrac{69}9\\approx7{,}67$ cm.",
+   "diem_dung": 0.125
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B4",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Chia sai $\\dfrac{53}9\\approx5{,}98$",
+   "loi_giai": "B1: $V_1=\\pi\\cdot3^2\\cdot5=45\\pi$ cm$^3$.\nB2: $V_2=6\\cdot\\dfrac43\\pi\\cdot1^3=8\\pi$; tổng $V=V_1+V_2=53\\pi$ cm$^3$.\nB3: Gọi $h$ là chiều cao mực nước mới: $9\\pi h=53\\pi$.\nB4: $h=\\dfrac{53}9\\approx5{,}98$ cm.",
+   "diem_dung": 0.375
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Bài hình không gian (trụ + cầu) duy nhất có HDC chính thức. Thang HDC 0,5 chia 4 ý × 0,125 (ý $V_2$ nằm trong ý tổng $53\\pi$)."
+}

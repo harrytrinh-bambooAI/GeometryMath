@@ -1,0 +1,150 @@
+{
+ "id": "MC-DS-UD",
+ "ten": "Đúng/sai: vận tốc - quãng đường",
+ "chu_de": "ung-dung-tich-phan",
+ "dang": "ds.van-toc-quang-duong",
+ "dang_tx": "ud.van-toc-quang-duong",
+ "yccd": [
+  "12.UD.3",
+  "12.NH.2"
+ ],
+ "lop": 12,
+ "ho_hinh": "MC-DS-UD",
+ "tham_so": {
+  "p": [
+   "10",
+   "12",
+   "20",
+   "15"
+  ],
+  "q": [
+   "2",
+   "4",
+   "5"
+  ]
+ },
+ "dan_xuat": {
+  "vt": "p-q*t"
+ },
+ "boi_canh": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)={vt}$ (m/s), $t$ tính bằng giây.",
+ "y": [
+  {
+   "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là ${v}$ m/s.",
+   "dap_so": "p",
+   "muc_do": "NB",
+   "nhieu": [
+    {
+     "bieu_thuc": "q",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Ô tô dừng hẳn sau ${v}$ giây kể từ lúc đạp phanh.",
+   "dap_so": "p/q",
+   "muc_do": "TH",
+   "nhieu": [
+    {
+     "bieu_thuc": "q/p",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là ${v}$ m.",
+   "dap_so": "p**2/(2*q)",
+   "muc_do": "VD",
+   "nhieu": [
+    {
+     "bieu_thuc": "p**2/q",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $qt$"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được ${v}$ m.",
+   "dap_so": "p-q/2",
+   "muc_do": "VD",
+   "nhieu": [
+    {
+     "bieu_thuc": "p-q",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ]
+  }
+ ],
+ "loai_mau": "dung-sai",
+ "loai_cau": [
+  "dung-sai"
+ ],
+ "bien_the": [
+  {
+   "p": "10",
+   "q": "2"
+  },
+  {
+   "p": "10",
+   "q": "4"
+  },
+  {
+   "p": "10",
+   "q": "5"
+  },
+  {
+   "p": "12",
+   "q": "2"
+  },
+  {
+   "p": "12",
+   "q": "4"
+  },
+  {
+   "p": "12",
+   "q": "5"
+  },
+  {
+   "p": "20",
+   "q": "2"
+  },
+  {
+   "p": "20",
+   "q": "4"
+  },
+  {
+   "p": "20",
+   "q": "5"
+  },
+  {
+   "p": "15",
+   "q": "2"
+  },
+  {
+   "p": "15",
+   "q": "4"
+  },
+  {
+   "p": "15",
+   "q": "5"
+  }
+ ],
+ "rang_buoc": [],
+ "so_bien_the": 12,
+ "so_cau_sinh": 12,
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-DS-UD"
+ },
+ "phien_ban": "v1.0 · 27/11/2026"
+}

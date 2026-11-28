@@ -1,0 +1,85 @@
+{
+ "id": "BM-038",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-25-hai-mat-phang-vuong-goc.md — bài 6 (v1.3 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa hai mặt phẳng",
+ "muc_do": "VD",
+ "de_bai": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. Tính $\\tan$ của góc giữa $(SBD)$ và $(ABCD)$.",
+ "dap_so": {
+  "gia_tri": "$\\sqrt2$",
+  "so": 1.4142135623730951
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Góc giữa hai mặt phẳng qua giao tuyến",
+  "tan"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$O=AC\\cap BD$: $AO\\perp BD$, $SO\\perp BD$ (vì $BD\\perp(SAC)$); giao tuyến là $BD$.",
+   "ket_qua_trung_gian": "$AO\\perp BD$, $SO\\perp BD$",
+   "kien_thuc": "Ba đường vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AO\\perp BD$, $SO\\perp BD$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Góc cần tìm là $\\widehat{SOA}$.",
+   "ket_qua_trung_gian": "$\\widehat{SOA}$",
+   "kien_thuc": "Góc giữa hai mặt phẳng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\widehat{SOA}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy góc $\\widehat{SBA}$ (giao tuyến không phải $AB$)",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$AO=\\dfrac{a\\sqrt2}2$, $\\tan\\widehat{SOA}=\\dfrac{SA}{AO}=\\sqrt2$.",
+   "ket_qua_trung_gian": "$\\sqrt2$",
+   "kien_thuc": "tan",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\sqrt2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $AO=a\\sqrt2$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 1.4142135623730951
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Lấy góc $\\widehat{SBA}$ (giao tuyến không phải $AB$)",
+   "loi_giai": "B1: $O=AC\\cap BD$: $AO\\perp BD$, $SO\\perp BD$ (vì $BD\\perp(SAC)$); giao tuyến là $BD$.\nB2: Góc cần tìm là $\\widehat{SBA}$.\nB3: $\\tan\\widehat{SBA}=\\dfrac aa=1$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $AO=a\\sqrt2$",
+   "loi_giai": "B1: $O=AC\\cap BD$: $AO\\perp BD$, $SO\\perp BD$ (vì $BD\\perp(SAC)$); giao tuyến là $BD$.\nB2: Góc cần tìm là $\\widehat{SOA}$.\nB3: $AO=a\\sqrt2$, $\\tan\\widehat{SOA}=\\dfrac{\\sqrt2}2$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

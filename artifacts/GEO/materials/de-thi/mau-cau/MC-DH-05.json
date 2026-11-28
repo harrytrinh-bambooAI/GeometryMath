@@ -1,0 +1,178 @@
+{
+ "id": "MC-DH-05",
+ "ten": "Vận tốc tức thời của chuyển động",
+ "chu_de": "dao-ham-co-ban",
+ "dang": "dh.van-toc-tuc-thoi",
+ "dang_tx": "dh1.quy-tac",
+ "yccd": [
+  "11.DH.1"
+ ],
+ "lop": 11,
+ "nang_luc": "mo-hinh-hoa",
+ "ho_hinh": "MC-DH-05",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-DH-05",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "p": [
+   "3",
+   "6"
+  ],
+  "q": [
+   "9",
+   "12",
+   "15"
+  ],
+  "t0": [
+   "2",
+   "3",
+   "5"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "st": "t**3-p*t**2+q*t"
+ },
+ "boi_canh": "Một vật chuyển động theo phương trình $s(t)={st}$ ($s$ tính bằng mét, $t$ tính bằng giây).",
+ "hoi": "Vận tốc tức thời của vật tại thời điểm $t={t0}$ (m/s) bằng",
+ "dap_so": "3*t0**2-2*p*t0+q",
+ "nhieu": [
+  {
+   "bieu_thuc": "t0**3-p*t0**2+q*t0",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Tính quãng đường $s(t_0)$ thay cho vận tốc"
+   }
+  },
+  {
+   "bieu_thuc": "6*t0-2*p",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Tính gia tốc $s''(t_0)$ thay cho vận tốc"
+   }
+  },
+  {
+   "bieu_thuc": "3*t0**2-p*t0+q",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy đạo hàm của $pt^2$ là $pt$"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": false,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-DH-05']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "p": "3",
+   "q": "9",
+   "t0": "2"
+  },
+  {
+   "p": "3",
+   "q": "9",
+   "t0": "3"
+  },
+  {
+   "p": "3",
+   "q": "9",
+   "t0": "5"
+  },
+  {
+   "p": "3",
+   "q": "12",
+   "t0": "2"
+  },
+  {
+   "p": "3",
+   "q": "12",
+   "t0": "3"
+  },
+  {
+   "p": "3",
+   "q": "12",
+   "t0": "5"
+  },
+  {
+   "p": "3",
+   "q": "15",
+   "t0": "2"
+  },
+  {
+   "p": "3",
+   "q": "15",
+   "t0": "3"
+  },
+  {
+   "p": "3",
+   "q": "15",
+   "t0": "5"
+  },
+  {
+   "p": "6",
+   "q": "9",
+   "t0": "2"
+  },
+  {
+   "p": "6",
+   "q": "9",
+   "t0": "3"
+  },
+  {
+   "p": "6",
+   "q": "9",
+   "t0": "5"
+  },
+  {
+   "p": "6",
+   "q": "12",
+   "t0": "2"
+  },
+  {
+   "p": "6",
+   "q": "12",
+   "t0": "3"
+  },
+  {
+   "p": "6",
+   "q": "12",
+   "t0": "5"
+  },
+  {
+   "p": "6",
+   "q": "15",
+   "t0": "2"
+  },
+  {
+   "p": "6",
+   "q": "15",
+   "t0": "3"
+  },
+  {
+   "p": "6",
+   "q": "15",
+   "t0": "5"
+  }
+ ],
+ "so_bien_the": 18,
+ "so_cau_sinh": 32,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

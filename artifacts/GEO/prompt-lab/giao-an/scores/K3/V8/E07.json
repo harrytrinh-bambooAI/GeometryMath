@@ -1,0 +1,37 @@
+{
+ "case": "E07",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "reply"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "Đề xuất về câu 3 ghi \"Cả hai đều tính khoảng cách từ A đến (SBC) với SA ⊥ (ABC)\". Câu 3 (BM-007) là chóp S.ABCD nên phải là SA ⊥ (ABCD)."
+  ],
+  "nhan_xet": "Trợ lý từ chối đúng vì mục muc_tieu đang khoá, giải thích hệ quả về nội dung và thời lượng, không tự sửa. Các đề xuất về lỗi có sẵn (HD4 o_nha/thời lượng, câu 2–3 trùng dạng, tham chiếu câu PHT ở HD2) có lý do rõ, chỉ có một chỗ ghi kí hiệu chưa chính xác."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 96.2,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.75
+ }
+}

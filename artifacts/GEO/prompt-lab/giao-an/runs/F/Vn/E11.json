@@ -1,0 +1,33 @@
+{
+ "case": "E11",
+ "variant": "Vn",
+ "round": "F",
+ "text": "Mục đích: thêm vào \"noi_dung\" của HĐ3 một ví dụ tính đạo hàm của thương. Mục \"muc_tieu\" và \"thiet_bi\" bị khóa nên không đụng tới. Đường dẫn \"hoat_dong[2].noi_dung\" không thuộc phần bị khóa.\n\nChọn ví dụ chỉ dùng quy tắc thương và các đạo hàm đã có trong KT11-C09-CT-002, tức là $y=\\dfrac{x^2+1}{x-1}$. Với $u=x^2+1$, $v=x-1$ thì $u'=2x$, $v'=1$. Ví dụ này không dùng hàm lượng giác hay hàm hợp nên phù hợp với tiết học này.\n\n```json\n{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[2].noi_dung\",\"before\":\"GV nêu quy tắc, HS làm ví dụ.\",\"after\":\"GV nêu quy tắc, HS làm ví dụ. Ví dụ về đạo hàm của thương: tính đạo hàm của hàm số $y=\\\\dfrac{x^2+1}{x-1}$ với $x\\\\neq 1$. Gợi ý: đặt $u=x^2+1$, $v=x-1$, tính $u'$, $v'$ rồi áp dụng công thức $\\\\left(\\\\dfrac uv\\\\right)'=\\\\dfrac{u'v-uv'}{v^2}$ và rút gọn tử số.\",\"ly_do\":\"Bổ sung một ví dụ tính đạo hàm của thương theo yêu cầu, chỉ dùng quy tắc thương và đạo hàm của $x^n$ nên phù hợp nội dung tiết học.\"}],\"de_xuat\":[],\"unsure\":[]}\n```",
+ "raw": "Mục đích: thêm vào \"noi_dung\" của HĐ3 một ví dụ tính đạo hàm của thương. Mục \"muc_tieu\" và \"thiet_bi\" bị khóa nên không đụng tới. Đường dẫn \"hoat_dong[2].noi_dung\" không thuộc phần bị khóa.\n\nChọn ví dụ chỉ dùng quy tắc thương và các đạo hàm đã có trong KT11-C09-CT-002, tức là $y=\\dfrac{x^2+1}{x-1}$. Với $u=x^2+1$, $v=x-1$ thì $u'=2x$, $v'=1$. Ví dụ này không dùng hàm lượng giác hay hàm hợp nên phù hợp với tiết học này.\n\n```json\n{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[2].noi_dung\",\"before\":\"GV nêu quy tắc, HS làm ví dụ.\",\"after\":\"GV nêu quy tắc, HS làm ví dụ. Ví dụ về đạo hàm của thương: tính đạo hàm của hàm số $y=\\\\dfrac{x^2+1}{x-1}$ với $x\\\\neq 1$. Gợi ý: đặt $u=x^2+1$, $v=x-1$, tính $u'$, $v'$ rồi áp dụng công thức $\\\\left(\\\\dfrac uv\\\\right)'=\\\\dfrac{u'v-uv'}{v^2}$ và rút gọn tử số.\",\"ly_do\":\"Bổ sung một ví dụ tính đạo hàm của thương theo yêu cầu, chỉ dùng quy tắc thương và đạo hàm của $x^n$ nên phù hợp nội dung tiết học.\"}],\"de_xuat\":[],\"unsure\":[]}\n```",
+ "usage": {
+  "ts": "2026-11-27T17:49:54",
+  "role": "gen",
+  "task": "F/Vn/E11",
+  "model": "claude-sonnet-5-5",
+  "input": 2834,
+  "output": 629,
+  "cache_write": 0,
+  "cache_read": 1335,
+  "stop": "end_turn",
+  "sec": 4.2
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:49:54",
+   "role": "gen",
+   "task": "F/Vn/E11",
+   "model": "claude-sonnet-5-5",
+   "input": 2834,
+   "output": 629,
+   "cache_write": 0,
+   "cache_read": 1335,
+   "stop": "end_turn",
+   "sec": 4.2
+  }
+ ]
+}

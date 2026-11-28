@@ -1,0 +1,93 @@
+{
+ "id": "MC-HH-A05",
+ "ten": "Độ dài cạnh SC",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "do-dai.chop-sa.canh-cheo",
+ "dang_tx": "qh.vuong-goc",
+ "yccd": [
+  "11.VG.4"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "A",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-06",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-06 + geometry/problem-specs.json#HKN-06"
+ },
+ "tham_so": {
+  "k": [
+   "1",
+   "2",
+   "sqrt(2)",
+   "sqrt(3)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SB": "sqrt(a**2+h**2)",
+  "SC": "sqrt(2*a**2+h**2)"
+ },
+ "boi_canh": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA={h}$.",
+ "hoi": "Độ dài đoạn $SC$ bằng",
+ "dap_so": "sqrt(2*a**2+h**2)",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "sqrt(a**2+h**2)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Dùng $AB$ thay cho $AC$: $SC=\\sqrt{SA^2+AB^2}$"
+   }
+  },
+  {
+   "bieu_thuc": "h+sqrt(2)*a",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng độ dài $SA+AC$ thay vì dùng định lí Pythagore"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(h**2+a**2/2)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $AO$ (nửa đường chéo) thay cho $AC$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-06",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "sa": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "2"
+  },
+  {
+   "k": "sqrt(2)"
+  },
+  {
+   "k": "sqrt(3)"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://127.0.0.1:54329/geo_test?ApplicationName=geo-test&connectTimeout=3&socketTimeout=30
+    url: jdbc:postgresql://127.0.0.1:${GEO_PG_PORT:54329}/geo_test?ApplicationName=geo-test&connectTimeout=3&socketTimeout=30
     hikari.leak-detection-threshold: 10000   # 10 giây ở môi trường thử (ADR-GEO-04)
   flyway:
     clean-disabled: false   # chỉ để IT dựng lại schema sạch; có chốt chặn chỉ cho phép geo_test
@@ -9,3 +9,9 @@ spring:
     locations: classpath:db/migration,classpath:db/testhooks
 geo:
   redis.key-prefix: "geotest:"
+  content.pack.load-on-start: false   # IT nạp gói tường minh (ContentPackMvpIT)
+  http.trust-forwarded-for: true
+  ai.api-key: KHOA-THU-KHONG-LO
+  # T-261128-51 (PLAN_code-s5 P5): bật cả hai cờ chặng 5 ở hồ sơ test (IT); mặc định false ở application.yml.
+  s5.grading.enabled: true
+  s5.ai-grading.enabled: true

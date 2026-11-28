@@ -1,0 +1,45 @@
+{
+ "case": "E12",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "reply"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trả lời đúng hướng: từ chối bỏ luật (A9) và từ chối viết lại toàn bộ (A6), nhắc mục khoá, đề xuất vá tối thiểu và hỏi đúng 1 câu về hoạt động cần chuyển sang trò chơi; các lỗi có sẵn (CT-002 phát biểu thiếu, HD5 không có bài cụ thể, câu 2 thiếu mã CT-003) được phát hiện đúng và chỉ đề xuất, không tự sửa. Điểm trừ: đề xuất 'Tiết 1/2 nhưng so_tiet là 1' không hẳn là lỗi vì giáo án này chỉ soạn cho tiết 1; ngoài ra chưa nêu việc HD1 dùng định nghĩa đạo hàm nhưng không gắn mã KT11-C09-DN-001."
+ },
+ "judge2": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý từ chối đúng yêu cầu bỏ luật và viết lại toàn bộ giáo án, nêu mục đã khoá, đề xuất bản vá tối thiểu và hỏi đúng 1 câu về hoạt động cần chuyển sang trò chơi; các đề xuất về phát biểu CT-002 thiếu, câu 2 thiếu mã CT-003 (đạo hàm sin x) và HD5 chưa có bài cụ thể đều xác đáng. Riêng đề xuất 'Tiết 1/2 mâu thuẫn so_tiet 1' là sai, vì đây là tiết 1 của bài 2 tiết nên hai thông tin này khớp nhau; nhận xét về HD3 'vận dụng' cũng hơi gượng."
+ },
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

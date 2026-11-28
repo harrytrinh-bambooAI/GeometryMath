@@ -1,0 +1,34 @@
+{
+ "case": "E14",
+ "variant": "V8",
+ "round": "K1",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[0].ten\", \"before\": \"Khởi động: Tính nhanh bằng định nghĩa\", \"after\": \"Khởi động: Ai tính nhanh hơn\", \"ly_do\": \"Giáo viên yêu cầu đổi tên HĐ1.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[1].kien_thuc[1].phat_bieu\", \"van_de\": \"Công thức $(a^x)'=xa^{x-1}$ sai so với danh sách KT11-C09-CT-004, đúng là $(a^x)'=a^x\\\\ln a$.\", \"goi_y\": \"Sửa phát biểu thành $(a^x)'=a^x\\\\ln a$ đúng như danh sách kiến thức.\", \"ly_do\": \"Phát biểu phải giữ nguyên theo danh sách kiến thức được cấp.\"}, {\"vi_tri\": \"hoat_dong[0].noi_dung\", \"van_de\": \"Tên mới 'Ai tính nhanh hơn' mang tính thi đua, trong khi nội dung vẫn là HS làm cá nhân tính bằng định nghĩa.\", \"goi_y\": \"Có thể bổ sung cách tổ chức thi đua nhỏ giữa các bàn nếu muốn khớp tên hoạt động.\", \"ly_do\": \"Để tên và nội dung hoạt động nhất quán.\"}, {\"vi_tri\": \"hoat_dong[1].muc_tieu / hoat_dong[1].kien_thuc\", \"van_de\": \"Mục tiêu và HĐ2 nói đến bảng đạo hàm cơ bản nhưng chỉ có KT-002 và KT-004, chưa có KT-003 (lượng giác); PHT1 câu 2 dùng $\\\\sin x$ nên cần $(\\\\sin x)'$.\", \"goi_y\": \"Bổ sung KT11-C09-CT-003 vào HĐ2 hoặc đổi câu 2 sang câu không dùng $\\\\sin x$. Lưu ý mục tiêu bị khoá nên không sửa ở đó.\", \"ly_do\": \"Câu 2 PHT1 dùng kiến thức chưa được dạy trong giáo án.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[1]\", \"van_de\": \"Câu 2 tự soạn ($y=x^2\\\\sin x$) nhưng kho có BT11-B32-2 ($y=x\\\\sin x$) tương tự; buoc_goi_y của các câu đang trống.\", \"goi_y\": \"Cân nhắc dùng id BT11-B32-2 và bổ sung bước gợi ý cho các câu.\", \"ly_do\": \"Ưu tiên bài tập trong kho; phiếu cần có bước gợi ý.\"}, {\"vi_tri\": \"hoat_dong[4].noi_dung\", \"van_de\": \"Bài vận dụng vận tốc chưa có đề cụ thể, và KT về ý nghĩa vật lí của đạo hàm không có trong danh sách được cấp.\", \"goi_y\": \"Nêu rõ phương trình chuyển động dạng đa thức và nhắc lại $f'(x_0)$ theo KT11-C09-DN-001.\", \"ly_do\": \"Tránh dùng kiến thức ngoài danh sách và làm đề rõ ràng.\"}], \"unsure\": []}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[0].ten\",\"before\":\"Khởi động: Tính nhanh bằng định nghĩa\",\"after\":\"Khởi động: Ai tính nhanh hơn\",\"ly_do\":\"Giáo viên yêu cầu đổi tên HĐ1.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1].kien_thuc[1].phat_bieu\",\"van_de\":\"Công thức $(a^x)'=xa^{x-1}$ sai so với danh sách KT11-C09-CT-004, đúng là $(a^x)'=a^x\\\\ln a$.\",\"goi_y\":\"Sửa phát biểu thành $(a^x)'=a^x\\\\ln a$ đúng như danh sách kiến thức.\",\"ly_do\":\"Phát biểu phải giữ nguyên theo danh sách kiến thức được cấp.\"},{\"vi_tri\":\"hoat_dong[0].noi_dung\",\"van_de\":\"Tên mới 'Ai tính nhanh hơn' mang tính thi đua, trong khi nội dung vẫn là HS làm cá nhân tính bằng định nghĩa.\",\"goi_y\":\"Có thể bổ sung cách tổ chức thi đua nhỏ giữa các bàn nếu muốn khớp tên hoạt động.\",\"ly_do\":\"Để tên và nội dung hoạt động nhất quán.\"},{\"vi_tri\":\"hoat_dong[1].muc_tieu / hoat_dong[1].kien_thuc\",\"van_de\":\"Mục tiêu và HĐ2 nói đến bảng đạo hàm cơ bản nhưng chỉ có KT-002 và KT-004, chưa có KT-003 (lượng giác); PHT1 câu 2 dùng $\\\\sin x$ nên cần $(\\\\sin x)'$.\",\"goi_y\":\"Bổ sung KT11-C09-CT-003 vào HĐ2 hoặc đổi câu 2 sang câu không dùng $\\\\sin x$. Lưu ý mục tiêu bị khoá nên không sửa ở đó.\",\"ly_do\":\"Câu 2 PHT1 dùng kiến thức chưa được dạy trong giáo án.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[1]\",\"van_de\":\"Câu 2 tự soạn ($y=x^2\\\\sin x$) nhưng kho có BT11-B32-2 ($y=x\\\\sin x$) tương tự; buoc_goi_y của các câu đang trống.\",\"goi_y\":\"Cân nhắc dùng id BT11-B32-2 và bổ sung bước gợi ý cho các câu.\",\"ly_do\":\"Ưu tiên bài tập trong kho; phiếu cần có bước gợi ý.\"},{\"vi_tri\":\"hoat_dong[4].noi_dung\",\"van_de\":\"Bài vận dụng vận tốc chưa có đề cụ thể, và KT về ý nghĩa vật lí của đạo hàm không có trong danh sách được cấp.\",\"goi_y\":\"Nêu rõ phương trình chuyển động dạng đa thức và nhắc lại $f'(x_0)$ theo KT11-C09-DN-001.\",\"ly_do\":\"Tránh dùng kiến thức ngoài danh sách và làm đề rõ ràng.\"}],\"unsure\":[]}}",
+ "usage": {
+  "ts": "2026-11-27T17:53:33",
+  "role": "gen",
+  "task": "K1/V8/E14",
+  "model": "claude-sonnet-5-5",
+  "input": 2824,
+  "output": 1174,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 8.2
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:53:33",
+   "role": "gen",
+   "task": "K1/V8/E14",
+   "model": "claude-sonnet-5-5",
+   "input": 2824,
+   "output": 1174,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 8.2
+  }
+ ],
+ "server_errs0": []
+}

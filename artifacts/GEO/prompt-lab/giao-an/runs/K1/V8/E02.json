@@ -1,0 +1,34 @@
+{
+ "case": "E02",
+ "variant": "V8",
+ "round": "K1",
+ "text": "{\"kind\": \"question\", \"text\": \"Yêu cầu \\\"viết lại hết\\\" khá rộng và các mục Mục tiêu, Thiết bị đang bị khoá nên không được sửa; thầy/cô muốn tôi chỉ chuyển sang hướng khám phá cho những hoạt động nào (HD1, HD2, HD3, HD4) và giữ nguyên phiếu học tập hiện tại hay thay đổi cả các câu trong phiếu?\"}",
+ "raw": "{\"ket_qua\":{\"kind\":\"question\",\"text\":\"Yêu cầu \\\"viết lại hết\\\" khá rộng và các mục Mục tiêu, Thiết bị đang bị khoá nên không được sửa; thầy/cô muốn tôi chỉ chuyển sang hướng khám phá cho những hoạt động nào (HD1, HD2, HD3, HD4) và giữ nguyên phiếu học tập hiện tại hay thay đổi cả các câu trong phiếu?\"}}",
+ "usage": {
+  "ts": "2026-11-27T17:51:17",
+  "role": "gen",
+  "task": "K1/V8/E02",
+  "model": "claude-sonnet-5-5",
+  "input": 3358,
+  "output": 174,
+  "cache_write": 6641,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 3.1
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:51:17",
+   "role": "gen",
+   "task": "K1/V8/E02",
+   "model": "claude-sonnet-5-5",
+   "input": 3358,
+   "output": 174,
+   "cache_write": 6641,
+   "cache_read": 0,
+   "stop": "end_turn",
+   "sec": 3.1
+  }
+ ],
+ "server_errs0": []
+}

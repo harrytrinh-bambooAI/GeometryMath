@@ -1,0 +1,102 @@
+{
+ "case": "C11",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 4,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 0,
+   "cau_tu_kho": 0,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 4,
+   "chinh_xac": 3,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "HD3 dùng BM-052 ('GV làm mẫu BM-052 ... chứng minh $SC\\parallel(MBD)$') làm ví dụ cho tính chất giao tuyến KT11-C04-TC-005. Theo lời giải chuẩn, bài này chỉ dùng dấu hiệu KT11-C04-DL-003 ($OM\\parallel SC$, $OM\\subset(MBD)$, $SC\\not\\subset(MBD)$), không minh hoạ tính chất giao tuyến. Ví dụ đúng nên dùng là BT11-B12-7, bài dựng giao tuyến $MN\\parallel BC$, $MQ\\parallel AD$."
+  ],
+  "nhan_xet": "Giáo án đúng khung, đủ 45 phút, phát biểu kiến thức khớp tham chiếu và giữ đúng phong cách truyền thống. Tuy nhiên ví dụ mẫu ở HD3 không minh hoạ tính chất giao tuyến, và HD4 dồn bài VDC dựng thiết diện vào 6 phút trong khi còn phải chữa 3 bài là khá chật."
+ },
+ "judge2": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 3,
+   "chinh_xac": 3,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "HĐ3 dùng sai ví dụ: \"GV phát biểu tính chất, vẽ hình minh họa trên mô hình hình chóp và làm ví dụ mẫu BM-052\". Lời giải chuẩn của BM-052 (OM là đường trung bình nên OM∥SC, OM⊂(MBD), SC⊄(MBD)) dùng dấu hiệu KT11-C04-DL-003, không dùng tính chất giao tuyến KT11-C04-TC-005. Câu hỏi report \"giao tuyến nằm trong mặt phẳng nào, vì sao không cắt d\" cũng không khớp bài này. Nên đặt BM-052 ở HĐ2 hoặc HĐ4; ví dụ cho tính chất giao tuyến nên là bài dựng giao tuyến, chẳng hạn ý dựng MN∥BC trong BT11-B12-7."
+  ],
+  "nhan_xet": "Mục tiêu và phát biểu kiến thức khớp tham chiếu, tổng thời lượng đúng 45 phút, không có phiếu đúng yêu cầu. Tuy vậy, HĐ3 dùng ví dụ BM-052 không minh họa tính chất giao tuyến; HĐ4 dành 14/16 phút cho HS làm bài nên chỉ còn khoảng 2 phút cho ba HS trình bày và GV chữa, và bài VDC BT11-B12-7 chỉ được 6 phút là quá gấp với đối tượng khá."
+ },
+ "auto0": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": false,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A5: tổng 50 phút ≠ 1×45"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 50,
+   "kt_khop": 3,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 0,
+   "cau_tu_kho": 0,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "retried": true,
+ "score": {
+  "diem": 90.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.33
+ }
+}

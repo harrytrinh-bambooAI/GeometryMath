@@ -1,0 +1,19 @@
+{
+ "case": "E03",
+ "variant": "V2",
+ "round": "R2",
+ "text": "{\"kind\": \"reply\", \"text\": \"Mình chưa thể thay hệ thức 1/AH² bằng công thức d = |ax0+by0+cz0+d|/√(a²+b²+c²). Luật A1 chỉ cho dùng kiến thức trong danh sách được cấp, và công thức khoảng cách trong hệ toạ độ không có trong danh sách. Công thức này cũng cần phương trình mặt phẳng trong toạ độ, nên không khớp với ví dụ hình chóp S.ABC ở HĐ2. Hệ thức KT11-C07-CT-003 hiện là kiến thức trọng tâm của HĐ2, đồng thời là căn cứ cho câu 2 của PHT1. Nếu muốn học sinh tính nhanh hơn, bạn có thể giữ hệ thức này và bổ sung bước gợi ý (buoc_goi_y) cho PHT1, hoặc nhờ bên quản trị cấp thêm mã kiến thức về công thức toạ độ rồi mình sẽ soạn lại.\", \"de_xuat\": [{\"vi_tri\": \"hoat_dong[3]\", \"van_de\": \"HĐ4 có \\\"o_nha\\\":false và 5 phút nhưng nội dung lại giao làm ở nhà, nộp tiết sau.\", \"goi_y\": \"Đặt \\\"o_nha\\\":true và \\\"thoi_luong_phut\\\":0 cho HĐ4, rồi bổ sung 5 phút cho HĐ khác để tổng vẫn đúng 45 phút. Bạn cần quyết định nên cộng thêm cho HĐ nào.\", \"ly_do\": \"Luật A5: HĐ ở nhà phải có 0 phút và tổng thời lượng trên lớp đúng bằng số tiết × 45.\"}]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"reply\",\"text\":\"Mình chưa thể thay hệ thức 1/AH² bằng công thức d = |ax0+by0+cz0+d|/√(a²+b²+c²). Luật A1 chỉ cho dùng kiến thức trong danh sách được cấp, và công thức khoảng cách trong hệ toạ độ không có trong danh sách. Công thức này cũng cần phương trình mặt phẳng trong toạ độ, nên không khớp với ví dụ hình chóp S.ABC ở HĐ2. Hệ thức KT11-C07-CT-003 hiện là kiến thức trọng tâm của HĐ2, đồng thời là căn cứ cho câu 2 của PHT1. Nếu muốn học sinh tính nhanh hơn, bạn có thể giữ hệ thức này và bổ sung bước gợi ý (buoc_goi_y) cho PHT1, hoặc nhờ bên quản trị cấp thêm mã kiến thức về công thức toạ độ rồi mình sẽ soạn lại.\",\"de_xuat\":[{\"vi_tri\":\"hoat_dong[3]\",\"van_de\":\"HĐ4 có \\\"o_nha\\\":false và 5 phút nhưng nội dung lại giao làm ở nhà, nộp tiết sau.\",\"goi_y\":\"Đặt \\\"o_nha\\\":true và \\\"thoi_luong_phut\\\":0 cho HĐ4, rồi bổ sung 5 phút cho HĐ khác để tổng vẫn đúng 45 phút. Bạn cần quyết định nên cộng thêm cho HĐ nào.\",\"ly_do\":\"Luật A5: HĐ ở nhà phải có 0 phút và tổng thời lượng trên lớp đúng bằng số tiết × 45.\"}]}}",
+ "usage": {
+  "ts": "2026-11-27T16:38:25",
+  "role": "gen",
+  "task": "R2/V2/E03",
+  "model": "claude-sonnet-5-5",
+  "input": 3464,
+  "output": 631,
+  "cache_write": 5071,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 5.9
+ }
+}

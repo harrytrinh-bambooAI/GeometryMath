@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 215" width="340" height="215" font-family="sans-serif" font-size="13"><rect width="100%" height="100%" fill="white"/>
+<polygon points="30,70 250,70 300,40 80,40" stroke="black" fill="none"/><polygon points="30,170 250,170 300,140 80,140" stroke="black" fill="none"/>
+<polygon points="110,30 190,30 190,185 110,185" fill="#2471a3" fill-opacity="0.12" stroke="#2471a3"/>
+<line x1="110" y1="55" x2="190" y2="55" stroke="#c0392b" stroke-width="2"/><line x1="110" y1="155" x2="190" y2="155" stroke="#c0392b" stroke-width="2"/>
+<text x="20" y="60">(P)</text><text x="20" y="160">(Q)</text><text x="196" y="110" fill="#2471a3">(R)</text><text x="200" y="52" fill="#c0392b">a</text><text x="200" y="152" fill="#c0392b">b</text><text x="60" y="200">(P)//(Q) ⇒ a // b</text>
+</svg>

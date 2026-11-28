@@ -1,0 +1,85 @@
+{
+ "id": "BM-031",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-22-hai-duong-thang-vuong-goc.md — bài 3 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa hai đường thẳng",
+ "muc_do": "TH",
+ "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$. Tính góc giữa hai đường thẳng $AB'$ và $BC'$.",
+ "dap_so": {
+  "gia_tri": "$60^\\circ$",
+  "so": 60.0
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Đưa về hai đường thẳng cắt nhau bằng phép song song",
+  "Tam giác đều"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$ABC'D'$ là hình bình hành nên $BC'\\parallel AD'$; góc $(AB',BC')=(AB',AD')$.",
+   "ket_qua_trung_gian": "$(AB',BC')=(AB',AD')$",
+   "kien_thuc": "Góc giữa hai đường thẳng qua đường song song",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $(AB',BC')=(AB',AD')$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Cho $BC'\\parallel AD$ (nhầm đường song song) rồi suy ra góc $(AB',AD)=90^\\circ$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$AB'=B'D'=D'A=a\\sqrt2$ (đường chéo các mặt) nên $\\triangle AB'D'$ đều.",
+   "ket_qua_trung_gian": "$\\triangle AB'D'$ đều",
+   "kien_thuc": "Đường chéo mặt",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\triangle AB'D'$ đều",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $B'D'=a\\sqrt3$ nên tam giác không đều, $\\cos=\\dfrac14$",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\widehat{B'AD'}=60^\\circ$; góc cần tìm là $60^\\circ$.",
+   "ket_qua_trung_gian": "$60^\\circ$",
+   "kien_thuc": "Tam giác đều",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $60^\\circ$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 60.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Cho $BC'\\parallel AD$ (nhầm đường song song) rồi suy ra góc $(AB',AD)=90^\\circ$",
+   "loi_giai": "B1: $BC'\\parallel AD$ nên góc $(AB',BC')=(AB',AD)$.\nB2: $AD\\perp(ABB'A')$ nên $AD\\perp AB'$.\nB3: Góc cần tìm là $90^\\circ$.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $B'D'=a\\sqrt3$ nên tam giác không đều, $\\cos=\\dfrac14$",
+   "loi_giai": "B1: $ABC'D'$ là hình bình hành nên $BC'\\parallel AD'$; góc $(AB',BC')=(AB',AD')$.\nB2: $AB'=AD'=a\\sqrt2$, $B'D'=a\\sqrt3$.\nB3: $\\cos\\widehat{B'AD'}=\\dfrac{2+2-3}{4}=\\dfrac14$, góc $\\approx75{,}52^\\circ$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

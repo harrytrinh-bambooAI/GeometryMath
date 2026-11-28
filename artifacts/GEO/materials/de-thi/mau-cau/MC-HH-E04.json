@@ -1,0 +1,90 @@
+{
+ "id": "MC-HH-E04",
+ "ten": "Khoảng cách giữa AA' và BC",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "kc-cheo-nhau.lang-tru-deu",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.3"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "E",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-33",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-33 + geometry/problem-specs.json#HKN-33"
+ },
+ "tham_so": {
+  "k": [
+   "2",
+   "1",
+   "sqrt(3)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "AM": "sqrt(3)*a/2",
+  "AH": "h*sqrt(3)*a/2/sqrt(h**2+3*a**2/4)",
+  "AmM": "sqrt(h**2+3*a**2/4)"
+ },
+ "boi_canh": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'={h}$.",
+ "hoi": "Khoảng cách giữa hai đường thẳng $AA'$ và $BC$ bằng",
+ "dap_so": "sqrt(3)*a/2",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "a",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $AB$ là đoạn vuông góc chung"
+   }
+  },
+  {
+   "bieu_thuc": "h",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $AA'$ là khoảng cách"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(3)*a/3",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $AG$ ($G$ trọng tâm đáy) làm khoảng cách"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-33",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "2"
+  },
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(3)"
+  }
+ ],
+ "so_bien_the": 3,
+ "so_cau_sinh": 5,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

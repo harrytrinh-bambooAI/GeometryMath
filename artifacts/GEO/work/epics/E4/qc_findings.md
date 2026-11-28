@@ -34,3 +34,31 @@
 - TC-GEO-0482 → 406-SC7, 0485 → 406-SC9, 0487 → 406-SC10, 0488 → 404-FC5 (giữ id, chuyển thành case bám tiêu chí); mới: 0489 (406-SC8), 0490 (406-FC3), 0491 (406-FC4), 0492 (406-FC5), 0493 (410-SC5). Case viết tay còn lại: 0481, 0483 (viết lại câu chữ), 0484 (khác đại lượng hỏi), 0486 (đã xem rồi giáo viên giao, trỏ 406-SC9). QF-E4-12 đóng.
 - Đối chiếu cuối: 91 / 91 tiêu chí có case (100%); 94 / 94 case trỏ về tiêu chí có thật của BA hoặc NFR-GEO; 0 case trỏ tiêu chí không tồn tại (bộ sinh và phép đối chiếu độc lập).
 - Sau M-306, M-220, M-221 (D-GEO-173…183): mới TC-GEO-0494 (412-SC4, D-GEO-181); TC-GEO-0486 nối vào US-GEO-406-FC6 (M-222). Đối chiếu: 93 / 93 tiêu chí, 95 / 95 case.
+
+## Sinh lại theo AC hiện hành (PO-50, Đợt 0; 22-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E4-13 | Fixed | mọi case của E4 | Case chưa có trường cho biết tự động hóa bằng cách nào; cột "Tầng tự động hóa" cũ ghi E2E trình duyệt = 0 | Thêm cột "Tự động hóa" do bộ sinh suy từ tầng và loại; QC chỉnh từng case ở `work/src/qc/E4_auto.txt`. Kết quả: E2E-UI 59 / E2E-API 29 / IT 6 / Manual 1 (Manual: TC-GEO-0411, lý do ở từng case) | QC · xong |
+
+- Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa". Không case nào bị bỏ.
+- Đối chiếu: 93 / 93 tiêu chí có case (100%); 95 / 95 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.
+
+## Dev (E4, Đợt 1; 23-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E4-D01 | Question | US-GEO-406-FC6, TC-GEO-0486 | Giờ mở BG-7 "T0 + 30 phút" không chờ được trong E2E | Test thu về T0 + 20 giây (cùng chuỗi Sắp mở → Đã mở), ghi trong test | QC · R3 |
+| QF-E4-D02 | Fixed (Dev) | US-GEO-405-FC4, 410-SC5; BR-GEO-02 | Kiểm soát đáp án đầy đủ thuộc E6 (US-GEO-609) chưa có | E4 cài bộ kiểm tối thiểu (AnswerGuardApi, guard_version g1-e4): đáp số mọi dạng E4 nhận ra, kết luận "vế trái = vế phải" của bước, nguyên văn bước; không bắt đáp số một ký tự (F-GEO-116). E6 thay cài đặt; chưa ghi answer_guard_log | E6 |
+| QF-E4-D03 | Question | US-GEO-410-SC1 | Tên bài "Hình chóp S.ABCD: tính góc giữa SD và mặt đáy" không có trong dữ liệu (problem.title = mã) | Seed 401_e4 đặt tên ngắn cho sáu đề kho theo mẫu Design/prototype | BA (fixture) · R3 |
+| QF-E4-D04 | Question | MSG-GEO-35 | Chưa xem gợi ý nào thì "{gợi ý cao nhất em đã xem}" rỗng | Dùng MSG-GEO-34 "Em xem Gợi ý 1 trước nhé." làm phần đuôi | BA · R3 |
+| QF-E4-D05 | Fixed (Dev) | TC-GEO-0346 (E3) | Tab Gợi ý của E4 hiện sẵn gợi ý đã xem (US-GEO-404-SC4); An dữ liệu vàng đã xem Gợi ý 2 trên BG-1 nên không còn nút | Test E3 chỉ bấm khi còn nút; mức kiểm giữ nguyên (Gợi ý 1 còn sau khi xoay) | — |
+| QF-E4-D06 | Question | US-GEO-401-SC1 | "Màn Làm bài của bài tự học" | Sau "Dựng hình" vẫn mở trang kết quả tự học của E2 (hình, đề, nhãn máy), có nút "Làm bài trên hình" sang /hs/lam-bai/:id (tab Gợi ý/Lời giải/Hỏi) | PO · R3 |
+| QF-E4-D07 | Question | US-GEO-402; D-GEO-110 | Ảnh F-GEO-066…068 không có tệp; AI giả lập không đọc chữ; ảnh gửi base64 nên ảnh gốc > ~750 KB đã vượt trần 1 MB | E2E dùng PNG giả mang dấu "GEO-FIXTURE:F-GEO-066"; thu nhỏ ảnh ở thiết bị còn mở | PO, ARCH |
+| QF-E4-D08 | Fixed (FIX3) | BR-GEO-179, US-GEO-405; soát E4 #8 | Gợi ý AI của bài tự học không qua Kiểm soát đáp án | `HintService` chạy `AnswerGuard.leaks` cho từng gợi ý trước khi lưu; lộ đáp số/bước giải → câu gợi mở chung. Ca **Dev-E4-01** (`it/e4/HelpFix3E4IT`, kịch bản AI `[Dev-E4-01]` trong `mock-ai/e4.json`) | — |
+| QF-E4-D09 | Fixed (FIX3) | BR-GEO-171, D-GEO-110; soát E4 #9 | Đọc ảnh không kiểm loại tệp; trần 1 MB áp lên thân yêu cầu (base64) thay vì ảnh | `SelfStudyService.ocr`: giải mã base64; ảnh > 1 MB → 413 PAYLOAD_TOO_LARGE trước khi gọi AI; byte đầu tệp phải là JPEG/PNG/HEIC/WebP, khác → MSG-GEO-22. `BodySizeLimitFilter` nới trần thân của đường đọc ảnh theo cỡ base64 của 1 MB ảnh. Ca **Dev-E4-04, 05** (ảnh 1 000 000 byte đọc được; 1 100 000 byte → 413). Đóng phần "ảnh > ~750 KB vượt trần" của QF-E4-D07 | — |
+| QF-E4-D10 | Fixed (FIX3) | D-GEO-156, F-GEO-116/238/239; soát E4 #10 | Bộ kiểm E4 bỏ qua đáp số một ký tự ("a" của HKG-02) | Đáp số một ký tự chặn khi đứng làm kết luận (sau "=", "bằng", "là" và trước hết câu/mệnh đề); "cạnh a, …" không chặn. Ca **Dev-E4-07** (`AnswerGuardShortAnswerTest`). Thay câu "không bắt đáp số một ký tự" của QF-E4-D02 | — |
+| QF-E4-D11 | Fixed (FIX3) | BR-GEO-185; soát E4 #11 | Lời giải luôn gắn nhãn người "AI soạn" | Nhãn theo `solution.ai_authored`; lời giải không do AI: không nhãn người (`humanLabel` null, giao diện không vẽ chip). Ca **Dev-E4-06** | — |
+| QF-E4-D12 | Fixed (FIX3) | soát E4 #12 | `FigureEventService` có hàm dựng 4 tham số để `hints = null` → NPE khi xin gợi ý qua đường hình | Bỏ hàm dựng đó; IT E3 (`FigureBatchE3IT`) truyền `HintApi` thật | — |
+| QF-E4-D13 | Fixed (FIX3) | D-GEO-155; soát E4 #13 | Hai yêu cầu gợi ý đầu đồng thời gọi AI hai lần; bài kế thừa khóa mà đề kho thiếu gợi ý vẫn sinh gợi ý AI rồi trả NOT_FOUND | Khóa Redis `selfhints:<bài>` (30 s): yêu cầu giữ khóa xem lại rồi mới gọi AI, yêu cầu khác chờ khóa nhả; bài kế thừa khóa không gọi AI (V59 `fn_self_lock_inherited`). Ca **Dev-E4-02** (3 yêu cầu đồng thời → 1 lượt AI), **Dev-E4-03** (404, 0 lượt AI, 0 gợi ý ghi) | — |
+| QF-E4-D14 | Fixed (FIX3) | TC-GEO-0493, 0484, 0445, 0478, 0486; soát E4 #14–16 | Gom thân phản hồi bất đồng bộ (có thể đạt giả); kiểm luôn đúng; thiếu đếm event_log; cửa sổ 20 giây đồng hồ thật | 0493, 0484 dùng `recordResponses` (chờ đủ thân, kiểm đã gom được nội dung); 0445 đếm `unlock` = 1 qua móc `GET /test-hooks/e4/events`; 0478 so `org` của hai thẻ; 0486 hẹn giờ mở T0 + 30 phút như F-GEO-049, cho giờ trôi qua bằng móc `POST /test-hooks/e4/release-passed` (thay cách làm của QF-E4-D01) | — |

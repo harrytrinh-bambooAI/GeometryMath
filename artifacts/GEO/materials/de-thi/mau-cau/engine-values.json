@@ -1,0 +1,2313 @@
+{
+"phien_ban": "v1.0 · 27/11/2026",
+"nguon": "DefaultGeometryEngine (app/server/src/main/java, biên dịch tạm 27/11/2026), build(spec, a=1) + measure",
+"so_gia_tri": 474,
+"gia_tri": {
+"MC-HH-A01.TN.0": {
+"engine": 59.99999999999999,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-A01.TLN.0": {
+"engine": 59.99999999999999,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-A01.TN.1": {
+"engine": 30.000000000000004,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-A01.TLN.1": {
+"engine": 30.000000000000004,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-A01.TLN.2": {
+"engine": 45.00000000000001,
+"sympy": 45.0,
+"spec": null
+},
+"MC-HH-A01.TN.3": {
+"engine": 54.73561031724535,
+"sympy": 54.735610317245346,
+"spec": null
+},
+"MC-HH-A01.TLN.3": {
+"engine": 54.73561031724535,
+"sympy": 54.735610317245346,
+"spec": null
+},
+"MC-HH-A02.TN.0": {
+"engine": 60.00000000000001,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-A02.TLN.0": {
+"engine": 60.00000000000001,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-A02.TN.1": {
+"engine": 30.000000000000004,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-A02.TLN.1": {
+"engine": 30.000000000000004,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-A02.TLN.2": {
+"engine": 44.99999999999999,
+"sympy": 45.0,
+"spec": null
+},
+"MC-HH-A02.TN.3": {
+"engine": 63.43494882292201,
+"sympy": 63.43494882292201,
+"spec": null
+},
+"MC-HH-A02.TLN.3": {
+"engine": 63.43494882292201,
+"sympy": 63.43494882292201,
+"spec": null
+},
+"MC-HH-A03.TLN.0": {
+"engine": 0.7071067811865475,
+"sympy": 0.7071067811865476,
+"spec": null
+},
+"MC-HH-A03.TL.0": {
+"engine": 0.7071067811865475,
+"sympy": 0.7071067811865476,
+"spec": null
+},
+"MC-HH-A03.TN.1": {
+"engine": 0.816496580927726,
+"sympy": 0.816496580927726,
+"spec": null
+},
+"MC-HH-A03.TLN.1": {
+"engine": 0.816496580927726,
+"sympy": 0.816496580927726,
+"spec": null
+},
+"MC-HH-A03.TL.1": {
+"engine": 0.816496580927726,
+"sympy": 0.816496580927726,
+"spec": null
+},
+"MC-HH-A03.TN.2": {
+"engine": 0.8660254037844387,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-A03.TLN.2": {
+"engine": 0.8660254037844387,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-A03.TL.2": {
+"engine": 0.8660254037844387,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-A03.TN.3": {
+"engine": 0.8944271909999159,
+"sympy": 0.8944271909999159,
+"spec": null
+},
+"MC-HH-A03.TLN.3": {
+"engine": 0.8944271909999159,
+"sympy": 0.8944271909999159,
+"spec": null
+},
+"MC-HH-A03.TL.3": {
+"engine": 0.8944271909999159,
+"sympy": 0.8944271909999159,
+"spec": null
+},
+"MC-HH-A04.TLN.0": {
+"engine": 0.7071067811865475,
+"sympy": 0.7071067811865476,
+"spec": null
+},
+"MC-HH-A04.TN.1": {
+"engine": 0.8660254037844387,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-A04.TLN.1": {
+"engine": 0.8660254037844387,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-A04.TN.2": {
+"engine": 0.8944271909999159,
+"sympy": 0.8944271909999159,
+"spec": null
+},
+"MC-HH-A04.TLN.2": {
+"engine": 0.8944271909999159,
+"sympy": 0.8944271909999159,
+"spec": null
+},
+"MC-HH-A04.TN.3": {
+"engine": 0.816496580927726,
+"sympy": 0.816496580927726,
+"spec": null
+},
+"MC-HH-A04.TLN.3": {
+"engine": 0.816496580927726,
+"sympy": 0.816496580927726,
+"spec": null
+},
+"MC-HH-A05.TN.0": {
+"engine": 1.7320508075688772,
+"sympy": 1.7320508075688772,
+"spec": null
+},
+"MC-HH-A05.TLN.0": {
+"engine": 1.7320508075688772,
+"sympy": 1.7320508075688772,
+"spec": null
+},
+"MC-HH-A05.TN.1": {
+"engine": 2.449489742783178,
+"sympy": 2.449489742783178,
+"spec": null
+},
+"MC-HH-A05.TLN.1": {
+"engine": 2.449489742783178,
+"sympy": 2.449489742783178,
+"spec": null
+},
+"MC-HH-A05.TN.2": {
+"engine": 2.0,
+"sympy": 2.0,
+"spec": null
+},
+"MC-HH-A05.TLN.2": {
+"engine": 2.0,
+"sympy": 2.0,
+"spec": null
+},
+"MC-HH-A05.TN.3": {
+"engine": 2.23606797749979,
+"sympy": 2.23606797749979,
+"spec": null
+},
+"MC-HH-A05.TLN.3": {
+"engine": 2.23606797749979,
+"sympy": 2.23606797749979,
+"spec": null
+},
+"MC-HH-A06.TN.0": {
+"engine": 30.000000000000004,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-A06.TLN.0": {
+"engine": 30.000000000000004,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-A06.TLN.1": {
+"engine": 35.264389682754654,
+"sympy": 35.264389682754654,
+"spec": null
+},
+"MC-HH-A06.TN.2": {
+"engine": 26.565051177077986,
+"sympy": 26.56505117707799,
+"spec": null
+},
+"MC-HH-A06.TLN.2": {
+"engine": 26.565051177077986,
+"sympy": 26.56505117707799,
+"spec": null
+},
+"MC-HH-A07.TLN.0": {
+"engine": 0.7071067811865475,
+"sympy": 0.7071067811865476,
+"spec": null
+},
+"MC-HH-A07.TN.1": {
+"engine": 0.7071067811865475,
+"sympy": 0.7071067811865476,
+"spec": null
+},
+"MC-HH-A07.TLN.1": {
+"engine": 0.7071067811865475,
+"sympy": 0.7071067811865476,
+"spec": null
+},
+"MC-HH-A07.TN.2": {
+"engine": 0.7071067811865476,
+"sympy": 0.7071067811865476,
+"spec": null
+},
+"MC-HH-A07.TLN.2": {
+"engine": 0.7071067811865476,
+"sympy": 0.7071067811865476,
+"spec": null
+},
+"MC-HH-A08.TLN.0": {
+"engine": 0.4082482904638631,
+"sympy": 0.408248290463863,
+"spec": null
+},
+"MC-HH-A08.TL.0": {
+"engine": 0.4082482904638631,
+"sympy": 0.408248290463863,
+"spec": null
+},
+"MC-HH-A08.TN.1": {
+"engine": 0.5,
+"sympy": 0.5,
+"spec": null
+},
+"MC-HH-A08.TLN.1": {
+"engine": 0.5,
+"sympy": 0.5,
+"spec": null
+},
+"MC-HH-A08.TL.1": {
+"engine": 0.5,
+"sympy": 0.5,
+"spec": null
+},
+"MC-HH-A08.TN.2": {
+"engine": 0.5773502691896258,
+"sympy": 0.5773502691896257,
+"spec": null
+},
+"MC-HH-A08.TLN.2": {
+"engine": 0.5773502691896258,
+"sympy": 0.5773502691896257,
+"spec": null
+},
+"MC-HH-A08.TL.2": {
+"engine": 0.5773502691896258,
+"sympy": 0.5773502691896257,
+"spec": null
+},
+"MC-HH-A09.TN.0": {
+"engine": 0.3333333333333333,
+"sympy": 0.3333333333333333,
+"spec": null
+},
+"MC-HH-A09.TLN.0": {
+"engine": 0.3333333333333333,
+"sympy": 0.3333333333333333,
+"spec": null
+},
+"MC-HH-A09.TN.1": {
+"engine": 0.47140452079103173,
+"sympy": 0.4714045207910317,
+"spec": null
+},
+"MC-HH-A09.TLN.1": {
+"engine": 0.47140452079103173,
+"sympy": 0.4714045207910317,
+"spec": null
+},
+"MC-HH-A09.TN.2": {
+"engine": 0.5773502691896257,
+"sympy": 0.5773502691896257,
+"spec": null
+},
+"MC-HH-A09.TLN.2": {
+"engine": 0.5773502691896257,
+"sympy": 0.5773502691896257,
+"spec": null
+},
+"MC-HH-A09.TN.3": {
+"engine": 0.6666666666666666,
+"sympy": 0.6666666666666666,
+"spec": null
+},
+"MC-HH-A09.TLN.3": {
+"engine": 0.6666666666666666,
+"sympy": 0.6666666666666666,
+"spec": null
+},
+"MC-HH-A09.TN.4": {
+"engine": 1.0,
+"sympy": 1.0,
+"spec": null
+},
+"MC-HH-A09.TLN.4": {
+"engine": 1.0,
+"sympy": 1.0,
+"spec": null
+},
+"MC-HH-A10.TN.0": {
+"engine": 2.414213562373095,
+"sympy": 2.414213562373095,
+"spec": null
+},
+"MC-HH-A10.TLN.0": {
+"engine": 2.414213562373095,
+"sympy": 2.414213562373095,
+"spec": null
+},
+"MC-HH-A10.TN.1": {
+"engine": 3.7320508075688767,
+"sympy": 3.732050807568877,
+"spec": null
+},
+"MC-HH-A10.TLN.1": {
+"engine": 3.7320508075688767,
+"sympy": 3.732050807568877,
+"spec": null
+},
+"MC-HH-A10.TN.2": {
+"engine": 4.23606797749979,
+"sympy": 4.23606797749979,
+"spec": null
+},
+"MC-HH-A10.TLN.2": {
+"engine": 4.23606797749979,
+"sympy": 4.23606797749979,
+"spec": null
+},
+"MC-HH-A11.TLN.0": {
+"engine": 0.8660254037844386,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-A11.TN.1": {
+"engine": 1.0,
+"sympy": 1.0,
+"spec": null
+},
+"MC-HH-A11.TLN.1": {
+"engine": 1.0,
+"sympy": 1.0,
+"spec": null
+},
+"MC-HH-A11.TN.2": {
+"engine": 1.224744871391589,
+"sympy": 1.224744871391589,
+"spec": null
+},
+"MC-HH-A11.TLN.2": {
+"engine": 1.224744871391589,
+"sympy": 1.224744871391589,
+"spec": null
+},
+"MC-HH-B01.TN.0": {
+"engine": 59.99999999999999,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-B01.TLN.0": {
+"engine": 59.99999999999999,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-B01.TLN.1": {
+"engine": 45.00000000000001,
+"sympy": 45.0,
+"spec": null
+},
+"MC-HH-B01.TN.2": {
+"engine": 30.000000000000004,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-B01.TLN.2": {
+"engine": 30.000000000000004,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-B01.TLN.3": {
+"engine": 54.73561031724535,
+"sympy": 54.735610317245346,
+"spec": null
+},
+"MC-HH-B02.TN.0": {
+"engine": 0.35355339059327373,
+"sympy": 0.3535533905932738,
+"spec": null
+},
+"MC-HH-B02.TLN.0": {
+"engine": 0.35355339059327373,
+"sympy": 0.3535533905932738,
+"spec": null
+},
+"MC-HH-B02.TL.0": {
+"engine": 0.35355339059327373,
+"sympy": 0.3535533905932738,
+"spec": null
+},
+"MC-HH-B02.TN.1": {
+"engine": 0.4472135954999579,
+"sympy": 0.4472135954999579,
+"spec": null
+},
+"MC-HH-B02.TLN.1": {
+"engine": 0.4472135954999579,
+"sympy": 0.4472135954999579,
+"spec": null
+},
+"MC-HH-B02.TL.1": {
+"engine": 0.4472135954999579,
+"sympy": 0.4472135954999579,
+"spec": null
+},
+"MC-HH-B02.TN.2": {
+"engine": 0.43301270189221935,
+"sympy": 0.4330127018922193,
+"spec": null
+},
+"MC-HH-B02.TLN.2": {
+"engine": 0.43301270189221935,
+"sympy": 0.4330127018922193,
+"spec": null
+},
+"MC-HH-B02.TL.2": {
+"engine": 0.43301270189221935,
+"sympy": 0.4330127018922193,
+"spec": null
+},
+"MC-HH-B02.TLN.3": {
+"engine": 0.408248290463863,
+"sympy": 0.408248290463863,
+"spec": null
+},
+"MC-HH-B02.TL.3": {
+"engine": 0.408248290463863,
+"sympy": 0.408248290463863,
+"spec": null
+},
+"MC-HH-B03.TN.0": {
+"engine": 0.816496580927726,
+"sympy": 0.816496580927726,
+"spec": null
+},
+"MC-HH-B03.TLN.0": {
+"engine": 0.816496580927726,
+"sympy": 0.816496580927726,
+"spec": null
+},
+"MC-HH-B03.TN.1": {
+"engine": 0.8944271909999159,
+"sympy": 0.8944271909999159,
+"spec": null
+},
+"MC-HH-B03.TLN.1": {
+"engine": 0.8944271909999159,
+"sympy": 0.8944271909999159,
+"spec": null
+},
+"MC-HH-B03.TLN.2": {
+"engine": 0.8660254037844387,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-B04.TLN.0": {
+"engine": 0.7071067811865476,
+"sympy": 0.7071067811865476,
+"spec": null
+},
+"MC-HH-B04.TN.1": {
+"engine": 1.224744871391589,
+"sympy": 1.224744871391589,
+"spec": null
+},
+"MC-HH-B04.TLN.1": {
+"engine": 1.224744871391589,
+"sympy": 1.224744871391589,
+"spec": null
+},
+"MC-HH-B04.TN.2": {
+"engine": 1.8708286933869707,
+"sympy": 1.8708286933869707,
+"spec": null
+},
+"MC-HH-B04.TLN.2": {
+"engine": 1.8708286933869707,
+"sympy": 1.8708286933869707,
+"spec": null
+},
+"MC-HH-B04.TN.3": {
+"engine": 1.5811388300841898,
+"sympy": 1.5811388300841898,
+"spec": null
+},
+"MC-HH-B04.TLN.3": {
+"engine": 1.5811388300841898,
+"sympy": 1.5811388300841898,
+"spec": null
+},
+"MC-HH-B05.TN.0": {
+"engine": 5.830951894845301,
+"sympy": 5.830951894845301,
+"spec": null
+},
+"MC-HH-B05.TLN.0": {
+"engine": 5.830951894845301,
+"sympy": 5.830951894845301,
+"spec": null
+},
+"MC-HH-B05.TN.1": {
+"engine": 6.4031242374328485,
+"sympy": 6.4031242374328485,
+"spec": null
+},
+"MC-HH-B05.TLN.1": {
+"engine": 6.4031242374328485,
+"sympy": 6.4031242374328485,
+"spec": null
+},
+"MC-HH-B05.TN.2": {
+"engine": 7.54983443527075,
+"sympy": 7.54983443527075,
+"spec": null
+},
+"MC-HH-B05.TLN.2": {
+"engine": 7.54983443527075,
+"sympy": 7.54983443527075,
+"spec": null
+},
+"MC-HH-B05.TN.3": {
+"engine": 5.196152422706632,
+"sympy": 5.196152422706632,
+"spec": null
+},
+"MC-HH-B05.TLN.3": {
+"engine": 5.196152422706632,
+"sympy": 5.196152422706632,
+"spec": null
+},
+"MC-HH-B06.TN.0": {
+"engine": 0.40824829046386296,
+"sympy": 0.408248290463863,
+"spec": null
+},
+"MC-HH-B06.TLN.0": {
+"engine": 0.40824829046386296,
+"sympy": 0.408248290463863,
+"spec": null
+},
+"MC-HH-B06.TN.1": {
+"engine": 0.3333333333333333,
+"sympy": 0.3333333333333333,
+"spec": null
+},
+"MC-HH-B06.TLN.1": {
+"engine": 0.3333333333333333,
+"sympy": 0.3333333333333333,
+"spec": null
+},
+"MC-HH-B06.TN.2": {
+"engine": 0.28867513459481287,
+"sympy": 0.28867513459481287,
+"spec": null
+},
+"MC-HH-B06.TLN.2": {
+"engine": 0.28867513459481287,
+"sympy": 0.28867513459481287,
+"spec": null
+},
+"MC-HH-B06.TN.3": {
+"engine": 0.6666666666666666,
+"sympy": 0.6666666666666666,
+"spec": null
+},
+"MC-HH-B06.TLN.3": {
+"engine": 0.6666666666666666,
+"sympy": 0.6666666666666666,
+"spec": null
+},
+"MC-HH-B07.TN.0": {
+"engine": 1.9999999999999998,
+"sympy": 2.0,
+"spec": null
+},
+"MC-HH-B07.TLN.0": {
+"engine": 1.9999999999999998,
+"sympy": 2.0,
+"spec": null
+},
+"MC-HH-B07.TN.1": {
+"engine": 2.23606797749979,
+"sympy": 2.23606797749979,
+"spec": null
+},
+"MC-HH-B07.TLN.1": {
+"engine": 2.23606797749979,
+"sympy": 2.23606797749979,
+"spec": null
+},
+"MC-HH-B07.TN.2": {
+"engine": 3.0000000000000004,
+"sympy": 3.0,
+"spec": null
+},
+"MC-HH-B07.TLN.2": {
+"engine": 3.0000000000000004,
+"sympy": 3.0,
+"spec": null
+},
+"MC-HH-B08.TLN.0": {
+"engine": 0.7071067811865475,
+"sympy": 0.7071067811865476,
+"spec": null
+},
+"MC-HH-B08.TN.1": {
+"engine": 0.75,
+"sympy": 0.75,
+"spec": null
+},
+"MC-HH-B08.TLN.1": {
+"engine": 0.75,
+"sympy": 0.75,
+"spec": null
+},
+"MC-HH-B08.TLN.2": {
+"engine": 0.8838834764831845,
+"sympy": 0.8838834764831844,
+"spec": null
+},
+"MC-HH-C01.TN.0": {
+"engine": 1.1547005383792517,
+"sympy": 1.1547005383792515,
+"spec": null
+},
+"MC-HH-C01.TLN.0": {
+"engine": 1.1547005383792517,
+"sympy": 1.1547005383792515,
+"spec": null
+},
+"MC-HH-C01.TN.1": {
+"engine": 1.7320508075688772,
+"sympy": 1.7320508075688772,
+"spec": null
+},
+"MC-HH-C01.TLN.1": {
+"engine": 1.7320508075688772,
+"sympy": 1.7320508075688772,
+"spec": null
+},
+"MC-HH-C01.TN.2": {
+"engine": 2.3094010767585034,
+"sympy": 2.309401076758503,
+"spec": null
+},
+"MC-HH-C01.TLN.2": {
+"engine": 2.3094010767585034,
+"sympy": 2.309401076758503,
+"spec": null
+},
+"MC-HH-C01.TN.3": {
+"engine": 3.4641016151377544,
+"sympy": 3.4641016151377544,
+"spec": null
+},
+"MC-HH-C01.TLN.3": {
+"engine": 3.4641016151377544,
+"sympy": 3.4641016151377544,
+"spec": null
+},
+"MC-HH-C02.TN.0": {
+"engine": 1.414213562373095,
+"sympy": 1.4142135623730951,
+"spec": null
+},
+"MC-HH-C02.TLN.0": {
+"engine": 1.414213562373095,
+"sympy": 1.4142135623730951,
+"spec": null
+},
+"MC-HH-C02.TN.1": {
+"engine": 2.121320343559643,
+"sympy": 2.1213203435596424,
+"spec": null
+},
+"MC-HH-C02.TLN.1": {
+"engine": 2.121320343559643,
+"sympy": 2.1213203435596424,
+"spec": null
+},
+"MC-HH-C02.TN.2": {
+"engine": 2.82842712474619,
+"sympy": 2.8284271247461903,
+"spec": null
+},
+"MC-HH-C02.TLN.2": {
+"engine": 2.82842712474619,
+"sympy": 2.8284271247461903,
+"spec": null
+},
+"MC-HH-C02.TN.3": {
+"engine": 4.242640687119286,
+"sympy": 4.242640687119285,
+"spec": null
+},
+"MC-HH-C02.TLN.3": {
+"engine": 4.242640687119286,
+"sympy": 4.242640687119285,
+"spec": null
+},
+"MC-HH-C03.TN.0": {
+"engine": 3.4641016151377544,
+"sympy": 3.4641016151377544,
+"spec": null
+},
+"MC-HH-C03.TLN.0": {
+"engine": 3.4641016151377544,
+"sympy": 3.4641016151377544,
+"spec": null
+},
+"MC-HH-C03.TN.1": {
+"engine": 5.196152422706632,
+"sympy": 5.196152422706632,
+"spec": null
+},
+"MC-HH-C03.TLN.1": {
+"engine": 5.196152422706632,
+"sympy": 5.196152422706632,
+"spec": null
+},
+"MC-HH-C03.TN.2": {
+"engine": 6.928203230275509,
+"sympy": 6.928203230275509,
+"spec": null
+},
+"MC-HH-C03.TLN.2": {
+"engine": 6.928203230275509,
+"sympy": 6.928203230275509,
+"spec": null
+},
+"MC-HH-C03.TN.3": {
+"engine": 10.392304845413264,
+"sympy": 10.392304845413264,
+"spec": null
+},
+"MC-HH-C03.TLN.3": {
+"engine": 10.392304845413264,
+"sympy": 10.392304845413264,
+"spec": null
+},
+"MC-HH-C04.TN.0": {
+"engine": 1.414213562373095,
+"sympy": 1.4142135623730951,
+"spec": null
+},
+"MC-HH-C04.TLN.0": {
+"engine": 1.414213562373095,
+"sympy": 1.4142135623730951,
+"spec": null
+},
+"MC-HH-C04.TN.1": {
+"engine": 2.121320343559643,
+"sympy": 2.1213203435596424,
+"spec": null
+},
+"MC-HH-C04.TLN.1": {
+"engine": 2.121320343559643,
+"sympy": 2.1213203435596424,
+"spec": null
+},
+"MC-HH-C04.TN.2": {
+"engine": 2.82842712474619,
+"sympy": 2.8284271247461903,
+"spec": null
+},
+"MC-HH-C04.TLN.2": {
+"engine": 2.82842712474619,
+"sympy": 2.8284271247461903,
+"spec": null
+},
+"MC-HH-C04.TN.3": {
+"engine": 4.242640687119286,
+"sympy": 4.242640687119285,
+"spec": null
+},
+"MC-HH-C04.TLN.3": {
+"engine": 4.242640687119286,
+"sympy": 4.242640687119285,
+"spec": null
+},
+"MC-HH-C05.TN.0": {
+"engine": 27.0,
+"sympy": 27.0,
+"spec": null
+},
+"MC-HH-C05.TLN.0": {
+"engine": 27.0,
+"sympy": 27.0,
+"spec": null
+},
+"MC-HH-C05.TLN.1": {
+"engine": 64.0,
+"sympy": 64.0,
+"spec": null
+},
+"MC-HH-C05.TN.2": {
+"engine": 125.0,
+"sympy": 125.0,
+"spec": null
+},
+"MC-HH-C05.TLN.2": {
+"engine": 125.0,
+"sympy": 125.0,
+"spec": null
+},
+"MC-HH-C05.TLN.3": {
+"engine": 216.0,
+"sympy": 216.0,
+"spec": null
+},
+"MC-HH-D01.TN.0": {
+"engine": 60.0,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-D01.TLN.0": {
+"engine": 60.0,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-D01.TN.1": {
+"engine": 144.0,
+"sympy": 144.0,
+"spec": null
+},
+"MC-HH-D01.TLN.1": {
+"engine": 144.0,
+"sympy": 144.0,
+"spec": null
+},
+"MC-HH-D01.TN.2": {
+"engine": 36.0,
+"sympy": 36.0,
+"spec": null
+},
+"MC-HH-D01.TLN.2": {
+"engine": 36.0,
+"sympy": 36.0,
+"spec": null
+},
+"MC-HH-D01.TN.3": {
+"engine": 4.0,
+"sympy": 4.0,
+"spec": null
+},
+"MC-HH-D01.TLN.3": {
+"engine": 4.0,
+"sympy": 4.0,
+"spec": null
+},
+"MC-HH-D01.TN.4": {
+"engine": 240.0,
+"sympy": 240.0,
+"spec": null
+},
+"MC-HH-D01.TLN.4": {
+"engine": 240.0,
+"sympy": 240.0,
+"spec": null
+},
+"MC-HH-D02.TN.0": {
+"engine": 7.0710678118654755,
+"sympy": 7.0710678118654755,
+"spec": null
+},
+"MC-HH-D02.TLN.0": {
+"engine": 7.0710678118654755,
+"sympy": 7.0710678118654755,
+"spec": null
+},
+"MC-HH-D02.TN.1": {
+"engine": 13.0,
+"sympy": 13.0,
+"spec": null
+},
+"MC-HH-D02.TLN.1": {
+"engine": 13.0,
+"sympy": 13.0,
+"spec": null
+},
+"MC-HH-D02.TN.2": {
+"engine": 7.0,
+"sympy": 7.0,
+"spec": null
+},
+"MC-HH-D02.TLN.2": {
+"engine": 7.0,
+"sympy": 7.0,
+"spec": null
+},
+"MC-HH-D02.TN.3": {
+"engine": 3.0,
+"sympy": 3.0,
+"spec": null
+},
+"MC-HH-D02.TLN.3": {
+"engine": 3.0,
+"sympy": 3.0,
+"spec": null
+},
+"MC-HH-D02.TN.4": {
+"engine": 11.180339887498949,
+"sympy": 11.180339887498949,
+"spec": null
+},
+"MC-HH-D02.TLN.4": {
+"engine": 11.180339887498949,
+"sympy": 11.180339887498949,
+"spec": null
+},
+"MC-HH-D03.TN.0": {
+"engine": 2.4,
+"sympy": 2.4,
+"spec": null
+},
+"MC-HH-D03.TLN.0": {
+"engine": 2.4,
+"sympy": 2.4,
+"spec": null
+},
+"MC-HH-D03.TN.1": {
+"engine": 2.4,
+"sympy": 2.4,
+"spec": null
+},
+"MC-HH-D03.TLN.1": {
+"engine": 2.4,
+"sympy": 2.4,
+"spec": null
+},
+"MC-HH-D03.TN.2": {
+"engine": 1.6641005886756872,
+"sympy": 1.6641005886756874,
+"spec": null
+},
+"MC-HH-D03.TLN.2": {
+"engine": 1.6641005886756872,
+"sympy": 1.6641005886756874,
+"spec": null
+},
+"MC-HH-D03.TN.3": {
+"engine": 0.8944271909999159,
+"sympy": 0.8944271909999159,
+"spec": null
+},
+"MC-HH-D03.TLN.3": {
+"engine": 0.8944271909999159,
+"sympy": 0.8944271909999159,
+"spec": null
+},
+"MC-HH-D03.TN.4": {
+"engine": 4.8,
+"sympy": 4.8,
+"spec": null
+},
+"MC-HH-D03.TLN.4": {
+"engine": 4.8,
+"sympy": 4.8,
+"spec": null
+},
+"MC-HH-D04.TN.0": {
+"engine": 70.0,
+"sympy": 70.0,
+"spec": null
+},
+"MC-HH-D04.TLN.0": {
+"engine": 70.0,
+"sympy": 70.0,
+"spec": null
+},
+"MC-HH-D04.TN.1": {
+"engine": 168.0,
+"sympy": 168.0,
+"spec": null
+},
+"MC-HH-D04.TLN.1": {
+"engine": 168.0,
+"sympy": 168.0,
+"spec": null
+},
+"MC-HH-D04.TN.2": {
+"engine": 60.0,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-D04.TLN.2": {
+"engine": 60.0,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-D04.TN.3": {
+"engine": 12.0,
+"sympy": 12.0,
+"spec": null
+},
+"MC-HH-D04.TLN.3": {
+"engine": 12.0,
+"sympy": 12.0,
+"spec": null
+},
+"MC-HH-D04.TN.4": {
+"engine": 140.0,
+"sympy": 140.0,
+"spec": null
+},
+"MC-HH-D04.TLN.4": {
+"engine": 140.0,
+"sympy": 140.0,
+"spec": null
+},
+"MC-HH-D05.TN.0": {
+"engine": 2.163655337923857,
+"sympy": 2.163655337923857,
+"spec": null
+},
+"MC-HH-D05.TLN.0": {
+"engine": 2.163655337923857,
+"sympy": 2.163655337923857,
+"spec": null
+},
+"MC-HH-D05.TN.1": {
+"engine": 2.353393621658208,
+"sympy": 2.3533936216582085,
+"spec": null
+},
+"MC-HH-D05.TLN.1": {
+"engine": 2.353393621658208,
+"sympy": 2.3533936216582085,
+"spec": null
+},
+"MC-HH-D05.TN.2": {
+"engine": 1.6035674514745464,
+"sympy": 1.6035674514745464,
+"spec": null
+},
+"MC-HH-D05.TLN.2": {
+"engine": 1.6035674514745464,
+"sympy": 1.6035674514745464,
+"spec": null
+},
+"MC-HH-D05.TN.3": {
+"engine": 0.8164965809277261,
+"sympy": 0.816496580927726,
+"spec": null
+},
+"MC-HH-D05.TLN.3": {
+"engine": 0.8164965809277261,
+"sympy": 0.816496580927726,
+"spec": null
+},
+"MC-HH-D05.TN.4": {
+"engine": 3.4626591409485674,
+"sympy": 3.4626591409485674,
+"spec": null
+},
+"MC-HH-D05.TLN.4": {
+"engine": 3.4626591409485674,
+"sympy": 3.4626591409485674,
+"spec": null
+},
+"MC-HH-D06.TN.0": {
+"engine": 157.07963267948966,
+"sympy": 157.07963267948966,
+"spec": null
+},
+"MC-HH-D06.TLN.0": {
+"engine": 157.07963267948966,
+"sympy": 157.07963267948966,
+"spec": null
+},
+"MC-HH-D06.TN.1": {
+"engine": 530.929158456675,
+"sympy": 530.929158456675,
+"spec": null
+},
+"MC-HH-D06.TLN.1": {
+"engine": 530.929158456675,
+"sympy": 530.929158456675,
+"spec": null
+},
+"MC-HH-D06.TN.2": {
+"engine": 153.93804002589985,
+"sympy": 153.93804002589988,
+"spec": null
+},
+"MC-HH-D06.TLN.2": {
+"engine": 153.93804002589985,
+"sympy": 153.93804002589988,
+"spec": null
+},
+"MC-HH-D06.TN.3": {
+"engine": 28.274333882308138,
+"sympy": 28.274333882308138,
+"spec": null
+},
+"MC-HH-D06.TLN.3": {
+"engine": 28.274333882308138,
+"sympy": 28.274333882308138,
+"spec": null
+},
+"MC-HH-D06.TN.4": {
+"engine": 392.69908169872417,
+"sympy": 392.69908169872417,
+"spec": null
+},
+"MC-HH-D06.TLN.4": {
+"engine": 392.69908169872417,
+"sympy": 392.69908169872417,
+"spec": null
+},
+"MC-HH-E01.TLN.0": {
+"engine": 44.99999999999999,
+"sympy": 45.0,
+"spec": null
+},
+"MC-HH-E01.TLN.1": {
+"engine": 60.00000000000001,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-E01.TN.2": {
+"engine": 30.000000000000004,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-E01.TLN.2": {
+"engine": 30.000000000000004,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-E01.TN.3": {
+"engine": 63.434948822921996,
+"sympy": 63.43494882292201,
+"spec": null
+},
+"MC-HH-E01.TLN.3": {
+"engine": 63.434948822921996,
+"sympy": 63.43494882292201,
+"spec": null
+},
+"MC-HH-E02.TN.0": {
+"engine": 0.4330127018922193,
+"sympy": 0.4330127018922193,
+"spec": null
+},
+"MC-HH-E02.TLN.0": {
+"engine": 0.4330127018922193,
+"sympy": 0.4330127018922193,
+"spec": null
+},
+"MC-HH-E02.TN.1": {
+"engine": 0.7499999999999999,
+"sympy": 0.75,
+"spec": null
+},
+"MC-HH-E02.TLN.1": {
+"engine": 0.7499999999999999,
+"sympy": 0.75,
+"spec": null
+},
+"MC-HH-E02.TN.2": {
+"engine": 0.8660254037844386,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-E02.TLN.2": {
+"engine": 0.8660254037844386,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-E02.TN.3": {
+"engine": 1.4999999999999998,
+"sympy": 1.5,
+"spec": null
+},
+"MC-HH-E02.TLN.3": {
+"engine": 1.4999999999999998,
+"sympy": 1.5,
+"spec": null
+},
+"MC-HH-E03.TN.0": {
+"engine": 0.6546536707079772,
+"sympy": 0.6546536707079772,
+"spec": null
+},
+"MC-HH-E03.TLN.0": {
+"engine": 0.6546536707079772,
+"sympy": 0.6546536707079772,
+"spec": null
+},
+"MC-HH-E03.TL.0": {
+"engine": 0.6546536707079772,
+"sympy": 0.6546536707079772,
+"spec": null
+},
+"MC-HH-E03.TLN.1": {
+"engine": 0.6123724356957945,
+"sympy": 0.6123724356957945,
+"spec": null
+},
+"MC-HH-E03.TL.1": {
+"engine": 0.6123724356957945,
+"sympy": 0.6123724356957945,
+"spec": null
+},
+"MC-HH-E03.TN.2": {
+"engine": 0.7947194142390264,
+"sympy": 0.7947194142390263,
+"spec": null
+},
+"MC-HH-E03.TLN.2": {
+"engine": 0.7947194142390264,
+"sympy": 0.7947194142390263,
+"spec": null
+},
+"MC-HH-E03.TL.2": {
+"engine": 0.7947194142390264,
+"sympy": 0.7947194142390263,
+"spec": null
+},
+"MC-HH-E03.TLN.3": {
+"engine": 0.7745966692414833,
+"sympy": 0.7745966692414834,
+"spec": null
+},
+"MC-HH-E03.TL.3": {
+"engine": 0.7745966692414833,
+"sympy": 0.7745966692414834,
+"spec": null
+},
+"MC-HH-E04.TN.0": {
+"engine": 0.8660254037844387,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-E04.TLN.0": {
+"engine": 0.8660254037844387,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-E04.TLN.1": {
+"engine": 0.8660254037844387,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-E04.TN.2": {
+"engine": 0.8660254037844386,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-E04.TLN.2": {
+"engine": 0.8660254037844386,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-E05.TN.0": {
+"engine": 6.0,
+"sympy": 6.0,
+"spec": null
+},
+"MC-HH-E05.TLN.0": {
+"engine": 6.0,
+"sympy": 6.0,
+"spec": null
+},
+"MC-HH-E05.TN.1": {
+"engine": 3.0,
+"sympy": 3.0,
+"spec": null
+},
+"MC-HH-E05.TLN.1": {
+"engine": 3.0,
+"sympy": 3.0,
+"spec": null
+},
+"MC-HH-E05.TN.2": {
+"engine": 9.000000000000002,
+"sympy": 9.0,
+"spec": null
+},
+"MC-HH-E05.TLN.2": {
+"engine": 9.000000000000002,
+"sympy": 9.0,
+"spec": null
+},
+"MC-HH-E06.TN.0": {
+"engine": 16.755160819145562,
+"sympy": 16.755160819145566,
+"spec": null
+},
+"MC-HH-E06.TLN.0": {
+"engine": 16.755160819145562,
+"sympy": 16.755160819145566,
+"spec": null
+},
+"MC-HH-E06.TN.1": {
+"engine": 7.330382858376183,
+"sympy": 7.3303828583761845,
+"spec": null
+},
+"MC-HH-E06.TLN.1": {
+"engine": 7.330382858376183,
+"sympy": 7.3303828583761845,
+"spec": null
+},
+"MC-HH-E06.TN.2": {
+"engine": 13.613568165555769,
+"sympy": 13.61356816555577,
+"spec": null
+},
+"MC-HH-E06.TLN.2": {
+"engine": 13.613568165555769,
+"sympy": 13.61356816555577,
+"spec": null
+},
+"MC-HH-F01.TN.0": {
+"engine": 36.0,
+"sympy": 36.0,
+"spec": null
+},
+"MC-HH-F01.TLN.0": {
+"engine": 36.0,
+"sympy": 36.0,
+"spec": null
+},
+"MC-HH-F01.TN.1": {
+"engine": 240.0,
+"sympy": 240.0,
+"spec": null
+},
+"MC-HH-F01.TLN.1": {
+"engine": 240.0,
+"sympy": 240.0,
+"spec": null
+},
+"MC-HH-F01.TN.2": {
+"engine": 120.0,
+"sympy": 120.0,
+"spec": null
+},
+"MC-HH-F01.TLN.2": {
+"engine": 120.0,
+"sympy": 120.0,
+"spec": null
+},
+"MC-HH-F01.TN.3": {
+"engine": 300.0,
+"sympy": 300.0,
+"spec": null
+},
+"MC-HH-F01.TLN.3": {
+"engine": 300.0,
+"sympy": 300.0,
+"spec": null
+},
+"MC-HH-F02.TLN.0": {
+"engine": 35.264389682754654,
+"sympy": 35.264389682754654,
+"spec": null
+},
+"MC-HH-F02.TLN.1": {
+"engine": 54.73561031724535,
+"sympy": 54.735610317245346,
+"spec": null
+},
+"MC-HH-F02.TLN.2": {
+"engine": 45.00000000000001,
+"sympy": 45.0,
+"spec": null
+},
+"MC-HH-F02.TLN.3": {
+"engine": 67.7923457014035,
+"sympy": 67.79234570140352,
+"spec": null
+},
+"MC-HH-F02.TN.4": {
+"engine": 26.565051177077986,
+"sympy": 26.56505117707799,
+"spec": null
+},
+"MC-HH-F02.TLN.4": {
+"engine": 26.565051177077986,
+"sympy": 26.56505117707799,
+"spec": null
+},
+"MC-HH-F02.TLN.5": {
+"engine": 44.99999999999999,
+"sympy": 45.0,
+"spec": null
+},
+"MC-HH-F02.TLN.6": {
+"engine": 35.264389682754654,
+"sympy": 35.264389682754654,
+"spec": null
+},
+"MC-HH-F02.TN.7": {
+"engine": 60.00000000000001,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-F02.TLN.7": {
+"engine": 60.00000000000001,
+"sympy": 60.0,
+"spec": null
+},
+"MC-HH-F03.TN.0": {
+"engine": 0.5773502691896258,
+"sympy": 0.5773502691896257,
+"spec": null
+},
+"MC-HH-F03.TLN.0": {
+"engine": 0.5773502691896258,
+"sympy": 0.5773502691896257,
+"spec": null
+},
+"MC-HH-F03.TN.1": {
+"engine": 0.6666666666666666,
+"sympy": 0.6666666666666666,
+"spec": null
+},
+"MC-HH-F03.TLN.1": {
+"engine": 0.6666666666666666,
+"sympy": 0.6666666666666666,
+"spec": null
+},
+"MC-HH-F03.TN.2": {
+"engine": 0.6546536707079772,
+"sympy": 0.6546536707079772,
+"spec": null
+},
+"MC-HH-F03.TLN.2": {
+"engine": 0.6546536707079772,
+"sympy": 0.6546536707079772,
+"spec": null
+},
+"MC-HH-F03.TN.3": {
+"engine": 0.6546536707079772,
+"sympy": 0.6546536707079772,
+"spec": null
+},
+"MC-HH-F03.TLN.3": {
+"engine": 0.6546536707079772,
+"sympy": 0.6546536707079772,
+"spec": null
+},
+"MC-HH-F03.TN.4": {
+"engine": 0.7947194142390264,
+"sympy": 0.7947194142390263,
+"spec": null
+},
+"MC-HH-F03.TLN.4": {
+"engine": 0.7947194142390264,
+"sympy": 0.7947194142390263,
+"spec": null
+},
+"MC-HH-F03.TN.5": {
+"engine": 0.7745966692414833,
+"sympy": 0.7745966692414834,
+"spec": null
+},
+"MC-HH-F03.TLN.5": {
+"engine": 0.7745966692414833,
+"sympy": 0.7745966692414834,
+"spec": null
+},
+"MC-HH-F04.TN.0": {
+"engine": 72.0,
+"sympy": 72.0,
+"spec": null
+},
+"MC-HH-F04.TLN.0": {
+"engine": 72.0,
+"sympy": 72.0,
+"spec": null
+},
+"MC-HH-F04.TLN.1": {
+"engine": 240.0,
+"sympy": 240.0,
+"spec": null
+},
+"MC-HH-F04.TLN.2": {
+"engine": 120.0,
+"sympy": 120.0,
+"spec": null
+},
+"MC-HH-F04.TN.3": {
+"engine": 200.0,
+"sympy": 200.0,
+"spec": null
+},
+"MC-HH-F04.TLN.3": {
+"engine": 200.0,
+"sympy": 200.0,
+"spec": null
+},
+"MC-HH-F05.TN.0": {
+"engine": 1.224744871391589,
+"sympy": 1.224744871391589,
+"spec": null
+},
+"MC-HH-F05.TLN.0": {
+"engine": 1.224744871391589,
+"sympy": 1.224744871391589,
+"spec": null
+},
+"MC-HH-F05.TN.1": {
+"engine": 0.8660254037844386,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-F05.TLN.1": {
+"engine": 0.8660254037844386,
+"sympy": 0.8660254037844386,
+"spec": null
+},
+"MC-HH-F05.TN.2": {
+"engine": 1.8708286933869707,
+"sympy": 1.8708286933869707,
+"spec": null
+},
+"MC-HH-F05.TLN.2": {
+"engine": 1.8708286933869707,
+"sympy": 1.8708286933869707,
+"spec": null
+},
+"MC-HH-F05.TN.3": {
+"engine": 1.4142135623730951,
+"sympy": 1.4142135623730951,
+"spec": null
+},
+"MC-HH-F05.TLN.3": {
+"engine": 1.4142135623730951,
+"sympy": 1.4142135623730951,
+"spec": null
+},
+"MC-HH-F05.TN.4": {
+"engine": 1.118033988749895,
+"sympy": 1.118033988749895,
+"spec": null
+},
+"MC-HH-F05.TLN.4": {
+"engine": 1.118033988749895,
+"sympy": 1.118033988749895,
+"spec": null
+},
+"MC-HH-F05.TN.5": {
+"engine": 1.9999999999999998,
+"sympy": 2.0,
+"spec": null
+},
+"MC-HH-F05.TLN.5": {
+"engine": 1.9999999999999998,
+"sympy": 2.0,
+"spec": null
+},
+"MC-HH-G01.TN.0": {
+"engine": 840.0,
+"sympy": 840.0,
+"spec": null
+},
+"MC-HH-G01.TLN.0": {
+"engine": 840.0,
+"sympy": 840.0,
+"spec": null
+},
+"MC-HH-G01.TN.1": {
+"engine": 96.0,
+"sympy": 96.0,
+"spec": null
+},
+"MC-HH-G01.TLN.1": {
+"engine": 96.0,
+"sympy": 96.0,
+"spec": null
+},
+"MC-HH-G01.TLN.2": {
+"engine": 120.0,
+"sympy": 120.0,
+"spec": null
+},
+"MC-HH-G01.TN.3": {
+"engine": 35.999999999999986,
+"sympy": 36.0,
+"spec": null
+},
+"MC-HH-G01.TLN.3": {
+"engine": 35.999999999999986,
+"sympy": 36.0,
+"spec": null
+},
+"MC-HH-H01.TN.0": {
+"engine": 47.12388980384689,
+"sympy": 47.1238898038469,
+"spec": null
+},
+"MC-HH-H01.TLN.0": {
+"engine": 47.12388980384689,
+"sympy": 47.1238898038469,
+"spec": null
+},
+"MC-HH-H01.TN.1": {
+"engine": 188.49555921538757,
+"sympy": 188.4955592153876,
+"spec": null
+},
+"MC-HH-H01.TLN.1": {
+"engine": 188.49555921538757,
+"sympy": 188.4955592153876,
+"spec": null
+},
+"MC-HH-H01.TN.2": {
+"engine": 204.20352248333654,
+"sympy": 204.20352248333657,
+"spec": null
+},
+"MC-HH-H01.TLN.2": {
+"engine": 204.20352248333654,
+"sympy": 204.20352248333657,
+"spec": null
+},
+"MC-HH-H01.TN.3": {
+"engine": 424.11500823462205,
+"sympy": 424.1150082346221,
+"spec": null
+},
+"MC-HH-H01.TLN.3": {
+"engine": 424.11500823462205,
+"sympy": 424.1150082346221,
+"spec": null
+},
+"MC-HH-H02.TN.0": {
+"engine": 37.69911184307752,
+"sympy": 37.69911184307752,
+"spec": null
+},
+"MC-HH-H02.TLN.0": {
+"engine": 37.69911184307752,
+"sympy": 37.69911184307752,
+"spec": null
+},
+"MC-HH-H02.TN.1": {
+"engine": 301.59289474462014,
+"sympy": 301.59289474462014,
+"spec": null
+},
+"MC-HH-H02.TLN.1": {
+"engine": 301.59289474462014,
+"sympy": 301.59289474462014,
+"spec": null
+},
+"MC-HH-H02.TN.2": {
+"engine": 314.1592653589793,
+"sympy": 314.1592653589793,
+"spec": null
+},
+"MC-HH-H02.TLN.2": {
+"engine": 314.1592653589793,
+"sympy": 314.1592653589793,
+"spec": null
+},
+"MC-HH-H02.TN.3": {
+"engine": 1017.876019763093,
+"sympy": 1017.876019763093,
+"spec": null
+},
+"MC-HH-H02.TLN.3": {
+"engine": 1017.876019763093,
+"sympy": 1017.876019763093,
+"spec": null
+},
+"MC-HH-H03.TN.0": {
+"engine": 314.1592653589793,
+"sympy": 314.1592653589793,
+"spec": null
+},
+"MC-HH-H03.TLN.0": {
+"engine": 314.1592653589793,
+"sympy": 314.1592653589793,
+"spec": null
+},
+"MC-HH-H03.TN.1": {
+"engine": 37.69911184307752,
+"sympy": 37.69911184307752,
+"spec": null
+},
+"MC-HH-H03.TLN.1": {
+"engine": 37.69911184307752,
+"sympy": 37.69911184307752,
+"spec": null
+},
+"MC-HH-H03.TN.2": {
+"engine": 301.59289474462014,
+"sympy": 301.59289474462014,
+"spec": null
+},
+"MC-HH-H03.TLN.2": {
+"engine": 301.59289474462014,
+"sympy": 301.59289474462014,
+"spec": null
+},
+"MC-HH-H03.TN.3": {
+"engine": 402.1238596594935,
+"sympy": 402.1238596594935,
+"spec": null
+},
+"MC-HH-H03.TLN.3": {
+"engine": 402.1238596594935,
+"sympy": 402.1238596594935,
+"spec": null
+},
+"MC-HH-H04.TN.0": {
+"engine": 282.7433388230814,
+"sympy": 282.7433388230814,
+"spec": null
+},
+"MC-HH-H04.TLN.0": {
+"engine": 282.7433388230814,
+"sympy": 282.7433388230814,
+"spec": null
+},
+"MC-HH-H04.TN.1": {
+"engine": 75.39822368615503,
+"sympy": 75.39822368615503,
+"spec": null
+},
+"MC-HH-H04.TLN.1": {
+"engine": 75.39822368615503,
+"sympy": 75.39822368615503,
+"spec": null
+},
+"MC-HH-H04.TN.2": {
+"engine": 301.59289474462014,
+"sympy": 301.59289474462014,
+"spec": null
+},
+"MC-HH-H04.TLN.2": {
+"engine": 301.59289474462014,
+"sympy": 301.59289474462014,
+"spec": null
+},
+"MC-HH-H04.TN.3": {
+"engine": 452.3893421169302,
+"sympy": 452.3893421169302,
+"spec": null
+},
+"MC-HH-H04.TLN.3": {
+"engine": 452.3893421169302,
+"sympy": 452.3893421169302,
+"spec": null
+},
+"MC-HH-H05.TLN.0": {
+"engine": 30.000000000000004,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-H05.TLN.1": {
+"engine": 29.999999999999993,
+"sympy": 30.0,
+"spec": null
+},
+"MC-HH-H05.TN.2": {
+"engine": 36.86989764584401,
+"sympy": 36.86989764584402,
+"spec": null
+},
+"MC-HH-H05.TLN.2": {
+"engine": 36.86989764584401,
+"sympy": 36.86989764584402,
+"spec": null
+},
+"MC-HH-H05.TN.3": {
+"engine": 22.61986494804042,
+"sympy": 22.619864948040426,
+"spec": null
+},
+"MC-HH-H05.TLN.3": {
+"engine": 22.61986494804042,
+"sympy": 22.619864948040426,
+"spec": null
+},
+"MC-HH-I01.TN.0": {
+"engine": 188.49555921538757,
+"sympy": 188.4955592153876,
+"spec": null
+},
+"MC-HH-I01.TLN.0": {
+"engine": 188.49555921538757,
+"sympy": 188.4955592153876,
+"spec": null
+},
+"MC-HH-I01.TN.1": {
+"engine": 351.85837720205683,
+"sympy": 351.85837720205683,
+"spec": null
+},
+"MC-HH-I01.TLN.1": {
+"engine": 351.85837720205683,
+"sympy": 351.85837720205683,
+"spec": null
+},
+"MC-HH-I01.TN.2": {
+"engine": 87.96459430051421,
+"sympy": 87.96459430051421,
+"spec": null
+},
+"MC-HH-I01.TLN.2": {
+"engine": 87.96459430051421,
+"sympy": 87.96459430051421,
+"spec": null
+},
+"MC-HH-I01.TN.3": {
+"engine": 345.57519189487726,
+"sympy": 345.57519189487726,
+"spec": null
+},
+"MC-HH-I01.TLN.3": {
+"engine": 345.57519189487726,
+"sympy": 345.57519189487726,
+"spec": null
+},
+"MC-HH-I02.TN.0": {
+"engine": 197.92033717615698,
+"sympy": 197.92033717615698,
+"spec": null
+},
+"MC-HH-I02.TLN.0": {
+"engine": 197.92033717615698,
+"sympy": 197.92033717615698,
+"spec": null
+},
+"MC-HH-I02.TN.1": {
+"engine": 502.6548245743669,
+"sympy": 502.6548245743669,
+"spec": null
+},
+"MC-HH-I02.TLN.1": {
+"engine": 502.6548245743669,
+"sympy": 502.6548245743669,
+"spec": null
+},
+"MC-HH-I02.TLN.2": {
+"engine": 62.83185307179586,
+"sympy": 62.83185307179586,
+"spec": null
+},
+"MC-HH-I02.TN.3": {
+"engine": 471.23889803846896,
+"sympy": 471.23889803846896,
+"spec": null
+},
+"MC-HH-I02.TLN.3": {
+"engine": 471.23889803846896,
+"sympy": 471.23889803846896,
+"spec": null
+},
+"MC-HH-I03.TN.0": {
+"engine": 131.94689145077132,
+"sympy": 131.94689145077132,
+"spec": null
+},
+"MC-HH-I03.TLN.0": {
+"engine": 131.94689145077132,
+"sympy": 131.94689145077132,
+"spec": null
+},
+"MC-HH-I03.TN.1": {
+"engine": 251.32741228718345,
+"sympy": 251.32741228718345,
+"spec": null
+},
+"MC-HH-I03.TLN.1": {
+"engine": 251.32741228718345,
+"sympy": 251.32741228718345,
+"spec": null
+},
+"MC-HH-I03.TLN.2": {
+"engine": 62.83185307179586,
+"sympy": 62.83185307179586,
+"spec": null
+},
+"MC-HH-I03.TN.3": {
+"engine": 188.49555921538757,
+"sympy": 188.4955592153876,
+"spec": null
+},
+"MC-HH-I03.TLN.3": {
+"engine": 188.49555921538757,
+"sympy": 188.4955592153876,
+"spec": null
+},
+"MC-HH-J01.TLN.0": {
+"engine": 113.09733552923255,
+"sympy": 113.09733552923255,
+"spec": null
+},
+"MC-HH-J01.TN.1": {
+"engine": 268.082573106329,
+"sympy": 268.08257310632905,
+"spec": null
+},
+"MC-HH-J01.TLN.1": {
+"engine": 268.082573106329,
+"sympy": 268.08257310632905,
+"spec": null
+},
+"MC-HH-J01.TN.2": {
+"engine": 523.5987755982989,
+"sympy": 523.5987755982989,
+"spec": null
+},
+"MC-HH-J01.TLN.2": {
+"engine": 523.5987755982989,
+"sympy": 523.5987755982989,
+"spec": null
+},
+"MC-HH-J01.TN.3": {
+"engine": 904.7786842338604,
+"sympy": 904.7786842338604,
+"spec": null
+},
+"MC-HH-J01.TLN.3": {
+"engine": 904.7786842338604,
+"sympy": 904.7786842338604,
+"spec": null
+},
+"MC-HH-J02.TLN.0": {
+"engine": 113.09733552923255,
+"sympy": 113.09733552923255,
+"spec": null
+},
+"MC-HH-J02.TN.1": {
+"engine": 201.06192982974676,
+"sympy": 201.06192982974676,
+"spec": null
+},
+"MC-HH-J02.TLN.1": {
+"engine": 201.06192982974676,
+"sympy": 201.06192982974676,
+"spec": null
+},
+"MC-HH-J02.TN.2": {
+"engine": 314.1592653589793,
+"sympy": 314.1592653589793,
+"spec": null
+},
+"MC-HH-J02.TLN.2": {
+"engine": 314.1592653589793,
+"sympy": 314.1592653589793,
+"spec": null
+},
+"MC-HH-J02.TN.3": {
+"engine": 452.3893421169302,
+"sympy": 452.3893421169302,
+"spec": null
+},
+"MC-HH-J02.TLN.3": {
+"engine": 452.3893421169302,
+"sympy": 452.3893421169302,
+"spec": null
+},
+"MC-HH-J03.TN.0": {
+"engine": 1.7320508075688772,
+"sympy": 1.7320508075688772,
+"spec": null
+},
+"MC-HH-J03.TLN.0": {
+"engine": 1.7320508075688772,
+"sympy": 1.7320508075688772,
+"spec": null
+},
+"MC-HH-J03.TN.1": {
+"engine": 2.598076211353316,
+"sympy": 2.598076211353316,
+"spec": null
+},
+"MC-HH-J03.TLN.1": {
+"engine": 2.598076211353316,
+"sympy": 2.598076211353316,
+"spec": null
+},
+"MC-HH-J03.TN.2": {
+"engine": 3.4641016151377544,
+"sympy": 3.4641016151377544,
+"spec": null
+},
+"MC-HH-J03.TLN.2": {
+"engine": 3.4641016151377544,
+"sympy": 3.4641016151377544,
+"spec": null
+},
+"MC-HH-J03.TN.3": {
+"engine": 5.196152422706632,
+"sympy": 5.196152422706632,
+"spec": null
+},
+"MC-HH-J03.TLN.3": {
+"engine": 5.196152422706632,
+"sympy": 5.196152422706632,
+"spec": null
+},
+"MC-HH-DS-A.DS.0#a": {
+"engine": 1.7320508075688772,
+"sympy": 1.7320508075688772
+},
+"MC-HH-DS-A.DS.0#b": {
+"engine": 0.3333333333333333,
+"sympy": 0.3333333333333333
+},
+"MC-HH-DS-A.DS.0#c": {
+"engine": 35.264389682754654,
+"sympy": 35.264389682754654
+},
+"MC-HH-DS-A.DS.0#d": {
+"engine": 0.7071067811865475,
+"sympy": 0.7071067811865476
+},
+"MC-HH-DS-A.DS.1#a": {
+"engine": 2.0,
+"sympy": 2.0
+},
+"MC-HH-DS-A.DS.1#b": {
+"engine": 0.47140452079103173,
+"sympy": 0.4714045207910317
+},
+"MC-HH-DS-A.DS.1#c": {
+"engine": 45.00000000000001,
+"sympy": 45.0
+},
+"MC-HH-DS-A.DS.1#d": {
+"engine": 0.816496580927726,
+"sympy": 0.816496580927726
+},
+"MC-HH-DS-A.DS.2#a": {
+"engine": 2.449489742783178,
+"sympy": 2.449489742783178
+},
+"MC-HH-DS-A.DS.2#b": {
+"engine": 0.6666666666666666,
+"sympy": 0.6666666666666666
+},
+"MC-HH-DS-A.DS.2#c": {
+"engine": 54.73561031724535,
+"sympy": 54.735610317245346
+},
+"MC-HH-DS-A.DS.2#d": {
+"engine": 0.8944271909999159,
+"sympy": 0.8944271909999159
+},
+"MC-HH-DS-A.DS.3#a": {
+"engine": 2.82842712474619,
+"sympy": 2.8284271247461903
+},
+"MC-HH-DS-A.DS.3#b": {
+"engine": 0.8164965809277259,
+"sympy": 0.816496580927726
+},
+"MC-HH-DS-A.DS.3#c": {
+"engine": 59.99999999999999,
+"sympy": 60.0
+},
+"MC-HH-DS-A.DS.3#d": {
+"engine": 0.9258200997725515,
+"sympy": 0.9258200997725514
+},
+"MC-HH-DS-B.DS.0#a": {
+"engine": 0.3333333333333333,
+"sympy": 0.3333333333333333
+},
+"MC-HH-DS-B.DS.0#b": {
+"engine": 54.73561031724535,
+"sympy": 54.735610317245346
+},
+"MC-HH-DS-B.DS.0#c": {
+"engine": 2.23606797749979,
+"sympy": 2.23606797749979
+},
+"MC-HH-DS-B.DS.0#d": {
+"engine": 0.4472135954999579,
+"sympy": 0.4472135954999579
+},
+"MC-HH-DS-B.DS.1#a": {
+"engine": 0.28867513459481287,
+"sympy": 0.28867513459481287
+},
+"MC-HH-DS-B.DS.1#b": {
+"engine": 50.76847951640774,
+"sympy": 50.768479516407744
+},
+"MC-HH-DS-B.DS.1#c": {
+"engine": 1.9999999999999998,
+"sympy": 2.0
+},
+"MC-HH-DS-B.DS.1#d": {
+"engine": 0.43301270189221935,
+"sympy": 0.4330127018922193
+},
+"MC-HH-DS-B.DS.2#a": {
+"engine": 0.40824829046386296,
+"sympy": 0.408248290463863
+},
+"MC-HH-DS-B.DS.2#b": {
+"engine": 59.99999999999999,
+"sympy": 60.0
+},
+"MC-HH-DS-B.DS.2#c": {
+"engine": 2.6457513110645903,
+"sympy": 2.6457513110645907
+},
+"MC-HH-DS-B.DS.2#d": {
+"engine": 0.46291004988627577,
+"sympy": 0.4629100498862757
+},
+"MC-HH-DS-B.DS.3#a": {
+"engine": 0.23570226039551587,
+"sympy": 0.23570226039551584
+},
+"MC-HH-DS-B.DS.3#b": {
+"engine": 45.00000000000001,
+"sympy": 45.0
+},
+"MC-HH-DS-B.DS.3#c": {
+"engine": 1.7320508075688774,
+"sympy": 1.7320508075688772
+},
+"MC-HH-DS-B.DS.3#d": {
+"engine": 0.408248290463863,
+"sympy": 0.408248290463863
+},
+"MC-HH-DS-E.DS.0#a": {
+"engine": 0.4330127018922193,
+"sympy": 0.4330127018922193
+},
+"MC-HH-DS-E.DS.0#b": {
+"engine": 0.8660254037844387,
+"sympy": 0.8660254037844386
+},
+"MC-HH-DS-E.DS.0#c": {
+"engine": 44.99999999999999,
+"sympy": 45.0
+},
+"MC-HH-DS-E.DS.0#d": {
+"engine": 0.6546536707079772,
+"sympy": 0.6546536707079772
+},
+"MC-HH-DS-E.DS.1#a": {
+"engine": 0.7499999999999999,
+"sympy": 0.75
+},
+"MC-HH-DS-E.DS.1#b": {
+"engine": 0.8660254037844386,
+"sympy": 0.8660254037844386
+},
+"MC-HH-DS-E.DS.1#c": {
+"engine": 60.00000000000001,
+"sympy": 60.0
+},
+"MC-HH-DS-E.DS.1#d": {
+"engine": 0.7745966692414833,
+"sympy": 0.7745966692414834
+},
+"MC-HH-DS-E.DS.2#a": {
+"engine": 0.8660254037844386,
+"sympy": 0.8660254037844386
+},
+"MC-HH-DS-E.DS.2#b": {
+"engine": 0.8660254037844387,
+"sympy": 0.8660254037844386
+},
+"MC-HH-DS-E.DS.2#c": {
+"engine": 63.434948822921996,
+"sympy": 63.43494882292201
+},
+"MC-HH-DS-E.DS.2#d": {
+"engine": 0.7947194142390264,
+"sympy": 0.7947194142390263
+},
+"MC-HH-DS-D.DS.0#a": {
+"engine": 60.0,
+"sympy": 60.0
+},
+"MC-HH-DS-D.DS.0#b": {
+"engine": 7.0710678118654755,
+"sympy": 7.0710678118654755
+},
+"MC-HH-DS-D.DS.0#c": {
+"engine": 2.4,
+"sympy": 2.4
+},
+"MC-HH-DS-D.DS.0#d": {
+"engine": 2.163655337923857,
+"sympy": 2.163655337923857
+},
+"MC-HH-DS-D.DS.1#a": {
+"engine": 144.0,
+"sympy": 144.0
+},
+"MC-HH-DS-D.DS.1#b": {
+"engine": 13.0,
+"sympy": 13.0
+},
+"MC-HH-DS-D.DS.1#c": {
+"engine": 2.4,
+"sympy": 2.4
+},
+"MC-HH-DS-D.DS.1#d": {
+"engine": 2.353393621658208,
+"sympy": 2.3533936216582085
+},
+"MC-HH-DS-D.DS.2#a": {
+"engine": 36.0,
+"sympy": 36.0
+},
+"MC-HH-DS-D.DS.2#b": {
+"engine": 7.0,
+"sympy": 7.0
+},
+"MC-HH-DS-D.DS.2#c": {
+"engine": 1.6641005886756872,
+"sympy": 1.6641005886756874
+},
+"MC-HH-DS-D.DS.2#d": {
+"engine": 1.6035674514745464,
+"sympy": 1.6035674514745464
+},
+"MC-HH-DS-D.DS.3#a": {
+"engine": 4.0,
+"sympy": 4.0
+},
+"MC-HH-DS-D.DS.3#b": {
+"engine": 3.0,
+"sympy": 3.0
+},
+"MC-HH-DS-D.DS.3#c": {
+"engine": 0.8944271909999159,
+"sympy": 0.8944271909999159
+},
+"MC-HH-DS-D.DS.3#d": {
+"engine": 0.8164965809277261,
+"sympy": 0.816496580927726
+},
+"MC-HH-DS-D.DS.4#a": {
+"engine": 240.0,
+"sympy": 240.0
+},
+"MC-HH-DS-D.DS.4#b": {
+"engine": 11.180339887498949,
+"sympy": 11.180339887498949
+},
+"MC-HH-DS-D.DS.4#c": {
+"engine": 4.8,
+"sympy": 4.8
+},
+"MC-HH-DS-D.DS.4#d": {
+"engine": 3.4626591409485674,
+"sympy": 3.4626591409485674
+}
+}
+}

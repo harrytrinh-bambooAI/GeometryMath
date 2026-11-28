@@ -1,0 +1,224 @@
+/* S3-E3 · C3-04 Kết quả lớp: bảng lớp × bài, khung bằng chứng, "Cả lớp vướng ở đâu" (Design/prototype/s23b.js).
+   Màu, bo góc, font CHỈ qua token theme (styles/tokens.css); chữ phụ ≥ 14 px (PO-66 G17); vùng chạm ≥ 44 px;
+   nội dung toán dùng --font-math (data-math). Trang không cuộn ngang: chỉ vùng bảng cuộn, cột "Học sinh" cố định. */
+.s3e3-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  max-width: 1280px;
+  min-width: 0;
+}
+.s3e3-head,
+.s3e3-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.s3e3-title {
+  margin: 0;
+  font-size: 24px;
+}
+.s3e3-h2 {
+  margin: 0;
+  font-size: 18px;
+}
+.s3e3-grow {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.s3e3-pick {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: max(14px, var(--fs-sm));
+}
+.s3e3-pick select {
+  min-height: var(--touch, 44px);
+  max-width: 220px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-btn);
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  padding: 0 10px;
+}
+.s3e3-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  min-width: 0;
+  align-items: start;
+}
+@media (min-width: 1100px) {
+  .s3e3-layout {
+    grid-template-columns: minmax(0, 1fr) 400px;
+  }
+}
+.s3e3-side,
+.s3e3-card,
+.s3e3-ev-body,
+.s3e3-insight,
+.s3e3-raw,
+.s3e3-step {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  min-width: 0;
+}
+.s3e3-card {
+  padding: var(--pad-card);
+}
+.s3e3-sub,
+.s3e3-note,
+.s3e3-code,
+.s3e3-line,
+.s3e3-banner,
+.s3e3-legend {
+  font-size: max(14px, var(--fs-sm));
+}
+.s3e3-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+}
+.s3e3-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+.s3e3-table th,
+.s3e3-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  white-space: nowrap;
+  font-size: max(14px, var(--fs-sm));
+}
+.s3e3-stick {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--panel);
+  min-width: 150px;
+}
+.s3e3-name {
+  font-weight: 400;
+}
+.s3e3-name .chip {
+  margin-left: 6px;
+}
+.s3e3-code {
+  display: block;
+}
+.s3e3-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--touch, 44px);
+  min-width: 112px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--soft);
+  color: var(--text);
+  font: inherit;
+  font-size: max(14px, var(--fs-sm));
+  font-weight: 600;
+  cursor: pointer;
+}
+.s3e3-cell.correct {
+  background: var(--grn-s);
+  border-color: var(--grn);
+}
+.s3e3-cell.review {
+  background: var(--yel-s);
+  border-color: var(--yel);
+}
+.s3e3-cell.doing {
+  background: var(--org-s);
+  border-color: var(--org);
+}
+.s3e3-cell.todo {
+  color: var(--muted);
+}
+.s3e3-cell.on,
+.s3e3-cell:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+.s3e3-key {
+  min-height: 0;
+  min-width: 0;
+  padding: 4px 8px;
+  cursor: default;
+}
+.s3e3-kicker {
+  font-size: max(14px, var(--fs-sm));
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.s3e3-plain,
+.s3e3-statement,
+.s3e3-insight-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.s3e3-line .btn {
+  margin-left: 6px;
+}
+.s3e3-stuck {
+  border-color: var(--pur);
+}
+.s3e3-insight,
+.s3e3-raw {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+}
+.s3e3-ai {
+  background: var(--pur-s);
+  color: var(--pur);
+}
+.s3e3-banner {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: var(--r-sm);
+  background: var(--yel-s);
+  color: var(--yel-t, var(--text));
+}
+.s3e3-people {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.s3e3-person {
+  width: 100%;
+  justify-content: space-between;
+}
+.s3e3-skeleton {
+  gap: 8px;
+}
+.s3e3-skel-row {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(4, 1fr);
+  gap: 8px;
+}
+.s3e3-skel-cell {
+  height: 36px;
+  border-radius: var(--r-sm);
+  background: var(--soft);
+}
+@media print {
+  .s3e3-side,
+  .s3e3-pick,
+  [data-testid='s3e3-refresh'] {
+    display: none;
+  }
+}

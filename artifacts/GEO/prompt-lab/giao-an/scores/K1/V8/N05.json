@@ -1,0 +1,90 @@
+{
+ "case": "N05",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A3: buoc_goi_y ghi kết quả số ['32']"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 4,
+   "cau_tu_kho": 3,
+   "kq_ai_ghi": 1,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 5,
+   "chinh_xac": 4,
+   "phieu": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "PHT1 câu 3 ghi \"muc_do\":\"VD\" cho bài \"Cho $\\log_2 3=a$. Biểu diễn $\\log_2 18$ theo $a$.\". Bài này chỉ áp dụng trực tiếp tính chất tích và luỹ thừa nên đúng phải là mức TH. Gợi ý \"làm tròn theo yêu cầu\" ở câu 4 cũng không khớp đề, vì đề không nêu yêu cầu làm tròn."
+  ],
+  "nhan_xet": "Giáo án bám đúng hai kiến thức trọng tâm, phong cách lớp học đảo ngược thể hiện rõ (HD1 học ở nhà, trên lớp kiểm tra và giải đáp), tổng thời lượng trên lớp 7+10+20+8=45 phút, không tự tính đáp số. Giáo án đã nêu lý do bỏ BT11-B19-3 trong unsure; chỉ cần chỉnh mức độ câu 3 thành TH và bỏ cụm \"theo yêu cầu\" ở gợi ý câu 4."
+ },
+ "judge2": null,
+ "auto0": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A3: buoc_goi_y ghi kết quả số ['32', '10^-7', '410^-5']"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 5,
+   "cau_tu_kho": 3,
+   "kq_ai_ghi": 3,
+   "kq_khop_kho": 2
+  },
+  "kind": "lesson"
+ },
+ "retried": true,
+ "score": {
+  "diem": 77.5,
+  "A": 1,
+  "A_auto": 1,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "case": "C13",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "dung_mot_cau_hoi": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "question"
+ },
+ "judge": {
+  "diem": {
+   "dung_cho_thieu": 3,
+   "gon": 5,
+   "can_thiet": 2
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Câu hỏi gọn, đúng một câu và nhắm vào trường số tiết đang để trống, nhưng phiếu đã ghi 'Tiết PPCT: Tiết 1/1' nên suy ra được bài dạy trong 1 tiết (45 phút). Trợ lý lẽ ra nên soạn luôn với giả định này và ghi chú lại thay vì hỏi giáo viên."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 75.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 3.33
+ }
+}

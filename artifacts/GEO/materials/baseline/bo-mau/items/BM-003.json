@@ -1,0 +1,86 @@
+{
+ "id": "BM-003",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-10 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-10 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa đường thẳng và mặt phẳng",
+ "muc_do": "TH",
+ "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy $a$, $O$ là tâm đáy và $SO=\\dfrac{a\\sqrt6}{2}$. Tính góc giữa cạnh bên $SA$ và mặt đáy.",
+ "dap_so": {
+  "gia_tri": "$60^\\circ$",
+  "so": 60.0
+ },
+ "dap_so_engine": 59.99999999999999,
+ "kien_thuc": [
+  "Chân đường cao hình chóp đều là tâm đáy",
+  "Góc giữa đường thẳng và mặt phẳng"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$SO\\perp(ABCD)$ nên hình chiếu của $SA$ là $OA$; góc cần tìm là $\\widehat{SAO}$.",
+   "ket_qua_trung_gian": "$\\widehat{SAO}$",
+   "kien_thuc": "Hình chiếu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\widehat{SAO}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy góc ở đỉnh $\\widehat{ASO}$ làm góc giữa $SA$ và đáy",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$OA=\\dfrac{AC}2=\\dfrac{a\\sqrt2}2$.",
+   "ket_qua_trung_gian": "$OA=\\dfrac{a\\sqrt2}{2}$",
+   "kien_thuc": "Đường chéo hình vuông",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $OA=\\dfrac{a\\sqrt2}{2}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy $OA=a\\sqrt2$ (quên chia đôi đường chéo)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.7071067811865476
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\tan\\widehat{SAO}=\\dfrac{SO}{OA}=\\dfrac{a\\sqrt6/2}{a\\sqrt2/2}=\\sqrt3\\Rightarrow 60^\\circ$.",
+   "ket_qua_trung_gian": "$60^\\circ$",
+   "kien_thuc": "tan trong tam giác vuông",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $60^\\circ$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 60.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy $OA=a\\sqrt2$ (quên chia đôi đường chéo)",
+   "loi_giai": "B1: $SO\\perp(ABCD)$ nên hình chiếu của $SA$ là $OA$; góc cần tìm là $\\widehat{SAO}$.\nB2: $OA=a\\sqrt2$.\nB3: $\\tan\\widehat{SAO}=\\dfrac{a\\sqrt6/2}{a\\sqrt2}=\\dfrac{\\sqrt3}2\\Rightarrow\\approx40{,}89^\\circ$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lấy góc ở đỉnh $\\widehat{ASO}$ làm góc giữa $SA$ và đáy",
+   "loi_giai": "B1: Góc cần tìm là $\\widehat{ASO}$.\nB2: $OA=\\dfrac{AC}2=\\dfrac{a\\sqrt2}2$.\nB3: $\\tan\\widehat{ASO}=\\dfrac{OA}{SO}=\\dfrac1{\\sqrt3}\\Rightarrow 30^\\circ$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "S2: B2 đúng, độc lập nên được 0,25."
+}

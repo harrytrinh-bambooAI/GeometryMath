@@ -1,0 +1,34 @@
+{
+ "case": "E03",
+ "variant": "V8",
+ "round": "K3",
+ "text": "{\"kind\": \"reply\", \"text\": \"Mình chưa thể thay như vậy. Công thức d = |ax0+by0+cz0+d|/√(a²+b²+c²) (khoảng cách trong toạ độ) không nằm trong <kien_thuc_duoc_cap>, nên luật A1 chặn việc đưa kiến thức ngoài danh sách vào giáo án. Cách làm hợp lệ: giữ hệ thức 1/AH² = 1/SA² + 1/AK² (KT11-C07-CT-003) ở HĐ2, hoặc nếu muốn HS tính nhanh hơn thì bổ sung thêm ví dụ mẫu áp dụng hệ thức này để HS quen các bước dựng AK, AH. Nếu thầy/cô cần dùng công thức toạ độ, cần cấp thêm mã kiến thức tương ứng trong danh sách.\", \"de_xuat\": [{\"vi_tri\": \"phieu_hoc_tap[0].cau[1].kt\", \"van_de\": \"Câu 2 (BT11-B26-3) dùng KT11-C07-CT-003 nhưng HĐ2 cũng dùng câu 1 PHT1 làm ví dụ, trong khi nội dung HĐ2 là ví dụ chóp S.ABC trùng dạng với câu 2 và câu 1 là bài hình lập phương.\", \"goi_y\": \"Kiểm tra lại HĐ2 giao 'PHT1 câu 1' nhưng nội dung ví dụ chóp S.ABC tương ứng câu 2; nên thống nhất tham chiếu câu.\", \"ly_do\": \"Tránh lặp ví dụ và tham chiếu không khớp giữa HĐ2 và phiếu học tập.\"}, {\"vi_tri\": \"hoat_dong[3]\", \"van_de\": \"HD4 có 'o_nha': false nhưng cách tổ chức là HS làm ở nhà, nộp tiết sau, trong khi vẫn tính 5 phút trên lớp.\", \"goi_y\": \"Nếu làm ở nhà thì đặt o_nha true và thoi_luong_phut 0, rồi điều chỉnh để tổng vẫn 45 phút; hoặc đổi cách tổ chức thành làm tại lớp.\", \"ly_do\": \"Khớp nội bộ giữa o_nha, thời lượng và cách tổ chức; tổng phút phải đúng 45.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu 3 (BM-007) cùng dạng và gần như trùng với câu 2 (BT11-B26-3), cùng tính d(A,(SBC)) với SA ⊥ đáy.\", \"goi_y\": \"Cân nhắc thay bằng bài khác dạng để tăng tính phân hoá cho đối tượng khá.\", \"ly_do\": \"Tránh trùng lặp dạng bài; đối tượng khá cần một câu VD.\"}]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"reply\",\"text\":\"Mình chưa thể thay như vậy. Công thức d = |ax0+by0+cz0+d|/√(a²+b²+c²) (khoảng cách trong toạ độ) không nằm trong <kien_thuc_duoc_cap>, nên luật A1 chặn việc đưa kiến thức ngoài danh sách vào giáo án. Cách làm hợp lệ: giữ hệ thức 1/AH² = 1/SA² + 1/AK² (KT11-C07-CT-003) ở HĐ2, hoặc nếu muốn HS tính nhanh hơn thì bổ sung thêm ví dụ mẫu áp dụng hệ thức này để HS quen các bước dựng AK, AH. Nếu thầy/cô cần dùng công thức toạ độ, cần cấp thêm mã kiến thức tương ứng trong danh sách.\",\"de_xuat\":[{\"vi_tri\":\"phieu_hoc_tap[0].cau[1].kt\",\"van_de\":\"Câu 2 (BT11-B26-3) dùng KT11-C07-CT-003 nhưng HĐ2 cũng dùng câu 1 PHT1 làm ví dụ, trong khi nội dung HĐ2 là ví dụ chóp S.ABC trùng dạng với câu 2 và câu 1 là bài hình lập phương.\",\"goi_y\":\"Kiểm tra lại HĐ2 giao 'PHT1 câu 1' nhưng nội dung ví dụ chóp S.ABC tương ứng câu 2; nên thống nhất tham chiếu câu.\",\"ly_do\":\"Tránh lặp ví dụ và tham chiếu không khớp giữa HĐ2 và phiếu học tập.\"},{\"vi_tri\":\"hoat_dong[3]\",\"van_de\":\"HD4 có 'o_nha': false nhưng cách tổ chức là HS làm ở nhà, nộp tiết sau, trong khi vẫn tính 5 phút trên lớp.\",\"goi_y\":\"Nếu làm ở nhà thì đặt o_nha true và thoi_luong_phut 0, rồi điều chỉnh để tổng vẫn 45 phút; hoặc đổi cách tổ chức thành làm tại lớp.\",\"ly_do\":\"Khớp nội bộ giữa o_nha, thời lượng và cách tổ chức; tổng phút phải đúng 45.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu 3 (BM-007) cùng dạng và gần như trùng với câu 2 (BT11-B26-3), cùng tính d(A,(SBC)) với SA ⊥ đáy.\",\"goi_y\":\"Cân nhắc thay bằng bài khác dạng để tăng tính phân hoá cho đối tượng khá.\",\"ly_do\":\"Tránh trùng lặp dạng bài; đối tượng khá cần một câu VD.\"}]}}",
+ "usage": {
+  "ts": "2026-11-27T17:56:41",
+  "role": "gen",
+  "task": "K3/V8/E03",
+  "model": "claude-sonnet-5-5",
+  "input": 3404,
+  "output": 1037,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 7.5
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:56:41",
+   "role": "gen",
+   "task": "K3/V8/E03",
+   "model": "claude-sonnet-5-5",
+   "input": 3404,
+   "output": 1037,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 7.5
+  }
+ ],
+ "server_errs0": []
+}

@@ -1,0 +1,90 @@
+{
+ "id": "MC-ML-04",
+ "ten": "Lãi kép: số năm để vốn gấp đôi",
+ "chu_de": "ham-so-mu-logarit",
+ "dang": "ml.lai-kep",
+ "dang_tx": "ml.lai-suat",
+ "yccd": [
+  "11.ML.4"
+ ],
+ "lop": 11,
+ "nang_luc": "mo-hinh-hoa",
+ "ho_hinh": "MC-ML-04",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-ML-04",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "r": [
+   "5",
+   "6",
+   "7",
+   "8"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Một người gửi tiết kiệm với lãi suất ${r}\\%$ một năm, lãi kép theo năm, không rút tiền.",
+ "hoi": "Số năm ít nhất để số tiền (cả vốn và lãi) vượt gấp đôi số vốn ban đầu là",
+ "dap_so": "ceiling(log(2)/log(1+r/100))",
+ "nhieu": [
+  {
+   "bieu_thuc": "floor(log(2)/log(1+r/100))",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Làm tròn xuống thay vì lấy số nguyên nhỏ nhất thỏa mãn"
+   }
+  },
+  {
+   "bieu_thuc": "ceiling(100/r)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Tính như lãi đơn: $n\\cdot r\\%\\ge 100\\%$"
+   }
+  },
+  {
+   "bieu_thuc": "ceiling(log(3)/log(1+r/100))",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Nhầm điều kiện gấp đôi thành tổng tiền gấp ba"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-ML-04']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "r": "5"
+  },
+  {
+   "r": "6"
+  },
+  {
+   "r": "7"
+  },
+  {
+   "r": "8"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

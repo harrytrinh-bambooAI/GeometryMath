@@ -1,0 +1,34 @@
+{
+ "case": "E05",
+ "variant": "V8",
+ "round": "K2",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"add\", \"path\": \"phieu_hoc_tap[0].cau\", \"before\": null, \"after\": {\"so\": 4, \"nguon\": \"BM-008\", \"muc_do\": \"VD\", \"de\": \"Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\\\perp(ABCD)$ và $SA=a\\\\sqrt3$. Tính khoảng cách giữa hai đường thẳng $AB$ và $SD$.\", \"kt\": [\"KT11-C07-DN-012\", \"KT11-C07-PP-001\"], \"dap_so\": null, \"buoc_goi_y\": [\"Nhận xét AB song song CD nên AB song song với mặt phẳng (SCD) chứa SD.\", \"Đưa về d(AB,SD) = d(AB,(SCD)) = d(A,(SCD)).\", \"Chứng minh CD vuông góc với (SAD), từ đó dựng AH vuông góc SD thì AH vuông góc (SCD).\", \"Tính AH trong tam giác vuông SAD từ SA và AD.\"]}, \"ly_do\": \"Thêm một câu mức VD về khoảng cách hai đường thẳng chéo nhau, lấy từ kho (BM-008), dùng KT11-C07-PP-001 đã được cấp.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[2].noi_dung\", \"van_de\": \"HD3 chỉ giao câu 2, 3 của PHT1 nên câu 4 mới thêm chưa được dùng trong tiết.\", \"goi_y\": \"Nếu muốn dùng câu 4 trên lớp, đổi nội dung HD3 thành câu 2–4 hoặc giao câu 4 về nhà. Một câu VD cần khoảng 6–8 phút.\", \"ly_do\": \"Khớp nội bộ giữa hoạt động và phiếu học tập.\"}, {\"vi_tri\": \"hoat_dong (thời lượng)\", \"van_de\": \"Tổng thời lượng HD1–HD4 là 5+20+20+5 = 50 phút, trong khi 1 tiết là 45 phút.\", \"goi_y\": \"Giảm 5 phút, hoặc chuyển HD4 thành hoạt động ở nhà (o_nha true, 0 phút).\", \"ly_do\": \"Tổng thời gian trên lớp phải bằng 45 phút.\"}, {\"vi_tri\": \"hoat_dong[3].o_nha\", \"van_de\": \"HD4 ghi HS làm ở nhà nhưng o_nha là false và thoi_luong_phut là 5.\", \"goi_y\": \"Đặt o_nha true và thoi_luong_phut 0 nếu làm ở nhà.\", \"ly_do\": \"o_nha phải khớp với cách tổ chức.\"}, {\"vi_tri\": \"hoat_dong[1].kien_thuc[1].phat_bieu\", \"van_de\": \"Công thức ghi $\\\\dfrac1{AH}=\\\\dfrac1{SA}+\\\\dfrac1{AK}$, trong danh sách kiến thức là $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$.\", \"goi_y\": \"Sửa lại đúng công thức có bình phương như KT11-C07-CT-003.\", \"ly_do\": \"Phát biểu phải đúng với danh sách kiến thức được cấp.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu 3 (BM-007) gần như trùng dạng với câu 2 (BT11-B26-3), cùng tính khoảng cách từ A đến (SBC).\", \"goi_y\": \"Cân nhắc thay câu 3 bằng bài khác để tránh lặp dạng.\", \"ly_do\": \"Tránh trùng lặp bài tập.\"}], \"unsure\": []}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"add\",\"path\":\"phieu_hoc_tap[0].cau\",\"before\":null,\"after\":{\"so\":4,\"nguon\":\"BM-008\",\"muc_do\":\"VD\",\"de\":\"Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\\\perp(ABCD)$ và $SA=a\\\\sqrt3$. Tính khoảng cách giữa hai đường thẳng $AB$ và $SD$.\",\"kt\":[\"KT11-C07-DN-012\",\"KT11-C07-PP-001\"],\"dap_so\":null,\"buoc_goi_y\":[\"Nhận xét AB song song CD nên AB song song với mặt phẳng (SCD) chứa SD.\",\"Đưa về d(AB,SD) = d(AB,(SCD)) = d(A,(SCD)).\",\"Chứng minh CD vuông góc với (SAD), từ đó dựng AH vuông góc SD thì AH vuông góc (SCD).\",\"Tính AH trong tam giác vuông SAD từ SA và AD.\"]},\"ly_do\":\"Thêm một câu mức VD về khoảng cách hai đường thẳng chéo nhau, lấy từ kho (BM-008), dùng KT11-C07-PP-001 đã được cấp.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[2].noi_dung\",\"van_de\":\"HD3 chỉ giao câu 2, 3 của PHT1 nên câu 4 mới thêm chưa được dùng trong tiết.\",\"goi_y\":\"Nếu muốn dùng câu 4 trên lớp, đổi nội dung HD3 thành câu 2–4 hoặc giao câu 4 về nhà. Một câu VD cần khoảng 6–8 phút.\",\"ly_do\":\"Khớp nội bộ giữa hoạt động và phiếu học tập.\"},{\"vi_tri\":\"hoat_dong (thời lượng)\",\"van_de\":\"Tổng thời lượng HD1–HD4 là 5+20+20+5 = 50 phút, trong khi 1 tiết là 45 phút.\",\"goi_y\":\"Giảm 5 phút, hoặc chuyển HD4 thành hoạt động ở nhà (o_nha true, 0 phút).\",\"ly_do\":\"Tổng thời gian trên lớp phải bằng 45 phút.\"},{\"vi_tri\":\"hoat_dong[3].o_nha\",\"van_de\":\"HD4 ghi HS làm ở nhà nhưng o_nha là false và thoi_luong_phut là 5.\",\"goi_y\":\"Đặt o_nha true và thoi_luong_phut 0 nếu làm ở nhà.\",\"ly_do\":\"o_nha phải khớp với cách tổ chức.\"},{\"vi_tri\":\"hoat_dong[1].kien_thuc[1].phat_bieu\",\"van_de\":\"Công thức ghi $\\\\dfrac1{AH}=\\\\dfrac1{SA}+\\\\dfrac1{AK}$, trong danh sách kiến thức là $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$.\",\"goi_y\":\"Sửa lại đúng công thức có bình phương như KT11-C07-CT-003.\",\"ly_do\":\"Phát biểu phải đúng với danh sách kiến thức được cấp.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu 3 (BM-007) gần như trùng dạng với câu 2 (BT11-B26-3), cùng tính khoảng cách từ A đến (SBC).\",\"goi_y\":\"Cân nhắc thay câu 3 bằng bài khác để tránh lặp dạng.\",\"ly_do\":\"Tránh trùng lặp bài tập.\"}],\"unsure\":[]}}",
+ "usage": {
+  "ts": "2026-11-27T17:56:54",
+  "role": "gen",
+  "task": "K2/V8/E05",
+  "model": "claude-sonnet-5-5",
+  "input": 3382,
+  "output": 1943,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 12.9
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:56:54",
+   "role": "gen",
+   "task": "K2/V8/E05",
+   "model": "claude-sonnet-5-5",
+   "input": 3382,
+   "output": 1943,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 12.9
+  }
+ ],
+ "server_errs0": []
+}

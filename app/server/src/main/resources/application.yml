@@ -1,9 +1,9 @@
 spring:
   application.name: geo-server
-  profiles.default: dev
+  # KHÔNG có profile mặc định: phải bật tường minh dev | test | prod (ProfileGuard từ chối khởi động nếu thiếu).
   threads.virtual.enabled: true          # mỗi yêu cầu một luồng ảo: chịu hàng nghìn yêu cầu chờ I/O
   datasource:
-    url: ${GEO_DB_URL:jdbc:postgresql://127.0.0.1:54329/geo_dev?ApplicationName=geo-server&connectTimeout=3&socketTimeout=30}
+    url: ${GEO_DB_URL:jdbc:postgresql://127.0.0.1:${GEO_PG_PORT:54329}/geo_dev?ApplicationName=geo-server&connectTimeout=3&socketTimeout=30}
     username: ${GEO_DB_USER:geo}
     password: ${GEO_DB_PASSWORD:}
     # Giá trị và nguồn: app/docs/CONFIG.md (D-GEO-168, ADR-GEO-04, 05_capacity.md §4.2, §7)
@@ -42,8 +42,13 @@ geo:
   http:
     max-body-bytes: 1048576   # 1 MB
     retry-after: 2s           # Retry-After mặc định cho 429 RATE_LIMITED / 503 SERVICE_OVERLOADED
+    trust-forwarded-for: false  # chỉ bật sau proxy tin cậy (dev/test bật để E2E mô phỏng nhiều IP, TC-GEO-0179)
   time:
     display-zone: Asia/Ho_Chi_Minh   # múi giờ hiển thị duy nhất (BR-GEO-233); lưu/truyền luôn UTC
+  content:
+    # Gói nội dung Kho đề MVP (content/catalog-mvp.json + geometry/problem-specs.json, T-261126-02): nạp vào bộ 'main' khi
+    # khởi động rồi engine tính nhãn. Profile test và make e2e tắt (Kho đề e2e giữ sáu đề, TC-GEO-0125).
+    pack.load-on-start: ${GEO_CONTENT_PACK_ON_START:true}
   paging:
     default-limit: 20
     max-limit: 100            # trần chung
@@ -54,10 +59,100 @@ geo:
   auth:
     secret: ${GEO_AUTH_SECRET:dev-only-secret-change-me-0123456789abcdef}
     ttl: PT8H
+    # Khóa HMAC của mã Giáo viên mẫu và IP (D-GEO-152: CSDL chỉ lưu băm). Môi trường thật đặt GEO_AUTH_CODE_PEPPER.
+    code-pepper: ${GEO_AUTH_CODE_PEPPER:dev-only-code-pepper-0123456789abcdef}
   redis.key-prefix: ${GEO_REDIS_PREFIX:geo:}
   ai:
-    provider: mock
-    timeout: 10s              # TẠM: chưa có nguồn (D-GEO-072, owner TechLead)
+    provider: ${GEO_AI_PROVIDER:mock}       # mock (dev/test/CI) | anthropic; prod cấm mock (ProfileGuard, PO-60)
+    timeout: ${GEO_AI_TIMEOUT:10s}          # trần một lượt gọi ở cổng. TẠM: chưa có nguồn (D-GEO-072, owner TechLead)
+    model: ${GEO_AI_MODEL:gia-lap-1}        # F-GEO-096; provider anthropic + giá trị giả lập này = "claude-sonnet-5-5" (AiProperties)
+    prompt-version: ${GEO_AI_PROMPT_VERSION:p1}   # provider anthropic + "p1" = "a2" (AnthropicPrompts.VERSION)
+    cost-per-call: 0.12       # chi phí mô phỏng mỗi lượt của mock (đơn vị chưa xác định, KG-07)
+    api-key: ${GEO_AI_API_KEY:}             # chỉ ở máy chủ, không bao giờ xuống trình duyệt/nhật ký (BR-GEO-106)
+    anthropic:
+      base-url: ${GEO_AI_BASE_URL:https://api.anthropic.com}
+      api-version: "2023-06-01"
+      max-tokens: 16000
+      attempt-timeout: ${GEO_AI_ATTEMPT_TIMEOUT:45s}   # một lần gọi HTTP; tổng (kể cả thử lại) vẫn chịu geo.ai.timeout
+      max-retries: 2            # chỉ thử lại 429/5xx/lỗi mạng, có giãn cách; lỗi khác trả ngay
+      retry-backoff: 1s
+      fallbacks: default        # chuyển model khi bị từ chối an toàn (beta server-side-fallback-2026-07-01); rỗng = tắt
+      effort: ${GEO_AI_EFFORT:}  # output_config.effort; rỗng = mặc định của model (Sonnet 5.5: high)
+    # Bảng giá (USD / 1 triệu token) để tính chi phí mỗi lượt từ usage thật.
+    # Nguồn: bảng giá Anthropic theo skill claude-api "Current Models" (cached 2026-11-03), chép ngày 2026-11-26.
+    # cache-read/cache-write bỏ trống = 0,1× / 1,25× giá input (quy tắc bộ nhớ đệm 5 phút).
+    pricing:
+      claude-sonnet-5-5: { input: 2.00, output: 10.00, cache-read: 0.10 }
+      claude-opus-5-5:   { input: 4.00, output: 20.00, cache-read: 0.20 }
+      claude-haiku-5-5:  { input: 0.10, output: 0.50 }
+
+  # ===== Chặng 2–3: khóa geo.<feature>.* theo task (T-261126-41, PLAN_code-s23 §5 luật 2) =====
+  # Mỗi task chỉ thêm khóa NGAY DƯỚI mốc của mình, thụt 2 dấu cách (con của geo:), ví dụ "  s2e8:".
+  # --- T-261126-41 (khung) ---
+  # --- T-261126-18 (S2-E1) ---
+  s2e1:
+    pbkdf2-iterations: ${GEO_S2E1_PBKDF2_ITER:60000}   # vòng PBKDF2-SHA256 băm mật khẩu (số vòng lưu trong chuỗi băm)
+    community-org-id: 00000000-0000-7000-8002-000000000100  # trường "Cộng đồng" của tài khoản tự đăng ký (PO-61)
+    migrate: false            # true: chạy lệnh chuyển tài khoản MVP rồi thoát (make s2e1-migrate, US-S2E1-04)
+  # --- T-261126-19 (S2-E2) ---
+  # --- T-261126-20 (S2-E5) ---
+  # --- T-261126-21 (S2-E8) ---
+  # --- T-261126-22 (S2-E3) ---
+  # --- T-261126-23 (S2-E6, S2-E7) ---
+  # --- T-261126-24 (S2-E4) ---
+  # --- T-261126-25 (S2-E9) ---
+  # --- T-261126-42 (S3 dữ liệu mẫu) ---
+  # --- T-261126-28 (S3-E1, S3-E5) ---
+  # --- T-261126-29 (S3-E2) ---
+  # --- T-261126-30 (S3-E3) ---
+  tracking.min-aggregate: ${GEO_MIN_AGGREGATE:5}   # MIN_AGGREGATE: số bài làm tối thiểu của một đề để gộp "Cả lớp vướng ở đâu" (PO-65 Q6, PO-66 QA-S3E3-02)
+  # --- T-261126-31 (S3-E4, S3-E5) ---
+  s3e6-reminders:
+    cron: ${GEO_S3E6_REMINDER_CRON:0 * * * * *}   # US-S3E6-03: tác vụ nhắc việc mỗi phút (giờ VN); "-" để tắt
+  # --- T-261126-32 (S3-E6, S3-E5) ---
+  s3e5:
+    access-log-max-days: 7          # BR-S3E5-37: nhật ký truy cập của máy chủ web (có IP) giữ tối đa 7 ngày; Tomcat
+                                    # access log mặc định tắt, proxy phía trước phải xoay vòng theo số ngày này
+    account-purge-cron: ${GEO_ACCOUNT_PURGE_CRON:0 0 3 * * *}   # US-S3E5-05, Dev-REV-A3: dọn tài khoản đã xóa quá 30 ngày lúc 03:00 giờ VN; "-" để tắt
+  # --- FIX (task FIX T-261126-35, 43+) ---
+  # ===== Chặng 5: khóa geo.s5.* theo task (T-261128-51, PLAN_code-s5 §5 luật 2) =====
+  # Mỗi task chỉ thêm khóa NGAY DƯỚI mốc của mình, dạng chấm "  s5.<khóa>: …" (không mở khóa "s5:" thứ hai).
+  # --- T-261128-51 (khung) ---
+  s5.grading.enabled: ${GEO_S5_GRADING_ENABLED:false}         # P5: S5-E4 + US-S5E5-02/03 (chờ PO-64); tắt = API 404, menu ẩn, job không chạy
+  s5.ai-grading.enabled: ${GEO_S5_AI_GRADING_ENABLED:false}   # P5: S5-E6 AI đề xuất điểm (chờ PO-64, QS5-30)
+  # --- T-261128-52 (S5-E2) ---
+  s5.exam.data-dir: ${GEO_EXAM_DATA_DIR:artifacts/GEO/materials/de-thi}   # US-S5E2-01: thư mục dữ liệu đề (chỉ đọc); tương đối = tìm từ thư mục chạy lên các thư mục cha
+  s5.exam.data-version: ${GEO_EXAM_DATA_VERSION:de-thi v1.0}            # BR-S5E2-01: nhãn phiên bản gắn vào bản ghi đã nạp
+  # --- T-261128-53 (S5-E1) ---
+  s5.lesson-plan.daily-limit: ${GEO_S5_LESSON_PLAN_DAILY_LIMIT:30}   # BR-S5E1-08, QS5-04: lượt AI soạn (mới + vá) mỗi giáo viên mỗi ngày giờ VN
+  # --- T-261128-54 (S5-E1, S5-E2 xuất) ---
+  # --- T-261128-55 (S5-E5) ---
+  # --- T-261128-56 (S5-E3) ---
+  kb.min-score: ${GEO_KB_MIN_SCORE:0.1}   # BR-S5E3-24, QS5-09: ngưỡng điểm ts_rank_cd chuẩn hoá (0…1) của bộ truy xuất mục kho tri thức
+  # --- T-261128-57 (S5-E4) ---
+  s5.images.backend: ${GEO_IMAGE_BACKEND:local}            # US-S5E4-08, P6: local = tệp mã hoá AES-256-GCM dưới dir (dev/test); s3 = kho tại VN (QS5-18, chưa cấu hình: khởi động báo lỗi khi dùng)
+  s5.images.dir: ${GEO_IMAGE_DIR:.data/s5-images}           # thư mục kho cục bộ (không phục vụ tĩnh, không đường dẫn công khai)
+  s5.images.key: ${GEO_IMAGE_KEY:}                          # khoá AES-256 base64 (32 byte), tách theo môi trường; trống = khoá suy từ tên profile (chỉ dev/test; prod bắt buộc đặt)
+  s5.images.sign-key: ${GEO_IMAGE_SIGN_KEY:}                # khoá HMAC của URL ký; trống = suy như trên (chỉ dev/test)
+  s5.images.url-ttl: ${GEO_IMAGE_URL_TTL:PT5M}              # BR-S5E4-26: URL ký hạn 5 phút
+  s5.images.purge-cron: "${GEO_IMAGE_PURGE_CRON:0 20 * * * *}"   # BR-S5E4-28: job xoá theo tài khoản (≤ 24 giờ) + theo năm học (từ 31/07), giờ VN
+  # --- T-261128-58 (S5-E3) ---
+  # --- T-261128-59 (S5-E4) ---
+  # --- T-261128-60 (S5-E4) ---
+  # --- T-261128-61 (S5-E6) ---
+  s5.ai-grading.poll-ms: ${GEO_S5_AI_GRADING_POLL_MS:2000}   # US-S5E6-01: chu kỳ job nền quét bản đọc chữ mới để AI đề xuất điểm (ms)
+  # --- T-261128-62 (S5-E6) ---
+  # --- T-261128-63 (S5-E2, S5-E3) ---
+  # --- T-261128-64 (S5-E5) ---
+  # --- T-261128-65 (S5-E6) ---
+  s5.ai-grading.gate.min-papers: ${GEO_S5_AI_GATE_MIN_PAPERS:20}     # BR-S5E6-16, QS5-21: số bài chạy song song tối thiểu để xét cổng "AI đề xuất" của lớp
+  s5.ai-grading.gate.macro: ${GEO_S5_AI_GATE_MACRO:0.85}             # KPI §4 (a): cận dưới KTC 95 % điểm khớp macro theo dạng
+  s5.ai-grading.gate.topic-floor: ${GEO_S5_AI_GATE_TOPIC_FLOOR:0.70} # KPI §4 (a): không dạng bài nào dưới ngưỡng này
+  s5.ai-grading.gate.within: ${GEO_S5_AI_GATE_WITHIN:0.85}           # KPI §4 (b): cận dưới Wilson tỉ lệ cặp tiêu chí lệch trong ±0,25
+  s5.ai-grading.gate.result: ${GEO_S5_AI_GATE_RESULT:0.95}           # KPI §4 (c): tỉ lệ Kết quả AI đúng chiều engine (ước lượng điểm)
+  s5.ai-grading.gate.catch: ${GEO_S5_AI_GATE_CATCH:0.80}             # KPI §4 (d): tỉ lệ bắt bước sai (ước lượng điểm)
+  s5.ai-grading.gate.false-alarm: ${GEO_S5_AI_GATE_FALSE_ALARM:0.10} # KPI §4 (d): tỉ lệ báo nhầm tối đa (ước lượng điểm)
+  # --- FIX chặng 5 (task FIX T-261128-*) ---
 
 management:
   endpoints.web.exposure.include: health,info,metrics,prometheus

@@ -1,0 +1,126 @@
+/* S5-E6b · màn chấm có đề xuất AI (T-261128-62). Màu, bo góc chỉ qua token theme; chữ phụ ≥ 14 px. */
+.s5e6-page {
+  display: grid;
+  gap: var(--gap);
+  max-width: 1200px;
+  min-width: 0;
+}
+.s5e6-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.s5e6-title {
+  margin: 0;
+  font-size: 20px;
+}
+.s5e6-muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+.s5e6-toast,
+.s5e6-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: var(--radius, 8px);
+  background: var(--pri-s);
+  color: var(--text);
+}
+.s5e6-review {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--gap);
+  min-width: 0;
+}
+@media (max-width: 900px) {
+  .s5e6-review {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.s5e6-pages {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.s5e6-page-img {
+  position: relative;
+}
+.s5e6-page-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius, 8px);
+}
+.s5e6-region {
+  position: absolute;
+  border: 3px solid var(--red);
+  border-radius: var(--radius, 8px);
+  pointer-events: none;
+}
+.s5e6-card {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+.s5e6-crit {
+  display: grid;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius, 8px);
+  cursor: pointer;
+}
+.s5e6-crit.is-selected {
+  border-color: var(--pri);
+}
+.s5e6-crit p {
+  margin: 0;
+}
+.s5e6-crit-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.s5e6-crit input {
+  width: 90px;
+}
+.s5e6-ai-points {
+  font-weight: 600;
+}
+.s5e6-ok {
+  color: var(--grn);
+  font-size: 14px;
+}
+.s5e6-flag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 2px 8px;
+  border-radius: var(--radius, 8px);
+  background: var(--red-s);
+  color: var(--red);
+  font-size: 14px;
+}
+.s5e6-total {
+  margin: 0;
+  font-weight: 600;
+}
+.s5e6-cmp {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.s5e6-cmp th,
+.s5e6-cmp td {
+  padding: 4px 6px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.s5e6-cmp tr.is-diff td {
+  color: var(--red);
+}

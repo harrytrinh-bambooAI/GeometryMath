@@ -1,0 +1,35 @@
+{
+ "case": "E03",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "reply"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý từ chối đúng theo A1, giữ nguyên giáo án và phát hiện được lỗi có sẵn: HĐ4 ghi o_nha=false, 5 phút nhưng lại tổ chức cho HS làm ở nhà. Còn thiếu ý công thức tọa độ thuộc chương trình lớp 12, không phải Toán 11, và đề xuất đổi mã kt câu 3 (BM-007) chưa thật cần thiết vì lời giải chuẩn dựng AH⊥SB trực tiếp."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 92.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.5
+ }
+}

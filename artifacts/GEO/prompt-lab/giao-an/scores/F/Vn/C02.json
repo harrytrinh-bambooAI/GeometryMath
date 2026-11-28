@@ -1,0 +1,84 @@
+{
+ "case": "C02",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": false,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A5: tổng 38 phút ≠ 1×45"
+  ],
+  "info": {
+   "khoa_co_dau": 5,
+   "tong_phut": 38,
+   "kt_khop": 4,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 6,
+   "cau_tu_kho": 6,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 4,
+   "doi_tuong": 4,
+   "phong_cach": 4,
+   "to_chuc": 2,
+   "chinh_xac": 4,
+   "phieu": 3
+  },
+  "vi_pham_A": [
+   {
+    "luat": "A5",
+    "trich": "\"thoi_luong_phut\":7"
+   },
+   {
+    "luat": "A5",
+    "trich": "\"thoi_luong_phut\":8"
+   },
+   {
+    "luat": "A5",
+    "trich": "\"thoi_luong_phut\":10"
+   },
+   {
+    "luat": "A5",
+    "trich": "\"thoi_luong_phut\":13"
+   },
+   {
+    "luat": "A1",
+    "trich": "Dùng hệ thức nghịch đảo bình phương cho tứ diện vuông, hoặc tính qua thể tích."
+   },
+   {
+    "luat": "A1",
+    "trich": "Cách 2: tìm đoạn vuông góc chung trực tiếp hoặc dùng toạ độ."
+   }
+  ],
+  "loi_toan": [
+   "HD3 nói 'Phát PHT1 (bài mẫu theo các câu hỏi dẫn dắt)' với BM-008, nhưng PHT1 lại chứa BM-007 và BT11-B26-5; BM-008 thực tế nằm ở PHT2 nên phiếu và hoạt động không khớp nhau.",
+   "PHT3 câu 1 (BT11-B26-6) gợi ý theo hướng 'trực tâm'/thể tích; đúng ra nên theo lời giải chuẩn: kẻ OK⊥BC, rồi OH⊥AK và áp dụng 1/OH²=1/OA²+1/OK² (KT11-C07-CT-003)."
+  ],
+  "nhan_xet": "Tổng thời lượng các hoạt động trên lớp là 7+8+10+13 = 38 phút, không bằng 45 phút; PHT1 không khớp với HD3 và phiếu dùng kiến thức ngoài danh sách được cấp (thể tích, toạ độ). Ngoài các lỗi trên, giáo án bám tốt hai kiến thức trọng tâm, có phong cách khám phá rõ và không tự ghi đáp số."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 0.0,
+  "A": 7,
+  "A_auto": 1,
+  "A_judge": 6,
+  "auto": 0.9,
+  "judge": 3.5
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "id": "BM-061",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-08-quy-tac-tinh-xac-suat/on-tap-chuong.md — bài 5 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Quy tắc nhân xác suất",
+ "muc_do": "VD",
+ "de_bai": "Một cầu thủ sút phạt đền thành công với xác suất $0{,}8$. Sút $3$ lần độc lập, tính xác suất thành công đúng $2$ lần.",
+ "dap_so": {
+  "gia_tri": "$0{,}384$",
+  "so": 0.384
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Quy tắc nhân (biến cố độc lập)",
+  "Quy tắc cộng (xung khắc)"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Có $3$ cách chọn lần trượt.",
+   "ket_qua_trung_gian": "$3$ cách",
+   "kien_thuc": "Đếm",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $3$ cách",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Bỏ qua số cách chọn lần trượt (chỉ tính một thứ tự)",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Mỗi cách có xác suất $0{,}8\\cdot0{,}8\\cdot0{,}2=0{,}128$.",
+   "ket_qua_trung_gian": "$0{,}128$",
+   "kien_thuc": "Quy tắc nhân",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $0{,}128$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Nhân sai: $0{,}8^2\\cdot0{,}2=0{,}16$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.128
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Các cách xung khắc nên $P=3\\cdot0{,}128=0{,}384$.",
+   "ket_qua_trung_gian": "$0{,}384$",
+   "kien_thuc": "Quy tắc cộng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $0{,}384$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.384
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "thieu-chung-minh",
+   "mo_ta": "Bỏ qua số cách chọn lần trượt (chỉ tính một thứ tự)",
+   "loi_giai": "B1: (không xét thứ tự)\nB2: Mỗi cách có xác suất $0{,}8\\cdot0{,}8\\cdot0{,}2=0{,}128$.\nB3: $P=0{,}128$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Nhân sai: $0{,}8^2\\cdot0{,}2=0{,}16$",
+   "loi_giai": "B1: Có $3$ cách chọn lần trượt.\nB2: $0{,}8\\cdot0{,}8\\cdot0{,}2=0{,}16$.\nB3: $P=3\\cdot0{,}16=0{,}48$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "S1: B2 đúng → 0,5."
+}

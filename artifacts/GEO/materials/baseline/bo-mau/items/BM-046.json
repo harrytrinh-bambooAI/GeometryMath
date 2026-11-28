@@ -1,0 +1,86 @@
+{
+ "id": "BM-046",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-27-the-tich.md — bài 8 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Thể tích khối chóp",
+ "muc_do": "VDC",
+ "de_bai": "Chóp $S.ABCD$ đáy hình vuông cạnh $2a$, tam giác $SAB$ đều và nằm trong mặt phẳng vuông góc với đáy. Tính thể tích theo $a$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{4\\sqrt3a^3}{3}$",
+  "so": 2.309401076758503
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Hai mặt phẳng vuông góc",
+  "$V=\\dfrac13Bh$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$H$ trung điểm $AB$: $SH\\perp AB$, $SH=\\dfrac{2a\\sqrt3}2=a\\sqrt3$.",
+   "ket_qua_trung_gian": "$SH=a\\sqrt3$",
+   "kien_thuc": "Đường cao tam giác đều",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $SH=a\\sqrt3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 1.7320508075688772
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$(SAB)\\perp(ABCD)$, giao tuyến $AB$, $SH\\perp AB$ nên $SH\\perp(ABCD)$.",
+   "ket_qua_trung_gian": "$SH\\perp(ABCD)$",
+   "kien_thuc": "Định lí hai mặt phẳng vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $SH\\perp(ABCD)$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Không chứng minh $SH\\perp(ABCD)$, chỉ ghi \"$SH$ là đường cao\"",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$V=\\dfrac13\\cdot4a^2\\cdot a\\sqrt3=\\dfrac{4\\sqrt3a^3}3$.",
+   "ket_qua_trung_gian": "$\\dfrac{4\\sqrt3a^3}3$",
+   "kien_thuc": "Thể tích",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{4\\sqrt3a^3}3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy diện tích đáy $2a^2$ (quên bình phương $2$)",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 2.309401076758503
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Lấy diện tích đáy $2a^2$ (quên bình phương $2$)",
+   "loi_giai": "B1: $H$ trung điểm $AB$: $SH\\perp AB$, $SH=\\dfrac{2a\\sqrt3}2=a\\sqrt3$.\nB2: $(SAB)\\perp(ABCD)$, giao tuyến $AB$, $SH\\perp AB$ nên $SH\\perp(ABCD)$.\nB3: $V=\\dfrac13\\cdot2a^2\\cdot a\\sqrt3=\\dfrac{2\\sqrt3a^3}3$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "thieu-chung-minh",
+   "mo_ta": "Không chứng minh $SH\\perp(ABCD)$, chỉ ghi \"$SH$ là đường cao\"",
+   "loi_giai": "B1: $H$ trung điểm $AB$: $SH\\perp AB$, $SH=\\dfrac{2a\\sqrt3}2=a\\sqrt3$.\nB2: $SH$ là đường cao của hình chóp.\nB3: $V=\\dfrac13\\cdot4a^2\\cdot a\\sqrt3=\\dfrac{4\\sqrt3a^3}3$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

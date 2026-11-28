@@ -1,0 +1,99 @@
+/* S3-E5 (T-261126-28): màn thông báo riêng tư (MSG-S3-81) và công tắc AI theo lớp (MSG-S3-83). Chỉ token theme;
+   chữ phụ ≥ 14 px; nút "Đã đọc" cao ≥ 44 px (US-S3E5-02-FC6). */
+.s3e5-notice {
+  max-width: 720px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.s3e5-title {
+  font-size: 22px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+.s3e5-body p {
+  margin: 0 0 8px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.s3e5-ack {
+  min-height: 44px;
+  align-self: flex-start;
+}
+.s3e5-ai-msg {
+  margin: 0 0 12px;
+}
+/* ẩn khung Hỏi đáp của màn bài E1 khi lớp tắt trợ lý AI */
+.s3e5-ai-off [data-testid='e1-qa'] {
+  display: none;
+}
+
+/* US-S3E5-05 (T-261126-32): mục "Xóa tài khoản" ở Cài đặt và màn thông báo riêng tư xem lại. */
+.s3e5-delete {
+  max-width: 720px;
+  margin-top: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.s3e5-delete h3 {
+  margin: 0;
+}
+.s3e5-delete-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.s3e5-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+.s3e5-field input {
+  font-family: var(--font-math);
+  font-size: 17px;
+  font-weight: 400;
+  min-height: max(var(--touch), var(--ctl-h));
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  color: var(--text);
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+.s3e5-field input[aria-invalid='true'] {
+  border-color: var(--red);
+}
+.s3e5-err {
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 400;
+}
+.s3e5-danger {
+  min-height: 44px;
+  align-self: flex-start;
+  color: var(--red);
+  border-color: var(--red);
+}
+.s3e5-danger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.s3e5-delete-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.s3e5-settings-link {
+  font-size: 15px;
+}

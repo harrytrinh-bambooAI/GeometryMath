@@ -1,0 +1,34 @@
+{
+ "case": "E11",
+ "variant": "V8",
+ "round": "K3",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[2].noi_dung\", \"before\": \"GV nêu quy tắc, HS làm ví dụ.\", \"after\": \"GV nêu quy tắc, HS làm ví dụ. Ví dụ về đạo hàm của thương: tính đạo hàm của $y=\\\\dfrac{x}{x^2+1}$ bằng công thức $\\\\left(\\\\dfrac uv\\\\right)'=\\\\dfrac{u'v-uv'}{v^2}$ với $u=x$, $v=x^2+1$.\", \"ly_do\": \"Thêm một ví dụ tính đạo hàm của thương theo yêu cầu, chỉ dùng công thức KT11-C09-CT-005 và $(x^n)'$ từ KT11-C09-CT-002, không ghi kết quả số.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[0].noi_dung\", \"van_de\": \"HD1 dùng định nghĩa đạo hàm (KT11-C09-DN-001) nhưng kien_thuc của HĐ để trống.\", \"goi_y\": \"Cân nhắc ghi KT11-C09-DN-001 vào kien_thuc của HD1 hoặc nêu rõ đây chỉ là nhắc lại.\", \"ly_do\": \"Đồng bộ mã kiến thức với nội dung HĐ.\"}, {\"vi_tri\": \"hoat_dong[1].kien_thuc\", \"van_de\": \"Phát biểu KT11-C09-CT-002 chỉ ghi $(x^n)'=nx^{n-1}$, thiếu $(c)'=0$, $(\\\\sqrt x)'$, $\\\\left(\\\\dfrac1x\\\\right)'$; KT11-C09-CT-004 chỉ ghi $(a^x)'$, thiếu các công thức còn lại.\", \"goi_y\": \"Bổ sung đầy đủ phát biểu theo danh sách được cấp nếu GV muốn dạy các công thức đó.\", \"ly_do\": \"Phát biểu cần đúng nguyên văn danh sách kiến thức.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[1]\", \"van_de\": \"Câu 2 có nguon là \\\"moi\\\" nhưng kho có BT11-B32-2 ($y=x\\\\sin x$) gần tương tự; câu này còn dùng đạo hàm của $\\\\sin x$ (KT11-C09-CT-003) mà kt chưa ghi mã đó. Ngoài ra buoc_goi_y của các câu đang để trống.\", \"goi_y\": \"Cân nhắc dùng id kho bài tập, thêm KT11-C09-CT-003 vào kt của câu 2 và bổ sung buoc_goi_y.\", \"ly_do\": \"Ưu tiên bài trong kho và đủ mã kiến thức.\"}, {\"vi_tri\": \"hoat_dong[0..4].thoi_luong_phut\", \"van_de\": \"Tổng thời lượng là 5+15+10+10+5=45 phút, khớp 1 tiết; không có lỗi.\", \"goi_y\": \"Giữ nguyên, ví dụ thêm vào HD3 cần lưu ý thời gian 10 phút.\", \"ly_do\": \"Ví dụ thêm có thể làm HD3 chật thời gian.\"}], \"unsure\": []}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[2].noi_dung\",\"before\":\"GV nêu quy tắc, HS làm ví dụ.\",\"after\":\"GV nêu quy tắc, HS làm ví dụ. Ví dụ về đạo hàm của thương: tính đạo hàm của $y=\\\\dfrac{x}{x^2+1}$ bằng công thức $\\\\left(\\\\dfrac uv\\\\right)'=\\\\dfrac{u'v-uv'}{v^2}$ với $u=x$, $v=x^2+1$.\",\"ly_do\":\"Thêm một ví dụ tính đạo hàm của thương theo yêu cầu, chỉ dùng công thức KT11-C09-CT-005 và $(x^n)'$ từ KT11-C09-CT-002, không ghi kết quả số.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[0].noi_dung\",\"van_de\":\"HD1 dùng định nghĩa đạo hàm (KT11-C09-DN-001) nhưng kien_thuc của HĐ để trống.\",\"goi_y\":\"Cân nhắc ghi KT11-C09-DN-001 vào kien_thuc của HD1 hoặc nêu rõ đây chỉ là nhắc lại.\",\"ly_do\":\"Đồng bộ mã kiến thức với nội dung HĐ.\"},{\"vi_tri\":\"hoat_dong[1].kien_thuc\",\"van_de\":\"Phát biểu KT11-C09-CT-002 chỉ ghi $(x^n)'=nx^{n-1}$, thiếu $(c)'=0$, $(\\\\sqrt x)'$, $\\\\left(\\\\dfrac1x\\\\right)'$; KT11-C09-CT-004 chỉ ghi $(a^x)'$, thiếu các công thức còn lại.\",\"goi_y\":\"Bổ sung đầy đủ phát biểu theo danh sách được cấp nếu GV muốn dạy các công thức đó.\",\"ly_do\":\"Phát biểu cần đúng nguyên văn danh sách kiến thức.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[1]\",\"van_de\":\"Câu 2 có nguon là \\\"moi\\\" nhưng kho có BT11-B32-2 ($y=x\\\\sin x$) gần tương tự; câu này còn dùng đạo hàm của $\\\\sin x$ (KT11-C09-CT-003) mà kt chưa ghi mã đó. Ngoài ra buoc_goi_y của các câu đang để trống.\",\"goi_y\":\"Cân nhắc dùng id kho bài tập, thêm KT11-C09-CT-003 vào kt của câu 2 và bổ sung buoc_goi_y.\",\"ly_do\":\"Ưu tiên bài trong kho và đủ mã kiến thức.\"},{\"vi_tri\":\"hoat_dong[0..4].thoi_luong_phut\",\"van_de\":\"Tổng thời lượng là 5+15+10+10+5=45 phút, khớp 1 tiết; không có lỗi.\",\"goi_y\":\"Giữ nguyên, ví dụ thêm vào HD3 cần lưu ý thời gian 10 phút.\",\"ly_do\":\"Ví dụ thêm có thể làm HD3 chật thời gian.\"}],\"unsure\":[]}}",
+ "usage": {
+  "ts": "2026-11-27T17:58:31",
+  "role": "gen",
+  "task": "K3/V8/E11",
+  "model": "claude-sonnet-5-5",
+  "input": 2822,
+  "output": 1164,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 7.6
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:31",
+   "role": "gen",
+   "task": "K3/V8/E11",
+   "model": "claude-sonnet-5-5",
+   "input": 2822,
+   "output": 1164,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 7.6
+  }
+ ],
+ "server_errs0": []
+}

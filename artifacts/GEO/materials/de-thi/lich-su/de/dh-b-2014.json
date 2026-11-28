@@ -1,0 +1,167 @@
+{
+ "ma": "dh-b-2014",
+ "ky_thi": "dh-b",
+ "nam": 2014,
+ "cau_truc_loai": "tu-luan",
+ "cau_truc": {
+  "phan": [
+   {
+    "id": "P1",
+    "ten": "Toàn bộ đề (9 câu)",
+    "loai_cau": "tu-luan",
+    "so_cau": 11,
+    "diem": 10.0
+   }
+  ],
+  "thoi_gian_phut": 180,
+  "nguon_cau_truc": "Đề thi: 180 phút, thang 10 điểm (câu 1 gồm 2 ý 1 điểm; còn lại theo từng câu)"
+ },
+ "do_tin_cay": "cao: đối chiếu trực tiếp với PDF chính thức của Bộ; muc_do là suy luận theo vị trí/độ khó điển hình (đề ĐH không công bố mức độ)",
+ "ghi_chu": "Đề 2014 không còn tách phần chung/riêng.",
+ "nguon": [
+  {
+   "url": "https://hocmai.vn/file.php/1/Thu_vien_de_thi/Tuyen%20sinh%20DH,%20CD/Nam_2014/Tuyen_sinh_dai_hoc/Khoi_B/Toan/De_Toan_DH_B_Ct_14.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  },
+  {
+   "url": "https://toanmath.com/toanmath-pdf/tong-hop-88-de-thi-thpt-quoc-gia-mon-toan-cua-bo-gddt-2005-2026.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  }
+ ],
+ "cau": [
+  {
+   "so": "1a",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.khao-sat",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Khảo sát hàm y=x^3-3mx+1 khi m=1"
+  },
+  {
+   "so": "1b",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.cuc-tri-hinh-hoc",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hai cực trị B,C sao cho tam giác ABC cân tại A(2;3)"
+  },
+  {
+   "so": "2",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "luong-giac",
+   "dang": "lg.pt",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "PT căn2(sin x-2cos x)=2-sin2x"
+  },
+  {
+   "so": "3",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tp-huu-ti",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Tích phân (x^2+3x+1)/(x^2+x)"
+  },
+  {
+   "so": "4a",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 0.5,
+   "chu_de": "so-phuc",
+   "dang": "sp.tim-z",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Môđun của z thỏa 2z+3(1-i)z̄=1-9i"
+  },
+  {
+   "so": "4b",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 0.5,
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-co-dien",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Chọn 3 hộp sữa từ 5 cam, 4 dâu, 3 nho: xác suất đủ 3 loại"
+  },
+  {
+   "so": "5",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.mp-pt+ox.toa-do-diem",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Mặt phẳng qua A vuông góc d; hình chiếu của A trên d"
+  },
+  {
+   "so": "6",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "th.lang-tru-goc+qh.khoang-cach",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Lăng trụ đáy đều, A' chiếu lên trung điểm AB: thể tích, khoảng cách B đến (ACC'A')"
+  },
+  {
+   "so": "7",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxy-hinh-phang",
+   "dang": "oxy.hinh-binh-hanh",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hình bình hành ABCD với M, H, G cho trước: tìm B và D"
+  },
+  {
+   "so": "8",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he",
+   "lop": 10,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hệ phương trình (1-y)căn(x-y)+x=2+(x-y-1)căn y ..."
+  },
+  {
+   "so": "9",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "bat-dang-thuc-cuc-tri",
+   "dang": "bdt.cuc-tri",
+   "lop": 10,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "GTNN của biểu thức với a,b,c không âm, (a+b)c>0"
+  }
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "ma": "dh-a-2012",
+ "ky_thi": "dh-a",
+ "nam": 2012,
+ "cau_truc_loai": "tu-luan",
+ "cau_truc": {
+  "phan": [
+   {
+    "id": "P1",
+    "ten": "Phần chung",
+    "loai_cau": "tu-luan",
+    "so_cau": 7,
+    "diem": 7
+   },
+   {
+    "id": "P2",
+    "ten": "Phần riêng - chương trình chuẩn (thí sinh chọn chuẩn hoặc nâng cao)",
+    "loai_cau": "tu-luan",
+    "so_cau": 3,
+    "diem": 3
+   }
+  ],
+  "thoi_gian_phut": 180,
+  "nguon_cau_truc": "Đề thi: 180 phút, thang 10 điểm (câu 1 gồm 2 ý 1 điểm; còn lại theo từng câu)"
+ },
+ "do_tin_cay": "cao: nội dung đọc từ text đề trong bộ tổng hợp; điểm theo thang chuẩn của đề; muc_do là suy luận theo vị trí/độ khó điển hình (đề ĐH không công bố mức độ)",
+ "ghi_chu": "Chỉ ghi phần riêng theo chương trình Chuẩn; phần riêng Nâng cao (3 điểm, thay thế) KHÔNG đưa vào. Đề Toán khối A và A1 là một đề chung.",
+ "nguon": [
+  {
+   "url": "https://toanmath.com/toanmath-pdf/tong-hop-88-de-thi-thpt-quoc-gia-mon-toan-cua-bo-gddt-2005-2026.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  }
+ ],
+ "cau": [
+  {
+   "so": "1a",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.khao-sat",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Khảo sát hàm trùng phương y=x^4-2(m+1)x^2+m^2 khi m=0"
+  },
+  {
+   "so": "1b",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.cuc-tri-hinh-hoc",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Ba cực trị tạo tam giác vuông"
+  },
+  {
+   "so": "2",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "luong-giac",
+   "dang": "lg.pt",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "PT căn3 sin2x+cos2x=2cosx-1"
+  },
+  {
+   "so": "3",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hệ phương trình x^3-3x^2-9x+22=y^3+3y^2-9y, x^2+y^2-x+y=1/2"
+  },
+  {
+   "so": "4",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tp-log",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Tích phân (1+ln(x+1))/x^2"
+  },
+  {
+   "so": "5",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "th.chop-goc+qh.khoang-cach",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Thể tích S.ABC và khoảng cách SA-BC (H trên AB, HA=2HB)"
+  },
+  {
+   "so": "6",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "bat-dang-thuc-cuc-tri",
+   "dang": "bdt.cuc-tri",
+   "lop": 10,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "GTNN của P=3^|x-y|+3^|y-z|+3^|z-x|-căn(6x^2+6y^2+6z^2) với x+y+z=0"
+  },
+  {
+   "so": "7",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxy-hinh-phang",
+   "dang": "oxy.hinh-vuong",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hình vuông ABCD, M trung điểm BC, CN=2ND: tìm A"
+  },
+  {
+   "so": "8",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-pt",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Mặt cầu tâm I cắt đường thẳng tại A,B sao cho IAB vuông tại I"
+  },
+  {
+   "so": "9",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.nhi-thuc",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Tìm số hạng chứa x^5 trong khai triển nhị thức Newton với n từ 5C(n,n-1)=C(n,3)"
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "id": "MC-UD-01",
+ "ten": "Diện tích giữa parabol và đường thẳng",
+ "chu_de": "ung-dung-tich-phan",
+ "dang": "ud.dien-tich-parabol",
+ "dang_tx": "ud.dien-tich",
+ "yccd": [
+  "12.UD.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-UD-01",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-UD-01",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "m": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "6"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "",
+ "hoi": "Diện tích hình phẳng giới hạn bởi đồ thị $y=x^2$ và đường thẳng $y={m}x$ bằng",
+ "dap_so": "m**3/6",
+ "nhieu": [
+  {
+   "bieu_thuc": "m**3/3",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Chỉ tính $\\int_0^m x^2dx$ (quên đường thẳng)"
+   }
+  },
+  {
+   "bieu_thuc": "m**3/2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Chỉ tính $\\int_0^m mx\\,dx$ (quên parabol)"
+   }
+  },
+  {
+   "bieu_thuc": "m**2/6",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Sai lũy thừa khi thay cận"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-UD-01']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "m": "1"
+  },
+  {
+   "m": "2"
+  },
+  {
+   "m": "3"
+  },
+  {
+   "m": "4"
+  },
+  {
+   "m": "6"
+  }
+ ],
+ "so_bien_the": 5,
+ "so_cau_sinh": 9,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

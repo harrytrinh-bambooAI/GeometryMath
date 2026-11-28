@@ -1,0 +1,89 @@
+{
+ "id": "MC-HH-A10",
+ "ten": "Diện tích xung quanh chóp SA ⊥ đáy vuông",
+ "chu_de": "hinh-khong-gian-the-tich",
+ "dang": "dien-tich-xq.chop-sa",
+ "dang_tx": "th.chop",
+ "yccd": [
+  "11.TT.2"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "A",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-67",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-67 + geometry/problem-specs.json#HKN-67"
+ },
+ "tham_so": {
+  "k": [
+   "1",
+   "sqrt(3)",
+   "2"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SB": "sqrt(a**2+h**2)",
+  "SC": "sqrt(2*a**2+h**2)"
+ },
+ "boi_canh": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA={h}$.",
+ "hoi": "Tổng diện tích bốn mặt bên của hình chóp $S.ABCD$ bằng",
+ "dap_so": "a*h+a*sqrt(a**2+h**2)",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "a*h+a*sqrt(a**2+h**2)+a**2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng cả diện tích đáy (tính diện tích toàn phần)"
+   }
+  },
+  {
+   "bieu_thuc": "2*a*sqrt(a**2+h**2)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi bốn mặt bên đều có đường cao bằng $SB$"
+   }
+  },
+  {
+   "bieu_thuc": "2*a*h",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi bốn mặt bên đều vuông tại $A$ với đường cao $SA$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-67",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "sa": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(3)"
+  },
+  {
+   "k": "2"
+  }
+ ],
+ "so_bien_the": 3,
+ "so_cau_sinh": 6,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

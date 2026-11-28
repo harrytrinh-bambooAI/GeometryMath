@@ -1,0 +1,32 @@
+{
+ "ids": [
+  "BM-023-S1",
+  "BM-023-S2",
+  "BM-023-DUNG",
+  "BM-024-S1",
+  "BM-024-S2",
+  "BM-024-DUNG",
+  "BM-025-S1",
+  "BM-025-S2",
+  "BM-025-DUNG",
+  "BM-026-S1",
+  "BM-026-S2",
+  "BM-026-DUNG",
+  "BM-027-S1",
+  "BM-027-S2",
+  "BM-027-DUNG"
+ ],
+ "text": "{\"ket_qua\":[{\"id\":\"BM-023-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"Trung đoạn là SH = √(4²+3²) = 5 cm, không phải đường cao SO = 4 cm.\"},{\"id\":\"BM-023-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"S_xq = p·d = 12·5 = 60 cm², không phải 24·5 = 120 (p đã là nửa chu vi).\"},{\"id\":\"BM-023-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: SH=5, p=12, S_xq=60 cm².\"},{\"id\":\"BM-024-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"OH = a/2 nên SH² = SO² + OH² = 3a²/4 + a²/4 = a². Lời giải đã trừ thay vì cộng.\"},{\"id\":\"BM-024-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"Diện tích tam giác SBC = (1/2)·BC·SH = a²/2, lời giải thiếu hệ số 1/2.\"},{\"id\":\"BM-024-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: SH=a, S_SBC=a²/2, S_xq=2a².\"},{\"id\":\"BM-025-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Tam giác SBC vuông tại B (BC⊥SB), không vuông tại C; tương tự SCD vuông tại D. Sai dẫn đến B3 cũng sai.\"},{\"id\":\"BM-025-S2\",\"buoc_sai\":\"B4\",\"ly_do\":\"Tổng = 2·a²/2 + 2·a²√2/2 = (1+√2)a², lời giải tính ra 2a²√2 là sai.\"},{\"id\":\"BM-025-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: tổng diện tích = (1+√2)a².\"},{\"id\":\"BM-026-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Bán kính mặt cầu ngoại tiếp là nửa đường chéo: R = AC'/2 = √3, không phải AC'.\"},{\"id\":\"BM-026-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"V = (4/3)π(√3)³ = (4/3)π·3√3 = 4√3π, không phải 4π (R³ = 3√3, không phải 3).\"},{\"id\":\"BM-026-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: R=√3, V=4√3π cm³.\"},{\"id\":\"BM-027-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Tâm mặt cầu là trung điểm SC, không phải tâm O của đáy (O không cách đều S).\"},{\"id\":\"BM-027-S2\",\"buoc_sai\":\"B4\",\"ly_do\":\"Diện tích mặt cầu là 4πR² = 4πa², không phải πR².\"},{\"id\":\"BM-027-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: R=a, S=4πa².\"}]}",
+ "usage": {
+  "ts": "2026-11-27T17:45:16",
+  "role": "gen",
+  "task": "R5/STEP1/stepb-2",
+  "model": "claude-sonnet-5-5",
+  "input": 4469,
+  "output": 1076,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 6.3
+ }
+}

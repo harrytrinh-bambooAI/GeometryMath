@@ -29,3 +29,28 @@
 - mới: TC-GEO-0234 (203-SC7), 0235 (203-FC6) cho đề không tham số (D-GEO-140). Gỡ chỉnh TC-GEO-0216 (AC đã ghi 45,0044). QF-E2-07 và QF-E2-02 đóng.
 - Đối chiếu cuối: 36 / 36 tiêu chí có case (100%); 36 / 36 case trỏ về tiêu chí có thật của BA hoặc NFR-GEO; 0 case trỏ tiêu chí không tồn tại (bộ sinh và phép đối chiếu độc lập).
 - Sau M-306, M-220, M-221 (D-GEO-173…183): mới TC-GEO-0236 (203-SC8, D-GEO-178); TC-GEO-0235 theo dữ liệu mới "41,56 cm³". Đối chiếu: 37 / 37 tiêu chí, 37 / 37 case.
+
+## Sinh lại theo AC hiện hành (PO-50, Đợt 0; 22-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E2-08 | Fixed | mọi case của E2 | Case chưa có trường cho biết tự động hóa bằng cách nào; cột "Tầng tự động hóa" cũ ghi E2E trình duyệt = 0 | Thêm cột "Tự động hóa" do bộ sinh suy từ tầng và loại; QC chỉnh từng case ở `work/src/qc/E2_auto.txt`. Kết quả: E2E-UI 12 / E2E-API 5 / IT 20 / Manual 0 | QC · xong |
+
+- Sinh lại: bộ sinh chạy trên `stories_ac.md` hiện hành cho đúng nội dung tệp cũ (0 case lệch AC); thay đổi là cột "Tự động hóa". Không case nào bị bỏ.
+- Đối chiếu: 37 / 37 tiêu chí có case (100%); 37 / 37 case trỏ về tiêu chí của BA hoặc NFR-GEO / D-GEO; kiểm bằng `work/tools/check_ac_tc.py`.
+
+## Dev (E2, Đợt 1; 22-11-2026)
+
+| ID | Type | Where | Finding | Action taken or proposal | Owner · cần trước |
+|---|---|---|---|---|---|
+| QF-E2-D01 | Fixed (chốt QF-E1-D07) | BR-GEO-134; D-GEO-040, 163, 178; F-GEO-071, F-GEO-079 | E1 dùng max(1e-4·\|q\|, nửa đơn vị chữ số cuối) + 1e-12 cho mọi đề; AC của E2 tách hai trường hợp | Một công thức DUY NHẤT `AnswerMatch.tolerance` (geometry.api) đúng BR-GEO-134: đề/đại lượng có tham số a → 1e-4·max(1, \|q\|) + 1e-12 trên a = 1, 2, 3; không tham số → max(1e-6, nửa đơn vị chữ số thập phân cuối) + 1e-12, tính một lần. Lý do: BR-GEO-134 là quy tắc của chủ sở hữu kiểm chứng (E2) và có ví dụ số cho cả hai nhánh (TC-0216/0219, 0234…0236); một công thức thì E1 và E2 không thể cho hai nhãn khác nhau cho cùng đáp số. E1 `AnswerExpr.matches` gọi hàm này (đại lượng có a ⇒ nhánh tham số); test E1 vẫn đạt | E2 · xong |
+| QF-E2-D02 | Note | US-GEO-201-FC2 (F-GEO-074) | Fixture chỉ ghi "đáy tam giác ABC có AB = 1, BC = 1, CA = 3", không có đề đầy đủ | Test dùng đề "Cho lăng trụ đứng ABC.A′B′C′ có đáy là tam giác ABC với AB = 1, BC = 1, CA = 3, AA′ = 2. Tính thể tích."; AI giả lập trả kèm tọa độ để kiểm "không lặng lẽ thay bằng tọa độ AI" | QC · ghi nhận |
+| QF-E2-D03 | Note | US-GEO-203-FC4; TC-GEO-0222 | Cần "một đề mang Cần xem lại" mà Kho đề phải giữ đúng sáu đề (TC-GEO-0125) | Seed `200_e2_core.sql`: version 99 (không hiện hành) của HKG-06, chưa có báo cáo ⇒ "Cần xem lại"; trang chi tiết đề `/gv/de/:versionId`. Điểm cuối đổi nhãn `PUT /api/v1/problems/{id}/verify-status` luôn `FORBIDDEN` (khớp QF-E2-01) | QC · ghi nhận |
+| QF-E2-D04 | Note | US-GEO-204; D-GEO-047 | Nhận ra "hình phẳng"/"không khớp hình mẫu" thuộc cổng AI | AI giả lập tác vụ "scene" theo mẫu chữ (`server/src/main/resources/mock-ai/scene.json`); kịch bản F-GEO-111, F-GEO-112 đặt qua móc `/test-hooks/ai {scenario}`. Đề lạ lưu `solid_kind` theo gợi ý của AI (enum chưa có bát diện) | ARCH · khi nối AI thật |
+| QF-E2-D05 | Note | US-GEO-202-SC2, 201-SC2 ("đo bằng công cụ Đo dài") | Công cụ Đo dài đầy đủ thuộc E3 | Khung hình tạm của E2 có Đo dài tối giản (chọn hai điểm); E3 thay bằng bộ xem thật | E3 |
+| QF-E2-D06 | Note | D-GEO-109 | Giá trị mặc định của tham số hình mẫu chưa có nguồn | V20 đặt: chóp a=2, h=3; lăng trụ a=2, h=3; hộp 3×2×2; lập phương 2; nón r=2, h=3; trụ r=2, h=3; cầu r=2 | PO · khi có nguồn |
+| QF-E2-D07 | Note | US-GEO-202-SC4, 203-SC6 (iPhone) | Playwright chưa có dự án iPhone | Test mở ngữ cảnh iPhone 13 (khung nhìn, cảm ứng) trên trình duyệt của dự án đang chạy | QC · ghi nhận |
+| QF-E2-D08 | Fixed (QF-E1-D02) | TC-GEO-0118 | Phần "một lượt dựng hình tự học" chờ E2 | Đã thêm vào test TC-GEO-0118 (dựng F-GEO-060 ở màn Tự học, kiểm cả phản hồi đó không chứa khóa) | E2 · xong |
+| QF-E2-D09 | Fixed (FIX2, soát E2 #1, #2, #6) | US-GEO-204; BR-GEO-137; D-GEO-047 | AI trả `solid` ngoài enum (500), đại lượng hỏi thiếu điểm (500 IndexOutOfBounds), tọa độ "abc" lặng lẽ thành 0, tham số số nhỏ ra ký hiệu E | Tên đồng nghĩa quy về danh mục (tetrahedron → pyramid, vẫn là đề lạ), còn lại MSG-GEO-18; engine kiểm số điểm theo loại đại lượng; tọa độ đọc chặt (chuỗi số nhận, chữ → MSG-GEO-18); mọi lỗi dữ liệu AI → MSG-GEO-18. Ca Dev-E2-01, 02 (`GeometryEngineE2Test`), Dev-E2-03…07 (`AiDataE2IT`, kịch bản `[kịch bản AI lỗi: …]` trong `mock-ai/scene.json`) | FIX2 · xong |
+| QF-E2-D10 | Fixed (FIX2, soát E2 #3, #4, #5) | US-GEO-205; BR-GEO-132, 140 | Hình mẫu gắn cứng "verified", không cận trên; MSG-GEO-19 luôn ở ô đầu; nạp danh mục không kiểm khóa tham số, dựng thử, `solid_kind` | Nhãn theo `engine.check`; cận trên 1000 (MSG-GEO-19 đúng ô); ô lỗi = ô mà trả về mặc định thì dựng được; nạp danh mục kiểm khóa khớp bộ dựng, dựng thử bằng mặc định, loại hình trong enum và khớp bộ dựng. Ca Dev-E2-08…10 (`AiDataE2IT`). Cận trên 1000 là giả định của Dev (AC chưa ghi) | PO · xác nhận cận trên |
+| QF-E2-D11 | Fixed (FIX2, soát E2 #7, #8) | TC-GEO-0205, TC-GEO-0218 | TC-0205 tự suy nhãn (luôn đúng); TC-0218 chỉ cấm một biến thể chữ; `AssignmentScene` hiện hình bài cũ khi đổi bài | TC-0205 đi qua `verify` thật với hình lệch 1e-5 (kèm đối chứng không lệch); TC-0218 kiểm mọi thẻ nhãn là đúng một trong hai chuỗi; hình gắn với mã bài đã tải | FIX2 · xong |

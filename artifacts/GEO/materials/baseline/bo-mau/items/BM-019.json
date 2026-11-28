@@ -1,0 +1,87 @@
+{
+ "id": "BM-019",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-53 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-53 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Thể tích lăng trụ",
+ "muc_do": "NB",
+ "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác đều cạnh $a$ và $AA'=a\\sqrt3$. Tính thể tích khối lăng trụ theo $a$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{3a^3}{4}$",
+  "so": 0.75
+ },
+ "dap_so_engine": 0.7499999999999999,
+ "kien_thuc": [
+  "$V=Bh$",
+  "Lăng trụ đứng: chiều cao bằng cạnh bên"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$S_{ABC}=\\dfrac{a^2\\sqrt3}4$.",
+   "ket_qua_trung_gian": "$\\dfrac{a^2\\sqrt3}4$",
+   "kien_thuc": "Diện tích tam giác đều",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a^2\\sqrt3}4$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng $S=\\dfrac{a^2\\sqrt3}2$ cho tam giác đều",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.4330127018922193
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Lăng trụ đứng nên chiều cao $h=AA'=a\\sqrt3$.",
+   "ket_qua_trung_gian": "$h=a\\sqrt3$",
+   "kien_thuc": "Lăng trụ đứng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $h=a\\sqrt3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Coi như lăng trụ xiên, lấy $h=AA'\\sin60^\\circ$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 1.7320508075688772
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$V=\\dfrac{a^2\\sqrt3}4\\cdot a\\sqrt3=\\dfrac{3a^3}4$.",
+   "ket_qua_trung_gian": "$\\dfrac{3a^3}4$",
+   "kien_thuc": "Thể tích lăng trụ",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{3a^3}4$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.75
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Coi như lăng trụ xiên, lấy $h=AA'\\sin60^\\circ$",
+   "loi_giai": "B1: $S_{ABC}=\\dfrac{a^2\\sqrt3}4$.\nB2: $h=AA'\\sin60^\\circ=\\dfrac{3a}2$.\nB3: $V=\\dfrac{a^2\\sqrt3}4\\cdot\\dfrac{3a}2=\\dfrac{3\\sqrt3a^3}8$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng $S=\\dfrac{a^2\\sqrt3}2$ cho tam giác đều",
+   "loi_giai": "B1: $S_{ABC}=\\dfrac{a^2\\sqrt3}2$.\nB2: Lăng trụ đứng nên chiều cao $h=AA'=a\\sqrt3$.\nB3: $V=\\dfrac{3a^3}2$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

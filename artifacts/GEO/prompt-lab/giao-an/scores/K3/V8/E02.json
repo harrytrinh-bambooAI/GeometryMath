@@ -1,0 +1,35 @@
+{
+ "case": "E02",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "dung_mot_cau_hoi": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "question"
+ },
+ "judge": {
+  "diem": {
+   "dung_cho_thieu": 3,
+   "gon": 3,
+   "can_thiet": 2
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Câu hỏi nêu đúng xung đột giữa yêu cầu \"viết lại hết\" với luật A6 và các mục đã khoá, nhưng lại hỏi điều có thể suy ra hợp lí. Lẽ ra trợ lý nên giải thích vì sao không viết lại toàn bộ rồi soạn luôn bản vá tối thiểu (meta.phong_cach cùng noi_dung/to_chuc của HD1–HD4), thay vì hỏi một câu dài kèm hai phương án."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 65.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 2.67
+ }
+}

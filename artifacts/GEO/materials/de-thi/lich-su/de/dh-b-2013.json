@@ -1,0 +1,157 @@
+{
+ "ma": "dh-b-2013",
+ "ky_thi": "dh-b",
+ "nam": 2013,
+ "cau_truc_loai": "tu-luan",
+ "cau_truc": {
+  "phan": [
+   {
+    "id": "P1",
+    "ten": "Phần chung",
+    "loai_cau": "tu-luan",
+    "so_cau": 7,
+    "diem": 7
+   },
+   {
+    "id": "P2",
+    "ten": "Phần riêng - chương trình chuẩn (thí sinh chọn chuẩn hoặc nâng cao)",
+    "loai_cau": "tu-luan",
+    "so_cau": 3,
+    "diem": 3
+   }
+  ],
+  "thoi_gian_phut": 180,
+  "nguon_cau_truc": "Đề thi: 180 phút, thang 10 điểm (câu 1 gồm 2 ý 1 điểm; còn lại theo từng câu)"
+ },
+ "do_tin_cay": "cao: nội dung đọc từ text đề trong bộ tổng hợp; điểm theo thang chuẩn của đề; muc_do là suy luận theo vị trí/độ khó điển hình (đề ĐH không công bố mức độ)",
+ "ghi_chu": "Chỉ ghi phần riêng theo chương trình Chuẩn; phần riêng Nâng cao (3 điểm, thay thế) KHÔNG đưa vào.",
+ "nguon": [
+  {
+   "url": "https://toanmath.com/toanmath-pdf/tong-hop-88-de-thi-thpt-quoc-gia-mon-toan-cua-bo-gddt-2005-2026.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  }
+ ],
+ "cau": [
+  {
+   "so": "1a",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.khao-sat",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Khảo sát hàm y=2x^3-3(m+1)x^2+6mx khi m=-1"
+  },
+  {
+   "so": "1b",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.cuc-tri-hinh-hoc",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hai cực trị A,B sao cho AB vuông góc y=x+2"
+  },
+  {
+   "so": "2",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "luong-giac",
+   "dang": "lg.pt",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "PT sin5x+2cos^2 x=1"
+  },
+  {
+   "so": "3",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.he",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hệ phương trình hai ẩn kết hợp căn thức"
+  },
+  {
+   "so": "4",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tp-vo-ti",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Tích phân x.căn(2-x^2)"
+  },
+  {
+   "so": "5",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "th.chop+qh.khoang-cach",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Chóp S.ABCD mặt bên SAB đều vuông góc đáy: thể tích, khoảng cách A đến (SCD)"
+  },
+  {
+   "so": "6",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "bat-dang-thuc-cuc-tri",
+   "dang": "bdt.cuc-tri",
+   "lop": 10,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "GTLN của P=4/căn(a^2+b^2+c^2+4)-9/((a+b)căn((a+2c)(b+2c)))"
+  },
+  {
+   "so": "7",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxy-hinh-phang",
+   "dang": "oxy.hinh-thang",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hình thang cân hai đường chéo vuông góc, AD=3BC: tìm C và D"
+  },
+  {
+   "so": "8",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxyz-duong-thang",
+   "dang": "ox.dt-pt",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Đường thẳng qua A vuông góc (P); điểm đối xứng của A qua (P)"
+  },
+  {
+   "so": "9",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-co-dien",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Hai hộp bi, lấy mỗi hộp 1 viên: xác suất cùng màu"
+  }
+ ]
+}

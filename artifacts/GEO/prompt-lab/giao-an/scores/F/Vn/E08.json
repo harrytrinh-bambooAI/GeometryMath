@@ -1,0 +1,35 @@
+{
+ "case": "E08",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "reply"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 3,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý từ chối đúng yêu cầu tính đáp số vì trái A3, không sửa giáo án và đề xuất gợi ý bằng lời đúng hướng (với câu 2, 3 thì K trùng B nên AH ⊥ SB, khớp lời giải chuẩn), nhưng de_xuat chỉ trỏ vi_tri cau[1] trong khi nói cả 3 câu. Trợ lý bỏ sót các lỗi có sẵn: HD4 ghi o_nha false trong khi HS làm ở nhà mà vẫn tính 5 phút trên lớp, và câu 3 PHT1 gắn kt KT11-C07-DN-010 thay vì KT11-C07-CT-003."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 88.8,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.25
+ }
+}

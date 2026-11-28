@@ -1,0 +1,110 @@
+{
+ "id": "MC-HH-E03",
+ "ten": "Khoảng cách từ A đến (A'BC)",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "kc-diem-mp.lang-tru-deu",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.2"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "E",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan",
+  "tu-luan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD",
+  "tu-luan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-32",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-32 + geometry/problem-specs.json#HKN-32"
+ },
+ "tham_so": {
+  "k": [
+   "1",
+   "sqrt(3)/2",
+   "2",
+   "sqrt(3)"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "AM": "sqrt(3)*a/2",
+  "AH": "h*sqrt(3)*a/2/sqrt(h**2+3*a**2/4)",
+  "AmM": "sqrt(h**2+3*a**2/4)"
+ },
+ "boi_canh": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'={h}$.",
+ "hoi": "Khoảng cách từ $A$ đến mặt phẳng $(A'BC)$ bằng",
+ "dap_so": "h*(sqrt(3)*a/2)/sqrt(h**2+3*a**2/4)",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "sqrt(3)*a/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $AM$ làm khoảng cách"
+   }
+  },
+  {
+   "bieu_thuc": "h",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $AA'$ là khoảng cách"
+   }
+  },
+  {
+   "bieu_thuc": "h*a/sqrt(h**2+a**2)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Kẻ $AH\\perp A'B$ rồi lấy $AH$ (sai chân đường vuông góc)"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-32",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "tu_luan": [
+  {
+   "noi_dung": "Gọi $M$ là trung điểm $BC$, kẻ $AH\\perp A'M$ ($H\\in A'M$). Vì $BC\\perp AM$, $BC\\perp AA'$ nên $BC\\perp(AA'M)$, suy ra $BC\\perp AH$; do đó $AH\\perp(A'BC)$.",
+   "diem": 0.5
+  },
+  {
+   "noi_dung": "$AM=\\dfrac{a\\sqrt3}{2}$, $A'M=\\sqrt{AA'^2+AM^2}={AmM}$.",
+   "diem": 0.25
+  },
+  {
+   "noi_dung": "$AH=\\dfrac{AA'\\cdot AM}{A'M}={ds}$.",
+   "diem": 0.25
+  }
+ ],
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(3)/2"
+  },
+  {
+   "k": "2"
+  },
+  {
+   "k": "sqrt(3)"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 10,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

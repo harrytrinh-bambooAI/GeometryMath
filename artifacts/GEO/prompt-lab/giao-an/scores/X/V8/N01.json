@@ -1,0 +1,56 @@
+{
+ "case": "N01",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A3: buoc_goi_y ghi kết quả số ['0']"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 4,
+   "cau_tu_kho": 1,
+   "kq_ai_ghi": 2,
+   "kq_khop_kho": 2
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 5,
+   "phong_cach": 5,
+   "to_chuc": 4,
+   "chinh_xac": 5,
+   "phieu": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án theo đúng phong cách khám phá: học sinh tự lập bảng $|u_n-L|$, dự đoán rồi mới phát biểu định nghĩa. Thời lượng các hoạt động cộng đủ 45 phút, kiến thức chỉ dùng hai mục trọng tâm, gợi ý không ghi kết quả số, và việc BT11-B15-1 cần thêm quy tắc tổng KT11-C05-TC-001 đã được nêu đúng trong unsure. Hai chỗ cần sửa nhỏ: HĐ2 (18 phút) hơi chật vì mỗi nhóm phải xử lí 4 dãy với nhiều ngưỡng, và PHT2 nên sắp câu NB lên trước câu TH."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 80.0,
+  "A": 1,
+  "A_auto": 1,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.67
+ }
+}

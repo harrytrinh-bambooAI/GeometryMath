@@ -1,0 +1,126 @@
+{
+ "id": "MC-XS-01",
+ "ten": "Xác suất có điều kiện từ bảng số liệu",
+ "chu_de": "xac-suat-co-dieu-kien",
+ "dang": "xs.dieu-kien-bang",
+ "dang_tx": "xs.dieu-kien",
+ "yccd": [
+  "12.XS.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-XS-01",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-XS-01",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "nAB": 12,
+    "nAb": 8,
+    "naB": 18,
+    "nab": 12
+   },
+   {
+    "nAB": 15,
+    "nAb": 10,
+    "naB": 5,
+    "nab": 10
+   },
+   {
+    "nAB": 9,
+    "nAb": 6,
+    "naB": 21,
+    "nab": 4
+   },
+   {
+    "nAB": 14,
+    "nAb": 7,
+    "naB": 6,
+    "nab": 13
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "nB": "nAB+naB",
+  "nA": "nAB+nAb",
+  "NN": "nAB+nAb+naB+nab"
+ },
+ "boi_canh": "Một lớp có ${NN}$ học sinh. Trong đó có ${nAB}$ bạn vừa thích bóng đá vừa thích cầu lông, ${nAb}$ bạn thích bóng đá nhưng không thích cầu lông, ${naB}$ bạn thích cầu lông nhưng không thích bóng đá, còn lại không thích môn nào. Chọn ngẫu nhiên một học sinh; gọi $A$: \\\"thích bóng đá\\\", $B$: \\\"thích cầu lông\\\".",
+ "hoi": "Xác suất $P(A\\mid B)$ bằng",
+ "dap_so": "nAB/nB",
+ "nhieu": [
+  {
+   "bieu_thuc": "nAB/NN",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Tính $P(AB)$ thay cho $P(A\\mid B)$"
+   }
+  },
+  {
+   "bieu_thuc": "nAB/nA",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Đổi vai trò, tính $P(B\\mid A)$"
+   }
+  },
+  {
+   "bieu_thuc": "nB/NN",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Tính $P(B)$"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-XS-01']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "nAB": "12",
+   "nAb": "8",
+   "naB": "18",
+   "nab": "12"
+  },
+  {
+   "nAB": "15",
+   "nAb": "10",
+   "naB": "5",
+   "nab": "10"
+  },
+  {
+   "nAB": "9",
+   "nAb": "6",
+   "naB": "21",
+   "nab": "4"
+  },
+  {
+   "nAB": "14",
+   "nAb": "7",
+   "naB": "6",
+   "nab": "13"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 7,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

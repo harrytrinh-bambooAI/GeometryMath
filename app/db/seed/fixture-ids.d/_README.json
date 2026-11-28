@@ -1,0 +1,3 @@
+{
+  "_doc": "Mã cố định fixture chặng 2–3 (PLAN_code-s23 §4, T-261126-41). Mỗi feature một tệp <feature>.json (s2e1.json … s3e6.json, s3.json cho dữ liệu mẫu chung của task 42), cùng dạng fixture-ids.json: { \"<nhóm>\": { \"<mã F>\": { \"id\": \"…\", … } } }. Quy tắc UUID: F-S2-nnn → 00000000-0000-7000-8002-<nnn 12 chữ số>; F-S3-nnn → 00000000-0000-7000-8003-<…>. app/e2e/support/fixtures.ts đọc gộp fixture-ids.json + mọi *.json ở đây (theo tên tệp); khóa bắt đầu bằng \"_\" bỏ qua; một mã khai báo hai lần là lỗi. Không sửa tệp của task khác."
+}

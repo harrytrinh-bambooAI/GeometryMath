@@ -1,0 +1,61 @@
+{
+ "case": "C03",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": false,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [
+   "A5: tổng 80 phút ≠ 2×45"
+  ],
+  "info": {
+   "khoa_co_dau": 5,
+   "tong_phut": 80,
+   "kt_khop": 3,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 4,
+   "cau_tu_kho": 4,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 3,
+   "to_chuc": 3,
+   "chinh_xac": 5,
+   "phieu": 4
+  },
+  "vi_pham_A": [
+   {
+    "luat": "A5",
+    "trich": "\"so_tiet\":2,\"tong_phut\":90"
+   }
+  ],
+  "loi_toan": [],
+  "nhan_xet": "Tổng thời lượng các hoạt động trên lớp chỉ là 10+20+30+20 = 80 phút (HD5 ở nhà 0 phút), không khớp 90 phút ghi ở meta. Nội dung toán và phiếu bám đúng tham chiếu, nhưng các hoạt động nghiêng về khám phá nhóm bằng GeoGebra hơn là phong cách truyền thống (GV giảng, HS ghi, làm mẫu)."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 51.0,
+  "A": 2,
+  "A_auto": 1,
+  "A_judge": 1,
+  "auto": 0.9,
+  "judge": 4
+ }
+}

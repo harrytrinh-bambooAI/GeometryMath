@@ -1,0 +1,87 @@
+{
+ "id": "BM-009",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-09 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-09 (v1.1)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách giữa hai đường thẳng chéo nhau",
+ "muc_do": "VD",
+ "de_bai": "Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. Tính khoảng cách giữa hai đường thẳng chéo nhau $BD$ và $SC$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a\\sqrt6}{6}$",
+  "so": 0.40824829046386296
+ },
+ "dap_so_engine": 0.4082482904638631,
+ "kien_thuc": [
+  "Đoạn vuông góc chung",
+  "Tam giác đồng dạng"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$BD\\perp AC$, $BD\\perp SA$ nên $BD\\perp(SAC)$ tại $O$. Kẻ $OH\\perp SC$ ($H\\in SC$) thì $OH\\perp BD$, $OH\\perp SC$: $OH$ là đoạn vuông góc chung.",
+   "ket_qua_trung_gian": "$d(BD,SC)=OH$",
+   "kien_thuc": "Đoạn vuông góc chung",
+   "diem": 0.5,
+   "tieu_chi_dat": "Chỉ ra được $BD\\perp(SAC)$ và $OH$ vuông góc cả hai đường",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$\\triangle CHO\\sim\\triangle CAS$ (chung góc $C$, cùng vuông) nên $\\dfrac{OH}{SA}=\\dfrac{OC}{SC}$, $OH=\\dfrac{SA\\cdot OC}{SC}$.",
+   "ket_qua_trung_gian": "$OH=\\dfrac{SA\\cdot OC}{SC}$",
+   "kien_thuc": "Tam giác đồng dạng",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $OH=\\dfrac{SA\\cdot OC}{SC}$",
+   "cach_khac": [
+    "$OH=OC\\sin\\widehat{SCA}$"
+   ],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lập sai tỉ số đồng dạng: $\\dfrac{OH}{OC}=\\dfrac{SA}{AC}$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$OC=\\dfrac{a\\sqrt2}2$, $SC=a\\sqrt3$, nên $OH=\\dfrac{a\\cdot a\\sqrt2/2}{a\\sqrt3}=\\dfrac{a\\sqrt6}6$.",
+   "ket_qua_trung_gian": "$OH=\\dfrac{a\\sqrt6}6$",
+   "kien_thuc": "Tính toán",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $OH=\\dfrac{a\\sqrt6}6$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Tính $SC=2a$ (sai Pythagore)",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 0.40824829046386296
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lập sai tỉ số đồng dạng: $\\dfrac{OH}{OC}=\\dfrac{SA}{AC}$",
+   "loi_giai": "B1: $BD\\perp AC$, $BD\\perp SA$ nên $BD\\perp(SAC)$ tại $O$. Kẻ $OH\\perp SC$ ($H\\in SC$) thì $OH\\perp BD$, $OH\\perp SC$: $OH$ là đoạn vuông góc chung.\nB2: $\\dfrac{OH}{OC}=\\dfrac{SA}{AC}\\Rightarrow OH=\\dfrac{OC\\cdot SA}{AC}$.\nB3: $OH=\\dfrac{a\\sqrt2/2\\cdot a}{a\\sqrt2}=\\dfrac a2$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Tính $SC=2a$ (sai Pythagore)",
+   "loi_giai": "B1: $BD\\perp AC$, $BD\\perp SA$ nên $BD\\perp(SAC)$ tại $O$. Kẻ $OH\\perp SC$ ($H\\in SC$) thì $OH\\perp BD$, $OH\\perp SC$: $OH$ là đoạn vuông góc chung.\nB2: $\\triangle CHO\\sim\\triangle CAS$ (chung góc $C$, cùng vuông) nên $\\dfrac{OH}{SA}=\\dfrac{OC}{SC}$, $OH=\\dfrac{SA\\cdot OC}{SC}$.\nB3: $OC=\\dfrac{a\\sqrt2}2$, $SC=2a$, $OH=\\dfrac{a\\sqrt2}4$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

@@ -1,0 +1,85 @@
+{
+ "id": "BM-037",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-25-hai-mat-phang-vuong-goc.md — bài 5 (v1.3 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc nhị diện",
+ "muc_do": "VD",
+ "de_bai": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a\\sqrt3$. Tính số đo góc nhị diện $[S,BC,A]$.",
+ "dap_so": {
+  "gia_tri": "$60^\\circ$",
+  "so": 60.0
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Góc phẳng nhị diện",
+  "tan"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$BC\\perp(SAB)$ nên $BC\\perp SB$ và $BC\\perp AB$.",
+   "ket_qua_trung_gian": "$BC\\perp SB$, $BC\\perp AB$",
+   "kien_thuc": "Dấu hiệu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $BC\\perp SB$, $BC\\perp AB$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$\\widehat{SBA}$ là góc phẳng nhị diện của $[S,BC,A]$.",
+   "ket_qua_trung_gian": "$\\widehat{SBA}$",
+   "kien_thuc": "Góc phẳng nhị diện",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\widehat{SBA}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy góc $\\widehat{SCA}$ làm góc phẳng nhị diện",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\tan\\widehat{SBA}=\\dfrac{a\\sqrt3}a=\\sqrt3\\Rightarrow 60^\\circ$.",
+   "ket_qua_trung_gian": "$60^\\circ$",
+   "kien_thuc": "tan",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $60^\\circ$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Đảo tỉ số tan",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 60.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Lấy góc $\\widehat{SCA}$ làm góc phẳng nhị diện",
+   "loi_giai": "B1: $BC\\perp(SAB)$ nên $BC\\perp SB$ và $BC\\perp AB$.\nB2: Góc phẳng nhị diện là $\\widehat{SCA}$.\nB3: $\\tan\\widehat{SCA}=\\dfrac{a\\sqrt3}{a\\sqrt2}\\Rightarrow\\approx50{,}77^\\circ$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Đảo tỉ số tan",
+   "loi_giai": "B1: $BC\\perp(SAB)$ nên $BC\\perp SB$ và $BC\\perp AB$.\nB2: $\\widehat{SBA}$ là góc phẳng nhị diện của $[S,BC,A]$.\nB3: $\\tan\\widehat{SBA}=\\dfrac{AB}{SA}=\\dfrac1{\\sqrt3}\\Rightarrow30^\\circ$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

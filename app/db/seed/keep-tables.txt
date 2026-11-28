@@ -1,0 +1,10 @@
+# Bảng KHÔNG bị xóa khi reset seed: lịch sử Flyway và dữ liệu tham chiếu do migration V… nạp.
+# Mỗi dòng một tên bảng (schema public). Thêm vào đây khi migration của epic nạp dữ liệu danh mục.
+flyway_schema_history
+health_probe
+# E1: danh mục tham chiếu do V10 nạp. org/app_user nền tảng bị xóa rồi nạp lại ở e2e/100_e1_core.sql.
+subject
+problem_topic
+solid_template
+# S2-E1: văn bản thông báo riêng tư do V110 nạp (seed 800 vẫn nạp lại, ON CONFLICT DO NOTHING) (T-261126-45)
+privacy_notice

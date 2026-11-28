@@ -1,0 +1,34 @@
+{
+ "case": "E05",
+ "variant": "V8",
+ "round": "K3",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"add\", \"path\": \"phieu_hoc_tap[0].cau\", \"before\": null, \"after\": {\"so\": 4, \"nguon\": \"BM-008\", \"muc_do\": \"VD\", \"de\": \"Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\\\perp(ABCD)$ và $SA=a\\\\sqrt3$. Tính khoảng cách giữa hai đường thẳng $AB$ và $SD$.\", \"kt\": [\"KT11-C07-PP-001\", \"KT11-C07-CT-003\"], \"dap_so\": null, \"buoc_goi_y\": [\"Nhận xét AB song song CD nên AB song song mặt phẳng (SCD) chứa SD, đưa về khoảng cách từ một điểm của AB đến (SCD).\", \"Chọn điểm A, đưa về d(A,(SCD)).\", \"Dựng AK vuông góc CD (K là chân đường vuông góc trong mặt đáy), AH vuông góc SK để có AH vuông góc (SCD).\", \"Áp dụng hệ thức $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$ với SA, AK đã biết rồi tính AH.\"]}, \"ly_do\": \"Thêm câu Vận dụng về khoảng cách hai đường thẳng chéo nhau từ kho (BM-008), chưa có trong phiếu; có thể dùng hệ thức KT11-C07-CT-003 đang dạy ở HD2.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[2].noi_dung\", \"van_de\": \"HD3 chỉ giao PHT1 câu 2, 3; câu 4 mới thêm chưa được HĐ nào nhắc đến.\", \"goi_y\": \"Nếu muốn dùng trên lớp, đổi thành 'câu 2, 3, 4' hoặc giao câu 4 cho HS khá/về nhà.\", \"ly_do\": \"Khớp nội bộ giữa HĐ và phiếu; không tự sửa vì chưa được yêu cầu.\"}, {\"vi_tri\": \"hoat_dong[*].thoi_luong_phut\", \"van_de\": \"Tổng thời lượng các HĐ trên lớp là 5+20+20+5 = 50 phút, vượt 45 phút (1 tiết).\", \"goi_y\": \"Giảm bớt 5 phút, ví dụ HD3 còn 15 phút, hoặc chuyển HD4 thành HĐ ở nhà (0 phút).\", \"ly_do\": \"Luật thời lượng: tổng phút trên lớp phải bằng số tiết × 45.\"}, {\"vi_tri\": \"hoat_dong[3].o_nha\", \"van_de\": \"HD4 ghi 'HS làm ở nhà' nhưng o_nha=false và thời lượng 5 phút.\", \"goi_y\": \"Nếu làm ở nhà: o_nha=true, thoi_luong_phut=0 (khi đó tổng còn 45 phút).\", \"ly_do\": \"o_nha phải khớp cách tổ chức.\"}, {\"vi_tri\": \"hoat_dong[1].kien_thuc[1].phat_bieu\", \"van_de\": \"Công thức thiếu bình phương: ghi $\\\\dfrac1{AH}=\\\\dfrac1{SA}+\\\\dfrac1{AK}$, trong danh sách là $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$.\", \"goi_y\": \"Sửa lại đúng công thức của KT11-C07-CT-003.\", \"ly_do\": \"Công thức sai so với danh sách kiến thức được cấp.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu 3 (BM-007) gần như trùng dạng với câu 2 (BT11-B26-3).\", \"goi_y\": \"Có thể thay một câu bằng bài khác dạng.\", \"ly_do\": \"Tránh lặp dạng bài trong phiếu.\"}, {\"vi_tri\": \"muc_tieu.kien_thuc\", \"van_de\": \"Mục tiêu (đã khoá) chưa nêu kiến thức về khoảng cách hai đường thẳng chéo nhau (KT11-C07-DN-012, PP-001), trong khi PHT1 giờ có câu 4 dùng kiến thức này.\", \"goi_y\": \"Mở khoá mục tiêu để bổ sung, hoặc xem câu 4 là hướng mở rộng cho HS khá.\", \"ly_do\": \"Khớp giữa mục tiêu và nội dung phiếu.\"}], \"unsure\": [\"Chọn BM-008 trong 3 bài VD về hai đường chéo nhau vì có thể dùng hệ thức đã dạy ở HD2; có thể đổi sang BM-009 hoặc BT11-B26-5 nếu GV muốn.\"]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"add\",\"path\":\"phieu_hoc_tap[0].cau\",\"before\":null,\"after\":{\"so\":4,\"nguon\":\"BM-008\",\"muc_do\":\"VD\",\"de\":\"Cho hình chóp $S.ABCD$ có đáy là hình vuông cạnh $a$, $SA\\\\perp(ABCD)$ và $SA=a\\\\sqrt3$. Tính khoảng cách giữa hai đường thẳng $AB$ và $SD$.\",\"kt\":[\"KT11-C07-PP-001\",\"KT11-C07-CT-003\"],\"dap_so\":null,\"buoc_goi_y\":[\"Nhận xét AB song song CD nên AB song song mặt phẳng (SCD) chứa SD, đưa về khoảng cách từ một điểm của AB đến (SCD).\",\"Chọn điểm A, đưa về d(A,(SCD)).\",\"Dựng AK vuông góc CD (K là chân đường vuông góc trong mặt đáy), AH vuông góc SK để có AH vuông góc (SCD).\",\"Áp dụng hệ thức $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$ với SA, AK đã biết rồi tính AH.\"]},\"ly_do\":\"Thêm câu Vận dụng về khoảng cách hai đường thẳng chéo nhau từ kho (BM-008), chưa có trong phiếu; có thể dùng hệ thức KT11-C07-CT-003 đang dạy ở HD2.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[2].noi_dung\",\"van_de\":\"HD3 chỉ giao PHT1 câu 2, 3; câu 4 mới thêm chưa được HĐ nào nhắc đến.\",\"goi_y\":\"Nếu muốn dùng trên lớp, đổi thành 'câu 2, 3, 4' hoặc giao câu 4 cho HS khá/về nhà.\",\"ly_do\":\"Khớp nội bộ giữa HĐ và phiếu; không tự sửa vì chưa được yêu cầu.\"},{\"vi_tri\":\"hoat_dong[*].thoi_luong_phut\",\"van_de\":\"Tổng thời lượng các HĐ trên lớp là 5+20+20+5 = 50 phút, vượt 45 phút (1 tiết).\",\"goi_y\":\"Giảm bớt 5 phút, ví dụ HD3 còn 15 phút, hoặc chuyển HD4 thành HĐ ở nhà (0 phút).\",\"ly_do\":\"Luật thời lượng: tổng phút trên lớp phải bằng số tiết × 45.\"},{\"vi_tri\":\"hoat_dong[3].o_nha\",\"van_de\":\"HD4 ghi 'HS làm ở nhà' nhưng o_nha=false và thời lượng 5 phút.\",\"goi_y\":\"Nếu làm ở nhà: o_nha=true, thoi_luong_phut=0 (khi đó tổng còn 45 phút).\",\"ly_do\":\"o_nha phải khớp cách tổ chức.\"},{\"vi_tri\":\"hoat_dong[1].kien_thuc[1].phat_bieu\",\"van_de\":\"Công thức thiếu bình phương: ghi $\\\\dfrac1{AH}=\\\\dfrac1{SA}+\\\\dfrac1{AK}$, trong danh sách là $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$.\",\"goi_y\":\"Sửa lại đúng công thức của KT11-C07-CT-003.\",\"ly_do\":\"Công thức sai so với danh sách kiến thức được cấp.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu 3 (BM-007) gần như trùng dạng với câu 2 (BT11-B26-3).\",\"goi_y\":\"Có thể thay một câu bằng bài khác dạng.\",\"ly_do\":\"Tránh lặp dạng bài trong phiếu.\"},{\"vi_tri\":\"muc_tieu.kien_thuc\",\"van_de\":\"Mục tiêu (đã khoá) chưa nêu kiến thức về khoảng cách hai đường thẳng chéo nhau (KT11-C07-DN-012, PP-001), trong khi PHT1 giờ có câu 4 dùng kiến thức này.\",\"goi_y\":\"Mở khoá mục tiêu để bổ sung, hoặc xem câu 4 là hướng mở rộng cho HS khá.\",\"ly_do\":\"Khớp giữa mục tiêu và nội dung phiếu.\"}],\"unsure\":[\"Chọn BM-008 trong 3 bài VD về hai đường chéo nhau vì có thể dùng hệ thức đã dạy ở HD2; có thể đổi sang BM-009 hoặc BT11-B26-5 nếu GV muốn.\"]}}",
+ "usage": {
+  "ts": "2026-11-27T17:56:57",
+  "role": "gen",
+  "task": "K3/V8/E05",
+  "model": "claude-sonnet-5-5",
+  "input": 3382,
+  "output": 2273,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 15.3
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:56:57",
+   "role": "gen",
+   "task": "K3/V8/E05",
+   "model": "claude-sonnet-5-5",
+   "input": 3382,
+   "output": 2273,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 15.3
+  }
+ ],
+ "server_errs0": []
+}

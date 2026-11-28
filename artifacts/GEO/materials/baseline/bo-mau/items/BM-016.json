@@ -1,0 +1,89 @@
+{
+ "id": "BM-016",
+ "nguon": {
+  "loai": "mvp",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-37 (v1.2 · 27/11/2026) + geometry/problem-specs.json#HKN-37 (v1.1)"
+ },
+ "cap": "thcs",
+ "chu_de": "Thể tích lăng trụ",
+ "muc_do": "TH",
+ "de_bai": "Lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác với $AB=13$ cm, $BC=14$ cm, $CA=15$ cm và chiều cao $10$ cm. Tính thể tích lăng trụ.",
+ "dap_so": {
+  "gia_tri": "$840$ cm$^3$",
+  "so": 840.0
+ },
+ "dap_so_engine": 840.0,
+ "kien_thuc": [
+  "Công thức Heron",
+  "$V=S_{đáy}\\cdot h$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Nửa chu vi $p=\\dfrac{13+14+15}2=21$.",
+   "ket_qua_trung_gian": "$p=21$",
+   "kien_thuc": "Nửa chu vi",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $p=21$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng chu vi $42$ thay nửa chu vi trong Heron",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 21.0
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$S=\\sqrt{21\\cdot8\\cdot7\\cdot6}=\\sqrt{7056}=84$ cm$^2$.",
+   "ket_qua_trung_gian": "$S=84$",
+   "kien_thuc": "Heron",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $S=84$",
+   "cach_khac": [
+    "Hạ đường cao từ $A$ xuống $BC$: $h_a=12$, $S=\\dfrac12\\cdot14\\cdot12$"
+   ],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Khai căn sai $\\sqrt{7056}=86$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 84.0
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$V=84\\cdot10=840$ cm$^3$.",
+   "ket_qua_trung_gian": "$840$",
+   "kien_thuc": "Thể tích lăng trụ",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $840$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 840.0
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Khai căn sai $\\sqrt{7056}=86$",
+   "loi_giai": "B1: Nửa chu vi $p=\\dfrac{13+14+15}2=21$.\nB2: $S=\\sqrt{7056}=86$.\nB3: $V=860$ cm$^3$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng chu vi $42$ thay nửa chu vi trong Heron",
+   "loi_giai": "B1: $p=13+14+15=42$.\nB2: $S=\\sqrt{42\\cdot29\\cdot28\\cdot27}\\approx959{,}6$.\nB3: $V\\approx9596$ cm$^3$.",
+   "diem_dung": 0
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

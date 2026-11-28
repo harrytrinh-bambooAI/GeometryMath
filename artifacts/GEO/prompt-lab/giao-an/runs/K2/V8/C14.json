@@ -1,0 +1,34 @@
+{
+ "case": "C14",
+ "variant": "V8",
+ "round": "K2",
+ "text": "{\"kind\":\"question\",\"text\":\"Tiết 1/2 của Bài 26 nên tập trung vào những mã kiến thức nào trong danh sách được cấp (ví dụ chỉ KT11-C07-DN-010, DN-011 và CT-003 về khoảng cách điểm–đường, điểm–mặt, hay thêm cả khoảng cách giữa hai đường thẳng chéo nhau)?\"}",
+ "raw": "{\"kind\":\"question\",\"text\":\"Tiết 1/2 của Bài 26 nên tập trung vào những mã kiến thức nào trong danh sách được cấp (ví dụ chỉ KT11-C07-DN-010, DN-011 và CT-003 về khoảng cách điểm–đường, điểm–mặt, hay thêm cả khoảng cách giữa hai đường thẳng chéo nhau)?\"}",
+ "usage": {
+  "ts": "2026-11-27T17:56:30",
+  "role": "gen",
+  "task": "K2/V8/C14",
+  "model": "claude-sonnet-5-5",
+  "input": 1246,
+  "output": 355,
+  "cache_write": 0,
+  "cache_read": 4631,
+  "stop": "end_turn",
+  "sec": 3.5
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:56:30",
+   "role": "gen",
+   "task": "K2/V8/C14",
+   "model": "claude-sonnet-5-5",
+   "input": 1246,
+   "output": 355,
+   "cache_write": 0,
+   "cache_read": 4631,
+   "stop": "end_turn",
+   "sec": 3.5
+  }
+ ],
+ "server_errs0": []
+}

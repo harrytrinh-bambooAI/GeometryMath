@@ -1,0 +1,84 @@
+{
+ "id": "BM-057",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-01-ham-so-luong-giac-va-phuong-trinh-luong-giac/on-tap-chuong.md — bài 4 (v1.3 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Phương trình lượng giác",
+ "muc_do": "VD",
+ "de_bai": "Giải phương trình $2\\cos^2x-3\\cos x+1=0$.",
+ "dap_so": {
+  "gia_tri": "$x=k2\\pi$ hoặc $x=\\pm\\dfrac\\pi3+k2\\pi$ ($k\\in\\mathbb Z$)",
+  "so": null
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Đặt ẩn phụ",
+  "Phương trình $\\cos x=m$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Đặt $t=\\cos x\\in[-1;1]$: $2t^2-3t+1=0\\Rightarrow t=1$ hoặc $t=\\dfrac12$.",
+   "ket_qua_trung_gian": "$t\\in\\{1;\\frac12\\}$",
+   "kien_thuc": "Phương trình bậc hai",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có điều kiện $t\\in[-1;1]$ và hai nghiệm đúng",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Giải sai PT bậc hai: $t=-1$ hoặc $t=-\\dfrac12$",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$\\cos x=1\\Rightarrow x=k2\\pi$.",
+   "ket_qua_trung_gian": "$x=k2\\pi$",
+   "kien_thuc": "PT lượng giác cơ bản",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $x=k2\\pi$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\cos x=\\dfrac12\\Rightarrow x=\\pm\\dfrac\\pi3+k2\\pi$.",
+   "ket_qua_trung_gian": "$x=\\pm\\frac\\pi3+k2\\pi$",
+   "kien_thuc": "PT lượng giác cơ bản",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $x=\\pm\\frac\\pi3+k2\\pi$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Viết nghiệm $\\cos x=\\dfrac12$ như phương trình sin",
+     "tru": 0.25
+    }
+   ]
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Giải sai PT bậc hai: $t=-1$ hoặc $t=-\\dfrac12$",
+   "loi_giai": "B1: $t=-1$ hoặc $t=-\\dfrac12$.\nB2: $\\cos x=-1\\Rightarrow x=\\pi+k2\\pi$.\nB3: $\\cos x=-\\dfrac12\\Rightarrow x=\\pm\\dfrac{2\\pi}3+k2\\pi$.",
+   "diem_dung": 0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Viết nghiệm $\\cos x=\\dfrac12$ như phương trình sin",
+   "loi_giai": "B1: Đặt $t=\\cos x\\in[-1;1]$: $2t^2-3t+1=0\\Rightarrow t=1$ hoặc $t=\\dfrac12$.\nB2: $\\cos x=1\\Rightarrow x=k2\\pi$.\nB3: $\\cos x=\\dfrac12\\Rightarrow x=\\dfrac\\pi3+k2\\pi$ hoặc $x=\\pi-\\dfrac\\pi3+k2\\pi$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Đáp số là họ nghiệm, không có giá trị số duy nhất."
+}

@@ -1,0 +1,38 @@
+{
+ "case": "E06",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 4
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 4,
+   "xu_ly_luat": 4,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá chỉ sửa HD4 theo đúng yêu cầu (cột cờ, vẫn giao về nhà), không đụng mục khoá, không ghi đáp số, và đã phát hiện lỗi sẵn có là phát biểu KT11-C07-CT-003 ở HD2 thiếu điều kiện áp dụng. Còn vài điểm cần chỉnh: đường dẫn trong de_xuat sai tên trường (\"to_chuc.conclude\", \"to_chuc.assign\" thay vì \"ket_luan\", \"chuyen_giao\"), mục unsure về thời lượng HD4 diễn đạt tự mâu thuẫn, và việc sửa thêm muc_tieu của HD4 hơi vượt mức tối thiểu."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 88.8,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.25
+ }
+}

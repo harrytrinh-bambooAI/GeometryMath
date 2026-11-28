@@ -1,0 +1,13 @@
+# E3 — cột "Tự động hóa" (PO-50): chỉ ghi case khác mặc định của gen_cases.py (auto_default).
+# TC-GEO-nnnn | E2E-UI / E2E-API / IT / Manual | lý do (bắt buộc với Manual)
+# Case E2E-UI trên khung hình 3D cần móc đọc trạng thái cảnh ở profile test (QF-E3-08); thiếu móc thì so ảnh chụp có ngưỡng.
+TC-GEO-0300 | E2E-UI | kéo bằng con trỏ trên khung hình (Playwright giả lập chạm); cảm giác kéo bằng ngón trên iPad thật nằm ở vòng kiểm thủ công trên thiết bị
+TC-GEO-0302 | E2E-UI | lăn chuột trên máy tính chạy được bằng Playwright
+TC-GEO-0310 | E2E-UI | chạm một điểm trên khung hình bằng giả lập chạm (hasTouch), tọa độ lấy từ móc đọc cảnh
+TC-GEO-0311 | E2E-UI | như TC-GEO-0310
+TC-GEO-0312 | E2E-UI | như TC-GEO-0310
+TC-GEO-0315 | E2E-UI | như TC-GEO-0310
+TC-GEO-0341 | E2E-UI | Playwright giả lập iPhone màn dọc; chỉ kiểm bố cục
+TC-GEO-0345 | E2E-UI | Playwright giả lập iPhone màn dọc
+TC-GEO-0346 | E2E-UI | đổi khung nhìn dọc → ngang → dọc trong giả lập; xoay máy thật nằm ở vòng thủ công
+TC-GEO-0351 | E2E-UI | đo hộp bao của từng nút trong giả lập iPhone (≥ 44 × 44)

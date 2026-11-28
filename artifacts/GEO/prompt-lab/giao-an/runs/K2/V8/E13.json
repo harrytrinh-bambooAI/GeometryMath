@@ -1,0 +1,34 @@
+{
+ "case": "E13",
+ "variant": "V8",
+ "round": "K2",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"add\", \"path\": \"phieu_hoc_tap[0].cau\", \"before\": null, \"after\": {\"so\": 3, \"nguon\": \"BT11-B32-5\", \"muc_do\": \"VD\", \"de\": \"Tính đạo hàm của $y=\\\\ln(x^2+1)$.\", \"kt\": [\"KT11-C09-CT-004\", \"KT11-C09-CT-006\"], \"dap_so\": null, \"buoc_goi_y\": [\"Đặt $u=x^2+1$ để nhận ra hàm số có dạng $y=\\\\ln u$.\", \"Áp dụng công thức đạo hàm hàm hợp $y'_x=f'_u\\\\cdot u'_x$.\", \"Dùng $(\\\\ln x)'=\\\\dfrac1x$ để tính $f'_u$ và tính $u'_x$ bằng quy tắc đạo hàm của $x^n$.\", \"Nhân hai kết quả và viết gọn biểu thức.\"]}, \"ly_do\": \"Thêm câu mức VD lấy từ kho bài tập (BT11-B32-5) vào cuối PHT1, chưa trùng với câu nào trong giáo án.\"}], \"de_xuat\": [{\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu BT11-B32-5 cần đạo hàm hàm hợp (KT11-C09-CT-006), kiến thức này chưa được dạy trong HD2–HD3 và không nằm trong mục tiêu bài (mục tiêu đã khoá).\", \"goi_y\": \"Cân nhắc đổi sang bài khác phù hợp hơn, hoặc bổ sung nội dung đạo hàm hàm hợp ở một tiết sau/HĐ phù hợp.\", \"ly_do\": \"HS cơ bản chưa học quy tắc hàm hợp trong tiết này nên có thể không làm được câu 3.\"}, {\"vi_tri\": \"hoat_dong[3].thoi_luong_phut\", \"van_de\": \"HD4 chỉ 10 phút cho 3 câu (NB, TH, VD) có thể thiếu thời gian, đặc biệt với đối tượng cơ bản.\", \"goi_y\": \"Có thể giao câu 3 làm thêm ở nhà hoặc điều chỉnh thời lượng các HĐ.\", \"ly_do\": \"Ước lượng 3–4 phút/câu NB–TH và 6–8 phút/câu VD, tổng vượt 10 phút.\"}, {\"vi_tri\": \"hoat_dong[1].kien_thuc\", \"van_de\": \"HD2 đang liệt kê KT11-C09-CT-002 và KT11-C09-CT-004 nhưng phát biểu chưa đầy đủ so với danh sách; câu 2 PHT1 (x^2 sin x) cần KT11-C09-CT-003 chưa được dạy.\", \"goi_y\": \"Bổ sung KT11-C09-CT-003 vào HD2 nếu muốn giữ câu 2 trong PHT1.\", \"ly_do\": \"Tránh tham chiếu kiến thức chưa dạy.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[0].buoc_goi_y\", \"van_de\": \"Các câu 1–2 có buoc_goi_y trống.\", \"goi_y\": \"Bổ sung các bước gợi ý bằng lời nếu cần.\", \"ly_do\": \"Không thuộc yêu cầu lần này nên chưa tự sửa.\"}], \"unsure\": [\"Câu 3 dùng kiến thức hàm hợp KT11-C09-CT-006 nằm ngoài mục tiêu đã khoá của tiết; nếu GV muốn tránh, có thể chọn câu khác.\"]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"add\",\"path\":\"phieu_hoc_tap[0].cau\",\"before\":null,\"after\":{\"so\":3,\"nguon\":\"BT11-B32-5\",\"muc_do\":\"VD\",\"de\":\"Tính đạo hàm của $y=\\\\ln(x^2+1)$.\",\"kt\":[\"KT11-C09-CT-004\",\"KT11-C09-CT-006\"],\"dap_so\":null,\"buoc_goi_y\":[\"Đặt $u=x^2+1$ để nhận ra hàm số có dạng $y=\\\\ln u$.\",\"Áp dụng công thức đạo hàm hàm hợp $y'_x=f'_u\\\\cdot u'_x$.\",\"Dùng $(\\\\ln x)'=\\\\dfrac1x$ để tính $f'_u$ và tính $u'_x$ bằng quy tắc đạo hàm của $x^n$.\",\"Nhân hai kết quả và viết gọn biểu thức.\"]},\"ly_do\":\"Thêm câu mức VD lấy từ kho bài tập (BT11-B32-5) vào cuối PHT1, chưa trùng với câu nào trong giáo án.\"}],\"de_xuat\":[{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu BT11-B32-5 cần đạo hàm hàm hợp (KT11-C09-CT-006), kiến thức này chưa được dạy trong HD2–HD3 và không nằm trong mục tiêu bài (mục tiêu đã khoá).\",\"goi_y\":\"Cân nhắc đổi sang bài khác phù hợp hơn, hoặc bổ sung nội dung đạo hàm hàm hợp ở một tiết sau/HĐ phù hợp.\",\"ly_do\":\"HS cơ bản chưa học quy tắc hàm hợp trong tiết này nên có thể không làm được câu 3.\"},{\"vi_tri\":\"hoat_dong[3].thoi_luong_phut\",\"van_de\":\"HD4 chỉ 10 phút cho 3 câu (NB, TH, VD) có thể thiếu thời gian, đặc biệt với đối tượng cơ bản.\",\"goi_y\":\"Có thể giao câu 3 làm thêm ở nhà hoặc điều chỉnh thời lượng các HĐ.\",\"ly_do\":\"Ước lượng 3–4 phút/câu NB–TH và 6–8 phút/câu VD, tổng vượt 10 phút.\"},{\"vi_tri\":\"hoat_dong[1].kien_thuc\",\"van_de\":\"HD2 đang liệt kê KT11-C09-CT-002 và KT11-C09-CT-004 nhưng phát biểu chưa đầy đủ so với danh sách; câu 2 PHT1 (x^2 sin x) cần KT11-C09-CT-003 chưa được dạy.\",\"goi_y\":\"Bổ sung KT11-C09-CT-003 vào HD2 nếu muốn giữ câu 2 trong PHT1.\",\"ly_do\":\"Tránh tham chiếu kiến thức chưa dạy.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[0].buoc_goi_y\",\"van_de\":\"Các câu 1–2 có buoc_goi_y trống.\",\"goi_y\":\"Bổ sung các bước gợi ý bằng lời nếu cần.\",\"ly_do\":\"Không thuộc yêu cầu lần này nên chưa tự sửa.\"}],\"unsure\":[\"Câu 3 dùng kiến thức hàm hợp KT11-C09-CT-006 nằm ngoài mục tiêu đã khoá của tiết; nếu GV muốn tránh, có thể chọn câu khác.\"]}}",
+ "usage": {
+  "ts": "2026-11-27T17:58:38",
+  "role": "gen",
+  "task": "K2/V8/E13",
+  "model": "claude-sonnet-5-5",
+  "input": 2822,
+  "output": 1289,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 8.6
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:38",
+   "role": "gen",
+   "task": "K2/V8/E13",
+   "model": "claude-sonnet-5-5",
+   "input": 2822,
+   "output": 1289,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 8.6
+  }
+ ],
+ "server_errs0": []
+}

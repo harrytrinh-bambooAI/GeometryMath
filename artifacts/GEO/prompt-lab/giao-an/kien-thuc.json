@@ -1,0 +1,755 @@
+{
+ "kien_thuc": [
+  {
+   "ma": "KT11-C04-TC-001",
+   "bai": 10,
+   "chuan": "Các tính chất thừa nhận: qua 2 điểm phân biệt có duy nhất 1 đường thẳng; qua 3 điểm không thẳng hàng có duy nhất 1 mặt phẳng; đường thẳng có 2 điểm chung với mặt phẳng thì nằm trong mặt phẳng; hai mặt phẳng phân biệt có điểm chung thì cắt nhau theo một giao tuyến.",
+   "khoa": [
+    "duy nhất"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-PP-001",
+   "bai": 10,
+   "chuan": "Xác định mặt phẳng: qua 3 điểm không thẳng hàng; qua một đường thẳng và một điểm ngoài nó; qua hai đường thẳng cắt nhau; qua hai đường thẳng song song.",
+   "khoa": [
+    "không thẳng hàng"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-DN-001",
+   "bai": 10,
+   "chuan": "Hình chóp S.A1...An có đỉnh S, đáy là đa giác A1...An, các mặt bên là tam giác; tứ diện ABCD là hình chóp tam giác.",
+   "khoa": [
+    "đỉnh",
+    "đáy"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-PP-002",
+   "bai": 10,
+   "chuan": "Tìm giao tuyến của hai mặt phẳng: tìm hai điểm chung của hai mặt phẳng.",
+   "khoa": [
+    "hai điểm chung"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-PP-003",
+   "bai": 10,
+   "chuan": "Tìm giao điểm của d và (P): chọn (Q) chứa d, tìm giao tuyến Δ của (P) và (Q); giao điểm của d và Δ là giao điểm cần tìm.",
+   "khoa": [
+    "giao tuyến"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-DN-002",
+   "bai": 11,
+   "chuan": "Hai đường thẳng trong không gian: cắt nhau, song song (đồng phẳng, không có điểm chung), chéo nhau (không đồng phẳng).",
+   "khoa": [
+    "chéo nhau",
+    "đồng phẳng"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-DL-001",
+   "bai": 11,
+   "chuan": "Định lí về giao tuyến của ba mặt phẳng: ba mặt phẳng đôi một cắt nhau theo ba giao tuyến phân biệt thì ba giao tuyến đồng quy hoặc đôi một song song.",
+   "khoa": [
+    "đồng quy",
+    "song song"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-DL-002",
+   "bai": 11,
+   "chuan": "Hệ quả: hai mặt phẳng cắt nhau lần lượt chứa hai đường thẳng song song thì giao tuyến song song (hoặc trùng) với một trong hai đường thẳng đó.",
+   "khoa": [
+    "giao tuyến",
+    "song song"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-TC-004",
+   "bai": 11,
+   "chuan": "Hai đường thẳng phân biệt cùng song song với đường thẳng thứ ba thì song song với nhau.",
+   "khoa": [
+    "thứ ba"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-DN-003",
+   "bai": 12,
+   "chuan": "Đường thẳng d song song với mặt phẳng (P) nếu chúng không có điểm chung.",
+   "khoa": [
+    "không có điểm chung"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-DL-003",
+   "bai": 12,
+   "chuan": "Nếu d không nằm trong (P) và d song song với một đường thẳng a nằm trong (P) thì d song song với (P).",
+   "khoa": [
+    "không nằm trong",
+    "song song"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-TC-005",
+   "bai": 12,
+   "chuan": "Nếu d song song với (P) thì mọi mặt phẳng (Q) chứa d mà cắt (P) thì cắt theo giao tuyến song song với d.",
+   "khoa": [
+    "giao tuyến",
+    "song song"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-DN-004",
+   "bai": 13,
+   "chuan": "Hai mặt phẳng (P), (Q) song song nếu chúng không có điểm chung.",
+   "khoa": [
+    "không có điểm chung"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-DL-004",
+   "bai": 13,
+   "chuan": "Nếu (P) chứa hai đường thẳng cắt nhau cùng song song với (Q) thì (P) song song với (Q).",
+   "khoa": [
+    "cắt nhau",
+    "song song"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-TC-007",
+   "bai": 13,
+   "chuan": "Tính chất hai mặt phẳng song song: qua điểm ngoài (Q) có duy nhất (P) song song (Q); (P)∥(Q) thì mọi đường thẳng trong (P) song song (Q); mặt phẳng cắt hai mặt phẳng song song theo hai giao tuyến song song.",
+   "khoa": [
+    "giao tuyến"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-DL-005",
+   "bai": 13,
+   "chuan": "Định lí Thalès trong không gian: ba mặt phẳng đôi một song song chắn trên hai cát tuyến bất kì những đoạn thẳng tương ứng tỉ lệ.",
+   "khoa": [
+    "tỉ lệ"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-DN-005",
+   "bai": 13,
+   "chuan": "Hình lăng trụ có hai đáy nằm trên hai mặt phẳng song song, các cạnh bên song song và bằng nhau, mặt bên là hình bình hành; hình hộp là hình lăng trụ có đáy là hình bình hành.",
+   "khoa": [
+    "hình bình hành"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-DN-006",
+   "bai": 14,
+   "chuan": "Phép chiếu song song lên (P) theo phương Δ (Δ cắt (P)): mỗi điểm M ứng với giao điểm M' của (P) và đường thẳng qua M song song (hoặc trùng) với Δ.",
+   "khoa": [
+    "phương"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-TC-008",
+   "bai": 14,
+   "chuan": "Phép chiếu song song giữ tính thẳng hàng và thứ tự điểm, biến hai đường thẳng song song thành hai đường thẳng song song hoặc trùng, giữ tỉ số độ dài hai đoạn thẳng cùng nằm trên một đường thẳng hoặc trên hai đường thẳng song song.",
+   "khoa": [
+    "thẳng hàng",
+    "tỉ số"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C04-PP-004",
+   "bai": 14,
+   "chuan": "Hình biểu diễn của hình không gian là hình chiếu song song của nó lên một mặt phẳng; giữ quan hệ song song, tỉ số, trung điểm.",
+   "khoa": [
+    "hình chiếu song song"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-001",
+   "bai": 22,
+   "chuan": "Góc giữa hai đường thẳng a, b là góc giữa hai đường thẳng a', b' cùng đi qua một điểm và lần lượt song song (hoặc trùng) với a, b; số đo từ 0° đến 90°.",
+   "khoa": [
+    "90"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-002",
+   "bai": 22,
+   "chuan": "Hai đường thẳng vuông góc nếu góc giữa chúng bằng 90°; chúng có thể chéo nhau.",
+   "khoa": [
+    "90"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-CT-001",
+   "bai": 22,
+   "chuan": "$\\cos(a,b)=\\dfrac{|\\vec u\\cdot\\vec v|}{|\\vec u|\\cdot|\\vec v|}$ với $\\vec u,\\vec v$ là vectơ chỉ phương.",
+   "khoa": [
+    "\\cos(a,b)=\\dfrac{|\\vec u\\cdot\\vec v|}{|\\vec u||\\vec v|}"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-TC-001",
+   "bai": 22,
+   "chuan": "Nếu a ∥ b và c ⊥ a thì c ⊥ b.",
+   "khoa": [],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-003",
+   "bai": 23,
+   "chuan": "Đường thẳng d vuông góc với (P) nếu d vuông góc với mọi đường thẳng nằm trong (P).",
+   "khoa": [
+    "mọi đường thẳng"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DL-001",
+   "bai": 23,
+   "chuan": "Nếu d vuông góc với hai đường thẳng cắt nhau cùng nằm trong (P) thì d ⊥ (P).",
+   "khoa": [
+    "cắt nhau"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-TC-002",
+   "bai": 23,
+   "chuan": "a ∥ b, (P) ⊥ a thì (P) ⊥ b; a ⊥ (P), b ⊥ (P) thì a ∥ b (hoặc trùng); (P) ∥ (Q), d ⊥ (P) thì d ⊥ (Q).",
+   "khoa": [],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-004",
+   "bai": 23,
+   "chuan": "Mặt phẳng trung trực của AB là mặt phẳng vuông góc với AB tại trung điểm; là tập hợp các điểm cách đều A và B.",
+   "khoa": [
+    "trung điểm",
+    "cách đều"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DL-002",
+   "bai": 23,
+   "chuan": "Định lí ba đường vuông góc: a nằm trong (P), b là hình chiếu vuông góc của d lên (P); a ⊥ d khi và chỉ khi a ⊥ b.",
+   "khoa": [
+    "hình chiếu"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-005",
+   "bai": 24,
+   "chuan": "Phép chiếu vuông góc lên (P) là phép chiếu song song theo phương vuông góc với (P).",
+   "khoa": [
+    "vuông góc"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-006",
+   "bai": 24,
+   "chuan": "Góc giữa d và (P): 90° nếu d ⊥ (P); 0° nếu d ∥ (P) hoặc d ⊂ (P); còn lại là góc giữa d và hình chiếu d' của nó trên (P).",
+   "khoa": [
+    "hình chiếu"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-CT-002",
+   "bai": 24,
+   "chuan": "Nếu $SH\\perp(P)$, $H,A\\in(P)$ thì góc giữa $SA$ và $(P)$ là $\\widehat{SAH}$, $\\sin\\varphi=\\dfrac{SH}{SA}$.",
+   "khoa": [
+    "\\widehat{SAH}"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-007",
+   "bai": 25,
+   "chuan": "Góc nhị diện gồm hai nửa mặt phẳng chung cạnh c; góc phẳng nhị diện là góc giữa hai tia cùng vuông góc với c tại một điểm, mỗi tia nằm trong một nửa mặt phẳng.",
+   "khoa": [
+    "nhị diện",
+    "vuông góc"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-008",
+   "bai": 25,
+   "chuan": "Góc giữa hai mặt phẳng cắt nhau có số đo từ 0° đến 90°; (P) ⊥ (Q) nếu góc giữa chúng bằng 90°.",
+   "khoa": [
+    "90"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DL-003",
+   "bai": 25,
+   "chuan": "Nếu (P) chứa một đường thẳng vuông góc với (Q) thì (P) ⊥ (Q).",
+   "khoa": [
+    "chứa"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-TC-003",
+   "bai": 25,
+   "chuan": "(P) ⊥ (Q) theo giao tuyến c: đường thẳng a nằm trong (P), a ⊥ c thì a ⊥ (Q); hai mặt phẳng cắt nhau cùng vuông góc mặt phẳng thứ ba thì giao tuyến vuông góc mặt phẳng ấy.",
+   "khoa": [
+    "giao tuyến"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-009",
+   "bai": 25,
+   "chuan": "Lăng trụ đứng có cạnh bên vuông góc với đáy; hình chóp đều có đáy là đa giác đều và chân đường cao là tâm đáy.",
+   "khoa": [
+    "đa giác đều"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-010",
+   "bai": 26,
+   "chuan": "d(M,Δ)=MH với H là chân đường vuông góc hạ từ M xuống Δ; d(M,(P))=MH với H là hình chiếu vuông góc của M lên (P).",
+   "khoa": [
+    "hình chiếu",
+    "MH"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-011",
+   "bai": 26,
+   "chuan": "Khoảng cách giữa đường thẳng và mặt phẳng song song, giữa hai mặt phẳng song song bằng khoảng cách từ một điểm bất kì của đối tượng này đến đối tượng kia.",
+   "khoa": [
+    "bất kì"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-DN-012",
+   "bai": 26,
+   "chuan": "Khoảng cách giữa hai đường thẳng chéo nhau là độ dài đoạn vuông góc chung.",
+   "khoa": [
+    "đoạn vuông góc chung"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-PP-001",
+   "bai": 26,
+   "chuan": "Đưa khoảng cách hai đường chéo nhau về khoảng cách điểm–mặt: $d(a,b)=d(a,(P))$ với $(P)\\supset b$, $(P)\\parallel a$.",
+   "khoa": [
+    "d(a,b)=d(a,(P))"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-CT-003",
+   "bai": 26,
+   "chuan": "Nếu $SA\\perp(ABC)$, $AK\\perp BC$, $AH\\perp SK$ thì $AH\\perp(SBC)$ và $\\dfrac1{AH^2}=\\dfrac1{SA^2}+\\dfrac1{AK^2}$.",
+   "khoa": [
+    "\\dfrac1{AH^2}=\\dfrac1{SA^2}+\\dfrac1{AK^2}"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-CT-004",
+   "bai": 27,
+   "chuan": "Thể tích lăng trụ $V=S_{đáy}\\cdot h$; hình hộp chữ nhật $V=abc$; hình lập phương $V=a^3$.",
+   "khoa": [
+    "V=S\\cdot h"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-CT-005",
+   "bai": 27,
+   "chuan": "Thể tích khối chóp $V=\\dfrac13S_{đáy}\\cdot h$.",
+   "khoa": [
+    "V=\\dfrac13S\\cdot h"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-CT-006",
+   "bai": 27,
+   "chuan": "Thể tích khối chóp cụt đều $V=\\dfrac h3\\left(S+\\sqrt{SS'}+S'\\right)$.",
+   "khoa": [
+    "V=\\dfrac h3(S+\\sqrt{SS'}+S')"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-CT-007",
+   "bai": 27,
+   "chuan": "Tỉ số thể tích: $\\dfrac{V_{S.A'B'C'}}{V_{S.ABC}}=\\dfrac{SA'}{SA}\\cdot\\dfrac{SB'}{SB}\\cdot\\dfrac{SC'}{SC}$.",
+   "khoa": [
+    "\\dfrac{V_{S.A'B'C'}}{V_{S.ABC}}=\\dfrac{SA'}{SA}\\cdot\\dfrac{SB'}{SB}\\cdot\\dfrac{SC'}{SC}"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C07-PP-002",
+   "bai": 27,
+   "chuan": "Tính thể tích: xác định chiều cao (chân đường vuông góc) và diện tích đáy; dùng tỉ số thể tích hoặc khoảng cách điểm–mặt khi chiều cao khó thấy.",
+   "khoa": [
+    "chiều cao"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C05-DN-001",
+   "bai": 15,
+   "chuan": "Dãy $(u_n)$ có giới hạn $L$ ($\\lim u_n=L$) nếu $|u_n-L|$ nhỏ tuỳ ý khi $n$ đủ lớn.",
+   "khoa": [
+    "\\lim u_n=L"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C05-CT-001",
+   "bai": 15,
+   "chuan": "Giới hạn cơ bản: $\\lim\\dfrac1{n^k}=0$ ($k>0$); $\\lim q^n=0$ khi $|q|<1$; $\\lim c=c$.",
+   "khoa": [
+    "\\lim q^n=0"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C05-TC-001",
+   "bai": 15,
+   "chuan": "Nếu $\\lim u_n=a$, $\\lim v_n=b$ thì $\\lim(u_n\\pm v_n)=a\\pm b$, $\\lim u_nv_n=ab$, $\\lim\\dfrac{u_n}{v_n}=\\dfrac ab$ ($b\\ne0$).",
+   "khoa": [
+    "\\lim(u_n\\pm v_n)=a\\pm b"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C05-CT-002",
+   "bai": 15,
+   "chuan": "Tổng cấp số nhân lùi vô hạn ($|q|<1$): $S=\\dfrac{u_1}{1-q}$.",
+   "khoa": [
+    "S=\\dfrac{u_1}{1-q}"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C05-PP-001",
+   "bai": 15,
+   "chuan": "Khử dạng vô định của dãy: chia tử và mẫu cho luỹ thừa bậc cao nhất của n, hoặc nhân liên hợp.",
+   "khoa": [
+    "bậc cao nhất"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C05-DN-002",
+   "bai": 16,
+   "chuan": "$\\lim_{x\\to x_0}f(x)=L$ nếu mọi dãy $x_n\\to x_0$ ($x_n\\ne x_0$) đều có $f(x_n)\\to L$.",
+   "khoa": [
+    "mọi dãy"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C05-DL-001",
+   "bai": 16,
+   "chuan": "$\\lim_{x\\to x_0}f(x)=L$ khi và chỉ khi $\\lim_{x\\to x_0^+}f(x)=\\lim_{x\\to x_0^-}f(x)=L$.",
+   "khoa": [
+    "x_0^+",
+    "x_0^-"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C05-PP-002",
+   "bai": 16,
+   "chuan": "Dạng vô định: $\\dfrac00$ phân tích nhân tử hoặc nhân liên hợp; $\\dfrac\\infty\\infty$ chia cho luỹ thừa bậc cao nhất; $\\infty-\\infty$ quy đồng hoặc liên hợp.",
+   "khoa": [
+    "liên hợp"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C05-DN-003",
+   "bai": 17,
+   "chuan": "$f$ liên tục tại $x_0$ nếu $\\lim_{x\\to x_0}f(x)=f(x_0)$.",
+   "khoa": [
+    "\\lim_{x\\to x_0}f(x)=f(x_0)"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C05-TC-002",
+   "bai": 17,
+   "chuan": "Đa thức, phân thức hữu tỉ, hàm lượng giác, căn thức liên tục trên tập xác định; tổng, hiệu, tích, thương (mẫu khác 0) của hàm liên tục là hàm liên tục.",
+   "khoa": [
+    "tập xác định"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C05-DL-002",
+   "bai": 17,
+   "chuan": "Nếu $f$ liên tục trên $[a;b]$ và $f(a)f(b)<0$ thì phương trình $f(x)=0$ có ít nhất một nghiệm thuộc $(a;b)$.",
+   "khoa": [
+    "f(a)f(b)<0"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C06-DN-001",
+   "bai": 18,
+   "chuan": "Luỹ thừa: $a^0=1$ ($a\\ne0$), $a^{-n}=\\dfrac1{a^n}$; $a^{\\frac mn}=\\sqrt[n]{a^m}$ ($a>0$).",
+   "khoa": [
+    "a^{-n}=\\dfrac1{a^n}"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C06-TC-001",
+   "bai": 18,
+   "chuan": "Với $a,b>0$: $a^\\alpha a^\\beta=a^{\\alpha+\\beta}$; $\\dfrac{a^\\alpha}{a^\\beta}=a^{\\alpha-\\beta}$; $(a^\\alpha)^\\beta=a^{\\alpha\\beta}$; $(ab)^\\alpha=a^\\alpha b^\\alpha$.",
+   "khoa": [
+    "a^\\alpha a^\\beta=a^{\\alpha+\\beta}"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C06-TC-002",
+   "bai": 18,
+   "chuan": "So sánh: $a>1$ thì $a^\\alpha<a^\\beta\\Leftrightarrow\\alpha<\\beta$; $0<a<1$ thì ngược lại.",
+   "khoa": [
+    "a^\\alpha<a^\\beta"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C06-DN-002",
+   "bai": 19,
+   "chuan": "Với $a>0$, $a\\ne1$, $b>0$: $\\log_ab=\\alpha\\Leftrightarrow a^\\alpha=b$; $\\lg b=\\log_{10}b$, $\\ln b=\\log_eb$.",
+   "khoa": [
+    "\\log_ab=\\alpha\\Leftrightarrow a^\\alpha=b"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C06-TC-003",
+   "bai": 19,
+   "chuan": "Với $M,N>0$: $\\log_a(MN)=\\log_aM+\\log_aN$; $\\log_a\\dfrac MN=\\log_aM-\\log_aN$; $\\log_aM^\\alpha=\\alpha\\log_aM$.",
+   "khoa": [
+    "\\log_a(MN)=\\log_aM+\\log_aN"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C06-CT-001",
+   "bai": 19,
+   "chuan": "Đổi cơ số: $\\log_ab=\\dfrac{\\log_cb}{\\log_ca}$; $\\log_ab=\\dfrac1{\\log_ba}$.",
+   "khoa": [
+    "\\log_ab=\\dfrac{\\log_cb}{\\log_ca}"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C06-DN-003",
+   "bai": 20,
+   "chuan": "Hàm số mũ $y=a^x$ ($a>0,a\\ne1$): tập xác định $\\mathbb R$, tập giá trị $(0;+\\infty)$, đồng biến khi $a>1$, nghịch biến khi $0<a<1$.",
+   "khoa": [
+    "y=a^x"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C06-DN-004",
+   "bai": 20,
+   "chuan": "Hàm số lôgarit $y=\\log_ax$: tập xác định $(0;+\\infty)$, tập giá trị $\\mathbb R$, đồng biến khi $a>1$, nghịch biến khi $0<a<1$.",
+   "khoa": [
+    "y=\\log_ax"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C06-PP-001",
+   "bai": 21,
+   "chuan": "Phương trình mũ: $a^x=b$ ($b>0$) $\\Leftrightarrow x=\\log_ab$; $a^{f(x)}=a^{g(x)}\\Leftrightarrow f(x)=g(x)$; có thể đặt $t=a^x>0$.",
+   "khoa": [
+    "x=\\log_ab"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C06-PP-002",
+   "bai": 21,
+   "chuan": "Phương trình lôgarit: $\\log_ax=b\\Leftrightarrow x=a^b$; $\\log_af(x)=\\log_ag(x)\\Leftrightarrow f(x)=g(x)>0$; phải đặt điều kiện.",
+   "khoa": [
+    "\\log_ax=b\\Leftrightarrow x=a^b"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C06-TC-004",
+   "bai": 21,
+   "chuan": "Bất phương trình: $a>1$ thì $a^{f}>a^{g}\\Leftrightarrow f>g$; $0<a<1$ thì đổi chiều.",
+   "khoa": [
+    "đổi chiều"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C09-DN-001",
+   "bai": 31,
+   "chuan": "$f'(x_0)=\\lim_{x\\to x_0}\\dfrac{f(x)-f(x_0)}{x-x_0}$.",
+   "khoa": [
+    "f'(x_0)=\\lim_{x\\to x_0}\\dfrac{f(x)-f(x_0)}{x-x_0}"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C09-TC-001",
+   "bai": 31,
+   "chuan": "Hàm số có đạo hàm tại $x_0$ thì liên tục tại $x_0$; điều ngược lại không đúng.",
+   "khoa": [
+    "liên tục"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C09-CT-001",
+   "bai": 31,
+   "chuan": "Phương trình tiếp tuyến tại $M(x_0;f(x_0))$: $y=f'(x_0)(x-x_0)+f(x_0)$; $f'(x_0)$ là hệ số góc.",
+   "khoa": [
+    "y=f'(x_0)(x-x_0)+f(x_0)"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C09-DN-002",
+   "bai": 31,
+   "chuan": "Ý nghĩa vật lí: vận tốc tức thời $v(t_0)=s'(t_0)$.",
+   "khoa": [
+    "v(t_0)=s'(t_0)"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C09-CT-002",
+   "bai": 32,
+   "chuan": "$(c)'=0$; $(x^n)'=nx^{n-1}$; $(\\sqrt x)'=\\dfrac1{2\\sqrt x}$; $\\left(\\dfrac1x\\right)'=-\\dfrac1{x^2}$.",
+   "khoa": [
+    "(x^n)'=nx^{n-1}"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C09-CT-003",
+   "bai": 32,
+   "chuan": "$(\\sin x)'=\\cos x$; $(\\cos x)'=-\\sin x$; $(\\tan x)'=\\dfrac1{\\cos^2x}$; $(\\cot x)'=-\\dfrac1{\\sin^2x}$.",
+   "khoa": [
+    "(\\sin x)'=\\cos x"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C09-CT-004",
+   "bai": 32,
+   "chuan": "$(e^x)'=e^x$; $(a^x)'=a^x\\ln a$; $(\\ln x)'=\\dfrac1x$; $(\\log_ax)'=\\dfrac1{x\\ln a}$.",
+   "khoa": [
+    "(a^x)'=a^x\\ln a"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C09-CT-005",
+   "bai": 32,
+   "chuan": "$(u\\pm v)'=u'\\pm v'$; $(uv)'=u'v+uv'$; $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$.",
+   "khoa": [
+    "(uv)'=u'v+uv'"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C09-CT-006",
+   "bai": 32,
+   "chuan": "Đạo hàm hàm hợp: $y=f(u(x))\\Rightarrow y'_x=f'_u\\cdot u'_x$.",
+   "khoa": [
+    "y'_x=f'_u\\cdot u'_x"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C09-DN-003",
+   "bai": 33,
+   "chuan": "Đạo hàm cấp hai $f''(x)=(f'(x))'$.",
+   "khoa": [
+    "f''(x)=(f'(x))'"
+   ],
+   "trang_thai": "nhap-tam"
+  },
+  {
+   "ma": "KT11-C09-DN-004",
+   "bai": 33,
+   "chuan": "Ý nghĩa cơ học: gia tốc $a(t)=v'(t)=s''(t)$.",
+   "khoa": [
+    "a(t)=v'(t)=s''(t)"
+   ],
+   "trang_thai": "nhap-tam"
+  }
+ ],
+ "ly_thuyet": {
+  "10": "## 1. Các khái niệm cơ bản\nĐiểm, đường thẳng, mặt phẳng là khái niệm không định nghĩa. Mặt phẳng $(P)$ thường vẽ bằng hình bình hành. Hình không gian vẽ nét liền cho cạnh thấy, nét đứt cho cạnh bị che.\n\n## 2. Các tính chất thừa nhận\n1. Qua hai điểm phân biệt có duy nhất một đường thẳng.\n2. Qua ba điểm không thẳng hàng có duy nhất một mặt phẳng.\n3. Nếu một đường thẳng có hai điểm chung với mặt phẳng thì nó nằm trong mặt phẳng.\n4. Hai mặt phẳng phân biệt có điểm chung thì giao nhau theo một đường thẳng (giao tuyến).\n5. Trên mỗi mặt phẳng, mọi kết quả của hình học phẳng đều đúng.\n\n## 3. Cách xác định mặt phẳng\nQua ba điểm không thẳng hàng; qua một đường thẳng và một điểm ngoài nó; qua hai đường thẳng cắt nhau; qua hai đường thẳng song song.\n\n## 4. Hình chóp và hình tứ diện\nHình chóp $S.A_1\\dots A_n$: đỉnh $S$, đáy đa giác $A_1\\dots A_n$, các mặt bên là tam giác. Tứ diện $ABCD$ là hình chóp tam giác có 4 mặt là tam giác.\n\n\n## 5. Tìm giao tuyến của hai mặt phẳng\nTìm **hai điểm chung** của hai mặt phẳng. Ví dụ chóp $S.ABCD$, đáy là hình bình hành tâm $O$: $S$ và $O$ cùng thuộc $(SAC)$ và $(SBD)$ nên $(SAC)\\cap(SBD)=SO$.\n\n\n## 6. Giao điểm của đường thẳng và mặt phẳng\nĐể tìm $d\\cap(P)$: chọn mặt phẳng $(Q)\\supset d$, tìm giao tuyến $\\Delta=(P)\\cap(Q)$; $d\\cap\\Delta$ chính là giao điểm cần tìm.",
+  "11": "## 1. Vị trí tương đối của hai đường thẳng\nHai đường thẳng trong không gian: **cắt nhau**, **song song** (đồng phẳng, không điểm chung), **chéo nhau** (không đồng phẳng).\n\n## 2. Tính chất\n- Qua điểm nằm ngoài đường thẳng $d$ có duy nhất một đường thẳng song song với $d$.\n- **Định lí giao tuyến**: ba mặt phẳng đôi một cắt nhau theo ba giao tuyến phân biệt thì ba giao tuyến đồng quy hoặc đôi một song song.\n- Hệ quả: hai mặt phẳng cắt nhau lần lượt chứa hai đường thẳng song song thì giao tuyến song song (hoặc trùng) với hai đường đó.\n- Hai đường thẳng cùng song song với đường thẳng thứ ba thì song song với nhau.\n\n\n**Ví dụ.** Trong hình hộp $ABCD.A'B'C'D'$ có $AA'\\parallel BB'\\parallel CC'$; $AB\\parallel CD\\parallel C'D'$.",
+  "12": "## 1. Định nghĩa\nĐường thẳng $d$ và mặt phẳng $(P)$ song song nếu chúng không có điểm chung. Kí hiệu $d\\parallel(P)$.\n\n## 2. Điều kiện và tính chất\n- **Điều kiện**: $d\\not\\subset(P)$ và $d\\parallel a$ với $a\\subset(P)$ thì $d\\parallel(P)$.\n- Nếu $d\\parallel(P)$ và $(Q)\\supset d$ cắt $(P)$ theo $a$ thì $a\\parallel d$.\n- Nếu hai mặt phẳng cắt nhau cùng song song một đường thẳng thì giao tuyến của chúng song song với đường thẳng đó.",
+  "13": "## 1. Định nghĩa\n$(P)\\parallel(Q)$ nếu không có điểm chung.\n\n## 2. Điều kiện\nNếu $(P)$ chứa hai đường thẳng cắt nhau $a,b$ cùng song song với $(Q)$ thì $(P)\\parallel(Q)$.\n\n## 3. Tính chất\n- Qua một điểm ngoài $(Q)$ có duy nhất mặt phẳng $(P)\\parallel(Q)$.\n- Nếu $(P)\\parallel(Q)$ thì mọi đường thẳng trong $(P)$ song song $(Q)$.\n- Mặt phẳng thứ ba $(R)$ cắt hai mặt phẳng song song theo hai giao tuyến song song.\n- **Định lí Thalès** trong không gian: ba mặt phẳng song song chắn trên hai cát tuyến những đoạn tương ứng tỉ lệ.\n\n\n## 4. Hình lăng trụ, hình hộp\nLăng trụ $ABC.A'B'C'$: hai đáy song song, các cạnh bên song song và bằng nhau, mặt bên là hình bình hành. Hình hộp là lăng trụ đáy hình bình hành.",
+  "14": "## 1. Định nghĩa\nCho mặt phẳng $(P)$ và đường thẳng $\\Delta$ cắt $(P)$. Với mỗi điểm $M$, đường thẳng qua $M$ song song $\\Delta$ cắt $(P)$ tại $M'$: $M'$ là hình chiếu song song của $M$ lên $(P)$ theo phương $\\Delta$.\n\n\n## 2. Tính chất\n- Giữ nguyên **tính thẳng hàng** và thứ tự các điểm; đường thẳng $\\to$ đường thẳng (hoặc điểm).\n- Biến hai đường thẳng song song thành hai đường thẳng song song (hoặc trùng).\n- Giữ nguyên **tỉ số** độ dài các đoạn trên cùng đường thẳng hoặc hai đường thẳng song song.\n- Không bảo toàn độ lớn góc, độ dài tuyệt đối.\n\n## 3. Hình biểu diễn của hình không gian\nHình vẽ trên mặt phẳng là hình chiếu song song của hình không gian: hình vuông $\\to$ hình bình hành; giữ quan hệ song song, trung điểm.",
+  "22": "## 1. Góc giữa hai đường thẳng\nGóc giữa $a,b$ là góc giữa hai đường thẳng $a',b'$ cắt nhau tại một điểm và lần lượt song song (hoặc trùng) với $a,b$. Số đo từ $0^\\circ$ đến $90^\\circ$. Hai đường song song có góc $0^\\circ$.\n\n## 2. Hai đường thẳng vuông góc\n$a\\perp b\\Leftrightarrow(a,b)=90^\\circ$. Có thể không cắt nhau (chéo nhau).\nNếu $\\vec u,\\vec v$ là vectơ chỉ phương: $\\cos(a,b)=\\dfrac{|\\vec u\\cdot\\vec v|}{|\\vec u||\\vec v|}$.\n\n## 3. Tính chất\nNếu $a\\parallel b$ và $c\\perp a$ thì $c\\perp b$.\n\n**Ví dụ.** Hình lập phương $ABCD.A'B'C'D'$: $AB\\parallel A'B'$ và $A'B'\\perp A'D'$ nên $AB\\perp A'D'$.",
+  "23": "## 1. Định nghĩa\n$d\\perp(P)$ nếu $d$ vuông góc với mọi đường thẳng nằm trong $(P)$.\n\n## 2. Điều kiện\n$d$ vuông góc với hai đường thẳng cắt nhau $a,b\\subset(P)$ thì $d\\perp(P)$.\n\n\n## 3. Tính chất\n- Qua một điểm có duy nhất một mặt phẳng vuông góc với đường thẳng cho trước, và duy nhất một đường thẳng vuông góc với mặt phẳng cho trước.\n- $a\\parallel b$, $(P)\\perp a\\Rightarrow(P)\\perp b$; $a\\perp(P)$, $b\\perp(P)\\Rightarrow a\\parallel b$.\n- $(P)\\parallel(Q)$, $d\\perp(P)\\Rightarrow d\\perp(Q)$.\n\n## 4. Mặt phẳng trung trực\nMặt phẳng vuông góc với $AB$ tại trung điểm $AB$: tập các điểm cách đều $A,B$.\n\n## 5. Định lí ba đường vuông góc\nCho $a\\subset(P)$, $b$ là hình chiếu vuông góc của $d$ lên $(P)$: $a\\perp d\\Leftrightarrow a\\perp b$.",
+  "24": "## 1. Phép chiếu vuông góc\nLà phép chiếu song song theo phương vuông góc với $(P)$. Hình chiếu của $M$ là chân đường vuông góc $H$ hạ từ $M$ xuống $(P)$.\n\n## 2. Góc giữa đường thẳng và mặt phẳng\nNếu $d\\perp(P)$ góc là $90^\\circ$; nếu $d\\parallel(P)$ hoặc $d\\subset(P)$ góc là $0^\\circ$. Ngược lại: góc giữa $d$ và hình chiếu $d'$ của nó trên $(P)$.\n\n\nNếu $SH\\perp(P)$ ($H\\in(P)$), $A\\in(P)$ thì $\\widehat{(SA,(P))}=\\widehat{SAH}$ và $\\sin\\varphi=\\dfrac{SH}{SA}$.",
+  "25": "## 1. Góc giữa hai mặt phẳng, góc nhị diện\nGóc nhị diện $[P,c,Q]$ gồm hai nửa mặt phẳng chung cạnh $c$. **Góc phẳng nhị diện**: góc giữa hai tia cùng vuông góc với $c$ tại một điểm, mỗi tia nằm trong một mặt. Góc giữa hai mặt phẳng cắt nhau là góc nhỏ trong hai góc phẳng (từ $0^\\circ$ đến $90^\\circ$).\n\n\n## 2. Hai mặt phẳng vuông góc\n$(P)\\perp(Q)$ nếu góc giữa chúng $90^\\circ$.\n**Điều kiện**: $(P)$ chứa một đường thẳng vuông góc với $(Q)$ thì $(P)\\perp(Q)$.\n\n## 3. Tính chất\n- $(P)\\perp(Q)$, giao tuyến $c$: đường thẳng $a\\subset(P)$, $a\\perp c$ thì $a\\perp(Q)$.\n- Hai mặt phẳng cắt nhau cùng vuông góc mặt phẳng thứ ba thì giao tuyến vuông góc mặt phẳng ấy.\n\n## 4. Hình lăng trụ đứng, hình chóp đều\nLăng trụ đứng: cạnh bên vuông góc đáy. Hình chóp đều: đáy đa giác đều, chân đường cao là tâm đáy; cạnh bên bằng nhau.",
+  "26": "## 1. Khoảng cách từ điểm đến đường thẳng, đến mặt phẳng\n$d(M,\\Delta)=MH$ với $H$ là chân đường vuông góc hạ từ $M$ lên $\\Delta$; $d(M,(P))=MH$ với $H$ là hình chiếu vuông góc của $M$ lên $(P)$.\n\n\n## 2. Khoảng cách giữa các đối tượng song song\n$d(a,(P))$ với $a\\parallel(P)$ bằng khoảng cách từ một điểm bất kì của $a$ đến $(P)$. $d((P),(Q))$ với $(P)\\parallel(Q)$ bằng khoảng cách từ một điểm bất kì của mặt này đến mặt kia.\n\n## 3. Khoảng cách giữa hai đường thẳng chéo nhau\nLà độ dài đoạn vuông góc chung. Cách tính: đưa về khoảng cách từ một điểm đến mặt phẳng: $d(a,b)=d(a,(P))$ với $(P)\\supset b$, $(P)\\parallel a$.\n\n## 4. Mẹo\nNếu $SA\\perp(ABC)$, kẻ $AK\\perp BC$ rồi $AH\\perp SK$ thì $AH\\perp(SBC)$ và $\\dfrac1{AH^2}=\\dfrac1{SA^2}+\\dfrac1{AK^2}$.",
+  "27": "## 1. Công thức\n- Lăng trụ, hình hộp: $V=S_{đáy}\\cdot h$. Hình hộp chữ nhật: $V=abc$; hình lập phương: $a^3$.\n- Hình chóp: $V=\\dfrac13S_{đáy}\\cdot h$.\n- Hình chóp cụt đều: $V=\\dfrac h3\\left(S+\\sqrt{SS'}+S'\\right)$.\n\n## 2. Tỉ số thể tích\nChóp $S.ABC$, $A'\\in SA,B'\\in SB,C'\\in SC$: $\\dfrac{V_{S.A'B'C'}}{V_{S.ABC}}=\\dfrac{SA'}{SA}\\cdot\\dfrac{SB'}{SB}\\cdot\\dfrac{SC'}{SC}$.\n\n## 3. Phương pháp\nXác định chiều cao (chân đường vuông góc), diện tích đáy; dùng tỉ số thể tích hoặc khoảng cách điểm–mặt khi chiều cao khó thấy.",
+  "15": "## 1. Giới hạn hữu hạn\n$\\lim u_n=L$ nếu $|u_n-L|$ nhỏ tuỳ ý khi $n$ đủ lớn.\n- $\\lim\\dfrac1{n^k}=0$ ($k>0$); $\\lim q^n=0$ khi $|q|<1$; $\\lim c=c$.\n- Nếu $\\lim u_n=a$, $\\lim v_n=b$: $\\lim(u_n\\pm v_n)=a\\pm b$, $\\lim u_nv_n=ab$, $\\lim\\dfrac{u_n}{v_n}=\\dfrac ab$ ($b\\ne0$), $\\lim\\sqrt{u_n}=\\sqrt a$ ($u_n\\ge0$).\n\n## 2. Giới hạn vô cực\n$\\lim u_n=+\\infty$ nếu $u_n$ lớn hơn mọi số dương bất kì khi $n$ đủ lớn. $\\lim n^k=+\\infty$; $\\lim q^n=+\\infty$ khi $q>1$. $\\lim u_n=+\\infty\\Rightarrow\\lim\\dfrac1{u_n}=0$.\n\n## 3. Tổng cấp số nhân lùi vô hạn\n$|q|<1$: $S=u_1+u_1q+\\dots=\\dfrac{u_1}{1-q}$.\n\n## 4. Mẹo khử dạng vô định\nChia tử và mẫu cho luỹ thừa bậc cao nhất của $n$; hoặc nhân liên hợp với căn thức.\n\n**Ví dụ.** $\\lim\\dfrac{3n^2+n}{2n^2-1}=\\lim\\dfrac{3+1/n}{2-1/n^2}=\\dfrac32$.",
+  "16": "## 1. Giới hạn hữu hạn tại một điểm\n$\\lim_{x\\to x_0}f(x)=L$ nếu mọi dãy $x_n\\to x_0$ ($x_n\\ne x_0$) đều có $f(x_n)\\to L$. Các quy tắc cộng, nhân, chia tương tự dãy số. Với hàm đa thức/phân thức xác định tại $x_0$: $\\lim_{x\\to x_0}f(x)=f(x_0)$.\n\n## 2. Giới hạn một bên\n$\\lim_{x\\to x_0}f(x)=L\\Leftrightarrow\\lim_{x\\to x_0^+}f=\\lim_{x\\to x_0^-}f=L$.\n\n## 3. Giới hạn tại vô cực và giới hạn vô cực\n$\\lim_{x\\to\\pm\\infty}\\dfrac1{x^k}=0$; $\\lim_{x\\to+\\infty}x^k=+\\infty$. Dạng $\\dfrac{c}{0^\\pm}$ ($c\\ne0$) cho $\\pm\\infty$ tuỳ dấu.\n\n## 4. Dạng vô định\n$\\dfrac00$: phân tích nhân tử/nhân liên hợp. $\\dfrac\\infty\\infty$: chia cho luỹ thừa bậc cao nhất. $\\infty-\\infty$: quy đồng hoặc liên hợp.\n\n**Ví dụ.** $\\lim_{x\\to2}\\dfrac{x^2-4}{x-2}=\\lim(x+2)=4$.",
+  "17": "## 1. Liên tục tại một điểm\n$f$ liên tục tại $x_0$ nếu $\\lim_{x\\to x_0}f(x)=f(x_0)$. (Ba điều kiện: $f(x_0)$ xác định, giới hạn tồn tại, hai số bằng nhau.)\n\n## 2. Liên tục trên khoảng, đoạn\nLiên tục tại mọi điểm của khoảng; trên $[a;b]$ nếu liên tục trên $(a;b)$ và $\\lim_{x\\to a^+}f=f(a)$, $\\lim_{x\\to b^-}f=f(b)$. Đa thức, phân thức hữu tỉ, lượng giác (trên TXĐ), căn thức liên tục trên TXĐ.\n\n## 3. Tính chất\nTổng, hiệu, tích, thương (mẫu $\\ne0$) của hàm liên tục là hàm liên tục.\n\n## 4. Định lí giá trị trung gian (hệ quả)\n$f$ liên tục trên $[a;b]$ và $f(a)f(b)<0$ thì phương trình $f(x)=0$ có ít nhất một nghiệm thuộc $(a;b)$.\n\n**Ví dụ.** $x^3+x-1=0$: $f(0)=-1,f(1)=1$ nên có nghiệm trong $(0;1)$.",
+  "18": "## 1. Luỹ thừa số mũ nguyên, hữu tỉ\n$a^n=a\\cdots a$; $a^0=1$ ($a\\ne0$); $a^{-n}=\\dfrac1{a^n}$. Căn bậc $n$: $\\sqrt[n]{a}$; $a^{m/n}=\\sqrt[n]{a^m}$ ($a>0$).\n\n## 2. Luỹ thừa số mũ thực\nVới $a>0$, $a^{\\alpha}=\\lim a^{r_n}$, $r_n\\to\\alpha$ hữu tỉ.\n\n## 3. Tính chất ($a,b>0$)\n$a^\\alpha a^\\beta=a^{\\alpha+\\beta}$; $\\dfrac{a^\\alpha}{a^\\beta}=a^{\\alpha-\\beta}$; $(a^\\alpha)^\\beta=a^{\\alpha\\beta}$; $(ab)^\\alpha=a^\\alpha b^\\alpha$; $\\left(\\dfrac ab\\right)^\\alpha=\\dfrac{a^\\alpha}{b^\\alpha}$.\nSo sánh: $a>1$: $a^\\alpha<a^\\beta\\Leftrightarrow\\alpha<\\beta$; $0<a<1$: ngược lại.",
+  "19": "## 1. Định nghĩa\nVới $a>0,a\\ne1,b>0$: $\\log_ab=\\alpha\\Leftrightarrow a^\\alpha=b$. $\\log_a1=0$, $\\log_aa=1$, $a^{\\log_ab}=b$. $\\lg b=\\log_{10}b$, $\\ln b=\\log_eb$.\n\n## 2. Quy tắc ($M,N>0$)\n$\\log_a(MN)=\\log_aM+\\log_aN$; $\\log_a\\dfrac MN=\\log_aM-\\log_aN$; $\\log_aM^\\alpha=\\alpha\\log_aM$.\n\n## 3. Đổi cơ số\n$\\log_ab=\\dfrac{\\log_cb}{\\log_ca}$; $\\log_ab=\\dfrac1{\\log_ba}$; $\\log_{a^\\beta}b=\\dfrac1\\beta\\log_ab$.",
+  "20": "## 1. Hàm số mũ $y=a^x$ ($a>0,a\\ne1$)\nTXĐ $\\mathbb R$; tập giá trị $(0;+\\infty)$; $a>1$ đồng biến, $0<a<1$ nghịch biến; đồ thị luôn đi qua $(0;1)$, nhận $Ox$ làm tiệm cận ngang.\n\n\n## 2. Hàm số lôgarit $y=\\log_ax$\nTXĐ $(0;+\\infty)$; tập giá trị $\\mathbb R$; $a>1$ đồng biến, $0<a<1$ nghịch biến; đồ thị qua $(1;0)$, nhận $Oy$ làm tiệm cận đứng. Đồ thị $y=a^x$ và $y=\\log_ax$ đối xứng nhau qua đường $y=x$.\n\n\n## 3. Một số giới hạn và số $e$\n$e\\approx2{,}718$; $\\lim\\left(1+\\tfrac1n\\right)^n=e$; $y=e^x$, $y=\\ln x$.",
+  "21": "## 1. Phương trình mũ\n$a^x=b$: $b\\le0$ vô nghiệm; $b>0$: $x=\\log_ab$. $a^{f}=a^{g}\\Leftrightarrow f=g$. Đặt ẩn phụ $t=a^x>0$.\n\n## 2. Phương trình lôgarit\n$\\log_ax=b\\Leftrightarrow x=a^b$. $\\log_af=\\log_ag\\Leftrightarrow f=g>0$. Phải đặt điều kiện biểu thức trong log dương.\n\n## 3. Bất phương trình\n$a>1$: $a^f>a^g\\Leftrightarrow f>g$; $\\log_af>\\log_ag\\Leftrightarrow f>g>0$. $0<a<1$: đổi chiều (với log vẫn giữ điều kiện dương).",
+  "31": "## 1. Đạo hàm tại một điểm\n$$f'(x_0)=\\lim_{x\\to x_0}\\frac{f(x)-f(x_0)}{x-x_0}=\\lim_{\\Delta x\\to0}\\frac{f(x_0+\\Delta x)-f(x_0)}{\\Delta x}.$$\nHàm có đạo hàm tại $x_0$ thì liên tục tại $x_0$ (ngược lại không đúng, vd $y=|x|$ tại 0).\n\n## 2. Đạo hàm trên một khoảng\n$f'(x)$ là hàm số tính được tại mọi điểm của khoảng.\n\n## 3. Ý nghĩa hình học\n$f'(x_0)$ là **hệ số góc** của tiếp tuyến đồ thị tại $M(x_0;f(x_0))$. Phương trình tiếp tuyến: $y=f'(x_0)(x-x_0)+f(x_0)$.\n\n\n## 4. Ý nghĩa vật lí\nVận tốc tức thời $v(t_0)=s'(t_0)$; cường độ dòng điện tức thời $I(t)=Q'(t)$.",
+  "32": "## 1. Đạo hàm của hàm thường gặp\n$(c)'=0$; $(x^n)'=nx^{n-1}$; $(\\sqrt x)'=\\dfrac1{2\\sqrt x}$; $\\left(\\dfrac1x\\right)'=-\\dfrac1{x^2}$.\n$(\\sin x)'=\\cos x$; $(\\cos x)'=-\\sin x$; $(\\tan x)'=\\dfrac1{\\cos^2x}$; $(\\cot x)'=-\\dfrac1{\\sin^2x}$.\n$(e^x)'=e^x$; $(a^x)'=a^x\\ln a$; $(\\ln x)'=\\dfrac1x$; $(\\log_ax)'=\\dfrac1{x\\ln a}$.\n\n## 2. Quy tắc\n$(u\\pm v)'=u'\\pm v'$; $(ku)'=ku'$; $(uv)'=u'v+uv'$; $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$.\nHàm hợp: $y=f(u(x))\\Rightarrow y'_x=f'_u\\cdot u'_x$. Ví dụ $(\\sin3x)'=3\\cos3x$; $(e^{x^2})'=2xe^{x^2}$.",
+  "33": "## 1. Định nghĩa\n$f''(x)=(f'(x))'$. Tương tự $f'''$, ... đạo hàm cấp $n$.\n\n## 2. Ý nghĩa cơ học\n$s(t)$: vận tốc $v=s'$, **gia tốc** $a(t)=v'(t)=s''(t)$.\n\n## 3. Ví dụ\n$(\\sin x)''=-\\sin x$; $(e^{2x})''=4e^{2x}$; $(x^4)''=12x^2$."
+ }
+}

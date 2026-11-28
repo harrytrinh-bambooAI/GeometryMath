@@ -1,0 +1,85 @@
+{
+ "id": "BM-060",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-05-gioi-han-ham-so-lien-tuc/on-tap-chuong.md — bài 5 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Hàm số liên tục",
+ "muc_do": "VD",
+ "de_bai": "Tìm $a$ để $f(x)=\\begin{cases}\\dfrac{\\sqrt{x+3}-2}{x-1}&x\\ne1\\\\ a&x=1\\end{cases}$ liên tục tại $x=1$.",
+ "dap_so": {
+  "gia_tri": "$a=\\dfrac14$",
+  "so": 0.25
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Định nghĩa liên tục",
+  "Nhân liên hợp"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Cần $\\lim_{x\\to1}f(x)=f(1)=a$.",
+   "ket_qua_trung_gian": "$\\lim f=a$",
+   "kien_thuc": "Định nghĩa liên tục",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\lim f=a$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Cho rằng chỉ cần $f(1)$ xác định nên mọi $a$ đều được",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$\\dfrac{\\sqrt{x+3}-2}{x-1}=\\dfrac{1}{\\sqrt{x+3}+2}$ ($x\\ne1$).",
+   "ket_qua_trung_gian": "$\\dfrac1{\\sqrt{x+3}+2}$",
+   "kien_thuc": "Nhân liên hợp",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac1{\\sqrt{x+3}+2}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Nhân liên hợp sai dấu: được $\\dfrac1{\\sqrt{x+3}-2}$",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Giới hạn $=\\dfrac14$, vậy $a=\\dfrac14$.",
+   "ket_qua_trung_gian": "$\\dfrac14$",
+   "kien_thuc": "Thay giá trị",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac14$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.25
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Nhân liên hợp sai dấu: được $\\dfrac1{\\sqrt{x+3}-2}$",
+   "loi_giai": "B1: Cần $\\lim_{x\\to1}f(x)=f(1)=a$.\nB2: $\\dfrac{\\sqrt{x+3}-2}{x-1}=\\dfrac1{\\sqrt{x+3}-2}$.\nB3: Giới hạn không tồn tại hữu hạn; không có $a$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Cho rằng chỉ cần $f(1)$ xác định nên mọi $a$ đều được",
+   "loi_giai": "B1: $f(1)=a$ xác định nên $f$ liên tục với mọi $a$.\nB2: $\\dfrac{\\sqrt{x+3}-2}{x-1}=\\dfrac{1}{\\sqrt{x+3}+2}$ ($x\\ne1$).\nB3: Vậy mọi $a\\in\\mathbb R$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "S2: B2 (rút gọn) đúng và độc lập → 0,5."
+}

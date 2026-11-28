@@ -1,0 +1,33 @@
+{
+ "case": "E09",
+ "variant": "Vn",
+ "round": "F",
+ "text": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[1].to_chuc.chuyen_giao\",\"before\":\"GV giao phiếu PHT1 câu 1.\",\"after\":\"GV chiếu hình chóp S.ABC có SA ⊥ (ABC), nêu vấn đề: dựng và tính khoảng cách từ A đến (SBC). GV giao PHT1 câu 1 để HS nhớ lại khoảng cách từ điểm đến mặt phẳng trong hình quen thuộc.\",\"ly_do\":\"Làm rõ nhiệm vụ, tạo tình huống có vấn đề dẫn vào định nghĩa và cách dựng.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[1].to_chuc.thuc_hien\",\"before\":\"HS làm nhóm 4.\",\"after\":\"HS làm nhóm 4: (1) chỉ ra BC ⊥ (SAK) bằng cách dùng hai đường thẳng cắt nhau; (2) suy ra AH ⊥ BC và AH ⊥ SK nên AH ⊥ (SBC); (3) áp dụng hệ thức tính AH. GV đi quanh gợi ý nhóm gặp khó.\",\"ly_do\":\"Tường minh các bước tư duy, giúp HS khá tự khám phá cách dựng.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[2].to_chuc.thuc_hien\",\"before\":\"HS làm cá nhân.\",\"after\":\"HS làm cá nhân 8 phút, sau đó đối chiếu theo cặp và sửa lỗi cho nhau trước khi báo cáo.\",\"ly_do\":\"Thêm phản hồi ngang hàng, tăng hiệu quả luyện tập.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[2].to_chuc.ket_luan\",\"before\":\"GV nhận xét.\",\"after\":\"GV nhận xét, nhấn mạnh các bước: xác định chân đường cao, dựng AK ⊥ BC, dựng AH ⊥ SK, chứng minh AH ⊥ (SBC), rồi tính. Nêu lỗi thường gặp: quên chứng minh vuông góc với mặt phẳng.\",\"ly_do\":\"Chốt quy trình và lỗi thường gặp.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].to_chuc.chuyen_giao\",\"before\":\"GV giao việc.\",\"after\":\"GV giao việc: đo ba kích thước phòng học (dài, rộng, cao), chọn mô hình hóa thành hình hộp chữ nhật, tính khoảng cách từ một góc trần đến mặt tường đối diện và nêu cách kiểm tra bằng thước.\",\"ly_do\":\"Làm rõ yêu cầu vận dụng và gắn với mô hình hóa.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].thoi_luong_phut\",\"before\":5,\"after\":0,\"ly_do\":\"HĐ này giao làm ở nhà nên thời lượng trên lớp là 0.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].o_nha\",\"before\":false,\"after\":true,\"ly_do\":\"Nội dung và tổ chức ghi HS làm ở nhà, cần đánh dấu đúng.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[2].thoi_luong_phut\",\"before\":15,\"after\":20,\"ly_do\":\"Bù 5 phút từ HĐ4 để tổng vẫn đủ 45 phút, tăng thời gian luyện tập.\"}],\"de_xuat\":[{\"vi_tri\":\"phieu_hoc_tap[0].cau\",\"van_de\":\"Phiếu mới có 3 câu, chủ yếu NB–TH, chưa có câu phân hóa cho đối tượng khá.\",\"goi_y\":\"Có thể bổ sung BT11-B26-6 (VDC) hoặc BM-008 (VD) làm câu thử thách tùy chọn.\",\"ly_do\":\"Tăng tính phân hóa, nhưng cần GV cân nhắc vì bài 1 tiết chỉ 45 phút.\"}],\"unsure\":[]}",
+ "raw": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[1].to_chuc.chuyen_giao\",\"before\":\"GV giao phiếu PHT1 câu 1.\",\"after\":\"GV chiếu hình chóp S.ABC có SA ⊥ (ABC), nêu vấn đề: dựng và tính khoảng cách từ A đến (SBC). GV giao PHT1 câu 1 để HS nhớ lại khoảng cách từ điểm đến mặt phẳng trong hình quen thuộc.\",\"ly_do\":\"Làm rõ nhiệm vụ, tạo tình huống có vấn đề dẫn vào định nghĩa và cách dựng.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[1].to_chuc.thuc_hien\",\"before\":\"HS làm nhóm 4.\",\"after\":\"HS làm nhóm 4: (1) chỉ ra BC ⊥ (SAK) bằng cách dùng hai đường thẳng cắt nhau; (2) suy ra AH ⊥ BC và AH ⊥ SK nên AH ⊥ (SBC); (3) áp dụng hệ thức tính AH. GV đi quanh gợi ý nhóm gặp khó.\",\"ly_do\":\"Tường minh các bước tư duy, giúp HS khá tự khám phá cách dựng.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[2].to_chuc.thuc_hien\",\"before\":\"HS làm cá nhân.\",\"after\":\"HS làm cá nhân 8 phút, sau đó đối chiếu theo cặp và sửa lỗi cho nhau trước khi báo cáo.\",\"ly_do\":\"Thêm phản hồi ngang hàng, tăng hiệu quả luyện tập.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[2].to_chuc.ket_luan\",\"before\":\"GV nhận xét.\",\"after\":\"GV nhận xét, nhấn mạnh các bước: xác định chân đường cao, dựng AK ⊥ BC, dựng AH ⊥ SK, chứng minh AH ⊥ (SBC), rồi tính. Nêu lỗi thường gặp: quên chứng minh vuông góc với mặt phẳng.\",\"ly_do\":\"Chốt quy trình và lỗi thường gặp.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].to_chuc.chuyen_giao\",\"before\":\"GV giao việc.\",\"after\":\"GV giao việc: đo ba kích thước phòng học (dài, rộng, cao), chọn mô hình hóa thành hình hộp chữ nhật, tính khoảng cách từ một góc trần đến mặt tường đối diện và nêu cách kiểm tra bằng thước.\",\"ly_do\":\"Làm rõ yêu cầu vận dụng và gắn với mô hình hóa.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].thoi_luong_phut\",\"before\":5,\"after\":0,\"ly_do\":\"HĐ này giao làm ở nhà nên thời lượng trên lớp là 0.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[3].o_nha\",\"before\":false,\"after\":true,\"ly_do\":\"Nội dung và tổ chức ghi HS làm ở nhà, cần đánh dấu đúng.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[2].thoi_luong_phut\",\"before\":15,\"after\":20,\"ly_do\":\"Bù 5 phút từ HĐ4 để tổng vẫn đủ 45 phút, tăng thời gian luyện tập.\"}],\"de_xuat\":[{\"vi_tri\":\"phieu_hoc_tap[0].cau\",\"van_de\":\"Phiếu mới có 3 câu, chủ yếu NB–TH, chưa có câu phân hóa cho đối tượng khá.\",\"goi_y\":\"Có thể bổ sung BT11-B26-6 (VDC) hoặc BM-008 (VD) làm câu thử thách tùy chọn.\",\"ly_do\":\"Tăng tính phân hóa, nhưng cần GV cân nhắc vì bài 1 tiết chỉ 45 phút.\"}],\"unsure\":[]}",
+ "usage": {
+  "ts": "2026-11-27T17:49:54",
+  "role": "gen",
+  "task": "F/Vn/E09",
+  "model": "claude-sonnet-5-5",
+  "input": 3344,
+  "output": 1438,
+  "cache_write": 0,
+  "cache_read": 1335,
+  "stop": "end_turn",
+  "sec": 10.1
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:49:54",
+   "role": "gen",
+   "task": "F/Vn/E09",
+   "model": "claude-sonnet-5-5",
+   "input": 3344,
+   "output": 1438,
+   "cache_write": 0,
+   "cache_read": 1335,
+   "stop": "end_turn",
+   "sec": 10.1
+  }
+ ]
+}

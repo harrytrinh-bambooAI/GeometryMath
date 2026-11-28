@@ -1,0 +1,105 @@
+{
+ "id": "MC-HH-A08",
+ "ten": "Khoảng cách giữa BD và SC",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "kc-cheo-nhau.chop-sa.duong-cheo",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.3"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "A",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan",
+  "tu-luan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD",
+  "tu-luan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-09",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-09 + geometry/problem-specs.json#HKN-09"
+ },
+ "tham_so": {
+  "k": [
+   "1",
+   "sqrt(2)",
+   "2"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SB": "sqrt(a**2+h**2)",
+  "SC": "sqrt(2*a**2+h**2)"
+ },
+ "boi_canh": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA={h}$.",
+ "hoi": "Khoảng cách giữa hai đường thẳng chéo nhau $BD$ và $SC$ bằng",
+ "dap_so": "(sqrt(2)*a/2)*h/sqrt(2*a**2+h**2)",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "sqrt(2)*a/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy $OC$ làm đoạn vuông góc chung"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(2)*a*h/sqrt(2*a**2+h**2)",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Tính khoảng cách từ $A$ đến $SC$, quên nhân tỉ số $\\dfrac{OC}{AC}=\\dfrac12$"
+   }
+  },
+  {
+   "bieu_thuc": "a*h/sqrt(a**2+h**2)",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Nhầm sang khoảng cách từ $A$ đến $(SBC)$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-09",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "sa": "h"
+  }
+ },
+ "tu_luan": [
+  {
+   "noi_dung": "Gọi $O=AC\\cap BD$. Vì $BD\\perp AC$, $BD\\perp SA$ nên $BD\\perp(SAC)$. Kẻ $OK\\perp SC$ ($K\\in SC$) thì $OK\\perp BD$, nên $OK$ là đoạn vuông góc chung, $d(BD,SC)=OK$.",
+   "diem": 0.5
+  },
+  {
+   "noi_dung": "$SC=\\sqrt{SA^2+AC^2}={SC}$; hai tam giác vuông $CKO$ và $CAS$ đồng dạng.",
+   "diem": 0.25
+  },
+  {
+   "noi_dung": "$OK=\\dfrac{OC\\cdot SA}{SC\\,}={ds}$.",
+   "diem": 0.25
+  }
+ ],
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(2)"
+  },
+  {
+   "k": "2"
+  }
+ ],
+ "so_bien_the": 3,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

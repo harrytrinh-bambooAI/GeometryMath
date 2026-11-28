@@ -1,0 +1,39 @@
+{
+ "case": "E05",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true,
+   "co_de_xuat": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 1
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá thêm đúng câu BM-008 mức VD từ kho, gắn kt hợp lệ (DN-012, PP-001), giữ dap_so null và gợi ý không lộ kết quả số. Trợ lý phát hiện và đề xuất đúng các lỗi có sẵn (tổng 50 phút, o_nha, công thức thiếu bình phương, HD3 chưa dùng câu 4) nhưng chưa lưu ý mục tiêu bị khoá không bao quát khoảng cách hai đường thẳng chéo nhau."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 96.2,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.75
+ }
+}

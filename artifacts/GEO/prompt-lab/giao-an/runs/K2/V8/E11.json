@@ -1,0 +1,34 @@
+{
+ "case": "E11",
+ "variant": "V8",
+ "round": "K2",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[2].noi_dung\", \"before\": \"GV nêu quy tắc, HS làm ví dụ.\", \"after\": \"GV nêu quy tắc, HS làm ví dụ. Ví dụ về đạo hàm của thương: tính đạo hàm của $y=\\\\dfrac{x}{x^2+1}$ bằng công thức $\\\\left(\\\\dfrac uv\\\\right)'=\\\\dfrac{u'v-uv'}{v^2}$ với $u=x$, $v=x^2+1$.\", \"ly_do\": \"Thêm một ví dụ tính đạo hàm của thương theo yêu cầu, chỉ dùng công thức KT11-C09-CT-005 và KT11-C09-CT-002, không ghi kết quả.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[1].kien_thuc\", \"van_de\": \"Mục tiêu và HĐ2 nêu KT11-C09-CT-002 nhưng phát biểu chỉ có $(x^n)'=nx^{n-1}$, thiếu $(c)'=0$, $(\\\\sqrt x)'$, $\\\\left(\\\\dfrac1x\\\\right)'$ như danh sách.\", \"goi_y\": \"Bổ sung đầy đủ phát biểu của KT11-C09-CT-002 theo danh sách được cấp.\", \"ly_do\": \"Phát biểu phải giữ nguyên nội dung như danh sách kiến thức.\"}, {\"vi_tri\": \"hoat_dong[2].kien_thuc\", \"van_de\": \"Phát biểu KT11-C09-CT-005 thiếu quy tắc tổng, hiệu $(u\\\\pm v)'=u'\\\\pm v'$.\", \"goi_y\": \"Bổ sung quy tắc tổng, hiệu vào phát biểu.\", \"ly_do\": \"Mục tiêu nêu cả tổng, hiệu, tích, thương.\"}, {\"vi_tri\": \"hoat_dong[0].noi_dung\", \"van_de\": \"HĐ1 tính đạo hàm của $y=x^2$ tại $x_0=1$ bằng định nghĩa, nhưng KT11-C09-DN-001 không nằm trong mục tiêu.\", \"goi_y\": \"Cân nhắc ghi KT11-C09-DN-001 vào kiến thức của HĐ1 hoặc điều chỉnh mục tiêu.\", \"ly_do\": \"Đồng bộ giữa HĐ và kiến thức được dạy.\"}, {\"vi_tri\": \"hoat_dong[4]\", \"van_de\": \"HĐ5 tính vận tốc tức thời nhưng không nêu phương trình chuyển động cụ thể.\", \"goi_y\": \"Nêu rõ hàm $s(t)$ và thời điểm cần tính.\", \"ly_do\": \"Bài vận dụng cần dữ kiện cụ thể để thực hiện được.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau\", \"van_de\": \"Câu 2 có nguồn \\\"moi\\\" trong khi kho bài tập có BT11-B32-2 (y = x sin x) gần tương tự. Ngoài ra $\\\\sin x$ thuộc KT11-C09-CT-003 nhưng câu chỉ gắn CT-005; các câu chưa có buoc_goi_y.\", \"goi_y\": \"Dùng id BT11-B32-2, thêm KT11-C09-CT-003 vào kt của câu 2 và bổ sung buoc_goi_y.\", \"ly_do\": \"Ưu tiên bài trong kho và đảm bảo kiến thức đã được dạy.\"}, {\"vi_tri\": \"hoat_dong[1] và hoat_dong[3]\", \"van_de\": \"HĐ2 không dạy KT11-C09-CT-003 (đạo hàm của sin x) nhưng PHT1 câu 2 cần dùng.\", \"goi_y\": \"Thêm KT11-C09-CT-003 vào HĐ2 hoặc thay câu 2 bằng bài không dùng hàm lượng giác.\", \"ly_do\": \"HS chưa được học kiến thức cần cho bài luyện tập.\"}], \"unsure\": []}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[2].noi_dung\",\"before\":\"GV nêu quy tắc, HS làm ví dụ.\",\"after\":\"GV nêu quy tắc, HS làm ví dụ. Ví dụ về đạo hàm của thương: tính đạo hàm của $y=\\\\dfrac{x}{x^2+1}$ bằng công thức $\\\\left(\\\\dfrac uv\\\\right)'=\\\\dfrac{u'v-uv'}{v^2}$ với $u=x$, $v=x^2+1$.\",\"ly_do\":\"Thêm một ví dụ tính đạo hàm của thương theo yêu cầu, chỉ dùng công thức KT11-C09-CT-005 và KT11-C09-CT-002, không ghi kết quả.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1].kien_thuc\",\"van_de\":\"Mục tiêu và HĐ2 nêu KT11-C09-CT-002 nhưng phát biểu chỉ có $(x^n)'=nx^{n-1}$, thiếu $(c)'=0$, $(\\\\sqrt x)'$, $\\\\left(\\\\dfrac1x\\\\right)'$ như danh sách.\",\"goi_y\":\"Bổ sung đầy đủ phát biểu của KT11-C09-CT-002 theo danh sách được cấp.\",\"ly_do\":\"Phát biểu phải giữ nguyên nội dung như danh sách kiến thức.\"},{\"vi_tri\":\"hoat_dong[2].kien_thuc\",\"van_de\":\"Phát biểu KT11-C09-CT-005 thiếu quy tắc tổng, hiệu $(u\\\\pm v)'=u'\\\\pm v'$.\",\"goi_y\":\"Bổ sung quy tắc tổng, hiệu vào phát biểu.\",\"ly_do\":\"Mục tiêu nêu cả tổng, hiệu, tích, thương.\"},{\"vi_tri\":\"hoat_dong[0].noi_dung\",\"van_de\":\"HĐ1 tính đạo hàm của $y=x^2$ tại $x_0=1$ bằng định nghĩa, nhưng KT11-C09-DN-001 không nằm trong mục tiêu.\",\"goi_y\":\"Cân nhắc ghi KT11-C09-DN-001 vào kiến thức của HĐ1 hoặc điều chỉnh mục tiêu.\",\"ly_do\":\"Đồng bộ giữa HĐ và kiến thức được dạy.\"},{\"vi_tri\":\"hoat_dong[4]\",\"van_de\":\"HĐ5 tính vận tốc tức thời nhưng không nêu phương trình chuyển động cụ thể.\",\"goi_y\":\"Nêu rõ hàm $s(t)$ và thời điểm cần tính.\",\"ly_do\":\"Bài vận dụng cần dữ kiện cụ thể để thực hiện được.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau\",\"van_de\":\"Câu 2 có nguồn \\\"moi\\\" trong khi kho bài tập có BT11-B32-2 (y = x sin x) gần tương tự. Ngoài ra $\\\\sin x$ thuộc KT11-C09-CT-003 nhưng câu chỉ gắn CT-005; các câu chưa có buoc_goi_y.\",\"goi_y\":\"Dùng id BT11-B32-2, thêm KT11-C09-CT-003 vào kt của câu 2 và bổ sung buoc_goi_y.\",\"ly_do\":\"Ưu tiên bài trong kho và đảm bảo kiến thức đã được dạy.\"},{\"vi_tri\":\"hoat_dong[1] và hoat_dong[3]\",\"van_de\":\"HĐ2 không dạy KT11-C09-CT-003 (đạo hàm của sin x) nhưng PHT1 câu 2 cần dùng.\",\"goi_y\":\"Thêm KT11-C09-CT-003 vào HĐ2 hoặc thay câu 2 bằng bài không dùng hàm lượng giác.\",\"ly_do\":\"HS chưa được học kiến thức cần cho bài luyện tập.\"}],\"unsure\":[]}}",
+ "usage": {
+  "ts": "2026-11-27T17:58:33",
+  "role": "gen",
+  "task": "K2/V8/E11",
+  "model": "claude-sonnet-5-5",
+  "input": 2822,
+  "output": 1453,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 9.1
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:33",
+   "role": "gen",
+   "task": "K2/V8/E11",
+   "model": "claude-sonnet-5-5",
+   "input": 2822,
+   "output": 1453,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 9.1
+  }
+ ],
+ "server_errs0": []
+}

@@ -1,0 +1,117 @@
+{
+ "id": "MC-XS-04",
+ "ten": "Xác suất chọn hai viên bi cùng màu",
+ "chu_de": "to-hop-xac-suat",
+ "dang": "tk.xs-bi-cung-mau",
+ "dang_tx": "tk.xs-co-dien",
+ "yccd": [
+  "10.XS.1",
+  "11.XS.3"
+ ],
+ "lop": 10,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-XS-04",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-XS-04",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "m": [
+   "4",
+   "5",
+   "6"
+  ],
+  "n": [
+   "3",
+   "5",
+   "7"
+  ]
+ },
+ "rang_buoc": [
+  "m!=n"
+ ],
+ "dan_xuat": {},
+ "boi_canh": "Một hộp có ${m}$ viên bi đỏ và ${n}$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi.",
+ "hoi": "Xác suất để hai viên bi lấy ra cùng màu (làm tròn đến hàng phần trăm) bằng",
+ "dap_so": "(binomial(m,2)+binomial(n,2))/binomial(m+n,2)",
+ "nhieu": [
+  {
+   "bieu_thuc": "(m**2+n**2)/(m+n)**2",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Tính như lấy có hoàn lại"
+   }
+  },
+  {
+   "bieu_thuc": "binomial(m,2)/binomial(m+n,2)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+   }
+  },
+  {
+   "bieu_thuc": "m*n/binomial(m+n,2)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Tính xác suất hai bi khác màu"
+   }
+  }
+ ],
+ "kieu": "xap-xi:2",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-XS-04']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "m": "4",
+   "n": "3"
+  },
+  {
+   "m": "4",
+   "n": "5"
+  },
+  {
+   "m": "4",
+   "n": "7"
+  },
+  {
+   "m": "5",
+   "n": "3"
+  },
+  {
+   "m": "5",
+   "n": "7"
+  },
+  {
+   "m": "6",
+   "n": "3"
+  },
+  {
+   "m": "6",
+   "n": "5"
+  },
+  {
+   "m": "6",
+   "n": "7"
+  }
+ ],
+ "so_bien_the": 8,
+ "so_cau_sinh": 15,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

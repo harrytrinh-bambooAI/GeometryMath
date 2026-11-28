@@ -32,12 +32,13 @@ Chưa có trong khung (sẽ thêm khi có tác vụ nền thật): nhóm riêng 
 | Trần thân yêu cầu | **1 MB** (1 048 576 byte), vượt trả `413 PAYLOAD_TOO_LARGE` | `geo.http.max-body-bytes`; `BodySizeLimitFilter` | M-004 (5) |
 | `Retry-After` mặc định | 2 giây (giây nguyên, làm tròn lên) cho `429` và `503 SERVICE_OVERLOADED` | `geo.http.retry-after` | `05_capacity.md` §7; NFR-GEO-055 |
 | Phản hồi nhạy cảm | `Cache-Control: no-store` (kèm `Pragma: no-cache`) cho lời giải, gợi ý, trạng thái khóa; áp cả phản hồi lỗi của endpoint đó | chú thích `@NoStore` (phương thức hoặc lớp controller) → `NoStoreInterceptor`; ngoài MVC dùng `CacheHeaders.noStore(response)` | D-GEO-145 |
-| Cổng AI | 10 giây **TẠM**, chưa có nguồn | `geo.ai.timeout` | D-GEO-072 (owner TechLead) |
+| Cổng AI | 10 giây **TẠM** (dev/test), 90 giây ở prod (AI thật, **TẠM**, chưa đo); trần một lượt kể cả thử lại | `geo.ai.timeout` (`GEO_AI_TIMEOUT`) | D-GEO-072 (owner TechLead); PO-60 |
 
 ## 4. Phân trang
 | Khóa | Giá trị | Ở đâu | Nguồn |
 |---|---|---|---|
 | Kích thước mặc định | 20 | `geo.paging.default-limit` | ADR-GEO-12 |
+| Gói nội dung Kho đề MVP | nạp `content/catalog-mvp.json` (đề HKN-xx, mô tả dựng ở `geometry/problem-specs.json`) vào bộ `main` khi khởi động, chỉ THÊM đề chưa có theo mã (đề đã có, đã lưu trữ hay sửa tay: giữ nguyên, log số đề bỏ qua), engine tính nhãn; mặc định **bật**, profile `test` và `make e2e` tắt (`GEO_CONTENT_PACK_ON_START=false`) | `geo.content.pack.load-on-start`; `ContentPackRunner` | T-261126-02; PO-60 |
 | Trần chung | **100** | `geo.paging.max-limit` | M-004 (2); D-GEO-168 |
 | Trần Kho đề | **50** (mặc định 20) | `geo.paging.max-limit-by-list."[content.problem-bank]"` | D-GEO-142 |
 | Trần riêng khác | thêm khóa `max-limit-by-list."[<mã danh sách>]"`; chỉ được thấp hơn trần chung | `PagingProperties.maxLimitFor` | ADR-GEO-12, `04_query_catalogue.md` |
@@ -90,3 +91,44 @@ Tạo lỗi có `Retry-After` trong mã: `AppException.rateLimited(Duration)`, `
 | Kiểm ranh giới đúng R qua API | R = giờ máy chủ + 2 giây rồi chờ | D-GEO-169 |
 | E2E | Playwright (`app/e2e`), múi giờ `Asia/Ho_Chi_Minh` | D-GEO-170 |
 | Thử tải | Gatling Java DSL (`app/loadtest`) | D-GEO-170 |
+| Bộ đo MVP | `make bench-mvp` (`scripts/bench-mvp.sh`, lớp `it/mvp/MvpBench`, ngoài `make verify`): mọi đề của bộ đề chuẩn (hợp mã `geometry/problem-specs.json`, `content/scene-specs.json`, `mock-ai/benchmark.json`) → `artifacts/GEO/evidence/MVP-METRICS-<yyyymmdd-HHmm>/report.md + report.json`; mã thoát ≠ 0 khi chỉ số bắt buộc trượt. Mock mặc định; AI thật: `GEO_AI_PROVIDER=anthropic GEO_AI_API_KEY=…` | MVP.md §9, PO-60 |
+
+## 8. Profile và khóa bí mật (chốt khởi động `ProfileGuard`)
+| Hạng mục | Giá trị | Nguồn |
+|---|---|---|
+| Profile mặc định | **không có**; phải bật tường minh `dev`, `test` hoặc `prod`. Không bật thì máy chủ từ chối khởi động | soát Đợt 0 (22/11/2026) |
+| Cách bật | `make run`: `-Dspring-boot.run.profiles=dev`; `scripts/e2e.sh`: `--spring.profiles.active=dev`; IT: `@ActiveProfiles("test")` | — |
+| `prod` cùng `dev`/`test` | từ chối khởi động | — |
+| Khóa bắt buộc ngoài dev/test | `GEO_AUTH_SECRET` (`geo.auth.secret`), `GEO_AUTH_CODE_PEPPER` (`geo.auth.code-pepper`), `GEO_CURSOR_KEY` (`geo.paging.cursor-key`): không có mặc định trong `application-prod.yml`; rỗng hoặc còn giá trị dev thì từ chối khởi động | D-GEO-152 |
+| `geo.http.trust-forwarded-for` | `false` (mặc định và prod; prod chỉ bật bằng `GEO_TRUST_FORWARDED_FOR=true` khi có proxy tin cậy); `true` ở dev/test để E2E mô phỏng nhiều IP | TC-GEO-0179 |
+| `/dev/token`, `/test-hooks/*` | chỉ có ở dev/test (`@Profile`); ngoài dev/test không công khai trong `AuthFilter` (không thẻ => 401, có thẻ => 404) | PO-51 |
+| `geo.ai.provider` | `mock` hoặc `anthropic`; giá trị khác từ chối khởi động. Ngoài dev/test (prod) **cấm `mock`**; `application-prod.yml` mặc định `anthropic` | PO-60 (MVP.md §8 M0) |
+| `GEO_AI_API_KEY` (`geo.ai.api-key`) | bắt buộc khi `geo.ai.provider=anthropic` (mọi profile); không in ra nhật ký, thông báo lỗi, ai_call_log | BR-GEO-106, PO-60 |
+
+## 8b. Cổng AI (`geo.ai`, `aigateway`)
+| Khóa (biến môi trường) | Mặc định | Ghi chú |
+|---|---|---|
+| `geo.ai.provider` (`GEO_AI_PROVIDER`) | `mock` (dev/test/CI), `anthropic` (prod) | `MockAiProvider` (D-GEO-047) / `AnthropicAiProvider` (Claude Messages API qua HttpClient của JDK) |
+| `geo.ai.model` (`GEO_AI_MODEL`) | `gia-lap-1` (mock); provider `anthropic` thì giá trị giả lập này thành `claude-sonnet-5-5` (prod yml đặt sẵn) | đổi model bằng cấu hình (US-GEO-103-SC2) |
+| `geo.ai.prompt-version` (`GEO_AI_PROMPT_VERSION`) | `p1` (mock); `anthropic` + `p1` thành `a2` (`AnthropicPrompts.VERSION`) | ghi vào ai_call_log và báo cáo bộ đề chuẩn |
+| `geo.ai.anthropic.base-url` (`GEO_AI_BASE_URL`) | `https://api.anthropic.com` | test trỏ vào máy chủ HTTP giả |
+| `geo.ai.anthropic.api-version` | `2023-06-01` | tiêu đề `anthropic-version` |
+| `geo.ai.anthropic.max-tokens` | 16000 | trần token ra mỗi lượt; bị cắt (`max_tokens`) = lỗi |
+| `geo.ai.anthropic.attempt-timeout` (`GEO_AI_ATTEMPT_TIMEOUT`) | 45 s | một lần gọi HTTP; hết giờ = lỗi quá thời gian (`TIMEOUT`, không thử lại) |
+| `geo.ai.anthropic.max-retries` / `retry-backoff` | 2 / 1 s (nhân đôi; theo `retry-after` nếu có, tối đa 30 s) | chỉ 429, 5xx, lỗi mạng; 4xx khác, JSON hỏng, `refusal` trả ngay `DEPENDENCY_UNAVAILABLE` |
+| `geo.ai.anthropic.fallbacks` | `default` (+ beta `server-side-fallback-2026-07-01`) | chuyển model khi bị từ chối an toàn; rỗng = tắt |
+| `geo.ai.anthropic.effort` (`GEO_AI_EFFORT`) | rỗng = mặc định của model | `output_config.effort` |
+| `geo.ai.pricing.<model>` | Sonnet 5.5: 2 / 10 USD (cache đọc 0,10); Opus 5.5: 4 / 20 (0,20); Haiku 5.5: 0,10 / 0,50 — USD / 1 triệu token | bắt buộc có giá của `geo.ai.model` khi provider=anthropic (ProfileGuard từ chối khởi động nếu thiếu; model khác ghi 0 + cảnh báo một lần); nguồn: bảng giá Anthropic theo skill claude-api (cached 2026-11-03), chép 2026-11-26; chi phí = usage thật × giá → `ai_call_log.cost_micro_usd` |
+| `geo.ai.cost-per-call` | 0,12 | chi phí mô phỏng của mock (KG-07) |
+| `geo.tracking.stuck-deadline` | `PT10S` | PO-83 (BR-S3E3-42): trần chờ bộ gộp "Cả lớp vướng ở đâu" của CẢ màn; mỗi lượt chỉ chờ phần còn lại (`AiGateway.complete(req, maxWait)`), không cộng dồn, không theo `geo.ai.timeout`. Task `class_stuck` có prompt hệ thống riêng và `ai_purpose` = `class_stuck` (V421) |
+| `geo.auth.failure-purge-cron` | `0 */10 * * * *` (mỗi 10 phút, giờ VN; `-` = tắt) | PO-71: `AuthFailurePurgeJob` dọn `auth_failure` (HMAC IP) cũ hơn 1 giờ (V420 `fn_purge_auth_failure`) |
+| `geo.signature.upgrade-on-start` | `true` | Câu mở sau T-05: `SignatureUpgrade` tính lại chữ ký chuẩn bản cũ → `SIG_VERSION` khi máy chủ sẵn sàng (V422; lũy đẳng) |
+| `geo.audit.denied-window` | `PT1H` | PO-76: tối đa một hàng "Từ chối" mỗi (người gọi, loại đối tượng) trong cửa sổ; Redis là đường nhanh, CSDL là nguồn đúng |
+
+Đầu ra AI thật được đưa về đúng định dạng của mock (JSON theo task: scene, solution, hint, ocr, qa) rồi đi qua đường kiểm sẵn có (engine.check, AnswerExpr, Kiểm soát đáp án) — không nới kiểm. Bộ đo: `make bench-mvp` (mục 7).
+
+## 9. Quyền bộ đề (bank) của Kho đề — guard bắt buộc (FIX3)
+- Bộ `main` mọi trường thấy; bộ khác chỉ tổ chức có hàng `catalog_bank_access` thấy (E5, V50). Không thấy = `NOT_FOUND` (BR-GEO-112), không lộ là đề có tồn tại.
+- **Mọi đường đọc hoặc giao một version đề kho theo id PHẢI gọi `vn.geo.server.content.api.BankAccess.requireVisible(versionId)` ở tầng dịch vụ trước khi đọc/ghi**: chi tiết đề (`CatalogService.detail`), lời giải giáo viên (`CatalogService.teacherSolution`), trang chi tiết có cảnh (`SceneService.teacherProblem`), tạo bài giao (`AssignmentService.create`), và mọi đường thêm sau này.
+- Lớp SQL cũng kiểm (V59: `fn_catalog_bank_visible` trong `fn_create_assignment`, `fn_get_solution_teacher`; điều kiện bộ trong `CatalogRepository.detail`, `SceneRepository.catalogVersion`). Migration nào định nghĩa lại các hàm này PHẢI giữ điều kiện `fn_catalog_bank_visible`; guard Java vẫn chặn nếu quên.
+- Kiểm thử: `it/e5/BankAccessE5IT` (Dev-E5-01…04: giáo viên ngoài bộ → 404 cho chi tiết, lời giải, cảnh, giao bài).

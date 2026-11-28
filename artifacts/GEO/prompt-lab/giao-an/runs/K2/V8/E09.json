@@ -1,0 +1,34 @@
+{
+ "case": "E09",
+ "variant": "V8",
+ "round": "K2",
+ "text": "{\"kind\": \"question\", \"text\": \"Bạn muốn \\\"hay hơn\\\" ở phần nào cụ thể (ví dụ: hoạt động khởi động, cách tổ chức HĐ2, độ khó của phiếu học tập, hay thêm bài VD cho học sinh khá)?\"}",
+ "raw": "{\"ket_qua\":{\"kind\":\"question\",\"text\":\"Bạn muốn \\\"hay hơn\\\" ở phần nào cụ thể (ví dụ: hoạt động khởi động, cách tổ chức HĐ2, độ khó của phiếu học tập, hay thêm bài VD cho học sinh khá)?\"}}",
+ "usage": {
+  "ts": "2026-11-27T17:58:23",
+  "role": "gen",
+  "task": "K2/V8/E09",
+  "model": "claude-sonnet-5-5",
+  "input": 3347,
+  "output": 113,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 1.9
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:23",
+   "role": "gen",
+   "task": "K2/V8/E09",
+   "model": "claude-sonnet-5-5",
+   "input": 3347,
+   "output": 113,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 1.9
+  }
+ ],
+ "server_errs0": []
+}

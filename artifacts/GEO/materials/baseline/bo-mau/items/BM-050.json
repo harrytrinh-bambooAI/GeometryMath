@@ -1,0 +1,85 @@
+{
+ "id": "BM-050",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-04-quan-he-song-song/bai-10-duong-thang-va-mat-phang-trong-khong-gian.md — bài 6 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Giao điểm đường thẳng và mặt phẳng",
+ "muc_do": "VD",
+ "de_bai": "Chóp $S.ABCD$ đáy hình bình hành tâm $O$; $M$ là trung điểm $SC$. Tìm giao điểm $I$ của $AM$ và $(SBD)$, tính $\\dfrac{AI}{AM}$.",
+ "dap_so": {
+  "gia_tri": "$I=AM\\cap SO$, $\\dfrac{AI}{AM}=\\dfrac23$",
+  "so": 0.6666666666666666
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Giao tuyến hai mặt phẳng",
+  "Trọng tâm tam giác"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$AM\\subset(SAC)$, $(SAC)\\cap(SBD)=SO$.",
+   "ket_qua_trung_gian": "$(SAC)\\cap(SBD)=SO$",
+   "kien_thuc": "Giao tuyến",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $(SAC)\\cap(SBD)=SO$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy giao tuyến $(SAC)\\cap(SBD)=SB$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Trong $(SAC)$, $AM\\cap SO=I$; $I\\in SO\\subset(SBD)$ nên $I=AM\\cap(SBD)$.",
+   "ket_qua_trung_gian": "$I=AM\\cap SO$",
+   "kien_thuc": "Giao điểm",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $I=AM\\cap SO$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$AM,SO$ là hai trung tuyến của $\\triangle SAC$ nên $I$ là trọng tâm, $\\dfrac{AI}{AM}=\\dfrac23$.",
+   "ket_qua_trung_gian": "$\\dfrac23$",
+   "kien_thuc": "Trọng tâm",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac23$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy tỉ số trọng tâm là $\\dfrac12$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.6666666666666666
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Lấy tỉ số trọng tâm là $\\dfrac12$",
+   "loi_giai": "B1: $AM\\subset(SAC)$, $(SAC)\\cap(SBD)=SO$.\nB2: Trong $(SAC)$, $AM\\cap SO=I$; $I\\in SO\\subset(SBD)$ nên $I=AM\\cap(SBD)$.\nB3: $I$ là trọng tâm nên $\\dfrac{AI}{AM}=\\dfrac12$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Lấy giao tuyến $(SAC)\\cap(SBD)=SB$",
+   "loi_giai": "B1: $(SAC)\\cap(SBD)=SB$.\nB2: $I=AM\\cap SB$.\nB3: Không xác định được tỉ số ($AM$ và $SB$ chéo nhau).",
+   "diem_dung": 0
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

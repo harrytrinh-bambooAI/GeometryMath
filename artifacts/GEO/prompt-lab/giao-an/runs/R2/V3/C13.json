@@ -1,0 +1,19 @@
+{
+ "case": "C13",
+ "variant": "V3",
+ "round": "R2",
+ "text": "{\"kind\":\"question\",\"text\":\"Bài này dạy trong bao nhiêu tiết (số tiết) — ví dụ 1 tiết (45 phút) hay 2 tiết (90 phút)?\"}",
+ "raw": "{\"kind\":\"question\",\"text\":\"Bài này dạy trong bao nhiêu tiết (số tiết) — ví dụ 1 tiết (45 phút) hay 2 tiết (90 phút)?\"}",
+ "usage": {
+  "ts": "2026-11-27T16:38:20",
+  "role": "gen",
+  "task": "R2/V3/C13",
+  "model": "claude-sonnet-5-5",
+  "input": 754,
+  "output": 73,
+  "cache_write": 3112,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 1.5
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "id": "BM-059",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-06-ham-so-mu-va-logarit/on-tap-chuong.md — bài 4 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Phương trình logarit",
+ "muc_do": "VD",
+ "de_bai": "Giải phương trình $\\log_3(x^2-3x+2)=\\log_3(x+10)$.",
+ "dap_so": {
+  "gia_tri": "$x=2\\pm2\\sqrt3$",
+  "so": null
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Điều kiện xác định logarit",
+  "Phương trình $\\log_a f=\\log_a g$"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Điều kiện $x^2-3x+2>0$ và $x+10>0$.",
+   "ket_qua_trung_gian": "ĐK",
+   "kien_thuc": "Điều kiện logarit",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: ĐK",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "PT $\\Leftrightarrow x^2-3x+2=x+10\\Leftrightarrow x^2-4x-8=0\\Leftrightarrow x=2\\pm2\\sqrt3$.",
+   "ket_qua_trung_gian": "$x=2\\pm2\\sqrt3$",
+   "kien_thuc": "Phương trình bậc hai",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $x=2\\pm2\\sqrt3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Chuyển vế sai: $x^2-2x-8=0$",
+     "tru": 0.5
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Hai nghiệm thỏa $x+10>0$ (và khi đó $x^2-3x+2=x+10>0$): nhận cả hai.",
+   "ket_qua_trung_gian": "$x=2\\pm2\\sqrt3$",
+   "kien_thuc": "Đối chiếu điều kiện",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $x=2\\pm2\\sqrt3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Loại nghiệm âm $2-2\\sqrt3$ vì nghĩ $x$ phải dương",
+     "tru": 0.25
+    }
+   ]
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Loại nghiệm âm $2-2\\sqrt3$ vì nghĩ $x$ phải dương",
+   "loi_giai": "B1: Điều kiện $x^2-3x+2>0$ và $x+10>0$.\nB2: PT $\\Leftrightarrow x^2-3x+2=x+10\\Leftrightarrow x^2-4x-8=0\\Leftrightarrow x=2\\pm2\\sqrt3$.\nB3: $2-2\\sqrt3<0$ nên loại; nghiệm $x=2+2\\sqrt3$.",
+   "diem_dung": 0.75
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Chuyển vế sai: $x^2-2x-8=0$",
+   "loi_giai": "B1: Điều kiện $x^2-3x+2>0$ và $x+10>0$.\nB2: $x^2-3x+2=x+10\\Leftrightarrow x^2-2x-8=0\\Leftrightarrow x=4$ hoặc $x=-2$.\nB3: Thử ĐK: $x=4$ và $x=-2$ đều thỏa; nghiệm $x\\in\\{4;-2\\}$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Hai nghiệm; không có giá trị số duy nhất."
+}

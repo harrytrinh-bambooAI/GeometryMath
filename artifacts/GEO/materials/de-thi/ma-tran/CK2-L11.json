@@ -1,0 +1,566 @@
+{
+ "id": "CK2-L11",
+ "ten": "Kiểm tra cuối học kì II - Toán 11 (7 điểm trắc nghiệm + 3 điểm tự luận)",
+ "loai_de": "cuoi-ki",
+ "lop": 11,
+ "thoi_gian_phut": 90,
+ "tong_diem": 10.0,
+ "phan": [
+  {
+   "id": "P1",
+   "ten": "Phần I - Trắc nghiệm nhiều lựa chọn",
+   "loai_cau": "tn4",
+   "so_cau": 12,
+   "diem_moi_cau": 0.25
+  },
+  {
+   "id": "P2",
+   "ten": "Phần II - Trắc nghiệm đúng/sai",
+   "loai_cau": "dung-sai",
+   "so_cau": 2,
+   "diem_moi_cau": 1.0,
+   "thang_diem_y": {
+    "1": 0.1,
+    "2": 0.25,
+    "3": 0.5,
+    "4": 1.0
+   }
+  },
+  {
+   "id": "P3",
+   "ten": "Phần III - Trắc nghiệm trả lời ngắn",
+   "loai_cau": "tra-loi-ngan",
+   "so_cau": 4,
+   "diem_moi_cau": 0.5
+  },
+  {
+   "id": "P4",
+   "ten": "Phần IV - Tự luận",
+   "loai_cau": "tu-luan",
+   "so_cau": 2,
+   "diem_moi_cau": 1.5
+  }
+ ],
+ "can_cu": [
+  "Phạm vi: Toán 11 CT2018 cả học kì II (mũ - lôgarit, quan hệ vuông góc, xác suất, đạo hàm).",
+  "Ba dạng trắc nghiệm theo QĐ 764; tỉ lệ 7 điểm trắc nghiệm + 3 điểm tự luận là giả định (CV 7991 chưa đọc toàn văn)."
+ ],
+ "gia_dinh": [
+  "Tỉ lệ 7/3 và số câu mỗi phần là giả định của nhóm, giáo viên đổi được qua form (số câu, điểm mỗi phần).",
+  "Trọng số xoay vòng theo số câu của chủ đề trong đề 2025, 2026 (×1) và MH 2025 (×0,5); dạng HHKG theo đề TN 2017-2024.",
+  "Hướng dẫn chấm tự luận có thang 1,0 trong ngân hàng; bộ lắp nhân hệ số 1,5 theo điểm ô."
+ ],
+ "cells": [
+  {
+   "id": "P1-01",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Phương trình mũ/lôgarit cơ bản.",
+   "loai_o": "co-dinh",
+   "chu_de": "ham-so-mu-logarit",
+   "yccd": [
+    "11.ML.3"
+   ],
+   "dang_tx": null,
+   "can_cu": "Có mặt ở phần P1 trong 3/3 đề cấu trúc mới — tn-thpt-2025: câu 10 (ml.pt-log); tn-thpt-2026: câu 4 (ml.pt-log); minh-hoa-2025: câu 6 (ml.bpt-log), câu 9 (ml.pt-mu)"
+  },
+  {
+   "id": "P1-02",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Biến đổi lôgarit, bất phương trình lôgarit, lãi suất.",
+   "loai_o": "co-dinh",
+   "chu_de": "ham-so-mu-logarit",
+   "yccd": [
+    "11.ML.1",
+    "11.ML.3",
+    "11.ML.4"
+   ],
+   "dang_tx": null,
+   "can_cu": "Có mặt ở phần None trong 3/3 đề cấu trúc mới — tn-thpt-2025: câu 10 (ml.pt-log), câu 14 (ml.mo-hinh); tn-thpt-2026: câu 4 (ml.pt-log); minh-hoa-2025: câu 6 (ml.bpt-log), câu 9 (ml.pt-mu)"
+  },
+  {
+   "id": "P1-03",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Góc giữa đường thẳng và mặt phẳng.",
+   "loai_o": "co-dinh",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "yccd": [
+    "11.VG.1"
+   ],
+   "dang_tx": [
+    "qh.goc"
+   ],
+   "can_cu": "TN 2017-2024: dạng qh.goc có 10 câu, xuất hiện 7/8 năm (lich-su/tan-suat.md mục HHKG)"
+  },
+  {
+   "id": "P1-04",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Khoảng cách từ điểm đến mặt phẳng.",
+   "loai_o": "co-dinh",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "yccd": [
+    "11.VG.2"
+   ],
+   "dang_tx": [
+    "qh.khoang-cach"
+   ],
+   "can_cu": "TN 2017-2024: dạng qh.khoang-cach có 5 câu, xuất hiện 4/8 năm (lich-su/tan-suat.md mục HHKG)"
+  },
+  {
+   "id": "P1-05",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Thể tích khối đa diện.",
+   "loai_o": "co-dinh",
+   "chu_de": "hinh-khong-gian-the-tich",
+   "yccd": [
+    "11.TT.1"
+   ],
+   "dang_tx": null,
+   "can_cu": "TN 2017-2024: dạng th.chop/th.lang-tru/th.hop có 13 câu, xuất hiện 8/8 năm (lich-su/tan-suat.md mục HHKG)"
+  },
+  {
+   "id": "P1-06",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Công thức cộng xác suất.",
+   "loai_o": "co-dinh",
+   "chu_de": "to-hop-xac-suat",
+   "yccd": [
+    "11.XS.1"
+   ],
+   "dang_tx": null,
+   "can_cu": "Có mặt ở phần None trong 3/3 đề cấu trúc mới — tn-thpt-2025: câu 17 (tk.xs-co-dien), câu 21 (tk.dem); tn-thpt-2026: câu 18 (tk.dem), câu 20 (tk.dem); minh-hoa-2025: câu 18 (tk.dem)"
+  },
+  {
+   "id": "P1-07",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Công thức nhân xác suất cho biến cố độc lập.",
+   "loai_o": "co-dinh",
+   "chu_de": "to-hop-xac-suat",
+   "yccd": [
+    "11.XS.2"
+   ],
+   "dang_tx": null,
+   "can_cu": "Có mặt ở phần None trong 3/3 đề cấu trúc mới — tn-thpt-2025: câu 17 (tk.xs-co-dien), câu 21 (tk.dem); tn-thpt-2026: câu 18 (tk.dem), câu 20 (tk.dem); minh-hoa-2025: câu 18 (tk.dem)"
+  },
+  {
+   "id": "P1-08",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Đạo hàm tại một điểm.",
+   "loai_o": "co-dinh",
+   "chu_de": "dao-ham-co-ban",
+   "yccd": [
+    "11.DH.1"
+   ],
+   "dang_tx": null,
+   "can_cu": "Có mặt ở phần P1 trong 1/3 đề cấu trúc mới — tn-thpt-2025: không có; tn-thpt-2026: câu 2 (dh1.quy-tac); minh-hoa-2025: không có"
+  },
+  {
+   "id": "P1-09",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Đạo hàm cấp hai.",
+   "loai_o": "co-dinh",
+   "chu_de": "dao-ham-co-ban",
+   "yccd": [
+    "11.DH.3"
+   ],
+   "dang_tx": null,
+   "can_cu": "Có mặt ở phần P1 trong 1/3 đề cấu trúc mới — tn-thpt-2025: không có; tn-thpt-2026: câu 2 (dh1.quy-tac); minh-hoa-2025: không có"
+  },
+  {
+   "id": "P1-10",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Phương trình tiếp tuyến.",
+   "loai_o": "co-dinh",
+   "chu_de": "dao-ham-co-ban",
+   "yccd": [
+    "11.DH.2"
+   ],
+   "dang_tx": null,
+   "can_cu": "Có mặt ở phần P1 trong 1/3 đề cấu trúc mới — tn-thpt-2025: không có; tn-thpt-2026: câu 2 (dh1.quy-tac); minh-hoa-2025: không có"
+  },
+  {
+   "id": "P1-11",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Thông hiểu một trong bốn mạch của học kì II (xoay vòng).",
+   "loai_o": "xoay-vong",
+   "nhom": [
+    {
+     "chu_de": "ham-so-mu-logarit",
+     "dang_tx": null,
+     "yccd": [
+      "11.ML.1",
+      "11.ML.3",
+      "11.ML.4"
+     ],
+     "trong_so": 0.25,
+     "can_cu": "Cả đề: tn-thpt-2025: câu 10 (ml.pt-log), câu 14 (ml.mo-hinh); tn-thpt-2026: câu 4 (ml.pt-log); minh-hoa-2025: câu 6 (ml.bpt-log), câu 9 (ml.pt-mu) → điểm thô 4.5"
+    },
+    {
+     "chu_de": "hinh-khong-gian-quan-he",
+     "dang_tx": null,
+     "yccd": [
+      "11.VG.1",
+      "11.VG.2",
+      "11.VG.3",
+      "11.VG.4"
+     ],
+     "trong_so": 0.3889,
+     "can_cu": "Cả đề: tn-thpt-2025: câu 1 (qh.vecto), câu 2 (qh.song-song), câu 20 (qh.khoang-cach); tn-thpt-2026: câu 7 (qh.vecto), câu 17 (qh.khoang-cach); minh-hoa-2025: câu 8 (qh.vuong-goc), câu 11 (qh.vecto), câu 17 (qh.khoang-cach) → điểm thô 7"
+    },
+    {
+     "chu_de": "to-hop-xac-suat",
+     "dang_tx": null,
+     "yccd": [
+      "11.XS.1",
+      "11.XS.2",
+      "11.XS.3",
+      "10.XS.1"
+     ],
+     "trong_so": 0.2778,
+     "can_cu": "Cả đề: tn-thpt-2025: câu 17 (tk.xs-co-dien), câu 21 (tk.dem); tn-thpt-2026: câu 18 (tk.dem), câu 20 (tk.dem); minh-hoa-2025: câu 18 (tk.dem) → điểm thô 5"
+    },
+    {
+     "chu_de": "dao-ham-co-ban",
+     "dang_tx": null,
+     "yccd": [
+      "11.DH.1",
+      "11.DH.2",
+      "11.DH.3"
+     ],
+     "trong_so": 0.0833,
+     "can_cu": "Cả đề: tn-thpt-2025: không có; tn-thpt-2026: câu 2 (dh1.quy-tac); minh-hoa-2025: không có → điểm thô 1.5"
+    }
+   ]
+  },
+  {
+   "id": "P1-12",
+   "phan": "P1",
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "so_cau": 1,
+   "diem": 0.25,
+   "dac_ta": "Vận dụng: khoảng cách hoặc góc trong không gian.",
+   "loai_o": "xoay-vong",
+   "nhom": [
+    {
+     "chu_de": "hinh-khong-gian-quan-he",
+     "dang_tx": [
+      "qh.khoang-cach"
+     ],
+     "yccd": [
+      "11.VG.2",
+      "11.VG.3"
+     ],
+     "trong_so": 0.3529,
+     "can_cu": "TN 2017-2024 (8 đề): 5 câu dạng qh.khoang-cach (+1 làm trơn)"
+    },
+    {
+     "chu_de": "hinh-khong-gian-quan-he",
+     "dang_tx": [
+      "qh.goc"
+     ],
+     "yccd": [
+      "11.VG.1"
+     ],
+     "trong_so": 0.6471,
+     "can_cu": "TN 2017-2024 (8 đề): 10 câu dạng qh.goc (+1 làm trơn)"
+    }
+   ]
+  },
+  {
+   "id": "P2-01",
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "so_cau": 1,
+   "diem": 1.0,
+   "dac_ta": "Đúng/sai: xác suất (cộng, nhân) hoặc đạo hàm - tiếp tuyến.",
+   "loai_o": "xoay-vong",
+   "nhom": [
+    {
+     "chu_de": "to-hop-xac-suat",
+     "dang_tx": null,
+     "yccd": [
+      "11.XS.1",
+      "11.XS.2"
+     ],
+     "trong_so": 0.7692,
+     "can_cu": "Cả đề: tn-thpt-2025: câu 17 (tk.xs-co-dien), câu 21 (tk.dem); tn-thpt-2026: câu 18 (tk.dem), câu 20 (tk.dem); minh-hoa-2025: câu 18 (tk.dem) → điểm thô 5"
+    },
+    {
+     "chu_de": "dao-ham-co-ban",
+     "dang_tx": null,
+     "yccd": [
+      "11.DH.1",
+      "11.DH.2",
+      "11.DH.3"
+     ],
+     "trong_so": 0.2308,
+     "can_cu": "Cả đề: tn-thpt-2025: không có; tn-thpt-2026: câu 2 (dh1.quy-tac); minh-hoa-2025: không có → điểm thô 1.5"
+    }
+   ]
+  },
+  {
+   "id": "P2-02",
+   "phan": "P2",
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "so_cau": 1,
+   "diem": 1.0,
+   "dac_ta": "Đúng/sai: hình không gian hoặc mô hình mũ.",
+   "loai_o": "xoay-vong",
+   "nhom": [
+    {
+     "chu_de": "hinh-khong-gian-quan-he",
+     "dang_tx": null,
+     "yccd": [
+      "11.VG.1",
+      "11.VG.2",
+      "11.VG.3",
+      "11.VG.4",
+      "11.TT.1",
+      "11.TT.2"
+     ],
+     "trong_so": 0.6087,
+     "can_cu": "Cả đề: tn-thpt-2025: câu 1 (qh.vecto), câu 2 (qh.song-song), câu 20 (qh.khoang-cach); tn-thpt-2026: câu 7 (qh.vecto), câu 17 (qh.khoang-cach); minh-hoa-2025: câu 8 (qh.vuong-goc), câu 11 (qh.vecto), câu 17 (qh.khoang-cach) → điểm thô 7"
+    },
+    {
+     "chu_de": "ham-so-mu-logarit",
+     "dang_tx": null,
+     "yccd": [
+      "11.ML.3",
+      "11.ML.4"
+     ],
+     "trong_so": 0.3913,
+     "can_cu": "Cả đề: tn-thpt-2025: câu 10 (ml.pt-log), câu 14 (ml.mo-hinh); tn-thpt-2026: câu 4 (ml.pt-log); minh-hoa-2025: câu 6 (ml.bpt-log), câu 9 (ml.pt-mu) → điểm thô 4.5"
+    }
+   ]
+  },
+  {
+   "id": "P3-01",
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "so_cau": 1,
+   "diem": 0.5,
+   "dac_ta": "Khoảng cách (đáp số làm tròn).",
+   "loai_o": "co-dinh",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "yccd": [
+    "11.VG.2",
+    "11.VG.3"
+   ],
+   "dang_tx": [
+    "qh.khoang-cach"
+   ],
+   "can_cu": "Có mặt ở phần P3 trong 3/3 đề cấu trúc mới — tn-thpt-2025: câu 20 (qh.khoang-cach); tn-thpt-2026: câu 17 (qh.khoang-cach); minh-hoa-2025: câu 17 (qh.khoang-cach)"
+  },
+  {
+   "id": "P3-02",
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "so_cau": 1,
+   "diem": 0.5,
+   "dac_ta": "Lãi kép/bất phương trình lôgarit.",
+   "loai_o": "co-dinh",
+   "chu_de": "ham-so-mu-logarit",
+   "yccd": [
+    "11.ML.3",
+    "11.ML.4"
+   ],
+   "dang_tx": null,
+   "can_cu": "Có mặt ở phần None trong 3/3 đề cấu trúc mới — tn-thpt-2025: câu 10 (ml.pt-log), câu 14 (ml.mo-hinh); tn-thpt-2026: câu 4 (ml.pt-log); minh-hoa-2025: câu 6 (ml.bpt-log), câu 9 (ml.pt-mu)"
+  },
+  {
+   "id": "P3-03",
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 0.5,
+   "dac_ta": "Xác suất (cộng, nhân).",
+   "loai_o": "co-dinh",
+   "chu_de": "to-hop-xac-suat",
+   "yccd": [
+    "11.XS.1",
+    "11.XS.2"
+   ],
+   "dang_tx": null,
+   "can_cu": "Có mặt ở phần P3 trong 3/3 đề cấu trúc mới — tn-thpt-2025: câu 17 (tk.xs-co-dien), câu 21 (tk.dem); tn-thpt-2026: câu 18 (tk.dem), câu 20 (tk.dem); minh-hoa-2025: câu 18 (tk.dem)"
+  },
+  {
+   "id": "P3-04",
+   "phan": "P3",
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "so_cau": 1,
+   "diem": 0.5,
+   "dac_ta": "Đạo hàm cấp hai tại một điểm.",
+   "loai_o": "co-dinh",
+   "chu_de": "dao-ham-co-ban",
+   "yccd": [
+    "11.DH.3",
+    "11.DH.1"
+   ],
+   "dang_tx": null,
+   "can_cu": "Có mặt ở phần None trong 1/3 đề cấu trúc mới — tn-thpt-2025: không có; tn-thpt-2026: câu 2 (dh1.quy-tac); minh-hoa-2025: không có"
+  },
+  {
+   "id": "P4-01",
+   "phan": "P4",
+   "loai_cau": "tu-luan",
+   "muc_do": "VD",
+   "so_cau": 1,
+   "diem": 1.5,
+   "dac_ta": "Tự luận: dựng và tính khoảng cách (trình bày lập luận vuông góc).",
+   "loai_o": "co-dinh",
+   "chu_de": "hinh-khong-gian-quan-he",
+   "yccd": [
+    "11.VG.2",
+    "11.VG.3"
+   ],
+   "dang_tx": [
+    "qh.khoang-cach"
+   ],
+   "can_cu": "Có mặt ở phần P3 trong 3/3 đề cấu trúc mới — tn-thpt-2025: câu 20 (qh.khoang-cach); tn-thpt-2026: câu 17 (qh.khoang-cach); minh-hoa-2025: câu 17 (qh.khoang-cach)"
+  },
+  {
+   "id": "P4-02",
+   "phan": "P4",
+   "loai_cau": "tu-luan",
+   "muc_do": "VD",
+   "so_cau": 1,
+   "diem": 1.5,
+   "dac_ta": "Tự luận: bất phương trình lôgarit, tiếp tuyến hoặc xác suất.",
+   "loai_o": "xoay-vong",
+   "nhom": [
+    {
+     "chu_de": "ham-so-mu-logarit",
+     "dang_tx": null,
+     "yccd": [
+      "11.ML.3"
+     ],
+     "trong_so": 0.4091,
+     "can_cu": "Cả đề: tn-thpt-2025: câu 10 (ml.pt-log), câu 14 (ml.mo-hinh); tn-thpt-2026: câu 4 (ml.pt-log); minh-hoa-2025: câu 6 (ml.bpt-log), câu 9 (ml.pt-mu) → điểm thô 4.5"
+    },
+    {
+     "chu_de": "dao-ham-co-ban",
+     "dang_tx": null,
+     "yccd": [
+      "11.DH.2"
+     ],
+     "trong_so": 0.1364,
+     "can_cu": "Cả đề: tn-thpt-2025: không có; tn-thpt-2026: câu 2 (dh1.quy-tac); minh-hoa-2025: không có → điểm thô 1.5"
+    },
+    {
+     "chu_de": "to-hop-xac-suat",
+     "dang_tx": null,
+     "yccd": [
+      "11.XS.2"
+     ],
+     "trong_so": 0.4545,
+     "can_cu": "Cả đề: tn-thpt-2025: câu 17 (tk.xs-co-dien), câu 21 (tk.dem); tn-thpt-2026: câu 18 (tk.dem), câu 20 (tk.dem); minh-hoa-2025: câu 18 (tk.dem) → điểm thô 5"
+    }
+   ]
+  }
+ ],
+ "phien_ban": "v1.0 · 27/11/2026",
+ "bang": [
+  {
+   "chu_de": "ham-so-mu-logarit",
+   "o": {
+    "tn4|NB": 1.0,
+    "tn4|TH": 1.25,
+    "dung-sai|VD": 0.3913,
+    "tra-loi-ngan|VD": 1.0,
+    "tu-luan|VD": 0.4091
+   },
+   "tong_cau_ki_vong": 4.0504
+  },
+  {
+   "chu_de": "hinh-khong-gian-quan-he",
+   "o": {
+    "tn4|TH": 2.3889,
+    "tn4|VD": 1.0,
+    "dung-sai|VD": 0.6087,
+    "tra-loi-ngan|VD": 1.0,
+    "tu-luan|VD": 1.0
+   },
+   "tong_cau_ki_vong": 5.9976
+  },
+  {
+   "chu_de": "hinh-khong-gian-the-tich",
+   "o": {
+    "tn4|NB": 1.0
+   },
+   "tong_cau_ki_vong": 1.0
+  },
+  {
+   "chu_de": "to-hop-xac-suat",
+   "o": {
+    "tn4|NB": 1.0,
+    "tn4|TH": 1.2778,
+    "dung-sai|VD": 0.7692,
+    "tra-loi-ngan|TH": 1.0,
+    "tu-luan|VD": 0.4545
+   },
+   "tong_cau_ki_vong": 4.5015
+  },
+  {
+   "chu_de": "dao-ham-co-ban",
+   "o": {
+    "tn4|NB": 1.0,
+    "tn4|TH": 2.0833,
+    "dung-sai|VD": 0.2308,
+    "tra-loi-ngan|TH": 1.0,
+    "tu-luan|VD": 0.1364
+   },
+   "tong_cau_ki_vong": 4.4505
+  }
+ ],
+ "tong_cau": 20
+}

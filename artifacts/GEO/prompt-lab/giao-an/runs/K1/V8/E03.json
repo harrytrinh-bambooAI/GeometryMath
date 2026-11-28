@@ -1,0 +1,34 @@
+{
+ "case": "E03",
+ "variant": "V8",
+ "round": "K1",
+ "text": "{\"kind\": \"reply\", \"text\": \"Không thể thay như vậy: công thức d = |ax0+by0+cz0+d|/√(a²+b²+c²) (khoảng cách trong tọa độ) không có trong <kien_thuc_duoc_cap> nên luật A1 chặn việc đưa kiến thức ngoài danh sách vào giáo án. Cách làm hợp lệ: giữ hệ thức $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$ (KT11-C07-CT-003), hoặc nếu muốn HS tính nhanh hơn thì thêm bước gợi ý các bước dựng AK ⊥ BC, AH ⊥ SK rồi áp dụng hệ thức này trong PHT1.\", \"de_xuat\": [{\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu 3 (BM-007) cùng dạng với câu 2 (BT11-B26-3), gắn mã KT11-C07-DN-010 trong khi lời giải cần KT11-C07-CT-003.\", \"goi_y\": \"Cân nhắc đổi mã kt của câu 3 hoặc thay bằng câu khác trong kho nếu cần đa dạng.\", \"ly_do\": \"Đảm bảo khớp kiến thức và tránh trùng dạng bài.\"}, {\"vi_tri\": \"hoat_dong[3]\", \"van_de\": \"HĐ4 ghi o_nha false nhưng nội dung giao làm ở nhà và nộp tiết sau, đang tính 5 phút trên lớp.\", \"goi_y\": \"Nếu làm ở nhà thì đặt o_nha true, thoi_luong_phut 0 và điều chỉnh thời lượng để tổng vẫn 45 phút.\", \"ly_do\": \"Khớp o_nha với cách tổ chức và tổng thời lượng.\"}, {\"vi_tri\": \"hoat_dong[1].to_chuc.assign\", \"van_de\": \"HD2 chỉ giao câu 1 PHT1 nhưng câu 1 là NB về hình lập phương, không liên quan ví dụ chóp S.ABC.\", \"goi_y\": \"Chỉnh lại nhiệm vụ HĐ2 cho khớp với ví dụ dựng AH ⊥ (SBC).\", \"ly_do\": \"Tham chiếu nhiệm vụ chưa khớp nội dung.\"}]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"reply\",\"text\":\"Không thể thay như vậy: công thức d = |ax0+by0+cz0+d|/√(a²+b²+c²) (khoảng cách trong tọa độ) không có trong <kien_thuc_duoc_cap> nên luật A1 chặn việc đưa kiến thức ngoài danh sách vào giáo án. Cách làm hợp lệ: giữ hệ thức $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$ (KT11-C07-CT-003), hoặc nếu muốn HS tính nhanh hơn thì thêm bước gợi ý các bước dựng AK ⊥ BC, AH ⊥ SK rồi áp dụng hệ thức này trong PHT1.\",\"de_xuat\":[{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu 3 (BM-007) cùng dạng với câu 2 (BT11-B26-3), gắn mã KT11-C07-DN-010 trong khi lời giải cần KT11-C07-CT-003.\",\"goi_y\":\"Cân nhắc đổi mã kt của câu 3 hoặc thay bằng câu khác trong kho nếu cần đa dạng.\",\"ly_do\":\"Đảm bảo khớp kiến thức và tránh trùng dạng bài.\"},{\"vi_tri\":\"hoat_dong[3]\",\"van_de\":\"HĐ4 ghi o_nha false nhưng nội dung giao làm ở nhà và nộp tiết sau, đang tính 5 phút trên lớp.\",\"goi_y\":\"Nếu làm ở nhà thì đặt o_nha true, thoi_luong_phut 0 và điều chỉnh thời lượng để tổng vẫn 45 phút.\",\"ly_do\":\"Khớp o_nha với cách tổ chức và tổng thời lượng.\"},{\"vi_tri\":\"hoat_dong[1].to_chuc.assign\",\"van_de\":\"HD2 chỉ giao câu 1 PHT1 nhưng câu 1 là NB về hình lập phương, không liên quan ví dụ chóp S.ABC.\",\"goi_y\":\"Chỉnh lại nhiệm vụ HĐ2 cho khớp với ví dụ dựng AH ⊥ (SBC).\",\"ly_do\":\"Tham chiếu nhiệm vụ chưa khớp nội dung.\"}]}}",
+ "usage": {
+  "ts": "2026-11-27T17:51:24",
+  "role": "gen",
+  "task": "K1/V8/E03",
+  "model": "claude-sonnet-5-5",
+  "input": 3404,
+  "output": 859,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 6.5
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:51:24",
+   "role": "gen",
+   "task": "K1/V8/E03",
+   "model": "claude-sonnet-5-5",
+   "input": 3404,
+   "output": 859,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 6.5
+  }
+ ],
+ "server_errs0": []
+}

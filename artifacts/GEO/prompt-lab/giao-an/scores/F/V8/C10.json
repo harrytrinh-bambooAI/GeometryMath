@@ -1,0 +1,56 @@
+{
+ "case": "C10",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 3,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 4,
+   "cau_tu_kho": 3,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 5,
+   "chinh_xac": 3,
+   "phieu": 3
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "PHT1 câu 2 (BT11-B10-4), gợi ý sai: \"Tìm điểm chung thứ hai, chú ý vị trí của AB và CD trong đáy.\" và \"Nối hai điểm chung để kết luận giao tuyến.\" Vì AB ∥ CD nên không có điểm chung thứ hai để nối. Đúng phải là: S là điểm chung, AB ∥ CD nên giao tuyến là đường thẳng qua S song song với AB (định lí ba giao tuyến). Kiến thức này nằm ngoài danh sách được cấp và quá sức HS cơ bản ở tiết này, nên cân nhắc thay câu hỏi."
+  ],
+  "nhan_xet": "Giáo án bám sát phong cách khám phá, 4 bước tổ chức cụ thể, tổng thời lượng 6+11+10+12+6 = 45 phút, HD3 tự soạn đúng toán và câu 3 tự soạn có ghi unsure. Lỗi chính là gợi ý câu 2 PHT1 dẫn HS đi tìm điểm chung thứ hai không tồn tại (AB ∥ CD), cần sửa gợi ý hoặc thay câu trước khi dùng."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 87.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.17
+ }
+}

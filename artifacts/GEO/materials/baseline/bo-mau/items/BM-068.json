@@ -1,0 +1,74 @@
+{
+ "id": "BM-068",
+ "nguon": {
+  "loai": "de-chinh-thuc",
+  "ref": "LG-004 Phòng GD&ĐT Quốc Oai — đề thi thử vào 10 lần 1 (2024-2025) + HDC, Câu 1c, đề trang 1, HDC trang 2/6 — https://cdn.thuvienphapluat.vn/uploads/Hoidapphapluat/2024/TTTT/240502/Toan/HN/de-thi-thu-toan-vao-lop-10-lan-1-nam-2024-2025-phong-gddt-quoc-oai-ha-noi.pdf (tải 27/11/2026)"
+ },
+ "cap": "thcs",
+ "chu_de": "Giá trị nguyên của biểu thức",
+ "muc_do": "VD",
+ "de_bai": "Cho $A=\\dfrac{\\sqrt x-5}{\\sqrt x+3}$ và $B=\\dfrac{\\sqrt x+3}{\\sqrt x+2}$ ($x\\ge0,x\\ne1$). Đặt $P=A\\cdot B$. Tìm $x$ để $P$ có giá trị là số nguyên.",
+ "dap_so": {
+  "gia_tri": "$x\\in\\left\\{25;\\dfrac94;\\dfrac19\\right\\}$",
+  "so": null
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Tách phần nguyên",
+  "Đánh giá miền giá trị"
+ ],
+ "tong_diem": 0.5,
+ "bieu_diem": "chinh-thuc",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$P=\\dfrac{\\sqrt x-5}{\\sqrt x+2}=1-\\dfrac7{\\sqrt x+2}$.",
+   "ket_qua_trung_gian": "$P=1-\\dfrac7{\\sqrt x+2}$",
+   "kien_thuc": "Tách phần nguyên",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $P=1-\\dfrac7{\\sqrt x+2}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Rút gọn sai $P=1-\\dfrac3{\\sqrt x+2}$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$0<\\dfrac7{\\sqrt x+2}\\le\\dfrac72$ nên $\\dfrac7{\\sqrt x+2}\\in\\{1;2;3\\}$, được $x=25;\\dfrac94;\\dfrac19$ (đều thỏa ĐK).",
+   "ket_qua_trung_gian": "$x\\in\\{25;\\frac94;\\frac19\\}$",
+   "kien_thuc": "Đánh giá miền giá trị",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $x\\in\\{25;\\frac94;\\frac19\\}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Chỉ xét ước nguyên của 7 (bỏ trường hợp $\\sqrt x$ không nguyên)",
+     "tru": 0.25
+    }
+   ]
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Chỉ xét ước nguyên của 7 (bỏ trường hợp $\\sqrt x$ không nguyên)",
+   "loi_giai": "B1: $P=\\dfrac{\\sqrt x-5}{\\sqrt x+2}=1-\\dfrac7{\\sqrt x+2}$.\nB2: $\\sqrt x+2\\in$ Ư$(7)$, $\\sqrt x+2>0$ nên $\\sqrt x+2=7$, $x=25$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Rút gọn sai $P=1-\\dfrac3{\\sqrt x+2}$",
+   "loi_giai": "B1: $P=\\dfrac{\\sqrt x-5}{\\sqrt x+2}=1-\\dfrac3{\\sqrt x+2}$.\nB2: $0<\\dfrac3{\\sqrt x+2}\\le\\dfrac32$ nên bằng $1$, $x=1$ (loại). Không có $x$.",
+   "diem_dung": 0
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

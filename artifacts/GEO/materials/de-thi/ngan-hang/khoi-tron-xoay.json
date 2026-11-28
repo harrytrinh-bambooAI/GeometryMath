@@ -1,0 +1,7545 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "khoi-tron-xoay",
+ "so_cau": 119,
+ "cau": [
+  {
+   "id": "MC-HH-A11.TLN.0",
+   "mau_cau": "MC-HH-A11",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.chop-sa",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "A|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-79",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-79 + geometry/problem-specs.json#HKN-79",
+    "mau_cau": "MC-HH-A11"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a$. Bán kính mặt cầu ngoại tiếp hình chóp $S.ABCD$ bằng $m\\cdot a$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,87",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.8660254037844386,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{3}}{2}",
+    "so": 0.8660254037844386
+   },
+   "do_kho": 0.661,
+   "dap_so_engine": 0.8660254037844386
+  },
+  {
+   "id": "MC-HH-A11.TN.1",
+   "mau_cau": "MC-HH-A11",
+   "bien_the": {
+    "k": "sqrt(2)"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.chop-sa",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "A|k=sqrt(2)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-79",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-79 + geometry/problem-specs.json#HKN-79",
+    "mau_cau": "MC-HH-A11"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt{2}$. Bán kính mặt cầu ngoại tiếp hình chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "a",
+     "dung": true
+    },
+    {
+     "noi_dung": "2a",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $SC$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy trung điểm $SB$ làm tâm mặt cầu"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{2}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    }
+   ],
+   "dap_an": "a",
+   "nhieu": [
+    {
+     "phuong_an": "2a",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $SC$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{3}}{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy trung điểm $SB$ làm tâm mặt cầu"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{2}}{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a",
+    "so": 1.0
+   },
+   "do_kho": 0.554,
+   "dap_so_engine": 1.0
+  },
+  {
+   "id": "MC-HH-A11.TLN.1",
+   "mau_cau": "MC-HH-A11",
+   "bien_the": {
+    "k": "sqrt(2)"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.chop-sa",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "A|k=sqrt(2)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-79",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-79 + geometry/problem-specs.json#HKN-79",
+    "mau_cau": "MC-HH-A11"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=a\\sqrt{2}$. Bán kính mặt cầu ngoại tiếp hình chóp $S.ABCD$ bằng $m\\cdot a$. Tìm $m$.",
+   "dap_an": "1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.0,
+   "dap_so": {
+    "gia_tri": "a",
+    "so": 1.0
+   },
+   "do_kho": 0.641,
+   "dap_so_engine": 1.0
+  },
+  {
+   "id": "MC-HH-A11.TN.2",
+   "mau_cau": "MC-HH-A11",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.chop-sa",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "A|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-79",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-79 + geometry/problem-specs.json#HKN-79",
+    "mau_cau": "MC-HH-A11"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=2a$. Bán kính mặt cầu ngoại tiếp hình chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{6}}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a\\sqrt{6}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $SC$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{5}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy trung điểm $SB$ làm tâm mặt cầu"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{2}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a\\sqrt{6}}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "a\\sqrt{6}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $SC$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{5}}{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy trung điểm $SB$ làm tâm mặt cầu"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{2}}{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{6}}{2}",
+    "so": 1.224744871391589
+   },
+   "do_kho": 0.574,
+   "dap_so_engine": 1.224744871391589
+  },
+  {
+   "id": "MC-HH-A11.TLN.2",
+   "mau_cau": "MC-HH-A11",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.chop-sa",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp chóp SA ⊥ đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "A|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-79",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-79 + geometry/problem-specs.json#HKN-79",
+    "mau_cau": "MC-HH-A11"
+   },
+   "de_bai": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA=2a$. Bán kính mặt cầu ngoại tiếp hình chóp $S.ABCD$ bằng $m\\cdot a$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "1,22",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.224744871391589,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{6}}{2}",
+    "so": 1.224744871391589
+   },
+   "do_kho": 0.685,
+   "dap_so_engine": 1.224744871391589
+  },
+  {
+   "id": "MC-HH-B08.TLN.0",
+   "mau_cau": "MC-HH-B08",
+   "bien_the": {
+    "k": "sqrt(2)/2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.chop-deu",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp chóp đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "B|k=sqrt(2)/2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-80",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-80 + geometry/problem-specs.json#HKN-80",
+    "mau_cau": "MC-HH-B08"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=\\dfrac{a\\sqrt{2}}{2}$. Bán kính mặt cầu ngoại tiếp hình chóp $S.ABCD$ bằng $m\\cdot a$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,71",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.7071067811865476,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{2}}{2}",
+    "so": 0.7071067811865476
+   },
+   "do_kho": 0.666,
+   "dap_so_engine": 0.7071067811865475
+  },
+  {
+   "id": "MC-HH-B08.TN.1",
+   "mau_cau": "MC-HH-B08",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.chop-deu",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp chóp đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "B|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-80",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-80 + geometry/problem-specs.json#HKN-80",
+    "mau_cau": "MC-HH-B08"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=a$. Bán kính mặt cầu ngoại tiếp hình chóp $S.ABCD$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{3a}{4}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{6}}{4}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy trung điểm cạnh bên $SA$ làm tâm"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{2}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy $O$ làm tâm, $R=OA$ (chưa kiểm $OS=OA$)"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy trung điểm $SO$ làm tâm"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{3a}{4}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{6}}{4}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy trung điểm cạnh bên $SA$ làm tâm"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{2}}{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy $O$ làm tâm, $R=OA$ (chưa kiểm $OS=OA$)"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a}{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy trung điểm $SO$ làm tâm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{3a}{4}",
+    "so": 0.75
+   },
+   "do_kho": 0.569,
+   "dap_so_engine": 0.75
+  },
+  {
+   "id": "MC-HH-B08.TLN.1",
+   "mau_cau": "MC-HH-B08",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.chop-deu",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp chóp đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "B|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-80",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-80 + geometry/problem-specs.json#HKN-80",
+    "mau_cau": "MC-HH-B08"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=a$. Bán kính mặt cầu ngoại tiếp hình chóp $S.ABCD$ bằng $m\\cdot a$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,75",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.75,
+   "dap_so": {
+    "gia_tri": "\\dfrac{3a}{4}",
+    "so": 0.75
+   },
+   "do_kho": 0.644,
+   "dap_so_engine": 0.75
+  },
+  {
+   "id": "MC-HH-B08.TLN.2",
+   "mau_cau": "MC-HH-B08",
+   "bien_the": {
+    "k": "sqrt(2)"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.chop-deu",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp chóp đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "B|k=sqrt(2)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-80",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-80 + geometry/problem-specs.json#HKN-80",
+    "mau_cau": "MC-HH-B08"
+   },
+   "de_bai": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO=a\\sqrt{2}$. Bán kính mặt cầu ngoại tiếp hình chóp $S.ABCD$ bằng $m\\cdot a$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,88",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.8838834764831844,
+   "dap_so": {
+    "gia_tri": "\\dfrac{5a\\sqrt{2}}{8}",
+    "so": 0.8838834764831844
+   },
+   "do_kho": 0.682,
+   "dap_so_engine": 0.8838834764831845
+  },
+  {
+   "id": "MC-HH-D06.TN.0",
+   "mau_cau": "MC-HH-D06",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.hop",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp hình hộp"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=3,q=4,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-81",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-81 + geometry/problem-specs.json#HKN-81",
+    "mau_cau": "MC-HH-D06"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=5$ cm. Diện tích mặt cầu ngoại tiếp hình hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "50\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "200\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "25\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính bằng nửa đường chéo đáy"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{25\\pi}{2}\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $S=\\pi R^2$ thay cho $4\\pi R^2$"
+     }
+    }
+   ],
+   "dap_an": "50\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "200\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "25\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính bằng nửa đường chéo đáy"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{25\\pi}{2}\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $S=\\pi R^2$ thay cho $4\\pi R^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "50\\pi\\text{ cm}^2",
+    "so": 157.07963267948966
+   },
+   "do_kho": 0.544,
+   "dap_so_engine": 157.07963267948966
+  },
+  {
+   "id": "MC-HH-D06.TLN.0",
+   "mau_cau": "MC-HH-D06",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.hop",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp hình hộp"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=3,q=4,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-81",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-81 + geometry/problem-specs.json#HKN-81",
+    "mau_cau": "MC-HH-D06"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=5$ cm. Diện tích mặt cầu ngoại tiếp hình hộp chữ nhật bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "157",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 157.07963267948966,
+   "dap_so": {
+    "gia_tri": "50\\pi\\text{ cm}^2",
+    "so": 157.07963267948966
+   },
+   "do_kho": 0.649,
+   "dap_so_engine": 157.07963267948966
+  },
+  {
+   "id": "MC-HH-D06.TN.1",
+   "mau_cau": "MC-HH-D06",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "12"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.hop",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp hình hộp"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=3,q=4,r=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-81",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-81 + geometry/problem-specs.json#HKN-81",
+    "mau_cau": "MC-HH-D06"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=12$ cm. Diện tích mặt cầu ngoại tiếp hình hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "169\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "676\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "25\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính bằng nửa đường chéo đáy"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{169\\pi}{4}\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $S=\\pi R^2$ thay cho $4\\pi R^2$"
+     }
+    }
+   ],
+   "dap_an": "169\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "676\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "25\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính bằng nửa đường chéo đáy"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{169\\pi}{4}\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $S=\\pi R^2$ thay cho $4\\pi R^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "169\\pi\\text{ cm}^2",
+    "so": 530.929158456675
+   },
+   "do_kho": 0.582,
+   "dap_so_engine": 530.929158456675
+  },
+  {
+   "id": "MC-HH-D06.TLN.1",
+   "mau_cau": "MC-HH-D06",
+   "bien_the": {
+    "p": "3",
+    "q": "4",
+    "r": "12"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.hop",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp hình hộp"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=3,q=4,r=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-81",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-81 + geometry/problem-specs.json#HKN-81",
+    "mau_cau": "MC-HH-D06"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=3$ cm, $AD=4$ cm, $AA'=12$ cm. Diện tích mặt cầu ngoại tiếp hình hộp chữ nhật bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "531",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 530.929158456675,
+   "dap_so": {
+    "gia_tri": "169\\pi\\text{ cm}^2",
+    "so": 530.929158456675
+   },
+   "do_kho": 0.683,
+   "dap_so_engine": 530.929158456675
+  },
+  {
+   "id": "MC-HH-D06.TN.2",
+   "mau_cau": "MC-HH-D06",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "r": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.hop",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp hình hộp"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=2,q=3,r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-81",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-81 + geometry/problem-specs.json#HKN-81",
+    "mau_cau": "MC-HH-D06"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=2$ cm, $AD=3$ cm, $AA'=6$ cm. Diện tích mặt cầu ngoại tiếp hình hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "49\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "196\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "13\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính bằng nửa đường chéo đáy"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{49\\pi}{4}\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $S=\\pi R^2$ thay cho $4\\pi R^2$"
+     }
+    }
+   ],
+   "dap_an": "49\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "196\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "13\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính bằng nửa đường chéo đáy"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{49\\pi}{4}\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $S=\\pi R^2$ thay cho $4\\pi R^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "49\\pi\\text{ cm}^2",
+    "so": 153.93804002589988
+   },
+   "do_kho": 0.575,
+   "dap_so_engine": 153.93804002589985
+  },
+  {
+   "id": "MC-HH-D06.TLN.2",
+   "mau_cau": "MC-HH-D06",
+   "bien_the": {
+    "p": "2",
+    "q": "3",
+    "r": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.hop",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp hình hộp"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=2,q=3,r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-81",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-81 + geometry/problem-specs.json#HKN-81",
+    "mau_cau": "MC-HH-D06"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=2$ cm, $AD=3$ cm, $AA'=6$ cm. Diện tích mặt cầu ngoại tiếp hình hộp chữ nhật bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "154",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 153.93804002589988,
+   "dap_so": {
+    "gia_tri": "49\\pi\\text{ cm}^2",
+    "so": 153.93804002589988
+   },
+   "do_kho": 0.644,
+   "dap_so_engine": 153.93804002589985
+  },
+  {
+   "id": "MC-HH-D06.TN.3",
+   "mau_cau": "MC-HH-D06",
+   "bien_the": {
+    "p": "1",
+    "q": "2",
+    "r": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.hop",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp hình hộp"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=1,q=2,r=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-81",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-81 + geometry/problem-specs.json#HKN-81",
+    "mau_cau": "MC-HH-D06"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=1$ cm, $AD=2$ cm, $AA'=2$ cm. Diện tích mặt cầu ngoại tiếp hình hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "9\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "36\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "5\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính bằng nửa đường chéo đáy"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{9\\pi}{4}\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $S=\\pi R^2$ thay cho $4\\pi R^2$"
+     }
+    }
+   ],
+   "dap_an": "9\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "36\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "5\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính bằng nửa đường chéo đáy"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{9\\pi}{4}\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $S=\\pi R^2$ thay cho $4\\pi R^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "9\\pi\\text{ cm}^2",
+    "so": 28.274333882308138
+   },
+   "do_kho": 0.59,
+   "dap_so_engine": 28.274333882308138
+  },
+  {
+   "id": "MC-HH-D06.TLN.3",
+   "mau_cau": "MC-HH-D06",
+   "bien_the": {
+    "p": "1",
+    "q": "2",
+    "r": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.hop",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp hình hộp"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=1,q=2,r=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-81",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-81 + geometry/problem-specs.json#HKN-81",
+    "mau_cau": "MC-HH-D06"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=1$ cm, $AD=2$ cm, $AA'=2$ cm. Diện tích mặt cầu ngoại tiếp hình hộp chữ nhật bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng phần mười)?",
+   "dap_an": "28,3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 28.274333882308138,
+   "dap_so": {
+    "gia_tri": "9\\pi\\text{ cm}^2",
+    "so": 28.274333882308138
+   },
+   "do_kho": 0.696,
+   "dap_so_engine": 28.274333882308138
+  },
+  {
+   "id": "MC-HH-D06.TN.4",
+   "mau_cau": "MC-HH-D06",
+   "bien_the": {
+    "p": "6",
+    "q": "8",
+    "r": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.hop",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp hình hộp"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "D|p=6,q=8,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-81",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-81 + geometry/problem-specs.json#HKN-81",
+    "mau_cau": "MC-HH-D06"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=6$ cm, $AD=8$ cm, $AA'=5$ cm. Diện tích mặt cầu ngoại tiếp hình hộp chữ nhật bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "125\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "500\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "100\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính bằng nửa đường chéo đáy"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{125\\pi}{4}\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $S=\\pi R^2$ thay cho $4\\pi R^2$"
+     }
+    }
+   ],
+   "dap_an": "125\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "500\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "100\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính bằng nửa đường chéo đáy"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{125\\pi}{4}\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Dùng $S=\\pi R^2$ thay cho $4\\pi R^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "125\\pi\\text{ cm}^2",
+    "so": 392.69908169872417
+   },
+   "do_kho": 0.582,
+   "dap_so_engine": 392.69908169872417
+  },
+  {
+   "id": "MC-HH-D06.TLN.4",
+   "mau_cau": "MC-HH-D06",
+   "bien_the": {
+    "p": "6",
+    "q": "8",
+    "r": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.hop",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp hình hộp"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "D|p=6,q=8,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-81",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-81 + geometry/problem-specs.json#HKN-81",
+    "mau_cau": "MC-HH-D06"
+   },
+   "de_bai": "Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=6$ cm, $AD=8$ cm, $AA'=5$ cm. Diện tích mặt cầu ngoại tiếp hình hộp chữ nhật bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "393",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 392.69908169872417,
+   "dap_so": {
+    "gia_tri": "125\\pi\\text{ cm}^2",
+    "so": 392.69908169872417
+   },
+   "do_kho": 0.66,
+   "dap_so_engine": 392.69908169872417
+  },
+  {
+   "id": "MC-HH-E06.TN.0",
+   "mau_cau": "MC-HH-E06",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-deu",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp lăng trụ đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "E|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-82",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-82 + geometry/problem-specs.json#HKN-82",
+    "mau_cau": "MC-HH-E06"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=2a$. Diện tích mặt cầu ngoại tiếp hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{16\\pi a^{2}}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "7\\pi a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn đáy bằng đường cao tam giác đều $\\dfrac{a\\sqrt3}{2}$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{52\\pi a^{2}}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=h^2+r^2$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{4\\pi a^{2}}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S=\\pi R^2$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{16\\pi a^{2}}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "7\\pi a^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn đáy bằng đường cao tam giác đều $\\dfrac{a\\sqrt3}{2}$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{52\\pi a^{2}}{3}",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=h^2+r^2$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{4\\pi a^{2}}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S=\\pi R^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{16\\pi a^{2}}{3}",
+    "so": 16.755160819145566
+   },
+   "do_kho": 0.57,
+   "dap_so_engine": 16.755160819145562
+  },
+  {
+   "id": "MC-HH-E06.TLN.0",
+   "mau_cau": "MC-HH-E06",
+   "bien_the": {
+    "k": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-deu",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp lăng trụ đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "E|k=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-82",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-82 + geometry/problem-specs.json#HKN-82",
+    "mau_cau": "MC-HH-E06"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=2a$. Diện tích mặt cầu ngoại tiếp hình lăng trụ bằng $m\\cdot a^2$. Tìm $m$ (làm tròn đến hàng phần mười).",
+   "dap_an": "16,8",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 16.755160819145566,
+   "dap_so": {
+    "gia_tri": "\\dfrac{16\\pi a^{2}}{3}",
+    "so": 16.755160819145566
+   },
+   "do_kho": 0.671,
+   "dap_so_engine": 16.755160819145562
+  },
+  {
+   "id": "MC-HH-E06.TN.1",
+   "mau_cau": "MC-HH-E06",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-deu",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp lăng trụ đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "E|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-82",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-82 + geometry/problem-specs.json#HKN-82",
+    "mau_cau": "MC-HH-E06"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=a$. Diện tích mặt cầu ngoại tiếp hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{7\\pi a^{2}}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "4\\pi a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn đáy bằng đường cao tam giác đều $\\dfrac{a\\sqrt3}{2}$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{16\\pi a^{2}}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=h^2+r^2$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{7\\pi a^{2}}{12}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S=\\pi R^2$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{7\\pi a^{2}}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "4\\pi a^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn đáy bằng đường cao tam giác đều $\\dfrac{a\\sqrt3}{2}$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{16\\pi a^{2}}{3}",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=h^2+r^2$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{7\\pi a^{2}}{12}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S=\\pi R^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{7\\pi a^{2}}{3}",
+    "so": 7.3303828583761845
+   },
+   "do_kho": 0.574,
+   "dap_so_engine": 7.330382858376183
+  },
+  {
+   "id": "MC-HH-E06.TLN.1",
+   "mau_cau": "MC-HH-E06",
+   "bien_the": {
+    "k": "1"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-deu",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp lăng trụ đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "E|k=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-82",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-82 + geometry/problem-specs.json#HKN-82",
+    "mau_cau": "MC-HH-E06"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=a$. Diện tích mặt cầu ngoại tiếp hình lăng trụ bằng $m\\cdot a^2$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "7,33",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 7.3303828583761845,
+   "dap_so": {
+    "gia_tri": "\\dfrac{7\\pi a^{2}}{3}",
+    "so": 7.3303828583761845
+   },
+   "do_kho": 0.644,
+   "dap_so_engine": 7.330382858376183
+  },
+  {
+   "id": "MC-HH-E06.TN.2",
+   "mau_cau": "MC-HH-E06",
+   "bien_the": {
+    "k": "sqrt(3)"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-deu",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp lăng trụ đều"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "E|k=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-82",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-82 + geometry/problem-specs.json#HKN-82",
+    "mau_cau": "MC-HH-E06"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=a\\sqrt{3}$. Diện tích mặt cầu ngoại tiếp hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{13\\pi a^{2}}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "6\\pi a^{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn đáy bằng đường cao tam giác đều $\\dfrac{a\\sqrt3}{2}$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{40\\pi a^{2}}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=h^2+r^2$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{13\\pi a^{2}}{12}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S=\\pi R^2$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{13\\pi a^{2}}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "6\\pi a^{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn đáy bằng đường cao tam giác đều $\\dfrac{a\\sqrt3}{2}$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{40\\pi a^{2}}{3}",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=h^2+r^2$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{13\\pi a^{2}}{12}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S=\\pi R^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{13\\pi a^{2}}{3}",
+    "so": 13.61356816555577
+   },
+   "do_kho": 0.585,
+   "dap_so_engine": 13.613568165555769
+  },
+  {
+   "id": "MC-HH-E06.TLN.2",
+   "mau_cau": "MC-HH-E06",
+   "bien_the": {
+    "k": "sqrt(3)"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-deu",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu ngoại tiếp lăng trụ đều"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "E|k=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-82",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-82 + geometry/problem-specs.json#HKN-82",
+    "mau_cau": "MC-HH-E06"
+   },
+   "de_bai": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'=a\\sqrt{3}$. Diện tích mặt cầu ngoại tiếp hình lăng trụ bằng $m\\cdot a^2$. Tìm $m$ (làm tròn đến hàng phần mười).",
+   "dap_an": "13,6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 13.61356816555577,
+   "dap_so": {
+    "gia_tri": "\\dfrac{13\\pi a^{2}}{3}",
+    "so": 13.61356816555577
+   },
+   "do_kho": 0.668,
+   "dap_so_engine": 13.613568165555769
+  },
+  {
+   "id": "MC-HH-F05.TN.0",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "1",
+    "k": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "F|k=2,q=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a$ và $AA'=2a$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{6}}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a\\sqrt{6}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{2}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{3a\\sqrt{2}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a\\sqrt{6}}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "a\\sqrt{6}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{2}}{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{3a\\sqrt{2}}{2}",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{6}}{2}",
+    "so": 1.224744871391589
+   },
+   "do_kho": 0.59,
+   "dap_so_engine": 1.224744871391589
+  },
+  {
+   "id": "MC-HH-F05.TLN.0",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "1",
+    "k": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "F|k=2,q=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a$ và $AA'=2a$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng $m\\cdot a$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "1,22",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.224744871391589,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{6}}{2}",
+    "so": 1.224744871391589
+   },
+   "do_kho": 0.678,
+   "dap_so_engine": 1.224744871391589
+  },
+  {
+   "id": "MC-HH-F05.TN.1",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "1",
+    "k": "1"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "F|k=1,q=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a$ và $AA'=a$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{3}}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a\\sqrt{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{2}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{6}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a\\sqrt{3}}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "a\\sqrt{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{2}}{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{6}}{2}",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{3}}{2}",
+    "so": 0.8660254037844386
+   },
+   "do_kho": 0.587,
+   "dap_so_engine": 0.8660254037844386
+  },
+  {
+   "id": "MC-HH-F05.TLN.1",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "1",
+    "k": "1"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "F|k=1,q=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a$ và $AA'=a$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng $m\\cdot a$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "0,87",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.8660254037844386,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{3}}{2}",
+    "so": 0.8660254037844386
+   },
+   "do_kho": 0.643,
+   "dap_so_engine": 0.8660254037844386
+  },
+  {
+   "id": "MC-HH-F05.TN.2",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "1",
+    "k": "2*sqrt(3)"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "F|k=2*sqrt(3),q=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a$ và $AA'=2a\\sqrt{3}$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{14}}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a\\sqrt{14}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{2}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{5a\\sqrt{2}}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a\\sqrt{14}}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "a\\sqrt{14}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{a\\sqrt{2}}{2}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{5a\\sqrt{2}}{2}",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{14}}{2}",
+    "so": 1.8708286933869707
+   },
+   "do_kho": 0.582,
+   "dap_so_engine": 1.8708286933869707
+  },
+  {
+   "id": "MC-HH-F05.TLN.2",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "1",
+    "k": "2*sqrt(3)"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "F|k=2*sqrt(3),q=1",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a$ và $AA'=2a\\sqrt{3}$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng $m\\cdot a$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "1,87",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.8708286933869707,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{14}}{2}",
+    "so": 1.8708286933869707
+   },
+   "do_kho": 0.694,
+   "dap_so_engine": 1.8708286933869707
+  },
+  {
+   "id": "MC-HH-F05.TN.3",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "sqrt(3)",
+    "k": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "F|k=2,q=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a\\sqrt{3}$ và $AA'=2a$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "a\\sqrt{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "2a\\sqrt{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "a",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "noi_dung": "a\\sqrt{5}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_an": "a\\sqrt{2}",
+   "nhieu": [
+    {
+     "phuong_an": "2a\\sqrt{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "a",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "phuong_an": "a\\sqrt{5}",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a\\sqrt{2}",
+    "so": 1.4142135623730951
+   },
+   "do_kho": 0.596,
+   "dap_so_engine": 1.4142135623730951
+  },
+  {
+   "id": "MC-HH-F05.TLN.3",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "sqrt(3)",
+    "k": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "F|k=2,q=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a\\sqrt{3}$ và $AA'=2a$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng $m\\cdot a$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "1,41",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.4142135623730951,
+   "dap_so": {
+    "gia_tri": "a\\sqrt{2}",
+    "so": 1.4142135623730951
+   },
+   "do_kho": 0.666,
+   "dap_so_engine": 1.4142135623730951
+  },
+  {
+   "id": "MC-HH-F05.TN.4",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "sqrt(3)",
+    "k": "1"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "F|k=1,q=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a\\sqrt{3}$ và $AA'=a$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{a\\sqrt{5}}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "a\\sqrt{5}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "a",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "noi_dung": "a\\sqrt{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{a\\sqrt{5}}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "a\\sqrt{5}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "a",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "phuong_an": "a\\sqrt{2}",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{5}}{2}",
+    "so": 1.118033988749895
+   },
+   "do_kho": 0.562,
+   "dap_so_engine": 1.118033988749895
+  },
+  {
+   "id": "MC-HH-F05.TLN.4",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "sqrt(3)",
+    "k": "1"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "F|k=1,q=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a\\sqrt{3}$ và $AA'=a$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng $m\\cdot a$. Tìm $m$ (làm tròn đến hàng phần trăm).",
+   "dap_an": "1,12",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.118033988749895,
+   "dap_so": {
+    "gia_tri": "\\dfrac{a\\sqrt{5}}{2}",
+    "so": 1.118033988749895
+   },
+   "do_kho": 0.696,
+   "dap_so_engine": 1.118033988749895
+  },
+  {
+   "id": "MC-HH-F05.TN.5",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "sqrt(3)",
+    "k": "2*sqrt(3)"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.5,
+   "diem": 0.25,
+   "boi_canh_key": "F|k=2*sqrt(3),q=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a\\sqrt{3}$ và $AA'=2a\\sqrt{3}$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2a",
+     "dung": true
+    },
+    {
+     "noi_dung": "4a",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "noi_dung": "a",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "noi_dung": "a\\sqrt{13}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_an": "2a",
+   "nhieu": [
+    {
+     "phuong_an": "4a",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $B'C$ (đường kính) làm bán kính"
+     }
+    },
+    {
+     "phuong_an": "a",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+     }
+    },
+    {
+     "phuong_an": "a\\sqrt{13}",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên chia đôi chiều cao: $R^2=r^2+h^2$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2a",
+    "so": 2.0
+   },
+   "do_kho": 0.577,
+   "dap_so_engine": 1.9999999999999998
+  },
+  {
+   "id": "MC-HH-F05.TLN.5",
+   "mau_cau": "MC-HH-F05",
+   "bien_the": {
+    "q": "sqrt(3)",
+    "k": "2*sqrt(3)"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lang-tru-dung",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp lăng trụ đứng đáy vuông"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "F|k=2*sqrt(3),q=sqrt(3)",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-83",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-83 + geometry/problem-specs.json#HKN-83",
+    "mau_cau": "MC-HH-F05"
+   },
+   "de_bai": "Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=a$, $AC=a\\sqrt{3}$ và $AA'=2a\\sqrt{3}$. Bán kính mặt cầu ngoại tiếp hình lăng trụ bằng $m\\cdot a$. Tìm $m$.",
+   "dap_an": "2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.0,
+   "dap_so": {
+    "gia_tri": "2a",
+    "so": 2.0
+   },
+   "do_kho": 0.636,
+   "dap_so_engine": 1.9999999999999998
+  },
+  {
+   "id": "MC-HH-H01.TN.0",
+   "mau_cau": "MC-HH-H01",
+   "bien_the": {
+    "r": "3",
+    "t": "4"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-xq",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "H|r=3,t=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-61",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-61 + geometry/problem-specs.json#HKN-61",
+    "mau_cau": "MC-HH-H01"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=3$ cm và chiều cao $h=4$ cm. Diện tích xung quanh của hình nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "15\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "12\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao thay cho đường sinh"
+     }
+    },
+    {
+     "noi_dung": "30\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm công thức hình trụ $2\\pi rl$"
+     }
+    },
+    {
+     "noi_dung": "24\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng diện tích đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_an": "15\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "12\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao thay cho đường sinh"
+     }
+    },
+    {
+     "phuong_an": "30\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm công thức hình trụ $2\\pi rl$"
+     }
+    },
+    {
+     "phuong_an": "24\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng diện tích đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "15\\pi\\text{ cm}^2",
+    "so": 47.1238898038469
+   },
+   "do_kho": 0.145,
+   "dap_so_engine": 47.12388980384689
+  },
+  {
+   "id": "MC-HH-H01.TLN.0",
+   "mau_cau": "MC-HH-H01",
+   "bien_the": {
+    "r": "3",
+    "t": "4"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-xq",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "H|r=3,t=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-61",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-61 + geometry/problem-specs.json#HKN-61",
+    "mau_cau": "MC-HH-H01"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=3$ cm và chiều cao $h=4$ cm. Diện tích xung quanh của hình nón bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng phần mười)?",
+   "dap_an": "47,1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 47.1238898038469,
+   "dap_so": {
+    "gia_tri": "15\\pi\\text{ cm}^2",
+    "so": 47.1238898038469
+   },
+   "do_kho": 0.486,
+   "dap_so_engine": 47.12388980384689
+  },
+  {
+   "id": "MC-HH-H01.TN.1",
+   "mau_cau": "MC-HH-H01",
+   "bien_the": {
+    "r": "6",
+    "t": "8"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-xq",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "H|r=6,t=8",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-61",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-61 + geometry/problem-specs.json#HKN-61",
+    "mau_cau": "MC-HH-H01"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=6$ cm và chiều cao $h=8$ cm. Diện tích xung quanh của hình nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "60\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "48\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao thay cho đường sinh"
+     }
+    },
+    {
+     "noi_dung": "120\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm công thức hình trụ $2\\pi rl$"
+     }
+    },
+    {
+     "noi_dung": "96\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng diện tích đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_an": "60\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "48\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao thay cho đường sinh"
+     }
+    },
+    {
+     "phuong_an": "120\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm công thức hình trụ $2\\pi rl$"
+     }
+    },
+    {
+     "phuong_an": "96\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng diện tích đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "60\\pi\\text{ cm}^2",
+    "so": 188.4955592153876
+   },
+   "do_kho": 0.187,
+   "dap_so_engine": 188.49555921538757
+  },
+  {
+   "id": "MC-HH-H01.TLN.1",
+   "mau_cau": "MC-HH-H01",
+   "bien_the": {
+    "r": "6",
+    "t": "8"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-xq",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "H|r=6,t=8",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-61",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-61 + geometry/problem-specs.json#HKN-61",
+    "mau_cau": "MC-HH-H01"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=6$ cm và chiều cao $h=8$ cm. Diện tích xung quanh của hình nón bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "188",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 188.4955592153876,
+   "dap_so": {
+    "gia_tri": "60\\pi\\text{ cm}^2",
+    "so": 188.4955592153876
+   },
+   "do_kho": 0.465,
+   "dap_so_engine": 188.49555921538757
+  },
+  {
+   "id": "MC-HH-H01.TN.2",
+   "mau_cau": "MC-HH-H01",
+   "bien_the": {
+    "r": "5",
+    "t": "12"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-xq",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "H|r=5,t=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-61",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-61 + geometry/problem-specs.json#HKN-61",
+    "mau_cau": "MC-HH-H01"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=5$ cm và chiều cao $h=12$ cm. Diện tích xung quanh của hình nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "65\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "60\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao thay cho đường sinh"
+     }
+    },
+    {
+     "noi_dung": "130\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm công thức hình trụ $2\\pi rl$"
+     }
+    },
+    {
+     "noi_dung": "90\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng diện tích đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_an": "65\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "60\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao thay cho đường sinh"
+     }
+    },
+    {
+     "phuong_an": "130\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm công thức hình trụ $2\\pi rl$"
+     }
+    },
+    {
+     "phuong_an": "90\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng diện tích đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "65\\pi\\text{ cm}^2",
+    "so": 204.20352248333657
+   },
+   "do_kho": 0.186,
+   "dap_so_engine": 204.20352248333654
+  },
+  {
+   "id": "MC-HH-H01.TLN.2",
+   "mau_cau": "MC-HH-H01",
+   "bien_the": {
+    "r": "5",
+    "t": "12"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-xq",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "H|r=5,t=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-61",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-61 + geometry/problem-specs.json#HKN-61",
+    "mau_cau": "MC-HH-H01"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=5$ cm và chiều cao $h=12$ cm. Diện tích xung quanh của hình nón bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "204",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 204.20352248333657,
+   "dap_so": {
+    "gia_tri": "65\\pi\\text{ cm}^2",
+    "so": 204.20352248333657
+   },
+   "do_kho": 0.493,
+   "dap_so_engine": 204.20352248333654
+  },
+  {
+   "id": "MC-HH-H01.TN.3",
+   "mau_cau": "MC-HH-H01",
+   "bien_the": {
+    "r": "9",
+    "t": "12"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-xq",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "H|r=9,t=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-61",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-61 + geometry/problem-specs.json#HKN-61",
+    "mau_cau": "MC-HH-H01"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=9$ cm và chiều cao $h=12$ cm. Diện tích xung quanh của hình nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "135\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "108\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao thay cho đường sinh"
+     }
+    },
+    {
+     "noi_dung": "270\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm công thức hình trụ $2\\pi rl$"
+     }
+    },
+    {
+     "noi_dung": "216\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng diện tích đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_an": "135\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "108\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng chiều cao thay cho đường sinh"
+     }
+    },
+    {
+     "phuong_an": "270\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm công thức hình trụ $2\\pi rl$"
+     }
+    },
+    {
+     "phuong_an": "216\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng diện tích đáy (diện tích toàn phần)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "135\\pi\\text{ cm}^2",
+    "so": 424.1150082346221
+   },
+   "do_kho": 0.177,
+   "dap_so_engine": 424.11500823462205
+  },
+  {
+   "id": "MC-HH-H01.TLN.3",
+   "mau_cau": "MC-HH-H01",
+   "bien_the": {
+    "r": "9",
+    "t": "12"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-xq",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "H|r=9,t=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-61",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-61 + geometry/problem-specs.json#HKN-61",
+    "mau_cau": "MC-HH-H01"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=9$ cm và chiều cao $h=12$ cm. Diện tích xung quanh của hình nón bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "424",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 424.1150082346221,
+   "dap_so": {
+    "gia_tri": "135\\pi\\text{ cm}^2",
+    "so": 424.1150082346221
+   },
+   "do_kho": 0.452,
+   "dap_so_engine": 424.11500823462205
+  },
+  {
+   "id": "MC-HH-H02.TN.0",
+   "mau_cau": "MC-HH-H02",
+   "bien_the": {
+    "r": "3",
+    "t": "4"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "H|r=3,t=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-56",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-56 + geometry/problem-specs.json#HKN-56",
+    "mau_cau": "MC-HH-H02"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=3$ cm và chiều cao $h=4$ cm. Thể tích khối nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "12\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "36\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "16\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    },
+    {
+     "noi_dung": "15\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    }
+   ],
+   "dap_an": "12\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "36\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "16\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    },
+    {
+     "phuong_an": "15\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "12\\pi\\text{ cm}^3",
+    "so": 37.69911184307752
+   },
+   "do_kho": 0.144,
+   "dap_so_engine": 37.69911184307752
+  },
+  {
+   "id": "MC-HH-H02.TLN.0",
+   "mau_cau": "MC-HH-H02",
+   "bien_the": {
+    "r": "3",
+    "t": "4"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "H|r=3,t=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-56",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-56 + geometry/problem-specs.json#HKN-56",
+    "mau_cau": "MC-HH-H02"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=3$ cm và chiều cao $h=4$ cm. Thể tích khối nón bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng phần trăm)?",
+   "dap_an": "37,7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 37.69911184307752,
+   "dap_so": {
+    "gia_tri": "12\\pi\\text{ cm}^3",
+    "so": 37.69911184307752
+   },
+   "do_kho": 0.497,
+   "dap_so_engine": 37.69911184307752
+  },
+  {
+   "id": "MC-HH-H02.TN.1",
+   "mau_cau": "MC-HH-H02",
+   "bien_the": {
+    "r": "6",
+    "t": "8"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "H|r=6,t=8",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-56",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-56 + geometry/problem-specs.json#HKN-56",
+    "mau_cau": "MC-HH-H02"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=6$ cm và chiều cao $h=8$ cm. Thể tích khối nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "96\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "288\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "128\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    },
+    {
+     "noi_dung": "120\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    }
+   ],
+   "dap_an": "96\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "288\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "128\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    },
+    {
+     "phuong_an": "120\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "96\\pi\\text{ cm}^3",
+    "so": 301.59289474462014
+   },
+   "do_kho": 0.162,
+   "dap_so_engine": 301.59289474462014
+  },
+  {
+   "id": "MC-HH-H02.TLN.1",
+   "mau_cau": "MC-HH-H02",
+   "bien_the": {
+    "r": "6",
+    "t": "8"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "H|r=6,t=8",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-56",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-56 + geometry/problem-specs.json#HKN-56",
+    "mau_cau": "MC-HH-H02"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=6$ cm và chiều cao $h=8$ cm. Thể tích khối nón bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "302",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 301.59289474462014,
+   "dap_so": {
+    "gia_tri": "96\\pi\\text{ cm}^3",
+    "so": 301.59289474462014
+   },
+   "do_kho": 0.488,
+   "dap_so_engine": 301.59289474462014
+  },
+  {
+   "id": "MC-HH-H02.TN.2",
+   "mau_cau": "MC-HH-H02",
+   "bien_the": {
+    "r": "5",
+    "t": "12"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "H|r=5,t=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-56",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-56 + geometry/problem-specs.json#HKN-56",
+    "mau_cau": "MC-HH-H02"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=5$ cm và chiều cao $h=12$ cm. Thể tích khối nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "100\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "300\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "240\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{325\\pi}{3}\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    }
+   ],
+   "dap_an": "100\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "300\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "240\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{325\\pi}{3}\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "100\\pi\\text{ cm}^3",
+    "so": 314.1592653589793
+   },
+   "do_kho": 0.193,
+   "dap_so_engine": 314.1592653589793
+  },
+  {
+   "id": "MC-HH-H02.TLN.2",
+   "mau_cau": "MC-HH-H02",
+   "bien_the": {
+    "r": "5",
+    "t": "12"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "H|r=5,t=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-56",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-56 + geometry/problem-specs.json#HKN-56",
+    "mau_cau": "MC-HH-H02"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=5$ cm và chiều cao $h=12$ cm. Thể tích khối nón bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "314",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 314.1592653589793,
+   "dap_so": {
+    "gia_tri": "100\\pi\\text{ cm}^3",
+    "so": 314.1592653589793
+   },
+   "do_kho": 0.452,
+   "dap_so_engine": 314.1592653589793
+  },
+  {
+   "id": "MC-HH-H02.TN.3",
+   "mau_cau": "MC-HH-H02",
+   "bien_the": {
+    "r": "9",
+    "t": "12"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "H|r=9,t=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-56",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-56 + geometry/problem-specs.json#HKN-56",
+    "mau_cau": "MC-HH-H02"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=9$ cm và chiều cao $h=12$ cm. Thể tích khối nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "324\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "972\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "432\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    },
+    {
+     "noi_dung": "405\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    }
+   ],
+   "dap_an": "324\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "972\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "432\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    },
+    {
+     "phuong_an": "405\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "324\\pi\\text{ cm}^3",
+    "so": 1017.876019763093
+   },
+   "do_kho": 0.158,
+   "dap_so_engine": 1017.876019763093
+  },
+  {
+   "id": "MC-HH-H02.TLN.3",
+   "mau_cau": "MC-HH-H02",
+   "bien_the": {
+    "r": "9",
+    "t": "12"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "H|r=9,t=12",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-56",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-56 + geometry/problem-specs.json#HKN-56",
+    "mau_cau": "MC-HH-H02"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=9$ cm và chiều cao $h=12$ cm. Thể tích khối nón bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "1018",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1017.876019763093,
+   "dap_so": {
+    "gia_tri": "324\\pi\\text{ cm}^3",
+    "so": 1017.876019763093
+   },
+   "do_kho": 0.445,
+   "dap_so_engine": 1017.876019763093
+  },
+  {
+   "id": "MC-HH-H03.TN.0",
+   "mau_cau": "MC-HH-H03",
+   "bien_the": {
+    "r": "5",
+    "l": "13"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich-duong-sinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón biết đường sinh"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "HR|l=13,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-40",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-40 + geometry/problem-specs.json#HKN-40",
+    "mau_cau": "MC-HH-H03"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=5$ cm và độ dài đường sinh $l=13$ cm. Thể tích khối nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "100\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{325\\pi}{3}\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    },
+    {
+     "noi_dung": "300\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{25\\sqrt{194}\\pi}{3}\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng thay vì trừ khi tính chiều cao"
+     }
+    }
+   ],
+   "dap_an": "100\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{325\\pi}{3}\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    },
+    {
+     "phuong_an": "300\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{25\\sqrt{194}\\pi}{3}\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng thay vì trừ khi tính chiều cao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "100\\pi\\text{ cm}^3",
+    "so": 314.1592653589793
+   },
+   "do_kho": 0.38,
+   "dap_so_engine": 314.1592653589793
+  },
+  {
+   "id": "MC-HH-H03.TLN.0",
+   "mau_cau": "MC-HH-H03",
+   "bien_the": {
+    "r": "5",
+    "l": "13"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich-duong-sinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón biết đường sinh"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=13,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-40",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-40 + geometry/problem-specs.json#HKN-40",
+    "mau_cau": "MC-HH-H03"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=5$ cm và độ dài đường sinh $l=13$ cm. Thể tích khối nón bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "314",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 314.1592653589793,
+   "dap_so": {
+    "gia_tri": "100\\pi\\text{ cm}^3",
+    "so": 314.1592653589793
+   },
+   "do_kho": 0.485,
+   "dap_so_engine": 314.1592653589793
+  },
+  {
+   "id": "MC-HH-H03.TN.1",
+   "mau_cau": "MC-HH-H03",
+   "bien_the": {
+    "r": "3",
+    "l": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich-duong-sinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón biết đường sinh"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "HR|l=5,r=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-40",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-40 + geometry/problem-specs.json#HKN-40",
+    "mau_cau": "MC-HH-H03"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=3$ cm và độ dài đường sinh $l=5$ cm. Thể tích khối nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "12\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "15\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    },
+    {
+     "noi_dung": "36\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "3\\sqrt{34}\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng thay vì trừ khi tính chiều cao"
+     }
+    }
+   ],
+   "dap_an": "12\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "15\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    },
+    {
+     "phuong_an": "36\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "3\\sqrt{34}\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng thay vì trừ khi tính chiều cao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "12\\pi\\text{ cm}^3",
+    "so": 37.69911184307752
+   },
+   "do_kho": 0.347,
+   "dap_so_engine": 37.69911184307752
+  },
+  {
+   "id": "MC-HH-H03.TLN.1",
+   "mau_cau": "MC-HH-H03",
+   "bien_the": {
+    "r": "3",
+    "l": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich-duong-sinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón biết đường sinh"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=5,r=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-40",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-40 + geometry/problem-specs.json#HKN-40",
+    "mau_cau": "MC-HH-H03"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=3$ cm và độ dài đường sinh $l=5$ cm. Thể tích khối nón bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng phần trăm)?",
+   "dap_an": "37,7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 37.69911184307752,
+   "dap_so": {
+    "gia_tri": "12\\pi\\text{ cm}^3",
+    "so": 37.69911184307752
+   },
+   "do_kho": 0.451,
+   "dap_so_engine": 37.69911184307752
+  },
+  {
+   "id": "MC-HH-H03.TN.2",
+   "mau_cau": "MC-HH-H03",
+   "bien_the": {
+    "r": "6",
+    "l": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich-duong-sinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón biết đường sinh"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "HR|l=10,r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-40",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-40 + geometry/problem-specs.json#HKN-40",
+    "mau_cau": "MC-HH-H03"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=6$ cm và độ dài đường sinh $l=10$ cm. Thể tích khối nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "96\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "120\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    },
+    {
+     "noi_dung": "288\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "24\\sqrt{34}\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng thay vì trừ khi tính chiều cao"
+     }
+    }
+   ],
+   "dap_an": "96\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "120\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    },
+    {
+     "phuong_an": "288\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "24\\sqrt{34}\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng thay vì trừ khi tính chiều cao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "96\\pi\\text{ cm}^3",
+    "so": 301.59289474462014
+   },
+   "do_kho": 0.392,
+   "dap_so_engine": 301.59289474462014
+  },
+  {
+   "id": "MC-HH-H03.TLN.2",
+   "mau_cau": "MC-HH-H03",
+   "bien_the": {
+    "r": "6",
+    "l": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich-duong-sinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón biết đường sinh"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=10,r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-40",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-40 + geometry/problem-specs.json#HKN-40",
+    "mau_cau": "MC-HH-H03"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=6$ cm và độ dài đường sinh $l=10$ cm. Thể tích khối nón bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "302",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 301.59289474462014,
+   "dap_so": {
+    "gia_tri": "96\\pi\\text{ cm}^3",
+    "so": 301.59289474462014
+   },
+   "do_kho": 0.467,
+   "dap_so_engine": 301.59289474462014
+  },
+  {
+   "id": "MC-HH-H03.TN.3",
+   "mau_cau": "MC-HH-H03",
+   "bien_the": {
+    "r": "8",
+    "l": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich-duong-sinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón biết đường sinh"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "HR|l=10,r=8",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-40",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-40 + geometry/problem-specs.json#HKN-40",
+    "mau_cau": "MC-HH-H03"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=8$ cm và độ dài đường sinh $l=10$ cm. Thể tích khối nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "128\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{640\\pi}{3}\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    },
+    {
+     "noi_dung": "384\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{128\\sqrt{41}\\pi}{3}\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng thay vì trừ khi tính chiều cao"
+     }
+    }
+   ],
+   "dap_an": "128\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{640\\pi}{3}\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng đường sinh thay cho chiều cao"
+     }
+    },
+    {
+     "phuong_an": "384\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{128\\sqrt{41}\\pi}{3}\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Cộng thay vì trừ khi tính chiều cao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "128\\pi\\text{ cm}^3",
+    "so": 402.1238596594935
+   },
+   "do_kho": 0.389,
+   "dap_so_engine": 402.1238596594935
+  },
+  {
+   "id": "MC-HH-H03.TLN.3",
+   "mau_cau": "MC-HH-H03",
+   "bien_the": {
+    "r": "8",
+    "l": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.the-tich-duong-sinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối nón biết đường sinh"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=10,r=8",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-40",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-40 + geometry/problem-specs.json#HKN-40",
+    "mau_cau": "MC-HH-H03"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=8$ cm và độ dài đường sinh $l=10$ cm. Thể tích khối nón bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "402",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 402.1238596594935,
+   "dap_so": {
+    "gia_tri": "128\\pi\\text{ cm}^3",
+    "so": 402.1238596594935
+   },
+   "do_kho": 0.492,
+   "dap_so_engine": 402.1238596594935
+  },
+  {
+   "id": "MC-HH-H04.TN.0",
+   "mau_cau": "MC-HH-H04",
+   "bien_the": {
+    "r": "5",
+    "l": "13"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-tp",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "HR|l=13,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-60",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-60 + geometry/problem-specs.json#HKN-60",
+    "mau_cau": "MC-HH-H04"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=5$ cm và độ dài đường sinh $l=13$ cm. Diện tích toàn phần của hình nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "90\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "65\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên diện tích đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "noi_dung": "115\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng hai đáy như hình trụ"
+     }
+    },
+    {
+     "noi_dung": "155\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=2\\pi rl$"
+     }
+    }
+   ],
+   "dap_an": "90\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "65\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên diện tích đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "phuong_an": "115\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng hai đáy như hình trụ"
+     }
+    },
+    {
+     "phuong_an": "155\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=2\\pi rl$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "90\\pi\\text{ cm}^2",
+    "so": 282.7433388230814
+   },
+   "do_kho": 0.386,
+   "dap_so_engine": 282.7433388230814
+  },
+  {
+   "id": "MC-HH-H04.TLN.0",
+   "mau_cau": "MC-HH-H04",
+   "bien_the": {
+    "r": "5",
+    "l": "13"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-tp",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=13,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-60",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-60 + geometry/problem-specs.json#HKN-60",
+    "mau_cau": "MC-HH-H04"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=5$ cm và độ dài đường sinh $l=13$ cm. Diện tích toàn phần của hình nón bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "283",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 282.7433388230814,
+   "dap_so": {
+    "gia_tri": "90\\pi\\text{ cm}^2",
+    "so": 282.7433388230814
+   },
+   "do_kho": 0.459,
+   "dap_so_engine": 282.7433388230814
+  },
+  {
+   "id": "MC-HH-H04.TN.1",
+   "mau_cau": "MC-HH-H04",
+   "bien_the": {
+    "r": "3",
+    "l": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-tp",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "HR|l=5,r=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-60",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-60 + geometry/problem-specs.json#HKN-60",
+    "mau_cau": "MC-HH-H04"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=3$ cm và độ dài đường sinh $l=5$ cm. Diện tích toàn phần của hình nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "24\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "15\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên diện tích đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "noi_dung": "33\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng hai đáy như hình trụ"
+     }
+    },
+    {
+     "noi_dung": "39\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=2\\pi rl$"
+     }
+    }
+   ],
+   "dap_an": "24\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "15\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên diện tích đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "phuong_an": "33\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng hai đáy như hình trụ"
+     }
+    },
+    {
+     "phuong_an": "39\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=2\\pi rl$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "24\\pi\\text{ cm}^2",
+    "so": 75.39822368615503
+   },
+   "do_kho": 0.357,
+   "dap_so_engine": 75.39822368615503
+  },
+  {
+   "id": "MC-HH-H04.TLN.1",
+   "mau_cau": "MC-HH-H04",
+   "bien_the": {
+    "r": "3",
+    "l": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-tp",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=5,r=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-60",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-60 + geometry/problem-specs.json#HKN-60",
+    "mau_cau": "MC-HH-H04"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=3$ cm và độ dài đường sinh $l=5$ cm. Diện tích toàn phần của hình nón bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng phần trăm)?",
+   "dap_an": "75,4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 75.39822368615503,
+   "dap_so": {
+    "gia_tri": "24\\pi\\text{ cm}^2",
+    "so": 75.39822368615503
+   },
+   "do_kho": 0.469,
+   "dap_so_engine": 75.39822368615503
+  },
+  {
+   "id": "MC-HH-H04.TN.2",
+   "mau_cau": "MC-HH-H04",
+   "bien_the": {
+    "r": "6",
+    "l": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-tp",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "HR|l=10,r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-60",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-60 + geometry/problem-specs.json#HKN-60",
+    "mau_cau": "MC-HH-H04"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=6$ cm và độ dài đường sinh $l=10$ cm. Diện tích toàn phần của hình nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "96\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "60\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên diện tích đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "noi_dung": "132\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng hai đáy như hình trụ"
+     }
+    },
+    {
+     "noi_dung": "156\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=2\\pi rl$"
+     }
+    }
+   ],
+   "dap_an": "96\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "60\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên diện tích đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "phuong_an": "132\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng hai đáy như hình trụ"
+     }
+    },
+    {
+     "phuong_an": "156\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=2\\pi rl$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "96\\pi\\text{ cm}^2",
+    "so": 301.59289474462014
+   },
+   "do_kho": 0.399,
+   "dap_so_engine": 301.59289474462014
+  },
+  {
+   "id": "MC-HH-H04.TLN.2",
+   "mau_cau": "MC-HH-H04",
+   "bien_the": {
+    "r": "6",
+    "l": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-tp",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=10,r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-60",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-60 + geometry/problem-specs.json#HKN-60",
+    "mau_cau": "MC-HH-H04"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=6$ cm và độ dài đường sinh $l=10$ cm. Diện tích toàn phần của hình nón bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "302",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 301.59289474462014,
+   "dap_so": {
+    "gia_tri": "96\\pi\\text{ cm}^2",
+    "so": 301.59289474462014
+   },
+   "do_kho": 0.483,
+   "dap_so_engine": 301.59289474462014
+  },
+  {
+   "id": "MC-HH-H04.TN.3",
+   "mau_cau": "MC-HH-H04",
+   "bien_the": {
+    "r": "8",
+    "l": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-tp",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "HR|l=10,r=8",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-60",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-60 + geometry/problem-specs.json#HKN-60",
+    "mau_cau": "MC-HH-H04"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=8$ cm và độ dài đường sinh $l=10$ cm. Diện tích toàn phần của hình nón bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "144\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "80\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên diện tích đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "noi_dung": "208\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng hai đáy như hình trụ"
+     }
+    },
+    {
+     "noi_dung": "224\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=2\\pi rl$"
+     }
+    }
+   ],
+   "dap_an": "144\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "80\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên diện tích đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "phuong_an": "208\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cộng hai đáy như hình trụ"
+     }
+    },
+    {
+     "phuong_an": "224\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=2\\pi rl$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "144\\pi\\text{ cm}^2",
+    "so": 452.3893421169302
+   },
+   "do_kho": 0.365,
+   "dap_so_engine": 452.3893421169302
+  },
+  {
+   "id": "MC-HH-H04.TLN.3",
+   "mau_cau": "MC-HH-H04",
+   "bien_the": {
+    "r": "8",
+    "l": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.dien-tich-tp",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=10,r=8",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-60",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-60 + geometry/problem-specs.json#HKN-60",
+    "mau_cau": "MC-HH-H04"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=8$ cm và độ dài đường sinh $l=10$ cm. Diện tích toàn phần của hình nón bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "452",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 452.3893421169302,
+   "dap_so": {
+    "gia_tri": "144\\pi\\text{ cm}^2",
+    "so": 452.3893421169302
+   },
+   "do_kho": 0.446,
+   "dap_so_engine": 452.3893421169302
+  },
+  {
+   "id": "MC-HH-H05.TLN.0",
+   "mau_cau": "MC-HH-H05",
+   "bien_the": {
+    "r": "3",
+    "l": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.goc-dinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Góc giữa đường sinh và đường cao hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=6,r=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-47",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-47 + geometry/problem-specs.json#HKN-47",
+    "mau_cau": "MC-HH-H05"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=3$ cm và độ dài đường sinh $l=6$ cm. Gọi $S$ là đỉnh, $O$ là tâm đáy và $M$ là một điểm trên đường tròn đáy. Góc $\\widehat{OSM}$ giữa đường sinh và đường cao bằng bao nhiêu độ?",
+   "dap_an": "30",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 30.0,
+   "dap_so": {
+    "gia_tri": "30^\\circ",
+    "so": 30.0
+   },
+   "do_kho": 0.44,
+   "dap_so_engine": 30.000000000000004
+  },
+  {
+   "id": "MC-HH-H05.TLN.1",
+   "mau_cau": "MC-HH-H05",
+   "bien_the": {
+    "r": "5",
+    "l": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.goc-dinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Góc giữa đường sinh và đường cao hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=10,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-47",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-47 + geometry/problem-specs.json#HKN-47",
+    "mau_cau": "MC-HH-H05"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=5$ cm và độ dài đường sinh $l=10$ cm. Gọi $S$ là đỉnh, $O$ là tâm đáy và $M$ là một điểm trên đường tròn đáy. Góc $\\widehat{OSM}$ giữa đường sinh và đường cao bằng bao nhiêu độ?",
+   "dap_an": "30",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 30.0,
+   "dap_so": {
+    "gia_tri": "30^\\circ",
+    "so": 30.0
+   },
+   "do_kho": 0.432,
+   "dap_so_engine": 29.999999999999993
+  },
+  {
+   "id": "MC-HH-H05.TN.2",
+   "mau_cau": "MC-HH-H05",
+   "bien_the": {
+    "r": "3",
+    "l": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.goc-dinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Góc giữa đường sinh và đường cao hình nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "HR|l=5,r=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-47",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-47 + geometry/problem-specs.json#HKN-47",
+    "mau_cau": "MC-HH-H05"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=3$ cm và độ dài đường sinh $l=5$ cm. Gọi $S$ là đỉnh, $O$ là tâm đáy và $M$ là một điểm trên đường tròn đáy. Góc $\\widehat{OSM}$ giữa đường sinh và đường cao bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\approx 36{,}87^\\circ",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\approx 53{,}13^\\circ",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy góc $\\widehat{SMO}$ (góc giữa đường sinh và đáy)"
+     }
+    },
+    {
+     "noi_dung": "\\approx 30{,}96^\\circ",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $\\tan=\\dfrac{OM}{SM}$ ($SM$ là cạnh huyền)"
+     }
+    },
+    {
+     "noi_dung": "\\approx 73{,}74^\\circ",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy góc ở đỉnh của thiết diện qua trục"
+     }
+    }
+   ],
+   "dap_an": "\\approx 36{,}87^\\circ",
+   "nhieu": [
+    {
+     "phuong_an": "\\approx 53{,}13^\\circ",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy góc $\\widehat{SMO}$ (góc giữa đường sinh và đáy)"
+     }
+    },
+    {
+     "phuong_an": "\\approx 30{,}96^\\circ",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $\\tan=\\dfrac{OM}{SM}$ ($SM$ là cạnh huyền)"
+     }
+    },
+    {
+     "phuong_an": "\\approx 73{,}74^\\circ",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy góc ở đỉnh của thiết diện qua trục"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\approx 36{,}87^\\circ",
+    "so": 36.86989764584402
+   },
+   "do_kho": 0.359,
+   "dap_so_engine": 36.86989764584401
+  },
+  {
+   "id": "MC-HH-H05.TLN.2",
+   "mau_cau": "MC-HH-H05",
+   "bien_the": {
+    "r": "3",
+    "l": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.goc-dinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Góc giữa đường sinh và đường cao hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=5,r=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-47",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-47 + geometry/problem-specs.json#HKN-47",
+    "mau_cau": "MC-HH-H05"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=3$ cm và độ dài đường sinh $l=5$ cm. Gọi $S$ là đỉnh, $O$ là tâm đáy và $M$ là một điểm trên đường tròn đáy. Góc $\\widehat{OSM}$ giữa đường sinh và đường cao bằng bao nhiêu độ (làm tròn đến hàng phần mười)?",
+   "dap_an": "36,9",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 36.86989764584402,
+   "dap_so": {
+    "gia_tri": "\\approx 36{,}87^\\circ",
+    "so": 36.86989764584402
+   },
+   "do_kho": 0.497,
+   "dap_so_engine": 36.86989764584401
+  },
+  {
+   "id": "MC-HH-H05.TN.3",
+   "mau_cau": "MC-HH-H05",
+   "bien_the": {
+    "r": "5",
+    "l": "13"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.goc-dinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Góc giữa đường sinh và đường cao hình nón"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "HR|l=13,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-47",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-47 + geometry/problem-specs.json#HKN-47",
+    "mau_cau": "MC-HH-H05"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=5$ cm và độ dài đường sinh $l=13$ cm. Gọi $S$ là đỉnh, $O$ là tâm đáy và $M$ là một điểm trên đường tròn đáy. Góc $\\widehat{OSM}$ giữa đường sinh và đường cao bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\approx 22{,}62^\\circ",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\approx 67{,}38^\\circ",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy góc $\\widehat{SMO}$ (góc giữa đường sinh và đáy)"
+     }
+    },
+    {
+     "noi_dung": "\\approx 21{,}04^\\circ",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $\\tan=\\dfrac{OM}{SM}$ ($SM$ là cạnh huyền)"
+     }
+    },
+    {
+     "noi_dung": "\\approx 45{,}24^\\circ",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy góc ở đỉnh của thiết diện qua trục"
+     }
+    }
+   ],
+   "dap_an": "\\approx 22{,}62^\\circ",
+   "nhieu": [
+    {
+     "phuong_an": "\\approx 67{,}38^\\circ",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy góc $\\widehat{SMO}$ (góc giữa đường sinh và đáy)"
+     }
+    },
+    {
+     "phuong_an": "\\approx 21{,}04^\\circ",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $\\tan=\\dfrac{OM}{SM}$ ($SM$ là cạnh huyền)"
+     }
+    },
+    {
+     "phuong_an": "\\approx 45{,}24^\\circ",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy góc ở đỉnh của thiết diện qua trục"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\approx 22{,}62^\\circ",
+    "so": 22.619864948040426
+   },
+   "do_kho": 0.342,
+   "dap_so_engine": 22.61986494804042
+  },
+  {
+   "id": "MC-HH-H05.TLN.3",
+   "mau_cau": "MC-HH-H05",
+   "bien_the": {
+    "r": "5",
+    "l": "13"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "non.goc-dinh",
+   "dang_tx": "tx.non",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Góc giữa đường sinh và đường cao hình nón"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "HR|l=13,r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-47",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-47 + geometry/problem-specs.json#HKN-47",
+    "mau_cau": "MC-HH-H05"
+   },
+   "de_bai": "Cho hình nón có bán kính đáy $r=5$ cm và độ dài đường sinh $l=13$ cm. Gọi $S$ là đỉnh, $O$ là tâm đáy và $M$ là một điểm trên đường tròn đáy. Góc $\\widehat{OSM}$ giữa đường sinh và đường cao bằng bao nhiêu độ (làm tròn đến hàng phần mười)?",
+   "dap_an": "22,6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 22.619864948040426,
+   "dap_so": {
+    "gia_tri": "\\approx 22{,}62^\\circ",
+    "so": 22.619864948040426
+   },
+   "do_kho": 0.47,
+   "dap_so_engine": 22.61986494804042
+  },
+  {
+   "id": "MC-HH-I01.TN.0",
+   "mau_cau": "MC-HH-I01",
+   "bien_the": {
+    "r": "3",
+    "t": "7"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-tp",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình trụ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "I|r=3,t=7",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-42",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-42 + geometry/problem-specs.json#HKN-42",
+    "mau_cau": "MC-HH-I01"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=3$ cm và chiều cao $h=7$ cm. Diện tích toàn phần của hình trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "60\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "42\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hai đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "noi_dung": "51\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ cộng một đáy"
+     }
+    },
+    {
+     "noi_dung": "39\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=\\pi rh$"
+     }
+    }
+   ],
+   "dap_an": "60\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "42\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hai đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "phuong_an": "51\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ cộng một đáy"
+     }
+    },
+    {
+     "phuong_an": "39\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=\\pi rh$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "60\\pi\\text{ cm}^2",
+    "so": 188.4955592153876
+   },
+   "do_kho": 0.195,
+   "dap_so_engine": 188.49555921538757
+  },
+  {
+   "id": "MC-HH-I01.TLN.0",
+   "mau_cau": "MC-HH-I01",
+   "bien_the": {
+    "r": "3",
+    "t": "7"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-tp",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=3,t=7",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-42",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-42 + geometry/problem-specs.json#HKN-42",
+    "mau_cau": "MC-HH-I01"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=3$ cm và chiều cao $h=7$ cm. Diện tích toàn phần của hình trụ bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "188",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 188.4955592153876,
+   "dap_so": {
+    "gia_tri": "60\\pi\\text{ cm}^2",
+    "so": 188.4955592153876
+   },
+   "do_kho": 0.444,
+   "dap_so_engine": 188.49555921538757
+  },
+  {
+   "id": "MC-HH-I01.TN.1",
+   "mau_cau": "MC-HH-I01",
+   "bien_the": {
+    "r": "4",
+    "t": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-tp",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình trụ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "I|r=4,t=10",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-42",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-42 + geometry/problem-specs.json#HKN-42",
+    "mau_cau": "MC-HH-I01"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=4$ cm và chiều cao $h=10$ cm. Diện tích toàn phần của hình trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "112\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "80\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hai đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "noi_dung": "96\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ cộng một đáy"
+     }
+    },
+    {
+     "noi_dung": "72\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=\\pi rh$"
+     }
+    }
+   ],
+   "dap_an": "112\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "80\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hai đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "phuong_an": "96\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ cộng một đáy"
+     }
+    },
+    {
+     "phuong_an": "72\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=\\pi rh$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "112\\pi\\text{ cm}^2",
+    "so": 351.85837720205683
+   },
+   "do_kho": 0.141,
+   "dap_so_engine": 351.85837720205683
+  },
+  {
+   "id": "MC-HH-I01.TLN.1",
+   "mau_cau": "MC-HH-I01",
+   "bien_the": {
+    "r": "4",
+    "t": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-tp",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=4,t=10",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-42",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-42 + geometry/problem-specs.json#HKN-42",
+    "mau_cau": "MC-HH-I01"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=4$ cm và chiều cao $h=10$ cm. Diện tích toàn phần của hình trụ bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "352",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 351.85837720205683,
+   "dap_so": {
+    "gia_tri": "112\\pi\\text{ cm}^2",
+    "so": 351.85837720205683
+   },
+   "do_kho": 0.456,
+   "dap_so_engine": 351.85837720205683
+  },
+  {
+   "id": "MC-HH-I01.TN.2",
+   "mau_cau": "MC-HH-I01",
+   "bien_the": {
+    "r": "2",
+    "t": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-tp",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình trụ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "I|r=2,t=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-42",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-42 + geometry/problem-specs.json#HKN-42",
+    "mau_cau": "MC-HH-I01"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=2$ cm và chiều cao $h=5$ cm. Diện tích toàn phần của hình trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "28\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "20\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hai đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "noi_dung": "24\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ cộng một đáy"
+     }
+    },
+    {
+     "noi_dung": "18\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=\\pi rh$"
+     }
+    }
+   ],
+   "dap_an": "28\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "20\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hai đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "phuong_an": "24\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ cộng một đáy"
+     }
+    },
+    {
+     "phuong_an": "18\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=\\pi rh$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "28\\pi\\text{ cm}^2",
+    "so": 87.96459430051421
+   },
+   "do_kho": 0.172,
+   "dap_so_engine": 87.96459430051421
+  },
+  {
+   "id": "MC-HH-I01.TLN.2",
+   "mau_cau": "MC-HH-I01",
+   "bien_the": {
+    "r": "2",
+    "t": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-tp",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=2,t=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-42",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-42 + geometry/problem-specs.json#HKN-42",
+    "mau_cau": "MC-HH-I01"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=2$ cm và chiều cao $h=5$ cm. Diện tích toàn phần của hình trụ bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng phần mười)?",
+   "dap_an": "88",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 87.96459430051421,
+   "dap_so": {
+    "gia_tri": "28\\pi\\text{ cm}^2",
+    "so": 87.96459430051421
+   },
+   "do_kho": 0.452,
+   "dap_so_engine": 87.96459430051421
+  },
+  {
+   "id": "MC-HH-I01.TN.3",
+   "mau_cau": "MC-HH-I01",
+   "bien_the": {
+    "r": "5",
+    "t": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-tp",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình trụ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "I|r=5,t=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-42",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-42 + geometry/problem-specs.json#HKN-42",
+    "mau_cau": "MC-HH-I01"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=5$ cm và chiều cao $h=6$ cm. Diện tích toàn phần của hình trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "110\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "60\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hai đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "noi_dung": "85\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ cộng một đáy"
+     }
+    },
+    {
+     "noi_dung": "80\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=\\pi rh$"
+     }
+    }
+   ],
+   "dap_an": "110\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "60\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hai đáy (chỉ tính diện tích xung quanh)"
+     }
+    },
+    {
+     "phuong_an": "85\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chỉ cộng một đáy"
+     }
+    },
+    {
+     "phuong_an": "80\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $S_{xq}=\\pi rh$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "110\\pi\\text{ cm}^2",
+    "so": 345.57519189487726
+   },
+   "do_kho": 0.191,
+   "dap_so_engine": 345.57519189487726
+  },
+  {
+   "id": "MC-HH-I01.TLN.3",
+   "mau_cau": "MC-HH-I01",
+   "bien_the": {
+    "r": "5",
+    "t": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-tp",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích toàn phần hình trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=5,t=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-42",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-42 + geometry/problem-specs.json#HKN-42",
+    "mau_cau": "MC-HH-I01"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=5$ cm và chiều cao $h=6$ cm. Diện tích toàn phần của hình trụ bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "346",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 345.57519189487726,
+   "dap_so": {
+    "gia_tri": "110\\pi\\text{ cm}^2",
+    "so": 345.57519189487726
+   },
+   "do_kho": 0.467,
+   "dap_so_engine": 345.57519189487726
+  },
+  {
+   "id": "MC-HH-I02.TN.0",
+   "mau_cau": "MC-HH-I02",
+   "bien_the": {
+    "r": "3",
+    "t": "7"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.the-tich",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối trụ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "I|r=3,t=7",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-58",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-58 + geometry/problem-specs.json#HKN-58",
+    "mau_cau": "MC-HH-I02"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=3$ cm và chiều cao $h=7$ cm. Thể tích khối trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "63\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "42\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "noi_dung": "21\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối nón"
+     }
+    },
+    {
+     "noi_dung": "147\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    }
+   ],
+   "dap_an": "63\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "42\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "phuong_an": "21\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối nón"
+     }
+    },
+    {
+     "phuong_an": "147\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "63\\pi\\text{ cm}^3",
+    "so": 197.92033717615698
+   },
+   "do_kho": 0.196,
+   "dap_so_engine": 197.92033717615698
+  },
+  {
+   "id": "MC-HH-I02.TLN.0",
+   "mau_cau": "MC-HH-I02",
+   "bien_the": {
+    "r": "3",
+    "t": "7"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.the-tich",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=3,t=7",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-58",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-58 + geometry/problem-specs.json#HKN-58",
+    "mau_cau": "MC-HH-I02"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=3$ cm và chiều cao $h=7$ cm. Thể tích khối trụ bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "198",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 197.92033717615698,
+   "dap_so": {
+    "gia_tri": "63\\pi\\text{ cm}^3",
+    "so": 197.92033717615698
+   },
+   "do_kho": 0.255,
+   "dap_so_engine": 197.92033717615698
+  },
+  {
+   "id": "MC-HH-I02.TN.1",
+   "mau_cau": "MC-HH-I02",
+   "bien_the": {
+    "r": "4",
+    "t": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.the-tich",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối trụ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "I|r=4,t=10",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-58",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-58 + geometry/problem-specs.json#HKN-58",
+    "mau_cau": "MC-HH-I02"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=4$ cm và chiều cao $h=10$ cm. Thể tích khối trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "160\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "80\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{160\\pi}{3}\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối nón"
+     }
+    },
+    {
+     "noi_dung": "400\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    }
+   ],
+   "dap_an": "160\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "80\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{160\\pi}{3}\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối nón"
+     }
+    },
+    {
+     "phuong_an": "400\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "160\\pi\\text{ cm}^3",
+    "so": 502.6548245743669
+   },
+   "do_kho": 0.16,
+   "dap_so_engine": 502.6548245743669
+  },
+  {
+   "id": "MC-HH-I02.TLN.1",
+   "mau_cau": "MC-HH-I02",
+   "bien_the": {
+    "r": "4",
+    "t": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.the-tich",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=4,t=10",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-58",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-58 + geometry/problem-specs.json#HKN-58",
+    "mau_cau": "MC-HH-I02"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=4$ cm và chiều cao $h=10$ cm. Thể tích khối trụ bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "503",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 502.6548245743669,
+   "dap_so": {
+    "gia_tri": "160\\pi\\text{ cm}^3",
+    "so": 502.6548245743669
+   },
+   "do_kho": 0.25,
+   "dap_so_engine": 502.6548245743669
+  },
+  {
+   "id": "MC-HH-I02.TLN.2",
+   "mau_cau": "MC-HH-I02",
+   "bien_the": {
+    "r": "2",
+    "t": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.the-tich",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=2,t=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-58",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-58 + geometry/problem-specs.json#HKN-58",
+    "mau_cau": "MC-HH-I02"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=2$ cm và chiều cao $h=5$ cm. Thể tích khối trụ bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng phần mười)?",
+   "dap_an": "62,8",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 62.83185307179586,
+   "dap_so": {
+    "gia_tri": "20\\pi\\text{ cm}^3",
+    "so": 62.83185307179586
+   },
+   "do_kho": 0.278,
+   "dap_so_engine": 62.83185307179586
+  },
+  {
+   "id": "MC-HH-I02.TN.3",
+   "mau_cau": "MC-HH-I02",
+   "bien_the": {
+    "r": "5",
+    "t": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.the-tich",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối trụ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "I|r=5,t=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-58",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-58 + geometry/problem-specs.json#HKN-58",
+    "mau_cau": "MC-HH-I02"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=5$ cm và chiều cao $h=6$ cm. Thể tích khối trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "150\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "60\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "noi_dung": "50\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối nón"
+     }
+    },
+    {
+     "noi_dung": "180\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    }
+   ],
+   "dap_an": "150\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "60\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích xung quanh"
+     }
+    },
+    {
+     "phuong_an": "50\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân thêm $\\dfrac13$ như khối nón"
+     }
+    },
+    {
+     "phuong_an": "180\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Đổi vai bán kính và chiều cao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "150\\pi\\text{ cm}^3",
+    "so": 471.23889803846896
+   },
+   "do_kho": 0.186,
+   "dap_so_engine": 471.23889803846896
+  },
+  {
+   "id": "MC-HH-I02.TLN.3",
+   "mau_cau": "MC-HH-I02",
+   "bien_the": {
+    "r": "5",
+    "t": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.the-tich",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=5,t=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-58",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-58 + geometry/problem-specs.json#HKN-58",
+    "mau_cau": "MC-HH-I02"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=5$ cm và chiều cao $h=6$ cm. Thể tích khối trụ bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "471",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 471.23889803846896,
+   "dap_so": {
+    "gia_tri": "150\\pi\\text{ cm}^3",
+    "so": 471.23889803846896
+   },
+   "do_kho": 0.281,
+   "dap_so_engine": 471.23889803846896
+  },
+  {
+   "id": "MC-HH-I03.TN.0",
+   "mau_cau": "MC-HH-I03",
+   "bien_the": {
+    "r": "3",
+    "t": "7"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-xq",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình trụ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "I|r=3,t=7",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-59",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-59 + geometry/problem-specs.json#HKN-59",
+    "mau_cau": "MC-HH-I03"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=3$ cm và chiều cao $h=7$ cm. Diện tích xung quanh của hình trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "42\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "21\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $\\pi rh$ (nhầm với hình nón)"
+     }
+    },
+    {
+     "noi_dung": "60\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "63\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_an": "42\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "21\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $\\pi rh$ (nhầm với hình nón)"
+     }
+    },
+    {
+     "phuong_an": "60\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "63\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "42\\pi\\text{ cm}^2",
+    "so": 131.94689145077132
+   },
+   "do_kho": 0.196,
+   "dap_so_engine": 131.94689145077132
+  },
+  {
+   "id": "MC-HH-I03.TLN.0",
+   "mau_cau": "MC-HH-I03",
+   "bien_the": {
+    "r": "3",
+    "t": "7"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-xq",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=3,t=7",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-59",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-59 + geometry/problem-specs.json#HKN-59",
+    "mau_cau": "MC-HH-I03"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=3$ cm và chiều cao $h=7$ cm. Diện tích xung quanh của hình trụ bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "132",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 131.94689145077132,
+   "dap_so": {
+    "gia_tri": "42\\pi\\text{ cm}^2",
+    "so": 131.94689145077132
+   },
+   "do_kho": 0.298,
+   "dap_so_engine": 131.94689145077132
+  },
+  {
+   "id": "MC-HH-I03.TN.1",
+   "mau_cau": "MC-HH-I03",
+   "bien_the": {
+    "r": "4",
+    "t": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-xq",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình trụ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "I|r=4,t=10",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-59",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-59 + geometry/problem-specs.json#HKN-59",
+    "mau_cau": "MC-HH-I03"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=4$ cm và chiều cao $h=10$ cm. Diện tích xung quanh của hình trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "80\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "40\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $\\pi rh$ (nhầm với hình nón)"
+     }
+    },
+    {
+     "noi_dung": "112\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "160\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_an": "80\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "40\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $\\pi rh$ (nhầm với hình nón)"
+     }
+    },
+    {
+     "phuong_an": "112\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "160\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "80\\pi\\text{ cm}^2",
+    "so": 251.32741228718345
+   },
+   "do_kho": 0.168,
+   "dap_so_engine": 251.32741228718345
+  },
+  {
+   "id": "MC-HH-I03.TLN.1",
+   "mau_cau": "MC-HH-I03",
+   "bien_the": {
+    "r": "4",
+    "t": "10"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-xq",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=4,t=10",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-59",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-59 + geometry/problem-specs.json#HKN-59",
+    "mau_cau": "MC-HH-I03"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=4$ cm và chiều cao $h=10$ cm. Diện tích xung quanh của hình trụ bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "251",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 251.32741228718345,
+   "dap_so": {
+    "gia_tri": "80\\pi\\text{ cm}^2",
+    "so": 251.32741228718345
+   },
+   "do_kho": 0.243,
+   "dap_so_engine": 251.32741228718345
+  },
+  {
+   "id": "MC-HH-I03.TLN.2",
+   "mau_cau": "MC-HH-I03",
+   "bien_the": {
+    "r": "2",
+    "t": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-xq",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=2,t=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-59",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-59 + geometry/problem-specs.json#HKN-59",
+    "mau_cau": "MC-HH-I03"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=2$ cm và chiều cao $h=5$ cm. Diện tích xung quanh của hình trụ bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng phần mười)?",
+   "dap_an": "62,8",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 62.83185307179586,
+   "dap_so": {
+    "gia_tri": "20\\pi\\text{ cm}^2",
+    "so": 62.83185307179586
+   },
+   "do_kho": 0.243,
+   "dap_so_engine": 62.83185307179586
+  },
+  {
+   "id": "MC-HH-I03.TN.3",
+   "mau_cau": "MC-HH-I03",
+   "bien_the": {
+    "r": "5",
+    "t": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-xq",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình trụ"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "I|r=5,t=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-59",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-59 + geometry/problem-specs.json#HKN-59",
+    "mau_cau": "MC-HH-I03"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=5$ cm và chiều cao $h=6$ cm. Diện tích xung quanh của hình trụ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "60\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "30\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $\\pi rh$ (nhầm với hình nón)"
+     }
+    },
+    {
+     "noi_dung": "110\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "noi_dung": "150\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_an": "60\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "30\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $\\pi rh$ (nhầm với hình nón)"
+     }
+    },
+    {
+     "phuong_an": "110\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai đáy (diện tích toàn phần)"
+     }
+    },
+    {
+     "phuong_an": "150\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "60\\pi\\text{ cm}^2",
+    "so": 188.4955592153876
+   },
+   "do_kho": 0.148,
+   "dap_so_engine": 188.49555921538757
+  },
+  {
+   "id": "MC-HH-I03.TLN.3",
+   "mau_cau": "MC-HH-I03",
+   "bien_the": {
+    "r": "5",
+    "t": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "tru.dien-tich-xq",
+   "dang_tx": "tx.tru",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích xung quanh hình trụ"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "I|r=5,t=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-59",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-59 + geometry/problem-specs.json#HKN-59",
+    "mau_cau": "MC-HH-I03"
+   },
+   "de_bai": "Cho hình trụ có bán kính đáy $r=5$ cm và chiều cao $h=6$ cm. Diện tích xung quanh của hình trụ bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "188",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 188.4955592153876,
+   "dap_so": {
+    "gia_tri": "60\\pi\\text{ cm}^2",
+    "so": 188.4955592153876
+   },
+   "do_kho": 0.298,
+   "dap_so_engine": 188.49555921538757
+  },
+  {
+   "id": "MC-HH-J01.TLN.0",
+   "mau_cau": "MC-HH-J01",
+   "bien_the": {
+    "r": "3"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.the-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối cầu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "J|r=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-74",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-74 + geometry/problem-specs.json#HKN-74",
+    "mau_cau": "MC-HH-J01"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=3$ cm. Thể tích khối cầu bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "113",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 113.09733552923255,
+   "dap_so": {
+    "gia_tri": "36\\pi\\text{ cm}^3",
+    "so": 113.09733552923255
+   },
+   "do_kho": 0.28,
+   "dap_so_engine": 113.09733552923255
+  },
+  {
+   "id": "MC-HH-J01.TN.1",
+   "mau_cau": "MC-HH-J01",
+   "bien_the": {
+    "r": "4"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.the-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối cầu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "J|r=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-74",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-74 + geometry/problem-specs.json#HKN-74",
+    "mau_cau": "MC-HH-J01"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=4$ cm. Thể tích khối cầu bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{256\\pi}{3}\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "64\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích mặt cầu"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{64\\pi}{3}\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $r^2$ thay cho $r^3$"
+     }
+    },
+    {
+     "noi_dung": "256\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{256\\pi}{3}\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "64\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích mặt cầu"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{64\\pi}{3}\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $r^2$ thay cho $r^3$"
+     }
+    },
+    {
+     "phuong_an": "256\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{256\\pi}{3}\\text{ cm}^3",
+    "so": 268.08257310632905
+   },
+   "do_kho": 0.19,
+   "dap_so_engine": 268.082573106329
+  },
+  {
+   "id": "MC-HH-J01.TLN.1",
+   "mau_cau": "MC-HH-J01",
+   "bien_the": {
+    "r": "4"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.the-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối cầu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "J|r=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-74",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-74 + geometry/problem-specs.json#HKN-74",
+    "mau_cau": "MC-HH-J01"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=4$ cm. Thể tích khối cầu bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "268",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 268.08257310632905,
+   "dap_so": {
+    "gia_tri": "\\dfrac{256\\pi}{3}\\text{ cm}^3",
+    "so": 268.08257310632905
+   },
+   "do_kho": 0.278,
+   "dap_so_engine": 268.082573106329
+  },
+  {
+   "id": "MC-HH-J01.TN.2",
+   "mau_cau": "MC-HH-J01",
+   "bien_the": {
+    "r": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.the-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối cầu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "J|r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-74",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-74 + geometry/problem-specs.json#HKN-74",
+    "mau_cau": "MC-HH-J01"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=5$ cm. Thể tích khối cầu bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{500\\pi}{3}\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "100\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích mặt cầu"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{100\\pi}{3}\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $r^2$ thay cho $r^3$"
+     }
+    },
+    {
+     "noi_dung": "500\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{500\\pi}{3}\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "100\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích mặt cầu"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{100\\pi}{3}\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $r^2$ thay cho $r^3$"
+     }
+    },
+    {
+     "phuong_an": "500\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{500\\pi}{3}\\text{ cm}^3",
+    "so": 523.5987755982989
+   },
+   "do_kho": 0.149,
+   "dap_so_engine": 523.5987755982989
+  },
+  {
+   "id": "MC-HH-J01.TLN.2",
+   "mau_cau": "MC-HH-J01",
+   "bien_the": {
+    "r": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.the-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối cầu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "J|r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-74",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-74 + geometry/problem-specs.json#HKN-74",
+    "mau_cau": "MC-HH-J01"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=5$ cm. Thể tích khối cầu bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "524",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 523.5987755982989,
+   "dap_so": {
+    "gia_tri": "\\dfrac{500\\pi}{3}\\text{ cm}^3",
+    "so": 523.5987755982989
+   },
+   "do_kho": 0.296,
+   "dap_so_engine": 523.5987755982989
+  },
+  {
+   "id": "MC-HH-J01.TN.3",
+   "mau_cau": "MC-HH-J01",
+   "bien_the": {
+    "r": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.the-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối cầu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "J|r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-74",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-74 + geometry/problem-specs.json#HKN-74",
+    "mau_cau": "MC-HH-J01"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=6$ cm. Thể tích khối cầu bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "288\\pi\\text{ cm}^3",
+     "dung": true
+    },
+    {
+     "noi_dung": "144\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích mặt cầu"
+     }
+    },
+    {
+     "noi_dung": "48\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $r^2$ thay cho $r^3$"
+     }
+    },
+    {
+     "noi_dung": "864\\pi\\text{ cm}^3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    }
+   ],
+   "dap_an": "288\\pi\\text{ cm}^3",
+   "nhieu": [
+    {
+     "phuong_an": "144\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích mặt cầu"
+     }
+    },
+    {
+     "phuong_an": "48\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng $r^2$ thay cho $r^3$"
+     }
+    },
+    {
+     "phuong_an": "864\\pi\\text{ cm}^3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\dfrac13$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "288\\pi\\text{ cm}^3",
+    "so": 904.7786842338604
+   },
+   "do_kho": 0.171,
+   "dap_so_engine": 904.7786842338604
+  },
+  {
+   "id": "MC-HH-J01.TLN.3",
+   "mau_cau": "MC-HH-J01",
+   "bien_the": {
+    "r": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.the-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Thể tích khối cầu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "J|r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-74",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-74 + geometry/problem-specs.json#HKN-74",
+    "mau_cau": "MC-HH-J01"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=6$ cm. Thể tích khối cầu bằng bao nhiêu (đơn vị: cm³) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "905",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 904.7786842338604,
+   "dap_so": {
+    "gia_tri": "288\\pi\\text{ cm}^3",
+    "so": 904.7786842338604
+   },
+   "do_kho": 0.249,
+   "dap_so_engine": 904.7786842338604
+  },
+  {
+   "id": "MC-HH-J02.TLN.0",
+   "mau_cau": "MC-HH-J02",
+   "bien_the": {
+    "r": "3"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.dien-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "J|r=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-72",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-72 + geometry/problem-specs.json#HKN-72",
+    "mau_cau": "MC-HH-J02"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=3$ cm. Diện tích mặt cầu bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "113",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 113.09733552923255,
+   "dap_so": {
+    "gia_tri": "36\\pi\\text{ cm}^2",
+    "so": 113.09733552923255
+   },
+   "do_kho": 0.285,
+   "dap_so_engine": 113.09733552923255
+  },
+  {
+   "id": "MC-HH-J02.TN.1",
+   "mau_cau": "MC-HH-J02",
+   "bien_the": {
+    "r": "4"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.dien-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "J|r=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-72",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-72 + geometry/problem-specs.json#HKN-72",
+    "mau_cau": "MC-HH-J02"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=4$ cm. Diện tích mặt cầu bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "64\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "16\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích hình tròn lớn"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{256\\pi}{3}\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích khối cầu"
+     }
+    },
+    {
+     "noi_dung": "32\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số 2 thay cho 4"
+     }
+    }
+   ],
+   "dap_an": "64\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "16\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích hình tròn lớn"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{256\\pi}{3}\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích khối cầu"
+     }
+    },
+    {
+     "phuong_an": "32\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số 2 thay cho 4"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "64\\pi\\text{ cm}^2",
+    "so": 201.06192982974676
+   },
+   "do_kho": 0.142,
+   "dap_so_engine": 201.06192982974676
+  },
+  {
+   "id": "MC-HH-J02.TLN.1",
+   "mau_cau": "MC-HH-J02",
+   "bien_the": {
+    "r": "4"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.dien-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "J|r=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-72",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-72 + geometry/problem-specs.json#HKN-72",
+    "mau_cau": "MC-HH-J02"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=4$ cm. Diện tích mặt cầu bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "201",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 201.06192982974676,
+   "dap_so": {
+    "gia_tri": "64\\pi\\text{ cm}^2",
+    "so": 201.06192982974676
+   },
+   "do_kho": 0.265,
+   "dap_so_engine": 201.06192982974676
+  },
+  {
+   "id": "MC-HH-J02.TN.2",
+   "mau_cau": "MC-HH-J02",
+   "bien_the": {
+    "r": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.dien-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "J|r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-72",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-72 + geometry/problem-specs.json#HKN-72",
+    "mau_cau": "MC-HH-J02"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=5$ cm. Diện tích mặt cầu bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "100\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "25\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích hình tròn lớn"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{500\\pi}{3}\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích khối cầu"
+     }
+    },
+    {
+     "noi_dung": "50\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số 2 thay cho 4"
+     }
+    }
+   ],
+   "dap_an": "100\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "25\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích hình tròn lớn"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{500\\pi}{3}\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích khối cầu"
+     }
+    },
+    {
+     "phuong_an": "50\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số 2 thay cho 4"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "100\\pi\\text{ cm}^2",
+    "so": 314.1592653589793
+   },
+   "do_kho": 0.168,
+   "dap_so_engine": 314.1592653589793
+  },
+  {
+   "id": "MC-HH-J02.TLN.2",
+   "mau_cau": "MC-HH-J02",
+   "bien_the": {
+    "r": "5"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.dien-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "J|r=5",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-72",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-72 + geometry/problem-specs.json#HKN-72",
+    "mau_cau": "MC-HH-J02"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=5$ cm. Diện tích mặt cầu bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "314",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 314.1592653589793,
+   "dap_so": {
+    "gia_tri": "100\\pi\\text{ cm}^2",
+    "so": 314.1592653589793
+   },
+   "do_kho": 0.289,
+   "dap_so_engine": 314.1592653589793
+  },
+  {
+   "id": "MC-HH-J02.TN.3",
+   "mau_cau": "MC-HH-J02",
+   "bien_the": {
+    "r": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.dien-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "J|r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-72",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-72 + geometry/problem-specs.json#HKN-72",
+    "mau_cau": "MC-HH-J02"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=6$ cm. Diện tích mặt cầu bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "144\\pi\\text{ cm}^2",
+     "dung": true
+    },
+    {
+     "noi_dung": "36\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích hình tròn lớn"
+     }
+    },
+    {
+     "noi_dung": "288\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích khối cầu"
+     }
+    },
+    {
+     "noi_dung": "72\\pi\\text{ cm}^2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số 2 thay cho 4"
+     }
+    }
+   ],
+   "dap_an": "144\\pi\\text{ cm}^2",
+   "nhieu": [
+    {
+     "phuong_an": "36\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang diện tích hình tròn lớn"
+     }
+    },
+    {
+     "phuong_an": "288\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm sang thể tích khối cầu"
+     }
+    },
+    {
+     "phuong_an": "72\\pi\\text{ cm}^2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng hệ số 2 thay cho 4"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "144\\pi\\text{ cm}^2",
+    "so": 452.3893421169302
+   },
+   "do_kho": 0.156,
+   "dap_so_engine": 452.3893421169302
+  },
+  {
+   "id": "MC-HH-J02.TLN.3",
+   "mau_cau": "MC-HH-J02",
+   "bien_the": {
+    "r": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "cau.dien-tich",
+   "dang_tx": "tx.cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Diện tích mặt cầu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 2.0,
+   "diem": 0.5,
+   "boi_canh_key": "J|r=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-72",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-72 + geometry/problem-specs.json#HKN-72",
+    "mau_cau": "MC-HH-J02"
+   },
+   "de_bai": "Cho mặt cầu có bán kính $R=6$ cm. Diện tích mặt cầu bằng bao nhiêu (đơn vị: cm²) (làm tròn đến hàng đơn vị)?",
+   "dap_an": "452",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 452.3893421169302,
+   "dap_so": {
+    "gia_tri": "144\\pi\\text{ cm}^2",
+    "so": 452.3893421169302
+   },
+   "do_kho": 0.292,
+   "dap_so_engine": 452.3893421169302
+  },
+  {
+   "id": "MC-HH-J03.TN.0",
+   "mau_cau": "MC-HH-J03",
+   "bien_the": {
+    "c": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lap-phuong",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp hình lập phương"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "C|c=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-45",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-45 + geometry/problem-specs.json#HKN-45",
+    "mau_cau": "MC-HH-J03"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $2$ cm. Bán kính mặt cầu ngoại tiếp hình lập phương bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\sqrt{3}\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\sqrt{2}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy nửa đường chéo mặt"
+     }
+    },
+    {
+     "noi_dung": "1\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Nhầm sang mặt cầu nội tiếp (tiếp xúc các mặt)"
+     }
+    },
+    {
+     "noi_dung": "2\\sqrt{3}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ (đường kính) làm bán kính"
+     }
+    }
+   ],
+   "dap_an": "\\sqrt{3}\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "\\sqrt{2}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy nửa đường chéo mặt"
+     }
+    },
+    {
+     "phuong_an": "1\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Nhầm sang mặt cầu nội tiếp (tiếp xúc các mặt)"
+     }
+    },
+    {
+     "phuong_an": "2\\sqrt{3}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ (đường kính) làm bán kính"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\sqrt{3}\\text{ cm}",
+    "so": 1.7320508075688772
+   },
+   "do_kho": 0.348,
+   "dap_so_engine": 1.7320508075688772
+  },
+  {
+   "id": "MC-HH-J03.TLN.0",
+   "mau_cau": "MC-HH-J03",
+   "bien_the": {
+    "c": "2"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lap-phuong",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp hình lập phương"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "C|c=2",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-45",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-45 + geometry/problem-specs.json#HKN-45",
+    "mau_cau": "MC-HH-J03"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $2$ cm. Bán kính mặt cầu ngoại tiếp hình lập phương bằng bao nhiêu (đơn vị: cm) (làm tròn đến hàng phần trăm)?",
+   "dap_an": "1,73",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.7320508075688772,
+   "dap_so": {
+    "gia_tri": "\\sqrt{3}\\text{ cm}",
+    "so": 1.7320508075688772
+   },
+   "do_kho": 0.458,
+   "dap_so_engine": 1.7320508075688772
+  },
+  {
+   "id": "MC-HH-J03.TN.1",
+   "mau_cau": "MC-HH-J03",
+   "bien_the": {
+    "c": "3"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lap-phuong",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp hình lập phương"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "C|c=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-45",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-45 + geometry/problem-specs.json#HKN-45",
+    "mau_cau": "MC-HH-J03"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $3$ cm. Bán kính mặt cầu ngoại tiếp hình lập phương bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{3\\sqrt{3}}{2}\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{3\\sqrt{2}}{2}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy nửa đường chéo mặt"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{3}{2}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Nhầm sang mặt cầu nội tiếp (tiếp xúc các mặt)"
+     }
+    },
+    {
+     "noi_dung": "3\\sqrt{3}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ (đường kính) làm bán kính"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{3\\sqrt{3}}{2}\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{3\\sqrt{2}}{2}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy nửa đường chéo mặt"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{3}{2}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Nhầm sang mặt cầu nội tiếp (tiếp xúc các mặt)"
+     }
+    },
+    {
+     "phuong_an": "3\\sqrt{3}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ (đường kính) làm bán kính"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{3\\sqrt{3}}{2}\\text{ cm}",
+    "so": 2.598076211353316
+   },
+   "do_kho": 0.34,
+   "dap_so_engine": 2.598076211353316
+  },
+  {
+   "id": "MC-HH-J03.TLN.1",
+   "mau_cau": "MC-HH-J03",
+   "bien_the": {
+    "c": "3"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lap-phuong",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp hình lập phương"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "C|c=3",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-45",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-45 + geometry/problem-specs.json#HKN-45",
+    "mau_cau": "MC-HH-J03"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $3$ cm. Bán kính mặt cầu ngoại tiếp hình lập phương bằng bao nhiêu (đơn vị: cm) (làm tròn đến hàng phần trăm)?",
+   "dap_an": "2,6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 2.598076211353316,
+   "dap_so": {
+    "gia_tri": "\\dfrac{3\\sqrt{3}}{2}\\text{ cm}",
+    "so": 2.598076211353316
+   },
+   "do_kho": 0.442,
+   "dap_so_engine": 2.598076211353316
+  },
+  {
+   "id": "MC-HH-J03.TN.2",
+   "mau_cau": "MC-HH-J03",
+   "bien_the": {
+    "c": "4"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lap-phuong",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp hình lập phương"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "C|c=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-45",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-45 + geometry/problem-specs.json#HKN-45",
+    "mau_cau": "MC-HH-J03"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $4$ cm. Bán kính mặt cầu ngoại tiếp hình lập phương bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2\\sqrt{3}\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "2\\sqrt{2}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy nửa đường chéo mặt"
+     }
+    },
+    {
+     "noi_dung": "2\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Nhầm sang mặt cầu nội tiếp (tiếp xúc các mặt)"
+     }
+    },
+    {
+     "noi_dung": "4\\sqrt{3}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ (đường kính) làm bán kính"
+     }
+    }
+   ],
+   "dap_an": "2\\sqrt{3}\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "2\\sqrt{2}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy nửa đường chéo mặt"
+     }
+    },
+    {
+     "phuong_an": "2\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Nhầm sang mặt cầu nội tiếp (tiếp xúc các mặt)"
+     }
+    },
+    {
+     "phuong_an": "4\\sqrt{3}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ (đường kính) làm bán kính"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2\\sqrt{3}\\text{ cm}",
+    "so": 3.4641016151377544
+   },
+   "do_kho": 0.398,
+   "dap_so_engine": 3.4641016151377544
+  },
+  {
+   "id": "MC-HH-J03.TLN.2",
+   "mau_cau": "MC-HH-J03",
+   "bien_the": {
+    "c": "4"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lap-phuong",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp hình lập phương"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "C|c=4",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-45",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-45 + geometry/problem-specs.json#HKN-45",
+    "mau_cau": "MC-HH-J03"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $4$ cm. Bán kính mặt cầu ngoại tiếp hình lập phương bằng bao nhiêu (đơn vị: cm) (làm tròn đến hàng phần trăm)?",
+   "dap_an": "3,46",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.4641016151377544,
+   "dap_so": {
+    "gia_tri": "2\\sqrt{3}\\text{ cm}",
+    "so": 3.4641016151377544
+   },
+   "do_kho": 0.443,
+   "dap_so_engine": 3.4641016151377544
+  },
+  {
+   "id": "MC-HH-J03.TN.3",
+   "mau_cau": "MC-HH-J03",
+   "bien_the": {
+    "c": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lap-phuong",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp hình lập phương"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "C|c=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-45",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-45 + geometry/problem-specs.json#HKN-45",
+    "mau_cau": "MC-HH-J03"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $6$ cm. Bán kính mặt cầu ngoại tiếp hình lập phương bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "3\\sqrt{3}\\text{ cm}",
+     "dung": true
+    },
+    {
+     "noi_dung": "3\\sqrt{2}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy nửa đường chéo mặt"
+     }
+    },
+    {
+     "noi_dung": "3\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Nhầm sang mặt cầu nội tiếp (tiếp xúc các mặt)"
+     }
+    },
+    {
+     "noi_dung": "6\\sqrt{3}\\text{ cm}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ (đường kính) làm bán kính"
+     }
+    }
+   ],
+   "dap_an": "3\\sqrt{3}\\text{ cm}",
+   "nhieu": [
+    {
+     "phuong_an": "3\\sqrt{2}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Lấy nửa đường chéo mặt"
+     }
+    },
+    {
+     "phuong_an": "3\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-hinh-dung",
+      "mo_ta": "Nhầm sang mặt cầu nội tiếp (tiếp xúc các mặt)"
+     }
+    },
+    {
+     "phuong_an": "6\\sqrt{3}\\text{ cm}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy đường chéo $AC'$ (đường kính) làm bán kính"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "3\\sqrt{3}\\text{ cm}",
+    "so": 5.196152422706632
+   },
+   "do_kho": 0.341,
+   "dap_so_engine": 5.196152422706632
+  },
+  {
+   "id": "MC-HH-J03.TLN.3",
+   "mau_cau": "MC-HH-J03",
+   "bien_the": {
+    "c": "6"
+   },
+   "chu_de": "khoi-tron-xoay",
+   "dang": "mat-cau-ngoai-tiep.lap-phuong",
+   "dang_tx": "tx.noi-tiep-cau",
+   "lop": 12,
+   "yccd": [
+    "12.TX.1"
+   ],
+   "kien_thuc": [
+    "Bán kính mặt cầu ngoại tiếp hình lập phương"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "C|c=6",
+   "nguon": {
+    "loai": "mvp",
+    "ma": "HKN-45",
+    "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-45 + geometry/problem-specs.json#HKN-45",
+    "mau_cau": "MC-HH-J03"
+   },
+   "de_bai": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $6$ cm. Bán kính mặt cầu ngoại tiếp hình lập phương bằng bao nhiêu (đơn vị: cm) (làm tròn đến hàng phần trăm)?",
+   "dap_an": "5,2",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 5.196152422706632,
+   "dap_so": {
+    "gia_tri": "3\\sqrt{3}\\text{ cm}",
+    "so": 5.196152422706632
+   },
+   "do_kho": 0.489,
+   "dap_so_engine": 5.196152422706632
+  }
+ ]
+}

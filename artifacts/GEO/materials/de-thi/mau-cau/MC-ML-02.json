@@ -1,0 +1,225 @@
+{
+ "id": "MC-ML-02",
+ "ten": "Phương trình mũ cơ bản",
+ "chu_de": "ham-so-mu-logarit",
+ "dang": "ml.pt-mu-co-ban",
+ "dang_tx": "ml.pt-mu",
+ "yccd": [
+  "11.ML.3"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-ML-02",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "NB"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-ML-02",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "b": [
+   "2",
+   "3",
+   "5"
+  ],
+  "t": [
+   "2",
+   "3",
+   "4"
+  ],
+  "q": [
+   "1",
+   "-1",
+   "2"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "M": "b**t",
+  "ex": "x+q"
+ },
+ "boi_canh": "",
+ "hoi": "Nghiệm của phương trình ${b}^{{ex}}={M}$ là",
+ "dap_so": "t-q",
+ "nhieu": [
+  {
+   "bieu_thuc": "t+q",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Chuyển vế sai dấu"
+   }
+  },
+  {
+   "bieu_thuc": "M/b-q",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Coi $b^u=M\\Leftrightarrow u=\\dfrac Mb$"
+   }
+  },
+  {
+   "bieu_thuc": "t",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Quên số hạng $q$ trong số mũ"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "x=",
+ "hau_to": "",
+ "duong": false,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-ML-02']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "b": "2",
+   "t": "2",
+   "q": "1"
+  },
+  {
+   "b": "2",
+   "t": "2",
+   "q": "-1"
+  },
+  {
+   "b": "2",
+   "t": "2",
+   "q": "2"
+  },
+  {
+   "b": "2",
+   "t": "3",
+   "q": "1"
+  },
+  {
+   "b": "2",
+   "t": "3",
+   "q": "-1"
+  },
+  {
+   "b": "2",
+   "t": "3",
+   "q": "2"
+  },
+  {
+   "b": "2",
+   "t": "4",
+   "q": "1"
+  },
+  {
+   "b": "2",
+   "t": "4",
+   "q": "-1"
+  },
+  {
+   "b": "2",
+   "t": "4",
+   "q": "2"
+  },
+  {
+   "b": "3",
+   "t": "2",
+   "q": "1"
+  },
+  {
+   "b": "3",
+   "t": "2",
+   "q": "-1"
+  },
+  {
+   "b": "3",
+   "t": "2",
+   "q": "2"
+  },
+  {
+   "b": "3",
+   "t": "3",
+   "q": "1"
+  },
+  {
+   "b": "3",
+   "t": "3",
+   "q": "-1"
+  },
+  {
+   "b": "3",
+   "t": "3",
+   "q": "2"
+  },
+  {
+   "b": "3",
+   "t": "4",
+   "q": "1"
+  },
+  {
+   "b": "3",
+   "t": "4",
+   "q": "-1"
+  },
+  {
+   "b": "3",
+   "t": "4",
+   "q": "2"
+  },
+  {
+   "b": "5",
+   "t": "2",
+   "q": "1"
+  },
+  {
+   "b": "5",
+   "t": "2",
+   "q": "-1"
+  },
+  {
+   "b": "5",
+   "t": "2",
+   "q": "2"
+  },
+  {
+   "b": "5",
+   "t": "3",
+   "q": "1"
+  },
+  {
+   "b": "5",
+   "t": "3",
+   "q": "-1"
+  },
+  {
+   "b": "5",
+   "t": "3",
+   "q": "2"
+  },
+  {
+   "b": "5",
+   "t": "4",
+   "q": "1"
+  },
+  {
+   "b": "5",
+   "t": "4",
+   "q": "-1"
+  },
+  {
+   "b": "5",
+   "t": "4",
+   "q": "2"
+  }
+ ],
+ "so_bien_the": 27,
+ "so_cau_sinh": 48,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

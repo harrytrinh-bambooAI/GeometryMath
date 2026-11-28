@@ -1,0 +1,94 @@
+{
+ "id": "BM-067",
+ "nguon": {
+  "loai": "de-chinh-thuc",
+  "ref": "LG-004 Phòng GD&ĐT Quốc Oai — đề thi thử vào 10 lần 1 (2024-2025) + HDC, Câu 1b, đề trang 1, HDC trang 2/6 — https://cdn.thuvienphapluat.vn/uploads/Hoidapphapluat/2024/TTTT/240502/Toan/HN/de-thi-thu-toan-vao-lop-10-lan-1-nam-2024-2025-phong-gddt-quoc-oai-ha-noi.pdf (tải 27/11/2026)"
+ },
+ "cap": "thcs",
+ "chu_de": "Rút gọn biểu thức chứa căn",
+ "muc_do": "TH",
+ "de_bai": "Rút gọn $B=\\dfrac{2\\sqrt x}{\\sqrt x-1}-\\dfrac{\\sqrt x+1}{\\sqrt x+2}-\\dfrac{2\\sqrt x+4}{x+\\sqrt x-2}$ với $x\\ge0$, $x\\ne1$.",
+ "dap_so": {
+  "gia_tri": "$B=\\dfrac{\\sqrt x+3}{\\sqrt x+2}$",
+  "so": null
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Phân tích $x+\\sqrt x-2=(\\sqrt x-1)(\\sqrt x+2)$",
+  "Quy đồng"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "chinh-thuc",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$x+\\sqrt x-2=(\\sqrt x-1)(\\sqrt x+2)$; quy đồng với mẫu chung đó.",
+   "ket_qua_trung_gian": "MTC $(\\sqrt x-1)(\\sqrt x+2)$",
+   "kien_thuc": "Phân tích nhân tử",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: MTC $(\\sqrt x-1)(\\sqrt x+2)$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Tử $=2x+4\\sqrt x-x+1-2\\sqrt x-4=x+2\\sqrt x-3$.",
+   "ket_qua_trung_gian": "$x+2\\sqrt x-3$",
+   "kien_thuc": "Biến đổi",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $x+2\\sqrt x-3$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Khai triển sai $-(\\sqrt x+1)(\\sqrt x-1)=-x-1$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$x+2\\sqrt x-3=(\\sqrt x-1)(\\sqrt x+3)$ nên $B=\\dfrac{\\sqrt x+3}{\\sqrt x+2}$.",
+   "ket_qua_trung_gian": "$\\dfrac{\\sqrt x+3}{\\sqrt x+2}$",
+   "kien_thuc": "Rút gọn",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{\\sqrt x+3}{\\sqrt x+2}$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "Kết luận $B=\\dfrac{\\sqrt x+3}{\\sqrt x+2}$ với $x\\ge0,x\\ne1$.",
+   "ket_qua_trung_gian": "KL",
+   "kien_thuc": "Kết luận kèm ĐK",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: KL",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Kết luận không kèm điều kiện, ghi \"với mọi $x\\ge0$\"",
+     "tru": 0.25
+    }
+   ]
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Khai triển sai $-(\\sqrt x+1)(\\sqrt x-1)=-x-1$",
+   "loi_giai": "B1: $x+\\sqrt x-2=(\\sqrt x-1)(\\sqrt x+2)$; quy đồng với mẫu chung đó.\nB2: Tử $=2x+4\\sqrt x-x-1-2\\sqrt x-4=x+2\\sqrt x-5$.\nB3: Không phân tích được; $B=\\dfrac{x+2\\sqrt x-5}{(\\sqrt x-1)(\\sqrt x+2)}$.\nB4: Kết luận $B=\\dfrac{x+2\\sqrt x-5}{x+\\sqrt x-2}$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B4",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Kết luận không kèm điều kiện, ghi \"với mọi $x\\ge0$\"",
+   "loi_giai": "B1: $x+\\sqrt x-2=(\\sqrt x-1)(\\sqrt x+2)$; quy đồng với mẫu chung đó.\nB2: Tử $=2x+4\\sqrt x-x+1-2\\sqrt x-4=x+2\\sqrt x-3$.\nB3: $x+2\\sqrt x-3=(\\sqrt x-1)(\\sqrt x+3)$ nên $B=\\dfrac{\\sqrt x+3}{\\sqrt x+2}$.\nB4: Vậy $B=\\dfrac{\\sqrt x+3}{\\sqrt x+2}$ với mọi $x\\ge0$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Thang HDC 1đ = 4 × 0,25. Biểu thức B đọc từ PDF đã kiểm lại bằng dòng biến đổi tử số trong HDC."
+}

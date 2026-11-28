@@ -1,0 +1,473 @@
+TRUY VẾT TC ↔ E2E   nguồn TC: ../../artifacts/GEO/work/epics   lượt: 20261122-224604
+
+Epic  Tổng TC  Ứng viên  Bắt buộc  Có test  Đạt   Trượt  Ứng viên chưa có test
+E1    76       67        67        67       67    0      0
+E2    37       37        37        0        0     0      37
+E3    54       49        49        0        0     0      49
+E4    95       94        94        0        0     0      94
+E5    43       43        43        0        0     0      43
+E6    119      117       117       0        0     0      117
+E7    45       45        45        0        0     0      45
+
+TC có test (67):
+  TC-GEO-0100  [passed]  Vào lớp bằng tên và mã lớp đúng  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0101  [passed]  Tên chưa có trong lớp thì thành học sinh mới của lớp đó  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0102  [passed]  Vào lại với cùng tên thì giữ đúng dữ liệu của mình  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0103  [passed]  Mã lớp quyết định trường và lớp  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0104  [passed]  Màn "Vào lớp" chỉ có hai ô nhập  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0105  [passed]  Tên dài đúng 60 ký tự được nhận  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0107  [passed]  Tên hiển thị rỗng  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0108  [passed]  Tên hiển thị 61 ký tự  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0109  [passed]  Mã lớp không tồn tại  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0110  [passed]  Phiên hết hạn  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0173  [passed]  Gõ sai mã lớp nhiều lần không bị khóa riêng  <- tests/e1/student-join.ui.spec.ts
+  TC-GEO-0111  [passed]  Mã giáo viên đúng  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0112  [passed]  Vào được từ điện thoại  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0113  [passed]  Mã giáo viên sai  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0114  [passed]  Học sinh không làm được việc của giáo viên  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0115  [passed]  Không có công tắc đổi vai  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0171  [passed]  Dò mã: lần thử thứ 11 trong 15 phút bị chặn  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0172  [passed]  Máy chủ không lưu mã rõ  <- server/src/test/java/vn/geo/server/it/e1/IdentityE1IT.java
+  TC-GEO-0174  [passed]  Mỗi mã vào đúng tài khoản được cấp  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0175  [passed]  Mã đã thu hồi  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0176  [passed]  Mã quá hạn dùng  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0177  [passed]  Phiên học sinh không dùng được đường lời giải của giáo viên  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0179  [passed]  Dò mã từ nhiều địa chỉ IP: lần thử thứ 11 trên cùng một tài khoản bị chặn  <- tests/e1/auth.api.spec.ts
+  TC-GEO-0116  [passed]  Một lượt gọi, một bản ghi đủ trường  <- server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java
+  TC-GEO-0117  [passed]  Đổi model bằng cấu hình  <- server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java
+  TC-GEO-0118  [passed]  Khóa của nhà cung cấp không xuống trình duyệt  <- tests/e1/ai-gateway.ui.spec.ts
+  TC-GEO-0119  [passed]  Không gửi định danh học sinh cho nhà cung cấp  <- server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java
+  TC-GEO-0120  [passed]  Nhà cung cấp trả lỗi  <- tests/e1/ai-gateway.ui.spec.ts
+  TC-GEO-0121  [passed]  Nhà cung cấp quá thời gian  <- server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java
+  TC-GEO-0122  [passed]  Bấm "Thử lại" sau lỗi  <- tests/e1/ai-gateway.ui.spec.ts
+  TC-GEO-0123  [passed]  Học sinh chỉ nhận bài của lớp mình  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0124  [passed]  Giáo viên chỉ thấy lớp mình dạy  <- tests/e1/teacher-login.ui.spec.ts
+  TC-GEO-0125  [passed]  Nội dung hệ thống đọc được từ mọi trường  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0126  [passed]  Bản ghi mới mang trường của người tạo  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0127  [passed]  Bản ghi có chủ sở hữu, phiên bản lược đồ, nguồn gốc lời giải  <- server/src/test/java/vn/geo/server/it/e1/IdentityE1IT.java
+  TC-GEO-0128  [passed]  Học sinh gọi bài của lớp khác cùng trường  <- tests/e1/ai-gateway.ui.spec.ts
+  TC-GEO-0129  [passed]  Học sinh gọi bài của trường khác  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0130  [passed]  Học sinh gọi dữ liệu của bạn cùng lớp  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0131  [passed]  Giáo viên trường khác đổi giờ mở  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0132  [passed]  Giáo viên trường khác xem Theo dõi lớp  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0133  [passed]  Giao bài chéo trường  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0134  [passed]  Thẻ xác thực bị sửa  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0170  [passed]  Bộ kiểm cách ly duyệt mọi điểm cuối bằng thẻ của trường khác  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0178  [passed]  Giáo viên không đọc được câu trả lời đã lưu của học sinh  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0800  [passed]  Con trỏ phân trang của trường này dùng với thẻ của trường khác  <- tests/e1/isolation.api.spec.ts
+  TC-GEO-0135  [passed]  Báo cáo của một lần chạy trên sáu đề  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0136  [passed]  Một đề có đáp số sai làm tỉ lệ giảm đúng công thức  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0137  [passed]  Chạy lại khi đổi model giữ cả hai báo cáo  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0138  [passed]  So với ngưỡng đề xuất  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0139  [passed]  Ghi chú AI giả lập  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0140  [passed]  Bộ đề trống  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0141  [passed]  Một đề thiếu đáp số tham chiếu  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0142  [passed]  Không bản ghi nào mang "Đã kiểm chứng" khi hình hoặc đáp số chưa khớp  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0143  [passed]  Sáu đề có đáp số tham chiếu đúng nguồn  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0144  [passed]  Đáp số nhiều giá trị lưu thành từng đại lượng  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0145  [passed]  Đáp số theo tham số có ba bộ giá trị kiểm  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0146  [passed]  Một đề, một bản ghi cho cả kho đề và bộ đề chuẩn  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0147  [passed]  Đề thiếu đáp số không vào bộ đề chuẩn một cách im lặng  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0148  [passed]  Nhãn trong tệp nguồn không thành nhãn máy  <- server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java
+  TC-GEO-0156  [passed]  Sinh đủ quy mô bằng một lệnh  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0157  [passed]  Phân bố theo công thức  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0158  [passed]  Chạy lại cho cùng quy mô  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0159  [passed]  Không lẫn vào dữ liệu mẫu  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0160  [passed]  Tên sinh ra không phải tên thật  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0801  [passed]  Bộ quét SQL bắt các mẫu cấm  <- server/src/test/java/vn/geo/server/quality/SqlLintPatternsTest.java
+  TC-GEO-0802  [passed]  Truy vấn nóng không quét tuần tự bảng lớn  <- server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java
+  TC-GEO-0804  [passed]  Khóa bộ nhớ đệm của trường này không đọc được bằng thẻ trường khác  <- tests/e1/isolation.api.spec.ts
+
+Mã trong test nhưng không có trong test_cases.md (test khung hoặc gõ sai) (3):
+  TC-KHUNG-01  [passed]  <- tests/health.api.spec.ts
+  TC-KHUNG-02  [passed]  <- tests/seed.api.spec.ts
+  TC-KHUNG-03  [passed]  <- tests/home.ui.spec.ts
+
+TC tự động hóa (E2E-UI / E2E-API / IT) CHƯA có test (385):
+  TC-GEO-0200  E2  Dựng hình HKG-01 thỏa mọi ràng buộc
+  TC-GEO-0201  E2  Dựng hình có số đo cụ thể
+  TC-GEO-0202  E2  Thẻ ràng buộc hiện ở góc hình
+  TC-GEO-0203  E2  Sai số sát dưới ngưỡng vẫn thỏa
+  TC-GEO-0204  E2  Cùng đầu vào cho cùng hình
+  TC-GEO-0205  E2  Sai số vượt ngưỡng
+  TC-GEO-0206  E2  Ràng buộc mâu thuẫn
+  TC-GEO-0207  E2  Hình suy biến
+  TC-GEO-0208  E2  Chọn hình mẫu và thấy hình ngay, không gọi AI
+  TC-GEO-0209  E2  Đổi tham số thì hình đổi theo
+  TC-GEO-0210  E2  Nhận số thập phân dấu phẩy
+  TC-GEO-0211  E2  Sáu hình mẫu đều dựng được
+  TC-GEO-0212  E2  Tham số không hợp lệ
+  TC-GEO-0213  E2  Đề khớp mang "Đã kiểm chứng"
+  TC-GEO-0214  E2  Đề không khớp mang "Cần xem lại"
+  TC-GEO-0215  E2  Đáp số theo tham số kiểm trên ba bộ giá trị
+  TC-GEO-0216  E2  Sai lệch sát dưới ngưỡng vẫn khớp
+  TC-GEO-0217  E2  Nhãn do engine tính có thể khác nhãn trong tệp nguồn
+  TC-GEO-0218  E2  Một chuỗi nhãn trên mọi màn
+  TC-GEO-0219  E2  Sai lệch vượt ngưỡng
+  TC-GEO-0220  E2  Đáp số hai giá trị, một giá trị sai
+  TC-GEO-0221  E2  AI tự khai nhãn bị bỏ qua
+  TC-GEO-0222  E2  Giáo viên không đặt được nhãn máy
+  TC-GEO-0223  E2  Nhãn không kéo theo giá trị tính xuống thiết bị học sinh
+  TC-GEO-0234  E2  Đề không tham số khớp theo dung sai tuyệt đối
+  TC-GEO-0235  E2  Đề không tham số: lệch vượt dung sai theo chữ số ghi
+  TC-GEO-0236  E2  Đáp số thập phân khớp theo nửa đơn vị chữ số cuối
+  TC-GEO-0224  E2  Đề lạ có hình kèm cảnh báo
+  TC-GEO-0225  E2  Cảnh báo luôn hiện
+  TC-GEO-0226  E2  Đề lạ được đếm vào tỉ lệ đề lạ
+  TC-GEO-0227  E2  Đề lạ không bao giờ "Đã kiểm chứng"
+  TC-GEO-0228  E2  Tọa độ AI hỏng
+  TC-GEO-0229  E2  Đề hình phẳng
+  TC-GEO-0230  E2  Danh mục đủ hình
+  TC-GEO-0231  E2  Sáu thẻ hình mẫu trên màn "Tự học"
+  TC-GEO-0232  E2  Trường nào cũng đọc được danh mục
+  TC-GEO-0233  E2  Hình mẫu thiếu giá trị mặc định
+  TC-GEO-0300  E3  Kéo để xoay
+  TC-GEO-0302  E3  Lăn chuột để thu phóng trên máy tính
+  TC-GEO-0303  E3  "Nhìn từ trên"
+  TC-GEO-0304  E3  "Nhìn từ trước"
+  TC-GEO-0305  E3  "Đặt lại" về góc nhìn ban đầu
+  TC-GEO-0306  E3  Cạnh khuất vẽ nét đứt và tính lại khi xoay
+  TC-GEO-0307  E3  Bật, tắt trục Oxyz
+  TC-GEO-0308  E3  Thu phóng có giới hạn
+  TC-GEO-0309  E3  Xoay và thu phóng không tính là thao tác trên hình
+  TC-GEO-0353  E3  "Xóa hết" xóa phần vẽ thêm, giữ hình gốc và góc nhìn
+  TC-GEO-0310  E3  Chạm chọn một cạnh
+  TC-GEO-0311  E3  Chạm chọn một mặt
+  TC-GEO-0312  E3  Chạm chọn một điểm
+  TC-GEO-0313  E3  Mỗi lần chọn là một thao tác trên hình
+  TC-GEO-0315  E3  Chạm ra ngoài hình
+  TC-GEO-0316  E3  Vẽ đoạn nối hai điểm
+  TC-GEO-0317  E3  Giao điểm của hai đường cắt nhau có tên
+  TC-GEO-0318  E3  Dựng mặt phẳng qua ba điểm
+  TC-GEO-0319  E3  Giao tuyến của mặt phẳng mới với mặt của hình
+  TC-GEO-0320  E3  Mở rộng một mặt
+  TC-GEO-0321  E3  Kéo dài một cạnh
+  TC-GEO-0322  E3  Hai đường chéo nhau
+  TC-GEO-0323  E3  Ba điểm thẳng hàng
+  TC-GEO-0324  E3  Không có điều khiển kéo mặt phẳng
+  TC-GEO-0325  E3  Thêm trung điểm
+  TC-GEO-0326  E3  Thêm điểm chia tỉ lệ
+  TC-GEO-0327  E3  Thêm điểm tự do trên cạnh
+  TC-GEO-0328  E3  Điểm mới dùng được cho công cụ khác
+  TC-GEO-0329  E3  Tỉ lệ không hợp lệ
+  TC-GEO-0330  E3  Điểm trùng điểm đã có
+  TC-GEO-0331  E3  Đo độ dài một yếu tố trung gian khi đang khóa
+  TC-GEO-0332  E3  Đo một góc trung gian khi đang khóa
+  TC-GEO-0333  E3  Đo khoảng cách từ điểm tới mặt
+  TC-GEO-0334  E3  Sau giờ mở, đại lượng đề hỏi đo được
+  TC-GEO-0335  E3  Số đo dùng dấu phẩy
+  TC-GEO-0336  E3  Đo đại lượng đề hỏi khi đang khóa
+  TC-GEO-0337  E3  Đo đại lượng cùng vai trò khi đang khóa
+  TC-GEO-0338  E3  Bài Chưa đặt giờ cũng ẩn
+  TC-GEO-0339  E3  Bài tự học đang khóa cũng ẩn
+  TC-GEO-0340  E3  Danh sách đại lượng ẩn không mang giá trị
+  TC-GEO-0352  E3  Bài chuyển Đã mở khi đang mở sẵn công cụ đo
+  TC-GEO-0341  E3  Bố cục điện thoại
+  TC-GEO-0345  E3  Sáu nút chính và nút "Thêm" trên iPhone
+  TC-GEO-0346  E3  Xoay ngang máy giữa chừng
+  TC-GEO-0351  E3  Vùng chạm đủ lớn
+  TC-GEO-0347  E3  Tên mặt không lặp chữ
+  TC-GEO-0348  E3  Mặt bốn đỉnh tô kín
+  TC-GEO-0349  E3  Hai đường chéo nhau trên hình lập phương
+  TC-GEO-0350  E3  Mặt lõm
+  TC-GEO-0400  E4  Dán đề và nhận hình
+  TC-GEO-0401  E4  Màn chờ rõ ràng
+  TC-GEO-0402  E4  Bài tự học mới bắt đầu ở mức 0
+  TC-GEO-0403  E4  Ghi thời gian từ gửi đề tới có hình
+  TC-GEO-0404  E4  Đề rỗng
+  TC-GEO-0405  E4  Đề 8001 ký tự
+  TC-GEO-0406  E4  Trợ lý lỗi khi dựng hình
+  TC-GEO-0407  E4  Đề không phải hình học
+  TC-GEO-0408  E4  Bạn khác không thấy bài tự học của mình
+  TC-GEO-0409  E4  Ảnh rõ được đọc thành chữ để sửa
+  TC-GEO-0410  E4  Sửa chữ rồi dựng hình
+  TC-GEO-0412  E4  Ảnh mờ
+  TC-GEO-0413  E4  Ảnh vượt 1 MB
+  TC-GEO-0414  E4  Trợ lý lỗi khi đọc ảnh
+  TC-GEO-0415  E4  Vào từ "Tự khám phá" của Bài của em
+  TC-GEO-0416  E4  "Mở chế độ tự học"
+  TC-GEO-0417  E4  Màn khám phá không có gợi ý, lời giải, hỏi đáp
+  TC-GEO-0418  E4  Chưa vào lớp
+  TC-GEO-0419  E4  Xem Gợi ý 1
+  TC-GEO-0420  E4  Xem Gợi ý 2
+  TC-GEO-0421  E4  Giáo viên thấy mức gợi ý vừa dùng
+  TC-GEO-0422  E4  Xem lại gợi ý không làm tăng tiến độ
+  TC-GEO-0423  E4  Gợi ý trên bài tự học
+  TC-GEO-0424  E4  Xin Gợi ý 2 khi chưa xem Gợi ý 1
+  TC-GEO-0425  E4  Giáo viên đã tắt gợi ý
+  TC-GEO-0426  E4  Gợi ý chưa xin thì chưa được gửi xuống
+  TC-GEO-0427  E4  Mất mạng lúc bấm
+  TC-GEO-0488  E4  Phản hồi gợi ý không cho lưu đệm
+  TC-GEO-0428  E4  Đủ hai gợi ý thì mở được lời giải
+  TC-GEO-0429  E4  Đếm lượt gợi ý trước khi mở lời giải
+  TC-GEO-0430  E4  Chưa xem gợi ý nào
+  TC-GEO-0431  E4  Mới xem Gợi ý 1 mà gọi thẳng lời giải
+  TC-GEO-0432  E4  Trang bài tự học không mang sẵn lời giải
+  TC-GEO-0433  E4  Hỏi đáp không mở trước lời giải của bài tự học
+  TC-GEO-0434  E4  Dán lại đề đang khóa thì bị khóa theo bài giao
+  TC-GEO-0435  E4  Bài giao mở thì bài tự học kế thừa cũng mở
+  TC-GEO-0436  E4  Đề trùng bài đã mở thì không kế thừa
+  TC-GEO-0437  E4  Bài của lớp khác không gây kế thừa
+  TC-GEO-0438  E4  Đề gần trùng cũng kế thừa
+  TC-GEO-0439  E4  Gọi thẳng lời giải của bài kế thừa khóa
+  TC-GEO-0440  E4  Giáo viên dời giờ mở
+  TC-GEO-0481  E4  Dán lại đề của bài giao Chưa đặt giờ thì lời giải tự học cũng khóa
+  TC-GEO-0482  E4  Đề viết lại với cạnh 2a vẫn kế thừa
+  TC-GEO-0483  E4  Đề viết lại câu chữ, thêm chữ vẫn kế thừa khóa
+  TC-GEO-0484  E4  Cùng hình nhưng hỏi đại lượng khác thì không kế thừa khóa
+  TC-GEO-0485  E4  Dán đề trước, giáo viên giao sau: lần xin kế tiếp bị khóa
+  TC-GEO-0486  E4  Đã xem lời giải tự học, sau đó giáo viên giao đúng đề: xin lại thì bị khóa
+  TC-GEO-0487  E4  Bài kế thừa khóa dùng gợi ý của đề kho
+  TC-GEO-0489  E4  Cùng hình nhưng khác tham số thì không kế thừa
+  TC-GEO-0490  E4  Dán trước, giao sau: gọi thẳng lời giải bị từ chối
+  TC-GEO-0491  E4  Dữ liệu gợi ý của bài kế thừa khóa không lộ
+  TC-GEO-0492  E4  Đề không dựng được bằng hình mẫu không có lời giải tự học
+  TC-GEO-0441  E4  Bấm một bước, hình tô đúng đối tượng
+  TC-GEO-0442  E4  Đổi bước thì đổi phần tô
+  TC-GEO-0443  E4  "Bước sau", "Bước trước"
+  TC-GEO-0444  E4  Nhãn của lời giải
+  TC-GEO-0445  E4  Xem lời giải được ghi nhận
+  TC-GEO-0446  E4  Trên iPhone
+  TC-GEO-0447  E4  Bước không có đối tượng để tô
+  TC-GEO-0448  E4  Chuyển bước nhanh
+  TC-GEO-0449  E4  Phần vẽ thêm hiện dần theo bước
+  TC-GEO-0450  E4  "Vì sao nghĩ ra bước này?"
+  TC-GEO-0451  E4  Quay lại bước trước thì phần vẽ thêm bớt đi
+  TC-GEO-0452  E4  Nhảy thẳng tới bước cuối
+  TC-GEO-0453  E4  Bước không có phần vẽ thêm
+  TC-GEO-0454  E4  Câu trả lời có nguồn "Giáo án mẫu"
+  TC-GEO-0455  E4  Câu trả lời có nguồn "AI soạn"
+  TC-GEO-0456  E4  Câu hỏi ngoài giáo trình
+  TC-GEO-0457  E4  Màn chờ khi trợ lý đang trả lời
+  TC-GEO-0458  E4  Câu hỏi được ghi nhận
+  TC-GEO-0459  E4  Nguồn nêu ra luôn mở được
+  TC-GEO-0460  E4  Trợ lý lỗi
+  TC-GEO-0461  E4  Câu hỏi rỗng hoặc quá dài
+  TC-GEO-0462  E4  Giáo viên đã tắt hỏi đáp
+  TC-GEO-0463  E4  Xem nhật ký của mình
+  TC-GEO-0464  E4  Lọc theo bài
+  TC-GEO-0465  E4  Mở lại câu trả lời đã lưu
+  TC-GEO-0466  E4  Chỉ thấy câu của mình
+  TC-GEO-0467  E4  Bài chưa có câu hỏi
+  TC-GEO-0468  E4  Con trỏ hỏng
+  TC-GEO-0493  E4  Câu trả lời từng bị chặn mở lại vẫn là câu thay thế
+  TC-GEO-0469  E4  Bấm từ khóa trong gợi ý
+  TC-GEO-0470  E4  Bài giảng do AI viết mang nhãn chờ duyệt
+  TC-GEO-0471  E4  Từ khóa trong lời giải
+  TC-GEO-0472  E4  Đóng hộp bài giảng
+  TC-GEO-0473  E4  Cụm từ không có bài giảng
+  TC-GEO-0474  E4  Bài giảng không lộ đáp số của bài đang khóa
+  TC-GEO-0475  E4  Không dùng nhãn "Giáo viên đã duyệt"
+  TC-GEO-0476  E4  Đủ 10 bài giảng với nguồn và nhãn
+  TC-GEO-0477  E4  Mỗi bài có từ khóa trỏ tới
+  TC-GEO-0478  E4  Mọi trường đọc được
+  TC-GEO-0479  E4  Bài giảng chứa lời giải của một đề trong kho
+  TC-GEO-0480  E4  Bài giảng "Giáo án mẫu" thiếu tham chiếu nguồn
+  TC-GEO-0494  E4  Cờ chờ soát hiện cho học sinh và giáo viên
+  TC-GEO-0500  E5  Mở Kho đề
+  TC-GEO-0501  E5  Lọc theo hai nhóm cùng lúc
+  TC-GEO-0502  E5  Lọc theo hình
+  TC-GEO-0503  E5  Dòng đếm không đổi theo bộ lọc
+  TC-GEO-0504  E5  Nội dung một thẻ đề
+  TC-GEO-0505  E5  Dùng được trên điện thoại
+  TC-GEO-0506  E5  Lọc không có kết quả
+  TC-GEO-0507  E5  Học sinh gọi Kho đề
+  TC-GEO-0508  E5  Không có tìm kiếm và thêm đề
+  TC-GEO-0509  E5  Giá trị lọc không hợp lệ
+  TC-GEO-0510  E5  Đề đã kiểm chứng
+  TC-GEO-0511  E5  Đề cần xem lại
+  TC-GEO-0512  E5  Kho đề đứng tên Giáo viên mẫu
+  TC-GEO-0513  E5  Đề chưa tính nhãn
+  TC-GEO-0514  E5  Không có "Giáo viên đã duyệt"
+  TC-GEO-0515  E5  Bốn phần của trang chi tiết
+  TC-GEO-0516  E5  Giáo viên thấy lời giải dù bài đang khóa với học sinh
+  TC-GEO-0517  E5  Chip đáp số khớp tính toán
+  TC-GEO-0518  E5  Hình xoay được trên trang chi tiết
+  TC-GEO-0519  E5  Xem trên điện thoại
+  TC-GEO-0520  E5  Đề không có lời giải
+  TC-GEO-0521  E5  Không có nút "Sửa (sắp có)" và "Trình chiếu"
+  TC-GEO-0522  E5  Học sinh gọi trang chi tiết đề
+  TC-GEO-0523  E5  Mã đề không tồn tại
+  TC-GEO-0541  E5  Giáo viên trường khác gọi lời giải của đề tự nhập
+  TC-GEO-0542  E5  Giáo viên gọi lời giải của đề tự nhập của học sinh trường mình
+  TC-GEO-0524  E5  Nạp sáu đề nguồn đủ trường
+  TC-GEO-0525  E5  Nhãn do engine tính lại
+  TC-GEO-0526  E5  Kết quả nạp nêu chỗ nhãn khác tệp
+  TC-GEO-0527  E5  Đếm số đề đã kiểm chứng so với tiêu chí MVP
+  TC-GEO-0528  E5  Sửa lời giải tạo phiên bản mới, bài đã giao giữ phiên bản cũ
+  TC-GEO-0529  E5  Tính lại nhãn khi engine đổi
+  TC-GEO-0530  E5  Đề thiếu đáp số
+  TC-GEO-0531  E5  Sửa tại chỗ lời giải đã giao bị từ chối
+  TC-GEO-0532  E5  Tải lần lượt hết kho
+  TC-GEO-0533  E5  Dữ liệu đổi giữa chừng
+  TC-GEO-0534  E5  Phân trang cùng bộ lọc
+  TC-GEO-0535  E5  Phản hồi không có tổng số
+  TC-GEO-0536  E5  Không OFFSET, không truy vấn lặp theo dòng
+  TC-GEO-0537  E5  Hết danh sách
+  TC-GEO-0538  E5  Đổi bộ lọc giữa chừng
+  TC-GEO-0539  E5  Con trỏ hỏng
+  TC-GEO-0540  E5  Xin trang quá lớn
+  TC-GEO-0600  E6  Trường, giáo viên, lớp, học sinh mẫu
+  TC-GEO-0601  E6  Bài giao mẫu đủ ba trạng thái
+  TC-GEO-0602  E6  Tiến độ mẫu của lớp 11A1
+  TC-GEO-0603  E6  Nạp lại không nhân đôi
+  TC-GEO-0604  E6  Không lẫn dữ liệu thử tải
+  TC-GEO-0605  E6  Danh sách lớp ở bước 1
+  TC-GEO-0606  E6  Giao cho một lớp
+  TC-GEO-0607  E6  Nút giao ghi tên lớp đang chọn
+  TC-GEO-0608  E6  Học sinh vào lớp sau vẫn thấy bài
+  TC-GEO-0609  E6  Giao lại cùng đề cho cùng lớp
+  TC-GEO-0610  E6  Bấm đúp nút giao
+  TC-GEO-0611  E6  Không có giao theo bộ
+  TC-GEO-0696  E6  Hai yêu cầu giao cùng đề gửi đồng thời
+  TC-GEO-0865  E6  Cùng đề nhưng lời giải đã có phiên bản mới vẫn là cùng đề
+  TC-GEO-0612  E6  Mặc định cả hai bật
+  TC-GEO-0613  E6  Tắt gợi ý rồi giao
+  TC-GEO-0614  E6  Tắt hỏi đáp rồi giao
+  TC-GEO-0615  E6  Tắt cả hai vẫn giao được
+  TC-GEO-0616  E6  Giờ mở độc lập với công tắc
+  TC-GEO-0617  E6  Không đổi được công tắc sau khi giao
+  TC-GEO-0618  E6  Đặt giờ tương lai
+  TC-GEO-0619  E6  Để trống giờ mở
+  TC-GEO-0620  E6  Dòng nhắc trước khi giao
+  TC-GEO-0621  E6  "Ngay bây giờ"
+  TC-GEO-0622  E6  Giờ Việt Nam, lưu UTC
+  TC-GEO-0623  E6  Thiết bị ở múi giờ khác
+  TC-GEO-0624  E6  Giờ ở quá khứ
+  TC-GEO-0625  E6  Đồng hồ máy giáo viên sai
+  TC-GEO-0626  E6  Không có "Sau buổi học tới"
+  TC-GEO-0627  E6  Đổi giờ khi Sắp mở
+  TC-GEO-0628  E6  Đặt giờ lần đầu cho bài Chưa đặt giờ
+  TC-GEO-0629  E6  Mở ngay có hộp xác nhận
+  TC-GEO-0630  E6  Xác nhận mở ngay
+  TC-GEO-0631  E6  Hủy mở ngay
+  TC-GEO-0632  E6  Mở ngay từ Chưa đặt giờ
+  TC-GEO-0633  E6  Dời giờ muộn hơn thì giờ cũ không còn hiệu lực
+  TC-GEO-0634  E6  Ghi nhật ký đổi giờ
+  TC-GEO-0635  E6  Đổi giờ khi đã Đã mở
+  TC-GEO-0636  E6  Đổi giờ về quá khứ
+  TC-GEO-0637  E6  Hai lần đổi chồng nhau
+  TC-GEO-0638  E6  Không có thao tác xóa giờ đã đặt
+  TC-GEO-0699  E6  Giờ mở trôi qua trong lúc đang mở hộp "Đổi giờ"
+  TC-GEO-0867  E6  "Mở ngay" trên điện thoại
+  TC-GEO-0868  E6  Đổi sang giờ chỉ sau giờ máy chủ một giây
+  TC-GEO-0639  E6  Bài Sắp mở, đang làm dở
+  TC-GEO-0640  E6  Bài Chưa đặt giờ, chưa bắt đầu
+  TC-GEO-0641  E6  Bài Đã mở, đã xem lời giải
+  TC-GEO-0642  E6  Đã mở bài nhưng chưa dùng gợi ý
+  TC-GEO-0643  E6  Bấm vào một bài
+  TC-GEO-0644  E6  Trên iPhone
+  TC-GEO-0645  E6  Lớp chưa có bài
+  TC-GEO-0646  E6  Danh sách không mang lời giải
+  TC-GEO-0647  E6  Không có thẻ chuỗi ngày và phần trăm theo dạng
+  TC-GEO-0648  E6  Con trỏ hỏng
+  TC-GEO-0869  E6  Dòng "Hôm nay em có n bài cần làm"
+  TC-GEO-0877  E6  Không còn bài cần làm
+  TC-GEO-0649  E6  Mở xem trước
+  TC-GEO-0650  E6  Lời giải khóa trong xem trước
+  TC-GEO-0651  E6  Gợi ý xem được, không ghi sự kiện
+  TC-GEO-0652  E6  Thoát xem trước
+  TC-GEO-0653  E6  Dữ liệu của màn xem trước không chứa lời giải
+  TC-GEO-0654  E6  Hỏi đáp trong xem trước cũng không lộ
+  TC-GEO-0655  E6  Công cụ đo trong xem trước ẩn đại lượng đề hỏi
+  TC-GEO-0870  E6  Đã chọn giờ ở bước 3: thẻ khóa ghi giờ đang chọn
+  TC-GEO-0871  E6  Đề đã giao: theo giờ mở của chính bài giao
+  TC-GEO-0872  E6  Xem trước bài đã Đã mở không tải lời giải
+  TC-GEO-0656  E6  Đã mở thì trả lời giải
+  TC-GEO-0657  E6  Đúng giờ mở thì mở
+  TC-GEO-0658  E6  Thẻ khóa của bài Sắp mở
+  TC-GEO-0659  E6  Thẻ khóa của bài Chưa đặt giờ
+  TC-GEO-0660  E6  Chưa đặt giờ: gửi thẳng yêu cầu lời giải
+  TC-GEO-0661  E6  Một giây trước giờ mở
+  TC-GEO-0662  E6  Dữ liệu trang Làm bài của bài đang khóa
+  TC-GEO-0663  E6  Đồng hồ thiết bị bị chỉnh
+  TC-GEO-0664  E6  Lời giải đã mở cho lớp này không lọt sang lớp còn khóa
+  TC-GEO-0665  E6  Học sinh lớp khác gọi lời giải của bài đã mở
+  TC-GEO-0666  E6  Đường đọc thông thường không tới được nơi lưu lời giải
+  TC-GEO-0695  E6  Một giây sau giờ mở thì vẫn mở
+  TC-GEO-0698  E6  Phản hồi lời giải không cho lưu đệm
+  TC-GEO-0863  E6  Vai CSDL của ứng dụng không tự ghi được giờ mở, tiến độ, nhãn máy, tài khoản giáo viên
+  TC-GEO-0873  E6  Tọa độ đỉnh trong dữ liệu trang là dữ kiện, không tính là lộ
+  TC-GEO-0667  E6  Hỏi thẳng đáp số khi đang khóa
+  TC-GEO-0668  E6  Nhắc lại gợi ý không tính thêm lượt
+  TC-GEO-0669  E6  Công thức và phương pháp tổng quát vẫn được trả lời
+  TC-GEO-0670  E6  Sau giờ mở, trợ lý được nêu đáp số
+  TC-GEO-0671  E6  AI buột ra đáp số: bị chặn ở máy chủ
+  TC-GEO-0672  E6  Dạng viết tương đương của đáp số
+  TC-GEO-0673  E6  Xin giải từng bước
+  TC-GEO-0674  E6  Học sinh chưa xem gợi ý nào
+  TC-GEO-0675  E6  Bài Chưa đặt giờ cũng được bảo vệ
+  TC-GEO-0874  E6  Chữ "a" không ở vị trí kết luận không bị chặn
+  TC-GEO-0875  E6  Bộ kiểm soát đáp án lỗi thì không trả câu trả lời
+  TC-GEO-0878  E6  AI nêu đáp số đã làm tròn: bị chặn ở máy chủ
+  TC-GEO-0676  E6  Một lần chạy sạch
+  TC-GEO-0677  E6  Có ca dán lại đề đang khóa vào tự học
+  TC-GEO-0678  E6  Kiểm cả dữ liệu trả về của các kênh
+  TC-GEO-0679  E6  Chạy lại khi đổi model
+  TC-GEO-0680  E6  Một câu làm lộ
+  TC-GEO-0681  E6  Ghi chú AI giả lập
+  TC-GEO-0862  E6  Bộ câu thử: ca giả làm giáo viên không moi được đáp án
+  TC-GEO-0876  E6  Có ca đề gần trùng (đổi tên điểm) và đây là ca chặn phát hành
+  TC-GEO-0682  E6  Bộ câu thử đủ số câu và nhóm
+  TC-GEO-0683  E6  Mỗi câu gắn bài và đáp số tham chiếu
+  TC-GEO-0684  E6  Phiên bản bộ câu thử
+  TC-GEO-0685  E6  Câu trùng
+  TC-GEO-0686  E6  Câu không gắn bài
+  TC-GEO-0687  E6  Tới giờ thì lời giải tự mở
+  TC-GEO-0688  E6  Đếm ngược trên thẻ khóa
+  TC-GEO-0689  E6  Giáo viên mở ngay khi học sinh đang xem
+  TC-GEO-0690  E6  "Bài của em" đang mở cũng đổi nhãn
+  TC-GEO-0692  E6  Trước giờ mở trang không giữ sẵn lời giải
+  TC-GEO-0693  E6  Mất mạng đúng lúc tới giờ
+  TC-GEO-0694  E6  Đồng hồ thiết bị nhanh
+  TC-GEO-0697  E6  Trang đang chờ khóa hỏi lại trạng thái không quá 8 giây một lần
+  TC-GEO-0864  E6  Phản hồi trạng thái khóa không cho lưu đệm
+  TC-GEO-0860  E6  Nhật ký đổi giờ chỉ thêm, không sửa, không xóa
+  TC-GEO-0861  E6  Vượt giới hạn yêu cầu lời giải thì bị chặn, dùng bình thường thì không
+  TC-GEO-0700  E7  Bốn thẻ tổng
+  TC-GEO-0701  E7  Bảng học sinh
+  TC-GEO-0702  E7  Tình trạng khi bài còn khóa
+  TC-GEO-0703  E7  Tình trạng sau khi mở lời giải
+  TC-GEO-0704  E7  Thẻ vàng khi lời giải khóa
+  TC-GEO-0705  E7  Vào trang từ mục "Theo dõi"
+  TC-GEO-0706  E7  Xem nhanh trên điện thoại
+  TC-GEO-0707  E7  Chưa em nào mở bài
+  TC-GEO-0708  E7  Không có xếp hạng, không sắp theo kết quả
+  TC-GEO-0709  E7  Không có "Nên nhắc lại trên lớp"
+  TC-GEO-0710  E7  Học sinh gọi Theo dõi lớp
+  TC-GEO-0711  E7  Trang không mang lời giải
+  TC-GEO-0712  E7  Trang không đọc bảng sự kiện, không truy vấn lặp theo học sinh
+  TC-GEO-0744  E7  Thanh bên không có "Tổng quan" và "Lớp học"
+  TC-GEO-0713  E7  Mức gợi ý của từng em
+  TC-GEO-0714  E7  Số câu hỏi của từng em
+  TC-GEO-0715  E7  Câu hỏi của một em
+  TC-GEO-0716  E7  Khối "Học sinh đang hỏi gì" gộp câu trùng
+  TC-GEO-0717  E7  Gộp không phân biệt hoa thường và khoảng trắng
+  TC-GEO-0718  E7  Chưa ai hỏi
+  TC-GEO-0719  E7  Không lẫn câu hỏi của bài khác, lớp khác
+  TC-GEO-0720  E7  Không có nhận định do AI viết
+  TC-GEO-0721  E7  Mở bài tạo sự kiện mở bài
+  TC-GEO-0722  E7  Mỗi công cụ là một thao tác trên hình
+  TC-GEO-0723  E7  Sự kiện gợi ý ghi bền
+  TC-GEO-0724  E7  Tỉ lệ phiên có thao tác trên hình
+  TC-GEO-0725  E7  Ranh giới phiên làm bài
+  TC-GEO-0726  E7  Bài tự học cũng ghi sự kiện
+  TC-GEO-0727  E7  Công cụ không tính
+  TC-GEO-0728  E7  Gửi lại cùng một lô
+  TC-GEO-0729  E7  Mất mạng khi đang thao tác
+  TC-GEO-0730  E7  Không ghi sự kiện thay người khác
+  TC-GEO-0731  E7  Sự kiện cho bài không thuộc lớp mình
+  TC-GEO-0740  E7  Khoảng nghỉ 29 phút 59 giây vẫn cùng phiên
+  TC-GEO-0741  E7  Khoảng nghỉ đúng 30 phút 0 giây mở phiên mới
+  TC-GEO-0742  E7  Gửi lại câu hỏi sau khi hết thời gian chờ không đếm hai lần
+  TC-GEO-0743  E7  Sự kiện mở bài ghi bền
+  TC-GEO-0732  E7  Sự kiện vào đúng phần theo thời gian
+  TC-GEO-0733  E7  Luôn có phần cho thời gian sắp tới
+  TC-GEO-0734  E7  Đọc sự kiện theo con trỏ, không trùng không sót
+  TC-GEO-0735  E7  Truy vấn nóng không quét toàn bảng
+  TC-GEO-0736  E7  Truy vấn sự kiện không có cận thời gian hoặc dùng OFFSET
+  TC-GEO-0737  E7  Giờ thiết bị ở tương lai bị kẹp về giờ nhận
+  TC-GEO-0738  E7  Con trỏ hỏng
+  TC-GEO-0739  E7  Hai sự kiện trùng mốc thời gian ở ranh giới trang không lặp, không sót
+
+Ứng viên E2E khác chưa có test (0) — 15 mục đầu, thêm --all để xem hết:

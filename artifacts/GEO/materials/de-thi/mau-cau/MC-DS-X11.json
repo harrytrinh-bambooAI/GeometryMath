@@ -1,0 +1,123 @@
+{
+ "id": "MC-DS-X11",
+ "ten": "Đúng/sai: hai xạ thủ (quy tắc cộng, nhân xác suất)",
+ "chu_de": "to-hop-xac-suat",
+ "dang": "ds.xs-xa-thu",
+ "dang_tx": "tk.xs-co-dien",
+ "yccd": [
+  "11.XS.1",
+  "11.XS.2"
+ ],
+ "lop": 11,
+ "ho_hinh": "MC-DS-X11",
+ "tham_so": {
+  "p": [
+   "0.6",
+   "0.7",
+   "0.8"
+  ],
+  "q": [
+   "0.5",
+   "0.9"
+  ]
+ },
+ "dan_xuat": {},
+ "boi_canh": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người một viên, xác suất trúng lần lượt là ${p:xap-xi:2}$ và ${q:xap-xi:2}$.",
+ "kieu": "xap-xi:2",
+ "y": [
+  {
+   "menh_de": "Xác suất cả hai cùng bắn trúng là ${v}$.",
+   "dap_so": "p*q",
+   "muc_do": "NB",
+   "nhieu": [
+    {
+     "bieu_thuc": "p+q-1",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Trừ thay vì nhân khi tính xác suất giao"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Xác suất không ai bắn trúng là ${v}$.",
+   "dap_so": "(1-p)*(1-q)",
+   "muc_do": "TH",
+   "nhieu": [
+    {
+     "bieu_thuc": "1-p*q",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Xác suất có đúng một người bắn trúng là ${v}$.",
+   "dap_so": "p*(1-q)+q*(1-p)",
+   "muc_do": "VD",
+   "nhieu": [
+    {
+     "bieu_thuc": "p*(1-q)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp người thứ nhất trúng"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Xác suất bia bị trúng ít nhất một viên là ${v}$.",
+   "dap_so": "1-(1-p)*(1-q)",
+   "muc_do": "VD",
+   "nhieu": [
+    {
+     "bieu_thuc": "p+q",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    }
+   ]
+  }
+ ],
+ "loai_mau": "dung-sai",
+ "loai_cau": [
+  "dung-sai"
+ ],
+ "bien_the": [
+  {
+   "p": "0.6",
+   "q": "0.5"
+  },
+  {
+   "p": "0.6",
+   "q": "0.9"
+  },
+  {
+   "p": "0.7",
+   "q": "0.5"
+  },
+  {
+   "p": "0.7",
+   "q": "0.9"
+  },
+  {
+   "p": "0.8",
+   "q": "0.5"
+  },
+  {
+   "p": "0.8",
+   "q": "0.9"
+  }
+ ],
+ "rang_buoc": [],
+ "so_bien_the": 6,
+ "so_cau_sinh": 6,
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-DS-X11"
+ },
+ "phien_ban": "v1.0 · 27/11/2026"
+}

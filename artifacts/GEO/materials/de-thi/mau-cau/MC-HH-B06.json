@@ -1,0 +1,93 @@
+{
+ "id": "MC-HH-B06",
+ "ten": "Thể tích khối chóp tứ giác đều",
+ "chu_de": "hinh-khong-gian-the-tich",
+ "dang": "the-tich.chop-deu",
+ "dang_tx": "th.chop",
+ "yccd": [
+  "11.TT.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "B",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-52",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-52 + geometry/problem-specs.json#HKN-52"
+ },
+ "tham_so": {
+  "k": [
+   "sqrt(6)/2",
+   "1",
+   "sqrt(3)/2",
+   "2"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SM": "sqrt(h**2+a**2/4)",
+  "SA": "sqrt(h**2+a**2/2)"
+ },
+ "boi_canh": "Cho hình chóp tứ giác đều $S.ABCD$ có cạnh đáy bằng $a$, $O$ là tâm của đáy và chiều cao $SO={h}$.",
+ "hoi": "Thể tích khối chóp $S.ABCD$ bằng",
+ "dap_so": "a**2*h/3",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "a**2*h",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Quên hệ số $\\dfrac13$"
+   }
+  },
+  {
+   "bieu_thuc": "a**2*h/6",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Dùng hệ số $\\dfrac16$"
+   }
+  },
+  {
+   "bieu_thuc": "a**2*h/2",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Tính diện tích đáy là $\\dfrac{a^2}{2}$ (nhầm hình vuông với tam giác)"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-52",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "h": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "sqrt(6)/2"
+  },
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(3)/2"
+  },
+  {
+   "k": "2"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

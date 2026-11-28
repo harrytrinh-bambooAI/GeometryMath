@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>So sánh 4 hướng style GEO</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#F6F7F9;--sf:#fff;--tx:#14181F;--mut:#4B5563;--ln:#D6DAE0;--pri:#1D4ED8}
+*{box-sizing:border-box;margin:0}body{font-family:'Be Vietnam Pro',sans-serif;font-size:15px;color:var(--tx);background:var(--bg);padding:28px 32px 60px;max-width:1500px;margin:auto}
+h1{font-size:26px}h2{font-size:19px;margin:30px 0 10px}p.lead{color:var(--mut);margin:6px 0 0;max-width:900px;line-height:1.5}
+.tag{display:inline-block;font-size:14px;background:#E0E7FF;color:#1E3A8A;border-radius:6px;padding:2px 8px;font-weight:600}
+.hdr{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cell{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:6px}
+.cell h3{font-size:15px}.cell button{all:unset;cursor:zoom-in;display:block;border-radius:6px;overflow:hidden;border:1px solid var(--ln);background:#eee;height:190px}
+.cell button:focus-visible{outline:3px solid var(--pri)}
+.cell img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.cell small{color:var(--mut);font-size:14px}
+table{width:100%;border-collapse:collapse;background:var(--sf);border:1px solid var(--ln);border-radius:10px;overflow:hidden}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--ln);font-size:14px;line-height:1.5}
+thead th{background:#EEF1F6;font-size:15px;position:sticky;top:0}tbody th{width:150px;background:#FAFBFC;color:var(--mut)}
+.rec{background:#ECFDF5;border:1px solid #6EE7B7;border-radius:10px;padding:14px 18px;line-height:1.6}
+dialog{border:none;padding:0;background:transparent;max-width:96vw;max-height:96vh}dialog::backdrop{background:rgba(0,0,0,.75)}
+dialog img{max-width:96vw;max-height:94vh;display:block;border-radius:8px;background:#fff}
+@media(max-width:900px){.row{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+<div class="hdr"><h1>4 hướng style cho GEO</h1><span class="tag">T-261126-39 · v0.1 · 26/11/2026</span><span class="tag">Chỉ mô phỏng tĩnh · chưa chọn hướng</span></div>
+<p class="lead">Mỗi hướng dựng lại 3 màn từ bản mẫu S23 (HS làm bài, “Cả lớp vướng ở đâu”, Soát lời giải) và một bảng component. Bấm ảnh để phóng to. Dữ liệu mẫu: lớp 11A1, hình chóp S.ABCD. Chọn hướng là quyết định của owner.</p>
+
+<h2>Ảnh các màn</h2>
+<div id="gal"></div>
+
+<h2>Bảng thuộc tính</h2>
+<table><thead><tr><th></th><th>A · Lớp học sáng</th><th>B · Bảng đen tối</th><th>C · Giấy kẻ ô</th><th>D · Bảng điều khiển gọn</th></tr></thead><tbody>
+<tr><th>Chuẩn tham chiếu</th><td>Material Design 3 (tonal, pill)</td><td>IBM Carbon, theme g100</td><td>Apple HIG (iOS/iPadOS)</td><td>shadcn/Radix (token) + Fluent 2 (mật độ, tiêu điểm)</td></tr>
+<tr><th>Theme</th><td>Sáng, nền kem xanh, nhấn vàng/san hô</td><td>Tối #161616, nét phấn vàng/trắng</td><td>Sáng, giấy ô li, lề đỏ, nét bút chì</td><td>Sáng trung tính (slate), nhấn xanh</td></tr>
+<tr><th>Bố cục</th><td>Tab đáy (iPhone), rail trái (web), thẻ bento</td><td>Thanh trên (UI shell), bảng dữ liệu, trình chiếu</td><td>Thanh tab nổi phía trên, “tờ giấy” trên nền vở</td><td>Sidebar trái 224 px có nhãn, bảng + khung chi tiết phải</td></tr>
+<tr><th>Bo góc</th><td>Nút/chip/ô nhập 999 px (pill); thẻ 24; phím 16</td><td>0 px mọi nơi (chip 24 px bo tròn)</td><td>Nút/ô nhập 10; thẻ 14; phím 8</td><td>6 px; chip 4; phím 6</td></tr>
+<tr><th>Kiểu nút</th><td>Khối đặc / viền / chữ, pill</td><td>Khối vuông, viền trắng, ghost</td><td>Khối xanh, viền, chữ</td><td>Khối, viền xám, ghost (shadcn)</td></tr>
+<tr><th>Cao chạm tối thiểu</th><td>Nút 52 · phím 52 · tab 44</td><td>Nút 48 · phím 52 · hàng bảng 38–48</td><td>Nút 44 · phím 48–50 · tab 40–44</td><td>Nút 36 (web) / iPad 44–48 · phím 48</td></tr>
+<tr><th>Font (có tiếng Việt)</th><td>Nunito 400–800</td><td>IBM Plex Sans / Mono, nét phấn Patrick Hand</td><td>Be Vietnam Pro, ghi chú Caveat</td><td>Inter, số JetBrains Mono</td></tr>
+<tr><th>Bộ icon</th><td>Material Symbols Rounded, đặc (FILL 1)</td><td>Như A · màu theo token B</td><td>Như A · màu theo token C</td><td>Như A · màu theo token D</td></tr>
+<tr><th>Đồ hoạ / hình khối</th><td>Mặt tô màu phẳng, bóng đổ mềm, mảng tròn nền</td><td>Nét phấn có nhiễu, mặt mờ, chữ viết tay vàng</td><td>Nét chì rung nhẹ, mặt gạch chéo, nền ô li</td><td>Nét sắc 1,6 px, ghi cạnh a, a√2, SC</td></tr>
+<tr><th>Mật độ</th><td>Thấp, thoáng, chữ lớn</td><td>Trung bình, bảng đều</td><td>Trung bình, giống vở</td><td>Cao nhất (KPI + bảng + khung chi tiết)</td></tr>
+<tr><th>Tương phản (AA)</th><td>Nút 5,3:1 · chip ≥ 5,1:1</td><td>Chữ 16,5:1 · nút 5,0:1</td><td>Nút 5,8:1 · chip ≥ 4,6:1</td><td>Nút 6,7:1 · chip ≥ 4,6:1</td></tr>
+<tr><th>Ưu cho học sinh</th><td>Thân thiện, nút to dễ chạm, ít sợ; hợp lớp 11 trên iPhone</td><td>Ít chói khi trình chiếu; hơi “nặng” cho tự học</td><td>Gần vở toán, dễ nhận ra hình/nét; ghi chú tay</td><td>Gọn nhưng khô; ô nhập iPad vẫn to</td></tr>
+<tr><th>Ưu cho giáo viên</th><td>Dễ đọc nhanh số lớn; ít dòng trên màn</td><td>Bảng dữ liệu rõ, trình chiếu tốt</td><td>Biểu đồ kiểu viết tay dễ giảng; hạn chế khi nhiều dữ liệu</td><td>Quét nhanh 36 em, lọc, so sánh tuần; tốt nhất</td></tr>
+<tr><th>Nhược</th><td>Thẻ chiếm chỗ, ít dòng/màn; dữ liệu nhiều phải cuộn</td><td>Tối trong lớp sáng dễ mỏi; nút vuông ít thân thiện với HS</td><td>Nền ô li gây nhiễu khi bảng dày; chữ viết tay khó đọc nếu dùng quá tay</td><td>Chạm 36 px phải nâng lên 44 trên iPad; ít cảm xúc</td></tr>
+<tr><th>Rủi ro</th><td>Phụ thuộc font icon Google (cần tự lưu khi offline/PWA)</td><td>Hai theme phải bảo trì nếu giữ bản sáng</td><td>Font Caveat hiển thị dấu tiếng Việt chưa đều; cần kiểm trên iPad thật</td><td>Dễ giống mọi dashboard; cần thêm nét riêng cho HS</td></tr>
+<tr><th>Mức việc đổi so với bản mẫu</th><td>Lớn (đổi pill, rail, màu)</td><td>Lớn (đổi theme và nút)</td><td>Lớn (nền và chữ tay)</td><td>Nhỏ–vừa (gần bản mẫu hiện tại)</td></tr>
+</tbody></table>
+
+<h2>Khuyến nghị của Dom</h2>
+<div class="rec"><b>Hai tầng, một bộ token:</b> học sinh dùng <b>A</b> (iPhone/iPad: nút lớn, pill, tab đáy), giáo viên dùng <b>D</b> (web: mật độ cao, nhưng nút ≥ 44 px khi chạm iPad). <b>B</b> giữ làm chế độ “Trình chiếu” (tối, đã có màn trình chiếu trong bản mẫu). <b>C</b> là phương án nếu owner muốn bản sắc “vở toán”; nên dùng riêng cho hình vẽ và màn tự học thay vì toàn app. Quyết định thuộc owner. Chi tiết: STYLES.md.</div>
+
+<dialog id="dlg"><img id="big" alt=""></dialog>
+<script>
+const S=[['a','A · Lớp học sáng'],['b','B · Bảng đen tối'],['c','C · Giấy kẻ ô'],['d','D · Bảng điều khiển gọn']];
+const M=[['hs-lam-bai','HS làm bài'],['gv-lop','Cả lớp vướng ở đâu'],['them-de','Thêm đề · duyệt lời giải'],['component','Bảng component']];
+const g=document.getElementById('gal');
+M.forEach(([m,t])=>{g.insertAdjacentHTML('beforeend',`<h3 style="margin:14px 0 6px">${t}</h3><div class="row">${S.map(([s,n])=>`<div class="cell"><h3>${n}</h3><button type="button" data-src="png/${s}-${m}.png" aria-label="Phóng to ${n} · ${t}"><img loading="lazy" src="png/${s}-${m}.png" alt="${n} · ${t}"></button><small><a href="${s}/${m}.html">mở HTML</a></small></div>`).join('')}</div>`)});
+const d=document.getElementById('dlg'),b=document.getElementById('big');
+g.addEventListener('click',e=>{const x=e.target.closest('button[data-src]');if(x){b.src=x.dataset.src;d.showModal()}});
+d.addEventListener('click',()=>d.close());
+</script></body></html>

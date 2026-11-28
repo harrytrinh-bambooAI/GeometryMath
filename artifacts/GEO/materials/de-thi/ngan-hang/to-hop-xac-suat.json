@@ -1,0 +1,4272 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "to-hop-xac-suat",
+ "so_cau": 64,
+ "cau": [
+  {
+   "id": "MC-XS-04.TN.0",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "4",
+    "n": "3"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-04|m=4,n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $4$ viên bi đỏ và $3$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}43",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}51",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "noi_dung": "0{,}29",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "noi_dung": "0{,}57",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_an": "0{,}43",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}51",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "phuong_an": "0{,}29",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "phuong_an": "0{,}57",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}43",
+    "so": 0.42857142857142855
+   },
+   "do_kho": 0.358,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TLN.0",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "4",
+    "n": "3"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-04|m=4,n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $4$ viên bi đỏ và $3$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,43",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.42857142857142855,
+   "dap_so": {
+    "gia_tri": "0{,}43",
+    "so": 0.42857142857142855
+   },
+   "do_kho": 0.689,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TN.1",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "4",
+    "n": "5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-04|m=4,n=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $4$ viên bi đỏ và $5$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}44",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}51",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "noi_dung": "0{,}17",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "noi_dung": "0{,}56",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_an": "0{,}44",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}51",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "phuong_an": "0{,}17",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "phuong_an": "0{,}56",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}44",
+    "so": 0.4444444444444444
+   },
+   "do_kho": 0.341,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TLN.1",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "4",
+    "n": "5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-04|m=4,n=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $4$ viên bi đỏ và $5$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,44",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.4444444444444444,
+   "dap_so": {
+    "gia_tri": "0{,}44",
+    "so": 0.4444444444444444
+   },
+   "do_kho": 0.648,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TN.2",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "4",
+    "n": "7"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-04|m=4,n=7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $4$ viên bi đỏ và $7$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}49",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}54",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "noi_dung": "0{,}11",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "noi_dung": "0{,}51",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_an": "0{,}49",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}54",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "phuong_an": "0{,}11",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "phuong_an": "0{,}51",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}49",
+    "so": 0.4909090909090909
+   },
+   "do_kho": 0.392,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TLN.2",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "4",
+    "n": "7"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-04|m=4,n=7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $4$ viên bi đỏ và $7$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,49",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.4909090909090909,
+   "dap_so": {
+    "gia_tri": "0{,}49",
+    "so": 0.4909090909090909
+   },
+   "do_kho": 0.693,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TN.3",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "5",
+    "n": "3"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-04|m=5,n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $5$ viên bi đỏ và $3$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}46",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}53",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "noi_dung": "0{,}36",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "noi_dung": "0{,}54",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_an": "0{,}46",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}53",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "phuong_an": "0{,}36",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "phuong_an": "0{,}54",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}46",
+    "so": 0.4642857142857143
+   },
+   "do_kho": 0.34,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TLN.3",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "5",
+    "n": "3"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-04|m=5,n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $5$ viên bi đỏ và $3$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,46",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.4642857142857143,
+   "dap_so": {
+    "gia_tri": "0{,}46",
+    "so": 0.4642857142857143
+   },
+   "do_kho": 0.655,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TN.4",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "5",
+    "n": "7"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-04|m=5,n=7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $5$ viên bi đỏ và $7$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}47",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}51",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "noi_dung": "0{,}15",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "noi_dung": "0{,}53",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_an": "0{,}47",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}51",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "phuong_an": "0{,}15",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "phuong_an": "0{,}53",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}47",
+    "so": 0.4696969696969697
+   },
+   "do_kho": 0.372,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TLN.4",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "5",
+    "n": "7"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-04|m=5,n=7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $5$ viên bi đỏ và $7$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,47",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.4696969696969697,
+   "dap_so": {
+    "gia_tri": "0{,}47",
+    "so": 0.4696969696969697
+   },
+   "do_kho": 0.697,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TLN.5",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "6",
+    "n": "3"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-04|m=6,n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $6$ viên bi đỏ và $3$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.5,
+   "dap_so": {
+    "gia_tri": "0{,}5",
+    "so": 0.5
+   },
+   "do_kho": 0.682,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TN.6",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "6",
+    "n": "5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-04|m=6,n=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $6$ viên bi đỏ và $5$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}45",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "noi_dung": "0{,}27",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "noi_dung": "0{,}55",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_an": "0{,}45",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}5",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "phuong_an": "0{,}27",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "phuong_an": "0{,}55",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}45",
+    "so": 0.45454545454545453
+   },
+   "do_kho": 0.357,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TLN.6",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "6",
+    "n": "5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-04|m=6,n=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $6$ viên bi đỏ và $5$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,45",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.45454545454545453,
+   "dap_so": {
+    "gia_tri": "0{,}45",
+    "so": 0.45454545454545453
+   },
+   "do_kho": 0.7,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TN.7",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "6",
+    "n": "7"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-04|m=6,n=7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $6$ viên bi đỏ và $7$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}46",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "noi_dung": "0{,}19",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "noi_dung": "0{,}54",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_an": "0{,}46",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}5",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Tính như lấy có hoàn lại"
+     }
+    },
+    {
+     "phuong_an": "0{,}19",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp cùng đỏ"
+     }
+    },
+    {
+     "phuong_an": "0{,}54",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất hai bi khác màu"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}46",
+    "so": 0.46153846153846156
+   },
+   "do_kho": 0.387,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-04.TLN.7",
+   "mau_cau": "MC-XS-04",
+   "bien_the": {
+    "m": "6",
+    "n": "7"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-bi-cung-mau",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 10,
+   "yccd": [
+    "10.XS.1",
+    "11.XS.3"
+   ],
+   "kien_thuc": [
+    "Xác suất chọn hai viên bi cùng màu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-04|m=6,n=7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-04",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-04"
+   },
+   "de_bai": "Một hộp có $6$ viên bi đỏ và $7$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,46",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.46153846153846156,
+   "dap_so": {
+    "gia_tri": "0{,}46",
+    "so": 0.46153846153846156
+   },
+   "do_kho": 0.665,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-05.TN.0",
+   "mau_cau": "MC-XS-05",
+   "bien_the": {
+    "n": "5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem-so-chu-so",
+   "dang_tx": "tk.dem",
+   "lop": 10,
+   "yccd": [
+    "10.TH.1"
+   ],
+   "kien_thuc": [
+    "Đếm số có ba chữ số khác nhau"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-05|n=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-05"
+   },
+   "de_bai": "Từ các chữ số $0,1,2,\\dots,5$, lập các số tự nhiên có ba chữ số đôi một khác nhau. Số các số lập được là:",
+   "lua_chon": [
+    {
+     "noi_dung": "100",
+     "dung": true
+    },
+    {
+     "noi_dung": "120",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên loại trường hợp chữ số 0 đứng đầu"
+     }
+    },
+    {
+     "noi_dung": "180",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cho phép các chữ số lặp lại"
+     }
+    },
+    {
+     "noi_dung": "20",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng tổ hợp thay cho chỉnh hợp (bỏ thứ tự)"
+     }
+    }
+   ],
+   "dap_an": "100",
+   "nhieu": [
+    {
+     "phuong_an": "120",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên loại trường hợp chữ số 0 đứng đầu"
+     }
+    },
+    {
+     "phuong_an": "180",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cho phép các chữ số lặp lại"
+     }
+    },
+    {
+     "phuong_an": "20",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng tổ hợp thay cho chỉnh hợp (bỏ thứ tự)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "100",
+    "so": 100.0
+   },
+   "do_kho": 0.33,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-05.TLN.0",
+   "mau_cau": "MC-XS-05",
+   "bien_the": {
+    "n": "5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem-so-chu-so",
+   "dang_tx": "tk.dem",
+   "lop": 10,
+   "yccd": [
+    "10.TH.1"
+   ],
+   "kien_thuc": [
+    "Đếm số có ba chữ số khác nhau"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-05|n=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-05"
+   },
+   "de_bai": "Từ các chữ số $0,1,2,\\dots,5$, lập các số tự nhiên có ba chữ số đôi một khác nhau. Số các số lập được là bao nhiêu?",
+   "dap_an": "100",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 100.0,
+   "dap_so": {
+    "gia_tri": "100",
+    "so": 100.0
+   },
+   "do_kho": 0.628,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-05.TN.1",
+   "mau_cau": "MC-XS-05",
+   "bien_the": {
+    "n": "6"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem-so-chu-so",
+   "dang_tx": "tk.dem",
+   "lop": 10,
+   "yccd": [
+    "10.TH.1"
+   ],
+   "kien_thuc": [
+    "Đếm số có ba chữ số khác nhau"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-05|n=6",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-05"
+   },
+   "de_bai": "Từ các chữ số $0,1,2,\\dots,6$, lập các số tự nhiên có ba chữ số đôi một khác nhau. Số các số lập được là:",
+   "lua_chon": [
+    {
+     "noi_dung": "180",
+     "dung": true
+    },
+    {
+     "noi_dung": "210",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên loại trường hợp chữ số 0 đứng đầu"
+     }
+    },
+    {
+     "noi_dung": "294",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cho phép các chữ số lặp lại"
+     }
+    },
+    {
+     "noi_dung": "35",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng tổ hợp thay cho chỉnh hợp (bỏ thứ tự)"
+     }
+    }
+   ],
+   "dap_an": "180",
+   "nhieu": [
+    {
+     "phuong_an": "210",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên loại trường hợp chữ số 0 đứng đầu"
+     }
+    },
+    {
+     "phuong_an": "294",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cho phép các chữ số lặp lại"
+     }
+    },
+    {
+     "phuong_an": "35",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng tổ hợp thay cho chỉnh hợp (bỏ thứ tự)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "180",
+    "so": 180.0
+   },
+   "do_kho": 0.343,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-05.TLN.1",
+   "mau_cau": "MC-XS-05",
+   "bien_the": {
+    "n": "6"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem-so-chu-so",
+   "dang_tx": "tk.dem",
+   "lop": 10,
+   "yccd": [
+    "10.TH.1"
+   ],
+   "kien_thuc": [
+    "Đếm số có ba chữ số khác nhau"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-05|n=6",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-05"
+   },
+   "de_bai": "Từ các chữ số $0,1,2,\\dots,6$, lập các số tự nhiên có ba chữ số đôi một khác nhau. Số các số lập được là bao nhiêu?",
+   "dap_an": "180",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 180.0,
+   "dap_so": {
+    "gia_tri": "180",
+    "so": 180.0
+   },
+   "do_kho": 0.671,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-05.TN.2",
+   "mau_cau": "MC-XS-05",
+   "bien_the": {
+    "n": "7"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem-so-chu-so",
+   "dang_tx": "tk.dem",
+   "lop": 10,
+   "yccd": [
+    "10.TH.1"
+   ],
+   "kien_thuc": [
+    "Đếm số có ba chữ số khác nhau"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-05|n=7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-05"
+   },
+   "de_bai": "Từ các chữ số $0,1,2,\\dots,7$, lập các số tự nhiên có ba chữ số đôi một khác nhau. Số các số lập được là:",
+   "lua_chon": [
+    {
+     "noi_dung": "294",
+     "dung": true
+    },
+    {
+     "noi_dung": "336",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên loại trường hợp chữ số 0 đứng đầu"
+     }
+    },
+    {
+     "noi_dung": "448",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cho phép các chữ số lặp lại"
+     }
+    },
+    {
+     "noi_dung": "56",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng tổ hợp thay cho chỉnh hợp (bỏ thứ tự)"
+     }
+    }
+   ],
+   "dap_an": "294",
+   "nhieu": [
+    {
+     "phuong_an": "336",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên loại trường hợp chữ số 0 đứng đầu"
+     }
+    },
+    {
+     "phuong_an": "448",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cho phép các chữ số lặp lại"
+     }
+    },
+    {
+     "phuong_an": "56",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng tổ hợp thay cho chỉnh hợp (bỏ thứ tự)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "294",
+    "so": 294.0
+   },
+   "do_kho": 0.368,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-05.TLN.2",
+   "mau_cau": "MC-XS-05",
+   "bien_the": {
+    "n": "7"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem-so-chu-so",
+   "dang_tx": "tk.dem",
+   "lop": 10,
+   "yccd": [
+    "10.TH.1"
+   ],
+   "kien_thuc": [
+    "Đếm số có ba chữ số khác nhau"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-05|n=7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-05"
+   },
+   "de_bai": "Từ các chữ số $0,1,2,\\dots,7$, lập các số tự nhiên có ba chữ số đôi một khác nhau. Số các số lập được là bao nhiêu?",
+   "dap_an": "294",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 294.0,
+   "dap_so": {
+    "gia_tri": "294",
+    "so": 294.0
+   },
+   "do_kho": 0.665,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-05.TN.3",
+   "mau_cau": "MC-XS-05",
+   "bien_the": {
+    "n": "8"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem-so-chu-so",
+   "dang_tx": "tk.dem",
+   "lop": 10,
+   "yccd": [
+    "10.TH.1"
+   ],
+   "kien_thuc": [
+    "Đếm số có ba chữ số khác nhau"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-05|n=8",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-05"
+   },
+   "de_bai": "Từ các chữ số $0,1,2,\\dots,8$, lập các số tự nhiên có ba chữ số đôi một khác nhau. Số các số lập được là:",
+   "lua_chon": [
+    {
+     "noi_dung": "448",
+     "dung": true
+    },
+    {
+     "noi_dung": "504",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên loại trường hợp chữ số 0 đứng đầu"
+     }
+    },
+    {
+     "noi_dung": "648",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cho phép các chữ số lặp lại"
+     }
+    },
+    {
+     "noi_dung": "84",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng tổ hợp thay cho chỉnh hợp (bỏ thứ tự)"
+     }
+    }
+   ],
+   "dap_an": "448",
+   "nhieu": [
+    {
+     "phuong_an": "504",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Quên loại trường hợp chữ số 0 đứng đầu"
+     }
+    },
+    {
+     "phuong_an": "648",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Cho phép các chữ số lặp lại"
+     }
+    },
+    {
+     "phuong_an": "84",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Dùng tổ hợp thay cho chỉnh hợp (bỏ thứ tự)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "448",
+    "so": 448.0
+   },
+   "do_kho": 0.34,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-05.TLN.3",
+   "mau_cau": "MC-XS-05",
+   "bien_the": {
+    "n": "8"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.dem-so-chu-so",
+   "dang_tx": "tk.dem",
+   "lop": 10,
+   "yccd": [
+    "10.TH.1"
+   ],
+   "kien_thuc": [
+    "Đếm số có ba chữ số khác nhau"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-05|n=8",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-05",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-05"
+   },
+   "de_bai": "Từ các chữ số $0,1,2,\\dots,8$, lập các số tự nhiên có ba chữ số đôi một khác nhau. Số các số lập được là bao nhiêu?",
+   "dap_an": "448",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 448.0,
+   "dap_so": {
+    "gia_tri": "448",
+    "so": 448.0
+   },
+   "do_kho": 0.647,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-06.TN.0",
+   "mau_cau": "MC-XS-06",
+   "bien_the": {
+    "pa": "0.5",
+    "pb": "0.4",
+    "pab": "0.1"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.cong",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1"
+   ],
+   "kien_thuc": [
+    "Công thức cộng xác suất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-06|pa=0.5,pab=0.1,pb=0.4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-06"
+   },
+   "de_bai": "Cho hai biến cố $A$, $B$ với $P(A)=0{,}5$, $P(B)=0{,}4$ và $P(AB)=0{,}1$. Xác suất $P(A\\cup B)$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}8",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên trừ $P(AB)$"
+     }
+    },
+    {
+     "noi_dung": "0{,}7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Coi $A$, $B$ độc lập khi chưa có giả thiết"
+     }
+    },
+    {
+     "noi_dung": "0{,}2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân hai xác suất"
+     }
+    }
+   ],
+   "dap_an": "0{,}8",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}9",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên trừ $P(AB)$"
+     }
+    },
+    {
+     "phuong_an": "0{,}7",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Coi $A$, $B$ độc lập khi chưa có giả thiết"
+     }
+    },
+    {
+     "phuong_an": "0{,}2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân hai xác suất"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}8",
+    "so": 0.8
+   },
+   "do_kho": 0.168,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-06.TLN.0",
+   "mau_cau": "MC-XS-06",
+   "bien_the": {
+    "pa": "0.5",
+    "pb": "0.4",
+    "pab": "0.1"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.cong",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1"
+   ],
+   "kien_thuc": [
+    "Công thức cộng xác suất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-06|pa=0.5,pab=0.1,pb=0.4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-06"
+   },
+   "de_bai": "Cho hai biến cố $A$, $B$ với $P(A)=0{,}5$, $P(B)=0{,}4$ và $P(AB)=0{,}1$. Xác suất $P(A\\cup B)$ bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,8",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.8,
+   "dap_so": {
+    "gia_tri": "0{,}8",
+    "so": 0.8
+   },
+   "do_kho": 0.482,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-06.TN.1",
+   "mau_cau": "MC-XS-06",
+   "bien_the": {
+    "pa": "0.6",
+    "pb": "0.3",
+    "pab": "0.2"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.cong",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1"
+   ],
+   "kien_thuc": [
+    "Công thức cộng xác suất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-06|pa=0.6,pab=0.2,pb=0.3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-06"
+   },
+   "de_bai": "Cho hai biến cố $A$, $B$ với $P(A)=0{,}6$, $P(B)=0{,}3$ và $P(AB)=0{,}2$. Xác suất $P(A\\cup B)$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}7",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên trừ $P(AB)$"
+     }
+    },
+    {
+     "noi_dung": "0{,}72",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Coi $A$, $B$ độc lập khi chưa có giả thiết"
+     }
+    },
+    {
+     "noi_dung": "0{,}18",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân hai xác suất"
+     }
+    }
+   ],
+   "dap_an": "0{,}7",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}9",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên trừ $P(AB)$"
+     }
+    },
+    {
+     "phuong_an": "0{,}72",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Coi $A$, $B$ độc lập khi chưa có giả thiết"
+     }
+    },
+    {
+     "phuong_an": "0{,}18",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân hai xác suất"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}7",
+    "so": 0.7
+   },
+   "do_kho": 0.186,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-06.TLN.1",
+   "mau_cau": "MC-XS-06",
+   "bien_the": {
+    "pa": "0.6",
+    "pb": "0.3",
+    "pab": "0.2"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.cong",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1"
+   ],
+   "kien_thuc": [
+    "Công thức cộng xác suất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-06|pa=0.6,pab=0.2,pb=0.3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-06"
+   },
+   "de_bai": "Cho hai biến cố $A$, $B$ với $P(A)=0{,}6$, $P(B)=0{,}3$ và $P(AB)=0{,}2$. Xác suất $P(A\\cup B)$ bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.7,
+   "dap_so": {
+    "gia_tri": "0{,}7",
+    "so": 0.7
+   },
+   "do_kho": 0.497,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-06.TN.2",
+   "mau_cau": "MC-XS-06",
+   "bien_the": {
+    "pa": "0.45",
+    "pb": "0.35",
+    "pab": "0.15"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.cong",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1"
+   ],
+   "kien_thuc": [
+    "Công thức cộng xác suất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-06|pa=0.45,pab=0.15,pb=0.35",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-06"
+   },
+   "de_bai": "Cho hai biến cố $A$, $B$ với $P(A)=0{,}45$, $P(B)=0{,}35$ và $P(AB)=0{,}15$. Xác suất $P(A\\cup B)$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}65",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}8",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên trừ $P(AB)$"
+     }
+    },
+    {
+     "noi_dung": "0{,}64",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Coi $A$, $B$ độc lập khi chưa có giả thiết"
+     }
+    },
+    {
+     "noi_dung": "0{,}16",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân hai xác suất"
+     }
+    }
+   ],
+   "dap_an": "0{,}65",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}8",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên trừ $P(AB)$"
+     }
+    },
+    {
+     "phuong_an": "0{,}64",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Coi $A$, $B$ độc lập khi chưa có giả thiết"
+     }
+    },
+    {
+     "phuong_an": "0{,}16",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân hai xác suất"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}65",
+    "so": 0.65
+   },
+   "do_kho": 0.191,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-06.TLN.2",
+   "mau_cau": "MC-XS-06",
+   "bien_the": {
+    "pa": "0.45",
+    "pb": "0.35",
+    "pab": "0.15"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.cong",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1"
+   ],
+   "kien_thuc": [
+    "Công thức cộng xác suất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-06|pa=0.45,pab=0.15,pb=0.35",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-06"
+   },
+   "de_bai": "Cho hai biến cố $A$, $B$ với $P(A)=0{,}45$, $P(B)=0{,}35$ và $P(AB)=0{,}15$. Xác suất $P(A\\cup B)$ bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,65",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.65,
+   "dap_so": {
+    "gia_tri": "0{,}65",
+    "so": 0.65
+   },
+   "do_kho": 0.458,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-06.TN.3",
+   "mau_cau": "MC-XS-06",
+   "bien_the": {
+    "pa": "0.7",
+    "pb": "0.5",
+    "pab": "0.4"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.cong",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1"
+   ],
+   "kien_thuc": [
+    "Công thức cộng xác suất"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-06|pa=0.7,pab=0.4,pb=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-06"
+   },
+   "de_bai": "Cho hai biến cố $A$, $B$ với $P(A)=0{,}7$, $P(B)=0{,}5$ và $P(AB)=0{,}4$. Xác suất $P(A\\cup B)$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}8",
+     "dung": true
+    },
+    {
+     "noi_dung": "1{,}2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên trừ $P(AB)$"
+     }
+    },
+    {
+     "noi_dung": "0{,}85",
+     "dung": false,
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Coi $A$, $B$ độc lập khi chưa có giả thiết"
+     }
+    },
+    {
+     "noi_dung": "0{,}35",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân hai xác suất"
+     }
+    }
+   ],
+   "dap_an": "0{,}8",
+   "nhieu": [
+    {
+     "phuong_an": "1{,}2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên trừ $P(AB)$"
+     }
+    },
+    {
+     "phuong_an": "0{,}85",
+     "loi": {
+      "loai_loi": "nham-dieu-kien",
+      "mo_ta": "Coi $A$, $B$ độc lập khi chưa có giả thiết"
+     }
+    },
+    {
+     "phuong_an": "0{,}35",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân hai xác suất"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}8",
+    "so": 0.8
+   },
+   "do_kho": 0.16,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-06.TLN.3",
+   "mau_cau": "MC-XS-06",
+   "bien_the": {
+    "pa": "0.7",
+    "pb": "0.5",
+    "pab": "0.4"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.cong",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1"
+   ],
+   "kien_thuc": [
+    "Công thức cộng xác suất"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-06|pa=0.7,pab=0.4,pb=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-06",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-06"
+   },
+   "de_bai": "Cho hai biến cố $A$, $B$ với $P(A)=0{,}7$, $P(B)=0{,}5$ và $P(AB)=0{,}4$. Xác suất $P(A\\cup B)$ bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,8",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.8,
+   "dap_so": {
+    "gia_tri": "0{,}8",
+    "so": 0.8
+   },
+   "do_kho": 0.463,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TN.0",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.6",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-07|p=0.6,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}6$, của người thứ hai là $0{,}5$. Xác suất để bia bị trúng ít nhất một viên (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}8",
+     "dung": true
+    },
+    {
+     "noi_dung": "1{,}1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "noi_dung": "0{,}3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "noi_dung": "0{,}7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_an": "0{,}8",
+   "nhieu": [
+    {
+     "phuong_an": "1{,}1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "phuong_an": "0{,}3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "phuong_an": "0{,}7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}8",
+    "so": 0.8
+   },
+   "do_kho": 0.379,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TLN.0",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.6",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-07|p=0.6,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}6$, của người thứ hai là $0{,}5$. Xác suất để bia bị trúng ít nhất một viên bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,8",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.8,
+   "dap_so": {
+    "gia_tri": "0{,}8",
+    "so": 0.8
+   },
+   "do_kho": 0.482,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TL.0",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.6",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tu-luan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 8.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-XS-07|p=0.6,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}6$, của người thứ hai là $0{,}5$. Tính xác suất để bia bị trúng ít nhất một viên.",
+   "huong_dan_cham": [
+    {
+     "buoc": "B1",
+     "noi_dung": "Gọi $A_1$, $A_2$ là biến cố người thứ nhất, thứ hai bắn trúng; $A_1$, $A_2$ độc lập. Biến cố đối của \\\"ít nhất một viên trúng\\\" là $\\overline{A_1}\\,\\overline{A_2}$.",
+     "diem": 0.5
+    },
+    {
+     "buoc": "B2",
+     "noi_dung": "$P(\\overline{A_1}\\,\\overline{A_2})=P(\\overline{A_1})P(\\overline{A_2})=(1-0{,}6)(1-0{,}5)$.",
+     "diem": 0.25
+    },
+    {
+     "buoc": "B3",
+     "noi_dung": "Xác suất cần tìm bằng $1-(1-0{,}6)(1-0{,}5)=0{,}8$.",
+     "diem": 0.25
+    }
+   ],
+   "dap_an": "0{,}8",
+   "nhieu": [],
+   "dap_so": {
+    "gia_tri": "0{,}8",
+    "so": 0.8
+   },
+   "do_kho": 0.654,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TN.1",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.6",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-07|p=0.6,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}6$, của người thứ hai là $0{,}9$. Xác suất để bia bị trúng ít nhất một viên (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}96",
+     "dung": true
+    },
+    {
+     "noi_dung": "1{,}5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "noi_dung": "0{,}54",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "noi_dung": "0{,}46",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_an": "0{,}96",
+   "nhieu": [
+    {
+     "phuong_an": "1{,}5",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "phuong_an": "0{,}54",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "phuong_an": "0{,}46",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}96",
+    "so": 0.96
+   },
+   "do_kho": 0.357,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TLN.1",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.6",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-07|p=0.6,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}6$, của người thứ hai là $0{,}9$. Xác suất để bia bị trúng ít nhất một viên bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,96",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.96,
+   "dap_so": {
+    "gia_tri": "0{,}96",
+    "so": 0.96
+   },
+   "do_kho": 0.468,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TL.1",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.6",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tu-luan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 8.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-XS-07|p=0.6,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}6$, của người thứ hai là $0{,}9$. Tính xác suất để bia bị trúng ít nhất một viên.",
+   "huong_dan_cham": [
+    {
+     "buoc": "B1",
+     "noi_dung": "Gọi $A_1$, $A_2$ là biến cố người thứ nhất, thứ hai bắn trúng; $A_1$, $A_2$ độc lập. Biến cố đối của \\\"ít nhất một viên trúng\\\" là $\\overline{A_1}\\,\\overline{A_2}$.",
+     "diem": 0.5
+    },
+    {
+     "buoc": "B2",
+     "noi_dung": "$P(\\overline{A_1}\\,\\overline{A_2})=P(\\overline{A_1})P(\\overline{A_2})=(1-0{,}6)(1-0{,}9)$.",
+     "diem": 0.25
+    },
+    {
+     "buoc": "B3",
+     "noi_dung": "Xác suất cần tìm bằng $1-(1-0{,}6)(1-0{,}9)=0{,}96$.",
+     "diem": 0.25
+    }
+   ],
+   "dap_an": "0{,}96",
+   "nhieu": [],
+   "dap_so": {
+    "gia_tri": "0{,}96",
+    "so": 0.96
+   },
+   "do_kho": 0.644,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TN.2",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.7",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-07|p=0.7,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}7$, của người thứ hai là $0{,}5$. Xác suất để bia bị trúng ít nhất một viên (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}85",
+     "dung": true
+    },
+    {
+     "noi_dung": "1{,}2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "noi_dung": "0{,}35",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "noi_dung": "0{,}65",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_an": "0{,}85",
+   "nhieu": [
+    {
+     "phuong_an": "1{,}2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "phuong_an": "0{,}35",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "phuong_an": "0{,}65",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}85",
+    "so": 0.85
+   },
+   "do_kho": 0.38,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TLN.2",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.7",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-07|p=0.7,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}7$, của người thứ hai là $0{,}5$. Xác suất để bia bị trúng ít nhất một viên bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,85",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.85,
+   "dap_so": {
+    "gia_tri": "0{,}85",
+    "so": 0.85
+   },
+   "do_kho": 0.455,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TL.2",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.7",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tu-luan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 8.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-XS-07|p=0.7,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}7$, của người thứ hai là $0{,}5$. Tính xác suất để bia bị trúng ít nhất một viên.",
+   "huong_dan_cham": [
+    {
+     "buoc": "B1",
+     "noi_dung": "Gọi $A_1$, $A_2$ là biến cố người thứ nhất, thứ hai bắn trúng; $A_1$, $A_2$ độc lập. Biến cố đối của \\\"ít nhất một viên trúng\\\" là $\\overline{A_1}\\,\\overline{A_2}$.",
+     "diem": 0.5
+    },
+    {
+     "buoc": "B2",
+     "noi_dung": "$P(\\overline{A_1}\\,\\overline{A_2})=P(\\overline{A_1})P(\\overline{A_2})=(1-0{,}7)(1-0{,}5)$.",
+     "diem": 0.25
+    },
+    {
+     "buoc": "B3",
+     "noi_dung": "Xác suất cần tìm bằng $1-(1-0{,}7)(1-0{,}5)=0{,}85$.",
+     "diem": 0.25
+    }
+   ],
+   "dap_an": "0{,}85",
+   "nhieu": [],
+   "dap_so": {
+    "gia_tri": "0{,}85",
+    "so": 0.85
+   },
+   "do_kho": 0.65,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TN.3",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.7",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-07|p=0.7,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}7$, của người thứ hai là $0{,}9$. Xác suất để bia bị trúng ít nhất một viên (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}97",
+     "dung": true
+    },
+    {
+     "noi_dung": "1{,}6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "noi_dung": "0{,}63",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "noi_dung": "0{,}37",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_an": "0{,}97",
+   "nhieu": [
+    {
+     "phuong_an": "1{,}6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "phuong_an": "0{,}63",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "phuong_an": "0{,}37",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}97",
+    "so": 0.97
+   },
+   "do_kho": 0.342,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TLN.3",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.7",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-07|p=0.7,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}7$, của người thứ hai là $0{,}9$. Xác suất để bia bị trúng ít nhất một viên bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,97",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.97,
+   "dap_so": {
+    "gia_tri": "0{,}97",
+    "so": 0.97
+   },
+   "do_kho": 0.5,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TL.3",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.7",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tu-luan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 8.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-XS-07|p=0.7,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}7$, của người thứ hai là $0{,}9$. Tính xác suất để bia bị trúng ít nhất một viên.",
+   "huong_dan_cham": [
+    {
+     "buoc": "B1",
+     "noi_dung": "Gọi $A_1$, $A_2$ là biến cố người thứ nhất, thứ hai bắn trúng; $A_1$, $A_2$ độc lập. Biến cố đối của \\\"ít nhất một viên trúng\\\" là $\\overline{A_1}\\,\\overline{A_2}$.",
+     "diem": 0.5
+    },
+    {
+     "buoc": "B2",
+     "noi_dung": "$P(\\overline{A_1}\\,\\overline{A_2})=P(\\overline{A_1})P(\\overline{A_2})=(1-0{,}7)(1-0{,}9)$.",
+     "diem": 0.25
+    },
+    {
+     "buoc": "B3",
+     "noi_dung": "Xác suất cần tìm bằng $1-(1-0{,}7)(1-0{,}9)=0{,}97$.",
+     "diem": 0.25
+    }
+   ],
+   "dap_an": "0{,}97",
+   "nhieu": [],
+   "dap_so": {
+    "gia_tri": "0{,}97",
+    "so": 0.97
+   },
+   "do_kho": 0.684,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TN.4",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.8",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-07|p=0.8,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}8$, của người thứ hai là $0{,}5$. Xác suất để bia bị trúng ít nhất một viên (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}9",
+     "dung": true
+    },
+    {
+     "noi_dung": "1{,}3",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "noi_dung": "0{,}4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "noi_dung": "0{,}6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_an": "0{,}9",
+   "nhieu": [
+    {
+     "phuong_an": "1{,}3",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "phuong_an": "0{,}4",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "phuong_an": "0{,}6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}9",
+    "so": 0.9
+   },
+   "do_kho": 0.371,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TLN.4",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.8",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-07|p=0.8,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}8$, của người thứ hai là $0{,}5$. Xác suất để bia bị trúng ít nhất một viên bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,9",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.9,
+   "dap_so": {
+    "gia_tri": "0{,}9",
+    "so": 0.9
+   },
+   "do_kho": 0.492,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TL.4",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.8",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tu-luan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 8.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-XS-07|p=0.8,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}8$, của người thứ hai là $0{,}5$. Tính xác suất để bia bị trúng ít nhất một viên.",
+   "huong_dan_cham": [
+    {
+     "buoc": "B1",
+     "noi_dung": "Gọi $A_1$, $A_2$ là biến cố người thứ nhất, thứ hai bắn trúng; $A_1$, $A_2$ độc lập. Biến cố đối của \\\"ít nhất một viên trúng\\\" là $\\overline{A_1}\\,\\overline{A_2}$.",
+     "diem": 0.5
+    },
+    {
+     "buoc": "B2",
+     "noi_dung": "$P(\\overline{A_1}\\,\\overline{A_2})=P(\\overline{A_1})P(\\overline{A_2})=(1-0{,}8)(1-0{,}5)$.",
+     "diem": 0.25
+    },
+    {
+     "buoc": "B3",
+     "noi_dung": "Xác suất cần tìm bằng $1-(1-0{,}8)(1-0{,}5)=0{,}9$.",
+     "diem": 0.25
+    }
+   ],
+   "dap_an": "0{,}9",
+   "nhieu": [],
+   "dap_so": {
+    "gia_tri": "0{,}9",
+    "so": 0.9
+   },
+   "do_kho": 0.683,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TN.5",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.8",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-07|p=0.8,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}8$, của người thứ hai là $0{,}9$. Xác suất để bia bị trúng ít nhất một viên (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}98",
+     "dung": true
+    },
+    {
+     "noi_dung": "1{,}7",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "noi_dung": "0{,}72",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "noi_dung": "0{,}28",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_an": "0{,}98",
+   "nhieu": [
+    {
+     "phuong_an": "1{,}7",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    },
+    {
+     "phuong_an": "0{,}72",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất cả hai cùng trúng"
+     }
+    },
+    {
+     "phuong_an": "0{,}28",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}98",
+    "so": 0.98
+   },
+   "do_kho": 0.4,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TLN.5",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.8",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-07|p=0.8,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}8$, của người thứ hai là $0{,}9$. Xác suất để bia bị trúng ít nhất một viên bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,98",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.98,
+   "dap_so": {
+    "gia_tri": "0{,}98",
+    "so": 0.98
+   },
+   "do_kho": 0.464,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-07.TL.5",
+   "mau_cau": "MC-XS-07",
+   "bien_the": {
+    "p": "0.8",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.nhan-it-nhat",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Công thức nhân: ít nhất một lần trúng"
+   ],
+   "loai_cau": "tu-luan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 8.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-XS-07|p=0.8,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-07",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-07"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người bắn một viên. Xác suất bắn trúng của người thứ nhất là $0{,}8$, của người thứ hai là $0{,}9$. Tính xác suất để bia bị trúng ít nhất một viên.",
+   "huong_dan_cham": [
+    {
+     "buoc": "B1",
+     "noi_dung": "Gọi $A_1$, $A_2$ là biến cố người thứ nhất, thứ hai bắn trúng; $A_1$, $A_2$ độc lập. Biến cố đối của \\\"ít nhất một viên trúng\\\" là $\\overline{A_1}\\,\\overline{A_2}$.",
+     "diem": 0.5
+    },
+    {
+     "buoc": "B2",
+     "noi_dung": "$P(\\overline{A_1}\\,\\overline{A_2})=P(\\overline{A_1})P(\\overline{A_2})=(1-0{,}8)(1-0{,}9)$.",
+     "diem": 0.25
+    },
+    {
+     "buoc": "B3",
+     "noi_dung": "Xác suất cần tìm bằng $1-(1-0{,}8)(1-0{,}9)=0{,}98$.",
+     "diem": 0.25
+    }
+   ],
+   "dap_an": "0{,}98",
+   "nhieu": [],
+   "dap_so": {
+    "gia_tri": "0{,}98",
+    "so": 0.98
+   },
+   "do_kho": 0.647,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-08.TN.0",
+   "mau_cau": "MC-XS-08",
+   "bien_the": {
+    "n": "2"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.it-nhat-mot-lan",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Xác suất ít nhất một lần xuất hiện mặt sáu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-08|n=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-08",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-08"
+   },
+   "de_bai": "Gieo một con xúc xắc cân đối và đồng chất $2$ lần liên tiếp. Xác suất để mặt sáu chấm xuất hiện ít nhất một lần (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}31",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}33",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng xác suất của các lần gieo (các biến cố không xung khắc)"
+     }
+    },
+    {
+     "noi_dung": "0{,}03",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất mặt sáu xuất hiện ở mọi lần"
+     }
+    },
+    {
+     "noi_dung": "0{,}97",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy sai biến cố đối (\"không lần nào ra mặt sáu\" thành \"mọi lần ra mặt sáu\")"
+     }
+    }
+   ],
+   "dap_an": "0{,}31",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}33",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng xác suất của các lần gieo (các biến cố không xung khắc)"
+     }
+    },
+    {
+     "phuong_an": "0{,}03",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất mặt sáu xuất hiện ở mọi lần"
+     }
+    },
+    {
+     "phuong_an": "0{,}97",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy sai biến cố đối (\"không lần nào ra mặt sáu\" thành \"mọi lần ra mặt sáu\")"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}31",
+    "so": 0.3055555555555556
+   },
+   "do_kho": 0.399,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-08.TLN.0",
+   "mau_cau": "MC-XS-08",
+   "bien_the": {
+    "n": "2"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.it-nhat-mot-lan",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Xác suất ít nhất một lần xuất hiện mặt sáu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-08|n=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-08",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-08"
+   },
+   "de_bai": "Gieo một con xúc xắc cân đối và đồng chất $2$ lần liên tiếp. Xác suất để mặt sáu chấm xuất hiện ít nhất một lần bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,31",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.3055555555555556,
+   "dap_so": {
+    "gia_tri": "0{,}31",
+    "so": 0.3055555555555556
+   },
+   "do_kho": 0.494,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-08.TL.0",
+   "mau_cau": "MC-XS-08",
+   "bien_the": {
+    "n": "2"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.it-nhat-mot-lan",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Xác suất ít nhất một lần xuất hiện mặt sáu"
+   ],
+   "loai_cau": "tu-luan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 8.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-XS-08|n=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-08",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-08"
+   },
+   "de_bai": "Gieo một con xúc xắc cân đối và đồng chất $2$ lần liên tiếp. Tính xác suất để mặt sáu chấm xuất hiện ít nhất một lần.",
+   "huong_dan_cham": [
+    {
+     "buoc": "B1",
+     "noi_dung": "Gọi $A_i$: \\\"lần thứ $i$ ra mặt sáu\\\"; các $A_i$ độc lập. Biến cố đối của \\\"ít nhất một lần ra mặt sáu\\\" là \\\"không lần nào ra mặt sáu\\\".",
+     "diem": 0.5
+    },
+    {
+     "buoc": "B2",
+     "noi_dung": "Xác suất không lần nào ra mặt sáu là $\\left(\\dfrac56\\right)^{2}$ (công thức nhân).",
+     "diem": 0.25
+    },
+    {
+     "buoc": "B3",
+     "noi_dung": "Xác suất cần tìm bằng $1-\\left(\\dfrac56\\right)^{2}\\approx0{,}31$.",
+     "diem": 0.25
+    }
+   ],
+   "dap_an": "0{,}31",
+   "nhieu": [],
+   "dap_so": {
+    "gia_tri": "0{,}31",
+    "so": 0.3055555555555556
+   },
+   "do_kho": 0.665,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-08.TN.1",
+   "mau_cau": "MC-XS-08",
+   "bien_the": {
+    "n": "3"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.it-nhat-mot-lan",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Xác suất ít nhất một lần xuất hiện mặt sáu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-08|n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-08",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-08"
+   },
+   "de_bai": "Gieo một con xúc xắc cân đối và đồng chất $3$ lần liên tiếp. Xác suất để mặt sáu chấm xuất hiện ít nhất một lần (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}42",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}5",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng xác suất của các lần gieo (các biến cố không xung khắc)"
+     }
+    },
+    {
+     "noi_dung": "0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất mặt sáu xuất hiện ở mọi lần"
+     }
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy sai biến cố đối (\"không lần nào ra mặt sáu\" thành \"mọi lần ra mặt sáu\")"
+     }
+    }
+   ],
+   "dap_an": "0{,}42",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}5",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng xác suất của các lần gieo (các biến cố không xung khắc)"
+     }
+    },
+    {
+     "phuong_an": "0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất mặt sáu xuất hiện ở mọi lần"
+     }
+    },
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy sai biến cố đối (\"không lần nào ra mặt sáu\" thành \"mọi lần ra mặt sáu\")"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}42",
+    "so": 0.4212962962962963
+   },
+   "do_kho": 0.366,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-08.TLN.1",
+   "mau_cau": "MC-XS-08",
+   "bien_the": {
+    "n": "3"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.it-nhat-mot-lan",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Xác suất ít nhất một lần xuất hiện mặt sáu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-08|n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-08",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-08"
+   },
+   "de_bai": "Gieo một con xúc xắc cân đối và đồng chất $3$ lần liên tiếp. Xác suất để mặt sáu chấm xuất hiện ít nhất một lần bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,42",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.4212962962962963,
+   "dap_so": {
+    "gia_tri": "0{,}42",
+    "so": 0.4212962962962963
+   },
+   "do_kho": 0.45,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-08.TL.1",
+   "mau_cau": "MC-XS-08",
+   "bien_the": {
+    "n": "3"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.it-nhat-mot-lan",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Xác suất ít nhất một lần xuất hiện mặt sáu"
+   ],
+   "loai_cau": "tu-luan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 8.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-XS-08|n=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-08",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-08"
+   },
+   "de_bai": "Gieo một con xúc xắc cân đối và đồng chất $3$ lần liên tiếp. Tính xác suất để mặt sáu chấm xuất hiện ít nhất một lần.",
+   "huong_dan_cham": [
+    {
+     "buoc": "B1",
+     "noi_dung": "Gọi $A_i$: \\\"lần thứ $i$ ra mặt sáu\\\"; các $A_i$ độc lập. Biến cố đối của \\\"ít nhất một lần ra mặt sáu\\\" là \\\"không lần nào ra mặt sáu\\\".",
+     "diem": 0.5
+    },
+    {
+     "buoc": "B2",
+     "noi_dung": "Xác suất không lần nào ra mặt sáu là $\\left(\\dfrac56\\right)^{3}$ (công thức nhân).",
+     "diem": 0.25
+    },
+    {
+     "buoc": "B3",
+     "noi_dung": "Xác suất cần tìm bằng $1-\\left(\\dfrac56\\right)^{3}\\approx0{,}42$.",
+     "diem": 0.25
+    }
+   ],
+   "dap_an": "0{,}42",
+   "nhieu": [],
+   "dap_so": {
+    "gia_tri": "0{,}42",
+    "so": 0.4212962962962963
+   },
+   "do_kho": 0.646,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-08.TN.2",
+   "mau_cau": "MC-XS-08",
+   "bien_the": {
+    "n": "4"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.it-nhat-mot-lan",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Xác suất ít nhất một lần xuất hiện mặt sáu"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-XS-08|n=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-08",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-08"
+   },
+   "de_bai": "Gieo một con xúc xắc cân đối và đồng chất $4$ lần liên tiếp. Xác suất để mặt sáu chấm xuất hiện ít nhất một lần (làm tròn đến hàng phần trăm) bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "0{,}52",
+     "dung": true
+    },
+    {
+     "noi_dung": "0{,}67",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng xác suất của các lần gieo (các biến cố không xung khắc)"
+     }
+    },
+    {
+     "noi_dung": "0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất mặt sáu xuất hiện ở mọi lần"
+     }
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy sai biến cố đối (\"không lần nào ra mặt sáu\" thành \"mọi lần ra mặt sáu\")"
+     }
+    }
+   ],
+   "dap_an": "0{,}52",
+   "nhieu": [
+    {
+     "phuong_an": "0{,}67",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng xác suất của các lần gieo (các biến cố không xung khắc)"
+     }
+    },
+    {
+     "phuong_an": "0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Tính xác suất mặt sáu xuất hiện ở mọi lần"
+     }
+    },
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy sai biến cố đối (\"không lần nào ra mặt sáu\" thành \"mọi lần ra mặt sáu\")"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "0{,}52",
+    "so": 0.5177469135802469
+   },
+   "do_kho": 0.361,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-08.TLN.2",
+   "mau_cau": "MC-XS-08",
+   "bien_the": {
+    "n": "4"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.it-nhat-mot-lan",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Xác suất ít nhất một lần xuất hiện mặt sáu"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 3.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-XS-08|n=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-08",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-08"
+   },
+   "de_bai": "Gieo một con xúc xắc cân đối và đồng chất $4$ lần liên tiếp. Xác suất để mặt sáu chấm xuất hiện ít nhất một lần bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,52",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.5177469135802469,
+   "dap_so": {
+    "gia_tri": "0{,}52",
+    "so": 0.5177469135802469
+   },
+   "do_kho": 0.45,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-XS-08.TL.2",
+   "mau_cau": "MC-XS-08",
+   "bien_the": {
+    "n": "4"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "xs11.it-nhat-mot-lan",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Xác suất ít nhất một lần xuất hiện mặt sáu"
+   ],
+   "loai_cau": "tu-luan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 8.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-XS-08|n=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-XS-08",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-XS-08"
+   },
+   "de_bai": "Gieo một con xúc xắc cân đối và đồng chất $4$ lần liên tiếp. Tính xác suất để mặt sáu chấm xuất hiện ít nhất một lần.",
+   "huong_dan_cham": [
+    {
+     "buoc": "B1",
+     "noi_dung": "Gọi $A_i$: \\\"lần thứ $i$ ra mặt sáu\\\"; các $A_i$ độc lập. Biến cố đối của \\\"ít nhất một lần ra mặt sáu\\\" là \\\"không lần nào ra mặt sáu\\\".",
+     "diem": 0.5
+    },
+    {
+     "buoc": "B2",
+     "noi_dung": "Xác suất không lần nào ra mặt sáu là $\\left(\\dfrac56\\right)^{4}$ (công thức nhân).",
+     "diem": 0.25
+    },
+    {
+     "buoc": "B3",
+     "noi_dung": "Xác suất cần tìm bằng $1-\\left(\\dfrac56\\right)^{4}\\approx0{,}52$.",
+     "diem": 0.25
+    }
+   ],
+   "dap_an": "0{,}52",
+   "nhieu": [],
+   "dap_so": {
+    "gia_tri": "0{,}52",
+    "so": 0.5177469135802469
+   },
+   "do_kho": 0.674,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-X11.DS.0",
+   "mau_cau": "MC-DS-X11",
+   "bien_the": {
+    "p": "0.6",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "ds.xs-xa-thu",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1",
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hai xạ thủ (quy tắc cộng, nhân xác suất)"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-X11|p=0.6,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-X11",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-X11"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người một viên, xác suất trúng lần lượt là $0{,}6$ và $0{,}5$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Xác suất cả hai cùng bắn trúng là $0{,}3$.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "0{,}3",
+     "so": 0.3
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Xác suất không ai bắn trúng là $0{,}7$.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "0{,}2",
+     "so": 0.2,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Xác suất có đúng một người bắn trúng là $0{,}5$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}5",
+     "so": 0.5
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Xác suất bia bị trúng ít nhất một viên là $1{,}1$.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}8",
+     "so": 0.8,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    }
+   ],
+   "dap_an": "a) Đ; b) S; c) Đ; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "b) Xác suất không ai bắn trúng là $0{,}7$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    },
+    {
+     "phuong_an": "d) Xác suất bia bị trúng ít nhất một viên là $1{,}1$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) S; c) Đ; d) S",
+    "so": null
+   },
+   "do_kho": 0.606,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-X11.DS.1",
+   "mau_cau": "MC-DS-X11",
+   "bien_the": {
+    "p": "0.6",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "ds.xs-xa-thu",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1",
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hai xạ thủ (quy tắc cộng, nhân xác suất)"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-X11|p=0.6,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-X11",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-X11"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người một viên, xác suất trúng lần lượt là $0{,}6$ và $0{,}9$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Xác suất cả hai cùng bắn trúng là $0{,}5$.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "0{,}54",
+     "so": 0.54,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Trừ thay vì nhân khi tính xác suất giao"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Xác suất không ai bắn trúng là $0{,}04$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "0{,}04",
+     "so": 0.04
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Xác suất có đúng một người bắn trúng là $0{,}42$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}42",
+     "so": 0.42
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Xác suất bia bị trúng ít nhất một viên là $0{,}96$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}96",
+     "so": 0.96
+    }
+   ],
+   "dap_an": "a) S; b) Đ; c) Đ; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "a) Xác suất cả hai cùng bắn trúng là $0{,}5$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Trừ thay vì nhân khi tính xác suất giao"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) Đ; c) Đ; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.603,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-X11.DS.2",
+   "mau_cau": "MC-DS-X11",
+   "bien_the": {
+    "p": "0.7",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "ds.xs-xa-thu",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1",
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hai xạ thủ (quy tắc cộng, nhân xác suất)"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-X11|p=0.7,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-X11",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-X11"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người một viên, xác suất trúng lần lượt là $0{,}7$ và $0{,}5$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Xác suất cả hai cùng bắn trúng là $0{,}35$.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "0{,}35",
+     "so": 0.35
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Xác suất không ai bắn trúng là $0{,}15$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "0{,}15",
+     "so": 0.15
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Xác suất có đúng một người bắn trúng là $0{,}35$.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}5",
+     "so": 0.5,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp người thứ nhất trúng"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Xác suất bia bị trúng ít nhất một viên là $1{,}2$.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}85",
+     "so": 0.85,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    }
+   ],
+   "dap_an": "a) Đ; b) Đ; c) S; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "c) Xác suất có đúng một người bắn trúng là $0{,}35$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp người thứ nhất trúng"
+     }
+    },
+    {
+     "phuong_an": "d) Xác suất bia bị trúng ít nhất một viên là $1{,}2$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) Đ; c) S; d) S",
+    "so": null
+   },
+   "do_kho": 0.631,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-X11.DS.3",
+   "mau_cau": "MC-DS-X11",
+   "bien_the": {
+    "p": "0.7",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "ds.xs-xa-thu",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1",
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hai xạ thủ (quy tắc cộng, nhân xác suất)"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-X11|p=0.7,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-X11",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-X11"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người một viên, xác suất trúng lần lượt là $0{,}7$ và $0{,}9$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Xác suất cả hai cùng bắn trúng là $0{,}6$.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "0{,}63",
+     "so": 0.63,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Trừ thay vì nhân khi tính xác suất giao"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Xác suất không ai bắn trúng là $0{,}37$.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "0{,}03",
+     "so": 0.03,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Xác suất có đúng một người bắn trúng là $0{,}34$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}34",
+     "so": 0.34
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Xác suất bia bị trúng ít nhất một viên là $0{,}97$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}97",
+     "so": 0.97
+    }
+   ],
+   "dap_an": "a) S; b) S; c) Đ; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "a) Xác suất cả hai cùng bắn trúng là $0{,}6$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Trừ thay vì nhân khi tính xác suất giao"
+     }
+    },
+    {
+     "phuong_an": "b) Xác suất không ai bắn trúng là $0{,}37$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) S; c) Đ; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.637,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-X11.DS.4",
+   "mau_cau": "MC-DS-X11",
+   "bien_the": {
+    "p": "0.8",
+    "q": "0.5"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "ds.xs-xa-thu",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1",
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hai xạ thủ (quy tắc cộng, nhân xác suất)"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-X11|p=0.8,q=0.5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-X11",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-X11"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người một viên, xác suất trúng lần lượt là $0{,}8$ và $0{,}5$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Xác suất cả hai cùng bắn trúng là $0{,}4$.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "0{,}4",
+     "so": 0.4
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Xác suất không ai bắn trúng là $0{,}6$.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "0{,}1",
+     "so": 0.1,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Xác suất có đúng một người bắn trúng là $0{,}4$.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}5",
+     "so": 0.5,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp người thứ nhất trúng"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Xác suất bia bị trúng ít nhất một viên là $0{,}9$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}9",
+     "so": 0.9
+    }
+   ],
+   "dap_an": "a) Đ; b) S; c) S; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "b) Xác suất không ai bắn trúng là $0{,}6$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy biến cố đối của \"cả hai cùng trúng\""
+     }
+    },
+    {
+     "phuong_an": "c) Xác suất có đúng một người bắn trúng là $0{,}4$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính trường hợp người thứ nhất trúng"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) S; c) S; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.617,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-X11.DS.5",
+   "mau_cau": "MC-DS-X11",
+   "bien_the": {
+    "p": "0.8",
+    "q": "0.9"
+   },
+   "chu_de": "to-hop-xac-suat",
+   "dang": "ds.xs-xa-thu",
+   "dang_tx": "tk.xs-co-dien",
+   "lop": 11,
+   "yccd": [
+    "11.XS.1",
+    "11.XS.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: hai xạ thủ (quy tắc cộng, nhân xác suất)"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-X11|p=0.8,q=0.9",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-X11",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-X11"
+   },
+   "de_bai": "Hai xạ thủ độc lập cùng bắn vào một bia, mỗi người một viên, xác suất trúng lần lượt là $0{,}8$ và $0{,}9$. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Xác suất cả hai cùng bắn trúng là $0{,}7$.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "0{,}72",
+     "so": 0.72,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Trừ thay vì nhân khi tính xác suất giao"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Xác suất không ai bắn trúng là $0{,}02$.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "0{,}02",
+     "so": 0.02
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Xác suất có đúng một người bắn trúng là $0{,}26$.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}26",
+     "so": 0.26
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Xác suất bia bị trúng ít nhất một viên là $1{,}7$.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "0{,}98",
+     "so": 0.98,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    }
+   ],
+   "dap_an": "a) S; b) Đ; c) Đ; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "a) Xác suất cả hai cùng bắn trúng là $0{,}7$.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Trừ thay vì nhân khi tính xác suất giao"
+     }
+    },
+    {
+     "phuong_an": "d) Xác suất bia bị trúng ít nhất một viên là $1{,}7$.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Cộng hai xác suất (hai biến cố không xung khắc)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) Đ; c) Đ; d) S",
+    "so": null
+   },
+   "do_kho": 0.608,
+   "dap_so_engine": null
+  }
+ ]
+}

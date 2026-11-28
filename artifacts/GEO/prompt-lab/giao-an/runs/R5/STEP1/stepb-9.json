@@ -1,0 +1,32 @@
+{
+ "ids": [
+  "BM-058-S1",
+  "BM-058-S2",
+  "BM-058-DUNG",
+  "BM-059-S1",
+  "BM-059-S2",
+  "BM-059-DUNG",
+  "BM-060-S1",
+  "BM-060-S2",
+  "BM-060-DUNG",
+  "BM-061-S1",
+  "BM-061-S2",
+  "BM-061-DUNG",
+  "BM-062-S1",
+  "BM-062-S2",
+  "BM-062-DUNG"
+ ],
+ "text": "{\"ket_qua\":[{\"id\":\"BM-058-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Tổng cấp số cộng là n(1+2n-1)/2 = n², không phải 2n² (thiếu chia 2). Các bước sau sai theo.\"},{\"id\":\"BM-058-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"n là số số hạng nên phải là số nguyên dương; n²=169 chỉ cho n=13, không nhận n=-13.\"},{\"id\":\"BM-058-DUNG\",\"buoc_sai\":null,\"ly_do\":\"S_n=n²=169 nên n=13 (loại -13). Đúng.\"},{\"id\":\"BM-059-S1\",\"buoc_sai\":\"B3\",\"ly_do\":\"2-2√3≈-1,46 vẫn thỏa x+10>0 và x²-3x+2=x+10>0, nên không được loại. Cả hai nghiệm đều nhận.\"},{\"id\":\"BM-059-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"x²-3x+2=x+10 ⇔ x²-4x-8=0, không phải x²-2x-8=0.\"},{\"id\":\"BM-059-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Biến đổi đúng, x=2±2√3 đều có x+10>0 nên thỏa điều kiện.\"},{\"id\":\"BM-060-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"Nhân liên hợp phải cho 1/(√(x+3)+2), không phải 1/(√(x+3)-2). Giới hạn thực tế bằng 1/4.\"},{\"id\":\"BM-060-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"f(1) xác định chưa đủ để liên tục; cần lim f(x) = f(1). Chỉ a=1/4 thỏa.\"},{\"id\":\"BM-060-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: giới hạn bằng 1/4 nên a=1/4.\"},{\"id\":\"BM-061-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"Phải xét có 3 cách chọn lần trượt (hệ số C(3,2)=3); bỏ qua dẫn đến thiếu nhân 3, đáp án đúng là 0,384.\"},{\"id\":\"BM-061-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"0,8·0,8·0,2=0,128, không phải 0,16.\"},{\"id\":\"BM-061-DUNG\",\"buoc_sai\":null,\"ly_do\":\"3·0,128=0,384 đúng.\"},{\"id\":\"BM-062-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"Δ=b²-4ac=25-24=1, không phải 25+24=49.\"},{\"id\":\"BM-062-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"Công thức nghiệm là x=(-b±√Δ)/2a=(5±1)/2, nên nghiệm là 2 và 3, không phải (-5±1)/2.\"},{\"id\":\"BM-062-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Δ=1, nghiệm 2 và 3 đúng.\"}]}",
+ "usage": {
+  "ts": "2026-11-27T17:46:09",
+  "role": "gen",
+  "task": "R5/STEP1/stepb-9",
+  "model": "claude-sonnet-5-5",
+  "input": 3120,
+  "output": 1100,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 8.4
+ }
+}

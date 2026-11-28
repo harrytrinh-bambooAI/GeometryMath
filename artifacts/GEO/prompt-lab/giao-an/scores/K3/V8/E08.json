@@ -1,0 +1,35 @@
+{
+ "case": "E08",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0
+  },
+  "kind": "reply"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 4
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trợ lý từ chối đúng theo A3, đưa phương án hợp lệ là bổ sung buoc_goi_y không kèm kết quả số, và phát hiện đúng lỗi có sẵn: HD4 ghi o_nha=false, tính 5 phút nhưng phần tổ chức lại cho HS làm ở nhà. Điểm trừ: đề xuất thứ ba diễn đạt rối, và gợi ý chung 'dựng AK ⊥ BC, AH ⊥ SK' chưa sát với câu 2 và câu 3 (đáy vuông tại B nên K trùng B, cách dựng chuẩn là kẻ AH ⊥ SB)."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 96.2,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.75
+ }
+}

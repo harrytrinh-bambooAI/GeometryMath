@@ -1,0 +1,25 @@
+{
+ "ids": [
+  "BM-001-S2",
+  "BM-002-S2",
+  "BM-003-S2",
+  "BM-004-S2",
+  "BM-005-S2",
+  "BM-006-S2",
+  "BM-007-S2",
+  "BM-008-S2"
+ ],
+ "text": "{\"ket_qua\":[{\"id\":\"BM-001-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"AC là đường chéo hình vuông cạnh a nên AC = a√2, không phải a. Do đó B3 cũng sai: tan = √6/√2 = √3, góc = 60°.\"},{\"id\":\"BM-002-S2\",\"buoc_sai\":null,\"ly_do\":\"Đúng: SB là hình chiếu của SC, SC = a√3, sin = 1/√3, góc ≈ 35,26°.\"},{\"id\":\"BM-003-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"OA/SO = (a√2/2)/(a√6/2) = 1/√3 là tan của góc ASO, nhưng góc ASO không phải góc giữa SA và đáy. Góc giữa SA và đáy là góc SAO, có tan = SO/OA = √3, tức 60°. B1 xác định sai góc.\"},{\"id\":\"BM-004-S2\",\"buoc_sai\":\"B2\",\"ly_do\":\"Tam giác AB'D' đều nên góc giữa AB' và AD' là 60°. Góc giữa hai đường thẳng không vượt quá 90°, nên không thể là 120°.\"},{\"id\":\"BM-005-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"Hình chiếu của AC' lên (ABCD) là AC nên góc cần tìm là C'AC, không phải C'AB (C'B không vuông góc với AB theo cách đó và C' không chiếu lên B). Các bước sau cũng sai: AC' = √(4a²+4a²) = 2a√2 đúng, nhưng góc phải tính là tan = CC'/AC = 2a/2a = 1, góc 45°.\"},{\"id\":\"BM-006-S2\",\"buoc_sai\":\"B1\",\"ly_do\":\"Hình chiếu của B'C lên (ABC) là BC (B' chiếu xuống B), không phải AC. Góc cần tìm là B'CB, tan = BB'/BC = 2a/2a = 1, góc 45°.\"},{\"id\":\"BM-007-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"Trong tam giác vuông SAB: 1/AH² = 1/SA² + 1/AB² = 1/a² + 1/a² = 2/a², suy ra AH = a/√2 = a√2/2, không phải a/2.\"},{\"id\":\"BM-008-S2\",\"buoc_sai\":\"B3\",\"ly_do\":\"1/AK² = 1/(3a²) + 1/a² = 4/(3a²), suy ra AK = a√3/2. Bước ghi 2/(4a²) là sai.\"}]}",
+ "usage": {
+  "ts": "2026-11-27T16:48:23",
+  "role": "gen",
+  "task": "R3/STEP1/step-3",
+  "model": "claude-sonnet-5-5",
+  "input": 2650,
+  "output": 913,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 6.7
+ }
+}

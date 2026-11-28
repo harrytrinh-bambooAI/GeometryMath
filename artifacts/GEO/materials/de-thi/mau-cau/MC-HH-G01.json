@@ -1,0 +1,126 @@
+{
+ "id": "MC-HH-G01",
+ "ten": "Thể tích lăng trụ đứng biết ba cạnh đáy",
+ "chu_de": "hinh-khong-gian-the-tich",
+ "dang": "the-tich.lang-tru-heron",
+ "dang_tx": "th.lang-tru",
+ "yccd": [
+  "11.TT.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "G",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-37",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-37 + geometry/problem-specs.json#HKN-37"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "u": 13,
+    "v": 14,
+    "w": 15,
+    "t": 10
+   },
+   {
+    "u": 5,
+    "v": 5,
+    "w": 6,
+    "t": 8
+   },
+   {
+    "u": 6,
+    "v": 8,
+    "w": 10,
+    "t": 5
+   },
+   {
+    "u": 5,
+    "v": 5,
+    "w": 8,
+    "t": 3
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "pp": "(u+v+w)/2",
+  "Sd": "sqrt(pp*(pp-u)*(pp-v)*(pp-w))"
+ },
+ "boi_canh": "Cho lăng trụ đứng $ABC.A'B'C'$ có $AB={u}$ cm, $BC={v}$ cm, $CA={w}$ cm và $AA'={t}$ cm.",
+ "hoi": "Thể tích khối lăng trụ bằng",
+ "dap_so": "Sd*t",
+ "don_vi": "cm",
+ "nhieu": [
+  {
+   "bieu_thuc": "Sd*t/3",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhân thêm $\\dfrac13$ như khối chóp"
+   }
+  },
+  {
+   "bieu_thuc": "(u+v+w)*t",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhầm sang diện tích xung quanh"
+   }
+  },
+  {
+   "bieu_thuc": "u*v*t/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi đáy là tam giác vuông với hai cạnh góc vuông $AB$, $BC$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-37",
+  "ask": 0,
+  "params": {
+   "ab": "u",
+   "bc": "v",
+   "ca": "w",
+   "h": "t"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "u": "13",
+   "v": "14",
+   "w": "15",
+   "t": "10"
+  },
+  {
+   "u": "5",
+   "v": "5",
+   "w": "6",
+   "t": "8"
+  },
+  {
+   "u": "6",
+   "v": "8",
+   "w": "10",
+   "t": "5"
+  },
+  {
+   "u": "5",
+   "v": "5",
+   "w": "8",
+   "t": "3"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 7,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

@@ -1,0 +1,85 @@
+{
+ "id": "BM-044",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-27-the-tich.md — bài 6 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Tỉ số thể tích",
+ "muc_do": "VD",
+ "de_bai": "Chóp $S.ABC$; $M$ là trung điểm $SB$, $N\\in SC$ với $SN=2NC$. Tính $\\dfrac{V_{S.AMN}}{V_{S.ABC}}$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac13$",
+  "so": 0.3333333333333333
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Tỉ số thể tích (Simson)"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$\\dfrac{V_{S.AMN}}{V_{S.ABC}}=\\dfrac{SA}{SA}\\cdot\\dfrac{SM}{SB}\\cdot\\dfrac{SN}{SC}$.",
+   "ket_qua_trung_gian": "Công thức tỉ số",
+   "kien_thuc": "Tỉ số thể tích",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Công thức tỉ số",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Cộng tỉ số thay vì nhân",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$\\dfrac{SM}{SB}=\\dfrac12$, $SN=2NC\\Rightarrow\\dfrac{SN}{SC}=\\dfrac23$.",
+   "ket_qua_trung_gian": "$\\dfrac12$; $\\dfrac23$",
+   "kien_thuc": "Tỉ số đoạn",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac12$; $\\dfrac23$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Đọc $SN=2NC$ thành $\\dfrac{SN}{SC}=\\dfrac12$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.6666666666666666
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Tỉ số $=\\dfrac12\\cdot\\dfrac23=\\dfrac13$.",
+   "ket_qua_trung_gian": "$\\dfrac13$",
+   "kien_thuc": "Tính",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac13$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 0.3333333333333333
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B2",
+   "loai_loi": "nham-dieu-kien",
+   "mo_ta": "Đọc $SN=2NC$ thành $\\dfrac{SN}{SC}=\\dfrac12$",
+   "loi_giai": "B1: $\\dfrac{V_{S.AMN}}{V_{S.ABC}}=\\dfrac{SA}{SA}\\cdot\\dfrac{SM}{SB}\\cdot\\dfrac{SN}{SC}$.\nB2: $\\dfrac{SM}{SB}=\\dfrac12$, $\\dfrac{SN}{SC}=\\dfrac12$.\nB3: Tỉ số $=\\dfrac14$.",
+   "diem_dung": 0.25
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Cộng tỉ số thay vì nhân",
+   "loi_giai": "B1: $\\dfrac{V_{S.AMN}}{V_{S.ABC}}=\\dfrac{SM}{SB}+\\dfrac{SN}{SC}-1$.\nB2: $\\dfrac{SM}{SB}=\\dfrac12$, $SN=2NC\\Rightarrow\\dfrac{SN}{SC}=\\dfrac23$.\nB3: Tỉ số $=\\dfrac12+\\dfrac23-1=\\dfrac16$.",
+   "diem_dung": 0.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

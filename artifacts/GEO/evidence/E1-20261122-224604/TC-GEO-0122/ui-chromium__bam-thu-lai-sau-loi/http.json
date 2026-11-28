@@ -1,0 +1,127 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "role": "STUDENT"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c372-7730-9442-4c1323ae3926",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 4
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/test-hooks/ai",
+    "requestBody": {
+      "mode": "error",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "lane": "ui-chromium-5"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c44c-707b-aa40-1dfa3f95bf5a",
+      "content-type": "application/json",
+      "content-length": "39",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"model\":\"gia-lap-1\",\"timeoutMs\":10000}",
+    "ms": 5
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/test-hooks/ai/calls?userId=00000000-0000-7000-8000-000000000020&limit=100",
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c452-7216-917a-14add12486e2",
+      "content-type": "application/json",
+      "content-length": "914",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "[{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":0,\"costMicro\":0,\"latencyMs\":0,\"status\":\"error\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":57,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"}]",
+    "ms": 5
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/test-hooks/ai/calls?userId=00000000-0000-7000-8000-000000000020&limit=100",
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c4d9-71db-8d70-4242dc4a17ac",
+      "content-type": "application/json",
+      "content-length": "1140",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "[{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":0,\"costMicro\":0,\"latencyMs\":0,\"status\":\"error\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":0,\"costMicro\":0,\"latencyMs\":0,\"status\":\"error\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":57,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"}]",
+    "ms": 5
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/test-hooks/ai",
+    "requestBody": {
+      "mode": "ok",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "lane": "ui-chromium-5"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c4dd-70ee-b4a7-7ca8c20952e2",
+      "content-type": "application/json",
+      "content-length": "39",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"model\":\"gia-lap-1\",\"timeoutMs\":10000}",
+    "ms": 3
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/test-hooks/ai/calls?userId=00000000-0000-7000-8000-000000000020&limit=100",
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c50c-7039-89d1-ce9447b703fd",
+      "content-type": "application/json",
+      "content-length": "1369",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "[{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":0,\"costMicro\":0,\"latencyMs\":0,\"status\":\"error\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":0,\"costMicro\":0,\"latencyMs\":0,\"status\":\"error\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":53,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"},{\"orgId\":\"00000000-0000-7000-8000-000000000001\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"purpose\":\"qa\",\"model\":\"gia-lap-1\",\"promptVersion\":\"p1\",\"tokensIn\":57,\"tokensOut\":25,\"costMicro\":120000,\"latencyMs\":0,\"status\":\"ok\"}]",
+    "ms": 3
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/test-hooks/ai",
+    "requestBody": {
+      "mode": "ok",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "lane": "ui-chromium-5"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-c54b-750a-9354-39ae2c0a882c",
+      "content-type": "application/json",
+      "content-length": "39",
+      "date": "Sun, 22 Nov 2026 15:46:14 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"model\":\"gia-lap-1\",\"timeoutMs\":10000}",
+    "ms": 3
+  }
+]

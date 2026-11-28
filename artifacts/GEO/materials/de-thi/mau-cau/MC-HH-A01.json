@@ -1,0 +1,93 @@
+{
+ "id": "MC-HH-A01",
+ "ten": "Góc giữa SC và mặt đáy (chóp SA ⊥ đáy vuông)",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "goc-dt-mp.chop-sa.canh-cheo",
+ "dang_tx": "qh.goc",
+ "yccd": [
+  "11.VG.1"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "A",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-01",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-01 + geometry/problem-specs.json#HKN-01"
+ },
+ "tham_so": {
+  "k": [
+   "sqrt(6)",
+   "sqrt(6)/3",
+   "sqrt(2)",
+   "2"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SB": "sqrt(a**2+h**2)",
+  "SC": "sqrt(2*a**2+h**2)"
+ },
+ "boi_canh": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA={h}$.",
+ "hoi": "Góc giữa đường thẳng $SC$ và mặt phẳng $(ABCD)$ bằng",
+ "dap_so": "atan(h/(sqrt(2)*a))*180/pi",
+ "don_vi": "do",
+ "nhieu": [
+  {
+   "bieu_thuc": "90-atan(h/(sqrt(2)*a))*180/pi",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy góc $\\widehat{ASC}$ (góc giữa $SC$ và $SA$) làm góc giữa $SC$ và đáy"
+   }
+  },
+  {
+   "bieu_thuc": "atan(h/a)*180/pi",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Tính sai $AC=a$ (nhầm đường chéo với cạnh hình vuông)"
+   }
+  },
+  {
+   "bieu_thuc": "atan(sqrt(2)*h/a)*180/pi",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy $AO=\\dfrac{a\\sqrt2}{2}$ thay cho $AC$ khi tính $\\tan$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-01",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "sa": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "sqrt(6)"
+  },
+  {
+   "k": "sqrt(6)/3"
+  },
+  {
+   "k": "sqrt(2)"
+  },
+  {
+   "k": "2"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 7,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

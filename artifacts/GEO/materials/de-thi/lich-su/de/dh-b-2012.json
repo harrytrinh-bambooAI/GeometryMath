@@ -1,0 +1,157 @@
+{
+ "ma": "dh-b-2012",
+ "ky_thi": "dh-b",
+ "nam": 2012,
+ "cau_truc_loai": "tu-luan",
+ "cau_truc": {
+  "phan": [
+   {
+    "id": "P1",
+    "ten": "Phần chung",
+    "loai_cau": "tu-luan",
+    "so_cau": 7,
+    "diem": 7
+   },
+   {
+    "id": "P2",
+    "ten": "Phần riêng - chương trình chuẩn (thí sinh chọn chuẩn hoặc nâng cao)",
+    "loai_cau": "tu-luan",
+    "so_cau": 3,
+    "diem": 3
+   }
+  ],
+  "thoi_gian_phut": 180,
+  "nguon_cau_truc": "Đề thi: 180 phút, thang 10 điểm (câu 1 gồm 2 ý 1 điểm; còn lại theo từng câu)"
+ },
+ "do_tin_cay": "cao: nội dung đọc từ text đề trong bộ tổng hợp; điểm theo thang chuẩn của đề; muc_do là suy luận theo vị trí/độ khó điển hình (đề ĐH không công bố mức độ)",
+ "ghi_chu": "Chỉ ghi phần riêng theo chương trình Chuẩn; phần riêng Nâng cao (3 điểm, thay thế) KHÔNG đưa vào.",
+ "nguon": [
+  {
+   "url": "https://toanmath.com/toanmath-pdf/tong-hop-88-de-thi-thpt-quoc-gia-mon-toan-cua-bo-gddt-2005-2026.pdf",
+   "http": 200,
+   "tra_ngay": "2026-11-27"
+  }
+ ],
+ "cau": [
+  {
+   "so": "1a",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-do-thi",
+   "dang": "dt.khao-sat",
+   "lop": 12,
+   "muc_do": "NB",
+   "nang_luc": "cong-cu",
+   "tom_tat": "Khảo sát hàm y=x^3-3mx^2+3m^3 khi m=1"
+  },
+  {
+   "so": "1b",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "ham-so-ung-dung-dao-ham",
+   "dang": "hs.cuc-tri-hinh-hoc",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Hai cực trị A,B với diện tích tam giác OAB=48"
+  },
+  {
+   "so": "2",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "luong-giac",
+   "dang": "lg.pt",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "PT 2(cosx+căn3 sinx)cosx=cosx-căn3 sinx+1"
+  },
+  {
+   "so": "3",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "phuong-trinh-he-bpt",
+   "dang": "pt.bpt-vo-ti",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "BPT x+1+căn(x^2-4x+1)>=3căn x"
+  },
+  {
+   "so": "4",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "nguyen-ham-tich-phan",
+   "dang": "nh.tp-huu-ti",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Tích phân x^3/(x^4+3x^2+2)"
+  },
+  {
+   "so": "5",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "hinh-khong-gian-the-tich",
+   "dang": "th.chop+qh.vuong-goc",
+   "lop": 12,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Chóp tam giác đều: chứng minh SC⊥(ABH), thể tích S.ABH"
+  },
+  {
+   "so": "6",
+   "phan": "P1",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "bat-dang-thuc-cuc-tri",
+   "dang": "bdt.cuc-tri",
+   "lop": 10,
+   "muc_do": "VDC",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "GTLN của P=x^5+y^5+z^5 với x+y+z=0, x^2+y^2+z^2=1"
+  },
+  {
+   "so": "7",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxy-hinh-phang",
+   "dang": "oxy.duong-tron",
+   "lop": 10,
+   "muc_do": "VD",
+   "nang_luc": "giai-quyet-van-de",
+   "tom_tat": "Đường tròn tâm thuộc (C2), tiếp xúc d, cắt (C1) tại A,B với AB⊥d"
+  },
+  {
+   "so": "8",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "oxyz-mat-cau",
+   "dang": "ox.mc-pt",
+   "lop": 12,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Mặt cầu qua A,B tâm thuộc đường thẳng d"
+  },
+  {
+   "so": "9",
+   "phan": "P2",
+   "loai_cau": "tu-luan",
+   "diem": 1,
+   "chu_de": "to-hop-xac-suat",
+   "dang": "tk.xs-co-dien",
+   "lop": 11,
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "tom_tat": "Xác suất 4 học sinh gọi lên bảng có cả nam lẫn nữ (15 nam, 10 nữ)"
+  }
+ ]
+}

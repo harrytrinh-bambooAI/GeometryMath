@@ -21,6 +21,8 @@ Feature GEO là MVP web app Hình Học Không Gian Cùng AI, máy chủ Java, �
 | [D-GEO-072](#q-tl-06) | Thông báo dễ hiểu, cho thử lại, không hiện nội dung dở dang, không đổi nhãn; thời gian chờ tối đa: TBD — owner TechLead | SRC-062, SRC-066 | US-GEO-103, 401, 402, 409; AC và TC chưa viết (BA, QC đánh dấu PROVISIONAL cùng D-GEO-072) | story và AC dùng giá trị đó viết lại; chỉ phần bị ảnh hưởng chạy lại (Q7) |
 | [D-GEO-074](#q-tl-06) | Trang đang mở tự cập nhật trạng thái khóa không muộn hơn 10 giây sau `release_at`, không cần tải lại hay đăng nhập lại; cơ chế (làm mới định kỳ hay máy chủ đẩy) do ARCH đề xuất | SRC-069 (ca "học sinh đang mở bài đúng lúc tới giờ"); 10 giây là PO đặt | US-GEO-612; AC và TC chưa viết (BA, QC đánh dấu PROVISIONAL cùng D-GEO-074) | story và AC dùng giá trị đó viết lại; chỉ phần bị ảnh hưởng chạy lại (Q7) |
 
+> Cập nhật 27/11/2026 (PO, goal run): sáu câu đã có trả lời PO ở cột Answer; điểm cần TechLead thật: nơi vận hành prod (Q-TL-01) và iOS tối thiểu (Q-TL-05).
+
 ## Terms used
 - Phiên đang hoạt động: có ít nhất một yêu cầu trong 60 giây gần nhất.
 - `school_id`: định danh trường; cách ly dữ liệu theo trường.
@@ -29,12 +31,12 @@ Feature GEO là MVP web app Hình Học Không Gian Cùng AI, máy chủ Java, �
 
 | # | Topic | Ref | Screen | Needed by | Answer |
 |---|---|---|---|---|---|
-| [Q-TL-01](#q-tl-01) | Hạ tầng chạy thử và vận hành | D-GEO-046 | — | R3 của E1 | |
-| [Q-TL-02](#q-tl-02) | Dữ liệu thử tải | D-GEO-049 | — | R3 của E1 | |
-| [Q-TL-03](#q-tl-03) | "Đang hoạt động" và cửa sổ đỉnh | D-GEO-044 | — | R3 của E1 | |
-| [Q-TL-04](#q-tl-04) | Dữ liệu mẫu, mã lớp, nội dung dùng chung | D-GEO-054, D-GEO-051, D-GEO-076 | — | R3 của E6 | |
-| [Q-TL-05](#q-tl-05) | Java, khung và thiết bị tối thiểu | D-GEO-068 | — | R3 của E1 | |
-| [Q-TL-06](#q-tl-06) | Cổng AI lỗi và độ trễ khi tới giờ mở | D-GEO-072, D-GEO-074 | — | R3 của E4 | |
+| [Q-TL-01](#q-tl-01) | Hạ tầng chạy thử và vận hành | D-GEO-046 | — | R3 của E1 | PO 27/11/2026: Confirm A (PO-84); nơi vận hành thật chờ TechLead/owner khi lên prod |
+| [Q-TL-02](#q-tl-02) | Dữ liệu thử tải | D-GEO-049 | — | R3 của E1 | PO 27/11/2026: Confirm the default (PO-84); bộ đo `bench/` đã chạy cỡ này |
+| [Q-TL-03](#q-tl-03) | "Đang hoạt động" và cửa sổ đỉnh | D-GEO-044 | — | R3 của E1 | PO 27/11/2026: Confirm the default (PO-84) |
+| [Q-TL-04](#q-tl-04) | Dữ liệu mẫu, mã lớp, nội dung dùng chung | D-GEO-054, D-GEO-051, D-GEO-076 | — | R3 của E6 | PO 27/11/2026: Confirm the default (PO-84) |
+| [Q-TL-05](#q-tl-05) | Java, khung và thiết bị tối thiểu | D-GEO-068 | — | R3 của E1 | PO 27/11/2026: chốt theo code, Java 26 · Spring Boot 4.1.2 · Maven (PO-77); thiết bị kiểm: Chrome desktop, iPad gen 7, iPhone 13, Pixel 7; iOS tối thiểu chờ TechLead |
+| [Q-TL-06](#q-tl-06) | Cổng AI lỗi và độ trễ khi tới giờ mở | D-GEO-072, D-GEO-074 | — | R3 của E4 | PO 27/11/2026: chốt 10 giây dev/test, 90 giây prod, 45 giây một lần gọi (PO-78); trễ khóa ≤ 10 giây giữ mặc định (PO-84) |
 
 ---
 

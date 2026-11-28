@@ -1,0 +1,2883 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "ung-dung-tich-phan",
+ "so_cau": 39,
+ "cau": [
+  {
+   "id": "MC-UD-01.TLN.0",
+   "mau_cau": "MC-UD-01",
+   "bien_the": {
+    "m": "1"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich-parabol",
+   "dang_tx": "ud.dien-tich",
+   "lop": 12,
+   "yccd": [
+    "12.UD.1"
+   ],
+   "kien_thuc": [
+    "Diện tích giữa parabol và đường thẳng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-01|m=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-01"
+   },
+   "de_bai": "Diện tích hình phẳng giới hạn bởi đồ thị $y=x^2$ và đường thẳng $y=1x$ bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "0,17",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 0.16666666666666666,
+   "dap_so": {
+    "gia_tri": "\\dfrac{1}{6}",
+    "so": 0.16666666666666666
+   },
+   "do_kho": 0.631,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-01.TN.1",
+   "mau_cau": "MC-UD-01",
+   "bien_the": {
+    "m": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich-parabol",
+   "dang_tx": "ud.dien-tich",
+   "lop": 12,
+   "yccd": [
+    "12.UD.1"
+   ],
+   "kien_thuc": [
+    "Diện tích giữa parabol và đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-01|m=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-01"
+   },
+   "de_bai": "Diện tích hình phẳng giới hạn bởi đồ thị $y=x^2$ và đường thẳng $y=2x$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{4}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{8}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m x^2dx$ (quên đường thẳng)"
+     }
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m mx\\,dx$ (quên parabol)"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{2}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai lũy thừa khi thay cận"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{4}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{8}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m x^2dx$ (quên đường thẳng)"
+     }
+    },
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m mx\\,dx$ (quên parabol)"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{2}{3}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai lũy thừa khi thay cận"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{4}{3}",
+    "so": 1.3333333333333333
+   },
+   "do_kho": 0.157,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-01.TLN.1",
+   "mau_cau": "MC-UD-01",
+   "bien_the": {
+    "m": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich-parabol",
+   "dang_tx": "ud.dien-tich",
+   "lop": 12,
+   "yccd": [
+    "12.UD.1"
+   ],
+   "kien_thuc": [
+    "Diện tích giữa parabol và đường thẳng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-01|m=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-01"
+   },
+   "de_bai": "Diện tích hình phẳng giới hạn bởi đồ thị $y=x^2$ và đường thẳng $y=2x$ bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "1,33",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.3333333333333333,
+   "dap_so": {
+    "gia_tri": "\\dfrac{4}{3}",
+    "so": 1.3333333333333333
+   },
+   "do_kho": 0.646,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-01.TN.2",
+   "mau_cau": "MC-UD-01",
+   "bien_the": {
+    "m": "3"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich-parabol",
+   "dang_tx": "ud.dien-tich",
+   "lop": 12,
+   "yccd": [
+    "12.UD.1"
+   ],
+   "kien_thuc": [
+    "Diện tích giữa parabol và đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-01|m=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-01"
+   },
+   "de_bai": "Diện tích hình phẳng giới hạn bởi đồ thị $y=x^2$ và đường thẳng $y=3x$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{9}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m x^2dx$ (quên đường thẳng)"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{27}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m mx\\,dx$ (quên parabol)"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{3}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai lũy thừa khi thay cận"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{9}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m x^2dx$ (quên đường thẳng)"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{27}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m mx\\,dx$ (quên parabol)"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{3}{2}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai lũy thừa khi thay cận"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{9}{2}",
+    "so": 4.5
+   },
+   "do_kho": 0.124,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-01.TLN.2",
+   "mau_cau": "MC-UD-01",
+   "bien_the": {
+    "m": "3"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich-parabol",
+   "dang_tx": "ud.dien-tich",
+   "lop": 12,
+   "yccd": [
+    "12.UD.1"
+   ],
+   "kien_thuc": [
+    "Diện tích giữa parabol và đường thẳng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-01|m=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-01"
+   },
+   "de_bai": "Diện tích hình phẳng giới hạn bởi đồ thị $y=x^2$ và đường thẳng $y=3x$ bằng bao nhiêu (làm tròn đến hàng phần trăm)?",
+   "dap_an": "4,5",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.5,
+   "dap_so": {
+    "gia_tri": "\\dfrac{9}{2}",
+    "so": 4.5
+   },
+   "do_kho": 0.676,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-01.TN.3",
+   "mau_cau": "MC-UD-01",
+   "bien_the": {
+    "m": "4"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich-parabol",
+   "dang_tx": "ud.dien-tich",
+   "lop": 12,
+   "yccd": [
+    "12.UD.1"
+   ],
+   "kien_thuc": [
+    "Diện tích giữa parabol và đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-01|m=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-01"
+   },
+   "de_bai": "Diện tích hình phẳng giới hạn bởi đồ thị $y=x^2$ và đường thẳng $y=4x$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{32}{3}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{64}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m x^2dx$ (quên đường thẳng)"
+     }
+    },
+    {
+     "noi_dung": "32",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m mx\\,dx$ (quên parabol)"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{8}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai lũy thừa khi thay cận"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{32}{3}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{64}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m x^2dx$ (quên đường thẳng)"
+     }
+    },
+    {
+     "phuong_an": "32",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m mx\\,dx$ (quên parabol)"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{8}{3}",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai lũy thừa khi thay cận"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{32}{3}",
+    "so": 10.666666666666666
+   },
+   "do_kho": 0.179,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-01.TLN.3",
+   "mau_cau": "MC-UD-01",
+   "bien_the": {
+    "m": "4"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich-parabol",
+   "dang_tx": "ud.dien-tich",
+   "lop": 12,
+   "yccd": [
+    "12.UD.1"
+   ],
+   "kien_thuc": [
+    "Diện tích giữa parabol và đường thẳng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-01|m=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-01"
+   },
+   "de_bai": "Diện tích hình phẳng giới hạn bởi đồ thị $y=x^2$ và đường thẳng $y=4x$ bằng bao nhiêu (làm tròn đến hàng phần mười)?",
+   "dap_an": "10,7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 10.666666666666666,
+   "dap_so": {
+    "gia_tri": "\\dfrac{32}{3}",
+    "so": 10.666666666666666
+   },
+   "do_kho": 0.651,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-01.TN.4",
+   "mau_cau": "MC-UD-01",
+   "bien_the": {
+    "m": "6"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich-parabol",
+   "dang_tx": "ud.dien-tich",
+   "lop": 12,
+   "yccd": [
+    "12.UD.1"
+   ],
+   "kien_thuc": [
+    "Diện tích giữa parabol và đường thẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-01|m=6",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-01"
+   },
+   "de_bai": "Diện tích hình phẳng giới hạn bởi đồ thị $y=x^2$ và đường thẳng $y=6x$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "36",
+     "dung": true
+    },
+    {
+     "noi_dung": "72",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m x^2dx$ (quên đường thẳng)"
+     }
+    },
+    {
+     "noi_dung": "108",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m mx\\,dx$ (quên parabol)"
+     }
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai lũy thừa khi thay cận"
+     }
+    }
+   ],
+   "dap_an": "36",
+   "nhieu": [
+    {
+     "phuong_an": "72",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m x^2dx$ (quên đường thẳng)"
+     }
+    },
+    {
+     "phuong_an": "108",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Chỉ tính $\\int_0^m mx\\,dx$ (quên parabol)"
+     }
+    },
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai lũy thừa khi thay cận"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "36",
+    "so": 36.0
+   },
+   "do_kho": 0.126,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-01.TLN.4",
+   "mau_cau": "MC-UD-01",
+   "bien_the": {
+    "m": "6"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.dien-tich-parabol",
+   "dang_tx": "ud.dien-tich",
+   "lop": 12,
+   "yccd": [
+    "12.UD.1"
+   ],
+   "kien_thuc": [
+    "Diện tích giữa parabol và đường thẳng"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 4.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-01|m=6",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-01"
+   },
+   "de_bai": "Diện tích hình phẳng giới hạn bởi đồ thị $y=x^2$ và đường thẳng $y=6x$ bằng bao nhiêu?",
+   "dap_an": "36",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 36.0,
+   "dap_so": {
+    "gia_tri": "36",
+    "so": 36.0
+   },
+   "do_kho": 0.658,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TN.0",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "1",
+    "t": "1"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-02|k=1,t=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{1x}}$, $y=0$, $x=1$ quanh trục $Ox$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{\\pi}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{1}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{2\\pi}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "noi_dung": "\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{\\pi}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{1}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{2\\pi}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "phuong_an": "\\pi",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{\\pi}{2}",
+    "so": 1.5707963267948966
+   },
+   "do_kho": 0.379,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TLN.0",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "1",
+    "t": "1"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-02|k=1,t=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{1x}}$, $y=0$, $x=1$ quanh trục $Ox$ bằng bao nhiêu (làm tròn đến hàng phần mười)?",
+   "dap_an": "1,6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 1.5707963267948966,
+   "dap_so": {
+    "gia_tri": "\\dfrac{\\pi}{2}",
+    "so": 1.5707963267948966
+   },
+   "do_kho": 0.896,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TN.1",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "1",
+    "t": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-02|k=1,t=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{1x}}$, $y=0$, $x=2$ quanh trục $Ox$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "2\\pi",
+     "dung": true
+    },
+    {
+     "noi_dung": "2",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{4\\sqrt{2}\\pi}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "noi_dung": "4\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_an": "2\\pi",
+   "nhieu": [
+    {
+     "phuong_an": "2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{4\\sqrt{2}\\pi}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "phuong_an": "4\\pi",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2\\pi",
+    "so": 6.283185307179586
+   },
+   "do_kho": 0.35,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TLN.1",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "1",
+    "t": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-02|k=1,t=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{1x}}$, $y=0$, $x=2$ quanh trục $Ox$ bằng bao nhiêu (làm tròn đến hàng phần mười)?",
+   "dap_an": "6,3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 6.283185307179586,
+   "dap_so": {
+    "gia_tri": "2\\pi",
+    "so": 6.283185307179586
+   },
+   "do_kho": 0.847,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TN.2",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "1",
+    "t": "3"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-02|k=1,t=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{1x}}$, $y=0$, $x=3$ quanh trục $Ox$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{9\\pi}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{9}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "noi_dung": "2\\sqrt{3}\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "noi_dung": "9\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{9\\pi}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{9}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "phuong_an": "2\\sqrt{3}\\pi",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "phuong_an": "9\\pi",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{9\\pi}{2}",
+    "so": 14.137166941154069
+   },
+   "do_kho": 0.344,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TLN.2",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "1",
+    "t": "3"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-02|k=1,t=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{1x}}$, $y=0$, $x=3$ quanh trục $Ox$ bằng bao nhiêu (làm tròn đến hàng phần mười)?",
+   "dap_an": "14,1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 14.137166941154069,
+   "dap_so": {
+    "gia_tri": "\\dfrac{9\\pi}{2}",
+    "so": 14.137166941154069
+   },
+   "do_kho": 0.892,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TN.3",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "2",
+    "t": "1"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-02|k=2,t=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{2x}}$, $y=0$, $x=1$ quanh trục $Ox$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\pi",
+     "dung": true
+    },
+    {
+     "noi_dung": "1",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{2\\sqrt{2}\\pi}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "noi_dung": "2\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_an": "\\pi",
+   "nhieu": [
+    {
+     "phuong_an": "1",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{2\\sqrt{2}\\pi}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "phuong_an": "2\\pi",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\pi",
+    "so": 3.141592653589793
+   },
+   "do_kho": 0.366,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TLN.3",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "2",
+    "t": "1"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-02|k=2,t=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{2x}}$, $y=0$, $x=1$ quanh trục $Ox$ bằng bao nhiêu (làm tròn đến hàng phần mười)?",
+   "dap_an": "3,1",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 3.141592653589793,
+   "dap_so": {
+    "gia_tri": "\\pi",
+    "so": 3.141592653589793
+   },
+   "do_kho": 0.897,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TN.4",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "2",
+    "t": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-02|k=2,t=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{2x}}$, $y=0$, $x=2$ quanh trục $Ox$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "4\\pi",
+     "dung": true
+    },
+    {
+     "noi_dung": "4",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{8\\pi}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "noi_dung": "8\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_an": "4\\pi",
+   "nhieu": [
+    {
+     "phuong_an": "4",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{8\\pi}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "phuong_an": "8\\pi",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "4\\pi",
+    "so": 12.566370614359172
+   },
+   "do_kho": 0.367,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TLN.4",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "2",
+    "t": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-02|k=2,t=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{2x}}$, $y=0$, $x=2$ quanh trục $Ox$ bằng bao nhiêu (làm tròn đến hàng phần mười)?",
+   "dap_an": "12,6",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 12.566370614359172,
+   "dap_so": {
+    "gia_tri": "4\\pi",
+    "so": 12.566370614359172
+   },
+   "do_kho": 0.872,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TN.5",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "2",
+    "t": "3"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-02|k=2,t=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{2x}}$, $y=0$, $x=3$ quanh trục $Ox$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "9\\pi",
+     "dung": true
+    },
+    {
+     "noi_dung": "9",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "noi_dung": "2\\sqrt{6}\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "noi_dung": "18\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_an": "9\\pi",
+   "nhieu": [
+    {
+     "phuong_an": "9",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "phuong_an": "2\\sqrt{6}\\pi",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "phuong_an": "18\\pi",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "9\\pi",
+    "so": 28.274333882308138
+   },
+   "do_kho": 0.383,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TLN.5",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "2",
+    "t": "3"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-02|k=2,t=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{2x}}$, $y=0$, $x=3$ quanh trục $Ox$ bằng bao nhiêu (làm tròn đến hàng phần mười)?",
+   "dap_an": "28,3",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 28.274333882308138,
+   "dap_so": {
+    "gia_tri": "9\\pi",
+    "so": 28.274333882308138
+   },
+   "do_kho": 0.842,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TN.6",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "3",
+    "t": "1"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-02|k=3,t=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{3x}}$, $y=0$, $x=1$ quanh trục $Ox$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{3\\pi}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{3}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{2\\sqrt{3}\\pi}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "noi_dung": "3\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{3\\pi}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{3}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{2\\sqrt{3}\\pi}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "phuong_an": "3\\pi",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{3\\pi}{2}",
+    "so": 4.71238898038469
+   },
+   "do_kho": 0.369,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TLN.6",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "3",
+    "t": "1"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-02|k=3,t=1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{3x}}$, $y=0$, $x=1$ quanh trục $Ox$ bằng bao nhiêu (làm tròn đến hàng phần mười)?",
+   "dap_an": "4,7",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 4.71238898038469,
+   "dap_so": {
+    "gia_tri": "\\dfrac{3\\pi}{2}",
+    "so": 4.71238898038469
+   },
+   "do_kho": 0.891,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TN.7",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "3",
+    "t": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-02|k=3,t=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{3x}}$, $y=0$, $x=2$ quanh trục $Ox$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "6\\pi",
+     "dung": true
+    },
+    {
+     "noi_dung": "6",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "noi_dung": "\\dfrac{4\\sqrt{6}\\pi}{3}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "noi_dung": "12\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_an": "6\\pi",
+   "nhieu": [
+    {
+     "phuong_an": "6",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "phuong_an": "\\dfrac{4\\sqrt{6}\\pi}{3}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "phuong_an": "12\\pi",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "6\\pi",
+    "so": 18.84955592153876
+   },
+   "do_kho": 0.362,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TLN.7",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "3",
+    "t": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-02|k=3,t=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{3x}}$, $y=0$, $x=2$ quanh trục $Ox$ bằng bao nhiêu (làm tròn đến hàng phần mười)?",
+   "dap_an": "18,8",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 18.84955592153876,
+   "dap_so": {
+    "gia_tri": "6\\pi",
+    "so": 18.84955592153876
+   },
+   "do_kho": 0.882,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TN.8",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "3",
+    "t": "3"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "TH",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.5,
+   "diem": 0.25,
+   "boi_canh_key": "MC-UD-02|k=3,t=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{3x}}$, $y=0$, $x=3$ quanh trục $Ox$ bằng:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\dfrac{27\\pi}{2}",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\dfrac{27}{2}",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "noi_dung": "6\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "noi_dung": "27\\pi",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_an": "\\dfrac{27\\pi}{2}",
+   "nhieu": [
+    {
+     "phuong_an": "\\dfrac{27}{2}",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên hệ số $\\pi$"
+     }
+    },
+    {
+     "phuong_an": "6\\pi",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Không bình phương hàm số: $\\pi\\int\\sqrt{kx}\\,dx$"
+     }
+    },
+    {
+     "phuong_an": "27\\pi",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\dfrac{27\\pi}{2}",
+    "so": 42.411500823462205
+   },
+   "do_kho": 0.392,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-UD-02.TLN.8",
+   "mau_cau": "MC-UD-02",
+   "bien_the": {
+    "k": "3",
+    "t": "3"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ud.the-tich-xoay-can",
+   "dang_tx": "ud.the-tich-xoay",
+   "lop": 12,
+   "yccd": [
+    "12.UD.2"
+   ],
+   "kien_thuc": [
+    "Thể tích khối tròn xoay quanh Ox"
+   ],
+   "loai_cau": "tra-loi-ngan",
+   "muc_do": "VDC",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 0.5,
+   "boi_canh_key": "MC-UD-02|k=3,t=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-UD-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-UD-02"
+   },
+   "de_bai": "Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi $y=\\sqrt{{3x}}$, $y=0$, $x=3$ quanh trục $Ox$ bằng bao nhiêu (làm tròn đến hàng phần mười)?",
+   "dap_an": "42,4",
+   "nhieu": [],
+   "gia_tri_chinh_xac": 42.411500823462205,
+   "dap_so": {
+    "gia_tri": "\\dfrac{27\\pi}{2}",
+    "so": 42.411500823462205
+   },
+   "do_kho": 0.841,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.0",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "10",
+    "q": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=10,q=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=10 - 2t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $10$ m/s.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "10",
+     "so": 10.0
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $\\dfrac{1}{5}$ giây kể từ lúc đạp phanh.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "5",
+     "so": 5.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $25$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "25",
+     "so": 25.0
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $8$ m.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "9",
+     "so": 9.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_an": "a) Đ; b) S; c) Đ; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "b) Ô tô dừng hẳn sau $\\dfrac{1}{5}$ giây kể từ lúc đạp phanh.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    },
+    {
+     "phuong_an": "d) Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $8$ m.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) S; c) Đ; d) S",
+    "so": null
+   },
+   "do_kho": 0.605,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.1",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "10",
+    "q": "4"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=10,q=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=10 - 4t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $4$ m/s.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "10",
+     "so": 10.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $\\dfrac{5}{2}$ giây kể từ lúc đạp phanh.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "\\dfrac{5}{2}",
+     "so": 2.5
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $\\dfrac{25}{2}$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{25}{2}",
+     "so": 12.5
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $8$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "8",
+     "so": 8.0
+    }
+   ],
+   "dap_an": "a) S; b) Đ; c) Đ; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "a) Vận tốc của ô tô lúc bắt đầu đạp phanh là $4$ m/s.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) Đ; c) Đ; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.587,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.2",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "10",
+    "q": "5"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=10,q=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=10 - 5t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $10$ m/s.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "10",
+     "so": 10.0
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $2$ giây kể từ lúc đạp phanh.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "2",
+     "so": 2.0
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $20$ m.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "10",
+     "so": 10.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $qt$"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $5$ m.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{15}{2}",
+     "so": 7.5,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_an": "a) Đ; b) Đ; c) S; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "c) Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $20$ m.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $qt$"
+     }
+    },
+    {
+     "phuong_an": "d) Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $5$ m.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) Đ; c) S; d) S",
+    "so": null
+   },
+   "do_kho": 0.573,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.3",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "12",
+    "q": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=12,q=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=12 - 2t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $2$ m/s.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "12",
+     "so": 12.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $\\dfrac{1}{6}$ giây kể từ lúc đạp phanh.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "6",
+     "so": 6.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $36$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "36",
+     "so": 36.0
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $11$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "11",
+     "so": 11.0
+    }
+   ],
+   "dap_an": "a) S; b) S; c) Đ; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "a) Vận tốc của ô tô lúc bắt đầu đạp phanh là $2$ m/s.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    },
+    {
+     "phuong_an": "b) Ô tô dừng hẳn sau $\\dfrac{1}{6}$ giây kể từ lúc đạp phanh.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) S; c) Đ; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.627,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.4",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "12",
+    "q": "4"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=12,q=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=12 - 4t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $12$ m/s.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "12",
+     "so": 12.0
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $\\dfrac{1}{3}$ giây kể từ lúc đạp phanh.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "3",
+     "so": 3.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $36$ m.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "18",
+     "so": 18.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $qt$"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $10$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "10",
+     "so": 10.0
+    }
+   ],
+   "dap_an": "a) Đ; b) S; c) S; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "b) Ô tô dừng hẳn sau $\\dfrac{1}{3}$ giây kể từ lúc đạp phanh.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    },
+    {
+     "phuong_an": "c) Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $36$ m.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $qt$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) S; c) S; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.583,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.5",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "12",
+    "q": "5"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=12,q=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=12 - 5t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $5$ m/s.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "12",
+     "so": 12.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $\\dfrac{12}{5}$ giây kể từ lúc đạp phanh.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "\\dfrac{12}{5}",
+     "so": 2.4
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $\\dfrac{72}{5}$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{72}{5}",
+     "so": 14.4
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $7$ m.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{19}{2}",
+     "so": 9.5,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_an": "a) S; b) Đ; c) Đ; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "a) Vận tốc của ô tô lúc bắt đầu đạp phanh là $5$ m/s.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    },
+    {
+     "phuong_an": "d) Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $7$ m.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) Đ; c) Đ; d) S",
+    "so": null
+   },
+   "do_kho": 0.619,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.6",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "20",
+    "q": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=20,q=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=20 - 2t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $20$ m/s.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "20",
+     "so": 20.0
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $\\dfrac{1}{10}$ giây kể từ lúc đạp phanh.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "10",
+     "so": 10.0,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $100$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "100",
+     "so": 100.0
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $18$ m.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "19",
+     "so": 19.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_an": "a) Đ; b) S; c) Đ; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "b) Ô tô dừng hẳn sau $\\dfrac{1}{10}$ giây kể từ lúc đạp phanh.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    },
+    {
+     "phuong_an": "d) Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $18$ m.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) S; c) Đ; d) S",
+    "so": null
+   },
+   "do_kho": 0.628,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.7",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "20",
+    "q": "4"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=20,q=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=20 - 4t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $4$ m/s.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "20",
+     "so": 20.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $5$ giây kể từ lúc đạp phanh.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "5",
+     "so": 5.0
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $50$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "50",
+     "so": 50.0
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $18$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "18",
+     "so": 18.0
+    }
+   ],
+   "dap_an": "a) S; b) Đ; c) Đ; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "a) Vận tốc của ô tô lúc bắt đầu đạp phanh là $4$ m/s.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) Đ; c) Đ; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.594,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.8",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "20",
+    "q": "5"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=20,q=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=20 - 5t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $20$ m/s.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "20",
+     "so": 20.0
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $4$ giây kể từ lúc đạp phanh.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "4",
+     "so": 4.0
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $80$ m.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "40",
+     "so": 40.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $qt$"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $15$ m.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{35}{2}",
+     "so": 17.5,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_an": "a) Đ; b) Đ; c) S; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "c) Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $80$ m.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $qt$"
+     }
+    },
+    {
+     "phuong_an": "d) Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $15$ m.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) Đ; c) S; d) S",
+    "so": null
+   },
+   "do_kho": 0.608,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.9",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "15",
+    "q": "2"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=15,q=2",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=15 - 2t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $2$ m/s.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "15",
+     "so": 15.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $\\dfrac{2}{15}$ giây kể từ lúc đạp phanh.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "\\dfrac{15}{2}",
+     "so": 7.5,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $\\dfrac{225}{4}$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{225}{4}",
+     "so": 56.25
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $14$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "14",
+     "so": 14.0
+    }
+   ],
+   "dap_an": "a) S; b) S; c) Đ; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "a) Vận tốc của ô tô lúc bắt đầu đạp phanh là $2$ m/s.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    },
+    {
+     "phuong_an": "b) Ô tô dừng hẳn sau $\\dfrac{2}{15}$ giây kể từ lúc đạp phanh.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) S; c) Đ; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.616,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.10",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "15",
+    "q": "4"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=15,q=4",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=15 - 4t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $15$ m/s.",
+     "dung": true,
+     "muc_do": "NB",
+     "gia_tri_dung": "15",
+     "so": 15.0
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $\\dfrac{4}{15}$ giây kể từ lúc đạp phanh.",
+     "dung": false,
+     "muc_do": "TH",
+     "gia_tri_dung": "\\dfrac{15}{4}",
+     "so": 3.75,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $\\dfrac{225}{4}$ m.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{225}{8}",
+     "so": 28.125,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $qt$"
+     }
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $13$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "13",
+     "so": 13.0
+    }
+   ],
+   "dap_an": "a) Đ; b) S; c) S; d) Đ",
+   "nhieu": [
+    {
+     "phuong_an": "b) Ô tô dừng hẳn sau $\\dfrac{4}{15}$ giây kể từ lúc đạp phanh.",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Giải sai phương trình $v(t)=0$"
+     }
+    },
+    {
+     "phuong_an": "c) Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $\\dfrac{225}{4}$ m.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên chia 2 khi lấy nguyên hàm của $qt$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) Đ; b) S; c) S; d) Đ",
+    "so": null
+   },
+   "do_kho": 0.613,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-DS-UD.DS.11",
+   "mau_cau": "MC-DS-UD",
+   "bien_the": {
+    "p": "15",
+    "q": "5"
+   },
+   "chu_de": "ung-dung-tich-phan",
+   "dang": "ds.van-toc-quang-duong",
+   "dang_tx": "ud.van-toc-quang-duong",
+   "lop": 12,
+   "yccd": [
+    "12.UD.3",
+    "12.NH.2"
+   ],
+   "kien_thuc": [
+    "Đúng/sai: vận tốc - quãng đường"
+   ],
+   "loai_cau": "dung-sai",
+   "muc_do": "VD",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 6.0,
+   "diem": 1.0,
+   "boi_canh_key": "MC-DS-UD|p=15,q=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-DS-UD",
+    "ref": "gen/mau_khac.py",
+    "mau_cau": "MC-DS-UD"
+   },
+   "de_bai": "Một ô tô đang chạy thì người lái đạp phanh; từ thời điểm đó ô tô chuyển động chậm dần đều với vận tốc $v(t)=15 - 5t$ (m/s), $t$ tính bằng giây. Xét tính đúng/sai của các mệnh đề sau.",
+   "y": [
+    {
+     "nhan": "a",
+     "menh_de": "Vận tốc của ô tô lúc bắt đầu đạp phanh là $5$ m/s.",
+     "dung": false,
+     "muc_do": "NB",
+     "gia_tri_dung": "15",
+     "so": 15.0,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    },
+    {
+     "nhan": "b",
+     "menh_de": "Ô tô dừng hẳn sau $3$ giây kể từ lúc đạp phanh.",
+     "dung": true,
+     "muc_do": "TH",
+     "gia_tri_dung": "3",
+     "so": 3.0
+    },
+    {
+     "nhan": "c",
+     "menh_de": "Quãng đường ô tô đi được từ lúc đạp phanh đến khi dừng là $\\dfrac{45}{2}$ m.",
+     "dung": true,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{45}{2}",
+     "so": 22.5
+    },
+    {
+     "nhan": "d",
+     "menh_de": "Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $10$ m.",
+     "dung": false,
+     "muc_do": "VD",
+     "gia_tri_dung": "\\dfrac{25}{2}",
+     "so": 12.5,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_an": "a) S; b) Đ; c) Đ; d) S",
+   "nhieu": [
+    {
+     "phuong_an": "a) Vận tốc của ô tô lúc bắt đầu đạp phanh là $5$ m/s.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm gia tốc với vận tốc ban đầu"
+     }
+    },
+    {
+     "phuong_an": "d) Trong giây đầu tiên sau khi đạp phanh, ô tô đi được $10$ m.",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $v(1)$ thay cho quãng đường"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "a) S; b) Đ; c) Đ; d) S",
+    "so": null
+   },
+   "do_kho": 0.573,
+   "dap_so_engine": null
+  }
+ ]
+}

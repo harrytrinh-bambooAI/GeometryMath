@@ -1,0 +1,94 @@
+{
+ "id": "BM-034",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-23-duong-thang-vuong-goc-voi-mat-phang.md — bài 7 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Đường thẳng vuông góc với mặt phẳng",
+ "muc_do": "VDC",
+ "de_bai": "Tứ diện $OABC$ có $OA,OB,OC$ đôi một vuông góc, $H$ là trực tâm tam giác $ABC$. Chứng minh $OH\\perp(ABC)$.",
+ "dap_so": {
+  "gia_tri": "$OH\\perp(ABC)$ (chứng minh)",
+  "so": null
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Dấu hiệu đường thẳng vuông góc mặt phẳng",
+  "Trực tâm"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$OA\\perp OB$, $OA\\perp OC$ nên $OA\\perp(OBC)\\Rightarrow OA\\perp BC$.",
+   "ket_qua_trung_gian": "$OA\\perp BC$",
+   "kien_thuc": "Dấu hiệu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $OA\\perp BC$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$AH\\perp BC$ (trực tâm); $OA,AH$ cắt nhau trong $(OAH)$ nên $BC\\perp(OAH)\\Rightarrow BC\\perp OH$.",
+   "ket_qua_trung_gian": "$BC\\perp OH$",
+   "kien_thuc": "Dấu hiệu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $BC\\perp OH$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Suy $BC\\perp(OAH)$ chỉ từ $OA\\perp BC$ (một đường)",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Tương tự $OB\\perp(OAC)\\Rightarrow OB\\perp AC$, $BH\\perp AC$ nên $AC\\perp(OBH)\\Rightarrow AC\\perp OH$.",
+   "ket_qua_trung_gian": "$AC\\perp OH$",
+   "kien_thuc": "Dấu hiệu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AC\\perp OH$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "$BC,AC$ cắt nhau trong $(ABC)$ nên $OH\\perp(ABC)$.",
+   "ket_qua_trung_gian": "$OH\\perp(ABC)$",
+   "kien_thuc": "Dấu hiệu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Nêu đủ hai đường cắt nhau trong $(ABC)$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Chỉ có $OH\\perp BC$ đã kết luận $OH\\perp(ABC)$ (bỏ B3, dùng một đường)",
+     "tru": 0.25
+    }
+   ]
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B4",
+   "loai_loi": "thieu-chung-minh",
+   "mo_ta": "Chỉ có $OH\\perp BC$ đã kết luận $OH\\perp(ABC)$ (bỏ B3, dùng một đường)",
+   "loi_giai": "B1: $OA\\perp OB$, $OA\\perp OC$ nên $OA\\perp(OBC)\\Rightarrow OA\\perp BC$.\nB2: $AH\\perp BC$ (trực tâm); $OA,AH$ cắt nhau trong $(OAH)$ nên $BC\\perp(OAH)\\Rightarrow BC\\perp OH$.\nB3: (bỏ qua)\nB4: $OH\\perp BC$, $BC\\subset(ABC)$ nên $OH\\perp(ABC)$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Suy $BC\\perp(OAH)$ chỉ từ $OA\\perp BC$ (một đường)",
+   "loi_giai": "B1: $OA\\perp OB$, $OA\\perp OC$ nên $OA\\perp(OBC)\\Rightarrow OA\\perp BC$.\nB2: $OA\\perp BC$ nên $BC\\perp(OAH)$, do đó $BC\\perp OH$.\nB3: Tương tự $OB\\perp(OAC)\\Rightarrow OB\\perp AC$, $BH\\perp AC$ nên $AC\\perp(OBH)\\Rightarrow AC\\perp OH$.\nB4: $BC,AC$ cắt nhau trong $(ABC)$ nên $OH\\perp(ABC)$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "chứng minh (không có đáp số số). S2: B3, B4 vẫn đúng và độc lập (lỗi ở B2 không lan) → 0,75."
+}

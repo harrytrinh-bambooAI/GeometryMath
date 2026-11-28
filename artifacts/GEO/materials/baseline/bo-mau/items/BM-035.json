@@ -1,0 +1,86 @@
+{
+ "id": "BM-035",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-24-phep-chieu-vuong-goc-goc-giua-duong-thang-va-mat-phang.md — bài 3 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Góc giữa đường thẳng và mặt phẳng",
+ "muc_do": "TH",
+ "de_bai": "Chóp $S.ABCD$ đáy hình vuông cạnh $a$, $SA\\perp(ABCD)$, $SA=a$. Tính góc giữa $SC$ và mặt đáy.",
+ "dap_so": {
+  "gia_tri": "$\\arctan\\dfrac{1}{\\sqrt2}\\approx35{,}26^\\circ$",
+  "so": 35.264389682754654
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Hình chiếu vuông góc",
+  "tan"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$AC$ là hình chiếu của $SC$ lên $(ABCD)$; góc cần tìm là $\\widehat{SCA}$.",
+   "ket_qua_trung_gian": "$\\widehat{SCA}$",
+   "kien_thuc": "Hình chiếu",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\widehat{SCA}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Lấy góc $\\widehat{SCB}$ (với cạnh $BC$) làm góc với mặt đáy",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "$AC=a\\sqrt2$.",
+   "ket_qua_trung_gian": "$AC=a\\sqrt2$",
+   "kien_thuc": "Đường chéo hình vuông",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $AC=a\\sqrt2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 1.4142135623730951
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$\\tan\\widehat{SCA}=\\dfrac{a}{a\\sqrt2}=\\dfrac1{\\sqrt2}\\Rightarrow\\widehat{SCA}\\approx35{,}26^\\circ$.",
+   "ket_qua_trung_gian": "$\\tan=\\dfrac1{\\sqrt2}$",
+   "kien_thuc": "tan",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\tan=\\dfrac1{\\sqrt2}$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng $\\sin\\widehat{SCA}=\\dfrac{SA}{AC}$",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 35.264389682754654
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng $\\sin\\widehat{SCA}=\\dfrac{SA}{AC}$",
+   "loi_giai": "B1: $AC$ là hình chiếu của $SC$ lên $(ABCD)$; góc cần tìm là $\\widehat{SCA}$.\nB2: $AC=a\\sqrt2$.\nB3: $\\sin\\widehat{SCA}=\\dfrac{SA}{AC}=\\dfrac1{\\sqrt2}\\Rightarrow 45^\\circ$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B1",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Lấy góc $\\widehat{SCB}$ (với cạnh $BC$) làm góc với mặt đáy",
+   "loi_giai": "B1: Góc cần tìm là $\\widehat{SCB}$.\nB2: $AC=a\\sqrt2$.\nB3: $SB=a\\sqrt2$, $\\tan\\widehat{SCB}=\\dfrac{SB}{BC}=\\sqrt2\\Rightarrow\\approx54{,}74^\\circ$.",
+   "diem_dung": 0.25
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

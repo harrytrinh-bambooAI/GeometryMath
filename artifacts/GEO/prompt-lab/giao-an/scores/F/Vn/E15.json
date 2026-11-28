@@ -1,0 +1,50 @@
+{
+ "case": "E15",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": false,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [
+   "A6/A8: kind=patch không hợp với yêu cầu (chấp nhận ['reply', 'question'])",
+   "A6: sửa ngoài phạm vi yêu cầu phieu_hoc_tap[0].cau[0].de"
+  ],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 1
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 2,
+   "toi_thieu": 4,
+   "xu_ly_luat": 2,
+   "noi_dung": 2
+  },
+  "vi_pham_A": [
+   {
+    "luat": "A1",
+    "trich": "\"after\":\"$y=x^3-2x+5$. $\\\\dfrac{dy}{dx}$?\""
+   },
+   {
+    "luat": "A8",
+    "trich": "Nếu thầy/cô muốn đổi cả các kí hiệu $f'(x)$ hay $(\\\\cdot)'$ sang dạng $\\\\dfrac{d}{dx}(\\\\cdot)$ thì cần cho phép thay đổi phần phát biểu kiến thức."
+   }
+  ],
+  "loi_toan": [],
+  "nhan_xet": "Yêu cầu đổi y' sang dy/dx trái luật A1 (giữ nguyên kí hiệu SGK), nên phải từ chối và giải thích. Trợ lý lại sửa đề bài lấy từ kho (BT11-B32-1) và còn gợi ý rằng có thể đổi tiếp nếu giáo viên cho phép."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 0.0,
+  "A": 4,
+  "A_auto": 2,
+  "A_judge": 2,
+  "auto": 0.75,
+  "judge": 2.5
+ }
+}

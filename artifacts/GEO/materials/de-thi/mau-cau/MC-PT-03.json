@@ -1,0 +1,123 @@
+{
+ "id": "MC-PT-03",
+ "ten": "Bài toán hệ phương trình bậc nhất hai ẩn",
+ "chu_de": "phuong-trinh-he-bpt",
+ "dang": "pt.he-bac-nhat-thuc-te",
+ "dang_tx": "pt.he-bac-nhat",
+ "yccd": [
+  "10.HPT.1"
+ ],
+ "lop": 10,
+ "nang_luc": "mo-hinh-hoa",
+ "ho_hinh": "MC-PT-03",
+ "loai_cau": [
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tra-loi-ngan": "VDC"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-PT-03",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "_bo": [
+   {
+    "x0": 120,
+    "y0": 80,
+    "pp": 50,
+    "qq": 80
+   },
+   {
+    "x0": 35,
+    "y0": 65,
+    "pp": 30,
+    "qq": 45
+   },
+   {
+    "x0": 240,
+    "y0": 160,
+    "pp": 20,
+    "qq": 35
+   },
+   {
+    "x0": 75,
+    "y0": 125,
+    "pp": 60,
+    "qq": 100
+   }
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "NN": "x0+y0",
+  "TT": "pp*x0+qq*y0"
+ },
+ "boi_canh": "Một buổi biểu diễn bán được ${NN}$ vé gồm hai loại: vé loại I giá ${pp}$ nghìn đồng và vé loại II giá ${qq}$ nghìn đồng; tổng tiền thu được là ${TT}$ nghìn đồng.",
+ "hoi": "Số vé loại I đã bán là",
+ "dap_so": "x0",
+ "nhieu": [
+  {
+   "bieu_thuc": "y0",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhầm ẩn: trả lời số vé loại II"
+   }
+  },
+  {
+   "bieu_thuc": "TT/(pp+qq)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Chia tổng tiền cho tổng hai giá vé"
+   }
+  },
+  {
+   "bieu_thuc": "NN/2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Chia đều tổng số vé cho hai loại"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-PT-03']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "x0": "120",
+   "y0": "80",
+   "pp": "50",
+   "qq": "80"
+  },
+  {
+   "x0": "35",
+   "y0": "65",
+   "pp": "30",
+   "qq": "45"
+  },
+  {
+   "x0": "240",
+   "y0": "160",
+   "pp": "20",
+   "qq": "35"
+  },
+  {
+   "x0": "75",
+   "y0": "125",
+   "pp": "60",
+   "qq": "100"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 4,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

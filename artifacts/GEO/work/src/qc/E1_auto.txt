@@ -1,0 +1,14 @@
+# E1 — cột "Tự động hóa" (PO-50): chỉ ghi case khác mặc định của gen_cases.py (auto_default).
+# TC-GEO-nnnn | E2E-UI / E2E-API / IT / Manual | lý do (bắt buộc với Manual)
+TC-GEO-0110 | E2E-UI | thẻ hết hạn nạp sẵn vào phiên trình duyệt; kỳ vọng chính là câu MSG-GEO-02 và việc quay về "Vào lớp"
+TC-GEO-0112 | E2E-UI | Playwright giả lập điện thoại (F-GEO-103); chỉ kiểm bố cục, không cần bàn phím ảo
+TC-GEO-0118 | E2E-UI | soát mọi phản hồi mạng và mã JS mà trình duyệt nhận, không có khóa của nhà cung cấp
+TC-GEO-0116 | IT | đọc bản ghi lượt gọi của cổng AI ở phía máy chủ
+TC-GEO-0117 | IT | đổi cấu hình cổng AI rồi đọc bản ghi lượt gọi
+TC-GEO-0119 | IT | đọc yêu cầu mà nhà cung cấp giả lập nhận được
+TC-GEO-0121 | IT | điều khiển nhà cung cấp giả lập không trả lời và đọc bản ghi lượt gọi; câu MSG-GEO-14 trên màn đã có ở TC-GEO-0120
+TC-GEO-0135 | IT | chạy bộ đề chuẩn như một tác vụ phía máy chủ, đọc báo cáo
+TC-GEO-0136 | IT | như TC-GEO-0135
+TC-GEO-0137 | IT | như TC-GEO-0135
+TC-GEO-0139 | IT | như TC-GEO-0135
+TC-GEO-0141 | IT | như TC-GEO-0135

@@ -1,0 +1,948 @@
+{
+  "run": "20261122-224604",
+  "epics": [
+    {
+      "epic": "E1",
+      "total": 76,
+      "candidates": 67,
+      "required": 67,
+      "withTest": 67,
+      "passed": 67,
+      "failed": 0,
+      "candidatesWithoutTest": 0
+    },
+    {
+      "epic": "E2",
+      "total": 37,
+      "candidates": 37,
+      "required": 37,
+      "withTest": 0,
+      "passed": 0,
+      "failed": 0,
+      "candidatesWithoutTest": 37
+    },
+    {
+      "epic": "E3",
+      "total": 54,
+      "candidates": 49,
+      "required": 49,
+      "withTest": 0,
+      "passed": 0,
+      "failed": 0,
+      "candidatesWithoutTest": 49
+    },
+    {
+      "epic": "E4",
+      "total": 95,
+      "candidates": 94,
+      "required": 94,
+      "withTest": 0,
+      "passed": 0,
+      "failed": 0,
+      "candidatesWithoutTest": 94
+    },
+    {
+      "epic": "E5",
+      "total": 43,
+      "candidates": 43,
+      "required": 43,
+      "withTest": 0,
+      "passed": 0,
+      "failed": 0,
+      "candidatesWithoutTest": 43
+    },
+    {
+      "epic": "E6",
+      "total": 119,
+      "candidates": 117,
+      "required": 117,
+      "withTest": 0,
+      "passed": 0,
+      "failed": 0,
+      "candidatesWithoutTest": 117
+    },
+    {
+      "epic": "E7",
+      "total": 45,
+      "candidates": 45,
+      "required": 45,
+      "withTest": 0,
+      "passed": 0,
+      "failed": 0,
+      "candidatesWithoutTest": 45
+    }
+  ],
+  "withTests": [
+    {
+      "id": "TC-GEO-0100",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0101",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0102",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0103",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0104",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0105",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0107",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0108",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0109",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0110",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0173",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0111",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0112",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0113",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0114",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0115",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0171",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0172",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/IdentityE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0174",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0175",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0176",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0177",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0179",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0116",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0117",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0118",
+      "status": "passed",
+      "files": [
+        "tests/e1/ai-gateway.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0119",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0120",
+      "status": "passed",
+      "files": [
+        "tests/e1/ai-gateway.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0121",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0122",
+      "status": "passed",
+      "files": [
+        "tests/e1/ai-gateway.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0123",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0124",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0125",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0126",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0127",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/IdentityE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0128",
+      "status": "passed",
+      "files": [
+        "tests/e1/ai-gateway.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0129",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0130",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0131",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0132",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0133",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0134",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0170",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0178",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0800",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0135",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0136",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0137",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0138",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0139",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0140",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0141",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0142",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0143",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0144",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0145",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0146",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0147",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0148",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0156",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0157",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0158",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0159",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0160",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0801",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/quality/SqlLintPatternsTest.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0802",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0804",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    }
+  ],
+  "unknownTags": [
+    {
+      "id": "TC-KHUNG-01",
+      "status": "passed"
+    },
+    {
+      "id": "TC-KHUNG-02",
+      "status": "passed"
+    },
+    {
+      "id": "TC-KHUNG-03",
+      "status": "passed"
+    }
+  ],
+  "requiredMissing": [
+    "TC-GEO-0200",
+    "TC-GEO-0201",
+    "TC-GEO-0202",
+    "TC-GEO-0203",
+    "TC-GEO-0204",
+    "TC-GEO-0205",
+    "TC-GEO-0206",
+    "TC-GEO-0207",
+    "TC-GEO-0208",
+    "TC-GEO-0209",
+    "TC-GEO-0210",
+    "TC-GEO-0211",
+    "TC-GEO-0212",
+    "TC-GEO-0213",
+    "TC-GEO-0214",
+    "TC-GEO-0215",
+    "TC-GEO-0216",
+    "TC-GEO-0217",
+    "TC-GEO-0218",
+    "TC-GEO-0219",
+    "TC-GEO-0220",
+    "TC-GEO-0221",
+    "TC-GEO-0222",
+    "TC-GEO-0223",
+    "TC-GEO-0234",
+    "TC-GEO-0235",
+    "TC-GEO-0236",
+    "TC-GEO-0224",
+    "TC-GEO-0225",
+    "TC-GEO-0226",
+    "TC-GEO-0227",
+    "TC-GEO-0228",
+    "TC-GEO-0229",
+    "TC-GEO-0230",
+    "TC-GEO-0231",
+    "TC-GEO-0232",
+    "TC-GEO-0233",
+    "TC-GEO-0300",
+    "TC-GEO-0302",
+    "TC-GEO-0303",
+    "TC-GEO-0304",
+    "TC-GEO-0305",
+    "TC-GEO-0306",
+    "TC-GEO-0307",
+    "TC-GEO-0308",
+    "TC-GEO-0309",
+    "TC-GEO-0353",
+    "TC-GEO-0310",
+    "TC-GEO-0311",
+    "TC-GEO-0312",
+    "TC-GEO-0313",
+    "TC-GEO-0315",
+    "TC-GEO-0316",
+    "TC-GEO-0317",
+    "TC-GEO-0318",
+    "TC-GEO-0319",
+    "TC-GEO-0320",
+    "TC-GEO-0321",
+    "TC-GEO-0322",
+    "TC-GEO-0323",
+    "TC-GEO-0324",
+    "TC-GEO-0325",
+    "TC-GEO-0326",
+    "TC-GEO-0327",
+    "TC-GEO-0328",
+    "TC-GEO-0329",
+    "TC-GEO-0330",
+    "TC-GEO-0331",
+    "TC-GEO-0332",
+    "TC-GEO-0333",
+    "TC-GEO-0334",
+    "TC-GEO-0335",
+    "TC-GEO-0336",
+    "TC-GEO-0337",
+    "TC-GEO-0338",
+    "TC-GEO-0339",
+    "TC-GEO-0340",
+    "TC-GEO-0352",
+    "TC-GEO-0341",
+    "TC-GEO-0345",
+    "TC-GEO-0346",
+    "TC-GEO-0351",
+    "TC-GEO-0347",
+    "TC-GEO-0348",
+    "TC-GEO-0349",
+    "TC-GEO-0350",
+    "TC-GEO-0400",
+    "TC-GEO-0401",
+    "TC-GEO-0402",
+    "TC-GEO-0403",
+    "TC-GEO-0404",
+    "TC-GEO-0405",
+    "TC-GEO-0406",
+    "TC-GEO-0407",
+    "TC-GEO-0408",
+    "TC-GEO-0409",
+    "TC-GEO-0410",
+    "TC-GEO-0412",
+    "TC-GEO-0413",
+    "TC-GEO-0414",
+    "TC-GEO-0415",
+    "TC-GEO-0416",
+    "TC-GEO-0417",
+    "TC-GEO-0418",
+    "TC-GEO-0419",
+    "TC-GEO-0420",
+    "TC-GEO-0421",
+    "TC-GEO-0422",
+    "TC-GEO-0423",
+    "TC-GEO-0424",
+    "TC-GEO-0425",
+    "TC-GEO-0426",
+    "TC-GEO-0427",
+    "TC-GEO-0488",
+    "TC-GEO-0428",
+    "TC-GEO-0429",
+    "TC-GEO-0430",
+    "TC-GEO-0431",
+    "TC-GEO-0432",
+    "TC-GEO-0433",
+    "TC-GEO-0434",
+    "TC-GEO-0435",
+    "TC-GEO-0436",
+    "TC-GEO-0437",
+    "TC-GEO-0438",
+    "TC-GEO-0439",
+    "TC-GEO-0440",
+    "TC-GEO-0481",
+    "TC-GEO-0482",
+    "TC-GEO-0483",
+    "TC-GEO-0484",
+    "TC-GEO-0485",
+    "TC-GEO-0486",
+    "TC-GEO-0487",
+    "TC-GEO-0489",
+    "TC-GEO-0490",
+    "TC-GEO-0491",
+    "TC-GEO-0492",
+    "TC-GEO-0441",
+    "TC-GEO-0442",
+    "TC-GEO-0443",
+    "TC-GEO-0444",
+    "TC-GEO-0445",
+    "TC-GEO-0446",
+    "TC-GEO-0447",
+    "TC-GEO-0448",
+    "TC-GEO-0449",
+    "TC-GEO-0450",
+    "TC-GEO-0451",
+    "TC-GEO-0452",
+    "TC-GEO-0453",
+    "TC-GEO-0454",
+    "TC-GEO-0455",
+    "TC-GEO-0456",
+    "TC-GEO-0457",
+    "TC-GEO-0458",
+    "TC-GEO-0459",
+    "TC-GEO-0460",
+    "TC-GEO-0461",
+    "TC-GEO-0462",
+    "TC-GEO-0463",
+    "TC-GEO-0464",
+    "TC-GEO-0465",
+    "TC-GEO-0466",
+    "TC-GEO-0467",
+    "TC-GEO-0468",
+    "TC-GEO-0493",
+    "TC-GEO-0469",
+    "TC-GEO-0470",
+    "TC-GEO-0471",
+    "TC-GEO-0472",
+    "TC-GEO-0473",
+    "TC-GEO-0474",
+    "TC-GEO-0475",
+    "TC-GEO-0476",
+    "TC-GEO-0477",
+    "TC-GEO-0478",
+    "TC-GEO-0479",
+    "TC-GEO-0480",
+    "TC-GEO-0494",
+    "TC-GEO-0500",
+    "TC-GEO-0501",
+    "TC-GEO-0502",
+    "TC-GEO-0503",
+    "TC-GEO-0504",
+    "TC-GEO-0505",
+    "TC-GEO-0506",
+    "TC-GEO-0507",
+    "TC-GEO-0508",
+    "TC-GEO-0509",
+    "TC-GEO-0510",
+    "TC-GEO-0511",
+    "TC-GEO-0512",
+    "TC-GEO-0513",
+    "TC-GEO-0514",
+    "TC-GEO-0515",
+    "TC-GEO-0516",
+    "TC-GEO-0517",
+    "TC-GEO-0518",
+    "TC-GEO-0519",
+    "TC-GEO-0520",
+    "TC-GEO-0521",
+    "TC-GEO-0522",
+    "TC-GEO-0523",
+    "TC-GEO-0541",
+    "TC-GEO-0542",
+    "TC-GEO-0524",
+    "TC-GEO-0525",
+    "TC-GEO-0526",
+    "TC-GEO-0527",
+    "TC-GEO-0528",
+    "TC-GEO-0529",
+    "TC-GEO-0530",
+    "TC-GEO-0531",
+    "TC-GEO-0532",
+    "TC-GEO-0533",
+    "TC-GEO-0534",
+    "TC-GEO-0535",
+    "TC-GEO-0536",
+    "TC-GEO-0537",
+    "TC-GEO-0538",
+    "TC-GEO-0539",
+    "TC-GEO-0540",
+    "TC-GEO-0600",
+    "TC-GEO-0601",
+    "TC-GEO-0602",
+    "TC-GEO-0603",
+    "TC-GEO-0604",
+    "TC-GEO-0605",
+    "TC-GEO-0606",
+    "TC-GEO-0607",
+    "TC-GEO-0608",
+    "TC-GEO-0609",
+    "TC-GEO-0610",
+    "TC-GEO-0611",
+    "TC-GEO-0696",
+    "TC-GEO-0865",
+    "TC-GEO-0612",
+    "TC-GEO-0613",
+    "TC-GEO-0614",
+    "TC-GEO-0615",
+    "TC-GEO-0616",
+    "TC-GEO-0617",
+    "TC-GEO-0618",
+    "TC-GEO-0619",
+    "TC-GEO-0620",
+    "TC-GEO-0621",
+    "TC-GEO-0622",
+    "TC-GEO-0623",
+    "TC-GEO-0624",
+    "TC-GEO-0625",
+    "TC-GEO-0626",
+    "TC-GEO-0627",
+    "TC-GEO-0628",
+    "TC-GEO-0629",
+    "TC-GEO-0630",
+    "TC-GEO-0631",
+    "TC-GEO-0632",
+    "TC-GEO-0633",
+    "TC-GEO-0634",
+    "TC-GEO-0635",
+    "TC-GEO-0636",
+    "TC-GEO-0637",
+    "TC-GEO-0638",
+    "TC-GEO-0699",
+    "TC-GEO-0867",
+    "TC-GEO-0868",
+    "TC-GEO-0639",
+    "TC-GEO-0640",
+    "TC-GEO-0641",
+    "TC-GEO-0642",
+    "TC-GEO-0643",
+    "TC-GEO-0644",
+    "TC-GEO-0645",
+    "TC-GEO-0646",
+    "TC-GEO-0647",
+    "TC-GEO-0648",
+    "TC-GEO-0869",
+    "TC-GEO-0877",
+    "TC-GEO-0649",
+    "TC-GEO-0650",
+    "TC-GEO-0651",
+    "TC-GEO-0652",
+    "TC-GEO-0653",
+    "TC-GEO-0654",
+    "TC-GEO-0655",
+    "TC-GEO-0870",
+    "TC-GEO-0871",
+    "TC-GEO-0872",
+    "TC-GEO-0656",
+    "TC-GEO-0657",
+    "TC-GEO-0658",
+    "TC-GEO-0659",
+    "TC-GEO-0660",
+    "TC-GEO-0661",
+    "TC-GEO-0662",
+    "TC-GEO-0663",
+    "TC-GEO-0664",
+    "TC-GEO-0665",
+    "TC-GEO-0666",
+    "TC-GEO-0695",
+    "TC-GEO-0698",
+    "TC-GEO-0863",
+    "TC-GEO-0873",
+    "TC-GEO-0667",
+    "TC-GEO-0668",
+    "TC-GEO-0669",
+    "TC-GEO-0670",
+    "TC-GEO-0671",
+    "TC-GEO-0672",
+    "TC-GEO-0673",
+    "TC-GEO-0674",
+    "TC-GEO-0675",
+    "TC-GEO-0874",
+    "TC-GEO-0875",
+    "TC-GEO-0878",
+    "TC-GEO-0676",
+    "TC-GEO-0677",
+    "TC-GEO-0678",
+    "TC-GEO-0679",
+    "TC-GEO-0680",
+    "TC-GEO-0681",
+    "TC-GEO-0862",
+    "TC-GEO-0876",
+    "TC-GEO-0682",
+    "TC-GEO-0683",
+    "TC-GEO-0684",
+    "TC-GEO-0685",
+    "TC-GEO-0686",
+    "TC-GEO-0687",
+    "TC-GEO-0688",
+    "TC-GEO-0689",
+    "TC-GEO-0690",
+    "TC-GEO-0692",
+    "TC-GEO-0693",
+    "TC-GEO-0694",
+    "TC-GEO-0697",
+    "TC-GEO-0864",
+    "TC-GEO-0860",
+    "TC-GEO-0861",
+    "TC-GEO-0700",
+    "TC-GEO-0701",
+    "TC-GEO-0702",
+    "TC-GEO-0703",
+    "TC-GEO-0704",
+    "TC-GEO-0705",
+    "TC-GEO-0706",
+    "TC-GEO-0707",
+    "TC-GEO-0708",
+    "TC-GEO-0709",
+    "TC-GEO-0710",
+    "TC-GEO-0711",
+    "TC-GEO-0712",
+    "TC-GEO-0744",
+    "TC-GEO-0713",
+    "TC-GEO-0714",
+    "TC-GEO-0715",
+    "TC-GEO-0716",
+    "TC-GEO-0717",
+    "TC-GEO-0718",
+    "TC-GEO-0719",
+    "TC-GEO-0720",
+    "TC-GEO-0721",
+    "TC-GEO-0722",
+    "TC-GEO-0723",
+    "TC-GEO-0724",
+    "TC-GEO-0725",
+    "TC-GEO-0726",
+    "TC-GEO-0727",
+    "TC-GEO-0728",
+    "TC-GEO-0729",
+    "TC-GEO-0730",
+    "TC-GEO-0731",
+    "TC-GEO-0740",
+    "TC-GEO-0741",
+    "TC-GEO-0742",
+    "TC-GEO-0743",
+    "TC-GEO-0732",
+    "TC-GEO-0733",
+    "TC-GEO-0734",
+    "TC-GEO-0735",
+    "TC-GEO-0736",
+    "TC-GEO-0737",
+    "TC-GEO-0738",
+    "TC-GEO-0739"
+  ],
+  "candidatesMissing": []
+}

@@ -1,0 +1,57 @@
+{
+ "case": "C09",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 3,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 4,
+   "cau_tu_kho": 4,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 3,
+   "phong_cach": 4,
+   "to_chuc": 4,
+   "chinh_xac": 4,
+   "phieu": 3
+  },
+  "vi_pham_A": [],
+  "loi_toan": [
+   "PHT1 câu 4: bước gợi ý 'Chứng minh CD vuông góc với hai đường thẳng nối đỉnh với trung điểm đó trong các tam giác đều. → Kết luận AB ⊥ CD.' bị hổng lập luận. Muốn suy ra AB ⊥ CD phải qua bước CD ⊥ (ABM), là kiến thức đường thẳng vuông góc mặt phẳng, nằm ngoài danh sách được cấp. Gợi ý cần nêu rõ bước này hoặc đổi sang bài khác.",
+   "PHT1 câu 4 gắn kt 'KT11-C07-TC-001', nhưng lời giải chuẩn không dùng tính chất a ∥ b, c ⊥ a ⇒ c ⊥ b. Câu 3 cũng gắn TC-001 dù chỉ dùng quan hệ song song để chuyển góc. Mục tiêu HD4 'Vận dụng tính chất song song – vuông góc' vì vậy không khớp với nội dung câu 4."
+  ],
+  "nhan_xet": "Thời lượng 45 phút đúng, phát biểu kiến thức khớp tham chiếu, các câu gợi ý không lộ đáp số, khung trò chơi rõ ràng (riêng HD2 vẫn thiên về giảng giải). Câu 4 vượt kiến thức được cấp và quá sức đối tượng cơ bản; trợ lý đã nêu ở unsure nhưng vẫn giữ câu này, còn đề xuất thay bằng BM-031 thì trùng nội dung câu 3, nên GV vẫn phải tự chọn bài khác."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 82.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 3.83
+ }
+}

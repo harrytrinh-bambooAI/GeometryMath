@@ -1,0 +1,85 @@
+{
+ "id": "BM-039",
+ "nguon": {
+  "loai": "lop11",
+  "ref": "artifacts/GEO/materials/lop-11/bai-tap/chuong-07-quan-he-vuong-goc/bai-26-khoang-cach.md — bài 3 (v1.2 · 27/11/2026)"
+ },
+ "cap": "thpt",
+ "chu_de": "Khoảng cách từ điểm đến mặt phẳng",
+ "muc_do": "TH",
+ "de_bai": "Chóp $S.ABC$, $SA\\perp(ABC)$, $SA=a$, tam giác $ABC$ vuông tại $B$, $AB=a$. Tính $d(A,(SBC))$.",
+ "dap_so": {
+  "gia_tri": "$\\dfrac{a\\sqrt2}{2}$",
+  "so": 0.7071067811865476
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Dựng khoảng cách",
+  "Hệ thức lượng"
+ ],
+ "tong_diem": 1.0,
+ "bieu_diem": "tu-soan",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "$BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.",
+   "ket_qua_trung_gian": "$BC\\perp(SAB)$",
+   "kien_thuc": "Dấu hiệu vuông góc",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $BC\\perp(SAB)$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Kẻ $AH\\perp SB$; $AH\\perp BC$ nên $AH\\perp(SBC)$, $d=AH$.",
+   "ket_qua_trung_gian": "$d=AH$",
+   "kien_thuc": "Dựng khoảng cách",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $d=AH$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Kẻ $AH\\perp SB$ rồi khẳng định $AH\\perp(SBC)$ không nêu $AH\\perp BC$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "$SB=a\\sqrt2$, $AH=\\dfrac{SA\\cdot AB}{SB}=\\dfrac{a\\sqrt2}2$.",
+   "ket_qua_trung_gian": "$\\dfrac{a\\sqrt2}2$",
+   "kien_thuc": "Hệ thức lượng",
+   "diem": 0.5,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{a\\sqrt2}2$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Dùng $AH=\\dfrac{SB}{SA\\cdot AB}$ (đảo công thức)",
+     "tru": 0.5
+    }
+   ],
+   "ket_qua_so": 0.7071067811865476
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B3",
+   "loai_loi": "sai-dinh-li",
+   "mo_ta": "Dùng $AH=\\dfrac{SB}{SA\\cdot AB}$ (đảo công thức)",
+   "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Kẻ $AH\\perp SB$; $AH\\perp BC$ nên $AH\\perp(SBC)$, $d=AH$.\nB3: $AH=\\dfrac{SA\\cdot SB}{AB}=a\\sqrt2$.",
+   "diem_dung": 0.5
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B2",
+   "loai_loi": "thieu-chung-minh",
+   "mo_ta": "Kẻ $AH\\perp SB$ rồi khẳng định $AH\\perp(SBC)$ không nêu $AH\\perp BC$",
+   "loi_giai": "B1: $BC\\perp AB$, $BC\\perp SA$ nên $BC\\perp(SAB)$.\nB2: Kẻ $AH\\perp SB$ thì $d(A,(SBC))=AH$.\nB3: $SB=a\\sqrt2$, $AH=\\dfrac{SA\\cdot AB}{SB}=\\dfrac{a\\sqrt2}2$.",
+   "diem_dung": 0.75
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": ""
+}

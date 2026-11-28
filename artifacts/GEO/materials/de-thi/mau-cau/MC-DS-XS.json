@@ -1,0 +1,168 @@
+{
+ "id": "MC-DS-XS",
+ "ten": "Đúng/sai: xác suất toàn phần và Bayes",
+ "chu_de": "xac-suat-co-dieu-kien",
+ "dang": "ds.bayes",
+ "dang_tx": "xs.dieu-kien",
+ "yccd": [
+  "12.XS.1",
+  "12.XS.2"
+ ],
+ "lop": 12,
+ "ho_hinh": "MC-DS-XS",
+ "tham_so": {
+  "p": [
+   "3/5",
+   "2/5",
+   "7/10"
+  ],
+  "u": [
+   "1/10",
+   "1/20"
+  ],
+  "v": [
+   "1/25",
+   "3/100"
+  ]
+ },
+ "dan_xuat": {
+  "P1": "100*p",
+  "U": "100*u",
+  "V": "100*v"
+ },
+ "boi_canh": "Một bệnh viện nhận bệnh nhân từ hai khu vực: khu vực I chiếm ${P1}\\%$; tỉ lệ mắc bệnh X ở khu vực I là ${U}\\%$, ở khu vực II là ${V}\\%$. Chọn ngẫu nhiên một bệnh nhân; gọi $H$: \\\"bệnh nhân đến từ khu vực I\\\", $A$: \\\"bệnh nhân mắc bệnh X\\\".",
+ "kieu": "xap-xi:4",
+ "y": [
+  {
+   "menh_de": "$P(\\overline H)={v}$.",
+   "dap_so": "1-p",
+   "muc_do": "NB",
+   "nhieu": [
+    {
+     "bieu_thuc": "p",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm $P(\\overline H)$ với $P(H)$"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "$P(AH)={v}$.",
+   "dap_so": "p*u",
+   "muc_do": "TH",
+   "nhieu": [
+    {
+     "bieu_thuc": "u",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Quên nhân $P(H)$: lấy $P(A\\mid H)$"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "$P(A)={v}$.",
+   "dap_so": "p*u+(1-p)*v",
+   "muc_do": "VD",
+   "nhieu": [
+    {
+     "bieu_thuc": "(u+v)/2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy trung bình cộng không theo tỉ trọng"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "$P(H\\mid A)={v}$ (làm tròn đến hàng phần nghìn).",
+   "dap_so": "p*u/(p*u+(1-p)*v)",
+   "muc_do": "VD",
+   "nhieu": [
+    {
+     "bieu_thuc": "u",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhầm $P(H\\mid A)$ với $P(A\\mid H)$"
+     }
+    }
+   ],
+   "kieu": "xap-xi:3"
+  }
+ ],
+ "loai_mau": "dung-sai",
+ "loai_cau": [
+  "dung-sai"
+ ],
+ "bien_the": [
+  {
+   "p": "3/5",
+   "u": "1/10",
+   "v": "1/25"
+  },
+  {
+   "p": "3/5",
+   "u": "1/10",
+   "v": "3/100"
+  },
+  {
+   "p": "3/5",
+   "u": "1/20",
+   "v": "1/25"
+  },
+  {
+   "p": "3/5",
+   "u": "1/20",
+   "v": "3/100"
+  },
+  {
+   "p": "2/5",
+   "u": "1/10",
+   "v": "1/25"
+  },
+  {
+   "p": "2/5",
+   "u": "1/10",
+   "v": "3/100"
+  },
+  {
+   "p": "2/5",
+   "u": "1/20",
+   "v": "1/25"
+  },
+  {
+   "p": "2/5",
+   "u": "1/20",
+   "v": "3/100"
+  },
+  {
+   "p": "7/10",
+   "u": "1/10",
+   "v": "1/25"
+  },
+  {
+   "p": "7/10",
+   "u": "1/10",
+   "v": "3/100"
+  },
+  {
+   "p": "7/10",
+   "u": "1/20",
+   "v": "1/25"
+  },
+  {
+   "p": "7/10",
+   "u": "1/20",
+   "v": "3/100"
+  }
+ ],
+ "rang_buoc": [],
+ "so_bien_the": 12,
+ "so_cau_sinh": 12,
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-DS-XS"
+ },
+ "phien_ban": "v1.0 · 27/11/2026"
+}

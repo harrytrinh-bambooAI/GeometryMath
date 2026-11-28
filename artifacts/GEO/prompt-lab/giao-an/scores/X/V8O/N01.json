@@ -1,0 +1,62 @@
+{
+ "case": "N01",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 45,
+   "kt_khop": 2,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "muc_do_lech_kho": [],
+   "so_cau": 4,
+   "cau_tu_kho": 1,
+   "kq_ai_ghi": 4,
+   "kq_khop_kho": 4
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 4,
+   "chinh_xac": 4,
+   "phieu": 4
+  },
+  "vi_pham_A": [
+   {
+    "luat": "A3",
+    "trich": "Câu 1 (BT11-B15-1) chỉ làm theo định nghĩa: $|u_n-2|=\\frac1n$, không dùng tính chất giới hạn của tổng."
+   }
+  ],
+  "loi_toan": [
+   "HĐ4 ghi \"Các ví dụ này không trùng với các dãy đã khảo sát ở HĐ1–HĐ3\" là sai: câu 1 ($\\frac{2n+1}{n}$) trùng dãy ở HĐ2, câu 2 ($\\left(\\frac12\\right)^n$) trùng dãy ở HĐ1 và HĐ3.",
+   "Câu 3 ($\\lim\\frac1{n^3}$, $\\lim\\left(-\\frac34\\right)^n$) chỉ áp dụng trực tiếp giới hạn cơ bản, đúng mức là NB chứ không phải TH."
+  ],
+  "nhan_xet": "Giáo án theo đúng phong cách khám phá, đủ 45 phút, kiến thức khớp tham chiếu. Tuy vậy, mục unsure tự lộ kết quả $L=2$ của câu 1. Câu 1 và câu 2 của PHT lặp lại dãy đã khảo sát nhưng lại được khẳng định là không trùng, và câu 3 ghi sai mức độ."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 75.0,
+  "A": 1,
+  "A_auto": 0,
+  "A_judge": 1,
+  "auto": 1.0,
+  "judge": 4.33
+ }
+}

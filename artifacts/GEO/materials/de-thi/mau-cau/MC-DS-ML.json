@@ -1,0 +1,196 @@
+{
+ "id": "MC-DS-ML",
+ "ten": "Đúng/sai: mô hình tăng trưởng mũ",
+ "chu_de": "ham-so-mu-logarit",
+ "dang": "ds.mo-hinh-mu",
+ "dang_tx": "ml.mo-hinh",
+ "yccd": [
+  "11.ML.4",
+  "11.ML.3"
+ ],
+ "lop": 11,
+ "ho_hinh": "MC-DS-ML",
+ "tham_so": {
+  "N0": [
+   "100",
+   "500",
+   "1000"
+  ],
+  "T": [
+   "2",
+   "3",
+   "5"
+  ],
+  "k": [
+   "3",
+   "4"
+  ]
+ },
+ "dan_xuat": {
+  "M": "2**k",
+  "kT": "k*T"
+ },
+ "boi_canh": "Số lượng vi khuẩn trong một mẻ nuôi cấy sau $t$ giờ là $N(t)={N0}\\cdot 2^{\\frac{t}{{T}}}$.",
+ "y": [
+  {
+   "menh_de": "Số vi khuẩn ban đầu là ${v}$.",
+   "dap_so": "N0",
+   "muc_do": "NB",
+   "nhieu": [
+    {
+     "bieu_thuc": "2*N0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Tính $2^0=2$"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Sau ${T}$ giờ, số vi khuẩn là ${v}$.",
+   "dap_so": "2*N0",
+   "muc_do": "TH",
+   "nhieu": [
+    {
+     "bieu_thuc": "N0*T",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi số vi khuẩn tăng tuyến tính theo thời gian"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Sau ${kT}$ giờ, số vi khuẩn là ${v}$.",
+   "dap_so": "N0*2**k",
+   "muc_do": "TH",
+   "nhieu": [
+    {
+     "bieu_thuc": "N0*2*k",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Nhân $2k$ thay cho lũy thừa $2^k$"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Thời gian để số vi khuẩn gấp ${M}$ lần ban đầu là ${v}$ giờ.",
+   "dap_so": "k*T",
+   "muc_do": "VD",
+   "nhieu": [
+    {
+     "bieu_thuc": "M*T/2",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Coi tăng tuyến tính: gấp đôi sau $T$ giờ thì gấp $M$ lần sau $\\dfrac{MT}{2}$ giờ"
+     }
+    }
+   ]
+  }
+ ],
+ "loai_mau": "dung-sai",
+ "loai_cau": [
+  "dung-sai"
+ ],
+ "bien_the": [
+  {
+   "N0": "100",
+   "T": "2",
+   "k": "3"
+  },
+  {
+   "N0": "100",
+   "T": "2",
+   "k": "4"
+  },
+  {
+   "N0": "100",
+   "T": "3",
+   "k": "3"
+  },
+  {
+   "N0": "100",
+   "T": "3",
+   "k": "4"
+  },
+  {
+   "N0": "100",
+   "T": "5",
+   "k": "3"
+  },
+  {
+   "N0": "100",
+   "T": "5",
+   "k": "4"
+  },
+  {
+   "N0": "500",
+   "T": "2",
+   "k": "3"
+  },
+  {
+   "N0": "500",
+   "T": "2",
+   "k": "4"
+  },
+  {
+   "N0": "500",
+   "T": "3",
+   "k": "3"
+  },
+  {
+   "N0": "500",
+   "T": "3",
+   "k": "4"
+  },
+  {
+   "N0": "500",
+   "T": "5",
+   "k": "3"
+  },
+  {
+   "N0": "500",
+   "T": "5",
+   "k": "4"
+  },
+  {
+   "N0": "1000",
+   "T": "2",
+   "k": "3"
+  },
+  {
+   "N0": "1000",
+   "T": "2",
+   "k": "4"
+  },
+  {
+   "N0": "1000",
+   "T": "3",
+   "k": "3"
+  },
+  {
+   "N0": "1000",
+   "T": "3",
+   "k": "4"
+  },
+  {
+   "N0": "1000",
+   "T": "5",
+   "k": "3"
+  },
+  {
+   "N0": "1000",
+   "T": "5",
+   "k": "4"
+  }
+ ],
+ "rang_buoc": [],
+ "so_bien_the": 18,
+ "so_cau_sinh": 12,
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-DS-ML"
+ },
+ "phien_ban": "v1.0 · 27/11/2026"
+}

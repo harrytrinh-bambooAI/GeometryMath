@@ -1,0 +1,127 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "role": "STUDENT"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b71a-7116-9406-c3ace827d905",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 61
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/api/v1/student/assignments/00000000-0000-7000-8000-000000000040/questions",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "requestBody": {
+      "question": "Vì sao A là hình chiếu của S? (1795362371405)",
+      "orgId": "00000000-0000-7000-8000-000000000002",
+      "schoolId": "00000000-0000-7000-8000-000000000002"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b751-778f-8c20-0a10dba04ffb",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "245",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"id\":8,\"question\":\"Vì sao A là hình chiếu của S? (1795362371405)\",\"replyKind\":\"concept\",\"reply\":\"[Trợ lý giả lập] Em hãy đọc lại dữ kiện của đề và thử tìm mối liên hệ giữa các yếu tố đã cho nhé.\"}",
+    "ms": 39
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000003",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b776-7565-9f67-c4701f891f59",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 5
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/teacher/assignments/00000000-0000-7000-8000-000000000040/monitor",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b77d-70cf-ae7d-b22c667caee2",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "content-length": "2735",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"problemCode\":\"HKG-01\",\"className\":\"11A1\",\"releaseState\":\"upcoming\",\"studentCount\":5,\"openedCount\":4,\"students\":[{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000020\",\"displayName\":\"An\",\"opened\":true,\"k\":2,\"label\":\"Đã xem gợi ý 2\",\"hintLevel\":2,\"askCount\":4,\"toolCount\":4,\"activeMinutes\":23},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000021\",\"displayName\":\"Bình\",\"opened\":true,\"k\":1,\"label\":\"Đã xem gợi ý 1\",\"hintLevel\":1,\"askCount\":2,\"toolCount\":2,\"activeMinutes\":11},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000022\",\"displayName\":\"Chi\",\"opened\":true,\"k\":0,\"label\":\"Đã mở bài\",\"hintLevel\":0,\"askCount\":0,\"toolCount\":6,\"activeMinutes\":9},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000023\",\"displayName\":\"Dũng\",\"opened\":true,\"k\":2,\"label\":\"Đã xem gợi ý 2\",\"hintLevel\":2,\"askCount\":2,\"toolCount\":3,\"activeMinutes\":21},{\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"userId\":\"00000000-0000-7000-8000-000000000024\",\"displayName\":\"Hà\",\"opened\":false,\"k\":0,\"label\":\"Chưa bắt đầu\",\"hintLevel\":0,\"askCount\":0,\"toolCount\":0,\"activeMinutes\":0}],\"questions\":[{\"id\":8,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S? (1795362371405)\",\"askedAt\":\"2026-11-22T15:46:11.430823Z\",\"askerName\":\"An\"},{\"id\":7,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Tan của một góc là gì?\",\"askedAt\":\"2026-11-22T15:23:10.684Z\",\"askerName\":\"Dũng\"},{\"id\":6,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Cho em xin đáp số luôn được không?\",\"askedAt\":\"2026-11-22T15:22:10.684Z\",\"askerName\":\"An\"},{\"id\":5,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:21:10.684Z\",\"askerName\":\"An\"},{\"id\":4,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:20:10.684Z\",\"askerName\":\"Bình\"},{\"id\":3,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Góc cần tìm là góc nào trên hình?\",\"askedAt\":\"2026-11-22T15:19:10.684Z\",\"askerName\":\"Bình\"},{\"id\":2,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:18:10.684Z\",\"askerName\":\"Dũng\"},{\"id\":1,\"assignmentId\":\"00000000-0000-7000-8000-000000000040\",\"question\":\"Vì sao A là hình chiếu của S?\",\"askedAt\":\"2026-11-22T15:17:10.684Z\",\"askerName\":\"An\"}]}",
+    "ms": 51
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000002",
+      "userId": "00000000-0000-7000-8000-000000000005",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b7b2-70e3-b9fb-c35f86d318da",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 5
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/teacher/assignments/00000000-0000-7000-8000-000000000040/monitor",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 404,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b7b8-7022-a257-112f00520a79",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"code\":\"NOT_FOUND\",\"message\":\"Không tìm thấy dữ liệu yêu cầu.\",\"requestId\":\"01a203ef-b7b8-7022-a257-112f00520a79\"}",
+    "ms": 6
+  }
+]

@@ -1,0 +1,89 @@
+{
+ "id": "MC-HH-A11",
+ "ten": "Bán kính mặt cầu ngoại tiếp chóp SA ⊥ đáy vuông",
+ "chu_de": "khoi-tron-xoay",
+ "dang": "mat-cau-ngoai-tiep.chop-sa",
+ "dang_tx": "tx.noi-tiep-cau",
+ "yccd": [
+  "12.TX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "A",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "VD",
+  "tra-loi-ngan": "VD"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-79",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-79 + geometry/problem-specs.json#HKN-79"
+ },
+ "tham_so": {
+  "k": [
+   "1",
+   "sqrt(2)",
+   "2"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "h": "k*a",
+  "SB": "sqrt(a**2+h**2)",
+  "SC": "sqrt(2*a**2+h**2)"
+ },
+ "boi_canh": "Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\\perp(ABCD)$ và $SA={h}$.",
+ "hoi": "Bán kính mặt cầu ngoại tiếp hình chóp $S.ABCD$ bằng",
+ "dap_so": "sqrt(2*a**2+h**2)/2",
+ "don_vi": "a",
+ "nhieu": [
+  {
+   "bieu_thuc": "sqrt(2*a**2+h**2)",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy $SC$ (đường kính) làm bán kính"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(a**2+h**2)/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy trung điểm $SB$ làm tâm mặt cầu"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(2)*a/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy bán kính đường tròn ngoại tiếp đáy"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-79",
+  "ask": 0,
+  "params": {
+   "a": "a",
+   "sa": "h"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(2)"
+  },
+  {
+   "k": "2"
+  }
+ ],
+ "so_bien_the": 3,
+ "so_cau_sinh": 5,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

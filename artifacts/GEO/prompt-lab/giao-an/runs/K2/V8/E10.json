@@ -1,0 +1,34 @@
+{
+ "case": "E10",
+ "variant": "V8",
+ "round": "K2",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[1].thoi_luong_phut\", \"before\": 20, \"after\": 15, \"ly_do\": \"Giáo viên yêu cầu giảm HĐ Hình thành xuống 15 phút.\"}, {\"op\": \"replace\", \"path\": \"hoat_dong[2].thoi_luong_phut\", \"before\": 15, \"after\": 20, \"ly_do\": \"Giáo viên yêu cầu tăng HĐ Luyện tập lên 20 phút. Tổng thời lượng trên lớp vẫn là 5+15+20+5=45 phút.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[3]\", \"van_de\": \"HĐ4 có \\\"o_nha\\\":false và \\\"thoi_luong_phut\\\":5 nhưng cách tổ chức ghi HS làm ở nhà, nộp tiết sau. Tổng 5+15+20+5=45 vẫn đúng nhưng nội dung không khớp cờ o_nha.\", \"goi_y\": \"Chọn một trong hai: (a) giữ HĐ4 trên lớp 5 phút và sửa phần tổ chức cho HS làm tại lớp; (b) đặt \\\"o_nha\\\":true, 0 phút và chuyển 5 phút sang HĐ khác, ví dụ Luyện tập.\", \"ly_do\": \"Quy tắc khớp nội bộ: làm ở nhà thì o_nha true và 0 phút. Tôi không tự sửa vì không được yêu cầu.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu 3 (BM-007) cùng dạng với ví dụ ở HD2 và câu 2, đều tính d(A,(SBC)) với SA ⊥ (ABCD). Câu 3 lại gắn mã KT11-C07-DN-010 trong khi lời giải dùng KT11-C07-CT-003.\", \"goi_y\": \"Cân nhắc đổi sang bài VD như BM-008 hoặc BT11-B26-5 cho đối tượng khá, hoặc sửa mã kt của câu 3 cho đúng. Với 20 phút luyện tập, các câu 2, 3 vẫn vừa thời lượng.\", \"ly_do\": \"Tránh trùng dạng bài và đảm bảo mã kiến thức khớp.\"}, {\"vi_tri\": \"hoat_dong[1].to_chuc\", \"van_de\": \"HD2 giao PHT1 câu 1 cho nhóm 4 làm trong 15 phút (sau khi giảm) cùng với định nghĩa và ví dụ dựng AH ⊥ (SBC). Thời gian khá chặt.\", \"goi_y\": \"GV nên làm mẫu phần dựng hình và để HS làm nhanh câu 1 (mức NB).\", \"ly_do\": \"Sau khi giảm thời lượng, HĐ Hình thành có thể quá tải.\"}], \"unsure\": []}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[1].thoi_luong_phut\",\"before\":20,\"after\":15,\"ly_do\":\"Giáo viên yêu cầu giảm HĐ Hình thành xuống 15 phút.\"},{\"op\":\"replace\",\"path\":\"hoat_dong[2].thoi_luong_phut\",\"before\":15,\"after\":20,\"ly_do\":\"Giáo viên yêu cầu tăng HĐ Luyện tập lên 20 phút. Tổng thời lượng trên lớp vẫn là 5+15+20+5=45 phút.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[3]\",\"van_de\":\"HĐ4 có \\\"o_nha\\\":false và \\\"thoi_luong_phut\\\":5 nhưng cách tổ chức ghi HS làm ở nhà, nộp tiết sau. Tổng 5+15+20+5=45 vẫn đúng nhưng nội dung không khớp cờ o_nha.\",\"goi_y\":\"Chọn một trong hai: (a) giữ HĐ4 trên lớp 5 phút và sửa phần tổ chức cho HS làm tại lớp; (b) đặt \\\"o_nha\\\":true, 0 phút và chuyển 5 phút sang HĐ khác, ví dụ Luyện tập.\",\"ly_do\":\"Quy tắc khớp nội bộ: làm ở nhà thì o_nha true và 0 phút. Tôi không tự sửa vì không được yêu cầu.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu 3 (BM-007) cùng dạng với ví dụ ở HD2 và câu 2, đều tính d(A,(SBC)) với SA ⊥ (ABCD). Câu 3 lại gắn mã KT11-C07-DN-010 trong khi lời giải dùng KT11-C07-CT-003.\",\"goi_y\":\"Cân nhắc đổi sang bài VD như BM-008 hoặc BT11-B26-5 cho đối tượng khá, hoặc sửa mã kt của câu 3 cho đúng. Với 20 phút luyện tập, các câu 2, 3 vẫn vừa thời lượng.\",\"ly_do\":\"Tránh trùng dạng bài và đảm bảo mã kiến thức khớp.\"},{\"vi_tri\":\"hoat_dong[1].to_chuc\",\"van_de\":\"HD2 giao PHT1 câu 1 cho nhóm 4 làm trong 15 phút (sau khi giảm) cùng với định nghĩa và ví dụ dựng AH ⊥ (SBC). Thời gian khá chặt.\",\"goi_y\":\"GV nên làm mẫu phần dựng hình và để HS làm nhanh câu 1 (mức NB).\",\"ly_do\":\"Sau khi giảm thời lượng, HĐ Hình thành có thể quá tải.\"}],\"unsure\":[]}}",
+ "usage": {
+  "ts": "2026-11-27T17:58:30",
+  "role": "gen",
+  "task": "K2/V8/E10",
+  "model": "claude-sonnet-5-5",
+  "input": 3371,
+  "output": 1036,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 7.1
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:58:30",
+   "role": "gen",
+   "task": "K2/V8/E10",
+   "model": "claude-sonnet-5-5",
+   "input": 3371,
+   "output": 1036,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 7.1
+  }
+ ],
+ "server_errs0": []
+}

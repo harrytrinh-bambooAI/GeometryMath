@@ -1,0 +1,25 @@
+{
+ "ids": [
+  "BM-001-S1",
+  "BM-001-DUNG",
+  "BM-002-S1",
+  "BM-002-DUNG",
+  "BM-003-S1",
+  "BM-003-DUNG",
+  "BM-004-S1",
+  "BM-004-DUNG"
+ ],
+ "text": "{\"ket_qua\":[{\"id\":\"BM-001-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"Vì SA ⊥ (ABCD) nên hình chiếu của SC lên (ABCD) là AC, góc giữa SC và mặt phẳng là góc SCA, không phải góc ASC. Các bước sau dùng sai góc này.\"},{\"id\":\"BM-001-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: AC = a√2, tan SCA = a√6/(a√2) = √3, nên góc bằng 60°.\"},{\"id\":\"BM-002-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"BC ⊥ (SAB) nên hình chiếu của C lên (SAB) là B và hình chiếu của SC là SB. Góc cần tìm là góc CSB, không phải CSA.\"},{\"id\":\"BM-002-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: SC = 2a, sin CSB = BC/SC = 1/2, nên góc bằng 30°.\"},{\"id\":\"BM-003-S1\",\"buoc_sai\":\"B2\",\"ly_do\":\"OA = AC/2 = a√2/2, không phải a√2. Hệ quả: tan SAO = √3 và góc bằng 60°.\"},{\"id\":\"BM-003-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: OA = a√2/2, tan SAO = √3, nên góc bằng 60°.\"},{\"id\":\"BM-004-S1\",\"buoc_sai\":\"B1\",\"ly_do\":\"B'D' là đường chéo của mặt hình vuông cạnh a nên B'D' = a√2, không phải a√3. Do đó tam giác AB'D' đều và góc bằng 60°.\"},{\"id\":\"BM-004-DUNG\",\"buoc_sai\":null,\"ly_do\":\"Đúng: ba đoạn AB', AD', B'D' đều bằng a√2, tam giác đều nên góc bằng 60°.\"}]}",
+ "usage": {
+  "ts": "2026-11-27T16:41:53",
+  "role": "gen",
+  "task": "R3/STEP1/step-0",
+  "model": "claude-sonnet-5-5",
+  "input": 2621,
+  "output": 695,
+  "cache_write": 0,
+  "cache_read": 0,
+  "stop": "end_turn",
+  "sec": 4.6
+ }
+}

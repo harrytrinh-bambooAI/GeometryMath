@@ -1,0 +1,48 @@
+{
+ "case": "E11",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 1
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá chỉ thay đúng noi_dung của HĐ3, thêm ví dụ thương $y=\\dfrac{x}{x^2+1}$ với $u$, $v$ rõ ràng; ví dụ dùng đúng công thức SGK, không ghi kết quả và không đụng mục khoá. Các đề xuất phát hiện đúng lỗi có sẵn và chỉ đề xuất kèm lý do, không tự sửa: PHT1 câu 2 cần $(\\sin x)'$ mà HĐ2 chưa dạy KT11-C09-CT-003, HĐ1 thiếu mã DN-001, phát biểu HĐ3 thiếu quy tắc tổng, hiệu."
+ },
+ "judge2": {
+  "diem": {
+   "dap_ung": 5,
+   "toi_thieu": 5,
+   "xu_ly_luat": 5,
+   "noi_dung": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Bản vá đúng chỗ (hoat_dong[2].noi_dung) và đúng yêu cầu: thêm ví dụ thương $y=\\dfrac{x}{x^2+1}$, dùng đúng công thức SGK, không ghi đáp số, không đụng mục khoá. Các đề xuất đều xác đáng và chỉ đề xuất, không tự sửa: PHT1 câu 2 cần $(\\sin x)'$ mà chưa có KT11-C09-CT-003, HĐ1 thiếu mã KT11-C09-DN-001, phát biểu HĐ3 thiếu quy tắc tổng/hiệu, nên dùng id BT11-B32-2 trong kho."
+ },
+ "score": {
+  "diem": 100.0,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 5
+ }
+}

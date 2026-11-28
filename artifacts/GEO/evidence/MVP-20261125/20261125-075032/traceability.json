@@ -1,0 +1,3260 @@
+{
+  "run": "20261125-075032",
+  "epics": [
+    {
+      "epic": "E1",
+      "total": 76,
+      "candidates": 67,
+      "required": 67,
+      "withTest": 67,
+      "passed": 67,
+      "failed": 0,
+      "candidatesWithoutTest": 0
+    },
+    {
+      "epic": "E2",
+      "total": 37,
+      "candidates": 37,
+      "required": 37,
+      "withTest": 37,
+      "passed": 37,
+      "failed": 0,
+      "candidatesWithoutTest": 0
+    },
+    {
+      "epic": "E3",
+      "total": 54,
+      "candidates": 49,
+      "required": 49,
+      "withTest": 49,
+      "passed": 49,
+      "failed": 0,
+      "candidatesWithoutTest": 0
+    },
+    {
+      "epic": "E4",
+      "total": 95,
+      "candidates": 94,
+      "required": 94,
+      "withTest": 94,
+      "passed": 94,
+      "failed": 0,
+      "candidatesWithoutTest": 0
+    },
+    {
+      "epic": "E5",
+      "total": 43,
+      "candidates": 43,
+      "required": 43,
+      "withTest": 43,
+      "passed": 43,
+      "failed": 0,
+      "candidatesWithoutTest": 0
+    },
+    {
+      "epic": "E6",
+      "total": 119,
+      "candidates": 117,
+      "required": 117,
+      "withTest": 117,
+      "passed": 117,
+      "failed": 0,
+      "candidatesWithoutTest": 0
+    },
+    {
+      "epic": "E7",
+      "total": 45,
+      "candidates": 45,
+      "required": 45,
+      "withTest": 45,
+      "passed": 45,
+      "failed": 0,
+      "candidatesWithoutTest": 0
+    }
+  ],
+  "withTests": [
+    {
+      "id": "TC-GEO-0100",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0101",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0102",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0103",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0104",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0105",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0107",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0108",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0109",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0110",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0173",
+      "status": "passed",
+      "files": [
+        "tests/e1/student-join.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0111",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0112",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0113",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0114",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0115",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0171",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0172",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/IdentityE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0174",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0175",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0176",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0177",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0179",
+      "status": "passed",
+      "files": [
+        "tests/e1/auth.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0116",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0117",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0118",
+      "status": "passed",
+      "files": [
+        "tests/e1/ai-gateway.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0119",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0120",
+      "status": "passed",
+      "files": [
+        "tests/e1/ai-gateway.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0121",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/AiGatewayE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0122",
+      "status": "passed",
+      "files": [
+        "tests/e1/ai-gateway.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0123",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0124",
+      "status": "passed",
+      "files": [
+        "tests/e1/teacher-login.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0125",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0126",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0127",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/IdentityE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0128",
+      "status": "passed",
+      "files": [
+        "tests/e1/ai-gateway.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0129",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0130",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0131",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0132",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0133",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0134",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0170",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0178",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0800",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0135",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0136",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0137",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0138",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0139",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0140",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0141",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0142",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0143",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0144",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0145",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0146",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0147",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0148",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/BenchmarkE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0156",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0157",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0158",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0159",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0160",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0801",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/quality/SqlLintPatternsTest.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0802",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e1/LoadDataE1IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0804",
+      "status": "passed",
+      "files": [
+        "tests/e1/isolation.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0200",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0201",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0202",
+      "status": "passed",
+      "files": [
+        "tests/e2/labels.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0203",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0204",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0205",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0206",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e2/GeometryE2IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0207",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e2/GeometryE2IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0208",
+      "status": "passed",
+      "files": [
+        "tests/e2/templates.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0209",
+      "status": "passed",
+      "files": [
+        "tests/e2/templates.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0210",
+      "status": "passed",
+      "files": [
+        "tests/e2/templates.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0211",
+      "status": "passed",
+      "files": [
+        "tests/e2/templates.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0212",
+      "status": "passed",
+      "files": [
+        "tests/e2/templates.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0213",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0214",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0215",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0216",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0217",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0218",
+      "status": "passed",
+      "files": [
+        "tests/e2/labels.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0219",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0220",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0221",
+      "status": "passed",
+      "files": [
+        "tests/e2/e2.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0222",
+      "status": "passed",
+      "files": [
+        "tests/e2/labels.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0223",
+      "status": "passed",
+      "files": [
+        "tests/e2/e2.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0234",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0235",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0236",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/geometry/internal/GeometryEngineE2Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0224",
+      "status": "passed",
+      "files": [
+        "tests/e2/self-study.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0225",
+      "status": "passed",
+      "files": [
+        "tests/e2/self-study.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0226",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e2/GeometryE2IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0227",
+      "status": "passed",
+      "files": [
+        "tests/e2/e2.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0228",
+      "status": "passed",
+      "files": [
+        "tests/e2/e2.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0229",
+      "status": "passed",
+      "files": [
+        "tests/e2/self-study.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0230",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e2/GeometryE2IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0231",
+      "status": "passed",
+      "files": [
+        "tests/e2/templates.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0232",
+      "status": "passed",
+      "files": [
+        "tests/e2/e2.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0233",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e2/GeometryE2IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0300",
+      "status": "passed",
+      "files": [
+        "tests/e3/view.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0302",
+      "status": "passed",
+      "files": [
+        "tests/e3/view.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0303",
+      "status": "passed",
+      "files": [
+        "tests/e3/view.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0304",
+      "status": "passed",
+      "files": [
+        "tests/e3/view.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0305",
+      "status": "passed",
+      "files": [
+        "tests/e3/view.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0306",
+      "status": "passed",
+      "files": [
+        "tests/e3/view.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0307",
+      "status": "passed",
+      "files": [
+        "tests/e3/view.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0308",
+      "status": "passed",
+      "files": [
+        "tests/e3/view.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0309",
+      "status": "passed",
+      "files": [
+        "tests/e3/events.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0353",
+      "status": "passed",
+      "files": [
+        "tests/e3/view.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0310",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0311",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0312",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0313",
+      "status": "passed",
+      "files": [
+        "tests/e3/events.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0315",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0316",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0317",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0318",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0319",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0320",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0321",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0322",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0323",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0324",
+      "status": "passed",
+      "files": [
+        "tests/e3/draw.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0325",
+      "status": "passed",
+      "files": [
+        "tests/e3/points.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0326",
+      "status": "passed",
+      "files": [
+        "tests/e3/points.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0327",
+      "status": "passed",
+      "files": [
+        "tests/e3/points.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0328",
+      "status": "passed",
+      "files": [
+        "tests/e3/points.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0329",
+      "status": "passed",
+      "files": [
+        "tests/e3/points.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0330",
+      "status": "passed",
+      "files": [
+        "tests/e3/points.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0331",
+      "status": "passed",
+      "files": [
+        "tests/e3/measure.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0332",
+      "status": "passed",
+      "files": [
+        "tests/e3/measure.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0333",
+      "status": "passed",
+      "files": [
+        "tests/e3/measure.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0334",
+      "status": "passed",
+      "files": [
+        "tests/e3/measure.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0335",
+      "status": "passed",
+      "files": [
+        "tests/e3/measure.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0336",
+      "status": "passed",
+      "files": [
+        "tests/e3/measure.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0337",
+      "status": "passed",
+      "files": [
+        "tests/e3/measure.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0338",
+      "status": "passed",
+      "files": [
+        "tests/e3/measure.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0339",
+      "status": "passed",
+      "files": [
+        "tests/e3/measure.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0340",
+      "status": "passed",
+      "files": [
+        "tests/e3/events.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0352",
+      "status": "passed",
+      "files": [
+        "tests/e3/measure.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0341",
+      "status": "passed",
+      "files": [
+        "tests/e3/phone.iphone.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0345",
+      "status": "passed",
+      "files": [
+        "tests/e3/phone.iphone.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0346",
+      "status": "passed",
+      "files": [
+        "tests/e3/phone.iphone.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0351",
+      "status": "passed",
+      "files": [
+        "tests/e3/phone.iphone.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0347",
+      "status": "passed",
+      "files": [
+        "tests/e3/fixes.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0348",
+      "status": "passed",
+      "files": [
+        "tests/e3/fixes.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0349",
+      "status": "passed",
+      "files": [
+        "tests/e3/fixes.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0350",
+      "status": "passed",
+      "files": [
+        "tests/e3/fixes.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0400",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0401",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0402",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0403",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0404",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0405",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0406",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0407",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0408",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0409",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0410",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0412",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0413",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0414",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0415",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0416",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0417",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0418",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0419",
+      "status": "passed",
+      "files": [
+        "tests/e4/hints.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0420",
+      "status": "passed",
+      "files": [
+        "tests/e4/hints.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0421",
+      "status": "passed",
+      "files": [
+        "tests/e4/hints.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0422",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0423",
+      "status": "passed",
+      "files": [
+        "tests/e4/hints.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0424",
+      "status": "passed",
+      "files": [
+        "tests/e4/hints.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0425",
+      "status": "passed",
+      "files": [
+        "tests/e4/hints.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0426",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0427",
+      "status": "passed",
+      "files": [
+        "tests/e4/hints.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0488",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0428",
+      "status": "passed",
+      "files": [
+        "tests/e4/hints.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0429",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0430",
+      "status": "passed",
+      "files": [
+        "tests/e4/hints.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0431",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0432",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0433",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0434",
+      "status": "passed",
+      "files": [
+        "tests/e4/inherit.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0435",
+      "status": "passed",
+      "files": [
+        "tests/e4/inherit.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0436",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0437",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0438",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0439",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0440",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0481",
+      "status": "passed",
+      "files": [
+        "tests/e4/inherit.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0482",
+      "status": "passed",
+      "files": [
+        "tests/e4/inherit.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0483",
+      "status": "passed",
+      "files": [
+        "tests/e4/inherit.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0484",
+      "status": "passed",
+      "files": [
+        "tests/e4/inherit.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0485",
+      "status": "passed",
+      "files": [
+        "tests/e4/inherit.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0486",
+      "status": "passed",
+      "files": [
+        "tests/e4/inherit.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0487",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0489",
+      "status": "passed",
+      "files": [
+        "tests/e4/inherit.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0490",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0491",
+      "status": "passed",
+      "files": [
+        "tests/e4/selfstudy.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0492",
+      "status": "passed",
+      "files": [
+        "tests/e4/inherit.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0441",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0442",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0443",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0444",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0445",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0446",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0447",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0448",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0449",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0450",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0451",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0452",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0453",
+      "status": "passed",
+      "files": [
+        "tests/e4/solution.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0454",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0455",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0456",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0457",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0458",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0459",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0460",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0461",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0462",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0463",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0464",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0465",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0466",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0467",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0468",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0493",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0469",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0470",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0471",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0472",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0473",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0474",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0475",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0476",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0477",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0478",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0479",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0480",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e4/HelpE4IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0494",
+      "status": "passed",
+      "files": [
+        "tests/e4/qa.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0500",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0501",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0502",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0503",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0504",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0505",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0506",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0507",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0508",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0509",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0510",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0511",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0512",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0513",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0514",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0515",
+      "status": "passed",
+      "files": [
+        "tests/e5/detail.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0516",
+      "status": "passed",
+      "files": [
+        "tests/e5/detail.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0517",
+      "status": "passed",
+      "files": [
+        "tests/e5/detail.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0518",
+      "status": "passed",
+      "files": [
+        "tests/e5/detail.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0519",
+      "status": "passed",
+      "files": [
+        "tests/e5/detail.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0520",
+      "status": "passed",
+      "files": [
+        "tests/e5/detail.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0521",
+      "status": "passed",
+      "files": [
+        "tests/e5/detail.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0522",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0523",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts",
+        "tests/e5/detail.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0541",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0542",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0524",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0525",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0526",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0527",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0528",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0529",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0530",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0531",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0532",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0533",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0534",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0535",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0536",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e5/CatalogE5IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0537",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts",
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0538",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0539",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts",
+        "tests/e5/catalog.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0540",
+      "status": "passed",
+      "files": [
+        "tests/e5/catalog.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0600",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/DataE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0601",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/DataE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0602",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/DataE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0603",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/DataE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0604",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/DataE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0605",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0606",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0607",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0608",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0609",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0610",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0611",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0696",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0865",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0612",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0613",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0614",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0615",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0616",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0617",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0618",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0619",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0620",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0621",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0622",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0623",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0624",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0625",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0626",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0627",
+      "status": "passed",
+      "files": [
+        "tests/e6/release.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0628",
+      "status": "passed",
+      "files": [
+        "tests/e6/release.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0629",
+      "status": "passed",
+      "files": [
+        "tests/e6/release.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0630",
+      "status": "passed",
+      "files": [
+        "tests/e6/release.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0631",
+      "status": "passed",
+      "files": [
+        "tests/e6/release.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0632",
+      "status": "passed",
+      "files": [
+        "tests/e6/release.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0633",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0634",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0635",
+      "status": "passed",
+      "files": [
+        "tests/e6/release.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0636",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0637",
+      "status": "passed",
+      "files": [
+        "tests/e6/assign.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0638",
+      "status": "passed",
+      "files": [
+        "tests/e6/release.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0699",
+      "status": "passed",
+      "files": [
+        "tests/e6/release.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0867",
+      "status": "passed",
+      "files": [
+        "tests/e6/release.iphone.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0868",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0639",
+      "status": "passed",
+      "files": [
+        "tests/e6/mine.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0640",
+      "status": "passed",
+      "files": [
+        "tests/e6/mine.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0641",
+      "status": "passed",
+      "files": [
+        "tests/e6/mine.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0642",
+      "status": "passed",
+      "files": [
+        "tests/e6/mine.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0643",
+      "status": "passed",
+      "files": [
+        "tests/e6/mine.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0644",
+      "status": "passed",
+      "files": [
+        "tests/e6/mine.iphone.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0645",
+      "status": "passed",
+      "files": [
+        "tests/e6/mine.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0646",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0647",
+      "status": "passed",
+      "files": [
+        "tests/e6/mine.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0648",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0869",
+      "status": "passed",
+      "files": [
+        "tests/e6/mine.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0877",
+      "status": "passed",
+      "files": [
+        "tests/e6/mine.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0649",
+      "status": "passed",
+      "files": [
+        "tests/e6/preview.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0650",
+      "status": "passed",
+      "files": [
+        "tests/e6/preview.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0651",
+      "status": "passed",
+      "files": [
+        "tests/e6/preview.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0652",
+      "status": "passed",
+      "files": [
+        "tests/e6/preview.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0653",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0654",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0655",
+      "status": "passed",
+      "files": [
+        "tests/e6/preview.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0870",
+      "status": "passed",
+      "files": [
+        "tests/e6/preview.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0871",
+      "status": "passed",
+      "files": [
+        "tests/e6/preview.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0872",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0656",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0657",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0658",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0659",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0660",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0661",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0662",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0663",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0664",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0665",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0666",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0695",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0698",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0863",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0873",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0667",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0668",
+      "status": "passed",
+      "files": [
+        "tests/e6/guard.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0669",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0670",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0671",
+      "status": "passed",
+      "files": [
+        "tests/e6/guard.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0672",
+      "status": "passed",
+      "files": [
+        "tests/e6/guard.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0673",
+      "status": "passed",
+      "files": [
+        "tests/e6/guard.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0674",
+      "status": "passed",
+      "files": [
+        "tests/e6/guard.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0675",
+      "status": "passed",
+      "files": [
+        "tests/e6/guard.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0874",
+      "status": "passed",
+      "files": [
+        "tests/e6/guard.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0875",
+      "status": "passed",
+      "files": [
+        "tests/e6/guard.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0878",
+      "status": "passed",
+      "files": [
+        "tests/e6/guard.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0676",
+      "status": "passed",
+      "files": [
+        "tests/e6/probe.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0677",
+      "status": "passed",
+      "files": [
+        "tests/e6/probe.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0678",
+      "status": "passed",
+      "files": [
+        "tests/e6/probe.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0679",
+      "status": "passed",
+      "files": [
+        "tests/e6/probe.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0680",
+      "status": "passed",
+      "files": [
+        "tests/e6/probe.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0681",
+      "status": "passed",
+      "files": [
+        "tests/e6/probe.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0862",
+      "status": "passed",
+      "files": [
+        "tests/e6/probe.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0876",
+      "status": "passed",
+      "files": [
+        "tests/e6/probe.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0682",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/DataE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0683",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/DataE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0684",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/DataE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0685",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/DataE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0686",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/DataE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0687",
+      "status": "passed",
+      "files": [
+        "tests/e6/auto.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0688",
+      "status": "passed",
+      "files": [
+        "tests/e6/auto.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0689",
+      "status": "passed",
+      "files": [
+        "tests/e6/auto.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0690",
+      "status": "passed",
+      "files": [
+        "tests/e6/auto.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0692",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0693",
+      "status": "passed",
+      "files": [
+        "tests/e6/auto.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0694",
+      "status": "passed",
+      "files": [
+        "tests/e6/auto.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0697",
+      "status": "passed",
+      "files": [
+        "tests/e6/auto.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0864",
+      "status": "passed",
+      "files": [
+        "tests/e6/auto.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0860",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e6/ReleaseE6IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0861",
+      "status": "passed",
+      "files": [
+        "tests/e6/lock.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0700",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0701",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0702",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0703",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0704",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0705",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0706",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.iphone.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0707",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0708",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0709",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0710",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0711",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0712",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0744",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0713",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0714",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0715",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0716",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0717",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/tracking/MonitorViewE7Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0718",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0719",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0720",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0721",
+      "status": "passed",
+      "files": [
+        "tests/e7/events.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0722",
+      "status": "passed",
+      "files": [
+        "tests/e7/events.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0723",
+      "status": "passed",
+      "files": [
+        "tests/e7/events.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0724",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0725",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0726",
+      "status": "passed",
+      "files": [
+        "tests/e7/events.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0727",
+      "status": "passed",
+      "files": [
+        "tests/e7/events.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0728",
+      "status": "passed",
+      "files": [
+        "tests/e7/events.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0729",
+      "status": "passed",
+      "files": [
+        "tests/e7/offline.ui.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0730",
+      "status": "passed",
+      "files": [
+        "tests/e7/events.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0731",
+      "status": "passed",
+      "files": [
+        "tests/e7/events.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0740",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0741",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0742",
+      "status": "passed",
+      "files": [
+        "tests/e7/monitor.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0743",
+      "status": "passed",
+      "files": [
+        "tests/e7/events.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0732",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0733",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0734",
+      "status": "passed",
+      "files": [
+        "tests/e7/cursor.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0735",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e7/PlansE7IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0736",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/quality/SqlLintE7Test.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0737",
+      "status": "passed",
+      "files": [
+        "server/src/test/java/vn/geo/server/it/e7/EventsE7IT.java"
+      ]
+    },
+    {
+      "id": "TC-GEO-0738",
+      "status": "passed",
+      "files": [
+        "tests/e7/cursor.api.spec.ts"
+      ]
+    },
+    {
+      "id": "TC-GEO-0739",
+      "status": "passed",
+      "files": [
+        "tests/e7/cursor.api.spec.ts"
+      ]
+    }
+  ],
+  "unknownTags": [
+    {
+      "id": "TC-KHUNG-01",
+      "status": "passed"
+    },
+    {
+      "id": "TC-KHUNG-02",
+      "status": "passed"
+    },
+    {
+      "id": "TC-KHUNG-03",
+      "status": "passed"
+    }
+  ],
+  "requiredMissing": [],
+  "candidatesMissing": []
+}

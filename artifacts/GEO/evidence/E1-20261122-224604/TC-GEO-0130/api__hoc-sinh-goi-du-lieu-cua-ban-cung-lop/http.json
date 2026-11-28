@@ -1,0 +1,62 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000020",
+      "role": "STUDENT"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b8bc-74e4-bd32-4e0af65b398f",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 5
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/students/00000000-0000-7000-8000-000000000021/questions",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 404,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b8c1-7539-8252-31ae5136e694",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"code\":\"NOT_FOUND\",\"message\":\"Không tìm thấy dữ liệu yêu cầu.\",\"requestId\":\"01a203ef-b8c1-7539-8252-31ae5136e694\"}",
+    "ms": 5
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/students/00000000-0000-7000-8000-000000000021/progress",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 404,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b8c8-7769-abaa-f39f7c88c839",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"code\":\"NOT_FOUND\",\"message\":\"Không tìm thấy dữ liệu yêu cầu.\",\"requestId\":\"01a203ef-b8c8-7769-abaa-f39f7c88c839\"}",
+    "ms": 3
+  }
+]

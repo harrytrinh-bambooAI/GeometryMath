@@ -1,0 +1,88 @@
+{
+ "id": "MC-HH-C04",
+ "ten": "Khoảng cách từ A đến (BDD'B')",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "kc-diem-mp.lap-phuong.mat-cheo",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.2"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "C",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-23",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-23 + geometry/problem-specs.json#HKN-23"
+ },
+ "tham_so": {
+  "c": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng ${c}$ cm.",
+ "hoi": "Khoảng cách từ $A$ đến mặt phẳng $(BDD'B')$ bằng",
+ "dap_so": "sqrt(2)*c/2",
+ "don_vi": "cm",
+ "nhieu": [
+  {
+   "bieu_thuc": "c",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Coi $AB$ là khoảng cách"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(2)*c",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Lấy cả đường chéo $AC$ thay vì $AO$"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(3)*c/3",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Nhầm sang khoảng cách từ $A$ đến $(A'BD)$"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-23",
+  "ask": 0,
+  "params": {
+   "a": "c"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "c": "2"
+  },
+  {
+   "c": "3"
+  },
+  {
+   "c": "4"
+  },
+  {
+   "c": "6"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

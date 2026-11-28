@@ -1,0 +1,88 @@
+{
+ "id": "MC-HH-J03",
+ "ten": "Bán kính mặt cầu ngoại tiếp hình lập phương",
+ "chu_de": "khoi-tron-xoay",
+ "dang": "mat-cau-ngoai-tiep.lap-phuong",
+ "dang_tx": "tx.noi-tiep-cau",
+ "yccd": [
+  "12.TX.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "C",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "mvp",
+  "ma": "HKN-45",
+  "ref": "app/server/src/main/resources/content/catalog-mvp.json#HKN-45 + geometry/problem-specs.json#HKN-45"
+ },
+ "tham_so": {
+  "c": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng ${c}$ cm.",
+ "hoi": "Bán kính mặt cầu ngoại tiếp hình lập phương bằng",
+ "dap_so": "sqrt(3)*c/2",
+ "don_vi": "cm",
+ "nhieu": [
+  {
+   "bieu_thuc": "sqrt(2)*c/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Lấy nửa đường chéo mặt"
+   }
+  },
+  {
+   "bieu_thuc": "c/2",
+   "loi": {
+    "loai_loi": "sai-hinh-dung",
+    "mo_ta": "Nhầm sang mặt cầu nội tiếp (tiếp xúc các mặt)"
+   }
+  },
+  {
+   "bieu_thuc": "sqrt(3)*c",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy đường chéo $AC'$ (đường kính) làm bán kính"
+   }
+  }
+ ],
+ "engine": {
+  "mvp": "HKN-45",
+  "ask": 0,
+  "params": {
+   "a": "c"
+  }
+ },
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "c": "2"
+  },
+  {
+   "c": "3"
+  },
+  {
+   "c": "4"
+  },
+  {
+   "c": "6"
+  }
+ ],
+ "so_bien_the": 4,
+ "so_cau_sinh": 8,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

@@ -1,0 +1,4899 @@
+{
+ "phien_ban": "v1.0 · 27/11/2026",
+ "chu_de": "oxyz-mat-phang",
+ "so_cau": 52,
+ "cau": [
+  {
+   "id": "MC-OX-01.TN.0",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "1",
+    "q": "-1",
+    "r": "3",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=1,q=-1,r=3,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): x - y + 3z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(1;-1;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(1;-1;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;3;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(1;-1;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(1;-1;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(1;-1;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;3;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(1;-1;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(1;-1;3)",
+    "so": null
+   },
+   "do_kho": 0.175,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.1",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "1",
+    "q": "-1",
+    "r": "3",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=1,q=-1,r=3,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): x - y + 3z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(1;-1;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(1;-1;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;3;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(1;-1;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(1;-1;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(1;-1;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;3;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(1;-1;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(1;-1;3)",
+    "so": null
+   },
+   "do_kho": 0.122,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.2",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "1",
+    "q": "-1",
+    "r": "-4",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=1,q=-1,r=-4,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): x - y - 4z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(1;-1;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(1;-1;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;-4;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(1;-1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(1;-1;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(1;-1;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;-4;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(1;-1;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(1;-1;-4)",
+    "so": null
+   },
+   "do_kho": 0.158,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.3",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "1",
+    "q": "-1",
+    "r": "-4",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=1,q=-1,r=-4,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): x - y - 4z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(1;-1;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(1;-1;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;-4;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(1;-1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(1;-1;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(1;-1;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;-4;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(1;-1;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(1;-1;-4)",
+    "so": null
+   },
+   "do_kho": 0.172,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.4",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "1",
+    "q": "2",
+    "r": "3",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=1,q=2,r=3,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): x + 2y + 3z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(1;2;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(1;2;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;3;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(1;2;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(1;2;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(1;2;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;3;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(1;2;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(1;2;3)",
+    "so": null
+   },
+   "do_kho": 0.137,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.5",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "1",
+    "q": "2",
+    "r": "3",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=1,q=2,r=3,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): x + 2y + 3z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(1;2;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(1;2;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;3;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(1;2;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(1;2;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(1;2;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;3;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(1;2;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(1;2;3)",
+    "so": null
+   },
+   "do_kho": 0.147,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.6",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "1",
+    "q": "2",
+    "r": "-4",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=1,q=2,r=-4,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): x + 2y - 4z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(1;2;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(1;2;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;-4;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(1;2;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(1;2;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(1;2;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;-4;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(1;2;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(1;2;-4)",
+    "so": null
+   },
+   "do_kho": 0.136,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.7",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "1",
+    "q": "2",
+    "r": "-4",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=1,q=2,r=-4,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): x + 2y - 4z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(1;2;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(1;2;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;-4;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(1;2;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(1;2;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(1;2;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;-4;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(1;2;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(1;2;-4)",
+    "so": null
+   },
+   "do_kho": 0.161,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.8",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "2",
+    "q": "-1",
+    "r": "3",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=2,q=-1,r=3,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 2x - y + 3z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(2;-1;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(2;-1;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;3;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;-1;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(2;-1;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(2;-1;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;3;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;-1;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(2;-1;3)",
+    "so": null
+   },
+   "do_kho": 0.121,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.9",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "2",
+    "q": "-1",
+    "r": "3",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=2,q=-1,r=3,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 2x - y + 3z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(2;-1;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(2;-1;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;3;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;-1;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(2;-1;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(2;-1;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;3;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;-1;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(2;-1;3)",
+    "so": null
+   },
+   "do_kho": 0.131,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.10",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "2",
+    "q": "-1",
+    "r": "-4",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=2,q=-1,r=-4,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 2x - y - 4z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(2;-1;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(2;-1;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;-4;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;-1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(2;-1;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(2;-1;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;-4;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;-1;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(2;-1;-4)",
+    "so": null
+   },
+   "do_kho": 0.161,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.11",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "2",
+    "q": "-1",
+    "r": "-4",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=2,q=-1,r=-4,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 2x - y - 4z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(2;-1;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(2;-1;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;-4;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;-1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(2;-1;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(2;-1;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;-4;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;-1;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(2;-1;-4)",
+    "so": null
+   },
+   "do_kho": 0.139,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.12",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "2",
+    "q": "2",
+    "r": "3",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=2,q=2,r=3,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 2x + 2y + 3z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(2;2;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(2;2;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;3;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;2;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(2;2;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(2;2;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;3;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;2;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(2;2;3)",
+    "so": null
+   },
+   "do_kho": 0.129,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.13",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "2",
+    "q": "2",
+    "r": "3",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=2,q=2,r=3,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 2x + 2y + 3z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(2;2;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(2;2;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;3;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;2;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(2;2;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(2;2;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;3;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;2;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(2;2;3)",
+    "so": null
+   },
+   "do_kho": 0.14,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.14",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "2",
+    "q": "2",
+    "r": "-4",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=2,q=2,r=-4,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 2x + 2y - 4z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(2;2;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(2;2;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;-4;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;2;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(2;2;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(2;2;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;-4;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;2;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(2;2;-4)",
+    "so": null
+   },
+   "do_kho": 0.135,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.15",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "2",
+    "q": "2",
+    "r": "-4",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=2,q=2,r=-4,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 2x + 2y - 4z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(2;2;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(2;2;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;-4;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;2;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(2;2;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(2;2;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;-4;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;2;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(2;2;-4)",
+    "so": null
+   },
+   "do_kho": 0.158,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.16",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "3",
+    "q": "-1",
+    "r": "3",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=3,q=-1,r=3,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 3x - y + 3z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(3;-1;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(3;-1;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;3;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(3;-1;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(3;-1;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(3;-1;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;3;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(3;-1;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(3;-1;3)",
+    "so": null
+   },
+   "do_kho": 0.126,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.17",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "3",
+    "q": "-1",
+    "r": "3",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=3,q=-1,r=3,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 3x - y + 3z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(3;-1;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(3;-1;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;3;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(3;-1;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(3;-1;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(3;-1;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;3;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(3;-1;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(3;-1;3)",
+    "so": null
+   },
+   "do_kho": 0.169,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.18",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "3",
+    "q": "-1",
+    "r": "-4",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=3,q=-1,r=-4,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 3x - y - 4z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(3;-1;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(3;-1;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;-4;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(3;-1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(3;-1;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(3;-1;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;-4;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(3;-1;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(3;-1;-4)",
+    "so": null
+   },
+   "do_kho": 0.179,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.19",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "3",
+    "q": "-1",
+    "r": "-4",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=3,q=-1,r=-4,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 3x - y - 4z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(3;-1;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(3;-1;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(-1;-4;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(3;-1;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(3;-1;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(3;-1;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(-1;-4;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(3;-1;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(3;-1;-4)",
+    "so": null
+   },
+   "do_kho": 0.178,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.20",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "3",
+    "q": "2",
+    "r": "3",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=3,q=2,r=3,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 3x + 2y + 3z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(3;2;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(3;2;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;3;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(3;2;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(3;2;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(3;2;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;3;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(3;2;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(3;2;3)",
+    "so": null
+   },
+   "do_kho": 0.146,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.21",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "3",
+    "q": "2",
+    "r": "3",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=3,q=2,r=3,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 3x + 2y + 3z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(3;2;3)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(3;2;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;3;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(3;2;-3)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(3;2;3)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(3;2;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;3;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(3;2;-3)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(3;2;3)",
+    "so": null
+   },
+   "do_kho": 0.12,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.22",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "3",
+    "q": "2",
+    "r": "-4",
+    "s": "5"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=3,q=2,r=-4,s=5",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 3x + 2y - 4z + 5=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(3;2;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(3;2;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;-4;5)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(3;2;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(3;2;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(3;2;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;-4;5)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(3;2;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(3;2;-4)",
+    "so": null
+   },
+   "do_kho": 0.121,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-01.TN.23",
+   "mau_cau": "MC-OX-01",
+   "bien_the": {
+    "p": "3",
+    "q": "2",
+    "r": "-4",
+    "s": "-7"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.vtpt",
+   "dang_tx": "ox.mp-vtpt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Vectơ pháp tuyến của mặt phẳng"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-01|p=3,q=2,r=-4,s=-7",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-01",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-01"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho mặt phẳng $(P): 3x + 2y - 4z - 7=0$. Một vectơ pháp tuyến của $(P)$ là:",
+   "lua_chon": [
+    {
+     "noi_dung": "\\vec n=(3;2;-4)",
+     "dung": true
+    },
+    {
+     "noi_dung": "\\vec n=(3;2;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(2;-4;-7)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "noi_dung": "\\vec n=(3;2;4)",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_an": "\\vec n=(3;2;-4)",
+   "nhieu": [
+    {
+     "phuong_an": "\\vec n=(3;2;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy hệ số tự do thay cho hệ số của $z$"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(2;-4;-7)",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Bỏ hệ số của $x$, lấy ba hệ số cuối"
+     }
+    },
+    {
+     "phuong_an": "\\vec n=(3;2;4)",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Chép sai dấu hệ số của $z$"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "\\vec n=(3;2;-4)",
+    "so": null
+   },
+   "do_kho": 0.169,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.0",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "2",
+    "z0": "-1",
+    "p": "1",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=3,r=2,x0=1,y0=2,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;2;-1)$ và vectơ $\\vec n=(1;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x + 3y + 2z - 5=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x + 3y + 2z + 5=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 2y - z - 5=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x + 3y + 2z - 5=0",
+   "nhieu": [
+    {
+     "phuong_an": "x + 3y + 2z + 5=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 2y - z - 5=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x + 3y + 2z - 5=0",
+    "so": null
+   },
+   "do_kho": 0.165,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.1",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "2",
+    "z0": "-1",
+    "p": "1",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=-1,r=2,x0=1,y0=2,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;2;-1)$ và vectơ $\\vec n=(1;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x - y + 2z + 3=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x - y + 2z - 3=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 2y - z + 3=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x - y + 2z + 3=0",
+   "nhieu": [
+    {
+     "phuong_an": "x - y + 2z - 3=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 2y - z + 3=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x - y + 2z + 3=0",
+    "so": null
+   },
+   "do_kho": 0.153,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.2",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "2",
+    "z0": "-1",
+    "p": "2",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=3,r=2,x0=1,y0=2,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;2;-1)$ và vectơ $\\vec n=(2;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x + 3y + 2z - 6=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x + 3y + 2z + 6=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 2y - z - 6=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x + 3y + 2z - 6=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x + 3y + 2z + 6=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 2y - z - 6=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x + 3y + 2z - 6=0",
+    "so": null
+   },
+   "do_kho": 0.137,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.3",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "2",
+    "z0": "-1",
+    "p": "2",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=-1,r=2,x0=1,y0=2,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;2;-1)$ và vectơ $\\vec n=(2;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x - y + 2z + 2=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x - y + 2z - 2=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 2y - z + 2=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x - y + 2z + 2=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x - y + 2z - 2=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 2y - z + 2=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x - y + 2z + 2=0",
+    "so": null
+   },
+   "do_kho": 0.13,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.4",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "2",
+    "z0": "3",
+    "p": "1",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=3,r=2,x0=1,y0=2,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;2;3)$ và vectơ $\\vec n=(1;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x + 3y + 2z - 13=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x + 3y + 2z + 13=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 2y + 3z - 13=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x + 3y + 2z - 13=0",
+   "nhieu": [
+    {
+     "phuong_an": "x + 3y + 2z + 13=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 2y + 3z - 13=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x + 3y + 2z - 13=0",
+    "so": null
+   },
+   "do_kho": 0.127,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.5",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "2",
+    "z0": "3",
+    "p": "1",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=-1,r=2,x0=1,y0=2,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;2;3)$ và vectơ $\\vec n=(1;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x - y + 2z - 5=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x - y + 2z + 5=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 2y + 3z - 5=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x - y + 2z - 5=0",
+   "nhieu": [
+    {
+     "phuong_an": "x - y + 2z + 5=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 2y + 3z - 5=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x - y + 2z - 5=0",
+    "so": null
+   },
+   "do_kho": 0.123,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.6",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "2",
+    "z0": "3",
+    "p": "2",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=3,r=2,x0=1,y0=2,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;2;3)$ và vectơ $\\vec n=(2;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x + 3y + 2z - 14=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x + 3y + 2z + 14=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 2y + 3z - 14=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x + 3y + 2z - 14=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x + 3y + 2z + 14=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 2y + 3z - 14=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x + 3y + 2z - 14=0",
+    "so": null
+   },
+   "do_kho": 0.143,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.7",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "2",
+    "z0": "3",
+    "p": "2",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=-1,r=2,x0=1,y0=2,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;2;3)$ và vectơ $\\vec n=(2;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x - y + 2z - 6=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x - y + 2z + 6=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 2y + 3z - 6=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x - y + 2z - 6=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x - y + 2z + 6=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 2y + 3z - 6=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x - y + 2z - 6=0",
+    "so": null
+   },
+   "do_kho": 0.156,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.8",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "0",
+    "z0": "-1",
+    "p": "1",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=3,r=2,x0=1,y0=0,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;0;-1)$ và vectơ $\\vec n=(1;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x + 3y + 2z + 1=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x + 3y + 2z - 1=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x - z + 1=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x + 3y + 2z + 1=0",
+   "nhieu": [
+    {
+     "phuong_an": "x + 3y + 2z - 1=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x - z + 1=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x + 3y + 2z + 1=0",
+    "so": null
+   },
+   "do_kho": 0.164,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.9",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "0",
+    "z0": "-1",
+    "p": "1",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=-1,r=2,x0=1,y0=0,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;0;-1)$ và vectơ $\\vec n=(1;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x - y + 2z + 1=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x - y + 2z - 1=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x - z + 1=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x - y + 2z + 1=0",
+   "nhieu": [
+    {
+     "phuong_an": "x - y + 2z - 1=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x - z + 1=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x - y + 2z + 1=0",
+    "so": null
+   },
+   "do_kho": 0.158,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.10",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "0",
+    "z0": "3",
+    "p": "1",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=3,r=2,x0=1,y0=0,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;0;3)$ và vectơ $\\vec n=(1;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x + 3y + 2z - 7=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x + 3y + 2z + 7=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 3z - 7=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x + 3y + 2z - 7=0",
+   "nhieu": [
+    {
+     "phuong_an": "x + 3y + 2z + 7=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 3z - 7=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x + 3y + 2z - 7=0",
+    "so": null
+   },
+   "do_kho": 0.16,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.11",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "0",
+    "z0": "3",
+    "p": "1",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=-1,r=2,x0=1,y0=0,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;0;3)$ và vectơ $\\vec n=(1;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x - y + 2z - 7=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x - y + 2z + 7=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 3z - 7=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x - y + 2z - 7=0",
+   "nhieu": [
+    {
+     "phuong_an": "x - y + 2z + 7=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 3z - 7=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x - y + 2z - 7=0",
+    "so": null
+   },
+   "do_kho": 0.125,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.12",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "0",
+    "z0": "3",
+    "p": "2",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=3,r=2,x0=1,y0=0,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;0;3)$ và vectơ $\\vec n=(2;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x + 3y + 2z - 8=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x + 3y + 2z + 8=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 3z - 8=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x + 3y + 2z - 8=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x + 3y + 2z + 8=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 3z - 8=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x + 3y + 2z - 8=0",
+    "so": null
+   },
+   "do_kho": 0.177,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.13",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "1",
+    "y0": "0",
+    "z0": "3",
+    "p": "2",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=-1,r=2,x0=1,y0=0,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(1;0;3)$ và vectơ $\\vec n=(2;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x - y + 2z - 8=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x - y + 2z + 8=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "x + 3z - 8=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x - y + 2z - 8=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x - y + 2z + 8=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "x + 3z - 8=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x - y + 2z - 8=0",
+    "so": null
+   },
+   "do_kho": 0.161,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.14",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "2",
+    "z0": "-1",
+    "p": "1",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=3,r=2,x0=-2,y0=2,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;2;-1)$ và vectơ $\\vec n=(1;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x + 3y + 2z - 2=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x + 3y + 2z + 2=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x + 2y - z - 2=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x + 3y + 2z - 2=0",
+   "nhieu": [
+    {
+     "phuong_an": "x + 3y + 2z + 2=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x + 2y - z - 2=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x + 3y + 2z - 2=0",
+    "so": null
+   },
+   "do_kho": 0.179,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.15",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "2",
+    "z0": "-1",
+    "p": "1",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=-1,r=2,x0=-2,y0=2,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;2;-1)$ và vectơ $\\vec n=(1;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x - y + 2z + 6=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x - y + 2z - 6=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x + 2y - z + 6=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x - y + 2z + 6=0",
+   "nhieu": [
+    {
+     "phuong_an": "x - y + 2z - 6=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x + 2y - z + 6=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x - y + 2z + 6=0",
+    "so": null
+   },
+   "do_kho": 0.124,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.16",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "2",
+    "z0": "-1",
+    "p": "2",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=-1,r=2,x0=-2,y0=2,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;2;-1)$ và vectơ $\\vec n=(2;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x - y + 2z + 8=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x - y + 2z - 8=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x + 2y - z + 8=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x - y + 2z + 8=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x - y + 2z - 8=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x + 2y - z + 8=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x - y + 2z + 8=0",
+    "so": null
+   },
+   "do_kho": 0.178,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.17",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "2",
+    "z0": "3",
+    "p": "1",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=3,r=2,x0=-2,y0=2,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;2;3)$ và vectơ $\\vec n=(1;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x + 3y + 2z - 10=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x + 3y + 2z + 10=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x + 2y + 3z - 10=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x + 3y + 2z - 10=0",
+   "nhieu": [
+    {
+     "phuong_an": "x + 3y + 2z + 10=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x + 2y + 3z - 10=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x + 3y + 2z - 10=0",
+    "so": null
+   },
+   "do_kho": 0.139,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.18",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "2",
+    "z0": "3",
+    "p": "1",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=-1,r=2,x0=-2,y0=2,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;2;3)$ và vectơ $\\vec n=(1;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x - y + 2z - 2=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x - y + 2z + 2=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x + 2y + 3z - 2=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x - y + 2z - 2=0",
+   "nhieu": [
+    {
+     "phuong_an": "x - y + 2z + 2=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x + 2y + 3z - 2=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x - y + 2z - 2=0",
+    "so": null
+   },
+   "do_kho": 0.124,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.19",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "2",
+    "z0": "3",
+    "p": "2",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=3,r=2,x0=-2,y0=2,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;2;3)$ và vectơ $\\vec n=(2;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x + 3y + 2z - 8=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x + 3y + 2z + 8=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x + 2y + 3z - 8=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x + 3y + 2z - 8=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x + 3y + 2z + 8=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x + 2y + 3z - 8=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x + 3y + 2z - 8=0",
+    "so": null
+   },
+   "do_kho": 0.129,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.20",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "0",
+    "z0": "-1",
+    "p": "1",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=3,r=2,x0=-2,y0=0,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;0;-1)$ và vectơ $\\vec n=(1;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x + 3y + 2z + 4=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x + 3y + 2z - 4=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x - z + 4=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x + 3y + 2z + 4=0",
+   "nhieu": [
+    {
+     "phuong_an": "x + 3y + 2z - 4=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x - z + 4=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x + 3y + 2z + 4=0",
+    "so": null
+   },
+   "do_kho": 0.154,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.21",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "0",
+    "z0": "-1",
+    "p": "1",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=-1,r=2,x0=-2,y0=0,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;0;-1)$ và vectơ $\\vec n=(1;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x - y + 2z + 4=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x - y + 2z - 4=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x - z + 4=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x - y + 2z + 4=0",
+   "nhieu": [
+    {
+     "phuong_an": "x - y + 2z - 4=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x - z + 4=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x - y + 2z + 4=0",
+    "so": null
+   },
+   "do_kho": 0.177,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.22",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "0",
+    "z0": "-1",
+    "p": "2",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=3,r=2,x0=-2,y0=0,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;0;-1)$ và vectơ $\\vec n=(2;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x + 3y + 2z + 6=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x + 3y + 2z - 6=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x - z + 6=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x + 3y + 2z + 6=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x + 3y + 2z - 6=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x - z + 6=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x + 3y + 2z + 6=0",
+    "so": null
+   },
+   "do_kho": 0.151,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.23",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "0",
+    "z0": "-1",
+    "p": "2",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=-1,r=2,x0=-2,y0=0,z0=-1",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;0;-1)$ và vectơ $\\vec n=(2;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x - y + 2z + 6=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x - y + 2z - 6=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x - z + 6=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x - y + 2z + 6=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x - y + 2z - 6=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x - z + 6=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x - y + 2z + 6=0",
+    "so": null
+   },
+   "do_kho": 0.12,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.24",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "0",
+    "z0": "3",
+    "p": "1",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=3,r=2,x0=-2,y0=0,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;0;3)$ và vectơ $\\vec n=(1;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x + 3y + 2z - 4=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x + 3y + 2z + 4=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x + 3z - 4=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x + 3y + 2z - 4=0",
+   "nhieu": [
+    {
+     "phuong_an": "x + 3y + 2z + 4=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x + 3z - 4=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x + 3y + 2z - 4=0",
+    "so": null
+   },
+   "do_kho": 0.14,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.25",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "0",
+    "z0": "3",
+    "p": "1",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=1,q=-1,r=2,x0=-2,y0=0,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;0;3)$ và vectơ $\\vec n=(1;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "x - y + 2z - 4=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "x - y + 2z + 4=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x + 3z - 4=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "x - y + 2z - 4=0",
+   "nhieu": [
+    {
+     "phuong_an": "x - y + 2z + 4=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x + 3z - 4=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "x - y + 2z - 4=0",
+    "so": null
+   },
+   "do_kho": 0.127,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.26",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "0",
+    "z0": "3",
+    "p": "2",
+    "q": "3",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=3,r=2,x0=-2,y0=0,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;0;3)$ và vectơ $\\vec n=(2;3;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x + 3y + 2z - 2=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x + 3y + 2z + 2=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x + 3z - 2=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x + 3y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x + 3y + 2z - 2=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x + 3y + 2z + 2=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x + 3z - 2=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x + 3y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x + 3y + 2z - 2=0",
+    "so": null
+   },
+   "do_kho": 0.178,
+   "dap_so_engine": null
+  },
+  {
+   "id": "MC-OX-02.TN.27",
+   "mau_cau": "MC-OX-02",
+   "bien_the": {
+    "x0": "-2",
+    "y0": "0",
+    "z0": "3",
+    "p": "2",
+    "q": "-1",
+    "r": "2"
+   },
+   "chu_de": "oxyz-mat-phang",
+   "dang": "ox.pt-mp-diem-vtpt",
+   "dang_tx": "ox.mp-pt",
+   "lop": 12,
+   "yccd": [
+    "12.OX.2"
+   ],
+   "kien_thuc": [
+    "Phương trình mặt phẳng qua điểm có VTPT"
+   ],
+   "loai_cau": "tn4",
+   "muc_do": "NB",
+   "nang_luc": "tu-duy-lap-luan",
+   "thoi_gian_phut": 1.0,
+   "diem": 0.25,
+   "boi_canh_key": "MC-OX-02|p=2,q=-1,r=2,x0=-2,y0=0,z0=3",
+   "nguon": {
+    "loai": "tu-soan",
+    "ma": "MC-OX-02",
+    "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)",
+    "mau_cau": "MC-OX-02"
+   },
+   "de_bai": "Trong không gian $Oxyz$, cho điểm $M(-2;0;3)$ và vectơ $\\vec n=(2;-1;2)$. Mặt phẳng đi qua $M$ và nhận $\\vec n$ làm vectơ pháp tuyến có phương trình:",
+   "lua_chon": [
+    {
+     "noi_dung": "2x - y + 2z - 2=0",
+     "dung": true
+    },
+    {
+     "noi_dung": "2x - y + 2z + 2=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "noi_dung": "- 2x + 3z - 2=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "noi_dung": "2x - y + 2z=0",
+     "dung": false,
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_an": "2x - y + 2z - 2=0",
+   "nhieu": [
+    {
+     "phuong_an": "2x - y + 2z + 2=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu hệ số tự do"
+     }
+    },
+    {
+     "phuong_an": "- 2x + 3z - 2=0",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Đảo vai trò tọa độ điểm và vectơ pháp tuyến"
+     }
+    },
+    {
+     "phuong_an": "2x - y + 2z=0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Quên hệ số tự do (coi mặt phẳng đi qua gốc tọa độ)"
+     }
+    }
+   ],
+   "dap_so": {
+    "gia_tri": "2x - y + 2z - 2=0",
+    "so": null
+   },
+   "do_kho": 0.123,
+   "dap_so_engine": null
+  }
+ ]
+}

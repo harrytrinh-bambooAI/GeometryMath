@@ -1,0 +1,213 @@
+{
+ "id": "MC-PT-01",
+ "ten": "Nghiệm nguyên lớn nhất theo y của bất phương trình bậc nhất hai ẩn",
+ "chu_de": "phuong-trinh-he-bpt",
+ "dang": "pt.bpt-2-an-nghiem",
+ "dang_tx": "pt.he-bpt-2-an",
+ "yccd": [
+  "10.BPT.1"
+ ],
+ "lop": 10,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-PT-01",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "NB"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-PT-01",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "p": [
+   "2",
+   "3"
+  ],
+  "q": [
+   "3",
+   "4"
+  ],
+  "r": [
+   "13",
+   "20",
+   "25"
+  ],
+  "x0": [
+   "1",
+   "2"
+  ]
+ },
+ "rang_buoc": [
+  "(r-p*x0)/q-floor((r-p*x0)/q)>0"
+ ],
+ "dan_xuat": {
+  "bt": "p*x+q*y"
+ },
+ "boi_canh": "Cho bất phương trình bậc nhất hai ẩn ${bt}\\le {r}$.",
+ "hoi": "Với $x={x0}$, số nguyên $y$ lớn nhất để $({x0};y)$ là nghiệm của bất phương trình là",
+ "dap_so": "floor((r-p*x0)/q)",
+ "nhieu": [
+  {
+   "bieu_thuc": "ceiling((r-p*x0)/q)",
+   "loi": {
+    "loai_loi": "nham-dieu-kien",
+    "mo_ta": "Làm tròn lên (không thỏa bất phương trình)"
+   }
+  },
+  {
+   "bieu_thuc": "floor((r+p*x0)/q)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Chuyển vế sai dấu số hạng $px_0$"
+   }
+  },
+  {
+   "bieu_thuc": "floor(r/q)",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Quên số hạng $px_0$"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": false,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-PT-01']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "p": "2",
+   "q": "3",
+   "r": "13",
+   "x0": "1"
+  },
+  {
+   "p": "2",
+   "q": "3",
+   "r": "20",
+   "x0": "2"
+  },
+  {
+   "p": "2",
+   "q": "3",
+   "r": "25",
+   "x0": "1"
+  },
+  {
+   "p": "2",
+   "q": "4",
+   "r": "13",
+   "x0": "1"
+  },
+  {
+   "p": "2",
+   "q": "4",
+   "r": "13",
+   "x0": "2"
+  },
+  {
+   "p": "2",
+   "q": "4",
+   "r": "20",
+   "x0": "1"
+  },
+  {
+   "p": "2",
+   "q": "4",
+   "r": "25",
+   "x0": "1"
+  },
+  {
+   "p": "2",
+   "q": "4",
+   "r": "25",
+   "x0": "2"
+  },
+  {
+   "p": "3",
+   "q": "3",
+   "r": "13",
+   "x0": "1"
+  },
+  {
+   "p": "3",
+   "q": "3",
+   "r": "13",
+   "x0": "2"
+  },
+  {
+   "p": "3",
+   "q": "3",
+   "r": "20",
+   "x0": "1"
+  },
+  {
+   "p": "3",
+   "q": "3",
+   "r": "20",
+   "x0": "2"
+  },
+  {
+   "p": "3",
+   "q": "3",
+   "r": "25",
+   "x0": "1"
+  },
+  {
+   "p": "3",
+   "q": "3",
+   "r": "25",
+   "x0": "2"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "13",
+   "x0": "1"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "13",
+   "x0": "2"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "20",
+   "x0": "1"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "20",
+   "x0": "2"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "25",
+   "x0": "1"
+  },
+  {
+   "p": "3",
+   "q": "4",
+   "r": "25",
+   "x0": "2"
+  }
+ ],
+ "so_bien_the": 20,
+ "so_cau_sinh": 26,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

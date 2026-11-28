@@ -1,0 +1,420 @@
+/* S2-E5 · C2-03 Soát và duyệt lời giải. Chỉ token theme (không mã màu cứng); chữ phụ ≥ 14 px (PO-66 G17);
+   nội dung toán dùng --font-math; nút chạm ≥ 44 px. */
+.s2e5-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--gap);
+  align-items: start;
+  min-width: 0;
+}
+@media (min-width: 900px) {
+  .s2e5-page {
+    grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr);
+  }
+  .s2e5-figure {
+    grid-column: 1 / -1;
+  }
+}
+@media (min-width: 1280px) {
+  .s2e5-page {
+    grid-template-columns: minmax(240px, 300px) minmax(0, 1fr) minmax(300px, 340px);
+  }
+  .s2e5-figure {
+    grid-column: auto;
+  }
+}
+.s2e5-page .btn,
+.s2e5-student .btn,
+.s2e5-listpage .btn {
+  min-height: var(--touch);
+  min-width: var(--touch);
+}
+.s2e5-h {
+  font-size: 16px;
+  margin: 0;
+}
+.s2e5-title {
+  font-size: 20px;
+  margin: 0;
+}
+.s2e5-cap {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.s2e5-sub {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.s2e5-grow {
+  flex: 1 1 auto;
+}
+.s2e5-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Thẻ hình + nhãn hai trục */
+.s2e5-figure,
+.s2e5-box,
+.s2e5-student {
+  padding: 14px;
+  min-width: 0;
+}
+.s2e5-figure-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.s2e5-labels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  min-width: 0;
+}
+.s2e5-labels .chip {
+  font-size: 14px;
+}
+.chip.s2e5-pur {
+  background: var(--pur-s);
+  color: var(--pur);
+  border-color: transparent;
+}
+.s2e5-machine-note {
+  font-size: 14px;
+  color: var(--muted);
+  flex-basis: 100%;
+  overflow-wrap: anywhere;
+}
+.s2e5-viewer {
+  height: 300px;
+  display: flex;
+  min-width: 0;
+  margin-bottom: 10px;
+}
+.s2e5-viewer-inner {
+  flex: 1;
+  min-width: 0;
+}
+.s2e5-statement {
+  font-family: var(--font-math, var(--font));
+  font-size: var(--fs);
+  line-height: 1.6;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Cột lời giải */
+.s2e5-main {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+.s2e5-main-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.s2e5-summary {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.s2e5-summary.bad {
+  color: var(--red);
+}
+.s2e5-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.s2e5-step {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 10px 12px;
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.s2e5-step.bad {
+  border-color: var(--red);
+  background: var(--red-s);
+}
+.s2e5-step.invalid .s2e5-step-input {
+  border-color: var(--red);
+  box-shadow: 0 0 0 1px var(--red);
+}
+.s2e5-step-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.s2e5-step-head .chip {
+  font-size: 14px;
+}
+.s2e5-grip {
+  cursor: grab;
+  color: var(--faint);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--touch);
+  min-height: var(--touch);
+  border-radius: var(--r-sm);
+  user-select: none;
+}
+.s2e5-grip:hover {
+  background: var(--hover);
+}
+.s2e5-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--r-sm);
+  background: var(--pri-s);
+  color: var(--pri-t);
+  font-weight: 700;
+  font-size: 14px;
+}
+.s2e5-step.bad .s2e5-num {
+  background: var(--red);
+  color: var(--on-pri);
+}
+.s2e5-step-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-left: auto;
+}
+.s2e5-step-actions .btn,
+.s2e5-add {
+  padding: 6px 10px;
+}
+.s2e5-step-input,
+.s2e5-step-text,
+.s2e5-proposal-text,
+.s2e5-mine li {
+  font-family: var(--font-math, var(--font));
+  font-size: var(--fs);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.s2e5-step-input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 64px;
+  padding: 8px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  color: var(--text);
+  resize: vertical;
+}
+.s2e5-step-text,
+.s2e5-proposal-text {
+  margin: 0;
+}
+.s2e5-reason {
+  margin: 0;
+  font-family: var(--font-math, var(--font));
+  font-size: 14px;
+  color: var(--muted);
+}
+.s2e5-reason.bad {
+  color: var(--red);
+  font-weight: 600;
+}
+.s2e5-add {
+  justify-self: start;
+}
+.s2e5-mine {
+  padding: 12px 14px;
+}
+
+/* Hộp duyệt */
+.s2e5-box {
+  display: grid;
+  gap: 14px;
+}
+.s2e5-sec {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.s2e5-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.s2e5-proposal,
+.s2e5-hist-event {
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--soft);
+}
+.s2e5-hist {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  min-height: var(--touch);
+  text-align: left;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--panel);
+  color: var(--text);
+  font-family: inherit;
+  cursor: pointer;
+}
+.s2e5-hist:hover {
+  background: var(--hover);
+}
+.s2e5-hist.on {
+  border-color: var(--pri-line);
+  background: var(--pri-s);
+}
+.s2e5-hist-title {
+  font-size: 14px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.s2e5-ban {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  font-size: 14px;
+  font-weight: 600;
+  display: grid;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+.s2e5-ban.red {
+  background: var(--red-s);
+  color: var(--red);
+}
+.s2e5-ban.yel {
+  background: var(--yel-s);
+  color: var(--yel-t);
+}
+.s2e5-ban.grn {
+  background: var(--grn-s);
+  color: var(--grn);
+}
+.s2e5-ban.pri {
+  background: var(--pri-s);
+  color: var(--pri-t);
+}
+.s2e5-ban-title {
+  margin: 0;
+}
+.s2e5-approve-btn {
+  width: 100%;
+}
+.s2e5-retry {
+  margin-left: 8px;
+}
+.s2e5-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: color-mix(in srgb, var(--text) 40%, transparent);
+}
+.s2e5-dialog {
+  max-width: 420px;
+  width: 100%;
+  display: grid;
+  gap: 14px;
+}
+.s2e5-dialog-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Danh sách và màn học sinh */
+.s2e5-listpage {
+  display: grid;
+  gap: 12px;
+  max-width: 760px;
+}
+.s2e5-doc {
+  display: grid;
+  gap: 2px;
+  padding: 12px 14px;
+  min-height: var(--touch);
+  color: var(--text);
+  text-decoration: none;
+}
+.s2e5-student {
+  max-width: 640px;
+  display: grid;
+  gap: 8px;
+}
+
+/* T-261126-22: đối chiếu đáp số (S2-E3) và hộp "Đã giao" có "Áp dụng cho lớp" (US-S2E5-05) */
+.s2e5-answers {
+  display: grid;
+  gap: 10px;
+}
+.s2e5-ans-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.s2e5-ans-table th,
+.s2e5-ans-table td {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--line);
+}
+.s2e5-ans-val {
+  font-family: var(--font-math);
+  font-weight: 700;
+}
+.s2e5-ans-bad {
+  background: var(--red-s);
+}
+.s2e5-ans-bad .s2e5-ans-val {
+  color: var(--red);
+}
+.s2e5-ans-actions {
+  display: grid;
+  gap: 8px;
+}
+.s2e5-ans-input {
+  min-height: var(--touch);
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-family: var(--font-math);
+  font-size: 15px;
+  background: var(--panel);
+  color: var(--text);
+}
+.s2e5-assigned-item {
+  display: grid;
+  gap: 6px;
+}

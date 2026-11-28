@@ -1,0 +1,105 @@
+{
+ "id": "MC-XS-03",
+ "ten": "Xác suất hai biến cố độc lập",
+ "chu_de": "xac-suat-co-dieu-kien",
+ "dang": "xs.doc-lap-tich",
+ "dang_tx": "xs.doc-lap",
+ "yccd": [
+  "12.XS.1"
+ ],
+ "lop": 12,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-XS-03",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "NB",
+  "tra-loi-ngan": "NB"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-XS-03",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "pa": [
+   "0.6",
+   "0.7",
+   "0.8"
+  ],
+  "pb": [
+   "0.5",
+   "0.9"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {},
+ "boi_canh": "Cho hai biến cố độc lập $A$, $B$ với $P(A)={pa:xap-xi:2}$ và $P(B)={pb:xap-xi:2}$.",
+ "hoi": "Xác suất $P(AB)$ bằng",
+ "dap_so": "pa*pb",
+ "nhieu": [
+  {
+   "bieu_thuc": "pa+pb",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Cộng hai xác suất"
+   }
+  },
+  {
+   "bieu_thuc": "pa+pb-pa*pb",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Nhầm sang $P(A\\cup B)$"
+   }
+  },
+  {
+   "bieu_thuc": "1-pa*pb",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Lấy xác suất biến cố đối của $AB$"
+   }
+  }
+ ],
+ "kieu": "xap-xi:2",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": true,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-XS-03']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "pa": "0.6",
+   "pb": "0.5"
+  },
+  {
+   "pa": "0.6",
+   "pb": "0.9"
+  },
+  {
+   "pa": "0.7",
+   "pb": "0.5"
+  },
+  {
+   "pa": "0.7",
+   "pb": "0.9"
+  },
+  {
+   "pa": "0.8",
+   "pb": "0.5"
+  },
+  {
+   "pa": "0.8",
+   "pb": "0.9"
+  }
+ ],
+ "so_bien_the": 6,
+ "so_cau_sinh": 12,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

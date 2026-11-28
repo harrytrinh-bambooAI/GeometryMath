@@ -1,0 +1,136 @@
+{
+ "id": "BM-069",
+ "nguon": {
+  "loai": "de-chinh-thuc",
+  "ref": "LG-004 Phòng GD&ĐT Quốc Oai — đề thi thử vào 10 lần 1 (2024-2025) + HDC, Câu 2.1, đề trang 1, HDC trang 3/6 — https://cdn.thuvienphapluat.vn/uploads/Hoidapphapluat/2024/TTTT/240502/Toan/HN/de-thi-thu-toan-vao-lop-10-lan-1-nam-2024-2025-phong-gddt-quoc-oai-ha-noi.pdf (tải 27/11/2026)"
+ },
+ "cap": "thcs",
+ "chu_de": "Giải bài toán bằng cách lập phương trình",
+ "muc_do": "VD",
+ "de_bai": "Một đội xe nhận kế hoạch chở $360$ tấn hàng, chia đều cho các xe. Lúc khởi hành có $3$ xe bị hỏng nên mỗi xe phải chở thêm $4$ tấn so với dự định. Hỏi ban đầu có bao nhiêu xe?",
+ "dap_so": {
+  "gia_tri": "$18$ xe",
+  "so": 18.0
+ },
+ "dap_so_engine": null,
+ "kien_thuc": [
+  "Lập phương trình",
+  "Phương trình bậc hai"
+ ],
+ "tong_diem": 2.0,
+ "bieu_diem": "chinh-thuc",
+ "buoc": [
+  {
+   "ma": "B1",
+   "noi_dung": "Gọi số xe ban đầu là $x$ ($x\\in\\mathbb Z^+$, $x>3$).",
+   "ket_qua_trung_gian": "Ẩn + ĐK",
+   "kien_thuc": "Đặt ẩn",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: Ẩn + ĐK",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B2",
+   "noi_dung": "Số xe thực tế $x-3$.",
+   "ket_qua_trung_gian": "$x-3$",
+   "kien_thuc": "Biểu thị",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $x-3$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B3",
+   "noi_dung": "Dự định mỗi xe chở $\\dfrac{360}x$ tấn.",
+   "ket_qua_trung_gian": "$\\dfrac{360}x$",
+   "kien_thuc": "Biểu thị",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{360}x$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B4",
+   "noi_dung": "Thực tế mỗi xe chở $\\dfrac{360}{x-3}$ tấn.",
+   "ket_qua_trung_gian": "$\\dfrac{360}{x-3}$",
+   "kien_thuc": "Biểu thị",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\dfrac{360}{x-3}$",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  },
+  {
+   "ma": "B5",
+   "noi_dung": "Phương trình $\\dfrac{360}{x-3}-\\dfrac{360}x=4$.",
+   "ket_qua_trung_gian": "PT",
+   "kien_thuc": "Lập phương trình",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: PT",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Đảo hiệu: $\\dfrac{360}x-\\dfrac{360}{x-3}=4$",
+     "tru": 0.25
+    }
+   ]
+  },
+  {
+   "ma": "B6",
+   "noi_dung": "$\\Leftrightarrow4x^2-12x-1080=0$, $\\Delta'=36+4320=4356$, $\\sqrt{\\Delta'}=66$.",
+   "ket_qua_trung_gian": "$\\sqrt{\\Delta'}=66$",
+   "kien_thuc": "Biến đổi",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $\\sqrt{\\Delta'}=66$",
+   "cach_khac": [],
+   "loi_thuong_gap": [],
+   "ket_qua_so": 66.0
+  },
+  {
+   "ma": "B7",
+   "noi_dung": "$x_1=\\dfrac{6+66}4=18$ (TM), $x_2=-15$ (loại).",
+   "ket_qua_trung_gian": "$x=18$",
+   "kien_thuc": "Công thức nghiệm, đối chiếu ĐK",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $x=18$",
+   "cach_khac": [],
+   "loi_thuong_gap": [
+    {
+     "mo_ta": "Chia cho $2$ thay vì $a=4$: $x=\\dfrac{6+66}2=36$",
+     "tru": 0.25
+    }
+   ],
+   "ket_qua_so": 18.0
+  },
+  {
+   "ma": "B8",
+   "noi_dung": "Vậy ban đầu có $18$ xe.",
+   "ket_qua_trung_gian": "$18$ xe",
+   "kien_thuc": "Kết luận",
+   "diem": 0.25,
+   "tieu_chi_dat": "Có lập luận đúng và nêu được: $18$ xe",
+   "cach_khac": [],
+   "loi_thuong_gap": []
+  }
+ ],
+ "loi_giai_sai": [
+  {
+   "id": "S1",
+   "buoc_sai": "B5",
+   "loai_loi": "sai-hinh-dung",
+   "mo_ta": "Đảo hiệu: $\\dfrac{360}x-\\dfrac{360}{x-3}=4$",
+   "loi_giai": "B1: Gọi số xe ban đầu là $x$ ($x\\in\\mathbb Z^+$, $x>3$).\nB2: Số xe thực tế $x-3$.\nB3: Dự định mỗi xe chở $\\dfrac{360}x$ tấn.\nB4: Thực tế mỗi xe chở $\\dfrac{360}{x-3}$ tấn.\nB5: Phương trình $\\dfrac{360}x-\\dfrac{360}{x-3}=4$.\nB6: $\\Leftrightarrow4x^2-12x+1080=0$, $\\Delta'<0$.\nB7: Phương trình vô nghiệm.\nB8: Không có số xe thỏa mãn.",
+   "diem_dung": 1.0
+  },
+  {
+   "id": "S2",
+   "buoc_sai": "B7",
+   "loai_loi": "sai-tinh-toan",
+   "mo_ta": "Chia cho $2$ thay vì $a=4$: $x=\\dfrac{6+66}2=36$",
+   "loi_giai": "B1: Gọi số xe ban đầu là $x$ ($x\\in\\mathbb Z^+$, $x>3$).\nB2: Số xe thực tế $x-3$.\nB3: Dự định mỗi xe chở $\\dfrac{360}x$ tấn.\nB4: Thực tế mỗi xe chở $\\dfrac{360}{x-3}$ tấn.\nB5: Phương trình $\\dfrac{360}{x-3}-\\dfrac{360}x=4$.\nB6: $\\Leftrightarrow4x^2-12x-1080=0$, $\\Delta'=36+4320=4356$, $\\sqrt{\\Delta'}=66$.\nB7: $x_1=\\dfrac{6+66}2=36$ (TM), $x_2=-30$ (loại).\nB8: Vậy ban đầu có $36$ xe.",
+   "diem_dung": 1.5
+  }
+ ],
+ "trang_thai": "da-soat",
+ "ghi_chu": "Thang HDC 2đ = 8 × 0,25."
+}

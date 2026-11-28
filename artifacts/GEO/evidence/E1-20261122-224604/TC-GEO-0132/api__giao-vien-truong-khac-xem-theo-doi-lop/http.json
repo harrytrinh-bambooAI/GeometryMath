@@ -1,0 +1,42 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000002",
+      "userId": "00000000-0000-7000-8000-000000000005",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b8fa-756a-a8da-fcddd150fed0",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 4
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/teacher/assignments/00000000-0000-7000-8000-000000000040/monitor",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 404,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b8ff-75b8-a5cd-0bfc883f7239",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:11 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"code\":\"NOT_FOUND\",\"message\":\"Không tìm thấy dữ liệu yêu cầu.\",\"requestId\":\"01a203ef-b8ff-75b8-a5cd-0bfc883f7239\"}",
+    "ms": 5
+  }
+]

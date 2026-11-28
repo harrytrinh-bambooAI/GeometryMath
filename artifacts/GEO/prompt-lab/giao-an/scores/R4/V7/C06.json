@@ -1,0 +1,62 @@
+{
+ "case": "C06",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "khung_5512": true,
+   "thoi_luong": true,
+   "meta_khop": true,
+   "ma_kt_hop_le": true,
+   "phu_trong_tam": true,
+   "kt_khop_kho": true,
+   "phieu_theo_yc": true,
+   "so_bai_tap": true,
+   "ti_le": true,
+   "nguon_bai_tap_hop_le": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "tong_phut": 90,
+   "kt_khop": 4,
+   "kt_lech": 0,
+   "kt_lech_ds": [],
+   "ti_le_thuc": {
+    "NB": 1,
+    "TH": 3,
+    "VD": 3,
+    "VDC": 1
+   },
+   "muc_do_lech_kho": [],
+   "so_cau": 8,
+   "cau_tu_kho": 6,
+   "kq_ai_ghi": 0,
+   "kq_khop_kho": 0
+  },
+  "kind": "lesson"
+ },
+ "judge": {
+  "diem": {
+   "muc_tieu": 5,
+   "doi_tuong": 4,
+   "phong_cach": 5,
+   "to_chuc": 5,
+   "chinh_xac": 5,
+   "phieu": 5
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Giáo án đủ khung 5512 và đủ 90 phút (6+17+17+35+15); phiếu có 8 câu đúng tỉ lệ 1/3/3/1, không lộ đáp số, các câu tự soạn đúng toán và được ghi rõ trong unsure. Với lớp chuyên, câu VDC (BT11-B25-7) còn khá nhẹ, nên bổ sung một câu khai thác tính chất TC-003 để tăng độ thách thức."
+ },
+ "judge2": null,
+ "score": {
+  "diem": 97.5,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 4.83
+ }
+}

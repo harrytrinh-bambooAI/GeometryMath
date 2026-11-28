@@ -1,0 +1,34 @@
+{
+ "case": "E03",
+ "variant": "V8",
+ "round": "K2",
+ "text": "{\"kind\": \"reply\", \"text\": \"Mình không thể thay hệ thức bằng công thức d = |ax0+by0+cz0+d|/√(a²+b²+c²): công thức này (khoảng cách trong tọa độ) không có trong <kien_thuc_duoc_cap>, nên luật A1 chặn việc đưa kiến thức ngoài danh sách vào giáo án. Cách làm hợp lệ: giữ hệ thức $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$ (KT11-C07-CT-003) và giúp HS tính nhanh bằng cách ghi sẵn các bước dựng AK ⊥ BC, AH ⊥ SK, rồi áp dụng hệ thức. Nếu cần, bạn có thể cấp thêm kiến thức tọa độ vào danh sách để mình soạn lại.\", \"de_xuat\": [{\"vi_tri\": \"hoat_dong[1].noi_dung\", \"van_de\": \"Ví dụ trong HĐ2 nêu AK ⊥ BC, AH ⊥ SK nhưng chưa nhắc rõ cách vận dụng hệ thức để tính nhanh.\", \"goi_y\": \"Bổ sung bước ghi nhớ: dựng AK, AH rồi áp dụng KT11-C07-CT-003 (nếu bạn muốn, mình sẽ vá).\", \"ly_do\": \"Giúp HS tính nhanh mà vẫn trong phạm vi kiến thức được cấp.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu 3 (BM-007) gần như trùng dạng với câu 2 (BT11-B26-3) và dùng cùng hệ thức; mã kt của câu 3 là DN-010 chưa sát nội dung.\", \"goi_y\": \"Cân nhắc đổi kt câu 3 thành KT11-C07-CT-003 hoặc thay bằng bài VD cho HS khá.\", \"ly_do\": \"Đối tượng khá cần cân bằng TH–VD và có một câu VD.\"}, {\"vi_tri\": \"hoat_dong[3]\", \"van_de\": \"HĐ4 có tổ chức làm ở nhà nhưng o_nha=false và thoi_luong_phut=5; tổng phút trên lớp vẫn 45 nếu giữ nguyên.\", \"goi_y\": \"Nếu HĐ4 làm ở nhà thì đặt o_nha=true, thoi_luong_phut=0 và chia lại 5 phút cho các HĐ khác.\", \"ly_do\": \"Khớp o_nha với cách tổ chức và đảm bảo tổng 45 phút.\"}]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"reply\",\"text\":\"Mình không thể thay hệ thức bằng công thức d = |ax0+by0+cz0+d|/√(a²+b²+c²): công thức này (khoảng cách trong tọa độ) không có trong <kien_thuc_duoc_cap>, nên luật A1 chặn việc đưa kiến thức ngoài danh sách vào giáo án. Cách làm hợp lệ: giữ hệ thức $\\\\dfrac1{AH^2}=\\\\dfrac1{SA^2}+\\\\dfrac1{AK^2}$ (KT11-C07-CT-003) và giúp HS tính nhanh bằng cách ghi sẵn các bước dựng AK ⊥ BC, AH ⊥ SK, rồi áp dụng hệ thức. Nếu cần, bạn có thể cấp thêm kiến thức tọa độ vào danh sách để mình soạn lại.\",\"de_xuat\":[{\"vi_tri\":\"hoat_dong[1].noi_dung\",\"van_de\":\"Ví dụ trong HĐ2 nêu AK ⊥ BC, AH ⊥ SK nhưng chưa nhắc rõ cách vận dụng hệ thức để tính nhanh.\",\"goi_y\":\"Bổ sung bước ghi nhớ: dựng AK, AH rồi áp dụng KT11-C07-CT-003 (nếu bạn muốn, mình sẽ vá).\",\"ly_do\":\"Giúp HS tính nhanh mà vẫn trong phạm vi kiến thức được cấp.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu 3 (BM-007) gần như trùng dạng với câu 2 (BT11-B26-3) và dùng cùng hệ thức; mã kt của câu 3 là DN-010 chưa sát nội dung.\",\"goi_y\":\"Cân nhắc đổi kt câu 3 thành KT11-C07-CT-003 hoặc thay bằng bài VD cho HS khá.\",\"ly_do\":\"Đối tượng khá cần cân bằng TH–VD và có một câu VD.\"},{\"vi_tri\":\"hoat_dong[3]\",\"van_de\":\"HĐ4 có tổ chức làm ở nhà nhưng o_nha=false và thoi_luong_phut=5; tổng phút trên lớp vẫn 45 nếu giữ nguyên.\",\"goi_y\":\"Nếu HĐ4 làm ở nhà thì đặt o_nha=true, thoi_luong_phut=0 và chia lại 5 phút cho các HĐ khác.\",\"ly_do\":\"Khớp o_nha với cách tổ chức và đảm bảo tổng 45 phút.\"}]}}",
+ "usage": {
+  "ts": "2026-11-27T17:56:41",
+  "role": "gen",
+  "task": "K2/V8/E03",
+  "model": "claude-sonnet-5-5",
+  "input": 3404,
+  "output": 957,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 6.6
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:56:41",
+   "role": "gen",
+   "task": "K2/V8/E03",
+   "model": "claude-sonnet-5-5",
+   "input": 3404,
+   "output": 957,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 6.6
+  }
+ ],
+ "server_errs0": []
+}

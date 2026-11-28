@@ -1,0 +1,165 @@
+{
+ "id": "MC-DS-DH",
+ "ten": "Đúng/sai: đạo hàm và tiếp tuyến",
+ "chu_de": "dao-ham-co-ban",
+ "dang": "ds.dao-ham",
+ "dang_tx": "dh1.quy-tac",
+ "yccd": [
+  "11.DH.1",
+  "11.DH.2",
+  "11.DH.3"
+ ],
+ "lop": 11,
+ "ho_hinh": "MC-DS-DH",
+ "tham_so": {
+  "p": [
+   "1",
+   "-2",
+   "3"
+  ],
+  "q": [
+   "2",
+   "-1"
+  ],
+  "x0": [
+   "1",
+   "2"
+  ]
+ },
+ "dan_xuat": {
+  "fx": "x**3+p*x**2+q"
+ },
+ "boi_canh": "Cho hàm số $f(x)={fx}$.",
+ "y": [
+  {
+   "menh_de": "$f'(1)={v}$.",
+   "dap_so": "3+2*p",
+   "muc_do": "NB",
+   "nhieu": [
+    {
+     "bieu_thuc": "3+p",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy đạo hàm của $px^2$ là $px$"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "$f''(1)={v}$.",
+   "dap_so": "6+2*p",
+   "muc_do": "TH",
+   "nhieu": [
+    {
+     "bieu_thuc": "6+p",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Lấy đạo hàm cấp hai của $px^2$ là $p$"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Tiếp tuyến của đồ thị tại điểm có hoành độ ${x0}$ có hệ số góc ${v}$.",
+   "dap_so": "3*x0**2+2*p*x0",
+   "muc_do": "TH",
+   "nhieu": [
+    {
+     "bieu_thuc": "x0**3+p*x0**2+q",
+     "loi": {
+      "loai_loi": "sai-dinh-li",
+      "mo_ta": "Lấy $f(x_0)$ làm hệ số góc"
+     }
+    }
+   ]
+  },
+  {
+   "menh_de": "Tiếp tuyến đó cắt trục $Oy$ tại điểm có tung độ ${v}$.",
+   "dap_so": "x0**3+p*x0**2+q-(3*x0**2+2*p*x0)*x0",
+   "muc_do": "VD",
+   "nhieu": [
+    {
+     "bieu_thuc": "x0**3+p*x0**2+q+(3*x0**2+2*p*x0)*x0",
+     "loi": {
+      "loai_loi": "sai-tinh-toan",
+      "mo_ta": "Sai dấu khi khai triển $y=k(x-x_0)+y_0$ tại $x=0$"
+     }
+    }
+   ]
+  }
+ ],
+ "loai_mau": "dung-sai",
+ "loai_cau": [
+  "dung-sai"
+ ],
+ "bien_the": [
+  {
+   "p": "1",
+   "q": "2",
+   "x0": "1"
+  },
+  {
+   "p": "1",
+   "q": "2",
+   "x0": "2"
+  },
+  {
+   "p": "1",
+   "q": "-1",
+   "x0": "1"
+  },
+  {
+   "p": "1",
+   "q": "-1",
+   "x0": "2"
+  },
+  {
+   "p": "-2",
+   "q": "2",
+   "x0": "1"
+  },
+  {
+   "p": "-2",
+   "q": "2",
+   "x0": "2"
+  },
+  {
+   "p": "-2",
+   "q": "-1",
+   "x0": "1"
+  },
+  {
+   "p": "-2",
+   "q": "-1",
+   "x0": "2"
+  },
+  {
+   "p": "3",
+   "q": "2",
+   "x0": "1"
+  },
+  {
+   "p": "3",
+   "q": "2",
+   "x0": "2"
+  },
+  {
+   "p": "3",
+   "q": "-1",
+   "x0": "1"
+  },
+  {
+   "p": "3",
+   "q": "-1",
+   "x0": "2"
+  }
+ ],
+ "rang_buoc": [],
+ "so_bien_the": 12,
+ "so_cau_sinh": 12,
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-DS-DH"
+ },
+ "phien_ban": "v1.0 · 27/11/2026"
+}

@@ -21,6 +21,31 @@
 | Lint | Spotless (google-java-format) kiểm ở pha `validate` | Chạy sớm; sửa bằng `make fmt`. |
 | Kiểm thử | JUnit 5, AssertJ, ArchUnit 1.5.1, bộ quét SQL tự viết; datasource-proxy 1.11.1 (đếm câu lệnh JDBC); Gatling 3.16.1 Java DSL (`loadtest/`); Playwright 1.65.1 (`e2e/`) | D-GEO-170. Xem README. |
 
+## Giao diện web và E2E (Đợt 0, PO-50, 22/11/2026)
+| Hạng mục | Chọn (phiên bản ghim chính xác) | Lý do ngắn |
+|---|---|---|
+| Khung giao diện | React 19.3.1 + react-dom 19.3.1, react-router 8.5.2 | Chủ đầu tư chốt React (PO-50). Router dạng đối tượng để epic cắm route qua `src/features/<epic>/index.tsx`. |
+| Build/dev | Vite 8.3.8 + @vitejs/plugin-react 6.3.0 | Dev nhanh (HMR), proxy sẵn tới máy chủ. |
+| Ngôn ngữ | TypeScript 6.0.3 (strict) | 7.x (bản Go) chưa được typescript-eslint hỗ trợ (`<6.1`). |
+| Lint | ESLint 10.15.0, @eslint/js 10.0.1, typescript-eslint 8.73.0, eslint-plugin-react-hooks 7.1.1, globals 17.14.0 | 0 cảnh báo; luật riêng cấm `toLocale*String` ngoài `src/shared/time` (BR-GEO-233). |
+| Hình 3D | three 0.187.0 (+ @types/three 0.187.0), nạp động | Chỗ đặt sẵn; tính năng do E2/E3 làm. Prototype dùng r128 qua CDN; bản app dùng gói npm ghim. |
+| Kiểm thử hàm thuần | `node --test` (Node ≥ 22.18 tự bỏ kiểu TS) | Không thêm Vitest/Jest cho Đợt 0. |
+| Kiểu Node | @types/node 26.6.6 | cho `vite.config.ts`, test, script E2E. |
+| E2E | @playwright/test 1.65.1 (Chromium 1255, WebKit 2388), typescript 6.0.3 (chỉ để typecheck) | D-GEO-170. Reporter bằng chứng và script truy vết tự viết, không thêm thư viện. |
+
+**Cách phục vụ giao diện (quyết định):** dev = Vite (cổng `GEO_WEB_PORT`) proxy `/api`, `/health`, `/dev` sang máy chủ Java
+(`GEO_PORT`); build = **tệp tĩnh `web/dist` phục vụ riêng** (reverse proxy/CDN cùng nguồn, chuyển `/api` vào máy chủ), KHÔNG
+đóng vào jar. Lý do: (1) `make verify` và build Maven không phụ thuộc Node, ArchUnit/bộ quét SQL không đổi; (2) tệp tĩnh có băm
+trong tên nên bộ nhớ đệm CDN lâu dài, máy chủ Java chỉ lo API; (3) không cần thêm bộ điều khiển "SPA fallback" và ngoại lệ cho
+`AuthFilter`; (4) cùng nguồn qua proxy nên không cần CORS. E2E phục vụ đúng bản build bằng `vite preview` (cùng proxy).
+Môi trường thật cần một quy tắc reverse proxy: `/api/*`, `/health` -> máy chủ; còn lại -> `dist/`, đường dẫn không có tệp -> `index.html`.
+
+**Seed dữ liệu vàng:** SQL ngoài migration (`db/seed/`), nạp bằng `scripts/seed-reset.sh` chỉ trên geo_e2e/geo_dev; chi tiết và
+phần fixture chưa có bảng: [db/seed/README.md](../db/seed/README.md).
+
+**Chạy nhiều checkout song song:** cổng PG/Redis/máy chủ/web đọc từ biến môi trường hoặc `app/.env.ports` (`scripts/env.sh`);
+`dev-up.sh` từ chối nếu cổng PG/Redis đang do cụm của thư mục khác phục vụ.
+
 ## Đã cân nhắc, không chọn
 - **Quarkus / Micronaut:** khởi động nhanh, nhưng đội và hệ sinh thái thư viện nhỏ hơn; MVP không cần cold start nhanh.
 - **WebFlux (phản ứng):** chịu tải cao nhưng khó đọc, khó gỡ lỗi; luồng ảo đạt mục tiêu với mã đồng bộ.
@@ -62,4 +87,4 @@ Maven khi chạy trên JDK 26 in cảnh báo `sun.misc.Unsafe` của chính Mave
 ## Vấn đề còn mở
 - Chưa đo thời gian khởi động tối ưu (~11 giây trên máy dev); chưa bật CDS/AOT.
 - Chưa có thử tải chính thức: `loadtest/` mới có kịch bản khói Gatling tới `/health` (xem `loadtest/README.md`); số đo trên máy dev chỉ mang tính chỉ báo.
-- `e2e/` mới có test khói HTTP (chưa có giao diện); test trình duyệt WebKit cần `npm run install-browsers`.
+- `e2e/` mới có test khung (`@TC-KHUNG-01…03`); TC của QC do agent từng epic viết. Lần đầu cần `npm run install-browsers`.

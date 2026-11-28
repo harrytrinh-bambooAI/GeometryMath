@@ -1,0 +1,48 @@
+{
+ "case": "E01",
+ "auto": {
+  "schema": true,
+  "checks": {
+   "json_nghiem_ngat": true,
+   "kind_chap_nhan": true,
+   "before_nguyen_van": true,
+   "ban_va_toi_thieu": true
+  },
+  "viol": [],
+  "info": {
+   "khoa_co_dau": 0,
+   "so_patch": 8
+  },
+  "kind": "patch"
+ },
+ "judge": {
+  "diem": {
+   "dap_ung": 3,
+   "toi_thieu": 3,
+   "xu_ly_luat": 4,
+   "noi_dung": 3
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Nội dung trò chơi 'Ai nhanh hơn' đạt yêu cầu: có 3 câu hỏi nhanh định tính, không ghi đáp số, giữ 5 phút. Trợ lý cũng phát hiện đúng lỗi o_nha/thời lượng của HĐ4 và lỗi phát biểu CT-003 thiếu điều kiện. Tuy nhiên, 4 patch to_chuc dùng sai khoá (assign/perform/report/conclude thay vì chuyen_giao/thuc_hien/bao_cao/ket_luan) nên sẽ không áp được hoặc làm hỏng cấu trúc; câu (2) của trò chơi lại trùng PHT1 câu 1 mà trợ lý chỉ tự đề xuất sửa thay vì tránh ngay, và mục unsure thứ hai không có nội dung hữu ích."
+ },
+ "judge2": {
+  "diem": {
+   "dap_ung": 3,
+   "toi_thieu": 4,
+   "xu_ly_luat": 4,
+   "noi_dung": 3
+  },
+  "vi_pham_A": [],
+  "loi_toan": [],
+  "nhan_xet": "Trò chơi 'Ai nhanh hơn' có đủ 3 câu hỏi định tính, có luật chơi, giữ 5 phút và không ghi đáp số; đề xuất về HĐ4 (o_nha/thời lượng) và về phát biểu CT-003 thiếu điều kiện là hợp lý. Tuy nhiên bốn bản vá tổ chức dùng sai đường dẫn (to_chuc.assign/perform/report/conclude thay vì chuyen_giao/thuc_hien/bao_cao/ket_luan) nên không áp được; câu hỏi (2) trò chơi lại tự tạo trùng PHT1 câu 1 rồi mới đề xuất đổi, lẽ ra nên chọn tình huống khác ngay trong bản vá."
+ },
+ "score": {
+  "diem": 73.8,
+  "A": 0,
+  "A_auto": 0,
+  "A_judge": 0,
+  "auto": 1.0,
+  "judge": 3.25
+ }
+}

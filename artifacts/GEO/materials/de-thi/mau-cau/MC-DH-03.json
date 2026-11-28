@@ -1,0 +1,147 @@
+{
+ "id": "MC-DH-03",
+ "ten": "Đạo hàm cấp hai tại một điểm",
+ "chu_de": "dao-ham-co-ban",
+ "dang": "dh.dao-ham-cap-hai",
+ "dang_tx": "dh1.quy-tac",
+ "yccd": [
+  "11.DH.3"
+ ],
+ "lop": 11,
+ "nang_luc": "tu-duy-lap-luan",
+ "ho_hinh": "MC-DH-03",
+ "loai_cau": [
+  "tn4",
+  "tra-loi-ngan"
+ ],
+ "muc_do": {
+  "tn4": "TH",
+  "tra-loi-ngan": "TH"
+ },
+ "nguon": {
+  "loai": "tu-soan",
+  "ma": "MC-DH-03",
+  "ref": "gen/mau_khac.py (soạn mới theo dạng trong lich-su/taxonomy.json)"
+ },
+ "tham_so": {
+  "p": [
+   "1",
+   "2",
+   "-1"
+  ],
+  "q": [
+   "2",
+   "-3"
+  ],
+  "x0": [
+   "1",
+   "2"
+  ]
+ },
+ "rang_buoc": [],
+ "dan_xuat": {
+  "fx": "p*x**4+q*x**3"
+ },
+ "boi_canh": "Cho hàm số $f(x)={fx}$.",
+ "hoi": "Giá trị $f''({x0})$ bằng",
+ "dap_so": "12*p*x0**2+6*q*x0",
+ "nhieu": [
+  {
+   "bieu_thuc": "4*p*x0**3+3*q*x0**2",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Chỉ tính đạo hàm cấp một"
+   }
+  },
+  {
+   "bieu_thuc": "12*p*x0**2+3*q*x0",
+   "loi": {
+    "loai_loi": "sai-tinh-toan",
+    "mo_ta": "Quên nhân 2 khi lấy đạo hàm lần hai của $x^3$"
+   }
+  },
+  {
+   "bieu_thuc": "4*p*x0**2+3*q*x0",
+   "loi": {
+    "loai_loi": "sai-dinh-li",
+    "mo_ta": "Hạ bậc hai lần nhưng không nhân các số mũ"
+   }
+  }
+ ],
+ "kieu": "so",
+ "tien_to": "",
+ "hau_to": "",
+ "duong": false,
+ "tln_nd": [
+  2,
+  1,
+  0
+ ],
+ "kiem": "gen/mau_khac.py:KIEM['MC-DH-03']",
+ "loai_mau": "don",
+ "bien_the": [
+  {
+   "p": "1",
+   "q": "2",
+   "x0": "1"
+  },
+  {
+   "p": "1",
+   "q": "2",
+   "x0": "2"
+  },
+  {
+   "p": "1",
+   "q": "-3",
+   "x0": "1"
+  },
+  {
+   "p": "1",
+   "q": "-3",
+   "x0": "2"
+  },
+  {
+   "p": "2",
+   "q": "2",
+   "x0": "1"
+  },
+  {
+   "p": "2",
+   "q": "2",
+   "x0": "2"
+  },
+  {
+   "p": "2",
+   "q": "-3",
+   "x0": "1"
+  },
+  {
+   "p": "2",
+   "q": "-3",
+   "x0": "2"
+  },
+  {
+   "p": "-1",
+   "q": "2",
+   "x0": "1"
+  },
+  {
+   "p": "-1",
+   "q": "2",
+   "x0": "2"
+  },
+  {
+   "p": "-1",
+   "q": "-3",
+   "x0": "1"
+  },
+  {
+   "p": "-1",
+   "q": "-3",
+   "x0": "2"
+  }
+ ],
+ "so_bien_the": 12,
+ "so_cau_sinh": 18,
+ "phien_ban": "v1.0 · 27/11/2026"
+}

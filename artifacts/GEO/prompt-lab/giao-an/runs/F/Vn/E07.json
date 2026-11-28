@@ -1,0 +1,33 @@
+{
+ "case": "E07",
+ "variant": "Vn",
+ "round": "F",
+ "text": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"add\",\"path\":\"muc_tieu.kien_thuc\",\"before\":null,\"after\":{\"noi_dung\":\"Tính được khoảng cách giữa hai đường thẳng chéo nhau.\",\"kt\":[\"KT11-C07-DN-012\",\"KT11-C07-PP-001\"]},\"ly_do\":\"Thêm mục tiêu kiến thức theo yêu cầu của giáo viên; gắn với định nghĩa đoạn vuông góc chung (KT11-C07-DN-012) và phương pháp đưa về khoảng cách điểm–mặt (KT11-C07-PP-001).\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong, phieu_hoc_tap\",\"van_de\":\"Mục tiêu mới về khoảng cách giữa hai đường thẳng chéo nhau chưa được dạy trong HĐ nào và chưa có câu hỏi trong phiếu học tập. Tiết chỉ có 45 phút, đã kín thời lượng.\",\"goi_y\":\"Thêm nội dung KT11-C07-DN-012 và KT11-C07-PP-001 vào một HĐ hình thành kiến thức mới (hoặc chuyển sang Tiết 2/2), thêm câu BT11-B26-5 (VD) hoặc BM-008 (VD) vào PHT1. Có thể rút gọn HĐ3 hoặc chuyển HĐ4 sang giao về nhà để có thời gian.\",\"ly_do\":\"Để mục tiêu khớp với hoạt động và đánh giá; giáo viên chỉ yêu cầu sửa mục tiêu nên chưa thay đổi các phần khác.\"}],\"unsure\":[]}",
+ "raw": "{\"kind\":\"patch\",\"patches\":[{\"op\":\"add\",\"path\":\"muc_tieu.kien_thuc\",\"before\":null,\"after\":{\"noi_dung\":\"Tính được khoảng cách giữa hai đường thẳng chéo nhau.\",\"kt\":[\"KT11-C07-DN-012\",\"KT11-C07-PP-001\"]},\"ly_do\":\"Thêm mục tiêu kiến thức theo yêu cầu của giáo viên; gắn với định nghĩa đoạn vuông góc chung (KT11-C07-DN-012) và phương pháp đưa về khoảng cách điểm–mặt (KT11-C07-PP-001).\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong, phieu_hoc_tap\",\"van_de\":\"Mục tiêu mới về khoảng cách giữa hai đường thẳng chéo nhau chưa được dạy trong HĐ nào và chưa có câu hỏi trong phiếu học tập. Tiết chỉ có 45 phút, đã kín thời lượng.\",\"goi_y\":\"Thêm nội dung KT11-C07-DN-012 và KT11-C07-PP-001 vào một HĐ hình thành kiến thức mới (hoặc chuyển sang Tiết 2/2), thêm câu BT11-B26-5 (VD) hoặc BM-008 (VD) vào PHT1. Có thể rút gọn HĐ3 hoặc chuyển HĐ4 sang giao về nhà để có thời gian.\",\"ly_do\":\"Để mục tiêu khớp với hoạt động và đánh giá; giáo viên chỉ yêu cầu sửa mục tiêu nên chưa thay đổi các phần khác.\"}],\"unsure\":[]}",
+ "usage": {
+  "ts": "2026-11-27T17:49:45",
+  "role": "gen",
+  "task": "F/Vn/E07",
+  "model": "claude-sonnet-5-5",
+  "input": 3379,
+  "output": 599,
+  "cache_write": 0,
+  "cache_read": 1335,
+  "stop": "end_turn",
+  "sec": 4.8
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:49:45",
+   "role": "gen",
+   "task": "F/Vn/E07",
+   "model": "claude-sonnet-5-5",
+   "input": 3379,
+   "output": 599,
+   "cache_write": 0,
+   "cache_read": 1335,
+   "stop": "end_turn",
+   "sec": 4.8
+  }
+ ]
+}

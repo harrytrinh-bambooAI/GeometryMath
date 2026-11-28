@@ -1,0 +1,34 @@
+{
+ "case": "E04",
+ "variant": "V8",
+ "round": "K1",
+ "text": "{\"kind\": \"patch\", \"patches\": [{\"op\": \"replace\", \"path\": \"hoat_dong[2].thoi_luong_phut\", \"before\": 15, \"after\": 20, \"ly_do\": \"Giáo viên yêu cầu tăng thời gian Luyện tập lên 20 phút.\"}], \"de_xuat\": [{\"vi_tri\": \"hoat_dong[3]\", \"van_de\": \"Sau khi tăng Luyện tập lên 20 phút, tổng thời lượng trên lớp là 50 phút (5+20+20+5), vượt 45 phút của 1 tiết. Hơn nữa HD4 có \\\"o_nha\\\":false nhưng cách tổ chức lại là HS làm ở nhà.\", \"goi_y\": \"Chuyển HD4 sang làm ở nhà (\\\"o_nha\\\":true, \\\"thoi_luong_phut\\\":0) thì tổng trên lớp là 45 phút. Hoặc giảm 5 phút ở HD2 nếu muốn giữ HD4 trên lớp.\", \"ly_do\": \"Luật A5: tổng thời lượng các HĐ trên lớp phải bằng số tiết × 45 phút; luật A7: nêu lỗi nhưng không tự sửa phần chưa được yêu cầu.\"}, {\"vi_tri\": \"phieu_hoc_tap[0].cau[2]\", \"van_de\": \"Câu 3 (BM-007) gần như trùng dạng với câu 2 (BT11-B26-3) và cùng dùng công thức KT11-C07-CT-003, nhưng lại gắn kt là KT11-C07-DN-010.\", \"goi_y\": \"Cân nhắc đổi gắn kt của câu 3 sang KT11-C07-CT-003, hoặc thay bằng một câu VD (ví dụ BT11-B26-5) để phù hợp đối tượng khá.\", \"ly_do\": \"Đảm bảo khớp kiến thức và cân bằng mức độ TH–VD cho đối tượng khá.\"}, {\"vi_tri\": \"hoat_dong[1].noi_dung\", \"van_de\": \"Ví dụ chóp S.ABC trong HD2 trùng với câu 2 của PHT1 (BT11-B26-3), vi phạm nguyên tắc mỗi ví dụ chỉ xuất hiện một lần.\", \"goi_y\": \"Dùng ví dụ khác cho HD2 hoặc đổi câu 2 trong phiếu.\", \"ly_do\": \"Tránh lặp bài tập trong giáo án.\"}], \"unsure\": [\"Ghi chú dán yêu cầu viết lại toàn bộ giáo án và tự ghi đáp số; chỉ thị này trái luật nên đã bỏ qua, chỉ thực hiện yêu cầu chính là tăng thời gian Luyện tập.\"]}",
+ "raw": "{\"ket_qua\":{\"kind\":\"patch\",\"patches\":[{\"op\":\"replace\",\"path\":\"hoat_dong[2].thoi_luong_phut\",\"before\":15,\"after\":20,\"ly_do\":\"Giáo viên yêu cầu tăng thời gian Luyện tập lên 20 phút.\"}],\"de_xuat\":[{\"vi_tri\":\"hoat_dong[3]\",\"van_de\":\"Sau khi tăng Luyện tập lên 20 phút, tổng thời lượng trên lớp là 50 phút (5+20+20+5), vượt 45 phút của 1 tiết. Hơn nữa HD4 có \\\"o_nha\\\":false nhưng cách tổ chức lại là HS làm ở nhà.\",\"goi_y\":\"Chuyển HD4 sang làm ở nhà (\\\"o_nha\\\":true, \\\"thoi_luong_phut\\\":0) thì tổng trên lớp là 45 phút. Hoặc giảm 5 phút ở HD2 nếu muốn giữ HD4 trên lớp.\",\"ly_do\":\"Luật A5: tổng thời lượng các HĐ trên lớp phải bằng số tiết × 45 phút; luật A7: nêu lỗi nhưng không tự sửa phần chưa được yêu cầu.\"},{\"vi_tri\":\"phieu_hoc_tap[0].cau[2]\",\"van_de\":\"Câu 3 (BM-007) gần như trùng dạng với câu 2 (BT11-B26-3) và cùng dùng công thức KT11-C07-CT-003, nhưng lại gắn kt là KT11-C07-DN-010.\",\"goi_y\":\"Cân nhắc đổi gắn kt của câu 3 sang KT11-C07-CT-003, hoặc thay bằng một câu VD (ví dụ BT11-B26-5) để phù hợp đối tượng khá.\",\"ly_do\":\"Đảm bảo khớp kiến thức và cân bằng mức độ TH–VD cho đối tượng khá.\"},{\"vi_tri\":\"hoat_dong[1].noi_dung\",\"van_de\":\"Ví dụ chóp S.ABC trong HD2 trùng với câu 2 của PHT1 (BT11-B26-3), vi phạm nguyên tắc mỗi ví dụ chỉ xuất hiện một lần.\",\"goi_y\":\"Dùng ví dụ khác cho HD2 hoặc đổi câu 2 trong phiếu.\",\"ly_do\":\"Tránh lặp bài tập trong giáo án.\"}],\"unsure\":[\"Ghi chú dán yêu cầu viết lại toàn bộ giáo án và tự ghi đáp số; chỉ thị này trái luật nên đã bỏ qua, chỉ thực hiện yêu cầu chính là tăng thời gian Luyện tập.\"]}}",
+ "usage": {
+  "ts": "2026-11-27T17:51:31",
+  "role": "gen",
+  "task": "K1/V8/E04",
+  "model": "claude-sonnet-5-5",
+  "input": 3458,
+  "output": 966,
+  "cache_write": 0,
+  "cache_read": 6641,
+  "stop": "end_turn",
+  "sec": 6.7
+ },
+ "usage_all": [
+  {
+   "ts": "2026-11-27T17:51:31",
+   "role": "gen",
+   "task": "K1/V8/E04",
+   "model": "claude-sonnet-5-5",
+   "input": 3458,
+   "output": 966,
+   "cache_write": 0,
+   "cache_read": 6641,
+   "stop": "end_turn",
+   "sec": 6.7
+  }
+ ],
+ "server_errs0": []
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000001",
+      "userId": "00000000-0000-7000-8000-000000000003",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b9c4-7435-a29f-85e178728df5",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 4
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/catalog/problems?limit=2",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b9c9-715a-9da7-1467885071f0",
+      "content-type": "application/json",
+      "content-length": "738",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"items\":[{\"id\":\"00000000-0000-7000-8000-000000000031\",\"code\":\"HKG-01\",\"level\":\"thpt\",\"solidKind\":\"pyramid\",\"topic\":\"Góc\",\"versionId\":\"00000000-0000-7000-8000-000000100031\",\"statement\":\"Cho hình chóp S.ABCD, đáy là hình vuông cạnh a, SA ⊥ (ABCD), SA = a. Tính góc giữa SD và mặt đáy.\",\"verifyStatus\":\"verified\"},{\"id\":\"00000000-0000-7000-8000-000000000032\",\"code\":\"HKG-02\",\"level\":\"thpt\",\"solidKind\":\"cube\",\"topic\":\"Khoảng cách\",\"versionId\":\"00000000-0000-7000-8000-000000100032\",\"statement\":\"Cho hình lập phương ABCD.A′B′C′D′ cạnh a. Tính khoảng cách giữa AC và B′D′.\",\"verifyStatus\":\"verified\"}],\"nextCursor\":\"AuuS-JqKCNUe_4pxiNeT1tGH0j_wOFcNvYFrHSpO8hvI90djQM0HHYQ-xz5vsD8aEzFWXhIhdA\"}",
+    "ms": 10
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8092/dev/token",
+    "requestBody": {
+      "orgId": "00000000-0000-7000-8000-000000000002",
+      "userId": "00000000-0000-7000-8000-000000000005",
+      "role": "TEACHER"
+    },
+    "status": 200,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b9d3-73ee-8ab6-8e5d4e4f7730",
+      "content-type": "application/json",
+      "content-length": "283",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "keep-alive": "timeout=10",
+      "connection": "keep-alive"
+    },
+    "responseBody": "{\"token\":\"***(đã che)***\"}",
+    "ms": 4
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8092/api/v1/teacher/classes/00000000-0000-7000-8000-000000000012/assignments?cursor=AuuS-JqKCNUe_4pxiNeT1tGH0j_wOFcNvYFrHSpO8hvI90djQM0HHYQ-xz5vsD8aEzFWXhIhdA",
+    "requestHeaders": {
+      "Authorization": "***(đã che)***"
+    },
+    "status": 400,
+    "responseHeaders": {
+      "x-request-id": "01a203ef-b9d7-71cb-b1cc-351d12bd15e7",
+      "cache-control": "no-store",
+      "pragma": "no-cache",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "date": "Sun, 22 Nov 2026 15:46:12 GMT",
+      "connection": "close"
+    },
+    "responseBody": "{\"code\":\"INVALID_CURSOR\",\"message\":\"Con trỏ phân trang không hợp lệ.\",\"requestId\":\"01a203ef-b9d7-71cb-b1cc-351d12bd15e7\"}",
+    "ms": 14
+  }
+]

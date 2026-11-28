@@ -1,0 +1,74 @@
+{
+ "id": "MC-HH-DS-E",
+ "ten": "Đúng/sai: lăng trụ tam giác đều",
+ "chu_de": "hinh-khong-gian-quan-he",
+ "dang": "ds.lang-tru-deu",
+ "dang_tx": "qh.khoang-cach",
+ "yccd": [
+  "11.VG.1",
+  "11.VG.2",
+  "11.VG.3",
+  "11.TT.1"
+ ],
+ "lop": 11,
+ "ho_hinh": "E",
+ "tham_so": {
+  "k": [
+   "1",
+   "sqrt(3)",
+   "2"
+  ]
+ },
+ "dan_xuat": {
+  "h": "k*a",
+  "AM": "sqrt(3)*a/2",
+  "AH": "h*sqrt(3)*a/2/sqrt(h**2+3*a**2/4)",
+  "AmM": "sqrt(h**2+3*a**2/4)"
+ },
+ "boi_canh": "Cho lăng trụ đều $ABC.A'B'C'$ có cạnh đáy bằng $a$ và cạnh bên $AA'={h}$.",
+ "y": [
+  {
+   "mau": "MC-HH-E02",
+   "menh_de": "Thể tích khối lăng trụ bằng ${v}$.",
+   "muc_do": "NB"
+  },
+  {
+   "mau": "MC-HH-E04",
+   "menh_de": "Khoảng cách giữa $AA'$ và $BC$ bằng ${v}$.",
+   "muc_do": "TH"
+  },
+  {
+   "mau": "MC-HH-E01",
+   "menh_de": "Góc giữa $A'B$ và mặt phẳng $(ABC)$ bằng ${v}$.",
+   "muc_do": "TH"
+  },
+  {
+   "mau": "MC-HH-E03",
+   "menh_de": "Khoảng cách từ $A$ đến mặt phẳng $(A'BC)$ bằng ${v}$.",
+   "muc_do": "VD"
+  }
+ ],
+ "loai_mau": "dung-sai",
+ "loai_cau": [
+  "dung-sai"
+ ],
+ "bien_the": [
+  {
+   "k": "1"
+  },
+  {
+   "k": "sqrt(3)"
+  },
+  {
+   "k": "2"
+  }
+ ],
+ "rang_buoc": [],
+ "so_bien_the": 3,
+ "so_cau_sinh": 3,
+ "nguon": {
+  "loai": "mvp",
+  "ma": "MC-HH-DS-E"
+ },
+ "phien_ban": "v1.0 · 27/11/2026"
+}
