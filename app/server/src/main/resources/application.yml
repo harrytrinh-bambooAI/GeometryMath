@@ -128,6 +128,7 @@ geo:
   # --- T-261128-54 (S5-E1, S5-E2 xuất) ---
   # --- T-261128-55 (S5-E5) ---
   # --- T-261128-56 (S5-E3) ---
+  kb.min-score: ${GEO_KB_MIN_SCORE:0.1}   # BR-S5E3-24, QS5-09: ngưỡng điểm ts_rank_cd chuẩn hoá (0…1) của bộ truy xuất mục kho tri thức
   # --- T-261128-57 (S5-E4) ---
   s5.images.backend: ${GEO_IMAGE_BACKEND:local}            # US-S5E4-08, P6: local = tệp mã hoá AES-256-GCM dưới dir (dev/test); s3 = kho tại VN (QS5-18, chưa cấu hình: khởi động báo lỗi khi dùng)
   s5.images.dir: ${GEO_IMAGE_DIR:.data/s5-images}           # thư mục kho cục bộ (không phục vụ tĩnh, không đường dẫn công khai)

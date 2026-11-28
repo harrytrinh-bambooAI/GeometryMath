@@ -1,0 +1,13 @@
+{
+ "_doc": "T-261128-56 (S5-E3 kho tri thức): mã cố định thêm cho kho F-S5-040 / F-S5-041 (seed e2e/s5_300_s5e3_kb.sql). Tài liệu TL-01 dùng id của F-S5-040, TL-09 dùng id của F-S5-041 (s5.json); TL-02, TL-03 và gắn kết dùng dải 00000000-0000-7000-8005-3000000004nn.",
+ "kbDocuments": {
+  "TL-01": {"id": "00000000-0000-7000-8005-000000000040", "fixture": "F-S5-040", "owner": "F-S5-001", "versions": {"1": "archived", "2": "active"}},
+  "TL-02": {"id": "00000000-0000-7000-8005-300000000402", "fixture": "F-S5-040", "owner": "F-S5-001", "versions": {"1": "pending"}},
+  "TL-03": {"id": "00000000-0000-7000-8005-300000000403", "fixture": "F-S5-040", "owner": "F-S5-001", "versions": {"1": "draft"}, "humanLabel": "AI soạn"},
+  "TL-09": {"id": "00000000-0000-7000-8005-000000000041", "fixture": "F-S5-041", "owner": "F-S5-002", "versions": {"1": "active"}}
+ },
+ "kbGrants": {
+  "TL-01→11A1": {"id": "00000000-0000-7000-8005-300000000410", "doc": "TL-01", "class": "F-S5-010"},
+  "TL-09→10B": {"id": "00000000-0000-7000-8005-300000000419", "doc": "TL-09", "class": "F-S3-012"}
+ }
+}
