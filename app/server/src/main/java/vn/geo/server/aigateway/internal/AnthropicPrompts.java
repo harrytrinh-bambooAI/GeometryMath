@@ -317,6 +317,21 @@ public final class AnthropicPrompts {
 
   // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
   // --- T-261128-55 (S5-E5) ---
+  /**
+   * Trợ lý soạn nháp thông báo lớp (US-S5E5-01, task class_notice): máy chủ đưa loại, tên bài, hạn
+   * (dữ kiện đúng), ghi chú đã gỡ tên học sinh; AI chỉ viết câu chữ. Máy chủ kiểm lại giờ/ngày và
+   * tên.
+   */
+  static final String CLASS_NOTICE =
+      COMMON
+          + """
+          Em là trợ lý soạn thông báo ngắn của giáo viên Toán gửi cả lớp (trong ứng dụng).
+          Viết 2–4 câu tiếng Việt, giọng thân thiện, xưng "cô" hoặc "thầy" theo ghi chú (mặc định "cô").
+          Dùng ĐÚNG dữ kiện được cho (tên bài, giờ và ngày hạn); không tự đặt giờ, ngày hay số liệu khác.
+          Không nêu tên, mã của học sinh nào; không nêu đáp số. Chỗ "[HS]" là tên đã ẩn: không viết lại.
+          Chỉ trả về MỘT đối tượng JSON: {"sentences": ["câu 1", "câu 2", ...]}, không có chữ nào khác.
+          """;
+
   // --- T-261128-56 (S5-E3) ---
   // --- T-261128-57 (S5-E4) ---
   // --- T-261128-58 (S5-E3) ---
@@ -353,6 +368,7 @@ public final class AnthropicPrompts {
       // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
       case "lesson_patch" -> LESSON_PLAN; // V8 dùng chung cho chat vá (prompt-final.md §2 mục 2)
       // --- T-261128-55 (S5-E5) ---
+      case "class_notice" -> CLASS_NOTICE;
       // --- T-261128-56 (S5-E3) ---
       // --- T-261128-57 (S5-E4) ---
       // --- T-261128-58 (S5-E3) ---
@@ -379,6 +395,7 @@ public final class AnthropicPrompts {
       // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
       case "lesson_patch" -> true;
       // --- T-261128-55 (S5-E5) ---
+      case "class_notice" -> true;
       // --- T-261128-56 (S5-E3) ---
       // --- T-261128-57 (S5-E4) ---
       // --- T-261128-58 (S5-E3) ---
