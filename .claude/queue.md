@@ -573,9 +573,41 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Chờ: owner quyết
 - Phụ thuộc: T-261128-66
 
+## T-261128-74 · FIX · Hiển thị toán (KaTeX) + hình 3D bị mất trước khi quay demo · wt fix-math · 2h/4M · lỗi owner bắt ở video T-73 [running]
+- Mục tiêu: Mọi chuỗi toán LaTeX hiển thị đúng bằng KaTeX (không còn `$...$`, `\dfrac`, `\perp`, `\sqrt`, `\approx`, `^\circ`, `{,}` thô) ở MỌI màn web giáo viên + học sinh, gồm: Soạn giáo án (danh sách "Kiến thức trọng tâm", mục tiêu, tiến trình), Ra đề theo ma trận (đề + 4 phương án A–D — hiện phương án không render), Đề nháp từ tài liệu, Kho tri thức/hỏi đáp, Rubric/chấm, Thông báo, Lỗi sai lớp, Bài luyện, Trình chiếu. Sửa hình 3D/2D bị cắt chỉ hiện góc trên trái + nền xám (video T-73 mốc 3:10, đề SP-01 "Góc giữa SC và mặt đáy" — kiểm cả lúc đổi kích thước/viewport 1920x1080, mở trong modal/trình chiếu). Dùng một component render toán dùng chung (đã có thì tái dùng, chưa có thì tạo) thay vì vá từng chỗ.
+- Nguồn: khung lỗi `artifacts/GEO/evidence/DEMO-20261128/GEO-MVP-demo-full-1080p.mp4` mốc 3:10, 4:21, 4:39, 5:11 (+ "..." owner: quét hết các màn còn lại); kịch bản quay `app/e2e/demo/*.demo.ts`; features `app/web/src/features/*`; owner 28/11 17:14.
+- Xong khi: (1) test E2E mới `app/e2e/tests/ui/math-render.spec.ts` duyệt các màn trên với dữ liệu seed, khẳng định không còn text node chứa mẫu LaTeX thô (regex `\$[^$]+\$|\\(dfrac|frac|perp|sqrt|approx|circ|parallel|subset)`) và có phần tử `.katex`; khẳng định canvas/SVG hình SP-01 chiếm ≥ 80% khung chứa ở 1920x1080; (2) ảnh trước/sau ở `artifacts/GEO/evidence/FIX-MATH-20261128/` (≥ 4 cặp, đúng 4 mốc owner nêu); (3) `make web-build` + e2e affected đạt.
+- Kiểm: `cd app && make web-build && npx playwright test e2e/tests/ui/math-render.spec.ts && test $(ls ../artifacts/GEO/evidence/FIX-MATH-20261128/*.png | wc -l) -ge 8`
+- Ngoài phạm vi: đổi nội dung/dữ liệu đề, đổi API/DB schema, gọi AI thật, profile prod, cổng 5432/6379/54329, tính năng mới ngoài PRODUCT-MASTER/MVP.
+- Model: opus · Ngân sách: 2 giờ
+- Phạm vi tệp: ^(app/web/|app/e2e/tests/ui/math-render|app/e2e/demo/|artifacts/GEO/evidence/FIX-MATH-20261128/|app/\.env\.ports|app/server/src/main/resources/(seed|fixtures)/)
+- Cổng: 54931
+
+## T-261128-75 · DEMO · Chuẩn bị video giới thiệu tiếng Việt style BambooAI (kịch bản, slide, phụ đề, giọng, dữ liệu thật) · wt demo-vi · 3h/5M [running]
+- Mục tiêu: Chuẩn bị mọi thứ cho video giới thiệu mới "Hình Học Không Gian Cùng AI — presented by BambooAI" bằng TIẾNG VIỆT: (1) `COMPARE.md` đối chiếu MVP.md/PRODUCT-MASTER.md (tính năng đã có, chặng 1,2,3,5) với video cũ `Video/GeometryMath.mp4` + `Video/01..03-*.mp4` + video T-73 → bảng: tính năng · đã nêu ở video nào · thiếu / chưa cụ thể · đưa vào video mới ở cảnh nào; (2) `SCRIPT-VI.md` kịch bản mới ~8–10 phút, nhấn mạnh: hỗ trợ Hình học (dựng hình 3D từ đề, xoay, vẽ thêm, đo, lời giải từng bước, kiểm chứng đáp số bằng tính toán), AI support, tra cứu tri thức từ AI (kho tri thức, hỏi đáp có nguồn), soạn đề cho giáo viên bằng prompting (gõ yêu cầu → đề nháp → duyệt; ra đề theo ma trận), soạn giáo án, chấm điểm (rubric, AI đề xuất điểm, GV nhận từng tiêu chí), nhận dạng bài làm của học sinh (chụp ảnh bài viết tay → đọc chữ → đối chiếu rubric); lợi ích cho học sinh và giáo viên; mỗi cảnh có: lời đọc VI, phụ đề VI (≤ 2 dòng, ≤ 42 ký tự/dòng), thao tác quay, dữ liệu dùng; (3) slide style BambooAI y như video cũ (nền xanh lá đậm gradient, nhãn "PRESENTED BY BAMBOOAI" vàng chanh, thẻ kính có icon, slide chương "0N <TÊN>"; tham chiếu `Video/slides/*.png` + khung hình `Video/GeometryMath.mp4`) dựng bằng HTML → PNG 1920x1080: mở đầu, giới thiệu hệ thống, các chương, lợi ích HS/GV, tổng kết, kết; (4) DỮ LIỆU THẬT: seed/kịch bản quay dùng bài giảng và bài tập thật từ `materials/Giao-an-Hinh-khong-gian-11A1.docx` + `materials/Ngan-hang-bai-tap-Hinh-khong-gian.xlsx` (checkout chính, chỉ đọc) — đề thật, giáo án thật, prompt soạn đề thật của giáo viên; ảnh bài làm viết tay học sinh trông thật (tạo bằng font/ảnh viết tay trên giấy kẻ, tên HS giả) cho cảnh nhận dạng; AI vẫn là mock nhưng câu trả lời mock phải khớp nội dung bài thật (fixture demo riêng, không đổi fixture e2e); (5) giọng đọc VI THAY ĐƯỢC: mỗi cảnh một tệp `voice/NN-<cảnh>.(wav|mp3)` + `voice/lines.tsv` (mã cảnh, lời đọc) để owner gen lại bằng Google TTS và thả đè cùng tên; bản tạm sinh bằng giọng tiếng Việt có sẵn trên macOS (`say -v '?'` tìm giọng vi_VN, ví dụ Linh); script dựng phải căn thời lượng cảnh theo độ dài tệp giọng (đổi giọng → dựng lại tự khớp); (6) phụ đề VI dạng SRT sinh từ lines.tsv + thời lượng giọng; (7) script quay `app/e2e/demo-vi/*.demo.ts` + `make-video-vi.mjs` chạy được trên UI hiện tại (bản nháp video được, lỗi toán sẽ hết sau khi gộp T-74).
+- Nguồn: `Video/GeometryMath.mp4`, `Video/0[1-3]-*.mp4`, `Video/slides/*.png` (checkout chính /Users/harry/IdeaProjects/GeometryMathSupport, 22/11/2026 — style BambooAI owner chỉ định 28/11); video T-73 + `artifacts/GEO/evidence/DEMO-20261128/SCRIPT.md` (28/11, mới nhất về tính năng); MVP.md, PRODUCT-MASTER.md (checkout chính); `materials/*.docx|xlsx` (22/11); script quay cũ `app/e2e/demo/`.
+- Xong khi: COMPARE.md, SCRIPT-VI.md, ≥ 8 slide PNG 1920x1080, voice/lines.tsv + ≥ 1 tệp giọng mỗi cảnh, subtitles-vi.srt, script quay + dựng chạy ra bản nháp `GEO-intro-vi-DRAFT-1080p.mp4` (h264 + aac, ≥ 300 s, phụ đề VI burn-in).
+- Kiểm: `D=artifacts/GEO/evidence/DEMO-VI-20261128; test -s $D/COMPARE.md && test -s $D/SCRIPT-VI.md && test $(ls $D/slides/*.png | wc -l) -ge 8 && test -s $D/voice/lines.tsv && test -s $D/subtitles-vi.srt && test -s $D/GEO-intro-vi-DRAFT-1080p.mp4 && grep -q h264 $D/probe-draft.txt && grep -q aac $D/probe-draft.txt`
+- Ngoài phạm vi: sửa code sản phẩm server/web (việc của T-74); gọi AI thật hoặc TTS cloud (owner tự gen Google); profile prod; cổng 5432/6379/54329; dữ liệu học sinh thật (chỉ tên giả); gửi/đăng video ra ngoài; sửa fixture e2e.
+- Model: opus · Ngân sách: 3 giờ
+- Phạm vi tệp: ^(app/e2e/demo-vi/|artifacts/GEO/evidence/DEMO-VI-20261128/|app/\.env\.ports|app/server/src/main/resources/demo/)
+- Cổng: 54941
+
+## T-261128-76 · DEMO · Quay + dựng video tiếng Việt bản cuối sau khi gộp T-74 · wt demo-vi · 1.5h/3M [todo]
+- Mục tiêu: Gộp worktree-mvp-wave0 (đã có T-74) vào wt demo-vi, quay lại toàn bộ bằng script T-75, dựng `GEO-intro-vi-1080p.mp4` bản cuối; soát từng cảnh không còn LaTeX thô / hình mất (trích 1 khung/cảnh vào `frames/`).
+- Nguồn: kết quả T-261128-74, T-261128-75
+- Xong khi: video cuối h264 1920x1080 + aac, ≥ 300 s; `frames/` 1 ảnh/cảnh; README.md cách thay giọng Google và dựng lại 1 lệnh.
+- Kiểm: `D=artifacts/GEO/evidence/DEMO-VI-20261128; test -s $D/GEO-intro-vi-1080p.mp4 && grep -q h264 $D/probe.txt && grep -q 1920 $D/probe.txt && grep -q aac $D/probe.txt && test -s $D/README.md`
+- Ngoài phạm vi: như T-261128-75
+- Model: opus · Ngân sách: 1.5 giờ
+- Phạm vi tệp: ^(app/e2e/demo-vi/|artifacts/GEO/evidence/DEMO-VI-20261128/|app/\.env\.ports|app/server/src/main/resources/demo/)
+- Phụ thuộc: T-261128-74, T-261128-75
+
+
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
+| v0.5 | 2026-11-28 | Thêm T-261128-74 (fix KaTeX + hình 3D), 75 (chuẩn bị video VI BambooAI), 76 (quay + dựng bản cuối) theo yêu cầu owner 17:14 | Jarvis |
 | v0.4 | 2026-11-28 | Thêm 17 khối chặng 5 theo PLAN_code-s5 v1.0: T-261128-51 (khung + seed F-S5 + BUG-S23-001), 52–65 (14 task code, đợt W1–W7, 88 ngày dev), 66 tester L6, 67 gate L7 [wait-user]; sửa ghi chú phụ thuộc 'T-50' ở 18, 19 → T-261126-50 (validate báo thiếu) | agent plan-s5 |
 | v0.3 | 2026-11-26 | T-17 (PLAN_code-s23 v1.0): thêm T-41 (khung chung), T-42 (dữ liệu mẫu S3); khối 18–33 thêm Kế hoạch + Phạm vi tệp, kiểm traceability --strict + check_ac_tc; dời US-S2E5-05 → 22, US-S3E5-01 → 31, US-S3E5-03/05 → 32; phụ thuộc 21 (+18), 22–25 theo đợt, 28–29 (+42) | runner-T-261126-17 |
 | v0.2 | 2026-11-26 | Nạp 25 khối plan chặng 2–3 (T-05, T-08…T-34) | delivery-lead |
