@@ -510,7 +510,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phạm vi tệp: ^(app/scripts/e2e-affected[^/]*|artifacts/GEO/work/s23/impact-map\.json|app/Makefile|app/README\.md|app/\.env\.ports)
 - Cổng: 54869
 
-## T-261128-66 · S5 · L6 Tester · tester SKILL + Playwright · wt s5-test · 3h/4M · Kiểm thử chặng 5 [running]
+## T-261128-66 · S5 · L6 Tester · tester SKILL + Playwright · wt s5-test · 3h/4M · Kiểm thử chặng 5 [done]
 - Mục tiêu: chạy 219 TC chặng 5 trên `worktree-mvp-wave0` đã gộp W0–W7 (cờ grading + ai-grading bật ở hồ sơ e2e): E2E-UI bằng Playwright trước, còn lại E2E-API; ca quyền theo quan hệ (giáo viên khác, học sinh lớp khác), không lộ đáp án (bộ `firewall-s5.json` lộ = 0), không lộ gì của AI cho học sinh; iOS/HEIC thiết bị thật ghi Manual; bằng chứng + REPORT.md + BUG-LIST.md theo mẫu `artifacts/GEO/evidence/E2E-S23-20261128/` THEO DECISIONS 28/11 "E2E cách lai" + /goal: chạy `make e2e-full` trên nhánh tích hợp (UI + tương tác bằng Playwright TRƯỚC, phần còn lại qua API); ca trượt chạy lại 1 lần để tách lỗi thật / chập chờn; KHÔNG sửa code app. Ra `artifacts/GEO/evidence/E2E-S5-<ngày>/` gồm REPORT.md (đạt/tổng theo epic, UI/API), BUG-LIST.md + BUG-LIST.html: mỗi lỗi ≥ 1 ảnh NHÚNG base64 (data URI, ≤ 300 KB/ảnh, KHÔNG link tệp; lỗi API chụp trang HTML request/response bằng Playwright) + check_buglist.py — theo đúng mẫu `artifacts/GEO/evidence/E2E-S23-20261128/`. Commit + không push (phiên chính push).
 - Nguồn: epics/S5-*/test_cases.md v1.1 (80e9b6f 28/11); mẫu E2E-S23-20261128/REPORT.md (28/11); scope.json tester; PLAN_code-s5 v1.0 §3 W8
 - Xong khi: mọi TC S5 có status; lệch audit = 0; REPORT.md có bảng UI/API đạt/tổng

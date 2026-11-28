@@ -1,19 +1,21 @@
-# PROGRESS · GeometryMath (GEO) · cập nhật 28/11/2026 ~01:35
-Mục tiêu hiện tại (/goal 28/11): E2E chặng 2+3 + bug list ảnh nhúng (XONG) → code chặng 5 theo đặc tả v1.1.
-Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`).
+# PROGRESS · GeometryMath (GEO) · cập nhật 28/11/2026 ~11:55
+Mục tiêu hiện tại (/goal 28/11): E2E chặng 2+3 + bug list ảnh nhúng → code chặng 5 theo đặc tả v1.1 — CẢ HAI XONG; chờ owner nghiệm thu (gate T-261128-67).
+Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0`), đã push.
 
 Đã xong 28/11:
-- E2E chặng 2+3 trọn bộ: UI 678/678 test (290/290 TC), API 285/285 (284/284 TC), 0 trượt/chập chờn; 1 lỗi Minor BUG-S23-001 (evidence-reporter đếm thiếu test vòng lặp). `artifacts/GEO/evidence/E2E-S23-20261128/` (BUG-LIST.md/.html ảnh base64, check_buglist.py ĐẠT). Gộp từ nhánh e2e-s23 (5e20479).
-- Đặc tả chặng 5 v1.1 (PO/BA/QC): 6 epic, 37 US, 219 AC, 219 TC; 88 dev + 26,2 test = 114,2 ngày công (1 dev); story 2–3 ngày; `artifacts/GEO/work/s5/check_s5.py` ĐẠT. Soát độc lập (Sonnet) 27 lỗi → 25 sửa, 1 sửa một phần (trần test 30 % theo owner), 1 chấp nhận. Gộp từ spec-s5 (84bd6cb).
+- E2E chặng 2+3: UI 678/678, API 285/285; 1 lỗi Minor BUG-S23-001 (đã sửa ở T-51). `artifacts/GEO/evidence/E2E-S23-20261128/` (bug list ảnh base64, check_buglist ĐẠT).
+- Đặc tả chặng 5 v1.1: 6 epic, 37 US, 219 AC, 219 TC, 114,2 ngày công; soát độc lập 25/27 sửa.
+- Code chặng 5: 17 task (khung 51, code 52–65, FIX 68, công cụ E2E lai 69) — mỗi task phiên chính tự chạy lại `queue.py check` (exit 0) rồi gộp.
+- Tester chặng 5 (T-66): 219/219 TC đạt (UI 26/26 chromium+webkit, API 193/193), 0 lỗi; `artifacts/GEO/evidence/E2E-S5-20261128/` (REPORT, BUG-LIST .md/.html, check_buglist ĐẠT).
+- Hồi quy trọn bộ `make e2e-full` trên bản gộp cuối (wt s5-test @ dff5fb6, lượt 20261128-113923): 2054/2058 test đạt, 4 skipped, 0 trượt, 0 chập chờn; 1158/1158 mã TC; traceability --strict MVP,S2,S3,S5 ĐẠT (258 TC chưa chạy = loại Manual/IT/UT không thuộc E2E).
 
-Code chặng 5 (owner "Chạy hết 8 đợt", PLAN_code-s5 v1.0, queue v0.4): W0 T-51 ✅, W1 T-52 ✅ T-53 ✅, W2 T-54 ✅ T-55 ✅, W3 T-56 ✅ T-57 ✅, W4 T-58 ✅ T-59 ✅, W5 T-60 ✅ T-61 ✅, W6 T-62 ✅ T-63 ✅, W7 T-64 ✅ T-65 ✅ — CODE 14/14 + FIX T-68 + công cụ E2E lai T-69 XONG, đã gộp. Đang chạy T-66 tester trọn bộ (wt s5-test, cổng 54879·6909·8217·5297; make e2e-full, UI trước rồi API; ra artifacts/GEO/evidence/E2E-S5-<ngày>/ ảnh nhúng).
-Điểm resume: `.claude/progress/runner.md` + `tail -5 .claude/progress/runner-T-261128-*.md`; brief sinh bằng `.claude/briefs/mkbrief.sh <ID> <wt> <song song>` (nội dung: queue.py brief + phần bổ sung worktree/cổng/allowed_fields).
-Bài học W1: gộp nhánh tích hợp vào worktree task → reset geo_e2e/geo_dev của worktree đó (Flyway không out-of-order); allowed_fields.tsv dùng chung → mỗi task thêm dưới `# --- <ID> ---`, không đổi dòng Phiên bản.
+Đang dở: không có agent nào chạy.
+Bước tiếp theo:
+1. Owner nghiệm thu gate T-261128-67 (chặng 5) + còn L7 chặng 2, 3 và 7 ca tay chặng 3 (S3E2-37, E3-07, E4-02, E4-21, E4-27, E5-26, E6-10) + ca tay HEIC iPhone thật (S5-E4).
+2. Đề xuất (chờ owner): soát độc lập toàn bộ diff chặng 5 theo CLAUDE.md §7 (1 agent Sonnet, chỉ đọc diff + tiêu chí).
+3. Owner trả lời câu chặn: QS5-01 (PO-64 cấm thu ảnh → E4/E6 sau cờ tắt), QS5-27 (bench chấm AI ~$32, cần "Go"), QS5-18 (S3 trong nước + GEO_IMAGE_KEY/SIGN_KEY), QS5-10/28/30/32; câu PO từ T-58/60/61/64/68 trong `.claude/inbox.md`.
+Tiến độ %: `python3 .claude/briefs/progress_s5.py`. Script điều phối: `.claude/briefs/{start,sync,land}.sh`, `resolve_allowed_fields.py`.
+Quyết định: DECISIONS.md (mới nhất 28/11 "E2E cách lai"; "Code chặng 5 chạy hết 8 đợt").
 
-Bước tiếp theo: chờ T-66 → queue.py check T-261128-66 → land.sh T-261128-66 s5-test → báo owner (gate T-67). Tiến độ %: python3 .claude/briefs/progress_s5.py
-Owner cần trả lời (artifacts/GEO/work/s5/questions-s5.md): QS5-01 (PO-64 cấm thu ảnh bài làm → E4/E6 code được, chưa phát hành), QS5-10, QS5-27 (bench chấm AI ~$32, cần "Go"), QS5-28 (điều kiện mở chặng 5), QS5-30 (ảnh gửi AI ngoài nước), QS5-32 (cổng KPI giá trị điểm vs KTC).
-Owner vẫn còn: kiểm tay 7 ca chặng 3 (S3E2-37, E3-07, E4-02, E4-21, E4-27, E5-26, E6-10) + nghiệm thu L7 chặng 2, 3.
-Inbox: .claude/inbox.md (+ BUG-S23-001 sửa reporter dòng 227–229). Quyết định: DECISIONS.md (mới nhất 28/11 làm trọn chặng 2-3 song song đặc tả chặng 5).
-
-Lưu ý vận hành: hook worktree chặn `source`, lệnh ghép `cd …; git`, `git -C $VAR` → `git -C <đường dẫn tuyệt đối>`. Worktree con ở `.claude/worktrees/` của wave0, mỗi cái app/.env.ports riêng; cổng 54399 không dùng. AI giữ mock; AI thật cần owner duyệt chi phí.
-Rủi ro: AI chấm chữ viết tay chưa đo; PO-64; test chặng 5 chỉ ≈ 0,96 giờ/TC (R7 estimate-s5.md).
+Lưu ý vận hành: hook worktree chặn lệnh git ghép/biến → `git -C <đường dẫn tuyệt đối>` từng lệnh hoặc gói trong script. Gộp nhánh tích hợp vào worktree task → reset geo_e2e/geo_dev của worktree đó (`.claude/briefs/sync.sh`). Lệnh DB chỉ trên cổng của worktree mình (sự cố 28/11: T-60, T-61 đụng cụm 54329 của checkout chính — không mất dữ liệu; geo_e2e ở đó đã tạo lại rỗng).
+Rủi ro: AI chấm chữ viết tay chưa đo (bench QS5-27); PO-64; test chặng 5 ≈ 0,96 giờ/TC (R7).
