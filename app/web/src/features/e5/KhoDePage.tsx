@@ -11,6 +11,7 @@ import type { CatalogFilter, CatalogItem, CatalogSummary } from './api.ts';
 import { authoredLine, levelLabel, LEVELS, SolidThumb, SOLIDS, TOPICS } from './labels.tsx';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { verifyIcon } from '../../shared/ui/icons.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /** MSG-GEO-40 (05_dictionary.md). */
 export const MSG_40 = 'Không có đề nào khớp bộ lọc. Hãy bỏ bớt điều kiện.';
@@ -178,7 +179,7 @@ function ProblemCard({ p }: { p: CatalogItem }) {
         </span>
       </div>
       <Link to={open} className="e5-statement" data-testid={tid('e5', 'open', p.code)}>
-        {p.statement}
+        <MathText text={p.statement} />
       </Link>
       <div className="e5-card-foot">
         <span className="tiny muted" data-testid={tid('e5', 'authored', p.code)}>{authoredLine(p.stepCount)}</span>

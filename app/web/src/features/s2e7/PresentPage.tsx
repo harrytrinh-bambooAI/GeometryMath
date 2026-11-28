@@ -10,6 +10,7 @@ import { docPath, presentApi, type Presentation } from './api.ts';
 import { exitPresentFullscreen, fullscreenResult, requestPresentFullscreen } from './fullscreen.ts';
 import { highlightOf, MSG, next, pollMs, prev, START, toggleCover, visible, type StepState } from './logic.ts';
 import './s2e7.css';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 type Phase =
   | { k: 'checking' }
@@ -311,12 +312,12 @@ function Stage({ data, onExit }: { data: Presentation; onExit: () => void }) {
         </section>
         <section className="s2e7-text">
           <p className="s2e7-statement" data-math data-testid="s2e7-statement">
-            {data.statement}
+            <MathText text={data.statement} />
           </p>
           <ol className="s2e7-steps" data-testid="s2e7-steps">
             {data.steps.slice(0, shown).map((s, i) => (
               <li key={i} className="s2e7-step" data-math data-testid={`s2e7-step-${i + 1}`}>
-                {s}
+                <MathText text={s} />
               </li>
             ))}
           </ol>

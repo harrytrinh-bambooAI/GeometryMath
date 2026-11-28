@@ -7,6 +7,7 @@ import { tid } from '../../shared/testid.ts';
 import { CodeBox, SavedGate } from './CodeBox.tsx';
 import { MSG, checkPassword, codeOf, fieldErrorOf, messageOf, s2e1Api } from './api.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * C3-01 "Lấy lại tài khoản bằng mã khôi phục" (US-S2E1-03): mã người dùng + mã khôi phục + mật khẩu mới. Xong thì
@@ -74,7 +75,7 @@ export function RecoverPage({ area }: { area: 'gv' | 'hs' }) {
           <CodeBox label="Mã khôi phục MỚI · chỉ hiện một lần" code={done.recoveryCode} name="new-recovery-code" />
           {error ? (
             <div className="alert" role="alert" data-testid={tid('s2e1', 'recover', 'error')}>
-              {error.text}
+              <MathText text={error.text} />
             </div>
           ) : null}
           <SavedGate
@@ -139,7 +140,7 @@ export function RecoverPage({ area }: { area: 'gv' | 'hs' }) {
         </label>
         {error ? (
           <div className={locked ? 's2e1-ban red' : 'alert'} role="alert" data-testid={tid('s2e1', 'recover', 'error')} data-error-code={error.code}><Icon name={locked ? 'lock' : 'warn'} inline />
-            {error.text}
+            <MathText text={error.text} />
           </div>
         ) : null}
         <button type="submit" className="btn s2e1-wide" disabled={busy} data-testid={tid('s2e1', 'recover', 'submit')}>

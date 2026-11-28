@@ -3,6 +3,7 @@ import { formatVnDateTime } from '../../../shared/time/vnTime.ts';
 import { ErrorNotice } from '../../../shared/ui/ErrorNotice.tsx';
 import { qaFeedback, qaHistory, qaReport, type FeedbackType, type QaReport, type QaRow } from './historyApi.ts';
 import { DECISION_LABEL, FEEDBACK_LABEL, noteProblem, percentText } from './historyLogic.ts';
+import { MathText } from '../../../shared/math/MathText.tsx';
 
 /**
  * Lịch sử hỏi đáp của một bài cho giáo viên (US-S5E3-06): lọc theo quyết định, xem câu hỏi / câu trả lời đã hiện / nguồn /
@@ -97,10 +98,10 @@ export function QaHistoryPanel({ assignmentId }: { assignmentId: string }) {
                 {formatVnDateTime(r.at)} · {r.studentName}
               </div>
               <div>
-                <strong>Hỏi:</strong> {r.question}
+                <strong>Hỏi:</strong> <MathText text={r.question} />
               </div>
               <div>
-                <strong>Đã hiện:</strong> {r.reply}
+                <strong>Đã hiện:</strong> <MathText text={r.reply} />
               </div>
               <div className="s5e3-muted">
                 {r.source ? `${r.source.typeLabel} · ${r.source.label}` : 'Không nguồn'} ·{' '}

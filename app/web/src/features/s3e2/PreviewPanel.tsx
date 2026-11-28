@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { formatVnDateTime } from '../../shared/time/vnTime.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { errorText, MSG, RELEASE_LABEL, setsApi, useLoad, type Preview, type PreviewCheck } from './api.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 const OUTCOME: Record<PreviewCheck['outcome'], string> = { correct: 'Đúng', wrong: 'Chưa đúng', syntax: 'Chưa đọc được đáp số' };
 
@@ -46,7 +47,7 @@ export function PreviewPanel({ setId }: { setId: string }) {
             <div className="s3e2-row">
               <span className="s3e2-num">{i.position}</span>
               <span className="s3e2-grow" data-math>
-                {i.statement}
+                <MathText text={i.statement} />
               </span>
             </div>
             <div className="s3e2-row">

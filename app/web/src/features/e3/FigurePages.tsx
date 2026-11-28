@@ -6,6 +6,7 @@ import { fromScene } from '../../shared/viewer/adapter.ts';
 import { Figure3DViewer } from '../../shared/viewer/Figure3DViewer.tsx';
 import { e3Api } from './api.ts';
 import './e3.css';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 function useLoad<T>(load: () => Promise<T>, deps: unknown[]) {
   const [data, setData] = useState<T | null>(null);
@@ -38,7 +39,7 @@ export function TeacherFigurePage() {
         <h2>
           {data.code} <span className="chip">{data.label}</span>
         </h2>
-        <p className="e3-statement">{data.statement}</p>
+        <p className="e3-statement"><MathText text={data.statement} /></p>
       </header>
       <div className="e3-main">
         <Figure3DViewer solid={solid} lock="open" className="e3-viewer" />

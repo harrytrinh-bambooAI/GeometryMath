@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { CheckState, StepView } from './api.ts';
 import { MAX_STEPS, MSG, type DraftStep } from './logic.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 const CHIP: Record<CheckState, { cls: string; label: string }> = {
   pass: { cls: 'chip grn', label: 'Đạt' },
@@ -94,7 +95,7 @@ export function StepList({ draft, saved, changedFrom, readOnly, issueIndex, onCh
             </div>
             {readOnly ? (
               <p className="s2e5-step-text" data-math data-testid={`s2e5-step-text-${no}`}>
-                {d.text}
+                <MathText text={d.text} />
               </p>
             ) : (
               <textarea
@@ -110,7 +111,7 @@ export function StepList({ draft, saved, changedFrom, readOnly, issueIndex, onCh
             )}
             {s?.reason && check !== 'pass' && (
               <p className={`s2e5-reason${check === 'fail' ? ' bad' : ''}`} data-math data-testid={`s2e5-step-reason-${no}`}>
-                {s.reason}
+                <MathText text={s.reason} />
               </p>
             )}
             {!readOnly && (

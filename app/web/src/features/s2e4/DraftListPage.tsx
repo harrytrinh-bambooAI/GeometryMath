@@ -4,6 +4,7 @@ import { formatVnDateTime } from '../../shared/time/vnTime.ts';
 import { ErrorNotice } from '../../shared/ui/ErrorNotice.tsx';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { fetchMine, type DraftSummary } from '../s2e3/api.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Mục "Nháp" của giáo viên (US-S2E4-01-FC1): mọi nháp đề đang soạn, kể cả nháp vừa nhận đề xuất của AI hoặc vừa nhập từ
@@ -47,7 +48,7 @@ export function DraftListPage() {
         {items.map((d) => (
           <li key={d.id} className="card s2e4-item" data-testid={`s2e4-draft-${d.id}`} data-status={d.status}>
             <span className="s2e4-item-title" data-math>
-              {d.title}
+              <MathText text={d.title} />
             </span>
             <div className="s2e4-row">
               <span className="chip" data-testid={`s2e4-draft-label-${d.id}`}>

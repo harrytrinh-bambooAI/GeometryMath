@@ -14,6 +14,7 @@ import { SceneFrame } from './SceneFrame.tsx';
 import { MSG_19, parseParam } from './sceneMath.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { verifyIcon } from '../../shared/ui/icons.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Màn "Tự học" (US-GEO-202, 204, 205): ô nhập đề + "Dựng hình" (cổng AI nhận ra hình; engine dựng hoặc tọa độ AI kèm
@@ -291,7 +292,7 @@ export function SelfStudyResultPage() {
     <div data-testid={tid('e2', 'self-study', 'result')}>
       <h2>Tự học</h2>
       <p className="e1-statement" data-testid={tid('e2', 'self-study', 'statement')}>
-        {data.statement}{' '}
+        <MathText text={data.statement} />{' '}
         <span className={`chip ${v.status === 'verified' ? 'grn' : 'yel'}`} data-testid={tid('e2', 'problem', 'label')}
           data-status={v.status}><Icon name={verifyIcon(v.status === 'verified')} />
           {v.label}

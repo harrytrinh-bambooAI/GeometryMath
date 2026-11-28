@@ -1,0 +1,18 @@
+/* T-261128-74 · KaTeX trong dòng chữ: cỡ theo chữ bao quanh, không tràn khung hẹp (điện thoại). */
+.math .katex {
+  font-size: 1.08em;
+  white-space: nowrap;
+}
+.math-block {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.math-block .katex-display {
+  margin: 0.4em 0;
+}
+/* Dòng có phân số (\dfrac) cao hơn: nới khoảng dòng để phương án A–D / danh sách không chồng nhau. */
+:where(li, p, label, td, dd):has(.katex .mfrac) {
+  line-height: 2.1;
+}

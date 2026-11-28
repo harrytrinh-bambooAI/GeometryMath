@@ -4,6 +4,7 @@ import { Icon } from '../../shared/ui/Icon.tsx';
 import { resultsApi, useLoad, type Insight, type Stuck, type StuckItem } from './api.ts';
 import { columnLabel, groupByStep, MSG, splitCards, stepLabel } from './format.ts';
 import type { Picked } from './ResultsPage.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Khung "Cả lớp vướng ở đâu" (US-S3E3-03): thẻ nhận định của các đề đủ ngưỡng bài làm (hai nhãn cố định "AI gộp",
@@ -87,7 +88,7 @@ function Card({ c, updatedAt, onPick }: { c: Insight; updatedAt: string; onPick:
     <article className="s3e3-insight" data-testid="s3e3-insight" data-position={c.position}>
       <b data-testid="s3e3-insight-title">{columnLabel(c)}</b>
       <div className="s3e3-insight-text" data-testid="s3e3-insight-text">
-        {c.text}
+        <MathText text={c.text} />
       </div>
       <div className="s3e3-head">
         {c.labels.map((l) => (
@@ -144,7 +145,7 @@ function RawBlock({ it, s, onRetry }: { it: StuckItem; s: Stuck; onRetry: () => 
           {g.entries.map((r, i) => (
             <div className="s3e3-line" key={i} data-testid="s3e3-raw-entry" data-kind={r.kind}>
               <span className="mono">{formatVnTime(r.at)}</span> {r.kind === 'hint' ? 'Gợi ý' : 'Câu hỏi'}:{' '}
-              <span className="s3e3-plain">{r.text}</span>
+              <span className="s3e3-plain"><MathText text={r.text} /></span>
             </div>
           ))}
         </div>

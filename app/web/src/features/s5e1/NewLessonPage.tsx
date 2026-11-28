@@ -18,6 +18,7 @@ import {
   validate,
   type FormState,
 } from './logic.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * C5-08 "Soạn giáo án mới" (US-S5E1-01, giao-dien.md §1): trường B bắt buộc (Tiết PPCT, Đối tượng, Phong cách chọn
@@ -239,7 +240,7 @@ export function NewLessonPage() {
                 }
               />
               <span>
-                <span className="s5e1-mono">{k.code}</span> <span data-math>{k.statement}</span>
+                <span className="s5e1-mono">{k.code}</span> <span data-math><MathText text={k.statement} /></span>
               </span>
             </label>
           ))}

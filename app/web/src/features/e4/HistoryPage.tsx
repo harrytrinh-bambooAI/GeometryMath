@@ -7,6 +7,7 @@ import type { Page, StudentAssignment } from '../e1/studentApi.ts';
 import { e4Api, isNetworkError, M, type LogItem, type SavedAnswer } from './api.ts';
 import { AnswerView } from './AskTab.tsx';
 import { LectureProvider } from './Lecture.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * "Lịch sử" (US-GEO-410): nhật ký hỏi đáp của chính em, mới nhất trước, lọc theo bài, "Tải thêm" theo con trỏ, không
@@ -118,7 +119,7 @@ function History() {
             <li key={r.id} className="card" data-testid={tid('e4', 'log', 'row', r.id)} data-assignment-id={r.assignmentId}>
               <button type="button" className="e4-log-head" onClick={() => void toggle(r)} data-testid={tid('e4', 'log', 'open', r.id)}>
                 <span className="e4-question" data-testid={tid('e4', 'log', 'question')}>
-                  {r.question}
+                  <MathText text={r.question} />
                 </span>
                 <span className="small muted" data-testid={tid('e4', 'log', 'title')}>
                   {r.problemTitle}

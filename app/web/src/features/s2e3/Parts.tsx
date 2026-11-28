@@ -9,6 +9,7 @@ import { Figure3DViewer } from '../../shared/viewer/Figure3DViewer.tsx';
 import { AnswerTable } from '../s2e5/AnswerTable.tsx';
 import type { JobView, ResultView } from './api.ts';
 import { stageText } from './logic.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 const STAGE_ICON: Record<string, IconName> = { read: 'file', build: 'cube', solve: 'spark', verify: 'check' };
 
@@ -109,7 +110,7 @@ export function ResultPanel({
         <ol className="s2e3-steps" data-testid="s2e3-steps">
           {result.steps.map((s, i) => (
             <li key={`${i}-${s.length}`} data-math data-testid={`s2e3-step-${i + 1}`}>
-              {s}
+              <MathText text={s} />
             </li>
           ))}
         </ol>

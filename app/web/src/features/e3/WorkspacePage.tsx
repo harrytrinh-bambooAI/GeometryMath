@@ -10,6 +10,7 @@ import { useToolEvents } from './useToolEvents.ts';
 import { useLockState, useWorkspace } from './useWorkspace.ts';
 import { WorkspacePanel, type HintState, type PanelSlots, type PanelTab } from './WorkspacePanel.tsx';
 import './e3.css';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Không gian làm bài của học sinh `/hs/lam-bai/:id` (bài giao của lớp và bài tự học; US-GEO-301…307).
@@ -42,7 +43,7 @@ export function WorkspacePage({ slots }: { slots?: PanelSlots }) {
           {data.title} <span className="muted small">· {data.subtitle}</span>
         </h2>
         <p className="e3-statement" data-testid={tid('e3', 'statement')}>
-          {data.statement}
+          <MathText text={data.statement} />
         </p>
       </header>
       <div className="e3-main">

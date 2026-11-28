@@ -4,6 +4,7 @@ import { tid } from '../../shared/testid.ts';
 import { M, e6Api, errText, msg41, msg44, vnToIso } from './api.ts';
 import type { AssignOptions } from './api.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * "Chi tiết đề &amp; giao bài" (US-GEO-602, 603, 604; khung Design/mvp-02). Ba bước: 1 · Chọn lớp ("{tên lớp} · {cấp}
@@ -104,7 +105,7 @@ export function AssignPage() {
       </div>
       <section className="card" data-testid={tid('e6', 'assign', 'problem')}>
         <b>{opt.problem.code}</b> · {opt.problem.title}
-        <p className="e1-statement">{opt.problem.statement}</p>
+        <p className="e1-statement"><MathText text={opt.problem.statement} /></p>
       </section>
 
       <section className="card" data-testid={tid('e1', 'assign', 'step-class')}>

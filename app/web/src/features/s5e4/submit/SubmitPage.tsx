@@ -6,6 +6,7 @@ import { formatVnDateTime } from '../../../shared/time/vnTime.ts';
 import { ackPrivacy, mine, myGraded, privacy, submit, uploadPage, type Mine, type Privacy, type StudentGraded, type Submission } from './api.ts';
 import { clearDraft, loadDraft, saveDraft, type DraftPage } from './draft.ts';
 import { canSubmit, clarityScore, isClear, isQuotaError, MAX_EDGE, MAX_PAGE_BYTES, MAX_PAGES, MSG, move, newKey, stripJpeg } from './logic.ts';
+import { MathText } from '../../../shared/math/MathText.tsx';
 
 /**
  * C5-03 "Nộp bài" của học sinh (US-S5E4-03, 09): thông báo riêng tư S5 trước lần nộp đầu; chụp từng trang (camera
@@ -303,7 +304,7 @@ export function SubmitPage() {
         <div className="s5e4-card" data-testid="s5e4-capture-area" data-busy={busy ? 'true' : 'false'}>
           {!acked && notice && (
             <div className="s5e4-privacy" role="note" data-testid="s5e4-privacy">
-              <p data-testid="s5e4-privacy-text">{notice.text}</p>
+              <p data-testid="s5e4-privacy-text"><MathText text={notice.text} /></p>
               <button type="button" onClick={ack} data-testid="s5e4-ack">
                 Em đã hiểu
               </button>

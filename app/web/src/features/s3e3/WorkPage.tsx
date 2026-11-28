@@ -4,6 +4,7 @@ import { Icon } from '../../shared/ui/Icon.tsx';
 import { resultsApi, useLoad, type Evidence } from './api.ts';
 import { EvidenceBody } from './EvidencePanel.tsx';
 import { columnLabel, MSG, STATUS_ICON, STATUS_LABEL } from './format.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * "Mở bài làm" (BR-S3E3-24): bài của một em ở chế độ CHỈ ĐỌC — đề bài và các tương tác đã có; không ô nhập đáp số,
@@ -61,7 +62,7 @@ export function WorkPage() {
           </div>
           {ev.data.statement && (
             <p className="s3e3-statement" data-math data-testid="s3e3-work-statement">
-              {ev.data.statement}
+              <MathText text={ev.data.statement} />
             </p>
           )}
           {ev.data.status === 'todo' ? <p className="empty">{MSG.notOpened}</p> : <EvidenceBody e={ev.data} />}

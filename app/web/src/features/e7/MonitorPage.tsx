@@ -6,6 +6,7 @@ import { e7Api } from './api.ts';
 import type { Monitor, StudentRow } from './api.ts';
 import { vnDateTime } from './format.ts';
 import { LockSlot } from './LockSlot.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 const MSG_52 = 'Chưa có học sinh nào mở bài.';
 const MSG_53 = 'Chưa có câu hỏi nào.';
@@ -138,7 +139,7 @@ export function MonitorPage() {
                           <ul className="e7-popover" data-testid={tid('e7', 'asks-list', s.displayName)}>
                             {mine(s).map((q) => (
                               <li key={q.id} data-testid={tid('e7', 'asks-item')}>
-                                {q.question} <span className="small muted">{vnDateTime(q.askedAt)}</span>
+                                <MathText text={q.question} /> <span className="small muted">{vnDateTime(q.askedAt)}</span>
                               </li>
                             ))}
                           </ul>
