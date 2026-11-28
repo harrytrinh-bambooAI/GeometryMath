@@ -1,11 +1,13 @@
-Phiên bản: v0.1 · 2026-11-28
+Phiên bản: v0.2 · 2026-11-28
 # S5-E3 — trạng thái
 
 | Ngày | Vai | Nội dung |
 |---|---|---|
 | 2026-11-28 | Dev (runner-T-261128-56) | US-S5E3-01 (TC-S5E3-01…07) + US-S5E3-02 (TC-08…11) + US-S5E3-07 (TC-20…23) = 15 TC, đều E2E-API (`e2e/tests/s5e3/kb.api.spec.ts`); IT bổ trợ `it/s5e3/KbS5E3IT` (4), UT `KbSplitterTest` (4). Hoãn US-S5E3-03, 04, 05 (task 58), 06 (task 63). Máy chủ: `knowledge/internal/kb/{repo,service,web}`, cổng `knowledge.api.KbRetriever` cho hỏi đáp; migration V605 (`kb_document`, `kb_document_version`, `kb_section` tsvector bỏ dấu `kb_norm`, `kb_grant`, `kb_upload`); seed `s5_300_s5e3_kb.sql` (F-S5-040, 041) + `fixture-ids.d/s5e3.json`; khóa `geo.kb.min-score` (0,1). AI không dùng (chỉ ca TC-03 qua trợ lý giáo án giả lập). Web `/gv/kho-tri-thuc`. Kết quả lệnh kiểm: `make verify` xanh (đơn vị 376, IT 295), `make web-build` xanh, `make e2e-affected` L2 lượt 20261128-075515 1043/1043 (1020/1020 mã TC), traceability `--strict --epic MVP,S2,S3,S5-E1,S5-E2,S5-E3,S5-E5 --defer …` ĐẠT (S5-E3 15/15, hoãn 27), `check_s5.py` ĐẠT, `check_ac_tc.py S5-E3` 0 lỗi. Phát hiện: `qc_findings.md` Dev-S5E3-01…07. |
+| 2026-11-28 | Dev (runner-T-261128-58) | US-S5E3-03 (TC-S5E3-12…19), US-S5E3-04 (TC-24…28), US-S5E3-05 (TC-29…37) = 22 TC: E2E-API `e2e/tests/s5e3/qa.api.spec.ts`, `firewall.api.spec.ts`; E2E-UI `qa.ui.spec.ts` (TC-13, 18, 26; Chromium + iPad). Máy chủ: `knowledge/internal/kb/qa/{repo,service,web}` (`POST /api/v1/student/kb-qa`, nguồn, thông báo riêng tư `privacy-qa-s5-1.0`, cảnh báo mục có đáp số), `answers/{api,internal}/KsS5Firewall*` (KS-1…KS-4 mở rộng gọi lõi V60 qua `learning.api.AnswerGuardApi.leakRule`, thêm dạng căn/sqrt, KS-4 trước AI, `private_content`), `assignment/**/HelpLevel*` (`GET|PUT /api/v1/teacher/assignments/{id}/help-level`, mặc định QS5-12); task `kb_qa` trong `AnthropicPrompts` + đáp mẫu `MockAiProvider` (F-S5-094, 094b, s5e3-*); migration V655 (`assignment_help_level`, `ai_interaction`, `ai_policy_decision`, `ai_policy_counter`, `kb_privacy_ack`, `kb_answer_warning`, `fn_kb_qa_context`, `fn_help_level_target`, trigger xoá theo tài khoản); seed `s5_400_s5e3b_qa.sql` + `fixture-ids.d/s5e3b.json`; bộ câu thử `app/e2e/fixtures/firewall-s5.json` (60 câu, lộ 0/60). Web `/hs/hoi-dap?bai=`, `/gv/tro-giup-ai` (+ `features/s5e4/assign/HelpLevelPanel`). AI chỉ giả lập. Kết quả lệnh kiểm: `make verify` VERIFY OK (IT 295), `make web-build` xanh, `make e2e-affected` L2 lượt 20261128-084416 1082/1082 (1059/1059 mã TC), traceability strict ĐẠT (S5-E3 37/37, hoãn US-S5E3-06), `check_s5.py` ĐẠT, `check_ac_tc.py S5-E3` 0 lỗi. Phát hiện: `qc_findings.md` Dev-S5E3-08…14. |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-28 | Dòng Dev đầu tiên (US-S5E3-01, 02, 07) | runner-T-261128-56 |
+| v0.2 | 2026-11-28 | Dòng Dev US-S5E3-03, 04, 05 | runner-T-261128-58 |

@@ -383,6 +383,79 @@ public class MockAiProvider implements AiProvider {
       return mapper.writeValueAsString(out);
     }
     // --- T-261128-58 (S5-E3) ---
+    if ("kb_qa".equals(call.task())) {
+      // F-S5-094: trả lời khái niệm dẫn mục "Hệ thức 1/AH²" (hoặc mục đầu trong danh sách đã gửi);
+      // biến thể theo kịch bản của móc kiểm thử: F-S5-094b (chèn đáp số "a√6/3"), s5e3-hint (kind
+      // hint), s5e3-foreign (dẫn TL-09 không có trong danh sách), s5e3-leak (mọi thứ bị cấm: đáp
+      // số, ghi chú riêng, rubric, bài của bạn — bộ câu thử), s5e3-confirm ("Đúng rồi…"), "{…}"
+      // nguyên văn; qaReplies = danh sách theo lượt gọi.
+      String scripted = control.nextQa(call.scenario());
+      String variant =
+          scripted != null ? scripted : call.scenario() == null ? "F-S5-094" : call.scenario();
+      if (variant.startsWith("{")) {
+        return variant;
+      }
+      Matcher refs =
+          Pattern.compile("^\\[([^\\]]+)\\] \\(([^)]*)\\) (.*)$", Pattern.MULTILINE)
+              .matcher(call.prompt());
+      String source = null;
+      String title = "";
+      while (refs.find()) {
+        if (source == null || refs.group(3).contains("1/AH²")) {
+          source = refs.group(1);
+          title = refs.group(3);
+        }
+        if (refs.group(3).contains("1/AH²")) {
+          break;
+        }
+      }
+      ObjectNode out = mapper.createObjectNode();
+      if (source == null) {
+        out.put("kind", "refuse");
+        out.put("reply", "Chưa có tài liệu phù hợp để trả lời.");
+        return mapper.writeValueAsString(out);
+      }
+      String concept =
+          "Theo mục \""
+              + title
+              + "\": khoảng cách từ A đến mặt phẳng (SBC) là độ dài đoạn AH vuông góc với (SBC)."
+              + " Khi SA ⊥ đáy, kẻ AK ⊥ BC và AH ⊥ SK, rồi dùng hệ thức 1/AH² = 1/SA² + 1/AK².";
+      switch (variant) {
+        case "F-S5-094b" -> {
+          out.put("kind", "concept");
+          out.put("reply", concept + " Với SA = a√2, AB = a ta được AH = a√6/3.");
+        }
+        case "s5e3-hint" -> {
+          out.put("kind", "hint");
+          out.put("reply", "Em thử kẻ AH ⊥ SB rồi chứng minh AH ⊥ (SBC).");
+        }
+        case "s5e3-foreign" -> {
+          out.put("kind", "concept");
+          out.put("reply", "Định lí côsin: a² = b² + c² − 2bc·cos A (mẫu nguồn ngoài danh sách).");
+          out.put("source", "TL-09 v1 #1");
+          return mapper.writeValueAsString(out);
+        }
+        case "s5e3-confirm" -> {
+          out.put("kind", "concept");
+          out.put("reply", "Đúng rồi, em làm chính xác.");
+        }
+        case "s5e3-leak" -> {
+          out.put("kind", "concept");
+          out.put(
+              "reply",
+              concept
+                  + " Kết quả AH = a√6/3 ≈ 0,8165a. Ghi chú của cô: Em Mai hay nhầm SB."
+                  + " Rubric: Hướng: Chọn đúng hướng giải (dựng hình, công thức cần dùng)."
+                  + " Bạn Chi Mai viết đáp số a√3/3.");
+        }
+        default -> {
+          out.put("kind", "concept");
+          out.put("reply", concept);
+        }
+      }
+      out.put("source", source);
+      return mapper.writeValueAsString(out);
+    }
     // --- T-261128-59 (S5-E4) ---
     if ("grade_ocr".equals(call.task()) && call.prompt().startsWith("[s5e4b-ocr]")) {
       // F-S5-095: bản đọc chữ BN-01 theo trang (luồng nộp thật US-S5E4-04): mỗi trang 1 đoạn "chưa

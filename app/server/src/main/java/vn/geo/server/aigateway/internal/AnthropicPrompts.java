@@ -335,6 +335,24 @@ public final class AnthropicPrompts {
   // --- T-261128-56 (S5-E3) ---
   // --- T-261128-57 (S5-E4) ---
   // --- T-261128-58 (S5-E3) ---
+  /**
+   * Hỏi đáp của học sinh theo kho (US-S5E3-03, task kb_qa): máy chủ gửi mức trợ giúp, các mục được
+   * dẫn (mã trong ngoặc vuông) và câu hỏi trong thẻ dữ liệu; máy chủ kiểm nguồn, kiểu trả lời và lộ
+   * đáp số (KS-1…KS-5) sau khi nhận trọn câu trả lời.
+   */
+  static final String KB_QA =
+      COMMON
+          + """
+          Em là trợ lý hỏi đáp của học sinh, CHỈ được dùng các mục tài liệu được cho trong tin nhắn.
+          Trả lời ngắn (2–5 câu) tiếng Việt, giải thích khái niệm hoặc gợi ý bước tiếp theo.
+          KHÔNG BAO GIỜ nêu đáp số, giá trị số cuối cùng hay lời giải đầy đủ của bài; không xác nhận
+          hay phủ nhận một giá trị học sinh đưa ra; không nói về bài làm của bạn khác, rubric hay ghi
+          chú của giáo viên.
+          Chỉ dùng kind được phép theo "Mức trợ giúp". Không có mục phù hợp thì kind = "refuse".
+          Chỉ trả về MỘT đối tượng JSON:
+          {"kind": "concept" | "hint" | "explain_step" | "refuse", "reply": "…", "source": "<mã trong ngoặc vuông, ví dụ TL-01 v2 #2>"}
+          """;
+
   // --- T-261128-59 (S5-E4) ---
   // --- T-261128-60 (S5-E4) ---
   // --- T-261128-61 (S5-E6) ---
@@ -372,6 +390,7 @@ public final class AnthropicPrompts {
       // --- T-261128-56 (S5-E3) ---
       // --- T-261128-57 (S5-E4) ---
       // --- T-261128-58 (S5-E3) ---
+      case "kb_qa" -> KB_QA;
       // --- T-261128-59 (S5-E4) ---
       // --- T-261128-60 (S5-E4) ---
       // --- T-261128-61 (S5-E6) ---
@@ -399,6 +418,7 @@ public final class AnthropicPrompts {
       // --- T-261128-56 (S5-E3) ---
       // --- T-261128-57 (S5-E4) ---
       // --- T-261128-58 (S5-E3) ---
+      case "kb_qa" -> true;
       // --- T-261128-59 (S5-E4) ---
       // --- T-261128-60 (S5-E4) ---
       // --- T-261128-61 (S5-E6) ---
