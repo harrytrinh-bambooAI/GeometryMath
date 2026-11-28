@@ -1205,3 +1205,68 @@ api	api	minutes	Thời gian làm bài (phút) của form ra đề (US-S5E2-02)	P
 api	api	parts	Số câu và điểm mỗi phần của form ra đề (US-S5E2-02)	PO-65
 api	api	levels	Tỉ lệ mức độ NB/TH/VD/VDC của form ra đề (US-S5E2-02)	PO-65
 api	api	variantCount	Số mã đề 1–8 của form ra đề (US-S5E2-02, QS5-07)	PO-65
+# --- T-261128-55 ---
+api	api	aiGrading	Công tắc AI chấm của lớp (US-S5E5-04, QS5-26)	PO-85
+api	api	assistant	Công tắc Trợ lý của lớp (US-S5E5-04, QS5-26)	PO-85
+api	api	task	Task AI tắt khẩn toàn hệ thống (US-S5E5-04-SC5, BR-S5E5-16)	PO-85
+api	api	off	Trạng thái tắt khẩn của task AI (US-S5E5-04-SC5, BR-S5E5-16)	PO-85
+db	ai_class_switch	org_id	Công tắc AI chấm / Trợ lý theo lớp (US-S5E5-04, QS5-26)	PO-85
+db	ai_class_switch	class_id	Công tắc AI chấm / Trợ lý theo lớp (US-S5E5-04, QS5-26)	PO-85
+db	ai_class_switch	ai_grading	Công tắc AI chấm / Trợ lý theo lớp (US-S5E5-04, QS5-26)	PO-85
+db	ai_class_switch	assistant	Công tắc AI chấm / Trợ lý theo lớp (US-S5E5-04, QS5-26)	PO-85
+db	ai_class_switch	updated_by	Công tắc AI chấm / Trợ lý theo lớp (US-S5E5-04, QS5-26)	PO-85
+db	ai_class_switch	updated_at	Công tắc AI chấm / Trợ lý theo lớp (US-S5E5-04, QS5-26)	PO-85
+db	ai_switch_audit	id	AuditEvent đổi công tắc AI (BR-S5E5-10, 16)	PO-85
+db	ai_switch_audit	org_id	AuditEvent đổi công tắc AI (BR-S5E5-10, 16)	PO-85
+db	ai_switch_audit	actor_id	AuditEvent đổi công tắc AI (BR-S5E5-10, 16)	PO-85
+db	ai_switch_audit	actor_role	AuditEvent đổi công tắc AI (BR-S5E5-10, 16)	PO-85
+db	ai_switch_audit	class_id	AuditEvent đổi công tắc AI (BR-S5E5-10, 16)	PO-85
+db	ai_switch_audit	switch_name	AuditEvent đổi công tắc AI (BR-S5E5-10, 16)	PO-85
+db	ai_switch_audit	before_on	AuditEvent đổi công tắc AI (BR-S5E5-10, 16)	PO-85
+db	ai_switch_audit	after_on	AuditEvent đổi công tắc AI (BR-S5E5-10, 16)	PO-85
+db	ai_switch_audit	at	AuditEvent đổi công tắc AI (BR-S5E5-10, 16)	PO-85
+db	ai_kill_switch	task	Tắt khẩn AI toàn hệ thống theo task (BR-S5E5-16)	PO-85
+db	ai_kill_switch	lane	Tắt khẩn AI toàn hệ thống theo task (BR-S5E5-16)	PO-85
+db	ai_kill_switch	off	Tắt khẩn AI toàn hệ thống theo task (BR-S5E5-16)	PO-85
+db	ai_kill_switch	updated_by	Tắt khẩn AI toàn hệ thống theo task (BR-S5E5-16)	PO-85
+db	ai_kill_switch	updated_at	Tắt khẩn AI toàn hệ thống theo task (BR-S5E5-16)	PO-85
+db	ai_ops_grant	user_id	Vai Vận hành tắt khẩn AI (BR-S5E5-16)	PO-85
+db	ai_ops_grant	granted_by	Vai Vận hành tắt khẩn AI (BR-S5E5-16)	PO-85
+db	ai_ops_grant	granted_at	Vai Vận hành tắt khẩn AI (BR-S5E5-16)	PO-85
+db	ai_usage_counter	org_id	Bộ đếm lượt / token AI theo ngày, không tên học sinh (BR-S5E5-12, 13)	PO-85
+db	ai_usage_counter	day	Bộ đếm lượt / token AI theo ngày, không tên học sinh (BR-S5E5-12, 13)	PO-85
+db	ai_usage_counter	scope	Bộ đếm lượt / token AI theo ngày, không tên học sinh (BR-S5E5-12, 13)	PO-85
+db	ai_usage_counter	scope_id	Bộ đếm lượt / token AI theo ngày, không tên học sinh (BR-S5E5-12, 13)	PO-85
+db	ai_usage_counter	metric	Bộ đếm lượt / token AI theo ngày, không tên học sinh (BR-S5E5-12, 13)	PO-85
+db	ai_usage_counter	n	Bộ đếm lượt / token AI theo ngày, không tên học sinh (BR-S5E5-12, 13)	PO-85
+db	ai_quota_warning	org_id	Cảnh báo 80 % hạn mức AI một lần mỗi ngày (QS5-04)	PO-85
+db	ai_quota_warning	class_id	Cảnh báo 80 % hạn mức AI một lần mỗi ngày (QS5-04)	PO-85
+db	ai_quota_warning	day	Cảnh báo 80 % hạn mức AI một lần mỗi ngày (QS5-04)	PO-85
+db	ai_quota_warning	kind	Cảnh báo 80 % hạn mức AI một lần mỗi ngày (QS5-04)	PO-85
+db	ai_quota_warning	sent_at	Cảnh báo 80 % hạn mức AI một lần mỗi ngày (QS5-04)	PO-85
+db	ai_ocr_retry	org_id	Số lần Đọc lại bản đọc chữ, tối đa 3 (BR-S5E5-12)	PO-85
+db	ai_ocr_retry	submission_id	Số lần Đọc lại bản đọc chữ, tối đa 3 (BR-S5E5-12)	PO-85
+db	ai_ocr_retry	n	Số lần Đọc lại bản đọc chữ, tối đa 3 (BR-S5E5-12)	PO-85
+db	ai_pending_job	id	Việc AI chấm nền đang chờ, huỷ khi tắt AI chấm (BR-S5E5-11)	PO-85
+db	ai_pending_job	org_id	Việc AI chấm nền đang chờ, huỷ khi tắt AI chấm (BR-S5E5-11)	PO-85
+db	ai_pending_job	class_id	Việc AI chấm nền đang chờ, huỷ khi tắt AI chấm (BR-S5E5-11)	PO-85
+db	ai_pending_job	task	Việc AI chấm nền đang chờ, huỷ khi tắt AI chấm (BR-S5E5-11)	PO-85
+db	ai_pending_job	ref_id	Việc AI chấm nền đang chờ, huỷ khi tắt AI chấm (BR-S5E5-11)	PO-85
+db	ai_pending_job	status	Việc AI chấm nền đang chờ, huỷ khi tắt AI chấm (BR-S5E5-11)	PO-85
+db	ai_pending_job	created_at	Việc AI chấm nền đang chờ, huỷ khi tắt AI chấm (BR-S5E5-11)	PO-85
+db	ai_pending_job	updated_at	Việc AI chấm nền đang chờ, huỷ khi tắt AI chấm (BR-S5E5-11)	PO-85
+db	notice_draft	id	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	org_id	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	teacher_id	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	class_id	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	kind	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	ref_id	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	ai_text	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	body	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	unsure	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	status	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	edited	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	recipients	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	sent_at	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	created_at	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+db	notice_draft	updated_at	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85

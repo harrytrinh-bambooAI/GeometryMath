@@ -244,6 +244,46 @@ public class MockAiProvider implements AiProvider {
     }
     // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
     // --- T-261128-55 (S5-E5) ---
+    if ("class_notice".equals(call.task())) {
+      // Nháp thông báo 3 câu dựng từ dữ kiện trong tin nhắn (US-S5E5-01-SC1); biến thể theo kịch
+      // bản
+      // của móc kiểm thử: "s5e5-name" (AI chèn tên học sinh, FC4), "s5e5-wrong-time" (sai giờ hạn,
+      // FC1), "{…}" nguyên văn; qaReplies = danh sách theo lượt gọi.
+      String scripted = control.nextQa(call.scenario());
+      String variant = scripted != null ? scripted : call.scenario() == null ? "" : call.scenario();
+      if (variant.startsWith("{")) {
+        return variant;
+      }
+      Matcher mt = Pattern.compile("Tên bài: (.+)").matcher(call.prompt());
+      Matcher md =
+          Pattern.compile("Hạn nộp: (\\d{2}:\\d{2}, \\d{2}/\\d{2}/\\d{4})").matcher(call.prompt());
+      String title = mt.find() ? mt.group(1).trim() : "bài tập";
+      String due = md.find() ? md.group(1) : "";
+      ObjectNode out = mapper.createObjectNode();
+      tools.jackson.databind.node.ArrayNode s = out.putArray("sentences");
+      s.add("Chào các em, cô nhắc cả lớp bài \"" + title + "\".");
+      switch (variant) {
+        case "s5e5-name" -> s.add("Nhắc Chi Mai và cả lớp nộp bài trước 20:00.");
+        case "s5e5-wrong-time" -> s.add("Hạn nộp 21:00 thứ Sáu, các em chú ý.");
+        default -> s.add(due.isEmpty() ? "Các em chú ý thời gian nhé." : "Hạn nộp là " + due + ".");
+      }
+      s.add("Em nào cần hỏi thêm thì nhắn cô trong giờ học nhé.");
+      return mapper.writeValueAsString(out);
+    }
+    if (("grade".equals(call.task()) || "grade_ocr".equals(call.task()))
+        && call.prompt().startsWith("[s5e5-harness]")) {
+      // Bộ chạy chấm nền giả của móc kiểm thử S5-E5 (hạn mức, gọi lại): qaReplies "error" = lỗi
+      // lượt đó. Đáp F-S5-090 (BN-01: 10 điểm, tin cậy 0,86) / F-S5-095 (bản đọc chữ).
+      String scripted = control.nextQa(call.scenario());
+      if ("error".equals(scripted)) {
+        throw new IllegalStateException("giả lập lỗi tạm thời");
+      }
+      return "grade".equals(call.task())
+          ? "{\"total\":10,\"confidence\":0.86,\"criteria\":[{\"name\":\"Hướng\",\"score\":2},"
+              + "{\"name\":\"Các bước\",\"score\":4},{\"name\":\"Kết quả\",\"score\":2},"
+              + "{\"name\":\"Hình\",\"score\":1},{\"name\":\"Trình bày\",\"score\":1}]}"
+          : "{\"text\":\"Kẻ AH ⊥ SB ... AH = a√6/3\",\"unsure\":[]}";
+    }
     // --- T-261128-56 (S5-E3) ---
     // --- T-261128-57 (S5-E4) ---
     // --- T-261128-58 (S5-E3) ---

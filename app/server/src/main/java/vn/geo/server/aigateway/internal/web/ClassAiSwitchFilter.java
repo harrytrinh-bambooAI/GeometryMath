@@ -70,6 +70,11 @@ public class ClassAiSwitchFilter extends OncePerRequestFilter {
         || !ASK.matcher(normalizedPath(request)).matches();
   }
 
+  /** Đường đã chuẩn hóa (dùng chung với bộ lọc hạn mức hỏi đáp S5-E5, T-261128-55). */
+  public static String normalizedPathOf(HttpServletRequest request) {
+    return normalizedPath(request);
+  }
+
   static String normalizedPath(HttpServletRequest request) {
     String path = PATHS.getPathWithinApplication(request).replaceAll("/{2,}", "/");
     return path.length() > 1 && path.endsWith("/") ? path.substring(0, path.length() - 1) : path;
