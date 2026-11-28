@@ -38,7 +38,7 @@ public final class MetadataStripper {
     out.write(0xFF);
     out.write(0xD8);
     int i = 2;
-    while (i + 4 <= in.length) {
+    while (i + 2 <= in.length) {
       if ((in[i] & 0xFF) != 0xFF) {
         throw bad();
       }
@@ -47,7 +47,7 @@ public final class MetadataStripper {
         i++;
         continue;
       }
-      if (marker == 0xD9) { // EOI
+      if (marker == 0xD9) { // EOI: mọi byte sau EOI (MPF, ảnh thu nhỏ kèm EXIF/GPS…) bị bỏ
         out.write(in, i, 2);
         return out.toByteArray();
       }
@@ -56,21 +56,55 @@ public final class MetadataStripper {
         i += 2;
         continue;
       }
+      if (i + 4 > in.length) {
+        throw bad();
+      }
       int len = ((in[i + 2] & 0xFF) << 8) | (in[i + 3] & 0xFF);
       if (len < 2 || i + 2 + len > in.length) {
         throw bad();
       }
       boolean drop = (marker >= 0xE1 && marker <= 0xEF) || marker == 0xFE;
-      if (marker == 0xDA) { // SOS: dữ liệu nén tới hết tệp
-        out.write(in, i, in.length - i);
-        return out.toByteArray();
-      }
       if (!drop) {
         out.write(in, i, 2 + len);
       }
       i += 2 + len;
+      if (marker == 0xDA) { // SOS: chép dữ liệu nén tới marker kế (bỏ qua 0xFF00 và RSTn)
+        int end = scanEnd(in, i);
+        out.write(in, i, end - i);
+        i = end;
+        if (i >= in.length) { // thiếu EOI: đóng ảnh
+          out.write(0xFF);
+          out.write(0xD9);
+          return out.toByteArray();
+        }
+      }
     }
     throw bad();
+  }
+
+  /** Vị trí marker đầu tiên sau dữ liệu nén bắt đầu ở {@code from} (hoặc cuối tệp). */
+  private static int scanEnd(byte[] in, int from) {
+    int j = from;
+    while (j + 1 < in.length) {
+      if ((in[j] & 0xFF) == 0xFF) {
+        int next = in[j + 1] & 0xFF;
+        if (next == 0x00 || (next >= 0xD0 && next <= 0xD7)) {
+          j += 2;
+          continue;
+        }
+        if (next != 0xFF) {
+          return j;
+        }
+        // 0xFF 0xFF: byte đệm trước marker — marker bắt đầu ở byte 0xFF cuối
+        int k = j;
+        while (k + 1 < in.length && (in[k + 1] & 0xFF) == 0xFF) {
+          k++;
+        }
+        return k + 1 < in.length ? k : in.length;
+      }
+      j++;
+    }
+    return in.length;
   }
 
   static byte[] png(byte[] in) {

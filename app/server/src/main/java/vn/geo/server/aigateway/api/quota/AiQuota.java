@@ -1,5 +1,6 @@
 package vn.geo.server.aigateway.api.quota;
 
+import java.time.Instant;
 import java.util.UUID;
 
 /**
@@ -61,6 +62,17 @@ public interface AiQuota {
 
   /** Đánh dấu việc nền đã xong. */
   void finishJob(UUID orgId, UUID jobId);
+
+  /**
+   * Kiểm rồi tính MỘT lượt hỏi đáp của học sinh trong lớp {@code classId} (hỏi đáp theo kho {@code
+   * POST /student/kb-qa}, REVIEW-S5 #2; BR-S5E5-12, 16): tắt khẩn {@code kb_qa} → FORBIDDEN, lớp
+   * hết 300 hoặc em hết 30 lượt → RATE_LIMITED kèm Retry-After, không tính lượt. Trả false (không
+   * tính) khi không có lớp (bài tự học).
+   */
+  boolean takeStudentAsk(UUID orgId, UUID classId, UUID studentId);
+
+  /** Cộng token thật các lượt gọi AI của {@code userId} từ {@code since} vào trần của lớp. */
+  void addTokensSince(UUID orgId, UUID classId, UUID userId, Instant since);
 
   /** Kết quả xin lượt chấm. */
   record Admission(boolean allowed, String reason) {}

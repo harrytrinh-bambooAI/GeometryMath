@@ -52,6 +52,10 @@ public class ImagePurgeService {
       repo.delete(i.orgId(), i.id());
       perStudent.merge(i.orgId() + "/" + i.studentId(), 1, Integer::sum);
     }
+    // học sinh đã xoá còn dữ liệu bài nộp nhưng không còn ảnh (REVIEW-S5 #5)
+    for (StoredImageRepository.StudentRef r : repo.deletedStudentsWithData(scope, BATCH)) {
+      perStudent.putIfAbsent(r.orgId() + "/" + r.studentId(), 0);
+    }
     int erased = 0;
     for (Map.Entry<String, Integer> e : perStudent.entrySet()) {
       String[] k = e.getKey().split("/");
@@ -90,6 +94,8 @@ public class ImagePurgeService {
       perOrg.merge(i.orgId(), 1, Integer::sum);
       years.add(i.schoolYear());
     }
+    // năm học vừa kết thúc luôn được xoá, kể cả khi không còn ảnh nào (REVIEW-S5 #5)
+    years.add((endYear - 1) + "-" + endYear);
     int rows = 0;
     for (String y : years) {
       for (SubmissionDataEraser x : erasers) {

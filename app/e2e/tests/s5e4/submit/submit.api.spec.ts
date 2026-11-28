@@ -8,8 +8,8 @@ import { HEIC, MSG, P1, P2, SUB, ack, count, due, getSub, submitFiles, submitOk,
  * 8 MB/10 trang, quyền xem, khóa lũy đẳng, nộp muộn có nhãn, nộp lại tạo phiên bản, quá hạn, tải dồn 45 em.
  */
 
-/** JPEG hợp lệ đúng n byte (đệm sau dữ liệu nén; máy chủ giữ nguyên phần sau SOS). */
-const jpegOf = (n: number) => Buffer.concat([P1, Buffer.alloc(n - P1.length, 0)]);
+/** JPEG hợp lệ đúng n byte (đệm 0 trong dữ liệu nén, trước EOI; máy chủ bỏ mọi byte sau EOI — REVIEW-S5 #3). */
+const jpegOf = (n: number) => Buffer.concat([P1.subarray(0, P1.length - 2), Buffer.alloc(n - P1.length, 0), P1.subarray(P1.length - 2)]);
 
 test('Ảnh HEIC được nhận, bản phái sinh JPEG dùng cho đọc chữ @TC-S5E4-13', async ({ request }) => {
   const { w, lan, bc } = await setup(request);

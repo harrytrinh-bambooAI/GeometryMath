@@ -78,6 +78,12 @@ public class S5E4TestHookController {
     return as(b, () -> hooks.ocr(b.orgId(), b.submissionId(), page(b)));
   }
 
+  /** Xoá riêng ảnh của một bài nộp (giữ bài nộp, bản đọc chữ) — dựng ca REVIEW-S5 #5. */
+  @PostMapping("/test-hooks/s5e4/drop-images")
+  public Map<String, Object> dropImages(@RequestBody PageBody b) {
+    return hooks.dropImages(b.orgId(), b.submissionId());
+  }
+
   @PostMapping("/test-hooks/s5e4/purge-accounts")
   public Map<String, Object> purgeAccounts(@RequestBody PurgeBody b) {
     return hooks.purgeAccounts(b.assignmentId());

@@ -64,3 +64,27 @@ test('Ảnh gốc HEIC lưu đã gỡ EXIF/GPS, băm tính sau khi gỡ', async 
   expect(stored.subarray(4, 8).toString('latin1')).toBe('ftyp');
   expect(s.pages[0]!.sha256).toBe(sha256(stored));
 });
+
+/** HEIC có mục Exif nhưng hộp iloc bị cắt cụt (khai 3 mục, chỉ có 1) — máy chủ không đọc được cấu trúc. */
+function heicBroken(): Buffer {
+  const ftyp = box('ftyp', Buffer.from('heic', 'latin1'), u32(0), Buffer.from('mif1heic', 'latin1'));
+  const hdlr = full('hdlr', 0, u32(0), Buffer.from('pict', 'latin1'), Buffer.alloc(12), Buffer.from([0]));
+  const infe = (id: number, type: string) => full('infe', 2, u16(id), u16(0), Buffer.from(type, 'latin1'), Buffer.from([0]));
+  const iinf = full('iinf', 0, u16(1), infe(2, 'Exif'));
+  const iloc = full('iloc', 0, Buffer.from([0x44, 0x00]), u16(3), u16(2), u16(0), u16(1));
+  const exif = Buffer.from('Exif\0\0MM\0*GPS 21.0285,105.8542 Apple iPhone 15', 'latin1');
+  return Buffer.concat([ftyp, box('mdat', exif), full('meta', 0, hdlr, iinf, iloc)]);
+}
+
+test('Ảnh HEIC không gỡ được EXIF thì từ chối lưu, báo chụp lại @TC-S5E4-40', async ({ request }) => {
+  const c = await gradingWorld(request);
+  const an = c.w.people['Bình An']!;
+  await ack(request, an);
+  const h = await upload(request, an, heicBroken(), 'image/heic');
+  const j = await upload(request, an, P1, 'image/jpeg');
+  const r = await submitRaw(request, an, c.bc.id, [{ uploadId: h, derivedUploadId: j }]);
+  expect(r.status(), await r.text()).toBe(400);
+  const e = (await r.json()) as { code: string; message: string; details?: Array<{ field: string; message: string }> };
+  expect(e.code).toBe('VALIDATION_FAILED');
+  expect(JSON.stringify(e)).toContain('chụp lại');
+});

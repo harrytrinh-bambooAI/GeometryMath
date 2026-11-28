@@ -10,12 +10,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
 import vn.geo.server.aigateway.api.AiGateway;
 import vn.geo.server.aigateway.api.AiRequest;
+import vn.geo.server.aigateway.api.quota.AiQuota;
 import vn.geo.server.answers.api.KsS5Firewall;
 import vn.geo.server.answers.api.KsS5Firewall.Locked;
 import vn.geo.server.assignment.api.HelpLevelApi;
@@ -83,7 +86,10 @@ public class KbQaService {
   private final KbRetriever retriever;
   private final HelpLevelApi help;
   private final KsS5Firewall firewall;
+  private static final Logger log = LoggerFactory.getLogger(KbQaService.class);
+
   private final AiGateway ai;
+  private final AiQuota quota;
   private final KbQaProbe probe;
   private final JsonMapper mapper;
   private final Clock clock;
@@ -95,6 +101,7 @@ public class KbQaService {
       HelpLevelApi help,
       KsS5Firewall firewall,
       AiGateway ai,
+      AiQuota quota,
       KbQaProbe probe,
       JsonMapper mapper,
       Clock clock,
@@ -104,6 +111,7 @@ public class KbQaService {
     this.help = help;
     this.firewall = firewall;
     this.ai = ai;
+    this.quota = quota;
     this.probe = probe;
     this.mapper = mapper;
     this.clock = clock;
@@ -232,9 +240,19 @@ public class KbQaService {
           "no_source",
           null);
     }
+    // hạn mức HS 30 / lớp 300 và tắt khẩn kb_qa như hỏi trợ lý trên bài (REVIEW-S5 #2)
+    UUID quotaClass = quota.takeStudentAsk(org, ctx.classId(), me.userId()) ? ctx.classId() : null;
+    Instant askedAt = Instant.now().minusMillis(5);
     String prompt = KbQaPrompt.build(policy.helpLevel(), refs, question);
     probe.sent(interaction, prompt);
     String content = ai.complete(new AiRequest("kb_qa", prompt)).content();
+    if (quotaClass != null) {
+      try {
+        quota.addTokensSince(org, quotaClass, me.userId(), askedAt);
+      } catch (RuntimeException e) {
+        log.warn("không cộng được token AI của lớp: {}", e.toString());
+      }
+    }
     KbQaPrompt.Reply r = KbQaPrompt.parse(mapper, content);
     // bộ kiểm đầu ra (KS-5: lỗi hoặc tự nó quá 200 ms thì đóng)
     long started = System.nanoTime();

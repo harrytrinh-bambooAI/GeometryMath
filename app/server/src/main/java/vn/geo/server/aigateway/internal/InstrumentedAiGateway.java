@@ -245,7 +245,8 @@ public class InstrumentedAiGateway implements AiGateway {
     return s == null ? 0 : (s.length() + 3) / 4;
   }
 
-  private static String currentLane() {
+  /** Làn kiểm thử của yêu cầu HTTP hiện tại (header {@link #LANE_HEADER}); ngoài yêu cầu: null. */
+  public static String currentLane() {
     if (RequestContextHolder.getRequestAttributes() instanceof ServletRequestAttributes a) {
       return a.getRequest().getHeader(LANE_HEADER);
     }

@@ -8,6 +8,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import vn.geo.server.aigateway.api.quota.AiQuota;
+import vn.geo.server.aigateway.internal.InstrumentedAiGateway;
 import vn.geo.server.aigateway.internal.repo.quota.QuotaRepository;
 import vn.geo.server.aigateway.internal.service.killswitch.KillSwitchService;
 import vn.geo.server.common.config.TimeProperties;
@@ -142,7 +143,21 @@ public class AiQuotaService implements AiQuota {
         .map(c -> new ClassRef(c.id(), c.name()));
   }
 
+  @Override
+  public boolean takeStudentAsk(UUID orgId, UUID classId, UUID studentId) {
+    if (classId == null) {
+      return false;
+    }
+    String name = repo.classInfo(orgId, classId).map(c -> c.name()).orElse(null);
+    if (name == null) {
+      return false;
+    }
+    takeStudentQa(orgId, classId, name, studentId, InstrumentedAiGateway.currentLane());
+    return true;
+  }
+
   /** Cộng token thật các lượt gọi AI của {@code userId} từ {@code since} vào trần của lớp. */
+  @Override
   public void addTokensSince(UUID orgId, UUID classId, UUID userId, java.time.Instant since) {
     addTokens(orgId, classId, repo.tokensSince(orgId, userId, since));
   }
