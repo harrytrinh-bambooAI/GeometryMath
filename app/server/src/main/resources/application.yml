@@ -129,6 +129,12 @@ geo:
   # --- T-261128-55 (S5-E5) ---
   # --- T-261128-56 (S5-E3) ---
   # --- T-261128-57 (S5-E4) ---
+  s5.images.backend: ${GEO_IMAGE_BACKEND:local}            # US-S5E4-08, P6: local = tệp mã hoá AES-256-GCM dưới dir (dev/test); s3 = kho tại VN (QS5-18, chưa cấu hình: khởi động báo lỗi khi dùng)
+  s5.images.dir: ${GEO_IMAGE_DIR:.data/s5-images}           # thư mục kho cục bộ (không phục vụ tĩnh, không đường dẫn công khai)
+  s5.images.key: ${GEO_IMAGE_KEY:}                          # khoá AES-256 base64 (32 byte), tách theo môi trường; trống = khoá suy từ tên profile (chỉ dev/test; prod bắt buộc đặt)
+  s5.images.sign-key: ${GEO_IMAGE_SIGN_KEY:}                # khoá HMAC của URL ký; trống = suy như trên (chỉ dev/test)
+  s5.images.url-ttl: ${GEO_IMAGE_URL_TTL:PT5M}              # BR-S5E4-26: URL ký hạn 5 phút
+  s5.images.purge-cron: "${GEO_IMAGE_PURGE_CRON:0 20 * * * *}"   # BR-S5E4-28: job xoá theo tài khoản (≤ 24 giờ) + theo năm học (từ 31/07), giờ VN
   # --- T-261128-58 (S5-E3) ---
   # --- T-261128-59 (S5-E4) ---
   # --- T-261128-60 (S5-E4) ---

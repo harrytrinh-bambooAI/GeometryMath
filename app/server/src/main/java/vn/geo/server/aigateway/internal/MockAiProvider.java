@@ -368,6 +368,20 @@ public class MockAiProvider implements AiProvider {
     }
     // --- T-261128-56 (S5-E3) ---
     // --- T-261128-57 (S5-E4) ---
+    if ("grade_ocr".equals(call.task()) && call.prompt().startsWith("[s5e4-ocr]")) {
+      // F-S5-095: bản đọc chữ BN-01 với 2 đoạn "chưa chắc" (tin cậy < 0,6). Giả lập GHI LẠI yêu cầu
+      // đã nhận (khóa "request") để E2E soát ảnh gửi AI không còn EXIF/GPS và không có danh tính
+      // (TC-S5E4-45, BR-S5E4-29).
+      ObjectNode out = mapper.createObjectNode();
+      out.put(
+          "text",
+          "Kẻ AH ⊥ SB tại H. Vì BC ⊥ (SAB) nên AH ⊥ (SBC). 1/AH² = 1/SA² + 1/AB². AH = a√6/3");
+      out.putArray("unsure")
+          .add(mapper.createObjectNode().put("text", "1/SA²").put("confidence", 0.52))
+          .add(mapper.createObjectNode().put("text", "a√6/3").put("confidence", 0.48));
+      out.put("request", call.prompt());
+      return mapper.writeValueAsString(out);
+    }
     // --- T-261128-58 (S5-E3) ---
     // --- T-261128-59 (S5-E4) ---
     // --- T-261128-60 (S5-E4) ---

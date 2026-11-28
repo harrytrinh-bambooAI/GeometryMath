@@ -1,0 +1,74 @@
+/* S5-E4 · Rubric, bài có chấm (T-261128-57). Màu, bo góc, font chỉ qua token theme; chữ phụ ≥ 14 px. */
+.s5e4-page {
+  display: grid;
+  gap: var(--gap);
+  max-width: 960px;
+  min-width: 0;
+}
+.s5e4-title {
+  margin: 0;
+  font-size: 22px;
+}
+.s5e4-card {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+.s5e4-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.s5e4-grow {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.s5e4-field {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+}
+.s5e4-muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+.s5e4-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.s5e4-table {
+  width: 100%;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+}
+.s5e4-table th,
+.s5e4-table td {
+  padding: 6px 8px;
+  text-align: left;
+  font-size: 14px;
+}
+.s5e4-table input[type='number'] {
+  width: 90px;
+}
+.s5e4-total {
+  font-size: 16px;
+}
+.s5e4-warn {
+  color: var(--red);
+}
+.s5e4-error {
+  color: var(--red);
+  font-size: 14px;
+}
+.s5e4-toast {
+  padding: 8px 12px;
+  border-radius: var(--radius, 8px);
+  background: var(--red-s);
+  font-size: 14px;
+}
