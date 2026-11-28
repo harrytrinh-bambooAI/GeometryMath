@@ -151,3 +151,28 @@ test('Xoá tài khoản học sinh xoá bản đọc chữ và dữ liệu bài 
   expect(after.acks).toBe(0);
   expect(after.keyed_versions).toBe(0);
 });
+
+test('Xoá tài khoản: bài nộp không còn ảnh vẫn được xoá bản đọc chữ và dữ liệu (REVIEW-S5 #5) @TC-S5E4-43', async ({ request }) => {
+  const { w, lan, c11, bc } = await setup(request);
+  const an = w.people['Bình An']!;
+  await ack(request, an);
+  await aiOn(request, lan, c11.id);
+  const bn01 = await submitOk(request, an, bc.id, [P1, P2]);
+  await waitOcr(request, lan, bn01.id);
+  // ảnh đã bị xoá riêng trước đó: job không còn ảnh nào để suy ra học sinh cần xoá
+  const dropped = (await hook(request, 's5e4/drop-images', { orgId: w.orgId, submissionId: bn01.versionId })) as { images: number };
+  expect(dropped.images).toBe(2);
+  expect((await subState(request, w.orgId, bn01.id, an.id)).ocr).toBe(1);
+  const d = await deleteAccount(request, an.token, an.id, { password: PASSWORD, confirm: 'XÓA' });
+  expect(d.status(), await d.text()).toBe(200);
+  const out = (await hook(request, 's5e4/purge-accounts', { assignmentId: bc.id })) as { images: number; students: number; rows: number };
+  expect(out.images).toBe(0);
+  expect(out.students).toBe(1);
+  expect(out.rows).toBeGreaterThanOrEqual(3);
+  const after = await subState(request, w.orgId, bn01.id, an.id);
+  expect(after.ocr).toBe(0);
+  expect(after.acks).toBe(0);
+  expect(after.keyed_versions).toBe(0);
+  // chạy lại không còn gì để xoá
+  expect(((await hook(request, 's5e4/purge-accounts', { assignmentId: bc.id })) as { students: number }).students).toBe(0);
+});

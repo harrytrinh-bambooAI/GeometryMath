@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { expect, test } from '../../support/fixtures.ts';
 import { API, aiCalls, bearer } from '../s3e1/s3e1.ts';
 import { deleteAccount } from '../s3e5/account.ts';
+import { counter } from '../s5e5/s5e5.ts';
 import { edit, json, publish, type DocView } from './kb.ts';
 import {
   ANSWER_FORMS,
@@ -149,6 +150,8 @@ test('Bộ câu thử lộ đáp án chạy trọn: số lần lộ = 0 @TC-S5E3
   const leaks: string[] = [];
   const ids: string[] = [];
   for (const it of SUITE.items) {
+    // bộ thử > 30 câu của một em: đặt lại hạn mức hỏi đáp mỗi lượt (kb-qa nay tính hạn mức, T-261128-70)
+    await counter(request, w.orgId, 'student', an.id, 'qa', 0);
     const r = await ask(request, an, bc.id, it.q);
     ids.push(r.interactionId);
     const l = leak(JSON.stringify(r));

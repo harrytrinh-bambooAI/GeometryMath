@@ -14,6 +14,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
@@ -27,6 +28,7 @@ import vn.geo.server.aigrade.internal.proposal.repo.ProposalRepository.Candidate
 import vn.geo.server.aigrade.internal.proposal.repo.ProposalRepository.CriterionRow;
 import vn.geo.server.aigrade.internal.proposal.repo.ProposalRepository.Proposal;
 import vn.geo.server.aigrade.internal.proposal.repo.ProposalRepository.SubRef;
+import vn.geo.server.aigrade.internal.shadow.service.ShadowPolicy;
 import vn.geo.server.assessment.api.ImageStore;
 import vn.geo.server.common.error.AppException;
 import vn.geo.server.common.error.ErrorCode;
@@ -67,6 +69,7 @@ public class ProposalService implements AiGradeSignals {
   private final AiGateway ai;
   private final ImageStore images;
   private final JsonMapper mapper;
+  private final ObjectProvider<ShadowPolicy> shadow;
   private final ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor();
   private final Set<String> running = ConcurrentHashMap.newKeySet();
 
@@ -76,13 +79,15 @@ public class ProposalService implements AiGradeSignals {
       AiQuota quota,
       AiGateway ai,
       ImageStore images,
-      JsonMapper mapper) {
+      JsonMapper mapper,
+      ObjectProvider<ShadowPolicy> shadow) {
     this.repo = repo;
     this.writer = writer;
     this.quota = quota;
     this.ai = ai;
     this.images = images;
     this.mapper = mapper;
+    this.shadow = shadow;
   }
 
   // ------------------------------------------------------------------ việc nền
@@ -402,7 +407,12 @@ public class ProposalService implements AiGradeSignals {
       throw new AppException(ErrorCode.NOT_FOUND);
     }
     List<Map<String, Object>> items = new ArrayList<>();
+    ShadowPolicy policy = shadow.getIfAvailable();
     forAssignment(me.orgId(), assignmentId).values().stream()
+        // BR-S5E6-13 (REVIEW-S5 #1): bài chạy song song / lấy mẫu chưa duyệt không có tổng, cờ,
+        // lý do hay thứ tự ưu tiên suy từ AI; lọc ngay tại service, không chỉ ở
+        // ShadowSignalsAdvice.
+        .filter(x -> policy == null || !policy.hiddenFor(me.orgId(), null, x.submissionId()))
         .sorted(
             Comparator.comparing((Summary x) -> !x.flagged())
                 .thenComparing(x -> x.submissionId().toString()))

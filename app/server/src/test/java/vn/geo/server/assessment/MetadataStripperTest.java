@@ -54,6 +54,44 @@ class MetadataStripperTest {
   }
 
   @Test
+  @DisplayName("TC-S5E4-40 (REVIEW-S5 #3) JPEG: bỏ mọi byte sau EOI (MPF/ảnh thu nhỏ kèm EXIF/GPS)")
+  void jpegDropsTrailerAfterEoi() {
+    ByteArrayOutputStream o = new ByteArrayOutputStream();
+    o.writeBytes(jpeg());
+    // ảnh thứ hai (MPF) của điện thoại sau EOI, mang EXIF/GPS riêng
+    o.writeBytes(new byte[] {(byte) 0xFF, (byte) 0xD8});
+    o.writeBytes(seg(0xE1, "Exif\0\0GPS 21.0285,105.8542".getBytes(StandardCharsets.ISO_8859_1)));
+    o.writeBytes(seg(0xDA, new byte[] {0, 1}));
+    o.writeBytes(new byte[] {0x44, (byte) 0xFF, (byte) 0xD9});
+    MetadataStripper.Clean c = MetadataStripper.strip(o.toByteArray());
+    String s = new String(c.bytes(), StandardCharsets.ISO_8859_1);
+    assertThat(s).doesNotContain("Exif").doesNotContain("21.0285");
+    assertThat(c.bytes()).isEqualTo(MetadataStripper.strip(jpeg()).bytes());
+  }
+
+  @Test
+  @DisplayName("TC-S5E4-40 JPEG lũy tiến: nhiều SOS, RSTn, DHT và APPn giữa các lượt quét")
+  void jpegProgressiveScans() {
+    ByteArrayOutputStream o = new ByteArrayOutputStream();
+    o.writeBytes(new byte[] {(byte) 0xFF, (byte) 0xD8});
+    o.writeBytes(seg(0xE0, "JFIF\0\1\1".getBytes(StandardCharsets.ISO_8859_1)));
+    o.writeBytes(seg(0xDA, new byte[] {0, 1}));
+    o.writeBytes(new byte[] {0x11, (byte) 0xFF, (byte) 0xD0, 0x12, (byte) 0xFF, 0x00});
+    o.writeBytes(seg(0xC4, new byte[] {7, 7}));
+    o.writeBytes(seg(0xE1, "Exif\0\0GPS".getBytes(StandardCharsets.ISO_8859_1)));
+    o.writeBytes(seg(0xDA, new byte[] {0, 2}));
+    o.writeBytes(new byte[] {0x21, (byte) 0xFF, (byte) 0xFF, (byte) 0xD9});
+    o.writeBytes("trailer GPS".getBytes(StandardCharsets.ISO_8859_1));
+    byte[] out = MetadataStripper.strip(o.toByteArray()).bytes();
+    String s = new String(out, StandardCharsets.ISO_8859_1);
+    assertThat(s).doesNotContain("Exif").doesNotContain("trailer");
+    assertThat(out[out.length - 1]).isEqualTo((byte) 0xD9);
+    assertThat(out[out.length - 2]).isEqualTo((byte) 0xFF);
+    // giữ cả hai lượt quét và bảng Huffman giữa chúng
+    assertThat(out.length).isEqualTo(o.size() - 13 - 11);
+  }
+
+  @Test
   @DisplayName("US-S5E4-08 PNG: chỉ giữ khúc hiển thị, bỏ eXIf/tEXt")
   void pngLosesText() {
     ByteArrayOutputStream o = new ByteArrayOutputStream();

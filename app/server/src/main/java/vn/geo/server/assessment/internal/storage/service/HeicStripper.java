@@ -5,17 +5,23 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import vn.geo.server.common.error.AppException;
 
 /**
  * Gỡ EXIF/XMP khỏi ảnh gốc HEIC (BR-S5E4-27; T-261128-60 nối Dev-S5E4-07): trong cấu trúc ISOBMFF,
  * EXIF là mục {@code Exif} và XMP là mục {@code mime} (application/rdf+xml) của hộp {@code meta};
  * vùng dữ liệu của các mục đó (theo {@code iloc}, trong tệp hoặc trong {@code idat}) được ghi đè
- * bằng 0, giữ nguyên độ dài và mọi hộp khác nên tệp vẫn giải mã được. Không phải HEIC hợp lệ hoặc
- * không tìm thấy mục siêu dữ liệu → trả bản sao nguyên vẹn.
+ * bằng 0, giữ nguyên độ dài và mọi hộp khác nên tệp vẫn giải mã được. Không tìm thấy mục siêu dữ
+ * liệu → trả bản sao nguyên vẹn. Cấu trúc lạ không đọc được → từ chối lưu (fail closed, REVIEW-S5
+ * #4): VALIDATION_FAILED {@link #MSG_RETAKE}, không lưu bản gốc chưa gỡ.
  */
 public final class HeicStripper {
 
   private HeicStripper() {}
+
+  /** Thông báo cho học sinh khi không gỡ được EXIF/GPS của ảnh HEIC. */
+  public static final String MSG_RETAKE =
+      "Không đọc được ảnh HEIC để gỡ thông tin vị trí. Em chụp lại hoặc chọn ảnh JPEG nhé.";
 
   private record Box(String type, int start, int header, long size) {
     int body() {
@@ -36,7 +42,8 @@ public final class HeicStripper {
         }
       }
     } catch (RuntimeException e) {
-      return in.clone(); // cấu trúc lạ: giữ nguyên, không làm hỏng ảnh
+      // cấu trúc lạ: không chắc đã gỡ hết EXIF/GPS → không lưu bản gốc (fail closed)
+      throw AppException.invalidField("pages", MSG_RETAKE);
     }
     return out;
   }

@@ -164,6 +164,34 @@ public class StoredImageRepository {
         .list();
   }
 
+  /** Học sinh (org, id) của tài khoản đã xoá còn dữ liệu bài nộp chưa xoá. */
+  public record StudentRef(UUID orgId, UUID studentId) {}
+
+  /**
+   * Học sinh đã xoá tài khoản còn phiên bản bài nộp chưa gỡ khoá lũy đẳng — kể cả khi không còn ảnh
+   * nào (REVIEW-S5 #5, BR-S5E4-28a). {@code scope} khác null: chỉ bài của một bài có chấm.
+   */
+  public List<StudentRef> deletedStudentsWithData(UUID scope, int limit) {
+    return jdbc.sql(
+            """
+            SELECT DISTINCT v.org_id, v.student_id FROM submission_version v
+            WHERE v.idempotency_key <> CAST(v.id AS text)
+              AND (CAST(:scope AS uuid) IS NULL OR EXISTS (SELECT 1 FROM submission s
+                   WHERE s.org_id = v.org_id AND s.id = v.submission_id AND s.assignment_id = :scope LIMIT 1))
+              AND EXISTS (SELECT 1 FROM app_user u WHERE u.org_id = v.org_id AND u.id = v.student_id
+                          AND u.deleted_at IS NOT NULL LIMIT 1)
+            LIMIT :lim
+            -- sqllint:allow=tenant job xoá theo tài khoản chạy xuyên trường (BR-S5E4-28a)
+            -- sqllint:allow=ownership đọc cờ đã xoá của tài khoản (iam)
+            """)
+        .param("scope", scope)
+        .param("lim", limit)
+        .query((rs, n) ->
+            new StudentRef(
+                rs.getObject("org_id", UUID.class), rs.getObject("student_id", UUID.class)))
+        .list();
+  }
+
   /** Ảnh của các năm học kết thúc không muộn hơn năm {@code endYear} (job 31/07). */
   public List<Image> ofEndedYears(int endYear, UUID scope, int limit) {
     return jdbc.sql(

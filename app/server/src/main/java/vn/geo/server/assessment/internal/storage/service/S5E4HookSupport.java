@@ -112,6 +112,16 @@ public class S5E4HookSupport {
     return ai.ocrPage(orgId, submissionId, pageNo);
   }
 
+  public Map<String, Object> dropImages(UUID orgId, UUID submissionId) {
+    int n = 0;
+    for (StoredImageRepository.Image i : repo.ofSubmission(orgId, submissionId)) {
+      store.delete(i.objectKey());
+      repo.delete(orgId, i.id());
+      n++;
+    }
+    return Map.of("images", n);
+  }
+
   public Map<String, Object> purgeAccounts(UUID assignmentId) {
     return purge.purgeDeletedAccounts(assignmentId);
   }
