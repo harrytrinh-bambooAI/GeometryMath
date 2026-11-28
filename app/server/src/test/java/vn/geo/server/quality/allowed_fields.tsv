@@ -1422,3 +1422,72 @@ api	api	fromLessonPlan	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
 api	api	uploadId	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
 api	api	validFrom	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
 api	api	validTo	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
+# --- T-261128-59 ---
+db	submission_upload	id	Trang ảnh bài làm đang tải theo đoạn, xoá khi nộp (US-S5E4-03, V675)	PO-64
+db	submission_upload	org_id	Trang ảnh bài làm đang tải theo đoạn, xoá khi nộp (US-S5E4-03, V675)	PO-64
+db	submission_upload	student_id	Trang ảnh bài làm đang tải theo đoạn, xoá khi nộp (US-S5E4-03, V675)	PO-64
+db	submission_upload	content_type	Trang ảnh bài làm đang tải theo đoạn, xoá khi nộp (US-S5E4-03, V675)	PO-64
+db	submission_upload	size_bytes	Trang ảnh bài làm đang tải theo đoạn, xoá khi nộp (US-S5E4-03, V675)	PO-64
+db	submission_upload	data	Trang ảnh bài làm đang tải theo đoạn, xoá khi nộp (US-S5E4-03, V675)	PO-64
+db	submission_upload	created_at	Trang ảnh bài làm đang tải theo đoạn, xoá khi nộp (US-S5E4-03, V675)	PO-64
+db	submission	id	Bài nộp viết tay của học sinh (US-S5E4-03, 09, V675)	PO-64
+db	submission	org_id	Bài nộp viết tay của học sinh (US-S5E4-03, 09, V675)	PO-64
+db	submission	assignment_id	Bài nộp viết tay của học sinh (US-S5E4-03, 09, V675)	PO-64
+db	submission	student_id	Bài nộp viết tay của học sinh (US-S5E4-03, 09, V675)	PO-64
+db	submission	class_id	Bài nộp viết tay của học sinh (US-S5E4-03, 09, V675)	PO-64
+db	submission	code	Bài nộp viết tay của học sinh (US-S5E4-03, 09, V675)	PO-64
+db	submission	current_version	Bài nộp viết tay của học sinh (US-S5E4-03, 09, V675)	PO-64
+db	submission	academic_year	Bài nộp viết tay của học sinh (US-S5E4-03, 09, V675)	PO-64
+db	submission	created_at	Bài nộp viết tay của học sinh (US-S5E4-03, 09, V675)	PO-64
+db	submission	updated_at	Bài nộp viết tay của học sinh (US-S5E4-03, 09, V675)	PO-64
+db	submission_version	id	Phiên bản bài nộp, khóa lũy đẳng, nộp muộn (US-S5E4-09, V675)	PO-64
+db	submission_version	org_id	Phiên bản bài nộp, khóa lũy đẳng, nộp muộn (US-S5E4-09, V675)	PO-64
+db	submission_version	submission_id	Phiên bản bài nộp, khóa lũy đẳng, nộp muộn (US-S5E4-09, V675)	PO-64
+db	submission_version	student_id	Phiên bản bài nộp, khóa lũy đẳng, nộp muộn (US-S5E4-09, V675)	PO-64
+db	submission_version	version	Phiên bản bài nộp, khóa lũy đẳng, nộp muộn (US-S5E4-09, V675)	PO-64
+db	submission_version	idempotency_key	Phiên bản bài nộp, khóa lũy đẳng, nộp muộn (US-S5E4-09, V675)	PO-64
+db	submission_version	pages	Phiên bản bài nộp, khóa lũy đẳng, nộp muộn (US-S5E4-09, V675)	PO-64
+db	submission_version	submitted_at	Phiên bản bài nộp, khóa lũy đẳng, nộp muộn (US-S5E4-09, V675)	PO-64
+db	submission_version	late_seconds	Phiên bản bài nộp, khóa lũy đẳng, nộp muộn (US-S5E4-09, V675)	PO-64
+db	submission_version	academic_year	Phiên bản bài nộp, khóa lũy đẳng, nộp muộn (US-S5E4-09, V675)	PO-64
+db	ocr_artifact	id	Bản đọc chữ phái sinh có phiên bản (US-S5E4-04, V675)	PO-64
+db	ocr_artifact	org_id	Bản đọc chữ phái sinh có phiên bản (US-S5E4-04, V675)	PO-64
+db	ocr_artifact	submission_id	Bản đọc chữ phái sinh có phiên bản (US-S5E4-04, V675)	PO-64
+db	ocr_artifact	version_id	Bản đọc chữ phái sinh có phiên bản (US-S5E4-04, V675)	PO-64
+db	ocr_artifact	student_id	Bản đọc chữ phái sinh có phiên bản (US-S5E4-04, V675)	PO-64
+db	ocr_artifact	version	Bản đọc chữ phái sinh có phiên bản (US-S5E4-04, V675)	PO-64
+db	ocr_artifact	status	Bản đọc chữ phái sinh có phiên bản (US-S5E4-04, V675)	PO-64
+db	ocr_artifact	pages	Bản đọc chữ phái sinh có phiên bản (US-S5E4-04, V675)	PO-64
+db	ocr_artifact	edited_by	Bản đọc chữ phái sinh có phiên bản (US-S5E4-04, V675)	PO-64
+db	ocr_artifact	academic_year	Bản đọc chữ phái sinh có phiên bản (US-S5E4-04, V675)	PO-64
+db	ocr_artifact	created_at	Bản đọc chữ phái sinh có phiên bản (US-S5E4-04, V675)	PO-64
+db	submission_privacy_ack	org_id	Cờ đã đọc thông báo riêng tư S5 (US-S5E4-03, BR-S5E4-11, V675)	PO-64
+db	submission_privacy_ack	student_id	Cờ đã đọc thông báo riêng tư S5 (US-S5E4-03, BR-S5E4-11, V675)	PO-64
+db	submission_privacy_ack	notice_version	Cờ đã đọc thông báo riêng tư S5 (US-S5E4-03, BR-S5E4-11, V675)	PO-64
+db	submission_privacy_ack	acked_at	Cờ đã đọc thông báo riêng tư S5 (US-S5E4-03, BR-S5E4-11, V675)	PO-64
+api	api	acked	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	partBytes	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	studentId	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	gradingStatus	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	gradingStatusLabel	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	late	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	lateLabel	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	pageNo	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	contentType	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	sha256	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	bytes	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	derivedContentType	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	allowLate	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	privacyAcked	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	submission	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	submissionVersion	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	canRetry	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	editedBy	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	segments	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	region	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	edited	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	w	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	h	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	idempotencyKey	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	derivedUploadId	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+api	api	clarity	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64

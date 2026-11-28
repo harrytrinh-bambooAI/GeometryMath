@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-28
+Phiên bản: v0.2 · 2026-11-28
 # S5-E4 — phát hiện QC / Dev
 
 ## Dev
@@ -9,8 +9,14 @@ Phiên bản: v0.1 · 2026-11-28
 | Dev-S5E4-03 | Thế giới E2E riêng mỗi ca không thấy bộ `s5_core` (đề D-KC-01, F-S5-050): ca giao bài dùng đề kho `TUAN-11`. Seed `s5_350` cấp `s5_core` cho trường F-S2-100 và nạp RB-01 / BC-01 đúng id của `s5.json`. | TẠM | QC xác nhận |
 | Dev-S5E4-04 | CONFLICT có `details` (US-S5E4-02-FC1) dựng ở controller vì `AppException` chung chỉ mang details cho VALIDATION_FAILED. Cổng "AI đề xuất" là stub luôn đóng `ClosedClassAiGate` (`assessment.api.ClassAiGateQuery`); "Chạy song song" cần công tắc AI chấm của lớp (`AiQuota.gradingOn`). | 65 thay cổng bằng bean `@Primary` | Dev 65 |
 | Dev-S5E4-05 | Kho ảnh bản `local` (AES-256-GCM, khoá `GEO_IMAGE_KEY`; trống chỉ được ở dev/test). Bản S3 tại VN (QS5-18) chưa cấu hình: `geo.s5.images.backend=s3` báo lỗi rõ khi dùng. Mốc giờ của TC-41, TC-44 điều khiển qua móc (cấp URL lùi giờ; job năm học nhận ngày), không đổi đồng hồ CSDL. Job xoá chạy mỗi giờ (`geo.s5.images.purge-cron`). | Chờ owner chốt QS5-18 trước khi bật prod | PO / vận hành |
+| Dev-S5E4-06 | Thân yêu cầu máy chủ ≤ 1 MB (`BodySizeLimitFilter`, ngoài phạm vi): ảnh trang tải theo đoạn `POST /api/v1/submissions/uploads` {contentType, sizeBytes ≤ 8 388 608} → `PUT …/uploads/{id}?offset=` (≤ 1 000 000 B) → `POST /api/v1/submissions` {assignmentId, idempotencyKey, pages[{uploadId, derivedUploadId?, clarity}]}. Đặc tả ghi `/api/submissions`; TC-16 "8 MB + 1 byte" bị từ chối ở bước khai cỡ (VALIDATION_FAILED). Nộp mới 201, gửi lại cùng khóa 200, nộp lại trước hạn 201 (phiên bản mới). | Theo quy ước app | QC cập nhật TC khi soát |
+| Dev-S5E4-07 | HEIC: máy chủ Java không giải mã được HEIC (cần libheif). Máy (Safari iOS giải mã HEIC sẵn) gửi kèm bản JPEG phái sinh (`derivedUploadId`); máy chủ lưu ảnh gốc HEIC đúng tệp (băm = tệp tải lên) + bản `derived` image/jpeg đã gỡ EXIF; `grade_ocr` nhận bản JPEG. EXIF bên trong tệp HEIC gốc CHƯA gỡ (ảnh gốc chỉ ra ngoài qua URL ký cho GV/chính HS; AI chỉ nhận JPEG sạch) — lệch BR-S5E4-25 với HEIC. Ảnh mẫu HEIC 10 KB (đặc tả 1,4 MB). | TẠM: HEIC thiếu bản JPEG → VALIDATION_FAILED | ARCH/PO chốt: thêm libheif phía máy chủ hoặc chấp nhận |
+| Dev-S5E4-08 | Ảnh trang lưu ở `stored_image` với `submission_id` = id PHIÊN BẢN bài nộp (giữ ảnh của phiên bản cũ, BR-S5E4-10); URL ký `/api/v1/submissions/{versionId}/pages/{n}/url`. Bộ đếm "đã có bài nộp" của T-57 (`GradedAssignmentRepository.submissions`, ngoài phạm vi 59) vẫn đếm `DISTINCT stored_image.submission_id` → nộp lại làm số bài trên C5-01 tăng theo phiên bản. | Đề xuất đổi thành `SELECT count(*) FROM submission` | Dev 60 (hoặc FIX) |
+| Dev-S5E4-09 | Đọc chữ nền cần AI chấm của lớp bật (`AiQuota.admitGrading`, mặc định tắt): tắt thì bản đọc chữ "Chưa đọc được" (chấm tay vẫn được). Việc nền chạy dưới danh tính người nộp (giả lập lỗi theo học sinh); gọi lại 1 lần trong lượt; Đọc lại qua `AiQuota.takeOcrRetry` (≤ 3). Mock F-S5-095 theo trang (mốc 59): mỗi trang 1 đoạn < 0,6, trang 2 đọc nhầm "a√6/2". Móc S5-E5 `/test-hooks/s5e5/grading-run`, `/ocr-retry` (TC-S5E5-19/23/25/27) và TC-S5E4-43/45 của tệp T-57 chưa chuyển sang luồng thật (tệp ngoài phạm vi 59); 59 thêm một ca `@TC-S5E4-43` luồng thật trong `submit/ocr.api.spec.ts`. | TẠM | Dev 60/64 hoặc FIX |
+| Dev-S5E4-10 | Màn C5-03 `/hs/nop-bai`: thêm route + mục rail ở `features/s5e4/index.tsx` (tệp chỗ cắm của epic, ngoài regex phạm vi 59 — sửa 3 dòng). "Kéo" trang thay bằng nút ↑/↓ (cùng hành vi xếp lại, dễ bấm trên iPhone). Độ rõ chấm trên máy (phương sai Laplace, ngưỡng 0,5); máy chủ chỉ kiểm điểm máy gửi. Nháp trên máy: IndexedDB; QuotaExceededError → "Máy em hết chỗ lưu…". TC-51 chạy 45 em rải trong 60 giây (đặc tả 5 phút). Thiết bị iOS thật: chạy tay ở vòng pilot. | TẠM | Agent chính xác nhận sửa index.tsx; QC |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-28 | Mục Dev đầu tiên | runner-T-261128-57 |
+| v0.2 | 2026-11-28 | Dev-S5E4-06…10 (nộp bài, HEIC, phiên bản ảnh, đọc chữ nền, màn C5-03) | runner-T-261128-59 |
