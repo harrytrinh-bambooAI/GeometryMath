@@ -1298,3 +1298,60 @@ db	lesson_plan_patch	section	Cột duyệt / phiên bản / bản vá giáo án 
 db	lesson_plan_patch	patches	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
 db	lesson_plan_patch	decisions	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
 db	lesson_plan_patch	created_at	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+# --- T-261128-56 ---
+db	kb_document	id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document	org_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document	owner_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document	code	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document	title	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document	ai_authored	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document	archived_at	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document	created_at	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document	updated_at	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	org_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	doc_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	version	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	status	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	was_active	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	source_kind	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	source_label	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	file_name	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	file_mime	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	file_size	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	file_bytes	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	content_md	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	content_hash	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	created_by	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	created_at	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	activated_at	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_document_version	archived_at	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_section	id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_section	org_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_section	doc_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_section	version	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_section	ord	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_section	title	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_section	body	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_section	codes	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_section	search_tsv	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_grant	id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_grant	org_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_grant	doc_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_grant	class_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_grant	assignment_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_grant	valid_from	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_grant	valid_to	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_grant	created_by	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_grant	created_at	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_grant	revoked_at	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_upload	id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_upload	org_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_upload	owner_id	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_upload	file_name	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_upload	size_bytes	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_upload	file_tmp	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+db	kb_upload	created_at	Kho tri thức của giáo viên: tài liệu, phiên bản, mục, gắn lớp/bài, lượt tải (V605, US-S5E3-01, 02, 07)	PO-27
+api	api	fromLessonPlan	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
+api	api	uploadId	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
+api	api	validFrom	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
+api	api	validTo	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
