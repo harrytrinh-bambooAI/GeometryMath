@@ -1663,6 +1663,58 @@ db	engine_signal	rule	Tín hiệu engine: đáp số cuối trong bài so với 
 db	engine_signal	disagree	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
 db	engine_signal	academic_year	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
 db	engine_signal	created_at	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+# --- T-261128-63 ---
+db	exam_draft_batch	id	Lần soạn đề nháp của trợ lý từ tài liệu Đang dùng của giáo viên (US-S5E2-06, V775)	PO-65
+db	exam_draft_batch	org_id	Lần soạn đề nháp của trợ lý từ tài liệu Đang dùng của giáo viên (US-S5E2-06, V775)	PO-65
+db	exam_draft_batch	teacher_id	Lần soạn đề nháp của trợ lý từ tài liệu Đang dùng của giáo viên (US-S5E2-06, V775)	PO-65
+db	exam_draft_batch	class_id	Lần soạn đề nháp của trợ lý từ tài liệu Đang dùng của giáo viên (US-S5E2-06, V775)	PO-65
+db	exam_draft_batch	doc_id	Lần soạn đề nháp của trợ lý từ tài liệu Đang dùng của giáo viên (US-S5E2-06, V775)	PO-65
+db	exam_draft_batch	doc_code	Lần soạn đề nháp của trợ lý từ tài liệu Đang dùng của giáo viên (US-S5E2-06, V775)	PO-65
+db	exam_draft_batch	doc_version	Lần soạn đề nháp của trợ lý từ tài liệu Đang dùng của giáo viên (US-S5E2-06, V775)	PO-65
+db	exam_draft_batch	requested	Lần soạn đề nháp của trợ lý từ tài liệu Đang dùng của giáo viên (US-S5E2-06, V775)	PO-65
+db	exam_draft_batch	created_at	Lần soạn đề nháp của trợ lý từ tài liệu Đang dùng của giáo viên (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	id	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	org_id	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	batch_id	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	teacher_id	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	ord	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	statement	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	source_section	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	scene	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	ai_answer	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	engine_answer	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	machine_label	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	review_reason	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	status	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	approved_at	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	exam_draft_item	created_at	Đề nháp AI soạn: nhãn máy theo engine, đáp số engine, duyệt vào "Của tôi" (US-S5E2-06, V775)	PO-65
+db	ai_qa_feedback	org_id	Đánh dấu "chặn sai"/"lẽ ra phải chặn" của giáo viên trên lượt hỏi đáp (US-S5E3-06, V775)	PO-27
+db	ai_qa_feedback	interaction_id	Đánh dấu "chặn sai"/"lẽ ra phải chặn" của giáo viên trên lượt hỏi đáp (US-S5E3-06, V775)	PO-27
+db	ai_qa_feedback	teacher_id	Đánh dấu "chặn sai"/"lẽ ra phải chặn" của giáo viên trên lượt hỏi đáp (US-S5E3-06, V775)	PO-27
+db	ai_qa_feedback	type	Đánh dấu "chặn sai"/"lẽ ra phải chặn" của giáo viên trên lượt hỏi đáp (US-S5E3-06, V775)	PO-27
+db	ai_qa_feedback	note	Đánh dấu "chặn sai"/"lẽ ra phải chặn" của giáo viên trên lượt hỏi đáp (US-S5E3-06, V775)	PO-27
+db	ai_qa_feedback	rule_code	Đánh dấu "chặn sai"/"lẽ ra phải chặn" của giáo viên trên lượt hỏi đáp (US-S5E3-06, V775)	PO-27
+db	ai_qa_feedback	created_at	Đánh dấu "chặn sai"/"lẽ ra phải chặn" của giáo viên trên lượt hỏi đáp (US-S5E3-06, V775)	PO-27
+db	ai_qa_feedback	updated_at	Đánh dấu "chặn sai"/"lẽ ra phải chặn" của giáo viên trên lượt hỏi đáp (US-S5E3-06, V775)	PO-27
+db	ai_qa_feedback_counter	org_id	Tổng hợp đánh dấu theo luật cho người vận hành, chỉ số đếm (US-S5E3-06, V775)	PO-27
+db	ai_qa_feedback_counter	rule_code	Tổng hợp đánh dấu theo luật cho người vận hành, chỉ số đếm (US-S5E3-06, V775)	PO-27
+db	ai_qa_feedback_counter	type	Tổng hợp đánh dấu theo luật cho người vận hành, chỉ số đếm (US-S5E3-06, V775)	PO-27
+db	ai_qa_feedback_counter	n	Tổng hợp đánh dấu theo luật cho người vận hành, chỉ số đếm (US-S5E3-06, V775)	PO-27
+api	api	sourceSection	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	machineState	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	reviewReason	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	preselected	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	aiAnswer	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	feedback	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	typeLabel	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	teacherDocs	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	lectures	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	noSource	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	blocked	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	blockedByRule	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	percent	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	interactionId	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
+api	api	rule	Khóa JSON của API trợ lý soạn đề nháp / lịch sử hỏi đáp (US-S5E2-06, US-S5E3-06)	PO-65
 # --- T-261128-62 ---
 db	ai_review_action	id	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
 db	ai_review_action	org_id	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64

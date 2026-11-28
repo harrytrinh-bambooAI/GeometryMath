@@ -2,6 +2,8 @@ import type { FeatureModule } from '../types.ts';
 import { HelpLevelPage } from './HelpLevelPage.tsx';
 import { KbPage } from './KbPage.tsx';
 import { QaPage } from './QaPage.tsx';
+import { useParams } from 'react-router';
+import { QaHistoryPanel } from './history/QaHistoryPanel.tsx';
 import './s5e3.css';
 
 /**
@@ -12,11 +14,18 @@ import './s5e3.css';
  * Thêm màn: khai báo route/mục rail ở đây (path tương đối của /gv hoặc /hs), data-testid bắt đầu bằng 's5e3-'.
  * Không sửa features/index.ts, types.ts, router.tsx.
  */
+/** US-S5E3-06: /gv/kho-tri-thuc/lich-su/:assignmentId — lịch sử hỏi đáp theo bài (T-261128-63). */
+function QaHistoryRoute() {
+  const { assignmentId = '' } = useParams();
+  return <QaHistoryPanel assignmentId={assignmentId} />;
+}
+
 export const feature: FeatureModule = {
   id: 's5e3',
   title: 'Kho tri thức, hỏi đáp theo kho, kiểm soát đáp án',
   teacherRoutes: [
     { path: 'kho-tri-thuc', element: <KbPage /> },
+    { path: 'kho-tri-thuc/lich-su/:assignmentId', element: <QaHistoryRoute /> },
     { path: 'tro-giup-ai', element: <HelpLevelPage /> },
   ],
   studentRoutes: [{ path: 'hoi-dap', element: <QaPage /> }],

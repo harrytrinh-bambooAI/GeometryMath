@@ -1,4 +1,4 @@
-Phiên bản: v0.2 · 2026-11-28
+Phiên bản: v0.3 · 2026-11-28
 # S5-E3 — phát hiện QC / Dev
 
 ## Dev
@@ -18,9 +18,14 @@ Phiên bản: v0.2 · 2026-11-28
 | Dev-S5E3-13 | Bài của bạn (BN-02) chưa có ở nhánh (bảng bài nộp T-59): bộ kiểm chặn theo ghi chú riêng + rubric (tiêu chí, hướng dẫn chấm của rubric_version) qua `private_content`; nội dung bài nộp của học sinh khác không bao giờ được đưa vào yêu cầu AI (theo cấu trúc). Khi có bài nộp, cần thêm văn bản bài nộp của bạn vào danh sách bí mật. Lớp tắt AI / KS-4 / bộ kiểm lỗi chặn đúng; "Trả bài" (T-60) chưa có: E2E công bố đáp số BC-01 bằng móc `/test-hooks/s5e3/qa/release`. | TẠM | Dev 59/60 |
 | Dev-S5E3-14 | Xoá tài khoản: trigger trên `app_user.deleted_at` xoá ngay `ai_interaction`, `ai_policy_decision`, `kb_privacy_ack` của em (≤ 24 giờ), khoá ngoại ON DELETE CASCADE khi dọn vật lý; `ai_policy_counter` không gắn người, giữ nguyên. Bộ câu thử để ở `app/e2e/fixtures/firewall-s5.json` (phạm vi tệp của task) thay vì `artifacts/GEO/work/s5/fixtures/`. Dạng tương đương của đáp số chặng 5 (`answer_forms` chưa tính cho D-KC-01): bộ kiểm tự thêm dạng bỏ tham số, sqrt, "căn" (lệch về phía chặn). | TẠM | QC xác nhận |
 | Dev-S5E3-07 | Ngưỡng 0,1 áp lên `ts_rank_cd(…, 1|32)` (chia 1 + log độ dài mục rồi đưa về 0…1); câu hỏi bỏ từ dừng tiếng Việt (của, là, và, em, …) trước khi tìm. TC-S5E3-22 trả MSG-S5-20 + `aiCalled=false` ở móc truy xuất; lượt hỏi thật (MSG-S5-20, không gọi AI) do T-58 nối. | TẠM | Dev 58 |
+| Dev-S5E3-15 | Đặc tả ghi `GET /api/assignments/{id}/qa`, `/qa/report`, `POST /api/qa/{id}/feedback`, `GET /api/qa/mine`; app dùng quy ước `/api/v1/teacher/assignments/{id}/qa[?decision=&cursor=]`, `/api/v1/teacher/assignments/{id}/qa/report`, `POST /api/v1/teacher/qa/{id}/feedback` {type, note}, `GET /api/v1/student/qa/mine?assignment=`. Tổng hợp cho người vận hành: `GET /api/v1/admin/ai/qa-feedback[?orgId=]` (vai Vận hành `ai_ops_grant`, không theo trường QS5-02). Máy chủ bỏ khóa null khỏi JSON. | TẠM | QC cập nhật TC khi soát |
+| Dev-S5E3-16 | "Mỗi lượt một đánh dấu, sửa được": bảng `ai_qa_feedback` khóa (trường, lượt); gửi lại cùng loại chỉ sửa ghi chú, không đếm thêm; đổi loại thì chuyển đếm. Bộ đếm `ai_qa_feedback_counter` theo (luật, loại) = đánh dấu hiện hành; lượt lỗi đóng không ghi luật tính luật `KS-5`. | TẠM | PO xác nhận |
+| Dev-S5E3-17 | Báo cáo BR-S5E3-23: lượt `blocked` và `error_closed` tính "bị chặn" (kèm tỉ lệ theo luật); còn lại theo nguồn `kb` = "Tài liệu của thầy cô", `lecture` = "Bài giảng mẫu", không nguồn. Tỉ lệ làm tròn 0,1 %. Báo cáo của LỚP (BR-S5E3-23 nêu "của bài và của lớp") chưa làm: không có TC; chỉ báo cáo theo bài. | TẠM | PO/QC xác nhận phạm vi |
+| Dev-S5E3-18 | E2E dựng lượt hỏi đáp của BC-01 bằng móc `/test-hooks/s5e3/history/seed` (ghi `ai_interaction` + `ai_policy_decision` như bộ kiểm đã ghi) thay vì hỏi thật 6–10 lượt qua AI giả lập; luồng hỏi thật do T-58 đã kiểm. Giao diện `features/s5e3/history/QaHistoryPanel.tsx` CHƯA gắn route (`features/s5e3/index.tsx` ngoài phạm vi T-63). | TẠM | Phiên chính: gắn panel vào màn bài có chấm |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-28 | Mục Dev đầu tiên | runner-T-261128-56 |
 | v0.2 | 2026-11-28 | Dev-S5E3-08…14 (hỏi đáp theo kho, mức trợ giúp, kiểm soát đáp án) | runner-T-261128-58 |
+| v0.3 | 2026-11-28 | Dev-S5E3-15…18 (lịch sử hỏi đáp, đánh dấu chặn sai) | runner-T-261128-63 |
