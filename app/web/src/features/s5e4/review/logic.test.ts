@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { keyAction, msg37, parsePoints, total, validPoints } from './logic.ts';
+import { keyAction, msg37, parsePoints, reviewPath, total, validPoints } from './logic.ts';
 
 describe('chấm tay C5-05 (US-S5E4-06)', () => {
   it('điểm 0…tối đa, bước 0,25', () => {
@@ -22,5 +22,14 @@ describe('chấm tay C5-05 (US-S5E4-06)', () => {
     assert.equal(keyAction('Enter', true), 'approve');
     assert.equal(keyAction('j', true), null);
     assert.equal(keyAction('x', false), 'skip');
+  });
+});
+
+describe('hàng chờ mở màn chấm (T-261128-65)', () => {
+  it('bài có đề xuất AI mở /gv/cham-ai, bài chấm tay hoặc song song chưa duyệt mở /gv/cham', () => {
+    assert.equal(reviewPath({ submissionId: 's1', ai: { aiStatus: 'proposed' } }), '/gv/cham-ai/s1');
+    assert.equal(reviewPath({ submissionId: 's2', ai: { aiStatus: 'no_grade' } }), '/gv/cham-ai/s2');
+    assert.equal(reviewPath({ submissionId: 's3' }), '/gv/cham/s3');
+    assert.equal(reviewPath({ submissionId: 's4', ai: {} }), '/gv/cham/s4');
   });
 });

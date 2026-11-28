@@ -1759,3 +1759,55 @@ api	api	differs	Khóa JSON của API (màn chấm có đề xuất AI / chạy s
 api	api	pairs	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
 api	api	differing	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
 api	api	aiActions	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+# --- T-261128-65 ---
+api	api	n_bai	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	n_cap	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	metrics	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	gateOpen	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	reasons	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	defaultMode	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	since	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	closeReason	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	thresholds	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	minPapers	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	macro	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	topicFloor	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	within	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	catchRate	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	falseAlarm	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	lower	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	upper	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	method	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	topics	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	uncertain	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	caught	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	invented	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	medianSeconds	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	a	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	b	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	c	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	d	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	e	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	f	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+api	api	g	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
+db	ai_kpi_paper	org_id	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_kpi_paper	submission_id	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_kpi_paper	kind	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_kpi_paper	class_id	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_kpi_paper	topic	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_kpi_paper	criteria	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_kpi_paper	result_ok	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_kpi_paper	invented	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_kpi_paper	blocked	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_kpi_paper	no_grade	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_kpi_paper	review_seconds	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_kpi_paper	created_at	Số liệu KPI theo bài của lớp, không mã/tên học sinh (US-S5E6-06, BR-S5E6-15, V825)	PO-64
+db	ai_class_gate	org_id	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64
+db	ai_class_gate	class_id	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64
+db	ai_class_gate	opened_at	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64
+db	ai_class_gate	since	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64
+db	ai_class_gate	fail_streak	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64
+db	ai_class_gate	batches_done	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64
+db	ai_class_gate	closed_at	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64
+db	ai_class_gate	close_reason	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64
+db	ai_class_gate	updated_at	Trạng thái cổng AI đề xuất của lớp (US-S5E6-06, BR-S5E6-16, 17, V825)	PO-64

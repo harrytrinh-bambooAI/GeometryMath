@@ -50,7 +50,7 @@ public class ShadowPolicy {
       return false;
     }
     ClassAiGateQuery g = gate.getIfAvailable();
-    return g != null && g.aiProposalReady(orgId, s.classId());
+    return g != null && g.aiProposalOpen(orgId, s.classId());
   }
 
   public boolean shadow(UUID orgId, SubInfo s) {
