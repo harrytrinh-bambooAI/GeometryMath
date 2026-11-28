@@ -496,7 +496,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Ngoài phạm vi: tính năng mới ngoài danh sách trên; sửa đặc tả S5 (stories_ac, test_cases); gọi AI thật · Chỉ sửa tệp khớp regex: ^(app/server/src/main/java/vn/geo/server/(assessment|aigrade|knowledge|answers)/|app/server/src/test/java/vn/geo/server/(it/s5e[3-6]|assessment|aigrade|knowledge|answers)/|app/web/src/features/s5e[3-6]/|app/e2e/tests/s5e[3-6]/|app/server/src/main/resources/db/migration/V8(4[5-9]|5[0-4])__|app/db/seed/(e2e/s5_9|fixture-ids\.d/s5fix)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|artifacts/GEO/work/epics/S5-E[3-6]/(status|qc_findings)\.md)
 - Model: opus · Ngân sách: 2 giờ
 - Phụ thuộc: T-261128-64, T-261128-65
-- Cổng: 54849
+- Cổng: 54889
 - Kế hoạch: PLAN_code-s5 §4 FIX W7
 
 ## T-261128-69 · TOOL · L5 Dev công cụ E2E cách lai · wt e2e-lai · 1h/2M · e2e-affected: tệp dùng chung → API trọn bộ, UI chỉ màn của task [done]
@@ -520,6 +520,17 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phụ thuộc: T-261128-64, T-261128-65, T-261128-68
 - Phạm vi tệp: ^(artifacts/GEO/evidence/E2E-S5-|app/e2e/evidence/|artifacts/GEO/work/epics/S5-E[1-6]/status\.md)
 - Kế hoạch: PLAN_code-s5 §3 W8
+
+## T-261128-70 · S5-FIX · L5 Dev FIX soát độc lập · epic-common v1.6 · wt s5-fix2 · 1.5h/4M · Sửa 3 Major + 3 Minor từ REVIEW-S5-20261128 [running]
+- Mục tiêu: sửa theo `artifacts/GEO/evidence/REVIEW-S5-20261128.md`: (M1) chấm mù — `GET /teacher/graded-assignments/{id}/ai-signals` (ProposalService:396) không trả total/flags/reason của AI cho bài chế độ song song chưa duyệt (BR-S5E6-13), mở rộng ShadowGuard; (M2) `POST /student/kb-qa` đi qua hạn mức HS 30/lớp 300 và kill switch như `/assignments/{id}/questions` (StudentQaQuotaFilter:48); (M3) MetadataStripper JPEG cắt tại EOI, bỏ dữ liệu sau EOI (MPF/thumbnail) — có test ảnh mẫu chứa EXIF sau EOI; (m4) ImagePurgeService xoá dữ liệu bài nộp/OCR/đề xuất theo tài khoản/năm học kể cả khi không còn `stored_image`; (m5) HeicStripper gỡ EXIF thất bại → từ chối lưu (fail closed, thông báo HS chụp lại), không lưu bản gốc; (m6) V705:91 mở lời giải theo at_time: đối chiếu BR-S5E4-23 với `ReturnService.result`, sửa cho thống nhất (migration mới trong khoảng). Mỗi mục có test (IT hoặc e2e API) gắn mã TC liên quan. Cập nhật bảng REVIEW: thêm cột Trạng thái (Đã sửa / Chấp nhận + lý do).
+- Nguồn: artifacts/GEO/evidence/REVIEW-S5-20261128.md v1.0 (28/11); epics/S5-E4, S5-E6, S5-E5 stories_ac.md (BR-S5E6-13, BR-S5E4-23); DECISIONS 28/11 "E2E cách lai"
+- Xong khi: verify + web-build + e2e-affected xanh; traceability --strict MVP,S2,S3,S5 đạt; REVIEW có cột Trạng thái cho 8 mục.
+- Kiểm: `cd .claude/worktrees/s5-fix2/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5" && python3 ../artifacts/GEO/work/s5/check_s5.py && grep -q 'Trạng thái' ../artifacts/GEO/evidence/REVIEW-S5-20261128.md`
+- Ngoài phạm vi: tính năng mới; sửa đặc tả; gọi AI thật
+- Model: opus · Ngân sách: 1.5 giờ
+- Phụ thuộc: T-261128-66
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(assessment|aigrade|aigateway|knowledge|answers)/|app/server/src/test/java/vn/geo/server/|app/e2e/tests/s5e[3-6]/|app/e2e/fixtures/|app/server/src/main/resources/db/migration/V8(4[8-9]|5[0-4])__|app/server/quality/sql-lint\.properties|app/server/src/main/resources/application\.yml|artifacts/GEO/evidence/REVIEW-S5-20261128\.md|artifacts/GEO/work/epics/S5-E[3-6]/(status|qc_findings)\.md)
+- Cổng: 54889
 
 ## T-261128-67 · GATE · Owner L7 chặng 5 (L5a phát hành; L5b/L5c chờ PO-64, bench QS5-27, lớp pilot) [wait-user]
 - Mục tiêu: owner quyết phát hành L5a (S5-E1, S5-E2, S5-E3, US-S5E5-01, 04); chốt QS5-01/QS5-30 (PO-64) để bật cờ grading (L5b); duyệt bench QS5-27 trước khi bật ai-grading cho lớp (L5c)
