@@ -1,0 +1,206 @@
+{
+  "_doc": "T-261128-77 · v1.0 · 2026-11-28. Bộ video HƯỚNG DẪN SỬ DỤNG, mỗi video một tác vụ, xem độc lập. Mỗi video: slide mở 'Hướng dẫn · <tác vụ>' → các bước (clip quay guides/<id>.demo.ts, cắt theo mốc demo.chapter('bN')) → slide tóm tắt + mẹo. Lời đọc gốc ở đây; make-guides.mjs xuất ra guides/voice/<id>/lines.tsv (chỉ khi chưa có) — sau đó lines.tsv là nguồn của giọng và phụ đề.",
+  "guides": [
+    {
+      "id": "01-gv-tao-de-dung-hinh", "role": "Giáo viên", "title": "Tạo đề và dựng hình 3D",
+      "intro": "Hướng dẫn giáo viên tạo một đề hình không gian mới: gõ đề, để hệ thống dựng hình 3D, giải từng bước và kiểm chứng đáp số.",
+      "steps": [
+        { "code": "b1", "title": "Mở trang Thêm đề", "voice": "Bước một. Ở thanh bên trái, chọn Đề mới. Trang Thêm đề mở ra ở thẻ Dán chữ." },
+        { "code": "b2", "title": "Gõ hoặc dán đề bài", "voice": "Bước hai. Gõ hoặc dán đề vào ô Đề đã chép lại. Ký hiệu toán như vuông góc hay căn bậc hai được giữ nguyên, và bản nháp tự lưu." },
+        { "code": "b3", "title": "Bấm Dựng hình", "voice": "Bước ba. Bấm Dựng hình. Hệ thống chạy bốn bước: đọc đề, dựng hình, giải, và kiểm chứng. Thầy cô theo dõi tiến trình ngay trên màn hình." },
+        { "code": "b4", "title": "Soát hình, lời giải và nhãn kiểm chứng", "voice": "Bước bốn. Soát hình, lời giải nháp và nhãn. Nhãn Đã kiểm chứng nghĩa là máy đã tính lại đáp số. Nhãn AI soạn nhắc rằng lời giải cần giáo viên duyệt." }
+      ],
+      "tips": ["Đề càng đủ dữ kiện (cạnh, góc, quan hệ vuông góc) thì hình càng chính xác.", "Nếu máy không dựng được, chọn Bổ sung điều kiện hoặc Dựng tay.", "Đề chỉ giao được khi đã duyệt lời giải."],
+      "outro": "Tóm lại: mở Đề mới, gõ đề, bấm Dựng hình, rồi soát nhãn kiểm chứng trước khi duyệt."
+    },
+    {
+      "id": "02-gv-giao-bai", "role": "Giáo viên", "title": "Giao bài cho lớp",
+      "intro": "Hướng dẫn giáo viên giao một bài trong kho đề cho lớp, kèm quyền gợi ý và giờ mở lời giải.",
+      "steps": [
+        { "code": "b1", "title": "Mở đề cần giao", "voice": "Bước một. Từ kho đề, mở đề cần giao rồi bấm Giao bài. Trang giao bài hiện tên đề và hình thu nhỏ." },
+        { "code": "b2", "title": "Chọn lớp", "voice": "Bước hai. Chọn lớp nhận bài. Có thể chọn nhiều lớp cùng lúc." },
+        { "code": "b3", "title": "Đặt gợi ý và giờ mở lời giải", "voice": "Bước ba. Đặt quyền xem gợi ý, quyền hỏi AI, và giờ mở lời giải. Trước giờ này, học sinh không xem được lời giải, kể cả khi hỏi AI." },
+        { "code": "b4", "title": "Bấm Giao bài", "voice": "Bước bốn. Bấm Giao bài. Hệ thống xác nhận đã giao, và học sinh thấy bài trong mục Bài của em." }
+      ],
+      "tips": ["Đặt giờ mở lời giải sau buổi học để học sinh tự nghĩ trước.", "Dùng Xem trước để thấy đúng giao diện học sinh."],
+      "outro": "Tóm lại: mở đề, chọn lớp, đặt gợi ý và giờ mở lời giải, rồi bấm Giao bài."
+    },
+    {
+      "id": "03-gv-theo-doi-lop", "role": "Giáo viên", "title": "Theo dõi lớp khi học sinh làm bài",
+      "intro": "Hướng dẫn giáo viên theo dõi cả lớp theo thời gian thực trong lúc học sinh làm bài.",
+      "steps": [
+        { "code": "b1", "title": "Mở trang Theo dõi", "voice": "Bước một. Mở mục Theo dõi và chọn bài đã giao. Trang theo dõi của bài mở ra." },
+        { "code": "b2", "title": "Đọc bốn thẻ tổng hợp", "voice": "Bước hai. Đọc bốn thẻ tổng hợp: số em đã mở bài, đã dùng gợi ý, đã hỏi AI, và thời gian thao tác trên hình." },
+        { "code": "b3", "title": "Xem từng học sinh", "voice": "Bước ba. Kéo xuống bảng từng học sinh: trạng thái, thời gian, và bậc gợi ý đã dùng. Không có cột xếp hạng." }
+      ],
+      "tips": ["Em nào dùng đến gợi ý bậc hai mà chưa xong là dấu hiệu cần hỗ trợ.", "Trang tự cập nhật, không cần tải lại."],
+      "outro": "Tóm lại: mở Theo dõi, đọc thẻ tổng hợp, rồi xem bảng từng học sinh để hỗ trợ đúng em."
+    },
+    {
+      "id": "04-gv-soan-de-tu-tai-lieu", "role": "Giáo viên", "title": "Soạn đề bằng AI từ tài liệu",
+      "intro": "Hướng dẫn giáo viên nhờ AI soạn đề nháp từ một tài liệu đang dùng của lớp, rồi duyệt từng câu.",
+      "steps": [
+        { "code": "b1", "title": "Mở tài liệu nguồn", "voice": "Bước một. Từ kho tri thức, mở tài liệu đang dùng và chọn Soạn đề nháp. Trang hiện tài liệu nguồn và phiên bản." },
+        { "code": "b2", "title": "Bấm soạn đề nháp", "voice": "Bước hai. Bấm soạn đề nháp. AI đọc tài liệu và đề xuất các câu hỏi bám nội dung." },
+        { "code": "b3", "title": "Xem nhãn kiểm chứng", "voice": "Bước ba. Câu nào máy dựng được hình có đáp số đã tính lại. Câu chưa kiểm chứng xếp cuối và không được chọn sẵn." },
+        { "code": "b4", "title": "Chọn và duyệt", "voice": "Bước bốn. Đánh dấu các câu muốn giữ rồi bấm Duyệt. Chỉ câu đã duyệt mới vào ngân hàng đề của thầy cô." }
+      ],
+      "tips": ["Tài liệu càng rõ ràng, câu nháp càng sát.", "Có thể sửa từng câu trước khi duyệt."],
+      "outro": "Tóm lại: mở tài liệu, bấm soạn đề nháp, xem nhãn kiểm chứng, rồi chọn và duyệt."
+    },
+    {
+      "id": "05-gv-ra-de-ma-tran", "role": "Giáo viên", "title": "Ra đề theo ma trận, nhiều mã đề",
+      "intro": "Hướng dẫn giáo viên ra một đề kiểm tra theo ma trận chuẩn, sinh nhiều mã đề từ ngân hàng đã kiểm chứng.",
+      "steps": [
+        { "code": "b1", "title": "Mở Ra đề", "voice": "Bước một. Chọn Ra đề ở thanh bên trái." },
+        { "code": "b2", "title": "Chọn loại đề", "voice": "Bước hai. Chọn loại đề, ví dụ kiểm tra mười lăm phút. Số câu trắc nghiệm, tự luận và tổng điểm được điền sẵn theo ma trận." },
+        { "code": "b3", "title": "Xem bộ đề và mã đề", "voice": "Bước ba. Mở bộ đề vừa sinh. Mỗi câu có hai nhãn: máy kiểm chứng và người duyệt. Bấm từng mã đề để xem." },
+        { "code": "b4", "title": "Đổi một câu", "voice": "Bước bốn. Muốn đổi câu nào, bấm Thay. Câu mới giữ nguyên chủ đề, dạng, mức độ và điểm." }
+      ],
+      "tips": ["Nên sinh bốn mã đề cho lớp đông.", "Xuất đề ra tệp để in sau khi duyệt."],
+      "outro": "Tóm lại: mở Ra đề, chọn loại đề, xem các mã đề, và thay câu khi cần."
+    },
+    {
+      "id": "06-gv-soan-giao-an", "role": "Giáo viên", "title": "Soạn giáo án theo PPCT",
+      "intro": "Hướng dẫn giáo viên soạn giáo án một tiết theo phân phối chương trình, với bản nháp do AI soạn.",
+      "steps": [
+        { "code": "b1", "title": "Mở Giáo án mới", "voice": "Bước một. Chọn Giáo án, rồi Soạn giáo án mới." },
+        { "code": "b2", "title": "Chọn chương, bài, tiết", "voice": "Bước hai. Chọn chương, bài và tiết theo phân phối chương trình. Số tiết và kiến thức trọng tâm tự điền." },
+        { "code": "b3", "title": "Chọn đối tượng, bấm soạn", "voice": "Bước ba. Chọn đối tượng học sinh và phong cách dạy, rồi bấm soạn. Bản nháp có nhãn AI soạn." },
+        { "code": "b4", "title": "Đọc và sửa từng mục", "voice": "Bước bốn. Đọc mục tiêu, thiết bị, tiến trình và phiếu học tập. Bấm chọn để sửa ở mục nào cần chỉnh, hoặc dùng ô chat sửa giáo án." },
+        { "code": "b5", "title": "Duyệt và tải về", "voice": "Bước năm. Khi đã ưng, bấm Duyệt giáo án, rồi tải Word hoặc PDF." }
+      ],
+      "tips": ["Khóa các mục đã ưng để AI không sửa đè.", "Hoàn tác được về phiên bản trước."],
+      "outro": "Tóm lại: chọn bài và tiết, chọn đối tượng, bấm soạn, sửa từng mục, rồi duyệt và tải về."
+    },
+    {
+      "id": "07-gv-kho-tri-thuc", "role": "Giáo viên", "title": "Quản lý kho tri thức của lớp",
+      "intro": "Hướng dẫn giáo viên quản lý kho tri thức: nơi chứa tài liệu mà AI được phép dùng để trả lời học sinh.",
+      "steps": [
+        { "code": "b1", "title": "Mở Kho tri thức", "voice": "Bước một. Chọn Kho tri thức ở thanh bên trái." },
+        { "code": "b2", "title": "Xem tài liệu và phiên bản", "voice": "Bước hai. Mỗi tài liệu có phiên bản và trạng thái: đang dùng, chờ duyệt, hoặc đã lưu trữ. AI chỉ dùng bản đang dùng." },
+        { "code": "b3", "title": "Duyệt hoặc lưu trữ", "voice": "Bước ba. Duyệt bản mới để thay bản cũ, hoặc lưu trữ tài liệu không còn dùng. Học sinh luôn thấy nguồn đúng phiên bản." }
+      ],
+      "tips": ["Mỗi lớp có thể có tài liệu riêng.", "Câu trả lời của AI luôn ghi tài liệu và mục được trích."],
+      "outro": "Tóm lại: mở kho tri thức, xem phiên bản, rồi duyệt hoặc lưu trữ để AI trả lời đúng tài liệu."
+    },
+    {
+      "id": "08-gv-rubric", "role": "Giáo viên", "title": "Tạo rubric chấm điểm",
+      "intro": "Hướng dẫn giáo viên tạo và chỉnh rubric chấm điểm cho bài tự luận.",
+      "steps": [
+        { "code": "b1", "title": "Mở Rubric", "voice": "Bước một. Chọn Rubric và mở rubric cần chỉnh, hoặc tạo mới từ mẫu." },
+        { "code": "b2", "title": "Sửa điểm từng tiêu chí", "voice": "Bước hai. Sửa tên và điểm tối đa của từng tiêu chí. Tổng điểm hiển thị ngay." },
+        { "code": "b3", "title": "Kiểm tổng điểm", "voice": "Bước ba. Nếu tổng không bằng mười, hệ thống cảnh báo và chặn lưu. Chỉnh lại cho đủ mười." },
+        { "code": "b4", "title": "Lưu rubric", "voice": "Bước bốn. Lưu rubric. Mỗi lần sửa tạo phiên bản mới, bài đã chấm giữ phiên bản cũ." }
+      ],
+      "tips": ["Mô tả tiêu chí rõ ràng giúp AI đề xuất điểm sát hơn.", "Dùng mẫu Tính toán cho bài hình."],
+      "outro": "Tóm lại: mở rubric, sửa điểm từng tiêu chí, kiểm tổng mười, rồi lưu."
+    },
+    {
+      "id": "09-gv-cham-bai", "role": "Giáo viên", "title": "Chấm bài từ hàng chờ",
+      "intro": "Hướng dẫn giáo viên chấm bài viết tay của học sinh từ hàng chờ, theo rubric.",
+      "steps": [
+        { "code": "b1", "title": "Mở Hàng chờ", "voice": "Bước một. Mở Hàng chờ, chọn lớp và bài có chấm. Bài cần chú ý như ảnh mờ hay nộp muộn nằm trên cùng." },
+        { "code": "b2", "title": "Mở bài làm", "voice": "Bước hai. Mở một bài. Ảnh các trang ở bên trái, rubric ở bên phải." },
+        { "code": "b3", "title": "Nhập điểm từng tiêu chí", "voice": "Bước ba. Nhập điểm từng tiêu chí. Tổng điểm tự cộng." },
+        { "code": "b4", "title": "Nhận xét và duyệt", "voice": "Bước bốn. Viết nhận xét ngắn rồi bấm Duyệt, hoặc nhấn phím A. Bài tiếp theo trong hàng chờ tự mở." }
+      ],
+      "tips": ["Phím tắt: A duyệt, Enter sang tiêu chí kế.", "Học sinh chỉ thấy điểm khi thầy cô trả bài."],
+      "outro": "Tóm lại: mở hàng chờ, mở bài, nhập điểm từng tiêu chí, nhận xét và duyệt."
+    },
+    {
+      "id": "10-gv-nhan-ai-de-xuat-diem", "role": "Giáo viên", "title": "Nhận điểm AI đề xuất",
+      "intro": "Hướng dẫn giáo viên xem điểm AI đề xuất cho bài viết tay, rồi nhận, sửa hoặc bỏ từng tiêu chí.",
+      "steps": [
+        { "code": "b1", "title": "Mở bài có đề xuất của AI", "voice": "Bước một. Mở bài có nhãn AI đã đề xuất. Mỗi tiêu chí có điểm AI và độ tin cậy." },
+        { "code": "b2", "title": "Xem vùng AI dựa vào", "voice": "Bước hai. Bấm tên một tiêu chí để thấy vùng trên trang bài làm mà AI đã dựa vào." },
+        { "code": "b3", "title": "Nhận, sửa hoặc bỏ", "voice": "Bước ba. Với từng tiêu chí, chọn Nhận, Sửa hoặc Bỏ. Nút Duyệt chỉ mở khi mọi tiêu chí đã được xử lý." },
+        { "code": "b4", "title": "Duyệt điểm", "voice": "Bước bốn. Bấm Lưu và duyệt. Điểm cuối cùng là điểm của giáo viên." }
+      ],
+      "tips": ["Tin cậy thấp thì xem kỹ vùng ảnh trước khi nhận.", "AI chấm chỉ bật cho lớp khi thầy cô cho phép."],
+      "outro": "Tóm lại: mở bài, xem vùng AI dựa vào, xử lý từng tiêu chí, rồi duyệt."
+    },
+    {
+      "id": "11-gv-xem-bai-viet-tay", "role": "Giáo viên", "title": "Xem bài viết tay và lỗi chung của lớp",
+      "intro": "Hướng dẫn giáo viên xem bài viết tay đã nhận dạng, và trang tổng hợp lỗi sai chung của lớp.",
+      "steps": [
+        { "code": "b1", "title": "Mở trang Lỗi của lớp", "voice": "Bước một. Từ bài có chấm, mở Lỗi của lớp. Mỗi thẻ là một lỗi chung, kèm số bài có lỗi đó." },
+        { "code": "b2", "title": "Mở bằng chứng", "voice": "Bước hai. Bấm vào bằng chứng để mở đúng bài viết tay của học sinh, với ảnh các trang và phần chữ đã đọc." },
+        { "code": "b3", "title": "Gợi ý bộ luyện nhắc lại", "voice": "Bước ba. Quay lại và bấm Nhắc lại. Hệ thống gợi ý tối đa ba câu luyện cùng chủ đề và mục tài liệu liên quan." }
+      ],
+      "tips": ["Không có xếp hạng hay phần trăm theo học sinh.", "Dùng lỗi chung để chọn nội dung chữa bài đầu giờ."],
+      "outro": "Tóm lại: mở Lỗi của lớp, xem bằng chứng là bài làm thật, rồi giao bộ luyện nhắc lại."
+    },
+    {
+      "id": "12-gv-trinh-chieu", "role": "Giáo viên", "title": "Trình chiếu lời giải trên lớp",
+      "intro": "Hướng dẫn giáo viên trình chiếu một bài trên lớp: hình lớn, lời giải mở từng bước.",
+      "steps": [
+        { "code": "b1", "title": "Mở chế độ trình chiếu", "voice": "Bước một. Từ đề, chọn Trình chiếu. Màn hình hiện hình lớn, lời giải còn che." },
+        { "code": "b2", "title": "Mở từng bước", "voice": "Bước hai. Bấm Bước tiếp để mở bước một. Hình tô sáng đúng các yếu tố bước đó dùng." },
+        { "code": "b3", "title": "Dùng phím mũi tên", "voice": "Bước ba. Dùng phím mũi tên phải để mở bước kế, mũi tên trái để quay lại." }
+      ],
+      "tips": ["Hỏi lớp dự đoán trước khi mở bước kế.", "Xoay hình trực tiếp trên màn chiếu."],
+      "outro": "Tóm lại: mở trình chiếu, mở từng bước, và dùng phím mũi tên để điều khiển."
+    },
+    {
+      "id": "13-hs-vao-lop", "role": "Học sinh", "title": "Vào lớp bằng mã lớp",
+      "intro": "Hướng dẫn học sinh vào lớp lần đầu, chỉ cần tên và mã lớp.",
+      "steps": [
+        { "code": "b1", "title": "Mở trang Vào lớp", "voice": "Bước một. Mở trang Vào lớp từ đường dẫn thầy cô gửi." },
+        { "code": "b2", "title": "Nhập tên và mã lớp", "voice": "Bước hai. Nhập tên hiển thị và mã lớp sáu ký tự, rồi bấm Vào lớp." },
+        { "code": "b3", "title": "Xem Bài của em", "voice": "Bước ba. Mục Bài của em hiện mọi bài thầy cô đã giao." }
+      ],
+      "tips": ["Không cần email hay số điện thoại.", "Hỏi thầy cô nếu mã lớp báo không đúng."],
+      "outro": "Tóm lại: mở trang vào lớp, nhập tên và mã lớp, rồi xem Bài của em."
+    },
+    {
+      "id": "14-hs-lam-bai-3d", "role": "Học sinh", "title": "Làm bài trên hình 3D: xoay, vẽ thêm, đo",
+      "intro": "Hướng dẫn học sinh làm bài trên hình 3D: xoay hình, vẽ thêm đoạn, và đo độ dài, góc.",
+      "steps": [
+        { "code": "b1", "title": "Mở bài", "voice": "Bước một. Mở bài từ Bài của em. Đề ở bên trái, hình 3D ở giữa." },
+        { "code": "b2", "title": "Xoay hình", "voice": "Bước hai. Kéo chuột hoặc ngón tay để xoay hình, nhìn các quan hệ vuông góc từ nhiều phía." },
+        { "code": "b3", "title": "Vẽ thêm đoạn", "voice": "Bước ba. Chọn công cụ Đường, rồi chạm hai điểm để nối thêm một đoạn." },
+        { "code": "b4", "title": "Đo độ dài", "voice": "Bước bốn. Chọn Đo dài, rồi chạm hai điểm. Kết quả hiện ngay trên hình." },
+        { "code": "b5", "title": "Đo góc", "voice": "Bước năm. Chọn Đo góc, rồi chạm ba điểm. Đại lượng là đáp số thì được khoá cho đến giờ mở lời giải." }
+      ],
+      "tips": ["Bấm Xoay tự do để hình tự quay.", "Đặt lại để về góc nhìn ban đầu."],
+      "outro": "Tóm lại: xoay hình, vẽ thêm đoạn, đo độ dài và góc để tự tìm hướng giải."
+    },
+    {
+      "id": "15-hs-goi-y-loi-giai", "role": "Học sinh", "title": "Xem gợi ý và lời giải",
+      "intro": "Hướng dẫn học sinh dùng gợi ý từng bậc và xem lời giải khi được mở.",
+      "steps": [
+        { "code": "b1", "title": "Mở thẻ Gợi ý", "voice": "Bước một. Trong bài, mở thẻ Gợi ý." },
+        { "code": "b2", "title": "Gợi ý một: hướng nghĩ", "voice": "Bước hai. Bấm mở gợi ý một. Gợi ý này chỉ hướng nghĩ, không có đáp số." },
+        { "code": "b3", "title": "Gợi ý hai: bước kế tiếp", "voice": "Bước ba. Nếu vẫn vướng, mở gợi ý hai để biết bước kế tiếp." },
+        { "code": "b4", "title": "Lời giải theo giờ mở", "voice": "Bước bốn. Thẻ Lời giải hiện giờ mở do thầy cô đặt. Khi đến giờ, em xem lời giải từng bước, mỗi bước có câu vì sao." }
+      ],
+      "tips": ["Thử tự làm ít nhất năm phút trước khi mở gợi ý.", "Thầy cô thấy em đã dùng gợi ý bậc nào để hỗ trợ."],
+      "outro": "Tóm lại: gợi ý một, gợi ý hai, rồi lời giải khi đến giờ mở."
+    },
+    {
+      "id": "16-hs-hoi-ai", "role": "Học sinh", "title": "Hỏi AI, đọc nguồn",
+      "intro": "Hướng dẫn học sinh hỏi AI về khái niệm trong bài, và đọc nguồn mà AI trích.",
+      "steps": [
+        { "code": "b1", "title": "Mở Hỏi đáp", "voice": "Bước một. Mở Hỏi đáp từ bài đang làm. Phạm vi hỏi theo mức hỗ trợ thầy cô cho phép." },
+        { "code": "b2", "title": "Gõ câu hỏi và gửi", "voice": "Bước hai. Gõ câu hỏi về khái niệm hoặc cách nghĩ, rồi bấm Gửi." },
+        { "code": "b3", "title": "Đọc câu trả lời", "voice": "Bước ba. AI giải thích mà không làm hộ bài, và ghi rõ nguồn." },
+        { "code": "b4", "title": "Bấm nguồn", "voice": "Bước bốn. Bấm vào nguồn để mở đúng đoạn trong tài liệu của lớp và đọc lại." }
+      ],
+      "tips": ["Hỏi vì sao thay vì hỏi đáp số.", "AI không nêu đáp số trước giờ mở lời giải."],
+      "outro": "Tóm lại: mở hỏi đáp, gõ câu hỏi, đọc câu trả lời, rồi bấm nguồn để đọc lại."
+    },
+    {
+      "id": "17-hs-nop-bai-viet-tay", "role": "Học sinh", "title": "Chụp và nộp bài viết tay",
+      "intro": "Hướng dẫn học sinh chụp ảnh bài làm trên giấy và nộp cho thầy cô chấm.",
+      "steps": [
+        { "code": "b1", "title": "Mở bài có chấm", "voice": "Bước một. Mở bài có chấm trong mục Nộp bài. Hạn nộp hiện ngay đầu trang." },
+        { "code": "b2", "title": "Chụp trang một", "voice": "Bước hai. Bấm Bắt đầu, chụp trang một. Ảnh được kiểm tra độ nét; ảnh đạt thì bấm Dùng ảnh này." },
+        { "code": "b3", "title": "Chụp các trang tiếp", "voice": "Bước ba. Chụp lần lượt các trang tiếp theo. Có thể đổi thứ tự trang nếu cần." },
+        { "code": "b4", "title": "Nộp bài", "voice": "Bước bốn. Bấm Nộp bài. Em thấy xác nhận kèm giờ của máy chủ." }
+      ],
+      "tips": ["Chụp nơi đủ sáng, đặt giấy phẳng, không để bóng tay.", "Ảnh mờ sẽ bị báo để chụp lại."],
+      "outro": "Tóm lại: mở bài, chụp từng trang rõ nét, rồi nộp và kiểm tra xác nhận."
+    }
+  ]
+}

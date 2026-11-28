@@ -2,7 +2,7 @@
 // T-261128-75 (DEMO-VI) · v1.0 · 2026-11-28
 // Dựng bằng HTML → PNG (Chromium của Playwright, không cài thêm gì):
 //   1) ảnh bài làm viết tay MINH HOẠ (giấy kẻ ô, chữ viết tay font Noteworthy, hình chóp vẽ tay, tên HS giả)
-//      → evidence/assets/bai-lam-hkg01-p{1,2}.png (bản quét) + -photo.jpg (như chụp điện thoại). Owner có thể thay ảnh chụp thật CÙNG TÊN.
+//      → evidence/assets/bai-lam-bn01-p{1,2}.png (bản quét) + -photo.jpg (như chụp điện thoại). Owner có thể thay ảnh chụp thật CÙNG TÊN.
 //   2) slide 1920x1080 style BambooAI (nền xanh lá đậm gradient, nhãn "PRESENTED BY BAMBOOAI" vàng chanh, thẻ kính có icon,
 //      slide chương "0N <TÊN>") → evidence/slides/<mã>.png
 //   cd app/e2e && node demo-vi/make-assets-vi.mjs [ffmpeg]   (ffmpeg để xuất JPEG; thiếu thì chỉ có PNG)
@@ -108,9 +108,11 @@ function pyramid() {
     ${seg('S', 'A')}${seg('S', 'B')}${seg('S', 'C')}${seg('A', 'B')}${seg('B', 'C')}
     ${seg('S', 'D', true)}${seg('A', 'D', true)}${seg('D', 'C', true)}
     <path d="M120 306 L140 300 L140 324" fill="none" stroke="${INK}" stroke-width="2.2"/>
-    <path d="M222 214 Q214 226 222 238" fill="none" stroke="#b3261e" stroke-width="2.4"/>
+    ${handLine(120, 330, 224, 156, r)}
+    <path d="M211 166 L222 176 L233 166" fill="none" stroke="#b3261e" stroke-width="2.4"/>
+    <text x="236" y="150" font-family="Noteworthy" font-size="34" fill="${INK}">H</text>
     ${lab('S', -10, -10)}${lab('A', -34, 18)}${lab('B', 0, 36)}${lab('C', 12, 8)}${lab('D', -6, -14)}
-    <text x="62" y="190" font-family="Noteworthy" font-size="28" fill="${INK}">a</text>
+    <text x="40" y="190" font-family="Noteworthy" font-size="28" fill="${INK}">a√2</text>
     <text x="240" y="364" font-family="Noteworthy" font-size="28" fill="${INK}">a</text>
   </svg>`;
 }
@@ -138,30 +140,33 @@ function handPage(lines, extra = '') {
 }
 const PAGE1 = handPage(
   [
-    { t: 'Họ và tên: Nguyễn Minh Khang', row: 0 },
+    { t: 'Họ và tên: Bình An', row: 0 },
     { t: 'Lớp: 11A1', row: 0, x: 860 },
-    { t: 'Bài HKG-01. Tính góc giữa SD và mặt đáy (ABCD).', row: 1 },
-    { t: 'Giải:', row: 9 },
-    { t: 'Vì SA ⊥ (ABCD) nên A là hình chiếu của S', row: 10 },
-    { t: 'lên mặt phẳng (ABCD).', row: 11, x: 200 },
-    { t: '⇒ Hình chiếu của SD lên (ABCD) là AD.', row: 12 },
-    { t: '⇒ Góc giữa SD và (ABCD) là góc SDA.', row: 13 },
+    { t: 'Kiểm tra 15 phút – Khoảng cách', row: 1 },
+    { t: 'Đề: S.ABCD đáy vuông cạnh a, SA ⊥ (ABCD), SA = a√2.', row: 2, size: 36 },
+    { t: 'Tính khoảng cách từ A đến mặt phẳng (SBC).', row: 3, size: 36 },
+    { t: 'Giải:', row: 11 },
+    { t: 'Kẻ AH ⊥ SB tại H.', row: 12 },
+    { t: 'Vì BC ⊥ AB và BC ⊥ SA nên BC ⊥ (SAB) ⇒ BC ⊥ AH.', row: 13, size: 37 },
+    { t: 'Mà AH ⊥ SB nên AH ⊥ (SBC).', row: 14 },
+    { t: '⇒ d(A, (SBC)) = AH.', row: 15 },
     { t: '(xem tiếp trang 2)', row: 22, x: 820, size: 32 },
   ],
-  `<div style="position:absolute;left:300px;top:268px;transform:rotate(-0.8deg)">${pyramid()}</div>
+  `<div style="position:absolute;left:300px;top:400px;transform:rotate(-0.8deg)">${pyramid()}</div>
    <div style="position:absolute;right:70px;top:120px;font-family:Noteworthy;font-size:30px;color:${INK}">Trang 1</div>`,
 );
 const PAGE2 = handPage(
   [
     { t: 'Trang 2', row: -1, x: 1040, size: 30 },
-    { t: 'Xét tam giác SAD vuông tại A có:', row: 0 },
-    { t: 'SA = a ; AD = a (cạnh hình vuông ABCD)', row: 1, x: 200 },
-    { t: 'sin SDA = SA / SD', row: 2, strike: true },
-    { t: 'tan SDA = SA / AD = a / a = 1', row: 3 },
-    { t: '⇒ góc SDA = 45°', row: 4 },
-    { t: 'Vậy góc giữa SD và mặt đáy bằng 45°.', row: 6 },
+    { t: 'Tam giác SAB vuông tại A, đường cao AH:', row: 0 },
+    { t: '1/AH² = 1/SA² + 1/AB²', row: 1, x: 220, color: '#2a3c86' },
+    { t: '1/AH² = 1/SA + 1/AB', row: 2, strike: true },
+    { t: '= 1/(2a²) + 1/a² = 3/(2a²)', row: 3, x: 260 },
+    { t: '⇒ AH = a√6/3', row: 4 },
+    { t: 'Vậy d(A, (SBC)) = a√6/3.', row: 6 },
   ],
-  `<div style="position:absolute;left:760px;top:520px;width:330px;height:92px;border:3px solid ${INK};border-radius:46% 54% 48% 52%;transform:rotate(-3deg)"></div>`,
+  `<div style="position:absolute;left:150px;top:400px;width:430px;height:92px;border:3px solid ${INK};border-radius:46% 54% 48% 52%;transform:rotate(-3deg)"></div>
+   <div style="position:absolute;left:360px;top:430px;width:180px;height:40px;background:radial-gradient(ellipse,rgba(40,60,130,.28),transparent 70%);filter:blur(3px)"></div>`,
 );
 
 async function shot(browser, html, file, w, h) {
@@ -217,12 +222,12 @@ function slides(p1photo) {
             <div class="ch" style="display:flex;align-items:center;gap:14px"><span class="ic" style="width:48px;height:48px">${icon('scan', 26)}</span>Chữ đọc được · độ tin cậy</div>
             <div style="margin-top:18px;display:flex;flex-direction:column;gap:12px;font-size:27px;font-weight:600">
               ${[
-                ['Vì SA ⊥ (ABCD) nên A là hình chiếu của S', '0,96', 0],
-                ['⇒ Hình chiếu của SD lên (ABCD) là AD', '0,94', 0],
-                ['⇒ Góc giữa SD và (ABCD) là góc SDA', '0,93', 0],
-                ['tan SDA = SA / AD = a / a = 1', '0,91', 0],
-                ['sin SDA = SA / SD  (dòng bị gạch)', '0,58', 1],
-                ['⇒ góc SDA = 45°', '0,95', 0],
+                ['Kẻ AH ⊥ SB tại H', '0,95', 0],
+                ['Vì BC ⊥ (SAB) nên AH ⊥ (SBC)', '0,93', 0],
+                ['1/AH² = 1/SA² + 1/AB²   (chỗ “1/SA²”)', '0,52', 1],
+                ['= 1/(2a²) + 1/a² = 3/(2a²)', '0,90', 0],
+                ['AH = a√6/3   (chữ bị nhoè)', '0,48', 1],
+                ['Vậy d(A, (SBC)) = a√6/3', '0,94', 0],
               ]
                 .map(([t, c, low]) => `<div style="display:flex;justify-content:space-between;gap:20px;padding:8px 14px;border-radius:12px;${low ? 'background:rgba(245,170,60,.18);border:2px dashed #f0b44c' : ''}"><span>${t}</span><span style="color:${low ? '#f5c46a' : '#c5d82f'};font-weight:800">${c}${low ? ' · GV xem lại' : ''}</span></div>`)
                 .join('')}
@@ -230,12 +235,12 @@ function slides(p1photo) {
           <div class="glass" style="padding:30px 36px">
             <div class="ch" style="display:flex;align-items:center;gap:14px"><span class="ic" style="width:48px;height:48px">${icon('check', 26)}</span>Đối chiếu rubric (10 điểm)</div>
             <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;font-size:26px;font-weight:600">
-              ${[['Hướng giải: hình chiếu → góc SDA', '2/2'], ['Các bước lập luận', '4/4'], ['Kết quả 45°', '2/2'], ['Hình vẽ', '1/1'], ['Trình bày', '1/1'], ['Tổng AI đề xuất', '10/10']]
+              ${[['Hướng: kẻ AH ⊥ SB', '2/2'], ['Các bước lập luận', '4/4'], ['Kết quả a√6/3', '2/2'], ['Hình vẽ', '1/1'], ['Trình bày', '1/1'], ['Tổng AI đề xuất', '10/10']]
                 .map(([t, s]) => `<div style="display:flex;justify-content:space-between"><span>${t}</span><b style="color:#c5d82f">${s}</b></div>`)
                 .join('')}
             </div></div>
         </div></div>
-      <div class="foot">Minh hoạ · ảnh bài làm tạo bằng chữ viết tay trên giấy kẻ, tên học sinh giả · AI giả lập · điểm cuối do giáo viên duyệt</div>`),
+      <div class="foot">Minh hoạ · ảnh bài làm tạo bằng chữ viết tay trên giấy kẻ, tên học sinh giả (Bình An) · AI giả lập · điểm cuối do giáo viên duyệt</div>`),
     '23-loi-ich-hs': page(`<div style="margin-top:90px" class="lab">Presented by BambooAI</div>
       <h1 style="margin:22px 0 60px">Lợi ích cho học sinh</h1>
       ${cards([
@@ -275,6 +280,28 @@ function slides(p1photo) {
         .join('')}
       </div>
       <div class="bar" style="margin-top:30px;width:1780px">AI executes, humans decide</div>`),
+    '00-hook': page(`<div style="margin-top:70px" class="lab">Một tối thứ Năm, 21:30 · tình huống minh hoạ</div>
+      <h1 style="margin:22px 0 54px">Hai người, cùng một bài hình không gian</h1>
+      ${cards([
+        { icon: 'book', title: 'Cô Lan · GV Toán 11A1', lead: 'Còn rất nhiều việc trước khi ngủ', items: ['Một chồng bài kiểm tra viết tay chưa chấm', 'Đề kiểm tra tuần sau chưa ra, cần 4 mã đề', 'Giáo án tiết “Góc giữa đường thẳng và mặt phẳng” chưa xong'] },
+        { icon: 'grad', title: 'Bình An · HS lớp 11A1', lead: 'Kẹt ở bài hình chóp S.ABCD', items: ['Không hình dung được hình chiếu của SD', 'Hỏi AI chung chung thì nhận ngay đáp số', 'Chép đáp số, mai lên lớp vẫn không hiểu'] },
+      ], { minH: 470 })}
+      <div class="bar" style="margin-top:44px;width:1720px">Nếu có một trợ lý hiểu hình học, hiểu lớp học, và luôn để giáo viên quyết định?</div>`),
+    '29-tuan-sau': page(`<div style="margin-top:70px" class="lab">Một tuần sau, 21:30</div>
+      <h1 style="margin:22px 0 54px">Cùng hai người ấy</h1>
+      ${cards([
+        { icon: 'check', title: 'Cô Lan', lead: 'Xong việc từ sớm', items: ['Bài viết tay đã chấm: AI đề xuất, cô duyệt từng tiêu chí', 'Đề 4 mã đề ra theo ma trận, đáp số đã kiểm chứng', 'Biết lớp hay sai bước nào để chữa đầu giờ'] },
+        { icon: 'bulb', title: 'Bình An', lead: 'Tự hiểu, không chép', items: ['Xoay hình, tự thấy AD là hình chiếu của SD', 'Gợi ý từng bậc, lời giải mở đúng giờ', 'Câu hỏi có nguồn từ tài liệu của lớp'] },
+      ], { minH: 470 })}
+      <div class="bar" style="margin-top:44px;width:1720px">AI thực hiện · con người quyết định</div>`),
+    '33-keu-goi': page(`<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px">
+      <div class="lab" style="font-size:34px">Presented by BambooAI</div>
+      <h1 style="font-size:92px">Mang Hình Học Không Gian<br>Cùng AI về trường bạn</h1>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;width:1600px;margin-top:20px">
+      ${[['users', 'Thí điểm cho tổ Toán', 'Dùng ngân hàng bài tập và giáo án của chính trường'], ['shield', 'Dữ liệu an toàn', 'Riêng tư học sinh, AI bật/tắt theo từng lớp'], ['spark', 'Đồng hành triển khai', 'Hướng dẫn sử dụng từng tác vụ cho GV và HS']]
+        .map(([ic, t, d]) => `<div class="glass" style="padding:30px 32px"><div style="display:flex;gap:18px;align-items:center"><span class="ic">${icon(ic)}</span><b style="font-size:34px">${t}</b></div><div style="margin-top:14px;font-size:27px;font-weight:600;color:#e3eee4">${d}</div></div>`)
+        .join('')}</div>
+      <div class="glass" style="margin-top:26px;padding:24px 48px;display:flex;align-items:center;gap:22px;font-size:44px;font-weight:800"><span class="ic">${icon('mail')}</span>contact@bamboox.ai</div></div>`),
     '26-ket': page(`<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px">
       <div class="lab" style="font-size:34px">Presented by BambooAI</div>
       <h1 style="font-size:96px">AI is powerful.<br><span style="color:#c5d82f">But thinking is still human.</span></h1>
@@ -288,7 +315,7 @@ function slides(p1photo) {
 const browser = await chromium.launch();
 try {
   // GEO_VI_KEEP_PHOTOS=1: giữ ảnh bài làm hiện có (vd. owner đã chép đè ảnh chụp thật), chỉ dựng lại slide
-  const pages = process.env.GEO_VI_KEEP_PHOTOS === '1' ? {} : { 'bai-lam-hkg01-p1': PAGE1, 'bai-lam-hkg01-p2': PAGE2 };
+  const pages = process.env.GEO_VI_KEEP_PHOTOS === '1' ? {} : { 'bai-lam-bn01-p1': PAGE1, 'bai-lam-bn01-p2': PAGE2 };
   for (const [name, html] of Object.entries(pages)) {
     const png = path.join(ASSETS, `${name}.png`);
     await shot(browser, html, png, 1240, 1754);
@@ -299,10 +326,37 @@ try {
     }
     console.log(`ảnh ${name}`);
   }
-  const p1 = b64(path.join(ASSETS, 'bai-lam-hkg01-p1-photo.png'));
+  const p1 = b64(path.join(ASSETS, 'bai-lam-bn01-p1-photo.png'));
   for (const [name, html] of Object.entries(slides(p1))) {
     await shot(browser, html, path.join(SLIDES, `${name}.png`), 1920, 1080);
     console.log(`slide ${name}`);
+  }
+  // ---- slide mở / tóm tắt của từng video hướng dẫn (T-77)
+  const G = JSON.parse(readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), 'guides', 'guides.json'), 'utf8')).guides;
+  const GS = path.join(EVIDENCE, 'guides', 'slides');
+  mkdirSync(GS, { recursive: true });
+  for (const g of G) {
+    const n = g.id.slice(0, 2);
+    const role = g.role === 'Học sinh' ? 'grad' : 'book';
+    const intro = page(`<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:0 140px">
+      <div class="lab">Presented by BambooAI · Hướng dẫn sử dụng</div>
+      <div style="display:flex;align-items:center;gap:18px;margin-top:20px"><span class="ic">${icon(role)}</span><span style="font-size:36px;font-weight:800;color:#c5d82f">${g.role} · Video ${n}</span></div>
+      <h1 style="font-size:96px;margin-top:10px">Hướng dẫn · ${g.title}</h1>
+      <div class="glass" style="margin-top:34px;padding:30px 44px;width:1400px">
+        ${g.steps.map((s, i) => `<div style="display:flex;gap:18px;align-items:center;font-size:32px;font-weight:700;padding:8px 0"><span style="width:48px;height:48px;border-radius:12px;background:#c5d82f;color:#173a2e;font-weight:900;display:flex;align-items:center;justify-content:center">${i + 1}</span>${s.title}</div>`).join('')}
+      </div></div><div class="foot">Hình Học Không Gian Cùng AI · dữ liệu mẫu · AI giả lập</div>`);
+    const sum = page(`<div style="margin-top:80px" class="lab">Tóm tắt · ${g.role}</div>
+      <h1 style="margin:20px 0 46px;font-size:72px">${g.title}</h1>
+      <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:34px;width:1720px">
+        <div class="glass" style="padding:36px 40px"><div class="ch">Các bước</div>
+          ${g.steps.map((s, i) => `<div style="display:flex;gap:18px;align-items:center;font-size:31px;font-weight:700;padding:10px 0"><span style="width:46px;height:46px;border-radius:12px;background:#c5d82f;color:#173a2e;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none">${i + 1}</span>${s.title}</div>`).join('')}</div>
+        <div class="glass" style="padding:36px 40px"><div class="ch" style="display:flex;gap:14px;align-items:center"><span class="ic" style="width:48px;height:48px">${icon('bulb', 26)}</span>Mẹo</div>
+          <ul style="list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:18px">${g.tips.map((t) => `<li style="font-size:29px;font-weight:600;line-height:1.38;display:flex;gap:14px"><span style="color:#c5d82f">•</span><span>${t}</span></li>`).join('')}</ul></div>
+      </div>
+      <div class="bar" style="margin-top:40px;width:1720px">AI đề xuất · giáo viên quyết định</div>`);
+    await shot(browser, intro, path.join(GS, `${g.id}-mo.png`), 1920, 1080);
+    await shot(browser, sum, path.join(GS, `${g.id}-tom-tat.png`), 1920, 1080);
+    console.log(`slide hướng dẫn ${g.id}`);
   }
 } finally {
   await browser.close();

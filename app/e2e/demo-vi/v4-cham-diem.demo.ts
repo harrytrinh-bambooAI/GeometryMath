@@ -8,7 +8,7 @@ import { asg, box, golden, signInAs } from '../tests/e7/e7.ts';
 
 /**
  * T-261128-75 · Chương 04 Chấm điểm và nhận dạng bài làm (clip câm). Cờ chặng 5 (geo.s5.grading, geo.s5.ai-grading) chỉ bật
- * trong phiên dev local của demo. Ảnh bài làm: ảnh viết tay MINH HOẠ (assets/bai-lam-hkg01-p*-photo.jpg, tên HS giả) —
+ * trong phiên dev local của demo. Ảnh bài làm: ảnh viết tay MINH HOẠ (assets/bai-lam-bn01-p*-photo.jpg, tên HS giả) —
  * owner có thể thay ảnh chụp thật cùng tên tệp.
  */
 
@@ -38,7 +38,7 @@ test('18-nop-bai-viet-tay | Học sinh chụp bài viết tay và nộp', async 
     await page.getByTestId('s5e4-hs-assignment').waitFor();
     await demo.hold(1200);
     await demo.tap(page.getByTestId('s5e4-start'));
-    for (const f of ['bai-lam-hkg01-p1-photo.jpg', 'bai-lam-hkg01-p2-photo.jpg']) {
+    for (const f of ['bai-lam-bn01-p1-photo.jpg', 'bai-lam-bn01-p2-photo.jpg']) {
       await page.getByTestId('s5e4-file').setInputFiles(ASSET(f));
       await page.getByTestId('s5e4-candidate').waitFor();
       await demo.hold(2200);

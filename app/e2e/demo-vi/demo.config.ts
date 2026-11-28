@@ -13,6 +13,7 @@ process.env.GEO_E2E_BASE_URL = apiURL;
 export default defineConfig({
   testDir: '.',
   testMatch: /.*\.demo\.ts/,
+  testIgnore: /guides\//, // video hướng dẫn (T-77) quay bằng guides/guides.config.ts
   outputDir: '../test-results/demo-vi-run',
   fullyParallel: false,
   workers: 1,
@@ -24,6 +25,9 @@ export default defineConfig({
     locale: 'vi-VN',
     timezoneId: 'Asia/Ho_Chi_Minh',
     viewport: { width: 1920, height: 1080 },
+    // như demo/demo.config.ts (T-261128-74): màn hình ảo 1920x1080 để Trình chiếu toàn màn hình không co về 800x600
+    screen: { width: 1920, height: 1080 },
+    launchOptions: { args: ['--window-size=1920,1080'] },
     video: { mode: 'on', size: { width: 1920, height: 1080 } },
     actionTimeout: 15_000,
   },
