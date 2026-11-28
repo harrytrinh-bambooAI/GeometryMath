@@ -1,4 +1,4 @@
-Phiên bản: v0.1 · 2026-11-28
+Phiên bản: v0.2 · 2026-11-28
 # S5-E3 — phát hiện QC / Dev
 
 ## Dev
@@ -10,9 +10,17 @@ Phiên bản: v0.1 · 2026-11-28
 | Dev-S5E3-04 | "Bài" của gắn kết = bài giao (`assignment`, S3); `BC-01` (bài có chấm, S5-E4, T-57) chưa có ở nhánh này: E2E dựng "Kiểm tra 15 phút – Khoảng cách" bằng bộ bài S3. Khi S5-E4 có `graded_assignment` riêng, cần nối gắn kết (cột `assignment_id` FK `assignment`). | TẠM | Dev 57/58 |
 | Dev-S5E3-05 | Đề chưa có cột mã kiến thức: `KbRetriever.retrieve(…, knowledgeCodes, …)` nhận mã KT của đề từ người gọi (hỏi đáp T-58 lấy từ đề / ngân hàng). Mục lấy mã `KT..-…` nêu trong tiêu đề hoặc thân. Mục trùng mã +1 điểm (luôn đứng trước mục không trùng). | TẠM | Dev 58 |
 | Dev-S5E3-06 | Không có đồng hồ dời được ở E2E: TC-S5E3-09 kiểm thời hạn bằng tham số `at` của `GET …/classes/{id}/knowledge` (và của bộ truy xuất); TC-S5E3-23 đo p95 phía máy chủ (`tookMs` của móc truy xuất), không gồm mạng. | TẠM | QC xác nhận |
+| Dev-S5E3-08 | Đặc tả ghi `POST /api/qa`; app dùng `POST /api/v1/student/kb-qa` {assignmentId, question} (đường hỏi đáp MVP `/api/v1/student/assignments/{id}/questions` giữ nguyên cho bài luyện cũ). Bài có thể là bài luyện S3 (`assignment`) hoặc bài có chấm S5-E4 (`graded_assignment`). Thông báo chặn trả 200 kèm `kind` (`off`, `no_source`, `refused_answer`, `error_closed` + `retry`), trừ lớp tắt AI (403, thông điệp S3-E5) và không phải thành viên (404). Quyết định (`AIPolicyDecision`) không trả cho học sinh; E2E đọc qua móc `/test-hooks/s5e3/qa/state`. | TẠM | QC cập nhật TC khi soát |
+| Dev-S5E3-09 | Gắn kết kho theo bài chỉ nhận bài luyện S3 (`kb_grant.assignment_id` FK `assignment`, V605; repo kho ngoài phạm vi T-58): bài có chấm dùng tài liệu gắn cả lớp. E2E gắn `TL-01` cho 11A1 thay vì riêng BC-01 (TC-S5E3-32). | TẠM | Dev 63 / FIX nếu cần gắn riêng bài có chấm |
+| Dev-S5E3-10 | Đề chưa có cột mã kiến thức: mã KT của đề khai ở mức trợ giúp của bài (`assignment_help_level.knowledge_codes`, PUT help-level `knowledgeCodes`), truyền vào `KbRetriever`. Ghi chú riêng (`ghi_chu_rieng`) cũng nằm ở đây (`privateNote`): không gửi AI, bộ kiểm chặn câu trả lời chứa nó. | TẠM | PO xác nhận nơi lưu |
+| Dev-S5E3-11 | Bài giảng mẫu "Giáo viên đã duyệt": không bài nào của kho hệ thống có nhãn này (D-GEO-028), geo_app không ghi được `lecture`. Seed e2e `s5_400` tạo hàm chỉ có ở CSDL e2e để móc thêm/xoá bài "Mặt phẳng trung trực" đã duyệt (trường cộng đồng F-S2-100; không nạp sẵn vì HelpE4IT đếm đúng 10 bài) cho TC-S5E3-19; TC-14 và TC-19 chạy nối tiếp. Nguồn bài giảng = org nền tảng + org của trường. | TẠM | QC xác nhận |
+| Dev-S5E3-12 | Form tạo bài có chấm (`GradedPage`, T-57) ngoài phạm vi: mục "Trợ giúp của AI" là `features/s5e4/assign/HelpLevelPanel` đặt ở màn `/gv/tro-giup-ai`; TC-S5E3-26 chạy trên màn này. Gắn panel vào form C5-01 khi chủ form (57/60) cho phép. | TẠM | Dev 57/60 |
+| Dev-S5E3-13 | Bài của bạn (BN-02) chưa có ở nhánh (bảng bài nộp T-59): bộ kiểm chặn theo ghi chú riêng + rubric (tiêu chí, hướng dẫn chấm của rubric_version) qua `private_content`; nội dung bài nộp của học sinh khác không bao giờ được đưa vào yêu cầu AI (theo cấu trúc). Khi có bài nộp, cần thêm văn bản bài nộp của bạn vào danh sách bí mật. Lớp tắt AI / KS-4 / bộ kiểm lỗi chặn đúng; "Trả bài" (T-60) chưa có: E2E công bố đáp số BC-01 bằng móc `/test-hooks/s5e3/qa/release`. | TẠM | Dev 59/60 |
+| Dev-S5E3-14 | Xoá tài khoản: trigger trên `app_user.deleted_at` xoá ngay `ai_interaction`, `ai_policy_decision`, `kb_privacy_ack` của em (≤ 24 giờ), khoá ngoại ON DELETE CASCADE khi dọn vật lý; `ai_policy_counter` không gắn người, giữ nguyên. Bộ câu thử để ở `app/e2e/fixtures/firewall-s5.json` (phạm vi tệp của task) thay vì `artifacts/GEO/work/s5/fixtures/`. Dạng tương đương của đáp số chặng 5 (`answer_forms` chưa tính cho D-KC-01): bộ kiểm tự thêm dạng bỏ tham số, sqrt, "căn" (lệch về phía chặn). | TẠM | QC xác nhận |
 | Dev-S5E3-07 | Ngưỡng 0,1 áp lên `ts_rank_cd(…, 1|32)` (chia 1 + log độ dài mục rồi đưa về 0…1); câu hỏi bỏ từ dừng tiếng Việt (của, là, và, em, …) trước khi tìm. TC-S5E3-22 trả MSG-S5-20 + `aiCalled=false` ở móc truy xuất; lượt hỏi thật (MSG-S5-20, không gọi AI) do T-58 nối. | TẠM | Dev 58 |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v0.1 | 2026-11-28 | Mục Dev đầu tiên | runner-T-261128-56 |
+| v0.2 | 2026-11-28 | Dev-S5E3-08…14 (hỏi đáp theo kho, mức trợ giúp, kiểm soát đáp án) | runner-T-261128-58 |

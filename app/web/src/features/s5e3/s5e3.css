@@ -95,3 +95,31 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* T-261128-58 · Hỏi đáp (học sinh) và mục "Trợ giúp của AI" (giáo viên; lớp s5e4-help của features/s5e4/assign/HelpLevelPanel). */
+.s5e3-source {
+  justify-self: start;
+  text-align: left;
+  white-space: normal;
+}
+.s5e3-help-list {
+  display: grid;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.s5e4-help {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.s5e4-help-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  border: 1px solid var(--line, currentColor);
+  border-radius: var(--radius, 8px);
+}

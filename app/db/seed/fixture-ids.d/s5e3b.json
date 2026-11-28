@@ -1,0 +1,22 @@
+{
+ "_doc": "T-261128-58 (S5-E3 hỏi đáp theo kho, mức trợ giúp, kiểm soát đáp án): mã cố định thêm (seed e2e/s5_400_s5e3b_qa.sql). Dải 00000000-0000-7000-8005-4000000004nn. Mức trợ giúp của BC-01 khoá theo id bài F-S5-052 (s5.json).",
+ "lectures": {
+  "mat-phang-trung-truc": {
+   "id": "00000000-0000-7000-8005-400000000401",
+   "title": "Mặt phẳng trung trực",
+   "org": "F-S2-100 (trường cộng đồng)",
+   "approval": "không nạp sẵn; móc /test-hooks/s5e3/qa/lecture thêm (teacher_approved) hoặc xoá"
+  }
+ },
+ "helpLevels": {
+  "BC-01": {
+   "target": "00000000-0000-7000-8005-000000000052",
+   "fixture": "F-S5-052",
+   "helpLevel": "hints_concepts",
+   "knowledgeCodes": [
+    "KT11-C07-CT-003"
+   ],
+   "privateNote": "Em Mai hay nhầm SB"
+  }
+ }
+}

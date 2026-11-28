@@ -1422,3 +1422,55 @@ api	api	fromLessonPlan	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
 api	api	uploadId	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
 api	api	validFrom	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
 api	api	validTo	Khóa API kho tri thức (US-S5E3-01, 02, 07)	PO-27
+# --- T-261128-58 ---
+db	assignment_help_level	org_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	assignment_help_level	target_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	assignment_help_level	target_kind	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	assignment_help_level	class_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	assignment_help_level	help_level	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	assignment_help_level	private_note	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	assignment_help_level	knowledge_codes	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	assignment_help_level	updated_by	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	assignment_help_level	updated_at	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_interaction	id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_interaction	org_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_interaction	student_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_interaction	class_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_interaction	target_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_interaction	target_kind	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_interaction	question	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_interaction	reply_kind	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_interaction	reply	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_interaction	source	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_interaction	created_at	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_decision	id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_decision	org_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_decision	interaction_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_decision	student_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_decision	target_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_decision	decision	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_decision	rule_code	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_decision	check_ms	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_decision	firewall_version	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_decision	created_at	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_counter	org_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_counter	day	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_counter	decision	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_counter	rule_code	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	ai_policy_counter	n	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_privacy_ack	org_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_privacy_ack	user_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_privacy_ack	version	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_privacy_ack	acked_at	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_answer_warning	id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_answer_warning	org_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_answer_warning	target_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_answer_warning	doc_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_answer_warning	version	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_answer_warning	section_id	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_answer_warning	first_seen_at	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_answer_warning	last_seen_at	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+db	kb_answer_warning	hits	Hỏi đáp theo kho, mức trợ giúp, nhật ký quyết định kiểm soát đáp án (V655, US-S5E3-03, 04, 05)	PO-27
+api	api	helpLevel	Khóa API hỏi đáp theo kho / mức trợ giúp AI theo bài (US-S5E3-03, 04)	PO-27
+api	api	knowledgeCodes	Khóa API hỏi đáp theo kho / mức trợ giúp AI theo bài (US-S5E3-03, 04)	PO-27
+api	api	privateNote	Khóa API hỏi đáp theo kho / mức trợ giúp AI theo bài (US-S5E3-03, 04)	PO-27
