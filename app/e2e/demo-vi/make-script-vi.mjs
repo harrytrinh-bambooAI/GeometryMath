@@ -13,19 +13,21 @@ export function writeScript(timeline = null, total = null, notes = []) {
   const out = [];
   out.push('# SCRIPT-VI — Video giới thiệu "Hình Học Không Gian Cùng AI — presented by BambooAI" (T-261128-75)');
   out.push('');
-  out.push(`Phiên bản: v1.0 · 2026-11-28 · sinh tự động bởi \`app/e2e/demo-vi/make-script-vi.mjs\` (không sửa tay: sửa \`voice/lines.tsv\` hoặc \`app/e2e/demo-vi/scenes.json\` rồi chạy lại).`);
+  out.push(`Phiên bản: v2.0 · 2026-11-28 · T-261128-76 · sinh tự động bởi \`app/e2e/demo-vi/make-script-vi.mjs\` (không sửa tay: sửa \`voice/lines.tsv\` hoặc \`app/e2e/demo-vi/scenes.json\` rồi chạy lại).`);
   out.push('');
   out.push(`- Tổng thời lượng bản nháp: ${total ? `${mmss(total)} (${total.toFixed(1)} s)` : 'chưa dựng'} · ${SCENES.scenes.length} cảnh · tiếng Việt, phụ đề VI burn-in (≤ 2 dòng × ${MAX_LINE} ký tự).`);
   out.push('- Style: BambooAI như video cũ (`Video/GeometryMath.mp4`, `Video/slides/*.png`): nền xanh lá đậm gradient, nhãn "PRESENTED BY BAMBOOAI" vàng chanh, thẻ kính có icon, slide chương "0N <TÊN>". Thông điệp: "AI is powerful. But thinking is still human." · "AI executes, humans decide" · contact@bamboox.ai.');
   out.push('- Dữ liệu thật: bài HKG-01..06 + gợi ý + lời giải từng bước của `materials/Ngan-hang-bai-tap-Hinh-khong-gian.xlsx` (đã có trong seed); định hướng và tiến trình của `materials/Giao-an-Hinh-khong-gian-11A1.docx`; giáo án chọn PPCT bài 24 "Phép chiếu vuông góc. Góc giữa đường thẳng và mặt phẳng" (đúng chủ đề giáo án 11A1).');
-  out.push('- **Ảnh bài làm viết tay là ảnh MINH HOẠ** (`assets/bai-lam-bn01-p1/p2[-photo].png|jpg`: chữ viết tay font Noteworthy trên giấy kẻ, hình chóp vẽ tay, học sinh giả "Nguyễn Minh Khang"). Owner thay ảnh chụp thật: chép đè `assets/bai-lam-bn01-p1-photo.jpg`, `-p2-photo.jpg` (và `-p1-photo.png` cho slide 19) CÙNG TÊN, chạy `GEO_VI_KEEP_PHOTOS=1 node demo-vi/make-assets-vi.mjs` (giữ ảnh, chỉ dựng lại slide), quay lại cảnh 18, 20 rồi dựng video.');
-  out.push('- AI giả lập (MockAiProvider) trong mọi cảnh. Câu trả lời hỏi đáp (cảnh 11) lấy từ fixture demo riêng `app/e2e/demo-vi/fixtures/qa-hkg01.json` (không đụng fixture e2e).');
+  out.push('- **Ảnh bài làm viết tay là ảnh MINH HOẠ** (`assets/bai-lam-bn01-p1/p2[-photo].png|jpg`: chữ viết tay font Noteworthy trên giấy kẻ, hình chóp vẽ tay, học sinh giả "Bình An" giải đúng đề được giao "Kiểm tra 15 phút – Khoảng cách": d(A,(SBC)) = a√6/3, khớp rubric và bản đọc chữ của AI giả lập). Owner thay ảnh chụp thật: chép đè `assets/bai-lam-bn01-p1-photo.jpg`, `-p2-photo.jpg` (và `-p1-photo.png` cho slide 19) CÙNG TÊN, chạy `GEO_VI_KEEP_PHOTOS=1 node demo-vi/make-assets-vi.mjs` (giữ ảnh, chỉ dựng lại slide), quay lại cảnh 18, 20 rồi dựng video.');
+  out.push('- Mạch kể: tình huống 21:30 của cô Lan và Bình An (00) → 3 khoảnh khắc "wow" (06 dựng hình từ đề, 14 hỏi đáp có nguồn, 23–24 đọc bài viết tay → đề xuất điểm) → cao trào chương 04 → "Một tuần sau" (29) → kêu gọi (33). Không trần thời lượng (owner 28/11).');
+  out.push('- AI giả lập (MockAiProvider) trong mọi cảnh. Câu trả lời hỏi đáp (cảnh 14) lấy từ fixture demo riêng `app/e2e/demo-vi/fixtures/qa-hkg01.json` (không đụng fixture e2e).');
   out.push('- Giọng đọc TẠM: macOS "Linh" (vi_VN). Thay giọng: gen bằng Google TTS theo `voice/lines.tsv`, thả `voice/<mã cảnh>.mp3|wav` CÙNG TÊN (tệp mới nhất thắng), chạy lại `node demo-vi/make-video-vi.mjs <node_modules ffmpeg>`: thời lượng cảnh và phụ đề tự khớp.');
   out.push('');
   out.push('## Lệnh dựng lại');
   out.push('');
   out.push('```bash');
   out.push('cd app && bash e2e/demo/stack-up.sh                       # máy chủ dev + web e2e trên cổng của worktree (AI giả lập)');
+  out.push('bash e2e/demo-vi/rebuild.sh                               # MỘT lệnh: slide, giọng còn thiếu, video giới thiệu + 17 video hướng dẫn (GEO_VI_RECORD=1 để quay lại)');
   out.push('cd e2e && node demo-vi/make-assets-vi.mjs <ffmpeg>        # slide PNG + ảnh viết tay minh hoạ');
   out.push('node demo-vi/gen-voice.mjs <ffmpeg>                       # giọng tạm (bỏ qua cảnh đã có tệp giọng)');
   out.push('GEO_PORT=… GEO_WEB_PORT=… npx playwright test -c demo-vi/demo.config.ts   # quay clip câm');
@@ -74,6 +76,7 @@ export function writeScript(timeline = null, total = null, notes = []) {
   out.push('| Phiên bản | Ngày | Thay đổi | Ai |');
   out.push('|---|---|---|---|');
   out.push('| v1.0 | 2026-11-28 | Bản đầu: 27 cảnh, 12 slide, giọng tạm Linh, bản nháp video | runner-T-261128-75 |');
+  out.push('| v2.0 | 2026-11-28 | Bản cuối sau T-74: 35 cảnh, mạch kể hook → wow → cao trào → kêu gọi; bài viết tay khớp đề giao; hỏi đáp khớp nguồn; frames/ | runner-T-261128-77 |');
   writeFileSync(path.join(EVIDENCE, 'SCRIPT-VI.md'), out.join('\n') + '\n');
 }
 

@@ -1,0 +1,48 @@
+1
+00:00:00,600 --> 00:00:03,383
+Hướng dẫn giáo viên quản lý kho tri thức:
+
+2
+00:00:03,433 --> 00:00:07,459
+nơi chứa tài liệu mà AI được
+phép dùng để trả lời học sinh.
+
+3
+00:00:09,509 --> 00:00:12,669
+Bước một. Chọn Kho tri
+thức ở thanh bên trái.
+
+4
+00:00:14,319 --> 00:00:15,119
+Bước hai.
+
+5
+00:00:15,017 --> 00:00:21,094
+Mỗi tài liệu có phiên bản và trạng thái:
+đang dùng, chờ duyệt, hoặc đã lưu trữ.
+
+6
+00:00:21,144 --> 00:00:23,110
+AI chỉ dùng bản đang dùng.
+
+7
+00:00:24,760 --> 00:00:25,560
+Bước ba.
+
+8
+00:00:25,323 --> 00:00:29,984
+Duyệt bản mới để thay bản cũ, hoặc
+lưu trữ tài liệu không còn dùng.
+
+9
+00:00:30,034 --> 00:00:32,796
+Học sinh luôn thấy nguồn đúng phiên bản.
+
+10
+00:00:34,460 --> 00:00:37,390
+Tóm lại: mở kho tri thức, xem phiên bản,
+
+11
+00:00:37,440 --> 00:00:41,191
+rồi duyệt hoặc lưu trữ để
+AI trả lời đúng tài liệu.

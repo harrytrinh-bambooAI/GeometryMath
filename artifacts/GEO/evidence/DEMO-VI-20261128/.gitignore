@@ -1,5 +1,7 @@
-# T-261128-75: video, giọng đọc và ảnh lớn để ngoài git (sinh lại bằng app/e2e/demo-vi/*.mjs)
+# T-261128-75/76/77: video, giọng đọc và ảnh lớn để ngoài git (sinh lại bằng app/e2e/demo-vi/rebuild.sh)
 *.mp4
 voice/*.wav
 voice/*.mp3
+guides/voice/*/*.wav
+guides/voice/*/*.mp3
 assets/*-photo.png

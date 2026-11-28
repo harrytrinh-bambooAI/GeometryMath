@@ -1,0 +1,60 @@
+1
+00:00:00,600 --> 00:00:06,760
+Hướng dẫn giáo viên tạo một đề hình không
+gian mới: gõ đề, để hệ thống dựng hình 3D,
+
+2
+00:00:06,810 --> 00:00:09,421
+giải từng bước và kiểm chứng đáp số.
+
+3
+00:00:11,471 --> 00:00:14,549
+Bước một. Ở thanh bên trái, chọn Đề mới.
+
+4
+00:00:14,599 --> 00:00:17,209
+Trang Thêm đề mở ra ở thẻ Dán chữ.
+
+5
+00:00:18,871 --> 00:00:22,156
+Bước hai. Gõ hoặc dán
+đề vào ô Đề đã chép lại.
+
+6
+00:00:22,206 --> 00:00:27,883
+Ký hiệu toán như vuông góc hay căn bậc
+hai được giữ nguyên, và bản nháp tự lưu.
+
+7
+00:00:29,538 --> 00:00:31,232
+Bước ba. Bấm Dựng hình.
+
+8
+00:00:31,282 --> 00:00:36,008
+Hệ thống chạy bốn bước: đọc đề,
+dựng hình, giải, và kiểm chứng.
+
+9
+00:00:36,058 --> 00:00:39,571
+Thầy cô theo dõi tiến
+trình ngay trên màn hình.
+
+10
+00:00:41,221 --> 00:00:44,305
+Bước bốn. Soát hình,
+lời giải nháp và nhãn.
+
+11
+00:00:44,355 --> 00:00:48,022
+Nhãn Đã kiểm chứng nghĩa
+là máy đã tính lại đáp số.
+
+12
+00:00:48,072 --> 00:00:51,812
+Nhãn AI soạn nhắc rằng lời
+giải cần giáo viên duyệt.
+
+13
+00:00:53,462 --> 00:00:59,717
+Tóm lại: mở Đề mới, gõ đề, bấm Dựng hình,
+rồi soát nhãn kiểm chứng trước khi duyệt.

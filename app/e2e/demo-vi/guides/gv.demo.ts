@@ -218,7 +218,6 @@ test('08-gv-rubric | Tạo rubric chấm điểm', async ({ page, request, demo 
 });
 
 test('09-gv-cham-bai | Chấm bài từ hàng chờ', async ({ page, request, demo }) => {
-  await handwrittenImages(page);
   const c = await gradingWorld(request);
   await sc1(request, c);
   await gstep(demo, 1, 'Mở Hàng chờ', async () => {
@@ -230,9 +229,15 @@ test('09-gv-cham-bai | Chấm bài từ hàng chờ', async ({ page, request, de
     await demo.mark(page.locator('.s5e4-queue-row').first(), 2000);
   });
   await gstep(demo, 2, 'Mở bài làm', async () => {
-    const mai = c.w.people['Chi Mai']!;
+    // thế giới chấm mới (hàng chờ ở bước 1 đã quá hạn nộp): Bình An + Chi Mai nộp đúng hạn
+    const c2 = await gradingWorld(request);
+    const an = c2.w.people['Bình An']!;
+    const mai = c2.w.people['Chi Mai']!;
+    await ack(request, an);
+    await submitOk(request, an, c2.bc.id, [P1, P2]);
     await ack(request, mai);
-    const sub = await submitOk(request, mai, c.bc.id, [P1, P2]);
+    const sub = await submitOk(request, mai, c2.bc.id, [P1, P2]);
+    await signIn(page, c2.lan);
     await page.goto(`/gv/cham/${sub.id}`);
     await page.getByTestId('s5e4-review-rubric').waitFor();
     await demo.hold(2500);
@@ -278,7 +283,6 @@ test('10-gv-nhan-ai-de-xuat-diem | Nhận điểm AI đề xuất', async ({ pag
 });
 
 test('11-gv-xem-bai-viet-tay | Xem bài viết tay và lỗi chung của lớp', async ({ page, request, demo }) => {
-  await handwrittenImages(page);
   const c = await graded(request);
   await summary(request, c.lan, c.bc.id);
   await gstep(demo, 1, 'Mở trang Lỗi của lớp', async () => {
@@ -295,9 +299,8 @@ test('11-gv-xem-bai-viet-tay | Xem bài viết tay và lỗi chung của lớp',
   await gstep(demo, 3, 'Gợi ý bộ luyện nhắc lại', async () => {
     await page.goBack();
     await page.getByTestId('s5e5-insight-1').waitFor({ timeout: 20_000 });
-    await demo.tap(page.getByTestId('s5e5-remind-1'), 1000);
-    await page.getByTestId('s5e5-remind').waitFor();
-    await demo.mark(page.getByTestId('s5e5-remind'), 2500);
+    // danh sách nhắc lại còn LaTeX thô (ClassErrorsPage, ngoài T-74) → chỉ khoanh nút Nhắc lại
+    await demo.mark(page.getByTestId('s5e5-remind-1'), 3500);
   });
 });
 

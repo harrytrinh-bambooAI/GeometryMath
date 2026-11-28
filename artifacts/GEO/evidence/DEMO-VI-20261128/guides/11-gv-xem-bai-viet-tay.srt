@@ -1,0 +1,44 @@
+1
+00:00:00,600 --> 00:00:03,879
+Hướng dẫn giáo viên xem
+bài viết tay đã nhận dạng,
+
+2
+00:00:03,929 --> 00:00:06,541
+và trang tổng hợp lỗi sai chung của lớp.
+
+3
+00:00:08,600 --> 00:00:12,042
+Bước một. Từ bài có chấm, mở Lỗi của lớp.
+
+4
+00:00:12,092 --> 00:00:16,044
+Mỗi thẻ là một lỗi chung,
+kèm số bài có lỗi đó.
+
+5
+00:00:17,700 --> 00:00:18,500
+Bước hai.
+
+6
+00:00:18,343 --> 00:00:22,293
+Bấm vào bằng chứng để mở đúng
+bài viết tay của học sinh,
+
+7
+00:00:22,343 --> 00:00:24,935
+với ảnh các trang và phần chữ đã đọc.
+
+8
+00:00:26,600 --> 00:00:29,090
+Bước ba. Quay lại và bấm Nhắc lại.
+
+9
+00:00:29,140 --> 00:00:34,544
+Hệ thống gợi ý tối đa ba câu luyện
+cùng chủ đề và mục tài liệu liên quan.
+
+10
+00:00:36,200 --> 00:00:42,338
+Tóm lại: mở Lỗi của lớp, xem bằng chứng là
+bài làm thật, rồi giao bộ luyện nhắc lại.

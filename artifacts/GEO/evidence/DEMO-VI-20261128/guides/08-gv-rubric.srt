@@ -1,0 +1,49 @@
+1
+00:00:00,600 --> 00:00:04,904
+Hướng dẫn giáo viên tạo và chỉnh
+rubric chấm điểm cho bài tự luận.
+
+2
+00:00:06,967 --> 00:00:07,767
+Bước một.
+
+3
+00:00:07,691 --> 00:00:12,147
+Chọn Rubric và mở rubric cần
+chỉnh, hoặc tạo mới từ mẫu.
+
+4
+00:00:13,801 --> 00:00:17,513
+Bước hai. Sửa tên và điểm
+tối đa của từng tiêu chí.
+
+5
+00:00:17,563 --> 00:00:19,283
+Tổng điểm hiển thị ngay.
+
+6
+00:00:20,935 --> 00:00:21,735
+Bước ba.
+
+7
+00:00:21,537 --> 00:00:25,702
+Nếu tổng không bằng mười, hệ
+thống cảnh báo và chặn lưu.
+
+8
+00:00:25,752 --> 00:00:27,358
+Chỉnh lại cho đủ mười.
+
+9
+00:00:29,008 --> 00:00:30,603
+Bước bốn. Lưu rubric.
+
+10
+00:00:30,653 --> 00:00:35,303
+Mỗi lần sửa tạo phiên bản mới,
+bài đã chấm giữ phiên bản cũ.
+
+11
+00:00:36,953 --> 00:00:42,395
+Tóm lại: mở rubric, sửa điểm từng
+tiêu chí, kiểm tổng mười, rồi lưu.

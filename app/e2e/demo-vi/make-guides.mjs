@@ -52,7 +52,9 @@ function build() {
     const metaF = path.join(RAW, `${g.id}.json`);
     const meta = existsSync(metaF) ? JSON.parse(readFileSync(metaF, 'utf8')) : { marks: [], end: 0, failures: ['chưa quay'] };
     const webm = path.join(RAW, `${g.id}.webm`);
-    const mark = new Map(meta.marks.map((m) => [m.code, m.t]));
+    // mốc đo theo đồng hồ của kit; WebM bắt đầu muộn hơn một khoảng off = end − độ dài WebM → trừ đi để cắt đúng bước
+    const off = meta.firstNav != null ? meta.firstNav : existsSync(webm) && meta.end ? Math.max(0, meta.end - probeDur(t.FP, webm)) : 0;
+    const mark = new Map(meta.marks.map((m) => [m.code, Math.max(0, m.t - off)]));
     const segs = [{ code: '00-mo-dau', png: path.join(OUT, 'slides', `${g.id}-mo.png`), voice: voiceFile(vdir, '00-mo-dau'), sub: lines.get('00-mo-dau').sub }];
     g.steps.forEach((s, i) => {
       const from = mark.get(s.code);
@@ -62,7 +64,8 @@ function build() {
         png: path.join(OUT, 'slides', `${g.id}-mo.png`),
         webm: from != null ? webm : undefined,
         from: from != null ? Math.max(0, from - 0.2) : undefined,
-        to: from != null ? (next ?? meta.end) : undefined,
+        // kết thúc 0,8 s trước mốc bước sau: khung cuối (giữ đứng khi giọng dài hơn) vẫn là của bước này
+        to: from != null ? Math.max(from + 0.5, (next ?? Math.max(0, meta.end - off)) - 0.8) : undefined,
         voice: voiceFile(vdir, s.code),
         sub: lines.get(s.code).sub,
       });

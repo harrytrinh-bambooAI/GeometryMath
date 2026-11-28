@@ -1,0 +1,32 @@
+1
+00:00:00,600 --> 00:00:04,916
+Hướng dẫn học sinh vào lớp lần
+đầu, chỉ cần tên và mã lớp.
+
+2
+00:00:06,967 --> 00:00:10,650
+Bước một. Mở trang Vào lớp
+từ đường dẫn thầy cô gửi.
+
+3
+00:00:12,301 --> 00:00:13,101
+Bước hai.
+
+4
+00:00:13,020 --> 00:00:17,365
+Nhập tên hiển thị và mã lớp
+sáu ký tự, rồi bấm Vào lớp.
+
+5
+00:00:19,015 --> 00:00:19,815
+Bước ba.
+
+6
+00:00:19,645 --> 00:00:23,058
+Mục Bài của em hiện mọi
+bài thầy cô đã giao.
+
+7
+00:00:24,715 --> 00:00:30,110
+Tóm lại: mở trang vào lớp, nhập
+tên và mã lớp, rồi xem Bài của em.

@@ -1,6 +1,6 @@
 # COMPARE — Tính năng đã có so với các video cũ → video giới thiệu tiếng Việt mới (T-261128-75)
 
-Phiên bản: v1.0 · 2026-11-28 · runner-T-261128-75
+Phiên bản: v1.1 · 2026-11-28 · runner-T-261128-75 (v1.1: T-76 giải quyết giả định)
 
 ## Nguồn đã dùng
 
@@ -58,8 +58,16 @@ Ký hiệu cột "Đã nêu ở": **GM** = GeometryMath.mp4 (+01/02/03), **T73**
 7. Cảnh 11: chữ trả lời lấy từ fixture demo (bám HKG-01), nhãn nguồn vẫn là tài liệu seed "Khoảng cách 11A1 v2". Cảnh 18/20: tên bài giao trong seed là "Kiểm tra 15 phút – Khoảng cách", ảnh nộp là bài HKG-01 (góc).
 8. Video bản nháp 7:26 (giọng Linh). Brief ghi ~8–10 phút: giọng Google TTS thường chậm hơn, nên bản dựng lại có thể dài hơn; muốn dài hơn nữa thì tăng `TAIL`/`EXTRA` trong `make-video-vi.mjs`.
 
+## Cập nhật T-76 (v1.1)
+
+- Giả định 3: giáo án hiển thị nội dung giáo án 11A1 (fixture demo `giao-an-11a1.json`).
+- Giả định 4, 7: bài viết tay đổi sang đề được giao "Kiểm tra 15 phút – Khoảng cách" (Bình An, d(A,(SBC)) = a√6/3), khớp rubric "Tính toán – khoảng cách" và bản đọc chữ giả lập F-S5-095; câu hỏi hỏi đáp đổi sang khoảng cách nên nhãn nguồn "Ghi chú Khoảng cách 11A1 · v2" đọc tự nhiên.
+- Giả định 6: sau T-74 trình chiếu đủ màn 1920x1080, LaTeX hiển thị đúng. Còn một chỗ LaTeX thô ngoài T-74: danh sách "Nhắc lại" ở trang Lỗi của lớp (ClassErrorsPage) — video chỉ khoanh nút, không mở danh sách.
+- Giả định 8: bỏ trần thời lượng; video cuối ~11–12 phút.
+
 ## Lịch sử
 
 | Phiên bản | Ngày | Thay đổi | Ai |
 |---|---|---|---|
 | v1.0 | 2026-11-28 | Bản đầu | runner-T-261128-75 |
+| v1.1 | 2026-11-28 | Mục cập nhật T-76 | runner-T-261128-77 |

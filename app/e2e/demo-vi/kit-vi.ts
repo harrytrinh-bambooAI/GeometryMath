@@ -62,6 +62,11 @@ export const test = base.extend<{ demo: Demo }>({
     const failures: string[] = [];
     const started = Date.now();
     const marks: Array<{ code: string; t: number }> = [];
+    // mốc khung đầu của video: Playwright chỉ ghi khung từ lần vẽ đầu (điều hướng http đầu tiên) → mốc bước trừ đi mốc này
+    let firstNav: number | null = null;
+    page.on('framenavigated', (f) => {
+      if (firstNav == null && f === page.mainFrame() && f.url().startsWith('http')) firstNav = (Date.now() - started) / 1000;
+    });
     const raw = info.file.includes(`${path.sep}guides${path.sep}`) ? GUIDES_RAW : RAW;
     await page.addInitScript(OVERLAY);
     await page.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
@@ -130,7 +135,7 @@ export const test = base.extend<{ demo: Demo }>({
     await page.close();
     const end = (Date.now() - started) / 1000;
     if (video) copyFileSync(await video.path(), path.join(raw, `${id}.webm`));
-    writeFileSync(path.join(raw, `${id}.json`), JSON.stringify({ id, title: info.title.split('|')[1]?.trim() ?? id, marks, end, failures }, null, 2));
+    writeFileSync(path.join(raw, `${id}.json`), JSON.stringify({ id, title: info.title.split('|')[1]?.trim() ?? id, marks, end, firstNav, failures }, null, 2));
   },
 });
 

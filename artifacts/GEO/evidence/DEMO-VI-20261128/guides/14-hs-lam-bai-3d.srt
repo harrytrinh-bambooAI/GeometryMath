@@ -1,0 +1,56 @@
+1
+00:00:00,600 --> 00:00:07,104
+Hướng dẫn học sinh làm bài trên hình 3D:
+xoay hình, vẽ thêm đoạn, và đo độ dài,
+
+2
+00:00:07,154 --> 00:00:07,954
+góc.
+
+3
+00:00:09,500 --> 00:00:12,320
+Bước một. Mở bài từ Bài của em.
+
+4
+00:00:12,370 --> 00:00:15,098
+Đề ở bên trái, hình 3D ở giữa.
+
+5
+00:00:16,748 --> 00:00:17,548
+Bước hai.
+
+6
+00:00:17,366 --> 00:00:22,741
+Kéo chuột hoặc ngón tay để xoay hình,
+nhìn các quan hệ vuông góc từ nhiều phía.
+
+7
+00:00:24,391 --> 00:00:25,191
+Bước ba.
+
+8
+00:00:24,984 --> 00:00:29,304
+Chọn công cụ Đường, rồi chạm
+hai điểm để nối thêm một đoạn.
+
+9
+00:00:30,958 --> 00:00:34,154
+Bước bốn. Chọn Đo dài, rồi chạm hai điểm.
+
+10
+00:00:34,204 --> 00:00:36,371
+Kết quả hiện ngay trên hình.
+
+11
+00:00:38,025 --> 00:00:40,958
+Bước năm. Chọn Đo góc, rồi chạm ba điểm.
+
+12
+00:00:41,008 --> 00:00:45,284
+Đại lượng là đáp số thì được
+khoá cho đến giờ mở lời giải.
+
+13
+00:00:46,934 --> 00:00:52,469
+Tóm lại: xoay hình, vẽ thêm đoạn, đo
+độ dài và góc để tự tìm hướng giải.

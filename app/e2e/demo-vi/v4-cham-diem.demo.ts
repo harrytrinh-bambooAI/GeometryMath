@@ -78,7 +78,6 @@ test('24-ai-de-xuat-diem | AI đề xuất điểm từng tiêu chí, giáo viê
 });
 
 test('25-song-song-tin-cay | Chạy song song, so điểm AI và giáo viên', async ({ page, request, demo }) => {
-  await handwrittenImages(page);
   await demo.step('song song', async () => {
     const c = await s5e6Setup(request, 'parallel');
     await mock(request, c.w.people['Chi Mai']!, ['F-S5-091']);
@@ -109,9 +108,10 @@ test('26-loi-sai-lop | Lỗi sai chung của lớp, bộ luyện nhắc lại', 
     await page.getByTestId('s5e5-insight-1').waitFor({ timeout: 20_000 });
     await demo.hold(2000);
     await demo.mark(page.getByTestId('s5e5-insight-1'), 2500);
-    await demo.tap(page.getByTestId('s5e5-remind-1'));
-    await page.getByTestId('s5e5-remind').waitFor();
-    await demo.hold(3500);
+    // danh sách nhắc lại còn LaTeX thô (ClassErrorsPage, ngoài T-74) → chỉ khoanh nút, không mở
+    await demo.mark(page.getByTestId('s5e5-remind-1'), 3000);
+    await page.mouse.wheel(0, 300);
+    await demo.hold(2500);
   });
 });
 

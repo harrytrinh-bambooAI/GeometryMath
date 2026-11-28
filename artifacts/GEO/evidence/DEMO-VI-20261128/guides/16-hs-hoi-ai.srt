@@ -1,0 +1,45 @@
+1
+00:00:00,600 --> 00:00:05,752
+Hướng dẫn học sinh hỏi AI về khái niệm
+trong bài, và đọc nguồn mà AI trích.
+
+2
+00:00:07,802 --> 00:00:10,573
+Bước một. Mở Hỏi đáp từ bài đang làm.
+
+3
+00:00:10,623 --> 00:00:14,004
+Phạm vi hỏi theo mức hỗ
+trợ thầy cô cho phép.
+
+4
+00:00:15,669 --> 00:00:16,469
+Bước hai.
+
+5
+00:00:16,362 --> 00:00:20,315
+Gõ câu hỏi về khái niệm
+hoặc cách nghĩ, rồi bấm Gửi.
+
+6
+00:00:21,969 --> 00:00:22,769
+Bước ba.
+
+7
+00:00:22,598 --> 00:00:26,557
+AI giải thích mà không làm
+hộ bài, và ghi rõ nguồn.
+
+8
+00:00:28,207 --> 00:00:29,007
+Bước bốn.
+
+9
+00:00:28,840 --> 00:00:33,295
+Bấm vào nguồn để mở đúng đoạn
+trong tài liệu của lớp và đọc lại.
+
+10
+00:00:34,945 --> 00:00:41,060
+Tóm lại: mở hỏi đáp, gõ câu hỏi, đọc
+câu trả lời, rồi bấm nguồn để đọc lại.
