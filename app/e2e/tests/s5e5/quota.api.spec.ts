@@ -1,12 +1,17 @@
 import { randomUUID } from 'node:crypto';
 import { expect, test } from '../../support/fixtures.ts';
 import { API, aiCalls, ask, assignSet, bearer, hook } from '../s3e1/s3e1.ts';
+import { setup as s5e4Setup } from '../s5e4/s5e4.ts';
+import { P1, P2, SUB, ack, aiOn, submitOk, waitOcr } from '../s5e4/submit/submit.ts';
+import { approve, gradeCalls, mock, setup as gradingSetup, waitAi } from '../s5e6/s5e6b.ts';
+import { jobs } from './insights.ts';
 import { KILL, MSG, counter, readCounter, notifications, s5e5World, stamp, switches, usage } from './s5e5.ts';
 
 /**
  * US-S5E5-04 — công tắc AI theo lớp, tắt khẩn, hạn mức lượt/token, báo cáo dùng AI (máy chủ thật, AI giả lập).
- * Chấm nền (S5-E4/E6) chưa có ở đợt W2: ca chấm đi qua bộ chạy chấm nền giả của móc /test-hooks/s5e5/grading-run, dùng
- * đúng cổng hạn mức (AiQuota.admitGrading mỗi trang), cổng AI và sổ ai_call_log thật.
+ * T-261128-64: TC-19, 23, 25, 27 chuyển từ bộ chạy chấm nền giả (/test-hooks/s5e5/grading-run, /ocr-retry) sang luồng
+ * chấm thật: nộp bài (US-S5E4-03) → đọc chữ nền (grade_ocr) → AI đề xuất (grade, S5-E6) → "Đọc lại"; cổng hạn mức
+ * AiQuota, cổng AI và sổ ai_call_log thật.
  */
 
 type Err = { code: string; message: string; details?: Array<{ field: string; message: string }> };
@@ -20,34 +25,39 @@ async function setup(request: Parameters<typeof s5e5World>[0]) {
 }
 
 test('Tắt AI chấm của 11A1 có hiệu lực ngay và có nhật ký @TC-S5E5-19', async ({ request }) => {
-  const { w, lan, c11 } = await setup(request);
-  // 11A1 AI chấm bật (mặc định QS5-26 là tắt)
-  const on = await request.put(switches(c11.id), { headers: bearer(lan.token), data: { aiGrading: true } });
-  expect(on.status(), await on.text()).toBe(200);
-  // BN-01 đang chờ chấm nền
-  const bn01 = randomUUID();
-  const job = (await hook(request, 's5e5/jobs', { orgId: w.orgId, classId: c11.id, refId: bn01 })) as { jobId: string };
-  const r = await request.put(switches(c11.id), { headers: bearer(lan.token), data: { aiGrading: false } });
-  expect(r.status()).toBe(200);
-  const b = (await r.json()) as { aiGrading: boolean; message: string; cancelledJobs: number };
-  expect(b.aiGrading).toBe(false);
-  expect(b.message).toBe(MSG.s59('11A1'));
-  expect(b.cancelledJobs).toBe(1);
-  const st = await request.get(`${API}/test-hooks/s5e5/jobs/${job.jobId}?orgId=${w.orgId}`);
-  expect(((await st.json()) as { status: string }).status).toBe('cancelled');
-  // việc nền chạy tiếp sau khi bị huỷ: không có đề xuất mới, không gọi AI
-  const before = await aiCalls(request, lan.id);
-  const run = (await hook(request, 's5e5/grading-run', {
-    orgId: w.orgId, teacherId: lan.id, classId: c11.id, submissionId: bn01, pages: 2, jobId: job.jobId,
-  })) as { status: string; proposals: unknown[] };
-  expect(run.status).toBe('cancelled');
-  expect(run.proposals).toEqual([]);
-  expect(await aiCalls(request, lan.id)).toBe(before);
+  // đường thật (T-261128-64): BC-01 "AI đề xuất", AI chấm 11A1 bật; BN-01 của Bình An đang chờ chấm nền (việc grade đã
+  // đăng ký, lượt gọi AI đang chạy: giả lập trả lời sau 3 giây)
+  const c = await gradingSetup(request, 'ai_proposal');
+  const an = c.w.people['Bình An']!;
+  await hook(request, 'ai', { userId: an.id, delayMs: 3000 });
+  try {
+    await ack(request, an);
+    const bn01 = await submitOk(request, an, c.bc.id, [P1]);
+    await expect
+      .poll(async () => (await jobs(request, c.w.orgId, bn01.id)).some((j) => j.task === 'grade' && j.status === 'pending'), {
+        timeout: 30_000,
+        intervals: [100, 200],
+      })
+      .toBe(true);
+    const r = await request.put(switches(c.c11.id), { headers: bearer(c.lan.token), data: { aiGrading: false } });
+    expect(r.status()).toBe(200);
+    const b = (await r.json()) as { aiGrading: boolean; message: string; cancelledJobs: number };
+    expect(b.aiGrading).toBe(false);
+    expect(b.message).toBe(MSG.s59('11A1'));
+    expect(b.cancelledJobs).toBeGreaterThanOrEqual(1);
+    expect((await jobs(request, c.w.orgId, bn01.id)).find((j) => j.task === 'grade')!.status).toBe('cancelled');
+    // lượt gọi đang chạy trả về sau khi huỷ: không lưu đề xuất; bài thành "AI không chấm", chấm tay
+    const v = await waitAi(request, c.lan, bn01.id);
+    expect(v.ai).toMatchObject({ aiStatus: 'no_grade', reason: 'AI chấm của lớp đang tắt' });
+    expect((await gradeCalls(request, an.id)).length).toBe(1);
+  } finally {
+    await hook(request, 'ai', { userId: an.id, delayMs: 0 });
+  }
   // AuditEvent: người thực hiện cô Lan, trước bật, sau tắt
-  const audit = (await (await request.get(`${API}/test-hooks/s5e5/audit?orgId=${w.orgId}&classId=${c11.id}`)).json()) as Array<{
+  const audit = (await (await request.get(`${API}/test-hooks/s5e5/audit?orgId=${c.w.orgId}&classId=${c.c11.id}`)).json()) as Array<{
     actorId: string; actorRole: string; switch: string; before: boolean; after: boolean;
   }>;
-  expect(audit[0]).toMatchObject({ actorId: lan.id, actorRole: 'teacher', switch: 'ai_grading', before: true, after: false });
+  expect(audit[0]).toMatchObject({ actorId: c.lan.id, actorRole: 'teacher', switch: 'ai_grading', before: true, after: false });
 });
 
 test('Báo cáo dùng AI 30 ngày của lớp @TC-S5E5-20', async ({ request }) => {
@@ -108,25 +118,29 @@ test('Học sinh và giáo viên khác không đổi được công tắc @TC-S5
 });
 
 test('Lượt chấm thứ 201 của lớp: bài thành "AI không chấm", vẫn chấm tay @TC-S5E5-23', async ({ request }) => {
-  const { w, lan, c11 } = await setup(request);
-  await request.put(switches(c11.id), { headers: bearer(lan.token), data: { aiGrading: true } });
-  // biên: 199 còn chấm 1 trang
-  await counter(request, w.orgId, 'class', c11.id, 'grade', 199);
-  const edge = (await hook(request, 's5e5/grading-run', {
-    orgId: w.orgId, teacherId: lan.id, classId: c11.id, submissionId: randomUUID(), pages: 1,
-  })) as { status: string; reason?: string };
-  expect(edge.status).toBe('ai_skipped'); // trang 1 grade_ocr là lượt thứ 200; grade trang 1 là lượt 201
-  expect(await readCounter(request, w.orgId, 'class', c11.id, 'grade')).toBe(200);
-  // 200/200: Ngọc Anh nộp bài 2 trang
-  const before = await aiCalls(request, lan.id);
-  const r = (await hook(request, 's5e5/grading-run', {
-    orgId: w.orgId, teacherId: lan.id, classId: c11.id, submissionId: randomUUID(), pages: 2,
-  })) as { status: string; flag: string; reason: string; aiCalls: number };
-  expect(r.status).toBe('ai_skipped');
-  expect(r.flag).toBe('AI không chấm');
-  expect(r.reason).toBe('lớp đã hết lượt AI hôm nay');
-  expect(r.aiCalls).toBe(0);
-  expect(await aiCalls(request, lan.id)).toBe(before); // không có AiCallLog grade / grade_ocr mới
+  // đường thật (T-261128-64): đọc chữ nền + AI đề xuất xin lượt qua AiQuota mỗi trang
+  const c = await gradingSetup(request, 'ai_proposal');
+  // biên: 199 → Chi Mai nộp 1 trang: đọc chữ trang 1 là lượt 200 (nhận), grade trang 1 là lượt 201 (không nhận)
+  await counter(request, c.w.orgId, 'class', c.c11.id, 'grade', 199);
+  const mai = c.w.people['Chi Mai']!;
+  await ack(request, mai);
+  const edge = await submitOk(request, mai, c.bc.id, [P1]);
+  expect((await waitOcr(request, c.lan, edge.id)).status).toBe('done');
+  const ve = await waitAi(request, c.lan, edge.id);
+  expect(ve.ai).toMatchObject({ aiStatus: 'no_grade', reason: 'lớp đã hết lượt AI hôm nay' });
+  expect(await readCounter(request, c.w.orgId, 'class', c.c11.id, 'grade')).toBe(200);
+  expect((await gradeCalls(request, mai.id)).length).toBe(0);
+  // 200/200: Ngọc Anh nộp bài 2 trang — không có AiCallLog grade / grade_ocr mới
+  const na = c.w.people['Ngọc Anh']!;
+  await ack(request, na);
+  const before = await aiCalls(request, na.id);
+  const bn = await submitOk(request, na, c.bc.id, [P1, P2]);
+  const o = await waitOcr(request, c.lan, bn.id);
+  expect(o.status).toBe('failed'); // không nhận lượt đọc chữ: không gọi AI
+  expect(await aiCalls(request, na.id)).toBe(before);
+  expect(await readCounter(request, c.w.orgId, 'class', c.c11.id, 'grade')).toBe(200);
+  // cô Lan chấm tay được cả hai bài
+  for (const id of [edge.id, bn.id]) expect((await approve(request, c.lan, id, [2, 4, 2, 1, 1])).status).toBe('approved');
 });
 
 test('Một học sinh hết 30 lượt hỏi, bạn cùng lớp vẫn hỏi được @TC-S5E5-24', async ({ request }) => {
@@ -145,19 +159,19 @@ test('Một học sinh hết 30 lượt hỏi, bạn cùng lớp vẫn hỏi đ�
 });
 
 test('Gọi lại tự động không tính thêm lượt; mỗi trang chấm tính một lượt @TC-S5E5-25', async ({ request }) => {
-  const { w, lan, c11 } = await setup(request);
-  await request.put(switches(c11.id), { headers: bearer(lan.token), data: { aiGrading: true } });
-  // lượt gọi: ocr trang 1, ocr trang 2, grade trang 1 (lỗi), grade trang 1 (gọi lại, đạt), grade trang 2
-  await hook(request, 'ai', { userId: lan.id, qaReplies: ['ok', 'ok', 'error', 'ok', 'ok'] });
-  const before = await aiCalls(request, lan.id);
-  const r = (await hook(request, 's5e5/grading-run', {
-    orgId: w.orgId, teacherId: lan.id, classId: c11.id, submissionId: randomUUID(), pages: 2,
-  })) as { status: string; proposals: string[]; aiCalls: number };
-  expect(r.status).toBe('graded');
-  expect(r.proposals).toHaveLength(2);
-  expect(await readCounter(request, w.orgId, 'class', c11.id, 'grade')).toBe(4);
-  expect(await aiCalls(request, lan.id)).toBe(before + 5); // AiCallLog ghi đủ mọi lần gọi
-  await hook(request, 'ai', { userId: lan.id, qaReplies: [] });
+  // đường thật (T-261128-64): BN-01 2 trang → đọc chữ nền (2 lượt grade_ocr) → AI đề xuất (2 lượt grade); giả lập grade
+  // lỗi lần 1, đạt lần 2 (gọi lại trong cùng lượt)
+  const c = await gradingSetup(request, 'ai_proposal');
+  const an = c.w.people['Bình An']!;
+  await mock(request, an, ['error', 'F-S5-090']);
+  const before = await aiCalls(request, an.id);
+  await ack(request, an);
+  const bn01 = await submitOk(request, an, c.bc.id, [P1, P2]);
+  const v = await waitAi(request, c.lan, bn01.id);
+  expect(v.ai?.aiStatus).toBe('proposed');
+  expect(await readCounter(request, c.w.orgId, 'class', c.c11.id, 'grade')).toBe(4); // 2 + 2, không tính lần gọi lại
+  expect((await gradeCalls(request, an.id)).length).toBe(2); // AiCallLog ghi đủ mọi lần gọi (lỗi + gọi lại)
+  expect(await aiCalls(request, an.id)).toBe(before + 4); // 2 grade_ocr + 2 grade
 });
 
 test('Đạt 80 % trần token thì giáo viên được cảnh báo một lần @TC-S5E5-26', async ({ request }) => {
@@ -176,18 +190,33 @@ test('Đạt 80 % trần token thì giáo viên được cảnh báo một lần
 });
 
 test('"Đọc lại" lần thứ 4 bị chặn @TC-S5E5-27', async ({ request }) => {
-  const { w, lan } = await setup(request);
-  const bn01 = randomUUID();
-  // lần 3 còn được (biên), lần 4 bị chặn
-  await hook(request, 's5e5/ocr-retry', { orgId: w.orgId, submissionId: bn01, used: 2 });
-  const third = await request.post(`${API}/test-hooks/s5e5/ocr-retry`, { data: { orgId: w.orgId, teacherId: lan.id, submissionId: bn01 } });
-  expect(third.status(), await third.text()).toBe(200);
-  expect(((await third.json()) as { n: number }).n).toBe(3);
-  const before = await aiCalls(request, lan.id);
-  const fourth = await request.post(`${API}/test-hooks/s5e5/ocr-retry`, { data: { orgId: w.orgId, teacherId: lan.id, submissionId: bn01 } });
-  expect(fourth.status()).toBe(429);
-  expect(((await fourth.json()) as Err).code).toBe('RATE_LIMITED');
-  expect(await aiCalls(request, lan.id)).toBe(before); // không gọi grade_ocr
+  // đường thật (T-261128-64): POST /api/v1/submissions/{id}/ocr/retry (đọc chữ nền lỗi → "Đọc lại")
+  const c = await s5e4Setup(request);
+  const an = c.w.people['Bình An']!;
+  await aiOn(request, c.lan, c.c11.id);
+  // đọc chữ nền chạy dưới danh tính học sinh; "Đọc lại" chạy dưới danh tính giáo viên: cả hai lỗi
+  await hook(request, 'ai', { userId: an.id, mode: 'error' });
+  await hook(request, 'ai', { userId: c.lan.id, mode: 'error' });
+  try {
+    await ack(request, an);
+    const bn01 = await submitOk(request, an, c.bc.id, [P1]);
+    expect((await waitOcr(request, c.lan, bn01.id)).status).toBe('failed');
+    // đã bấm "Đọc lại" 2 lần (bộ đếm 2/3): lần 3 còn được (biên), lần 4 bị chặn
+    await hook(request, 's5e5/ocr-retry', { orgId: c.w.orgId, submissionId: bn01.id, used: 2 });
+    const third = await request.post(`${SUB}/${bn01.id}/ocr/retry`, { headers: bearer(c.lan.token) });
+    expect(third.status(), await third.text()).toBe(200);
+    expect((await waitOcr(request, c.lan, bn01.id)).status).toBe('failed');
+    const before = await aiCalls(request, an.id);
+    const beforeLan = await aiCalls(request, c.lan.id);
+    const fourth = await request.post(`${SUB}/${bn01.id}/ocr/retry`, { headers: bearer(c.lan.token) });
+    expect(fourth.status()).toBe(429);
+    expect(((await fourth.json()) as Err).code).toBe('RATE_LIMITED');
+    expect(await aiCalls(request, an.id)).toBe(before); // không gọi grade_ocr
+    expect(await aiCalls(request, c.lan.id)).toBe(beforeLan);
+  } finally {
+    await hook(request, 'ai', { userId: an.id, mode: 'ok' });
+    await hook(request, 'ai', { userId: c.lan.id, mode: 'ok' });
+  }
 });
 
 test('Người vận hành tắt khẩn task kb_qa toàn hệ thống @TC-S5E5-28', async ({ request }) => {
