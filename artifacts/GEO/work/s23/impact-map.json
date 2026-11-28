@@ -1,14 +1,14 @@
 {
   "_doc": [
     "Bản đồ ảnh hưởng cho make e2e-affected (T-261126-45; DECISIONS 26/11 chiến lược regression; PLAN_code-s23 §2 module↔epic, §4 khoảng migration/seed, §5 tệp sở hữu).",
-    "Phiên bản: v1.1 · 2026-11-28. Sửa tệp này khi thêm module / thư mục dùng chung / epic mới; chạy lại make e2e-affected-selftest.",
+    "Phiên bản: v1.2 · 2026-11-28. Sửa tệp này khi thêm module / thư mục dùng chung / epic mới; chạy lại make e2e-affected-selftest.",
     "rules: duyệt theo thứ tự, luật ĐẦU TIÊN khớp thắng. match = biểu thức chính quy trên đường dẫn tính từ gốc repo.",
-    "level: none (tài liệu, test đơn vị, công cụ: chỉ smoke) · L0 (spec của epic sở hữu + smoke) · L1 (L0 + spec các epic phụ thuộc trong deps) · L2 (trọn bộ chromium + api).",
+    "level: none (tài liệu, test đơn vị, công cụ: chỉ smoke) · L0 (spec của epic sở hữu + smoke) · L1 (L0 + spec các epic phụ thuộc trong deps) · LA (project api trọn bộ, KHÔNG UI: tệp dùng chung ảnh hưởng dữ liệu/cấu hình chứ không ảnh hưởng màn hình) · L2 (trọn bộ chromium + api).",
     "epic: mã epic sở hữu (E1…E7, S2-E1…, S3-E…, S5-E…, CORE = spec ở gốc tests/, THEME = tests/theme); '$1' = nhóm bắt thứ nhất của match (e1 -> E1, s2e1 -> S2-E1, s5e1 -> S5-E1).",
     "deps: epic phụ thuộc (L1). '@imports:<thư mục>' = mọi feature web đang import thư mục đó (tính lúc chạy, luôn đủ).",
     "ranges: với migration, nhóm bắt $1 là số phiên bản; số ngoài mọi khoảng = L2.",
     "Tệp không khớp luật nào = L2. Epic chưa có thư mục spec thì bỏ qua (in 'chưa có spec').",
-    "Lịch sử: v1.0 2026-11-26 T-261126-45 tạo · v1.1 2026-11-28 T-261128-51 thêm chặng 5 (s5e*, module lessonplan/exam/assessment/aigrade, khoảng migration V505–V844 theo PLAN_code-s5 §4, seed s5_<nnn>_<feature>_*)."
+    "Lịch sử: v1.0 2026-11-26 T-261126-45 tạo · v1.1 2026-11-28 T-261128-51 thêm chặng 5 (s5e*, module lessonplan/exam/assessment/aigrade, khoảng migration V505–V844 theo PLAN_code-s5 §4, seed s5_<nnn>_<feature>_*). · v1.2 2026-11-28 T-261128-69 E2E cách lai: mức LA cho tệp dùng chung (allowed_fields.tsv, sql-lint.properties, application*.yml, AnthropicPrompts, MockAiProvider, Makefile, README), --ui-own"
   ],
   "specDirs": {
     "CORE": "",
@@ -19,6 +19,11 @@
       "match": "^app/\\.env\\.ports$",
       "level": "none",
       "note": "cổng cục bộ, không commit"
+    },
+    {
+      "match": "^app/server/src/test/java/vn/geo/server/quality/allowed_fields\\.tsv$|^app/server/quality/sql-lint\\.properties$|^app/server/src/main/resources/application[^/]*\\.yml$|^app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\\.java$|^app/Makefile$|^app/README\\.md$",
+      "level": "LA",
+      "note": "tệp dùng chung (E2E cách lai, DECISIONS 28/11): project api trọn bộ, không UI"
     },
     {
       "match": "^app/e2e/tests/(e[1-7]|s[235]e\\d+)/",
@@ -775,6 +780,37 @@
         "S5-E4",
         "S5-E6"
       ]
+    },
+    {
+      "name": "tệp dùng chung (allowed_fields.tsv) -> LA: api trọn bộ, không UI",
+      "files": ["app/server/src/test/java/vn/geo/server/quality/allowed_fields.tsv", "app/server/quality/sql-lint.properties", "app/server/src/main/resources/application.yml", "app/server/src/main/java/vn/geo/server/aigateway/internal/MockAiProvider.java", "app/Makefile", "app/README.md"],
+      "level": "LA",
+      "noUi": true
+    },
+    {
+      "name": "feature s5e4 (web) -> UI chỉ s5e4",
+      "files": ["app/web/src/features/s5e4/index.tsx"],
+      "level": "L0",
+      "epicsExact": ["S5-E4"],
+      "uiDirsExact": ["s5e4"]
+    },
+    {
+      "name": "iam (L1) -> UI chỉ epic sở hữu E1, spec epic phụ thuộc (s2e1, s3e1…) chỉ api",
+      "files": ["app/server/src/main/java/vn/geo/server/iam/internal/X.java"],
+      "level": "L1",
+      "uiDirsExact": ["e1"]
+    },
+    {
+      "name": "migration ngoài khoảng (V9999) -> L2",
+      "files": ["app/server/src/main/resources/db/migration/V9999__x.sql"],
+      "level": "L2"
+    },
+    {
+      "name": "LA + feature s5e4 -> mức theo feature, thêm api trọn bộ",
+      "files": ["app/server/quality/sql-lint.properties", "app/web/src/features/s5e4/index.tsx"],
+      "level": "L0",
+      "apiFull": true,
+      "uiDirsExact": ["s5e4"]
     }
   ]
 }
