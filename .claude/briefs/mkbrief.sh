@@ -5,6 +5,7 @@ R=/Users/harry/IdeaProjects/GeometryMathSupport/.claude/worktrees/mvp-wave0
 ID=$1; WT=$2; PAR=$3
 OUT=$R/.claude/briefs/$ID.md
 mkdir -p "$R/.claude/briefs"
+cd "$R"   # queue.py lấy gốc repo từ thư mục hiện tại → đường dẫn tiến độ phải trỏ về mvp-wave0
 python3 ~/.claude/skills/epic-runner/queue.py --queue "$R/.claude/queue.md" brief "$ID" > "$OUT"
 HEAD=$(git -C "$R" rev-parse --short HEAD)
 PORTS=$(tr '\n' ' ' < "$R/.claude/worktrees/$WT/app/.env.ports")
