@@ -2,8 +2,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router';
 import { ErrorNotice } from '../../shared/ui/ErrorNotice.tsx';
 import { Icon } from '../../shared/ui/Icon.tsx';
-import { createPlan, fetchPlan, retryPlan, type LessonBody, type PlanView } from './api.ts';
-import { MSG_FAILED, MSG_REFUSED } from './logic.ts';
+import { approvePlan, createPlan, downloadExport, fetchPlan, lockSection, retryPlan, undoPlan, type LessonBody, type PlanView } from './api.ts';
+import { MSG_FAILED, MSG_REFUSED, sectionLabel, versionLine } from './logic.ts';
+import { PatchPanel } from './PatchPanel.tsx';
 
 const FIELD_LABEL: Record<string, string> = {
   soTiet: 'Số tiết',
@@ -23,6 +24,9 @@ export function LessonResultPage() {
   const [plan, setPlan] = useState<PlanView | null>(null);
   const [error, setError] = useState<unknown>(null);
   const [tick, setTick] = useState(0);
+  // T-261128-54: mục đang chọn để chat vá, thông báo của thanh duyệt / xuất
+  const [selected, setSelected] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
 
   const load = useCallback(() => {
     fetchPlan(id)
@@ -48,6 +52,15 @@ export function LessonResultPage() {
       .then(() => setPlan({ ...plan, status: 'drafting', statusLabel: 'Đang soạn', kind: undefined, message: undefined }))
       .catch(setError);
   };
+  const act = (p: Promise<unknown>) => {
+    setNotice(null);
+    p.then(load).catch((e: unknown) => setNotice(e instanceof Error ? e.message : 'Chưa thực hiện được, thầy cô thử lại.'));
+  };
+  const exportAs = (format: 'docx' | 'pdf') => {
+    setNotice(null);
+    void downloadExport(plan.draftId, format).then((m) => setNotice(m));
+  };
+  const toggleLock = (section: string) => act(lockSection(plan.draftId, section, !plan.lockedSections.includes(section)));
 
   return (
     <div className="s5e1-page" data-testid="s5e1-result" data-status={plan.status}>
@@ -87,7 +100,47 @@ export function LessonResultPage() {
         </div>
       )}
       {(plan.kind === 'question' || plan.kind === 'reply') && plan.reply && <ReplyBubble plan={plan} />}
-      {plan.kind === 'lesson' && plan.lesson && <LessonView lesson={plan.lesson} locked={plan.lockedSections} />}
+      {plan.kind === 'lesson' && plan.lesson && (
+        <div className="card s5e1-row s5e1-toolbar" data-testid="s5e1-toolbar">
+          <span className="chip" data-testid="s5e1-version">
+            {versionLine(plan.version, plan.approvedVersion)}
+          </span>
+          <button type="button" className="btn ghost" data-testid="s5e1-undo" disabled={!plan.canUndo} onClick={() => act(undoPlan(plan.draftId))}>
+            <Icon name="redo" />
+            Hoàn tác
+          </button>
+          <span className="s5e1-grow" />
+          <button
+            type="button"
+            className="btn primary"
+            data-testid="s5e1-approve"
+            disabled={plan.approvedVersion === plan.version}
+            onClick={() => act(approvePlan(plan.draftId))}
+          >
+            <Icon name="shield" />
+            Duyệt giáo án
+          </button>
+          <button type="button" className="btn ghost" data-testid="s5e1-export-docx" onClick={() => exportAs('docx')}>
+            <Icon name="file" />
+            Tải Word
+          </button>
+          <button type="button" className="btn ghost" data-testid="s5e1-export-pdf" onClick={() => exportAs('pdf')}>
+            <Icon name="print" />
+            Tải PDF
+          </button>
+          {notice && (
+            <p className="small s5e1-notice" role="alert" data-testid="s5e1-notice">
+              {notice}
+            </p>
+          )}
+        </div>
+      )}
+      {plan.kind === 'lesson' && plan.lesson && (
+        <LessonView lesson={plan.lesson} locked={plan.lockedSections} selected={selected} onSelect={setSelected} onLock={toggleLock} />
+      )}
+      {plan.kind === 'lesson' && plan.lesson && (
+        <PatchPanel planId={plan.draftId} selected={selected} locked={plan.lockedSections} onClear={() => setSelected(null)} onChanged={load} />
+      )}
     </div>
   );
 }
@@ -141,7 +194,61 @@ function ReplyBubble({ plan }: { plan: PlanView }) {
   );
 }
 
-function LessonView({ lesson, locked }: { lesson: LessonBody; locked: string[] }) {
+/** Nút "chọn để sửa" và khoá / mở khoá của một mục (US-S5E1-04). */
+function SectionTools({
+  section,
+  locked,
+  selected,
+  onSelect,
+  onLock,
+}: {
+  section: string;
+  locked: string[];
+  selected: string | null;
+  onSelect: (s: string) => void;
+  onLock: (s: string) => void;
+}) {
+  const isLocked = locked.includes(section);
+  return (
+    <span className="s5e1-tools">
+      <button
+        type="button"
+        className={`btn ghost small${selected === section ? ' on' : ''}`}
+        aria-pressed={selected === section}
+        data-testid={`s5e1-pick-${section}`}
+        onClick={() => onSelect(section)}
+      >
+        <Icon name="pencil" />
+        {selected === section ? 'Đang chọn' : 'chọn để sửa'}
+      </button>
+      <button
+        type="button"
+        className="btn ghost small"
+        aria-label={`${isLocked ? 'Mở khoá' : 'Khoá'} ${sectionLabel(section)}`}
+        aria-pressed={isLocked}
+        data-testid={`s5e1-lock-${section}`}
+        onClick={() => onLock(section)}
+      >
+        <Icon name={isLocked ? 'lock' : 'unlock'} />
+      </button>
+    </span>
+  );
+}
+
+function LessonView({
+  lesson,
+  locked,
+  selected,
+  onSelect,
+  onLock,
+}: {
+  lesson: LessonBody;
+  locked: string[];
+  selected: string | null;
+  onSelect: (s: string) => void;
+  onLock: (s: string) => void;
+}) {
+  const tools = (section: string) => <SectionTools section={section} locked={locked} selected={selected} onSelect={onSelect} onLock={onLock} />;
   const [handled, setHandled] = useState<Record<number, 'accepted' | 'skipped'>>({});
   const total = lesson.tongPhut;
   const pending = lesson.deXuat.filter((_, i) => !handled[i]);
@@ -150,6 +257,8 @@ function LessonView({ lesson, locked }: { lesson: LessonBody; locked: string[] }
       <section className="card s5e1-card" data-testid="s5e1-sec-muc-tieu">
         <h2 className="s5e1-h">
           {locked.includes('muc_tieu') && <Icon name="lock" />} I. Mục tiêu
+          <span className="s5e1-grow" />
+          {tools('muc_tieu')}
         </h2>
         <ul>
           {lesson.mucTieu.kienThuc.map((k, i) => (
@@ -168,6 +277,8 @@ function LessonView({ lesson, locked }: { lesson: LessonBody; locked: string[] }
       <section className="card s5e1-card" data-testid="s5e1-sec-thiet-bi">
         <h2 className="s5e1-h">
           {locked.includes('thiet_bi') && <Icon name="lock" />} II. Thiết bị
+          <span className="s5e1-grow" />
+          {tools('thiet_bi')}
         </h2>
         <p>Giáo viên: {lesson.thietBi.giaoVien.join(', ')}</p>
         <p>Học sinh: {lesson.thietBi.hocSinh.join(', ')}</p>
@@ -181,9 +292,11 @@ function LessonView({ lesson, locked }: { lesson: LessonBody; locked: string[] }
                 <span className="s5e1-min" style={{ flexBasis: `${Math.max(8, (a.thoiLuongPhut / Math.max(total, 1)) * 100)}%` }}>
                   {a.oNha ? 'ở nhà' : `${a.thoiLuongPhut}'`}
                 </span>
-                <strong>
-                  {a.nhan} {a.loaiLabel}: {a.ten}
+                <strong data-testid={`s5e1-hd-ten-${a.ma}`}>
+                  {locked.includes(a.ma) && <Icon name="lock" inline />} {a.nhan} {a.loaiLabel}: {a.ten}
                 </strong>
+                <span className="s5e1-grow" />
+                {tools(a.ma)}
                 {a.unsure.length > 0 && (
                   <span className="chip s5e1-unsure" data-testid={`s5e1-unsure-${a.ma}`} title={a.unsure.join('\n')}>
                     AI chưa chắc
@@ -195,7 +308,9 @@ function LessonView({ lesson, locked }: { lesson: LessonBody; locked: string[] }
                   </span>
                 ))}
               </div>
-              <p className="small">{a.noiDung}</p>
+              <p className="small" data-testid={`s5e1-hd-noi-dung-${a.ma}`}>
+                {a.noiDung}
+              </p>
             </li>
           ))}
         </ol>
@@ -207,6 +322,8 @@ function LessonView({ lesson, locked }: { lesson: LessonBody; locked: string[] }
         <section key={p.ma} className="card s5e1-card" data-testid={`s5e1-pht-${p.ma}`}>
           <h2 className="s5e1-h">
             IV. Phiếu học tập {p.ma} ({p.cau.length} câu)
+            <span className="s5e1-grow" />
+            {tools(p.ma)}
           </h2>
           <ol>
             {p.cau.map((q) => (

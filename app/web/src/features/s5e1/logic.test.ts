@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { EMPTY, MSG_NOTE, MSG_RATIO, MSG_REQUIRED, choosePeriod, intOrNull, validate, type CatalogChapter } from './logic.ts';
+import { EMPTY, MSG_NOTE, MSG_RATIO, MSG_REQUIRED, choosePeriod, intOrNull, sectionLabel, validate, versionLine, type CatalogChapter } from './logic.ts';
 
 const chapters: CatalogChapter[] = [
   {
@@ -53,5 +53,19 @@ describe('S5-E1 form soạn giáo án', () => {
     assert.equal(intOrNull(''), null);
     assert.equal(intOrNull('3'), 3);
     assert.equal(intOrNull('2.5'), null);
+  });
+});
+
+describe('chat vá, duyệt (T-261128-54)', () => {
+  it('nhãn mục', () => {
+    assert.equal(sectionLabel('muc_tieu'), 'I. Mục tiêu');
+    assert.equal(sectionLabel('thiet_bi'), 'II. Thiết bị');
+    assert.equal(sectionLabel('HD3'), 'HĐ3');
+    assert.equal(sectionLabel('PHT1'), 'Phiếu PHT1');
+  });
+  it('dòng phiên bản', () => {
+    assert.equal(versionLine(1, null), 'Phiên bản 1');
+    assert.equal(versionLine(2, 2), 'Phiên bản 2 · đã duyệt');
+    assert.equal(versionLine(3, 2), 'Phiên bản 3 · đã duyệt phiên bản 2');
   });
 });

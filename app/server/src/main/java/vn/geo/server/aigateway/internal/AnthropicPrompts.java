@@ -351,6 +351,7 @@ public final class AnthropicPrompts {
       // --- T-261128-53 (S5-E1) ---
       case "lesson_plan" -> LESSON_PLAN;
       // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
+      case "lesson_patch" -> LESSON_PLAN; // V8 dùng chung cho chat vá (prompt-final.md §2 mục 2)
       // --- T-261128-55 (S5-E5) ---
       // --- T-261128-56 (S5-E3) ---
       // --- T-261128-57 (S5-E4) ---
@@ -376,6 +377,7 @@ public final class AnthropicPrompts {
       // --- T-261128-53 (S5-E1) ---
       case "lesson_plan" -> true;
       // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
+      case "lesson_patch" -> true;
       // --- T-261128-55 (S5-E5) ---
       // --- T-261128-56 (S5-E3) ---
       // --- T-261128-57 (S5-E4) ---
