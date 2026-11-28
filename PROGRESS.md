@@ -9,10 +9,10 @@ Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport
 - Tester chặng 5 (T-66): 219/219 TC đạt (UI 26/26 chromium+webkit, API 193/193), 0 lỗi; `artifacts/GEO/evidence/E2E-S5-20261128/` (REPORT, BUG-LIST .md/.html, check_buglist ĐẠT).
 - Hồi quy trọn bộ `make e2e-full` trên bản gộp cuối (wt s5-test @ dff5fb6, lượt 20261128-113923): 2054/2058 test đạt, 4 skipped, 0 trượt, 0 chập chờn; 1158/1158 mã TC; traceability --strict MVP,S2,S3,S5 ĐẠT (258 TC chưa chạy = loại Manual/IT/UT không thuộc E2E).
 
-Đang dở: T-261128-70 FIX theo soát độc lập (REVIEW-S5-20261128: 0 Blocker, 3 Major — chấm mù lộ qua /ai-signals, /student/kb-qa ngoài hạn mức+kill switch, JPEG còn dữ liệu sau EOI; + 3 Minor quyền riêng tư) · wt s5-fix2 cổng 54889·6919·8218·5298 · bản soát nằm trong worktree đó.
+Đang dở: không có agent nào chạy. Soát độc lập §7 + FIX T-70 đã gộp: REVIEW-S5-20261128 v1.1 (3 Major + 2 Minor đã sửa, 2 chấp nhận, mục 8 còn mở: OcrService không cộng token vào trần lớp — inbox).
 Bước tiếp theo:
 1. Owner nghiệm thu gate T-261128-67 (chặng 5) + còn L7 chặng 2, 3 và 7 ca tay chặng 3 (S3E2-37, E3-07, E4-02, E4-21, E4-27, E5-26, E6-10) + ca tay HEIC iPhone thật (S5-E4).
-2. Soát độc lập §7 ĐÃ CHẠY (Sonnet): xem REVIEW-S5-20261128.md sau khi T-70 gộp.
+2. Việc nhỏ còn mở: REVIEW mục 8 (token OCR), mục 7 (PO chọn cách ghi cặp điểm AI/GV) — trong .claude/inbox.md.
 3. Owner trả lời câu chặn: QS5-01 (PO-64 cấm thu ảnh → E4/E6 sau cờ tắt), QS5-27 (bench chấm AI ~$32, cần "Go"), QS5-18 (S3 trong nước + GEO_IMAGE_KEY/SIGN_KEY), QS5-10/28/30/32; câu PO từ T-58/60/61/64/68 trong `.claude/inbox.md`.
 Tiến độ %: `python3 .claude/briefs/progress_s5.py`. Script điều phối: `.claude/briefs/{start,sync,land}.sh`, `resolve_allowed_fields.py`.
 Quyết định: DECISIONS.md (mới nhất 28/11 "E2E cách lai"; "Code chặng 5 chạy hết 8 đợt").
