@@ -1270,3 +1270,31 @@ db	notice_draft	recipients	Nháp thông báo lớp do trợ lý soạn (US-S5E5-
 db	notice_draft	sent_at	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
 db	notice_draft	created_at	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
 db	notice_draft	updated_at	Nháp thông báo lớp do trợ lý soạn (US-S5E5-01)	PO-85
+# --- T-261128-54 ---
+api	api	section	Khóa JSON của API chat vá / duyệt / xuất giáo án (US-S5E1-04, 05, T-261128-54)	PO-27
+api	api	lines	Khóa JSON của API chat vá / duyệt / xuất giáo án (US-S5E1-04, 05, T-261128-54)	PO-27
+api	api	patchId	Khóa JSON của API chat vá / duyệt / xuất giáo án (US-S5E1-04, 05, T-261128-54)	PO-27
+api	api	op	Khóa JSON của API chat vá / duyệt / xuất giáo án (US-S5E1-04, 05, T-261128-54)	PO-27
+api	api	path	Khóa JSON của API chat vá / duyệt / xuất giáo án (US-S5E1-04, 05, T-261128-54)	PO-27
+api	api	approvedVersion	Khóa JSON của API chat vá / duyệt / xuất giáo án (US-S5E1-04, 05, T-261128-54)	PO-27
+api	api	approvedBy	Khóa JSON của API chat vá / duyệt / xuất giáo án (US-S5E1-04, 05, T-261128-54)	PO-27
+api	api	versions	Khóa JSON của API chat vá / duyệt / xuất giáo án (US-S5E1-04, 05, T-261128-54)	PO-27
+api	api	size	Khóa JSON của móc kiểm thử đọc tệp xuất DOCX/PDF/ZIP (chỉ dev/test, T-261128-54)	PO-27
+api	api	pages	Khóa JSON của móc kiểm thử đọc tệp xuất DOCX/PDF/ZIP (chỉ dev/test, T-261128-54)	PO-27
+api	api	paragraphs	Khóa JSON của móc kiểm thử đọc tệp xuất DOCX/PDF/ZIP (chỉ dev/test, T-261128-54)	PO-27
+api	api	tables	Khóa JSON của móc kiểm thử đọc tệp xuất DOCX/PDF/ZIP (chỉ dev/test, T-261128-54)	PO-27
+api	api	headers	Khóa JSON của móc kiểm thử đọc tệp xuất DOCX/PDF/ZIP (chỉ dev/test, T-261128-54)	PO-27
+api	api	footers	Khóa JSON của móc kiểm thử đọc tệp xuất DOCX/PDF/ZIP (chỉ dev/test, T-261128-54)	PO-27
+api	api	entries	Khóa JSON của móc kiểm thử đọc tệp xuất DOCX/PDF/ZIP (chỉ dev/test, T-261128-54)	PO-27
+db	lesson_plan	approved_version	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+db	lesson_plan	approved_by	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+db	lesson_plan	approved_at	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+db	lesson_plan_version	source	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+db	lesson_plan_patch	id	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+db	lesson_plan_patch	org_id	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+db	lesson_plan_patch	plan_id	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+db	lesson_plan_patch	base_version	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+db	lesson_plan_patch	section	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+db	lesson_plan_patch	patches	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+db	lesson_plan_patch	decisions	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27
+db	lesson_plan_patch	created_at	Cột duyệt / phiên bản / bản vá giáo án (V555, US-S5E1-04, 05)	PO-27

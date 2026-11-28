@@ -243,6 +243,88 @@ public class MockAiProvider implements AiProvider {
       return mapper.writeValueAsString(out);
     }
     // --- T-261128-54 (S5-E1, S5-E2 xuất) ---
+    if ("lesson_patch".equals(call.task())) {
+      // F-S5-096 (chat vá, US-S5E1-04): bản vá 7 trường của HĐ đang chọn, "before" lấy NGUYÊN VĂN
+      // từ
+      // <giao_an_hien_tai>. Biến thể theo kịch bản (scenario / qaReplies theo lượt): patch-2 (2
+      // dòng)
+      // · patch-locked (sửa muc_tieu) · patch-badbefore (before lệch) · patch-question ·
+      // patch-reply
+      // · "{…}" nguyên văn.
+      String scripted = control.nextQa(call.scenario());
+      String variant =
+          scripted != null ? scripted : call.scenario() == null ? "F-S5-096" : call.scenario();
+      if (variant.startsWith("{")) {
+        return variant;
+      }
+      if ("patch-question".equals(variant)) {
+        return "{\"kind\":\"question\",\"text\":\"Thầy cô muốn hoạt động này hay hơn theo hướng"
+            + " nào: thêm trò chơi hay thêm ví dụ thực tế?\"}";
+      }
+      if ("patch-reply".equals(variant)) {
+        return "{\"kind\":\"reply\",\"text\":\"Đáp số do kho và engine điền, AI không tự tính đáp"
+            + " số (luật A3). Thầy cô có thể chọn câu khác từ kho bài tập.\",\"de_xuat\":[]}";
+      }
+      String p = call.prompt();
+      int a = p.indexOf("<giao_an_hien_tai>\n");
+      int b = p.indexOf("\n</giao_an_hien_tai>");
+      JsonNode cur =
+          a >= 0 && b > a
+              ? mapper.readTree(p.substring(a + "<giao_an_hien_tai>\n".length(), b))
+              : mapper.createObjectNode();
+      Matcher ms = Pattern.compile("<muc_dang_chon>\n(\\S+)").matcher(p);
+      String sel = ms.find() ? ms.group(1) : "HD1";
+      int idx = 0;
+      for (int i = 0; i < cur.path("hoat_dong").size(); i++) {
+        if (sel.equals(cur.path("hoat_dong").get(i).path("ma").asString(""))) {
+          idx = i;
+        }
+      }
+      JsonNode hd = cur.path("hoat_dong").path(idx);
+      String[][] fields = {
+        {"ten", "Trò chơi: Ai nhanh hơn"},
+        {"muc_tieu", "HS nhớ lại hình chiếu vuông góc qua trò chơi thi đua."},
+        {"noi_dung", "Trò chơi Ai nhanh hơn: 4 câu hỏi nhanh về hình chiếu vuông góc."},
+        {"san_pham", "Đáp án của các đội trên bảng con."},
+        {"to_chuc.chuyen_giao", "GV chia lớp 4 đội, phổ biến luật chơi."},
+        {"to_chuc.thuc_hien", "Các đội giơ bảng con trả lời trong 30 giây."},
+        {"to_chuc.bao_cao", "Đội nhanh nhất trình bày cách làm."}
+      };
+      ObjectNode out = mapper.createObjectNode().put("kind", "patch");
+      tools.jackson.databind.node.ArrayNode patches = out.putArray("patches");
+      if ("patch-locked".equals(variant)) {
+        patches
+            .addObject()
+            .put("op", "replace")
+            .put("path", "muc_tieu.nang_luc[0]")
+            .put("before", cur.path("muc_tieu").path("nang_luc").path(0).asString(""))
+            .put("after", "Tư duy và lập luận; năng lực mô hình hoá toán học.")
+            .put("ly_do", "Thêm năng lực mô hình hoá theo yêu cầu.");
+      } else {
+        int n = "patch-2".equals(variant) ? 2 : "patch-badbefore".equals(variant) ? 1 : 7;
+        for (int i = 0; i < n; i++) {
+          String path = fields[i][0];
+          JsonNode before = hd;
+          for (String k : path.split("\\.")) {
+            before = before.path(k);
+          }
+          String bv = before.asString("");
+          if ("patch-badbefore".equals(variant)) {
+            bv = bv.replace(" từ điểm", "");
+          }
+          patches
+              .addObject()
+              .put("op", "replace")
+              .put("path", "hoat_dong[" + idx + "]." + path)
+              .put("before", bv)
+              .put("after", fields[i][1])
+              .put("ly_do", "Đổi hoạt động thành trò chơi theo yêu cầu, giữ nguyên thời lượng.");
+        }
+      }
+      out.putArray("de_xuat");
+      out.putArray("unsure");
+      return mapper.writeValueAsString(out);
+    }
     // --- T-261128-55 (S5-E5) ---
     if ("class_notice".equals(call.task())) {
       // Nháp thông báo 3 câu dựng từ dữ kiện trong tin nhắn (US-S5E5-01-SC1); biến thể theo kịch

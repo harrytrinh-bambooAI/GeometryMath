@@ -127,3 +127,20 @@ export function intOrNull(v: string): number | null {
   const n = Number(v);
   return Number.isInteger(n) ? n : null;
 }
+
+// ---------------------------------------------------------------- T-261128-54: chat vá, duyệt (US-S5E1-04, 05)
+
+/** Nhãn người đọc của mục sửa / khoá: muc_tieu → "I. Mục tiêu", HD1 → "HĐ1", PHT1 → "Phiếu PHT1". */
+export function sectionLabel(section: string): string {
+  if (section === 'muc_tieu') return 'I. Mục tiêu';
+  if (section === 'thiet_bi') return 'II. Thiết bị';
+  if (/^HD\d+$/.test(section)) return section.replace('HD', 'HĐ');
+  return `Phiếu ${section}`;
+}
+
+/** Dòng phiên bản: "Phiên bản 3 · đã duyệt phiên bản 2" (BR-S5E1-13). */
+export function versionLine(version: number, approvedVersion: number | null | undefined): string {
+  if (approvedVersion == null) return `Phiên bản ${version}`;
+  if (approvedVersion === version) return `Phiên bản ${version} · đã duyệt`;
+  return `Phiên bản ${version} · đã duyệt phiên bản ${approvedVersion}`;
+}

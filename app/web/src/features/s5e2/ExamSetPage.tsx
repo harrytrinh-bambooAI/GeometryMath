@@ -4,6 +4,7 @@ import { tid } from '../../shared/testid.ts';
 import { ErrorNotice } from '../../shared/ui/ErrorNotice.tsx';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { formatVnDateTime as formatVn } from '../../shared/time/vnTime.ts';
+import { ExamExportPanel } from './export/ExamExportPanel.tsx';
 import { examApi, MACHINE_LABEL, TYPE_LABEL, vn, type ExamSetDto, type QuestionDto } from './examApi.ts';
 
 /**
@@ -77,6 +78,8 @@ export function ExamSetPage() {
           <Icon name="check" /> Duyệt bộ đề
         </button>
       )}
+      {/* US-S5E2-05: xuất DOCX/PDF (T-261128-54) */}
+      <ExamExportPanel setId={set.id} codes={(set.variants ?? []).map((v) => v.code)} />
     </section>
   );
 }
