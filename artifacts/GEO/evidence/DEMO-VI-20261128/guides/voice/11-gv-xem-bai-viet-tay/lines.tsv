@@ -1,0 +1,6 @@
+# Phiên bản: v1.0 · 2026-11-28 · T-261128-77 · video 11-gv-xem-bai-viet-tay. Cột: mã <TAB> lời đọc [<TAB> phụ đề nếu khác]. Giọng: <mã>.wav|.mp3 cùng thư mục (tệp mới nhất thắng).
+00-mo-dau	Hướng dẫn giáo viên xem bài viết tay đã nhận dạng, và trang tổng hợp lỗi sai chung của lớp.
+b1	Bước một. Từ bài có chấm, mở Lỗi của lớp. Mỗi thẻ là một lỗi chung, kèm số bài có lỗi đó.
+b2	Bước hai. Bấm vào bằng chứng để mở đúng bài viết tay của học sinh, với ảnh các trang và phần chữ đã đọc.
+b3	Bước ba. Quay lại và bấm Nhắc lại. Hệ thống gợi ý tối đa ba câu luyện cùng chủ đề và mục tài liệu liên quan.
+99-tom-tat	Tóm lại: mở Lỗi của lớp, xem bằng chứng là bài làm thật, rồi giao bộ luyện nhắc lại.

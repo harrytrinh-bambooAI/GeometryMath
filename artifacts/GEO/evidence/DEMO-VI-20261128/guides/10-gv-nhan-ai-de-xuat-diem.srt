@@ -1,0 +1,48 @@
+1
+00:00:00,600 --> 00:00:05,310
+Hướng dẫn giáo viên xem điểm AI đề
+xuất cho bài viết tay, rồi nhận,
+
+2
+00:00:05,360 --> 00:00:07,157
+sửa hoặc bỏ từng tiêu chí.
+
+3
+00:00:09,207 --> 00:00:12,235
+Bước một. Mở bài có nhãn AI đã đề xuất.
+
+4
+00:00:12,285 --> 00:00:15,235
+Mỗi tiêu chí có điểm AI và độ tin cậy.
+
+5
+00:00:16,885 --> 00:00:17,685
+Bước hai.
+
+6
+00:00:17,538 --> 00:00:22,565
+Bấm tên một tiêu chí để thấy vùng
+trên trang bài làm mà AI đã dựa vào.
+
+7
+00:00:24,219 --> 00:00:28,227
+Bước ba. Với từng tiêu chí,
+chọn Nhận, Sửa hoặc Bỏ.
+
+8
+00:00:28,277 --> 00:00:32,046
+Nút Duyệt chỉ mở khi mọi
+tiêu chí đã được xử lý.
+
+9
+00:00:33,696 --> 00:00:35,554
+Bước bốn. Bấm Lưu và duyệt.
+
+10
+00:00:35,604 --> 00:00:38,168
+Điểm cuối cùng là điểm của giáo viên.
+
+11
+00:00:39,830 --> 00:00:45,736
+Tóm lại: mở bài, xem vùng AI dựa
+vào, xử lý từng tiêu chí, rồi duyệt.

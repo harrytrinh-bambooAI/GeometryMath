@@ -1,0 +1,48 @@
+1
+00:00:00,600 --> 00:00:05,915
+Hướng dẫn giáo viên theo dõi cả lớp theo
+thời gian thực trong lúc học sinh làm bài.
+
+2
+00:00:07,967 --> 00:00:11,460
+Bước một. Mở mục Theo
+dõi và chọn bài đã giao.
+
+3
+00:00:11,510 --> 00:00:13,693
+Trang theo dõi của bài mở ra.
+
+4
+00:00:15,343 --> 00:00:16,143
+Bước hai.
+
+5
+00:00:16,106 --> 00:00:21,480
+Đọc bốn thẻ tổng hợp: số em đã
+mở bài, đã dùng gợi ý, đã hỏi AI,
+
+6
+00:00:21,530 --> 00:00:24,192
+và thời gian thao tác trên hình.
+
+7
+00:00:25,843 --> 00:00:26,643
+Bước ba.
+
+8
+00:00:26,466 --> 00:00:32,178
+Kéo xuống bảng từng học sinh: trạng
+thái, thời gian, và bậc gợi ý đã dùng.
+
+9
+00:00:32,228 --> 00:00:33,891
+Không có cột xếp hạng.
+
+10
+00:00:35,543 --> 00:00:38,496
+Tóm lại: mở Theo dõi, đọc thẻ tổng hợp,
+
+11
+00:00:38,546 --> 00:00:41,960
+rồi xem bảng từng học
+sinh để hỗ trợ đúng em.

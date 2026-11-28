@@ -1,0 +1,6 @@
+# Phiên bản: v1.0 · 2026-11-28 · T-261128-77 · video 03-gv-theo-doi-lop. Cột: mã <TAB> lời đọc [<TAB> phụ đề nếu khác]. Giọng: <mã>.wav|.mp3 cùng thư mục (tệp mới nhất thắng).
+00-mo-dau	Hướng dẫn giáo viên theo dõi cả lớp theo thời gian thực trong lúc học sinh làm bài.
+b1	Bước một. Mở mục Theo dõi và chọn bài đã giao. Trang theo dõi của bài mở ra.
+b2	Bước hai. Đọc bốn thẻ tổng hợp: số em đã mở bài, đã dùng gợi ý, đã hỏi AI, và thời gian thao tác trên hình.
+b3	Bước ba. Kéo xuống bảng từng học sinh: trạng thái, thời gian, và bậc gợi ý đã dùng. Không có cột xếp hạng.
+99-tom-tat	Tóm lại: mở Theo dõi, đọc thẻ tổng hợp, rồi xem bảng từng học sinh để hỗ trợ đúng em.

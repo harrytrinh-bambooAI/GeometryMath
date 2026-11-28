@@ -1,0 +1,59 @@
+1
+00:00:00,600 --> 00:00:05,604
+Hướng dẫn giáo viên nhờ AI soạn đề
+nháp từ một tài liệu đang dùng của lớp,
+
+2
+00:00:05,654 --> 00:00:06,901
+rồi duyệt từng câu.
+
+3
+00:00:08,967 --> 00:00:09,767
+Bước một.
+
+4
+00:00:09,606 --> 00:00:13,816
+Từ kho tri thức, mở tài liệu
+đang dùng và chọn Soạn đề nháp.
+
+5
+00:00:13,866 --> 00:00:16,586
+Trang hiện tài liệu nguồn và phiên bản.
+
+6
+00:00:18,236 --> 00:00:20,196
+Bước hai. Bấm soạn đề nháp.
+
+7
+00:00:20,246 --> 00:00:24,067
+AI đọc tài liệu và đề xuất
+các câu hỏi bám nội dung.
+
+8
+00:00:25,716 --> 00:00:26,516
+Bước ba.
+
+9
+00:00:26,284 --> 00:00:29,713
+Câu nào máy dựng được hình
+có đáp số đã tính lại.
+
+10
+00:00:29,763 --> 00:00:33,404
+Câu chưa kiểm chứng xếp
+cuối và không được chọn sẵn.
+
+11
+00:00:35,054 --> 00:00:38,647
+Bước bốn. Đánh dấu các câu
+muốn giữ rồi bấm Duyệt.
+
+12
+00:00:38,697 --> 00:00:42,289
+Chỉ câu đã duyệt mới vào
+ngân hàng đề của thầy cô.
+
+13
+00:00:43,954 --> 00:00:49,907
+Tóm lại: mở tài liệu, bấm soạn đề nháp,
+xem nhãn kiểm chứng, rồi chọn và duyệt.

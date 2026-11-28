@@ -1,0 +1,34 @@
+1
+00:00:00,600 --> 00:00:06,065
+Hướng dẫn giáo viên trình chiếu một bài
+trên lớp: hình lớn, lời giải mở từng bước.
+
+2
+00:00:08,115 --> 00:00:10,789
+Bước một. Từ đề, chọn Trình chiếu.
+
+3
+00:00:10,839 --> 00:00:14,073
+Màn hình hiện hình lớn, lời giải còn che.
+
+4
+00:00:15,723 --> 00:00:18,549
+Bước hai. Bấm Bước tiếp để mở bước một.
+
+5
+00:00:18,599 --> 00:00:21,646
+Hình tô sáng đúng các yếu tố bước đó dùng.
+
+6
+00:00:23,296 --> 00:00:24,096
+Bước ba.
+
+7
+00:00:23,910 --> 00:00:28,697
+Dùng phím mũi tên phải để mở bước
+kế, mũi tên trái để quay lại.
+
+8
+00:00:30,363 --> 00:00:35,747
+Tóm lại: mở trình chiếu, mở từng bước,
+và dùng phím mũi tên để điều khiển.

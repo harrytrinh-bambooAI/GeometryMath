@@ -1,0 +1,58 @@
+1
+00:00:00,600 --> 00:00:04,326
+Hướng dẫn giáo viên giao một
+bài trong kho đề cho lớp,
+
+2
+00:00:04,376 --> 00:00:06,774
+kèm quyền gợi ý và giờ mở lời giải.
+
+3
+00:00:08,834 --> 00:00:09,634
+Bước một.
+
+4
+00:00:09,545 --> 00:00:12,893
+Từ kho đề, mở đề cần
+giao rồi bấm Giao bài.
+
+5
+00:00:12,943 --> 00:00:16,290
+Trang giao bài hiện
+tên đề và hình thu nhỏ.
+
+6
+00:00:17,940 --> 00:00:20,020
+Bước hai. Chọn lớp nhận bài.
+
+7
+00:00:20,070 --> 00:00:22,377
+Có thể chọn nhiều lớp cùng lúc.
+
+8
+00:00:24,040 --> 00:00:24,840
+Bước ba.
+
+9
+00:00:24,693 --> 00:00:29,048
+Đặt quyền xem gợi ý, quyền
+hỏi AI, và giờ mở lời giải.
+
+10
+00:00:29,098 --> 00:00:34,433
+Trước giờ này, học sinh không xem
+được lời giải, kể cả khi hỏi AI.
+
+11
+00:00:36,083 --> 00:00:37,799
+Bước bốn. Bấm Giao bài.
+
+12
+00:00:37,849 --> 00:00:43,098
+Hệ thống xác nhận đã giao, và học
+sinh thấy bài trong mục Bài của em.
+
+13
+00:00:44,750 --> 00:00:51,028
+Tóm lại: mở đề, chọn lớp, đặt gợi ý
+và giờ mở lời giải, rồi bấm Giao bài.

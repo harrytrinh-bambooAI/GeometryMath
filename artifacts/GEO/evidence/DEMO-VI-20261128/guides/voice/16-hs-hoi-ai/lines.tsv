@@ -1,0 +1,7 @@
+# Phiên bản: v1.0 · 2026-11-28 · T-261128-77 · video 16-hs-hoi-ai. Cột: mã <TAB> lời đọc [<TAB> phụ đề nếu khác]. Giọng: <mã>.wav|.mp3 cùng thư mục (tệp mới nhất thắng).
+00-mo-dau	Hướng dẫn học sinh hỏi AI về khái niệm trong bài, và đọc nguồn mà AI trích.
+b1	Bước một. Mở Hỏi đáp từ bài đang làm. Phạm vi hỏi theo mức hỗ trợ thầy cô cho phép.
+b2	Bước hai. Gõ câu hỏi về khái niệm hoặc cách nghĩ, rồi bấm Gửi.
+b3	Bước ba. AI giải thích mà không làm hộ bài, và ghi rõ nguồn.
+b4	Bước bốn. Bấm vào nguồn để mở đúng đoạn trong tài liệu của lớp và đọc lại.
+99-tom-tat	Tóm lại: mở hỏi đáp, gõ câu hỏi, đọc câu trả lời, rồi bấm nguồn để đọc lại.

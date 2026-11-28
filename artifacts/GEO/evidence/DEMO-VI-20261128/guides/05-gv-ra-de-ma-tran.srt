@@ -1,0 +1,54 @@
+1
+00:00:00,600 --> 00:00:04,511
+Hướng dẫn giáo viên ra một đề
+kiểm tra theo ma trận chuẩn,
+
+2
+00:00:04,561 --> 00:00:07,517
+sinh nhiều mã đề từ
+ngân hàng đã kiểm chứng.
+
+3
+00:00:09,567 --> 00:00:12,402
+Bước một. Chọn Ra đề ở thanh bên trái.
+
+4
+00:00:14,067 --> 00:00:14,867
+Bước hai.
+
+5
+00:00:14,720 --> 00:00:17,788
+Chọn loại đề, ví dụ
+kiểm tra mười lăm phút.
+
+6
+00:00:17,838 --> 00:00:22,719
+Số câu trắc nghiệm, tự luận và tổng
+điểm được điền sẵn theo ma trận.
+
+7
+00:00:24,369 --> 00:00:26,496
+Bước ba. Mở bộ đề vừa sinh.
+
+8
+00:00:26,546 --> 00:00:30,608
+Mỗi câu có hai nhãn: máy
+kiểm chứng và người duyệt.
+
+9
+00:00:30,658 --> 00:00:32,382
+Bấm từng mã đề để xem.
+
+10
+00:00:34,036 --> 00:00:36,970
+Bước bốn. Muốn đổi câu nào, bấm Thay.
+
+11
+00:00:37,020 --> 00:00:40,842
+Câu mới giữ nguyên chủ
+đề, dạng, mức độ và điểm.
+
+12
+00:00:42,503 --> 00:00:48,467
+Tóm lại: mở Ra đề, chọn loại đề,
+xem các mã đề, và thay câu khi cần.

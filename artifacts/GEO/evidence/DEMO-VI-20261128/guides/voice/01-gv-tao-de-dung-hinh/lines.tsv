@@ -1,0 +1,7 @@
+# Phiên bản: v1.0 · 2026-11-28 · T-261128-77 · video 01-gv-tao-de-dung-hinh. Cột: mã <TAB> lời đọc [<TAB> phụ đề nếu khác]. Giọng: <mã>.wav|.mp3 cùng thư mục (tệp mới nhất thắng).
+00-mo-dau	Hướng dẫn giáo viên tạo một đề hình không gian mới: gõ đề, để hệ thống dựng hình 3D, giải từng bước và kiểm chứng đáp số.
+b1	Bước một. Ở thanh bên trái, chọn Đề mới. Trang Thêm đề mở ra ở thẻ Dán chữ.
+b2	Bước hai. Gõ hoặc dán đề vào ô Đề đã chép lại. Ký hiệu toán như vuông góc hay căn bậc hai được giữ nguyên, và bản nháp tự lưu.
+b3	Bước ba. Bấm Dựng hình. Hệ thống chạy bốn bước: đọc đề, dựng hình, giải, và kiểm chứng. Thầy cô theo dõi tiến trình ngay trên màn hình.
+b4	Bước bốn. Soát hình, lời giải nháp và nhãn. Nhãn Đã kiểm chứng nghĩa là máy đã tính lại đáp số. Nhãn AI soạn nhắc rằng lời giải cần giáo viên duyệt.
+99-tom-tat	Tóm lại: mở Đề mới, gõ đề, bấm Dựng hình, rồi soát nhãn kiểm chứng trước khi duyệt.

@@ -1,0 +1,46 @@
+1
+00:00:00,600 --> 00:00:05,764
+Hướng dẫn giáo viên chấm bài viết tay
+của học sinh từ hàng chờ, theo rubric.
+
+2
+00:00:07,814 --> 00:00:11,515
+Bước một. Mở Hàng chờ,
+chọn lớp và bài có chấm.
+
+3
+00:00:11,565 --> 00:00:15,665
+Bài cần chú ý như ảnh mờ
+hay nộp muộn nằm trên cùng.
+
+4
+00:00:17,315 --> 00:00:18,974
+Bước hai. Mở một bài.
+
+5
+00:00:19,024 --> 00:00:22,553
+Ảnh các trang ở bên
+trái, rubric ở bên phải.
+
+6
+00:00:24,215 --> 00:00:27,886
+Bước ba. Nhập điểm từng
+tiêu chí. Tổng điểm tự cộng.
+
+7
+00:00:29,549 --> 00:00:30,349
+Bước bốn.
+
+8
+00:00:30,185 --> 00:00:33,741
+Viết nhận xét ngắn rồi bấm
+Duyệt, hoặc nhấn phím A.
+
+9
+00:00:33,791 --> 00:00:36,216
+Bài tiếp theo trong hàng chờ tự mở.
+
+10
+00:00:37,883 --> 00:00:43,720
+Tóm lại: mở hàng chờ, mở bài, nhập
+điểm từng tiêu chí, nhận xét và duyệt.

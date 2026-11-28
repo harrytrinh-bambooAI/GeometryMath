@@ -1,0 +1,7 @@
+# Phiên bản: v1.0 · 2026-11-28 · T-261128-77 · video 02-gv-giao-bai. Cột: mã <TAB> lời đọc [<TAB> phụ đề nếu khác]. Giọng: <mã>.wav|.mp3 cùng thư mục (tệp mới nhất thắng).
+00-mo-dau	Hướng dẫn giáo viên giao một bài trong kho đề cho lớp, kèm quyền gợi ý và giờ mở lời giải.
+b1	Bước một. Từ kho đề, mở đề cần giao rồi bấm Giao bài. Trang giao bài hiện tên đề và hình thu nhỏ.
+b2	Bước hai. Chọn lớp nhận bài. Có thể chọn nhiều lớp cùng lúc.
+b3	Bước ba. Đặt quyền xem gợi ý, quyền hỏi AI, và giờ mở lời giải. Trước giờ này, học sinh không xem được lời giải, kể cả khi hỏi AI.
+b4	Bước bốn. Bấm Giao bài. Hệ thống xác nhận đã giao, và học sinh thấy bài trong mục Bài của em.
+99-tom-tat	Tóm lại: mở đề, chọn lớp, đặt gợi ý và giờ mở lời giải, rồi bấm Giao bài.

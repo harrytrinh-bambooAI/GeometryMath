@@ -1,0 +1,5 @@
+{
+  "_doc": "T-261128-76 · v2.0 · fixture DEMO riêng (không phải fixture e2e). Câu hỏi của học sinh Bình An trước bài 'Kiểm tra 15 phút – Khoảng cách' (đề: S.ABCD đáy vuông cạnh a, SA ⊥ đáy, SA = a√2, tính d(A,(SBC))) và câu trả lời GIẢ LẬP chỉ nêu cách nghĩ, không nêu đáp số — khớp nguồn máy chủ trích ('Ghi chú Khoảng cách 11A1 · v2 · mục Khoảng cách từ điểm đến mặt phẳng'). Chỉ thay chữ 'reply' khi hiển thị (page.route).",
+  "question": "Muốn tính khoảng cách từ A đến mặt phẳng (SBC) thì em nên bắt đầu từ đâu ạ?",
+  "reply": "Khoảng cách từ một điểm đến mặt phẳng là độ dài đoạn vuông góc hạ từ điểm đó xuống mặt phẳng. Em thử tìm một mặt phẳng chứa A và vuông góc với (SBC): xem BC vuông góc với những đường nào đi qua B. Khi có mặt phẳng ấy, chỉ cần hạ đường vuông góc từ A xuống giao tuyến của hai mặt phẳng. Cô chưa mở lời giải, em tự làm tiếp nhé."
+}

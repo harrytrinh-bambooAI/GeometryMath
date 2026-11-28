@@ -1,0 +1,7 @@
+# Phiên bản: v1.0 · 2026-11-28 · T-261128-77 · video 10-gv-nhan-ai-de-xuat-diem. Cột: mã <TAB> lời đọc [<TAB> phụ đề nếu khác]. Giọng: <mã>.wav|.mp3 cùng thư mục (tệp mới nhất thắng).
+00-mo-dau	Hướng dẫn giáo viên xem điểm AI đề xuất cho bài viết tay, rồi nhận, sửa hoặc bỏ từng tiêu chí.
+b1	Bước một. Mở bài có nhãn AI đã đề xuất. Mỗi tiêu chí có điểm AI và độ tin cậy.
+b2	Bước hai. Bấm tên một tiêu chí để thấy vùng trên trang bài làm mà AI đã dựa vào.
+b3	Bước ba. Với từng tiêu chí, chọn Nhận, Sửa hoặc Bỏ. Nút Duyệt chỉ mở khi mọi tiêu chí đã được xử lý.
+b4	Bước bốn. Bấm Lưu và duyệt. Điểm cuối cùng là điểm của giáo viên.
+99-tom-tat	Tóm lại: mở bài, xem vùng AI dựa vào, xử lý từng tiêu chí, rồi duyệt.

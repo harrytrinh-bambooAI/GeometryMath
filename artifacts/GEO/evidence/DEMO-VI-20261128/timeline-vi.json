@@ -1,0 +1,1542 @@
+{
+  "total": 693.9,
+  "notes": [],
+  "scenes": [
+    {
+      "code": "00-hook",
+      "kind": "slide",
+      "start": 0,
+      "duration": 32.87,
+      "voice": "00-hook.wav",
+      "voiceDur": 30.26,
+      "cues": [
+        {
+          "start": 0.6,
+          "end": 2.57,
+          "lines": [
+            "Chín giờ rưỡi tối thứ Năm."
+          ]
+        },
+        {
+          "start": 2.57,
+          "end": 8.56,
+          "lines": [
+            "Cô Lan, giáo viên Toán lớp 11A1, còn một",
+            "chồng bài kiểm tra viết tay chưa chấm,"
+          ]
+        },
+        {
+          "start": 8.56,
+          "end": 13.11,
+          "lines": [
+            "đề kiểm tra tuần sau chưa ra,",
+            "và giáo án tiết sau chưa xong."
+          ]
+        },
+        {
+          "start": 13.11,
+          "end": 17.59,
+          "lines": [
+            "Cùng lúc đó, học sinh Bình An",
+            "đang kẹt ở một bài hình chóp."
+          ]
+        },
+        {
+          "start": 17.59,
+          "end": 21.68,
+          "lines": [
+            "Em hỏi một AI chung chung,",
+            "nhận ngay đáp số, chép lại,"
+          ]
+        },
+        {
+          "start": 21.68,
+          "end": 24.34,
+          "lines": [
+            "và sáng mai lên lớp vẫn không hiểu."
+          ]
+        },
+        {
+          "start": 24.34,
+          "end": 27.83,
+          "lines": [
+            "Nếu có một trợ lý hiểu",
+            "hình học, hiểu lớp học,"
+          ]
+        },
+        {
+          "start": 27.83,
+          "end": 30.86,
+          "lines": [
+            "và luôn để giáo viên quyết định thì sao?"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "01-mo-dau",
+      "kind": "slide",
+      "start": 32.87,
+      "duration": 16.18,
+      "voice": "01-mo-dau.wav",
+      "voiceDur": 13.58,
+      "cues": [
+        {
+          "start": 33.47,
+          "end": 36.43,
+          "lines": [
+            "Xin giới thiệu Hình",
+            "Học Không Gian Cùng AI,"
+          ]
+        },
+        {
+          "start": 36.43,
+          "end": 40.5,
+          "lines": [
+            "do BambooAI phát triển cho giáo",
+            "viên và học sinh trung học."
+          ]
+        },
+        {
+          "start": 40.5,
+          "end": 43.73,
+          "lines": [
+            "AI rất mạnh, nhưng tư",
+            "duy vẫn là của con người."
+          ]
+        },
+        {
+          "start": 43.73,
+          "end": 47.04,
+          "lines": [
+            "Đó là nguyên tắc của mọi",
+            "tính năng bạn sắp thấy."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "02-van-de",
+      "kind": "slide",
+      "start": 49.04,
+      "duration": 21.41,
+      "voice": "02-van-de.wav",
+      "voiceDur": 18.81,
+      "cues": [
+        {
+          "start": 49.64,
+          "end": 51.78,
+          "lines": [
+            "Vì sao cần một công cụ riêng?"
+          ]
+        },
+        {
+          "start": 51.78,
+          "end": 54.95,
+          "lines": [
+            "Vì hình không gian khó",
+            "hình dung trên giấy."
+          ]
+        },
+        {
+          "start": 54.95,
+          "end": 60.86,
+          "lines": [
+            "Vì AI thông thường có thể tính sai mà vẫn",
+            "rất tự tin, và hay đưa đáp số quá sớm."
+          ]
+        },
+        {
+          "start": 60.86,
+          "end": 66.76,
+          "lines": [
+            "Và vì giáo viên đang mất rất nhiều giờ",
+            "mỗi tuần cho những việc lặp lại: soạn đề,"
+          ]
+        },
+        {
+          "start": 66.76,
+          "end": 68.46,
+          "lines": [
+            "soạn giáo án, chấm bài."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "03-gioi-thieu",
+      "kind": "slide",
+      "start": 70.46,
+      "duration": 20.03,
+      "voice": "03-gioi-thieu.wav",
+      "voiceDur": 17.43,
+      "cues": [
+        {
+          "start": 71.06,
+          "end": 72.48,
+          "lines": [
+            "Hệ thống có ba vai."
+          ]
+        },
+        {
+          "start": 72.48,
+          "end": 76.37,
+          "lines": [
+            "Học sinh nhìn thấy hình,",
+            "tự tay thử, và hiểu vì sao."
+          ]
+        },
+        {
+          "start": 76.37,
+          "end": 81.46,
+          "lines": [
+            "Giáo viên được đỡ công soạn và chấm,",
+            "nhưng vẫn quyết định cuối cùng."
+          ]
+        },
+        {
+          "start": 81.46,
+          "end": 85.87,
+          "lines": [
+            "Còn AI đề xuất, và một engine",
+            "hình học tính lại mọi đáp số."
+          ]
+        },
+        {
+          "start": 85.87,
+          "end": 88.49,
+          "lines": [
+            "AI thực hiện, con người quyết định."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "04-chuong-hinh-hoc",
+      "kind": "slide",
+      "start": 90.49,
+      "duration": 9.77,
+      "voice": "04-chuong-hinh-hoc.wav",
+      "voiceDur": 7.17,
+      "cues": [
+        {
+          "start": 91.09,
+          "end": 93.08,
+          "lines": [
+            "Chương một: hỗ trợ hình học."
+          ]
+        },
+        {
+          "start": 93.08,
+          "end": 98.26,
+          "lines": [
+            "Hãy bắt đầu với điều mà AI thông thường",
+            "hay làm sai nhất: hình và đáp số."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "05-kho-de-that",
+      "kind": "clip",
+      "start": 100.26,
+      "duration": 21.37,
+      "voice": "05-kho-de-that.wav",
+      "voiceDur": 19.17,
+      "cues": [
+        {
+          "start": 100.86,
+          "end": 106.5,
+          "lines": [
+            "Đây là kho đề, chứa chính các bài",
+            "trong ngân hàng bài tập của tổ Toán:"
+          ]
+        },
+        {
+          "start": 106.5,
+          "end": 111.9,
+          "lines": [
+            "bài HKG-01 về góc trong hình chóp,",
+            "bài HKG-03 về thể tích lăng trụ,"
+          ]
+        },
+        {
+          "start": 111.9,
+          "end": 113.35,
+          "lines": [
+            "và nhiều bài khác."
+          ]
+        },
+        {
+          "start": 113.35,
+          "end": 117.21,
+          "lines": [
+            "Giáo viên lọc theo cấp",
+            "học, loại hình và chủ đề."
+          ]
+        },
+        {
+          "start": 117.21,
+          "end": 120.03,
+          "lines": [
+            "Bài nào cũng có nhãn đã kiểm chứng."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "06-wow-dung-hinh",
+      "kind": "clip",
+      "start": 121.63,
+      "duration": 30.61,
+      "voice": "06-wow-dung-hinh.wav",
+      "voiceDur": 28.41,
+      "cues": [
+        {
+          "start": 122.23,
+          "end": 125.25,
+          "lines": [
+            "Còn một đề hoàn toàn mới thì sao?"
+          ]
+        },
+        {
+          "start": 125.25,
+          "end": 130.94,
+          "lines": [
+            "Cô Lan chỉ cần gõ đề, như viết",
+            "lên bảng: cho hình chóp S.ABCD,"
+          ]
+        },
+        {
+          "start": 130.94,
+          "end": 137.72,
+          "lines": [
+            "đáy là hình vuông cạnh a, SA ⊥ đáy,",
+            "SA = a√2, tính góc giữa SC và mặt đáy."
+          ]
+        },
+        {
+          "start": 137.72,
+          "end": 139,
+          "lines": [
+            "Bấm Dựng hình."
+          ]
+        },
+        {
+          "start": 139,
+          "end": 143.22,
+          "lines": [
+            "Hệ thống đọc đề, dựng",
+            "hình 3D, giải từng bước,"
+          ]
+        },
+        {
+          "start": 143.22,
+          "end": 147.52,
+          "lines": [
+            "và cuối cùng tự kiểm",
+            "chứng bằng tính toán. 45°."
+          ]
+        },
+        {
+          "start": 147.52,
+          "end": 150.64,
+          "lines": [
+            "Đã kiểm chứng. Chỉ trong vài giây."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "07-chi-tiet-kiem-chung",
+      "kind": "clip",
+      "start": 152.24,
+      "duration": 21.97,
+      "voice": "07-chi-tiet-kiem-chung.wav",
+      "voiceDur": 19.75,
+      "cues": [
+        {
+          "start": 152.84,
+          "end": 157.22,
+          "lines": [
+            "Mở một bài trong kho, ví dụ",
+            "bài góc giữa SD và mặt đáy."
+          ]
+        },
+        {
+          "start": 157.22,
+          "end": 159.69,
+          "lines": [
+            "Mỗi bài có đề, hình 3D, đáp số,"
+          ]
+        },
+        {
+          "start": 159.69,
+          "end": 163.67,
+          "lines": [
+            "và lời giải từng bước theo",
+            "đúng định hướng của tổ:"
+          ]
+        },
+        {
+          "start": 163.67,
+          "end": 166.62,
+          "lines": [
+            "ưu tiên hình chiếu và tam giác vuông."
+          ]
+        },
+        {
+          "start": 166.62,
+          "end": 172.59,
+          "lines": [
+            "Đáp số này không phải do AI tự nói, mà",
+            "khớp với kết quả engine tự tính lại."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "08-xoay-ve-do",
+      "kind": "clip",
+      "start": 174.2,
+      "duration": 24,
+      "voice": "08-xoay-ve-do.wav",
+      "voiceDur": 21.8,
+      "cues": [
+        {
+          "start": 174.8,
+          "end": 176.89,
+          "lines": [
+            "Bây giờ là phía Bình An."
+          ]
+        },
+        {
+          "start": 176.89,
+          "end": 183.06,
+          "lines": [
+            "Hình chóp không còn nằm im trên giấy:",
+            "em kéo để xoay, nhìn từ mọi phía,"
+          ]
+        },
+        {
+          "start": 183.06,
+          "end": 185.83,
+          "lines": [
+            "và tự thấy SA vuông góc với đáy."
+          ]
+        },
+        {
+          "start": 185.83,
+          "end": 190.7,
+          "lines": [
+            "Em vẽ thêm đoạn BD, đo SD",
+            "được a√2, đo góc SAD được 90°."
+          ]
+        },
+        {
+          "start": 190.7,
+          "end": 196.6,
+          "lines": [
+            "Riêng đại lượng là đáp số thì được",
+            "khoá, để em vẫn phải tự suy luận."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "09-trinh-chieu",
+      "kind": "clip",
+      "start": 198.2,
+      "duration": 18,
+      "voice": "09-trinh-chieu.wav",
+      "voiceDur": 14.14,
+      "cues": [
+        {
+          "start": 198.8,
+          "end": 202.56,
+          "lines": [
+            "Trên lớp, cô Lan trình chiếu",
+            "bài toán toàn màn hình."
+          ]
+        },
+        {
+          "start": 202.56,
+          "end": 205.58,
+          "lines": [
+            "Lời giải được che, và cô mở từng bước một."
+          ]
+        },
+        {
+          "start": 205.58,
+          "end": 209.12,
+          "lines": [
+            "Mỗi bước, hình tô sáng",
+            "đúng các yếu tố đang dùng."
+          ]
+        },
+        {
+          "start": 209.12,
+          "end": 212.94,
+          "lines": [
+            "Cả lớp cùng dự đoán trước",
+            "khi bước tiếp theo hiện ra."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "10-chuong-ai",
+      "kind": "slide",
+      "start": 216.2,
+      "duration": 10.24,
+      "voice": "10-chuong-ai.wav",
+      "voiceDur": 7.65,
+      "cues": [
+        {
+          "start": 216.8,
+          "end": 219.85,
+          "lines": [
+            "Chương hai: AI đồng hành cùng học sinh."
+          ]
+        },
+        {
+          "start": 219.85,
+          "end": 224.45,
+          "lines": [
+            "Gợi ý trước, lời giải sau, và",
+            "mọi câu trả lời đều có nguồn."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "11-vao-lop-goi-y",
+      "kind": "clip",
+      "start": 226.45,
+      "duration": 23.44,
+      "voice": "11-vao-lop-goi-y.wav",
+      "voiceDur": 19.31,
+      "cues": [
+        {
+          "start": 227.05,
+          "end": 231.78,
+          "lines": [
+            "Học sinh vào lớp chỉ bằng tên",
+            "và mã lớp, không cần tài khoản."
+          ]
+        },
+        {
+          "start": 231.78,
+          "end": 234.26,
+          "lines": [
+            "Khi vướng, Bình An mở gợi ý một:"
+          ]
+        },
+        {
+          "start": 234.26,
+          "end": 239.23,
+          "lines": [
+            "góc giữa đường và mặt là góc giữa",
+            "đường đó và hình chiếu của nó."
+          ]
+        },
+        {
+          "start": 239.23,
+          "end": 241.32,
+          "lines": [
+            "Gợi ý hai chỉ bước kế tiếp."
+          ]
+        },
+        {
+          "start": 241.32,
+          "end": 244.04,
+          "lines": [
+            "Còn lời giải thì chờ đến giờ cô mở."
+          ]
+        },
+        {
+          "start": 244.04,
+          "end": 246.36,
+          "lines": [
+            "Không ai bị lộ đáp án quá sớm."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "12-bai-luyen",
+      "kind": "clip",
+      "start": 249.89,
+      "duration": 18.6,
+      "voice": "12-bai-luyen.wav",
+      "voiceDur": 16.39,
+      "cues": [
+        {
+          "start": 250.49,
+          "end": 254.7,
+          "lines": [
+            "Với bài luyện, cô chọn những",
+            "bài mà máy kiểm được đáp số."
+          ]
+        },
+        {
+          "start": 254.7,
+          "end": 258.83,
+          "lines": [
+            "Học sinh nhập đáp số trên bàn",
+            "phím toán, có ba lượt thử."
+          ]
+        },
+        {
+          "start": 258.83,
+          "end": 264.52,
+          "lines": [
+            "Sai thì được báo ngay kèm một gợi ý;",
+            "đúng thì được xác nhận và sang câu tiếp."
+          ]
+        },
+        {
+          "start": 264.52,
+          "end": 266.88,
+          "lines": [
+            "Cô không phải chấm tay từng câu."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "13-kho-tri-thuc",
+      "kind": "clip",
+      "start": 268.49,
+      "duration": 16.65,
+      "voice": "13-kho-tri-thuc.wav",
+      "voiceDur": 14.45,
+      "cues": [
+        {
+          "start": 269.09,
+          "end": 274.99,
+          "lines": [
+            "Muốn AI trả lời đúng với lớp mình, cô Lan",
+            "đưa tài liệu của lớp vào kho tri thức."
+          ]
+        },
+        {
+          "start": 274.99,
+          "end": 280.74,
+          "lines": [
+            "Mỗi tài liệu có phiên bản và trạng thái:",
+            "đang dùng, chờ duyệt, hay đã lưu trữ."
+          ]
+        },
+        {
+          "start": 280.74,
+          "end": 283.54,
+          "lines": [
+            "AI chỉ được dùng những gì cô đã duyệt."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "14-wow-hoi-dap",
+      "kind": "clip",
+      "start": 285.14,
+      "duration": 24.42,
+      "voice": "14-wow-hoi-dap.wav",
+      "voiceDur": 22.22,
+      "cues": [
+        {
+          "start": 285.74,
+          "end": 287.87,
+          "lines": [
+            "Và đây là khác biệt thứ hai."
+          ]
+        },
+        {
+          "start": 287.87,
+          "end": 290.3,
+          "lines": [
+            "Trước giờ kiểm tra, Bình An hỏi:"
+          ]
+        },
+        {
+          "start": 290.3,
+          "end": 295.33,
+          "lines": [
+            "muốn tính khoảng cách từ A đến mặt",
+            "phẳng (SBC) thì bắt đầu từ đâu?"
+          ]
+        },
+        {
+          "start": 295.33,
+          "end": 296.85,
+          "lines": [
+            "AI không đưa đáp số."
+          ]
+        },
+        {
+          "start": 296.85,
+          "end": 302.55,
+          "lines": [
+            "Nó giải thích cách nghĩ, gợi ý em tìm",
+            "mặt phẳng vuông góc, và ghi rõ nguồn."
+          ]
+        },
+        {
+          "start": 302.55,
+          "end": 307.95,
+          "lines": [
+            "Bấm vào nguồn, em đọc đúng đoạn trong",
+            "ghi chú Khoảng cách của lớp 11A1."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "15-chuong-soan",
+      "kind": "slide",
+      "start": 309.56,
+      "duration": 8.91,
+      "voice": "15-chuong-soan.wav",
+      "voiceDur": 6.31,
+      "cues": [
+        {
+          "start": 310.16,
+          "end": 312.75,
+          "lines": [
+            "Chương ba: soạn giáo án và soạn đề."
+          ]
+        },
+        {
+          "start": 312.75,
+          "end": 316.47,
+          "lines": [
+            "Đây là nơi cô Lan lấy lại",
+            "những buổi tối của mình."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "16-soan-giao-an",
+      "kind": "clip",
+      "start": 318.47,
+      "duration": 34.07,
+      "voice": "16-soan-giao-an.wav",
+      "voiceDur": 31.86,
+      "cues": [
+        {
+          "start": 319.07,
+          "end": 323.95,
+          "lines": [
+            "Soạn giáo án theo phân phối chương",
+            "trình: cô chọn chương, bài 24,"
+          ]
+        },
+        {
+          "start": 323.95,
+          "end": 328.98,
+          "lines": [
+            "góc giữa đường thẳng và mặt phẳng,",
+            "chọn tiết và đối tượng học sinh."
+          ]
+        },
+        {
+          "start": 328.98,
+          "end": 332.29,
+          "lines": [
+            "AI soạn bản nháp đầy",
+            "đủ: mục tiêu, thiết bị,"
+          ]
+        },
+        {
+          "start": 332.29,
+          "end": 336.72,
+          "lines": [
+            "tiến trình từng hoạt động với",
+            "thời lượng, và phiếu học tập."
+          ]
+        },
+        {
+          "start": 336.72,
+          "end": 342.81,
+          "lines": [
+            "Nội dung bám đúng giáo án lớp 11A1: khởi",
+            "động bằng hình chóp xoay trên máy chiếu,"
+          ]
+        },
+        {
+          "start": 342.81,
+          "end": 345.51,
+          "lines": [
+            "hình thành kiến thức qua bài HKG-01."
+          ]
+        },
+        {
+          "start": 345.51,
+          "end": 350.92,
+          "lines": [
+            "Mọi mục đều sửa được, và bản nháp gắn",
+            "nhãn AI soạn cho đến khi cô duyệt."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "17-ra-de-ma-tran",
+      "kind": "clip",
+      "start": 352.53,
+      "duration": 24.53,
+      "voice": "17-ra-de-ma-tran.wav",
+      "voiceDur": 22.33,
+      "cues": [
+        {
+          "start": 353.13,
+          "end": 357.21,
+          "lines": [
+            "Đề kiểm tra tuần sau? Cô chọn",
+            "loại đề kiểm tra 15 phút."
+          ]
+        },
+        {
+          "start": 357.21,
+          "end": 363,
+          "lines": [
+            "Hệ thống điền sẵn số câu trắc nghiệm, tự",
+            "luận và tổng điểm theo ma trận chuẩn,"
+          ]
+        },
+        {
+          "start": 363,
+          "end": 366.26,
+          "lines": [
+            "rồi sinh 4 mã đề từ",
+            "ngân hàng đã kiểm chứng."
+          ]
+        },
+        {
+          "start": 366.26,
+          "end": 370.2,
+          "lines": [
+            "Mỗi câu mang hai nhãn: máy",
+            "kiểm chứng và người duyệt."
+          ]
+        },
+        {
+          "start": 370.2,
+          "end": 375.46,
+          "lines": [
+            "Không ưng câu nào, bấm thay: câu mới",
+            "giữ nguyên chủ đề, mức độ và điểm."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "18-soan-de-tai-lieu",
+      "kind": "clip",
+      "start": 377.07,
+      "duration": 17.42,
+      "voice": "18-soan-de-tai-lieu.wav",
+      "voiceDur": 15.22,
+      "cues": [
+        {
+          "start": 377.67,
+          "end": 382.3,
+          "lines": [
+            "Cô còn có thể yêu cầu AI soạn đề",
+            "nháp từ chính tài liệu của lớp."
+          ]
+        },
+        {
+          "start": 382.3,
+          "end": 386.14,
+          "lines": [
+            "Câu nào máy dựng được hình",
+            "thì có đáp số đã tính lại."
+          ]
+        },
+        {
+          "start": 386.14,
+          "end": 390.35,
+          "lines": [
+            "Câu chưa kiểm chứng được xếp",
+            "cuối, và không được chọn sẵn."
+          ]
+        },
+        {
+          "start": 390.35,
+          "end": 392.88,
+          "lines": [
+            "Chỉ câu cô duyệt mới vào ngân hàng."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "19-thong-bao-cong-tac",
+      "kind": "clip",
+      "start": 394.48,
+      "duration": 17.07,
+      "voice": "19-thong-bao-cong-tac.wav",
+      "voiceDur": 14.85,
+      "cues": [
+        {
+          "start": 395.08,
+          "end": 398.14,
+          "lines": [
+            "Trợ lý cũng soạn giúp thông báo cho lớp,"
+          ]
+        },
+        {
+          "start": 398.14,
+          "end": 401.44,
+          "lines": [
+            "ví dụ nhắc hạn nộp với",
+            "đúng giờ địa phương."
+          ]
+        },
+        {
+          "start": 401.44,
+          "end": 403.2,
+          "lines": [
+            "Cô sửa một câu rồi gửi."
+          ]
+        },
+        {
+          "start": 403.2,
+          "end": 408.1,
+          "lines": [
+            "Và ở mỗi lớp, cô có công tắc bật",
+            "hoặc tắt AI chấm bài và trợ lý,"
+          ]
+        },
+        {
+          "start": 408.1,
+          "end": 409.93,
+          "lines": [
+            "kèm mức sử dụng 30 ngày."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "20-chuong-cham",
+      "kind": "slide",
+      "start": 411.55,
+      "duration": 7.34,
+      "voice": "20-chuong-cham.wav",
+      "voiceDur": 4.74,
+      "cues": [
+        {
+          "start": 412.15,
+          "end": 414.21,
+          "lines": [
+            "Chương bốn: chấm bài viết tay."
+          ]
+        },
+        {
+          "start": 414.21,
+          "end": 416.89,
+          "lines": [
+            "Đây là khoảnh khắc cô Lan chờ đợi nhất."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "21-rubric",
+      "kind": "clip",
+      "start": 418.89,
+      "duration": 17.53,
+      "voice": "21-rubric.wav",
+      "voiceDur": 15.32,
+      "cues": [
+        {
+          "start": 419.49,
+          "end": 425.14,
+          "lines": [
+            "Mọi thứ bắt đầu từ rubric của cô: năm",
+            "tiêu chí cho bài kiểm tra khoảng cách,"
+          ]
+        },
+        {
+          "start": 425.14,
+          "end": 429.31,
+          "lines": [
+            "gồm hướng giải, các bước, kết",
+            "quả, hình vẽ và trình bày."
+          ]
+        },
+        {
+          "start": 429.31,
+          "end": 430.8,
+          "lines": [
+            "Tổng điểm tính ngay."
+          ]
+        },
+        {
+          "start": 430.8,
+          "end": 434.81,
+          "lines": [
+            "Nếu tổng không đủ mười, hệ",
+            "thống cảnh báo và chặn lưu."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "22-nop-bai-viet-tay",
+      "kind": "clip",
+      "start": 436.43,
+      "duration": 18,
+      "voice": "22-nop-bai-viet-tay.wav",
+      "voiceDur": 14.62,
+      "cues": [
+        {
+          "start": 437.03,
+          "end": 442.85,
+          "lines": [
+            "Bình An làm bài kiểm tra trên giấy như mọi",
+            "khi, rồi chụp từng trang bằng điện thoại."
+          ]
+        },
+        {
+          "start": 442.85,
+          "end": 445.55,
+          "lines": [
+            "Ảnh được kiểm tra độ nét ngay khi chụp."
+          ]
+        },
+        {
+          "start": 445.55,
+          "end": 448.95,
+          "lines": [
+            "Em bấm nộp, và nhận xác",
+            "nhận kèm giờ của máy chủ."
+          ]
+        },
+        {
+          "start": 448.95,
+          "end": 451.65,
+          "lines": [
+            "Không cần máy quét, không cần nhập lại."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "23-wow-nhan-dang",
+      "kind": "slide",
+      "start": 454.43,
+      "duration": 27.8,
+      "voice": "23-wow-nhan-dang.wav",
+      "voiceDur": 25.19,
+      "cues": [
+        {
+          "start": 455.03,
+          "end": 457.38,
+          "lines": [
+            "Và đây là khác biệt thứ ba."
+          ]
+        },
+        {
+          "start": 457.38,
+          "end": 463.92,
+          "lines": [
+            "Hệ thống đọc chữ viết tay của Bình An,",
+            "tách từng dòng lập luận: kẻ AH ⊥ SB,"
+          ]
+        },
+        {
+          "start": 463.92,
+          "end": 467.66,
+          "lines": [
+            "chứng minh AH ⊥ (SBC),",
+            "rồi tính AH = a√6/3."
+          ]
+        },
+        {
+          "start": 467.66,
+          "end": 469.67,
+          "lines": [
+            "Mỗi dòng có độ tin cậy."
+          ]
+        },
+        {
+          "start": 469.67,
+          "end": 475.16,
+          "lines": [
+            "Hai chỗ chữ nhoè được đánh dấu",
+            "để cô xem lại, thay vì đoán bừa."
+          ]
+        },
+        {
+          "start": 475.16,
+          "end": 480.21,
+          "lines": [
+            "Rồi từng dòng được đối chiếu",
+            "với từng tiêu chí của rubric."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "24-ai-de-xuat-diem",
+      "kind": "clip",
+      "start": 482.23,
+      "duration": 23.33,
+      "voice": "24-ai-de-xuat-diem.wav",
+      "voiceDur": 21.13,
+      "cues": [
+        {
+          "start": 482.83,
+          "end": 484.8,
+          "lines": [
+            "Cô Lan mở bài của Bình An."
+          ]
+        },
+        {
+          "start": 484.8,
+          "end": 489.82,
+          "lines": [
+            "AI đề xuất điểm cho từng tiêu chí,",
+            "và khi cô bấm vào một tiêu chí,"
+          ]
+        },
+        {
+          "start": 489.82,
+          "end": 493.84,
+          "lines": [
+            "nó khoanh đúng vùng trên",
+            "trang bài làm mà nó dựa vào."
+          ]
+        },
+        {
+          "start": 493.84,
+          "end": 496.58,
+          "lines": [
+            "Cô nhận, sửa, hoặc bỏ từng tiêu chí."
+          ]
+        },
+        {
+          "start": 496.58,
+          "end": 500.23,
+          "lines": [
+            "Nút duyệt chỉ mở khi mọi",
+            "tiêu chí đã được xử lý."
+          ]
+        },
+        {
+          "start": 500.23,
+          "end": 503.95,
+          "lines": [
+            "Mười trên mười. Và điểm",
+            "cuối cùng là điểm của cô."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "25-song-song-tin-cay",
+      "kind": "clip",
+      "start": 505.56,
+      "duration": 22.18,
+      "voice": "25-song-song-tin-cay.wav",
+      "voiceDur": 19.98,
+      "cues": [
+        {
+          "start": 506.16,
+          "end": 508.49,
+          "lines": [
+            "Làm sao biết có nên tin AI chấm?"
+          ]
+        },
+        {
+          "start": 508.49,
+          "end": 514.15,
+          "lines": [
+            "Trước khi bật đề xuất điểm cho một lớp,",
+            "hệ thống chạy song song: AI chấm ngầm,"
+          ]
+        },
+        {
+          "start": 514.15,
+          "end": 518.15,
+          "lines": [
+            "điểm AI bị ẩn trong lúc cô",
+            "chấm để cô không bị dẫn dắt."
+          ]
+        },
+        {
+          "start": 518.15,
+          "end": 522.44,
+          "lines": [
+            "Sau khi duyệt, điểm của AI và",
+            "của cô được so từng tiêu chí."
+          ]
+        },
+        {
+          "start": 522.44,
+          "end": 526.14,
+          "lines": [
+            "Đề xuất của AI chỉ được",
+            "bật khi độ khớp đạt ngưỡng."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "26-loi-sai-lop",
+      "kind": "clip",
+      "start": 527.74,
+      "duration": 16.78,
+      "voice": "26-loi-sai-lop.wav",
+      "voiceDur": 14.58,
+      "cues": [
+        {
+          "start": 528.34,
+          "end": 532.26,
+          "lines": [
+            "Chấm xong cả lớp, trợ lý",
+            "tổng hợp những lỗi sai chung,"
+          ]
+        },
+        {
+          "start": 532.26,
+          "end": 538.06,
+          "lines": [
+            "kèm bằng chứng là bài làm cụ thể, không",
+            "xếp hạng, không phần trăm theo học sinh."
+          ]
+        },
+        {
+          "start": 538.06,
+          "end": 542.92,
+          "lines": [
+            "Từ đó, cô giao ngay một bộ luyện",
+            "nhắc lại cùng chủ đề cho buổi sau."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "27-ket-qua-lop",
+      "kind": "clip",
+      "start": 544.52,
+      "duration": 16.73,
+      "voice": "27-ket-qua-lop.wav",
+      "voiceDur": 14.52,
+      "cues": [
+        {
+          "start": 545.12,
+          "end": 550.39,
+          "lines": [
+            "Ở cấp lớp, bảng kết quả cho cô",
+            "một ô cho mỗi học sinh và mỗi bài."
+          ]
+        },
+        {
+          "start": 550.39,
+          "end": 554.86,
+          "lines": [
+            "Mở một ô là thấy bằng chứng:",
+            "số lần thử, gợi ý đã dùng."
+          ]
+        },
+        {
+          "start": 554.86,
+          "end": 559.64,
+          "lines": [
+            "Lớp học thật, với mã vào lớp",
+            "và duyệt học sinh, đều có sẵn."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "28-theo-doi-lop",
+      "kind": "clip",
+      "start": 561.25,
+      "duration": 14.7,
+      "voice": "28-theo-doi-lop.wav",
+      "voiceDur": 12.49,
+      "cues": [
+        {
+          "start": 561.85,
+          "end": 568.37,
+          "lines": [
+            "Và trong lúc học sinh làm bài, cô theo dõi",
+            "cả lớp theo thời gian thực: ai đã mở bài,"
+          ]
+        },
+        {
+          "start": 568.37,
+          "end": 571.55,
+          "lines": [
+            "ai dùng gợi ý đến bậc nào, ai đang vướng."
+          ]
+        },
+        {
+          "start": 571.55,
+          "end": 574.34,
+          "lines": [
+            "Số liệu để hỗ trợ đúng em, đúng lúc."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "29-tuan-sau",
+      "kind": "slide",
+      "start": 575.95,
+      "duration": 26.17,
+      "voice": "29-tuan-sau.wav",
+      "voiceDur": 23.56,
+      "cues": [
+        {
+          "start": 576.55,
+          "end": 579.54,
+          "lines": [
+            "Một tuần sau, cũng chín giờ rưỡi tối."
+          ]
+        },
+        {
+          "start": 579.54,
+          "end": 584.62,
+          "lines": [
+            "Cô Lan đã xong việc từ sớm: bài",
+            "viết tay chấm xong, AI đề xuất,"
+          ]
+        },
+        {
+          "start": 584.62,
+          "end": 586.48,
+          "lines": [
+            "cô duyệt từng tiêu chí."
+          ]
+        },
+        {
+          "start": 586.48,
+          "end": 590.27,
+          "lines": [
+            "Đề bốn mã đề đã sẵn sàng,",
+            "đáp số đã kiểm chứng."
+          ]
+        },
+        {
+          "start": 590.27,
+          "end": 594.06,
+          "lines": [
+            "Cô biết lớp hay sai ở",
+            "bước nào để chữa đầu giờ."
+          ]
+        },
+        {
+          "start": 594.06,
+          "end": 595.03,
+          "lines": [
+            "Còn Bình An?"
+          ]
+        },
+        {
+          "start": 595.03,
+          "end": 600.12,
+          "lines": [
+            "Em tự xoay hình, tự thấy hình",
+            "chiếu, và lần này em hiểu vì sao."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "30-loi-ich-hs",
+      "kind": "slide",
+      "start": 602.12,
+      "duration": 15.81,
+      "voice": "30-loi-ich-hs.wav",
+      "voiceDur": 13.21,
+      "cues": [
+        {
+          "start": 602.72,
+          "end": 607.2,
+          "lines": [
+            "Với học sinh: nhìn thấy hình,",
+            "tự tay thử, và hiểu vì sao."
+          ]
+        },
+        {
+          "start": 607.2,
+          "end": 610.27,
+          "lines": [
+            "Gợi ý đến đúng lúc, không bị lộ đáp án."
+          ]
+        },
+        {
+          "start": 610.27,
+          "end": 615.93,
+          "lines": [
+            "Câu hỏi được trả lời theo đúng tài",
+            "liệu của lớp, có nguồn để tự đọc lại."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "31-loi-ich-gv",
+      "kind": "slide",
+      "start": 617.93,
+      "duration": 19.31,
+      "voice": "31-loi-ich-gv.wav",
+      "voiceDur": 16.71,
+      "cues": [
+        {
+          "start": 618.53,
+          "end": 623.56,
+          "lines": [
+            "Với giáo viên: soạn nhanh hơn, tin",
+            "được đáp số vì máy đã kiểm chứng,"
+          ]
+        },
+        {
+          "start": 623.56,
+          "end": 627.33,
+          "lines": [
+            "chấm bài viết tay có trợ",
+            "lý, và hiểu lớp sai ở đâu."
+          ]
+        },
+        {
+          "start": 627.33,
+          "end": 633.39,
+          "lines": [
+            "Trên hết, giáo viên luôn giữ quyền quyết",
+            "định cuối cùng: bật tắt AI theo từng lớp,"
+          ]
+        },
+        {
+          "start": 633.39,
+          "end": 635.24,
+          "lines": [
+            "nhận hay bỏ từng đề xuất."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "32-tong-ket",
+      "kind": "slide",
+      "start": 637.24,
+      "duration": 25.57,
+      "voice": "32-tong-ket.wav",
+      "voiceDur": 22.95,
+      "cues": [
+        {
+          "start": 637.84,
+          "end": 643.7,
+          "lines": [
+            "Tóm lại, một vòng khép kín: gõ đề và",
+            "dựng hình, kiểm chứng bằng tính toán,"
+          ]
+        },
+        {
+          "start": 643.7,
+          "end": 648.13,
+          "lines": [
+            "soạn và duyệt đề, giáo án,",
+            "giao bài với giờ mở lời giải,"
+          ]
+        },
+        {
+          "start": 648.13,
+          "end": 654.62,
+          "lines": [
+            "học sinh làm bài với gợi ý và hỏi đáp có",
+            "nguồn, rồi chấm bài viết tay và hiểu lớp."
+          ]
+        },
+        {
+          "start": 654.62,
+          "end": 656.52,
+          "lines": [
+            "Gợi ý trước, đáp số sau."
+          ]
+        },
+        {
+          "start": 656.52,
+          "end": 660.79,
+          "lines": [
+            "AI đề xuất, giáo viên quyết",
+            "định. Đúng trước, đẹp sau."
+          ]
+        }
+      ]
+    },
+    {
+      "code": "33-keu-goi",
+      "kind": "slide",
+      "start": 662.81,
+      "duration": 23.23,
+      "voice": "33-keu-goi.wav",
+      "voiceDur": 20.63,
+      "cues": [
+        {
+          "start": 663.41,
+          "end": 668.94,
+          "lines": [
+            "Bạn muốn mang Hình Học Không Gian",
+            "Cùng AI về tổ Toán của trường mình?"
+          ]
+        },
+        {
+          "start": 668.94,
+          "end": 674.48,
+          "lines": [
+            "Chúng tôi thí điểm với chính ngân",
+            "hàng bài tập và giáo án của trường,"
+          ]
+        },
+        {
+          "start": 674.48,
+          "end": 681.14,
+          "lines": [
+            "giữ an toàn dữ liệu học sinh, và đồng hành",
+            "cùng bộ video hướng dẫn cho từng tác vụ."
+          ]
+        },
+        {
+          "start": 681.14,
+          "end": 684.03,
+          "lines": [
+            "Liên hệ BambooAI: contact@bamboox.ai"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "34-ket",
+      "kind": "slide",
+      "start": 686.04,
+      "duration": 7.83,
+      "voice": "34-ket.wav",
+      "voiceDur": 5.22,
+      "cues": [
+        {
+          "start": 686.64,
+          "end": 690.15,
+          "lines": [
+            "AI rất mạnh. Nhưng tư",
+            "duy vẫn là của con người."
+          ]
+        },
+        {
+          "start": 690.15,
+          "end": 691.87,
+          "lines": [
+            "Cảm ơn bạn đã theo dõi."
+          ]
+        }
+      ]
+    }
+  ]
+}

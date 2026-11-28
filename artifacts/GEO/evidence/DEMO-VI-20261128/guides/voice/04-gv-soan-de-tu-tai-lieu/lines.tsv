@@ -1,0 +1,7 @@
+# Phiên bản: v1.0 · 2026-11-28 · T-261128-77 · video 04-gv-soan-de-tu-tai-lieu. Cột: mã <TAB> lời đọc [<TAB> phụ đề nếu khác]. Giọng: <mã>.wav|.mp3 cùng thư mục (tệp mới nhất thắng).
+00-mo-dau	Hướng dẫn giáo viên nhờ AI soạn đề nháp từ một tài liệu đang dùng của lớp, rồi duyệt từng câu.
+b1	Bước một. Từ kho tri thức, mở tài liệu đang dùng và chọn Soạn đề nháp. Trang hiện tài liệu nguồn và phiên bản.
+b2	Bước hai. Bấm soạn đề nháp. AI đọc tài liệu và đề xuất các câu hỏi bám nội dung.
+b3	Bước ba. Câu nào máy dựng được hình có đáp số đã tính lại. Câu chưa kiểm chứng xếp cuối và không được chọn sẵn.
+b4	Bước bốn. Đánh dấu các câu muốn giữ rồi bấm Duyệt. Chỉ câu đã duyệt mới vào ngân hàng đề của thầy cô.
+99-tom-tat	Tóm lại: mở tài liệu, bấm soạn đề nháp, xem nhãn kiểm chứng, rồi chọn và duyệt.

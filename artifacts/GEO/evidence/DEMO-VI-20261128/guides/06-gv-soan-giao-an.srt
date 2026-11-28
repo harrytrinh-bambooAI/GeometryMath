@@ -1,0 +1,71 @@
+1
+00:00:00,600 --> 00:00:05,159
+Hướng dẫn giáo viên soạn giáo án một
+tiết theo phân phối chương trình,
+
+2
+00:00:05,209 --> 00:00:06,739
+với bản nháp do AI soạn.
+
+3
+00:00:08,800 --> 00:00:12,448
+Bước một. Chọn Giáo án,
+rồi Soạn giáo án mới.
+
+4
+00:00:14,100 --> 00:00:14,900
+Bước hai.
+
+5
+00:00:14,731 --> 00:00:18,394
+Chọn chương, bài và tiết
+theo phân phối chương trình.
+
+6
+00:00:18,444 --> 00:00:21,126
+Số tiết và kiến thức trọng tâm tự điền.
+
+7
+00:00:22,776 --> 00:00:23,576
+Bước ba.
+
+8
+00:00:23,379 --> 00:00:27,547
+Chọn đối tượng học sinh và
+phong cách dạy, rồi bấm soạn.
+
+9
+00:00:27,597 --> 00:00:29,431
+Bản nháp có nhãn AI soạn.
+
+10
+00:00:31,081 --> 00:00:31,881
+Bước bốn.
+
+11
+00:00:31,767 --> 00:00:35,679
+Đọc mục tiêu, thiết bị,
+tiến trình và phiếu học tập.
+
+12
+00:00:35,729 --> 00:00:40,708
+Bấm chọn để sửa ở mục nào cần
+chỉnh, hoặc dùng ô chat sửa giáo án.
+
+13
+00:00:42,358 --> 00:00:43,158
+Bước năm.
+
+14
+00:00:43,148 --> 00:00:47,747
+Khi đã ưng, bấm Duyệt giáo
+án, rồi tải Word hoặc PDF.
+
+15
+00:00:49,397 --> 00:00:54,524
+Tóm lại: chọn bài và tiết, chọn
+đối tượng, bấm soạn, sửa từng mục,
+
+16
+00:00:54,574 --> 00:00:56,093
+rồi duyệt và tải về.
