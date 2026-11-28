@@ -1759,6 +1759,33 @@ api	api	differs	Khóa JSON của API (màn chấm có đề xuất AI / chạy s
 api	api	pairs	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
 api	api	differing	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
 api	api	aiActions	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+# --- T-261128-64 ---
+db	class_error_summary	id	Lượt tổng hợp lỗi sai của lớp: nhận định đã lọc, thứ tự bài làm căn cứ, kết quả kiểm máy chủ; không tên học sinh (US-S5E5-02, V805)	PO-65
+db	class_error_summary	org_id	Lượt tổng hợp lỗi sai của lớp: nhận định đã lọc, thứ tự bài làm căn cứ, kết quả kiểm máy chủ; không tên học sinh (US-S5E5-02, V805)	PO-65
+db	class_error_summary	assignment_id	Lượt tổng hợp lỗi sai của lớp: nhận định đã lọc, thứ tự bài làm căn cứ, kết quả kiểm máy chủ; không tên học sinh (US-S5E5-02, V805)	PO-65
+db	class_error_summary	teacher_id	Lượt tổng hợp lỗi sai của lớp: nhận định đã lọc, thứ tự bài làm căn cứ, kết quả kiểm máy chủ; không tên học sinh (US-S5E5-02, V805)	PO-65
+db	class_error_summary	input_hash	Lượt tổng hợp lỗi sai của lớp: nhận định đã lọc, thứ tự bài làm căn cứ, kết quả kiểm máy chủ; không tên học sinh (US-S5E5-02, V805)	PO-65
+db	class_error_summary	mode	Lượt tổng hợp lỗi sai của lớp: nhận định đã lọc, thứ tự bài làm căn cứ, kết quả kiểm máy chủ; không tên học sinh (US-S5E5-02, V805)	PO-65
+db	class_error_summary	insights	Lượt tổng hợp lỗi sai của lớp: nhận định đã lọc, thứ tự bài làm căn cứ, kết quả kiểm máy chủ; không tên học sinh (US-S5E5-02, V805)	PO-65
+db	class_error_summary	works	Lượt tổng hợp lỗi sai của lớp: nhận định đã lọc, thứ tự bài làm căn cứ, kết quả kiểm máy chủ; không tên học sinh (US-S5E5-02, V805)	PO-65
+db	class_error_summary	check_note	Lượt tổng hợp lỗi sai của lớp: nhận định đã lọc, thứ tự bài làm căn cứ, kết quả kiểm máy chủ; không tên học sinh (US-S5E5-02, V805)	PO-65
+db	class_error_summary	removed	Lượt tổng hợp lỗi sai của lớp: nhận định đã lọc, thứ tự bài làm căn cứ, kết quả kiểm máy chủ; không tên học sinh (US-S5E5-02, V805)	PO-65
+db	class_error_summary	created_at	Lượt tổng hợp lỗi sai của lớp: nhận định đã lọc, thứ tự bài làm căn cứ, kết quả kiểm máy chủ; không tên học sinh (US-S5E5-02, V805)	PO-65
+api	api	minApproved	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	work	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	lost	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	avgPoints	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	engine	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	match	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	mismatch	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	notFound	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	criterion	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	family	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	familyLabel	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	sameDang	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	distractorMatch	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	distractor	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
+api	api	docs	Khóa JSON của API tổng hợp lỗi sai của lớp / gợi ý nên nhắc lại trên lớp (US-S5E5-02, US-S5E5-03)	PO-65
 # --- T-261128-65 ---
 api	api	n_bai	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64
 api	api	n_cap	Khóa JSON của API (báo cáo khớp AI–giáo viên, cổng AI đề xuất của lớp, T-261128-65)	PO-64

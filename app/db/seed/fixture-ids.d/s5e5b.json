@@ -1,0 +1,8 @@
+{
+ "_doc": "T-261128-64 (S5-E5b tổng hợp lỗi sai của lớp, 'Nên nhắc lại trên lớp'): ba đề kho nền tảng bộ 's5_kc' dạng khoảng cách từ điểm đến mặt phẳng (họ kc-diem-mp của ngân hàng de-thi) để gợi ý bài luyện giao được qua S3-E2 (seed e2e/s5_700_s5e5b_kc.sql). Bộ chưa cấp cho trường nào; móc /test-hooks/s5e5b/bank-access cấp cho trường của thế giới E2E. Dải 00000000-0000-7000-8005-7000000007nn (đề), …-7000000008nn (phiên bản).",
+ "s5kcProblems": {
+  "KCA-01": { "id": "00000000-0000-7000-8005-700000000701", "versionId": "00000000-0000-7000-8005-700000000801", "answer": "a√2/2" },
+  "KCA-02": { "id": "00000000-0000-7000-8005-700000000702", "versionId": "00000000-0000-7000-8005-700000000802", "answer": "a√21/7" },
+  "KCA-03": { "id": "00000000-0000-7000-8005-700000000703", "versionId": "00000000-0000-7000-8005-700000000803", "answer": "a√2/4" }
+ }
+}

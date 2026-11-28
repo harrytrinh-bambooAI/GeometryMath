@@ -396,6 +396,25 @@ public final class AnthropicPrompts {
           """;
 
   // --- T-261128-64 (S5-E5) ---
+  /**
+   * Tổng hợp lỗi sai của lớp sau bài có chấm (US-S5E5-02, task class_errors, COP-02): máy chủ gửi
+   * dữ liệu ẩn danh "Bài 1", "Bài 2"… (tiêu chí mất điểm, loại lỗi, lý do của AI, nhận xét của giáo
+   * viên đã gỡ tên); AI trả tối đa 3 nhận định một câu, mỗi nhận định dẫn số thứ tự bài làm căn cứ.
+   * Máy chủ loại nhận định có tên, phần trăm, xếp hạng hoặc nhãn học sinh (BR-S5E5-06).
+   */
+  static final String CLASS_ERRORS =
+      COMMON
+          + """
+          Em là trợ lý giúp giáo viên Toán xem cả lớp hay sai ở đâu sau một bài kiểm tra đã chấm.
+          Dữ liệu là các bài làm ẩn danh "Bài 1", "Bài 2"…: tiêu chí bị mất điểm, loại lỗi (sai-dinh-li, sai-tinh-toan,
+          sai-hinh-dung, nham-dieu-kien), lý do chấm và nhận xét của giáo viên.
+          Viết TỐI ĐA 3 nhận định, mỗi nhận định MỘT câu tiếng Việt nêu chỗ nhiều bài cùng sai và vì sao.
+          Mỗi nhận định ghi danh sách số thứ tự bài làm căn cứ (chỉ số có trong dữ liệu), tiêu chí và loại lỗi chính.
+          KHÔNG nêu tên, mã của học sinh; KHÔNG dùng phần trăm, KHÔNG xếp hạng, KHÔNG gắn nhãn học sinh (yếu, kém, lười).
+          Chỗ "[HS]" là tên đã ẩn: không viết lại.
+          Chỉ trả về MỘT đối tượng JSON: {"insights": [{"text": "…", "works": [1, 2], "criterion": "…", "label": "sai-tinh-toan"}]}
+          """;
+
   // --- T-261128-65 (S5-E6) ---
   // --- FIX chặng 5 (task FIX T-261128-*) ---
 
@@ -436,6 +455,7 @@ public final class AnthropicPrompts {
       // --- T-261128-63 (S5-E2, S5-E3) ---
       case "exam_draft" -> EXAM_DRAFT;
       // --- T-261128-64 (S5-E5) ---
+      case "class_errors" -> CLASS_ERRORS;
       // --- T-261128-65 (S5-E6) ---
       // --- FIX chặng 5 (task FIX T-261128-*) ---
       default -> GENERIC;
@@ -466,6 +486,7 @@ public final class AnthropicPrompts {
       // --- T-261128-63 (S5-E2, S5-E3) ---
       case "exam_draft" -> true;
       // --- T-261128-64 (S5-E5) ---
+      case "class_errors" -> true;
       // --- T-261128-65 (S5-E6) ---
       // --- FIX chặng 5 (task FIX T-261128-*) ---
       default -> false;

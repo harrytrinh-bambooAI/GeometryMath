@@ -630,9 +630,86 @@ public class MockAiProvider implements AiProvider {
       return mapper.writeValueAsString(out);
     }
     // --- T-261128-64 (S5-E5) ---
+    if ("class_errors".equals(call.task())) {
+      return classErrors(call.prompt(), control.nextQa(call.scenario()), call.scenario());
+    }
     // --- T-261128-65 (S5-E6) ---
     // --- FIX chặng 5 (task FIX T-261128-*) ---
     return QA_REPLY;
+  }
+
+  // --- T-261128-64 (S5-E5) ---
+  /**
+   * Tổng hợp lỗi của lớp (US-S5E5-02): đọc các dòng "Bài k: …" của tin nhắn ẩn danh, trả tối đa 2
+   * nhận định tất định — loại lỗi gặp nhiều nhất và tiêu chí bị mất điểm nhiều nhất. Biến thể theo
+   * kịch bản của móc kiểm thử: "s5e5-errors-name" (thêm nhận định có tên và phần trăm, FC2),
+   * "error" (lỗi lượt đó), "{…}" nguyên văn; qaReplies = danh sách theo lượt gọi.
+   */
+  private String classErrors(String prompt, String scripted, String scenario) {
+    String variant = scripted != null ? scripted : scenario == null ? "" : scenario;
+    if (variant.startsWith("{")) {
+      return variant;
+    }
+    if ("error".equals(variant)) {
+      throw new IllegalStateException("giả lập lỗi tạm thời");
+    }
+    Map<String, java.util.List<Integer>> byLabel = new java.util.TreeMap<>();
+    Map<String, java.util.List<Integer>> byCriterion = new java.util.TreeMap<>();
+    Matcher line = Pattern.compile("(?m)^Bài (\\d+): (.*)$").matcher(prompt);
+    while (line.find()) {
+      int k = Integer.parseInt(line.group(1));
+      String body = line.group(2);
+      Matcher lab = Pattern.compile("loại lỗi ([a-z-]+)").matcher(body);
+      while (lab.find()) {
+        java.util.List<Integer> ks =
+            byLabel.computeIfAbsent(lab.group(1), x -> new java.util.ArrayList<>());
+        if (!ks.contains(k)) {
+          ks.add(k);
+        }
+      }
+      Matcher lost = Pattern.compile("mất điểm ([^;]+)").matcher(body);
+      if (lost.find()) {
+        for (String part : lost.group(1).split(", ")) {
+          String name = part.replaceAll("\\s*\\(.*$", "").trim();
+          if (!name.isEmpty()) {
+            byCriterion.computeIfAbsent(name, x -> new java.util.ArrayList<>()).add(k);
+          }
+        }
+      }
+    }
+    ObjectNode out = mapper.createObjectNode();
+    tools.jackson.databind.node.ArrayNode arr = out.putArray("insights");
+    if ("s5e5-errors-name".equals(variant)) {
+      ObjectNode bad = arr.addObject();
+      bad.put("text", "Chi Mai và 50 % lớp sai bước tính SB.");
+      bad.putArray("works").add(1);
+      bad.put("criterion", "Các bước");
+      bad.put("label", "sai-tinh-toan");
+    }
+    byLabel.entrySet().stream()
+        .max(java.util.Comparator.comparingInt(e -> e.getValue().size()))
+        .ifPresent(e -> {
+          ObjectNode n = arr.addObject();
+          n.put(
+              "text",
+              "Nhiều bài mắc lỗi "
+                  + e.getKey()
+                  + " ở bước tính SB, AH, cần chữa lại hệ thức lượng.");
+          tools.jackson.databind.node.ArrayNode w = n.putArray("works");
+          e.getValue().forEach(w::add);
+          n.put("criterion", "Các bước");
+          n.put("label", e.getKey());
+        });
+    byCriterion.entrySet().stream()
+        .max(java.util.Comparator.comparingInt(e -> e.getValue().size()))
+        .ifPresent(e -> {
+          ObjectNode n = arr.addObject();
+          n.put("text", "Nhiều bài mất điểm ở tiêu chí " + e.getKey() + ", nên nhắc lại trên lớp.");
+          tools.jackson.databind.node.ArrayNode w = n.putArray("works");
+          e.getValue().forEach(w::add);
+          n.put("criterion", e.getKey());
+        });
+    return mapper.writeValueAsString(out);
   }
 
   private static final Pattern STATEMENT = Pattern.compile("Đề bài: (.*)", Pattern.DOTALL);
