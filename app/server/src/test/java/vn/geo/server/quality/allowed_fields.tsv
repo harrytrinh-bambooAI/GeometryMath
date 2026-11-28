@@ -1543,3 +1543,56 @@ api	api	h	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 0
 api	api	idempotencyKey	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
 api	api	derivedUploadId	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
 api	api	clarity	Khóa API nộp bài viết tay, bản đọc chữ (US-S5E4-03, 04, 09)	PO-64
+# --- T-261128-61 ---
+db	ai_grade_proposal	id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	org_id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	submission_id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	version_id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	submission_version	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	ocr_artifact_id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	ocr_version	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	assignment_id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	class_id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	student_id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	problem_version_id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	rubric_version_id	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	rubric_version	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	status	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	reason	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	total	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	scale	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	confidence	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	flags	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	step_marks	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	model	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	prompt_version	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	attempts	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	tokens	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	academic_year	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	ai_grade_proposal	created_at	Đề xuất điểm AI theo rubric, bất biến, có phiên bản (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	id	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	org_id	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	proposal_id	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	ord	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	name	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	max_points	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	ai_points	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	points	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	reason	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	region	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	confidence	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	error_label	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	adjustments	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	flags	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	criterion_assessment	academic_year	Đánh giá từng tiêu chí của đề xuất AI sau luật chặn KPI (US-S5E6-01, V725)	PO-64
+db	engine_signal	id	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+db	engine_signal	org_id	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+db	engine_signal	proposal_id	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+db	engine_signal	submission_id	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+db	engine_signal	status	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+db	engine_signal	student_answer	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+db	engine_signal	engine_answer	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+db	engine_signal	rule	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+db	engine_signal	disagree	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+db	engine_signal	academic_year	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+db	engine_signal	created_at	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64

@@ -140,6 +140,7 @@ geo:
   # --- T-261128-59 (S5-E4) ---
   # --- T-261128-60 (S5-E4) ---
   # --- T-261128-61 (S5-E6) ---
+  s5.ai-grading.poll-ms: ${GEO_S5_AI_GRADING_POLL_MS:2000}   # US-S5E6-01: chu kỳ job nền quét bản đọc chữ mới để AI đề xuất điểm (ms)
   # --- T-261128-62 (S5-E6) ---
   # --- T-261128-63 (S5-E2, S5-E3) ---
   # --- T-261128-64 (S5-E5) ---

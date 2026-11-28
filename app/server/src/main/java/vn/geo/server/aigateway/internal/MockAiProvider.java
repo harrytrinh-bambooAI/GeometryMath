@@ -485,6 +485,90 @@ public class MockAiProvider implements AiProvider {
     }
     // --- T-261128-60 (S5-E4) ---
     // --- T-261128-61 (S5-E6) ---
+    if ("grade".equals(call.task()) && call.prompt().startsWith("[s5e6-grade]")) {
+      // F-S5-090 (BN-01: 2/4/2/1/1 = 10, tin cậy 0,86) mặc định; biến thể theo kịch bản của móc
+      // kiểm thử (qaReplies theo lượt gọi, danh tính học sinh nộp): F-S5-091 (BN-02: 2/3/0/1/1 = 7,
+      // 0,74, sai-tinh-toan ở B2) · s5e6-thieu (BN-07: Bước 1, Kết quả 2) · s5e6-huong0 (Hướng 0,
+      // Bước 3) · s5e6-buoc-sai (F-S5-091, B3 phu_thuoc [B2]) · s5e6-hinh-sai (hình sai, B1
+      // dua_tren_hinh) · s5e6-vuot (Bước 5 > 4) · s5e6-bia (Bước dẫn kiến thức ngoài kho) ·
+      // s5e6-kq2 (F-S5-091 nhưng Kết quả 2/2) · error (lỗi lượt đó) · "{…}" nguyên văn.
+      String scripted = control.nextQa(call.scenario());
+      String variant = scripted != null ? scripted : "F-S5-090";
+      if (variant.startsWith("{")) {
+        return variant;
+      }
+      if ("error".equals(variant)) {
+        throw new IllegalStateException("giả lập lỗi tạm thời");
+      }
+      boolean b2 =
+          variant.equals("F-S5-091")
+              || variant.equals("s5e6-buoc-sai")
+              || variant.equals("s5e6-kq2");
+      double[] pts =
+          switch (variant) {
+            case "F-S5-091", "s5e6-buoc-sai" -> new double[] {2, 3, 0, 1, 1};
+            case "s5e6-kq2" -> new double[] {2, 3, 2, 1, 1};
+            case "s5e6-thieu" -> new double[] {2, 1, 2, 1, 1};
+            case "s5e6-huong0" -> new double[] {0, 3, 0, 1, 1};
+            case "s5e6-vuot" -> new double[] {2, 5, 2, 1, 1};
+            default -> new double[] {2, 4, 2, 1, 1};
+          };
+      double conf = b2 ? 0.74 : 0.86;
+      String[] why = {
+        "Chọn đúng hướng: kẻ AH ⊥ SB, chứng minh AH ⊥ (SBC).",
+        "Các bước tính SB, AH theo hệ thức lượng.",
+        "Đáp số cuối của bài.",
+        "Hình chóp vẽ đủ đường cao SA và AH.",
+        "Trình bày rõ, có căn cứ."
+      };
+      ObjectNode out = mapper.createObjectNode();
+      out.put("kind", "grade");
+      out.put("hinh", variant.equals("s5e6-hinh-sai") ? "hình sai" : "đúng");
+      tools.jackson.databind.node.ArrayNode cs = out.putArray("criteria");
+      double sum = 0;
+      for (int i = 0; i < 5; i++) {
+        ObjectNode c = cs.addObject();
+        c.put("ma", "C" + (i + 1));
+        c.put("diem", pts[i]);
+        c.put("ly_do", why[i]);
+        c.putObject("vung")
+            .put("trang", i < 2 ? 1 : 2)
+            .put("x", 40)
+            .put("y", 60 + 80 * i)
+            .put("w", 480)
+            .put("h", 60);
+        c.put("tin_cay", conf);
+        if (i == 1 && b2) {
+          c.put("loi", "sai-tinh-toan");
+        }
+        if (i == 1 && variant.equals("s5e6-bia")) {
+          c.putArray("kien_thuc").addObject().put("ten", "định lí ba đường cao không gian");
+        }
+        sum += pts[i];
+      }
+      out.put("tong", sum);
+      tools.jackson.databind.node.ArrayNode steps = out.putArray("buoc");
+      for (int i = 1; i <= 4; i++) {
+        ObjectNode st = steps.addObject();
+        st.put("ma", "B" + i);
+        st.put("tieu_chi", "C2");
+        boolean ok =
+            switch (variant) {
+              case "F-S5-091", "s5e6-buoc-sai", "s5e6-kq2" -> i != 2;
+              case "s5e6-thieu" -> i == 1;
+              case "s5e6-huong0" -> i != 4;
+              default -> true;
+            };
+        st.put("diem", ok ? 1 : 0);
+        st.put("dung", ok);
+        tools.jackson.databind.node.ArrayNode dep = st.putArray("phu_thuoc");
+        if (i == 3 && variant.equals("s5e6-buoc-sai")) {
+          dep.add("B2");
+        }
+        st.put("dua_tren_hinh", i == 1 && variant.equals("s5e6-hinh-sai"));
+      }
+      return mapper.writeValueAsString(out);
+    }
     // --- T-261128-62 (S5-E6) ---
     // --- T-261128-63 (S5-E2, S5-E3) ---
     // --- T-261128-64 (S5-E5) ---
