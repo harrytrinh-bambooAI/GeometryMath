@@ -8,6 +8,7 @@ Nhánh `worktree-mvp-wave0` (repo `/Users/harry/IdeaProjects/GeometryMathSupport
 - Code chặng 5: 17 task (khung 51, code 52–65, FIX 68, công cụ E2E lai 69) — mỗi task phiên chính tự chạy lại `queue.py check` (exit 0) rồi gộp.
 - Tester chặng 5 (T-66): 219/219 TC đạt (UI 26/26 chromium+webkit, API 193/193), 0 lỗi; `artifacts/GEO/evidence/E2E-S5-20261128/` (REPORT, BUG-LIST .md/.html, check_buglist ĐẠT).
 - Hồi quy trọn bộ `make e2e-full` trên bản gộp cuối (wt s5-test @ dff5fb6, lượt 20261128-113923): 2054/2058 test đạt, 4 skipped, 0 trượt, 0 chập chờn; 1158/1158 mã TC; traceability --strict MVP,S2,S3,S5 ĐẠT (258 TC chưa chạy = loại Manual/IT/UT không thuộc E2E).
+- Hồi quy trọn bộ lần 2 sau FIX T-70 (HEAD 2af318f): 2059/2063 đạt (1 chập chờn đạt sau retry), 4 skipped, 0 trượt; 1158/1158 mã TC; traceability --strict ĐẠT.
 
 Đang dở: không có agent nào chạy. Soát độc lập §7 + FIX T-70 đã gộp: REVIEW-S5-20261128 v1.1 (3 Major + 2 Minor đã sửa, 2 chấp nhận, mục 8 còn mở: OcrService không cộng token vào trần lớp — inbox).
 Bước tiếp theo:
