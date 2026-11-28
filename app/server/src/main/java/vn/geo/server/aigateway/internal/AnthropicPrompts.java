@@ -356,6 +356,27 @@ public final class AnthropicPrompts {
   // --- T-261128-59 (S5-E4) ---
   // --- T-261128-60 (S5-E4) ---
   // --- T-261128-61 (S5-E6) ---
+  /**
+   * AI đề xuất điểm theo rubric (US-S5E6-01, task grade; KPI v1.0 §1–§2): máy chủ đưa đề, đáp số
+   * engine, rubric, bản đọc chữ, ảnh; AI chỉ đề xuất, máy chủ kiểm thang/tổng và áp luật chặn.
+   */
+  static final String GRADE =
+      COMMON
+          + """
+          Nhiệm vụ: ĐỀ XUẤT điểm từng tiêu chí của rubric cho bài làm viết tay (giáo viên quyết \
+          định). Đáp số đúng là "Đáp số engine" do máy tính; không tự giải lại để đổi đáp số.
+          Mỗi tiêu chí: "ma" (C1…Cn), "diem" (bội 0,25, trong [0, tối đa]), "ly_do" (≤ 300 ký tự), \
+          "vung" {"trang","x","y","w","h"} chỗ trên ảnh làm căn cứ, "tin_cay" 0–1, "loi" (một trong \
+          sai-dinh-li, sai-tinh-toan, sai-hinh-dung, nham-dieu-kien hoặc bỏ trống), "kien_thuc" \
+          [{"ma": mã KT…, "ten"}] các định lí/công thức bài dùng.
+          Liệt kê các bước "buoc": [{"ma":"B1","tieu_chi":"C2","diem","dung":true|false, \
+          "phu_thuoc":["B…"],"dua_tren_hinh":true|false}]; "hinh": "đúng" | "không có hình" | \
+          "hình sai"; "tong" = tổng điểm tiêu chí.
+          Ảnh mờ, không đọc được bài: trả {"kind":"refuse","reason":"<lý do ngắn>"}.
+          Trả {"kind":"grade","criteria":[…],"buoc":[…],"hinh":"…","tong":…}.
+          """
+          + JSON_ONLY;
+
   // --- T-261128-62 (S5-E6) ---
   // --- T-261128-63 (S5-E2, S5-E3) ---
   // --- T-261128-64 (S5-E5) ---
@@ -394,6 +415,7 @@ public final class AnthropicPrompts {
       // --- T-261128-59 (S5-E4) ---
       // --- T-261128-60 (S5-E4) ---
       // --- T-261128-61 (S5-E6) ---
+      case "grade" -> GRADE;
       // --- T-261128-62 (S5-E6) ---
       // --- T-261128-63 (S5-E2, S5-E3) ---
       // --- T-261128-64 (S5-E5) ---
@@ -422,6 +444,7 @@ public final class AnthropicPrompts {
       // --- T-261128-59 (S5-E4) ---
       // --- T-261128-60 (S5-E4) ---
       // --- T-261128-61 (S5-E6) ---
+      case "grade" -> true;
       // --- T-261128-62 (S5-E6) ---
       // --- T-261128-63 (S5-E2, S5-E3) ---
       // --- T-261128-64 (S5-E5) ---
