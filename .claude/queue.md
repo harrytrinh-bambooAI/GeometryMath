@@ -532,6 +532,17 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(assessment|aigrade|aigateway|knowledge|answers)/|app/server/src/test/java/vn/geo/server/|app/e2e/tests/s5e[3-6]/|app/e2e/fixtures/|app/server/src/main/resources/db/migration/V8(4[8-9]|5[0-4])__|app/server/quality/sql-lint\.properties|app/server/src/main/resources/application\.yml|artifacts/GEO/evidence/REVIEW-S5-20261128\.md|artifacts/GEO/work/epics/S5-E[3-6]/(status|qc_findings)\.md)
 - Cổng: 54889
 
+## T-261128-71 · S5-FIX · L5 Dev FIX REVIEW mục 8 · epic-common v1.6 · wt s5-fix3 · 1h/2M · OcrService cộng token AI vào trần token của lớp [done]
+- Mục tiêu: REVIEW-S5-20261128 mục 8: mọi lời gọi `grade_ocr` (OCR tự động + "Đọc lại") cộng token AI vào trần token của lớp qua `aigateway.api.quota.AiQuota.addTokensSince` (cách T-70 làm cho `KbQaService.ask`); khi trần token lớp đã chạm thì OCR không gọi AI và ghi lý do hạn mức (`ocr_artifact.reason`, như V846). Có IT hoặc e2e API kiểm: sau N lượt OCR mock, bộ đếm token lớp tăng đúng; chạm trần → không gọi AI. Cập nhật REVIEW mục 8 → "Đã sửa" (tăng v1.2) và qc_findings S5-E4.
+- Nguồn: artifacts/GEO/evidence/REVIEW-S5-20261128.md v1.1 mục 8 (28/11); T-70 (KbQaService + AiQuota.addTokensSince); epics/S5-E5 stories_ac.md (hạn mức/trần token)
+- Xong khi: verify + web-build + e2e-affected xanh; traceability --strict đạt; REVIEW mục 8 "Đã sửa".
+- Kiểm: `cd .claude/worktrees/s5-fix3/app && make verify && make web-build && make e2e-affected && make traceability ARGS="--strict --epic MVP,S2,S3,S5" && grep -q 'v1.2' ../artifacts/GEO/evidence/REVIEW-S5-20261128.md`
+- Ngoài phạm vi: tính năng khác; sửa đặc tả; gọi AI thật
+- Model: sonnet · Ngân sách: 1 giờ
+- Phụ thuộc: T-261128-70
+- Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/(assessment|aigateway)/|app/server/src/test/java/vn/geo/server/|app/e2e/tests/s5e[45]/|artifacts/GEO/evidence/REVIEW-S5-20261128\.md|artifacts/GEO/work/epics/S5-E4/(status|qc_findings)\.md)
+- Cổng: 54899
+
 ## T-261128-67 · GATE · Owner L7 chặng 5 (L5a phát hành; L5b/L5c chờ PO-64, bench QS5-27, lớp pilot) [wait-user]
 - Mục tiêu: owner quyết phát hành L5a (S5-E1, S5-E2, S5-E3, US-S5E5-01, 04); chốt QS5-01/QS5-30 (PO-64) để bật cờ grading (L5b); duyệt bench QS5-27 trước khi bật ai-grading cho lớp (L5c)
 - Nguồn: artifacts/GEO/evidence/E2E-S5/REPORT.md; s5/questions-s5.md v0.2; brief-s5 §5
