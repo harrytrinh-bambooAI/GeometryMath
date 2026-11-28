@@ -1,0 +1,453 @@
+1
+00:00:00,600 --> 00:00:03,730
+Xin chào. Đây là Hình
+Học Không Gian Cùng AI,
+
+2
+00:00:03,780 --> 00:00:08,536
+sản phẩm do BambooAI phát triển cho
+giáo viên và học sinh trung học.
+
+3
+00:00:08,586 --> 00:00:09,879
+Trong vài phút tới,
+
+4
+00:00:09,929 --> 00:00:14,614
+chúng tôi sẽ cho bạn thấy hệ thống
+giúp học hình không gian dễ hơn,
+
+5
+00:00:14,664 --> 00:00:17,794
+và giúp giáo viên tiết
+kiệm thời gian ra sao.
+
+6
+00:00:20,444 --> 00:00:23,595
+Hình không gian khó hình
+dung trên trang giấy.
+
+7
+00:00:23,645 --> 00:00:28,188
+Học sinh thường bế tắc vì không
+nhìn ra quan hệ giữa đường và mặt.
+
+8
+00:00:28,238 --> 00:00:32,433
+AI thông thường lại có thể tính
+sai, hoặc đưa đáp số quá sớm.
+
+9
+00:00:32,483 --> 00:00:37,583
+Còn giáo viên mất nhiều giờ mỗi tuần
+để soạn đề, soạn giáo án và chấm bài.
+
+10
+00:00:40,244 --> 00:00:41,715
+Hệ thống có ba phần.
+
+11
+00:00:41,765 --> 00:00:45,517
+Học sinh làm bài trên hình
+3D, với gợi ý từng bậc.
+
+12
+00:00:45,567 --> 00:00:49,700
+Giáo viên soạn đề, soạn giáo
+án, giao bài và chấm điểm.
+
+13
+00:00:49,750 --> 00:00:56,011
+AI hỗ trợ ở mọi bước, nhưng hình và đáp số
+luôn được máy kiểm chứng bằng tính toán.
+
+14
+00:00:56,061 --> 00:00:58,521
+AI đề xuất, giáo viên quyết định.
+
+15
+00:01:01,178 --> 00:01:03,278
+Chương một: hỗ trợ hình học.
+
+16
+00:01:03,328 --> 00:01:08,808
+Từ đề bài đến hình 3D, lời giải từng
+bước, và đáp số đã được kiểm chứng.
+
+17
+00:01:11,458 --> 00:01:16,413
+Kho đề chứa chính các bài trong
+ngân hàng bài tập của tổ Toán,
+
+18
+00:01:16,463 --> 00:01:22,628
+ví dụ bài HKG-01 về góc trong hình chóp,
+hay bài HKG-03 về thể tích lăng trụ.
+
+19
+00:01:22,678 --> 00:01:26,503
+Giáo viên lọc theo cấp
+học, loại hình và chủ đề.
+
+20
+00:01:26,553 --> 00:01:28,924
+Mỗi bài có nhãn đã kiểm chứng.
+
+21
+00:01:31,174 --> 00:01:33,482
+Giáo viên chỉ cần gõ đề.
+
+22
+00:01:33,532 --> 00:01:40,752
+Ví dụ: cho hình chóp S.ABCD, đáy là
+hình vuông cạnh a, SA ⊥ đáy, SA = a√2.
+
+23
+00:01:40,802 --> 00:01:43,503
+Tính góc giữa SC và mặt đáy.
+
+24
+00:01:43,553 --> 00:01:47,727
+Hệ thống đọc đề, dựng
+hình, giải từng bước,
+
+25
+00:01:47,777 --> 00:01:51,854
+rồi kiểm chứng đáp số bằng tính toán: 45°.
+
+26
+00:01:54,108 --> 00:01:59,800
+Hình 3D xoay được bằng chuột hoặc ngón
+tay, để thấy rõ SA vuông góc với đáy.
+
+27
+00:01:59,850 --> 00:02:05,541
+Học sinh có thể vẽ thêm điểm, nối đoạn,
+và đo độ dài hay góc ngay trên hình.
+
+28
+00:02:05,591 --> 00:02:10,527
+Đại lượng là đáp số thì được khoá,
+để các em vẫn phải tự suy luận.
+
+29
+00:02:12,777 --> 00:02:17,976
+Lời giải trình bày từng bước, mỗi bước
+kèm một câu: vì sao nghĩ ra bước này,
+
+30
+00:02:18,026 --> 00:02:22,673
+đúng định hướng của giáo viên, ưu
+tiên hình chiếu và tam giác vuông.
+
+31
+00:02:22,723 --> 00:02:26,057
+Khi trình chiếu trên lớp,
+giáo viên mở từng bước,
+
+32
+00:02:26,107 --> 00:02:28,958
+và hình tô sáng đúng các yếu tố đang dùng.
+
+33
+00:02:31,211 --> 00:02:34,181
+Chương hai: AI đồng hành cùng học sinh.
+
+34
+00:02:34,231 --> 00:02:38,516
+Gợi ý trước, lời giải sau,
+và câu trả lời luôn có nguồn.
+
+35
+00:02:41,178 --> 00:02:45,424
+Học sinh vào lớp bằng tên và
+mã lớp, không cần tài khoản.
+
+36
+00:02:45,474 --> 00:02:47,760
+Khi vướng, các em mở gợi ý một:
+
+37
+00:02:47,810 --> 00:02:52,583
+góc giữa đường và mặt là góc giữa
+đường đó và hình chiếu của nó.
+
+38
+00:02:52,633 --> 00:02:54,919
+Gợi ý hai mới chỉ bước kế tiếp.
+
+39
+00:02:54,969 --> 00:02:57,783
+Lời giải chỉ mở vào giờ giáo viên đặt.
+
+40
+00:03:01,712 --> 00:03:05,996
+Giáo viên đưa giáo án và tài
+liệu của lớp vào kho tri thức.
+
+41
+00:03:06,046 --> 00:03:10,770
+Mỗi tài liệu có phiên bản: đang
+dùng, chờ duyệt, hoặc đã lưu trữ.
+
+42
+00:03:10,820 --> 00:03:14,811
+AI chỉ trả lời dựa trên tài
+liệu mà giáo viên đã duyệt.
+
+43
+00:03:17,060 --> 00:03:21,359
+Học sinh hỏi: vì sao hình
+chiếu của SD lên mặt đáy là AD?
+
+44
+00:03:21,409 --> 00:03:25,860
+AI giải thích khái niệm, không
+làm hộ bài, và ghi rõ nguồn.
+
+45
+00:03:25,910 --> 00:03:29,904
+Bấm vào nguồn là mở đúng
+đoạn trong tài liệu của lớp.
+
+46
+00:03:32,160 --> 00:03:35,371
+Chương ba: soạn đề và
+soạn giáo án cùng AI.
+
+47
+00:03:35,421 --> 00:03:39,314
+Giáo viên ra yêu cầu, AI
+soạn nháp, giáo viên duyệt.
+
+48
+00:03:41,964 --> 00:03:46,303
+Từ tài liệu đã có trong kho, giáo
+viên yêu cầu AI soạn đề nháp.
+
+49
+00:03:46,353 --> 00:03:49,995
+Câu nào máy dựng được hình
+thì có đáp số đã tính lại.
+
+50
+00:03:50,045 --> 00:03:53,965
+Câu chưa kiểm chứng được xếp
+cuối và không được chọn sẵn.
+
+51
+00:03:54,015 --> 00:03:57,657
+Giáo viên duyệt từng câu
+trước khi đưa vào ngân hàng.
+
+52
+00:03:59,907 --> 00:04:04,151
+Ra đề theo ma trận chuẩn:
+chọn loại đề kiểm tra 15 phút,
+
+53
+00:04:04,201 --> 00:04:08,675
+hệ thống điền sẵn số câu trắc
+nghiệm, tự luận và tổng điểm,
+
+54
+00:04:08,725 --> 00:04:12,049
+rồi sinh 4 mã đề từ
+ngân hàng đã kiểm chứng.
+
+55
+00:04:12,099 --> 00:04:16,036
+Đổi một câu, câu mới vẫn
+giữ chủ đề, mức độ và điểm.
+
+56
+00:04:18,286 --> 00:04:23,095
+Soạn giáo án theo phân phối chương
+trình: chọn chương, bài và tiết,
+
+57
+00:04:23,145 --> 00:04:24,836
+chọn đối tượng học sinh.
+
+58
+00:04:24,886 --> 00:04:29,550
+AI soạn bản nháp có mục tiêu, tiến
+trình hoạt động và thời lượng,
+
+59
+00:04:29,600 --> 00:04:32,523
+như giáo án Hình không gian của lớp 11A1.
+
+60
+00:04:32,573 --> 00:04:36,802
+Bản nháp gắn nhãn AI soạn, để
+giáo viên sửa trước khi dùng.
+
+61
+00:04:39,053 --> 00:04:43,630
+Chương bốn: chấm điểm, và nhận
+dạng bài làm viết tay của học sinh.
+
+62
+00:04:46,287 --> 00:04:52,382
+Giáo viên tạo rubric năm tiêu chí cho bài
+kiểm tra: hướng giải, các bước, kết quả,
+
+63
+00:04:52,432 --> 00:04:54,031
+hình vẽ, và trình bày.
+
+64
+00:04:54,081 --> 00:04:55,904
+Tổng điểm được tính ngay.
+
+65
+00:04:55,954 --> 00:05:00,326
+Nếu tổng không đủ mười điểm,
+hệ thống cảnh báo và chặn lưu.
+
+66
+00:05:02,587 --> 00:05:07,302
+Học sinh làm bài trên giấy như thường
+lệ, rồi chụp từng trang để nộp.
+
+67
+00:05:07,352 --> 00:05:10,064
+Ảnh được kiểm tra độ nét trước khi nhận.
+
+68
+00:05:10,114 --> 00:05:13,794
+Sau khi nộp, các em thấy xác
+nhận kèm giờ của máy chủ.
+
+69
+00:05:19,067 --> 00:05:23,239
+Hệ thống đọc chữ viết tay trong
+ảnh, tách từng dòng lập luận,
+
+70
+00:05:23,289 --> 00:05:26,215
+rồi đối chiếu với từng
+tiêu chí của rubric.
+
+71
+00:05:26,265 --> 00:05:30,229
+Dòng nào đọc chưa chắc được
+đánh dấu để giáo viên xem lại.
+
+72
+00:05:30,279 --> 00:05:34,174
+Ảnh trong video là ảnh minh
+hoạ, tên học sinh là tên giả.
+
+73
+00:05:36,834 --> 00:05:39,234
+AI đề xuất điểm cho từng tiêu chí,
+
+74
+00:05:39,284 --> 00:05:42,694
+và khoanh vùng trên trang
+bài làm mà nó dựa vào.
+
+75
+00:05:42,744 --> 00:05:45,793
+Giáo viên nhận, sửa,
+hoặc bỏ từng tiêu chí.
+
+76
+00:05:45,843 --> 00:05:49,252
+Nút duyệt chỉ mở khi mọi
+tiêu chí đã được xử lý.
+
+77
+00:05:49,302 --> 00:05:52,423
+Điểm cuối cùng luôn do
+giáo viên quyết định.
+
+78
+00:05:54,673 --> 00:05:59,123
+Từ các bài đã chấm, trợ lý tổng
+hợp lỗi sai chung của cả lớp,
+
+79
+00:05:59,173 --> 00:06:03,622
+kèm bằng chứng là bài làm cụ
+thể, và không xếp hạng học sinh.
+
+80
+00:06:03,672 --> 00:06:08,195
+Giáo viên có thể gợi ý ngay một
+bộ luyện nhắc lại cùng chủ đề.
+
+81
+00:06:10,445 --> 00:06:15,707
+Trong lúc học sinh làm bài, giáo
+viên theo dõi cả lớp: ai đã mở bài,
+
+82
+00:06:15,757 --> 00:06:18,910
+ai dùng gợi ý đến bậc nào, ai đang vướng.
+
+83
+00:06:18,960 --> 00:06:23,441
+Số liệu dùng để hỗ trợ từng
+em, không để so sánh học sinh.
+
+84
+00:06:25,691 --> 00:06:30,122
+Với học sinh: nhìn thấy hình,
+tự tay thử, và hiểu vì sao.
+
+85
+00:06:30,172 --> 00:06:33,188
+Gợi ý đến đúng lúc, không bị lộ đáp án.
+
+86
+00:06:33,238 --> 00:06:38,847
+Câu hỏi được trả lời theo đúng tài
+liệu của lớp, có nguồn để tự đọc lại.
+
+87
+00:06:41,497 --> 00:06:45,818
+Với giáo viên: soạn đề, soạn
+giáo án và chấm bài nhanh hơn.
+
+88
+00:06:45,868 --> 00:06:48,041
+Đáp số đã được máy kiểm chứng.
+
+89
+00:06:48,091 --> 00:06:50,930
+Biết lớp sai ở đâu để dạy lại đúng chỗ.
+
+90
+00:06:50,980 --> 00:06:54,561
+Và giáo viên luôn giữ
+quyền quyết định cuối cùng.
+
+91
+00:06:57,211 --> 00:07:02,928
+Tóm lại: dựng hình từ đề, kiểm chứng bằng
+tính toán, gợi ý trước lời giải sau,
+
+92
+00:07:02,978 --> 00:07:08,842
+soạn đề và giáo án bằng yêu cầu, chấm bài
+theo rubric và nhận dạng bài viết tay.
+
+93
+00:07:08,892 --> 00:07:11,430
+AI thực hiện, con người quyết định.
+
+94
+00:07:14,080 --> 00:07:18,612
+AI rất mạnh, nhưng tư
+duy vẫn là của con người.
+
+95
+00:07:18,662 --> 00:07:20,854
+Cảm ơn bạn đã theo dõi.
+
+96
+00:07:20,904 --> 00:07:24,363
+Liên hệ BambooAI: contact@bamboox.ai

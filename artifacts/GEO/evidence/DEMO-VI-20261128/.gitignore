@@ -1,0 +1,5 @@
+# T-261128-75: video, giọng đọc và ảnh lớn để ngoài git (sinh lại bằng app/e2e/demo-vi/*.mjs)
+*.mp4
+voice/*.wav
+voice/*.mp3
+assets/*-photo.png

@@ -1,0 +1,31 @@
+{
+  "_doc": "T-261128-75 · fixture DEMO riêng (không phải fixture e2e). Nội dung bản nháp giáo án GIẢ LẬP lấy từ materials/Giao-an-Hinh-khong-gian-11A1.docx (mục 1 Mục tiêu, mục 3 Tiến trình dạy học, bài HKG-01..06). Chỉ ghi đè chữ các trường dưới đây khi hiển thị trong clip 15 (page.route GET /api/v1/teacher/lesson-plans/<id>); mã kiến thức, nhãn 'AI soạn', cấu trúc giữ nguyên của máy chủ.",
+  "mucTieuKienThuc": "Xác định được hình chiếu của một điểm, một đường thẳng lên mặt phẳng; tính được góc giữa đường thẳng và mặt phẳng bằng tam giác vuông.",
+  "nangLuc": ["Tư duy và lập luận: tìm hình chiếu, dựng tam giác vuông chứa góc cần tìm.", "Mô hình hoá: quan sát, xoay hình 3D để thấy quan hệ vuông góc."],
+  "hoatDong": [
+    {
+      "ten": "Khởi động: chiếu hình chóp S.ABCD",
+      "noiDung": "GV chiếu hình chóp S.ABCD, xoay hình để HS thấy SA vuông góc với đáy.",
+      "chuyenGiao": "GV chiếu và xoay hình chóp S.ABCD trên máy chiếu.",
+      "thucHien": "HS quan sát, nêu điểm nào là hình chiếu của S."
+    },
+    {
+      "ten": "Hình thành: góc giữa đường thẳng và mặt phẳng",
+      "noiDung": "GV nêu định nghĩa góc giữa đường thẳng và mặt phẳng qua hình chiếu; ưu tiên phương pháp hình chiếu và tam giác vuông.",
+      "chuyenGiao": "GV nêu định nghĩa qua hình chiếu, giao bài HKG-01.",
+      "thucHien": "HS làm bài HKG-01 trên thiết bị, dùng gợi ý khi cần."
+    },
+    {
+      "ten": "Luyện tập: HKG-02 đến HKG-05",
+      "noiDung": "GV giao HKG-02 đến HKG-05 (khoảng cách, thể tích, diện tích); đặt giờ mở lời giải sau buổi học.",
+      "chuyenGiao": "GV giao HKG-02 đến HKG-05, đặt giờ mở lời giải.",
+      "thucHien": "HS tự làm, thao tác trên hình, hỏi trợ lý khi vướng."
+    },
+    {
+      "ten": "Mở rộng: HKG-06 mặt cầu ngoại tiếp",
+      "noiDung": "GV giao HKG-06 cho HS đã vững phần thể tích.",
+      "chuyenGiao": "GV giao HKG-06 cho nhóm HS khá.",
+      "thucHien": "HS làm bài, đối chiếu lời giải khi được mở."
+    }
+  ]
+}
