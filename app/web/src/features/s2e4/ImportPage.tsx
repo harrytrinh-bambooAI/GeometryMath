@@ -4,6 +4,7 @@ import { ApiError } from '../../shared/api/errors.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { createDrafts, importFile, type ImportItem, type ImportView } from './api.ts';
 import { defaultSelection, formatSize, MSG, pickFile, refLink, summarize } from './logic.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * C2-04b…d "Nhập từ tệp" (US-S2E4-02, 03; Design/prototype/s23c.js c2-04b-import-tach-bai, c2-04d-import-loi-tep).
@@ -189,12 +190,12 @@ function ItemRow({ it, checked, disabled, onToggle }: { it: ImportItem; checked:
         data-testid={`s2e4-item-check-${it.index}`}
       />
       <label className="s2e4-imp-body" htmlFor={`s2e4-item-check-${it.index}`}>
-        <b>{it.title}.</b> <span data-math>{it.text}</span>
+        <b>{it.title}.</b> <span data-math><MathText text={it.text} /></span>
       </label>
       <div className="s2e4-row">
         {it.note && (
           <span className={`chip${tone}`} data-testid={`s2e4-item-note-${it.index}`}>
-            {it.note}
+            <MathText text={it.note} />
           </span>
         )}
         {it.draftId && (

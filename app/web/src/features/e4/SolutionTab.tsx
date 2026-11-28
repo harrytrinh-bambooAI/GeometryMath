@@ -10,6 +10,7 @@ import { LockCard } from '../e6/LockCard.tsx';
 import { useReleaseWatch } from '../e6/useReleaseWatch.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { verifyIcon } from '../../shared/ui/icons.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /** Thông điệp khóa của tab "Lời giải" theo trạng thái máy chủ (MSG-GEO-30, 31, 58; bài lớp: giờ mở của giáo viên). */
 function lockText(state: string, message: string | null | undefined, releaseAt: string | null | undefined): string {
@@ -149,7 +150,7 @@ export function SolutionTab({ id, model }: { id: string; model: HelpModel }) {
                 {s.why && (
                   <div className="e4-why" data-testid={tid('e4', 'step', 'why')}>
                     <strong>Vì sao nghĩ ra bước này?</strong>
-                    <p>{s.why}</p>
+                    <p><MathText text={s.why} /></p>
                   </div>
                 )}
               </div>
@@ -173,7 +174,7 @@ export function SolutionTab({ id, model }: { id: string; model: HelpModel }) {
         </button>
       </div>
       <p data-testid={tid('e4', 'solution', 'answer')}>
-        Đáp số: <strong data-math>{solution.finalAnswer}</strong>
+        Đáp số: <strong data-math><MathText text={solution.finalAnswer} /></strong>
       </p>
     </div>
   );

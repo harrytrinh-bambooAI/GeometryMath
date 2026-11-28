@@ -7,6 +7,7 @@ import { libraryApi, type QueueDetail, type QueueRow } from './api.ts';
 import { reasonError } from './logic.ts';
 import { useFetch } from './useFetch.ts';
 import './s2e6.css';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Hàng đợi Chờ soát của người soát nội dung (US-S2E6-02): xem đề và lời giải đã gửi, "Duyệt vào Kho chung" hoặc
@@ -139,7 +140,7 @@ function QueueItem({ row, result, onDone }: { row: QueueRow; result?: string; on
       {detail ? (
         <div className="s2e6-detail" data-testid="s2e6-queue-detail">
           <p className="s2e6-statement" data-math>
-            {detail.statement}
+            <MathText text={detail.statement} />
           </p>
           <ol className="s2e6-steps">
             {detail.steps.map((s, i) => (

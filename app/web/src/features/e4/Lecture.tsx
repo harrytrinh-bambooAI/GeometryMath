@@ -4,6 +4,8 @@ import { ApiError } from '../../shared/api/errors.ts';
 import { tid } from '../../shared/testid.ts';
 import { e4Api, M, type Keyword, type Lecture } from './api.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
+import { splitMath } from '../../shared/math/math.ts';
 
 /**
  * Từ khóa bấm được và hộp bài giảng (US-GEO-411; BR-GEO-198, 199, 296). Cụm từ trùng một từ khóa của kho (dài trước,
@@ -45,7 +47,8 @@ export function LectureProvider({ children }: { children: ReactNode }) {
 }
 
 /** Chia văn bản thành đoạn thường và đoạn trùng từ khóa (dài trước). */
-export function splitKeywords(text: string, keywords: Keyword[]): Array<{ text: string; kw?: Keyword }> {
+type KwPart = { text: string; kw?: Keyword };
+export function splitKeywords(text: string, keywords: Keyword[]): KwPart[] {
   if (!keywords.length || !text) return [{ text }];
   const sorted = [...keywords].sort((a, b) => b.term.length - a.term.length);
   const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -66,7 +69,14 @@ export function splitKeywords(text: string, keywords: Keyword[]): Array<{ text: 
 /** Văn bản có từ khóa gạch chân chấm, bấm được. */
 export function KwText({ text, testId }: { text: string; testId?: string }) {
   const ctx = useContext(LectureCtx);
-  const parts = useMemo(() => splitKeywords(text, ctx?.keywords ?? []), [text, ctx?.keywords]);
+  // T-261128-74: tách toán trước, chỉ gạch chân từ khóa trong đoạn chữ (không cắt ngang biểu thức $...$).
+  const parts = useMemo(
+    () =>
+      splitMath(text).flatMap((s): KwPart[] =>
+        s.kind === 'math' ? [{ text: s.display ? `$$${s.value}$$` : `$${s.value}$` }] : splitKeywords(s.value, ctx?.keywords ?? []),
+      ),
+    [text, ctx?.keywords],
+  );
   return (
     <span data-testid={testId} data-math>
       {parts.map((p, i) =>
@@ -79,10 +89,10 @@ export function KwText({ text, testId }: { text: string; testId?: string }) {
             data-term={p.text}
             onClick={() => ctx.open({ term: p.text })}
           >
-            {p.text}
+            <MathText text={p.text} />
           </button>
         ) : (
-          <span key={i}>{p.text}</span>
+          <span key={i}><MathText text={p.text} /></span>
         ),
       )}
     </span>
@@ -143,7 +153,7 @@ function LectureModal({ req, onClose }: { req: { term?: string; slug?: string };
             </p>
             {lec.reviewNote && (
               <p className="small muted" data-testid={tid('e4', 'lecture', 'review')}>
-                {lec.reviewNote}
+                <MathText text={lec.reviewNote} />
               </p>
             )}
           </>

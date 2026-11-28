@@ -8,6 +8,7 @@ import { Icon } from '../../shared/ui/Icon.tsx';
 import { acceptProposal, fetchChat, recheck, rejectProposal, sendMessage, undoEdit, type ChatView, type MessageView } from './api.ts';
 import { charCount, MAX_MESSAGE_CHARS, messageIssue, MSG } from './logic.ts';
 import { ProposalPanel } from './ProposalPanel.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * C2-04a "Chỉnh nháp với AI" (US-S2E4-01; Design/prototype/s23c.js c2-04a-chat-chinh-nhap). Trái: trao đổi (AI hỏi lại
@@ -149,13 +150,13 @@ export function ChatPage() {
               </span>
             </div>
             <p className="s2e4-statement" data-math data-testid="s2e4-chat-statement">
-              {view.draft.statement}
+              <MathText text={view.draft.statement} />
             </p>
             {result?.sceneKind === 'plane' && result.scene ? <Scene2DView scene={result.scene as Scene2D} testId="s2e4-scene2d" /> : null}
             {result?.answers && (
               <p className="s2e4-sub" data-testid="s2e4-chat-answers" data-state={result.answers.state}>
-                Đề ghi: <b data-math>{result.answers.stated ?? '—'}</b> · AI giải: <b data-math>{result.answers.ai ?? '—'}</b> · Máy tính lại:{' '}
-                <b data-math>{result.answers.computed ?? '—'}</b>
+                Đề ghi: <b data-math><MathText text={result.answers.stated ?? '—'} /></b> · AI giải: <b data-math><MathText text={result.answers.ai ?? '—'} /></b> · Máy tính lại:{' '}
+                <b data-math><MathText text={result.answers.computed ?? '—'} /></b>
               </p>
             )}
             {result?.approveBlocked && result.blockedReason && (
@@ -218,11 +219,11 @@ function Bubble({ m }: { m: MessageView }) {
   const p = m.proposal;
   return (
     <li className={`s2e4-bubble ${m.role}`} data-testid={`s2e4-msg-${m.seq}`} data-role={m.role} data-kind={m.kind}>
-      <span data-math>{m.text}</span>
+      <span data-math><MathText text={m.text} /></span>
       {p && p.state !== 'pending' && (
         <span className={`chip${p.state === 'accepted' ? ' grn' : ''}`} data-testid={`s2e4-msg-note-${m.seq}`}>
           <Icon name={p.state === 'accepted' ? 'check' : 'x'} />
-          {p.note}
+          <MathText text={p.note} />
         </span>
       )}
       {p && p.state === 'pending' && <span className="chip yel">đang chờ cô quyết định</span>}

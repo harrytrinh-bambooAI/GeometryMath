@@ -5,6 +5,7 @@ import { TrustLabels } from './TrustLabels.tsx';
 import { MSG } from './logic.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { AssignedBox } from './AssignedBox.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 interface Props {
   doc: DocView;
@@ -53,7 +54,7 @@ export function ReviewBox({ doc, dirty, busy, onApprove, onProposal, onEditPropo
               <li key={p.id} className="s2e5-proposal" data-testid="s2e5-proposal">
                 <p className="s2e5-sub muted">Thêm bước sau bước {p.afterStep}</p>
                 <p className="s2e5-proposal-text" data-math data-testid="s2e5-proposal-text">
-                  {p.content}
+                  <MathText text={p.content} />
                 </p>
                 <div className="s2e5-row">
                   <button type="button" className="btn" disabled={dirty || busy || !v.latest} onClick={() => onProposal('accept', p)} data-testid="s2e5-proposal-accept"><Icon name="check" />
@@ -86,7 +87,7 @@ export function ReviewBox({ doc, dirty, busy, onApprove, onProposal, onEditPropo
                   data-testid={`s2e5-history-v${h.version}`}
                 >
                   <span className="s2e5-hist-title" data-testid={`s2e5-history-desc-v${h.version}`}>
-                    v{h.version} · {h.description}
+                    v{h.version} · <MathText text={h.description} />
                   </span>
                   <span className="s2e5-sub muted">
                     {h.author}
@@ -96,7 +97,7 @@ export function ReviewBox({ doc, dirty, busy, onApprove, onProposal, onEditPropo
               </li>
             ) : (
               <li key={`p${i}`} className="s2e5-hist-event" data-testid="s2e5-history-event">
-                <span className="s2e5-hist-title">{h.description}</span>
+                <span className="s2e5-hist-title"><MathText text={h.description} /></span>
                 <span className="s2e5-sub muted">{h.at ? formatVnDateTime(h.at) : ''}</span>
               </li>
             ),

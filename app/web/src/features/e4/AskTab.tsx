@@ -6,6 +6,7 @@ import { e4Api, isNetworkError, M, type Asked } from './api.ts';
 import { KwText, useOpenLecture } from './Lecture.tsx';
 import type { AskTurn, HelpModel } from './useHelp.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /** Một câu trả lời của trợ lý: nội dung (từ khóa bấm được) + dòng "Nguồn: …" kèm tên bài giảng bấm được (BR-GEO-189). */
 export function AnswerView({ a, testId }: { a: Asked; testId: string }) {
@@ -79,7 +80,7 @@ export function AskTab({ id, model }: { id: string; model: HelpModel }) {
         {asks.map((t, i) => (
           <li key={t.key} data-testid={tid('e4', 'qa', 'item', i + 1)}>
             <p className="e4-question" data-testid={tid('e4', 'qa', 'question', i + 1)}>
-              {t.question}
+              <MathText text={t.question} />
             </p>
             {t.pending && (
               <p className="muted" data-testid={tid('e4', 'qa', 'wait')}>

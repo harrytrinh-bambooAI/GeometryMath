@@ -9,6 +9,7 @@ import { choiceApi } from './choiceApi.ts';
 import { STATUS_LABEL, useLoad } from './load.ts';
 import { LoadError } from './LoadError.tsx';
 import { PracticeRunner, type RunnerDriver } from './PracticeRunner.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /** Danh sách "Bài luyện" của học sinh. */
 export function StudentListPage() {
@@ -125,7 +126,7 @@ function SolutionPanel({ item }: { item: ResultItem }) {
       <ol>
         {state.solution.steps.map((st, i) => (
           <li key={i} data-math data-testid="s2e8-solution-step">
-            <b>{st.title}</b> {st.body}
+            <b>{st.title}</b> <MathText text={st.body} />
           </li>
         ))}
       </ol>
@@ -153,7 +154,7 @@ export function ResultPage() {
       </h1>
       <section className="card s2e8-summary">
         <p className="s2e8-big" data-testid="s2e8-result-summary">
-          {r.summary}
+          <MathText text={r.summary} />
         </p>
         {r.pending ? (
           <p className="chip yel" data-testid="s2e8-result-pending">
@@ -162,7 +163,7 @@ export function ResultPage() {
         ) : null}
         {r.note ? (
           <p className="s2e8-help" data-testid="s2e8-result-note">
-            {r.note}
+            <MathText text={r.note} />
           </p>
         ) : null}
       </section>

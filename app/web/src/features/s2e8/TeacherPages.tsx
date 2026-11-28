@@ -6,6 +6,7 @@ import { Icon } from '../../shared/ui/Icon.tsx';
 import { practiceApi, type ReportView, type SetLine } from './api.ts';
 import { STATUS_LABEL, useLoad } from './load.ts';
 import { LoadError } from './LoadError.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /** Danh sách bài luyện của giáo viên: Nháp, Đã giao, Đã đóng. */
 export function TeacherListPage() {
@@ -100,7 +101,7 @@ export function ReportsPage() {
               <div data-testid="s2e8-report-canonical">
                 Dạng chuẩn: <span data-math>{r.canonical}</span>
               </div>
-              {r.note ? <div data-testid="s2e8-report-note">Ghi chú: {r.note}</div> : null}
+              {r.note ? <div data-testid="s2e8-report-note">Ghi chú: <MathText text={r.note} /></div> : null}
             </div>
             <span className={`chip ${r.status === 'confirmed' ? 'grn' : r.status === 'kept' ? '' : 'yel'}`} data-testid="s2e8-report-status">
               {r.statusLabel}

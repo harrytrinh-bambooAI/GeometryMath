@@ -12,6 +12,7 @@ import { StepList } from './StepList.tsx';
 import { TrustLabels } from './TrustLabels.tsx';
 import './s2e5.css';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 interface Notice {
   kind: 'info' | 'error';
@@ -216,7 +217,7 @@ function ReviewScreen({ id }: { id: string }) {
         </header>
 
         <p className={`s2e5-summary${v.failCount > 0 ? ' bad' : ''}`} role="status" data-testid="s2e5-summary">
-          {v.summary}
+          <MathText text={v.summary} />
           {v.failCount > 0 ? '. Máy chặn duyệt: sửa bước lệch rồi bấm "Kiểm tra lại".' : ''}
         </p>
 
@@ -257,7 +258,7 @@ function ReviewScreen({ id }: { id: string }) {
         )}
         {notice && (
           <div className={notice.kind === 'error' ? 'alert' : 's2e5-ban pri'} role="status" data-testid="s2e5-notice">
-            {notice.text}
+            <MathText text={notice.text} />
             {notice.retry && (
               <button type="button" className="btn ghost s2e5-retry" onClick={notice.retry} data-testid="s2e5-retry"><Icon name="redo" />
                 Thử lại
@@ -289,7 +290,7 @@ function ReviewScreen({ id }: { id: string }) {
             <ol>
               {mine.map((t, i) => (
                 <li key={`${i}-${t.length}`} data-math>
-                  {t}
+                  <MathText text={t} />
                 </li>
               ))}
             </ol>

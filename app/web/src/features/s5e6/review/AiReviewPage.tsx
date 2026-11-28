@@ -4,6 +4,7 @@ import { ErrorNotice } from '../../../shared/ui/ErrorNotice.tsx';
 import { comparison, grade, pageUrl, proposal, retry, review, type Comparison, type Proposal, type ReviewView } from './api.ts';
 import { canApprove, keyAction, msg49, pointsOf, regionBox, total, vn, type Act, type CritState } from './logic.ts';
 import './review.css';
+import { MathText } from '../../../shared/math/MathText.tsx';
 
 /**
  * S5-E6b · màn chấm có đề xuất AI C5-05 (US-S5E6-04; T-261128-62). Bấm tiêu chí → khoanh vùng ảnh; Nhận / Sửa / Bỏ từng
@@ -264,7 +265,7 @@ function AiReviewScreen({ id }: { id: string }) {
                       </span>
                     )}
                   </div>
-                  {pc && <p className="s5e6-muted">{pc.reason}</p>}
+                  {pc && <p className="s5e6-muted"><MathText text={pc.reason} /></p>}
                   <div className="s5e6-row">
                     {pc && (
                       <>

@@ -11,6 +11,7 @@ import { RELEASE_LABEL, VERIFY_LABEL } from './studentApi.ts';
 import type { Asked, StudentAssignment } from './studentApi.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { verifyIcon, releaseIcon } from '../../shared/ui/icons.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Một bài giao của học sinh (tối thiểu cho E1): đề, trạng thái giờ mở, tiến độ, nhãn máy và khung Hỏi đáp
@@ -48,7 +49,7 @@ export function StudentAssignmentPage() {
         {a.problemCode} <span className="muted small">· Lớp {a.className}</span>
       </h2>
       <p className="e1-statement" data-testid={tid('e1', 'assignment-page', 'statement')}>
-        {a.statement}
+        <MathText text={a.statement} />
       </p>
       <p>
         <span className="chip" data-testid={tid('e1', 'assignment-page', 'release')} data-status={a.releaseState}><Icon name={releaseIcon(a.releaseState)} />
@@ -113,7 +114,7 @@ function QaPanel({ assignmentId }: { assignmentId: string }) {
       <div className="e1-qa-log">
         {turns.map((t) => (
           <div key={t.id} className="e1-qa-turn" data-testid={tid('e1', 'qa', 'turn')}>
-            <p className="e1-q">{t.question}</p>
+            <p className="e1-q"><MathText text={t.question} /></p>
             <p className="e1-a" data-testid={tid('e1', 'qa', 'answer')}>
               {t.reply}
             </p>

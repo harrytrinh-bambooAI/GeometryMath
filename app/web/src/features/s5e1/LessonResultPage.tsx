@@ -5,6 +5,7 @@ import { Icon } from '../../shared/ui/Icon.tsx';
 import { approvePlan, createPlan, downloadExport, fetchPlan, lockSection, retryPlan, undoPlan, type LessonBody, type PlanView } from './api.ts';
 import { MSG_FAILED, MSG_REFUSED, sectionLabel, versionLine } from './logic.ts';
 import { PatchPanel } from './PatchPanel.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 const FIELD_LABEL: Record<string, string> = {
   soTiet: 'Số tiết',
@@ -161,7 +162,7 @@ function ReplyBubble({ plan }: { plan: PlanView }) {
     <section className="card s5e1-card s5e1-chat" data-testid="s5e1-chat">
       <p className="s5e1-bubble" data-testid={plan.kind === 'question' ? 's5e1-question' : 's5e1-reply'}>
         <strong>AI ▸ </strong>
-        {reply.text}
+        <MathText text={reply.text} />
       </p>
       {plan.kind === 'question' && (
         <>
@@ -263,7 +264,7 @@ function LessonView({
         <ul>
           {lesson.mucTieu.kienThuc.map((k, i) => (
             <li key={i} data-math>
-              {k.noi_dung} <span className="s5e1-mono small">{k.kt.join(', ')}</span>
+              <MathText text={k.noi_dung} /> <span className="s5e1-mono small">{k.kt.join(', ')}</span>
             </li>
           ))}
           {lesson.mucTieu.nangLuc.map((k, i) => (
@@ -293,7 +294,7 @@ function LessonView({
                   {a.oNha ? 'ở nhà' : `${a.thoiLuongPhut}'`}
                 </span>
                 <strong data-testid={`s5e1-hd-ten-${a.ma}`}>
-                  {locked.includes(a.ma) && <Icon name="lock" inline />} {a.nhan} {a.loaiLabel}: {a.ten}
+                  {locked.includes(a.ma) && <Icon name="lock" inline />} {a.nhan} {a.loaiLabel}: <MathText text={a.ten} />
                 </strong>
                 <span className="s5e1-grow" />
                 {tools(a.ma)}
@@ -309,7 +310,7 @@ function LessonView({
                 ))}
               </div>
               <p className="small" data-testid={`s5e1-hd-noi-dung-${a.ma}`}>
-                {a.noiDung}
+                <MathText text={a.noiDung} />
               </p>
             </li>
           ))}
@@ -328,9 +329,9 @@ function LessonView({
           <ol>
             {p.cau.map((q) => (
               <li key={q.so} data-testid={`s5e1-cau-${p.ma}-${q.so}`}>
-                <span className="s5e1-mono small">[{q.mucDo}] {q.nguon}</span> <span data-math>{q.de}</span>
+                <span className="s5e1-mono small">[{q.mucDo}] {q.nguon}</span> <span data-math><MathText text={q.de} /></span>
                 <div className="small">
-                  Đáp số: {q.dapSo ? <span data-math>{q.dapSo}</span> : '(đáp số chưa kiểm chứng)'} ·{' '}
+                  Đáp số: {q.dapSo ? <span data-math><MathText text={q.dapSo} /></span> : '(đáp số chưa kiểm chứng)'} ·{' '}
                   <span className="chip">{q.nhanMay}</span>
                 </div>
               </li>
@@ -350,7 +351,7 @@ function LessonView({
             handled[i] ? null : (
               <div key={i} className="s5e1-row" data-testid={`s5e1-proposal-${i}`}>
                 <span className="s5e1-grow">
-                  ▸ <strong>{d.viTri}</strong>: {d.vanDe} — {d.goiY} <span className="small muted">({d.lyDo})</span>
+                  ▸ <strong>{d.viTri}</strong>: <MathText text={d.vanDe} /> — <MathText text={d.goiY} /> <span className="small muted">({d.lyDo})</span>
                 </span>
                 <button type="button" className="btn ghost" data-testid={`s5e1-proposal-accept-${i}`} onClick={() => setHandled({ ...handled, [i]: 'accepted' })}>
                   Nhận

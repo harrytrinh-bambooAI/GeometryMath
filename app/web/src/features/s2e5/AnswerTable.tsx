@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import type { AnswersView } from './api.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 interface Props {
   answers: AnswersView;
@@ -25,7 +26,7 @@ export function AnswerTable({ answers, busy, onUseMachine, onSetStated, testPref
     <tr className={hot ? 's2e5-ans-bad' : undefined}>
       <th scope="row">{label}</th>
       <td className="s2e5-ans-val" data-math data-testid={t(`answer-${key}`)}>
-        {v ?? 'chưa có'}
+        <MathText text={v ?? 'chưa có'} />
       </td>
       <td className="s2e5-sub muted">{source}</td>
     </tr>

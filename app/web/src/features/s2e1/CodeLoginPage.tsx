@@ -6,6 +6,7 @@ import type { CodeSession } from '../../shared/auth/codeSession.ts';
 import { tid } from '../../shared/testid.ts';
 import { MSG, codeOf, messageOf, s2e1Api } from './api.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * C3-01 "Đăng nhập" bằng mã người dùng + mật khẩu (US-S2E1-02). Chỉ hai ô; mã không phân biệt hoa thường (máy chủ
@@ -100,7 +101,7 @@ export function CodeLoginPage({ area }: { area: 'gv' | 'hs' }) {
         </label>
         {error ? (
           <div className="alert" role="alert" data-testid={tid('s2e1', 'login', 'error')} data-error-code={error.code}>
-            {error.text}
+            <MathText text={error.text} />
           </div>
         ) : null}
         <button type="submit" className="btn s2e1-wide" disabled={busy} data-testid={tid('s2e1', 'login', 'submit')}><Icon name="login" />

@@ -3,6 +3,7 @@ import { ErrorNotice } from '../../../shared/ui/ErrorNotice.tsx';
 import { mine, myGraded, pageUrl, result, type Result } from '../review/api.ts';
 import { vn } from '../review/logic.ts';
 import '../review/review.css';
+import { MathText } from '../../../shared/math/MathText.tsx';
 
 /**
  * S5-E4 · kết quả bài có chấm của học sinh C5-06 (US-S5E4-07). T-261128-60. Trước khi trả: chỉ trạng thái; sau khi
@@ -78,7 +79,7 @@ function ResultBody({ r }: { r: Result }) {
       <p className="s5e4-total" data-testid="s5e4-result-score">
         Tổng: {vn(r.score ?? 0)} / {vn(r.scale ?? 10)}
       </p>
-      {r.comment && <p data-testid="s5e4-result-comment">Nhận xét: {r.comment}</p>}
+      {r.comment && <p data-testid="s5e4-result-comment">Nhận xét: <MathText text={r.comment} /></p>}
       <div className="s5e4-pages">
         {urls.map((u, k) => (
           <img key={u} src={u} alt={`Trang ${k + 1}`} />

@@ -3,6 +3,7 @@ import { ErrorNotice } from '../../shared/ui/ErrorNotice.tsx';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { acceptPatch, sendChat, skipPatch, type ChatReply } from './api.ts';
 import { sectionLabel } from './logic.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Chat vá bản nháp (US-S5E1-04, giao-dien.md §2–3): mục đang chọn → câu chat → bản vá trước → sau từng dòng có lý do;
@@ -96,7 +97,7 @@ export function PatchPanel({
       {reply && reply.kind !== 'patch' && (
         <p className="s5e1-bubble" data-testid={`s5e1-patch-${reply.kind}`}>
           <strong>AI ▸ </strong>
-          {reply.text}
+          <MathText text={reply.text} />
         </p>
       )}
       {reply?.kind === 'patch' && reply.lines && (

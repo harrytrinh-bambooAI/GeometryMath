@@ -8,6 +8,7 @@ import { saveLogin } from './e1Session.ts';
 import type { LoginResponse } from './e1Session.ts';
 import { MSG, errorText, fieldError } from './messages.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Màn "Giáo viên mẫu" (US-GEO-102): một ô "Mã giáo viên", nút "Vào". Vai giáo viên chỉ có được bằng mã
@@ -59,7 +60,7 @@ export function TeacherLoginPage() {
           />
           {error ? (
             <small className="e1-err" role="alert" data-testid={tid('e1', 'teacher-login', 'error')} data-error-code={error.code}>
-              {error.text}
+              <MathText text={error.text} />
             </small>
           ) : null}
         </label>

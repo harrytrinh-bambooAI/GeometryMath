@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import type { CellView } from './api.ts';
 import { MSG } from './logic.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 interface Props {
   cells: CellView[];
@@ -50,7 +51,7 @@ export function ImageCells({ cells, busy, onChange }: Props) {
             </span>
           ) : (
             <span key={c.index} className="s2e3-cell" data-testid={`s2e3-cell-${c.index}`} data-state={c.state}>
-              {c.text}{' '}
+              <MathText text={c.text} />{' '}
             </span>
           ),
         )}

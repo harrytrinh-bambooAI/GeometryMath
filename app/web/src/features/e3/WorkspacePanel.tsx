@@ -4,6 +4,7 @@ import { tid } from '../../shared/testid.ts';
 import type { LockState } from '../../shared/viewer/types.ts';
 import { e3Api } from './api.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 export type PanelTab = 'hint' | 'solution' | 'ask';
 export const PANEL_TABS: Array<{ id: PanelTab; label: string }> = [
@@ -91,7 +92,7 @@ function HintTab({ id, hints, onHints }: { id: string; hints: HintState; onHints
       {hints.shown.map((h) => (
         <div key={h.level} className="card e3-hint" data-testid={tid('e3', 'hint', h.level)}>
           <strong>Gợi ý {h.level}</strong>
-          <p>{h.body}</p>
+          <p><MathText text={h.body} /></p>
         </div>
       ))}
       {next <= 2 && (

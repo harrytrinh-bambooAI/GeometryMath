@@ -16,6 +16,7 @@ import {
   type Usage,
 } from './api.ts';
 import { lengthLabel, overLimit, taskLabel } from './logic.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * "Trợ lý · Thông báo" (US-S5E5-01): chọn lớp, loại, bài → trợ lý soạn nháp (nhãn "AI soạn", chỗ máy chủ sửa gắn
@@ -171,7 +172,7 @@ export function NoticePage() {
             <ul className="s5e5-unsure" data-testid="s5e5-unsure">
               {draft.unsure.map((u, i) => (
                 <li key={i}>
-                  <span className="chip s5e5-chip-warn">{u.label}</span> {u.text} <span className="s5e5-muted">({u.why})</span>
+                  <span className="chip s5e5-chip-warn">{u.label}</span> <MathText text={u.text} /> <span className="s5e5-muted">({u.why})</span>
                 </li>
               ))}
             </ul>

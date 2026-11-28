@@ -7,6 +7,7 @@ import { practiceApi, type AttemptView, type PlayItem, type PlayView } from './a
 import type { ChoiceAttemptView, RunnerChoice } from './choice.ts';
 import { emptyField, newRequestKey, type Field } from './keypad.ts';
 import { AnswerBox, MathKeypad } from './MathKeypad.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 export const MSG_NET = 'Chưa gửi được, đáp số của em vẫn còn';
 export const MSG_SENT = 'Đã gửi cho thầy cô';
@@ -221,7 +222,7 @@ function QuestionCard({
           {title}
         </h1>
         <p className="s2e8-statement" data-math data-testid="s2e8-statement">
-          {item.statement}
+          <MathText text={item.statement} />
         </p>
         {driver.figures ? <ItemFigure assignmentId={item.assignmentId} /> : null}
       </section>
@@ -259,7 +260,7 @@ function QuestionCard({
                     data-picked={picked === o.id}
                     data-testid={`s2e9-option-${k + 1}`}
                   >
-                    {o.text}
+                    <MathText text={o.text} />
                   </button>
                 );
               })}
@@ -301,7 +302,7 @@ function QuestionCard({
             <span data-testid="s2e8-feedback-text">{feedback.message}</span>
             {feedback.note ? (
               <span className="s2e8-fb-note" data-testid="s2e8-feedback-note">
-                {feedback.note}
+                <MathText text={feedback.note} />
               </span>
             ) : null}
             {feedback.kind === 'net' && pending ? (
@@ -318,7 +319,7 @@ function QuestionCard({
         ) : null}
         {item.hint && hintOpen ? (
           <div className="s2e8-hint" data-testid="s2e8-hint">
-            <b>Gợi ý:</b> {item.hint}
+            <b>Gợi ý:</b> <MathText text={item.hint} />
           </div>
         ) : null}
         {item.hint && !hintOpen ? (

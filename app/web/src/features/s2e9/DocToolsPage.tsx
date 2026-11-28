@@ -21,6 +21,7 @@ import { ExportPanel } from './ExportPanel.tsx';
 import { Labels } from './Labels.tsx';
 import { useFetch } from './useFetch.ts';
 import './s2e9.css';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 interface Loaded {
   option: DocOption;
@@ -144,7 +145,7 @@ function Variants({ docId, initial }: { docId: string; initial: VariantItem[] })
                 {v.title}
               </Link>
               <p className="s2e9-statement" data-math>
-                {v.statement}
+                <MathText text={v.statement} />
               </p>
               <span className="s2e9-help" data-math data-testid={`s2e9-variant-answer-${i + 1}`}>
                 Đáp số (engine): {v.answer}
@@ -311,7 +312,7 @@ export function DocToolsPage() {
             </span>
           ) : null}
           <p className="s2e9-statement" data-math data-testid="s2e9-doc-statement">
-            {item.statement}
+            <MathText text={item.statement} />
           </p>
           <Figure item={item} />
         </section>
