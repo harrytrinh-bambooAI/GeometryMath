@@ -48,3 +48,8 @@ export function keyAction(key: string, inInput: boolean): KeyAction {
       return null;
   }
 }
+
+/** Đường mở bài từ hàng chờ: bài có đề xuất AI (không phải chạy song song chưa duyệt) mở màn chấm có đề xuất (T-261128-65). */
+export function reviewPath(item: { submissionId: string; ai?: { aiStatus?: string } }): string {
+  return item.ai?.aiStatus ? `/gv/cham-ai/${item.submissionId}` : `/gv/cham/${item.submissionId}`;
+}

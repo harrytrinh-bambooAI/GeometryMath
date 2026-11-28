@@ -1,7 +1,5 @@
 package vn.geo.server.aigrade.internal.shadow.service;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -21,10 +19,9 @@ import vn.geo.server.common.security.Role;
  * Chấm nền ở chế độ "Chạy song song" (US-S5E6-05, BR-S5E6-13 "AI vẫn chấm nền"): cùng đường chấm
  * của US-S5E6-01 (lượt hạn mức, task {@code grade}, gọi lại, luật KPI §2, engine, lưu bất biến).
  *
- * <p>Hàng việc của {@code ProposalRepository} chỉ lấy chế độ "AI đề xuất" và đường chấm {@code
- * ProposalService.grade} là package-private (tệp của T-261128-61, ngoài phạm vi task này): gọi qua
- * phản chiếu, giải lúc khởi động (đổi tên là hỏng ngay ở test). FIX: mở {@code grade} public hoặc
- * cho {@code ProposalRepository.pending} lấy cả {@code parallel} — xem qc_findings Dev-S5E6-08.
+ * <p>Hàng việc của {@code ProposalRepository} chỉ lấy chế độ "AI đề xuất"; bài song song lấy từ
+ * {@code ShadowRepository.pending} rồi gọi thẳng {@code ProposalService.grade} (public từ
+ * T-261128-65, bỏ gọi phản chiếu — Dev-S5E6-08).
  */
 @Service
 public class ShadowGrader {
@@ -33,19 +30,12 @@ public class ShadowGrader {
 
   private final ShadowRepository repo;
   private final ProposalService proposals;
-  private final Method grade;
   private final ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor();
   private final Set<String> running = ConcurrentHashMap.newKeySet();
 
   public ShadowGrader(ShadowRepository repo, ProposalService proposals) {
     this.repo = repo;
     this.proposals = proposals;
-    try {
-      this.grade = ProposalService.class.getDeclaredMethod("grade", Candidate.class);
-      this.grade.setAccessible(true);
-    } catch (NoSuchMethodException e) {
-      throw new IllegalStateException("ProposalService.grade(Candidate) không còn", e);
-    }
   }
 
   /** Xếp chấm nền mọi bài song song đang chờ (job). */
@@ -86,16 +76,7 @@ public class ShadowGrader {
     RequestContext.callAs(
         new AuthPrincipal(c.orgId(), c.studentId(), Role.STUDENT),
         () -> {
-          try {
-            grade.invoke(proposals, c);
-          } catch (IllegalAccessException e) {
-            throw new IllegalStateException(e);
-          } catch (InvocationTargetException e) {
-            if (e.getCause() instanceof RuntimeException r) {
-              throw r;
-            }
-            throw new IllegalStateException(e.getCause());
-          }
+          proposals.grade(c);
           return null;
         });
   }

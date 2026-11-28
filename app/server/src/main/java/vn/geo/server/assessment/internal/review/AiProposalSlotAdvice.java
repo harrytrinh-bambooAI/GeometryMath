@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
+import java.time.Instant;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -213,6 +217,12 @@ public class AiProposalSlotAdvice implements RequestBodyAdvice, ResponseBodyAdvi
               putAi((Map<String, Object>) im, s.extras(me.orgId(), UUID.fromString(id)));
             }
           }
+          // T-261128-65: bài có cờ (của hàng chờ hoặc cờ AI) lên đầu, rồi theo giờ nộp (STAGES §5
+          // B2).
+          // Chạy song song trước khi duyệt không có aiFlags nên không đổi thứ tự (BR-S5E6-13).
+          List<Object> sorted = new ArrayList<>(items);
+          sorted.sort(QUEUE_ORDER);
+          map.put("items", sorted);
         }
         return body;
       }
@@ -261,6 +271,34 @@ public class AiProposalSlotAdvice implements RequestBodyAdvice, ResponseBodyAdvi
   /**
    * Chế độ chấm tay (không dùng AI): phản hồi giữ nguyên như US-S5E4, không thêm khóa {@code ai}.
    */
+  static boolean flagged(Object item) {
+    if (!(item instanceof Map<?, ?> m)) {
+      return false;
+    }
+    if (m.get("flags") instanceof List<?> f && !f.isEmpty()) {
+      return true;
+    }
+    return m.get("ai") instanceof Map<?, ?> ai
+        && ai.get("aiFlags") instanceof List<?> af
+        && !af.isEmpty();
+  }
+
+  static final Comparator<Object> QUEUE_ORDER =
+      Comparator.<Object>comparingInt(i -> flagged(i) ? 0 : 1)
+          .thenComparing(AiProposalSlotAdvice::submittedAt)
+          .thenComparing(
+              i -> i instanceof Map<?, ?> m && m.get("code") instanceof String c ? c : "");
+
+  private static Instant submittedAt(Object item) {
+    try {
+      return item instanceof Map<?, ?> m && m.get("submittedAt") instanceof String t
+          ? Instant.parse(t)
+          : Instant.EPOCH;
+    } catch (DateTimeParseException e) {
+      return Instant.EPOCH;
+    }
+  }
+
   private static void putAi(Map<String, Object> target, Map<String, Object> extras) {
     if (extras != null && !extras.isEmpty()) {
       target.put("ai", extras);

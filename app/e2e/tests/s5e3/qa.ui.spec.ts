@@ -58,7 +58,7 @@ test('Giáo viên đặt mức trợ giúp khi tạo bài @TC-S5E3-26', async ({
   const def = await json<{ helpLevel: string; isDefault: boolean }>(await request.get(helpUrl(fresh.id), { headers: bearer(lan.token) }), 200);
   expect(def).toMatchObject({ helpLevel: 'off', isDefault: true });
   await signIn(page, lan);
-  await page.goto('/gv/tro-giup-ai');
+  await page.goto('/gv/bai-co-cham'); // mục "Trợ giúp AI" gắn vào form bài có chấm (T-261128-65)
   const panel = page.getByTestId(`s5e4-help-${fresh.id}`);
   await expect(panel.getByTestId('s5e4-help-summary')).toHaveText('Trợ giúp: Tắt');
   await panel.getByTestId('s5e4-help-toggle').click();

@@ -4,6 +4,7 @@ import { ErrorNotice } from '../../../shared/ui/ErrorNotice.tsx';
 import { formatVnDateTime } from '../../../shared/time/vnTime.ts';
 import { listGraded, myClasses, type Graded } from '../assign/api.ts';
 import { queue, returnAll, returnStatus, undoReturn, type Queue, type ReturnStatus } from '../review/api.ts';
+import { reviewPath } from '../review/logic.ts';
 import '../review/review.css';
 
 /**
@@ -165,7 +166,7 @@ export function QueuePage() {
                   ))}
                 </td>
                 <td>
-                  <Link to={`/gv/cham/${i.submissionId}`} data-testid={`s5e4-queue-open-${i.code}`}>
+                  <Link to={reviewPath(i)} data-testid={`s5e4-queue-open-${i.code}`}>
                     Chấm
                   </Link>
                 </td>
