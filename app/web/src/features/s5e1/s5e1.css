@@ -116,3 +116,53 @@
 .s5e1-proposals {
   border-color: var(--yel-t);
 }
+
+/* T-261128-54: chat vá, thanh duyệt / xuất, "Giáo án của tôi" */
+.s5e1-toolbar {
+  padding: 10px 14px;
+}
+.s5e1-tools {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  font-weight: 400;
+}
+.s5e1-tools .btn.on {
+  border-color: var(--pri-line);
+  background: var(--pri-s);
+}
+.s5e1-patch-lines {
+  display: grid;
+  gap: 10px;
+}
+.s5e1-patch-line {
+  display: grid;
+  gap: 4px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+}
+.s5e1-patch-line[data-decision='accepted'] {
+  border-color: var(--pri-line);
+}
+.s5e1-patch-line[data-decision='skipped'] {
+  opacity: 0.7;
+}
+.s5e1-diff del {
+  color: var(--muted);
+}
+.s5e1-diff ins {
+  text-decoration: none;
+  font-weight: 700;
+}
+.s5e1-notice {
+  flex-basis: 100%;
+  margin: 0;
+}
+.s5e1-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}

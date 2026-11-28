@@ -68,6 +68,25 @@
       <artifactId>pdfbox</artifactId>
       <version>3.0.5</version>
     </dependency>
+    <!-- S5 (T-261128-54, PLAN_code-s5 P2, QS5-05): bộ dựng DOCX dùng chung common/export/docx (giáo án, mã đề). -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>5.4.1</version>
+    </dependency>
+    <!-- S5 (T-261128-54): phông DejaVu (giấy phép tự do Bitstream Vera) có đủ chữ tiếng Việt cho PDF xuất bằng pdfbox;
+         chỉ lấy tệp .ttf, không kéo thư viện JasperReports. -->
+    <dependency>
+      <groupId>net.sf.jasperreports</groupId>
+      <artifactId>jasperreports-fonts</artifactId>
+      <version>6.21.3</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
