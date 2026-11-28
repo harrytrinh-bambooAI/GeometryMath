@@ -431,3 +431,6 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - [28/11] FIX từ T-53: AnthropicAiProvider đặt max_tokens 16000 / effort medium riêng cho purpose lesson_plan (prompt-lab V8).
 - [28/11] Câu mở T-53: đường dẫn API /api/v1/teacher/lesson-plans (đặc tả ghi /api/lesson-plans); bài 25 Tiết 1-2/3 (AC) vs 1-2/2 (cases.json); câu moi chưa nối engine.
 - [28/11] Câu mở T-52: mã PO-65 gán TẠM cho dòng exam_* trong allowed_fields; prod nạp exam cần vai có quyền ghi; seed Java ≠ Python.
+- [28/11] Sự cố: T-61 và T-60 lỡ chạy lệnh DB vào cụm 54329 (checkout chính GeometryMathSupport/app): T-61 DROP IF EXISTS/DELETE 0 trên geo_dev (không mất gì, đã kiểm); T-60 dropdb geo_e2e rồi tạo lại rỗng (lượt e2e sau tự migrate+seed). Đã thêm luật cổng DB vào mkbrief.sh.
+- [28/11] PO chốt (T-61): sửa bản đọc chữ có cho AI chấm lại (tốn lượt)? Luật §2.5 bịa kiến thức chỉ gắn cờ hay trừ điểm? Token đề xuất là ước tính (AiResponse chưa trả token).
+- [28/11] T-60: phát hành theo giờ cố định (at_time) chưa gửi MSG-S5-39 (không có job lúc mở); TC-49 trượt riêng ui-webkit (không thuộc cổng).
