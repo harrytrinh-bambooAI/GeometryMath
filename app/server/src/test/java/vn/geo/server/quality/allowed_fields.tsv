@@ -1663,3 +1663,47 @@ db	engine_signal	rule	Tín hiệu engine: đáp số cuối trong bài so với 
 db	engine_signal	disagree	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
 db	engine_signal	academic_year	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
 db	engine_signal	created_at	Tín hiệu engine: đáp số cuối trong bài so với engine (US-S5E6-03, V725)	PO-64
+# --- T-261128-62 ---
+db	ai_review_action	id	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	org_id	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	submission_id	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	proposal_id	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	student_id	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	grade_seq	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	ord	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	name	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	max_points	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	action	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	ai_points	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	teacher_points	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	academic_year	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_review_action	created_at	Hành động giáo viên trên tiêu chí có đề xuất AI (US-S5E6-04, BR-S5E6-12, V755)	PO-64
+db	ai_shadow_pair	id	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	org_id	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	submission_id	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	assignment_id	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	class_id	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	student_id	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	sampled	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	ord	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	name	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	max_points	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	teacher_points	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	ai_points	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	proposal_id	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	academic_year	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+db	ai_shadow_pair	created_at	Cặp so sánh AI – giáo viên chạy song song (US-S5E6-05, BR-S5E6-14, V755)	PO-64
+api	api	aiDone	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	shadow	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	aiStatus	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	aiStatusLabel	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	aiFlags	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	acceptAll	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	actions	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	comparisonReady	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	teacherPoints	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	aiPoints	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	differs	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	pairs	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	differing	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
+api	api	aiActions	Khóa JSON của API (màn chấm có đề xuất AI / chạy song song, T-261128-62)	PO-64
