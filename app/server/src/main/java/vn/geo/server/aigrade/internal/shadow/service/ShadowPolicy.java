@@ -12,8 +12,9 @@ import vn.geo.server.assessment.api.ClassAiGateQuery;
 /**
  * Luật hiển thị của chạy song song (US-S5E6-05, BR-S5E6-13) và lấy mẫu sau khi bật AI đề xuất
  * (QS5-24): bài "song song" = bài có chấm chế độ "Chạy song song", hoặc bài lấy mẫu ({@code
- * shadow-sample-pct} % theo mã bài nộp, cố định) của chế độ "AI đề xuất" khi lớp đã đạt cổng. Trước
- * khi bài Đã duyệt mọi phản hồi cho giáo viên ẩn điểm, lý do, độ tin cậy và cờ suy từ AI.
+ * shadow-sample-pct} % theo mã bài nộp, tối thiểu 2 bài đầu, cố định) của chế độ "AI đề xuất" khi
+ * lớp đã đạt cổng. Trước khi bài Đã duyệt mọi phản hồi cho giáo viên ẩn điểm, lý do, độ tin cậy và
+ * cờ suy từ AI.
  */
 @Service
 public class ShadowPolicy {
@@ -44,9 +45,25 @@ public class ShadowPolicy {
     return pct > 0 && Math.floorMod(submissionId.getLeastSignificantBits(), 100) < pct;
   }
 
-  /** Bài lấy mẫu chạy song song sau khi lớp đã bật AI đề xuất (QS5-24). */
+  /** Tối thiểu số bài lấy mẫu mỗi bài có chấm (BR-S5E6-17). */
+  public static final int MIN_SAMPLE = 2;
+
+  /**
+   * Lấy mẫu "{@code pct} % mỗi bài, tối thiểu 2 bài" (BR-S5E6-17): bài trong mẫu theo mã, hoặc là
+   * một trong {@link #MIN_SAMPLE} bài nộp đầu tiên của bài có chấm ({@code earlier} = số bài nộp
+   * trước nó). Cố định theo bài nộp.
+   */
+  public static boolean inSample(UUID submissionId, int pct, int earlier) {
+    return pct > 0 && (earlier < MIN_SAMPLE || inSample(submissionId, pct));
+  }
+
+  /** Bài lấy mẫu chạy song song sau khi lớp đã bật AI đề xuất (QS5-24, BR-S5E6-17). */
   public boolean sampled(UUID orgId, SubInfo s) {
-    if (!"ai_proposal".equals(s.gradingMode()) || !inSample(s.id(), samplePct)) {
+    if (!"ai_proposal".equals(s.gradingMode())) {
+      return false;
+    }
+    if (!inSample(s.id(), samplePct)
+        && !inSample(s.id(), samplePct, repo.earlier(orgId, s.assignmentId(), s.id()))) {
       return false;
     }
     ClassAiGateQuery g = gate.getIfAvailable();

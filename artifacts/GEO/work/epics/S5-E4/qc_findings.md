@@ -1,4 +1,4 @@
-Phiên bản: v0.3 · 2026-11-28
+Phiên bản: v0.4 · 2026-11-28
 # S5-E4 — phát hiện QC / Dev
 
 ## Dev
@@ -20,6 +20,7 @@ Phiên bản: v0.3 · 2026-11-28
 | Dev-S5E4-14 | Thu hồi 15 phút tính theo giờ máy chủ từ lượt Trả bài gần nhất; thu hồi đưa bài của lượt đó về Đã duyệt, gỡ thông báo, mở lại nhận bài nộp khi không còn bài Đã trả. Mốc T0+10/T0+16 điều khiển bằng móc `/test-hooks/s5e4/return/age`; ranh giới giờ công bố TC-33 dùng móc `release-in` (giờ CSDL + 4 giây) rồi chờ mở. | TẠM | QC xác nhận |
 | Dev-S5E4-15 | `approved_grade` không có khoá ngoại tới `submission` để điểm chính thức còn khi job năm học xoá bài nộp; xoá tài khoản → `student_id` = NULL (phần "grade" của `SubmissionDataEraser`). Ảnh gốc HEIC: `HeicStripper` ghi đè 0 vùng dữ liệu của mục Exif / XMP (iinf + iloc) — giữ độ dài, băm tính sau gỡ (đóng phần lệch của Dev-S5E4-07). TC-S5E4-43/45 trong `storage.api.spec.ts` và TC-S5E5-19/23/25/27 vẫn qua móc (tệp ngoài phạm vi 60); 60 thêm ca `@TC-S5E4-43` luồng thật ở `return/return.api.spec.ts`. Móc `/test-hooks/s5e4/purge-year` (TC-44) trước đây xoá bài nộp + bản đọc chữ của CẢ năm học trên mọi trường (phần "submission"/"ocr" không theo phạm vi bài) → ca chạy song song mất bài nộp (TC-33 trượt 404); 60 thêm `SubmissionDataEraser.eraseSchoolYear(year, assignmentScope)` (mặc định: có phạm vi thì không xoá), job thật vẫn toàn hệ thống. | TẠM | Dev 61/64 hoặc FIX |
 | Dev-S5E4-16 | Chưa làm (ngoài regex tệp của 60): gắn `assign/HelpLevelPanel` vào form C5-01 (`assign/GradedPage.tsx`, `features/s5e3/index.tsx` giữ màn tạm `/gv/tro-giup-ai`); nối "Trả bài" với `KsS5Firewall` cho hỏi đáp (bộ kiểm nằm ở `knowledge`/`answers`; `fn_graded_solution` là cổng khoá lời giải bài có chấm mà hỏi đáp có thể dùng). | Hoãn | Agent chính giao FIX |
+| Dev-S5E4-17 | T-261128-68: TC-S5E4-45 chuyển sang luồng thật — Bình An nộp 2 trang `exif-gps.jpg`, việc đọc chữ nền `grade_ocr` chạy (AI chấm của lớp bật); yêu cầu từng trang lấy qua móc chỉ đọc `/test-hooks/s5e4/submit/ocr-prompt` (dựng lại đúng prompt + ảnh việc nền đã gửi), không còn móc `s5e4/ocr`. TC-S5E4-43 trong `storage.api.spec.ts` vẫn qua móc (đã có ca luồng thật ở `submit/ocr.api.spec.ts`, `return/return.api.spec.ts`). Dev-S5E4-16 phần "nối Trả bài với KsS5Firewall" đã xử lý (Dev-S5E3-19). | TẠM | QC xác nhận |
 
 ## Lịch sử
 | Phiên bản | Ngày | Thay đổi | Ai |
@@ -27,3 +28,4 @@ Phiên bản: v0.3 · 2026-11-28
 | v0.1 | 2026-11-28 | Mục Dev đầu tiên | runner-T-261128-57 |
 | v0.2 | 2026-11-28 | Dev-S5E4-06…10 (nộp bài, HEIC, phiên bản ảnh, đọc chữ nền, màn C5-03) | runner-T-261128-59 |
 | v0.3 | 2026-11-28 | Dev-S5E4-11…16 (hàng chờ, chấm tay, trả bài, thông báo, ẩn danh, HEIC) | runner-T-261128-60 |
+| v0.4 | 2026-11-28 | Dev-S5E4-17 (TC-45 luồng thật) | runner-T-261128-68 |

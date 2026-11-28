@@ -137,6 +137,13 @@ test('Lượt chấm thứ 201 của lớp: bài thành "AI không chấm", vẫ
   const bn = await submitOk(request, na, c.bc.id, [P1, P2]);
   const o = await waitOcr(request, c.lan, bn.id);
   expect(o.status).toBe('failed'); // không nhận lượt đọc chữ: không gọi AI
+  // màn chấm hiện lý do hạn mức thay cho "Chưa đọc được" (Dev-S5E5-10, T-261128-68)
+  expect(o.statusLabel).toBe('AI không chấm: lớp đã hết lượt AI hôm nay');
+  expect(o.reason).toBe('lớp đã hết lượt AI hôm nay');
+  const q = (await (await request.get(`${API}/api/v1/teacher/grading/queue?assignmentId=${c.bc.id}`, { headers: bearer(c.lan.token) })).json()) as {
+    items: Array<{ submissionId: string; flags: Array<{ label: string }> }>;
+  };
+  expect(q.items.find((i) => i.submissionId === bn.id)!.flags.map((f) => f.label)).toContain('AI không chấm: lớp đã hết lượt AI hôm nay');
   expect(await aiCalls(request, na.id)).toBe(before);
   expect(await readCounter(request, c.w.orgId, 'class', c.c11.id, 'grade')).toBe(200);
   // cô Lan chấm tay được cả hai bài

@@ -241,7 +241,12 @@ public class KbQaService {
     String rule;
     try {
       probe.beforeCheck(me.userId());
-      rule = firewall.check(question, r.reply(), locked, secrets(policy, ctx));
+      rule =
+          firewall.check(
+              question,
+              r.reply(),
+              locked,
+              secrets(policy, ctx, peers(org, me.userId(), ctx, target)));
     } catch (RuntimeException e) {
       return closed(me, ctx, target, interaction, question, "ERR_GUARD", ms(started));
     }
@@ -457,8 +462,13 @@ public class KbQaService {
     return new Locked(ctx.finalAnswer(), steps, forms);
   }
 
-  private static List<String> secrets(HelpLevelApi.Policy policy, Context ctx) {
-    List<String> out = new ArrayList<>();
+  /** Bài của bạn (BN-02…) chỉ có ở bài có chấm (Dev-S5E3-13). */
+  private List<String> peers(UUID org, UUID user, Context ctx, UUID target) {
+    return "graded".equals(ctx.targetKind()) ? repo.peerTexts(org, user, target) : List.of();
+  }
+
+  private static List<String> secrets(HelpLevelApi.Policy policy, Context ctx, List<String> peers) {
+    List<String> out = new ArrayList<>(peers);
     if (policy.privateNote() != null) {
       out.add(policy.privateNote());
     }

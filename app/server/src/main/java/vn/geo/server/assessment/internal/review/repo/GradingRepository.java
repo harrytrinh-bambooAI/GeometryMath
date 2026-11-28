@@ -35,7 +35,8 @@ public class GradingRepository {
       Instant submittedAt,
       Integer lateSeconds,
       String ocr,
-      String academicYear) {}
+      String academicYear,
+      String ocrReason) {}
 
   /** Một điểm duyệt. */
   public record Grade(
@@ -71,7 +72,9 @@ public class GradingRepository {
              s.row_version, v.id AS version_id, v.version, v.pages, v.submitted_at, v.late_seconds,
              (SELECT o.status FROM ocr_artifact o WHERE o.org_id = :orgId AND o.version_id = v.id
               ORDER BY o.version DESC LIMIT 1) AS ocr,
-             s.academic_year
+             s.academic_year,
+             (SELECT o.reason FROM ocr_artifact o WHERE o.org_id = :orgId AND o.version_id = v.id
+              ORDER BY o.version DESC LIMIT 1) AS ocr_reason
       FROM submission s
       JOIN graded_assignment g ON g.org_id = :orgId AND g.id = s.assignment_id
       JOIN submission_version v ON v.org_id = :orgId AND v.submission_id = s.id AND v.version = s.current_version
@@ -107,7 +110,8 @@ public class GradingRepository {
         ts(rs, "submitted_at"),
         onTime ? null : late,
         rs.getString("ocr"),
-        rs.getString("academic_year"));
+        rs.getString("academic_year"),
+        rs.getString("ocr_reason"));
   }
 
   /** Mọi bài nộp của một bài có chấm (≤ 500 — một lớp). */
@@ -326,6 +330,20 @@ public class GradingRepository {
         .param("a", assignmentId)
         .query(Integer.class)
         .single();
+  }
+
+  /** Lần đầu giáo viên mở màn chấm bài này (KPI (g), V847; lần mở sau giữ giờ cũ). */
+  public void markOpened(UUID orgId, UUID submissionId, UUID teacherId) {
+    jdbc.sql(
+            """
+            INSERT INTO grade_review_open (org_id, submission_id, teacher_id)
+            VALUES (:orgId, :s, :t)
+            ON CONFLICT DO NOTHING
+            """)
+        .param("orgId", orgId)
+        .param("s", submissionId)
+        .param("t", teacherId)
+        .update();
   }
 
   public void setAssignmentStatus(UUID orgId, UUID assignmentId, String status) {

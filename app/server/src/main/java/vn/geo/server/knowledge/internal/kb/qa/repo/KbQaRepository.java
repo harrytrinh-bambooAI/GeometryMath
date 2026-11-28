@@ -68,6 +68,19 @@ public class KbQaRepository {
   }
 
   /**
+   * Văn bản bài nộp của các bạn cùng bài có chấm (fn_kb_qa_peer_texts, V845; Dev-S5E3-13): chỉ cho
+   * bộ kiểm private_content, không bao giờ vào yêu cầu AI. Bài luyện: rỗng.
+   */
+  public List<String> peerTexts(UUID orgId, UUID userId, UUID targetId) {
+    return jdbc.sql("SELECT body FROM fn_kb_qa_peer_texts(:orgId, :user, :target)")
+        .param("orgId", orgId)
+        .param("user", userId)
+        .param("target", targetId)
+        .query(String.class)
+        .list();
+  }
+
+  /**
    * Bài giảng mẫu ĐÃ mang nhãn "Giáo viên đã duyệt" khớp câu hỏi (BR-S5E3-08, QS5-10): nội dung hệ
    * thống (org nền tảng) và bài giảng mẫu của trường; bài AI viết chưa duyệt không làm nguồn.
    */

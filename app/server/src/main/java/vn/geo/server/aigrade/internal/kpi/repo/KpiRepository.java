@@ -124,16 +124,24 @@ public class KpiRepository {
   public int refreshProposal(UUID orgId, UUID classId) {
     return jdbc.sql(
             """
-            INSERT INTO ai_kpi_paper (org_id, submission_id, kind, class_id, topic, criteria)
+            INSERT INTO ai_kpi_paper (org_id, submission_id, kind, class_id, topic, criteria, review_seconds)
             SELECT r.org_id, r.submission_id, 'proposal', a.class_id, 'khác',
-                   jsonb_agg(jsonb_build_object('max', r.max_points, 'edited', r.action <> 'accept') ORDER BY r.ord)
+                   jsonb_agg(jsonb_build_object('max', r.max_points, 'edited', r.action <> 'accept') ORDER BY r.ord),
+                   max(rs.secs)
             FROM ai_review_action r
             JOIN ai_grade_proposal a ON a.org_id = r.org_id AND a.id = r.proposal_id
+            LEFT JOIN LATERAL (
+              SELECT floor(extract(epoch FROM ag.approved_at - o.opened_at))::int AS secs
+              FROM grade_review_open o
+              JOIN approved_grade ag ON ag.org_id = o.org_id AND ag.submission_id = o.submission_id AND ag.seq = 1
+              WHERE o.org_id = r.org_id AND o.submission_id = r.submission_id AND ag.approved_at >= o.opened_at
+              LIMIT 1
+            ) rs ON true
             WHERE r.org_id = :orgId AND a.class_id = :classId AND r.grade_seq = 1
               AND NOT EXISTS (SELECT 1 FROM ai_kpi_paper k WHERE k.org_id = :orgId AND k.submission_id = r.submission_id AND k.kind = 'proposal')
             GROUP BY r.org_id, r.submission_id, a.class_id
             ON CONFLICT DO NOTHING
-            -- sqllint:allow=tenant điều kiện org nối theo hành động duyệt
+            -- sqllint:allow=tenant,ownership điều kiện org nối theo hành động duyệt; KPI (g) đọc giờ mở màn chấm + giờ Duyệt đầu (assessment, V847)
             """)
         .param("orgId", orgId)
         .param("classId", classId)

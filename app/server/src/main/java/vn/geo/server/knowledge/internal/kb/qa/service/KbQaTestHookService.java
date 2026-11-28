@@ -41,10 +41,6 @@ public class KbQaTestHookService {
     }
   }
 
-  public int release(UUID orgId, UUID gradedId) {
-    return repo.release(orgId, gradedId);
-  }
-
   public int lecture(String slug, boolean approved) {
     return repo.lectureApproval(slug, approved);
   }

@@ -30,4 +30,24 @@ class ShadowSampleTest {
     }
     assertThat(hit / (double) n).isBetween(0.08, 0.12);
   }
+
+  @Test
+  @DisplayName("BR-S5E6-17 tối thiểu 2 bài: 2 bài nộp đầu tiên luôn trong mẫu; 0 % thì không lấy")
+  void atLeastTwoPerAssignment() {
+    int sampled = 0;
+    for (int earlier = 0; earlier < 5; earlier++) {
+      UUID id = Uuid7.next();
+      boolean s = ShadowPolicy.inSample(id, 10, earlier);
+      if (earlier < ShadowPolicy.MIN_SAMPLE) {
+        assertThat(s).isTrue();
+      } else {
+        assertThat(s).isEqualTo(ShadowPolicy.inSample(id, 10));
+      }
+      assertThat(ShadowPolicy.inSample(id, 0, earlier)).isFalse();
+      if (s) {
+        sampled++;
+      }
+    }
+    assertThat(sampled).isGreaterThanOrEqualTo(2);
+  }
 }
