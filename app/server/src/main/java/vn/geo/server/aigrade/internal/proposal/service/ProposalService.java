@@ -146,7 +146,11 @@ public class ProposalService implements AiGradeSignals {
         });
   }
 
-  void grade(Candidate c) {
+  /**
+   * Đường chấm một bài (dùng chung cho chế độ "AI đề xuất" và chạy song song ShadowGrader;
+   * Dev-S5E6-08).
+   */
+  public void grade(Candidate c) {
     List<GradeRules.Criterion> rubric =
         repo.criteria(c.orgId(), c.rubricVersionId()).stream()
             .map(r -> new GradeRules.Criterion(r.ord(), r.name(), r.max(), r.directionDependent()))

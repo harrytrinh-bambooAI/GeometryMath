@@ -145,6 +145,13 @@ geo:
   # --- T-261128-63 (S5-E2, S5-E3) ---
   # --- T-261128-64 (S5-E5) ---
   # --- T-261128-65 (S5-E6) ---
+  s5.ai-grading.gate.min-papers: ${GEO_S5_AI_GATE_MIN_PAPERS:20}     # BR-S5E6-16, QS5-21: số bài chạy song song tối thiểu để xét cổng "AI đề xuất" của lớp
+  s5.ai-grading.gate.macro: ${GEO_S5_AI_GATE_MACRO:0.85}             # KPI §4 (a): cận dưới KTC 95 % điểm khớp macro theo dạng
+  s5.ai-grading.gate.topic-floor: ${GEO_S5_AI_GATE_TOPIC_FLOOR:0.70} # KPI §4 (a): không dạng bài nào dưới ngưỡng này
+  s5.ai-grading.gate.within: ${GEO_S5_AI_GATE_WITHIN:0.85}           # KPI §4 (b): cận dưới Wilson tỉ lệ cặp tiêu chí lệch trong ±0,25
+  s5.ai-grading.gate.result: ${GEO_S5_AI_GATE_RESULT:0.95}           # KPI §4 (c): tỉ lệ Kết quả AI đúng chiều engine (ước lượng điểm)
+  s5.ai-grading.gate.catch: ${GEO_S5_AI_GATE_CATCH:0.80}             # KPI §4 (d): tỉ lệ bắt bước sai (ước lượng điểm)
+  s5.ai-grading.gate.false-alarm: ${GEO_S5_AI_GATE_FALSE_ALARM:0.10} # KPI §4 (d): tỉ lệ báo nhầm tối đa (ước lượng điểm)
   # --- FIX chặng 5 (task FIX T-261128-*) ---
 
 management:

@@ -20,6 +20,8 @@ export interface QueueItem {
   submittedAt: string;
   pages: number;
   version: number;
+  /** Phần AI (S5-E6, sau cờ ai-grading): có khi bài dùng AI; chạy song song trước khi duyệt chỉ có aiDone. */
+  ai?: { aiDone?: boolean; aiStatus?: string; aiFlags?: string[] };
 }
 
 export interface QueueAssignment {

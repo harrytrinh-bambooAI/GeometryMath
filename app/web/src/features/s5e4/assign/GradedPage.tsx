@@ -3,6 +3,7 @@ import { ErrorNotice } from '../../../shared/ui/ErrorNotice.tsx';
 import { formatVnDateTime } from '../../../shared/time/vnTime.ts';
 import { listRubrics, type RubricLine } from '../rubric/api.ts';
 import { createGraded, listGraded, myClasses, problems, type Graded } from './api.ts';
+import { HelpLevelPanel } from './HelpLevelPanel.tsx';
 
 /**
  * C5-01 "Bài có chấm" (US-S5E4-02): giao bài với đề kho, rubric phiên bản hiện hành, hạn nộp, nộp muộn, chế độ chấm
@@ -130,6 +131,7 @@ export function GradedPage() {
             <th>Hạn nộp</th>
             <th>Chế độ</th>
             <th>Trạng thái</th>
+            <th>Trợ giúp AI</th>
           </tr>
         </thead>
         <tbody>
@@ -144,6 +146,9 @@ export function GradedPage() {
               <td>{formatVnDateTime(g.dueAt)}</td>
               <td>{g.gradingModeLabel}</td>
               <td>{g.statusLabel}</td>
+              <td>
+                <HelpLevelPanel assignmentId={g.id} />
+              </td>
             </tr>
           ))}
         </tbody>
