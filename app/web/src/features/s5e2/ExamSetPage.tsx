@@ -6,6 +6,7 @@ import { Icon } from '../../shared/ui/Icon.tsx';
 import { formatVnDateTime as formatVn } from '../../shared/time/vnTime.ts';
 import { ExamExportPanel } from './export/ExamExportPanel.tsx';
 import { examApi, MACHINE_LABEL, TYPE_LABEL, vn, type ExamSetDto, type QuestionDto } from './examApi.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Bộ đề nháp (US-S5E2-04): xem từng mã đề, "Thay câu" lấy câu khác cùng ô (máy chủ kiểm lại ràng buộc cả mã), nhãn
@@ -103,13 +104,13 @@ function Question({ q, draft, busy, onReplace }: { q: QuestionDto; draft: boolea
         )}
       </div>
       <p className="s5e2-math" data-math>
-        {q.de_bai}
+        <MathText text={q.de_bai} />
       </p>
       {q.phuong_an && (
         <ul className="s5e2-options" data-math>
           {(['A', 'B', 'C', 'D'] as const).map((k) => (
             <li key={k}>
-              <strong>{k}.</strong> {q.phuong_an?.[k]}
+              <strong>{k}.</strong> <MathText text={q.phuong_an?.[k]} />
             </li>
           ))}
         </ul>
@@ -118,7 +119,7 @@ function Question({ q, draft, busy, onReplace }: { q: QuestionDto; draft: boolea
         <ul className="s5e2-options" data-math>
           {q.y.map((y) => (
             <li key={y.nhan}>
-              {y.nhan}) {y.menh_de}
+              {y.nhan}) <MathText text={y.menh_de} />
             </li>
           ))}
         </ul>

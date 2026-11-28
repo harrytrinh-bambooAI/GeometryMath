@@ -6,6 +6,7 @@ import { ReleaseCard } from '../e6/ReleaseCard.tsx';
 import { errorText } from './messages.ts';
 import { RELEASE_LABEL } from './studentApi.ts';
 import type { Monitor } from './studentApi.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /** Theo dõi lớp tối thiểu của E1 (số học sinh, tiến độ, câu hỏi; bản đầy đủ thuộc E7). */
 export function MonitorPage() {
@@ -69,7 +70,7 @@ export function MonitorPage() {
         <h3>Câu hỏi gần đây</h3>
         {m.questions.map((q) => (
           <p key={q.id} data-testid={tid('e1', 'monitor', 'question')}>
-            <b>{q.askerName}:</b> {q.question}
+            <b>{q.askerName}:</b> <MathText text={q.question} />
           </p>
         ))}
       </section>

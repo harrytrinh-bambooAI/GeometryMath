@@ -6,6 +6,7 @@ import { fetchPlane, type PlaneView } from './api.ts';
 import './s2e2.css';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { verifyIcon } from '../../shared/ui/icons.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 export const MSG_LOCKED = 'Đại lượng này là đáp số, chưa đo được';
 export const MSG_OFFLINE = 'Không tải được bài. Kiểm tra mạng rồi bấm Thử lại.';
@@ -104,7 +105,7 @@ export function PlaneWorkPage() {
           </span>
         </header>
         <p className="s2e2-statement" data-math data-testid="s2e2-statement">
-          {d.statement}
+          <MathText text={d.statement} />
         </p>
         {d.scene ? (
           <Scene2DView scene={d.scene} selected={picked} onTapPoint={tap} testId="s2e2-figure" />
@@ -148,7 +149,7 @@ export function PlaneWorkPage() {
           <ul className="s2e2-measures" data-testid="s2e2-measures">
             {measures.map((m) => (
               <li key={m.text} data-math data-testid={`s2e2-measure-${m.kind}-${m.of.join('')}`}>
-                {m.text}
+                <MathText text={m.text} />
               </li>
             ))}
           </ul>
@@ -158,7 +159,7 @@ export function PlaneWorkPage() {
           <ol>
             {d.hints.slice(0, hintsOpen).map((h) => (
               <li key={h.level} data-testid={`s2e2-hint-${h.level}`}>
-                {h.text}
+                <MathText text={h.text} />
               </li>
             ))}
           </ol>

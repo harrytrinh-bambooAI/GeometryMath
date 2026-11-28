@@ -24,6 +24,10 @@ export default defineConfig({
     locale: 'vi-VN',
     timezoneId: 'Asia/Ho_Chi_Minh',
     viewport: { width: 1920, height: 1080 },
+    // T-261128-74: màn hình ảo 1920x1080 — Trình chiếu xin toàn màn hình; không đặt thì Chromium headless co trang về màn
+    // mặc định 800x600 và video chỉ hiện góc trên trái + nền xám (video T-73 mốc 3:10).
+    screen: { width: 1920, height: 1080 },
+    launchOptions: { args: ['--window-size=1920,1080'] },
     video: { mode: 'on', size: { width: 1920, height: 1080 } },
     actionTimeout: 15_000,
   },

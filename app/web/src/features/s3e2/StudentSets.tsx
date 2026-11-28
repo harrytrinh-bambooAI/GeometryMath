@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router';
 import { formatVnDateTime } from '../../shared/time/vnTime.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { dueLabel, errorText, ITEM_LABEL, MSG, RELEASE_LABEL, setsApi, useLoad, type SolutionView, type StudentHome, type StudentSet, type StudentSetDetail } from './api.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 const vnDate = (iso: string) => dueLabel(iso).slice(3);
 
@@ -130,7 +131,7 @@ export function StudentSetPage() {
               <div className="s3e2-row">
                 <span className="s3e2-num">{i.position}</span>
                 <span className="s3e2-grow" data-math>
-                  {i.statement}
+                  <MathText text={i.statement} />
                 </span>
                 <span className={`chip ${i.state === 'correct' ? 'grn' : i.state === 'review' ? 'yel' : ''}`} data-testid={`s3e2-hs-state-${i.position}`}>
                   {ITEM_LABEL[i.state]}
@@ -152,10 +153,10 @@ export function StudentSetPage() {
                 <div className="s3e2-solution" data-testid={`s3e2-hs-solution-body-${i.position}`}>
                   {(v.steps ?? []).map((st, k) => (
                     <p key={k} data-math>
-                      <b>{st.title}</b> {st.body}
+                      <b>{st.title}</b> <MathText text={st.body} />
                     </p>
                   ))}
-                  <p data-math>Đáp số: {v.finalAnswer}</p>
+                  <p data-math>Đáp số: <MathText text={v.finalAnswer} /></p>
                 </div>
               ) : null}
             </li>

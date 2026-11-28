@@ -10,6 +10,7 @@ import { ChoiceEditor } from './ChoiceEditor.tsx';
 import { STATUS_LABEL, useLoad } from './load.ts';
 import { LoadError } from './LoadError.tsx';
 import { PracticeRunner, type RunnerDriver } from './PracticeRunner.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 export const MSG_PAST = 'Giờ mở đã qua, lời giải mở ngay cho học sinh. Vẫn giao?';
 export const MSG_NO_ANSWER = 'Thêm đáp số ở Soát lời giải';
@@ -333,7 +334,7 @@ function ComposeForm({ refs }: { refs: Refs }) {
                 <span className="s2e8-grow">
                   <b>{p.code}</b>{' '}
                   <span data-math className="s2e8-problem-text">
-                    {p.statement}
+                    <MathText text={p.statement} />
                   </span>
                 </span>
               </label>

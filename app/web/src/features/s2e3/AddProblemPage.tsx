@@ -7,6 +7,7 @@ import { ImageCells } from './ImageCells.tsx';
 import { lengthIssue, MAX_CHARS, MSG, pickImage, charCount } from './logic.ts';
 import { Labels, ResultPanel, Stages } from './Parts.tsx';
 import { Unbuildable } from './Unbuildable.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 type Notice = { kind: 'error' | 'info'; text: string } | null;
 
@@ -192,7 +193,7 @@ export function AddProblemPage() {
 
       {notice && (
         <p className={notice.kind === 'error' ? 'alert' : 's2e3-ban pri'} role={notice.kind === 'error' ? 'alert' : 'status'} data-testid="s2e3-notice">
-          {notice.text}
+          <MathText text={notice.text} />
         </p>
       )}
 

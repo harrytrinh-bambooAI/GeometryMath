@@ -4,6 +4,7 @@ import { Icon } from '../../shared/ui/Icon.tsx';
 import { useLoad } from '../s3e2/api.ts';
 import { notifyApi, type Notification } from './api.ts';
 import { badge, vnAt } from './format.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /** Chấm thông báo: số Chưa đọc, đến 99 rồi "99+" (BR-S3E4-23); 0 thì không có chấm. */
 export function NotificationBell() {
@@ -109,7 +110,7 @@ export function NotificationsPage() {
               onClick={() => void act(() => notifyApi.read(x.id), x.setId ? () => void nav(`/hs/bo-bai/${x.setId}`) : undefined)}
             >
               <span className="s3e4-grow">
-                <b>{x.body}</b>
+                <b><MathText text={x.body} /></b>
                 <span className="s3e4-help s3e4-block">{vnAt(x.createdAt)}</span>
               </span>
               <span className={`chip ${x.read ? '' : 'yel'}`}>{x.read ? 'Đã đọc' : 'Chưa đọc'}</span>

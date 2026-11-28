@@ -6,6 +6,7 @@ import { Icon } from '../../shared/ui/Icon.tsx';
 import { formatVnDateTime } from '../../shared/time/vnTime.ts';
 import { assignDraft, fetchMine, type DraftSummary } from './api.ts';
 import { MSG } from './logic.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Ngăn "Của tôi" của giáo viên + bước "Soạn bài giao: chọn đề" (US-S2E3-04-SC2, SC3): bản nháp chữ không chọn được để
@@ -60,7 +61,7 @@ export function MyProblemsPage() {
         {items.map((d) => (
           <li key={d.id} className="card s2e3-item" data-testid={`s2e3-item-${d.id}`} data-status={d.status}>
             <span className="s2e3-item-title" data-math>
-              {d.title}
+              <MathText text={d.title} />
             </span>
             <span className="s2e3-sub muted">
               {d.statusLabel} · {formatVnDateTime(d.createdAt)}

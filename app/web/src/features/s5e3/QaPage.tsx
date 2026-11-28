@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router';
 import { ErrorNotice } from '../../shared/ui/ErrorNotice.tsx';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { ackPrivacy, askQa, getPrivacy, qaSource, type Privacy, type QaReply, type QaSourceView } from './qaApi.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * "Hỏi đáp" của học sinh trong bài (C5 "Hỏi đáp theo giáo trình", US-S5E3-03…05): /hs/hoi-dap?bai=<id bài>. Lần đầu phải
@@ -50,7 +51,7 @@ export function QaPage() {
       <h1 className="s5e3-title">Hỏi đáp</h1>
       {privacy && !acked && (
         <div className="card s5e3-card" role="note" data-testid="s5e3-qa-privacy">
-          <p data-testid="s5e3-qa-msg26">{privacy.text}</p>
+          <p data-testid="s5e3-qa-msg26"><MathText text={privacy.text} /></p>
           <div className="s5e3-row">
             <button
               type="button"
@@ -88,7 +89,7 @@ export function QaPage() {
       </div>
       {answer && (
         <div className="card s5e3-card" data-testid="s5e3-qa-answer" data-kind={answer.kind}>
-          <p data-testid="s5e3-qa-reply">{answer.reply}</p>
+          <p data-testid="s5e3-qa-reply"><MathText text={answer.reply} /></p>
           {answer.source && (
             <button type="button" className="btn s5e3-source" onClick={() => void open(answer)} data-testid="s5e3-qa-source">
               <Icon name="file" /> {answer.source.label}
@@ -111,7 +112,7 @@ export function QaPage() {
             {reader.sectionTitle}
           </h2>
           <p className="s5e3-section-body" data-testid="s5e3-qa-reader-body">
-            {reader.body}
+            <MathText text={reader.body} />
           </p>
         </article>
       )}

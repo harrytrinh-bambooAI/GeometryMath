@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ErrorNotice } from '../../../shared/ui/ErrorNotice.tsx';
 import { approveDraft, createDrafts, type DraftBatch } from './draftApi.ts';
 import { approvable, countProblem, initialSelection } from './draftLogic.ts';
+import { MathText } from '../../../shared/math/MathText.tsx';
 
 /**
  * Trợ lý soạn đề nháp từ một tài liệu Đang dùng (US-S5E2-06, C5-08): xin N đề, xem nhãn hai trục (máy "Đã kiểm chứng" /
@@ -93,7 +94,7 @@ export function ExamDraftPanel({ docId, classId }: { docId: string; classId: str
                     disabled={!approvable(it)}
                     onChange={() => toggle(it.id)}
                   />{' '}
-                  {it.statement}
+                  <MathText text={it.statement} />
                 </label>
                 <div className="s5e2-muted">
                   <span className="chip">{it.machineLabel}</span> <span className="chip">{it.humanLabel}</span> ·{' '}

@@ -11,6 +11,7 @@ import { M, e6Api, errText } from './api.ts';
 import type { PreviewPage as PreviewData } from './api.ts';
 import { LockCard } from './LockCard.tsx';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 interface TeacherProblem {
   statement: string;
@@ -92,7 +93,7 @@ export function PreviewPage() {
         <h2>
           {data.problem.code} <span className="muted small">· {data.problem.title}</span>
         </h2>
-        <p className="e3-statement" data-testid={tid('e6', 'preview', 'statement')}>{data.problem.statement}</p>
+        <p className="e3-statement" data-testid={tid('e6', 'preview', 'statement')}><MathText text={data.problem.statement} /></p>
       </header>
       <div className="e3-main">
         {prob.scene ? (

@@ -5,6 +5,7 @@ import { Icon } from '../../shared/ui/Icon.tsx';
 import { resultsApi, useLoad, type Evidence } from './api.ts';
 import { fold, MSG, STATUS_ICON, STATUS_LABEL, stepLabel } from './format.ts';
 import type { Picked } from './ResultsPage.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Khung "BẰNG CHỨNG · {em} · Đề n" của một ô (US-S3E3-02): lượt gửi đáp số, gợi ý đã dùng, câu hỏi nguyên văn, bước em
@@ -101,7 +102,7 @@ export function EvidenceBody({ e }: { e: Evidence }) {
         <div className="s3e3-line" key={`a${i}`} data-testid="s3e3-ev-attempt" data-matched={a.matched}>
           <span className="mono">{formatVnTime(a.at)}</span> gửi đáp số{' '}
           <b data-math className="s3e3-plain">
-            {a.value}
+            <MathText text={a.value} />
           </b>{' '}
           · {a.matched ? 'khớp' : 'không khớp'}
         </div>
@@ -121,7 +122,7 @@ function QuestionLine({ at, text }: { at: string; text: string }) {
     <div className="s3e3-line" data-testid="s3e3-ev-question">
       <span className="mono">{formatVnTime(at)}</span> hỏi:{' '}
       <span className="s3e3-plain" data-testid="s3e3-ev-question-text">
-        {f.shown}
+        <MathText text={f.shown} />
         {f.folded ? '…' : ''}
       </span>
       {f.folded && (

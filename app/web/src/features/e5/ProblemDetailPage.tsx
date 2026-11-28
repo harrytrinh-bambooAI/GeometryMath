@@ -11,6 +11,7 @@ import type { ProblemDetail } from './api.ts';
 import { levelLabel } from './labels.tsx';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { verifyIcon } from '../../shared/ui/icons.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /** MSG-GEO-54 (05_dictionary.md). */
 export const MSG_54 = 'Đề này chưa có lời giải.';
@@ -69,7 +70,7 @@ export function ProblemDetailPage() {
       <section className="card e5-part e5-part-statement" data-testid={tid('e5', 'part', 'statement')}>
         <h3>Đề bài</h3>
         <p className="e1-statement" data-testid={tid('e2', 'problem', 'statement')}>
-          {p.statement}
+          <MathText text={p.statement} />
         </p>
       </section>
       <section className="card e5-part e5-part-figure" data-testid={tid('e5', 'part', 'figure')}>
@@ -140,7 +141,7 @@ function SolutionBlock({ p }: { p: ProblemDetail }) {
             {s.steps.map((st, i) => (
               <li key={i} data-testid={tid('e5', 'step', i + 1)}>
                 <b>{st.title}</b>
-                <p className="e5-step-body">{st.body}</p>
+                <p className="e5-step-body"><MathText text={st.body} /></p>
                 {st.why ? <p className="tiny muted e5-step-why">Vì sao: {st.why}</p> : null}
               </li>
             ))}

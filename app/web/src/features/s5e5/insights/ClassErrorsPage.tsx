@@ -9,6 +9,7 @@ import {
   type Suggestions,
 } from './insightsApi.ts';
 import { labelName, lostText, points, practiceTitle, toggle } from './insightsLogic.ts';
+import { MathText } from '../../../shared/math/MathText.tsx';
 
 /**
  * /gv/bai-co-cham/:id/loi-cua-lop — thẻ "Cả lớp hay sai ở đâu" (US-S5E5-02): số liệu thô theo tiêu chí / loại lỗi,
@@ -105,7 +106,7 @@ export function ClassErrorsPage() {
         <ol className="s5e5-errors-insights" data-testid="s5e5-errors-insights">
           {data.insights.map((i) => (
             <li key={i.n} data-testid={`s5e5-insight-${i.n}`}>
-              <p>{i.text}</p>
+              <p><MathText text={i.text} /></p>
               <p className="s5e5-muted">
                 {i.criterion ? `Tiêu chí ${i.criterion}` : ''}
                 {i.label ? ` · ${labelName(i.label)}` : ''} · AI soạn, giáo viên xem lại
@@ -144,7 +145,7 @@ export function ClassErrorsPage() {
                     checked={picked.includes(s.problemVersionId)}
                     onChange={() => setPicked(toggle(picked, s.problemVersionId))}
                   />{' '}
-                  {s.code} · {s.statement}
+                  {s.code} · <MathText text={s.statement} />
                   {s.distractorMatch && s.distractor ? ` (nhiễu: ${s.distractor})` : ''}
                 </label>
               </li>

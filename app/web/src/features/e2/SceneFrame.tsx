@@ -5,6 +5,7 @@ import { tid } from '../../shared/testid.ts';
 import { fmtNum, lengthHidden, lengthOf, project } from './sceneMath.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { verifyIcon } from '../../shared/ui/icons.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Khung hình TẠM của E2 (SVG, chiếu song song): đủ cho tiêu chí E2 — hình hiện, xoay được (kéo hoặc nút),
@@ -127,7 +128,7 @@ export function SceneFrame({ scene, testId = tid('e2', 'scene') }: { scene: Scen
       </div>
       {warning ? (
         <div className="e2-warning" role="note" data-testid={tid('e2', 'scene', 'warning')} data-code={warning.code}><Icon name="warn" inline />
-          {warning.text}
+          <MathText text={warning.text} />
         </div>
       ) : null}
       <svg
@@ -170,7 +171,7 @@ export function SceneFrame({ scene, testId = tid('e2', 'scene') }: { scene: Scen
         <div className="e2-chips" data-testid={tid('e2', 'scene', 'chips')}>
           {scene.chips.map((c) => (
             <span key={c.text} className="chip" data-testid={tid('e2', 'scene', 'chip', c.points.join(''))}>
-              {c.text}
+              <MathText text={c.text} />
             </span>
           ))}
         </div>

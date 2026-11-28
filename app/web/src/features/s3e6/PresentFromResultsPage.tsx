@@ -4,6 +4,7 @@ import { ApiError } from '../../shared/api/errors.ts';
 import { tid } from '../../shared/testid.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import { MSG, s3e6Api, type Presentation } from './api.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 type Phase = { k: 'loading' } | { k: 'ready'; data: Presentation } | { k: 'error'; message: string };
 
@@ -85,12 +86,12 @@ export function PresentFromResultsPage() {
         </div>
       ) : null}
       <p className="s3e6-statement" data-math data-testid={tid('s3e6', 'present', 'statement')}>
-        {d.statement}
+        <MathText text={d.statement} />
       </p>
       <ol className="s3e6-steps" data-testid={tid('s3e6', 'present', 'steps')}>
         {d.steps.slice(0, shown).map((s, i) => (
           <li key={i} className="s3e6-step" data-math data-testid={`s3e6-present-step-${i + 1}`}>
-            {s}
+            <MathText text={s} />
           </li>
         ))}
       </ol>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Icon } from '../../shared/ui/Icon.tsx';
 import type { ProposalView } from './api.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Một đề xuất của AI đang chờ (BR-S2E4-02): đã đổi gì (TRƯỚC / SAU), dựa trên nguồn nào, chỗ nào AI chưa chắc.
@@ -35,7 +36,7 @@ export function ProposalPanel({
         <div className="s2e4-diff-cell before">
           <span className="s2e4-cap">TRƯỚC · {proposal.target === 'answer' ? 'đáp số đề ghi' : 'bản nháp hiện tại'}</span>
           <span className="s2e4-diff-text" data-math data-testid="s2e4-proposal-before">
-            {proposal.before}
+            <MathText text={proposal.before} />
           </span>
         </div>
         <div className="s2e4-diff-cell after">
@@ -52,7 +53,7 @@ export function ProposalPanel({
             />
           ) : (
             <span className="s2e4-diff-text" data-math data-testid="s2e4-proposal-after">
-              {proposal.after}
+              <MathText text={proposal.after} />
             </span>
           )}
         </div>

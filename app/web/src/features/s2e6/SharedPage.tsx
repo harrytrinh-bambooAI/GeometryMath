@@ -6,6 +6,7 @@ import { libraryApi, type LibraryDetail } from './api.ts';
 import { CardLabels } from './CardLabels.tsx';
 import { useFetch } from './useFetch.ts';
 import './s2e6.css';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Đề Kho chung (giáo viên): đề bài, gợi ý và lời giải xem ngay kèm nhãn hai trục (BR-S2E6-14, PO-63); "Sao chép về
@@ -44,7 +45,7 @@ export function SharedPage() {
       <div className="card s2e6-detail">
         <CardLabels card={item} testPrefix="s2e6-shared" />
         <p className="s2e6-statement" data-math>
-          {item.statement}
+          <MathText text={item.statement} />
         </p>
         <p className="s2e6-help">
           <Icon name="hint" />

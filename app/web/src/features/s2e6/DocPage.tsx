@@ -8,6 +8,7 @@ import { libraryApi, type DocDetail } from './api.ts';
 import { CardLabels } from './CardLabels.tsx';
 import { useFetch } from './useFetch.ts';
 import './s2e6.css';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Một đề "Của tôi" (C2-01 › đề): nhãn, trạng thái kho, lịch sử gửi soát (BR-S2E6-06), "Đề xuất vào Kho chung"
@@ -50,7 +51,7 @@ export function DocPage() {
       <div className="card s2e6-detail">
         <CardLabels card={doc} testPrefix="s2e6-doc" />
         <p className="s2e6-statement" data-math data-testid="s2e6-doc-statement">
-          {doc.statement}
+          <MathText text={doc.statement} />
         </p>
         {doc.reason ? (
           <p className="s2e6-reason" data-testid="s2e6-doc-reason">

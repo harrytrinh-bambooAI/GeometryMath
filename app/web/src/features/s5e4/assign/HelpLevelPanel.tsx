@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ErrorNotice } from '../../../shared/ui/ErrorNotice.tsx';
 import { Icon } from '../../../shared/ui/Icon.tsx';
 import { HELP_LEVELS, getHelpLevel, putHelpLevel, type HelpLevel, type HelpLevelView } from './HelpLevelApi.ts';
+import { MathText } from '../../../shared/math/MathText.tsx';
 
 /**
  * Mục "Trợ giúp của AI" của một bài (US-S5E3-04-SC3): mặc định Tắt cho bài có chấm, Gợi ý và khái niệm cho bài luyện
@@ -41,7 +42,7 @@ export function HelpLevelPanel({ assignmentId }: { assignmentId: string }) {
     <div className="s5e4-help" data-testid={`s5e4-help-${assignmentId}`}>
       {view && (
         <span className="chip" data-testid="s5e4-help-summary">
-          {view.summary}
+          <MathText text={view.summary} />
         </span>
       )}
       <button type="button" className="btn" onClick={() => setOpen((o) => !o)} aria-expanded={open} data-testid="s5e4-help-toggle">

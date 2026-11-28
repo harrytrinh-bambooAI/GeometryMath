@@ -17,6 +17,7 @@ import {
   type SetDetail,
 } from './api.ts';
 import { PreviewPanel } from './PreviewPanel.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 interface Row {
   problemVersionId: string;
@@ -197,7 +198,7 @@ function Compose({ options, initial }: { options: Options; initial: SetDetail | 
               >
                 <span className="s3e2-num">{k + 1}</span>
                 <div className="s3e2-grow">
-                  <b data-math>{r.title}</b>
+                  <b data-math><MathText text={r.title} /></b>
                   {mode === 'item' && draft ? (
                     <label className="s3e2-inline">
                       Giờ mở riêng
@@ -379,7 +380,7 @@ function ProblemPicker({ problems, onAdd }: { problems: Candidate[]; onAdd: (p: 
         {problems.map((p) => (
           <li key={p.problemVersionId} className="s3e2-item" data-testid={`s3e2-problem-${p.code}`}>
             <div className="s3e2-grow">
-              <b data-math>{p.title}</b>
+              <b data-math><MathText text={p.title} /></b>
               <div className="s3e2-help">
                 {p.code}
                 {p.needsReview ? ' · Cần xem lại' : ' · Máy kiểm chứng'}

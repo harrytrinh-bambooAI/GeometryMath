@@ -5,6 +5,7 @@ import type { SaveResult } from '../../shared/theme/theme.ts';
 import { THEMES } from '../../shared/theme/themes.ts';
 import type { ThemeId } from '../../shared/theme/themes.ts';
 import './settings.css';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * Màn Cài đặt (T-261126-50), chung cho giáo viên (/gv/cai-dat) và học sinh (/hs/cai-dat): chọn giao diện.
@@ -50,7 +51,7 @@ export function SettingsPage({ area }: { area: 'gv' | 'hs' }) {
               </span>
             </span>
             <span className="theme-name">{t.name}</span>
-            <span className="theme-sum">{t.summary}</span>
+            <span className="theme-sum"><MathText text={t.summary} /></span>
           </label>
         ))}
       </div>

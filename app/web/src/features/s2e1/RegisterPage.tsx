@@ -7,6 +7,7 @@ import { CodeBox, SavedGate } from './CodeBox.tsx';
 import { checkName, checkPassword, fieldErrorOf, messageOf, s2e1Api } from './api.ts';
 import type { Notice, Registered, Role } from './api.ts';
 import { Icon } from '../../shared/ui/Icon.tsx';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 type Errors = Partial<Record<'displayName' | 'role' | 'password' | 'privacyAck' | 'form', string>>;
 
@@ -149,7 +150,7 @@ export function RegisterPage({ area }: { area: 'gv' | 'hs' }) {
         </label>
         {showNotice && notice ? (
           <div className="s2e1-notice" data-testid={tid('s2e1', 'privacy', 'text')}>
-            {notice.body}
+            <MathText text={notice.body} />
           </div>
         ) : null}
         {errors.privacyAck ? <span className="s2e1-err">{errors.privacyAck}</span> : null}

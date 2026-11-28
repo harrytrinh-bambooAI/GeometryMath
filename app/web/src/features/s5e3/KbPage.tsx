@@ -22,6 +22,7 @@ import {
   type KbListItem,
 } from './api.ts';
 import { ACCEPT, endOfDayVn, fileProblem, nextAction, statusChip } from './logic.ts';
+import { MathText } from '../../shared/math/MathText.tsx';
 
 /**
  * "Kho tri thức" (C5, US-S5E3-01, 02): danh sách tài liệu, thêm (tải docx/pdf/md ≤ 10 MB, soạn tay Markdown, giáo án đã
@@ -256,7 +257,7 @@ export function KbPage() {
                       {c}
                     </span>
                   ))}
-                  <p className="s5e3-section-body">{s.body}</p>
+                  <p className="s5e3-section-body"><MathText text={s.body} /></p>
                 </li>
               ))}
             </ol>
