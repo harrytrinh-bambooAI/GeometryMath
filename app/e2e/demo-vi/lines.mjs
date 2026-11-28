@@ -6,8 +6,9 @@ const here = path.dirname(new URL(import.meta.url).pathname);
 export const EVIDENCE = path.resolve(process.env.GEO_VI_OUT ?? path.resolve(here, '../../../artifacts/GEO/evidence/DEMO-VI-20261128'));
 export const SCENES = JSON.parse(readFileSync(path.join(here, 'scenes.json'), 'utf8'));
 
-export function readLines() {
-  return readFileSync(path.join(EVIDENCE, 'voice', 'lines.tsv'), 'utf8')
+/** @param {string} [file] lines.tsv (mặc định: evidence voice/lines.tsv của video giới thiệu) */
+export function readLines(file = path.join(EVIDENCE, 'voice', 'lines.tsv')) {
+  return readFileSync(file, 'utf8')
     .split('\n')
     .filter((s) => s.trim() && !s.startsWith('#'))
     .map((s) => {

@@ -1,0 +1,7 @@
+# Phiên bản: v1.0 · 2026-11-28 · T-261128-77 · video 08-gv-rubric. Cột: mã <TAB> lời đọc [<TAB> phụ đề nếu khác]. Giọng: <mã>.wav|.mp3 cùng thư mục (tệp mới nhất thắng).
+00-mo-dau	Hướng dẫn giáo viên tạo và chỉnh rubric chấm điểm cho bài tự luận.
+b1	Bước một. Chọn Rubric và mở rubric cần chỉnh, hoặc tạo mới từ mẫu.
+b2	Bước hai. Sửa tên và điểm tối đa của từng tiêu chí. Tổng điểm hiển thị ngay.
+b3	Bước ba. Nếu tổng không bằng mười, hệ thống cảnh báo và chặn lưu. Chỉnh lại cho đủ mười.
+b4	Bước bốn. Lưu rubric. Mỗi lần sửa tạo phiên bản mới, bài đã chấm giữ phiên bản cũ.
+99-tom-tat	Tóm lại: mở rubric, sửa điểm từng tiêu chí, kiểm tổng mười, rồi lưu.

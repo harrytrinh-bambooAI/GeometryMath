@@ -1,5 +1,5 @@
 {
-  "_doc": "T-261128-75 · fixture DEMO riêng (không phải fixture e2e). Câu hỏi thật của học sinh về bài HKG-01 (Ngan-hang-bai-tap-Hinh-khong-gian.xlsx) và câu trả lời GIẢ LẬP bám giáo án 11A1 (Giao-an-Hinh-khong-gian-11A1.docx: mục 2 'Hướng lời giải: ưu tiên hình chiếu và tam giác vuông', gợi ý 1–2 của HKG-01). Chỉ thay chữ 'reply' khi hiển thị trong clip (page.route); nguồn giữ nguyên của máy chủ.",
-  "question": "Vì sao hình chiếu của SD lên mặt đáy (ABCD) là AD ạ?",
-  "reply": "Vì SA ⊥ (ABCD) nên chân đường vuông góc hạ từ S xuống mặt đáy chính là A, tức A là hình chiếu của S. Điểm D đã nằm trên mặt đáy nên hình chiếu của D là chính nó. Hình chiếu của đoạn SD là đoạn nối hình chiếu hai đầu mút, nên đó là AD. Em thử dùng ý này để tự xác định góc cần tìm nhé — cô chưa mở lời giải bài này."
+  "_doc": "T-261128-76 · v2.0 · fixture DEMO riêng (không phải fixture e2e). Câu hỏi của học sinh Bình An trước bài 'Kiểm tra 15 phút – Khoảng cách' (đề: S.ABCD đáy vuông cạnh a, SA ⊥ đáy, SA = a√2, tính d(A,(SBC))) và câu trả lời GIẢ LẬP chỉ nêu cách nghĩ, không nêu đáp số — khớp nguồn máy chủ trích ('Ghi chú Khoảng cách 11A1 · v2 · mục Khoảng cách từ điểm đến mặt phẳng'). Chỉ thay chữ 'reply' khi hiển thị (page.route).",
+  "question": "Muốn tính khoảng cách từ A đến mặt phẳng (SBC) thì em nên bắt đầu từ đâu ạ?",
+  "reply": "Khoảng cách từ một điểm đến mặt phẳng là độ dài đoạn vuông góc hạ từ điểm đó xuống mặt phẳng. Em thử tìm một mặt phẳng chứa A và vuông góc với (SBC): xem BC vuông góc với những đường nào đi qua B. Khi có mặt phẳng ấy, chỉ cần hạ đường vuông góc từ A xuống giao tuyến của hai mặt phẳng. Cô chưa mở lời giải, em tự làm tiếp nhé."
 }

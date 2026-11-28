@@ -1,0 +1,7 @@
+# Phiên bản: v1.0 · 2026-11-28 · T-261128-77 · video 05-gv-ra-de-ma-tran. Cột: mã <TAB> lời đọc [<TAB> phụ đề nếu khác]. Giọng: <mã>.wav|.mp3 cùng thư mục (tệp mới nhất thắng).
+00-mo-dau	Hướng dẫn giáo viên ra một đề kiểm tra theo ma trận chuẩn, sinh nhiều mã đề từ ngân hàng đã kiểm chứng.
+b1	Bước một. Chọn Ra đề ở thanh bên trái.
+b2	Bước hai. Chọn loại đề, ví dụ kiểm tra mười lăm phút. Số câu trắc nghiệm, tự luận và tổng điểm được điền sẵn theo ma trận.
+b3	Bước ba. Mở bộ đề vừa sinh. Mỗi câu có hai nhãn: máy kiểm chứng và người duyệt. Bấm từng mã đề để xem.
+b4	Bước bốn. Muốn đổi câu nào, bấm Thay. Câu mới giữ nguyên chủ đề, dạng, mức độ và điểm.
+99-tom-tat	Tóm lại: mở Ra đề, chọn loại đề, xem các mã đề, và thay câu khi cần.

@@ -1,0 +1,8 @@
+# Phiên bản: v1.0 · 2026-11-28 · T-261128-77 · video 06-gv-soan-giao-an. Cột: mã <TAB> lời đọc [<TAB> phụ đề nếu khác]. Giọng: <mã>.wav|.mp3 cùng thư mục (tệp mới nhất thắng).
+00-mo-dau	Hướng dẫn giáo viên soạn giáo án một tiết theo phân phối chương trình, với bản nháp do AI soạn.
+b1	Bước một. Chọn Giáo án, rồi Soạn giáo án mới.
+b2	Bước hai. Chọn chương, bài và tiết theo phân phối chương trình. Số tiết và kiến thức trọng tâm tự điền.
+b3	Bước ba. Chọn đối tượng học sinh và phong cách dạy, rồi bấm soạn. Bản nháp có nhãn AI soạn.
+b4	Bước bốn. Đọc mục tiêu, thiết bị, tiến trình và phiếu học tập. Bấm chọn để sửa ở mục nào cần chỉnh, hoặc dùng ô chat sửa giáo án.
+b5	Bước năm. Khi đã ưng, bấm Duyệt giáo án, rồi tải Word hoặc PDF.
+99-tom-tat	Tóm lại: chọn bài và tiết, chọn đối tượng, bấm soạn, sửa từng mục, rồi duyệt và tải về.

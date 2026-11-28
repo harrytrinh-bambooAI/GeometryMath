@@ -1,0 +1,6 @@
+# Phiên bản: v1.0 · 2026-11-28 · T-261128-77 · video 07-gv-kho-tri-thuc. Cột: mã <TAB> lời đọc [<TAB> phụ đề nếu khác]. Giọng: <mã>.wav|.mp3 cùng thư mục (tệp mới nhất thắng).
+00-mo-dau	Hướng dẫn giáo viên quản lý kho tri thức: nơi chứa tài liệu mà AI được phép dùng để trả lời học sinh.
+b1	Bước một. Chọn Kho tri thức ở thanh bên trái.
+b2	Bước hai. Mỗi tài liệu có phiên bản và trạng thái: đang dùng, chờ duyệt, hoặc đã lưu trữ. AI chỉ dùng bản đang dùng.
+b3	Bước ba. Duyệt bản mới để thay bản cũ, hoặc lưu trữ tài liệu không còn dùng. Học sinh luôn thấy nguồn đúng phiên bản.
+99-tom-tat	Tóm lại: mở kho tri thức, xem phiên bản, rồi duyệt hoặc lưu trữ để AI trả lời đúng tài liệu.

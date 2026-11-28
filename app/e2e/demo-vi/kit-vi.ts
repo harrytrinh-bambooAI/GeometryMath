@@ -149,4 +149,59 @@ export async function handwrittenImages(page: Page) {
   );
 }
 
+/** Thay chữ trả lời hỏi đáp bằng fixture demo (dùng chung cho video giới thiệu và video hướng dẫn). */
+export async function qaReplyOverride(page: Page) {
+  const fx = FIXTURE<{ question: string; reply: string }>('qa-hkg01.json');
+  await page.route('**/api/v1/student/kb-qa**', async (route) => {
+    if (route.request().method() !== 'POST') return route.fallback();
+    const res = await route.fetch();
+    const body = (await res.json()) as Record<string, unknown>;
+    if (typeof body.reply === 'string' && body.reply) body.reply = fx.reply;
+    await route.fulfill({ response: res, json: body });
+  });
+  return fx;
+}
+
+interface GiaoAn {
+  mucTieuKienThuc: string;
+  nangLuc: string[];
+  hoatDong: Array<{ ten: string; noiDung: string; chuyenGiao: string; thucHien: string }>;
+}
+type Hd = { ten?: string; mucTieu?: string; noiDung?: string; toChuc?: Record<string, string> };
+
+/** Bản nháp giáo án: AI giả lập soạn khung; chữ hiển thị lấy từ giáo án thật 11A1 (fixtures/giao-an-11a1.json). */
+export async function lessonPlanOverride(page: Page) {
+  const fx = FIXTURE<GiaoAn>('giao-an-11a1.json');
+  await page.route(/\/api\/v1\/teacher\/lesson-plans\/[0-9a-f-]{36}$/, async (route) => {
+    if (route.request().method() !== 'GET') return route.fallback();
+    const res = await route.fetch();
+    const body = (await res.json()) as { lesson?: { mucTieu?: { kienThuc?: Array<{ noi_dung?: string }>; nangLuc?: string[] }; hoatDong?: Hd[] } };
+    const l = body.lesson;
+    if (l?.mucTieu?.kienThuc?.[0]) l.mucTieu.kienThuc[0].noi_dung = fx.mucTieuKienThuc;
+    if (l?.mucTieu) l.mucTieu.nangLuc = fx.nangLuc;
+    l?.hoatDong?.forEach((h, i) => {
+      const f = fx.hoatDong[i];
+      if (!f) return;
+      h.ten = f.ten;
+      h.mucTieu = `HS đạt mục tiêu của ${f.ten}.`;
+      h.noiDung = f.noiDung;
+      if (h.toChuc) {
+        h.toChuc.chuyenGiao = f.chuyenGiao;
+        h.toChuc.thucHien = f.thucHien;
+      }
+    });
+    await route.fulfill({ response: res, json: body });
+  });
+}
+
+type DemoApi = { chapter(code: string): Promise<void>; badge(t: string | null): Promise<void>; step(l: string, fn: () => Promise<unknown>): Promise<boolean>; hold(ms?: number): Promise<void> };
+/** Một bước của video hướng dẫn: đặt mốc bN, hiện nhãn "Bước N · tiêu đề", chạy thao tác (bước mềm), giữ nhịp cuối bước. */
+export async function gstep(demo: DemoApi, n: number, title: string, fn: () => Promise<unknown>, tailMs = 1500) {
+  await demo.chapter(`b${n}`);
+  await demo.badge(`Bước ${n} · ${title}`);
+  await demo.step(`b${n} ${title}`, fn);
+  await demo.badge(`Bước ${n} · ${title}`); // đặt lại sau khi trang mới mở (sessionStorage của trang trước có thể chưa có)
+  await demo.hold(tailMs);
+}
+
 export { expect };
