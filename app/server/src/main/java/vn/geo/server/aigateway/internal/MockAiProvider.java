@@ -457,6 +457,32 @@ public class MockAiProvider implements AiProvider {
       return mapper.writeValueAsString(out);
     }
     // --- T-261128-59 (S5-E4) ---
+    if ("grade_ocr".equals(call.task()) && call.prompt().startsWith("[s5e4b-ocr]")) {
+      // F-S5-095: bản đọc chữ BN-01 theo trang (luồng nộp thật US-S5E4-04): mỗi trang 1 đoạn "chưa
+      // chắc" (tin cậy < 0,6) kèm vùng ảnh → bài 2 trang có 2 đoạn tô. Trang 2 đọc nhầm "a√6/2" để
+      // giáo viên sửa thành "a√6/3" (US-S5E4-04-SC2).
+      boolean p2 = call.prompt().startsWith("[s5e4b-ocr] trang 2.");
+      ObjectNode out = mapper.createObjectNode();
+      tools.jackson.databind.node.ArrayNode segs = out.putArray("segments");
+      ObjectNode r1 =
+          mapper.createObjectNode().put("x", 40).put("y", 60).put("w", 520).put("h", 48);
+      ObjectNode r2 =
+          mapper.createObjectNode().put("x", 40).put("y", 140).put("w", 300).put("h", 52);
+      if (p2) {
+        segs.addObject()
+            .put("text", "1/AH² = 1/SA² + 1/AB²")
+            .put("confidence", 0.91)
+            .set("region", r1);
+        segs.addObject().put("text", "AH = a√6/2").put("confidence", 0.48).set("region", r2);
+      } else {
+        segs.addObject()
+            .put("text", "Kẻ AH ⊥ SB tại H. Vì BC ⊥ (SAB) nên AH ⊥ (SBC).")
+            .put("confidence", 0.88)
+            .set("region", r1);
+        segs.addObject().put("text", "SB = a√3").put("confidence", 0.52).set("region", r2);
+      }
+      return mapper.writeValueAsString(out);
+    }
     // --- T-261128-60 (S5-E4) ---
     // --- T-261128-61 (S5-E6) ---
     // --- T-261128-62 (S5-E6) ---
