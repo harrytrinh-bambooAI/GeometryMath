@@ -488,7 +488,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phạm vi tệp: ^(app/server/src/main/java/vn/geo/server/aigrade/|app/web/src/features/(s5e3|s5e4)/|app/e2e/tests/(s5e3|s5e4)/|app/server/src/main/java/vn/geo/server/(knowledge|answers|assessment)/|app/server/src/main/java/vn/geo/server/(aigrade/.*/(kpi|gate)/|assessment/api/ClassAiGate)|app/server/src/test/java/vn/geo/server/(it/s5e6|aigrade)/.*(Kpi|Gate|kpi|gate)|app/web/src/features/s5e6/kpi/|app/e2e/tests/s5e6/kpi|app/server/src/main/resources/db/migration/V8(2[5-9]|3[0-9]|4[0-4])__|app/db/seed/(e2e/s5_7[5-9]|fixture-ids\.d/s5e6c)|app/server/quality/sql-lint\.properties|app/server/src/test/java/vn/geo/server/quality/|app/server/src/main/resources/application\.yml|app/server/src/main/java/vn/geo/server/aigateway/internal/(AnthropicPrompts|MockAiProvider)\.java|app/Makefile|app/README\.md|artifacts/GEO/work/epics/S5-E6/(status|qc_findings)\.md)
 - Kế hoạch: PLAN_code-s5 §3 W7
 
-## T-261128-68 · S5-FIX · L5 Dev FIX W7 · epic-common v1.6 · wt s5-fix · 2h/5M · Việc nối tiếp còn lại của chặng 5 [running]
+## T-261128-68 · S5-FIX · L5 Dev FIX W7 · epic-common v1.6 · wt s5-fix · 2h/5M · Việc nối tiếp còn lại của chặng 5 [done]
 - Mục tiêu: (1) nối "Trả bài" thật (`grade_return`) và nội dung bài nộp của HS vào KsS5Firewall để bộ kiểm lộ đáp án so được nội dung bài (Dev-S5E3-13); (2) chuyển TC-S5E4-45 và (nếu T-64 chưa làm) TC-S5E5-19/23/25/27 từ móc thử sang luồng nộp/OCR/chấm thật; (3) lấy mẫu chấm song song có điều kiện "tối thiểu 2 bài" (US-S5E6-04); (4) ghi giờ mở màn chấm để KPI (g) có số liệu thật; (5) cập nhật `S5-E3/qc_findings.md` (Dev-S5E3-12 đã xử lý ở T-65); (6) nếu còn ngân sách: TC-S5E4-49 trượt riêng ui-webkit. (7) TC-S5E5-23: khi hết hạn mức 200/200, màn hiển thị lý do hạn mức thay vì "Chưa đọc được" (code assessment, Dev-S5E5-10).
 - Nguồn: báo cáo T-261128-58/60/62/65 (28/11); epics/S5-E3, S5-E4, S5-E6 qc_findings.md v0.3; PLAN_code-s5 v1.0 §4 (FIX W7)
 - Xong khi: verify + web-build + e2e-affected xanh; traceability --strict MVP,S2,S3,S5 đạt; các TC nêu trên chạy luồng thật (grep không còn móc `/test-hooks/s5e5/grading-run` trong tests/s5e5 nếu đã chuyển).
@@ -499,7 +499,7 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Cổng: 54849
 - Kế hoạch: PLAN_code-s5 §4 FIX W7
 
-## T-261128-69 · TOOL · L5 Dev công cụ E2E cách lai · wt e2e-lai · 1h/2M · e2e-affected: tệp dùng chung → API trọn bộ, UI chỉ màn của task [running]
+## T-261128-69 · TOOL · L5 Dev công cụ E2E cách lai · wt e2e-lai · 1h/2M · e2e-affected: tệp dùng chung → API trọn bộ, UI chỉ màn của task [done]
 - Mục tiêu: theo DECISIONS 28/11 "E2E cách lai": (1) `app/scripts/e2e-affected.mjs` + `artifacts/GEO/work/s23/impact-map.json`: tệp dùng chung (quality/allowed_fields.tsv, quality/sql-lint.properties, application*.yml, aigateway/internal/{AnthropicPrompts,MockAiProvider}.java, Makefile, README) không kéo lên L2 nữa mà ra mức mới `LA` = project api trọn bộ + KHÔNG UI; (2) thêm cờ `--ui-own` (mặc định bật khi mức ≤ L1): UI chỉ chạy spec `*.ui.spec.ts` của feature/epic có tệp đổi, trên ui-chromium; mobile P0 giữ như cũ; (3) thêm target `make e2e-full` = `scripts/e2e.sh` trọn bộ mọi project (dùng cho lượt định kỳ 2–3 đợt và tester); (4) selftest của bản đồ thêm ≥ 3 ca mới (tệp dùng chung → LA; feature s5e4 web → UI chỉ s5e4; migration ngoài khoảng → L2) và đều đạt; README mục E2E ghi cách lai.
 - Nguồn: DECISIONS.md dòng 28/11 "E2E cách lai"; app/scripts/e2e-affected.mjs (đầu tệp mô tả L0/L1/L2); impact-map.json v1.1 (T-51); số liệu: UI ≈ 90 % thời gian (E2E-S23: UI 678 test 3,4 phút, API 285 test 24 giây)
 - Xong khi: selftest đạt; dry-run trên diff mẫu chỉ tệp allowed_fields cho mức LA không có UI.
@@ -510,15 +510,15 @@ Ghi chú chung (task code): cổng riêng trong `app/.env.ports`, khoảng số 
 - Phạm vi tệp: ^(app/scripts/e2e-affected[^/]*|artifacts/GEO/work/s23/impact-map\.json|app/Makefile|app/README\.md|app/\.env\.ports)
 - Cổng: 54869
 
-## T-261128-66 · S5 · L6 Tester · tester SKILL + Playwright · wt mvp-wave0 · 3h/4M · Kiểm thử chặng 5 [todo]
-- Mục tiêu: chạy 219 TC chặng 5 trên `worktree-mvp-wave0` đã gộp W0–W7 (cờ grading + ai-grading bật ở hồ sơ e2e): E2E-UI bằng Playwright trước, còn lại E2E-API; ca quyền theo quan hệ (giáo viên khác, học sinh lớp khác), không lộ đáp án (bộ `firewall-s5.json` lộ = 0), không lộ gì của AI cho học sinh; iOS/HEIC thiết bị thật ghi Manual; bằng chứng + REPORT.md + BUG-LIST.md theo mẫu `artifacts/GEO/evidence/E2E-S23-20261128/`
+## T-261128-66 · S5 · L6 Tester · tester SKILL + Playwright · wt s5-test · 3h/4M · Kiểm thử chặng 5 [running]
+- Mục tiêu: chạy 219 TC chặng 5 trên `worktree-mvp-wave0` đã gộp W0–W7 (cờ grading + ai-grading bật ở hồ sơ e2e): E2E-UI bằng Playwright trước, còn lại E2E-API; ca quyền theo quan hệ (giáo viên khác, học sinh lớp khác), không lộ đáp án (bộ `firewall-s5.json` lộ = 0), không lộ gì của AI cho học sinh; iOS/HEIC thiết bị thật ghi Manual; bằng chứng + REPORT.md + BUG-LIST.md theo mẫu `artifacts/GEO/evidence/E2E-S23-20261128/` THEO DECISIONS 28/11 "E2E cách lai" + /goal: chạy `make e2e-full` trên nhánh tích hợp (UI + tương tác bằng Playwright TRƯỚC, phần còn lại qua API); ca trượt chạy lại 1 lần để tách lỗi thật / chập chờn; KHÔNG sửa code app. Ra `artifacts/GEO/evidence/E2E-S5-<ngày>/` gồm REPORT.md (đạt/tổng theo epic, UI/API), BUG-LIST.md + BUG-LIST.html: mỗi lỗi ≥ 1 ảnh NHÚNG base64 (data URI, ≤ 300 KB/ảnh, KHÔNG link tệp; lỗi API chụp trang HTML request/response bằng Playwright) + check_buglist.py — theo đúng mẫu `artifacts/GEO/evidence/E2E-S23-20261128/`. Commit + không push (phiên chính push).
 - Nguồn: epics/S5-*/test_cases.md v1.1 (80e9b6f 28/11); mẫu E2E-S23-20261128/REPORT.md (28/11); scope.json tester; PLAN_code-s5 v1.0 §3 W8
 - Xong khi: mọi TC S5 có status; lệch audit = 0; REPORT.md có bảng UI/API đạt/tổng
-- Kiểm: `cd app && make e2e && make traceability ARGS="--strict --epic MVP,S2,S3,S5" && test -s ../artifacts/GEO/evidence/E2E-S5/REPORT.md && test -s ../artifacts/GEO/evidence/E2E-S5/BUG-LIST.md`
+- Kiểm: `cd .claude/worktrees/s5-test/app && make traceability ARGS="--strict --epic MVP,S2,S3,S5" && D=$(ls -d ../artifacts/GEO/evidence/E2E-S5-* | tail -1) && test -s $D/REPORT.md && test -s $D/BUG-LIST.md && test -s $D/BUG-LIST.html && python3 $D/check_buglist.py`
 - Ngoài phạm vi: sửa code (lỗi → BUG-LIST, phiên chính tạo FIX); AI thật; bench QS5-27
 - Model: opus · Ngân sách: 3 giờ
 - Phụ thuộc: T-261128-64, T-261128-65, T-261128-68
-- Phạm vi tệp: ^(artifacts/GEO/evidence/E2E-S5/|artifacts/GEO/work/epics/S5-E[1-6]/status\.md)
+- Phạm vi tệp: ^(artifacts/GEO/evidence/E2E-S5-|app/e2e/evidence/|artifacts/GEO/work/epics/S5-E[1-6]/status\.md)
 - Kế hoạch: PLAN_code-s5 §3 W8
 
 ## T-261128-67 · GATE · Owner L7 chặng 5 (L5a phát hành; L5b/L5c chờ PO-64, bench QS5-27, lớp pilot) [wait-user]

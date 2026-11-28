@@ -434,3 +434,4 @@ Kiểm: `make verify` 94 đơn vị + 47 IT đạt; web typecheck/lint/6 test/bu
 - [28/11] Sự cố: T-61 và T-60 lỡ chạy lệnh DB vào cụm 54329 (checkout chính GeometryMathSupport/app): T-61 DROP IF EXISTS/DELETE 0 trên geo_dev (không mất gì, đã kiểm); T-60 dropdb geo_e2e rồi tạo lại rỗng (lượt e2e sau tự migrate+seed). Đã thêm luật cổng DB vào mkbrief.sh.
 - [28/11] PO chốt (T-61): sửa bản đọc chữ có cho AI chấm lại (tốn lượt)? Luật §2.5 bịa kiến thức chỉ gắn cờ hay trừ điểm? Token đề xuất là ước tính (AiResponse chưa trả token).
 - [28/11] T-60: phát hành theo giờ cố định (at_time) chưa gửi MSG-S5-39 (không có job lúc mở); TC-49 trượt riêng ui-webkit (không thuộc cổng).
+- [28/11] PO chốt (T-68): HS không nộp bài vẫn khóa đáp số trong hỏi đáp sau khi GV Trả bài? Nhãn "AI không chấm: <lý do>" hiện cả khi AI lớp tắt? Cách chọn tối thiểu 2 bài cho mẫu chấm song song (10 % theo mã hoặc 2 bài nộp đầu).
