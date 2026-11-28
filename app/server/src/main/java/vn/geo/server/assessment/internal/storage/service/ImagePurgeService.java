@@ -93,7 +93,7 @@ public class ImagePurgeService {
     int rows = 0;
     for (String y : years) {
       for (SubmissionDataEraser x : erasers) {
-        rows += x.eraseSchoolYear(y);
+        rows += x.eraseSchoolYear(y, scope);
       }
     }
     perOrg.forEach(

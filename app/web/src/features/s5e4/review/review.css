@@ -1,0 +1,46 @@
+/* S5-E4c · hàng chờ, chấm tay, kết quả (T-261128-60). Màu, bo góc chỉ qua token theme; chữ phụ ≥ 14 px. */
+.s5e4-flag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 2px 8px;
+  border-radius: var(--radius, 8px);
+  background: var(--red-s);
+  color: var(--red);
+  font-size: 14px;
+}
+.s5e4-review {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--gap);
+  min-width: 0;
+}
+@media (max-width: 900px) {
+  .s5e4-review {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.s5e4-pages {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.s5e4-pages img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius, 8px);
+}
+.s5e4-crit {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 90px;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.s5e4-crit input {
+  width: 90px;
+}
+.s5e4-review textarea {
+  width: 100%;
+  min-height: 90px;
+  font: inherit;
+}

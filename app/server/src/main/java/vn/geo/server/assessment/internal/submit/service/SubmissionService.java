@@ -16,6 +16,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 import vn.geo.server.assessment.api.ImageStore;
 import vn.geo.server.assessment.internal.ocr.service.OcrService;
 import vn.geo.server.assessment.internal.storage.service.EncryptedObjectStore;
+import vn.geo.server.assessment.internal.storage.service.HeicStripper;
 import vn.geo.server.assessment.internal.storage.service.ImageStoreService;
 import vn.geo.server.assessment.internal.storage.service.MetadataStripper;
 import vn.geo.server.assessment.internal.submit.repo.SubmissionRepository;
@@ -299,9 +300,12 @@ public class SubmissionService {
         || f.original()[7] != 'p') {
       throw AppException.invalidField("pages", "Ảnh HEIC không hợp lệ.");
     }
+    // T-261128-60: gỡ mục Exif/XMP của ảnh gốc HEIC trước khi lưu; băm tính sau khi gỡ
+    // (BR-S5E4-27).
+    byte[] original = HeicStripper.strip(f.original());
     UUID origId = Uuid7.next();
     String origKey = me.orgId() + "/" + origId;
-    store.write(origKey, f.original());
+    store.write(origKey, original);
     repo.insertImage(
         me.orgId(),
         origId,
@@ -313,8 +317,8 @@ public class SubmissionService {
         a.classId(),
         year,
         "image/heic",
-        SubmitHashes.sha256(f.original()),
-        f.original().length,
+        SubmitHashes.sha256(original),
+        original.length,
         origKey);
     MetadataStripper.Clean clean = MetadataStripper.strip(f.derived());
     UUID derId = Uuid7.next();
@@ -377,14 +381,27 @@ public class SubmissionService {
     m.put("id", s.id().toString());
     m.put("code", s.code());
     m.put("assignmentId", s.assignmentId().toString());
-    m.put("status", "submitted");
-    m.put("statusLabel", "Đã nộp");
+    // T-261128-60: học sinh chỉ thấy "Đã nộp · Đang chờ thầy cô chấm" tới khi bài Đã trả
+    // (BR-S5E4-21).
+    String state = repo.gradingState(me.orgId(), s.id());
+    boolean returned = "returned".equals(state);
+    m.put("status", returned ? "returned" : "submitted");
+    m.put("statusLabel", returned ? "Đã trả" : "Đã nộp");
     m.put(
-        "message", "Đã nộp lúc " + VN_TIME.format(cur.submittedAt()) + ". Đang chờ thầy cô chấm.");
+        "message",
+        returned
+            ? "Thầy cô đã trả bài. Mở Kết quả để xem điểm và lời giải."
+            : "Đã nộp lúc " + VN_TIME.format(cur.submittedAt()) + ". Đang chờ thầy cô chấm.");
     if (teacher) {
       m.put("studentId", s.studentId().toString());
-      m.put("gradingStatus", "waiting");
-      m.put("gradingStatusLabel", "Chờ chấm");
+      m.put("gradingStatus", state);
+      m.put(
+          "gradingStatusLabel",
+          switch (state) {
+            case "approved" -> "Đã duyệt";
+            case "returned" -> "Đã trả";
+            default -> "Chờ chấm";
+          });
     }
     m.putAll(version(me, cur));
     if (teacher) {

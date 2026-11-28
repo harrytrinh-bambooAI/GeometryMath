@@ -22,4 +22,13 @@ public interface SubmissionDataEraser {
   default int eraseSchoolYear(String schoolYear) {
     return 0;
   }
+
+  /**
+   * Như {@link #eraseSchoolYear(String)} nhưng chỉ trong một bài có chấm khi {@code
+   * assignmentScope} khác null (móc kiểm thử chạy song song không xoá dữ liệu của ca khác;
+   * T-261128-60). Mặc định: không phạm vi → bản toàn hệ thống; có phạm vi → không xoá gì.
+   */
+  default int eraseSchoolYear(String schoolYear, UUID assignmentScope) {
+    return assignmentScope == null ? eraseSchoolYear(schoolYear) : 0;
+  }
 }

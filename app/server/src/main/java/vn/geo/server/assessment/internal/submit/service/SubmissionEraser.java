@@ -36,6 +36,11 @@ public class SubmissionEraser implements SubmissionDataEraser {
 
   @Override
   public int eraseSchoolYear(String schoolYear) {
-    return repo.deleteOfYear(schoolYear);
+    return repo.deleteOfYear(schoolYear, null);
+  }
+
+  @Override
+  public int eraseSchoolYear(String schoolYear, UUID assignmentScope) {
+    return repo.deleteOfYear(schoolYear, assignmentScope);
   }
 }
